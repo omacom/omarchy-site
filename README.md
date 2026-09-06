@@ -45,6 +45,6 @@ to put on the page.
 ## Plugins
 
 Plugins aren't in this repository. They're listed on
-[omarchyplugins.com](https://omarchyplugins.com/) from the
-[marketplace repo](https://github.com/HANCORE-linux/omarchy-plugin-marketplace),
+[plugins.omarchy.org](https://plugins.omarchy.org/) from the
+[marketplace repo](https://github.com/omacom/omarchy-plugin-marketplace),
 which has its own submission guide.
