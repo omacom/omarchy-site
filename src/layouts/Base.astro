@@ -90,12 +90,15 @@ const url = `${SITE_URL}${path}`
     <PixelSnap client:load />
     <script>
       import type { TransitionBeforeSwapEvent } from 'astro:transitions/client'
-      import { readTheme } from '@/lib/theme'
+      import { followDesktopTheme, readTheme } from '@/lib/theme'
       import { watchOutbound } from '@/lib/outbound'
       import { watchBrandDownloads } from '@/lib/brand-downloads'
 
       watchBrandDownloads()
       watchOutbound()
+      // Wear the theme the machine is wearing, where a browser is offering it.
+      // Does nothing at all without omarchy-theme-sync installed.
+      followDesktopTheme()
       // Navigation should paint live text, not briefly rasterize it through
       // the snapshot animation used for palette changes.
       document.addEventListener('astro:before-swap', (event) => {

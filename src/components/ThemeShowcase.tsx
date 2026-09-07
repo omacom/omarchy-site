@@ -1,6 +1,6 @@
 import { t } from '@/i18n/site'
 import { useEffect, useState } from 'react'
-import { SITE_THEMES, THEME_EVENT, switchTheme, readTheme } from '@/lib/theme'
+import { SITE_THEMES, THEME_EVENT, chooseTheme, readTheme } from '@/lib/theme'
 import { cn } from '@/lib/utils'
 
 /** A theme's desktop screenshot, the same one the picker shows. */
@@ -78,7 +78,7 @@ export function ThemeShowcase() {
               <button
                 type="button"
                 aria-pressed={selected}
-                onClick={() => switchTheme(theme.id)}
+                onClick={() => chooseTheme(theme.id)}
                 className={cn(
                   'whitespace-nowrap underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring',
                   selected

@@ -12,7 +12,7 @@ import {
   OPEN_PICKER_EVENT,
   PICKER_STATE_EVENT,
   SITE_THEMES,
-  switchTheme,
+  chooseTheme,
   paintFavicon,
   watchChrome,
   readTheme,
@@ -105,7 +105,7 @@ export function ThemePicker() {
     // element that disappears mid-transition makes the browser drop the
     // whole wipe. Hence the flush, rather than letting React close it on
     // its own schedule a frame later.
-    switchTheme(next.id, () => flushSync(() => close()), { frosted: true })
+    chooseTheme(next.id, () => flushSync(() => close()), { frosted: true })
   }, [close])
 
   // The entry point is T. Omarchy's own chord still works for anyone not on
