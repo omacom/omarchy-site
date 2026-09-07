@@ -1223,7 +1223,18 @@ h6 {
   content: '';
 }
 
-.site-bar :is(a, button):focus-visible {
+/* Inset, because the bar's own controls are no taller than its row. The menu's
+   filled buttons keep the ring they ship with, outside their box: a brand
+   outline drawn inside a brand fill is the colour of the fill. */
+.site-bar
+  :is(
+    .site-bar__home,
+    .site-bar__page,
+    .site-bar__icon,
+    .site-bar__install,
+    .site-bar__toggle,
+    .site-bar__menu-link
+  ):focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: -2px;
 }
