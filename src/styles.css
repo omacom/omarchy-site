@@ -966,7 +966,14 @@ body,
 
 /* Shared height for the sticky bar, hero offset, and mobile menu. */
 :root {
-  --nav-h: calc(3.5rem + env(safe-area-inset-top, 0px));
+  --nav-row-h: 2rem;
+  --nav-h: calc(var(--nav-row-h) + 1px + env(safe-area-inset-top, 0px));
+}
+
+@media (width < 40rem), (any-pointer: coarse) {
+  :root {
+    --nav-row-h: 2.75rem;
+  }
 }
 
 body {
@@ -982,13 +989,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Sticky stacking contexts prevent blending with the hero; labels blend inside the hero instead. */
 /* The hero field's cell size, derived in pure CSS: the wordmark slot is
    88% of the padded container capped at 896px, split into 81 columns,
    which is exactly the lattice the canvas draws. Elements sized with
-   --pxc multiples fit the grid with no runtime measurement at all. The
-   header and the hero section are both containers of the same width, so
-   the value agrees across them. */
+   --pxc multiples fit the grid with no runtime measurement at all. */
 .pixel-container {
   container-type: inline-size;
 }
@@ -1127,23 +1131,158 @@ h6 {
   }
 }
 
-/* Hide real labels while the blended copy is visible to avoid double painting. */
-[data-nav-blend] nav[aria-label='Main'] a,
-[data-nav-blend] [data-nav-glyph],
-[data-nav-blend] [data-nav-toggle] {
-  color: transparent;
+/* Omarchy's bar: an opaque theme surface, monospace labels, workspace-like
+   selection, and a right-aligned tray. The web row is a little taller than
+   the shell's 26px default; touch targets grow independently to 44px. */
+.site-bar {
+  padding-top: env(safe-area-inset-top, 0px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: 400 12px/1 var(--font-mono);
 }
 
-/* No active or hover chip while labels are blended. The ghost's colour is compensated
-   against the field behind the bar; a chip is not the field, so a label
-   painted through one comes out near enough black. Hovering hands the labels
-   back to the real layer anyway - this is only here so that the two can never
-   be seen in the same frame. */
-[data-nav-blend] nav[aria-label='Main'] a,
-[data-nav-blend] [data-nav-glyph]:hover,
-[data-nav-blend] [data-nav-toggle]:hover {
-  background-color: transparent;
-  transition: none;
+.site-bar__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--nav-row-h);
+  padding-inline: 10px;
+}
+
+.site-bar__home,
+.site-bar__page,
+.site-bar__icon,
+.site-bar__install,
+.site-bar__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: var(--nav-row-h);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font: inherit;
+  white-space: nowrap;
+  transition:
+    background-color 120ms ease-out,
+    color 120ms ease-out;
+}
+
+.site-bar__home,
+.site-bar__icon {
+  width: var(--nav-row-h);
+  padding: 0;
+}
+
+.site-bar__home {
+  color: var(--color-brand);
+}
+
+.site-bar__mark {
+  width: 18px;
+  height: 18px;
+}
+
+.site-bar__pages {
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.site-bar__page {
+  position: relative;
+  padding-inline: 11px;
+}
+
+.site-bar__home:hover,
+.site-bar__page:hover,
+.site-bar__icon:hover,
+.site-bar__install:hover,
+.site-bar__toggle:hover,
+.site-bar__menu-link:hover {
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  color: var(--color-text);
+}
+
+.site-bar__page[aria-current],
+.site-bar__menu-link[aria-current] {
+  background: color-mix(in srgb, var(--color-text) 18%, transparent);
+  color: var(--color-text);
+}
+
+.site-bar__page[aria-current]::after {
+  position: absolute;
+  right: 11px;
+  bottom: 3px;
+  left: 11px;
+  height: 1px;
+  background: var(--color-brand);
+  content: '';
+}
+
+.site-bar :is(a, button):focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: -2px;
+}
+
+.site-bar__tray {
+  align-items: center;
+  gap: 2px;
+}
+
+.site-bar__icon svg,
+.site-bar__install svg {
+  width: 15px;
+  height: 15px;
+}
+
+.site-bar__separator {
+  width: 1px;
+  height: 14px;
+  margin-inline: 7px;
+  background: var(--color-border-strong);
+}
+
+.site-bar__install {
+  gap: 7px;
+  padding-inline: 8px;
+  color: var(--color-text);
+}
+
+.site-bar__toggle {
+  display: none;
+  width: var(--nav-row-h);
+  padding: 0;
+}
+
+@media (width < 40rem) {
+  .site-bar__toggle {
+    display: inline-flex;
+  }
+}
+
+.site-bar__menu {
+  max-height: calc(100dvh - var(--nav-h));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.site-bar__menu-link {
+  min-height: 44px;
+  padding: 12px;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-bar :is(a, button) {
+    transition: none;
+  }
 }
 
 /* A full-bleed rail's own scrollbar would run the whole window width. These
@@ -2266,6 +2405,99 @@ h6 {
   }
   .team-named {
     animation: none;
+  }
+}
+
+/* A quiet terminal frame, matching the 40px hero actions on one line. */
+.hero-announcement-frame {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.hero-announcement {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid color-mix(in srgb, var(--color-brand) 42%, transparent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  color: var(--color-text-secondary);
+  font: 500 14px/1.55 var(--font-mono);
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.hero-announcement:hover {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-primary-foreground);
+}
+
+.hero-announcement:hover .hero-announcement__prompt,
+.hero-announcement:hover strong {
+  color: inherit;
+}
+
+.hero-announcement:focus-visible,
+.hero-announcement__pause:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+/* A focus-only control, not a permanent badge or another hero action. */
+.hero-announcement__pause:focus-visible {
+  z-index: 1;
+  bottom: calc(100% + 6px);
+  left: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 6px 10px;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  border: 1px solid var(--color-brand);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: 500 12px/1.5 var(--font-mono);
+  cursor: pointer;
+}
+
+.hero-announcement__prompt {
+  align-self: flex-start;
+  color: var(--color-brand);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.hero-announcement__text {
+  min-width: 0;
+  font-variant-ligatures: none;
+}
+
+.hero-announcement__text strong {
+  color: var(--color-brand);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero-announcement__text s {
+  opacity: 0.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-announcement {
+    transition: none;
   }
 }
 

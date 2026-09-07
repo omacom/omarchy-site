@@ -8,6 +8,7 @@ import {
 } from '@/data/wordmark-bitmap'
 import {
   ETCH_EVENT,
+  HERO_READY_EVENT,
   effectFromLocation,
   resolveEffect,
   startEtch,
@@ -1038,6 +1039,12 @@ export function HeroPixelField({
         paintedRef.current = true
         onPainted?.()
       }
+      // Announcements wait for the finished logo, not merely the first
+      // canvas frame. Theme replays do not restart a one-shot announcement.
+      if (isHero && !etching && sectionEl && !sectionEl.hasAttribute('data-hero-ready')) {
+        sectionEl.setAttribute('data-hero-ready', '')
+        sectionEl.dispatchEvent(new Event(HERO_READY_EVENT))
+      }
     }
 
     let frame = 0
@@ -1214,7 +1221,10 @@ export function HeroPixelField({
       window.removeEventListener('pointerup', onPointerUp)
       window.removeEventListener('pointercancel', onPointerCancel)
       window.removeEventListener('contextmenu', onPointerCancel)
-      if (isHero) window.dispatchEvent(new CustomEvent(GRID_CLEAR_EVENT))
+      if (isHero) {
+        sectionEl?.removeAttribute('data-hero-ready')
+        window.dispatchEvent(new CustomEvent(GRID_CLEAR_EVENT))
+      }
     }
   }, [onPainted, isHero])
 
