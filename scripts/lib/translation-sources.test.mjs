@@ -54,11 +54,30 @@ test('authored blocks preserve exact HTML and exclude people and product heading
       title: 'Our patrons',
       html: `<h2>Support us</h2><p>${block}</p><p><img src="/picture.webp"></p><p><strong> </strong></p><h3 class="member__name">Donor Name</h3><p class="member__meta">Product Name</p><ul class="patrons__supporters"><li>Another Donor</li></ul><h3 class="resident__name">Artist Name</h3><h2 class="sponsorship__name">Product</h2>`,
     },
-    meetups: { title: 'Unused imported title', html: '<p>Event Name</p>' },
+    teams: { title: 'Unused imported title', html: '<p>Person Name</p>' },
   })
   assert.deepEqual(collectSources(root), {
     messages: ['Our patrons'],
     blocks: [block, 'Support us'].sort(),
+  })
+})
+
+test('meetup rules and the everywhere filter are included without the replaced calendar', (t) => {
+  const { root, put } = fixture(t)
+  const rule = '\n<p>Open to everyone</p>\n<p>No invitation needed.</p>\n'
+  put('src/data/pages.json', {
+    meetups: {
+      title: 'Unused imported title',
+      html: `<div class="meetups"><div class="meetups__calendar"><p>Old calendar</p></div><section class="rules"><h2>Run your own meetup</h2><ol><li>${rule}</li></ol></section></div>`,
+    },
+  })
+  put(
+    'src/astro/pages/MeetupsPage.tsx',
+    "const label = r ? t(r) : t('Everywhere')",
+  )
+  assert.deepEqual(collectSources(root), {
+    messages: ['Everywhere'],
+    blocks: [rule, 'Run your own meetup'].sort(),
   })
 })
 
