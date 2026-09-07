@@ -4,6 +4,7 @@ import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { devPassthrough } from './scripts/dev-passthrough.mjs'
+import { devPlEditor } from './scripts/dev-pl-editor.mjs'
 
 const language = process.env.PUBLIC_SITE_LOCALE || 'en'
 if (!Object.hasOwn(locales, language))
@@ -19,7 +20,7 @@ export default defineConfig({
   outDir: language === 'en' ? './dist/client' : `./dist/${language}`,
   integrations: [react()],
   vite: {
-    plugins: [tailwindcss(), devPassthrough()],
+    plugins: [tailwindcss(), devPassthrough(), devPlEditor()],
     optimizeDeps: { entries: ['!src/parked/**'] },
     resolve: {
       // Array form: exact entries first, so the shims win over the prefixes.
