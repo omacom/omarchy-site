@@ -104,6 +104,14 @@
     "contentLocale": "en",
     "aliases": ["www.omarchy.nz", "nz.omarchy.org"]
   },
+  "pl": {
+    "name": "Polski",
+    "domain": "https://omarchy.pl",
+    "formatLocale": "pl-PL",
+    "ogLocale": "pl_PL",
+    "manual": false,
+    "aliases": ["www.omarchy.pl", "pl.omarchy.org"]
+  },
   "fil": {
     "name": "Filipino",
     "domain": "https://omarchy.ph",
