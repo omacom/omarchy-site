@@ -45,6 +45,11 @@
   "name": "Atelier"
  },
  {
+  "repo": "https://github.com/SirJul1337/omarchy-autumn-theme",
+  "image": "/assets/themes/autumn.webp",
+  "name": "Autumn"
+ },
+ {
   "repo": "https://github.com/abhijeet-swami/omarchy-ayaka-theme",
   "image": "/assets/themes/ayaka.webp",
   "name": "Ayaka"
@@ -613,6 +618,11 @@
   "repo": "https://github.com/motorsss/omarchy-solarizedosaka-theme",
   "image": "/assets/themes/solarized-osaka.webp",
   "name": "Solarized Osaka"
+ },
+ {
+  "repo": "https://github.com/SirJul1337/omarchy-spring-theme",
+  "image": "/assets/themes/spring.webp",
+  "name": "Spring"
  },
  {
   "repo": "https://github.com/juangalt/omarchy-starry-night-theme",
