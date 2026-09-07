@@ -55,6 +55,7 @@ const navLinks = [
   // Old /plugins/ addresses redirect to the standalone directory.
   { href: 'https://plugins.omarchy.org', label: 'Plugins' },
   { to: '/themes/', label: t('Themes') },
+  { to: '/teams/', label: t('Teams') },
 ] as const
 
 /** Observe the live hero sentinel; the header and blended labels share this state. */
