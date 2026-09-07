@@ -13,6 +13,17 @@
     "ogLocale": "da_DK",
     "manual": false
   },
+  "de": {
+    "name": "Deutsch",
+    "domain": "https://omarchy.de",
+    "formatLocale": "de-DE",
+    "ogLocale": "de_DE",
+    "manual": false,
+    "aliases": [
+      "https://de.omarchy.org",
+      "https://www.omarchy.de"
+    ]
+  },
   "ar": {
     "name": "العربية",
     "domain": "https://omarchy.ae",
