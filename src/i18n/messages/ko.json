@@ -46,9 +46,7 @@
   "Verify the file:": "파일 검증:",
   "signature": "서명",
   "Try it first": "먼저 체험하기",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "가상 머신에서 Omarchy 전체를 실행해 먼저 경험해 보세요.",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon Mac, Windows 10 및 11.",
-  "On Linux, the ISO is the way in.": "Linux에서는 ISO로 시작하세요.",
   "The manual also covers": "매뉴얼에서는 다음도 다룹니다:",
   "dual booting beside Windows": "Windows와 듀얼 부팅",
   "and": "및",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "워크스테이션 사진 뷰어",
   "Close photo viewer": "사진 뷰어 닫기",
   "Previous photo": "이전 사진",
-  "Next photo": "다음 사진"
+  "Next photo": "다음 사진",
+  "Try in Browser": "브라우저에서 체험",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Mac이나 PC의 가상 머신에서, 또는 브라우저 탭으로 스트리밍하여 Omarchy 전체를 먼저 맛볼 수 있습니다.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "브라우저 탭만 있으면 어디서든: 다운로드 없음, 닫으면 사라집니다."
 }

@@ -46,9 +46,7 @@
   "Verify the file:": "Staðfesta skrána:",
   "signature": "undirskrift",
   "Try it first": "Prófaðu fyrst",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Allt Omarchy keyrandi í sýndarvél svo þú getir prófað það fyrst.",
   "Apple Silicon Macs, Windows 10 and 11.": "Mac-tölvur með Apple Silicon, Windows 10 og 11.",
-  "On Linux, the ISO is the way in.": "Á Linux er ISO-skráin leiðin inn.",
   "The manual also covers": "Handbókin fjallar líka um",
   "dual booting beside Windows": "samhliða uppsetningu með Windows",
   "and": "og",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Myndaskoðari fyrir vinnustöðvar",
   "Close photo viewer": "Loka myndaskoðara",
   "Previous photo": "Fyrri mynd",
-  "Next photo": "Næsta mynd"
+  "Next photo": "Næsta mynd",
+  "Try in Browser": "Prófa í vafra",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Allt Omarchy í sýndarvél á Mac eða PC, eða streymt í vafraflipa, svo þú getir fengið forsmekk fyrst.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Hvað sem er með vafraflipa: ekkert að sækja, horfið þegar þú lokar honum."
 }

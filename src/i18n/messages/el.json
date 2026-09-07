@@ -46,9 +46,7 @@
   "Verify the file:": "Επαλήθευση αρχείου:",
   "signature": "υπογραφή",
   "Try it first": "Δοκίμασέ το πρώτα",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Ολόκληρο το Omarchy σε εικονική μηχανή, για να πάρεις πρώτα μια γεύση.",
   "Apple Silicon Macs, Windows 10 and 11.": "Mac με Apple Silicon, Windows 10 και 11.",
-  "On Linux, the ISO is the way in.": "Στο Linux, ξεκίνα με το ISO.",
   "The manual also covers": "Το εγχειρίδιο καλύπτει επίσης",
   "dual booting beside Windows": "διπλή εκκίνηση μαζί με Windows",
   "and": "και",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Προβολή φωτογραφιών σταθμών εργασίας",
   "Close photo viewer": "Κλείσιμο προβολής φωτογραφιών",
   "Previous photo": "Προηγούμενη φωτογραφία",
-  "Next photo": "Επόμενη φωτογραφία"
+  "Next photo": "Επόμενη φωτογραφία",
+  "Try in Browser": "Δοκιμή στο πρόγραμμα περιήγησης",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Ολόκληρο το Omarchy σε εικονική μηχανή στο Mac ή το PC σου, ή σε ροή σε μια καρτέλα του προγράμματος περιήγησης, για να πάρεις πρώτα μια γεύση.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Οτιδήποτε με μια καρτέλα προγράμματος περιήγησης: τίποτα για λήψη, εξαφανίζεται μόλις την κλείσεις."
 }

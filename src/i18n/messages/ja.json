@@ -46,9 +46,7 @@
   "Verify the file:": "ファイルを検証：",
   "signature": "署名",
   "Try it first": "まずは試してみる",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "仮想マシンでOmarchyを丸ごと動かし、使い心地を試せます。",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon搭載Mac、Windows 10と11に対応。",
-  "On Linux, the ISO is the way in.": "LinuxではISOから始めましょう。",
   "The manual also covers": "マニュアルでは、",
   "dual booting beside Windows": "Windowsとのデュアルブート",
   "and": "と",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "ワークステーション写真ビューアー",
   "Close photo viewer": "写真ビューアーを閉じる",
   "Previous photo": "前の写真",
-  "Next photo": "次の写真"
+  "Next photo": "次の写真",
+  "Try in Browser": "ブラウザで試す",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Mac や PC の仮想マシン、あるいはブラウザのタブへのストリーミングで、Omarchy のすべてをまず体験できます。",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "ブラウザのタブがあれば何でも。ダウンロード不要、閉じれば消えます。"
 }
