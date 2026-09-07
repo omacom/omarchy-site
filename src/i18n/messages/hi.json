@@ -46,9 +46,7 @@
   "Verify the file:": "फ़ाइल की जाँच करें:",
   "signature": "हस्ताक्षर",
   "Try it first": "पहले आज़माएँ",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "पूरा Omarchy एक वर्चुअल मशीन में चलता है, ताकि आप पहले इसका अनुभव ले सकें।",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon वाले Mac, Windows 10 और 11।",
-  "On Linux, the ISO is the way in.": "Linux पर शुरुआत ISO से होती है।",
   "The manual also covers": "मैनुअल में यह भी है:",
   "dual booting beside Windows": "Windows के साथ डुअल बूट",
   "and": "और",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "वर्कस्टेशन फ़ोटो दर्शक",
   "Close photo viewer": "फ़ोटो दर्शक बंद करें",
   "Previous photo": "पिछली फ़ोटो",
-  "Next photo": "अगली फ़ोटो"
+  "Next photo": "अगली फ़ोटो",
+  "Try in Browser": "ब्राउज़र में आज़माएँ",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "पूरा Omarchy आपके Mac या PC पर एक वर्चुअल मशीन में, या ब्राउज़र टैब में स्ट्रीम होकर, ताकि पहले एक झलक मिल सके।",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "ब्राउज़र टैब वाला कुछ भी: कुछ डाउनलोड नहीं, बंद करते ही गायब।"
 }

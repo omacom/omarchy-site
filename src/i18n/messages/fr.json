@@ -46,9 +46,7 @@
   "Verify the file:": "Vérifier le fichier :",
   "signature": "signature",
   "Try it first": "Essayer d’abord",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Tout Omarchy dans une machine virtuelle, pour vous faire une première idée.",
   "Apple Silicon Macs, Windows 10 and 11.": "Mac avec Apple Silicon, Windows 10 et 11.",
-  "On Linux, the ISO is the way in.": "Sous Linux, passez par l’ISO.",
   "The manual also covers": "Le manuel explique aussi",
   "dual booting beside Windows": "le double démarrage avec Windows",
   "and": "et",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Visionneuse de photos des postes de travail",
   "Close photo viewer": "Fermer la visionneuse",
   "Previous photo": "Photo précédente",
-  "Next photo": "Photo suivante"
+  "Next photo": "Photo suivante",
+  "Try in Browser": "Essayer dans le navigateur",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Tout Omarchy dans une machine virtuelle sur votre Mac ou PC, ou diffusé dans un onglet du navigateur, pour vous faire une première idée.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Tout ce qui a un onglet de navigateur : rien à télécharger, disparu dès que vous le fermez."
 }

@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
+  BrowserIcon,
   XIcon,
   ArrowUpRightIcon,
   BankIcon,
@@ -64,6 +65,11 @@ const TRY = {
     label: t('Try on Windows'),
     href: 'https://github.com/omacom/try-omarchy-windows',
     icon: WindowsIcon,
+  },
+  browser: {
+    label: t('Try in Browser'),
+    href: 'https://tryomarchy.dev',
+    icon: BrowserIcon,
   },
 } as const
 
@@ -567,12 +573,12 @@ export function HomePage({ data }: { data: HomeData }) {
               </div>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
                 {t(
-                  'All of Omarchy running in a virtual machine, so you can get a taste first.',
+                  'All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.',
                 )}
               </p>
               <div className="mt-auto pt-6">
                 <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
+                  {(['mac', 'windows', 'browser'] as const).map((key) => {
                     const Mark = TRY[key].icon
                     return (
                       <Button
@@ -592,7 +598,9 @@ export function HomePage({ data }: { data: HomeData }) {
                 <p className="mt-2.5 text-[13px] text-text-muted">
                   {t('Apple Silicon Macs, Windows 10 and 11.')}
                   <span className="block">
-                    {t('On Linux, the ISO is the way in.')}
+                    {t(
+                      'Anything with a browser tab: nothing to download, gone when you close it.',
+                    )}
                   </span>
                 </p>
               </div>

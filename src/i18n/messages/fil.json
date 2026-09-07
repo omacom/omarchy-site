@@ -46,9 +46,7 @@
   "Verify the file:": "Beripikahin ang file:",
   "signature": "lagda",
   "Try it first": "Subukan muna",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Buong Omarchy na tumatakbo sa virtual machine para matikman mo muna.",
   "Apple Silicon Macs, Windows 10 and 11.": "Mga Mac na may Apple Silicon, Windows 10 at 11.",
-  "On Linux, the ISO is the way in.": "Sa Linux, ISO ang paraan para magsimula.",
   "The manual also covers": "Saklaw din ng manwal ang",
   "dual booting beside Windows": "dual boot kasama ng Windows",
   "and": "at",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Tagatingin ng larawan ng workstation",
   "Close photo viewer": "Isara ang tagatingin ng larawan",
   "Previous photo": "Naunang larawan",
-  "Next photo": "Susunod na larawan"
+  "Next photo": "Susunod na larawan",
+  "Try in Browser": "Subukan sa browser",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Buong Omarchy sa isang virtual machine sa iyong Mac o PC, o naka-stream sa isang browser tab, para matikman mo muna.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Kahit ano na may browser tab: walang ida-download, nawawala kapag isinara mo."
 }

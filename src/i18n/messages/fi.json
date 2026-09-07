@@ -46,9 +46,7 @@
   "Verify the file:": "Tarkista tiedosto:",
   "signature": "allekirjoitus",
   "Try it first": "Kokeile ensin",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Koko Omarchy virtuaalikoneessa, jotta voit tutustua siihen ensin.",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon -Macit, Windows 10 ja 11.",
-  "On Linux, the ISO is the way in.": "Linuxissa pääset alkuun ISO-tiedostolla.",
   "The manual also covers": "Ohjekirja käsittelee myös",
   "dual booting beside Windows": "rinnakkaisasennuksen Windowsin kanssa",
   "and": "ja",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Työasemakuvien katselu",
   "Close photo viewer": "Sulje kuvien katselu",
   "Previous photo": "Edellinen kuva",
-  "Next photo": "Seuraava kuva"
+  "Next photo": "Seuraava kuva",
+  "Try in Browser": "Kokeile selaimessa",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Koko Omarchy virtuaalikoneessa Macilla tai PC:llä tai suoratoistona selaimen välilehteen, jotta saat ensin esimakua.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Mikä tahansa, jossa on selaimen välilehti: ei ladattavaa, katoaa kun suljet sen."
 }

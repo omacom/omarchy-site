@@ -46,9 +46,7 @@
   "Verify the file:": "Dosyayı doğrulayın:",
   "signature": "imza",
   "Try it first": "Önce deneyin",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Önce tadına bakabilmeniz için Omarchy'nin tamamı bir sanal makinede çalışır.",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon Mac'ler, Windows 10 ve 11.",
-  "On Linux, the ISO is the way in.": "Linux'ta başlangıç noktası ISO dosyasıdır.",
   "The manual also covers": "Kılavuz ayrıca şunları da anlatır:",
   "dual booting beside Windows": "Windows yanında çift önyükleme",
   "and": "ve",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Çalışma istasyonu fotoğraf görüntüleyicisi",
   "Close photo viewer": "Fotoğraf görüntüleyicisini kapat",
   "Previous photo": "Önceki fotoğraf",
-  "Next photo": "Sonraki fotoğraf"
+  "Next photo": "Sonraki fotoğraf",
+  "Try in Browser": "Tarayıcıda deneyin",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Omarchy'nin tamamı Mac veya PC'nizde bir sanal makinede ya da bir tarayıcı sekmesine aktarılmış olarak, önce bir tadına bakın.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Tarayıcı sekmesi olan her şey: indirilecek bir şey yok, kapatınca gider."
 }

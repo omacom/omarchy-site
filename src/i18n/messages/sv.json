@@ -46,9 +46,7 @@
   "Verify the file:": "Verifiera filen:",
   "signature": "signatur",
   "Try it first": "Prova först",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Hela Omarchy i en virtuell maskin, så att du kan få ett smakprov först.",
   "Apple Silicon Macs, Windows 10 and 11.": "Mac med Apple Silicon, Windows 10 och 11.",
-  "On Linux, the ISO is the way in.": "På Linux använder du ISO-filen.",
   "The manual also covers": "Handboken tar också upp",
   "dual booting beside Windows": "dubbelstart med Windows",
   "and": "och",
@@ -333,5 +331,8 @@
   "Workstation photo viewer": "Bildvisare för arbetsstationer",
   "Close photo viewer": "Stäng bildvisaren",
   "Previous photo": "Föregående bild",
-  "Next photo": "Nästa bild"
+  "Next photo": "Nästa bild",
+  "Try in Browser": "Prova i webbläsaren",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Hela Omarchy i en virtuell maskin på din Mac eller PC, eller strömmat till en webbläsarflik, så att du kan få ett smakprov först.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Allt med en webbläsarflik: inget att ladda ned, borta när du stänger den."
 }
