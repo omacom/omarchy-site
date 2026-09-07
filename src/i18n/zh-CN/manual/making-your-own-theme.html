@@ -1,0 +1,139 @@
+<p>
+  你可以把自己的主题放到<code>~/.config/omarchy/themes</code>。复制一个现有主题作为基础（在<code>/usr/share/omarchy/themes</code>里找），然后随心调整。只要主题在这个文件夹内，就会出现在主题选择菜单中。
+</p>
+
+<p>
+  主要需要调整的文件是<code>colors.toml</code>。它定义的色板会用来生成终端（Foot/Alacritty/Ghostty/Kitty）、btop、Chromium、Hyprland、Neovim、Helix、VSCode、Obsidian以及整个Omarchy
+  shell（状态栏、菜单、通知、OSD和锁屏）的配置。
+</p>
+
+<p>
+  也可以用内置的Aether应用创建新主题，它提供漂亮的图形界面来调配颜色和搜索背景图片。通过<code
+    >Super + Alt + Space</code
+  >的应用菜单启动即可。
+</p>
+
+<h3 id="what-an-installed-theme-can-contain">
+  安装的主题可以包含什么<a
+    class="manual__heading-link"
+    href="#what-an-installed-theme-can-contain"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  你自己写在<code>~/.config/omarchy/themes</code>里的主题可以包含任何内容——机器是你的，文件也是你的，Omarchy会全部应用。
+</p>
+
+<p>
+  用<code>omarchy theme install</code
+  >从别人仓库安装的主题则只保留颜色相关的部分，去掉那几个会在你机器上运行代码的文件：任何<code>.lua</code>文件、终端配置（<code>alacritty.toml</code>、<code>foot.ini</code>、<code>ghostty.conf</code>、<code>kitty.conf</code>）和<code>vscode.json</code>。主题的<code>hyprland.lua</code>是合成器在登录时运行的Lua，终端配置指定终端启动的程序，<code>vscode.json</code>指定要安装的VSCode扩展。安装别人的主题应该只改变桌面的外观，而不该改变它运行什么。
+</p>
+
+<p>
+  其他一切仍按主题作者所写原样生效——<code>btop.theme</code>、<code>chromium.theme</code>、<code>helix.toml</code>、<code>icons.theme</code>、<code>shell.toml</code>、背景图片和预览图都会保留。只有被去掉的部分会在你的机器上根据<code>colors.toml</code>重新生成。
+</p>
+
+<p>
+  Omarchy通过主题内是否带有自己的git仓库来区分两者，这正是<code
+    >omarchy theme install</code
+  >克隆后留下的痕迹。所以你写的主题始终完整属于你，从网上拉来的主题始终只有颜色。
+</p>
+
+<h3 id="light-mode">
+  浅色模式<a
+    class="manual__heading-link"
+    href="#light-mode"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  制作浅色主题时，在<code>colors.toml</code>顶部设置<code>mode = "light"</code
+  >，所有应用就会自动配对浅色模式。（旧方法——在主题根目录放一个名为<code>light.mode</code>的空文件——同样有效。）
+</p>
+
+<h3 id="icon-colors">
+  图标颜色<a
+    class="manual__heading-link"
+    href="#icon-colors"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  想让文件管理器的图标与主题配色一致，添加一个名为<code>icons.theme</code>的文件，写入想用的图标集名称。默认可选：<code
+    >Yaru Yaru-blue Yaru-dark Yaru-magenta Yaru-olive Yaru-prussiangreen
+    Yaru-purple Yaru-red Yaru-sage Yaru-wartybrown Yaru-yellow</code
+  >。
+</p>
+
+<h3 id="unlock-image">
+  解锁图片<a
+    class="manual__heading-link"
+    href="#unlock-image"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  附带<code>unlock.png</code>和<code>preview-unlock.png</code>的主题会列在<em
+    >Style &gt; Unlock</em
+  >下。<code>unlock.png</code>最好是透明png，预览图可以用<code
+    >omarchy plymouth preview</code
+  >生成。
+</p>
+
+<h3 id="theming-apps-omarchy-doesnt-cover">
+  为Omarchy未覆盖的应用设置主题<a
+    class="manual__heading-link"
+    href="#theming-apps-omarchy-doesnt-cover"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  如果你用的应用不在上述列表中，可以用模板教会Omarchy为它设置主题。在<code>~/.config/omarchy/themed/</code>中放一个文件，以它生成的配置文件命名并加上<code>.tpl</code>扩展名，然后用<code
+    >{{ background }}</code
+  >、<code>{{ foreground }}</code>、<code>{{ accent }}</code>、<code
+    >{{ red }}</code
+  >、<code>{{ color0 }}</code>到<code>{{ color15 }}</code
+  >以及色板的其余部分作为占位符编写配置。每次切换主题时，该文件都会用新主题的颜色重新生成。
+</p>
+
+<p>
+  该文件夹里有一份注释完整的<code>alacritty.toml.tpl.sample</code>可供参考——它列出了所有可用变量，以及<code>_strip</code>和<code>_rgb</code>修饰符，供需要不带<code>#</code>或十进制RGB颜色的应用使用。你的模板优先于Omarchy自带的模板，所以也可以借此覆盖内置应用的主题生成方式。
+</p>
+
+<h3 id="distributing-your-theme">
+  分发主题<a
+    class="manual__heading-link"
+    href="#distributing-your-theme"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  想分发主题供他人使用，需要把它放到GitHub这样的公开git服务器上。然后别人就可以在Omarchy菜单的<em
+    >Install &gt; Style &gt; Theme</em
+  >中用该URL安装。建议遵循<code>omarchy-[themename]-theme</code>的命名约定，安装后主题会在选择菜单中正确显示为<code>[themename]</code>。
+</p>
+
+<p>
+  剩下的<code>[themename]</code>会成为主题的目录名，所以必须是Omarchy能安全处理的名称：以字母、数字或下划线开头，其余部分可包含字母、数字、<code>.</code>、<code>_</code>、<code>+</code>和<code>-</code>。大写会自动转为小写，但其他任何字符——空格、引号、非英文字符——都会在安装时被拒绝，而不是变成目录名。所以<code>omarchy-tokyo-night-theme</code>、<code>omarchy-flexoki_light-theme</code>和<code>omarchy-c++-theme</code>都能正常安装。
+</p>
+
+<p>
+  记住，从仓库安装后，主题附带的任何<code>.lua</code>、终端配置或<code>vscode.json</code>都会被去掉，所以不要围绕这些文件来构建主题。
+</p>
+
+<p>
+  向<a href="https://github.com/omacom-io/omarchy-site">omarchy-site仓库</a
+  >提交拉取请求，可以把你的主题加入<a href="/themes/">额外主题页面</a>。
+</p>

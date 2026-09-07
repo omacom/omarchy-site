@@ -1,0 +1,164 @@
+<p>
+  Omarchy内置了对<strong>Intel Mac</strong
+  >的支持。目前有几个已知限制，只要你了解并能接受，就可以装上Omarchy，给老Mac注入新生命。
+</p>
+
+<p>
+  请注意，目前不直接支持在M系列Mac上安装。相关进展可以在我们<a
+    href="https://discord.gg/tXFUdasqhY"
+    >Discord</a
+  >的 #omarchy-on-other频道了解。
+</p>
+
+<p>
+  在一次简单测试中，仅仅安装Omarchy就让一台2019款MacBook Pro获得了36%
+  的性能提升。
+</p>
+
+<p><img src="/manual/images/macbook-omarchy.webp" alt="macbook-omarchy" /></p>
+
+<h3 id="installing-omarchy-on-mac">
+  在Mac上安装Omarchy<a
+    class="manual__heading-link"
+    href="#installing-omarchy-on-mac"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy目前只支持作为<strong>唯一</strong>的操作系统安装。安装过程中驱动器会被抹掉，MacOS将无法再启动。
+</p>
+
+<p>之后如果想要，仍可通过互联网恢复模式把它装回来。</p>
+
+<p>
+  本节假定你已经看过<a href="/manual/getting-started/">入门指南</a
+  >并准备好了U盘。如果还没有，请先去准备。
+</p>
+
+<h4 id="disable-secure-boot">
+  关闭安全启动<a
+    class="manual__heading-link"
+    href="#disable-secure-boot"
+    aria-label="本节链接"
+    >#</a
+  >
+</h4>
+
+<p>要从可启动U盘启动并运行系统，必须先关闭Apple的安全启动。步骤如下：</p>
+
+<ol>
+  <li>关闭Mac</li>
+  <li>开机并<em>立即</em>按住Command-R，直到出现加载画面</li>
+  <li>选择用户，按提示输入密码</li>
+  <li>
+    进入恢复界面后，在菜单栏选择<strong
+      >Utilities &gt; Startup Security Utility</strong
+    >
+  </li>
+  <li>按提示输入密码完成认证</li>
+  <li>在Secure Boot选项中选择“No Security”</li>
+  <li>
+    在External Boot选项中选择“Allow booting from external or removable media”
+  </li>
+</ol>
+
+<h4 id="start-the-installation">
+  开始安装<a
+    class="manual__heading-link"
+    href="#start-the-installation"
+    aria-label="本节链接"
+    >#</a
+  >
+</h4>
+
+<ol>
+  <li>插入U盘</li>
+  <li>重启Mac并<em>立即</em>按住Option，直到出现启动设备选择界面</li>
+  <li>选择橙色的EFI Boot设备</li>
+  <li><a href="/manual/getting-started/">照常完成安装</a></li>
+</ol>
+
+<p>
+  安装程序会检测Mac硬件并自动应用所需修复：Broadcom
+  Wi-Fi驱动和固件、需要它的MacBook机型上的SPI键盘驱动，以及这些机型的NVMe挂起修复。
+</p>
+
+<h3 id="known-limitations">
+  已知限制<a
+    class="manual__heading-link"
+    href="#known-limitations"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  社区成员一直在为这些问题寻找解决方案。如果它们对你造成困扰，请加入我们<a
+    href="https://discord.gg/tXFUdasqhY"
+    >Discord</a
+  >的 #omarchy-on-other频道，看看是否有最新的解决办法。
+</p>
+
+<h4 id="devices-with-t1-chip">
+  配备T1芯片的设备<a
+    class="manual__heading-link"
+    href="#devices-with-t1-chip"
+    aria-label="本节链接"
+    >#</a
+  >
+</h4>
+
+<p>Apple T1芯片于2016年底推出，仅用于第一代带Touch Bar的MacBook Pro机型。</p>
+<ul>
+  <li>MacBook Pro 13英寸（2016，两个Thunderbolt 3端口）– 型号：A1706</li>
+  <li>MacBook Pro 13英寸（2016，四个Thunderbolt 3端口）– 型号：A1708</li>
+  <li>MacBook Pro 15英寸（2016）– 型号：A1707</li>
+</ul>
+
+<h4 id="known-issues">
+  已知问题<a
+    class="manual__heading-link"
+    href="#known-issues"
+    aria-label="本节链接"
+    >#</a
+  >
+</h4>
+
+<ul>
+  <li>Touch Bar无法使用</li>
+  <li>声音无法工作</li>
+</ul>
+
+<h4 id="devices-with-t2-chip">
+  配备T2芯片的设备<a
+    class="manual__heading-link"
+    href="#devices-with-t2-chip"
+    aria-label="本节链接"
+    >#</a
+  >
+</h4>
+
+<p>
+  Apple T2安全芯片于2017年推出，随着2020年起向Apple芯片（M系列）的过渡而停产。
+</p>
+
+<ul>
+  <li>iMac Pro（2017）– 型号：A1862</li>
+  <li>MacBook Pro 13英寸（2018，四个Thunderbolt 3端口）– 型号：A1989</li>
+  <li>MacBook Pro 15英寸（2018）– 型号：A1990</li>
+  <li>MacBook Air（视网膜，13英寸，2018）– 型号：A1932</li>
+  <li>Mac mini（2018）– 型号：A1998</li>
+  <li>MacBook Pro 13英寸（2019，两个Thunderbolt 3端口）– 型号：A2159</li>
+  <li>MacBook Pro 13英寸（2019，四个Thunderbolt 3端口）– 型号：A2178</li>
+  <li>MacBook Pro 15英寸（2019）– 型号：A1990</li>
+  <li>MacBook Pro 13英寸（2020，两个Thunderbolt 3端口）– 型号：A2265</li>
+  <li>MacBook Pro 15英寸（2020）– 型号：A1990</li>
+</ul>
+
+<p>
+  在这些机型上，安装程序会自动设置打过补丁的<code>linux-t2</code>内核、T2音频配置、Apple的Broadcom
+  Wi-Fi/蓝牙固件，以及通过<code>t2fanrd</code>实现的风扇控制。Touch
+  Bar依靠内核内置的Boot Camp式支持运行。
+</p>

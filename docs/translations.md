@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 30 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each of the 30 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links lead to the canonical English manual until a language translates its manual; Simplified Chinese is the first edition with a translated manual.
 
 ## Build and preview
 
@@ -21,7 +21,7 @@ Each output contains its own domain, CNAME, canonical URLs, language metadata, l
 4. Add `src/i18n/<code>/news.json` with each article's translated title and `sourceHash`, plus the full article HTML in `news/<original-slug>.html`. Keep original slugs across languages so language switching lands on the same article. The source hash is SHA-256 of the English title, a newline, and the English HTML from `src/data/news-posts.json`.
 5. Run `npm run port`, `npm run check:translations`, and `npm run build:locale -- <code>`. Review the rendered pages at desktop and mobile widths before configuring the domain.
 
-Only register a language when its main pages and news are ready. The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
+Only register a language when its main pages and news are ready. The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. While `manual` is false, translation builds redirect manual URLs to the English domain, preserving the chapter path; the language menu keeps the reader on the same chapter only for languages with a translated manual.
 
 ## Updating copy
 
@@ -88,7 +88,7 @@ Cloudflare custom domains handle routing and TLS directly. Registered national d
 | Polski           | [pl.omarchy.org](https://pl.omarchy.org) |
 | Lietuvių         | [lt.omarchy.org](https://lt.omarchy.org) |
 | Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
-| Nederlands | [nl.omarchy.org](https://nl.omarchy.org) |
+| Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
 
 ## Pointing a new domain to a language site
 
@@ -111,9 +111,9 @@ A domain owner can provide the new primary address for a language while keeping 
 
 A DNS CNAME pointing an arbitrary domain at an omarchy.org hostname is not sufficient: it does not configure Worker routing or provide a certificate for that domain. Use the zone and Worker custom-domain handoff above. Nameserver changes affect the whole domain, so preserving existing DNS records is part of the handoff, not an optional cleanup step.
 
-## Translating the manual next
+## Manual translations
 
-Keep English chapters in the existing source repository. Store translations separately using stable chapter paths and section IDs, with a hash of the English source beside each translated section. Preserve executable commands, filenames and the interface's actual menu labels. When the source changes, require review of only the affected sections. Until a section is translated, render its English source with a clear language notice; never leave installation instructions missing. Enable a locale's `manual` flag only after the translated routing, fallback and source-freshness checks are implemented.
+The English chapters stay in the source repository and are ported into `src/data/manual.json`. A translation lives beside the news translation: `src/i18n/<code>/manual.json` maps each chapter slug to its translated title and the SHA-256 of the English title, a newline, and the English HTML, and `manual/<slug>.html` holds the chapter body. Executable commands, filenames, hotkeys, and the interface's actual menu labels stay in English. When a chapter's source changes, `check:translations` flags only that chapter, and the hash is replaced after review. The check also requires links, images, and section ids to match, so cross-references and the search index keep working. A chapter without a current translation renders its English source behind a language notice, so a partly translated manual never hides installation instructions. Locale-specific manual copy (the manual's page title, description, and the notice) is required under `--strict-site` only for languages that set `manual: true`; the background workflow still translates it ahead of time.
 
 ## Publish English first, translate afterward
 
@@ -130,4 +130,4 @@ Configure these repository Actions settings:
 
 The repository must allow GitHub Actions to write commits to master (or grant the bot the appropriate ruleset bypass). The worker only runs on trusted master after the English workflow, never on pull-request code. Bot translation commits do not trigger the English workflow again; the same translation run publishes its own results.
 
-For a local catch-up, run `bin/build-news`, `npm run port`, then `npm run site:translate` and `npm run news:translate`. The Muse CLI must be installed and authenticated. `npm run site:pending` and `npm run news:pending` report remaining queues without invoking a model. Use `npm run check:translations -- --strict-site --strict-news` after a full catch-up. The manual remains English until the separate manual workflow is implemented.
+For a local catch-up, run `bin/build-news`, `npm run port`, then `npm run site:translate` and `npm run news:translate`. The Muse CLI must be installed and authenticated. `npm run site:pending` and `npm run news:pending` report remaining queues without invoking a model. Use `npm run check:translations -- --strict-site --strict-news` after a full catch-up. Manual chapters are translated by hand, as described under Manual translations.

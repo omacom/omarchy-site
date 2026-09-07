@@ -1,0 +1,116 @@
+<p>
+  Omarchy通过ISO安装。你可以选择全盘安装，占用整个硬盘；也可以选择空闲空间安装，把Omarchy装进硬盘上未分配的空间——这就是与Windows或其他系统双启动的方式（参见<a
+    href="/manual/dual-boot-install/"
+    >双系统安装</a
+  >，注意需要先在Windows中关闭BitLocker）。无论哪种方式，安装默认启用全盘加密，而全盘安装会清空所选硬盘，所以在已有硬盘上安装前务必先备份！
+</p>
+
+<p>
+  先<a href="/">下载Omarchy ISO</a>，写入U盘（Mac/Windows上使用<a
+    href="https://etcher.balena.io/"
+    >balenaEtcher</a
+  >，Linux上使用<a href="https://github.com/ifd3f/caligula">caligula</a
+  >），然后从U盘启动。
+</p>
+
+<p>
+  <em
+    >必须在BIOS中关闭Secure
+    Boot和/或TPM，否则无法安装Omarchy。它们是微软为Windows及微软系Linux发行版设计的安全机制。</em
+  >
+</p>
+
+<p>接着回答配置问题，并像这样确认：</p>
+
+<p><img src="/manual/images/install-config.webp" alt="install-config" /></p>
+
+<p>
+  然后选择安装目标硬盘，坐下来看安装过程跑完。在最快的现代机器上不到一分钟即可完成，即使是较老的电脑也不应超过5分钟。
+</p>
+
+<p><img src="/manual/images/install-done.webp" alt="install-done" /></p>
+
+<p>现在，可以开始使用Omarchy了！</p>
+
+<h3 id="use-a-wired-or-24ghz-keyboard">
+  请使用有线或2.4GHz键盘！<a
+    class="manual__heading-link"
+    href="#use-a-wired-or-24ghz-keyboard"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  全盘加密无法在开机时通过蓝牙键盘输入密码，就像PC上无法用蓝牙键盘进入BIOS一样。你需要一把通过2.4GHz接收器或线缆连接的键盘（后者延迟本来也低得多！）。我个人很喜欢<a
+    href="https://www.lofree.co/products/lofree-flow-the-smoothest-mechanical-keyboard"
+    >Lofree Flow84</a
+  >！
+</p>
+
+<h3 id="installing-for-another-owner">
+  为他人安装<a
+    class="manual__heading-link"
+    href="#installing-for-another-owner"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  如果你是替别人配置机器——家人、新同事、买家——就不该代他们回答个人信息问题。在安装程序的第一个界面（键盘选择）按下<code
+    >Ctrl + C</code
+  >，Omarchy会转而为另一位使用者准备这台机器：系统立即安装，但键盘布局、用户名、密码等个人设置推迟到机器首次启动时进行。硬盘仍默认加密，新使用者在首次启动时设置的密码也将成为加密密码。（已经在用的机器同样可以不重装就交给他人，参见<a
+    href="/manual/security/"
+    >重置电脑</a
+  >。）
+</p>
+
+<h3 id="unattended-installs">
+  无人值守安装<a
+    class="manual__heading-link"
+    href="#unattended-installs"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  只要把配置放在第二块驱动器上，ISO也能完全自动安装：不需要键盘，不需要向导。这是把Omarchy用作虚拟机和批量机器基础镜像的方法，参见<a
+    href="/manual/unattended-installs/"
+    >无人值守安装</a
+  >。
+</p>
+
+<h3 id="no-encryption-installations">
+  不加密安装<a
+    class="manual__heading-link"
+    href="#no-encryption-installations"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy默认加密安装。对任何可能丢失或被盗的电脑来说，这都是安全、负责的选择——你不会希望接触到你硬件的人拿到你的数据！
+</p>
+
+<p>
+  但在特殊情况下，比如在受保护的电脑上远程安装，或没有敏感数据的一次性安装，你可能希望不加密。在磁盘格式化确认界面按下<code
+    >Ctrl + C</code
+  >，即可切换为不加密安装。
+</p>
+
+<h3 id="help-if-youre-stuck">
+  遇到问题？<a
+    class="manual__heading-link"
+    href="#help-if-youre-stuck"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  如果卡住了，通常可以在<a href="/discord/">社区Discord</a
+  >的<em>#omarchy-help</em>频道找到愿意帮忙的人。
+</p>

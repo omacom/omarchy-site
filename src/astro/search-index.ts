@@ -1,4 +1,4 @@
-import manualJson from '../data/manual.json'
+import { getManualChapters } from './data'
 import pluginsJson from '../data/plugins.json'
 import themesJson from '../data/themes.json'
 import { loadNews } from '../lib/news'
@@ -102,11 +102,7 @@ function owner(repo: string) {
 export async function buildSearchIndex(): Promise<Array<SearchEntry>> {
   const news = newsEntries(await loadNews())
   const manualPart: SearchEntry[] = []
-  for (const chapter of manualJson as Array<{
-    slug: string
-    title: string
-    html: string
-  }>) {
+  for (const chapter of getManualChapters()) {
     manualPart.push(...manualSections(chapter))
   }
   const rest: SearchEntry[] = []

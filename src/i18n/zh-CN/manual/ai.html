@@ -1,0 +1,218 @@
+<p>
+  Omarchy将AI编程智能体视为一等公民，但不替你选定偏好。相反，每个主要的编程智能体CLI都预先接入，作为按需加载的启动器提供。这些启动器是<code>~/.local/bin/</code>中由<a
+    href="https://mise.jdx.dev/"
+    >mise</a
+  >管理的小型存根，在首次真正运行之前不会下载任何东西。运行其中任意一个，并按提示完成认证：
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>智能体</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>claude</code></td>
+      <td>
+        <a href="https://code.claude.com/docs/en/overview">Claude Code</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>codex</code></td>
+      <td><a href="https://github.com/openai/codex">OpenAI Codex</a></td>
+    </tr>
+    <tr>
+      <td><code>opencode</code></td>
+      <td><a href="https://opencode.ai/">OpenCode</a></td>
+    </tr>
+    <tr>
+      <td><code>agy</code></td>
+      <td>
+        <a href="https://github.com/google-antigravity/antigravity-cli"
+          >Google Antigravity CLI</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td><code>copilot</code></td>
+      <td>
+        <a href="https://github.com/github/copilot-cli">GitHub Copilot CLI</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>crush</code></td>
+      <td><a href="https://github.com/charmbracelet/crush">Crush</a></td>
+    </tr>
+    <tr>
+      <td><code>grok</code></td>
+      <td>xAI的Grok CLI</td>
+    </tr>
+    <tr>
+      <td><code>pi</code></td>
+      <td>
+        <a href="https://github.com/badlogic/pi-mono">Mario Zechner的Pi</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>omp</code></td>
+      <td><a href="https://github.com/can1357/oh-my-pi">Oh My Pi</a></td>
+    </tr>
+    <tr>
+      <td><code>ori</code></td>
+      <td>
+        <a href="https://openrouter.ai/docs/guides/ori/harness">Ori</a
+        >，OpenRouter的运行环境
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <code>ori</code
+  >比较特别：它让其他运行环境跑在OpenRouter的整个模型目录上。<code
+    >ori claude</code
+  >、<code>ori codex</code>或<code>ori opencode</code
+  >会用你指定的模型启动对应智能体，<code>ori code</code>则是Ori自己的智能体。
+</p>
+
+<p>
+  要以同样方式包装其他CLI，运行<code
+    >omarchy-mise-install &lt;package&gt; [command-name]</code
+  >。运行<code>omarchy update</code
+  >（或<code>mup</code>别名）时，这些存根会与mise管理的其他内容一同更新。
+</p>
+
+<h3 id="the-default-agent">
+  默认智能体<a
+    class="manual__heading-link"
+    href="#the-default-agent"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  用<code>omarchy default agent &lt;name&gt;</code>或Omarchy菜单（<code
+    >Super + Space</code
+  >）中的<em>Setup &gt; Defaults &gt; Agent</em
+  >选择默认智能体。如果尚未安装，选择时会先安装。新装的Omarchy会通过一次性通知邀请你做出选择。
+</p>
+
+<p>
+  选定后，<code>Super + Shift + Ctrl + A</code
+  >会在专用终端窗口中启动默认智能体（尚未选择时则打开选择器）。也可以直接带任务启动：<code
+    >omarchy agent prompt "Review this project"</code
+  >。这样启动的智能体以各自的免确认模式无人值守运行，所以要有心理准备——它们真的会动手！另外，由于智能体拒绝记住对家目录的信任，从<code>$HOME</code>启动会改为在<code>~/Work</code>中启动。
+</p>
+
+<p>
+  终端中也有快捷方式：<code>a</code>在当前终端内联运行默认智能体，<code>c</code>、<code>cx</code>和<code>cy</code>分别直接启动OpenCode、Claude
+  Code和Codex（同样是自动批准模式）。主题变化也会同步到智能体：切换Omarchy主题时，Claude
+  Code、Pi和OpenCode都会跟着变。
+</p>
+
+<h3 id="the-agents-panel">
+  智能体面板<a
+    class="manual__heading-link"
+    href="#the-agents-panel"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy首次在这台机器上发现AI编程用量时，状态栏会出现智能体图标（在此之前它不会现身）。图标背后的面板集中追踪每个订阅：套餐、5小时会话与每周限额的已用百分比（或预付余额），以及按天和按模型统计的token用量。Claude
+  Code、Codex和Fireworks开箱即支持。
+</p>
+
+<p>
+  左键点击状态栏图标打开面板，右键启动默认智能体。背后的用量记录每15分钟由<code
+    >omarchy agent usage-update</code
+  >重新生成，面板还能通过同步文件夹合并其他机器的用量。完整设置参见<code>$OMARCHY_PATH/shell/plugins/agents/</code>下的README。
+</p>
+
+<h3 id="crash-diagnosis">
+  崩溃诊断<a
+    class="manual__heading-link"
+    href="#crash-diagnosis"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy监视systemd-coredump以捕获进程崩溃。某个程序段错误时，你会收到“Process
+  crashed”通知——点击它，崩溃信息就会连同Omarchy的diagnose-crash技能一起交给默认智能体。该技能引导智能体从核心转储中确认事实，并判断是否值得向上游报告。也可以针对<code
+    >coredumpctl list</code
+  >中的任意PID手动运行：<code>omarchy agent crash &lt;pid&gt;</code>。
+</p>
+
+<p>
+  监视默认开启。在<em>Trigger &gt; Toggle &gt; Crash Capture</em>下（或用<code
+    >omarchy toggle crash-capture</code
+  >）关闭后，通知即停止；<code>omarchy agent crash &lt;pid&gt;</code
+  >仍可手动使用。
+</p>
+
+<p>
+  崩溃通知也可以按程序逐个静音，诊断结束时会提供这个选项。<code
+    >omarchy crash mute hyprland</code
+  >仅停止该程序的通知，<code>omarchy crash mute hyprland off</code
+  >恢复，单独运行<code>omarchy crash mute</code
+  >则列出已静音的程序。它同时接受二进制路径和名称，<code
+    >omarchy crash mute /usr/bin/hyprland</code
+  >效果相同；名称含空格时需加引号，如<code>omarchy crash mute 'Some App'</code
+  >。其他程序照常通知，被静音的程序也照常崩溃——这只是隐藏了提醒，并没有修复任何问题。
+</p>
+
+<h3 id="desktop-apps">
+  桌面应用<a
+    class="manual__heading-link"
+    href="#desktop-apps"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <em>Install &gt; AI</em
+  >菜单还提供几款图形化AI应用：ChatGPT桌面应用，以及用于与xAI模型对话的Grok
+  Bot。
+</p>
+
+<h3 id="local-llms">
+  本地大模型<a
+    class="manual__heading-link"
+    href="#local-llms"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy推荐两种运行本地大模型的方式：LM Studio和Ollama。LM
+  Studio提供图形界面，用于查找、安装和运行开放权重模型，是轻松上手的好途径；Ollama则以CLI完成类似工作。如果你是本地模型的新手，建议从LM
+  Studio开始。两者都可以在Omarchy菜单的<em>Install &gt; AI</em>下安装。
+</p>
+
+<h3 id="the-omarchy-skill">
+  Omarchy技能<a
+    class="manual__heading-link"
+    href="#the-omarchy-skill"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  智能体技能帮助AI以特定方式使用特定工具。Omarchy自带一个用于定制系统的默认技能，涵盖调整Hyprland配置、修改状态栏，乃至从零创建新主题。它被符号链接到Claude
+  Code（<code>~/.claude/skills</code>）、Codex（<code>~/.codex/skills</code>）、Pi（<code>~/.pi/agent/skills</code>）、Antigravity（<code>~/.gemini/config/skills</code>）的技能目录以及通用的<code>~/.agents/skills</code>位置，因此大多数运行环境会自动识别。
+</p>
+
+<p>
+  但请把这个技能视为实验性功能，不同模型的使用效果各异。最好先在计划模式下运行，了解智能体打算改动什么；同时做好回滚准备，万一智能体把一切搞乱，可以运行<code
+    >omarchy reinstall configs</code
+  >。
+</p>

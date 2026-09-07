@@ -1,0 +1,221 @@
+<p>
+  Omarchy桌面运行在一个名为<code>omarchy-shell</code>的长期存活的Quickshell进程中，屏幕上看到的几乎一切都是它内部的插件。状态栏是插件，从状态栏下拉的面板、表情选择器和剪贴板管理器这类全屏叠层、Omarchy菜单本身、锁屏、polkit对话框，以及监控电池、在夜间调暖屏幕色温的无界面服务，也都是插件。
+</p>
+
+<p>
+  这不只是实现细节。它意味着你可以关闭桌面的某些部分、替换它们，或者自己写一个，而无需改动Omarchy的一行源码。
+</p>
+
+<p>
+  第一方插件随Omarchy一起发布，位于<code>$OMARCHY_PATH/shell/plugins/</code>。你自己添加的东西——自己的实验，或在GitHub上找到的插件——位于<code>~/.config/omarchy/plugins/</code>。两者在启动时以同样的方式被发现，唯一的区别是在磁盘上的位置。
+</p>
+
+<h2 id="seeing-what-you-have">
+  查看已有插件<a
+    class="manual__heading-link"
+    href="#seeing-what-you-have"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<pre><code>omarchy plugin list
+</code></pre>
+
+<p>
+  这会列出发现的每个插件及其id、是否启用、属于第一方还是第三方、类型和显示名称。要把结果交给其他程序处理，加上<code>--json</code>。
+</p>
+
+<p>
+  插件id带有命名空间。内置插件都以<code>omarchy.</code>开头——<code>omarchy.clock</code>、<code>omarchy.network</code>、<code>omarchy.notifications</code>——这个命名空间是保留的，第三方插件永远无法占用。
+</p>
+
+<h2 id="turning-them-on-and-off">
+  启用与禁用<a
+    class="manual__heading-link"
+    href="#turning-them-on-and-off"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<pre><code>omarchy plugin enable omarchy.tailscale
+omarchy plugin disable omarchy.weather
+</code></pre>
+
+<p>
+  也可以使用菜单：<em>Setup &gt; Plugins</em
+  >下有Enable、Disable、Add、Clone和Remove，每一项都带一个选择器，只列出对该操作有意义的插件。
+</p>
+
+<p>
+  启用状态保存在<code>~/.config/omarchy/shell.json</code>中，两类插件的规则略有不同。第三方插件只要其id出现在该文件的任何位置——状态栏布局条目、<code>plugins[]</code>中的条目，或<code>bar.id</code>——就处于启用状态。非状态栏部件的第一方插件则相反：它们默认开启，只有列入<code>disabledPlugins[]</code>才会关闭。
+</p>
+
+<p>
+  完整的状态栏插件根本没有关闭状态。状态栏永远有且只有一个，所以替换它的方式是启用另一个。状态栏部件的摆放参见<a
+    href="/manual/the-top-bar/"
+    >状态栏</a
+  >。
+</p>
+
+<h2 id="adding-a-plugin-from-git">
+  从git添加插件<a
+    class="manual__heading-link"
+    href="#adding-a-plugin-from-git"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>第三方插件就是一个根目录带有<code>manifest.json</code>的git仓库。</p>
+
+<pre><code>omarchy plugin add https://github.com/acme/omarchy-weather.git --enable
+</code></pre>
+
+<p>
+  在做任何事情之前，它会明确告诉你：插件是在你长期存活的shell进程内运行的任意代码，没有沙箱；然后显示URL并请你确认。请认真对待这一点。插件不是配置文件——它是与会话同寿的代码，能触及你的用户账户所能触及的一切。只添加你愿意运行的仓库，启用之前先读一读代码。
+</p>
+
+<p>
+  随后它把仓库克隆到暂存目录，验证清单，若已有其他插件占用该id则拒绝安装，最后移入<code>~/.config/omarchy/plugins/&lt;id&gt;/</code>。不带<code>--enable</code>时，它会问你是否现在就启用，你可以拒绝，先去读代码。整个过程它不会运行插件中的任何东西，不执行安装钩子，也不要求sudo——只是克隆文件、检查清单，并通过IPC切换一个开关。
+</p>
+
+<p>更新就是对同一份检出做一次快进拉取：</p>
+
+<pre><code>omarchy plugin update acme.weather
+omarchy plugin update
+</code></pre>
+
+<p>
+  不带id时会更新你所有由git管理的插件。应用前会显示diff；若本地修改无法快进则拒绝更新；新版本验证失败时会回滚。
+</p>
+
+<pre><code>omarchy plugin remove acme.weather
+</code></pre>
+
+<p>
+  移除会先禁用插件，然后：git检出则直接删除（仓库仍在上游），符号链接则取消链接。没有git仓库的手工插件目录不会被直接删除，而是移到插件目录内一个带时间戳的备份中。
+</p>
+
+<h2 id="cloning-a-built-in-to-modify-it">
+  克隆内置插件来修改<a
+    class="manual__heading-link"
+    href="#cloning-a-built-in-to-modify-it"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  这是我最喜欢的部分。想改变某个内置部件的行为，不要编辑<code>$OMARCHY_PATH</code>下的文件——它们属于软件包，下次更新就会被覆盖。改为克隆它：
+</p>
+
+<pre><code>omarchy plugin clone omarchy.clock
+</code></pre>
+
+<p>
+  这会把整个插件复制到<code>~/.config/omarchy/plugins/dhh.clock</code>（前缀是你的用户名，不是我的），重命名为“My
+  Clock”，启用它，并让shell从内置版本切换到你的副本——同时保留已有状态栏部件的位置和设置。加上<code>--edit</code>会立即在<code>$EDITOR</code>中打开新目录，菜单中的<em
+    >Setup &gt; Plugins &gt; Clone Plugin</em
+  >做的就是这件事。
+</p>
+
+<p>
+  用户名前缀让克隆的id归你所有，分享出去也不会与他人冲突。对原始内置id的调用会被路由到你的克隆，所以引用<code>omarchy.clock</code>的地方都无需更新。要是改乱了，<code
+    >omarchy plugin remove dhh.clock</code
+  >就能恢复内置版本。
+</p>
+
+<p>
+  在<code>~/.config/omarchy/plugins/</code>下任何位置保存文件都会自动重新加载插件代码，所以可以让编辑器一直开着，看着修改即时生效。
+</p>
+
+<h2 id="writing-your-own">
+  编写自己的插件<a
+    class="manual__heading-link"
+    href="#writing-your-own"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  插件是一个包含<code>manifest.json</code>和若干QML的目录。清单声明<code
+    >schemaVersion: 1</code
+  >、<code>id</code>、<code>name</code>、<code>version</code>、一个或多个<code>kinds</code>，以及一个<code>entryPoints</code>对象，为每种类型指向对应的QML文件：
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bar-widget</code></td>
+      <td>当前状态栏可以放入某个区域的组件</td>
+    </tr>
+    <tr>
+      <td><code>panel</code></td>
+      <td>常驻或按需召唤的浮动窗口</td>
+    </tr>
+    <tr>
+      <td><code>overlay</code></td>
+      <td>全屏叠层</td>
+    </tr>
+    <tr>
+      <td><code>menu</code></td>
+      <td>按需召唤的菜单界面</td>
+    </tr>
+    <tr>
+      <td><code>service</code></td>
+      <td>没有界面的无头单例</td>
+    </tr>
+    <tr>
+      <td><code>bar</code></td>
+      <td>替换内置状态栏的完整状态栏</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  一个插件可以同时声明多种类型——媒体插件既是<code>service</code>也是<code>bar-widget</code>。状态栏部件还有一个额外的<code>barWidget</code>块，包含显示名称、分类、可选的<code>defaultSection</code>，以及<code>allowMultiple</code>，用于说明状态栏上放多个是否合理。大多数部件设为<code>false</code>，间隔符和指示器设为<code>true</code>。
+</p>
+
+<p>发布之前，先检查一下：</p>
+
+<pre><code>omarchy plugin validate ./my-plugin
+</code></pre>
+
+<p>
+  这会运行与shell加载时相同的检查：schema版本、必填字段、id未被保留、入口点是安全的相对路径且确实存在、每种声明的类型都有入口点，以及目录内不含任何符号链接。
+</p>
+
+<p>
+  要了解全貌，源码就是文档：Omarchy仓库中的<code>shell/README.md</code>讲解清单schema、shell的IPC契约和<code>shell.json</code>的确切结构；<code>shell/plugins/README.md</code>列出每个第一方插件的id、类型和入口点。
+</p>
+
+<h2 id="sharing-yours-with-the-world">
+  与世界分享<a
+    class="manual__heading-link"
+    href="#sharing-yours-with-the-world"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  做出满意的作品后，放进一个公开的git仓库。这就是全部的分发机制——任何人都能用你的URL运行<code
+    >omarchy plugin add</code
+  >，几秒钟内就能跑起来。
+</p>
+
+<p>
+  为了让大家真正找到它，请在<a href="https://plugins.omarchy.org"
+    >omarchyplugins.com</a
+  >登记。那是Omarchy
+  shell插件的社区目录，也是你在动手之前，查看是否有人已经做了同样部件的第一站。开始之前先去逛逛！
+</p>

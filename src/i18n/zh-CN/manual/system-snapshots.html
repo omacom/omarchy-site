@@ -1,0 +1,67 @@
+<p>
+  每次Omarchy更新都会自动创建快照，想自己创建的话，用<code
+    >omarchy-snapshot create</code
+  >。
+</p>
+
+<p>
+  要启动并恢复快照，在Limine启动加载器中选择它。（如果当前是直接进入Omarchy解密界面，需要先在BIOS中把Limine选为启动项。）
+</p>
+
+<p>
+  在该界面中根据日期和版本选择要启动的快照。快照创建时的Omarchy版本显示在左下角。
+</p>
+
+<p>
+  <img
+    src="/manual/images/snapshots-bootloader.webp"
+    alt="snapshots-bootloader"
+  />
+</p>
+
+<p>
+  进入系统后会弹出通知，提示你正处于可启动的快照中，点击即开始恢复。也可以使用<code
+    >omarchy-snapshot restore</code
+  >。
+</p>
+
+<p>
+  <img src="/manual/images/snapshots-restore.webp" alt="snapshots-restore" />
+</p>
+
+<p>
+  这会恢复根文件系统，但不包括<code>/home</code>。所以它适合撤销出问题的系统更新，不适合找回丢失的个人文件。
+</p>
+
+<p>
+  这也意味着<code>~/.config</code>目录保持原样。如果回滚到的库或应用的旧版本使用了新格式的配置文件，就需要手动处理。
+</p>
+
+<p>
+  <em
+    >注意：此功能仅在使用Limine启动加载器的安装上可用，Omarchy
+    2.0起它已是默认选择。GRUB或systemd-boot上不可用。</em
+  >
+</p>
+
+<h3 id="skipping-the-boot-menu">
+  跳过启动菜单<a
+    class="manual__heading-link"
+    href="#skipping-the-boot-menu"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  如果从不碰启动菜单，只想让机器直接进入解密界面，在Omarchy菜单中运行<em
+    >Setup &gt; Direct Boot</em
+  >。它会添加一个直接指向Omarchy的EFI条目，固件不经Limine直接启动。
+</p>
+
+<p>
+  代价就是开头提到的那一点：开启直接启动后，要进入快照得先在BIOS启动菜单中选择Limine。再次运行<em
+    >Setup &gt; Direct Boot</em
+  >可移除该条目，恢复经由Limine启动。有些固件对自定义EFI条目不太友好，所以该设置在American
+  Megatrends和Apple固件上会拒绝运行。
+</p>

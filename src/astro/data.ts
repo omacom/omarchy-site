@@ -1,4 +1,4 @@
-import { translateHtml } from '../i18n/content'
+import { translateHtml, translateManualChapter } from '../i18n/content'
 import { t } from '../i18n/site'
 import manualJson from '../data/manual.json'
 import pagesJson from '../data/pages.json'
@@ -12,8 +12,9 @@ export type ManualChapter = { slug: string; title: string; html: string }
 export type { NewsPost, NewsSummary }
 export type PortedPage = { title: string; html: string }
 
+// Tolerates the line breaks Prettier puts inside translated headings.
 const HEADING_LINK =
-  /<h([23])([^>]*)>([\s\S]*?)\s*<a class="manual__heading-link"([^>]*)>#<\/a><\/h\1>/g
+  /<h([23])([^>]*)>([\s\S]*?)\s*<a\s+class="manual__heading-link"([^>]*?)\s*>#<\/a\s*>\s*<\/h\1>/g
 
 function retargetContentsLink(html: string) {
   return html.replace(/href="\/manual\/toc\/?"/g, 'href="/manual/"')
@@ -28,7 +29,13 @@ function foldHeadingLinks(html: string) {
   )
 }
 
-const chapters = manualJson as Array<ManualChapter>
+const chapters = (manualJson as Array<ManualChapter>).map(
+  translateManualChapter,
+)
+
+export function getManualChapters() {
+  return chapters
+}
 
 export function getManualToc() {
   return chapters.map(({ slug, title }) => ({ slug, title }))

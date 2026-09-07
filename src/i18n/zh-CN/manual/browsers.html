@@ -1,0 +1,108 @@
+<p>
+  Omarchy以<a href="https://www.chromium.org/">Chromium</a
+  >作为默认浏览器。它是纯开源构建，主题与系统其余部分一致；<code
+    >Super + Shift + Return</code
+  >打开的就是它，每个<a href="/manual/web-apps/">Web应用</a>也都运行在其中。
+</p>
+
+<p>
+  如果Chromium不合口味，你并非别无选择。Omarchy菜单的<em
+    >Install &gt; Browser</em
+  >下有Chrome、Edge、Brave、Brave Origin、Firefox和<a
+    href="https://zen-browser.app/"
+    >Zen</a
+  >。选定后，Omarchy会安装它、配置策略目录，并应用当前主题。
+</p>
+
+<h2 id="making-one-the-default">
+  设为默认<a
+    class="manual__heading-link"
+    href="#making-one-the-default"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  安装浏览器并不会将其设为默认。安装完成后，前往<em
+    >Setup &gt; Defaults &gt; Browser</em
+  >选择——该菜单只列出已安装的浏览器，并用勾标记当前默认。
+</p>
+
+<p>终端中则是：</p>
+
+<pre><code class="language-bash">omarchy default browser firefox
+</code></pre>
+
+<p>
+  不带参数运行会显示当前默认。这会设置XDG处理程序，所以不只Omarchy的快捷键随之改变——从聊天应用到终端命令，任何打开链接的操作都会交给你选定的浏览器。
+</p>
+
+<h2 id="copy-url-and-download-video">
+  复制URL与下载视频<a
+    class="manual__heading-link"
+    href="#copy-url-and-download-video"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  Chromium系浏览器（Chromium本身、Chrome、Edge和Brave）自带两个Omarchy扩展，把浏览器与系统其余部分连接起来。
+</p>
+
+<p>
+  <strong>Copy URL</strong>用<code>Alt + Shift + L</code
+  >把当前标签页的地址放到剪贴板。这比点进地址栏再复制更快，而且因为走的是系统剪贴板而非浏览器剪贴板，你会收到Omarchy的确认通知，URL也会立即出现在<a
+    href="/manual/unified-clipboard-history/"
+    >剪贴板历史</a
+  >和所有其他应用中。偏好点击的话，也有工具栏按钮。
+</p>
+
+<p>
+  <strong>Download Video</strong>用<code>Alt + Shift + D</code
+  >抓取当前页面正在播放的视频。它把URL交给<a
+    href="https://github.com/yt-dlp/yt-dlp"
+    >yt-dlp</a
+  >，因此支持的远不止YouTube，下载会存入<code>~/Videos</code>。进度显示在音量和亮度共用的屏幕提示中，原地更新而不是堆积通知。想把文件放到别处，设置<code>OMARCHY_YTDLP_DIR</code>——环境变量放在哪里参见<a
+    href="/manual/faq/"
+    >常见问题</a
+  >。
+</p>
+
+<p>
+  两个扩展都通过一个小型原生消息主机与Omarchy通信，它会随浏览器一起安装。正是这个组件让网页视频得以落入你的家目录、URL得以进入剪贴板管理器，普通扩展自身做不到这些。
+</p>
+
+<p>以上仅限Chromium系。Firefox和Zen没有这些扩展。</p>
+
+<h2 id="firefox-and-zen">
+  Firefox与Zen<a
+    class="manual__heading-link"
+    href="#firefox-and-zen"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  Firefox和Zen属于另一个家族，待遇也不同：Omarchy会安装一份提供合理默认值的策略文件，并将它们切换到原生Wayland模式——分数缩放和顺滑的触控板滚动都需要它。
+</p>
+
+<p>
+  它们没有上述Chromium扩展，Omarchy也不会为它们设置主题，这部分体验需要你自行配置。
+</p>
+
+<h2 id="removing-one-again">
+  移除浏览器<a
+    class="manual__heading-link"
+    href="#removing-one-again"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  在此安装的任何浏览器都可以在<em>Remove &gt; Browser</em
+  >下移除。Chromium不在列表中——它是基础系统的一部分。
+</p>

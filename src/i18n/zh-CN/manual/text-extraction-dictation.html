@@ -1,0 +1,41 @@
+<h3 id="text-extraction">
+  文字提取<a
+    class="manual__heading-link"
+    href="#text-extraction"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  按<code>Super + Ctrl + PrtScr</code
+  >框选屏幕区域进行文字提取。开源OCR模型tesseract会迅速把选区转换成文字并放到剪贴板，然后按<code
+    >Super + V</code
+  >粘贴即可。
+</p>
+
+<p>从图片页脚抓取地址，或从网页标题图中抓取电话号码时，这非常方便。</p>
+
+<p><img src="/manual/images/text-extraction.webp" alt="text-extraction" /></p>
+
+<h3 id="dictation">
+  语音听写<a
+    class="manual__heading-link"
+    href="#dictation"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy通过<a href="https://voxtype.io/">Voxtype</a
+  >提供AI语音听写，可在Omarchy菜单的<em>Install &gt; AI &gt; Dictation</em
+  >中安装。默认加载一个150MB的英文基础模型；在终端运行<code
+    >voxtype setup model</code
+  >可以更换模型，所有设置都在<code>~/.config/voxtype/config.toml</code>中调整。
+</p>
+
+<p>
+  安装后，按住<code>F9</code>或用<code>Super + Ctrl + X</code
+  >切换即可开始听写，识别出的文字会出现在当前聚焦的输入区域。
+</p>

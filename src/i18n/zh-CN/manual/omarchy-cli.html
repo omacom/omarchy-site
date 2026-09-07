@@ -1,0 +1,80 @@
+<p>
+  Omarchy通常通过快捷键和Omarchy菜单（<code>Super + Space</code
+  >）操作，但也可以通过<code>omarchy</code>命令行工具控制。让AI智能体协助你做定制或配置时，这尤其方便。
+</p>
+
+<p>
+  命令行工具可以访问所有内部工具，无论它们平时是通过菜单还是其他方式使用。在终端运行<code>omarchy</code>即可看到全部可用内容。
+</p>
+
+<p>大致是这样：</p>
+
+<pre><code>~ ❯ omarchy
+Omarchy command center
+
+Usage:
+  omarchy &lt;command&gt; [args...]
+  omarchy commands [--all] [--json] [--check]
+  omarchy &lt;group&gt; --help
+  omarchy &lt;group&gt; &lt;command&gt; --help
+
+Common commands:
+  omarchy update              Update Omarchy and system packages
+  omarchy theme list          List available themes
+  omarchy theme set &lt;name&gt;    Apply a theme
+  omarchy font list           List available fonts
+  omarchy screenshot          Take a screenshot
+  omarchy debug               Print debugging information
+
+Groups:
+  agent          AI coding agent usage data
+  audio          Audio input and output controls
+  bar            Omarchy shell bar layout and settings
+  battery        Battery status helpers
+  bluetooth      Bluetooth device controls
+  branch         Omarchy git branch management
+  branding       About and screensaver branding
+  brightness     Display and keyboard brightness
+  capture        Screenshots and screen recording
+  channel        Omarchy release channel management
+  clipboard      Clipboard helpers
+  cmd            Command and shortcut helpers
+  config         System configuration helpers
+  debug          Diagnostics and support logs
+  ...
+</code></pre>
+
+<p>每个分组都可以继续深入：</p>
+
+<pre><code>~ ❯ omarchy capture
+Capture commands - Screenshots and screen recording:
+  omarchy capture qr                                                                                                                                                                                                       Decode a QR code from a screenshot region
+  omarchy capture screenrecording [--fullscreen] [--with-desktop-audio] [--with-microphone-audio] [--with-webcam] [--webcam-device=&lt;device&gt;] [--webcam-size=&lt;small|medium|large&gt;] [--resolution=&lt;size&gt;] [--stop-recording]  Start or stop screen recording
+  omarchy capture screenrecording with webcam                                                                                                                                                                              Pick a webcam and start a screen recording with it
+  omarchy capture screenshot [smart|region|windows|fullscreen] [slurp|copy|save] [--editor=&lt;name&gt;]                                                                                                                         Take a screenshot
+  omarchy capture text                                                                                                                                                                                                     Extract text from a screenshot region with OCR
+  omarchy capture webcam resize &lt;smaller|larger|reset|small|medium|large&gt;                                                                                                                                                  Resize the active webcam recording overlay
+</code></pre>
+
+<p>
+  每条命令也都接受<code>--help</code>，无论针对整个分组（<code
+    >omarchy capture --help</code
+  >）还是单条命令（<code>omarchy capture screenshot --help</code>）。
+</p>
+
+<h3 id="opening-the-menu-from-the-terminal">
+  从终端打开菜单<a
+    class="manual__heading-link"
+    href="#opening-the-menu-from-the-terminal"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy菜单同样可以用脚本控制，适合自定义键绑定。<code>omarchy menu</code
+  >从根节点打开菜单；按名称可以直接跳到树中的任意位置：<code
+    >omarchy menu summon style.theme</code
+  >直达主题选择器，<code>omarchy menu toggle system</code
+  >打开系统菜单（已打开则关闭），<code>omarchy menu close</code>将其收起。
+</p>

@@ -1,0 +1,206 @@
+{
+  "index": {
+    "title": "欢迎使用Omarchy！",
+    "sourceHash": "b99cb9eda4b2c62310e89d4717cb4fce1b45226feab86da502930c873388ddcc"
+  },
+  "getting-started": {
+    "title": "入门指南",
+    "sourceHash": "bea3c78eb9786b8c96c89db07e9fbca8e085a6585dc92a8c0cecaac07fbface0"
+  },
+  "coming-from-mac-or-windows": {
+    "title": "迁移自Mac或Windows",
+    "sourceHash": "55ae48e6c106dfbd5e9fc8e8a0808f54b06b39d40333b9a0a3ea75bb23a16357"
+  },
+  "navigation": {
+    "title": "窗口导航",
+    "sourceHash": "af666079d7a64eed0f352ecd84411e416dfb249a64a80ff8b6fec002ff5972ea"
+  },
+  "the-top-bar": {
+    "title": "状态栏",
+    "sourceHash": "a8753919f8534020b4639a548bdb1ef6b4e28612b39db2badd69036e41a64c91"
+  },
+  "themes": {
+    "title": "主题",
+    "sourceHash": "ad725ac7a2fc583a12cd6ddac21d96fbe3dfd934916e50355a570c2aaee50528"
+  },
+  "hotkeys": {
+    "title": "快捷键",
+    "sourceHash": "f1edcc17178c328cd4806d6dfa5b7051a152bea633872d72ea9021d153069b85"
+  },
+  "unified-clipboard-history": {
+    "title": "统一剪贴板与历史记录",
+    "sourceHash": "9e3b214f149bf3dc2e62d004a6aca6af1be9440ac2c92d098ec8af570c2391a5"
+  },
+  "reminders": {
+    "title": "提醒事项",
+    "sourceHash": "53fee389707f38f771045f7c7de7d08be9c39fc2815bd2bac84c5afb216af390"
+  },
+  "notices": {
+    "title": "快捷通知",
+    "sourceHash": "cdf2a8f5aba35b717c3a6ae33884e510b33c2ab5c2bdea1139b5ac94cc9ca7f4"
+  },
+  "text-extraction-dictation": {
+    "title": "文字提取与语音听写",
+    "sourceHash": "bf7d2ae464273ce8135c33fe351572847c19ba8b7a7ebf7a2f195eff4fc6ae3a"
+  },
+  "screenshots-recording": {
+    "title": "截图与录屏",
+    "sourceHash": "b55bd5856207a1e0c96c7bd7160786736b6fb994aef56b539310338e1142014d"
+  },
+  "toggles-idle-screensaver": {
+    "title": "开关、空闲与屏保",
+    "sourceHash": "be7b04464844658903f2a089648c713473f405d1bef27227615e3816b1a87298"
+  },
+  "omarchy-cli": {
+    "title": "Omarchy命令行",
+    "sourceHash": "ced3975ba80c6f8035bec59c715f5b34bab9d15ccbea62a5381b00910c009a4e"
+  },
+  "terminal": {
+    "title": "终端",
+    "sourceHash": "49167cb5abded582beace080e901121206364ccce23093a458246be63aed52ee"
+  },
+  "neovim": {
+    "title": "Neovim",
+    "sourceHash": "d953dff5afe64bd5a0c8c556babe5f04baff76ee471cca5c86548461c915c39f"
+  },
+  "ai": {
+    "title": "AI",
+    "sourceHash": "4bcfc7244618601ec0a3ee453aa453b05d3423e5860e2bef6d55078312333ba7"
+  },
+  "development-tools": {
+    "title": "开发工具",
+    "sourceHash": "934e3b11ed513e97bd9735d56f05503f064e6563bad1f8f8c6ed93913ac1ee29"
+  },
+  "shell-tools": {
+    "title": "Shell工具",
+    "sourceHash": "35be288ac9ae2fd08fa50ee2a34327dbdb44090a874d23b78d0c86dd7d405b13"
+  },
+  "shell-functions": {
+    "title": "Shell函数",
+    "sourceHash": "1e82b21d866086b4c2de2f5871e59f22df5fd54257320f5ebde0263b4ee2ce10"
+  },
+  "tuis": {
+    "title": "终端应用（TUI）",
+    "sourceHash": "4c226afb09d8804cf784b5cdb5109636c79d2085ccb523bc3223efb156ce0068"
+  },
+  "guis": {
+    "title": "图形应用（GUI）",
+    "sourceHash": "2dbc83c21d67f67c655cda18bfbb493dc55583304bd03f9f04c4778c3bea3bb1"
+  },
+  "browsers": {
+    "title": "浏览器",
+    "sourceHash": "83661356f5aee3ad3f110351d86bff40193146acd5a40c4f20a1e42cfa5d92b2"
+  },
+  "commercial-apps-services": {
+    "title": "商业应用与服务",
+    "sourceHash": "b359fab312a5eaf8fbd0aacb24902f3e8b0cc2919e1754fd07f99fc52134c5f9"
+  },
+  "web-apps": {
+    "title": "Web应用",
+    "sourceHash": "f60c9476cb173f0dbedff63d6d4dc132f220eb11dae05130b6b843b24e9d933b"
+  },
+  "gaming": {
+    "title": "游戏",
+    "sourceHash": "2d33006c75c73f14f7a236a17fffc8e3a79af3552339e11e4e72010b0e87b1b7"
+  },
+  "filling-out-pdfs": {
+    "title": "填写PDF",
+    "sourceHash": "208e29248f38285929d9f09b656310ff60ec37b7281d78d828d8e8efd5a50ce8"
+  },
+  "windows-vm": {
+    "title": "Windows虚拟机",
+    "sourceHash": "f307f9e48094bc7b58b111ad9d260aea7ed343533af0577062db8170298c6e50"
+  },
+  "other-packages": {
+    "title": "其他软件包",
+    "sourceHash": "78c28aff9219ac4f4b16526f75ca5f46c38d8024020df1545aca27126f6181f1"
+  },
+  "updates": {
+    "title": "系统更新",
+    "sourceHash": "62f0de0949af0bb7b8484c05c6d6d4cfd6730de8b923e73ebd62b1b63c1f3241"
+  },
+  "dotfiles": {
+    "title": "配置文件（Dotfiles）",
+    "sourceHash": "101c4023caa765660ce08b7ad09cd48c3c402f38da8a5cd897f04d71a95b6f28"
+  },
+  "shell-plugins": {
+    "title": "Shell插件",
+    "sourceHash": "04741f5d4dfcc3575e458513f47a80fca0e7f17ba340a6ca3188d4cc3a853e19"
+  },
+  "monitors": {
+    "title": "显示器",
+    "sourceHash": "1996a604ac374d574740ea754b85ac16824a092ee251c6ab587dc2d7cbece7a2"
+  },
+  "keyboard-mouse-trackpad": {
+    "title": "键盘、鼠标与触控板",
+    "sourceHash": "31d452095005f26e913d160bfe27c1fdce96e58360f633ad7d76b5971f2ba987"
+  },
+  "networking": {
+    "title": "网络",
+    "sourceHash": "e135e95c22ebb0b04ba3f1786e6421b4fe69be42c8c0b5836c083df805f7f3d6"
+  },
+  "system-sleep": {
+    "title": "系统睡眠",
+    "sourceHash": "1e61930dc043ba2b891aa92ca568587171c07092866afe6070581ab827b33332"
+  },
+  "hardware-authentication": {
+    "title": "硬件认证",
+    "sourceHash": "1a81a8020e115e9b090857b85b0e34c6274566b5651ac4c6dd81d05a507e9b2c"
+  },
+  "fonts": {
+    "title": "字体",
+    "sourceHash": "aad256ca66f2f89955282ff162589ae2cac509a33b11a745a73f7ca7b59d6948"
+  },
+  "backgrounds": {
+    "title": "背景图片",
+    "sourceHash": "d144207a98a8f3af78c3bf329cb1a03e95aadb334cc014cae05f0359125568c3"
+  },
+  "prompt": {
+    "title": "命令提示符",
+    "sourceHash": "5657e6632b138985313cab9c4b807edc9527820bad0ce1c43c3feb3ada510644"
+  },
+  "branding": {
+    "title": "品牌定制",
+    "sourceHash": "b9950416f0cdaa01fcb86e53dd4d4753e57ab731d3ebabc02fd54d2c7e65105b"
+  },
+  "common-tweaks": {
+    "title": "常见调整",
+    "sourceHash": "63b4ffac0d881a704bfa8c7660a5aa9d4b366d87616f524e04cfb9b87b8699bf"
+  },
+  "making-your-own-theme": {
+    "title": "制作自己的主题",
+    "sourceHash": "c174db83caa2f98c0f5eb8d0db828456da0b044c86102142cbc114937b991472"
+  },
+  "mac-support": {
+    "title": "Mac支持",
+    "sourceHash": "284af474bd7277b9f720e7f3a40522f9b8029e550aeebc6f4c291264e483bed3"
+  },
+  "troubleshooting": {
+    "title": "故障排除",
+    "sourceHash": "c971b6281ded232d608cf23f2ace1c93e0e51fed5fba722750df4958908b99ed"
+  },
+  "faq": {
+    "title": "常见问题",
+    "sourceHash": "d818964c5750b40d0f04d84aa81b18663579a7e4a9c26dccc0960f6173ba0079"
+  },
+  "system-snapshots": {
+    "title": "系统快照",
+    "sourceHash": "a2e468b4caa528dda43387b44940cfb658acf9bade537d0aed320dea1b837816"
+  },
+  "security": {
+    "title": "安全",
+    "sourceHash": "ce9d2081843325f4c6927772733cbe66f114d87565c23d7c43997919336d76bb"
+  },
+  "omarchy-on": {
+    "title": "在其他平台运行Omarchy",
+    "sourceHash": "96e09d63b190cbd77d00bbe99e76dd86d268f891d1648d7d49cce6fe2d02e0cf"
+  },
+  "dual-boot-install": {
+    "title": "双系统安装",
+    "sourceHash": "81eaf5ab80dc36670fdaa3947a210b19eeae4237996e95c9c26d134e3a8ac122"
+  },
+  "unattended-installs": {
+    "title": "无人值守安装",
+    "sourceHash": "2b787299c8ed3ff2036783f5fe65a002da5b0e8a44bc26954438ba43383a3041"
+  }
+}

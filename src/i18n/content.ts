@@ -1,4 +1,4 @@
-import { locale, localizedHref, contentLocale } from './site'
+import { locale, localizedHref, contentLocale, t } from './site'
 import {
   currentNewsTranslation,
   type NewsTranslation,
@@ -56,12 +56,36 @@ export function translateNews(post: NewsPost): NewsPost {
   }
 }
 
+const manualMeta = import.meta.glob<Record<string, NewsTranslation>>(
+  './*/manual.json',
+  { import: 'default', eager: true },
+)
+const manualHtml = import.meta.glob<string>('./*/manual/*.html', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
+
+export type ManualChapter = { slug: string; title: string; html: string }
+
+/** A chapter without a current translation keeps its English source behind a language notice. */
+export function translateManualChapter(chapter: ManualChapter): ManualChapter {
+  if (contentLocale === 'en') return chapter
+  const meta = manualMeta[`./${contentLocale}/manual.json`]?.[chapter.slug]
+  const html = manualHtml[`./${contentLocale}/manual/${chapter.slug}.html`]
+  if (!currentNewsTranslation(chapter, meta, html))
+    return {
+      ...chapter,
+      html: `<p class="manual__notice"><em>${t('This chapter has not been translated yet. The English original follows.')}</em></p>\n<div lang="en" dir="ltr">${chapter.html}</div>`,
+    }
+  return { ...chapter, title: meta.title, html }
+}
+
 const blockCatalogues = import.meta.glob<Record<string, string>>(
   './*/blocks.json',
   { import: 'default', eager: true },
 )
 const blocks = blockCatalogues[`./${contentLocale}/blocks.json`] ?? {}
-import { t } from './site'
 
 /** Translate authored prose blocks without copying live donor lists or asset markup. */
 export function translateHtml(html: string): string {

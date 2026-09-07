@@ -1,0 +1,120 @@
+<p>
+  Hyprland允许你对所有输入设备做非常细致的配置：可以把键盘重复速度调到飞快，也可以让触控板使用自然滚动。这一切都在<code>~/.config/hypr/input.lua</code>中修改，该文件也可通过Omarchy菜单（<code
+    >Super + Space</code
+  >）的<em>Setup &gt; Input</em
+  >打开。在这里设置的任何内容都会替换Omarchy的默认值。
+</p>
+
+<p>示例如下：</p>
+
+<pre><code class="language-lua">hl.config({
+  input = {
+    -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt
+    kb_layout = "us,dk",
+    kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+
+    -- Change speed of keyboard repeat
+    repeat_rate = 40,
+    repeat_delay = 600,
+
+    -- Increase sensitivity for mouse/trackpad (default: 0)
+    sensitivity = 0.35,
+
+    touchpad = {
+      -- Use natural (inverse) scrolling
+      natural_scroll = true,
+
+      -- Use two-finger clicks for right-click instead of lower-right corner
+      clickfinger_behavior = true,
+
+      -- Control the speed of your scrolling
+      scroll_factor = 0.3,
+    },
+  },
+})
+
+-- Scroll faster in the terminal
+o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
+</code></pre>
+
+<p>
+  Hyprland wiki上可以<a
+    href="https://wiki.hypr.land/Configuring/Basics/Variables/#input"
+    >查看全部输入选项</a
+  >。
+</p>
+
+<p>
+  Omarchy默认把CapsLock用作组合键，用于<a href="/manual/hotkeys/#quick-emojis"
+    >快速表情</a
+  >和<a href="/manual/hotkeys/#quick-completions">其他补全</a
+  >。如果你更想让CapsLock就是大写锁定，修改<code>kb_options</code>中的<code>compose:caps</code>，把组合键挪到别处。比如下面把组合键移到右Alt：
+</p>
+
+<pre><code class="language-lua">hl.config({
+  input = {
+    kb_options = "compose:ralt",
+  },
+})
+</code></pre>
+
+<h3 id="trackpad-gestures">
+  触控板手势<a
+    class="manual__heading-link"
+    href="#trackpad-gestures"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  还可以开启<a
+    href="https://wiki.hypr.land/Configuring/Advanced-and-Cool/Gestures/"
+    >触控板手势</a
+  >，比如三指滑动切换工作区：
+</p>
+
+<pre><code class="language-lua">hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+</code></pre>
+
+<p>
+  配备触觉反馈触控板的Dell XPS笔记本，还可以在<em
+    >Trigger &gt; Hardware &gt; Touchpad Haptics</em
+  >下把按压力度设为低、中或高。
+</p>
+
+<h3 id="typing-in-chinese-japanese-and-other-languages">
+  输入中文、日文及其他语言<a
+    class="manual__heading-link"
+    href="#typing-in-chinese-japanese-and-other-languages"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy在每个会话中都运行<a href="https://fcitx-im.org/">fcitx5</a
+  >输入法框架——CapsLock组合序列正是由它驱动的。这意味着非拉丁文字输入的底层设施已经就位：用<code
+    >omarchy pkg add</code
+  >安装一个输入引擎，如<code>fcitx5-mozc</code>（日文）或<code>fcitx5-chinese-addons</code>（中文），再装上<code>fcitx5-configtool</code>，把引擎加入输入法列表并设置切换键即可。
+</p>
+
+<h3 id="use-alt-as-super">
+  用ALT充当SUPER<a
+    class="manual__heading-link"
+    href="#use-alt-as-super"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在某些键盘上，用主meta键（Windows/cmd键）充当SUPER并不顺手。可以通过下面的修改改用ALT：
+</p>
+
+<pre><code class="language-lua">hl.config({
+  input = {
+    kb_options = "compose:caps,shift:both_capslock_cancel,altwin:swap_alt_win",
+  },
+})
+</code></pre>

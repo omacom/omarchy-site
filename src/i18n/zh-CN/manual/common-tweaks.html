@@ -1,0 +1,68 @@
+<p>
+  这里收集了一些对Omarchy的常见调整。请注意，系统更新偶尔需要把某些配置恢复为原始状态。发生这种情况时，你的修改不会丢失，而是存入同一目录下的<code>.bak</code>文件。
+</p>
+
+<p>
+  要是改坏了什么，可以通过Omarchy菜单的<em>Update &gt; Config</em
+  >把单个配置恢复为原始设置。要是<em>真的</em>全搞砸了，可以用<code>omarchy-reinstall</code>重置所有配置。
+</p>
+
+<h3 id="reveal-all-tray-icons-all-the-time">
+  始终显示所有托盘图标<a
+    class="manual__heading-link"
+    href="#reveal-all-tray-icons-all-the-time"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  默认情况下，Dropbox、1password、Steam之类的托盘图标藏在托盘展开箭头后面，鼠标悬停时才显示。想让它们一直可见，右键点击展开箭头打开托盘图标管理器，然后固定想保持可见的图标（也可以把永远不想看到的隐藏掉）。
+</p>
+
+<h3 id="rounded-window-corners">
+  圆角窗口<a
+    class="manual__heading-link"
+    href="#rounded-window-corners"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy的默认设计是直角，想柔和一点的话，可以修改<code>~/.config/hypr/looknfeel.lua</code>，把圆角设置的注释去掉：
+</p>
+
+<pre><code>hl.config({
+  decoration = {
+    -- Use round window corners.
+    rounding = 8,
+  },
+})
+</code></pre>
+
+<h3 id="remove-window-gaps">
+  去掉窗口间隙<a
+    class="manual__heading-link"
+    href="#remove-window-gaps"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在笔记本屏幕上，有些人不想把任何像素浪费在窗口间隙上（甚至连状态栏也不要，可以用<code
+    >Super + Shift + Space</code
+  >关掉）。用<code>Super + Shift + Backspace</code
+  >可以临时关闭所有间隙和边框；要永久去掉，把<code>~/.config/hypr/looknfeel.lua</code>中这一段的注释去掉：
+</p>
+
+<pre><code>hl.config({
+  general = {
+    -- No gaps between windows or borders.
+    gaps_in = 0,
+    gaps_out = 0,
+    border_size = 0,
+  },
+})
+</code></pre>

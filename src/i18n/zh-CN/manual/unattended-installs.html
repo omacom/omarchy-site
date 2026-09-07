@@ -1,0 +1,145 @@
+<p>
+  Omarchy
+  ISO可以在无人操作的情况下自行完成安装。如果安装程序发现另一块标签为<code>cidata</code>且带有配置文件的驱动器，它会把文件复制过来，完全跳过设置向导，并自行重启进入装好的系统。不需要特殊的ISO构建，也没有额外的启动菜单项——没有这样的驱动器时，一切照旧，你看到的还是普通向导。
+</p>
+
+<p>
+  这让Omarchy很适合作为一次性开发环境的基础镜像：在Proxmox或用Packer创建虚拟机，启动，走开，然后SSH进去。<code>cidata</code>是cloud-init的<code>NoCloud</code>标签，所有常见的虚拟化工具都已经知道如何挂载这样的驱动器。
+</p>
+
+<h2 id="the-configuration-files">
+  配置文件<a
+    class="manual__heading-link"
+    href="#the-configuration-files"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  这些文件正是安装程序自己的向导所写入的，所以获得初始文件最简单的办法是做一次交互式安装（比如在虚拟机里），然后复制它写入<code>/root</code>的内容：
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>文件</th>
+      <th>必需</th>
+      <th>用途</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>user_configuration.json</code></td>
+      <td>是</td>
+      <td>磁盘、主机名、时区、键盘</td>
+    </tr>
+    <tr>
+      <td><code>user_credentials.json</code></td>
+      <td>是</td>
+      <td>用户名和密码哈希</td>
+    </tr>
+    <tr>
+      <td><code>user_full_name.txt</code></td>
+      <td>否</td>
+      <td>Git全名</td>
+    </tr>
+    <tr>
+      <td><code>user_email_address.txt</code></td>
+      <td>否</td>
+      <td>Git邮箱</td>
+    </tr>
+    <tr>
+      <td><code>user_encrypt_installation.txt</code></td>
+      <td>否</td>
+      <td>配置中含有<code>disk_encryption</code>块时为<code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>authorized_keys</code></td>
+      <td>否</td>
+      <td>SSH公钥，每行一个</td>
+    </tr>
+    <tr>
+      <td><code>tailscale_authkey</code></td>
+      <td>否</td>
+      <td>首次启动时加入tailnet所用的Tailscale认证密钥</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  用<code>openssl passwd -6 "yourpassword"</code
+  >生成<code>user_credentials.json</code>所需的密码哈希。
+</p>
+
+<p>
+  也可以用一个名为<code>defer-provisioning</code>的空文件代替<code>user_credentials.json</code>。这会执行与交互式安装中相同的<a
+    href="/manual/getting-started/"
+    >为他人准备的安装</a
+  >：机器不带任何个人信息安装，第一个启动它的人选择键盘并创建自己的用户。这是批量装机的模式，驱动器上不应携带任何人的凭据。
+</p>
+
+<h2 id="ssh-access">
+  SSH访问<a
+    class="manual__heading-link"
+    href="#ssh-access"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  存在<code>authorized_keys</code>时，安装会把这些密钥设为用户的<code>~/.ssh/authorized_keys</code>，启用<code>sshd</code>，并在防火墙上开放端口。（标准的Omarchy安装自带openssh，但服务禁用、端口关闭，否则无人值守的机器将无法访问。）安装只添加你的密钥——不会放松SSH守护进程的其他任何认证设置。
+</p>
+
+<p>
+  存在<code>tailscale_authkey</code>时，机器改为在首次启动时加入你的tailnet：Tailscale从ISO附带的软件包安装，防火墙放行tailnet接口，后台任务在机器真正联网后立即执行加入，失败则重试直到成功。请使用可重复使用的预授权密钥，这样一份驱动器镜像就能服务多台机器。
+</p>
+
+<h2 id="building-the-cidata-drive">
+  制作cidata驱动器<a
+    class="manual__heading-link"
+    href="#building-the-cidata-drive"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>任何带有正确标签的文件系统都可以。最简单的是做一个小ISO：</p>
+
+<pre><code class="language-bash">mkdir cidata
+cp user_configuration.json user_credentials.json authorized_keys cidata/
+genisoimage -output cidata.iso -volid cidata -joliet -rock cidata/
+</code></pre>
+
+<p>然后把它和Omarchy ISO一起挂载到虚拟机。下面是完整的Proxmox示例：</p>
+
+<pre><code class="language-bash">qm create 101 --name my-omarchy \
+  --bios ovmf --machine q35 --cpu host --cores 4 --memory 8192 \
+  --ostype l26 --scsihw virtio-scsi-single \
+  --efidisk0 local-lvm:0,efitype=4m,pre-enrolled-keys=0 \
+  --scsi0 local-lvm:40,discard=on,iothread=1 \
+  --net0 virtio,bridge=vmbr0 --vga virtio --serial0 socket \
+  --ide2 local:iso/omarchy.iso,media=cdrom \
+  --ide3 local:iso/cidata.iso,media=cdrom \
+  --boot order='scsi0;ide2'
+
+qm start 101
+</code></pre>
+
+<p>
+  启动顺序有意把磁盘放在最前：首次启动时空磁盘会落到ISO，之后装好的系统就一直从磁盘启动。
+</p>
+
+<h2 id="two-caveats">
+  两点注意<a
+    class="manual__heading-link"
+    href="#two-caveats"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  加密的无人值守安装并非完全无人值守——首次启动时仍需有人输入LUKS口令。而且<code>user_configuration.json</code>中的<code>disk_encryption</code>块以明文携带该口令，所以从加密安装生成的cidata驱动器要当作机密对待。
+</p>

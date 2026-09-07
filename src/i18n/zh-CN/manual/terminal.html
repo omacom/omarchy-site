@@ -1,0 +1,89 @@
+<p>
+  <a href="https://codeberg.org/dnkl/foot">Foot</a
+  >是Omarchy的默认终端。它快速、轻巧，连老电脑也能胜任，但不支持原生标签页和分屏。
+</p>
+
+<p>
+  如果你用Tmux，可能并不在意；如果不用，我们也完整支持<em>Alacritty</em>、<em>Ghostty</em>和<em>Kitty</em>作为备选。在Omarchy菜单的<em
+    >Install &gt; Terminal</em
+  >下选择你偏好的终端即可。
+</p>
+
+<p>
+  用<code>Super + Return</code>启动新终端。（这个绑定会自动指向你通过<em
+    >Install &gt; Terminal</em
+  >安装的终端，也可以在<em>Setup &gt; Defaults &gt; Terminal</em
+  >下在已安装的终端之间切换。）
+</p>
+
+<h2 id="tmux">
+  Tmux<a class="manual__heading-link" href="#tmux" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  Tmux为窗格、窗口（即标签页）和可恢复的会话提供了一致、可编程的界面，与所用终端无关。它在远程主机上同样可用，SSH到服务器时也能沿用同一套方式。
+</p>
+
+<p>
+  用<code>Super + Alt + Return</code
+  >在新终端中启动Tmux会话。由于Tmux是常驻进程，即使关闭了终端也能恢复会话：按<code
+    >Ctrl + Space</code
+  >（即前缀键）再按<code>s</code>，即可查看所有活动会话。
+</p>
+
+<p>
+  Omarchy自带一套经过人体工学优化的Tmux配置，键绑定不少，建议把<a
+    href="/manual/hotkeys/#tmux"
+    >速查表</a
+  >放在手边。
+</p>
+
+<h2 id="tmux-layout-functions">
+  Tmux布局函数<a
+    class="manual__heading-link"
+    href="#tmux-layout-functions"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  因为Tmux可编程，我们可以用函数创建布局。Omarchy内置四个函数，对应常见的开发者布局。
+</p>
+
+<p>
+  <code>tdl [agent]</code
+  >启动一个三分的IDE式界面：左侧是<code>$EDITOR</code>，右侧是你选定的AI智能体（如<code>c</code>代表opencode，<code>cx</code>代表Claude，<code>codex</code>代表OpenAI），底部是终端。
+</p>
+
+<p>所以<code>tdl c</code>会启动这样的布局（或者直接用<code>ic</code>）：</p>
+
+<p><img src="/manual/images/tmux-tdl.webp" alt="tmux-tdl" /></p>
+
+<p>
+  还可以用<code>tdl c cx</code>同时启动第二个智能体（opencode +
+  claude）（或直接用<code>icx</code>）：
+</p>
+
+<p><img src="/manual/images/tmux-tdl2.webp" alt="tmux-tdl2" /></p>
+
+<p>
+  另有<code>tds</code>，启动一个四格布局：左上编辑器，右上实时diff监视，左下终端，右下opencode。
+</p>
+
+<p>
+  用<code>tdlm [agent]</code
+  >可以为当前目录下的每个子目录启动这套布局，然后用<code
+    >alt + 1/2/3/4/5/...</code
+  >切换：
+</p>
+
+<p><img src="/manual/images/tmux-tdlm.webp" alt="tmux-tdlm" /></p>
+
+<p>
+  最后，<code>tsl [panes] [command]</code>可以启动一群智能体。<code
+    >tsl 4 c</code
+  >会给你一个四格的opencode智能体网格：
+</p>
+
+<p><img src="/manual/images/tmux-tsl.webp" alt="tmux-tsl" /></p>

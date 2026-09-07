@@ -1,0 +1,277 @@
+<p>
+  日常改动的许多东西其实不是设置，而是模式：开一小时再关掉。熬夜工作时开夜间模式，演示时开勿扰，看视频时开保持唤醒。Omarchy称之为开关，它们的工作方式完全一致——一个快捷键、一个菜单项、一条命令，作用于同一个开关。
+</p>
+
+<h3 id="the-toggle-menu">
+  开关菜单<a
+    class="manual__heading-link"
+    href="#the-toggle-menu"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + O</code>直接打开<em>Trigger &gt; Toggle</em
+  >，也可以从Omarchy菜单（<code>Super + Space</code
+  >）一路点进去。列表中的每一项都是可以随手拨动的开关，不必关心状态存放在哪里。
+</p>
+
+<p>
+  在终端中，同样的开关是<code>omarchy toggle &lt;thing&gt;</code>。单独运行<code
+    >omarchy toggle</code
+  >可查看整组。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>开关</th>
+      <th>快捷键</th>
+      <th>命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>夜间模式</td>
+      <td><code>Super + Ctrl + N</code></td>
+      <td><code>omarchy toggle nightlight</code></td>
+    </tr>
+    <tr>
+      <td>通知静音</td>
+      <td><code>Super + Ctrl + ,</code></td>
+      <td><code>omarchy toggle notification silencing</code></td>
+    </tr>
+    <tr>
+      <td>保持唤醒（不在空闲时锁定）</td>
+      <td><code>Super + Ctrl + I</code></td>
+      <td><code>omarchy toggle idle</code></td>
+    </tr>
+    <tr>
+      <td>崩溃捕获</td>
+      <td>-</td>
+      <td><code>omarchy toggle crash-capture</code></td>
+    </tr>
+    <tr>
+      <td>屏保</td>
+      <td>-</td>
+      <td><code>omarchy toggle screensaver</code></td>
+    </tr>
+    <tr>
+      <td>菜单栏</td>
+      <td><code>Super + Shift + Space</code></td>
+      <td><code>omarchy toggle bar</code></td>
+    </tr>
+    <tr>
+      <td>触控板</td>
+      <td><code>XF86TouchpadToggle</code></td>
+      <td><code>omarchy toggle touchpad</code></td>
+    </tr>
+    <tr>
+      <td>触摸屏</td>
+      <td>-</td>
+      <td><code>omarchy toggle touchscreen</code></td>
+    </tr>
+    <tr>
+      <td>挂起</td>
+      <td>-</td>
+      <td><code>omarchy toggle suspend</code></td>
+    </tr>
+    <tr>
+      <td>混合GPU</td>
+      <td>-</td>
+      <td><code>omarchy toggle hybrid gpu</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  触控板、触摸屏和混合GPU的开关位于<em>Trigger &gt; Hardware</em>（<code
+    >Super + Ctrl + H</code
+  >）而非Toggle下，因为它们只在确实存在对应硬件时才出现。触控板和触摸屏的开关在Hyprland重新加载后依然有效：被禁用设备的名称会保存到一个小状态文件中，Hyprland启动时读取并再次禁用。
+</p>
+
+<p>
+  Toggle菜单中还有几项虽然不是<code>omarchy toggle</code
+  >命令，但行为相同：状态栏中的电量百分比、工作区布局（<code>Super + L</code
+  >）、窗口间隙（<code>Super + Shift + Backspace</code
+  >），以及单窗口方形比例（<code>Super + Ctrl + Backspace</code>）。
+</p>
+
+<p>
+  这些开关大多只是<code>~/.local/state/omarchy/toggles/</code>下的一个标记文件。想在脚本中根据某个开关分支，<code>omarchy-toggle-enabled</code>会直接给出退出码，无需自己去找：
+</p>
+
+<pre><code class="language-bash">omarchy-toggle-enabled screensaver-off &amp;&amp; echo "screensaver is off"
+</code></pre>
+
+<p>
+  标记按关闭状态命名——<code>screensaver-off</code>、<code>suspend-off</code>、<code>bar-off</code>——存在即表示该功能已禁用。
+</p>
+
+<h3 id="indicators-in-the-bar">
+  状态栏中的指示器<a
+    class="manual__heading-link"
+    href="#indicators-in-the-bar"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  某个模式开启时，状态栏中间时钟旁会出现一个小图标。那是指示器部件，涵盖语音听写、录屏、待触发的提醒、夜间模式、勿扰和保持唤醒。
+</p>
+
+<p>
+  未激活的指示器默认隐藏。把鼠标悬停到它们周围，它们会以暗色淡入，这样不知道快捷键也能点击开启；点击已激活的指示器则将其关闭。如果希望始终显示全部，在<code>~/.config/omarchy/shell.json</code>的<code>omarchy.indicators</code>条目上将<code>alwaysShow</code>设为<code>true</code>——状态栏部件的配置方式参见<a
+    href="/manual/the-top-bar/"
+    >状态栏</a
+  >。
+</p>
+
+<h3 id="night-light">
+  夜间模式<a
+    class="manual__heading-link"
+    href="#night-light"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + N</code
+  >将屏幕色温调暖至4000K，再按一次恢复6500K。它由hyprsunset驱动，如果hyprsunset尚未运行，开关会替你启动。
+</p>
+
+<p>
+  默认情况下，hyprsunset完全不改动屏幕：<code>~/.config/hypr/hyprsunset.conf</code>自带一个恒等配置，正是为了在你要求暖色之前保持显示原样。如果希望按时间自动切换，把它换成时间配置：
+</p>
+
+<pre><code>profile {
+    time = 20:00
+    temperature = 4000
+}
+</code></pre>
+
+<p>
+  然后在<code>~/.config/hypr/autostart.lua</code>中添加<code>o.launch_on_start("hyprsunset")</code>，让hyprsunset随登录启动。开关使用的4000K/6500K这一对是固定的，想要其他色温就去改配置文件。
+</p>
+
+<h3 id="do-not-disturb">
+  勿扰<a
+    class="manual__heading-link"
+    href="#do-not-disturb"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + ,</code
+  >让通知静音。开启期间不会弹出提示，状态栏中会出现一个划掉的铃铛，提醒你桌面为何安静了。
+</p>
+
+<p>
+  不过什么都不会丢失。被静音的通知会直接写入通知历史，正是你回来后想知道错过了什么时需要的记录。用<code
+    >Super + Shift + Alt + ,</code
+  >打开它。通知的其余内容参见<a href="/manual/notices/">快捷通知</a>。
+</p>
+
+<p>
+  两类消息仍会通过：Omarchy对你刚做的操作的确认提示（“Theme
+  changed”、“Screenshot
+  saved”），以及从命令行发送的紧急警报。那些把所有消息都标记为紧急、强行挤到你面前的聊天应用，不在此列。
+</p>
+
+<h3 id="idle">
+  空闲<a class="manual__heading-link" href="#idle" aria-label="本节链接">#</a>
+</h3>
+
+<p>
+  空闲行为由Omarchy
+  shell负责，计时位于<code>~/.config/omarchy/shell.json</code>顶层的<code>idle</code>块：
+</p>
+
+<pre><code class="language-json">{
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  }
+}
+</code></pre>
+
+<p>
+  两个数字都是从进入空闲那一刻算起的秒数，而不是彼此的间隔。按默认值，屏保在两分半后出现，锁屏在五分钟时接管，无论屏保是否运行过。保存文件，shell会立即采用新计时。
+</p>
+
+<p>
+  如果在锁定期限之前退出屏保，这算作活动，待执行的锁定会被取消。你不会因为看了一眼机器就被锁在外面。
+</p>
+
+<p>
+  要彻底停止空闲锁定，按<code>Super + Ctrl + I</code>——或运行<code
+    >omarchy toggle idle</code
+  >——开启保持唤醒，状态栏中会出现咖啡杯指示器。长时间演示或想盯着的构建开始前，就按它；再按一次恢复正常。脚本中需要时，<code
+    >omarchy toggle idle status</code
+  >会以JSON输出当前状态。
+</p>
+
+<p>
+  这里说的是锁定和屏保，不涉及电源。挂起和休眠有各自的设置，参见<a
+    href="/manual/system-sleep/"
+    >系统睡眠</a
+  >。
+</p>
+
+<h3 id="the-screensaver">
+  屏保<a
+    class="manual__heading-link"
+    href="#the-screensaver"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy的屏保是随机文字特效中的ASCII艺术，每个显示器一个实例。任何按键或鼠标移动都会退出。
+</p>
+
+<p>
+  可以从<em>System &gt; Screensaver</em>（<code>Super + Esc</code
+  >）按需启动，即使关闭了空闲屏保也会强制显示。默认没有绑定快捷键。
+</p>
+
+<p>
+  如果想从工作直接进入锁定，<code>omarchy toggle screensaver</code
+  >可关闭空闲屏保。它需要一个能够配置的终端——Alacritty、Foot、Ghostty或Kitty——如果默认终端是其他程序，它会提示你。
+</p>
+
+<p>
+  屏保绘制的标志可以在<em>Style &gt; Screensaver</em
+  >下更换：上传png或svg，Omarchy会将其转换为ASCII。参见<a
+    href="/manual/branding/"
+    >品牌定制</a
+  >。
+</p>
+
+<h3 id="the-lock-screen">
+  锁屏<a
+    class="manual__heading-link"
+    href="#the-lock-screen"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + L</code>锁定机器。这会运行Omarchy
+  shell的锁屏，熄灭显示，把键盘布局重置为第一个（免得用错误的字母表输入密码），并且——如果1Password正在运行——顺便将其锁定。
+</p>
+
+<p>
+  锁屏接受密码，设置指纹后也接受指纹。这一点和其他认证方式参见<a
+    href="/manual/hardware-authentication/"
+    >硬件认证</a
+  >。
+</p>

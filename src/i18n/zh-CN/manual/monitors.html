@@ -1,0 +1,156 @@
+<p>
+  Omarchy默认假定你使用的是支持2倍缩放的视网膜级显示器。这是获得清晰锐利的编程字体的前提，几乎所有配备高分辨率屏幕的新款高端笔记本都是为此优化的，也是你在27英寸5K的<a
+    href="https://www.apple.com/studio-display/"
+    >Apple Studio Display</a
+  >/<a
+    href="https://www.asus.com/us/displays-desktops/monitors/proart/proart-display-5k-pa27jcv/"
+    >ProArt PA27JCV</a
+  >/<a
+    href="https://www.samsung.com/us/computing/monitors/5k/27-viewfinity-s9-5k-monitor-with-thunderbolt-4-matte-display-and-smart-features-ls27c900panxza/"
+    >Samsung S9</a
+  >/<a href="https://kuycon.us/monitors/G27P/">Kuycon G27P</a>，或32英寸6K的<a
+    href="https://www.apple.com/pro-display-xdr/"
+    >Apple XDR</a
+  >/<a
+    href="https://www.asus.com/displays-desktops/monitors/proart/proart-display-6k-pa32qcv/"
+    >ProArt PA32QCV</a
+  >/<a href="https://kuycon.us/monitors/G32P/">Kuycon G32P</a>上想要的效果。
+</p>
+
+<p>
+  但如果显示器的PPI达不到218，就需要修改显示器设置。比如27或32英寸的4K屏，可以打开<code>~/.config/hypr/monitors.lua</code>（通过Omarchy菜单的<em
+    >Setup &gt; Monitors</em
+  >），切换为该组合的推荐分数缩放：
+</p>
+
+<pre><code class="language-lua">local omarchy_gdk_scale = 2
+local omarchy_monitor_scale = 1.6
+</code></pre>
+
+<p>1080p或1440p显示器通常只需1倍缩放：</p>
+
+<pre><code class="language-lua">local omarchy_gdk_scale = 1
+local omarchy_monitor_scale = 1
+</code></pre>
+
+<p>
+  <code>GDK_SCALE</code
+  >的修改只对之后启动的应用生效（GTK只接受整数，所以取最接近显示器缩放的整数即可）。修改后请退出那些尺寸过大的窗口（或用<code
+    >Ctrl + Alt + Del</code
+  >关闭所有窗口！）。
+</p>
+
+<p>
+  也可以用<code>Super + /</code>和<code>Super + Alt + /</code
+  >在主要缩放比例（1x、1.25x、1.6x、2x、3x、4x）之间上下切换。使用默认配置时，这些修改在重启后依然保留。
+</p>
+
+<h3 id="making-text-bigger-or-smaller">
+  放大或缩小文字<a
+    class="manual__heading-link"
+    href="#making-text-bigger-or-smaller"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  显示器缩放会改变一切的大小。如果只想让<em>文字</em>变大或变小，有一个专门的旋钮：
+</p>
+
+<pre><code>omarchy display text size 14
+</code></pre>
+
+<p>
+  它接受9到20之间的像素值，同时调整Omarchy
+  shell、GTK应用和终端，让整个桌面保持比例。不带参数运行可查看当前值，<code
+    >omarchy display text size reset</code
+  >恢复默认。Foot是唯一的例外：它无法重新加载配置，所以已打开的终端会保持旧尺寸，直到你开一个新的。
+</p>
+
+<h3 id="extending-and-mirroring-laptop-displays">
+  扩展与镜像笔记本显示器<a
+    class="manual__heading-link"
+    href="#extending-and-mirroring-laptop-displays"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  给笔记本接上外接屏幕时，显示会自动扩展。通过Omarchy菜单的<em
+    >Trigger &gt; Hardware</em
+  >或<code>Super + Ctrl + Alt + Delete</code
+  >可以改为镜像。外接屏幕是投影仪、你想边工作边展示时，这尤其方便。
+</p>
+
+<p>
+  处于扩展模式时，合上笔记本盖子会自动关闭内置屏幕，打开盖子则重新开启。也可以通过Omarchy菜单的<em
+    >Trigger &gt; Hardware</em
+  >或<code>Super + Ctrl + Delete</code>手动控制。
+</p>
+
+<h3 id="arranging-multiple-screens">
+  排列多块屏幕<a
+    class="manual__heading-link"
+    href="#arranging-multiple-screens"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Hyprland对多屏支持很好。布局方法参见<a
+    href="https://wiki.hypr.land/Configuring/Basics/Monitors/"
+    >Hyprland显示器文档</a
+  >，你还可以<a
+    href="https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/"
+    >把特定工作区绑定到特定显示器</a
+  >。在Omarchy中，这些规则以<code>hl.monitor</code>条目的形式写在<code>~/.config/hypr/monitors.lua</code>中——文件自带注释示例，展示如何为某块显示器固定分辨率、位置和旋转。
+</p>
+
+<p>
+  想用TUI辅助多屏定位的话，也可以看看<a href="https://github.com/erans/hyprmon/"
+    >Hyprmon</a
+  >。
+</p>
+
+<h3 id="controlling-brightness">
+  控制亮度<a
+    class="manual__heading-link"
+    href="#controlling-brightness"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  显示器亮度由专用的亮度增减功能键控制。按住Shift再按这些键，会直接跳到最大或最小亮度。按键作用于当前聚焦的显示器，所以支持DDC/CI的外接显示器与笔记本屏幕的调节方式相同。
+</p>
+
+<h3 id="apple-displays">
+  Apple显示器<a
+    class="manual__heading-link"
+    href="#apple-displays"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  使用Apple显示器时，只要焦点在它上面，常规的键盘亮度键同样自动可用。这是通过<code>asdcontrol</code>命令实现的。
+</p>
+
+<p>
+  注意，使用Apple 6K XDR显示器时，<code>hyprctl monitors</code
+  >列表中可能出现一块幻影屏幕。可以通过<em>Setup &gt; Monitors</em>用类似<code
+    >hl.monitor({ output = "DP-2", disabled = true })</code
+  >的设置把它关掉。
+</p>
+
+<p>
+  Intel机器应使用普通的Thunderbolt线连接Apple显示器。没有Thunderbolt接口的其他机器，通常需要一根<a
+    href="https://www.amazon.com/dp/B0BNX7MS6N"
+    >DP + USB-A转USB-C线</a
+  >才能正常工作。
+</p>

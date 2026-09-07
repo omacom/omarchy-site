@@ -1,6 +1,6 @@
 {
   "News": "新闻",
-  "Manual": "手册（英文）",
+  "Manual": "手册",
   "Themes": "主题",
   "Install": "安装",
   "Beautiful, fun & agentic Linux": "美观、有趣，与智能体同行的 Linux",
@@ -342,5 +342,10 @@
   "Omarchy Server 4.0": "Omarchy 服务器 4.0",
   "Plugin": "插件",
   "Rangers": "游侠",
-  "Server - Omarchy": "服务器 - Omarchy"
+  "Server - Omarchy": "服务器 - Omarchy",
+  "The Manual - Omarchy": "手册 - Omarchy",
+  "The Omarchy manual: installation, navigation, hotkeys, themes, plugins, and everything else about running the OS.": "Omarchy手册：安装、导航、快捷键、主题、插件，以及运行这个系统的其他一切。",
+  "Omarchy Manual": "Omarchy手册",
+  "Answers to what comes up most: keyboard layouts, the clock format, timezones, DNS and Wi-Fi, printers, and where screenshots end up.": "最常见的问题：键盘布局、时钟格式、时区、DNS和Wi-Fi、打印机，以及截图保存在哪里。",
+  "This chapter has not been translated yet. The English original follows.": "本章尚未翻译，下面是英文原文。"
 }

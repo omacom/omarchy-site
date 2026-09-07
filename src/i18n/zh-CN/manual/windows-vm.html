@@ -1,0 +1,111 @@
+<p>
+  Omarchy提供了一种通过Docker虚拟机运行Windows的便捷方式，可在Omarchy菜单（<code
+    >Super + Space</code
+  >）的<em>Install &gt; Windows</em>中安装。
+</p>
+
+<p>
+  这需要机器支持KVM虚拟化——大多数机器都支持，但有时在BIOS中被关闭了，安装程序会提示你。此外还需要磁盘空间：分配给Windows的容量，再加上镜像本身约10GB。
+</p>
+
+<p>
+  安装程序会询问要分配多少内存、多少CPU核心和多少磁盘（64GB或以上是合理的下限），然后询问Windows用户名和密码。留空则使用<code
+    >docker</code
+  >
+  /
+  <code>admin</code
+  >。下载需要一段时间——10到15分钟属正常——可以在浏览器中打开<code>http://127.0.0.1:8006</code>查看进度。浏览器在打开控制台前会要求输入同样的用户名和密码。
+</p>
+
+<p><img src="/manual/images/windows-vm.webp" alt="windows-vm" /></p>
+
+<h2 id="using-it">
+  使用<a class="manual__heading-link" href="#using-it" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  安装完成后，从应用启动器启动<em>Windows</em>。若虚拟机未运行，它会先启动，然后通过RDP全屏连接。冷启动请给它15到30秒。
+</p>
+
+<p>
+  RDP会话包含声音、麦克风和共享剪贴板，在Linux与Windows之间复制文本开箱即用。分辨率跟随窗口大小，Omarchy还会传递显示缩放设置，所以在HiDPI屏幕上不会模糊。
+</p>
+
+<p>
+  关闭RDP窗口时，虚拟机会自动关机。如果希望它继续运行——比如里面有任务正在进行——改用<code
+    >omarchy windows vm launch --keep-alive</code
+  >启动。
+</p>
+
+<p>其余控制都在同一条命令上：</p>
+
+<pre><code class="language-bash">omarchy windows vm status    # is it running?
+omarchy windows vm stop      # shut it down
+omarchy windows vm launch    # start and connect
+</code></pre>
+
+<h2 id="sharing-files">
+  共享文件<a
+    class="manual__heading-link"
+    href="#sharing-files"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  家目录中的<code>~/Windows</code>会自动与虚拟机共享，想让Windows访问的文件放在这里即可。虚拟机无法访问文件系统的其他任何部分，所以Windows那边的任何恶意程序都伤不到你。它自己的虚拟磁盘位于<code>~/.windows</code>。
+</p>
+
+<p>
+  这两个家目录路径各自保持在自己的文件系统上。它们也可以是指向你所拥有目录的符号链接，虚拟磁盘放在更大的驱动器上时很有用。安装程序测量的是实际容纳<code>~/.windows</code>的文件系统的可用空间，而不一定是家目录所在的文件系统。
+</p>
+
+<p>
+  磁盘目录与共享目录应保持独立、互不重叠。移除时会有意清空磁盘目录，但保留共享目录。删除前，Omarchy会执行一次有界的包含关系检查，若检查超时或无法证明两棵目录树彼此独立，则拒绝删除任何内容。
+</p>
+
+<p>
+  虚拟机启动前，Omarchy会打开并固定这两个目录，然后将确切的目录inode绑定挂载到<code>/var/lib/omarchy/windows/mounts</code>下受root保护的每用户私有锚点上。Docker只能看到这些受保护的锚点。这既保留了自定义磁盘位置，又防止以你身份运行的其他进程在特权容器使用前调换已检查的路径。迁移期间，现有的磁盘目录和共享目录会被收紧为<code>0700</code>权限，其他本地账户无法浏览其内容。
+</p>
+
+<p>
+  虚拟机的端口只绑定到localhost，网络上的任何设备都无法触及这台Windows机器。Web控制台也需要配置的Windows用户名和密码，防止其他本地账户通过8006端口操控虚拟机。
+</p>
+
+<h2 id="limits-and-licensing">
+  限制与许可<a
+    class="manual__heading-link"
+    href="#limits-and-licensing"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  这套方案没有GPU直通，不适合游戏或视频编辑。但用来运行Microsoft
+  Office或其他非用不可的软件，非常合适。
+</p>
+
+<p>安装的是未激活的Windows 11 Pro，需要自备许可证密钥才能使用受限功能。</p>
+
+<p>
+  如果这台电脑出厂时预装了Windows，即便安装了Omarchy，OEM密钥仍保存在固件中，用<code
+    >omarchy windows key</code
+  >即可显示。该密钥绑定于这台机器——它可以激活在同一硬件上重装的Windows，但通常无法激活虚拟机。
+</p>
+
+<p>
+  之后可以重新运行<code>omarchy-windows-vm install</code
+  >调整资源分配，它会根据你的回答重写虚拟机配置。compose文件位于<code>/var/lib/omarchy/windows/docker-compose.yml</code>，由root拥有——这是有意为之，以防以你身份运行的进程改写它，让特权启动把整块磁盘挂载进容器。如需手动编辑（例如挂载USB设备），请使用<code>sudo</code>，全部选项参见<a
+    href="https://github.com/dockur/windows"
+    >Dockur Windows项目</a
+  >。
+</p>
+
+<p>
+  要彻底删除，使用Omarchy菜单的<em>Remove &gt; Windows</em
+  >。这会删除虚拟机磁盘及其全部数据，请先确保重要内容已移出<code>~/Windows</code>。
+</p>

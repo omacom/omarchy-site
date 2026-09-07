@@ -1,0 +1,147 @@
+<h3 id="i-broke-my-system-with-an-update">
+  更新把系统搞坏了！<a
+    class="manual__heading-link"
+    href="#i-broke-my-system-with-an-update"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  先尝试把<a href="/manual/system-snapshots/">系统回滚</a
+  >到最近一次更新之前的版本。如果不行，用<code>omarchy-debug</code>把问题分享到Discord的
+  #omarchy-help。要是这些都不奏效，可以用<code>omarchy-reinstall</code>重装默认配置和软件包。
+</p>
+
+<h3 id="why-are-some-apps-so-large-on-my-display">
+  为什么有些应用在我的显示器上特别大？<a
+    class="manual__heading-link"
+    href="#why-are-some-apps-so-large-on-my-display"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy假定使用2倍高分辨率显示器，这需要在<code>~/.config/hypr/monitors.lua</code>中把<code>GDK_SCALE</code>设为2。如果你用的是1倍显示器，把<code
+    >local omarchy_gdk_scale = 2</code
+  >改为1（然后重启所有尺寸过大的应用）。参见<a href="/manual/monitors/"
+    >显示器</a
+  >一章。
+</p>
+
+<p>
+  Spotify可以用<code>Ctrl + Minus</code>缩小界面（<code>Ctrl + Plus</code
+  >放大）。
+</p>
+
+<h3 id="why-isnt-caps-lock-working">
+  为什么Caps Lock不起作用？<a
+    class="manual__heading-link"
+    href="#why-isnt-caps-lock-working"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在Omarchy中，Caps Lock被指定为xcompose键，<a
+    href="/manual/hotkeys/#quick-emojis"
+    >快速表情</a
+  >和<a href="/manual/hotkeys/#quick-completions">其他自动补全</a
+  >都靠它。如果确实怀念大写锁定，可以编辑<code>~/.config/hypr/input.lua</code>把xcompose键映射到别处，比如右Alt：
+</p>
+
+<pre><code>hl.config({
+  input = {
+    kb_options = "compose:ralt",
+  },
+})
+</code></pre>
+
+<h3 id="my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working">
+  Wi-Fi、蓝牙、音频或触控板突然不工作了<a
+    class="manual__heading-link"
+    href="#my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  重启之前，先试着单独重启出问题的子系统。Omarchy菜单的<em
+    >Update &gt; Hardware</em
+  >下有Wi-Fi、蓝牙、音频和触控板，重新加载其中一项就能解决大多数“五分钟前还好好的”情况——蓝牙耳机连不上、挂起后触控板失灵、拔掉显示器后声音消失。
+</p>
+
+<h3 id="why-are-my-external-speakers-not-playing">
+  为什么外接音箱不出声？<a
+    class="manual__heading-link"
+    href="#why-are-my-external-speakers-not-playing"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  多半是因为它没被设为主输出。点击状态栏右侧的扬声器图标，会弹出音量面板，在那里选择输出设备（也可以按应用调节音量）。
+</p>
+
+<h3 id="my-laptop-speakers-sound-off">
+  笔记本扬声器听起来不对劲<a
+    class="manual__heading-link"
+    href="#my-laptop-speakers-sound-off"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在某些笔记本上，Omarchy会自动应用一套扬声器调音，校正内置扬声器的频率响应。<code
+    >omarchy audio tuning status</code
+  >显示你的机器上是否启用了调音，<code>omarchy audio tuning off</code
+  >关闭它，让扬声器回到原声。
+</p>
+
+<h3 id="why-cant-i-login-or-sudo-with-my-password">
+  为什么密码正确却无法登录或sudo？<a
+    class="manual__heading-link"
+    href="#why-cant-i-login-or-sudo-with-my-password"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  多半是输错太多次被锁定了。如果发生在锁屏上，按<code>CTRL + ALT + F2</code
+  >打开一个新的TTY，以root登录，然后运行<code
+    >faillock --reset --user [your-username]</code
+  >。锁定即被重置，可以继续使用。
+</p>
+
+<h3
+  id="why-isnt-my-1password-authorization-prompts-for-1password-ssh-agent--cli-appearing"
+>
+  为什么1Password SSH Agent / CLI的授权提示没有出现？<a
+    class="manual__heading-link"
+    href="#why-isnt-my-1password-authorization-prompts-for-1password-ssh-agent--cli-appearing"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>这可能有两个原因：</p>
+
+<p>
+  要显示完整的审批提示，必须开启Settings &gt; Advanced &gt; Use Hardware
+  Acceleration。<em>注意：需要重启后才生效。</em>
+</p>
+
+<p>
+  <img
+    src="/manual/images/troubleshooting-1password.webp"
+    alt="troubleshooting-1password"
+  />
+</p>
+
+<p>另外，开机后如果还没启动过1Password，提示也不会出现。</p>
