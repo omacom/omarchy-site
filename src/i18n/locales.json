@@ -223,5 +223,14 @@
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
     "manual": false
+  },
+  "fa": {
+    "name": "فارسی",
+    "domain": "https://ir.omarchy.org",
+    "formatLocale": "fa-IR",
+    "ogLocale": "fa_IR",
+    "manual": false,
+    "flag": "IR",
+    "direction": "rtl"
   }
 }
