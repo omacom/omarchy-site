@@ -52,6 +52,15 @@ test('excerpts skip short introductions and decode prose as plain text', () => {
   )
 })
 
+test('excerpts keep a suffix attached to the link it hangs off', () => {
+  assert.equal(
+    excerptFromHtml(
+      '<p>Bu yüzden <a href="/">Omarchy.org</a>\'u baştan aşağı yeniden tasarladık ve 29 dilde yayına alıyoruz.</p>',
+    ),
+    "Bu yüzden Omarchy.org'u baştan aşağı yeniden tasarladık ve 29 dilde yayına alıyoruz.",
+  )
+})
+
 test('removing tags cannot concatenate a new script tag', () => {
   const excerpt = excerptFromHtml(
     '<p>Omarchy has a long paragraph for this regression case: <scr<script>ipt>alert(1)</scr<script>ipt> with more text.</p>',
