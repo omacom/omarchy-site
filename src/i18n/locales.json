@@ -288,5 +288,13 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "ZW"
+  },
+  "id": {
+    "name": "Bahasa Indonesia",
+    "domain": "https://id.omarchy.org",
+    "formatLocale": "id-ID",
+    "ogLocale": "id_ID",
+    "manual": false,
+    "flag": "ID"
   }
 }
