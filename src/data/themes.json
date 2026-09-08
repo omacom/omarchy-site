@@ -195,6 +195,11 @@
   "name": "Eldritch"
  },
  {
+  "repo": "https://github.com/wesleygrimes/omarchy-eternia-theme",
+  "image": "/assets/themes/eternia.webp",
+  "name": "Eternia"
+ },
+ {
   "repo": "https://github.com/OldJobobo/omarchy-event-horizon-theme",
   "image": "/assets/themes/event-horizon.webp",
   "name": "Event Horizon"
