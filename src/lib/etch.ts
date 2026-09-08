@@ -97,6 +97,8 @@ export const EFFECTS = [
 ] as const
 /** Fired with `{ detail: name }` to play an effect on the word now. */
 export const ETCH_EVENT = 'omarchy-etch'
+/** Fired on the hero section after the first resting wordmark is painted. */
+export const HERO_READY_EVENT = 'omarchy-hero-ready'
 
 /**
  * Runs in the head, before the first paint: when the effect is going to

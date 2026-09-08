@@ -1,6 +1,6 @@
 import { t, language } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -17,8 +17,8 @@ import {
   WindowsIcon,
 } from '@/components/icons'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
-import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
+import { AnnouncementText } from '@/components/AnnouncementText'
 import { EtchPicker } from '@/components/EtchPicker'
 import { CardRail } from '@/components/CardRail'
 import { Figures } from '@/components/Figures'
@@ -199,32 +199,37 @@ const banner = bannerData as typeof bannerData | null
 const NEWS_PATH = /^\/news\/(\d{4})\/(\d{2})\/([^/]+)\/?$/
 
 function HeroCallout({ href, html }: { href: string; html: string }) {
-  const className =
-    'group inline-flex max-w-full items-center gap-2 border border-brand/40 bg-bg/60 px-3.5 py-1.5 text-left font-mono text-[13px] leading-snug text-brand transition-colors duration-150 ease-out hover:border-brand hover:bg-brand hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring'
+  const [paused, setPaused] = useState(false)
   const inner = (
     <>
-      <span
-        className="min-w-0 [&_s]:text-current/60"
-        dangerouslySetInnerHTML={{ __html: t(html) }}
-      />
-      <ArrowRightIcon className="size-4 shrink-0 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+      <span className="hero-announcement__prompt" aria-hidden="true">›</span>
+      <AnnouncementText html={t(html)} identity={href} paused={paused} />
     </>
   )
   const news = NEWS_PATH.exec(href)
-  if (news)
-    return (
-      <Link
-        to="/news/$year/$month/$slug/"
-        params={{ year: news[1], month: news[2], slug: news[3] }}
-        className={className}
-      >
-        {inner}
-      </Link>
-    )
   return (
-    <a href={href} className={className}>
-      {inner}
-    </a>
+    <div className="hero-announcement-frame">
+      {/* No visible badge. Keep a persistent pause control available to
+          screen readers and reveal it on keyboard focus. */}
+      <button
+        type="button"
+        className="hero-announcement__pause sr-only"
+        onClick={() => setPaused(value => !value)}
+      >
+        {paused ? t('Resume news animation') : t('Pause news animation')}
+      </button>
+      {news ? (
+        <Link
+          to="/news/$year/$month/$slug/"
+          params={{ year: news[1], month: news[2], slug: news[3] }}
+          className="hero-announcement"
+        >
+          {inner}
+        </Link>
+      ) : (
+        <a href={href} className="hero-announcement">{inner}</a>
+      )}
+    </div>
   )
 }
 
@@ -235,6 +240,7 @@ export function HomePage({ data }: { data: HomeData }) {
   const installLink = useHashLink('install')
   const watchLink = useHashLink('watch')
   const [painted, setPainted] = useState(false)
+  const onHeroPainted = useCallback(() => setPainted(true), [])
   const [etchAsked, setEtchAsked] = useState(false)
   useEffect(() => {
     setEtchAsked(new URLSearchParams(window.location.search).has('etch'))
@@ -331,24 +337,11 @@ export function HomePage({ data }: { data: HomeData }) {
         }
         style={{ background: 'var(--t-field-bg)' }}
       >
-        <HeroShader onPainted={() => setPainted(true)} />
+        <HeroShader onPainted={onHeroPainted} />
         {etchAsked ? <EtchPicker /> : null}
-
-        {/* The bar's labels, blended against the canvas. They have to live in
-            here to reach it: the real header is sticky, and a sticky element
-            isolates everything inside it from the page behind. */}
-        <HeroNavGhost />
 
         <div className="pointer-events-none relative flex flex-1 flex-col items-center px-6">
           <div className="flex-1" />
-          {banner ? (
-            <div
-              data-hero-quiet
-              className="pointer-events-auto mb-12 flex w-full justify-center lg:mb-[calc(var(--pxr)*5)]"
-            >
-              <HeroCallout href={banner.href} html={banner.html} />
-            </div>
-          ) : null}
           {/* The slot the field measures its cell size from. Server-rendered
               as the SVG so the wordmark is there before any script runs, then
               handed over to the canvas once it has painted the same pixels. */}
@@ -401,19 +394,31 @@ export function HomePage({ data }: { data: HomeData }) {
               </span>
             </p>
 
+            {banner ? (
+              <div
+                data-hero-announcement
+                className="mt-7 flex w-full justify-center"
+              >
+                <HeroCallout href={banner.href} html={banner.html} />
+              </div>
+            ) : null}
+
             <div
               data-hero-stagger
               data-hero-cta
-              style={{ '--stagger': 2 } as React.CSSProperties}
-              className="mt-9 flex w-full max-w-xs flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row lg:gap-[calc(var(--pxc)*2)]"
+              style={{ '--stagger': banner ? 3 : 2 } as React.CSSProperties}
+              className={cn(
+                'flex w-full max-w-xs flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row lg:gap-[calc(var(--pxc)*2)]',
+                banner ? 'mt-3' : 'mt-9',
+              )}
             >
               {/* Both stay fully opaque, hover included: the default hover
                   drops the fill to 80% and the outline variant is a tinted
                   translucent panel, which lets the field show through the
                   one place on the site with a moving background. Both are
-                  40px tall, the pill above the word 32px: two heights on
-                  one 8px grid, and the pill stays a line, not a third
-                  button. Width follows the label. The padding is set by
+                  40px tall; the announcement above remains a lighter link,
+                  not a third primary action. Width follows the label.
+                  The padding is set by
                   eye: 16px on the text side, 12px on the icon side, since
                   the glyphs leave white space inside their own box and the
                   eye adds it to the padding. The play triangle also moves a

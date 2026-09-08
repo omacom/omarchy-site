@@ -342,5 +342,7 @@
   "Omarchy Server 4.0": "Omarchy เซิร์ฟเวอร์ 4.0",
   "Plugin": "ปลั๊กอิน",
   "Rangers": "เรนเจอร์ส",
-  "Server - Omarchy": "เซิร์ฟเวอร์ - Omarchy"
+  "Server - Omarchy": "เซิร์ฟเวอร์ - Omarchy",
+  "Pause news animation": "หยุดภาพเคลื่อนไหวข่าวชั่วคราว",
+  "Resume news animation": "เล่นภาพเคลื่อนไหวข่าวต่อ"
 }

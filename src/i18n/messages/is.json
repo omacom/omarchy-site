@@ -342,5 +342,7 @@
   "Omarchy Server 4.0": "Omarchy Þjónn 4.0",
   "Plugin": "Viðbót",
   "Rangers": "Landverðir",
-  "Server - Omarchy": "Þjónn - Omarchy"
+  "Server - Omarchy": "Þjónn - Omarchy",
+  "Pause news animation": "Gera hlé á fréttahreyfingu",
+  "Resume news animation": "Halda fréttahreyfingu áfram"
 }
