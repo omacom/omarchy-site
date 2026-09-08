@@ -1,42 +1,29 @@
 import { inlineJson } from './inline-json'
+import { DEFAULT_THEME, SITE_THEMES, type SiteTheme } from './site-themes.ts'
+import {
+  desktopThemeName,
+  onDesktopTheme,
+  siteThemeFor,
+} from './desktop-theme.ts'
 
 import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
-export type SiteTheme = {
-  id: string
-  name: string
-  /** A light page: the theme's background is the lighter of its two inks. */
-  light?: true
-}
+// Re-exported from here, which is where every caller already looks.
+export { DEFAULT_THEME, SITE_THEMES }
+export type { SiteTheme }
 
-export const SITE_THEMES: SiteTheme[] = [
-  { id: 'catppuccin', name: 'Catppuccin' },
-  { id: 'catppuccin-latte', name: 'Catppuccin Latte', light: true },
-  { id: 'ethereal', name: 'Ethereal' },
-  { id: 'everforest', name: 'Everforest' },
-  { id: 'flexoki-light', name: 'Flexoki Light', light: true },
-  { id: 'gruvbox', name: 'Gruvbox' },
-  { id: 'hackerman', name: 'Hackerman' },
-  { id: 'kanagawa', name: 'Kanagawa' },
-  { id: 'last-horizon', name: 'Last Horizon' },
-  { id: 'lumon', name: 'Lumon' },
-  { id: 'lupine', name: 'Lupine', light: true },
-  { id: 'matte-black', name: 'Matte Black' },
-  { id: 'miasma', name: 'Miasma' },
-  { id: 'nord', name: 'Nord' },
-  { id: 'osaka-jade', name: 'Osaka Jade' },
-  { id: 'retro-82', name: 'Retro 82' },
-  { id: 'ristretto', name: 'Ristretto' },
-  { id: 'rose-pine', name: 'Rosé Pine', light: true },
-  { id: 'solitude', name: 'Solitude' },
-  { id: 'tokyo-night', name: 'Tokyo Night' },
-  { id: 'vantablack', name: 'Vantablack' },
-  { id: 'white', name: 'White', light: true },
-]
-
-export const DEFAULT_THEME = 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
+/**
+ * The theme somebody chose, as against the one the site last applied.
+ *
+ * THEME_KEY is written on every applyTheme, so everyone has one stored — a
+ * first visit is given a random palette and that gets stored too. Stored is
+ * not chosen, and the difference matters to anything deciding whether it may
+ * dress the site itself: src/lib/desktop-theme.ts wears the machine's theme
+ * until somebody says otherwise, and this is how they say it.
+ */
+export const PIN_KEY = 'omarchy-site-theme-pinned'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
 /** Ask the mounted ThemePicker to open (footer link, welcome notice). */
@@ -64,6 +51,34 @@ export function readTheme(): string {
     /* storage unavailable */
   }
   return DEFAULT_THEME
+}
+
+/** The theme somebody picked out of the picker, if they ever picked one. */
+export function pinnedTheme(): string | null {
+  try {
+    const pinned = localStorage.getItem(PIN_KEY)
+    if (SITE_THEMES.some((t) => t.id === pinned)) return pinned
+  } catch {
+    /* storage unavailable */
+  }
+  return null
+}
+
+/**
+ * Applies a theme and records that it was chosen, so nothing else overrides
+ * it. Everywhere somebody picks one by hand goes through this.
+ */
+export function chooseTheme(
+  id: string,
+  after?: () => void,
+  options: { frosted?: boolean } = {},
+) {
+  try {
+    localStorage.setItem(PIN_KEY, id)
+  } catch {
+    /* storage unavailable */
+  }
+  switchTheme(id, after, options)
 }
 
 /** Replace the favicon link to invalidate browsers that cache it by element. */
@@ -266,4 +281,49 @@ export function switchTheme(
     undefined,
     options.frosted,
   )
+}
+
+/** The theme the desktop is wearing, if this site ships one to match it. */
+export function desktopTheme(): string | null {
+  return siteThemeFor(
+    desktopThemeName(),
+    SITE_THEMES.map((t) => t.id),
+  )
+}
+
+/**
+ * Wears the theme the machine is wearing, and keeps wearing it.
+ *
+ * Somebody who has chosen a theme keeps the one they chose: pinnedTheme() is
+ * what they picked, as against what the site last happened to apply. THEME_KEY
+ * is written on every applyTheme, so everyone has one stored — including the
+ * random palette a first visit is given — and stored is not chosen.
+ *
+ * The first name lands during load and is applied flat: the extension is
+ * always a moment behind the first paint, and there is nothing worth animating
+ * between two states nobody has looked at. A change after that is the desktop
+ * actually changing under an open tab, which earns the site's own wipe.
+ *
+ * Without the extension nothing is ever published, this never fires, and the
+ * site is the themes it always was.
+ *
+ * @returns a function that stops following.
+ */
+export function followDesktopTheme(): () => void {
+  // Whether a name has actually been published yet. onDesktopTheme calls back
+  // once on subscribe, when usually nothing has been, and that call must not
+  // count: it would leave the first real name taking the animated path, which
+  // is the one reserved for a desktop changing under an open tab.
+  let seen = false
+  return onDesktopTheme(() => {
+    const id = desktopTheme()
+    if (!id) return
+    const chosen = pinnedTheme()
+    if (chosen && chosen !== id) return
+    if (id !== readTheme()) {
+      if (seen) switchTheme(id)
+      else applyTheme(id)
+    }
+    seen = true
+  })
 }
