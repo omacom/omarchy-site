@@ -1,5 +1,6 @@
 import catalogue from './current-messages.ts'
 import registry from './locales.json' with { type: 'json' }
+import { pluralCategory } from '../lib/plural.ts'
 
 export type Locale = {
   name: string
@@ -21,6 +22,16 @@ export const contentLocale = locale.contentLocale ?? language
 /** English is the source copy; each language keeps its own reviewed catalogue. */
 export function t(english: string): string {
   return catalogue[english] ?? english
+}
+
+/**
+ * Translate a counted label. A locale can provide optional entries such as
+ * `contributors [one]` and `contributors [few]`; the base translation remains
+ * the fallback for locales that do not need separate forms.
+ */
+export function tPlural(english: string, count: number): string {
+  const category = pluralCategory(locale.formatLocale, count)
+  return catalogue[`${english} [${category}]`] ?? t(english)
 }
 
 export function hasTranslation(code: string, path: string): boolean {
