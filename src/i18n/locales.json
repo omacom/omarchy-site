@@ -223,5 +223,13 @@
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
     "manual": false
+  },
+  "kn": {
+    "name": "ಕನ್ನಡ",
+    "domain": "https://kn.omarchy.in",
+    "formatLocale": "kn-IN",
+    "ogLocale": "kn_IN",
+    "manual": false,
+    "flag": "IN"
   }
 }
