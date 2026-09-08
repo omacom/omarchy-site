@@ -1,0 +1,111 @@
+<p>
+  Omarchy和所有软件包通过Omarchy菜单（<code>Super + Space</code>）的<em
+    >Update &gt; Omarchy</em
+  >保持最新。
+</p>
+
+<p>
+  Omarchy本身以普通pacman软件包的形式从<a
+    href="https://github.com/omacom-io/omarchy-pkgs"
+    >Omarchy软件包仓库</a
+  >安装。因此一次更新会安装<a
+    href="https://github.com/basecamp/omarchy/releases"
+    >最新的Omarchy版本</a
+  >，运行待执行的迁移让系统与最新版同步，并从<a
+    href="https://github.com/omacom-io/omarchy-mirror"
+    >Omarchy Arch镜像</a
+  >和<a href="https://aur.archlinux.org/">AUR</a
+  >（如果安装过AUR软件包）更新全部系统软件包。
+</p>
+
+<p>有新版本发布时，时钟右侧会出现一个圆形箭头图标，点击即开始更新。</p>
+
+<p><img src="/manual/images/update-available.webp" alt="update-available" /></p>
+
+<h3 id="four-channels">
+  四个通道<a
+    class="manual__heading-link"
+    href="#four-channels"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy沿四个通道更新：stable、RC、edge和dev。新安装默认使用stable通道，它跟踪<a
+    href="https://github.com/basecamp/omarchy/releases/"
+    >正式版本</a
+  >，以及比最新版滞后一个月的<a
+    href="https://github.com/omacom-io/omarchy-mirror"
+    >stable Omarchy Arch镜像</a
+  >，这样需要修改配置的新不兼容问题会在影响大家之前被发现。
+</p>
+
+<p>
+  如果想帮忙提前发现这些问题，可以切换到edge通道。它让Omarchy软件包跟踪最新的开发构建，并在最新Arch软件包可用时立即更新。仅当你熟悉Linux并知道如何修复出问题的系统时，才建议这样做。
+</p>
+
+<p>
+  每次重大版本发布前，我们会通过RC通道做最终验证。有兴趣参与最后打磨的话，欢迎来Discord的
+  #omarchy-release-candidates。
+</p>
+
+<p>
+  最后是dev通道，它把Omarchy直接链接到<code>~/omarchy</code>中源代码的git检出，并搭配edge软件包。只有经验丰富、直接参与Omarchy开发并能容忍故障的Linux用户才应使用这个通道。
+</p>
+
+<p>
+  通过Omarchy菜单的<em>Update &gt; Channel</em
+  >（或终端中的<code>omarchy-channel-set</code>）在通道之间切换。
+</p>
+
+<h3 id="firmware-updates">
+  固件更新<a
+    class="manual__heading-link"
+    href="#firmware-updates"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  会过时的不只是软件包。许多笔记本和外设通过Linux Vendor Firmware
+  Service分发BIOS、SSD和扩展坞固件，Omarchy菜单的<em>Update &gt; Firmware</em
+  >会获取并安装你的硬件所有待更新的固件。首次运行时它会安装<code>fwupd</code>。许多固件只能在重启期间写入，所以被要求重启时不必惊讶。
+</p>
+
+<h3 id="warning-about-direct-pacmanyay-updates">
+  关于直接使用pacman/yay更新的提醒<a
+    class="manual__heading-link"
+    href="#warning-about-direct-pacmanyay-updates"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  熟悉Arch的人可能想自己运行<code>pacman -Syu</code>或<code>yay -Syu</code
+  >，但这样会错过Omarchy随新软件包一起执行的快照、迁移和配置更新。因此Omarchy会拦下直接的系统升级，并引导你使用<code
+    >omarchy update</code
+  >。（如果你确实清楚自己在做什么，拦截提示会告诉你如何为单次操作绕过它。）
+</p>
+
+<h3 id="rolling-back-bad-updates">
+  回滚有问题的更新<a
+    class="manual__heading-link"
+    href="#rolling-back-bad-updates"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  更新后遇到问题时，可以把系统回滚到更新前创建的快照：重启，在启动加载菜单中选择开始更新之前的那个快照即可。
+</p>
+
+<p><img src="/manual/images/bootloader.webp" alt="bootloader" /></p>
+
+<p>
+  如果配置文件不知怎么损坏了，也可以在终端运行<code>omarchy reinstall</code
+  >重装Omarchy。这会重装所有默认Omarchy软件包，切换到stable并降级过新的软件包，同时重置全部配置文件。注意，你对Omarchy默认配置所做的所有修改都会被覆盖！
+</p>

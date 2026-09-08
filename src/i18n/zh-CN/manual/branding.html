@@ -1,0 +1,129 @@
+<p>Omarchy允许你为开机解锁、屏保和关于界面设置公司logo或个人图片。</p>
+
+<h3 id="boot-unlock">
+  开机解锁<a
+    class="manual__heading-link"
+    href="#boot-unlock"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  用<code>omarchy plymouth preview</code
+  >可以预览自定义logo和配色的效果。它接受背景色、文字颜色、logo
+  png和预览图片的保存路径：
+</p>
+
+<pre><code>omarchy plymouth preview '#1d2021' '#ebdbb2' logo.png preview.png
+</code></pre>
+
+<p>
+  然后用<code>omarchy plymouth set '#1d2021' '#ebdbb2' logo.png</code
+  >应用，SDDM登录界面也会使用同样的配色和logo。想恢复原样，用<code
+    >omarchy plymouth reset</code
+  >。
+</p>
+
+<p>
+  <img
+    src="/manual/images/branding-plymouth-shopify.webp"
+    alt="branding-plymouth-shopify"
+  />
+</p>
+
+<h3 id="screensaver">
+  屏保<a class="manual__heading-link" href="#screensaver" aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在<em>Style &gt; Screensaver</em>下可以更换屏保使用的logo。它是ASCII
+  logo，所以可以直接编辑文本，也可以给它一张png或svg图片，我们会将其转换为ASCII。效果相当酷。
+</p>
+
+<p>
+  <img
+    src="/manual/images/branding-screensaver.webp"
+    alt="branding-screensaver"
+  />
+</p>
+
+<p>该菜单有三个条目：</p>
+
+<ul>
+  <li>
+    <strong>Edit Text</strong
+    >在编辑器中打开<code>~/.config/omarchy/branding/screensaver.txt</code>。想写什么就写什么——ASCII艺术、你的名字、一句粗话。保存退出后屏保立即启动，让你看看效果。
+  </li>
+  <li>
+    <strong>Set From Image</strong
+    >打开文件选择器选一张png或svg，转换为ASCII并显示结果。轮廓清晰的logo效果远胜于照片。
+  </li>
+  <li><strong>Restore Default</strong>恢复Omarchy logo。</li>
+</ul>
+
+<h3 id="about-screen">
+  关于界面<a
+    class="manual__heading-link"
+    href="#about-screen"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy菜单中<em>About</em>界面的同样三个选项位于<em>Style &gt; About</em
+  >下，用法完全相同——文件是<code>~/.config/omarchy/branding/about.txt</code>，每次修改后About窗口都会弹出。About的图案会转换成比屏保更小的尺寸，因为它要放进一个窗口，而不是铺满整块屏幕。
+</p>
+
+<p>
+  窗口打开期间，每隔几秒会有一道绿色微光斜掠过图案，然后归于静止。你自己的图案也会有这个效果，只要其中每个字符都是单列宽——<em
+    >Set From Image</em
+  >生成的图案都满足这一点。由表情或双宽字符组成的图案则保持静止，你保留了自己的fastfetch配置时也一样：这些情况下的静止logo是动画在主动避让，而非失效，因为让微光滑过它们会把行的其余部分挤到错误的位置。
+</p>
+
+<p><img src="/manual/images/branding-about.webp" alt="branding-about" /></p>
+
+<h3 id="converting-images-yourself">
+  自行转换图片<a
+    class="manual__heading-link"
+    href="#converting-images-yourself"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  两个<em>Set From Image</em>选项调用的都是<code>omarchy transcode ascii</code
+  >，想控制转换细节时可以直接运行它：
+</p>
+
+<pre><code>omarchy transcode ascii ~/logo.svg ~/.config/omarchy/branding/screensaver.txt --width 100
+</code></pre>
+
+<p>
+  它接受以终端列数和行数计的<code>--width</code>和<code>--height</code>；<code>--mode</code>可选<code>braille</code>（默认，精细得多）或<code>block</code>；<code>--threshold</code>是判定哪些像素属于logo的百分比；logo是深底浅色时用<code>--invert</code>。转换结果糊成一团时，通常该调的就是阈值。
+</p>
+
+<h3 id="words-instead-of-a-logo">
+  用文字代替logo<a
+    class="manual__heading-link"
+    href="#words-instead-of-a-logo"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>omarchy ascii</code>用Delta Corps Priest
+  1绘制文字，这正是Omarchy字标所用的FIGlet字体，因此屏保可以说一句话，而不只是展示图片：
+</p>
+
+<pre><code>omarchy ascii "Back in five" &gt; ~/.config/omarchy/branding/screensaver.txt
+</code></pre>
+
+<p>
+  它把参数作为文字，没有参数时则从管道读取。这款字体只有字母和空格——绘制时没有数字和标点——所以其他字符会被丢弃，并在stderr中列出，而不是悄悄吞掉。
+</p>

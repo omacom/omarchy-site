@@ -33,6 +33,7 @@ class Page(HTMLParser):
 
 registry = json.loads(Path('src/i18n/locales.json').read_text())
 posts = json.loads(Path('src/data/news-posts.json').read_text())
+manual = json.loads(Path('src/data/manual.json').read_text())
 ported = json.loads(Path('src/data/pages.json').read_text())
 paths = ['/', '/news/', '/themes/'] + [f'/{path}/' for path in ported]
 paths += [post['path'] for post in posts]
@@ -42,7 +43,10 @@ for code in codes:
     domain = locale['domain']
     output = Path('dist/client' if code == 'en' else f'dist/{code}')
     assert (output / 'CNAME').read_text().strip() == urlsplit(domain).hostname, code
-    for path in paths:
+    pages = list(paths)
+    if locale['manual']:
+        pages += ['/manual/'] + [f"/manual/{c['slug']}/" for c in manual if c['slug'] != 'index']
+    for path in pages:
         page = Page((output / path.strip('/') / 'index.html').read_text())
         assert page.root.get('lang') == code, (code, path, 'lang')
         assert page.root.get('dir') == locale.get('direction', 'ltr'), (code, path, 'dir')
@@ -51,9 +55,14 @@ for code in codes:
         assert page.meta.get('og:url') == domain + path, (code, path, 'og:url')
         assert page.meta.get('og:locale') == locale['ogLocale'], (code, path, 'og:locale')
         for other, destination in registry.items():
+            # Manual pages only point at editions that carry a translated manual.
+            if path.startswith('/manual') and not destination['manual']:
+                continue
             assert any(link.get('hreflang') == other and link.get('href') == destination['domain'] + path for link in page.links), (code, path, 'alternate', other)
         for destination in registry.values():
             navigation = destination['domain']
+            if path.startswith('/manual') and not destination['manual']:
+                continue
             assert navigation + path in page.anchors, (code, path, 'footer language destination', navigation)
         if not locale['manual']:
             assert not any(href == '/manual' or href.startswith(('/manual/', '/manual#', '/manual?')) for href in page.anchors), (code, path, 'local manual link')
@@ -64,4 +73,4 @@ for code in codes:
     for item, post in zip(items, posts):
         assert item.findtext('link', '').rstrip('/') == (domain + post['path']).rstrip('/'), (code, 'RSS link')
         assert parsedate_to_datetime(item.findtext('pubDate')) == datetime.fromisoformat(post['date']), (code, 'RSS date')
-    print(f'{code}: {len(paths)} pages and {len(items)} RSS articles verified')
+    print(f'{code}: {len(pages)} pages and {len(items)} RSS articles verified')

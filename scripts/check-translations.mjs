@@ -5,6 +5,7 @@ import locales from '../src/i18n/locales.json' with { type: 'json' }
 
 const json = (file) => JSON.parse(readFileSync(file, 'utf8'))
 const posts = json('src/data/news-posts.json')
+const chapters = json('src/data/manual.json')
 const sources = collectSources()
 const messages = new Set(sources.messages)
 const problems = []
@@ -92,10 +93,26 @@ if (pendingNews || pendingSite) {
   })
   process.exit(0)
 }
+// Only rendered once a locale enables its manual; other locales redirect those pages.
+const MANUAL_MESSAGES = new Set([
+  'The Manual - Omarchy',
+  'The Omarchy manual: installation, navigation, hotkeys, themes, plugins, and everything else about running the OS.',
+  'Omarchy Manual',
+  'Answers to what comes up most: keyboard layouts, the clock format, timezones, DNS and Wi-Fi, printers, and where screenshots end up.',
+  'This chapter has not been translated yet. The English original follows.',
+])
 const references = (html, attribute) =>
   [...html.matchAll(new RegExp(`${attribute}="([^"]*)"`, 'g'))]
     .map((match) => match[1])
     .sort()
+const attributeValues = (text, attribute) =>
+  [
+    ...new Set(
+      [...text.matchAll(new RegExp(`${attribute}="([^"\\s]+)"`, 'g'))].map(
+        (match) => match[1],
+      ),
+    ),
+  ].sort()
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 const domains = new Set()
 for (const [code, locale] of Object.entries(locales)) {
@@ -121,7 +138,8 @@ for (const [code, locale] of Object.entries(locales)) {
   const catalogue = existsSync(catalogueFile) ? json(catalogueFile) : {}
   for (const message of messages) {
     if (typeof catalogue[message] !== 'string' || !catalogue[message].trim()) {
-      if (strictSite) problems.push(`${code}: missing message: ${message}`)
+      if (strictSite && (locale.manual || !MANUAL_MESSAGES.has(message)))
+        problems.push(`${code}: missing message: ${message}`)
     } else {
       for (const attribute of ['href', 'src']) {
         if (
@@ -187,11 +205,41 @@ for (const [code, locale] of Object.entries(locales)) {
       }
     }
   }
+  if (locale.manual) {
+    const manualFile = `src/i18n/${contentLocale}/manual.json`
+    if (!existsSync(manualFile)) problems.push(`${code}: missing ${manualFile}`)
+    const manual = existsSync(manualFile) ? json(manualFile) : {}
+    for (const chapter of chapters) {
+      const translated = manual[chapter.slug]
+      const file = `src/i18n/${contentLocale}/manual/${chapter.slug}.html`
+      if (!translated?.title || !existsSync(file))
+        problems.push(`${code}: missing chapter: ${chapter.slug}`)
+      else if (translated.sourceHash !== sourceHash(chapter))
+        problems.push(
+          `${code}: source chapter changed; review translation: ${chapter.slug}`,
+        )
+      else {
+        const html = readFileSync(file, 'utf8')
+        // Links, images and section ids must survive translation so cross-references keep working.
+        for (const attribute of ['href', 'src', 'id']) {
+          if (
+            !same(
+              attributeValues(chapter.html, attribute),
+              attributeValues(html, attribute),
+            )
+          )
+            problems.push(
+              `${code}: chapter ${attribute} references differ: ${chapter.slug}`,
+            )
+        }
+      }
+    }
+  }
 }
 if (problems.length) {
   console.error(problems.join('\n'))
   process.exit(1)
 }
 console.log(
-  `Translations checked: ${(selected.length ? selected : Object.keys(locales)).join(', ')}; ${messages.size} UI messages, ${posts.length} news articles per language.`,
+  `Translations checked: ${(selected.length ? selected : Object.keys(locales)).join(', ')}; ${messages.size} UI messages, ${posts.length} news articles, ${chapters.length} manual chapters where enabled.`,
 )

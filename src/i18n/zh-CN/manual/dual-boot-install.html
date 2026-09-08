@@ -1,0 +1,91 @@
+<p>Omarchy可以安装到单个分区，与Windows或其他系统共存。</p>
+
+<p>
+  这种安装方式默认同样对分区启用LUKS加密，所以实际上与全盘安装没有区别，只需要磁盘上有可用的空闲空间。
+</p>
+
+<h2 id="making-space-on-windows">
+  在Windows上腾出空间<a
+    class="manual__heading-link"
+    href="#making-space-on-windows"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  要与Windows共存安装，在开始菜单中输入<code>disk management</code>，选择<strong
+    >Create and format hard disk partitions</strong
+  >。
+</p>
+
+<p><img src="/manual/images/dual-boot-1.webp" alt="dual-boot-1" /></p>
+
+<p>找到对应的分区，右键选择<strong>Shrink Volume</strong>。</p>
+
+<p><img src="/manual/images/dual-boot-2.webp" alt="dual-boot-2" /></p>
+
+<p>输入要压缩的容量。注意，这将是未来Omarchy安装（含启动分区）的大小。</p>
+
+<p><img src="/manual/images/dual-boot-3.webp" alt="dual-boot-3" /></p>
+
+<p>完成后应该会看到类似下图的结果，本例中50GB的区域就是Omarchy的安装位置。</p>
+
+<p><img src="/manual/images/dual-boot-4.webp" alt="dual-boot-4" /></p>
+
+<h2 id="installing-omarchy">
+  安装Omarchy<a
+    class="manual__heading-link"
+    href="#installing-omarchy"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  Omarchy的安装过程与平常基本相同。选择磁盘后会出现<strong
+    >Free space install</strong
+  >选项，选择它以避免抹掉整块磁盘。
+</p>
+
+<p><img src="/manual/images/dual-boot-5.webp" alt="dual-boot-5" /></p>
+
+<p>
+  确认一切无误后，像平常一样等待安装完成。和全盘安装一样，这里也可以选择不加密安装（不推荐）。
+  <img src="/manual/images/dual-boot-6.webp" alt="dual-boot-6" />
+</p>
+
+<h2 id="adding-other-installs-to-the-bootloader">
+  把其他系统加入启动加载器<a
+    class="manual__heading-link"
+    href="#adding-other-installs-to-the-bootloader"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  Omarchy安装完成后，你会发现Limine启动加载器已成为默认。借此也可以把Windows等其他系统作为选项加入Limine。
+</p>
+
+<p>
+  运行<code>limine-scan</code>，按提示把想要的条目加入limine配置。之后启动时，除了Omarchy的常规选项，还会看到Windows
+  Boot Manager或其他系统。
+</p>
+
+<h2 id="bitlocker">
+  Bitlocker<a
+    class="manual__heading-link"
+    href="#bitlocker"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  需要注意，这种安装方式与Bitlocker不兼容，因为它加密的是整块驱动器而非单个分区。如果遇到提示Bitlocker已启用的错误，启动进Windows，前往<strong
+    >Settings -&gt; Privacy &amp; Security -&gt; Device encryption</strong
+  >关闭Bitlocker。解密驱动器可能需要一些时间。
+</p>
+
+<p><img src="/manual/images/dual-boot-7.webp" alt="dual-boot-7" /></p>

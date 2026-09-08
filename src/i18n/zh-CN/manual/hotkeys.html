@@ -1,0 +1,1431 @@
+<p>
+  用<code>Super + K</code>可以查看所有主要键盘绑定（Tmux绑定用<code
+    >Super + Alt + K</code
+  >，Herdr绑定用<code>Super + Ctrl + K</code>）。
+</p>
+
+<h2 id="navigating">
+  窗口导航<a
+    class="manual__heading-link"
+    href="#navigating"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Space</code></td>
+      <td>Omarchy菜单（应用及其他一切）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Space</code></td>
+      <td>应用菜单</td>
+    </tr>
+    <tr>
+      <td><code>Super + Escape</code></td>
+      <td>系统菜单（挂起、重启等）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + L</code></td>
+      <td>锁定电脑</td>
+    </tr>
+    <tr>
+      <td><code>Super + W</code>或<code>Super + Q</code></td>
+      <td>关闭窗口</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Del</code></td>
+      <td>关闭所有窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + T</code></td>
+      <td>切换窗口平铺/浮动</td>
+    </tr>
+    <tr>
+      <td><code>Super + J</code></td>
+      <td>切换窗口排列方向（水平/垂直）</td>
+    </tr>
+    <tr>
+      <td><code>Super + O</code></td>
+      <td>将窗口弹出为固定浮动窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + L</code></td>
+      <td>在dwindle与滚动布局之间切换</td>
+    </tr>
+    <tr>
+      <td><code>Super + P</code></td>
+      <td>切换伪平铺窗口样式（自然/拉伸）</td>
+    </tr>
+    <tr>
+      <td><code>Super + F</code></td>
+      <td>全屏</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + F</code></td>
+      <td>占满宽度</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + F</code></td>
+      <td>窗口内全屏</td>
+    </tr>
+    <tr>
+      <td><code>Super + 1/2/3/4</code></td>
+      <td>跳转到指定工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Tab</code></td>
+      <td>跳转到下一个工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Tab</code></td>
+      <td>跳转到上一个工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Tab</code></td>
+      <td>跳转到之前所在的工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + 1/2/3/4</code></td>
+      <td>将窗口移到工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + 1/2/3/4</code></td>
+      <td>将窗口移到工作区但不跟随</td>
+    </tr>
+    <tr>
+      <td><code>Super + S</code> / <code>Super + Grave</code></td>
+      <td>切换便签工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + S</code> / <code>Super + Shift + Grave</code></td>
+      <td>将窗口移到便签工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + Arrows</code></td>
+      <td>将工作区移到对应方向的显示器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Arrow</code></td>
+      <td>将焦点移到方向键所指的窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Arrow</code></td>
+      <td>与方向键所指的窗口交换位置</td>
+    </tr>
+    <tr>
+      <td><code>Super + Minus</code></td>
+      <td>向左扩展窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Equal</code></td>
+      <td>向左收缩窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Minus</code></td>
+      <td>向上收缩窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Equal</code></td>
+      <td>向下扩展窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Minus/Equal</code></td>
+      <td>同样的缩放，步长更小</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Minus/Equal</code></td>
+      <td>同样的缩放，步长更大</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Home</code></td>
+      <td>保存窗口宽度</td>
+    </tr>
+    <tr>
+      <td><code>Super + Home</code></td>
+      <td>恢复已保存的窗口宽度</td>
+    </tr>
+    <tr>
+      <td><code>Super + Left Mouse</code></td>
+      <td>拖动窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Right Mouse</code></td>
+      <td>调整窗口大小</td>
+    </tr>
+    <tr>
+      <td><code>Super + Scroll Wheel</code></td>
+      <td>滚动切换工作区</td>
+    </tr>
+    <tr>
+      <td><code>Super + G</code></td>
+      <td>切换窗口分组</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + G</code></td>
+      <td>将窗口移出分组</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Tab</code></td>
+      <td>在分组内的窗口间循环</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Shift + Tab</code></td>
+      <td>在分组内的窗口间反向循环</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + 1/2/3/4/5</code></td>
+      <td>跳转到分组内的指定窗口</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Arrow</code></td>
+      <td>将窗口移入方向键所指的分组</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Left/Right</code></td>
+      <td>在平铺分组内的窗口间移动</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Z</code></td>
+      <td>放大屏幕（重复按可继续放大）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + Z</code></td>
+      <td>完全缩小屏幕</td>
+    </tr>
+    <tr>
+      <td><code>Super + /</code></td>
+      <td>向前切换显示器缩放档位</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + /</code></td>
+      <td>向后切换显示器缩放档位</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Tab</code></td>
+      <td>在当前工作区的窗口间向前循环</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Shift + Tab</code></td>
+      <td>在当前工作区的窗口间向后循环</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Tab</code></td>
+      <td>在显示器间向前切换焦点</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Shift + Tab</code></td>
+      <td>在显示器间向后切换焦点</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="system-controls">
+  系统控制<a
+    class="manual__heading-link"
+    href="#system-controls"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + A</code></td>
+      <td>音频面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + B</code></td>
+      <td>蓝牙面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + W</code></td>
+      <td>Wi-Fi/网络面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + D</code></td>
+      <td>显示面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + P</code></td>
+      <td>电源面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + D</code></td>
+      <td>日历面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + 1-9</code></td>
+      <td>按位置切换状态栏面板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + S</code></td>
+      <td>分享菜单（通过LocalSend）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + T</code></td>
+      <td>活动监视器（btop）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + C</code></td>
+      <td>捕获控制（截图/录屏/取色）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + O</code></td>
+      <td>开关菜单</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + H</code></td>
+      <td>硬件菜单</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Q</code></td>
+      <td>计算器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + E</code></td>
+      <td>表情选择器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + .</code></td>
+      <td>媒体转码</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Ctrl + A</code></td>
+      <td>选择AI智能体</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="adjustments">
+  调节<a class="manual__heading-link" href="#adjustments" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Shift + Brightness Up</code></td>
+      <td>屏幕最大亮度</td>
+    </tr>
+    <tr>
+      <td><code>Shift + Brightness Down</code></td>
+      <td>屏幕最小亮度</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Brightness Up/Down</code></td>
+      <td>以1% 为步长精确调节亮度</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Volume Up/Down</code></td>
+      <td>以1% 为步长精确调节音量</td>
+    </tr>
+    <tr>
+      <td><code>Keyboard Brightness Up/Down</code></td>
+      <td>键盘背光调亮/调暗</td>
+    </tr>
+    <tr>
+      <td><code>Keyboard Backlight</code></td>
+      <td>循环切换键盘背光档位</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Play</code></td>
+      <td>下一曲</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Shift + Play</code></td>
+      <td>上一曲</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="launching-apps">
+  启动应用<a
+    class="manual__heading-link"
+    href="#launching-apps"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Return</code></td>
+      <td>终端</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Return</code></td>
+      <td>Tmux终端</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Return</code></td>
+      <td>Herdr（智能体管理器）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Return</code></td>
+      <td>浏览器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + B</code></td>
+      <td>浏览器（隐私/无痕模式）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + F</code></td>
+      <td>文件管理器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + F</code></td>
+      <td>在终端当前目录打开文件管理器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + M</code></td>
+      <td>音乐（Spotify）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + M</code></td>
+      <td>音乐（cliamp）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + /</code></td>
+      <td>密码管理器（1password）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + N</code></td>
+      <td>编辑器（Neovim）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + C</code></td>
+      <td>日历（<a href="https://hey.com/">HEY</a>）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + E</code></td>
+      <td>邮件（<a href="https://hey.com/">HEY</a>）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + E</code></td>
+      <td>新邮件（<a href="https://hey.com/">HEY</a>）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + A</code></td>
+      <td>AI（ChatGPT）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + A</code></td>
+      <td>AI（Grok）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + G</code></td>
+      <td>即时通讯（Signal）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + P</code></td>
+      <td>Google Photos</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + S</code></td>
+      <td>Google Maps</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + G</code></td>
+      <td>即时通讯（WhatsApp）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Ctrl + G</code></td>
+      <td>即时通讯（Google）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + D</code></td>
+      <td>Docker（LazyDocker）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + O</code></td>
+      <td>Obsidian</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + W</code></td>
+      <td>写作（Omawrite）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + X</code></td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + X</code></td>
+      <td>在X上发帖</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Y</code></td>
+      <td>YouTube</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>在<code>~/.config/hypr/bindings.lua</code>中修改或添加绑定。</p>
+
+<h2 id="universal-clipboard">
+  统一剪贴板<a
+    class="manual__heading-link"
+    href="#universal-clipboard"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + C</code></td>
+      <td>复制</td>
+    </tr>
+    <tr>
+      <td><code>Super + X</code></td>
+      <td>剪切（终端内不可用）</td>
+    </tr>
+    <tr>
+      <td><code>Super + V</code></td>
+      <td>粘贴</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + V</code></td>
+      <td>剪贴板管理器</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  在Linux上，通常终端内要用<code>Ctrl + Shift + C/V</code
+  >复制粘贴，其他地方则用<code>Ctrl + C/V</code
+  >。Omarchy的统一剪贴板快捷键在任何地方都有效。
+</p>
+
+<h2 id="capture">
+  捕获<a class="manual__heading-link" href="#capture" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + C</code></td>
+      <td>捕获菜单（适用于没有PrintScr键的键盘）</td>
+    </tr>
+    <tr>
+      <td><code>Print Screen</code></td>
+      <td>截图</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Print Screen</code></td>
+      <td>录屏</td>
+    </tr>
+    <tr>
+      <td><code>Super + Print Screen</code></td>
+      <td>取色器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Print Screen</code></td>
+      <td>提取文字到剪贴板</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + [</code></td>
+      <td>录屏时缩小摄像头画面</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + ]</code></td>
+      <td>录屏时放大摄像头画面</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Shift + L</code></td>
+      <td>从Web应用或Chromium复制当前URL</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Shift + D</code></td>
+      <td>将当前页面的视频下载到<code>~/Videos</code></td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + X</code></td>
+      <td>开始/停止语音听写（需要<em>Install &gt; AI &gt; Dictation</em>）</td>
+    </tr>
+    <tr>
+      <td><code>F9</code></td>
+      <td>按住说话式听写（需要<em>Install &gt; AI &gt; Dictation</em>）</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  录屏时，快捷键会先询问要录制哪路音频，然后开始录制；再按一次即停止。详情参见<a
+    href="/manual/screenshots-recording/"
+    >截图与录屏</a
+  >。
+</p>
+
+<p>
+  所有捕获功能也都可以在Omarchy菜单（<code>Super + Space</code>）的<em
+    >Trigger &gt; Capture</em
+  >下找到。
+</p>
+
+<h2 id="notifications">
+  通知<a
+    class="manual__heading-link"
+    href="#notifications"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + ,</code></td>
+      <td>关闭最新通知</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + ,</code></td>
+      <td>关闭所有通知</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + ,</code></td>
+      <td>切换通知静音</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + ,</code></td>
+      <td>调出最近一条通知</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + ,</code></td>
+      <td>打开通知历史</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="style">
+  样式<a class="manual__heading-link" href="#style" aria-label="本节链接">#</a>
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + Shift + Space</code></td>
+      <td>选择新主题</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Space</code></td>
+      <td>选择主题背景</td>
+    </tr>
+    <tr>
+      <td><code>Super + Backspace</code></td>
+      <td>切换窗口透明度</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Backspace</code></td>
+      <td>切换单窗口方形比例</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  额外的背景图片存放在<code
+    >~/.config/omarchy/backgrounds/&lt;theme name&gt;</code
+  >，也可通过Omarchy菜单的<em>Install &gt; Style &gt; Background</em>添加。
+</p>
+
+<p>
+  所有样式选项也都可以在Omarchy菜单（<code>Super + Space</code
+  >）的<em>Style</em>下找到。
+</p>
+
+<h2 id="toggles">
+  开关<a class="manual__heading-link" href="#toggles" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + I</code></td>
+      <td>切换空闲锁定</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + N</code></td>
+      <td>切换夜间模式色温</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Delete</code></td>
+      <td>开关笔记本屏幕</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + Delete</code></td>
+      <td>切换笔记本屏幕镜像</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Space</code></td>
+      <td>切换状态栏</td>
+    </tr>
+    <tr>
+      <td><code>Shift + Mute</code></td>
+      <td>切换到下一个音频输出</td>
+    </tr>
+    <tr>
+      <td><code>Shift + Play</code></td>
+      <td>切换到下一个媒体源</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Backspace</code></td>
+      <td>切换窗口间隙</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="reminders">
+  提醒事项<a
+    class="manual__heading-link"
+    href="#reminders"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + R</code></td>
+      <td>设置提醒</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + R</code></td>
+      <td>查看所有提醒</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Shift + R</code></td>
+      <td>清除所有提醒</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="notices">
+  快捷通知<a class="manual__heading-link" href="#notices" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + Alt + T</code></td>
+      <td>以通知显示时间</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + B</code></td>
+      <td>以通知显示电量</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + W</code></td>
+      <td>以通知显示天气</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="tmux">
+  Tmux<a class="manual__heading-link" href="#tmux" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  前缀键是<code>Ctrl + Space</code>（<code>Ctrl + B</code
+  >也可以）。可在<code>~/.config/tmux/tmux.conf</code>中修改这些绑定。
+</p>
+
+<h3 id="panes">
+  窗格<a class="manual__heading-link" href="#panes" aria-label="本节链接">#</a>
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Prefix + v</code></td>
+      <td>在旁边分割窗格（垂直）</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + h</code></td>
+      <td>在下方分割窗格（水平）</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + x</code></td>
+      <td>关闭窗格</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + z</code></td>
+      <td>切换窗格缩放（全屏）</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Enter</code></td>
+      <td>在下方分割窗格（无需前缀）</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Shift + Enter</code></td>
+      <td>在旁边分割窗格（无需前缀）</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Escape</code></td>
+      <td>关闭窗格（无需前缀）</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Arrows</code></td>
+      <td>在窗格间移动</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Shift + Arrows</code></td>
+      <td>调整窗格大小</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="windows">
+  窗口<a class="manual__heading-link" href="#windows" aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Prefix + c</code></td>
+      <td>新建窗口</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + k</code></td>
+      <td>关闭窗口</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + r</code></td>
+      <td>重命名窗口</td>
+    </tr>
+    <tr>
+      <td><code>Alt + 1-9</code></td>
+      <td>跳转到指定窗口</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Arrow Left/Right</code></td>
+      <td>在窗口间移动</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Shift + Arrow Left/Right</code></td>
+      <td>向左/右移动窗口</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sessions">
+  会话<a class="manual__heading-link" href="#sessions" aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Prefix + C</code></td>
+      <td>新建会话</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + K</code></td>
+      <td>关闭会话</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + R</code></td>
+      <td>重命名会话</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + N</code></td>
+      <td>下一个会话</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + P</code></td>
+      <td>上一个会话</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Arrow Up/Down</code></td>
+      <td>在会话间移动</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + s</code></td>
+      <td>列出会话</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + d</code></td>
+      <td>脱离会话</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="copy-mode-vi-style">
+  复制模式（vi风格）<a
+    class="manual__heading-link"
+    href="#copy-mode-vi-style"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Prefix + [</code></td>
+      <td>进入复制模式</td>
+    </tr>
+    <tr>
+      <td><code>v</code></td>
+      <td>开始选择（复制模式内）</td>
+    </tr>
+    <tr>
+      <td><code>y</code></td>
+      <td>复制选区（复制模式内）</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="general">
+  通用<a class="manual__heading-link" href="#general" aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Prefix + q</code></td>
+      <td>重新加载配置</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + ?</code></td>
+      <td>显示Tmux键绑定</td>
+    </tr>
+    <tr>
+      <td><code>Prefix + :</code></td>
+      <td>命令提示符</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tmux-layout-functions">
+  Tmux布局函数<a
+    class="manual__heading-link"
+    href="#tmux-layout-functions"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>这些函数必须在Tmux会话内运行。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tdl &lt;ai&gt; [&lt;second_ai&gt;]</code></td>
+      <td>创建包含编辑器、AI和终端的开发布局</td>
+    </tr>
+    <tr>
+      <td><code>tdlm &lt;ai&gt; [&lt;second_ai&gt;]</code></td>
+      <td>为每个子目录创建开发布局</td>
+    </tr>
+    <tr>
+      <td><code>tsl &lt;count&gt; &lt;command&gt;</code></td>
+      <td>创建多窗格集群布局</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ghostty-terminal">
+  Ghostty终端<a
+    class="manual__heading-link"
+    href="#ghostty-terminal"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>Ghostty终端通过Omarchy菜单的<em>Install &gt; Terminal</em>安装。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Ctrl + Shift + E</code></td>
+      <td>在下方新建分屏</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Shift + O</code></td>
+      <td>在旁边新建分屏</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Arrows</code></td>
+      <td>在分屏间移动</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Shift + Arrows</code></td>
+      <td>以10行为步长调整分屏</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Shift + Alt + Arrows</code></td>
+      <td>以100行为步长调整分屏</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Shift + T</code></td>
+      <td>新建标签页</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Shift + Arrows</code></td>
+      <td>在标签页间移动</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Numbers</code></td>
+      <td>跳转到指定标签页</td>
+    </tr>
+    <tr>
+      <td><code>Shift + Pg Up/Down</code></td>
+      <td>滚动历史输出</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Left mouse</code></td>
+      <td>在浏览器中打开链接</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="file-manager">
+  文件管理器<a
+    class="manual__heading-link"
+    href="#file-manager"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Ctrl + L</code></td>
+      <td>跳转到路径</td>
+    </tr>
+    <tr>
+      <td><code>Space</code></td>
+      <td>预览文件（方向键切换）</td>
+    </tr>
+    <tr>
+      <td><code>Backspace</code></td>
+      <td>返回上一级文件夹</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="neovim-w-lazyvim">
+  Neovim（配合lazyvim）<a
+    class="manual__heading-link"
+    href="#neovim-w-lazyvim"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<h3 id="navigation">
+  导航<a class="manual__heading-link" href="#navigation" aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Space</code></td>
+      <td>显示命令选项</td>
+    </tr>
+    <tr>
+      <td><code>Space Space</code></td>
+      <td>模糊搜索并打开文件</td>
+    </tr>
+    <tr>
+      <td><code>Space E</code></td>
+      <td>切换侧边栏</td>
+    </tr>
+    <tr>
+      <td><code>Space G G</code></td>
+      <td>显示git控制</td>
+    </tr>
+    <tr>
+      <td><code>Space S G</code></td>
+      <td>搜索文件内容</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + W W</code></td>
+      <td>在侧边栏与编辑器间跳转</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Left/right arrow</code></td>
+      <td>调整侧边栏宽度</td>
+    </tr>
+    <tr>
+      <td><code>Shift + H</code></td>
+      <td>切换到左侧文件标签</td>
+    </tr>
+    <tr>
+      <td><code>Shift + L</code></td>
+      <td>切换到右侧文件标签</td>
+    </tr>
+    <tr>
+      <td><code>Space B D</code></td>
+      <td>关闭文件标签</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="while-in-sidebar">
+  侧边栏内<a
+    class="manual__heading-link"
+    href="#while-in-sidebar"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>A</code></td>
+      <td>在上级目录新建文件</td>
+    </tr>
+    <tr>
+      <td><code>Shift + A</code></td>
+      <td>在上级目录新建子目录</td>
+    </tr>
+    <tr>
+      <td><code>D</code></td>
+      <td>删除高亮的文件/目录</td>
+    </tr>
+    <tr>
+      <td><code>M</code></td>
+      <td>移动高亮的文件/目录</td>
+    </tr>
+    <tr>
+      <td><code>R</code></td>
+      <td>重命名高亮的文件/目录</td>
+    </tr>
+    <tr>
+      <td><code>?</code></td>
+      <td>显示所有命令的帮助</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href="https://www.lazyvim.org/keymaps">查看LazyVim配置的全部Neovim快捷键</a
+  >。
+</p>
+
+<h2 id="quick-emojis">
+  快速表情<a
+    class="manual__heading-link"
+    href="#quick-emojis"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Super + Ctrl + E</code
+  >可以打开完整的表情选择器，把所选表情放到剪贴板；也可以使用下面这些快速输入方式。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>表情</th>
+      <th>提示</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CapsLock M S</code></td>
+      <td>😄</td>
+      <td>smile</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M C</code></td>
+      <td>😂</td>
+      <td>cry</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M L</code></td>
+      <td>😍</td>
+      <td>love</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M V</code></td>
+      <td>✌️</td>
+      <td>victory</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M H</code></td>
+      <td>❤️</td>
+      <td>heart</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M Y</code></td>
+      <td>👍</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M N</code></td>
+      <td>👎</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M F</code></td>
+      <td>🖕</td>
+      <td>fuck</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M W</code></td>
+      <td>🤞</td>
+      <td>wish</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M R</code></td>
+      <td>🤘</td>
+      <td>rock</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M K</code></td>
+      <td>😘</td>
+      <td>kiss</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M E</code></td>
+      <td>🙄</td>
+      <td>eyeroll</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M I</code></td>
+      <td>😉</td>
+      <td>wink</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M P</code></td>
+      <td>🙏</td>
+      <td>pray</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M D</code></td>
+      <td>🤤</td>
+      <td>drool</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M M</code></td>
+      <td>💰</td>
+      <td>money</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M X</code></td>
+      <td>🎉</td>
+      <td>xellebrate</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M 1</code></td>
+      <td>💯</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M T</code></td>
+      <td>🥂</td>
+      <td>toast</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M O</code></td>
+      <td>👌</td>
+      <td>ok</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M G</code></td>
+      <td>👋</td>
+      <td>greeting</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M A</code></td>
+      <td>💪</td>
+      <td>arm</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock M B</code></td>
+      <td>🤯</td>
+      <td>blowing</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="quick-completions">
+  快速补全<a
+    class="manual__heading-link"
+    href="#quick-completions"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>补全内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CapsLock Space Space</code></td>
+      <td>- （破折号）</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock Space N</code></td>
+      <td>你的姓名（安装时填写）</td>
+    </tr>
+    <tr>
+      <td><code>CapsLock Space E</code></td>
+      <td>你的邮箱（安装时填写）</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  编辑<code>~/.XCompose</code>可以添加更多自定义补全，然后在终端运行<code>omarchy-restart-xcompose</code>让改动生效。
+</p>

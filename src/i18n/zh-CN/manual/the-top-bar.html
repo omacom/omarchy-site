@@ -1,0 +1,379 @@
+<p>
+  屏幕顶部的那一条是Omarchy状态栏。它不是外挂的状态栏，而是Omarchy
+  shell的一部分——同一个常驻的Quickshell进程还负责绘制菜单、通知、OSD弹窗和锁屏。因此它与其他一切主题完全一致，面板也能即时打开，而无需启动新的应用。
+</p>
+
+<p>它也是桌面上唯一始终显示的部分，所以值得弄清楚那些小图标各是什么。</p>
+
+<h2 id="whats-on-it-by-default">
+  默认内容<a
+    class="manual__heading-link"
+    href="#whats-on-it-by-default"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  状态栏分三个区域。左侧是Omarchy标志（菜单启动器）和工作区指示器；中间是状态指示器、时钟、键盘布局、天气和Omarchy更新标记；右侧是系统托盘、智能体、蓝牙、网络、音频、显示和电源。
+</p>
+
+<p>
+  其中一些只在有内容时才出现：键盘布局仅在配置了多个布局时显示，更新标记仅在有Omarchy更新等待时显示，智能体图标则在Omarchy首次在这台机器上发现AI编程用量时出现（参见<a
+    href="/manual/ai/"
+    >AI</a
+  >）。
+</p>
+
+<h2 id="clicking-around">
+  点击操作<a
+    class="manual__heading-link"
+    href="#clicking-around"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  几乎每个部件在左键、右键和中键点击时都有动作，不少还响应滚轮。这是大家容易错过的部分——许多好东西都藏在右键和中键里。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>部件</th>
+      <th>左键</th>
+      <th>右键</th>
+      <th>中键/滚轮</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>菜单</td>
+      <td>Omarchy菜单</td>
+      <td>新终端</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>工作区</td>
+      <td>聚焦该工作区</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>时钟</td>
+      <td>日历弹窗</td>
+      <td>循环切换显示格式</td>
+      <td>中键：时区选择</td>
+    </tr>
+    <tr>
+      <td>天气</td>
+      <td>预报弹窗</td>
+      <td>以通知显示完整天气</td>
+      <td>中键：刷新</td>
+    </tr>
+    <tr>
+      <td>音频</td>
+      <td>音频面板</td>
+      <td>静音</td>
+      <td>中键：面板 · 滚轮：音量</td>
+    </tr>
+    <tr>
+      <td>麦克风</td>
+      <td>麦克风静音</td>
+      <td>-</td>
+      <td>中键：音频面板 · 滚轮：输入音量</td>
+    </tr>
+    <tr>
+      <td>网络</td>
+      <td>网络面板</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>蓝牙</td>
+      <td>蓝牙面板</td>
+      <td>开关蓝牙</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>显示</td>
+      <td>显示面板</td>
+      <td>-</td>
+      <td>滚轮：亮度</td>
+    </tr>
+    <tr>
+      <td>电源</td>
+      <td>电源面板</td>
+      <td>开关电量百分比</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>媒体</td>
+      <td>播放/暂停</td>
+      <td>封面弹窗</td>
+      <td>中键：下一首 · 滚轮：上一首/下一首</td>
+    </tr>
+    <tr>
+      <td>智能体</td>
+      <td>智能体面板</td>
+      <td>启动你的智能体</td>
+      <td>中键：下一个订阅</td>
+    </tr>
+    <tr>
+      <td>托盘</td>
+      <td>悬停展开抽屉</td>
+      <td>右键箭头进行管理</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Omarchy更新</td>
+      <td>运行更新</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  表中的部件并非全都默认出现。媒体部件（MPRIS正在播放，带滚动的曲目与艺人）和麦克风部件都是内置的，但默认关闭——需要的话按下文方法添加。
+</p>
+
+<h2 id="the-panels">
+  面板<a class="manual__heading-link" href="#the-panels" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  点击状态栏图标会打开一个面板。它是带滑块、列表和键盘导航的正式弹窗，而不是工具提示。每个面板都有快捷键，所以你永远不必去瞄准一个16像素的图标：
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>面板</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + A</code></td>
+      <td>音频</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + W</code></td>
+      <td>网络</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + B</code></td>
+      <td>蓝牙</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + D</code></td>
+      <td>显示</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + P</code></td>
+      <td>电源</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + D</code></td>
+      <td>日历</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + 1-9</code></td>
+      <td>切换右侧区域的第n个面板</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>面板不只是信息展示，而是真正操作的地方：</p>
+
+<ul>
+  <li>
+    <strong>音频</strong
+    >提供主音量滑块、输出设备选择和按应用的混音器，可以只调低某个浏览器标签页而不影响其他。
+  </li>
+  <li>
+    <strong>网络</strong>扫描Wi-Fi，显示信号强度，连接网络，并可选择DNS提供商。
+  </li>
+  <li><strong>蓝牙</strong>列出设备，支持连接/断开并显示电量。</li>
+  <li>
+    <strong>电源</strong
+    >显示电池状态，切换电源模式（会分别记住电池与外接电源下的选择），并显示一些系统信息。
+  </li>
+  <li>
+    <strong>显示</strong
+    >提供亮度滑块、文字大小、显示器缩放预设，以及多屏时的逐显示器控制。更多内容参见<a
+      href="/manual/monitors/"
+      >显示器</a
+    >。
+  </li>
+  <li><strong>时钟</strong>打开带ISO周数的月历，可按月切换。</li>
+</ul>
+
+<p>
+  每个面板都支持键盘和鼠标：方向键移动，Return确认，Tab切换到相邻面板，Escape关闭。
+</p>
+
+<p>
+  <code>Super + Ctrl + 1-9</code
+  >按右侧区域从左到右计数，跳过没有面板的托盘，因此数字与你要指向的图标一一对应。
+</p>
+
+<h3 id="tailscale-and-dropbox">
+  Tailscale与Dropbox<a
+    class="manual__heading-link"
+    href="#tailscale-and-dropbox"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  还有两个部件只在通过<strong>Install → Service</strong
+  >安装对应服务后才会出现，两者都值得了解，因为它们不只是显示状态。
+</p>
+
+<p>
+  <strong>Tailscale</strong
+  >面板可以连接和断开tailnet、切换账户、选择出口节点（你自己的机器和Mullvad地区都会出现在列表中）。它还能浏览你的机器：选中一台后，按<code>s</code>即可通过Taildrop向它发送文件，这是把文件传到手机或另一台笔记本最快的方式；<code>c</code>复制该机器的IP，<code>n</code>复制名称，<code>d</code>复制完整DNS名称。每一行也有发送按钮，如果你更愿意点击。终端中对应的命令是<code
+    >omarchy tailscale send &lt;machine&gt; [file...]</code
+  >。
+</p>
+
+<p>
+  <strong>Dropbox</strong>面板负责登录，显示已用存储空间，并列出最近同步的文件。
+</p>
+
+<p>移除任一服务，对应部件也会从状态栏消失。</p>
+
+<h2 id="indicators">
+  指示器<a class="manual__heading-link" href="#indicators" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  中间那一小簇是指示器部件，显示已开启模式的状态图标：勿扰、夜间模式、待触发的<a
+    href="/manual/reminders/"
+    >提醒</a
+  >、进行中的录屏、保持唤醒，以及<a href="/manual/text-extraction-dictation/"
+    >语音听写</a
+  >。模式激活时它们亮起，平时则不碍事——把鼠标悬停在状态栏中间即可看到未激活的那些。点击指示器可切换对应模式。
+</p>
+
+<p>
+  如果希望它们始终可见，将该部件的<code>alwaysShow</code>设为<code>true</code>。如果只关心其中几个，在<code>items</code>中列出想要的：<code
+    >["Dnd", "Reminder", "NightLight"]</code
+  >。指示器部件可以有多个，不同区域可以显示不同的子集。
+</p>
+
+<h2 id="rearranging-the-bar">
+  重新排列状态栏<a
+    class="manual__heading-link"
+    href="#rearranging-the-bar"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>状态栏自己配置自己，移动东西不必打开配置文件。</p>
+
+<p>
+  抓住状态栏中部的一块空白，拖向另一条屏幕边缘，状态栏就会移过去——左、右、上、下都可以，每个部件都会自适应（垂直状态栏会退化为紧凑的纯图标形式）。按住不放同样可以开始拖动。双击同一块空白可切换透明度。拖动任意部件可以重新排序，或把它扔到另一个区域。
+</p>
+
+<p>
+  如果更愿意从菜单中选择，<strong>Style → Menu Bar</strong
+  >同时提供位置和透明度设置。
+</p>
+
+<p>
+  同样的操作也有对应命令，正是<a href="/manual/dotfiles/">配置文件</a
+  >方案需要的：
+</p>
+
+<pre><code class="language-bash">omarchy bar position bottom
+omarchy bar transparent toggle
+omarchy bar move omarchy.clock --section center --index 0
+omarchy bar set omarchy.clock format "HH:mm"
+omarchy bar defaults          # back to the shipped layout
+</code></pre>
+
+<p>
+  要彻底添加或移除某个部件，使用插件命令。<code>omarchy plugin list</code
+  >列出shell识别的每个部件及其id，然后：
+</p>
+
+<pre><code class="language-bash">omarchy plugin enable omarchy.media --section center
+omarchy plugin disable omarchy.weather
+</code></pre>
+
+<h2 id="hiding-the-bar">
+  隐藏状态栏<a
+    class="manual__heading-link"
+    href="#hiding-the-bar"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Super + Shift + Space</code
+  >可以关闭再显示状态栏，而不终止shell——面板和快捷键照常工作，你只是拿回了那些像素。菜单中的<strong
+    >Trigger → Toggle → Menu Bar</strong
+  >也提供同样的开关。
+</p>
+
+<h2 id="the-config-file">
+  配置文件<a
+    class="manual__heading-link"
+    href="#the-config-file"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  以上一切都存放在<code>~/.config/omarchy/shell.json</code>的<code>bar</code>键下。这是一个精简版本：
+</p>
+
+<pre><code class="language-json">{
+  "version": 1,
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "centerAnchor": "omarchy.clock",
+    "layout": {
+      "left": [{ "id": "omarchy.menu" }, { "id": "omarchy.workspaces" }],
+      "center": [{ "id": "omarchy.clock", "format": "HH:mm" }],
+      "right": [{ "id": "omarchy.audio" }, { "id": "omarchy.power" }]
+    }
+  }
+}
+</code></pre>
+
+<p>
+  每个部件都是三个布局数组之一中的一个条目，它的设置直接写在该条目上——没有单独的设置文件，也没有<code>config</code>子对象。时钟的<code>format</code>、<code>formatAlt</code>（右键切换到的格式）和<code>verticalFormat</code>都直接放在<code
+    >{ "id": "omarchy.clock" }</code
+  >上。
+</p>
+
+<p>
+  <code>centerAnchor</code
+  >指定中间区域中固定在屏幕正中的那一个部件，其余部件分列两侧。这就是为什么天气和更新标记来来去去，时钟依然稳居正中。将它设为空字符串，中间列表就会作为整体居中。
+</p>
+
+<p>
+  有一条规则值得记住：<strong>一旦有了自己的<code>shell.json</code>，它就是唯一依据</strong>。在你做任何自定义之前，shell读取Omarchy的默认文件；一旦你拖动了部件、运行了<code
+    >omarchy bar</code
+  >或亲自编辑了文件，它就归你所有——不会进行深度合并，所以未来Omarchy版本新增的默认部件不会自动出现在你的状态栏上。想要重新开始时，<code
+    >omarchy bar defaults</code
+  >会恢复默认布局。
+</p>
+
+<p>
+  同一文件还在顶层（<code>bar</code>键之外）保存空闲计时：<code>idle.screensaver</code>和<code>idle.lock</code>，都是从进入空闲开始计算的秒数。因此默认屏保在150秒时启动，锁屏在300秒时启动。
+</p>

@@ -1,0 +1,238 @@
+<h2 id="files">
+  Files<a class="manual__heading-link" href="#files" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  Files（Nautilus）是图形文件管理器。<code>Super + Shift + F</code>打开它，<code
+    >Super + Shift + Alt + F</code
+  >则在终端当前所在目录打开，能省不少点击。<code>Ctrl + L</code
+  >可输入路径，在任意文件上按<code>Space</code>即可快速预览而无需打开。
+</p>
+
+<p>
+  插入U盘或SD卡会自动挂载，直接出现在侧边栏中。更复杂的操作——格式化驱动器、检查SMART健康状态、创建分区——请从应用启动器（<code
+    >Super + Space</code
+  >）启动<em>Disks</em>。
+</p>
+
+<p>
+  双击遵循合理的默认关联：图片用imv打开，视频用mpv，PDF用Document
+  Viewer，纯文本用Neovim。
+</p>
+
+<h2 id="obsidian">
+  Obsidian<a class="manual__heading-link" href="#obsidian" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://obsidian.md/">Obsidian</a
+  >是一款免费、高度可扩展的笔记应用，以普通Markdown文件存储。
+</p>
+
+<p>Obsidian对个人、商业和非营利等所有用途免费。</p>
+
+<p>
+  Obsidian还提供<a href="https://obsidian.md/sync">商业同步附加服务</a
+  >，用于与iOS和Android移动应用同步。（https://obsidian.md/pricing）
+</p>
+
+<p>
+  用<code>Super + Shift + O</code
+  >启动Obsidian。要使用主题同步，需在设置中选择<code>Omarchy</code>主题。
+</p>
+
+<h2 id="omawrite">
+  Omawrite<a class="manual__heading-link" href="#omawrite" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/omawrite">Omawrite</a
+  >是Omarchy自家的极简Markdown写作应用。没有库，没有插件，只有你和文字。
+</p>
+
+<p>用<code>Super + Shift + W</code>启动Omawrite。</p>
+
+<h2 id="pinta">
+  Pinta<a class="manual__heading-link" href="#pinta" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://www.pinta-project.com/">Pinta</a
+  >是一款基础的图片编辑工具，适合裁剪、缩放等简单处理。别指望它替代Photoshop，但它也有魔棒和图层！
+</p>
+
+<p>通过应用启动器（<code>Super + Space</code>）启动Pinta。</p>
+
+<h2 id="aether">
+  Aether<a class="manual__heading-link" href="#aether" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/bjarneo/aether">Aether</a
+  >是一款主题应用，能从背景图片提取颜色并生成完整、协调的主题，是<a
+    href="/manual/making-your-own-theme/"
+    >制作自己的主题</a
+  >最简单的方式。
+</p>
+
+<p>通过应用启动器（<code>Super + Space</code>）启动Aether。</p>
+
+<h2 id="localsend">
+  LocalSend<a
+    class="manual__heading-link"
+    href="#localsend"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://localsend.org/">LocalSend</a
+  >可向同一网络中运行该应用的其他设备发送文件，类似Apple的AirDrop，但它是跨平台的：Windows、macOS、Android、iOS，当然还有Linux，都能互传。
+</p>
+
+<p>
+  用<code>Super + Ctrl + S</code>或Omarchy菜单的<em>Trigger &gt; Share</em
+  >打开分享菜单，其中有四个选项：
+</p>
+
+<ul>
+  <li>
+    <strong>Clipboard</strong
+    >将复制的内容作为文本文件发送。把链接或片段传到手机上，再也不用给自己发邮件。
+  </li>
+  <li><strong>File</strong>打开文件选择器，可一次选择多个。</li>
+  <li><strong>Folder</strong>发送整个目录。</li>
+  <li><strong>Receive</strong>打开完整的LocalSend，让其他设备向你发送内容。</li>
+</ul>
+
+<p>
+  终端中同样可用：<code>omarchy share clipboard</code>、<code
+    >omarchy share file [path]</code
+  >和<code>omarchy share folder [path]</code>。省略路径则会打开选择器。
+</p>
+
+<p>
+  也可以直接从文件管理器发送：在Nautilus中右键任意选中项，选择<em
+    >Send via LocalSend</em
+  >。
+</p>
+
+<p>
+  Omarchy的防火墙默认关闭，仅开放LocalSend的端口，所以新装系统上开箱即可使用。参见<a
+    href="/manual/security/"
+    >安全</a
+  >。
+</p>
+
+<h2 id="libreoffice">
+  LibreOffice<a
+    class="manual__heading-link"
+    href="#libreoffice"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://www.libreoffice.org/">LibreOffice</a
+  >是一套完整的办公软件，包含文字处理、电子表格、演示、绘图等应用。它兼容Microsoft
+  Office文件，打开Word文档很方便。
+</p>
+
+<p>通过应用启动器（<code>Super + Space</code>）启动LibreOffice。</p>
+
+<h2 id="omacalc">
+  Omacalc<a class="manual__heading-link" href="#omacalc" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/omacalc">Omacalc</a
+  >是Omarchy自家的极简计算器，以浮动窗口打开。
+</p>
+
+<p>
+  用<code>Super + Ctrl + Q</code>（或键盘上的计算器键，如果有的话）启动Omacalc。
+</p>
+
+<h2 id="signal">
+  Signal<a class="manual__heading-link" href="#signal" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://signal.org/">Signal</a
+  >是端到端加密通讯的先驱，对于不想依赖科技巨头的人来说，是极好的通讯选择。
+</p>
+
+<p>
+  用<code>Super + Shift + G</code
+  >启动Signal。它不在基础安装中，首次按下快捷键时，Omarchy会提议为你安装（也可在Omarchy菜单的<em
+    >Install &gt; Service</em
+  >下安装）。
+</p>
+
+<h2 id="mpv">
+  mpv<a class="manual__heading-link" href="#mpv" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://mpv.io/">mpv</a
+  >是一款简洁、快速的媒体播放器，几乎能播放任何来源的任何内容，看视频很合适。
+</p>
+
+<p>
+  通过应用启动器（<code>Super + Space</code
+  >）启动mpv，或直接在文件管理器中双击视频。
+</p>
+
+<h2 id="obs-studio">
+  OBS Studio<a
+    class="manual__heading-link"
+    href="#obs-studio"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://obsproject.com/">OBS Studio</a
+  >可从多路输入录制或直播视频，把屏幕录制、摄像头和麦克风混合在一起。Omarchy的演示视频就是用它录制的。
+</p>
+
+<p>通过应用启动器（<code>Super + Space</code>）启动OBS Studio。</p>
+
+<h2 id="kdenlive">
+  Kdenlive<a class="manual__heading-link" href="#kdenlive" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://kdenlive.org/">Kdenlive</a
+  >是一款出色的视频编辑器，非常适合在分享前处理OBS Studio录制的视频。
+</p>
+
+<p>通过应用启动器（<code>Super + Space</code>）启动Kdenlive。</p>
+
+<h2 id="omacut">
+  Omacut<a class="manual__heading-link" href="#omacut" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/omacut">Omacut</a
+  >是Omarchy自家的极简视频剪辑器。只需裁掉片段首尾时，它比打开完整的视频编辑器方便得多。
+</p>
+
+<p>通过应用启动器（<code>Super + Space</code>）启动Omacut。</p>

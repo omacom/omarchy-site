@@ -1,0 +1,152 @@
+<h2 id="lazygit">
+  Lazygit<a class="manual__heading-link" href="#lazygit" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/jesseduffield/lazygit">Lazygit</a>是GitHub
+  Desktop这类应用的绝佳替代品，而且运行在终端里。
+</p>
+
+<p>
+  可以直接运行：进入任意由git管理的目录，执行<code>lazygit</code>；也可以在Neovim中用<code
+    >Space G G</code
+  >启动。
+</p>
+
+<p>
+  用<code>Tab</code>在各窗格间切换。在Files窗格中用<code>Space</code>选择要暂存的文件，再用<code>c</code>创建提交。<code>?</code>可查看全部命令。
+</p>
+
+<h2 id="lazydocker">
+  Lazydocker<a
+    class="manual__heading-link"
+    href="#lazydocker"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/jesseduffield/lazydocker">Lazydocker</a
+  >与Lazygit一脉相承，同样以终端界面管理容器和镜像。
+</p>
+
+<p>用<code>Super + Shift + D</code>启动。</p>
+
+<p>
+  用<code>s</code>停止容器，<code>r</code>启动或重启。<code>?</code>可查看全部命令。
+</p>
+
+<h2 id="btop">
+  Btop<a class="manual__heading-link" href="#btop" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://github.com/aristocratos/btop">Btop</a
+  >是一款漂亮的资源监视器，显示内存、CPU、磁盘和网络用量，并列出所有活动进程供你管理。
+</p>
+
+<p>
+  Omarchy称之为活动监视器，按<code>Super + Ctrl + T</code
+  >启动。它以浮动窗口打开，可用<code>Super + T</code>平铺。
+</p>
+
+<h2 id="herdr">
+  Herdr<a class="manual__heading-link" href="#herdr" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/herdr">Herdr</a
+  >是一款终端工作区管理器，提供工作区、标签页和窗格，并将它们保持在一个可脱离、可随时回来的持久会话中。
+</p>
+
+<p>
+  用<code>Super + Ctrl + Return</code
+  >启动（或重新接入已有会话）。Omarchy内置的Herdr配置与其Tmux配置一致，所以前缀键同样是<code
+    >Ctrl + Space</code
+  >。<code>Super + Ctrl + K</code>可浏览全部键绑定。
+</p>
+
+<h2 id="fastfetch">
+  Fastfetch<a
+    class="manual__heading-link"
+    href="#fastfetch"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/fastfetch-cli/fastfetch">Fastfetch</a
+  >显示内核版本、运行时间、主题、CPU、内存等系统信息，是流行的neofetch的继任者。
+</p>
+
+<p>
+  Omarchy将它作为Omarchy菜单（<code>Super + Space</code
+  >）中的<em>About</em>提供。
+</p>
+
+<h2 id="disk-usage">
+  磁盘用量<a
+    class="manual__heading-link"
+    href="#disk-usage"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  硬盘满了却不知道是什么占的空间？从应用启动器（<code>Super + Space</code
+  >）启动<em>Disk Usage</em>。它是指向整个文件系统的交互模式<a
+    href="https://github.com/Byron/dua-cli"
+    >dua</a
+  >，可以一路深入到罪魁祸首所在的目录（按大小降序排列），并直接在其中删除。
+</p>
+
+<h2 id="cliamp">
+  Cliamp<a class="manual__heading-link" href="#cliamp" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://www.cliamp.stream/">Cliamp</a>是受Winamp
+  2.x启发的复古终端音乐播放器，内置lo-fi节拍电台。用<code
+    >Super + Shift + Alt + M</code
+  >启动，或从Omarchy菜单的<em>Apps</em>下启动。按<code>?</code>查看完整键绑定列表。
+</p>
+
+<h2 id="what-about-wi-fi-and-bluetooth">
+  Wi-Fi和蓝牙呢？<a
+    class="manual__heading-link"
+    href="#what-about-wi-fi-and-bluetooth"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  你不会找到Wi-Fi和蓝牙的TUI——这些工作属于Omarchy
+  shell。点击状态栏中的Wi-Fi图标（或按<code>Super + Ctrl + W</code
+  >）查看并连接网络，点击蓝牙图标（或按<code>Super + Ctrl + B</code
+  >）配对并连接设备。详情参见<a href="/manual/networking/">网络</a>。
+</p>
+
+<h2 id="adding-your-own">
+  添加自己的应用<a
+    class="manual__heading-link"
+    href="#adding-your-own"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  任何终端程序都能获得完整的应用待遇。进入Omarchy菜单（<code>Super + Space</code
+  >）的<em>Install &gt; TUI</em
+  >，填写名称、启动命令、窗口样式和图标，它就会像其他应用一样出现在应用启动器中。在<em
+    >Remove &gt; TUI</em
+  >下可以移除。
+</p>

@@ -1,0 +1,202 @@
+<p>
+  Omarchy中的一切都通过键盘完成——<em>一切！</em>系统首次启动时，光靠鼠标什么也做不了。但按下<code
+    >Super + Space</code
+  >就能调出Omarchy菜单，从这里几乎可以完成所有操作。
+</p>
+
+<p>
+  不过大多数时候，Omarchy菜单并不是操作系统的主要方式。我们可以更快！所有最重要的应用都直接绑定了快捷键：<code
+    >Super + Return</code
+  >启动终端，<code>Super + Shift + Return</code
+  >启动浏览器。先后按下试试，你就能看到Hyprland平铺的魔力：
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-browser-terminal.webp"
+    alt="navigation-browser-terminal"
+  />
+</p>
+
+<p>接着按<code>Super + J</code>，两个窗口会由左右并排改为上下堆叠：</p>
+
+<p>
+  <img src="/manual/images/navigation-stacked.webp" alt="navigation-stacked" />
+</p>
+
+<p>
+  再按一次<code>Super + J</code>，它们回到并排位置。然后在浏览器上试试<code
+    >Super + Shift + Arrow Right</code
+  >，交换两个窗口。
+</p>
+
+<p>
+  现在按<code>Super + Ctrl + T</code>启动活动监视器，它以浮动窗口出现。用<code
+    >Super + T</code
+  >可以把它平铺（再按一次恢复浮动）。再按<code>Super + Shift + F</code
+  >打开文件管理器，你就有了一个整齐的四分布局：
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-fourway-tiling.webp"
+    alt="navigation-fourway-tiling"
+  />
+</p>
+
+<p>
+  用<code>Super + Arrow</code
+  >切换要激活的窗口。这会转移焦点，并把光标移到新应用的中央。
+</p>
+
+<p>
+  按<code>Super + Shift + 2</code>，当前聚焦的应用会移到第二个工作区，<code
+    >Super + Shift + 1</code
+  >把它移回来。（<code>Super + Shift + Alt + 2</code
+  >则把当前应用移到第二个工作区，但自己不跟过去。）
+</p>
+
+<p>
+  按住<code>Super</code>用鼠标点击窗口，可以重新安排它的位置；按住<code>Super</code>并使用鼠标右键，可以自由调整窗口大小。
+</p>
+
+<p>
+  用<code>Super + W</code>或<code>Super + Q</code>关闭窗口（<code
+    >Ctrl + Alt + Delete</code
+  >关闭所有窗口）。
+</p>
+
+<p>
+  你还可以用<code>Super + F</code>全屏，用<code>Super + Alt + F</code
+  >仅占满宽度（保留状态栏），或用<code>Super + Ctrl + F</code
+  >在窗口内全屏（看YouTube很合适！）。
+</p>
+
+<h3 id="dwindle-vs-scrolling-layout">
+  Dwindle布局与滚动布局<a
+    class="manual__heading-link"
+    href="#dwindle-vs-scrolling-layout"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy的默认布局叫dwindle。它让同一工作区内打开的所有窗口始终可见，哪怕不得不把它们缩小。
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-dwindle-layout.webp"
+    alt="navigation-dwindle-layout"
+  />
+</p>
+
+<p>
+  你也可以把工作区切换成滚动布局：窗口并排排成一行，延伸到屏幕可见范围之外。用<code
+    >Super + L</code
+  >即可将当前工作区切换为这种布局。
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-scrolling-layout.webp"
+    alt="navigation-scrolling-layout"
+  />
+</p>
+
+<p>
+  这个选择按工作区保存，并且会保留。所以你可以让工作区1用dwindle浏览网页，工作区2用滚动布局写代码，重启后依然如此。（同样的开关也在Omarchy菜单的<em
+    >Trigger &gt; Toggle &gt; Workspace Layout</em
+  >下。）
+</p>
+
+<p>
+  如果想把滚动布局设为默认，可以在<code>~/.config/hypr/looknfeel.lua</code>中设置：
+</p>
+
+<pre><code class="language-lua">hl.config({
+  general = {
+    layout = "scrolling",
+  },
+})
+</code></pre>
+
+<h3 id="grouping-windows">
+  窗口分组<a
+    class="manual__heading-link"
+    href="#grouping-windows"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  用<code>Super + G</code
+  >可以将窗口分组。进入分组后，在此期间启动的每个窗口都会归入该组。用<code
+    >Super + Ctrl + Arrow Left/Right</code
+  >在组内窗口之间移动，或用<code>Super + Alt + 1/2/3/4</code
+  >按顺序直接跳到组内某个窗口。
+</p>
+
+<p>
+  用<code>Super + Alt + G</code>把窗口移出分组，或再按一次<code>Super + G</code
+  >解散整个组。最后，<code>Super + Alt + Arrows</code>可以把组外的窗口移进组内。
+</p>
+
+<h3 id="popping-windows">
+  弹出窗口<a
+    class="manual__heading-link"
+    href="#popping-windows"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + O</code
+  >可以把窗口从所在工作区中弹出，固定为浮动窗口，跟随你去往任何工作区。非常适合视频播放器之类的应用。
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-popped-window.webp"
+    alt="navigation-popped-window"
+  />
+</p>
+
+<h3 id="scratchpad-workspace">
+  便签工作区<a
+    class="manual__heading-link"
+    href="#scratchpad-workspace"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  最后，还有一个特殊的便签工作区，会覆盖在当前工作区之上，很像Quake的控制台。用<code
+    >Super + Grave</code
+  >或<code>Super + S</code>切换显示，用<code>Super + Shift + Grave</code>或<code
+    >Super + Alt + S</code
+  >把窗口放进去。
+</p>
+
+<p>
+  它特别适合运行智能体的终端，或是那些你想随手操作又不想离开当前工作区的控制窗口。要把窗口移出便签工作区，直接用<code
+    >Super + Shift + 1</code
+  >之类的快捷键把它发送到其他工作区即可。
+</p>
+
+<h3 id="it-takes-some-getting-used-to">
+  需要一点时间适应！<a
+    class="manual__heading-link"
+    href="#it-takes-some-getting-used-to"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  用这种方式操作桌面需要一点时间适应，但一旦习惯，就很难再回到传统的鼠标驱动桌面了！
+</p>

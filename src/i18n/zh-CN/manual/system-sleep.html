@@ -1,0 +1,60 @@
+<p>
+  Omarchy默认启用挂起和休眠，但如果其中任何一项在你的机器上有问题，可以把它关掉。
+</p>
+
+<h3 id="power-profiles">
+  电源配置<a
+    class="manual__heading-link"
+    href="#power-profiles"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在笔记本上，Omarchy会分别记住接通电源和使用电池时的电源配置，并随插拔自动切换。开箱即用的默认值是：接电源时性能模式，用电池时平衡模式。
+</p>
+
+<p>
+  用<code>omarchy powerprofiles list</code>查看机器支持的配置，用<code
+    >omarchy powerprofiles set autodetect power-saver</code
+  >为当前所处状态设置想要的配置。要在不插拔电源的情况下设置另一种状态，直接点名：<code
+    >omarchy powerprofiles set battery power-saver</code
+  >。无论选了什么，下次进入该状态时都会恢复。
+</p>
+
+<h3 id="toggle-suspend">
+  开关挂起<a
+    class="manual__heading-link"
+    href="#toggle-suspend"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在终端运行<code>omarchy toggle suspend</code
+  >开关挂起。它只是显示或隐藏<em>System</em>（或<code>Super + Esc</code
+  >）下的对应选项，你可以借此观察挂起在你的系统上是否稳定可用。如果不行，用同一条命令再把它隐藏起来。
+</p>
+
+<h3 id="toggle-hibernation">
+  开关休眠<a
+    class="manual__heading-link"
+    href="#toggle-hibernation"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在终端运行<code>omarchy hibernation setup</code
+  >设置休眠。休眠会在启动盘上创建一个与物理内存等大的/swap子卷，所以请确保有充足的剩余空间。32GB内存的机器需要始终为这个卷保留32GB以上的空闲空间。休眠还要求使用默认的Limine启动加载器。
+</p>
+
+<p>
+  设置完成后，<em>System</em>（或<code>Super + Esc</code
+  >）下会出现休眠选项，你可以观察它在你的系统上是否稳定可用。如果不行，运行<code
+    >omarchy hibernation remove</code
+  >移除。
+</p>

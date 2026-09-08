@@ -1,0 +1,220 @@
+<p>
+  在macOS或Windows上用了多年，你的手指记住了上百个大脑早已忘记学过的动作。本章就是这两者之间的转换层：告诉你这些本能在Omarchy中对应什么。各项功能本身在其他章节有详细介绍，这里只是一张地图。
+</p>
+
+<h3 id="super-is-the-center-of-everything">
+  一切以Super为中心<a
+    class="manual__heading-link"
+    href="#super-is-the-center-of-everything"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  你围绕Cmd或Windows键建立的所有肌肉记忆，都转移到了同一个键：Super。在PC键盘上它就是Windows键，也是Omarchy几乎所有快捷键的锚点。
+</p>
+
+<p>
+  按Spotlight、Raycast或开始菜单的反射动作，变成了<code>Super + Space</code
+  >。它打开Omarchy菜单：启动应用、修改设置、安装软件、截取屏幕，几乎什么都能做。开始输入即可筛选。另有一个只列出应用的菜单，快捷键是<code
+    >Super + Alt + Space</code
+  >。参见<a href="/manual/navigation/">窗口导航</a>。
+</p>
+
+<h3 id="theres-no-dock-and-no-desktop-icons">
+  没有Dock，也没有桌面图标<a
+    class="manual__heading-link"
+    href="#theres-no-dock-and-no-desktop-icons"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  没有可点击启动程序的东西，也没有可在桌面上排列的图标。应用通过快捷键启动（<code
+    >Super + Return</code
+  >打开终端，<code>Super + Shift + Return</code>打开浏览器，<code
+    >Super + K</code
+  >列出所有已绑定的快捷键），或从菜单启动。唯一常驻的界面元素是<a
+    href="/manual/the-top-bar/"
+    >状态栏</a
+  >，它承担了以往菜单栏、系统托盘和通知中心的职责，而且上面几乎每个部件在左键、右键、中键点击时都有各自的动作。
+</p>
+
+<h3 id="windows-place-themselves">
+  窗口自动就位<a
+    class="manual__heading-link"
+    href="#windows-place-themselves"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  最大的观念转变：你不再拖动窗口，也不再把它们贴到半边屏幕。打开一个窗口，它占满整个屏幕；再打开一个，两者平分。窗口从不重叠，所以你永远不必从另一个窗口下面把它翻出来。
+</p>
+
+<p>
+  确实需要浮动窗口时，<code>Super + T</code
+  >可以把当前窗口从平铺中切出来（再切回去）。但请先给平铺一个真正的机会——它是整个系统的核心。<a
+    href="/manual/navigation/"
+    >窗口导航</a
+  >会带你熟悉它。
+</p>
+
+<p>
+  工作区会让你感到熟悉：它们就是macOS的Spaces或Windows的虚拟桌面，只不过你会真正用起来，因为<code
+    >Super + 1/2/3/4</code
+  >直接跳到对应工作区，<code>Super + Shift + 1/2/3/4</code
+  >把当前窗口发送过去。没有动画延迟，只有即时切换。如果你以前习惯多显示器，现在可能根本不需要了。
+</p>
+
+<h3 id="copy-and-paste-just-work">
+  复制粘贴开箱即用<a
+    class="manual__heading-link"
+    href="#copy-and-paste-just-work"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在Mac上，你到处使用Cmd + C；在Windows上，到处使用Ctrl +
+  C——除了终端，在那里它会终止程序。Omarchy提供<code>Super + C</code>、<code
+    >Super + X</code
+  >和<code>Super + V</code
+  >，它们在任何地方都有效，包括终端。不必为shell单独学一套反射。
+</p>
+
+<p>
+  Windows用户：你的Win + V剪贴板历史对应<code>Super + Ctrl + V</code
+  >，而且图片和文本都保存。参见<a href="/manual/unified-clipboard-history/"
+    >统一剪贴板与历史记录</a
+  >。
+</p>
+
+<h3 id="the-translation-table">
+  对照表<a
+    class="manual__heading-link"
+    href="#the-translation-table"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>你习惯的</th>
+      <th>在Omarchy中</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spotlight / Raycast /开始菜单</td>
+      <td><code>Super + Space</code>，即Omarchy菜单</td>
+    </tr>
+    <tr>
+      <td>AirDrop</td>
+      <td>
+        LocalSend，通过<code>Super + Ctrl + S</code>，参见<a
+          href="/manual/guis/"
+          >图形应用</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>Cmd + Shift + 4 / Win + Shift + S</td>
+      <td>
+        <code>Print Screen</code>，参见<a href="/manual/screenshots-recording/"
+          >截图与录屏</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>通知中心</td>
+      <td>通知历史，快捷键<code>Super + Shift + Alt + ,</code></td>
+    </tr>
+    <tr>
+      <td>Time Machine（针对系统）</td>
+      <td>每次更新自动创建<a href="/manual/system-snapshots/">系统快照</a></td>
+    </tr>
+    <tr>
+      <td>App Store /下载安装程序</td>
+      <td>
+        菜单中的<em>Install</em>，或<code>omarchy pkg add</code>，参见<a
+          href="/manual/other-packages/"
+          >其他软件包</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>系统设置/控制面板</td>
+      <td>
+        菜单中的<em>Setup</em>，编辑的是纯文本配置文件，参见<a
+          href="/manual/dotfiles/"
+          >配置文件</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="some-things-really-are-different">
+  有些地方确实不同<a
+    class="manual__heading-link"
+    href="#some-things-really-are-different"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  许多设置存放在你编辑的文本文件里，而不是逐层点击的面板中。这听起来原始，直到你意识到：每一处调整都看得见、能复制到下一台机器、能纳入版本控制。<em>Setup</em>菜单会直接带你进入对应文件，编辑完成后自动重启需要重启的进程。
+</p>
+
+<p>
+  更新只有一条命令——<em>Update &gt; Omarchy</em
+  >——它会更新Omarchy本身和系统中的每个软件包，并先创建快照。没有各个应用随时冒出来的更新提示。参见<a
+    href="/manual/updates/"
+    >系统更新</a
+  >。
+</p>
+
+<p>软件来自包管理器，而不是下载的安装程序。</p>
+
+<p>
+  而且关闭窗口时，应用就真的退出了。没有macOS那种程序没有窗口却仍在运行的中间状态。<code
+    >Super + W</code
+  >——或者<code>Super + Q</code>，如果这是你带来的手指记忆——意味着彻底关闭。
+</p>
+
+<h3 id="on-mac-hardware">
+  在Mac硬件上<a
+    class="manual__heading-link"
+    href="#on-mac-hardware"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy在Intel Mac上运行良好，参见<a href="/manual/mac-support/">Mac支持</a
+  >。键盘也对你很友好：Omarchy不重映射任何按键，Linux把Command键视为Super，所以Super就在Cmd一直所在的位置。你的拇指察觉不到变化。
+</p>
+
+<h3 id="give-it-two-weeks">
+  给它两周时间<a
+    class="manual__heading-link"
+    href="#give-it-two-weeks"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  本能的迁移比你想的更快。把<a href="/manual/hotkeys/">快捷键</a
+  >一章快速浏览一遍，想不起某个绑定时就按<code>Super + K</code
+  >，它会列出全部快捷键。这是你唯一真正需要记住的一个。
+</p>

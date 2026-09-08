@@ -1,0 +1,113 @@
+<p>
+  <a href="https://neovim.io/">Neovim</a>是<a
+    href="https://en.wikipedia.org/wiki/Vi_(text_editor)"
+    >vi编辑器</a
+  >的现代实现，vi由Bill
+  Joy早在1976年创造。它是模式化编辑器，插入模式与命令模式分离；哪怕只学会它深不见底的按键命令集中的一小部分，也堪称一种超能力。当然，学习曲线也相当陡峭！
+</p>
+
+<p>
+  如果你对vim式编辑完全陌生，推荐观看YouTube上<a
+    href="https://www.youtube.com/watch?v=X6AR2RMB5tE&amp;list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R"
+    >ThePrimeagen的Vim As Your Editor系列</a
+  >，它会教你基础。要知道，与主流编辑器不同，vim需要更长时间才能达到基本熟练；但一旦做到，回报也更大。
+</p>
+
+<p>
+  Neovim几乎可以无限配置。如果真想放开手脚，可以从零打造自己的Neovim配置。<a
+    href="https://www.youtube.com/watch?v=zHTeCSVAFNY"
+    >Typecraft有一门从零配置Neovim的好课程</a
+  >，<a href="https://www.youtube.com/watch?v=w7i4amO_zaE"
+    >ThePrimeagen也有一门</a
+  >。
+</p>
+
+<p>
+  不过Omarchy自带一套完整的Neovim配置——<code>omarchy-nvim</code>软件包——经过精心调校，用来展示开箱即用的最佳效果，你不必写一行配置。它基于<a
+    href="https://www.lazyvim.org/"
+    >LazyVim</a
+  >，一个Neovim插件与配置的发行版。非常出色。
+</p>
+
+<h2 id="lazyvim-basics">
+  LazyVim基础<a
+    class="manual__heading-link"
+    href="#lazyvim-basics"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  如前所述，我不会在这篇简短介绍中教你vim，但可以展示LazyVim的几个基础操作，以及怎样在其中移动。
+</p>
+
+<p>
+  首先，Neovim有leader键的概念，它基本上是所有命令的入口。LazyVim将其设为<code>Space</code>。按下它，稍等一秒，就会看到一组选项像这样内联显示：
+</p>
+
+<p>这是我一直在用的几个基本命令：</p>
+
+<ul>
+  <li><code>Space Space</code>：在当前目录中模糊查找任意文件。</li>
+  <li><code>Space S G</code>：用grep搜索所有文件，带预览。</li>
+  <li><code>Space E</code>：开关文件树。</li>
+  <li><code>Ctrl + W W</code>：在文件树与编辑器之间来回跳转。</li>
+  <li>
+    <code>Shift + H</code>：在打开的标签页（vim称之为buffer）之间向左移动。
+  </li>
+  <li><code>Shift + L</code>：在打开的标签页之间向右移动。</li>
+  <li><code>Space B D</code>：关闭标签页。</li>
+  <li><code>Space B O</code>：关闭当前之外的所有标签页。</li>
+  <li><code>Space G G</code>：在当前目录以浮动窗格启动LazyGit。</li>
+  <li><code>Space U W</code>：开关软换行。</li>
+</ul>
+
+<p>
+  在文件树中（<code>Space E</code>显示，<code>Ctrl + W W</code
+  >跳转过去），用<code>a</code>新建文件，用<code>A</code>新建目录。在树中按<code>?</code>可查看所有命令。
+</p>
+
+<p>
+  如果想掌握vim的基本语言，我写过一篇关于<a
+    href="https://world.hey.com/dhh/wonderful-vi-a1d034d3"
+    >三段式语法</a
+  >的文章，教你打出那些漂亮的连招！
+</p>
+
+<p>
+  所有可用命令参见<a href="https://www.lazyvim.org/keymaps"
+    >LazyVim Keymaps页面</a
+  >。
+</p>
+
+<h2 id="starting-neovim">
+  启动Neovim<a
+    class="manual__heading-link"
+    href="#starting-neovim"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  可以用<code>Super + Shift + N</code
+  >启动Neovim（这个绑定启动的是默认编辑器，开箱即为Neovim），但通常从终端启动更方便：进入要工作的目录，输入<code>n</code>。<code>n</code>是<code>nvim</code>的别名，默认打开当前目录。<code
+    >n myfile.txt</code
+  >则打开单个文件。
+</p>
+
+<h2 id="using-neovim-for-sudo-edits">
+  用Neovim编辑需要sudo的文件<a
+    class="manual__heading-link"
+    href="#using-neovim-for-sudo-edits"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  如果要编辑只有超级用户才能修改的文件，运行<code
+    >sudoedit /etc/sudoers.d/00-sudo-only-file</code
+  >，即可使用带全部插件配置的neovim进行编辑。
+</p>

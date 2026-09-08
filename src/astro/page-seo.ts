@@ -1,4 +1,5 @@
 import { SITE_DESCRIPTION, excerptFromHtml, seo } from '../lib/seo'
+import { t } from '../i18n/site'
 import type { NewsPost } from '../lib/news'
 import type { getManualChapter } from './data'
 
@@ -33,22 +34,28 @@ export function newsPostSeo(post: NewsPost) {
 
 export function manualIndexSeo() {
   return seo({
-    title: 'The Manual - Omarchy',
-    description:
+    title: t('The Manual - Omarchy'),
+    description: t(
       'The Omarchy manual: installation, navigation, hotkeys, themes, plugins, and everything else about running the OS.',
+    ),
     path: '/manual',
   })
 }
 
-const WRITTEN: Partial<Record<string, string>> = {
-  faq: 'Answers to what comes up most: keyboard layouts, the clock format, timezones, DNS and Wi-Fi, printers, and where screenshots end up.',
+// Literal t() calls so the translation extractor sees the authored descriptions.
+function writtenDescription(slug: string) {
+  if (slug === 'faq')
+    return t(
+      'Answers to what comes up most: keyboard layouts, the clock format, timezones, DNS and Wi-Fi, printers, and where screenshots end up.',
+    )
+  return undefined
 }
 
 export function chapterSeo(data: ChapterData, slug: string) {
   return seo({
-    title: `${data.chapter?.title ?? 'Manual'} - Omarchy Manual`,
+    title: `${data.chapter?.title ?? t('Manual')} - ${t('Omarchy Manual')}`,
     description:
-      WRITTEN[slug] ??
+      writtenDescription(slug) ??
       ((data.chapter && excerptFromHtml(data.chapter.html)) ||
         SITE_DESCRIPTION),
     path: `/manual/${slug}`,

@@ -1,0 +1,229 @@
+<p>
+  Omarchy主要通过存放在<code>~/.config</code>中的所谓dotfiles进行配置。这些文件属于你，供你修改；而<code>/usr/share/omarchy</code>中的文件属于Omarchy本身，不应去动。如果需要更改<code>/usr/share/omarchy</code>中的任何内容，应改为在<code>~/.config</code>中覆盖对应的值。
+</p>
+
+<p>
+  关键配置可以直接从Omarchy菜单（<code>Super + Space</code>）编辑，如<em
+    >Setup &gt; Monitors</em
+  >、<em>Setup &gt; Keybindings</em>、<em>Setup &gt; Input</em>和<em
+    >Setup &gt; Config &gt; [file]</em
+  >。通过这种方式编辑，退出编辑器后需要重启的进程会自动重启（默认编辑器是Neovim——记得<code>:wq</code>！也可以在<em
+    >Setup &gt; Defaults &gt; Editor</em
+  >中更换）。
+</p>
+
+<p>以下是<code>~/.config</code>中的关键文件及各自的作用：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>文件</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>~/.config/hypr/hyprland.lua</code></td>
+      <td>
+        Hyprland主配置。加载Omarchy默认值和下列覆盖文件。<a
+          href="https://wiki.hypr.land/Configuring/"
+          >了解更多Hyprland配置</a
+        >。
+      </td>
+    </tr>
+    <tr>
+      <td><code>~/.config/hypr/bindings.lua</code></td>
+      <td>你自己的键绑定，以及对默认绑定的覆盖。</td>
+    </tr>
+    <tr>
+      <td><code>~/.config/hypr/monitors.lua</code></td>
+      <td>控制显示器、分辨率和位置。</td>
+    </tr>
+    <tr>
+      <td><code>~/.config/hypr/input.lua</code></td>
+      <td>控制键盘布局、鼠标和触控板设置。</td>
+    </tr>
+    <tr>
+      <td><code>~/.config/hypr/looknfeel.lua</code></td>
+      <td>控制间隙、边框、动画等外观。</td>
+    </tr>
+    <tr>
+      <td><code>~/.config/hypr/autostart.lua</code></td>
+      <td>控制随会话启动的额外进程。</td>
+    </tr>
+    <tr>
+      <td><code>~/.config/omarchy/shell.json</code></td>
+      <td>
+        控制Omarchy shell：状态栏位置、布局和部件，以及屏保、锁定和空闲计时。
+      </td>
+    </tr>
+    <tr>
+      <td><code>~/.config/foot/foot.ini</code></td>
+      <td>控制终端（默认为foot）。</td>
+    </tr>
+    <tr>
+      <td><code>~/.XCompose</code></td>
+      <td>
+        定义快速表情和姓名/邮箱自动补全。修改后请运行<code>omarchy-restart-xcompose</code>。
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  如果为了打磨自己的配置做了大量修改，最好把这些dotfiles备份起来。<a
+    href="https://www.youtube.com/watch?v=NoFiYOqnC4o"
+    >Stow是个不错的办法</a
+  >。
+</p>
+
+<h3 id="starting-your-own-apps-with-the-session">
+  随会话启动自己的应用<a
+    class="manual__heading-link"
+    href="#starting-your-own-apps-with-the-session"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  希望某个程序在每次登录时运行——同步守护进程、聊天应用、你自己的脚本——就把它加到<code>~/.config/hypr/autostart.lua</code>：
+</p>
+
+<pre><code class="language-lua">o.launch_on_start("my-service")
+</code></pre>
+
+<p>该命令会作为会话的一部分启动，退出登录时也会被正确清理。</p>
+
+<h3 id="running-scripts-on-system-events">
+  在系统事件上运行脚本<a
+    class="manual__heading-link"
+    href="#running-scripts-on-system-events"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy会在几个时刻触发钩子，你可以把自己的脚本挂上去。它们位于<code>~/.config/omarchy/hooks/&lt;event&gt;.d/</code>，每个事件一个目录，事件发生时其中的每个可执行文件都会运行：
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>事件</th>
+      <th>触发时机</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>post-boot</code></td>
+      <td>桌面启动后立即触发</td>
+    </tr>
+    <tr>
+      <td><code>post-update</code></td>
+      <td><code>omarchy update</code>期间，软件包与迁移完成之后</td>
+    </tr>
+    <tr>
+      <td><code>pre-refresh-pacman</code></td>
+      <td><code>omarchy refresh pacman</code>重新同步软件包配置之前</td>
+    </tr>
+    <tr>
+      <td><code>theme-set</code></td>
+      <td>更换主题之后（主题名在<code>$1</code>）</td>
+    </tr>
+    <tr>
+      <td><code>font-set</code></td>
+      <td>更换字体之后（字体名在<code>$1</code>）</td>
+    </tr>
+    <tr>
+      <td><code>battery-low</code></td>
+      <td>电池电量不足时（百分比在<code>$1</code>）</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  每个目录中都已有一个<code>.sample</code>文件展示钩子的写法，去掉文件名中的<code>.sample</code>即可启用。要安装写在别处的脚本，运行<code
+    >omarchy hook install post-boot ~/my-hook</code
+  >，它会复制进去并设为可执行。
+</p>
+
+<h3 id="adding-your-own-menu-entries">
+  添加自己的菜单项<a
+    class="manual__heading-link"
+    href="#adding-your-own-menu-entries"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  编辑<code>~/.config/omarchy/extensions/omarchy-menu.jsonc</code>，可以为Omarchy菜单（<code
+    >Super + Space</code
+  >）添加自己的条目。条目以点分id为键，id决定其在菜单树中的位置：<code>personal</code>出现在根菜单，<code>personal.notes</code>出现在它之下：
+</p>
+
+<pre><code class="language-jsonc">"personal": {"icon":"","label":"Personal"},
+"personal.notes": {"icon":"󰎞","label":"Notes","action":"omarchy-launch-editor ~/notes"},
+</code></pre>
+
+<p>重用已有的id会覆盖该条目而非新增。文件中以注释形式记录了所有可用字段。</p>
+
+<h3 id="adding-your-own-shell-exports-functions-and-aliases">
+  添加自己的shell导出、函数和别名<a
+    class="manual__heading-link"
+    href="#adding-your-own-shell-exports-functions-and-aliases"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy内置了一批顺手的别名和实用函数，但想添加自己的东西很常见。别名、函数和导出都应写在<code>~/.bashrc</code>中，该文件在更新时不会被覆盖。想更改Omarchy的任何默认值，也可以放心地写在这里。
+</p>
+
+<h3 id="changing-internal-omarchy-files">
+  修改Omarchy内部文件<a
+    class="manual__heading-link"
+    href="#changing-internal-omarchy-files"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  当然，这是你的电脑，想怎么改都可以，但我不建议直接修改<code>/usr/share/omarchy</code>中的文件。它们属于Omarchy的pacman软件包，下次更新时你的修改会被直接覆盖。更好的做法是在<code>~/.config/*</code>中覆盖你不喜欢的默认值。
+</p>
+
+<p>
+  几乎一切都能这样修改，包括默认键绑定。比如编辑<code>~/.config/hypr/bindings.lua</code>，把<a
+    href="https://obsidian.md/"
+    >Obsidian</a
+  >换成<a href="https://joplinapp.org/">Joplin</a>（用<code
+    >omarchy-pkg-add joplin-bin</code
+  >安装）：
+</p>
+
+<pre><code>hl.unbind("SUPER + SHIFT + O")
+o.bind("SUPER + SHIFT + O", "Joplin", "joplin-desktop")
+</code></pre>
+
+<p>
+  如果坚持要修改Omarchy内部文件，通过<em>Update &gt; Channel &gt; Dev</em
+  >切换到dev通道。它把Omarchy链接到<code>~/omarchy</code>中源代码的git检出，你可以随心所欲地修改。这里没人管你！
+</p>
+
+<h3 id="resetting-any-changes">
+  重置所有修改<a
+    class="manual__heading-link"
+    href="#resetting-any-changes"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  如果把配置改乱了，随时可以通过Omarchy菜单的<em>Update &gt; Config</em
+  >恢复默认，或运行<code>omarchy reinstall configs</code>重置一切。
+</p>

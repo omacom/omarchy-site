@@ -1,0 +1,198 @@
+<h3 id="how-do-i-switch-between-keyboard-layouts">
+  如何切换键盘布局？<a
+    class="manual__heading-link"
+    href="#how-do-i-switch-between-keyboard-layouts"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  编辑<code>~/.config/hypr/input.lua</code>，加入下面的内容，即可用<code
+    >Left Alt + Right Alt</code
+  >在布局之间切换：
+</p>
+
+<pre><code>hl.config({
+  input = {
+    -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt
+    kb_layout = "us,fr",
+    kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+  },
+})
+</code></pre>
+
+<p>配置了多个布局后，状态栏会自动显示当前键盘布局（点击它也能切换）。</p>
+
+<h3 id="how-do-i-change-the-clock-format-to-12-hour">
+  如何把时钟改为12小时制？<a
+    class="manual__heading-link"
+    href="#how-do-i-change-the-clock-format-to-12-hour"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  右键点击状态栏中的时钟，可在常用格式（包括12小时制）之间循环切换。也可以直接设置格式：
+</p>
+
+<pre><code>omarchy bar set omarchy.clock format "dddd h:mm AP"
+</code></pre>
+
+<p>这会显示为Sunday 10:55 AM。</p>
+
+<h3 id="how-do-i-change-my-timezone">
+  如何修改时区？<a
+    class="manual__heading-link"
+    href="#how-do-i-change-my-timezone"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  在Omarchy菜单中运行<em>Update &gt; Timezone</em
+  >，从列表中选择。如果时区正确但时钟本身走偏了，<em>Update &gt; Time</em
+  >会重新启动时间同步。
+</p>
+
+<h3 id="how-do-i-change-my-dns-share-my-wi-fi-or-check-my-connection-speed">
+  如何修改DNS、分享Wi-Fi或测试网速？<a
+    class="manual__heading-link"
+    href="#how-do-i-change-my-dns-share-my-wi-fi-or-check-my-connection-speed"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>这些都在<a href="/manual/networking/">网络</a>一章。</p>
+
+<h3 id="how-do-i-check-how-fast-my-disk-is">
+  如何测试磁盘速度？<a
+    class="manual__heading-link"
+    href="#how-do-i-check-how-fast-my-disk-is"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  <em>Trigger &gt; Speed Test &gt; Disk Speed Test</em
+  >会实时测量驱动器的读写速度，终端中则是<code>omarchy disk speedtest</code>。
+</p>
+
+<h3 id="why-cant-i-sign-into-my-google-account-in-chromium">
+  为什么无法在Chromium中登录Google账户？<a
+    class="manual__heading-link"
+    href="#why-cant-i-sign-into-my-google-account-in-chromium"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  纯开源的Chromium构建不附带Google登录所需的OAuth凭据。在Omarchy菜单中运行<em
+    >Install &gt; Service &gt; Chromium Account</em
+  >添加它们，重启浏览器后即可登录。
+</p>
+
+<h3 id="how-do-i-add-a-printer">
+  如何添加打印机？<a
+    class="manual__heading-link"
+    href="#how-do-i-add-a-printer"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  打印功能开箱即用，每台打印机由你自己在应用启动器（<code>Super + Space</code
+  >）的<em>Print Settings</em>中添加。
+</p>
+
+<p>
+  选择<em>Add</em>，稍等片刻让它搜索：通过USB连接的打印机和大多数网络打印机都会被自动找到。如果你的不在列表中，选择<em
+    >Network Printer &gt; Internet Printing Protocol (ipp)</em
+  >并输入地址——打印机自己的屏幕或网页会告诉你地址，通常类似<code>192.168.1.50</code>，队列为<code>ipp/print</code>。接着<em>Forward</em>会提供驱动，新款打印机用免驱动的<em
+    >IPP Everywhere</em
+  >配置效果最好，老机型则需要对应型号的驱动。
+</p>
+
+<p>
+  右键点击打印机，选择<em>Set as Default</em
+  >决定应用优先使用哪一台，选择<em>Properties</em>设置纸张大小、双面和质量。
+</p>
+
+<p>
+  自动发现——网络上的打印机无需添加自动出现——在重做期间暂时关闭，所以上面的第一步需要你手动完成。打印到PDF文件不需要任何打印机。
+</p>
+
+<h3 id="how-do-i-change-where-screenshots-or-screenrecordings-are-saved">
+  如何修改截图或录屏的保存位置？<a
+    class="manual__heading-link"
+    href="#how-do-i-change-where-screenshots-or-screenrecordings-are-saved"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  想把截图保存到<code>~/Pictures/Screenshots</code>而不是<code>~/Pictures</code>，可以把下面这行加到<code>~/.config/uwsm/env.d/</code>下的某个文件中（如<code>~/.config/uwsm/env.d/capture</code>）：
+</p>
+
+<pre><code>export OMARCHY_SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
+</code></pre>
+
+<p>录屏同理，使用<code>OMARCHY_SCREENRECORD_DIR</code>。</p>
+
+<p>记得先创建目标目录，并重启Omarchy使其生效。</p>
+
+<h3 id="how-do-i-get-the-speakers--webcam-working-on-my-apple-studio-display">
+  如何让Apple Studio Display的扬声器和摄像头工作？<a
+    class="manual__heading-link"
+    href="#how-do-i-get-the-speakers--webcam-working-on-my-apple-studio-display"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  你可能以为插上USB-C就万事大吉，可惜并非如此。我找到的可靠办法是使用<a
+    href="https://www.amazon.com/WJESOG-DisplayPort-Adapter-Converter-Thunderbolt/dp/B0BNX7MS6N/"
+    >WJESOG DisplayPort + USB-A转USB-C线</a
+  >，之后扬声器和摄像头都能正常工作。
+</p>
+
+<p>
+  记住，Omarchy内置了Apple显示器（Studio和XDR）的亮度控制，用常规的键盘亮度键即可。
+</p>
+
+<h3 id="how-do-i-get-rid-of-all-the-extra-software">
+  如何清掉所有额外的软件？<a
+    class="manual__heading-link"
+    href="#how-do-i-get-rid-of-all-the-extra-software"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>不想要Obsidian、LibreOffice或其他预装软件的话，移除起来很容易。</p>
+
+<p>
+  运行<em>Remove &gt; Package</em
+  >查看所有已安装的软件包，用Tab选中想移除的，再按回车开始移除选中的全部。
+</p>
+
+<p>
+  在Omarchy菜单中用<em>Remove &gt; Web App</em>可以移除不需要的预装Web应用。
+</p>
+
+<p>
+  也可以运行<em>Remove &gt; Preinstalls</em
+  >，一次清掉所有预装的额外内容——Web应用、TUI和可选应用。启动它们的快捷键也会随之消失，留给你一套干净的键绑定，在<code>~/.config/hypr/bindings.lua</code>中填上自己的。
+</p>
+
+<hr />
+
+<p>报错和故障请参见<a href="/manual/troubleshooting/">故障排除</a>。</p>

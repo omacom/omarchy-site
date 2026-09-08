@@ -1,0 +1,49 @@
+<h3 id="fingerprint-authentication">
+  指纹认证<a
+    class="manual__heading-link"
+    href="#fingerprint-authentication"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  许多笔记本配有用于认证的指纹传感器。在Omarchy菜单（<code>Super + Space</code
+  >）中运行<em>Setup &gt; Security &gt; Fingerprint</em>即可使用。
+</p>
+
+<p>
+  它会安装指纹软件包、采集并验证你的指纹，之后就可以用指纹解锁锁屏（<code
+    >Super + Ctrl + L</code
+  >触发）、进入sudo模式，以及授权系统提示。
+</p>
+
+<p>
+  笔记本盖子合上时会自动跳过指纹提示，直接进入密码提示，而不是等待一个够不着的传感器。如果需要在没有传感器的外接键盘上工作，<code>sudo</code>提示输入指纹时按<code
+    >CTRL + C</code
+  >即可。
+</p>
+
+<p>
+  在Omarchy菜单的<em>Remove &gt; Security &gt; Fingerprint</em
+  >下可以移除指纹认证。
+</p>
+
+<h3 id="fido2-authentication">
+  Fido2认证<a
+    class="manual__heading-link"
+    href="#fido2-authentication"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  使用Fido2设备的话，可以通过Omarchy菜单（<code>Super + Space</code>）的<em
+    >Setup &gt; Security &gt; Fido2</em
+  >将其设置为<code>sudo</code>认证方式。它覆盖<code>sudo</code>和系统授权提示，但不包括解锁电脑。
+</p>
+
+<p>
+  在Omarchy菜单的<em>Remove &gt; Security &gt; Fido2</em>下可以移除fido2认证。
+</p>

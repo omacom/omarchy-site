@@ -1,0 +1,145 @@
+<p>
+  Omarchy的网络由NetworkManager管理，通过<a href="/manual/the-top-bar/"
+    >状态栏</a
+  >中的网络图标或<code>Super + Ctrl + W</code>操作。
+</p>
+
+<p>
+  该面板会扫描Wi-Fi网络、显示信号强度并连接。有线网络什么都不用做——插上就能用。想留在终端里的话，<code>nmtui</code>提供同样的控制，另外还有一组<code
+    >omarchy network</code
+  >命令。
+</p>
+
+<h2 id="sharing-your-wi-fi">
+  分享Wi-Fi<a
+    class="manual__heading-link"
+    href="#sharing-your-wi-fi"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  与其把一长串密码念出来，不如在连着Wi-Fi时运行<em
+    >Setup &gt; Network &gt; QR Code</em
+  >。屏幕上会显示一个二维码，任何手机相机扫一下就能加入。这类功能一旦知道有，用得会比想象中频繁。
+</p>
+
+<p>
+  确实需要密码本身时，<code>omarchy network password &lt;interface&gt;</code
+  >会把它打印出来。
+</p>
+
+<h2 id="dns">
+  DNS<a class="manual__heading-link" href="#dns" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  Omarchy使用网络通过DHCP下发的DNS。可以在<em>Setup &gt; Network &gt; DNS</em
+  >下为整台机器覆盖它，Cloudflare和Google一键可选，选择<em>Custom</em>则可输入自己的服务器。
+</p>
+
+<p>
+  终端中，<code>omarchy dns</code>显示当前提供商，<code
+    >omarchy dns Cloudflare</code
+  >设置一个。
+</p>
+
+<h2 id="pinning-the-wi-fi-band">
+  固定Wi-Fi频段<a
+    class="manual__heading-link"
+    href="#pinning-the-wi-fi-band"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  如果路由器把2.4GHz、5GHz和6GHz放在同一个网络名下，笔记本有时会死守着慢的那个。<code
+    >omarchy network band</code
+  >显示当前所在频段，<code>omarchy network band 5</code
+  >固定频段，<code>auto</code>则交回自动选择。
+</p>
+
+<p>这固定的是频段而非具体接入点，所以在各个AP之间照常漫游。</p>
+
+<h2 id="how-fast-is-it">
+  网速有多快？<a
+    class="manual__heading-link"
+    href="#how-fast-is-it"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <em>Trigger &gt; Speed Test &gt; Network Speed Test</em
+  >用一对仪表盘测量实际的上下行速度。终端中是<code
+    >omarchy network speedtest down</code
+  >或<code>up</code>。（同一菜单里还有磁盘速度测试，用于衡量另一个瓶颈。）
+</p>
+
+<h2 id="the-firewall">
+  防火墙<a
+    class="manual__heading-link"
+    href="#the-firewall"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  防火墙默认开启，拦截所有入站流量，只有一个例外：53317端口，以便<a
+    href="/manual/guis/"
+    >LocalSend</a
+  >开箱即用。
+</p>
+
+<p>
+  SSH默认关闭，直到你通过<em>Setup &gt; Security &gt; SSHD</em
+  >开启，它会启动守护进程、开放带暴力破解限速的22端口，并授权一个密钥。Docker也被锁住，容器不会意外暴露到外网。完整说明参见<a
+    href="/manual/security/"
+    >安全</a
+  >。
+</p>
+
+<h2 id="tailscale">
+  Tailscale<a
+    class="manual__heading-link"
+    href="#tailscale"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://tailscale.com/">Tailscale</a
+  >是一款网状VPN，让你通过互联网安全访问所有电脑和服务器变得极为简单。通过<em
+    >Install &gt; Service &gt; Tailscale</em
+  >安装。
+</p>
+
+<p>
+  安装后状态栏中会出现Tailscale面板，可以连接和断开tailnet、切换账户、选择出口节点——你自己的机器和Mullvad地区都在列表中。它还能浏览你的机器，Taildrop就在这里：选中一台机器，按<code>s</code>向它发送文件，按<code>c</code>、<code>n</code>、<code>d</code>复制其IP、名称或完整DNS名。终端中的对应命令是<code
+    >omarchy tailscale send &lt;machine&gt; [file...]</code
+  >，发给你的文件会自动存入<code>~/Downloads</code>。到达通知会一直等到你点击打开或关闭，所以你不在机器旁时收到的文件，回来后仍在等你处理。
+</p>
+
+<p>安装后还会添加一个Tailscale管理控制台的Web应用。</p>
+
+<h2 id="when-it-stops-working">
+  网络失灵时<a
+    class="manual__heading-link"
+    href="#when-it-stops-working"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  重启之前，先试着单独重启出问题的那一部分。<em>Update &gt; Hardware</em
+  >下有Wi-Fi、蓝牙、音频和触控板，重新加载其中一项就能解决大多数“五分钟前还好好的”情况。参见<a
+    href="/manual/troubleshooting/"
+    >故障排除</a
+  >。
+</p>

@@ -190,7 +190,7 @@
     "domain": "https://zh.omarchy.org",
     "formatLocale": "zh-CN",
     "ogLocale": "zh_CN",
-    "manual": false,
+    "manual": true,
     "flag": "CN"
   },
   "pl": {

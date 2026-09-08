@@ -1,0 +1,140 @@
+<p>Omarchy内置了一组shell函数，用于简化常见任务、封装参数繁琐的调用。</p>
+
+<h2 id="compression">
+  压缩<a class="manual__heading-link" href="#compression" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li><code>compress [file/dir]</code>：将文件或目录打包为tar.gz。</li>
+  <li><code>decompress [file.tar.gz]</code>：解压tar.gz文件。</li>
+</ul>
+
+<h2 id="drives">
+  驱动器<a class="manual__heading-link" href="#drives" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>iso2sd [image.iso]</code
+    >：用指定的iso文件在SD卡上创建可启动驱动器，交互式选择目标。
+  </li>
+  <li>
+    <code>format-drive [device] [name]</code
+    >：将整块磁盘格式化为单个exFAT分区（Windows和macOS也能读写）。不带参数运行可查看可用驱动器。请务必小心！
+  </li>
+</ul>
+
+<h2 id="dev-layouts">
+  开发布局<a
+    class="manual__heading-link"
+    href="#dev-layouts"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>tmux的即时多窗格开发布局：</p>
+
+<ul>
+  <li>
+    <code>tdl [ai]</code>：创建Tmux Dev
+    Layout，包含编辑器、AI智能体和终端。使用智能体别名，如<code>tdl c</code
+    >对应opencode，<code>tdl cx</code>对应Claude
+    Code；传入第二个智能体可同时运行两个，如<code>tdl c cx</code>。
+  </li>
+  <li>
+    <code>tds</code>：创建Tmux Dev Square，包含编辑器、diff监视（通过<code
+      >hunk diff --watch</code
+    >）、终端和opencode。
+  </li>
+  <li>
+    <code>tdlm [ai]</code
+    >：为当前目录下的每个子目录创建一个<code>tdl</code>窗口。
+  </li>
+  <li>
+    <code>tsl [count] [command]</code
+    >：创建一组网格平铺的窗格，全部运行同一条命令（非常适合AI智能体）。
+  </li>
+</ul>
+
+<p>
+  同样的布局在Herdr中对应<code>hdl</code>、<code>hds</code>、<code>hdlm</code>和<code>hsl</code>。
+</p>
+
+<h2 id="git-worktrees">
+  Git工作树<a
+    class="manual__heading-link"
+    href="#git-worktrees"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>ga [branch]</code>：在当前仓库旁创建新的工作树和分支，并进入其中。
+  </li>
+  <li><code>gd</code>：删除当前工作树及其分支（会先要求确认）。</li>
+</ul>
+
+<h2 id="rsync-watchers">
+  Rsync监视器<a
+    class="manual__heading-link"
+    href="#rsync-watchers"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>rsw [source] [destination]</code>：启动后台监视器，一有变动就把source
+    rsync到destination。目标可以是远程主机，如<code
+      >rsw ~/Work/app nyc-dev:Work/app</code
+    >。
+  </li>
+  <li><code>lsw</code>：列出所有活动的监视器。</li>
+  <li><code>dsw</code>：停止所有活动的监视器。</li>
+</ul>
+
+<h2 id="ssh-portforwarding">
+  SSH端口转发<a
+    class="manual__heading-link"
+    href="#ssh-portforwarding"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>适合面向远程机器做Web开发，同时享有localhost的安全上下文权限。</p>
+
+<ul>
+  <li><code>fip</code>：通过SSH将远程主机的一个或多个端口转发到localhost。</li>
+  <li><code>dip</code>：断开一个或多个已转发的端口。</li>
+  <li><code>lip</code>：列出所有活动的SSH端口转发。</li>
+</ul>
+
+<p>
+  假设你在一台可通过<code>nyc-dev</code>访问的机器上以<code>3000</code>端口启动了开发服务器，运行<code
+    >fip nyc-dev 3000</code
+  >转发该端口，<code>localhost:3000</code>实际访问的就是<code>nyc-dev:3000</code>，而且无需SSL证书就能获得测试web
+  socket等功能所需的安全上下文。
+</p>
+
+<h2 id="ssh-reconnection">
+  SSH自动重连<a
+    class="manual__heading-link"
+    href="#ssh-reconnection"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>ssh</code
+  >本身被包装在一个函数中：若远程的tmux、Herdr或编辑器占用终端时连接中断，它会清理终端；交互式会话掉线时会自动重连（Ctrl-C可停止重试）。
+</p>

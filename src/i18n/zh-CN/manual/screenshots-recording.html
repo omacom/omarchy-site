@@ -1,0 +1,263 @@
+<p>
+  所有能从屏幕上抓取的东西都挂在Print
+  Screen键上：单独按下是截图，配合修饰键则是录屏、取色或提取区域内的文字。如果键盘没有Print
+  Screen键，<code>Super + Ctrl + C</code>会以菜单形式打开同一组功能。
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Print Screen</code></td>
+      <td>截图</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Print Screen</code></td>
+      <td>录屏（或停止正在进行的录屏）</td>
+    </tr>
+    <tr>
+      <td><code>Super + Print Screen</code></td>
+      <td>取色器</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Print Screen</code></td>
+      <td>从区域提取文字</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + C</code></td>
+      <td>捕获菜单</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + .</code></td>
+      <td>转码图片或视频</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="screenshots">
+  截图<a class="manual__heading-link" href="#screenshots" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  按下<code>Print Screen</code
+  >，屏幕随即冻结，瞄准时不会有任何东西移动。拖出方框可自由框选；只点一下，则截图会吸附到你点中的矩形——点中窗口就是窗口，点中状态栏或空隙就是整个显示器。改主意了？再按一次<code
+    >Print Screen</code
+  >即可取消。
+</p>
+
+<p>
+  结果同时去往两处：图片目录中的一个PNG，以及剪贴板，所以可以用<code
+    >Super + V</code
+  >直接粘贴到聊天窗口。随后会弹出带缩略图的通知，点击它（或按<code
+    >Super + Alt + ,</code
+  >调出最近一条通知），截图会在标注编辑器Tensaku中打开，发送前可以画上箭头和方框。
+</p>
+
+<p>
+  文件默认保存在<code>~/Pictures</code>，命名类似<code>screenshot-2026-08-13_14-22-05.png</code>。如果希望单独放在一个文件夹，设置<code>OMARCHY_SCREENSHOT_DIR</code>——会话环境变量放在哪里参见<a
+    href="/manual/faq/"
+    >常见问题</a
+  >。目录不存在时Omarchy会自动创建。编辑器也可以用<code>OMARCHY_SCREENSHOT_EDITOR</code>更换。
+</p>
+
+<p>
+  在终端中，<code>omarchy screenshot</code
+  >拍摄同样的截图，还可以更明确地指定：<code
+    >omarchy capture screenshot region</code
+  >仅自由框选，<code>windows</code>吸附到窗口和显示器矩形，<code>fullscreen</code>跳过选择器直接抓取当前聚焦的显示器。第二个参数<code>copy</code>只把截图放到剪贴板，<code>save</code>只保存到磁盘。
+</p>
+
+<h3 id="driving-the-picker-from-the-keyboard">
+  用键盘操作选择器<a
+    class="manual__heading-link"
+    href="#driving-the-picker-from-the-keyboard"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>选择界面显示期间，完全可以不用鼠标：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>按键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Return</code></td>
+      <td>捕获高亮的窗口</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Return</code></td>
+      <td>捕获整个屏幕</td>
+    </tr>
+    <tr>
+      <td><code>Tab</code> / <code>Ctrl + Tab</code></td>
+      <td>高亮下一个/上一个窗口</td>
+    </tr>
+    <tr>
+      <td>方向键</td>
+      <td>高亮该方向的窗口</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  方向键和Tab会把光标移到所选窗口上，高亮随之跟进，你能看清即将捕获的内容。这些绑定仅在选择界面显示时存在，不会与你自己的配置冲突。
+</p>
+
+<h2 id="screen-recording">
+  录屏<a
+    class="manual__heading-link"
+    href="#screen-recording"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Alt + Print Screen</code>打开<em
+    >Trigger &gt; Capture &gt; Screenrecord</em
+  >，它会询问音轨内容：无音频、桌面音频、桌面加麦克风，或桌面加麦克风加摄像头。最后一项仅在确实接入了摄像头时才出现。选定后会得到与截图相同的选择器：拖出区域，或点击窗口或显示器。
+</p>
+
+<p>
+  录制由gpu-screen-recorder完成，它在GPU上以60fps编码，必要时回退到CPU。结果是<code>~/Videos</code>中的一个MP4，命名类似<code>screenrecording-2026-08-13_14-22-05.mp4</code>。设置<code>OMARCHY_SCREENRECORD_DIR</code>可以更改——但与截图目录不同，这个目录必须已经存在，否则录制会拒绝开始。
+</p>
+
+<p>
+  录制期间，状态栏上会出现一个小指示器，点击即可停止。也可以再按一次<code
+    >Alt + Print Screen</code
+  >，或使用<em>Trigger &gt; Capture &gt; Screenrecord</em>下的<em
+    >Stop Screenrecording</em
+  >，该条目仅在确实有录制进行时才出现。
+</p>
+
+<p>
+  停止后会先做一点整理再把文件交给你：裁掉第一帧，如果有音频则归一化到 -14
+  LUFS，并将开头PipeWire采集的爆音消除。随后会出现一条带录像缩略图的通知，点击即可用mpv播放。
+</p>
+
+<h3 id="the-webcam-overlay">
+  摄像头画面<a
+    class="manual__heading-link"
+    href="#the-webcam-overlay"
+    aria-label="本节链接"
+    >#</a
+  >
+</h3>
+
+<p>
+  带摄像头录制时，摄像头画面会以固定的竖版裁剪窗口出现在录制区域右下角。如果它挡住了需要的内容，可以随时调整大小：
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷键</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Alt + [</code></td>
+      <td>缩小摄像头画面</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + ]</code></td>
+      <td>放大摄像头画面</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  共有小、中、大三种尺寸，快捷键在其间切换，默认为中。尺寸与录制画面成比例，无论录制的是1080p还是6K显示器，摄像头在画面中的占比都相同。如果录制的是一个区域而非整个显示器，画面会固定在该区域而非显示器的角落，始终保持在录制范围内。
+</p>
+
+<p>
+  也可以直接调用<code>omarchy-capture-webcam-resize small</code
+  >，或用<code>reset</code>恢复为中等尺寸。
+</p>
+
+<h2 id="text-qr-codes-and-colours">
+  文字、二维码与颜色<a
+    class="manual__heading-link"
+    href="#text-qr-codes-and-colours"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Super + Ctrl + Print Screen</code>框选区域并将其OCR到剪贴板，详见<a
+    href="/manual/text-extraction-dictation/"
+    >文字提取与语音听写</a
+  >。
+</p>
+
+<p>
+  <em>Trigger &gt; Capture &gt; QR Code</em
+  >对二维码做同样的事：框选包含二维码的区域，解码结果进入剪贴板。它只识别二维码——否则密集的屏幕内容很容易被误判为条形码。值得一提的是，解码结果只进入剪贴板，不去任何其他地方：不会打印，不出现在通知中，而且标记为敏感内容，不会留在<a
+    href="/manual/unified-clipboard-history/"
+    >剪贴板历史</a
+  >里。二维码常常携带机密，比如2FA设置码背后的<code>otpauth://</code>
+  URI，你不会希望它出现在日志中。粘贴则照常可用。
+</p>
+
+<p>
+  <code>Super + Print Screen</code>（或<em>Trigger &gt; Capture &gt; Color</em
+  >）把光标变成吸管，点击屏幕上的任意位置，颜色值即进入剪贴板。再按一次快捷键可不取色直接退出。
+</p>
+
+<h2 id="transcoding-before-you-share">
+  分享前转码<a
+    class="manual__heading-link"
+    href="#transcoding-before-you-share"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  4K录屏或手机里的原始HEIC往往太大，无法直接发送。<code>Super + Ctrl + .</code
+  >（或<em>Trigger &gt; Transcode</em
+  >）解决这个问题：它提供一个覆盖<code>~/Pictures</code>和<code>~/Videos</code>的模糊文件选择器，然后询问格式和尺寸。
+</p>
+
+<p>
+  图片可转为jpg或png，分高、中、低三档，宽度分别限制在3160、2160和1080像素。视频可转为mp4或动态gif，分4k、1080p和720p三档。转换后的文件写在原文件旁边，文件名带有分辨率——如<code>demo-1080p.mp4</code>——路径以文件URI形式复制到剪贴板，可以直接粘贴到接受文件拖放的应用中。
+</p>
+
+<p>
+  如果已经知道想要什么，终端中同样可用：<code
+    >omarchy transcode ~/Videos/demo.mov mp4 1080p</code
+  >。此外还有<code>omarchy transcode ascii</code
+  >，可把图片转成ASCII艺术，主要用于<a href="/manual/branding/">品牌定制</a>。
+</p>
+
+<h2 id="sending-it-somewhere">
+  发送出去<a
+    class="manual__heading-link"
+    href="#sending-it-somewhere"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  拿到文件后，<code>Super + Ctrl + S</code
+  >打开分享菜单，通过LocalSend发送到网络中的另一台设备。参见<a
+    href="/manual/guis/"
+    >图形应用</a
+  >。
+</p>

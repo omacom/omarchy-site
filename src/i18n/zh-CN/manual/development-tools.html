@@ -1,0 +1,117 @@
+<h2 id="alternative-editors">
+  其他编辑器<a
+    class="manual__heading-link"
+    href="#alternative-editors"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  Omarchy默认内置<a href="https://neovim.io/">Neovim</a
+  >，但如果你想要更主流、更熟悉的编辑器，可以打开Omarchy菜单（<code
+    >Super + Space</code
+  >），查看<em>Install &gt; Editor</em>下的选项：VSCode、Cursor、Zed、Sublime
+  Text、Helix、Vim和Emacs都在其中。没找到想要的，可以去<em
+    >Install &gt; Package</em
+  >看看是否有对应的Arch软件包（若没有，再试试<em>Install &gt; AUR</em
+  >查一下AUR）。
+</p>
+
+<p>
+  <code>VSCode</code
+  >、<code>Cursor</code>、<code>VSCodium</code>和<code>Helix</code>支持主题同步。
+</p>
+
+<p>全系统默认编辑器在<code>Setup &gt; Defaults &gt; Editor</code>下设置。</p>
+
+<h2 id="environment">
+  开发环境<a
+    class="manual__heading-link"
+    href="#environment"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  通过Omarchy菜单（<code>Super + Space</code>）的<em
+    >Install &gt; Development</em
+  >，可以配置大量开发环境。<em>Ruby on Rails</em
+  >自然在列，还有JavaScript的三大运行时（Node.js、Bun、Deno），以及Laravel、Symfony等流行的PHP框架。此外还有Go、Rust、Python、Java、Elixir（含Phoenix）、.NET、OCaml、Zig、Clojure和Scala。选择非常丰富！
+</p>
+
+<p>
+  这些环境大多由<a href="https://mise.jdx.dev/">Mise</a
+  >管理。它可以在同一台机器上安装并运行同一编程语言的多个版本，类似Ruby的rbenv或rvm、Python的virtualenv，但适用于许多不同的环境。
+</p>
+
+<p>
+  比如要安装Ruby，运行<code>mise use -g ruby</code
+  >，它会安装Ruby并设为全局默认。如果项目中有
+  .ruby-version文件，在项目根目录运行<code>mise i</code>即可。
+</p>
+
+<h2 id="docker">
+  Docker<a class="manual__heading-link" href="#docker" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://www.docker.com/">Docker</a
+  >无需多作介绍。它用于运行隔离的容器，Omarchy安装了运行它所需的一切，包括Docker本身和<a
+    href="https://docs.docker.com/compose/"
+    >Docker Compose</a
+  >。
+</p>
+
+<p>
+  默认情况下，你的用户<em>不在</em>
+  <code>docker</code
+  >组中。该组实际上等同于免密码的root——组内任何程序都可以通过<code
+    >docker run -v /:/host</code
+  >接管整台机器，否则一个以你身份运行的恶意脚本或依赖，离root就只差一条命令。因此命令行中需要用<code>sudo</code>运行Docker（<code
+    >sudo docker ps</code
+  >、<code>sudo docker compose up</code>），而与守护进程通信的图形工具——<code
+    >Super + Shift + D</code
+  >上的Docker
+  TUI和Windows虚拟机——会在需要时请求授权。如果你理解其中取舍，仍想要回免组的便利，可以在<strong
+    >Setup &gt; Security &gt; Sudoless Docker</strong
+  >中启用（或运行<code>omarchy-setup-security-sudoless-docker</code>），它会在警告后把你加入<code>docker</code>组；此后<code>docker</code>和<code>d</code>别名无需<code>sudo</code>即可使用。
+</p>
+
+<p>
+  别忘了试试Lazydocker，用<code>Super + Shift + D</code
+  >在一个漂亮的TUI中管理容器；除非启用了免sudo的Docker，否则它首次运行会请求授权。
+</p>
+
+<p>
+  通过Omarchy菜单的<em>Install &gt; Development &gt; Docker DB</em
+  >，可以在Docker中配置本地开发常用的数据库。
+</p>
+
+<h2 id="github-cli">
+  GitHub CLI<a
+    class="manual__heading-link"
+    href="#github-cli"
+    aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://cli.github.com/">GitHub CLI</a
+  >可以用GitHub账户认证并克隆私有仓库。它是按需加载的mise存根之一，首次运行<code>gh</code>时会自行安装。运行<code
+    >gh auth login</code
+  >完成认证，然后就可以用<code>gh repo clone org/repo</code>检出私有仓库。
+</p>
+
+<p>这个命令还能完成许多其他GitHub操作，运行<code>gh</code>即可查看全部功能。</p>
+
+<p>
+  另有一个按需安装的<code>ghui</code>存根，用于在TUI中管理拉取请求。如果也想在TUI中操作git本身，<a
+    href="https://github.com/jesseduffield/lazygit"
+    >lazygit</a
+  >已经预装。
+</p>

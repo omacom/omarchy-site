@@ -1,0 +1,122 @@
+<p>
+  除了标准的Linux工具，Omarchy还内置了一批增强版shell工具。以下是其中的重点。
+</p>
+
+<h2 id="fzf">
+  fzf<a class="manual__heading-link" href="#fzf" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://junegunn.github.io/fzf/">fzf</a
+  >通过<code>ff</code>别名提供文件模糊查找。进入任意目录，输入<code>ff</code>，就能模糊查找该目录树下的任何文件，右侧同时显示候选文件的预览。
+</p>
+
+<p><code>Ctrl + R</code>则用fzf模糊查找命令历史。</p>
+
+<p>在Neovim中输入<code>Space Space</code>时，用的也是这个工具。</p>
+
+<p>完整手册见<code>man fzf</code>。</p>
+
+<h2 id="zoxide">
+  Zoxide<a class="manual__heading-link" href="#zoxide" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/ajeetdsouza/zoxide">Zoxide</a
+  >是cd的替代品。它记住你去过的目录，下次跳转更省事。比如<code
+    >cd ~/.config/omarchy</code
+  >一次之后，下次只需<code>cd omarchy</code>（甚至<code>cd oma</code
+  >），Zoxide就会直接带你过去。
+</p>
+
+<p>完整手册见<code>man zoxide</code>。</p>
+
+<h2 id="ripgrep">
+  ripgrep<a class="manual__heading-link" href="#ripgrep" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a>通过<code
+    >rg &lt;pattern&gt; &lt;path&gt;</code
+  >搜索文件内容，例如<code>rg Controller app/</code
+  >会找出app目录中所有提到<code>Controller</code>的地方。
+</p>
+
+<p>在Neovim中输入<code>Space S G</code>时，用的也是这个工具。</p>
+
+<p>完整手册见<code>man rg</code>。</p>
+
+<h2 id="eza">
+  eza<a class="manual__heading-link" href="#eza" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://eza.rocks/">eza</a
+  >是ls的替代品，提供信息更丰富、带颜色和图标的目录列表。默认已将eza设为ls的别名。<code>lt</code>显示两层嵌套的列表，<code>lsa</code>显示包含隐藏文件的列表，<code>lta</code>则是包含隐藏文件的嵌套列表。
+</p>
+
+<p>完整手册见<code>man eza</code>。</p>
+
+<h2 id="fd">
+  fd<a class="manual__heading-link" href="#fd" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://github.com/sharkdp/fd">fd</a
+  >是更易用的<code>find</code>替代品。<code>fd person.rb</code
+  >在当前目录树中查找名为<code>person.rb</code>的文件；<code
+    >fd person.rb /</code
+  >搜索整个文件系统；<code>fd person.rb / -H</code
+  >搜索整个文件系统并包含隐藏目录。
+</p>
+
+<p>完整手册见<code>man fd</code>。</p>
+
+<h2 id="bat">
+  bat<a class="manual__heading-link" href="#bat" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://github.com/sharkdp/bat">bat</a
+  >是带语法高亮、行号和分页的<code>cat</code>。运行<code>bat somefile.rb</code
+  >，你就明白为什么再也回不去了。它还在别处默默工作：man页面的上色和<code>ff</code>中的预览，都出自它手。
+</p>
+
+<p>完整手册见<code>man bat</code>。</p>
+
+<h2 id="tldr">
+  tldr<a class="manual__heading-link" href="#tldr" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://tldr.sh/">tldr</a
+  >是那些先讲三屏历史才给一个示例的man页面的解药。<code>tldr tar</code
+  >直接给出你真正需要的几种用法。
+</p>
+
+<h2 id="yt-dlp">
+  yt-dlp<a class="manual__heading-link" href="#yt-dlp" aria-label="本节链接"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a
+  >可从YouTube及数百个其他网站下载视频。<code>yt-dlp &lt;url&gt;</code
+  >会把可用的最高画质下载到当前目录。
+</p>
+
+<p>完整手册见<code>man yt-dlp</code>。</p>
+
+<h2 id="try">
+  try<a class="manual__heading-link" href="#try" aria-label="本节链接">#</a>
+</h2>
+
+<p>
+  <a href="https://github.com/tobi/try">try</a
+  >用带日期戳的目录轻松管理编程实验。所有实验都存放在<code>~/Work/tries</code>，通过<code>try</code>访问。
+</p>
