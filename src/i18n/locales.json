@@ -223,5 +223,13 @@
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
     "manual": false
+  },
+  "sq": {
+    "name": "Shqip",
+    "domain": "https://sq.omarchy.org",
+    "formatLocale": "sq-AL",
+    "ogLocale": "sq_AL",
+    "manual": false,
+    "flag": "AL"
   }
 }
