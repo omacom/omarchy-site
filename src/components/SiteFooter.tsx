@@ -1,3 +1,4 @@
+import { byline } from '@/i18n/byline'
 import { t, language, locales, hasTranslation } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { OmarchyWordmark } from '@/components/Brand'
@@ -58,6 +59,7 @@ const footerLink = `text-text-secondary transition-colors duration-150 ease-out 
 const creditLink = `text-text-secondary transition-colors duration-150 ease-out hover:text-text ${focusRing}`
 
 export function SiteFooter({ path }: { path: string }) {
+  const whole = byline()
   const homeLink = useTopLink()
   const currentPath = path
   return (
@@ -89,13 +91,25 @@ export function SiteFooter({ path }: { path: string }) {
               className="mt-4 text-sm leading-relaxed text-text-muted [text-wrap:pretty]"
             >
               <span className="block">
-                {t('Beautiful, fun & agentic Linux')}{' '}
-                <span className="whitespace-nowrap">
-                  {t('by')}{' '}
-                  <a href="https://dhh.dk" className={footerLink}>
-                    DHH
-                  </a>
-                </span>
+                {whole ? (
+                  <>
+                    {whole.before}
+                    <a href="https://dhh.dk" className={footerLink}>
+                      DHH
+                    </a>
+                    {whole.after}
+                  </>
+                ) : (
+                  <>
+                    {t('Beautiful, fun & agentic Linux')}{' '}
+                    <span className="whitespace-nowrap">
+                      {t('by')}{' '}
+                      <a href="https://dhh.dk" className={footerLink}>
+                        DHH
+                      </a>
+                    </span>
+                  </>
+                )}
               </span>
               <span className="block">
                 {t('The malleable OS for the age of agents.')}

@@ -1,3 +1,4 @@
+import { byline } from '@/i18n/byline'
 import { t, language } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useLayoutEffect, useState } from 'react'
@@ -87,6 +88,9 @@ const FIXES = [
   t(' paper cut.'),
 ] as const
 const ISO_URL = release.isoUrl
+
+const authorLink =
+  'underline decoration-transparent underline-offset-[6px] transition-colors duration-150 ease-out hover:decoration-brand'
 
 const noteLink =
   'text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand'
@@ -229,6 +233,8 @@ function HeroCallout({ href, html }: { href: string; html: string }) {
 }
 
 export function HomePage({ data }: { data: HomeData }) {
+  // The name keeps its link wherever the language puts it.
+  const whole = byline()
   const { top, news } = data
   const device = useTryDevice()
   const [intro, setIntro] = useState(false)
@@ -374,17 +380,35 @@ export function HomePage({ data }: { data: HomeData }) {
               }
               className="text-2xl font-medium tracking-tight text-text [text-wrap:balance] sm:text-3xl"
             >
-              <SectionAnchor anchor="home">
-                <span className="sr-only">Omarchy: </span>
-                {t('Beautiful, fun & agentic Linux')}
-              </SectionAnchor>{' '}
-              {t('by')}{' '}
-              <a
-                href="https://dhh.dk"
-                className="underline decoration-transparent underline-offset-[6px] transition-colors duration-150 ease-out hover:decoration-brand"
-              >
-                DHH
-              </a>
+              {whole ? (
+                <>
+                  {whole.before ? (
+                    <SectionAnchor anchor="home">
+                      <span className="sr-only">Omarchy: </span>
+                      {whole.before}
+                    </SectionAnchor>
+                  ) : (
+                    <span className="sr-only">Omarchy: </span>
+                  )}
+                  <a href="https://dhh.dk" className={authorLink}>
+                    DHH
+                  </a>
+                  {whole.after ? (
+                    <SectionAnchor anchor="home">{whole.after}</SectionAnchor>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  <SectionAnchor anchor="home">
+                    <span className="sr-only">Omarchy: </span>
+                    {t('Beautiful, fun & agentic Linux')}
+                  </SectionAnchor>{' '}
+                  {t('by')}{' '}
+                  <a href="https://dhh.dk" className={authorLink}>
+                    DHH
+                  </a>
+                </>
+              )}
             </h1>
             <p
               data-hero-stagger
