@@ -7,10 +7,9 @@ export const SCRAMBLE_IN_TICKS = 26
 /** Decorate translated plain text, not the source lookup key or authored markup. */
 export function announcementMarkup(html: string): string {
   if (html.includes('<')) return html
-  return html.replace(
-    /\$\d+(?:[.,]\d+)*(?:\s+million\b)?/gu,
-    '<strong>$&</strong>',
-  )
+  const dollars = /\$\d+(?:[.,]\d+)*(?:\s+million\b)?/u
+  if (dollars.test(html)) return html.replace(dollars, '<strong>$&</strong>')
+  return html.replace(/\d+(?:[.,]\d+)*/u, '<strong>$&</strong>')
 }
 
 export function scrambleGlyph(

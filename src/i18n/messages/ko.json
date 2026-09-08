@@ -342,5 +342,7 @@
   "Omarchy Server 4.0": "Omarchy 서버 4.0",
   "Plugin": "플러그인",
   "Rangers": "레인저스",
-  "Server - Omarchy": "서버 - Omarchy"
+  "Server - Omarchy": "서버 - Omarchy",
+  "Pause news animation": "뉴스 애니메이션 일시 정지",
+  "Resume news animation": "뉴스 애니메이션 다시 시작"
 }

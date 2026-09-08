@@ -11,9 +11,9 @@ const REPEAT_INTERVAL_MS = 6_000
 
 /**
  * The registry's ASCII scramble, including the highlighted amount. Each
- * position resolves independently over 26 ticks. Starts are six seconds
- * apart while visible, with no per-session cap. Keyboard pause, hover,
- * focus, hidden tabs and reduced motion keep the complete message still.
+ * position resolves independently over 26 ticks. Fine-pointer starts repeat
+ * every six seconds while visible; touch-only devices play once. Keyboard
+ * pause, hover, focus, hidden tabs and reduced motion keep the message still.
  * The real message remains available to screen readers and without JS.
  * `html` is trusted repository content, not user input.
  */
@@ -45,6 +45,9 @@ export function AnnouncementText({
       element.closest('.hero-announcement-frame') ?? element.closest('a')
     const hero = element.closest('[data-hero-sentinel]')
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const canHover = window.matchMedia(
+      '(any-hover: hover) and (any-pointer: fine)',
+    )
     const segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' })
     const replacements: Array<{ wrapper: HTMLSpanElement; text: Text }> = []
     let disposed = false
@@ -77,8 +80,10 @@ export function AnnouncementText({
       playing = false
     }
 
+    const canSchedule = () => canPlay() && (plays === 0 || canHover.matches)
+
     const schedule = () => {
-      if (!canPlay() || !ready || playing || timer !== undefined) return
+      if (!canSchedule() || !ready || playing || timer !== undefined) return
       timer = window.setTimeout(
         () => {
           timer = undefined
@@ -204,6 +209,8 @@ export function AnnouncementText({
       if (!canPlay()) {
         clearTimer()
         if (playing) restore()
+      } else if (!canSchedule()) {
+        clearTimer()
       } else {
         schedule()
       }
@@ -231,6 +238,7 @@ export function AnnouncementText({
     interaction?.addEventListener('focusin', sync)
     interaction?.addEventListener('focusout', afterFocus)
     motion.addEventListener('change', sync)
+    canHover.addEventListener('change', sync)
     document.addEventListener('visibilitychange', sync)
     return () => {
       disposed = true
@@ -244,6 +252,7 @@ export function AnnouncementText({
       interaction?.removeEventListener('focusin', sync)
       interaction?.removeEventListener('focusout', afterFocus)
       motion.removeEventListener('change', sync)
+      canHover.removeEventListener('change', sync)
       document.removeEventListener('visibilitychange', sync)
     }
   }, [html, identity, paused])

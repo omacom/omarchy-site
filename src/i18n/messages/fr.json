@@ -342,5 +342,7 @@
   "Omarchy Server 4.0": "Omarchy Server 4.0",
   "Plugin": "Plugin",
   "Rangers": "Rangers",
-  "Server - Omarchy": "Server - Omarchy"
+  "Server - Omarchy": "Server - Omarchy",
+  "Pause news animation": "Mettre l’animation des actualités en pause",
+  "Resume news animation": "Reprendre l’animation des actualités"
 }

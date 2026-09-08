@@ -1239,6 +1239,13 @@ h6 {
   outline-offset: -2px;
 }
 
+/* The text ink contrasts with the current-page fill; the accent does not
+   in every theme. Keep the compact inset geometry and the active fill. */
+.site-bar
+  :is(.site-bar__page, .site-bar__menu-link)[aria-current]:focus-visible {
+  outline-color: var(--color-text);
+}
+
 .site-bar__tray {
   align-items: center;
   gap: 2px;

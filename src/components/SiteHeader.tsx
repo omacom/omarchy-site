@@ -251,7 +251,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           type="button"
           tabIndex={-1}
           data-menu-scrim
-          aria-label={t('Close navigation menu')}
+          aria-label="Close navigation menu"
           onClick={closeMenu}
           className="fixed inset-x-0 top-(--nav-h) bottom-0 bg-bg/40 sm:hidden"
         />

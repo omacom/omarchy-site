@@ -17,7 +17,11 @@ test('emphasizes the current amount after translation without rewriting source c
     announcementMarkup(
       'La Fondation Omacom démarre avec 15,5 millions de dollars',
     ),
-    'La Fondation Omacom démarre avec 15,5 millions de dollars',
+    'La Fondation Omacom démarre avec <strong>15,5</strong> millions de dollars',
+  )
+  assert.equal(
+    announcementMarkup('Omacom Foundation USD මිලියන 15.5 සමඟ ආරම්භ වෙනවා'),
+    'Omacom Foundation USD මිලියන <strong>15.5</strong> සමඟ ආරම්භ වෙනවා',
   )
   assert.equal(
     announcementMarkup('Total: $15,5.'),
