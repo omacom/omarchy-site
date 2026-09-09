@@ -1,0 +1,19 @@
+NotoSans: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
+
+NotoSansArabic: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)
+
+NotoNastaliqUrdu: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)
+
+NotoSansDevanagari: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari)
+
+NotoSansBengali: Copyright 2025 The Noto Project Authors (https://github.com/notofonts/bengali)
+
+NotoSansSinhala: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sinhala)
+
+NotoSansTamil: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)
+
+NotoSansThai: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)
+
+Noto Sans CJK: © 2014-2021 Adobe (http://www.adobe.com/).
+
+JetBrains Mono: Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)

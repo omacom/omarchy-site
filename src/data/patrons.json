@@ -89,6 +89,12 @@
     "meta": "",
     "href": "https://www.meta.com/superintelligence/",
     "avatar": "/assets/images/patrons/meta.webp"
+   },
+   {
+    "name": "DigitalOcean",
+    "meta": "",
+    "href": "https://www.digitalocean.com/",
+    "avatar": "/assets/images/patrons/digitalocean.webp"
    }
   ],
   "note": null

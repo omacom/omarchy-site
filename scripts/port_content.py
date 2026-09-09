@@ -39,7 +39,7 @@ OUT = Path(__file__).resolve().parent.parent / 'src' / 'data'
 PAGES = [
     'air', 'foundation', 'meetups', 'patrons', 'patrons/badges', 'security',
     'security/credits', 'sponsorships', 'teams', 'workstations', 'potato',
-    'server', 'omakub', 'brand',
+    'server', 'omakub', 'brand', 'staff',
 ]
 
 
