@@ -223,5 +223,13 @@
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
     "manual": false
+  },
+  "mr": {
+    "name": "मराठी",
+    "domain": "https://mr.omarchy.in",
+    "formatLocale": "mr-IN",
+    "ogLocale": "mr_IN",
+    "manual": false,
+    "flag": "IN"
   }
 }
