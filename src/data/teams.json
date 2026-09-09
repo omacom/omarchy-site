@@ -45,6 +45,12 @@
     "meta": "Japan",
     "href": "https://x.com/kwilczynski",
     "avatar": "/assets/images/team/krzysztof-wilczynski.webp"
+   },
+   {
+    "name": "outfoxxed",
+    "meta": "USA",
+    "href": "https://x.com/outfoxxedd",
+    "avatar": "/assets/images/team/outfoxxed.webp"
    }
   ],
   "note": null
@@ -62,7 +68,7 @@
    },
    {
     "name": "Mehmet \u0130nce",
-    "meta": "UK",
+    "meta": "UK/T\u00fcrkiye",
     "href": "https://x.com/mdisec",
     "avatar": "/assets/images/team/mehmet-ince.webp"
    },

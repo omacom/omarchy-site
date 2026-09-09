@@ -1,0 +1,96 @@
+{
+  "fonts": {
+    "JetBrains": {
+      "family": "Omarchy Social JetBrains",
+      "file": "jetbrains.ttf",
+      "characters": " &,.BDHLOSTVabcefghiklmnorstuvwxy"
+    },
+    "Latin": {
+      "family": "Omarchy Social Latin",
+      "file": "latin.ttf",
+      "characters": " &',-.:?ABCDEFHIKLMOPSTUVWabcdefghijklmnopqrstuvwxyzÁàáäåæçèéíðóöøúüýþąđėęğıłşųẓ̧̨̛̌̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώạắẹềễệỉốờụứừử‘’“„"
+    },
+    "Arabic": {
+      "family": "Omarchy Social Arabic",
+      "file": "arabic.ttf",
+      "characters": " .ءأابةتجحدرزسشصظعغقكلمنوئ"
+    },
+    "Devanagari": {
+      "family": "Omarchy Social Devanagari",
+      "file": "devanagari.ttf",
+      "characters": " ,ँंअएऔकगचजटढतदधनपबमयरलवशसह़ािीुेो।"
+    },
+    "Japanese": {
+      "family": "Omarchy Social Japanese",
+      "file": "japanese.otf",
+      "characters": "DHLOSinux、。いうえくこごしてとにのもよらりるれを゙ェエシジトンー代伝使困在変思整時更楽決美自解調"
+    },
+    "Korean": {
+      "family": "Omarchy Social Korean",
+      "file": "korean.otf",
+      "characters": " ,.DHLOSinuxᄀᄁᄂᄃᄅᄆᄇᄉᄋᄌᄐ하ᅢᅥᅦᅧᅩᅪᅭᅮᅯᅱᅲᅳᅵᆫᆯᆷᆸᆻᆼ가거게결경고께꿀꿔는답대도든로롭를름만말문바변보세수시아에와요운원위유이있자전정제조즐트하한함해"
+    },
+    "Urdu": {
+      "family": "Omarchy Social Urdu",
+      "file": "urdu.ttf",
+      "characters": " ،آئابتجحخدرسشصطفلمنويُِٓٔٹپڈکگںھہیے۔"
+    },
+    "Bengali": {
+      "family": "Omarchy Social Bengali",
+      "file": "bengali.ttf",
+      "characters": " ।ঁআএওকখগঙজটডতথদধনপবমযরলস়ািুৃেো্"
+    },
+    "Sinhala": {
+      "family": "Omarchy Social Sinhala",
+      "file": "sinhala.ttf",
+      "characters": " ,.DHLinuxඒඔකගඟජටඩතදධනඳපබමයරලවසහ්ාැෑිීුෙේෝ"
+    },
+    "Tamil": {
+      "family": "Omarchy Social Tamil",
+      "file": "tamil.ttf",
+      "characters": " ,-.அஇஉஒகஙசடதனபமயரறலளழவாிுூெேைொ்"
+    },
+    "Thai": {
+      "family": "Omarchy Social Thai",
+      "file": "thai.ttf",
+      "characters": " กขคงจฏดตทนบปมยรลวสหอะัาำิีืุเแโไ่้์ํ"
+    },
+    "Chinese": {
+      "family": "Omarchy Social Chinese",
+      "file": "chinese.otf",
+      "characters": " ,?ADHLVbegintux、。一不个亲代作功加原可坑好定小就心手打搞操改时玩生由的看系统置能自设该调路踩造随，？"
+    }
+  },
+  "locales": {
+    "en": "JetBrains",
+    "da": "Latin",
+    "ar": "Arabic",
+    "fi": "Latin",
+    "fr": "Latin",
+    "el": "Latin",
+    "hu": "Latin",
+    "hi": "Devanagari",
+    "is": "Latin",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "es-MX": "Latin",
+    "fil": "Latin",
+    "pt": "Latin",
+    "sv": "Latin",
+    "tr": "Latin",
+    "vi": "Latin",
+    "ur": "Urdu",
+    "bn": "Bengali",
+    "ca": "Latin",
+    "si": "Sinhala",
+    "ta": "Tamil",
+    "th": "Thai",
+    "uz": "Latin",
+    "it": "Latin",
+    "zh-CN": "Chinese",
+    "pl": "Latin",
+    "lt": "Latin",
+    "ga": "Latin",
+    "nl": "Latin"
+  }
+}

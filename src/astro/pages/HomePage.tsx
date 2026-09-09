@@ -374,17 +374,36 @@ export function HomePage({ data }: { data: HomeData }) {
               }
               className="text-2xl font-medium tracking-tight text-text [text-wrap:balance] sm:text-3xl"
             >
-              <SectionAnchor anchor="home">
-                <span className="sr-only">Omarchy: </span>
-                {t('Beautiful, fun & agentic Linux')}
-              </SectionAnchor>{' '}
-              {t('by')}{' '}
-              <a
-                href="https://dhh.dk"
-                className="underline decoration-transparent underline-offset-[6px] transition-colors duration-150 ease-out hover:decoration-brand"
-              >
-                DHH
-              </a>
+              {language === 'zh-CN' ? (
+                <>
+                  <span className="block">
+                    <SectionAnchor anchor="home">
+                      <span className="sr-only">Omarchy: </span>
+                      {t('Beautiful, fun & agentic Linux')}
+                    </SectionAnchor>
+                  </span>
+                  <a
+                    href="https://dhh.dk"
+                    className="mt-2 block text-lg underline decoration-transparent underline-offset-[6px] transition-colors duration-150 ease-out hover:decoration-brand sm:text-xl"
+                  >
+                    {t('By DHH')}
+                  </a>
+                </>
+              ) : (
+                <>
+                  <SectionAnchor anchor="home">
+                    <span className="sr-only">Omarchy: </span>
+                    {t('Beautiful, fun & agentic Linux')}
+                  </SectionAnchor>{' '}
+                  {t('by')}{' '}
+                  <a
+                    href="https://dhh.dk"
+                    className="underline decoration-transparent underline-offset-[6px] transition-colors duration-150 ease-out hover:decoration-brand"
+                  >
+                    DHH
+                  </a>
+                </>
+              )}
             </h1>
             <p
               data-hero-stagger
@@ -461,24 +480,30 @@ export function HomePage({ data }: { data: HomeData }) {
                   </span>
                 </SectionAnchor>
               </h2>
-              <p className="mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
+              <p
+                className={`mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
+              >
                 {t(
                   'Linux used to be a chore to setup, difficult to debug, and full of confusing upfront choices. Omarchy solves all of it with a lightning fast installation, agents that debug all issues, and fantastic defaults that give you a fully functioning system that looks amazing out of the box.',
                 )}
               </p>
-              <p className="mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
+              <p
+                className={`mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
+              >
                 {t(
                   "Oma is for omakase, chef's choice: the chef picks the courses, but you are always free to send anything back. Omarchy lets you take an exquisite baseline and then make it your own.",
                 )}
               </p>
               <p className="mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-                {t("It's not perfect... yet. But")}{' '}
+                {t("It's not perfect... yet. But")}
+                {language === 'zh-CN' ? '' : ' '}
                 <a
                   href="https://wecanfixeverything.com/"
                   className="underline decoration-border-strong underline-offset-4 hover:decoration-current"
                 >
                   {t('we can fix everything now.')}
                 </a>
+                {language === 'zh-CN' && '。'}
               </p>
             </div>
 
@@ -548,11 +573,11 @@ export function HomePage({ data }: { data: HomeData }) {
                     >
                       SHA-256
                     </a>
-                    ,{' '}
+                    {language === 'zh-CN' ? '、' : ', '}
                     <a href={`${ISO_URL}.sig`} className={noteLink}>
                       {t('signature')}
                     </a>
-                    .
+                    {language === 'zh-CN' ? '。' : '.'}
                   </span>
                 </p>
               </div>
@@ -608,7 +633,7 @@ export function HomePage({ data }: { data: HomeData }) {
             <ManualLink slug="unattended-installs">
               {t('unattended installs')}
             </ManualLink>
-            .
+            {language === 'zh-CN' ? t(' detailed guides.') : '.'}
           </p>
           <SectionActions>{installGuide}</SectionActions>
         </div>
@@ -658,6 +683,12 @@ export function HomePage({ data }: { data: HomeData }) {
               <>
                 {t(
                   'A theme restyles the whole system at once: terminal, bar, notifications, wallpaper. Pick one and this site wears it too.',
+                )}
+                {language === 'zh-CN' && (
+                  <>
+                    <span className="sm:hidden">。</span>
+                    <span className="hidden sm:inline">；</span>
+                  </>
                 )}
                 <span className="hidden sm:inline">
                   {' '}

@@ -56,16 +56,16 @@
     "sourceHash": "577ad8123132562e9e5155ee4cb444b371c265fc62de839cc789fd44836dd8d6"
   },
   "omacom-foundation-to-be-premier-quickshell-sponsor": {
-    "title": "Magiging pangunahing sponsor ng Quickshell ang Omacom Foundation",
-    "sourceHash": "46736a2ba8a4c7c3b9dd0e7b8f86b38496eac9fbc47eca082feb1e3a64dc4657"
+    "title": "Omacom Foundation, magiging pangunahing sponsor ng Quickshell",
+    "sourceHash": "cd8c462ecac862cc4f0af0eddbeee5d3a7577d2c1c70dd8d04ed8ebfc221effd"
   },
   "omacom-foundation-funding-hits-10m": {
     "title": "Umabot sa $10m ang pondo ng Omacom Foundation",
     "sourceHash": "5c7a98a0d30bdf81bdf7743ed9510e7c6d47dad679c92a02767d895dd1b3b9a5"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Inilunsad ang Omacom Foundation na may $15.5 milyon",
-    "sourceHash": "5a935586ef47677139c58c4e99e001592a054d4df673b9c60996fa7f5975d21d"
+    "title": "Inilunsad ang Omacom Foundation na may $18.5 milyon",
+    "sourceHash": "a708f0134cba2d1616f7bc6021cc73fb7b063b838578d560e3fb1e3093004e42"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
     "title": "Magiging eksklusibong sponsor ng Hyprland ang Omacom Foundation",
@@ -86,5 +86,13 @@
   "omacom-foundation-raises-another-half-a-million-dollars": {
     "title": "Nakalikom ng panibagong kalahating milyong dolyar ang Omacom Foundation!",
     "sourceHash": "0a0e75e5383dfa443527e945896e487bd803876f845bcaa62c1ad6fb5a3a301a"
+  },
+  "omacom-foundation-hires-outfoxxed": {
+    "title": "Kinuha ng Omacom Foundation si outfoxxed bilang Head of Omarchy Shell",
+    "sourceHash": "6b4c4987fc67ebfbd0295a23520056d21819c360a0932aec9a894ddf9edc6c15"
+  },
+  "digitalocean-joins-as-founding-corporate-patron": {
+    "title": "Sumali ang DigitalOcean bilang Founding Corporate Patron na may $3 milyon",
+    "sourceHash": "9619006b80c5dbebf99d2fd691d1fd3294ac303c20e41cb8dba14cad9dd2381f"
   }
 }

@@ -1128,7 +1128,7 @@ h6 {
 }
 
 /* Hide real labels while the blended copy is visible to avoid double painting. */
-[data-nav-blend] nav[aria-label='Main'] a,
+[data-nav-blend] [data-nav-links] a,
 [data-nav-blend] [data-nav-glyph],
 [data-nav-blend] [data-nav-toggle] {
   color: transparent;
@@ -1139,8 +1139,9 @@ h6 {
    painted through one comes out near enough black. Hovering hands the labels
    back to the real layer anyway - this is only here so that the two can never
    be seen in the same frame. */
-[data-nav-blend] nav[aria-label='Main'] a,
+[data-nav-blend] [data-nav-links] a,
 [data-nav-blend] [data-nav-glyph]:hover,
+[data-nav-blend] [data-nav-glyph][aria-expanded='true'],
 [data-nav-blend] [data-nav-toggle]:hover {
   background-color: transparent;
   transition: none;
@@ -1639,11 +1640,23 @@ h6 {
 .ported .member__name a:hover {
   text-decoration-color: var(--color-brand);
 }
-.ported .member__meta {
+.ported .member__meta,
+.ported .staff__role {
   margin: 0.2em 0 0;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--color-text-muted);
+}
+
+/* Staff names and roles share a line, wrapping naturally on narrow screens. */
+.ported .staff__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+}
+.ported .staff__heading .staff__role {
+  margin: 0;
 }
 
 /* AIR residents: avatar beside the bio */
@@ -1679,6 +1692,9 @@ h6 {
 @media (max-width: 480px) {
   .ported .resident {
     grid-template-columns: 1fr;
+  }
+  .ported .staff .resident > :not(.resident__avatar) {
+    grid-column: 1;
   }
   .ported .resident__avatar {
     grid-row: auto;

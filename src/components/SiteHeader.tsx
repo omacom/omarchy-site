@@ -55,7 +55,7 @@ const navLinks = [
   { to: '/news/', label: t('News') },
   { to: '/manual/', label: t('Manual') },
   // Old /plugins/ addresses redirect to the standalone directory.
-  { href: 'https://plugins.omarchy.org', label: 'Plugins' },
+  { href: 'https://plugins.omarchy.org', label: t('Plugins') },
   { to: '/themes/', label: t('Themes') },
 ] as const
 
@@ -509,7 +509,11 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
           {glyph}
 
-          <nav aria-label={t('Main')} className="hidden items-center sm:flex">
+          <nav
+            data-nav-links
+            aria-label={t('Main')}
+            className="hidden items-center sm:flex"
+          >
             {navLinks.map((link) =>
               'href' in link ? (
                 <a

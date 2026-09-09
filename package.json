@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev --port 3113",
-    "build": "npm run build:social && npm run port && astro build && node scripts/assemble-static.mjs",
+    "build": "npm run build:social -- --site && npm run port && astro build && node scripts/assemble-static.mjs",
     "preview": "astro preview",
     "build:social": "node scripts/build-og-image.mjs",
     "lint": "eslint",

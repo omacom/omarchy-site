@@ -1,4 +1,4 @@
-import { t } from '@/i18n/site'
+import { t, tCountries } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRightIcon } from '@/components/icons'
@@ -175,7 +175,7 @@ export function TeamClusters({
                   ) : (
                     <span className="text-text">{named.name}</span>
                   )}
-                  {named.meta ? ` - ${named.meta}` : ''}
+                  {named.meta ? ` - ${tCountries(named.meta)}` : ''}
                 </span>
               ) : null}
             </p>
