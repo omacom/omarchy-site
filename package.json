@@ -14,6 +14,7 @@
     "format": "prettier --write . && eslint --fix",
     "check": "prettier --check .",
     "refresh-data": "node scripts/refresh-data.mjs",
+    "refresh-patrons": "node scripts/refresh-patrons.mjs",
     "sync:workstations": "python3 scripts/sync-workstations.py",
     "port": "python3 scripts/port_content.py && node scripts/meetup-map.mjs",
     "assemble": "node scripts/assemble-static.mjs",

@@ -1,6 +1,9 @@
 import { t } from '@/i18n/site'
 import { cn } from '@/lib/utils'
 import { PageHeading } from '@/components/PageHeading'
+import { PatronInvitation } from '@/components/PatronInvitation'
+import { OpenPatrons } from '@/components/OpenPatrons'
+import patronage from '@/data/open-patrons.json'
 
 /**
  * Serves every standalone page ported from omarchy.org: /air, /foundation,
@@ -51,10 +54,14 @@ export function PortedPage({
           brand={path === 'foundation' ? 'oma' : 'omarchy'}
         />
       )}
+      {path === 'patrons' && (
+        <PatronInvitation summary={patronage.summary} onPatronsPage />
+      )}
       <div
         className="prose ported"
         dangerouslySetInnerHTML={{ __html: page.html }}
       />
+      {path === 'patrons' && <OpenPatrons />}
     </main>
   )
 }

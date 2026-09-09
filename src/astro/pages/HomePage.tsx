@@ -46,8 +46,10 @@ import { cn } from '@/lib/utils'
 import bannerData from '@/data/banner.json'
 import type { CatalogueEntry } from '@/lib/plugin-filter'
 import type { NewsSummary } from '@/lib/news'
+import type { PatronageSummary } from '@/lib/patronage'
 
 export interface HomeData {
+  patronage: PatronageSummary
   top: Array<CatalogueEntry>
   total: number
   news: Array<NewsSummary>
@@ -804,7 +806,7 @@ export function HomePage({ data }: { data: HomeData }) {
             )}
             action={allPatrons}
           />
-          <PatronHighlights />
+          <PatronHighlights summary={data.patronage} />
           <SectionActions>{allPatrons}</SectionActions>
         </div>
       </section>

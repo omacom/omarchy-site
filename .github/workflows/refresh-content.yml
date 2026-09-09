@@ -4,7 +4,8 @@
 # the bot regenerates, the themes page contributors edit, the assets. The
 # catalogue and the similarity map derived from it come from the marketplace
 # repository, and the release version from the OS repository's releases, so
-# they are fetched here on a schedule and committed.
+# they are fetched here on a schedule and committed. Open patronage names and
+# totals are also refreshed from Zeffy's public donation feed.
 #
 # A commit pushed with the workflow's own token does not trigger other
 # workflows - GitHub stops workflows from setting each other off by

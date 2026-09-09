@@ -1,6 +1,8 @@
-import { t } from '@/i18n/site'
+import { locale, t } from '@/i18n/site'
 import patrons from '@/data/patrons.json'
 import { TeamClusters } from '@/components/TeamClusters'
+import { PATRONAGE_URL } from '@/lib/patronage'
+import type { PatronageSummary } from '@/lib/patronage'
 
 const membersOf = (...ids: string[]) =>
   patrons
@@ -34,7 +36,24 @@ const groups = [
   },
 ]
 
-export function PatronHighlights() {
+export function PatronHighlights({ summary }: { summary: PatronageSummary }) {
+  const total = t('{count} patrons contributing {amount}.')
+    .replace(
+      '{count}',
+      summary.namedPatrons.toLocaleString(locale.formatLocale),
+    )
+    .replace(
+      '{amount}',
+      new Intl.NumberFormat(locale.formatLocale, {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(summary.totalAmount / 100),
+    )
+  const quietLink =
+    'underline decoration-border-strong underline-offset-4 hover:text-text hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring'
+
   return (
     <div>
       <TeamClusters
@@ -50,6 +69,17 @@ export function PatronHighlights() {
           {t('Our shadowy agenda? Better Linux.')}
         </a>
       </p>
+      <div className="mt-5 font-mono text-xs leading-relaxed text-text-muted">
+        <p>{total}</p>
+        <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+          <a href="/patrons/#everyone" className={quietLink}>
+            {t('Meet the patrons')}
+          </a>
+          <a href={PATRONAGE_URL} className={quietLink}>
+            {t('Become a patron')}
+          </a>
+        </p>
+      </div>
     </div>
   )
 }
