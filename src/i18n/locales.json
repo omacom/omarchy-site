@@ -223,5 +223,13 @@
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
     "manual": false
+  },
+  "ml": {
+    "name": "മലയാളം",
+    "domain": "https://ml.omarchy.in",
+    "formatLocale": "ml-IN",
+    "ogLocale": "ml_IN",
+    "manual": false,
+    "flag": "IN"
   }
 }
