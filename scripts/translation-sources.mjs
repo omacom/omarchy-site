@@ -145,7 +145,13 @@ export function collectSources(root = process.cwd()) {
       for (const country of member.meta?.split('/') ?? []) add(country)
   }
   for (const plugin of readJson('src/data/plugins.json', {}).plugins ?? [])
-    if (featured.has(plugin.id)) add(plugin.description)
+    if (featured.has(plugin.id)) {
+      add(plugin.description)
+      add(plugin.category)
+    }
+  for (const period of readJson('src/data/momentum.json', {}).downloads
+    ?.periods ?? [])
+    add(period.label)
   for (const [slug, page] of Object.entries(
     readJson('src/data/pages.json', {}),
   )) {

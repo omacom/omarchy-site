@@ -83,7 +83,7 @@ export function PluginCard({ plugin }: { plugin: CatalogueEntry }) {
         </p>
         <p className="mt-auto pt-1.5 font-mono text-xs text-text-muted">
           {plugin.builtIn ? 'Omarchy' : (plugin.author ?? 'unknown')} -{' '}
-          {plugin.category}
+          {t(plugin.category)}
         </p>
       </div>
 
