@@ -425,7 +425,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
   }, [menuOpen])
   useEffect(() => {
     const root = document.documentElement
-    if (menuOpen) root.dataset.navMenu = t('open')
+    if (menuOpen) root.dataset.navMenu = 'open'
     else delete root.dataset.navMenu
     return () => {
       delete root.dataset.navMenu
