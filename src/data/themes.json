@@ -150,6 +150,11 @@
   "name": "Commit"
  },
  {
+  "repo": "https://github.com/kenhara/omarchy-cozy-night-theme",
+  "image": "/assets/themes/cozy-night.webp",
+  "name": "Cozy Night"
+ },
+ {
   "repo": "https://github.com/stannorbvb-cmd/cpunk",
   "image": "/assets/themes/cpunk.webp",
   "name": "CpUnk"
@@ -228,6 +233,11 @@
   "repo": "https://github.com/abhijeet-swami/omarchy-forest-green-theme",
   "image": "/assets/themes/forest-green.webp",
   "name": "Forest Green"
+ },
+ {
+  "repo": "https://github.com/kenhara/omarchy-friendly-wave-theme",
+  "image": "/assets/themes/friendly-wave.webp",
+  "name": "Friendly Wave"
  },
  {
   "repo": "https://github.com/bjarneo/omarchy-frost-theme",
@@ -393,6 +403,11 @@
   "repo": "https://github.com/somerocketeer/omarchy-nagai-poolside-theme",
   "image": "/assets/themes/nagai-poolside.webp",
   "name": "Nagai Poolside"
+ },
+ {
+  "repo": "https://github.com/kenhara/omarchy-nature-of-hope-theme",
+  "image": "/assets/themes/nature-of-hope.webp",
+  "name": "Nature of Hope"
  },
  {
   "repo": "https://github.com/brianblakely/omarchy-naysayer-theme",
