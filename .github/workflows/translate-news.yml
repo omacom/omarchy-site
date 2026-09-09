@@ -18,25 +18,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  translate:
+  prepare:
     if: >-
       github.event_name != 'workflow_run' ||
       (github.event.workflow_run.conclusion == 'success' &&
        github.event.workflow_run.event != 'pull_request' &&
        github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
-    timeout-minutes: 45
-    permissions:
-      contents: write
-      actions: read
+    timeout-minutes: 10
     outputs:
-      revision: ${{ steps.commit.outputs.revision }}
-      locales: ${{ steps.commit.outputs.locales }}
-      deploy: ${{ steps.commit.outputs.deploy }}
+      revision: ${{ steps.pending.outputs.revision }}
+      locales: ${{ steps.pending.outputs.locales }}
     steps:
       - uses: actions/checkout@v7
         with:
           ref: master
+          persist-credentials: false
       - uses: actions/setup-node@v7
         with:
           node-version: 24
@@ -51,22 +48,52 @@ jobs:
       - run: gem install kramdown kramdown-parser-gfm --no-document
       - run: bin/build-news
       - run: npm run port
-      - name: Find pending site and news translations
+      - name: Find languages with pending translations
         id: pending
         run: |
           node scripts/check-translations.mjs --pending-news > "$RUNNER_TEMP/pending-news.json"
           node scripts/check-translations.mjs --pending-site > "$RUNNER_TEMP/pending-site.json"
-          python3 - <<'PYCOUNTS'
+          python3 - <<'PYQUEUE'
           import json, os
           from pathlib import Path
           directory = Path(os.environ['RUNNER_TEMP'])
-          news = len(json.loads((directory / 'pending-news.json').read_text()))
-          site = len(json.loads((directory / 'pending-site.json').read_text()))
+          jobs = json.loads((directory / 'pending-news.json').read_text())
+          jobs += json.loads((directory / 'pending-site.json').read_text())
+          locales = sorted({job['locale'] for job in jobs})
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-              out.write(f'news={news}\nsite={site}\ncount={news + site}\n')
-          PYCOUNTS
+              out.write(f'locales={json.dumps(locales)}\n')
+          PYQUEUE
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  translate:
+    needs: prepare
+    if: needs.prepare.outputs.locales != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: ${{ fromJSON(needs.prepare.outputs.locales) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.revision }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run port
       - name: Install Muse
-        if: steps.pending.outputs.count != '0'
         run: |
           mkdir -p "$RUNNER_TEMP/muse-bin"
           curl --fail --silent --show-error --location https://api.meta.ai/muse-launcher.sh --output "$RUNNER_TEMP/muse-bin/muse"
@@ -76,7 +103,6 @@ jobs:
           echo "MUSE_NO_AUTO_UPDATE=1" >> "$GITHUB_ENV"
           echo "$RUNNER_TEMP/muse-bin" >> "$GITHUB_PATH"
       - name: Configure Muse
-        if: steps.pending.outputs.count != '0'
         env:
           MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
         run: |
@@ -92,32 +118,81 @@ jobs:
           auth.write_text(json.dumps({'schema_version': 1, 'providers': {'meta': {'api_key': key}}}))
           auth.chmod(0o600)
           PY
-      - name: Translate site and news concurrently
-        if: steps.pending.outputs.count != '0'
+      - name: Translate this language's pending site and news
         continue-on-error: true
         env:
           MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-spark-1.3-contributor' }}
-          PENDING_SITE: ${{ steps.pending.outputs.site }}
-          PENDING_NEWS: ${{ steps.pending.outputs.news }}
+          LOCALE: ${{ matrix.locale }}
         run: |
-          pids=()
-          if [ "$PENDING_SITE" != '0' ]; then
-            python3 scripts/translate-site.py --concurrency 8 &
-            pids+=("$!")
-          fi
-          if [ "$PENDING_NEWS" != '0' ]; then
-            python3 scripts/translate-news.py --concurrency 8 &
-            pids+=("$!")
-          fi
-          # Wait for both queues even if one fails, retaining all valid results.
+          # Two queues per language; four Muse requests at most on each runner.
+          python3 scripts/translate-site.py --locale "$LOCALE" --concurrency 2 &
+          site_pid=$!
+          python3 scripts/translate-news.py --locale "$LOCALE" --concurrency 2 &
+          news_pid=$!
           result=0
-          for pid in "${pids[@]}"; do
-            if ! wait "$pid"; then
-              result=1
-            fi
-          done
+          wait "$site_pid" || result=1
+          wait "$news_pid" || result=1
           exit "$result"
       - name: Validate completed translations
+        run: npm run check:translations
+      - name: Package only this language's translations
+        env:
+          LOCALE: ${{ matrix.locale }}
+        run: |
+          python3 scripts/translation-artifact.py pack "$LOCALE" "$RUNNER_TEMP/translations"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: translations-${{ matrix.locale }}
+          path: ${{ runner.temp }}/translations/*.patch
+          retention-days: 3
+          if-no-files-found: error
+      - name: Remove Muse credentials
+        if: always()
+        run: rm -f "$HOME/.config/muse/auth.json"
+
+  commit:
+    needs: [prepare, translate]
+    # Keep valid results even if a different language runner failed.
+    if: ${{ always() && !cancelled() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      revision: ${{ steps.commit.outputs.revision }}
+      locales: ${{ steps.commit.outputs.locales }}
+      deploy: ${{ steps.commit.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.revision }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run port
+      - name: Download completed languages
+        if: needs.prepare.outputs.locales != '[]'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: translations-*
+          path: ${{ runner.temp }}/translations
+          merge-multiple: true
+      - name: Collect completed translations
+        env:
+          EXPECTED_LOCALES: ${{ needs.prepare.outputs.locales }}
+        run: python3 scripts/translation-artifact.py collect "$RUNNER_TEMP/translations"
+      - name: Validate combined translations
         run: npm run check:translations
       - name: Commit completed translations
         id: commit
@@ -125,7 +200,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add src/i18n/messages/*.json src/i18n/*/blocks.json src/i18n/*/news.json src/i18n/*/news/ news src/data/news-posts.json
+          git add news src/data/news-posts.json
           changed=false
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
@@ -160,24 +235,21 @@ jobs:
               out.write(f'Pending UI and prose translations: **{len(site)}**.\n\n')
               out.write('English remains available while translations catch up. Unfinished work is retried hourly.\n')
           PY
-      - name: Remove Muse credentials
-        if: always()
-        run: rm -f "$HOME/.config/muse/auth.json"
 
   deploy:
-    needs: translate
-    if: needs.translate.outputs.deploy == 'true'
+    needs: commit
+    if: ${{ !cancelled() && needs.commit.result == 'success' && needs.commit.outputs.deploy == 'true' }}
     strategy:
       fail-fast: false
       max-parallel: 6
       matrix:
-        locale: ${{ fromJSON(needs.translate.outputs.locales) }}
+        locale: ${{ fromJSON(needs.commit.outputs.locales) }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: ${{ needs.translate.outputs.revision }}
+          ref: ${{ needs.commit.outputs.revision }}
           persist-credentials: false
       - uses: actions/setup-node@v7
         with:

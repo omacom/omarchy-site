@@ -1,5 +1,6 @@
 /** Build a 1200x630 social card for every site theme from its CSS palette. */
 import sharp from 'sharp'
+import { socialLabelMasks, colorSocialLabels } from './lib/social-labels.mjs'
 import { SITE_THEMES } from '../src/lib/site-themes.ts'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -12,6 +13,11 @@ const css = fs.readFileSync(path.join(root, 'src/styles.css'), 'utf8')
 
 const W = 1200
 const H = 630
+const labelMasks = await socialLabelMasks(
+  process.argv.includes('--site')
+    ? [process.env.PUBLIC_SITE_LOCALE || 'en']
+    : undefined,
+)
 
 // The wordmark's own grid: 81 cells across, 19 down, each cell 51 wide by
 // 50 tall in the SVG's units. The card keeps that aspect exactly.
@@ -50,7 +56,6 @@ for (const theme of SITE_THEMES) {
     'field-mid',
     'field-dim',
   ].map(color)
-  const out = path.join(outputDir, `${theme.id}.png`)
 
   // Deterministic: the card should be the same picture every time it is built.
   const rand = (() => {
@@ -79,7 +84,7 @@ for (const theme of SITE_THEMES) {
       const wr = row - WM_ROW
       const wc = col - WM_COL
       if (lit(wr, wc)) continue
-      if (row * CH > 365 && row * CH < 535 && col * CW > 90 && col * CW < 1110)
+      if (row * CH > 365 && row * CH < 585 && col * CW > 90 && col * CW < 1110)
         continue
 
       const near1 = within(wr, wc, 1)
@@ -130,60 +135,19 @@ ${cells.join('')}
 ${wordmark.join('')}
 </svg>`
 
-  const fontfile = path.join(
-    root,
-    'node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2',
-  )
-  const labels = [
-    {
-      text: 'Beautiful, fun &amp; agentic Linux by DHH',
-      size: 28,
-      weight: 'Medium',
-      color: color('text'),
-      top: 390,
-    },
-    {
-      text: 'The malleable OS for the age of agents.',
-      size: 17,
-      weight: 'Regular',
-      color: color('text-secondary'),
-      top: 454,
-    },
-    {
-      text: 'Vibe your way through every alteration, tweak, or trouble.',
-      size: 17,
-      weight: 'Regular',
-      color: color('text-secondary'),
-      top: 482,
-    },
-  ]
-  const overlays = await Promise.all(
-    labels.map(async (label) => {
-      const { data, info } = await sharp({
-        text: {
-          text: `<span foreground="${label.color}">${label.text}</span>`,
-          font: `JetBrains Mono ${label.weight} ${label.size}`,
-          fontfile,
-          rgba: true,
-          dpi: 72,
-        },
-      })
-        .png()
-        .toBuffer({ resolveWithObject: true })
-      return {
-        input: data,
-        left: Math.round((W - info.width) / 2),
-        top: label.top,
-      }
-    }),
-  )
-  await sharp(Buffer.from(svg))
-    .composite(overlays)
-    .png({ palette: true })
-    .toFile(out)
-
-  const { size } = fs.statSync(out)
-  console.log(
-    `${path.relative(root, out)} - ${cells.length} field cells, ${(size / 1024).toFixed(0)} kB`,
-  )
+  for (const [language, masks] of Object.entries(labelMasks)) {
+    const directory =
+      language === 'en' ? outputDir : path.join(outputDir, language)
+    fs.mkdirSync(directory, { recursive: true })
+    const out = path.join(directory, `${theme.id}.png`)
+    const overlays = await colorSocialLabels(masks, [
+      color('text'),
+      color('text-secondary'),
+    ])
+    await sharp(Buffer.from(svg))
+      .composite(overlays)
+      .png({ palette: true })
+      .toFile(out)
+  }
+  console.log(`${theme.name}: ${Object.keys(labelMasks).length} language cards`)
 }

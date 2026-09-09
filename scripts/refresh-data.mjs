@@ -120,15 +120,26 @@ const version = String(release.tag_name ?? '').replace(/^v/, '')
 if (!/^\d+\.\d+\.\d+$/.test(version)) {
   throw new Error(`unexpected release tag: ${release.tag_name}`)
 }
-await writeFile(
-  path.join(OUT, 'version.json'),
-  JSON.stringify(
-    { version, isoUrl: `https://iso.omarchy.org/omarchy-${version}.iso` },
-    null,
-    1,
-  ),
-)
-console.log(`version.json: ${version}`)
+const versionPath = path.join(OUT, 'version.json')
+const currentRelease = JSON.parse(await readFile(versionPath, 'utf8'))
+// An ISO can be published before GitHub marks its release as latest.
+if (
+  version.localeCompare(currentRelease.version, 'en', { numeric: true }) < 0
+) {
+  console.log(
+    `version.json: keeping ${currentRelease.version} (GitHub latest is ${version})`,
+  )
+} else {
+  await writeFile(
+    versionPath,
+    JSON.stringify(
+      { version, isoUrl: `https://iso.omarchy.org/omarchy-${version}.iso` },
+      null,
+      1,
+    ),
+  )
+  console.log(`version.json: ${version}`)
+}
 
 // Refresh GitHub figures; foundation and download announcements are maintained separately.
 const MOMENTUM = path.join(OUT, 'momentum.json')
