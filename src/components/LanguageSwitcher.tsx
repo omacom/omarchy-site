@@ -1,11 +1,17 @@
 import { Popover } from '@base-ui/react/popover'
 import { useState } from 'react'
+import { CatalanIcon } from '@/components/icons/CatalanIcon'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { hasTranslation, language, locale, sortedLocales, t } from '@/i18n/site'
 
 function flag(domain: string, countryCode?: string) {
+  // Catalonia has no flag emoji, so use the Senyera image.
+  if (countryCode === 'ES-CT') {
+    return <CatalanIcon className="inline-block h-4 w-6 align-middle" />
+  }
+
   const country = countryCode ?? new URL(domain).hostname.split('.').at(-1)!
   return country.length === 2
     ? [...country.toUpperCase()]
