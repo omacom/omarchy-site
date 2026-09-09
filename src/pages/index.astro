@@ -4,9 +4,10 @@ import { HomePage } from '@/astro/pages/HomePage'
 import { getNewsIndex, getPluginHighlights } from '../astro/data'
 import { headProps } from '../astro/head'
 import { homeSeo } from '../astro/page-seo'
+import patronage from '../data/open-patrons.json'
 
 const [highlights, news] = await Promise.all([getPluginHighlights(), getNewsIndex()])
-const data = { ...highlights, news }
+const data = { ...highlights, news, patronage: patronage.summary }
 const head = headProps(homeSeo(), '/')
 ---
 <Base {...head}>

@@ -50,6 +50,19 @@ The screensaver and the Discord redirect are still served
 directly. Their styles, fonts, and scripts remain under `assets/`, alongside
 shared images and public downloads.
 
+## Open patronage
+
+`npm run refresh-patrons` fetches every page of the public Zeffy donation feed
+into `src/data/open-patrons.json`. The homepage summary and the badge classes on
+`/patrons/` share this snapshot. The six-hour `refresh-data` workflow also refreshes
+it; a failed fetch leaves the previous snapshot intact.
+
+Names are grouped by their cumulative USD contributions under the same displayed
+name, using the published $16, $256, $2,048, and $8,192 badge thresholds. Anonymous
+gifts contribute to the total and are counted separately, since the feed does not
+identify their donors. Founding and distinguished pledges are maintained separately
+in `patrons/index.html` and are not included in the open patronage total.
+
 ## Adding your theme
 
 Community themes are listed on [omarchy.org/themes](https://omarchy.org/themes/).

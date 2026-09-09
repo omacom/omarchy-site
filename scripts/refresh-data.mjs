@@ -19,6 +19,7 @@ import prettier from 'prettier'
 import { assetId } from './lib/asset-id.mjs'
 import { decodeCalendarText } from './lib/ical.mjs'
 import { geocodeTitle } from './lib/geocode.mjs'
+import { refreshPatrons } from './refresh-patrons.mjs'
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'src/data')
@@ -28,6 +29,15 @@ const MP_RAW =
   'https://raw.githubusercontent.com/omacom/omarchy-plugin-marketplace/main/site'
 
 const noEmDash = (s) => String(s ?? '').replace(/\s*—\s*/g, ' - ')
+
+try {
+  await refreshPatrons()
+} catch (error) {
+  // A Zeffy outage must not replace the roll or its totals with partial data.
+  console.warn(
+    `open-patrons.json: keeping the previous snapshot, ${error.message}`,
+  )
+}
 
 async function fetchText(url) {
   const res = await fetch(url)
