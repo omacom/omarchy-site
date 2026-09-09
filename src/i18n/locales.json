@@ -218,12 +218,13 @@
     "flag": "IE"
   },
   "nl": {
-    "name": "Nederlands",
-    "domain": "https://nl.omarchy.org",
-    "formatLocale": "nl-NL",
-    "ogLocale": "nl_NL",
-    "manual": false
-  },
+      "name": "Nederlands",
+      "domain": "https://nl.omarchy.org",
+      "formatLocale": "nl-NL",
+      "ogLocale": "nl_NL",
+      "manual": false,
+      "flag": "NL"
+    },
   "fa": {
     "name": "فارسی",
     "domain": "https://ir.omarchy.org",
