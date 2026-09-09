@@ -1,5 +1,5 @@
 ---
-title: Omacom Foundation launches with $15.5 million
+title: Omacom Foundation launches with $18.5 million
 date: 2026-08-21 17:57 +0200
 author: DHH
 author_url: https://dhh.dk
@@ -26,6 +26,11 @@ These twelve Founding Patrons are each contributing $1 million to this mission:
 - [Yunjie Dai](https://x.com/xdanger), cofounder of [TapTap](https://www.taptap.io)
 - Yours truly
 
+These Founding Corporate Patrons are each contributing $1 million a year for three years or $1.5 million in tokens, with renewal by mutual agreement:
+
+- [DigitalOcean](https://www.digitalocean.com/)
+- [Meta Superintelligence Labs](https://www.meta.com/superintelligence/)
+
 These Distinguished Patrons are each contributing $100,000 to the mission:
 
 - [Ryan R. Hughes](https://x.com/ryanrhughes), partner at [Oodle](https://heyoodle.com/)
@@ -33,24 +38,17 @@ These Distinguished Patrons are each contributing $100,000 to the mission:
 - [Adrien Treccani](https://www.linkedin.com/in/atreccani/), founder of [Metaco](https://ripple.com/products/custody/)
 - [Max Schoening](https://x.com/mschoening), Head of Product at [Notion](https://www.notion.com)
 
-And these Distinguished Corporate Patrons are each contributing $100,000 a year for three years:
+And these Distinguished Corporate Patrons are each contributing $100,000 a year for three years or $150,000 in tokens, with renewal by mutual agreement:
 
 - [1Password](https://1password.com)
 - [37signals](https://37signals.com)
 - [Four Technologies](https://www.paywithfour.com/)
-
-This Founding Token Patron is contributing $1.5 million in tokens to the mission:
-
-- [Meta Superintelligence Labs](https://www.meta.com/superintelligence/)
-
-And these Distinguished Corporate Patrons are each contributing $150,000 in tokens, with renewal by mutual agreement:
-
 - [Anthropic](https://www.anthropic.com)
 - [Fireworks](https://fireworks.ai)
 - [OpenAI](https://openai.com)
 - [OpenRouter](https://openrouter.ai/)
 
-Nearly 500 donors have also contributed roughly $60,000 through [open patronage](https://www.zeffy.com/en-US/donation-form/omarchy-patronage), bringing the total in pledges and donations to approximately $15.5 million.
+Nearly 500 donors have also contributed roughly $60,000 through [open patronage](https://www.zeffy.com/en-US/donation-form/omarchy-patronage), bringing the total in pledges and donations to approximately $18.5 million.
 
 This is a ridiculous sum of money, so I intend to make sure it lasts a long time, and that we make the most of it. But just as important as the incredible cushion is the vote of confidence delivered by these pledges.
 
@@ -67,3 +65,5 @@ We're going to make the prophecy of The Year of Linux on the Desktop come true. 
 *UPDATE: Meta Superintelligence Labs, Anthropic, OpenAI, and Fireworks [joined as Token Patrons on September 3](/news/2026/09/omacom-foundation-secures-tokens-from-leading-labs).*
 
 *UPDATE: OpenRouter, Four Technologies, and nearly 500 donors [added another half a million dollars on September 7](/news/2026/09/omacom-foundation-raises-another-half-a-million-dollars).*
+
+*UPDATE: DigitalOcean [joined as a Founding Corporate Patron with $1 million a year for three years](/news/2026/09/digitalocean-joins-as-founding-corporate-patron/).*

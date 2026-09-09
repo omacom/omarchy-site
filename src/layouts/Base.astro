@@ -11,7 +11,7 @@ import { PixelSnap } from '@/components/PixelSnap'
 import { MusicControl } from '@/components/MusicControl'
 import { themeInitScript } from '@/lib/theme'
 import { etchInitScript } from '@/lib/etch'
-import { OG_IMAGE, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo'
+import { socialImage, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo'
 import geistWoff2 from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
 import monoWoff2 from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
 
@@ -33,6 +33,7 @@ const {
   published,
 } = Astro.props
 const url = `${SITE_URL}${path}`
+const ogImage = socialImage(path)
 ---
 
 <!doctype html>
@@ -50,15 +51,15 @@ const url = `${SITE_URL}${path}`
     <meta property="og:url" content={url} />
     {type === 'article' && published ? <meta property="article:published_time" content={published} /> : null}
     {robots ? <meta name="robots" content={robots} /> : null}
-    <meta property="og:image" content={OG_IMAGE.url} />
-    <meta property="og:image:width" content={OG_IMAGE.width} />
-    <meta property="og:image:height" content={OG_IMAGE.height} />
-    <meta property="og:image:alt" content={OG_IMAGE.alt} />
+    <meta property="og:image" content={ogImage.url} />
+    <meta property="og:image:width" content={ogImage.width} />
+    <meta property="og:image:height" content={ogImage.height} />
+    <meta property="og:image:alt" content={ogImage.alt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={OG_IMAGE.url} />
-    <meta name="twitter:image:alt" content={OG_IMAGE.alt} />
+    <meta name="twitter:image" content={ogImage.url} />
+    <meta name="twitter:image:alt" content={ogImage.alt} />
     <meta name="theme-color" content="#1a1b26" />
     <link rel="icon" href="/brand/omarchy-logo.svg" type="image/svg+xml" data-theme-icon transition:persist="theme-icon" />
     <link rel="canonical" href={url} />

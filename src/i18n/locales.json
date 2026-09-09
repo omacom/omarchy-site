@@ -230,6 +230,14 @@
     "domain": "https://nl.omarchy.org",
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
+    "manual": false,
+    "flag": "NL"
+  },
+  "no": {
+    "name": "Norsk",
+    "domain": "https://omarchy.no",
+    "formatLocale": "nb-NO",
+    "ogLocale": "nb_NO",
     "manual": false
   }
 }

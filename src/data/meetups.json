@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-09-07",
+  "refreshed": "2026-09-09",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -648,6 +648,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-r4p4VN2OdsP8pEU",
+      "title": "Omarchy Meetup Austin, TX",
+      "url": "https://luma.com/cvpft021",
+      "start": "2026-09-20T22:00:00.000Z",
+      "end": "2026-09-21T03:00:00.000Z",
+      "timezone": "America/Chicago",
+      "address": "Austin, TX",
+      "city": "Austin",
+      "country": "US",
+      "online": false,
+      "geo": { "lat": 30.263046261699948, "lon": -97.71510712449106 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-r4p4VN2OdsP8pEU-full.webp",
+      "coverWidth": 537,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-PxPJVCnzOvx3MSu",
       "title": "Linux & Omarchy Meetup - Northampton, UK",
       "url": "https://luma.com/da9jp6p4",
@@ -768,7 +785,7 @@
     },
     {
       "id": "evt-XY4PE0sSpMrxY7t",
-      "title": "Omarchy NWA 001: Install Fest, Show & Tell, and Open Hacking",
+      "title": "Omarchy NWA 001: Install Fest, Show & Tell, Tips and Tricks",
       "url": "https://luma.com/fja5zgw2",
       "start": "2026-09-30T23:00:00.000Z",
       "end": "2026-10-01T00:00:00.000Z",
@@ -785,7 +802,7 @@
     },
     {
       "id": "evt-2h0vxlgK0HC9Weh",
-      "title": "Omarchy DFW 001: Install Fest, Show & Tell, and Open Hacking",
+      "title": "Omarchy DFW 001: Get Set Up, Show & Tell, and Dig In",
       "url": "https://luma.com/pj5yrzgv",
       "start": "2026-09-30T23:00:00.000Z",
       "end": "2026-10-01T00:00:00.000Z",
@@ -1001,6 +1018,23 @@
       "geo": { "lat": 25.0329636, "lon": 121.56542680000001 },
       "hosts": [],
       "cover": "/images/meetups/evt-q5DFUXoGZH97A6g-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-6ArZ35PUhtwJGGU",
+      "title": "Omarchy Doha - Meet & Tinker",
+      "url": "https://luma.com/9s4dh3xs",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T18:00:00.000Z",
+      "timezone": "Asia/Qatar",
+      "address": null,
+      "city": null,
+      "country": "QA",
+      "online": false,
+      "geo": { "lat": 25.3108807, "lon": 51.5081812, "approximate": true },
+      "hosts": [],
+      "cover": "/images/meetups/evt-6ArZ35PUhtwJGGU-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },

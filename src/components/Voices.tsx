@@ -1,3 +1,4 @@
+import { t } from '@/i18n/site'
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { PlayIcon, XIcon } from '@/components/icons'
@@ -94,7 +95,7 @@ export function Voices() {
       </div>
       <div className="mt-6 hidden justify-center sm:flex">
         <Button variant="outline" aria-expanded={open} onClick={toggle}>
-          {open ? 'Show less' : 'View more'}
+          {open ? t('Show less') : t('View more')}
         </Button>
       </div>
     </>

@@ -139,6 +139,10 @@ export function collectSources(root = process.cwd()) {
     add(team.description)
     add(team.note?.text)
     add(team.note?.linkText)
+    // A member's countries are copy; their name is not. "USA/Denmark"
+    // is two of them, translated one at a time.
+    for (const member of team.members ?? [])
+      for (const country of member.meta?.split('/') ?? []) add(country)
   }
   for (const plugin of readJson('src/data/plugins.json', {}).plugins ?? [])
     if (featured.has(plugin.id)) add(plugin.description)
