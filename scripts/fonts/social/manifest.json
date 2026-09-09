@@ -59,6 +59,11 @@
       "family": "Omarchy Social Chinese",
       "file": "chinese.otf",
       "characters": " ,?ADHLVbegintux、。一不个亲代作功加原可坑好定小就心手打搞操改时玩生由的看系统置能自设该调路踩造随，？"
+    },
+    "Persian": {
+      "family": "Omarchy Social Persian",
+      "file": "persian.ttf",
+      "characters": " .،ابتجحدذرزسشصطظعغفلمنهوپکگی‌"
     }
   },
   "locales": {
@@ -91,6 +96,7 @@
     "pl": "Latin",
     "lt": "Latin",
     "ga": "Latin",
-    "nl": "Latin"
+    "nl": "Latin",
+    "fa": "Persian"
   }
 }
