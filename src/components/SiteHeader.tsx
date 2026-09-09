@@ -586,7 +586,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
               className="relative size-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 sm:hidden"
               aria-expanded={menuOpen}
               aria-controls="site-menu"
-              aria-label={menuOpen ? 'Close menu' : 'Menu'}
+              aria-label={menuOpen ? t('Close menu') : t('Menu')}
               onClick={() => setMenuOpen((open) => !open)}
             >
               <MenuBarsIcon open={menuOpen} className="size-[22px]" />
