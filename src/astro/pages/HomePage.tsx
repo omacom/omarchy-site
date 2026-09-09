@@ -561,7 +561,10 @@ export function HomePage({ data }: { data: HomeData }) {
                   render={<a href={ISO_URL} />}
                 >
                   <DownloadIcon data-icon="inline-start" />
-                  {t('Download Omarchy')} {release.version}
+                  {t('Download Omarchy VERSION').replace(
+                    'VERSION',
+                    release.version,
+                  )}
                 </Button>
                 <p className="mt-2.5 text-[13px] text-text-muted">
                   {t('Under a minute from stick to desktop.')}{' '}
