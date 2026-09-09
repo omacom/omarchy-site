@@ -230,10 +230,20 @@ def positive(value):
     return number
 
 
+def select_jobs(jobs, names, locale=None, limit=None):
+    """Filter before limiting so one runner cannot consume another language's work."""
+    if locale is not None:
+        if locale not in names:
+            raise TranslationError('unknown content locale')
+        jobs = [job for job in jobs if job['locale'] == locale]
+    return jobs[:limit]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--concurrency', type=positive, default=8)
     parser.add_argument('--limit', type=positive)
+    parser.add_argument('--locale', help='translate only this content language')
     args = parser.parse_args()
     try:
         queue = subprocess.run(['node', 'scripts/check-translations.mjs', '--pending-news'],
@@ -245,7 +255,7 @@ def main():
         locales = json.loads((ROOT / 'src/i18n/locales.json').read_text())
         names = {code: data['name'] for code, data in locales.items()
                  if data.get('contentLocale', code) == code and code != 'en'}
-        jobs = jobs[:args.limit]
+        jobs = select_jobs(jobs, names, args.locale, args.limit)
         print(f'Translating {len(jobs)} pending articles', flush=True)
         failed = process_jobs(ROOT, jobs, posts, names, args.concurrency,
                               os.environ.get('MUSE_MODEL', MODEL))

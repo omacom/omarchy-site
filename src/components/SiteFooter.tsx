@@ -1,4 +1,4 @@
-import { t, language, locales, hasTranslation } from '@/i18n/site'
+import { t, language, sortedLocales, hasTranslation } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { OmarchyWordmark } from '@/components/Brand'
 import { PixelBackdrop } from '@/components/HeroShader'
@@ -14,7 +14,7 @@ const columns = [
     links: [
       { label: t('News'), to: '/news/' },
       { label: t('Manual'), to: '/manual/' },
-      { label: 'Plugins', href: 'https://plugins.omarchy.org' },
+      { label: t('Plugins'), href: 'https://plugins.omarchy.org' },
       { label: t('Themes'), to: '/themes/' },
     ],
   },
@@ -31,6 +31,7 @@ const columns = [
     title: t('Foundation'),
     links: [
       { label: t('About'), splat: 'foundation' },
+      { label: t('Staff'), splat: 'staff' },
       { label: t('Patrons'), splat: 'patrons' },
       { label: t('Sponsorships'), splat: 'sponsorships' },
       { label: t('Artists in Residence'), splat: 'air' },
@@ -89,13 +90,24 @@ export function SiteFooter({ path }: { path: string }) {
               className="mt-4 text-sm leading-relaxed text-text-muted [text-wrap:pretty]"
             >
               <span className="block">
-                {t('Beautiful, fun & agentic Linux')}{' '}
-                <span className="whitespace-nowrap">
-                  {t('by')}{' '}
-                  <a href="https://dhh.dk" className={footerLink}>
-                    DHH
-                  </a>
-                </span>
+                {language === 'zh-CN' ? (
+                  <>
+                    {t('Beautiful, fun & agentic Linux')}
+                    <a href="https://dhh.dk" className={`block ${footerLink}`}>
+                      {t('By DHH')}
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    {t('Beautiful, fun & agentic Linux')}{' '}
+                    <span className="whitespace-nowrap">
+                      {t('by')}{' '}
+                      <a href="https://dhh.dk" className={footerLink}>
+                        DHH
+                      </a>
+                    </span>
+                  </>
+                )}
               </span>
               <span className="block">
                 {t('The malleable OS for the age of agents.')}
@@ -159,7 +171,7 @@ export function SiteFooter({ path }: { path: string }) {
           aria-label={t('Language')}
           className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm"
         >
-          {Object.entries(locales)
+          {sortedLocales
             .filter(([code]) => hasTranslation(code, currentPath))
             .map(([code, entry]) => (
               <a

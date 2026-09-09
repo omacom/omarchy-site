@@ -39,6 +39,16 @@ After editing content inputs, run `npm run port` to refresh the dev data.
 - Run `bin/build-manual [path/to/omarchy/manual]` to refresh manual inputs and
   images. The Astro site builds its table of contents and search index.
 
+Social cards use the site's theme palettes and existing translations: 30 languages
+in all 22 themes. `npm run build:social` regenerates every 1200×630 PNG under
+`public/brand/social/`; normal builds regenerate only the active language.
+Each page selects a stable theme from its canonical path, and its locale selects
+the translated card. English cards stay at the directory root; other languages
+use a locale subdirectory. After changing palettes, themes, or card copy,
+regenerate and commit the images. Bundled font subsets support all scripts;
+see [font maintenance](scripts/fonts/social/README.md) when adding characters.
+Social platforms may retain cached previews for already-shared links.
+
 The screensaver and the Discord redirect are still served
 directly. Their styles, fonts, and scripts remain under `assets/`, alongside
 shared images and public downloads.
