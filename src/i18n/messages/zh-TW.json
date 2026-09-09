@@ -200,7 +200,7 @@
   "Bring a Windows 11 Pro license valid for a VM. Run": "請準備一份可用於虛擬機器的 Windows 11 Pro 授權。執行",
   "to retrieve your machine's original key (this only works on Pro, not Home licenses).": "即可獲取機器的原始金鑰（僅適用於 Pro 授權，不支援 Home）。",
   "For work, not gaming": "適合工作，不為遊戲",
-  "This setup has no GPU acceleration or passthrough. It's a great home for documents, spreadsheets, and Windows-only work apps, but isn't intended for gaming or demanding graphics work.": "此方案沒有 GPU 加速或直通。它適合文件、表格和 Windows 專用辦公應用程式，但不面向遊戲或高負載圖形工作。",
+  "This setup has no GPU acceleration or passthrough. It's a great home for documents, spreadsheets, and Windows-only work apps, but isn't intended for gaming or demanding graphics work.": "這樣裝沒有 GPU 加速，也沒有直通。文件、試算表和只有 Windows 才有的工作軟體放這裡很合適，但它不是拿來打遊戲或跑吃重繪圖工作的。",
   "By": "作者：",
   "on": "發布於",
   "the best shell tools": "最佳 shell 工具",
