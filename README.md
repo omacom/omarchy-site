@@ -67,26 +67,22 @@ Put the result in `assets/themes/`. Name the file after the theme, lowercase
 and hyphenated — `your-theme.webp`. Aim for 1200x675; keep it under about
 100KB so the page stays quick to load.
 
-**2. An entry.** Add a figure block to `themes/index.html`, in alphabetical
+**2. An entry.** Add an object to `src/data/themes.json`, in alphabetical
 order among the others:
 
-```html
-<figure class="themes__theme">
-  <a href="https://github.com/you/your-theme"
-    ><img
-      src="/assets/themes/your-theme.webp"
-      alt="Your Theme theme"
-      loading="lazy"
-      decoding="async"
-  /></a>
-  <figcaption>
-    <a href="https://github.com/you/your-theme">Your Theme</a>
-  </figcaption>
-</figure>
+```json
+{
+ "repo": "https://github.com/you/your-theme",
+ "image": "/assets/themes/your-theme.webp",
+ "name": "Your Theme"
+}
 ```
 
-Both links point at the theme's own repository, which is where people
-install it from and where it needs to keep living.
+`repo` points at the theme's own repository, which is where people install it
+from and where it needs to keep living. The `/themes` page is rendered from
+`src/data/themes.json` (via `src/astro/pages/ThemesPage.tsx`), so an entry here
+is what makes a theme show up — the older `themes/index.html` is no longer the
+source of truth.
 
 ### The screenshot matters
 
