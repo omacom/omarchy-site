@@ -223,5 +223,13 @@
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
     "manual": false
+  },
+  "uk": {
+    "name": "Українська",
+    "domain": "https://uk.omarchy.org",
+    "formatLocale": "uk-UA",
+    "ogLocale": "uk_UA",
+    "manual": false,
+    "flag": "UA"
   }
 }

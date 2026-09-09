@@ -29,11 +29,12 @@ test('current literals replace old English without consulting translation catalo
   assert.deepEqual(collectSources(root).messages, ['Old English'])
   put(
     'src/page.tsx',
-    "const view = <div>{t('New English')}{t(`New literal`)}</div>",
+    "const view = <div>{t('New English')}{tPlural('New plural')}{t(`New literal`)}</div>",
   )
   assert.deepEqual(collectSources(root).messages, [
     'New English',
     'New literal',
+    'New plural',
   ])
 })
 

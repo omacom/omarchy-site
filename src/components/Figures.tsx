@@ -1,4 +1,4 @@
-import { t, locale } from '@/i18n/site'
+import { t, tPlural, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
@@ -328,7 +328,9 @@ export function Figures() {
         </div>
         <p className={`${meta} mt-[14px]`}>
           {github.pullRequests.toLocaleString(locale.formatLocale)}{' '}
-          {t('pull requests ·')} {github.contributors} {t('contributors')}
+          {tPlural('pull requests ·', github.pullRequests)}{' '}
+          {github.contributors.toLocaleString(locale.formatLocale)}{' '}
+          {tPlural('contributors', github.contributors)}
         </p>
         <a href="https://github.com/omacom/omarchy" className={more}>
           {t('The repo')}
