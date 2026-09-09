@@ -1,4 +1,4 @@
-import { t, language } from '@/i18n/site'
+import { t, language, chineseScript } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import {
@@ -374,7 +374,7 @@ export function HomePage({ data }: { data: HomeData }) {
               }
               className="text-2xl font-medium tracking-tight text-text [text-wrap:balance] sm:text-3xl"
             >
-              {language === 'zh-CN' ? (
+              {chineseScript ? (
                 <>
                   <span className="block">
                     <SectionAnchor anchor="home">
@@ -496,14 +496,14 @@ export function HomePage({ data }: { data: HomeData }) {
               </p>
               <p className="mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
                 {t("It's not perfect... yet. But")}
-                {language === 'zh-CN' ? '' : ' '}
+                {chineseScript ? '' : ' '}
                 <a
                   href="https://wecanfixeverything.com/"
                   className="underline decoration-border-strong underline-offset-4 hover:decoration-current"
                 >
                   {t('we can fix everything now.')}
                 </a>
-                {language === 'zh-CN' && '。'}
+                {chineseScript && '。'}
               </p>
             </div>
 
@@ -573,11 +573,11 @@ export function HomePage({ data }: { data: HomeData }) {
                     >
                       SHA-256
                     </a>
-                    {language === 'zh-CN' ? '、' : ', '}
+                    {chineseScript ? '、' : ', '}
                     <a href={`${ISO_URL}.sig`} className={noteLink}>
                       {t('signature')}
                     </a>
-                    {language === 'zh-CN' ? '。' : '.'}
+                    {chineseScript ? '。' : '.'}
                   </span>
                 </p>
               </div>
@@ -633,7 +633,7 @@ export function HomePage({ data }: { data: HomeData }) {
             <ManualLink slug="unattended-installs">
               {t('unattended installs')}
             </ManualLink>
-            {language === 'zh-CN' ? t(' detailed guides.') : '.'}
+            {chineseScript ? t(' detailed guides.') : '.'}
           </p>
           <SectionActions>{installGuide}</SectionActions>
         </div>
@@ -684,7 +684,7 @@ export function HomePage({ data }: { data: HomeData }) {
                 {t(
                   'A theme restyles the whole system at once: terminal, bar, notifications, wallpaper. Pick one and this site wears it too.',
                 )}
-                {language === 'zh-CN' && (
+                {chineseScript && (
                   <>
                     <span className="sm:hidden">。</span>
                     <span className="hidden sm:inline">；</span>

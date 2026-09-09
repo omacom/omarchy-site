@@ -15,6 +15,9 @@ export const locales = registry as Record<string, Locale>
 export const language = import.meta.env?.PUBLIC_SITE_LOCALE || 'en'
 if (!locales[language]) throw new Error(`Unknown site language: ${language}`)
 export const locale = locales[language]
+
+/** Chinese sets its own punctuation, spacing and line breaks, unlike the Latin copy. */
+export const chineseScript = language === 'zh-CN' || language === 'zh-TW'
 export const siteUrl = locale.domain
 
 /**
