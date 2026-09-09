@@ -140,7 +140,13 @@ export function excerptFromHtml(html: string, limit = 155): string {
   // gets nothing rather than a run-on of its own list items. The caller
   // falls back to the site's own summary.
   if (!para) return ''
-  const text = decode(para.replace(/<[^>]*>/g, ' '))
+  const text = decode(
+    para
+      // A closing tag with a suffix hanging off it, as Turkish does with
+      // "Omarchy.org'u", must not leave a space between the two.
+      .replace(/<\/[^>]*>(?=['\u2019]\p{L})/gu, '')
+      .replace(/<[^>]*>/g, ' '),
+  )
     // The "#" a folded heading link leaves behind, and the space a stripped
     // inline tag leaves in front of punctuation.
     .replace(/\s#(?=\s|$)/g, '')
