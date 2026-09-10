@@ -163,7 +163,7 @@ export function SearchPalette() {
       <div
         aria-hidden="true"
         onClick={close}
-        className="absolute inset-0 bg-black/55"
+        className="absolute inset-0 bg-black/55 supports-backdrop-filter:backdrop-blur-xs"
       />
 
       <div className="ring-elevation relative flex max-h-[70vh] w-full max-w-2xl flex-col bg-surface">
