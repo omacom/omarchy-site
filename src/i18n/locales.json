@@ -233,5 +233,12 @@
     "manual": false,
     "flag": "IR",
     "direction": "rtl"
+  },
+  "no": {
+    "name": "Norsk",
+    "domain": "https://omarchy.no",
+    "formatLocale": "nb-NO",
+    "ogLocale": "nb_NO",
+    "manual": false
   }
 }

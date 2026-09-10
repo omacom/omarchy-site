@@ -4,6 +4,7 @@ import { OmarchyWordmark } from '@/components/Brand'
 import { PixelBackdrop } from '@/components/HeroShader'
 import {
   CloudflareMark,
+  DigitalOceanMark,
   ThirtySevenSignalsMark,
 } from '@/components/PartnerLogos'
 import { useTopLink } from '@/lib/hash-scroll'
@@ -75,7 +76,7 @@ export function SiteFooter({ path }: { path: string }) {
 
       <div className="footer-rise relative mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
-          <div className="flex w-full shrink-0 flex-col sm:w-max lg:w-96">
+          <div className="flex w-full shrink-0 flex-col sm:w-max lg:w-96 lg:self-start">
             <Link
               to="/"
               aria-label={t('Omarchy home')}
@@ -114,7 +115,7 @@ export function SiteFooter({ path }: { path: string }) {
               </span>
             </p>
 
-            <div className="mt-4 flex flex-col text-sm leading-relaxed text-text-muted [text-wrap:pretty] lg:mt-auto">
+            <div className="mt-4 flex flex-col text-sm leading-relaxed text-text-muted [text-wrap:pretty]">
               <p data-quiet>
                 {t('Incubated at')}{' '}
                 {/* Keep the link inline to preserve the paragraph baseline. */}
@@ -128,6 +129,13 @@ export function SiteFooter({ path }: { path: string }) {
                 <a href="https://cloudflare.com" className={creditLink}>
                   <CloudflareMark className="mr-[5px] inline-block h-3 w-auto shrink-0 align-[-0.15em]" />
                   Cloudflare
+                </a>
+              </p>
+              <p data-quiet>
+                {t('Compute by')}{' '}
+                <a href="https://www.digitalocean.com" className={creditLink}>
+                  <DigitalOceanMark className="mr-[5px] inline-block size-4 shrink-0 align-[-0.2em]" />
+                  DigitalOcean
                 </a>
               </p>
             </div>
