@@ -2,7 +2,6 @@ import { t } from '@/i18n/site'
 import { useState } from 'react'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { HeroShader } from '@/components/HeroShader'
-import { HeroNavGhost } from '@/components/SiteHeader'
 import { NotFoundWordmark } from '@/components/Brand'
 import { ArrowLeftIcon } from '@/components/icons'
 import {
@@ -26,7 +25,6 @@ export function NotFoundHero() {
   const home = useTopLink()
 
   return (
-    // The header watches this hero sentinel and paints its blended labels here.
     <main>
       <section
         data-hero-sentinel
@@ -38,8 +36,6 @@ export function NotFoundHero() {
           onPainted={() => setPainted(true)}
           onGlyphPress={() => void navigate({ to: '/' })}
         />
-
-        <HeroNavGhost />
 
         <div className="pointer-events-none relative flex flex-1 flex-col items-center px-6">
           <div className="flex-[0.5]" />

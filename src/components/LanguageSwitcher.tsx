@@ -2,6 +2,7 @@ import { Popover } from '@base-ui/react/popover'
 import { useState } from 'react'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { hasTranslation, language, locale, sortedLocales, t } from '@/i18n/site'
 
@@ -14,7 +15,13 @@ function flag(domain: string, countryCode?: string) {
     : '🌐'
 }
 
-export function LanguageSwitcher({ path }: { path: string }) {
+export function LanguageSwitcher({
+  path,
+  triggerClassName,
+}: {
+  path: string
+  triggerClassName?: string
+}) {
   const [suffix, setSuffix] = useState('')
 
   return (
@@ -31,8 +38,10 @@ export function LanguageSwitcher({ path }: { path: string }) {
             variant="ghost"
             size="icon"
             aria-label={`${t('Language')}: ${locale.name}`}
-            data-nav-glyph
-            className="relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
+            className={cn(
+              'relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]',
+              triggerClassName,
+            )}
           />
         }
       >

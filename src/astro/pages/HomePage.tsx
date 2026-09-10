@@ -17,7 +17,6 @@ import {
   WindowsIcon,
 } from '@/components/icons'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
-import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
 import { CardRail } from '@/components/CardRail'
@@ -333,11 +332,6 @@ export function HomePage({ data }: { data: HomeData }) {
       >
         <HeroShader onPainted={() => setPainted(true)} />
         {etchAsked ? <EtchPicker /> : null}
-
-        {/* The bar's labels, blended against the canvas. They have to live in
-            here to reach it: the real header is sticky, and a sticky element
-            isolates everything inside it from the page behind. */}
-        <HeroNavGhost />
 
         <div className="pointer-events-none relative flex flex-1 flex-col items-center px-6">
           <div className="flex-1" />
