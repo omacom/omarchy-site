@@ -139,7 +139,7 @@
   },
   "ca": {
     "name": "Català",
-    "domain": "https://ca.omarchy.org",
+    "domain": "https://omarchy.cat",
     "formatLocale": "ca-AD",
     "ogLocale": "ca_ES",
     "manual": false,
@@ -195,7 +195,7 @@
   },
   "pl": {
     "name": "Polski",
-    "domain": "https://pl.omarchy.org",
+    "domain": "https://omarchy.pl",
     "formatLocale": "pl-PL",
     "ogLocale": "pl_PL",
     "manual": false,
@@ -230,6 +230,494 @@
     "domain": "https://omarchy.no",
     "formatLocale": "nb-NO",
     "ogLocale": "nb_NO",
+    "manual": false
+  },
+  "ru": {
+    "name": "Русский",
+    "domain": "https://ru.omarchy.org",
+    "formatLocale": "ru-RU",
+    "ogLocale": "ru_RU",
+    "manual": false
+  },
+  "de": {
+    "name": "Deutsch",
+    "domain": "https://de.omarchy.org",
+    "formatLocale": "de-DE",
+    "ogLocale": "de_DE",
+    "manual": false
+  },
+  "id": {
+    "name": "Bahasa Indonesia",
+    "domain": "https://id.omarchy.org",
+    "formatLocale": "id-ID",
+    "ogLocale": "id_ID",
+    "manual": false
+  },
+  "sw": {
+    "name": "Kiswahili",
+    "domain": "https://sw.omarchy.org",
+    "formatLocale": "sw-KE",
+    "ogLocale": "sw_KE",
+    "manual": false
+  },
+  "mr": {
+    "name": "मराठी",
+    "domain": "https://mr.omarchy.org",
+    "formatLocale": "mr-IN",
+    "ogLocale": "mr_IN",
+    "manual": false
+  },
+  "te": {
+    "name": "తెలుగు",
+    "domain": "https://te.omarchy.org",
+    "formatLocale": "te-IN",
+    "ogLocale": "te_IN",
+    "manual": false
+  },
+  "pa": {
+    "name": "ਪੰਜਾਬੀ",
+    "domain": "https://pa.omarchy.org",
+    "formatLocale": "pa-IN",
+    "ogLocale": "pa_IN",
+    "manual": false
+  },
+  "jv": {
+    "name": "Basa Jawa",
+    "domain": "https://jv.omarchy.org",
+    "formatLocale": "jv-ID",
+    "ogLocale": "jv_ID",
+    "manual": false
+  },
+  "gu": {
+    "name": "ગુજરાતી",
+    "domain": "https://gu.omarchy.org",
+    "formatLocale": "gu-IN",
+    "ogLocale": "gu_IN",
+    "manual": false
+  },
+  "fa": {
+    "name": "فارسی",
+    "domain": "https://fa.omarchy.org",
+    "formatLocale": "fa-IR",
+    "ogLocale": "fa_IR",
+    "manual": false,
+    "direction": "rtl"
+  },
+  "ha": {
+    "name": "Hausa",
+    "domain": "https://ha.omarchy.org",
+    "formatLocale": "ha-NG",
+    "ogLocale": "ha_NG",
+    "manual": false
+  },
+  "kn": {
+    "name": "ಕನ್ನಡ",
+    "domain": "https://kn.omarchy.org",
+    "formatLocale": "kn-IN",
+    "ogLocale": "kn_IN",
+    "manual": false
+  },
+  "ml": {
+    "name": "മലയാളം",
+    "domain": "https://ml.omarchy.org",
+    "formatLocale": "ml-IN",
+    "ogLocale": "ml_IN",
+    "manual": false
+  },
+  "or": {
+    "name": "ଓଡ଼ିଆ",
+    "domain": "https://or.omarchy.org",
+    "formatLocale": "or-IN",
+    "ogLocale": "or_IN",
+    "manual": false
+  },
+  "my": {
+    "name": "မြန်မာဘာသာ",
+    "domain": "https://my.omarchy.org",
+    "formatLocale": "my-MM",
+    "ogLocale": "my_MM",
+    "manual": false
+  },
+  "uk": {
+    "name": "Українська",
+    "domain": "https://uk.omarchy.org",
+    "formatLocale": "uk-UA",
+    "ogLocale": "uk_UA",
+    "manual": false
+  },
+  "am": {
+    "name": "አማርኛ",
+    "domain": "https://am.omarchy.org",
+    "formatLocale": "am-ET",
+    "ogLocale": "am_ET",
+    "manual": false
+  },
+  "yo": {
+    "name": "Yorùbá",
+    "domain": "https://yo.omarchy.org",
+    "formatLocale": "yo-NG",
+    "ogLocale": "yo_NG",
+    "manual": false
+  },
+  "ig": {
+    "name": "Igbo",
+    "domain": "https://ig.omarchy.org",
+    "formatLocale": "ig-NG",
+    "ogLocale": "ig_NG",
+    "manual": false
+  },
+  "om": {
+    "name": "Afaan Oromoo",
+    "domain": "https://om.omarchy.org",
+    "formatLocale": "om-ET",
+    "ogLocale": "om_ET",
+    "manual": false
+  },
+  "az": {
+    "name": "Azərbaycanca",
+    "domain": "https://az.omarchy.org",
+    "formatLocale": "az-AZ",
+    "ogLocale": "az_AZ",
+    "manual": false
+  },
+  "ne": {
+    "name": "नेपाली",
+    "domain": "https://ne.omarchy.org",
+    "formatLocale": "ne-NP",
+    "ogLocale": "ne_NP",
+    "manual": false
+  },
+  "ro": {
+    "name": "Română",
+    "domain": "https://ro.omarchy.org",
+    "formatLocale": "ro-RO",
+    "ogLocale": "ro_RO",
+    "manual": false
+  },
+  "ceb": {
+    "name": "Cebuano",
+    "domain": "https://ceb.omarchy.org",
+    "formatLocale": "ceb-PH",
+    "ogLocale": "ceb_PH",
+    "manual": false
+  },
+  "ms": {
+    "name": "Bahasa Melayu",
+    "domain": "https://ms.omarchy.org",
+    "formatLocale": "ms-MY",
+    "ogLocale": "ms_MY",
+    "manual": false
+  },
+  "km": {
+    "name": "ខ្មែរ",
+    "domain": "https://km.omarchy.org",
+    "formatLocale": "km-KH",
+    "ogLocale": "km_KH",
+    "manual": false
+  },
+  "sd": {
+    "name": "سنڌي",
+    "domain": "https://sd.omarchy.org",
+    "formatLocale": "sd-PK",
+    "ogLocale": "sd_PK",
+    "manual": false,
+    "direction": "rtl"
+  },
+  "so": {
+    "name": "Soomaali",
+    "domain": "https://so.omarchy.org",
+    "formatLocale": "so-SO",
+    "ogLocale": "so_SO",
+    "manual": false
+  },
+  "sr": {
+    "name": "Српски",
+    "domain": "https://sr.omarchy.org",
+    "formatLocale": "sr-RS",
+    "ogLocale": "sr_RS",
+    "manual": false
+  },
+  "cs": {
+    "name": "Čeština",
+    "domain": "https://cs.omarchy.org",
+    "formatLocale": "cs-CZ",
+    "ogLocale": "cs_CZ",
+    "manual": false
+  },
+  "sk": {
+    "name": "Slovenčina",
+    "domain": "https://sk.omarchy.org",
+    "formatLocale": "sk-SK",
+    "ogLocale": "sk_SK",
+    "manual": false
+  },
+  "bg": {
+    "name": "Български",
+    "domain": "https://bg.omarchy.org",
+    "formatLocale": "bg-BG",
+    "ogLocale": "bg_BG",
+    "manual": false
+  },
+  "he": {
+    "name": "עברית",
+    "domain": "https://he.omarchy.org",
+    "formatLocale": "he-IL",
+    "ogLocale": "he_IL",
+    "manual": false,
+    "direction": "rtl"
+  },
+  "ps": {
+    "name": "پښتو",
+    "domain": "https://ps.omarchy.org",
+    "formatLocale": "ps-AF",
+    "ogLocale": "ps_AF",
+    "manual": false,
+    "direction": "rtl"
+  },
+  "mg": {
+    "name": "Malagasy",
+    "domain": "https://mg.omarchy.org",
+    "formatLocale": "mg-MG",
+    "ogLocale": "mg_MG",
+    "manual": false
+  },
+  "as": {
+    "name": "অসমীয়া",
+    "domain": "https://as.omarchy.org",
+    "formatLocale": "as-IN",
+    "ogLocale": "as_IN",
+    "manual": false
+  },
+  "zu": {
+    "name": "isiZulu",
+    "domain": "https://zu.omarchy.org",
+    "formatLocale": "zu-ZA",
+    "ogLocale": "zu_ZA",
+    "manual": false
+  },
+  "rw": {
+    "name": "Kinyarwanda",
+    "domain": "https://rw.omarchy.org",
+    "formatLocale": "rw-RW",
+    "ogLocale": "rw_RW",
+    "manual": false
+  },
+  "ht": {
+    "name": "Kreyòl Ayisyen",
+    "domain": "https://ht.omarchy.org",
+    "formatLocale": "ht-HT",
+    "ogLocale": "ht_HT",
+    "manual": false
+  },
+  "sn": {
+    "name": "chiShona",
+    "domain": "https://sn.omarchy.org",
+    "formatLocale": "sn-ZW",
+    "ogLocale": "sn_ZW",
+    "manual": false
+  },
+  "hr": {
+    "name": "Hrvatski",
+    "domain": "https://hr.omarchy.org",
+    "formatLocale": "hr-HR",
+    "ogLocale": "hr_HR",
+    "manual": false
+  },
+  "ku": {
+    "name": "Kurdî",
+    "domain": "https://ku.omarchy.org",
+    "formatLocale": "ku-TR",
+    "ogLocale": "ku_TR",
+    "manual": false
+  },
+  "be": {
+    "name": "Беларуская",
+    "domain": "https://be.omarchy.org",
+    "formatLocale": "be-BY",
+    "ogLocale": "be_BY",
+    "manual": false
+  },
+  "bs": {
+    "name": "Bosanski",
+    "domain": "https://bs.omarchy.org",
+    "formatLocale": "bs-BA",
+    "ogLocale": "bs_BA",
+    "manual": false
+  },
+  "sq": {
+    "name": "Shqip",
+    "domain": "https://sq.omarchy.org",
+    "formatLocale": "sq-AL",
+    "ogLocale": "sq_AL",
+    "manual": false
+  },
+  "hy": {
+    "name": "Հայերեն",
+    "domain": "https://hy.omarchy.org",
+    "formatLocale": "hy-AM",
+    "ogLocale": "hy_AM",
+    "manual": false
+  },
+  "ka": {
+    "name": "ქართული",
+    "domain": "https://ka.omarchy.org",
+    "formatLocale": "ka-GE",
+    "ogLocale": "ka_GE",
+    "manual": false
+  },
+  "mn": {
+    "name": "Монгол",
+    "domain": "https://mn.omarchy.org",
+    "formatLocale": "mn-MN",
+    "ogLocale": "mn_MN",
+    "manual": false
+  },
+  "lo": {
+    "name": "ລາວ",
+    "domain": "https://lo.omarchy.org",
+    "formatLocale": "lo-LA",
+    "ogLocale": "lo_LA",
+    "manual": false
+  },
+  "ky": {
+    "name": "Кыргызча",
+    "domain": "https://ky.omarchy.org",
+    "formatLocale": "ky-KG",
+    "ogLocale": "ky_KG",
+    "manual": false
+  },
+  "kk": {
+    "name": "Қазақша",
+    "domain": "https://kk.omarchy.org",
+    "formatLocale": "kk-KZ",
+    "ogLocale": "kk_KZ",
+    "manual": false
+  },
+  "tg": {
+    "name": "Тоҷикӣ",
+    "domain": "https://tg.omarchy.org",
+    "formatLocale": "tg-TJ",
+    "ogLocale": "tg_TJ",
+    "manual": false
+  },
+  "tk": {
+    "name": "Türkmençe",
+    "domain": "https://tk.omarchy.org",
+    "formatLocale": "tk-TM",
+    "ogLocale": "tk_TM",
+    "manual": false
+  },
+  "et": {
+    "name": "Eesti",
+    "domain": "https://et.omarchy.org",
+    "formatLocale": "et-EE",
+    "ogLocale": "et_EE",
+    "manual": false
+  },
+  "lv": {
+    "name": "Latviešu",
+    "domain": "https://lv.omarchy.org",
+    "formatLocale": "lv-LV",
+    "ogLocale": "lv_LV",
+    "manual": false
+  },
+  "sl": {
+    "name": "Slovenščina",
+    "domain": "https://sl.omarchy.org",
+    "formatLocale": "sl-SI",
+    "ogLocale": "sl_SI",
+    "manual": false
+  },
+  "mk": {
+    "name": "Македонски",
+    "domain": "https://mk.omarchy.org",
+    "formatLocale": "mk-MK",
+    "ogLocale": "mk_MK",
+    "manual": false
+  },
+  "af": {
+    "name": "Afrikaans",
+    "domain": "https://af.omarchy.org",
+    "formatLocale": "af-ZA",
+    "ogLocale": "af_ZA",
+    "manual": false
+  },
+  "xh": {
+    "name": "isiXhosa",
+    "domain": "https://xh.omarchy.org",
+    "formatLocale": "xh-ZA",
+    "ogLocale": "xh_ZA",
+    "manual": false
+  },
+  "st": {
+    "name": "Sesotho",
+    "domain": "https://st.omarchy.org",
+    "formatLocale": "st-ZA",
+    "ogLocale": "st_ZA",
+    "manual": false
+  },
+  "ln": {
+    "name": "Lingála",
+    "domain": "https://ln.omarchy.org",
+    "formatLocale": "ln-CD",
+    "ogLocale": "ln_CD",
+    "manual": false
+  },
+  "ny": {
+    "name": "Chichewa",
+    "domain": "https://ny.omarchy.org",
+    "formatLocale": "ny-MW",
+    "ogLocale": "ny_MW",
+    "manual": false
+  },
+  "ti": {
+    "name": "ትግርኛ",
+    "domain": "https://ti.omarchy.org",
+    "formatLocale": "ti-ET",
+    "ogLocale": "ti_ET",
+    "manual": false
+  },
+  "ug": {
+    "name": "ئۇيغۇرچە",
+    "domain": "https://ug.omarchy.org",
+    "formatLocale": "ug-CN",
+    "ogLocale": "ug_CN",
+    "manual": false,
+    "direction": "rtl"
+  },
+  "tt": {
+    "name": "Татарча",
+    "domain": "https://tt.omarchy.org",
+    "formatLocale": "tt-RU",
+    "ogLocale": "tt_RU",
+    "manual": false
+  },
+  "yue": {
+    "name": "粵語",
+    "domain": "https://yue.omarchy.org",
+    "formatLocale": "yue-HK",
+    "ogLocale": "yue_HK",
+    "manual": false
+  },
+  "mai": {
+    "name": "मैथिली",
+    "domain": "https://mai.omarchy.org",
+    "formatLocale": "mai-IN",
+    "ogLocale": "mai_IN",
+    "manual": false
+  },
+  "bho": {
+    "name": "भोजपुरी",
+    "domain": "https://bho.omarchy.org",
+    "formatLocale": "bho-IN",
+    "ogLocale": "bho_IN",
+    "manual": false
+  },
+  "wo": {
+    "name": "Wolof",
+    "domain": "https://wo.omarchy.org",
+    "formatLocale": "wo-SN",
+    "ogLocale": "wo_SN",
     "manual": false
   }
 }
