@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 31 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each of the 32 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
 
 ## Build and preview
 
@@ -53,7 +53,7 @@ Language publishing is automatic through `translate-news.yml`. Manual deployment
 
 The locale registry defines one public address for each language. The language menu, canonical URLs, Open Graph metadata, alternate-language links and deployment all use that same address. Do not register additional addresses or regional English editions. English has a single global edition at omarchy.org.
 
-The language menu shows colored country flags and preserves the current pathname, query and fragment when the destination has a translation. Otherwise it opens that language’s home page. Labels use native names, and English uses a globe. The `flag` field supplies the two-letter country code when needed. Arabic declares `direction: "rtl"`.
+The language menu shows colored country flags and preserves the current pathname, query and fragment when the destination has a translation. Otherwise it opens that language’s home page. Labels use native names, and English uses a globe. The `flag` field supplies the two-letter country code when needed. Arabic, Urdu, and Hebrew declare `direction: "rtl"`.
 
 Cloudflare custom domains handle routing and TLS directly. Registered national domains use their assigned Cloudflare nameservers; language subdomains use the omarchy.org zone. Verify HTTPS and the page language before publishing a new primary address.
 
@@ -90,6 +90,7 @@ Cloudflare custom domains handle routing and TLS directly. Registered national d
 | Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
 | Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
 | Norsk            | [omarchy.no](https://omarchy.no)         |
+| עברית            | [he.omarchy.org](https://he.omarchy.org) |
 
 ## Pointing a new domain to a language site
 

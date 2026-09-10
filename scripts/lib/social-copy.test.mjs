@@ -16,6 +16,7 @@ test('every language has complete, renderable social-card text', () => {
   }
   assert.equal(socialCopies.ar.direction, 'rtl')
   assert.equal(socialCopies.ur.direction, 'rtl')
+  assert.equal(socialCopies.he.direction, 'rtl')
   assert.throws(() => socialCopy('missing'), /Unknown social-card language/)
   assert.throws(
     () => validateSocialCharacters('da', { lines: ['🦄'] }),
