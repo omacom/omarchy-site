@@ -227,7 +227,7 @@
   },
   "fa": {
     "name": "فارسی",
-    "domain": "https://ir.omarchy.org",
+    "domain": "https://fa.omarchy.org",
     "formatLocale": "fa-IR",
     "ogLocale": "fa_IR",
     "manual": false,
