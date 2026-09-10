@@ -56,16 +56,16 @@
     "sourceHash": "577ad8123132562e9e5155ee4cb444b371c265fc62de839cc789fd44836dd8d6"
   },
   "omacom-foundation-to-be-premier-quickshell-sponsor": {
-    "title": "A Omacom Foundation será patrocinadora principal do Quickshell",
-    "sourceHash": "46736a2ba8a4c7c3b9dd0e7b8f86b38496eac9fbc47eca082feb1e3a64dc4657"
+    "title": "Fundação Omacom será a principal patrocinadora do Quickshell",
+    "sourceHash": "cd8c462ecac862cc4f0af0eddbeee5d3a7577d2c1c70dd8d04ed8ebfc221effd"
   },
   "omacom-foundation-funding-hits-10m": {
     "title": "O financiamento da Omacom Foundation chega aos $10m",
     "sourceHash": "5c7a98a0d30bdf81bdf7743ed9510e7c6d47dad679c92a02767d895dd1b3b9a5"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Fundação Omacom é lançada com US$ 15,5 milhões",
-    "sourceHash": "5a935586ef47677139c58c4e99e001592a054d4df673b9c60996fa7f5975d21d"
+    "title": "Fundação Omacom é lançada com $18,5 milhões",
+    "sourceHash": "a708f0134cba2d1616f7bc6021cc73fb7b063b838578d560e3fb1e3093004e42"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
     "title": "A Omacom Foundation será patrocinadora exclusiva do Hyprland",
@@ -85,6 +85,14 @@
   },
   "omacom-foundation-raises-another-half-a-million-dollars": {
     "title": "A Fundação Omacom arrecada mais meio milhão de dólares!",
-    "sourceHash": "f1c18a762af975870ccbdbbbaee2cd2a725e9c5a6dbe27221d610e38dfffa8ca"
+    "sourceHash": "0a0e75e5383dfa443527e945896e487bd803876f845bcaa62c1ad6fb5a3a301a"
+  },
+  "omacom-foundation-hires-outfoxxed": {
+    "title": "A Omacom Foundation contrata outfoxxed como Chefe do Omarchy Shell",
+    "sourceHash": "6b4c4987fc67ebfbd0295a23520056d21819c360a0932aec9a894ddf9edc6c15"
+  },
+  "digitalocean-joins-as-founding-corporate-patron": {
+    "title": "DigitalOcean junta-se como Patrocinadora Corporativa Fundadora com $3 milhões",
+    "sourceHash": "9619006b80c5dbebf99d2fd691d1fd3294ac303c20e41cb8dba14cad9dd2381f"
   }
 }

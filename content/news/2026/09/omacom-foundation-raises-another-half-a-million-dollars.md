@@ -22,4 +22,4 @@ And since [opening patronage to everyone](/news/2026/09/omacom-patronage-is-open
 
 Tokens to build with. Money to back the projects we depend on. People and companies willing to put something behind their belief in Linux on the desktop. This is how we keep going!
 
-Thank you to OpenRouter, Four Technologies, and everyone who's become a patron. If you'd like to join them, write [david@omarchy.com](mailto:david@omarchy.com) for founding and distinguished patronage, and [donate directly to the open patronage](https://www.zeffy.com/en-US/donation-form/omarchy-patronage).
+Thank you to OpenRouter, Four Technologies, and everyone who's become a patron. If you'd like to join them, write [david@omarchy.org](mailto:david@omarchy.org) for founding and distinguished patronage, and [donate directly to the open patronage](https://www.zeffy.com/en-US/donation-form/omarchy-patronage).

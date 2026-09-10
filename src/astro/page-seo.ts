@@ -103,6 +103,11 @@ const PORTED: Partial<Record<string, { title: string; description: string }>> =
       description:
         'The Omarchy wordmark and logo, as vectors and at 4096px, and the terms for using them. Omarchy is a pending trademark.',
     },
+    staff: {
+      title: 'Omacom Foundation Staff - Omarchy',
+      description:
+        'The employees of the Omacom Foundation, working full time on Omarchy.',
+    },
     foundation: {
       title: 'Omacom Foundation - Omarchy',
       description:

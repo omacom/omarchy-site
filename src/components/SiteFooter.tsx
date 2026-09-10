@@ -1,9 +1,10 @@
-import { t, language, locales, hasTranslation } from '@/i18n/site'
+import { t, language, sortedLocales, hasTranslation } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { OmarchyWordmark } from '@/components/Brand'
 import { PixelBackdrop } from '@/components/HeroShader'
 import {
   CloudflareMark,
+  DigitalOceanMark,
   ThirtySevenSignalsMark,
 } from '@/components/PartnerLogos'
 import { useTopLink } from '@/lib/hash-scroll'
@@ -14,7 +15,7 @@ const columns = [
     links: [
       { label: t('News'), to: '/news/' },
       { label: t('Manual'), to: '/manual/' },
-      { label: 'Plugins', href: 'https://plugins.omarchy.org' },
+      { label: t('Plugins'), href: 'https://plugins.omarchy.org' },
       { label: t('Themes'), to: '/themes/' },
     ],
   },
@@ -31,6 +32,7 @@ const columns = [
     title: t('Foundation'),
     links: [
       { label: t('About'), splat: 'foundation' },
+      { label: t('Staff'), splat: 'staff' },
       { label: t('Patrons'), splat: 'patrons' },
       { label: t('Sponsorships'), splat: 'sponsorships' },
       { label: t('Artists in Residence'), splat: 'air' },
@@ -74,7 +76,7 @@ export function SiteFooter({ path }: { path: string }) {
 
       <div className="footer-rise relative mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
-          <div className="flex w-full shrink-0 flex-col sm:w-max lg:w-96">
+          <div className="flex w-full shrink-0 flex-col sm:w-max lg:w-96 lg:self-start">
             <Link
               to="/"
               aria-label={t('Omarchy home')}
@@ -89,20 +91,31 @@ export function SiteFooter({ path }: { path: string }) {
               className="mt-4 text-sm leading-relaxed text-text-muted [text-wrap:pretty]"
             >
               <span className="block">
-                {t('Beautiful, fun & agentic Linux')}{' '}
-                <span className="whitespace-nowrap">
-                  {t('by')}{' '}
-                  <a href="https://dhh.dk" className={footerLink}>
-                    DHH
-                  </a>
-                </span>
+                {language === 'zh-CN' ? (
+                  <>
+                    {t('Beautiful, fun & agentic Linux')}
+                    <a href="https://dhh.dk" className={`block ${footerLink}`}>
+                      {t('By DHH')}
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    {t('Beautiful, fun & agentic Linux')}{' '}
+                    <span className="whitespace-nowrap">
+                      {t('by')}{' '}
+                      <a href="https://dhh.dk" className={footerLink}>
+                        DHH
+                      </a>
+                    </span>
+                  </>
+                )}
               </span>
               <span className="block">
                 {t('The malleable OS for the age of agents.')}
               </span>
             </p>
 
-            <div className="mt-4 flex flex-col text-sm leading-relaxed text-text-muted [text-wrap:pretty] lg:mt-auto">
+            <div className="mt-4 flex flex-col text-sm leading-relaxed text-text-muted [text-wrap:pretty]">
               <p data-quiet>
                 {t('Incubated at')}{' '}
                 {/* Keep the link inline to preserve the paragraph baseline. */}
@@ -116,6 +129,13 @@ export function SiteFooter({ path }: { path: string }) {
                 <a href="https://cloudflare.com" className={creditLink}>
                   <CloudflareMark className="mr-[5px] inline-block h-3 w-auto shrink-0 align-[-0.15em]" />
                   Cloudflare
+                </a>
+              </p>
+              <p data-quiet>
+                {t('Compute by')}{' '}
+                <a href="https://www.digitalocean.com" className={creditLink}>
+                  <DigitalOceanMark className="mr-[5px] inline-block size-4 shrink-0 align-[-0.2em]" />
+                  DigitalOcean
                 </a>
               </p>
             </div>
@@ -159,7 +179,7 @@ export function SiteFooter({ path }: { path: string }) {
           aria-label={t('Language')}
           className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm"
         >
-          {Object.entries(locales)
+          {sortedLocales
             .filter(([code]) => hasTranslation(code, currentPath))
             .map(([code, entry]) => (
               <a

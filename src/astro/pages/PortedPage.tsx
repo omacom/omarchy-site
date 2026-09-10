@@ -15,6 +15,7 @@ const NARROW = new Set([
   'air',
   'foundation',
   'sponsorships',
+  'staff',
   'security',
   'security/credits',
   'brand',
