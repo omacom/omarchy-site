@@ -1,6 +1,6 @@
 import { t, language, sortedLocales, hasTranslation } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { OmarchyWordmark } from '@/components/Brand'
+import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
 import { PixelBackdrop } from '@/components/HeroShader'
 import {
   CloudflareMark,
@@ -84,7 +84,10 @@ export function SiteFooter({ path }: { path: string }) {
               data-quiet
               className={`group block ${focusRing}`}
             >
-              <OmarchyWordmark className="h-6 w-auto text-brand transition-colors duration-150 ease-out group-hover:text-(--t-field-hover)" />
+              <OmarchyWordmark
+                className="h-6 w-auto text-[color:var(--t-field-lit)] transition-[filter] duration-150 ease-out group-hover:brightness-125"
+                background={WORDMARK_BANDS}
+              />
             </Link>
             <p
               data-quiet

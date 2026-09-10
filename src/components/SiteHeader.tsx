@@ -11,7 +11,11 @@ import {
   RssIcon,
   SearchIcon,
 } from '@/components/icons'
-import { OmarchyMarkDrawn, OmarchyWordmark } from '@/components/Brand'
+import {
+  OmarchyMarkDrawn,
+  OmarchyWordmark,
+  WORDMARK_BANDS,
+} from '@/components/Brand'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { MusicMenuControl } from '@/components/MusicControl'
@@ -443,7 +447,10 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
       className="mark-draw-trigger relative flex items-center"
     >
       <OmarchyMarkDrawn className="size-[22px] shrink-0 transition-opacity duration-150 ease-out max-sm:group-data-[nav-past-hero]/bar:opacity-0 lg:size-[calc(var(--pxc)*2)]" />
-      <OmarchyWordmark className="absolute top-1/2 left-0 w-28 -translate-y-1/2 text-brand opacity-0 transition-opacity duration-150 ease-out group-data-[nav-past-hero]/bar:opacity-100 sm:hidden" />
+      <OmarchyWordmark
+        className="absolute top-1/2 left-0 w-28 -translate-y-1/2 text-[color:var(--t-field-lit)] opacity-0 transition-opacity duration-150 ease-out group-data-[nav-past-hero]/bar:opacity-100 sm:hidden"
+        background={WORDMARK_BANDS}
+      />
     </Link>
   )
 
