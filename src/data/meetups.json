@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-09-09",
+  "refreshed": "2026-09-10",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -535,11 +535,11 @@
       "start": "2026-09-16T17:00:00.000Z",
       "end": "2026-09-16T19:00:00.000Z",
       "timezone": "Europe/Berlin",
-      "address": "Kommt bald",
+      "address": "Attraktor e. V., Eschelsweg 4, 22767 Hamburg, Germany",
       "city": "Hamburg",
       "country": "DE",
       "online": false,
-      "geo": { "lat": 53.5501721, "lon": 10.0013165, "approximate": true },
+      "geo": { "lat": 53.5497643, "lon": 9.946426599999999 },
       "hosts": [],
       "cover": "/images/meetups/evt-ZxhK7paWWnwv9oN-full.webp",
       "coverWidth": 800,
@@ -750,6 +750,23 @@
       "coverHeight": 760
     },
     {
+      "id": "evt-ClEdH3RnCaQflex",
+      "title": "OMARCHY PVD MEETUP ØØ2",
+      "url": "https://luma.com/beaoudd4",
+      "start": "2026-09-27T15:00:00.000Z",
+      "end": "2026-09-27T16:30:00.000Z",
+      "timezone": "America/New_York",
+      "address": "Providence, RI",
+      "city": "Providence",
+      "country": "US",
+      "online": false,
+      "geo": { "lat": 41.82138844663223, "lon": -71.41028424633957 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-ClEdH3RnCaQflex-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-dYaJHbKm9kTEQiz",
       "title": "Omarchy Copenhagen Meetup 001",
       "url": "https://luma.com/j6wrz0ww",
@@ -918,6 +935,23 @@
       "cover": "/images/meetups/evt-1ouSFJxK78jgCia-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
+    },
+    {
+      "id": "evt-AwFMh6wimj0ZBxW",
+      "title": "Omarchy Patna",
+      "url": "https://luma.com/pfzasqyq",
+      "start": "2026-10-03T12:30:00.000Z",
+      "end": "2026-10-03T15:30:00.000Z",
+      "timezone": "Asia/Kolkata",
+      "address": "Patna, India",
+      "city": "Patna",
+      "country": "IN",
+      "online": false,
+      "geo": { "lat": 25.616548943853218, "lon": 85.14330693960551 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-AwFMh6wimj0ZBxW-full.webp",
+      "coverWidth": 400,
+      "coverHeight": 400
     },
     {
       "id": "evt-lNdN45JFBUoPvbk",

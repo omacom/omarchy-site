@@ -48,6 +48,11 @@ jobs:
       - run: gem install kramdown kramdown-parser-gfm --no-document
       - run: bin/build-news
       - run: npm run port
+      - name: Check every deployed edition is registered
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_DEPLOY_API_TOKEN }}
+        run: node scripts/check-deployment-registry.mjs
       - name: Find languages with pending translations
         id: pending
         run: |

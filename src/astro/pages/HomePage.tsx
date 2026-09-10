@@ -491,11 +491,20 @@ export function HomePage({ data }: { data: HomeData }) {
                 className={`mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
               >
                 {t(
-                  "Oma is for omakase, chef's choice: the chef picks the courses, but you are always free to send anything back. Omarchy lets you take an exquisite baseline and then make it your own.",
+                  "Oma is for omakase, chef's choice: we pick the tools and tune the details, so you can get straight to work. But this is your computer. You're free to change everything.",
                 )}
               </p>
               <p className="mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-                {t("It's not perfect... yet. But")}
+                {t('Behind it all is the')}{' '}
+                <Link
+                  to="/doctrine/"
+                  className="underline decoration-border-strong underline-offset-4 hover:decoration-current"
+                >
+                  {t('Omarchy Doctrine')}
+                </Link>
+                {t(
+                  ": ten principles for uniting the nerds, welcoming the agents, and building the perfect computer. We're not there yet, but",
+                )}
                 {language === 'zh-CN' ? '' : ' '}
                 <a
                   href="https://wecanfixeverything.com/"

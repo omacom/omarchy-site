@@ -51,7 +51,7 @@ def addresses():
                         file.relative_to(SITE).as_posix(), 'file'))
     data = SITE / 'src' / 'data'
     read = lambda name: json.loads((data / f'{name}.json').read_text())
-    pages = {'/', '/404.html', '/manual/', '/manual/toc/', '/news/', '/themes/',
+    pages = {'/', '/404.html', '/doctrine/', '/manual/', '/manual/toc/', '/news/', '/themes/',
              '/teams/', '/plugins/', '/plugins/explore/', '/plugins/develop/',
              '/plugins/publish/'}
     pages.update(f'/{slug}/' for slug in read('pages'))
