@@ -122,7 +122,7 @@
   },
   "ur": {
     "name": "اردو",
-    "domain": "https://ur.omarchy.org",
+    "domain": "https://omarchy.pk",
     "formatLocale": "ur-PK",
     "ogLocale": "ur_PK",
     "manual": false,
@@ -240,7 +240,9 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "NZ",
-    "aliases": ["www.omarchy.nz"]
+    "aliases": [
+      "www.omarchy.nz"
+    ]
   },
   "en-US": {
     "name": "English (US)",
@@ -250,7 +252,9 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "US",
-    "aliases": ["www.omarchy.us"]
+    "aliases": [
+      "www.omarchy.us"
+    ]
   },
   "en-SG": {
     "name": "English (SG)",
@@ -260,7 +264,9 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "SG",
-    "aliases": ["www.omarchy.sg"]
+    "aliases": [
+      "www.omarchy.sg"
+    ]
   },
   "en-AU": {
     "name": "English (AU)",
