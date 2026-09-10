@@ -231,5 +231,14 @@
     "formatLocale": "nb-NO",
     "ogLocale": "nb_NO",
     "manual": false
+  },
+  "he": {
+    "name": "עברית",
+    "domain": "https://he.omarchy.org",
+    "formatLocale": "he-IL",
+    "ogLocale": "he_IL",
+    "manual": false,
+    "flag": "IL",
+    "direction": "rtl"
   }
 }
