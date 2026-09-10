@@ -1843,6 +1843,52 @@ h6 {
   color: var(--color-text-secondary);
 }
 
+/* /weekly's subscribe form. The email field is sized off the same 14px and
+   0.55em padding .prose .button uses, so the pair matches height without a
+   fixed one, and the button's prose margins are dropped inside the row. */
+.ported .subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  max-width: var(--measure);
+  margin: 1.25em 0;
+}
+.ported .subscribe__email {
+  flex: 1 1 16rem;
+  min-width: 0;
+  font: inherit;
+  font-size: 14px;
+  padding: 0.55em 0.85em;
+  color: var(--color-text);
+  background: var(--color-card);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+}
+.ported .subscribe__email::placeholder {
+  color: var(--color-text-muted);
+}
+.ported .subscribe__email:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-color: var(--color-ring);
+}
+.ported .subscribe .button {
+  margin: 0;
+  flex: none;
+}
+/* Spam trap the mailer checks server-side: off-screen rather than hidden, so
+   a bot filling every field still trips it. */
+.ported .subscribe__trap {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+.ported .subscribe__note {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
 /* ------------------------------------------- ported marketplace docs */
 
 .docs {
@@ -2349,7 +2395,14 @@ h6 {
 
 .brand__preview {
   width: 100%;
-  background: linear-gradient(to bottom, var(--t-field-crest) 0 26.316%, var(--t-field-hover) 26.316% 36.842%, var(--t-field-lit) 36.842% 57.895%, var(--t-field-mid) 57.895% 73.684%, var(--t-field-dim) 73.684% 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--t-field-crest) 0 26.316%,
+    var(--t-field-hover) 26.316% 36.842%,
+    var(--t-field-lit) 36.842% 57.895%,
+    var(--t-field-mid) 57.895% 73.684%,
+    var(--t-field-dim) 73.684% 100%
+  );
   mask: var(--brand-mask) no-repeat center / 100% 100%;
   -webkit-mask: var(--brand-mask) no-repeat center / 100% 100%;
 }
