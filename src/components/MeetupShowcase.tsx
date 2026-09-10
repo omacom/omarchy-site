@@ -5,7 +5,10 @@ import { SectionActions, SectionHeading } from '@/components/SectionHeading'
 import { MeetupCover } from '@/components/MeetupCover'
 import { RailBar, useRail } from '@/components/Rail'
 import { Button } from '@/components/ui/button'
-import { ChevronLeftIcon, ChevronRightIcon } from '@/components/icons'
+import {
+  ChevronEndIcon,
+  ChevronStartIcon,
+} from '@/components/icons/ReadingChevrons'
 import meetups from '@/data/meetups.json'
 import { cn } from '@/lib/utils'
 
@@ -39,7 +42,7 @@ export function MeetupShowcase({ action }: { action?: ReactNode }) {
         disabled={rail.atStart}
         onClick={() => turn(-1)}
       >
-        <ChevronLeftIcon className="size-5" />
+        <ChevronStartIcon className="size-5" />
       </Button>
       <Button
         variant="outline"
@@ -48,7 +51,7 @@ export function MeetupShowcase({ action }: { action?: ReactNode }) {
         disabled={rail.atEnd}
         onClick={() => turn(1)}
       >
-        <ChevronRightIcon className="size-5" />
+        <ChevronEndIcon className="size-5" />
       </Button>
     </div>
   )
