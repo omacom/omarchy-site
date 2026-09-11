@@ -7,6 +7,7 @@ export type Locale = {
   formatLocale: string
   ogLocale: string
   manual: boolean
+  aliases?: string[]
   contentLocale?: string
   direction?: 'ltr' | 'rtl'
   flag?: string
