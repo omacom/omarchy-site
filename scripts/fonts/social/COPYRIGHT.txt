@@ -1,5 +1,7 @@
 NotoSans: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
 
+NotoSans (Romanian subset): Copyright 2015-2021 Google LLC. All Rights Reserved. (https://github.com/notofonts/noto-fonts)
+
 NotoSansArabic: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)
 
 NotoNastaliqUrdu: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)

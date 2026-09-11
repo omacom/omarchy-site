@@ -87,9 +87,9 @@ export function OmarchyMarkDrawn({ className }: { className?: string }) {
   )
 }
 
-export const WORDMARK_BANDS = `linear-gradient(to bottom, ${BAND_STOPS.map(
+export const WORDMARK_BANDS = `var(--t-wordmark-gradient, linear-gradient(to bottom, ${BAND_STOPS.map(
   ([color, from, to]) => `${color} ${from}% ${to}%`,
-).join(', ')})`
+).join(', ')}))`
 
 type WordmarkProps = {
   className?: string
