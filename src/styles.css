@@ -1291,6 +1291,9 @@ h6 {
   padding: 0.25em 0 0.25em 1.25em;
   color: var(--color-text-muted);
 }
+.prose blockquote > :last-child {
+  margin-bottom: 0;
+}
 .prose hr {
   border: 0;
   border-top: 1px solid var(--color-border-subtle);
@@ -2366,4 +2369,23 @@ h6 {
   aspect-ratio: 722 / 300;
   max-width: 30rem;
   --brand-mask: url('/brand/oma-logo-mask.svg');
+}
+
+/* Compact, permanently linked headings for pages presented as principles. */
+.prose.principles h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  letter-spacing: normal;
+  margin-bottom: 0.5em;
+}
+.prose.principles h2:not(:first-child) {
+  margin-top: 2.75em;
+}
+.prose.principles h2 a,
+.prose.principles h2 a:hover {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  transition: none;
 }

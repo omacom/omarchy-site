@@ -1,0 +1,40 @@
+<p>Apple kuria puikią techniką. Visada kūrė (išskyrus tą vieną kartą su drugelio klaviatūra). Ir daug žmonių, ateinančių į Omarchy, ateina iš Mac. Daugelis jų norėtų pasilikti kompiuterį, bet atsikratyti operacinės sistemos. Tad mes užbaigsime tai, ką pradėjo Asahi: Omarchy, puikiai veikiančią ant Apple Silicon, su minimaliu sąrankos vargu.</p>
+
+<p>Šis darbas jau turi komandą. Šiandien tai įforminome oficialiai: <a href="/teams/#m">Omarchy M</a>, mūsų komanda Mac kompiuteriams su Apple Silicon (kartu su keliais nariais, kurie rūpinasi ir senesniais Mac).</p>
+
+<p>Leiskite pristatyti narius.</p>
+
+<p><strong>Diegimo programa.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> kuria <a href="https://github.com/maralcbr/omarchy-mx-mac">vietinę Mac diegimo programą</a>. Atsisiunti programą macOS sistemoje, ji parsiunčia pasirašytą Omarchy laidą, atskiria skaidinius ir paleidžia tave į Omarchy šalia tavo esamos macOS. Jokios USB atmintinės, jokių burtažodžių terminale. Jis taip pat paruošė versiją, kuri įjungė išorinius monitorius per USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> jau metus prižiūri <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>, įkeldamas Omarchy į M1 ir M2 kompiuterius dar gerokai prieš tai tampant oficialu, ir suburdamas aplink tai Discord bendruomenę iš daugiau nei 800 žmonių. <a href="https://x.com/bi9kahuna">Scott Jones</a> yra kita to projekto pusė Linux diegimo pusėje. Neseniai jis paleido M3 Air ekraną ant Apple techninės įrangos ekrano valdiklio, kas tą kompiuterį per vieną naktį pavertė iš nenaudojamo į naudojamą.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> sukūrė <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: tikrą Omarchy darbalaukį, veikiantį kaip vietinė, aparatūros spartinama programa tavo Mac kompiuteryje, su prijungta kamera, garsu, iškarpine ir bendrinamu aplanku. Nereikia nieko skaidyti. Tiesiog atsisiųsk ir pamatyk, dėl ko visas tas šurmulys.</p>
+
+<p><strong>Paketai.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> rūpinasi, kad viskas, ko reikia Omarchy, egzistuotų kaip <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 paketas</a>, kartu su bendriniais ARM64 disko atvaizdais virtualioms mašinoms ir svečio įrankiais, kurie daro jas malonias naudoti.</p>
+
+<p><strong>Tvarkyklės ir branduolys.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> rašo GPU tvarkykles ir privertė Touch ID veikti tiesiogiai bendraudamas su Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> atvirkščiai išanalizavo Apple patentuotą N1 lustą M5 kompiuteriuose ir dabar jo Wi-Fi ir Bluetooth pilnai veikia Linux sistemoje. <a href="https://x.com/LiamRay1O">Liam</a> diegia garsiakalbius, jutiklinę dalį ir energijos valdymą naujausiuose kompiuteriuose. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> vadovauja <a href="https://aurorasilicon.org/">Aurora Silicon</a> ir visa tai paverčia švaraus kambario įgyvendinimais, kurie gali keliauti į pagrindinę versiją. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> įgalino <a href="https://github.com/subedijaidip/dp-altmode-t8112">išorinius ekranus per USB-C ant M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> kuria <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, kuris atneša Apple MLX mašininio mokymosi karkasą į Linux ant Apple GPU per Vulkan. Tavo kodas vis dar sako <code>import mlx.core as mx</code>, bet dabar jis veikia ant Omarchy.</p>
+
+<p><strong>Senesni Mac.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> turi krūvą pull requestų 2016 ir 2017 metų Touch Bar MacBook Pro kompiuteriams: garsiakalbiai, Wi-Fi, aplinkos šviesos jutiklis, pats Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> atvirkščiai analizuoja T2 saugos lustą, kad atneštų Touch ID į Intel Mac kompiuterius, ir pakeliui dokumentuoja kiekvieną pataisymą 2019 metų MacBook Pro. <a href="https://x.com/jondkinney">Jon Kinney</a> prieš metus po truputį dirbo prie ARM palaikymo Omarchy, o dabar koordinuoja visą komandą, kas ką daro.</p>
+
+<p>Kartu jie yra grėsminga grupė. Keturiolika žmonių, kurie nelaukė leidimo ir kurie naudojo agentus, kad judėtų tempu, kuris prieš metus būtų atrodęs absurdiškai.</p>
+
+<p>Pirmos laidos tikslas yra tobulas suderinamumas su M1 ir M2, įskaitant Pro ir Max variantus:</p>
+
+<ul>
+  <li>Sklandi diegimo programa, su diegimo ir išbandymo parinktimis</li>
+  <li>Pilnas GPU palaikymas</li>
+  <li>Išoriniai monitoriai per USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Disko šifravimas</li>
+</ul>
+
+<p>Lygiagrečiai dirbama ir su naujesniais kompiuteriais, bet M1 ir M2 yra vieta, kur pirmiausia įsmeigiame vėliavą. Be M kompiuterių, pasaulyje yra milijonai senų nešiojamųjų kompiuterių, daugelis jų jau nepatenka į naujausius Apple macOS planus, ir kiekvienas iš jų yra būsimas nuostabus Omarchy kompiuteris.</p>
+
+<p>Nereikia laukti nugludintos laidos, kad pradėtum. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> per kelias minutes parodys tau tikrą darbalaukį tavo Mac kompiuteryje. O jei esi pasiruošęs įsipareigoti, <a href="https://github.com/maralcbr/omarchy-mx-mac">diegimo programa</a> jau šiandien įdiegs Omarchy šalia macOS ant M1 ar M2.</p>
+
+<p>Galiausiai, prašymas. Jei dirbai su Linux Apple techninei įrangai, nesvarbu, ar tai branduolio tvarkyklės, firmware, paketavimas, diegimo programos ar mašininis mokymasis, norėtume išgirsti tave. Didelė tikimybė, kad tu jau išsprendei kažką, ko mes vis dar siekiame, arba atvirkščiai. Susisiek adresu <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Užbaikime tai, ką pradėjo Asahi.</p>

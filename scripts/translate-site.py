@@ -54,7 +54,8 @@ def validate_value(source, value):
         raise TranslationError('placeholders changed')
     if Counter(LITERALS.findall(source_text)) != Counter(LITERALS.findall(target_text)):
         raise TranslationError('commands or literal references changed')
-    if numbers(source_text) != numbers(target_text):
+    # A number the source spells out may come back as a numeral, so only the source's digits are held to.
+    if numbers(source_text) - numbers(target_text):
         raise TranslationError('numeric values changed')
     return value
 

@@ -1,0 +1,40 @@
+<p>Apple நிறுவனம் சிறந்த வன்பொருளை உருவாக்குகிறது. எப்போதுமே அப்படித்தான் (அந்த ஒரு butterfly keyboard சம்பவத்தைத் தவிர). Omarchy-க்கு வரும் நிறைய பேர் Mac-லிருந்துதான் வருகிறார்கள். அவர்களில் பலர் தங்கள் கணினியை வைத்துக்கொண்டு இயக்க முறைமையை மட்டும் தூக்கிவிட விரும்புவார்கள். அதனால் Asahi தொடங்கியதை நாம் முடிக்கப் போகிறோம்: Apple Silicon-ல் Omarchy அழகாக இயங்கும், அதுவும் குறைந்தபட்ச setup தொந்தரவுடன்.</p>
+
+<p>இந்த வேலைக்குப் பின்னால் ஏற்கனவே ஒரு குழு இருக்கிறது. இன்று அதை அதிகாரப்பூர்வமாக்குகிறோம்: <a href="/teams/#m">Omarchy M</a>, Apple Silicon கொண்ட Mac-களுக்கான எங்கள் குழு (பழைய Mac-களையும் தொடர்ந்து கவனிக்கும் சில உறுப்பினர்களுடன்).</p>
+
+<p>உறுப்பினர்களை அறிமுகப்படுத்துகிறேன்.</p>
+
+<p><strong>நிறுவி.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> <a href="https://github.com/maralcbr/omarchy-mx-mac">நேட்டிவ் Mac நிறுவி</a>-யை உருவாக்குகிறார். macOS-ல் ஒரு app-ஐப் பதிவிறக்குகிறீர்கள், அது கையொப்பமிடப்பட்ட Omarchy வெளியீட்டை எடுத்து, partition-களைப் பிரித்து, உங்கள் தற்போதைய macOS-க்கு அருகில் Omarchy-க்குள் உங்களை boot செய்கிறது. USB stick இல்லை, terminal-ல் மந்திரம் ஓத வேண்டியதில்லை. USB-C வழியாக வெளிப்புற monitor-களை ஒளிரச் செய்த build-ஐயும் அவர்தான் உருவாக்கினார்.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>-ஐ ஒரு வருடமாகப் பராமரித்து வருகிறார், இவை எல்லாம் அதிகாரப்பூர்வமாவதற்கு மிக முன்பே Omarchy-ஐ M1 மற்றும் M2 கணினிகளில் இயங்க வைத்து, அதைச் சுற்றி 800-க்கும் மேற்பட்டோர் கொண்ட Discord சமூகத்தை உருவாக்கியுள்ளார். <a href="https://x.com/bi9kahuna">Scott Jones</a> அந்தத் திட்டத்தின் Linux பக்கத்தின் மறுபாதி. அவர் சமீபத்தில் M3 Air-இன் display-ஐ Apple-இன் hardware display controller-ல் இயங்க வைத்தார், இது அந்தக் கணினியை ஒரே இரவில் பயன்படுத்த முடியாத நிலையிலிருந்து பயன்படுத்தக்கூடிய நிலைக்குக் கொண்டு வந்தது.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>-ஐ உருவாக்கினார்: உங்கள் Mac-ல் நேட்டிவ், hardware-accelerated app-ஆக இயங்கும் நிஜ Omarchy desktop, உங்கள் camera, audio, clipboard மற்றும் பகிரப்பட்ட folder அனைத்தும் இணைக்கப்பட்ட நிலையில். partition செய்ய எதுவும் இல்லை. பதிவிறக்கம் செய்து, எதைப் பற்றி இவ்வளவு பேச்சு என்று பாருங்கள்.</p>
+
+<p><strong>தொகுப்புகள்.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> Omarchy-க்குத் தேவையான அனைத்தும் <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 தொகுப்பு</a>-ஆக இருப்பதை உறுதி செய்கிறார், அத்துடன் virtual machine-களுக்கான பொதுவான ARM64 disk image-களும் அவற்றைப் பயன்படுத்த இதமாக்கும் guest tool-களும்.</p>
+
+<p><strong>இயக்கிகள் மற்றும் kernel.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> GPU இயக்கிகளை எழுதுகிறார், Secure Enclave-உடன் நேரடியாகப் பேசி Touch ID-ஐ இயங்க வைத்தார். <a href="https://x.com/acelogic_">Miguel Cruz</a> M5 கணினிகளில் உள்ள Apple-இன் தனியுரிம N1 chip-ஐ reverse-engineer செய்து, இப்போது அதன் Wi-Fi மற்றும் Bluetooth-ஐ Linux-ல் முழுமையாக இயங்க வைத்துள்ளார். <a href="https://x.com/LiamRay1O">Liam</a> புதிய கணினிகளில் speaker, trackpad மற்றும் power management-ஐக் கொண்டு வருகிறார். <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> <a href="https://aurorasilicon.org/">Aurora Silicon</a>-ஐ நடத்துகிறார், இவை அனைத்தையும் upstream-க்குச் செல்லக்கூடிய clean-room செயலாக்கங்களாக மாற்றுகிறார். <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> <a href="https://github.com/subedijaidip/dp-altmode-t8112">M2 MacBook Air-ல் USB-C வழியாக வெளிப்புற display</a>-ஐ இயங்க வைத்தார்.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>-ஐ உருவாக்குகிறார், இது Apple-இன் MLX machine learning framework-ஐ Vulkan மூலம் Apple GPU-களில் Linux-ல் கொண்டு வருகிறது. உங்கள் code இன்னும் <code>import mlx.core as mx</code> என்றுதான் சொல்லும், ஆனால் இப்போது அது Omarchy-ல் ஓடும்.</p>
+
+<p><strong>பழைய Mac-கள்.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a>-இடம் 2016 மற்றும் 2017 Touch Bar MacBook Pro-களுக்கான pull request-கள் குவிந்துள்ளன: speaker-கள், Wi-Fi, ambient light sensor, Touch Bar-ஏ. <a href="https://x.com/novuon_ai">Randy</a> Intel Mac-களுக்கு Touch ID-ஐக் கொண்டு வர T2 security chip-ஐ reverse-engineer செய்து, வழியில் 2019 MacBook Pro-க்கான ஒவ்வொரு தீர்வையும் ஆவணப்படுத்துகிறார். <a href="https://x.com/jondkinney">Jon Kinney</a> ஒரு வருடத்திற்கு முன்பு Omarchy-க்கான ARM ஆதரவில் வேலை செய்து கொண்டிருந்தார், இப்போது யார் என்ன செய்கிறார்கள் என்று முழு குழுவையும் ஒருங்கிணைக்கிறார்.</p>
+
+<p>இணைந்து, அவர்கள் ஒரு வலிமையான குழு. அனுமதிக்காகக் காத்திருக்காத பதினான்கு பேர், ஒரு வருடத்திற்கு முன்பு அபத்தமாகத் தோன்றியிருக்கும் வேகத்தில் நகர agents-ஐப் பயன்படுத்தி வருபவர்கள்.</p>
+
+<p>முதல் வெளியீட்டின் இலக்கு M1 மற்றும் M2 உடன் முழுமையான இணக்கத்தன்மை, Pro மற்றும் Max மாறுபாடுகள் உட்பட:</p>
+
+<ul>
+  <li>install மற்றும் try விருப்பங்களுடன் தடையற்ற நிறுவி</li>
+  <li>முழு GPU ஆதரவு</li>
+  <li>USB-C வழியாக வெளிப்புற monitor-கள்</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>வட்டு குறியாக்கம்</li>
+</ul>
+
+<p>புதிய கணினிகளில் இணையாக வேலை நடந்து வருகிறது, ஆனால் M1 மற்றும் M2-ல்தான் முதலில் கொடியை நடுகிறோம். M கணினிகளுடன், வெளியே லட்சக்கணக்கான பழைய laptop-கள் உள்ளன, அவற்றில் பல Apple-இன் சமீபத்திய macOS ஆசைகளிலிருந்து ஏற்கனவே ஓய்வு பெற்றவை, அவை ஒவ்வொன்றும் நிகழக் காத்திருக்கும் அற்புதமான Omarchy கணினி.</p>
+
+<p>தொடங்க polished வெளியீட்டிற்காகக் காத்திருக்க வேண்டியதில்லை. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> சில நிமிடங்களில் உங்கள் Mac-ல் நிஜ desktop-ஐப் பார்க்க வைக்கும். உறுதியாக இறங்கத் தயாராக இருந்தால், <a href="https://github.com/maralcbr/omarchy-mx-mac">நிறுவி</a> இன்று M1 அல்லது M2-ல் macOS-க்கு அருகில் Omarchy-ஐ வைக்கும்.</p>
+
+<p>இறுதியாக, ஒரு வேண்டுகோள். Apple வன்பொருளுக்கான Linux-ல் வேலை செய்து வந்திருந்தால், அது kernel இயக்கிகள், firmware, தொகுப்பாக்கம், நிறுவிகள் அல்லது machine learning என எதுவாக இருந்தாலும், உங்களிடமிருந்து கேட்க விரும்புகிறோம். நாங்கள் இன்னும் துரத்திக் கொண்டிருக்கும் ஒன்றை நீங்கள் தீர்த்திருக்கவோ, அல்லது நேர்மாறாகவோ நல்ல வாய்ப்பு உள்ளது. <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>-ல் தொடர்பு கொள்ளுங்கள்.</p>
+
+<p>Asahi தொடங்கியதை முடிப்போம்.</p>

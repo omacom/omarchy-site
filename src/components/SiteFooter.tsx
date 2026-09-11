@@ -26,6 +26,7 @@ const columns = [
       { label: t('Meetups'), to: '/meetups/' },
       { label: t('Teams'), to: '/teams/' },
       { label: t('Workstations'), splat: 'workstations' },
+      { label: t('Doctrine'), to: '/doctrine/' },
     ],
   },
   {
@@ -35,7 +36,7 @@ const columns = [
       { label: t('Staff'), splat: 'staff' },
       { label: t('Patrons'), splat: 'patrons' },
       { label: t('Sponsorships'), splat: 'sponsorships' },
-      { label: t('Artists in Residence'), splat: 'air' },
+      { label: 'AIR', splat: 'air' },
     ],
   },
   {
@@ -55,9 +56,7 @@ const columns = [
 const focusRing =
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring'
 
-const footerLink = `text-text-secondary transition-colors duration-150 ease-out hover:text-text ${focusRing}`
-
-const creditLink = `text-text-secondary transition-colors duration-150 ease-out hover:text-text ${focusRing}`
+const footerLink = `text-text-secondary underline decoration-transparent underline-offset-4 transition-colors duration-150 ease-out hover:text-brand hover:decoration-current ${focusRing}`
 
 export function SiteFooter({ path }: { path: string }) {
   const homeLink = useTopLink()
@@ -119,21 +118,21 @@ export function SiteFooter({ path }: { path: string }) {
               <p data-quiet>
                 {t('Incubated at')}{' '}
                 {/* Keep the link inline to preserve the paragraph baseline. */}
-                <a href="https://37signals.com" className={creditLink}>
+                <a href="https://37signals.com" className={footerLink}>
                   <ThirtySevenSignalsMark className="mr-[3px] inline-block size-4 shrink-0 align-[-0.28em]" />
                   37signals
                 </a>
               </p>
               <p data-quiet>
                 {t('Hosting by')}{' '}
-                <a href="https://cloudflare.com" className={creditLink}>
+                <a href="https://cloudflare.com" className={footerLink}>
                   <CloudflareMark className="mr-[5px] inline-block h-3 w-auto shrink-0 align-[-0.15em]" />
                   Cloudflare
                 </a>
               </p>
               <p data-quiet>
                 {t('Compute by')}{' '}
-                <a href="https://www.digitalocean.com" className={creditLink}>
+                <a href="https://www.digitalocean.com" className={footerLink}>
                   <DigitalOceanMark className="mr-[5px] inline-block size-4 shrink-0 align-[-0.2em]" />
                   DigitalOcean
                 </a>
@@ -177,7 +176,7 @@ export function SiteFooter({ path }: { path: string }) {
 
         <nav
           aria-label={t('Language')}
-          className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm"
+          className="mt-12 flex flex-wrap gap-x-4 gap-y-2 text-sm"
         >
           {sortedLocales
             .filter(([code]) => hasTranslation(code, currentPath))

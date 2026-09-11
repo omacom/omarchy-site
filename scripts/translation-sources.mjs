@@ -2,8 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 import ts from 'typescript'
 
-// Runtime translateHtml uses these exact innerHTML keys, including whitespace.
-const PROSE = /<(p|h2|h3|figcaption|li)\b([^>]*)>([\s\S]*?)<\/\1>/g
+import { PROSE } from '../src/lib/prose.ts'
 const literal = (node) =>
   node && (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node))
 const unwrap = (node) => {
@@ -156,6 +155,8 @@ export function collectSources(root = process.cwd()) {
     // but replaces the old calendar and page heading with React components.
     if (slug === 'teams') continue
     if (slug !== 'meetups') add(page.title)
+    add(page.seoTitle)
+    add(page.description)
     const pageHtml =
       slug === 'meetups'
         ? (page.html ?? '').replace(

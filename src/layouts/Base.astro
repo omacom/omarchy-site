@@ -40,6 +40,7 @@ const ogImage = socialImage(path)
 <html lang={language} dir={locale.direction ?? 'ltr'} transition:name="root" transition:animate="none">
   <head>
     <ClientRouter fallback="swap" />
+    <script is:inline defer data-domain="omarchy.org" src="https://plausible.io/js/script.js" transition:persist="plausible" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>

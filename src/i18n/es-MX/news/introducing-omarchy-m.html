@@ -1,0 +1,40 @@
+<p>Apple hace un gran hardware. Siempre lo ha hecho (menos esa vez con el teclado mariposa). Y mucha de la gente que está llegando a Omarchy viene de una Mac. A muchos les encantaría quedarse con la máquina y deshacerse del sistema operativo. Así que vamos a terminar lo que Asahi empezó: Omarchy corriendo de maravilla en Apple Silicon, con el mínimo de complicaciones en la instalación.</p>
+
+<p>Ese trabajo ya tiene un equipo detrás. Hoy lo hacemos oficial: <a href="/teams/#m">Omarchy M</a>, nuestro equipo para las Mac con Apple Silicon (además de algunos miembros que mantienen a las Mac más viejitas dentro del grupo).</p>
+
+<p>Permítanme presentar a los miembros.</p>
+
+<p><strong>El instalador.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> está desarrollando el <a href="https://github.com/maralcbr/omarchy-mx-mac">instalador nativo para Mac</a>. Descargas una app en macOS, esta obtiene la versión firmada de Omarchy, crea las particiones y te inicia en Omarchy junto a tu macOS actual. Sin memoria USB, sin conjuros en la terminal. Él también preparó la compilación que encendió los monitores externos por USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> ha mantenido <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> durante un año, llevando Omarchy a las máquinas M1 y M2 mucho antes de que todo esto fuera oficial, y creando una comunidad en Discord de más de 800 personas alrededor del proyecto. <a href="https://x.com/bi9kahuna">Scott Jones</a> es la otra mitad de ese proyecto en el lado de Linux de la instalación. Recientemente logró que la pantalla de la M3 Air funcionara con el controlador de pantalla físico de Apple, lo que llevó esa máquina de inservible a usable en una noche.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> desarrolló <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: el escritorio real de Omarchy corriendo como una app nativa, con aceleración de hardware en tu Mac, con tu cámara, audio, portapapeles y una carpeta compartida conectados. Nada que particionar. Solo descárgalo y ve de qué es tanto alboroto.</p>
+
+<p><strong>Paquetes.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> se está asegurando de que todo lo que Omarchy necesita exista como <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paquete aarch64</a>, junto con imágenes de disco ARM64 genéricas para máquinas virtuales y las herramientas de invitado que las hacen agradables de usar.</p>
+
+<p><strong>Controladores y el kernel.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> está escribiendo los controladores de GPU, y logró que Touch ID funcionara comunicándose directamente con el Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> hizo ingeniería inversa al chip propietario N1 de Apple en las máquinas M5 y ahora tiene su Wi-Fi y Bluetooth totalmente funcionales en Linux. <a href="https://x.com/LiamRay1O">Liam</a> está habilitando las bocinas, el trackpad y la gestión de energía en las máquinas más nuevas. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> dirige <a href="https://aurorasilicon.org/">Aurora Silicon</a> y está convirtiendo todo esto en implementaciones clean-room que pueden llegar al upstream. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> habilitó <a href="https://github.com/subedijaidip/dp-altmode-t8112">monitores externos por USB-C en la M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> está desarrollando <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, que trae el framework de machine learning MLX de Apple a Linux en GPU de Apple a través de Vulkan. Tu código sigue diciendo <code>import mlx.core as mx</code>, pero ahora corre en Omarchy.</p>
+
+<p><strong>Macs más antiguas.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> tiene una pila de pull requests para las Touch Bar MacBook Pro de 2016 y 2017: bocinas, Wi-Fi, el sensor de luz ambiental, la Touch Bar misma. <a href="https://x.com/novuon_ai">Randy</a> está haciendo ingeniería inversa al chip de seguridad T2 para llevar Touch ID a las Intel Mac, y documentando cada arreglo para la MacBook Pro de 2019 en el camino. <a href="https://x.com/jondkinney">Jon Kinney</a> estuvo avanzando poco a poco en el soporte ARM para Omarchy hace un año, y ahora mantiene a todo el equipo coordinado sobre quién hace qué.</p>
+
+<p>Juntos, son un grupo formidable. Catorce personas que no esperaron permiso, y que han estado usando agentes para avanzar a un ritmo que habría parecido absurdo hace un año.</p>
+
+<p>La meta para la primera versión es la compatibilidad perfecta con M1 y M2, incluyendo las variantes Pro y Max:</p>
+
+<ul>
+  <li>Un instalador sin complicaciones, con opciones de instalar y probar</li>
+  <li>Soporte completo de GPU</li>
+  <li>Monitores externos por USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Cifrado de disco</li>
+</ul>
+
+<p>Las máquinas más nuevas se están trabajando en paralelo, pero M1 y M2 es donde plantamos la bandera primero. Además de las máquinas M, hay millones de laptops vintage por ahí, muchas de ellas ya retiradas de las ambiciones del macOS más reciente de Apple, y cada una de ellas es una maravillosa computadora Omarchy en potencia.</p>
+
+<p>No tienes que esperar a la versión pulida para empezar. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> te pondrá frente al escritorio real en tu Mac en minutos. Y si estás listo para comprometerte, <a href="https://github.com/maralcbr/omarchy-mx-mac">el instalador</a> pondrá Omarchy junto a macOS en una M1 o M2 hoy mismo.</p>
+
+<p>Por último, una petición. Si has estado trabajando en Linux para hardware de Apple, ya sea en controladores del kernel, firmware, empaquetado, instaladores o machine learning, nos encantaría saber de ti. Hay una buena probabilidad de que hayas resuelto algo que seguimos persiguiendo, o viceversa. Ponte en contacto en <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Terminemos lo que Asahi empezó.</p>

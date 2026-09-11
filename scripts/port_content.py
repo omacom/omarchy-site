@@ -36,11 +36,25 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / 'src' / 'data'
 
-PAGES = [
-    'air', 'foundation', 'meetups', 'patrons', 'patrons/badges', 'security',
-    'security/credits', 'sponsorships', 'teams', 'workstations', 'potato',
-    'server', 'omakub', 'brand', 'staff',
-]
+def page_sources(repo):
+    """Discover authored HTML pages instead of maintaining a route allowlist.
+
+    Only page trees with a root index.html are traversed. News and the manual
+    have dedicated importers; themes are rendered from structured gallery data.
+    Static redirect pages are excluded.
+    """
+    for directory in sorted(repo.iterdir()):
+        if (not directory.is_dir() or directory.name.startswith('.')
+                or directory.name in {'news', 'manual', 'themes', 'node_modules', 'dist'}
+                or not (directory / 'index.html').is_file()):
+            continue
+        for source in sorted(directory.rglob('index.html')):
+            html = source.read_text()
+            if re.search(r'http-equiv=[\"\']refresh[\"\']', html, re.I):
+                continue
+            if extract_main(html).strip():
+                yield source.parent.relative_to(repo).as_posix(), source
+
 
 
 def get_repo(argv):
@@ -248,8 +262,8 @@ def main() -> None:
 
     # ----------------------------------------------------------------- pages
     pages = {}
-    for slug in PAGES:
-        src = (repo / slug / 'index.html').read_text()
+    for slug, source in page_sources(repo):
+        src = source.read_text()
         pages[slug] = {
             'title': extract_title(src),
             'html': clean(extract_main(src)),

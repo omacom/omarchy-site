@@ -1,0 +1,40 @@
+<p>Apple fabrica un maquinari fantàstic. Sempre ho ha fet (menys aquella vegada amb el teclat de papallona). I molta de la gent que arriba a Omarchy arriba des d'un Mac. A molts els encantaria conservar la màquina i desfer-se del sistema operatiu. Així que acabarem el que va començar Asahi: Omarchy funcionant de meravella a Apple Silicon, amb el mínim d'embolic en la configuració.</p>
+
+<p>Aquesta feina ja té un equip al darrere. Avui ho fem oficial: <a href="/teams/#m">Omarchy M</a>, el nostre equip per als Mac amb Apple Silicon (a més d'uns quants membres que mantenen els Mac més antics dins del grup).</p>
+
+<p>Permeteu-me que us presenti els membres.</p>
+
+<p><strong>L'instal·lador.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> està creant <a href="https://github.com/maralcbr/omarchy-mx-mac">l'instal·lador natiu per a Mac</a>. Et descarregues una app a macOS, recupera la versió signada d'Omarchy, prepara les particions i t'arrenca a Omarchy al costat del teu macOS actual. Sense llapis USB, sense encanteris al terminal. Ell també va fer la compilació que va fer funcionar els monitors externs per USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> ha mantingut <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> durant un any, fent arribar Omarchy a les màquines M1 i M2 molt abans que res d'això fos oficial, i creant una comunitat de Discord de més de 800 persones al seu voltant. <a href="https://x.com/bi9kahuna">Scott Jones</a> és l'altra meitat d'aquest projecte pel que fa a la part de Linux de la instal·lació. Recentment ha fet funcionar la pantalla del M3 Air amb el controlador de pantalla de maquinari d'Apple, cosa que va fer passar aquella màquina d'inutilitzable a utilitzable en una nit.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> ha creat <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: l'escriptori real d'Omarchy funcionant com una app nativa amb acceleració de maquinari al teu Mac, amb la càmera, l'àudio, el porta-retalls i una carpeta compartida connectats. Res per particionar. Només descarrega'l i comprova per què tothom en parla.</p>
+
+<p><strong>Paquets.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> s'està assegurant que tot el que necessita Omarchy existeixi com a <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paquet aarch64</a>, juntament amb imatges de disc genèriques ARM64 per a màquines virtuals i les eines de convidat que les fan agradables d'utilitzar.</p>
+
+<p><strong>Controladors i el nucli.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> està escrivint els controladors de GPU, i ha fet funcionar Touch ID parlant directament amb Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> ha fet enginyeria inversa del xip propietari N1 d'Apple a les màquines M5 i ara ja té el seu Wi-Fi i Bluetooth plenament funcionals a Linux. <a href="https://x.com/LiamRay1O">Liam</a> està posant en marxa els altaveus, el trackpad i la gestió d'energia a les màquines més noves. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> dirigeix <a href="https://aurorasilicon.org/">Aurora Silicon</a> i està convertint tot això en implementacions de sala neta que poden pujar upstream. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> va habilitar <a href="https://github.com/subedijaidip/dp-altmode-t8112">les pantalles externes per USB-C al M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> està creant <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, que porta el framework d'aprenentatge automàtic MLX d'Apple a Linux en GPU d'Apple a través de Vulkan. El teu codi continua dient <code>import mlx.core as mx</code>, però ara s'executa a Omarchy.</p>
+
+<p><strong>Mac més antics.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> té una pila de pull requests per als MacBook Pro amb Touch Bar de 2016 i 2017: altaveus, Wi-Fi, el sensor de llum ambiental, la mateixa Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> està fent enginyeria inversa del xip de seguretat T2 per portar Touch ID als Mac Intel, i documentant cada correcció per al MacBook Pro de 2019 pel camí. <a href="https://x.com/jondkinney">Jon Kinney</a> ja estava treballant en el suport ARM per a Omarchy fa un any, i ara manté tot l'equip coordinat sobre qui fa què.</p>
+
+<p>Junts, són un grup formidable. Catorze persones que no van esperar cap permís, i que han estat utilitzant agents per avançar a un ritme que hauria semblat absurd fa un any.</p>
+
+<p>L'objectiu per a la primera versió és la compatibilitat perfecta amb M1 i M2, incloses les variants Pro i Max:</p>
+
+<ul>
+  <li>Un instal·lador sense friccions, amb opcions tant d'instal·lar com de provar</li>
+  <li>Suport complet de GPU</li>
+  <li>Monitors externs per USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Xifrat de disc</li>
+</ul>
+
+<p>Les màquines més noves s'estan treballant en paral·lel, però M1 i M2 són on plantem la bandera primer. A més de les màquines M, hi ha milions de portàtils clàssics per aquí fora, molts d'ells ja retirats de les últimes ambicions de macOS d'Apple, i cadascun d'ells és un meravellós ordinador Omarchy en potència.</p>
+
+<p>No cal que esperis la versió polida per començar. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> et mostrarà l'escriptori real al teu Mac en qüestió de minuts. I si ja estàs a punt per comprometre-t'hi, <a href="https://github.com/maralcbr/omarchy-mx-mac">l'instal·lador</a> posarà Omarchy al costat de macOS en un M1 o M2 avui mateix.</p>
+
+<p>Finalment, una petició. Si has estat treballant en Linux per a maquinari d'Apple, ja siguin controladors del nucli, firmware, empaquetat, instal·ladors o aprenentatge automàtic, ens encantaria saber de tu. És molt probable que hagis resolt alguna cosa que nosaltres encara perseguim, o viceversa. Posa't en contacte a <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Acabem el que va començar Asahi.</p>

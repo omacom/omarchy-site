@@ -1,0 +1,40 @@
+<p>Apple은 훌륭한 하드웨어를 만듭니다. 언제나 그래왔죠 (버터플라이 키보드 때 그 한 번은 빼고요). 그리고 Omarchy에 오는 많은 사람들이 Mac에서 오고 있습니다. 그중 많은 분들은 기기는 그대로 쓰고 운영체제는 바꾸고 싶어하죠. 그래서 저희는 Asahi가 시작한 일을 마무리하려 합니다: Apple Silicon에서 Omarchy가 최소한의 설치 수고로 아름답게 돌아가게 하는 것이죠.</p>
+
+<p>그 작업은 이미 팀을 갖추고 있습니다. 오늘 공식화합니다: <a href="/teams/#m">Omarchy M</a>, Apple Silicon Mac을 위한 저희 팀입니다 (구형 Mac을 계속 챙기는 몇몇 멤버도 포함해서요).</p>
+
+<p>멤버들을 소개하겠습니다.</p>
+
+<p><strong>인스톨러.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a>가 <a href="https://github.com/maralcbr/omarchy-mx-mac">네이티브 Mac 인스톨러</a>를 만들고 있습니다. macOS에서 앱을 다운로드하면, 서명된 Omarchy 릴리스를 가져와 파티션을 나누고, 기존 macOS 옆에 Omarchy로 부팅해줍니다. USB 스틱도 필요 없고, 터미널에서 주문을 외울 필요도 없습니다. 그는 USB-C로 외부 모니터를 켜낸 빌드를 만들기도 했습니다.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a>은 1년 동안 <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>을 유지관리하며, 공식화되기 훨씬 전부터 Omarchy를 M1과 M2 머신에 올렸고, 이를 중심으로 800명이 넘는 Discord 커뮤니티를 만들었습니다. <a href="https://x.com/bi9kahuna">Scott Jones</a>는 설치 과정 중 Linux 측면에서 함께하는 그 프로젝트의 또 다른 한 축입니다. 그는 최근 M3 Air의 디스플레이를 Apple의 하드웨어 디스플레이 컨트롤러에서 구동시켜, 하룻밤 만에 그 머신을 못 쓰던 상태에서 쓸 수 있는 상태로 만들었습니다.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a>는 <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>를 만들었습니다: 진짜 Omarchy 데스크톱을 Mac에서 네이티브 하드웨어 가속 앱으로 실행하는 것으로, 카메라, 오디오, 클립보드, 공유 폴더까지 연결되어 있습니다. 파티션을 나눌 필요도 없습니다. 그냥 다운로드해서 뭐가 난리인지 직접 확인해보세요.</p>
+
+<p><strong>패키지.</strong> <a href="https://x.com/riverleaf88">Shun Li</a>는 Omarchy에 필요한 모든 것이 <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package</a>로 존재하도록 챙기고 있으며, 가상 머신용 일반 ARM64 디스크 이미지와 이를 쾌적하게 쓸 수 있게 해주는 게스트 도구도 함께 준비하고 있습니다.</p>
+
+<p><strong>드라이버와 커널.</strong> <a href="https://x.com/buildwithdjdev">Dj</a>는 GPU 드라이버를 작성하고 있으며, Secure Enclave와 직접 통신해 Touch ID를 동작시켰습니다. <a href="https://x.com/acelogic_">Miguel Cruz</a>는 M5 머신에 들어간 Apple 독자 N1 칩을 리버스엔지니어링해 Linux에서 Wi-Fi와 Bluetooth를 완전히 동작시켰습니다. <a href="https://x.com/LiamRay1O">Liam</a>은 최신 머신에서 스피커, 트랙패드, 전원 관리를 올리고 있습니다. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a>는 <a href="https://aurorasilicon.org/">Aurora Silicon</a>을 운영하며 이 모든 것을 upstream에 보낼 수 있는 클린룸 구현으로 만들고 있습니다. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a>는 <a href="https://github.com/subedijaidip/dp-altmode-t8112">M2 MacBook Air에서 USB-C를 통한 외부 디스플레이</a>를 가능하게 했습니다.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a>은 <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>를 만들고 있으며, 이는 Apple의 MLX 머신러닝 프레임워크를 Vulkan을 통해 Apple GPU상의 Linux로 가져옵니다. 코드는 여전히 <code>import mlx.core as mx</code>라고 쓰지만, 이제 Omarchy에서 실행됩니다.</p>
+
+<p><strong>구형 Mac.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a>는 2016년형과 2017년형 Touch Bar MacBook Pro를 위한 pull request를 잔뜩 쌓아두고 있습니다: 스피커, Wi-Fi, 주변광 센서, Touch Bar 자체까지요. <a href="https://x.com/novuon_ai">Randy</a>는 Intel Mac에 Touch ID를 가져오기 위해 T2 보안 칩을 리버스엔지니어링하고 있으며, 그 과정에서 2019년형 MacBook Pro에 대한 모든 수정 사항을 문서화하고 있습니다. <a href="https://x.com/jondkinney">Jon Kinney</a>는 1년 전부터 Omarchy의 ARM 지원을 조금씩 다져왔고, 지금은 누가 무엇을 하는지 팀 전체의 조율을 맡고 있습니다.</p>
+
+<p>함께, 그들은 만만치 않은 팀입니다. 허락을 기다리지 않은 열네 명으로, 1년 전에는 터무니없어 보였을 속도로 에이전트를 활용해 움직여왔습니다.</p>
+
+<p>첫 번째 릴리스의 목표는 Pro와 Max 변형을 포함한 M1 및 M2와의 완벽한 호환성입니다:</p>
+
+<ul>
+  <li>설치와 체험 옵션을 모두 갖춘 매끄러운 인스톨러</li>
+  <li>완전한 GPU 지원</li>
+  <li>USB-C를 통한 외부 모니터</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>디스크 암호화</li>
+</ul>
+
+<p>신형 머신에 대한 작업도 병행되고 있지만, M1과 M2에 먼저 깃발을 꽂습니다. M 머신에 더해, 세상에는 수백만 대의 빈티지 노트북이 있으며, 그중 다수는 이미 Apple의 최신 macOS 야심에서는 은퇴했지만, 그 하나하나가 멋진 Omarchy 컴퓨터가 되길 기다리고 있습니다.</p>
+
+<p>시작하기 위해 다듬어진 릴리스를 기다릴 필요는 없습니다. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>면 몇 분 만에 Mac에서 진짜 데스크톱을 볼 수 있습니다. 그리고 마음먹었다면, <a href="https://github.com/maralcbr/omarchy-mx-mac">인스톨러</a>는 오늘 당장 M1이나 M2에 macOS 옆에 Omarchy를 설치해줍니다.</p>
+
+<p>마지막으로, 부탁 하나. Apple 하드웨어용 Linux를 작업해왔다면, 커널 드라이버, 펌웨어, 패키징, 인스톨러, 머신러닝 등 무엇이든, 꼭 연락주세요. 여러분이 저희가 아직 쫓고 있는 무언가를 이미 해결했을 가능성이 크고, 그 반대도 마찬가지입니다. <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>로 연락주세요.</p>
+
+<p>Asahi가 시작한 일을 마무리합시다.</p>

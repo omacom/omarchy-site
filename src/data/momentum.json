@@ -1,18 +1,18 @@
 {
-  "checked": "2026-09-09",
+  "checked": "2026-09-11",
   "github": {
-    "stars": 39665,
-    "pullRequests": 5074,
+    "stars": 40302,
+    "pullRequests": 5250,
     "contributors": 516,
-    "commitsYear": 3918,
+    "commitsYear": 3924,
     "weeks": [
       98, 18, 15, 71, 121, 86, 48, 40, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17,
       14, 37, 51, 23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263,
-      437, 142, 42, 30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 39, 140, 53, 32
+      437, 142, 42, 30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 39, 140, 53, 38
     ]
   },
   "foundation": {
-    "total": 15.5,
+    "total": 18.5,
     "steps": [
       {
         "date": "2026-08-21",
@@ -48,11 +48,16 @@
         "date": "2026-09-07",
         "amount": 15.5,
         "post": "/news/2026/09/omacom-foundation-raises-another-half-a-million-dollars/"
+      },
+      {
+        "date": "2026-09-09",
+        "amount": 18.5,
+        "post": "/news/2026/09/digitalocean-joins-as-founding-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1076172,
+    "total": 1094473,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
     "periods": [
@@ -62,12 +67,13 @@
     ],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-09-08",
-      "lastAdded": 8830,
+      "through": "2026-09-10",
+      "lastAdded": 8565,
       "countries": [
         "AD",
         "AE",
         "AF",
+        "AG",
         "AL",
         "AM",
         "AO",
@@ -77,6 +83,7 @@
         "AX",
         "AZ",
         "BA",
+        "BB",
         "BD",
         "BE",
         "BF",
@@ -93,6 +100,7 @@
         "BZ",
         "CA",
         "CD",
+        "CF",
         "CG",
         "CH",
         "CI",
@@ -107,6 +115,7 @@
         "DE",
         "DJ",
         "DK",
+        "DM",
         "DO",
         "DZ",
         "EC",
@@ -115,6 +124,7 @@
         "ES",
         "ET",
         "FI",
+        "FJ",
         "FK",
         "FO",
         "FR",
@@ -139,6 +149,7 @@
         "ID",
         "IE",
         "IL",
+        "IM",
         "IN",
         "IQ",
         "IR",
@@ -167,6 +178,7 @@
         "LY",
         "MA",
         "MD",
+        "ME",
         "MF",
         "MG",
         "MK",
@@ -200,6 +212,7 @@
         "PH",
         "PK",
         "PL",
+        "PM",
         "PR",
         "PS",
         "PT",
@@ -225,6 +238,7 @@
         "SY",
         "SZ",
         "T1",
+        "TC",
         "TD",
         "TG",
         "TH",
@@ -241,7 +255,9 @@
         "UY",
         "UZ",
         "VE",
+        "VG",
         "VN",
+        "WS",
         "XK",
         "YE",
         "ZA",

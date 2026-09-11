@@ -1,0 +1,40 @@
+<p>Appleは優れたハードウェアを作っています。昔からずっとそうです（あのバタフライキーボードの一件を除けば）。そしてOmarchyにやって来る人の多くはMacからの乗り換え組です。彼らの多くは、マシンはそのまま使い続けたいけれどOSは入れ替えたいと思っているでしょう。だからこそ、Asahiが始めたことを私たちが仕上げます。Apple Siliconの上でOmarchyを美しく動作させ、セットアップの手間は最小限にします。</p>
+
+<p>この取り組みの裏にはすでにチームがいます。今日、それを正式なものにします。<a href="/teams/#m">Omarchy M</a>、Apple Silicon搭載Macのためのチームです（古いMacを支え続けるメンバーも数名加わっています）。</p>
+
+<p>メンバーを紹介させてください。</p>
+
+<p><strong>インストーラー。</strong><a href="https://x.com/maralcbr">Marcelo Alcantara</a>は<a href="https://github.com/maralcbr/omarchy-mx-mac">ネイティブMacインストーラー</a>を開発しています。macOS上でアプリをダウンロードすると、署名済みのOmarchyリリースを取得し、パーティションを切り分け、既存のmacOSと並んでOmarchyを起動します。USBメモリも、ターミナルでのおまじないも不要です。USB-C経由で外部モニターを点灯させたビルドを作ったのも彼です。</p>
+
+<p><strong>Omarchy Mac。</strong><a href="https://x.com/tiredkebab">Naeem Malik</a>は1年間<a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>をメンテナンスし、正式化されるよりずっと前からOmarchyをM1やM2マシンで動作させ、その周りに800人超のDiscordコミュニティを築いてきました。<a href="https://x.com/bi9kahuna">Scott Jones</a>は、そのプロジェクトのLinux側インストールを担うもう一人の立役者です。彼は最近、Appleのハードウェアディスプレイコントローラー上でM3 Airのディスプレイを動作させ、一夜にしてそのマシンを使い物にならない状態から使える状態にしました。</p>
+
+<p><strong>Try Omarchy。</strong><a href="https://x.com/martiano">Eduardo Martinez</a>が作った<a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>は、本物のOmarchyデスクトップをMac上のネイティブでハードウェアアクセラレーションの効いたアプリとして実行するもので、カメラ、オーディオ、クリップボード、共有フォルダーも連携済みです。パーティションを切る必要はありません。ダウンロードするだけで、何が話題なのか確かめられます。</p>
+
+<p><strong>パッケージ。</strong><a href="https://x.com/riverleaf88">Shun Li</a>は、Omarchyに必要なものがすべて<a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64パッケージ</a>として存在するよう整備しており、仮想マシン用の汎用ARM64ディスクイメージや、それらを快適に使うためのゲストツールも用意しています。</p>
+
+<p><strong>ドライバーとカーネル。</strong><a href="https://x.com/buildwithdjdev">Dj</a>はGPUドライバーを書いており、Secure Enclaveに直接話しかけることでTouch IDを動作させました。<a href="https://x.com/acelogic_">Miguel Cruz</a>はM5マシンに搭載されたApple独自のN1チップをリバースエンジニアリングし、Linux上でそのWi-FiとBluetoothを完全に動作させています。<a href="https://x.com/LiamRay1O">Liam</a>は最新のマシンでスピーカー、トラックパッド、電源管理を立ち上げています。<a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a>は<a href="https://aurorasilicon.org/">Aurora Silicon</a>を運営し、これらすべてをアップストリーム可能なクリーンルーム実装にしています。<a href="https://x.com/jaidipsubedi">Jaidip Subedi</a>は<a href="https://github.com/subedijaidip/dp-altmode-t8112">M2 MacBook AirでのUSB-C経由の外部ディスプレイ出力</a>を可能にしました。</p>
+
+<p><strong>MLX。</strong><a href="https://x.com/JoshuaSWarren">Joshua Warren</a>は<a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>を開発しており、Vulkanを介してApple GPU上のLinuxにAppleのMLX機械学習フレームワークをもたらします。コードはこれまで通り<code>import mlx.core as mx</code>と書くだけで、今度はOmarchy上で動作します。</p>
+
+<p><strong>古いMac。</strong><a href="https://x.com/shawnyeager">Shawn Yeager</a>は2016年モデルと2017年モデルのTouch Bar搭載MacBook Pro向けに、スピーカー、Wi-Fi、環境光センサー、Touch Barそのものに関する大量のプルリクエストを出しています。<a href="https://x.com/novuon_ai">Randy</a>はT2セキュリティチップをリバースエンジニアリングしてIntel MacにTouch IDをもたらそうとしており、その過程で2019年モデルMacBook Pro向けのあらゆる修正を文書化しています。<a href="https://x.com/jondkinney">Jon Kinney</a>は1年前にOmarchyのARM対応をコツコツと進めていましたが、今はチーム全体の誰が何を担当しているかの調整役を務めています。</p>
+
+<p>合わせて、彼らは手ごわい集団です。許可を待たなかった14人であり、1年前には馬鹿げていると思われたであろうペースで進むためにエージェントを活用してきました。</p>
+
+<p>最初のリリースの目標は、ProやMaxバリアントを含むM1とM2との完全な互換性です：</p>
+
+<ul>
+  <li>シームレスなインストーラー（インストールと試用の両オプション付き）</li>
+  <li>完全なGPUサポート</li>
+  <li>USB-C経由の外部モニター</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>ディスク暗号化</li>
+</ul>
+
+<p>新しいマシンへの対応も並行して進めていますが、まずはM1とM2に旗を立てます。M搭載機に加えて、世の中には何百万台ものビンテージラップトップがあり、その多くはすでにAppleの最新macOSの対象から外れていますが、その一台一台が素晴らしいOmarchyコンピューターになるのを待っています。</p>
+
+<p>洗練されたリリースを待つ必要はありません。<a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>を使えば、数分でMac上に本物のデスクトップが表示されます。そして本格的に使う覚悟ができたら、<a href="https://github.com/maralcbr/omarchy-mx-mac">インストーラー</a>が今日にでもM1やM2上でmacOSの隣にOmarchyを入れてくれます。</p>
+
+<p>最後にお願いです。Appleハードウェア向けLinuxに取り組んでいる方、カーネルドライバー、ファームウェア、パッケージング、インストーラー、機械学習のいずれであっても、ぜひご連絡ください。あなたが解決済みのことを私たちがまだ追いかけている、あるいはその逆である可能性は高いはずです。<a href="mailto:apple@omarchy.org">apple@omarchy.org</a>までご連絡ください。</p>
+
+<p>Asahiが始めたことを仕上げましょう。</p>

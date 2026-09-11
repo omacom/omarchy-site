@@ -1,0 +1,40 @@
+<p>تصنع Apple عتادًا رائعًا. لطالما فعلت ذلك (باستثناء تلك المرة مع لوحة مفاتيح الفراشة). والكثير من الأشخاص الذين يصلون إلى Omarchy قادمون من Mac. وكثير منهم يودون الاحتفاظ بالجهاز والتخلص من نظام التشغيل. لذلك سنُكمل ما بدأته Asahi: تشغيل Omarchy بشكل جميل على Apple Silicon، مع أقل قدر ممكن من عناء الإعداد.</p>
+
+<p>هذا العمل لديه فريق يقف خلفه بالفعل. واليوم نجعله رسميًا: <a href="/teams/#m">Omarchy M</a>، فريقنا لأجهزة Mac المزودة بـ Apple Silicon (بالإضافة إلى بعض الأعضاء الذين يُبقون أجهزة Mac الأقدم ضمن المجموعة).</p>
+
+<p>اسمحوا لي أن أقدم لكم الأعضاء.</p>
+
+<p><strong>المثبّت.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> يبني <a href="https://github.com/maralcbr/omarchy-mx-mac">مثبّت Mac الأصلي</a>. تُنزّل تطبيقًا على macOS، فيجلب إصدار Omarchy الموقّع، ويقتطع الأقسام، ويُقلع بك إلى Omarchy جنبًا إلى جنب مع macOS الحالي لديك. لا شريحة USB، ولا تعاويذ في الطرفية. وهو أيضًا من أعدّ النسخة التي أشعلت الشاشات الخارجية عبر USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> صان <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> لمدة عام، وأوصل Omarchy إلى جهازي M1 وM2 قبل وقت طويل من أن يصبح أي من هذا رسميًا، وبنى حوله مجتمع Discord يضم أكثر من 800 شخص. <a href="https://x.com/bi9kahuna">Scott Jones</a> هو النصف الآخر من ذلك المشروع على جانب Linux من التثبيت. وقد نجح مؤخرًا في تشغيل شاشة M3 Air على وحدة التحكم بالشاشة الخاصة بعتاد Apple، مما نقل ذلك الجهاز من غير قابل للاستخدام إلى قابل للاستخدام في ليلة واحدة.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> بنى <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: سطح مكتب Omarchy الحقيقي يعمل كتطبيق أصلي مُسرّع بالعتاد على جهاز Mac الخاص بك، مع تمرير الكاميرا والصوت والحافظة ومجلد مشترك. لا شيء لتقسيمه. فقط نزّله وشاهد ما كل هذه الضجة.</p>
+
+<p><strong>الحزم.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> يتأكد من أن كل ما يحتاجه Omarchy موجود كـ <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">حزمة aarch64</a>، إلى جانب صور أقراص ARM64 العامة للأجهزة الافتراضية وأدوات الضيف التي تجعل استخدامها ممتعًا.</p>
+
+<p><strong>التعريفات والنواة.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> يكتب تعريفات GPU، وقد جعل Touch ID يعمل عبر التحدث مباشرة إلى Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> عكس هندسة شريحة N1 المملوكة لـ Apple في أجهزة M5 وأصبحت الآن شبكة Wi-Fi وBluetooth تعمل بالكامل في Linux. <a href="https://x.com/LiamRay1O">Liam</a> يعمل على تشغيل السماعات ولوحة اللمس وإدارة الطاقة على أحدث الأجهزة. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> يدير <a href="https://aurorasilicon.org/">Aurora Silicon</a> ويحوّل كل هذا إلى تطبيقات غرفة نظيفة يمكن أن تصل إلى المنبع. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> فعّل <a href="https://github.com/subedijaidip/dp-altmode-t8112">الشاشات الخارجية عبر USB-C على M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> يبني <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>، الذي يجلب إطار عمل تعلم الآلة MLX الخاص بـ Apple إلى Linux على وحدات معالجة رسومات Apple عبر Vulkan. ما زال الكود لديك يقول <code>import mlx.core as mx</code>، لكنه يعمل الآن على Omarchy.</p>
+
+<p><strong>أجهزة Mac الأقدم.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> لديه مجموعة من طلبات السحب لأجهزة Touch Bar MacBook Pro لعامي 2016 و2017: السماعات، وWi-Fi، ومستشعر الإضاءة المحيطة، وشريط اللمس Touch Bar نفسه. <a href="https://x.com/novuon_ai">Randy</a> يعكس هندسة شريحة الأمان T2 لجلب Touch ID إلى أجهزة Intel Mac، ويوثّق كل إصلاح لجهاز MacBook Pro لعام 2019 على طول الطريق. <a href="https://x.com/jondkinney">Jon Kinney</a> كان يعمل تدريجيًا على دعم ARM لـ Omarchy قبل عام، وهو الآن يُبقي الفريق بأكمله منسقًا حول من يفعل ماذا.</p>
+
+<p>معًا، هم مجموعة هائلة. أربعة عشر شخصًا لم ينتظروا الإذن، وكانوا يستخدمون الوكلاء للتحرك بوتيرة كانت ستبدو سخيفة قبل عام.</p>
+
+<p>الهدف للإصدار الأول هو التوافق الكامل مع M1 وM2، بما في ذلك نسختي Pro وMax:</p>
+
+<ul>
+  <li>مثبّت سلس، مع خياري التثبيت والتجربة</li>
+  <li>دعم كامل لـ GPU</li>
+  <li>شاشات خارجية عبر USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>تشفير القرص</li>
+</ul>
+
+<p>يجري العمل على الأجهزة الأحدث بالتوازي، لكن M1 وM2 هما حيث نغرس الراية أولًا. بالإضافة إلى أجهزة M، هناك ملايين أجهزة اللابتوب العتيقة هناك، وكثير منها تقاعد بالفعل من طموحات macOS الأحدث لدى Apple، وكل واحد منها هو حاسوب Omarchy رائع ينتظر أن يحدث.</p>
+
+<p>لا يتعين عليك انتظار الإصدار المصقول لتبدأ. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> سيجعلك تنظر إلى سطح المكتب الحقيقي على جهاز Mac الخاص بك في دقائق. وإذا كنت مستعدًا للالتزام، فإن <a href="https://github.com/maralcbr/omarchy-mx-mac">المثبّت</a> سيضع Omarchy بجانب macOS على M1 أو M2 اليوم.</p>
+
+<p>أخيرًا، طلب. إذا كنت تعمل على Linux لعتاد Apple، سواء كان ذلك تعريفات النواة، أو البرامج الثابتة، أو التغليف، أو المثبّتات، أو تعلم الآلة، فنود أن نسمع منك. هناك فرصة جيدة أنك حللت شيئًا ما زلنا نطارده، أو العكس. تواصل معنا على <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>لنُكمل ما بدأته Asahi.</p>

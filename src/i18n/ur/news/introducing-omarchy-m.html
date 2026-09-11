@@ -1,0 +1,40 @@
+<p>Apple شاندار ہارڈویئر بناتا ہے۔ ہمیشہ سے بناتا آیا ہے (اس ایک بار کو چھوڑ کر جب butterfly keyboard والا معاملہ ہوا)۔ اور Omarchy میں آنے والے بہت سے لوگ Mac سے آ رہے ہیں۔ ان میں سے کئی اپنی مشین رکھنا چاہیں گے لیکن آپریٹنگ سسٹم سے جان چھڑانا چاہیں گے۔ تو ہم وہ کام مکمل کرنے جا رہے ہیں جو Asahi نے شروع کیا تھا: Apple Silicon پر Omarchy شاندار طریقے سے چلے، اور سیٹ اپ کی کم سے کم جھنجھٹ ہو۔</p>
+
+<p>اس کام کے پیچھے پہلے سے ایک ٹیم کام کر رہی ہے۔ آج ہم اسے باضابطہ کر رہے ہیں: <a href="/teams/#m">Omarchy M</a>، Apple Silicon والے Macs کے لیے ہماری ٹیم (ساتھ میں چند اراکین جو پرانے Macs کو بھی شامل رکھے ہوئے ہیں)۔</p>
+
+<p>مجھے اراکین کا تعارف کرانے کی اجازت دیں۔</p>
+
+<p><strong>انسٹالر۔</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> <a href="https://github.com/maralcbr/omarchy-mx-mac">نیٹیو Mac انسٹالر</a> بنا رہے ہیں۔ آپ macOS پر ایک ایپ ڈاؤن لوڈ کرتے ہیں، وہ دستخط شدہ Omarchy ریلیز حاصل کرتی ہے، پارٹیشنز بناتی ہے، اور آپ کو آپ کے موجودہ macOS کے ساتھ Omarchy میں بوٹ کر دیتی ہے۔ کوئی USB stick نہیں، ٹرمینل میں کوئی منتر نہیں۔ انہوں نے وہ بلڈ بھی تیار کی جس نے USB-C پر ایکسٹرنل مانیٹرز روشن کر دیے۔</p>
+
+<p><strong>Omarchy Mac۔</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> ایک سال سے <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> کو برقرار رکھے ہوئے ہیں، Omarchy کو M1 اور M2 مشینوں پر اس سے بہت پہلے پہنچا دیا تھا کہ یہ سب باضابطہ ہو، اور اس کے گرد Discord پر 800 سے زائد افراد کی کمیونٹی بنا دی ہے۔ <a href="https://x.com/bi9kahuna">Scott Jones</a> انسٹال کے Linux والے حصے پر اس پروجیکٹ کا دوسرا حصہ ہیں۔ انہوں نے حال ہی میں M3 Air کا ڈسپلے Apple کے ہارڈویئر ڈسپلے کنٹرولر پر چلا دیا، جس نے اس مشین کو ایک ہی رات میں ناقابلِ استعمال سے قابلِ استعمال بنا دیا۔</p>
+
+<p><strong>Try Omarchy۔</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> نے <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> بنایا ہے: اصل Omarchy ڈیسک ٹاپ جو آپ کے Mac پر ایک نیٹیو، ہارڈویئر ایکسلریٹڈ ایپ کے طور پر چلتا ہے، جس میں آپ کا کیمرہ، آڈیو، کلپ بورڈ، اور ایک شیئرڈ فولڈر جڑے ہوئے ہیں۔ پارٹیشن بنانے کی کوئی ضرورت نہیں۔ بس اسے ڈاؤن لوڈ کریں اور دیکھیں کہ یہ شور کس بات کا ہے۔</p>
+
+<p><strong>Packages۔</strong> <a href="https://x.com/riverleaf88">Shun Li</a> یہ یقینی بنا رہے ہیں کہ Omarchy کو درکار ہر چیز <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package</a> کے طور پر موجود ہو، ساتھ میں virtual machines کے لیے جنرک ARM64 disk images اور guest tools جو ان کے استعمال کو خوشگوار بناتے ہیں۔</p>
+
+<p><strong>ڈرائیورز اور کرنل۔</strong> <a href="https://x.com/buildwithdjdev">Dj</a> GPU drivers لکھ رہے ہیں، اور Secure Enclave سے براہِ راست بات کر کے Touch ID کو چلا دیا ہے۔ <a href="https://x.com/acelogic_">Miguel Cruz</a> نے M5 مشینوں میں Apple کی ملکیتی N1 chip کو ریورس انجینئر کیا ہے اور اب اس کا Wi-Fi اور Bluetooth Linux میں مکمل طور پر فعال ہے۔ <a href="https://x.com/LiamRay1O">Liam</a> جدید ترین مشینوں پر اسپیکرز، ٹریک پیڈ، اور پاور مینجمنٹ چلا رہے ہیں۔ <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> <a href="https://aurorasilicon.org/">Aurora Silicon</a> چلاتے ہیں اور اس سب کو clean-room implementations میں بدل رہے ہیں جو upstream جا سکیں۔ <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> نے <a href="https://github.com/subedijaidip/dp-altmode-t8112">M2 MacBook Air پر USB-C پر ایکسٹرنل ڈسپلے</a> فعال کیے۔</p>
+
+<p><strong>MLX۔</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a> بنا رہے ہیں، جو Apple کے MLX مشین لرننگ فریم ورک کو Vulkan کے ذریعے Apple GPUs پر Linux پر لاتا ہے۔ آپ کا کوڈ اب بھی <code>import mlx.core as mx</code> کہتا ہے، لیکن اب یہ Omarchy پر چلتا ہے۔</p>
+
+<p><strong>پرانے Macs۔</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> کے پاس 2016 اور 2017 کے Touch Bar MacBook Pros کے لیے pull requests کا ڈھیر ہے: اسپیکرز، Wi-Fi، ambient light sensor، خود Touch Bar۔ <a href="https://x.com/novuon_ai">Randy</a> Intel Macs پر Touch ID لانے کے لیے T2 security chip کو ریورس انجینئر کر رہے ہیں، اور ساتھ ساتھ 2019 MacBook Pro کے ہر فکس کو دستاویزی شکل دے رہے ہیں۔ <a href="https://x.com/jondkinney">Jon Kinney</a> ایک سال پہلے Omarchy کے لیے ARM سپورٹ پر کام کر رہے تھے، اور اب پوری ٹیم میں ہم آہنگی رکھتے ہیں کہ کون کیا کر رہا ہے۔</p>
+
+<p>مجموعی طور پر، یہ ایک زبردست گروپ ہے۔ چودہ افراد جنہوں نے اجازت کا انتظار نہیں کیا، اور جو agents استعمال کر کے ایسی رفتار سے آگے بڑھ رہے ہیں جو ایک سال پہلے مضحکہ خیز لگتی۔</p>
+
+<p>پہلی ریلیز کا ہدف M1 اور M2 کے ساتھ مکمل مطابقت ہے، بشمول Pro اور Max ویریئنٹس:</p>
+
+<ul>
+  <li>ایک ہموار انسٹالر، جس میں install اور try دونوں آپشنز ہوں</li>
+  <li>مکمل GPU سپورٹ</li>
+  <li>USB-C پر ایکسٹرنل مانیٹرز</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>ڈسک انکرپشن</li>
+</ul>
+
+<p>نئی مشینوں پر متوازی طور پر کام جاری ہے، لیکن M1 اور M2 وہ ہیں جہاں ہم پہلے جھنڈا گاڑ رہے ہیں۔ M مشینوں کے علاوہ، باہر لاکھوں ونٹیج لیپ ٹاپس موجود ہیں، جن میں سے کئی پہلے ہی Apple کی تازہ ترین macOS خواہشات سے ریٹائر ہو چکے ہیں، اور ان میں سے ہر ایک ایک شاندار Omarchy کمپیوٹر بننے کا منتظر ہے۔</p>
+
+<p>شروع کرنے کے لیے آپ کو پالش شدہ ریلیز کا انتظار نہیں کرنا پڑے گا۔ <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> آپ کو منٹوں میں آپ کے Mac پر اصل ڈیسک ٹاپ دکھا دے گا۔ اور اگر آپ کمٹ کرنے کے لیے تیار ہیں، تو <a href="https://github.com/maralcbr/omarchy-mx-mac">انسٹالر</a> آج ہی M1 یا M2 پر macOS کے ساتھ Omarchy انسٹال کر دے گا۔</p>
+
+<p>آخر میں، ایک درخواست۔ اگر آپ Apple ہارڈویئر کے لیے Linux پر کام کر رہے ہیں، چاہے وہ kernel drivers ہوں، firmware، packaging، installers، یا machine learning، تو ہم آپ سے سننا چاہیں گے۔ اس بات کا اچھا امکان ہے کہ آپ نے کوئی ایسا مسئلہ حل کر لیا ہو جس کے پیچھے ہم ابھی بھی ہیں، یا اس کے برعکس۔ <a href="mailto:apple@omarchy.org">apple@omarchy.org</a> پر رابطہ کریں۔</p>
+
+<p>آئیے وہ کام مکمل کریں جو Asahi نے شروع کیا تھا۔</p>

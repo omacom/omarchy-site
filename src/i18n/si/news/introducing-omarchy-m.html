@@ -1,0 +1,40 @@
+<p>Apple විශිෂ්ට hardware හදනවා. ඔවුන් හැමදාම එහෙමයි (ඒ butterfly keyboard එකත් එක්ක වුණ එක පාර ඇරෙන්න). Omarchy වෙත එන බොහෝ දෙනෙක් එන්නේ Mac එකකින්. ඔවුන්ගෙන් බොහෝ දෙනෙක් කැමති වේවි යන්ත්‍රය තියාගෙන මෙහෙයුම් පද්ධතිය අතහරින්න. ඉතින් Asahi පටන් ගත්තු දේ අපි ඉවර කරන්න යනවා: අවම setup කරදරයකින් Apple Silicon මත Omarchy ලස්සනට දුවවන එක.</p>
+
+<p>ඒ වැඩේ පිටුපස දැනටමත් කණ්ඩායමක් ඉන්නවා. අද අපි එය නිල කරනවා: <a href="/teams/#m">Omarchy M</a>, Apple Silicon සහිත Mac සඳහා අපේ කණ්ඩායම (පැරණි Mac රැකගෙන ඉන්න සාමාජිකයන් කිහිප දෙනෙකුත් සමඟ).</p>
+
+<p>සාමාජිකයන් හඳුන්වා දෙන්න මට ඉඩ දෙන්න.</p>
+
+<p><strong>ස්ථාපකය.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> <a href="https://github.com/maralcbr/omarchy-mx-mac">native Mac installer එක</a> ගොඩනගමින් ඉන්නවා. ඔබ macOS මත app එකක් download කරගන්නවා, එය අත්සන් කළ Omarchy release එක ගෙනත්, partitions වෙන් කරලා, ඔබේ පවතින macOS එක alongside Omarchy වලට boot කරනවා. USB stick නැහැ, terminal එකේ මන්ත්‍ර ජප නැහැ. USB-C හරහා external monitors පත්තු කළ build එක කපලා දුන්නෙත් ඔහුමයි.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> වසරක් තිස්සේ <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> නඩත්තු කරමින්, මේ කිසිවක් නිල වීමට බොහෝ කලකට පෙර Omarchy M1 සහ M2 යන්ත්‍ර මතට ගෙනත්, ඒ වටා 800 කට අධික පිරිසක් සිටින Discord community එකක් ගොඩනගලා තියෙනවා. <a href="https://x.com/bi9kahuna">Scott Jones</a> ඒ ව්‍යාපෘතියේ install එකේ Linux පැත්ත බලාගන්න අනෙක් භාගය. ඔහු මෑතකදී M3 Air එකේ display එක Apple හි hardware display controller මත දුවවනු ලැබුවා, ඒකෙන් ඒ යන්ත්‍රය එක රැයකින් භාවිතා කළ නොහැකි තත්ත්වයෙන් භාවිතා කළ හැකි තත්ත්වයට පත් වුණා.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> ගොඩනැගුවා: ඔබේ Mac එක මත native, hardware-accelerated app එකක් ලෙස දුවන සැබෑ Omarchy desktop එක, ඔබේ camera, audio, clipboard, සහ shared folder එකක් සමඟ සම්බන්ධ කරලා. partition කරන්න දෙයක් නැහැ. Download කරලා මේ කලබලය මොකක්ද කියලා බලන්න විතරයි.</p>
+
+<p><strong>පැකේජ.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> Omarchy හට අවශ්‍ය සියල්ල <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package එකක් ලෙස</a> පවතින බව සහතික කරමින් ඉන්නවා, virtual machines සඳහා generic ARM64 disk images සහ ඒවා භාවිතයට පහසු කරන guest tools සමඟම.</p>
+
+<p><strong>Drivers සහ kernel එක.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> GPU drivers ලියමින් ඉන්නවා, Secure Enclave සමඟ සෘජුව කතා කරලා Touch ID වැඩ කරන තත්ත්වයට ගෙනත් තියෙනවා. <a href="https://x.com/acelogic_">Miguel Cruz</a> M5 යන්ත්‍රවල ඇති Apple හි හිමිකාර N1 chip එක reverse-engineer කරලා දැන් එහි Wi-Fi සහ Bluetooth Linux මත සම්පූර්ණයෙන් ක්‍රියාත්මක වන තත්ත්වයට ගෙනත් තියෙනවා. <a href="https://x.com/LiamRay1O">Liam</a> අලුත්ම යන්ත්‍රවල speakers, trackpad, සහ power management ගෙන එමින් ඉන්නවා. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> <a href="https://aurorasilicon.org/">Aurora Silicon</a> පවත්වාගෙන යනවා සහ මේ සියල්ල upstream යැවිය හැකි clean-room implementations බවට පත් කරමින් ඉන්නවා. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> <a href="https://github.com/subedijaidip/dp-altmode-t8112">M2 MacBook Air මත USB-C හරහා external displays</a> සක්‍රීය කළා.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a> ගොඩනගමින් ඉන්නවා, එය Vulkan හරහා Apple GPUs මත Linux මතට Apple හි MLX machine learning framework එක ගෙන එනවා. ඔබේ code එකේ තවමත් <code>import mlx.core as mx</code> කියලා තියෙනවා, නමුත් දැන් එය Omarchy මත දුවනවා.</p>
+
+<p><strong>පැරණි Mac.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> ළඟ 2016 සහ 2017 Touch Bar MacBook Pros සඳහා pull requests ගොඩක් තියෙනවා: speakers, Wi-Fi, ambient light sensor, Touch Bar එකම. <a href="https://x.com/novuon_ai">Randy</a> Intel Mac මත Touch ID ගෙන ඒමට T2 security chip එක reverse-engineer කරමින්, අතරමග 2019 MacBook Pro සඳහා සෑම නිවැරදියක්ම ලේඛනගත කරමින් ඉන්නවා. <a href="https://x.com/jondkinney">Jon Kinney</a> වසරකට පෙර Omarchy සඳහා ARM සහාය උදෙසා කෙමෙන් වැඩ කරමින් සිටියා, දැන් මුළු කණ්ඩායමම කවුද මොනවද කරන්නේ කියලා සම්බන්ධීකරණය කරලා තියෙන්නේ ඔහු.</p>
+
+<p>එකට එකතු වුණාම, ඔවුන් බලවත් පිරිසක්. අවසරය එනකන් නොහිටපු දහහතර දෙනෙක්, වසරකට පෙර හාස්‍යජනක ලෙස පෙනෙන්නට තිබුණු වේගයකින් ඉදිරියට යන්න agents භාවිතා කරමින් සිටින.</p>
+
+<p>පළමු release එකේ ඉලක්කය M1 සහ M2 සමඟ පරිපූර්ණ අනුකූලතාවයයි, Pro සහ Max variants ඇතුළුව:</p>
+
+<ul>
+  <li>සැහැල්ලු installer එකක්, install සහ try විකල්ප දෙකම සමඟ</li>
+  <li>සම්පූර්ණ GPU සහාය</li>
+  <li>USB-C හරහා external monitors</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Disk encryption</li>
+</ul>
+
+<p>අලුත් යන්ත්‍ර සඳහා වැඩ සමාන්තරව සිදු වෙමින් පවතිනවා, නමුත් අපි මුලින්ම කොඩිය සිටුවන්නේ M1 සහ M2 මතයි. M යන්ත්‍රවලට අමතරව, එළියේ vintage laptops මිලියන ගණනක් තියෙනවා, ඒවායින් බොහොමයක් දැනටමත් Apple හි නවතම macOS අභිලාෂයන්ගෙන් විශ්‍රාම ගිහින්, ඒ එකක්ම සිදුවීමට බලා සිටින අපූරු Omarchy පරිගණකයක්.</p>
+
+<p>පටන් ගන්න ඔප දැමූ release එක එනකන් ඉන්න අවශ්‍ය නැහැ. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> මිනිත්තු කිහිපයකින් ඔබේ Mac මත සැබෑ desktop එක පෙන්වාවි. කැපවීමට සූදානම් නම්, <a href="https://github.com/maralcbr/omarchy-mx-mac">installer එක</a> අදම M1 හෝ M2 මත macOS අසලින් Omarchy ස්ථාපනය කරාවි.</p>
+
+<p>අවසාන වශයෙන්, ඉල්ලීමක්. ඔබ Apple hardware සඳහා Linux මත වැඩ කරමින් සිටියේ නම්, ඒ kernel drivers, firmware, packaging, installers, හෝ machine learning වේවා, ඔබෙන් අසන්නට අපි කැමතියි. අපි තවමත් පසුපස හඹා යන දෙයක් ඔබ විසඳා තිබීමට හෝ අනෙක් අතට හොඳ ඉඩක් තියෙනවා. <a href="mailto:apple@omarchy.org">apple@omarchy.org</a> ලිපිනයෙන් සම්බන්ධ වන්න.</p>
+
+<p>Asahi පටන් ගත්තු දේ ඉවර කරමු.</p>

@@ -1,0 +1,40 @@
+<p>Az Apple nagyszerű hardvereket gyárt. Mindig is így volt (kivéve azt az egyszeri esetet a pillangó-billentyűzettel). És az Omarchyhoz érkezők közül sokan Macről érkeznek. Sokan közülük szívesen megtartanák a gépet, és megszabadulnának az operációs rendszertől. Ezért be fogjuk fejezni, amit az Asahi elkezdett: az Omarchy gyönyörűen fog futni Apple Siliconon, minimális telepítési macerával.</p>
+
+<p>Ennek a munkának már van csapata a háta mögött. Ma hivatalossá tesszük: <a href="/teams/#m">Omarchy M</a>, a csapatunk az Apple Siliconos Macekre (plusz néhány taggal, akik a régebbi Maceket is a kötelékben tartják).</p>
+
+<p>Engedjétek meg, hogy bemutassam a tagokat.</p>
+
+<p><strong>A telepítő.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> építi a <a href="https://github.com/maralcbr/omarchy-mx-mac">natív Mac-telepítőt</a>. Letöltesz egy appot macOS-en, az lekéri az aláírt Omarchy-kiadást, kialakítja a partíciókat, és bebootol az Omarchyba a meglévő macOS-ed mellé. Nincs USB-meghajtó, nincsenek varázsigék a terminálban. Ő készítette azt a buildet is, amely életre keltette a külső monitorokat USB-C-n keresztül.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> egy éve tartja karban az <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>et, amellyel jóval azelőtt feljuttatta az Omarchyt M1-es és M2-es gépekre, hogy ebből bármi is hivatalos lett volna, és több mint 800 fős Discord-közösséget épített köré. <a href="https://x.com/bi9kahuna">Scott Jones</a> a projekt másik fele a telepítés Linux-oldalán. Nemrég működésre bírta az M3 Air kijelzőjét az Apple hardveres kijelzővezérlőjén, ami egyetlen éjszaka alatt vitte át azt a gépet a használhatatlanból a használhatóba.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> építette a <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>t: a valódi Omarchy-asztal natív, hardveresen gyorsított appként fut a Maceden, a kameráddal, hanggal, vágólappal és egy megosztott mappával átvezetékelve. Nincs mit particionálni. Csak töltsd le, és nézd meg, miről szól a nagy felhajtás.</p>
+
+<p><strong>Csomagok.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> gondoskodik arról, hogy minden, amire az Omarchynak szüksége van, létezzen mint <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64-csomag</a>, valamint általános ARM64 lemezképek virtuális gépekhez és a vendég-eszközök, amelyek kellemessé teszik a használatukat.</p>
+
+<p><strong>Illesztőprogramok és a kernel.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> írja a GPU-illesztőprogramokat, és a Secure Enclave-vel közvetlenül beszélgetve működésre bírta a Touch ID-t. <a href="https://x.com/acelogic_">Miguel Cruz</a> visszafejtette az Apple saját N1 chipjét az M5-ös gépekben, és most már teljesen működik rajta a Wi-Fi és a Bluetooth Linux alatt. <a href="https://x.com/LiamRay1O">Liam</a> kelti életre a hangszórókat, a trackpadet és az energiagazdálkodást a legújabb gépeken. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> vezeti az <a href="https://aurorasilicon.org/">Aurora Silicon</a>t, és mindezt olyan clean-room megvalósításokká alakítja, amelyek bekerülhetnek az upstreambe. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> tette lehetővé a <a href="https://github.com/subedijaidip/dp-altmode-t8112">külső kijelzőket USB-C-n keresztül az M2-es MacBook Airen</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> építi az <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>t, amely az Apple MLX gépi tanulási keretrendszerét hozza el Linuxra Apple GPU-kra Vulkanon keresztül. A kódod továbbra is azt mondja, hogy <code>import mlx.core as mx</code>, de most már Omarchyn fut.</p>
+
+<p><strong>Régebbi Macek.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> neve mellett egy halom pull request áll a 2016-os és 2017-es Touch Bar-os MacBook Prókhoz: hangszórók, Wi-Fi, a környezeti fényérzékelő, maga a Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> visszafejti a T2 biztonsági chipet, hogy elhozza a Touch ID-t az Inteles Macekre, és közben minden javítást dokumentál a 2019-es MacBook Próhoz. <a href="https://x.com/jondkinney">Jon Kinney</a> egy évvel ezelőtt az Omarchy ARM-támogatásán dolgozgatott, most pedig összefogja az egész csapatot, hogy ki mit csinál.</p>
+
+<p>Együtt félelmetesen ütős csapatot alkotnak. Tizennégy ember, akik nem vártak engedélyre, és akik ügynökökkel dolgozva olyan tempóban haladnak, ami egy éve még abszurdnak tűnt volna.</p>
+
+<p>Az első kiadás célja a tökéletes kompatibilitás az M1-gyel és az M2-vel, beleértve a Pro és Max változatokat is:</p>
+
+<ul>
+  <li>Zökkenőmentes telepítő, telepítési és kipróbálási lehetőséggel egyaránt</li>
+  <li>Teljes GPU-támogatás</li>
+  <li>Külső monitorok USB-C-n keresztül</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Lemeztitkosítás</li>
+</ul>
+
+<p>Az újabb gépeken párhuzamosan dolgozunk, de az M1 és az M2 az, ahol először kitűzzük a zászlót. Az M-es gépeken túl milliónyi régi laptop van odakint, sokuk már kiszorult az Apple legújabb macOS-ambícióiból, és mindegyikben egy csodálatos leendő Omarchy-számítógép rejtőzik.</p>
+
+<p>Nem kell megvárnod a csiszolt kiadást a kezdéshez. A <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>vel perceken belül a valódi asztalt nézegetheted a Maceden. És ha készen állsz elköteleződni, <a href="https://github.com/maralcbr/omarchy-mx-mac">a telepítő</a> már ma felteszi az Omarchyt a macOS mellé egy M1-es vagy M2-es gépre.</p>
+
+<p>Végül egy kérés. Ha Apple-hardverre szánt Linuxon dolgoztál, legyen az kernel-illesztőprogram, firmware, csomagolás, telepítők vagy gépi tanulás, szívesen hallanánk felőled. Jó esély van rá, hogy megoldottál valamit, amit mi még hajszolunk, vagy fordítva. Jelentkezz az <a href="mailto:apple@omarchy.org">apple@omarchy.org</a> címen.</p>
+
+<p>Fejezzük be, amit az Asahi elkezdett.</p>

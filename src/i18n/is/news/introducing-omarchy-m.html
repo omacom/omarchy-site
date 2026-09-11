@@ -1,0 +1,40 @@
+<p>Apple framleiðir frábæran vélbúnað. Það hafa þeir alltaf gert (fyrir utan það eina skipti með fiðrildalyklaborðið). Og margir þeirra sem finna leiðina til Omarchy koma frá Mac. Margir þeirra myndu elska að halda vélinni en losna við stýrikerfið. Svo við ætlum að klára það sem Asahi byrjaði: Omarchy sem keyrir fallega á Apple Silicon, með lágmarks uppsetningarveseni.</p>
+
+<p>Þetta starf á sér nú þegar teymi. Í dag gerum við það opinbert: <a href="/teams/#m">Omarchy M</a>, teymið okkar fyrir Mac-tölvur með Apple Silicon (auk nokkurra meðlima sem halda eldri Mac-vélum innan hópsins).</p>
+
+<p>Leyfið mér að kynna meðlimina.</p>
+
+<p><strong>Uppsetningarforritið.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> er að smíða <a href="https://github.com/maralcbr/omarchy-mx-mac">innfædda Mac-uppsetningarforritið</a>. Þú sækir app á macOS, það nær í undirritaða Omarchy-útgáfu, útbýr skiptingarnar og ræsir þig inn í Omarchy samhliða núverandi macOS. Enginn USB-lykill, engar galdraþulur í terminalnum. Hann smíðaði líka útgáfuna sem kveikti á ytri skjáum yfir USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> hefur haldið utan um <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> í eitt ár, komið Omarchy á M1 og M2 vélar löngu áður en eitthvað af þessu varð opinbert, og byggt Discord-samfélag með yfir 800 manns í kringum það. <a href="https://x.com/bi9kahuna">Scott Jones</a> er hinn helmingurinn af því verkefni Linux-megin í uppsetningunni. Hann kom nýlega skjá M3 Air í gang á vélbúnaðarskjástýringu Apple, sem tók þá vél úr ónotahæfri í nothæfa á einni nóttu.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> smíðaði <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: hið raunverulega Omarchy-skjáborð sem keyrir sem innfætt, vélbúnaðarhradað app á Macnum þínum, með myndavél, hljóði, klippiborði og deildri möppu tengdri í gegn. Ekkert að skipta upp. Sæktu það bara og sjáðu um hvað lætin eru.</p>
+
+<p><strong>Pakkar.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> sér til þess að allt sem Omarchy þarf sé til sem <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64-pakki</a>, ásamt almennum ARM64-diskmyndum fyrir sýndarvélar og gestaverkfærunum sem gera þær þægilegar í notkun.</p>
+
+<p><strong>Reklar og kjarninn.</strong> <a href="https://x.com/buildwithdjdev">Dj</a> er að skrifa GPU-reklana og kom Touch ID í gang með því að tala beint við Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> öfugþróaði sérhæfða N1-kubb Apple í M5-vélunum og er nú með Wi-Fi og Bluetooth að fullu virkt í Linux. <a href="https://x.com/LiamRay1O">Liam</a> er að koma hátalurum, snertifleti og orkustýringu í gang á nýjustu vélunum. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> rekur <a href="https://aurorasilicon.org/">Aurora Silicon</a> og er að breyta öllu þessu í hreinar endurútfærslur sem geta farið upstream. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> virkjaði <a href="https://github.com/subedijaidip/dp-altmode-t8112">ytri skjái yfir USB-C á M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> er að smíða <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, sem færir MLX-vélanámsramma Apple til Linux á Apple-GPU-um í gegnum Vulkan. Kóðinn þinn segir enn <code>import mlx.core as mx</code>, en nú keyrir hann á Omarchy.</p>
+
+<p><strong>Eldri Mac-tölvur.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> er með bunka af pull requests fyrir Touch Bar MacBook Pro frá 2016 og 2017: hátalara, Wi-Fi, umhverfisljósnemann, Touch Barinn sjálfan. <a href="https://x.com/novuon_ai">Randy</a> er að öfugþróa T2-öryggiskubbinn til að færa Touch ID á Intel-Mac-tölvur, og skrásetur hverja lagfæringu fyrir MacBook Pro 2019 á leiðinni. <a href="https://x.com/jondkinney">Jon Kinney</a> var að brjóta til mergjar ARM-stuðning fyrir Omarchy fyrir ári síðan, og heldur nú öllu teyminu samstilltu um hver er að gera hvað.</p>
+
+<p>Saman eru þau gríðarlega öflugur hópur. Fjórtán manns sem biðu ekki eftir leyfi, og sem hafa notað ajenta til að halda hraða sem hefði virst fáránlegur fyrir ári síðan.</p>
+
+<p>Markmiðið fyrir fyrstu útgáfuna er fullkomin samhæfni við M1 og M2, þar með talin Pro og Max afbrigðin:</p>
+
+<ul>
+  <li>Gallalaust uppsetningarforrit, með bæði uppsetningar- og prófunarvalkostum</li>
+  <li>Fullur GPU-stuðningur</li>
+  <li>Ytri skjáir yfir USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Dulkóðun disks</li>
+</ul>
+
+<p>Nýrri vélar eru í vinnslu samhliða, en M1 og M2 er þar sem við stingum fánanum fyrst. Til viðbótar við M-vélarnar eru milljónir eldri fartölva þarna úti, margar þeirra þegar hættar í nýjustu macOS-metnaði Apple, og hver einasta þeirra er dásamleg Omarchy-tölva í vændum.</p>
+
+<p>Þú þarft ekki að bíða eftir pússaðri útgáfunni til að byrja. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> fær þig til að horfa á hið raunverulega skjáborð á Macnum þínum á nokkrum mínútum. Og ef þú ert tilbúinn að skuldbinda þig, mun <a href="https://github.com/maralcbr/omarchy-mx-mac">uppsetningarforritið</a> setja Omarchy við hlið macOS á M1 eða M2 í dag.</p>
+
+<p>Að lokum, beiðni. Ef þú hefur unnið að Linux fyrir Apple-vélbúnað, hvort sem það eru kjarnareklar, firmware, pökkun, uppsetningarforrit eða vélanám, viljum við gjarnan heyra frá þér. Góðar líkur eru á að þú hafir leyst eitthvað sem við erum enn að elta, eða öfugt. Hafðu samband á <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Förum að klára það sem Asahi byrjaði.</p>
