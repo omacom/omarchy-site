@@ -56,8 +56,8 @@ export function NewsPostPage({ post }: { post: NewsPost }) {
               className="text-text-secondary"
             >
               DHH
-            </a>{' '}
-            {language === 'zh-CN' ? '\u3000' : `${t('on')} `}
+            </a>
+            {language === 'zh-CN' ? '\u3000' : ` ${t('on')} `}
             <time dateTime={post.date}>{post.dateStr}</time>
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight text-text">
