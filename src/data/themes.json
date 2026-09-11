@@ -585,6 +585,16 @@
   "name": "Shades of Jade"
  },
  {
+  "repo": "https://github.com/demian0311/omarchy-slate-dark-theme",
+  "image": "/assets/themes/slate-dark.webp",
+  "name": "Slate Dark"
+ },
+ {
+  "repo": "https://github.com/demian0311/omarchy-slate-light-theme",
+  "image": "/assets/themes/slate-light.webp",
+  "name": "Slate Light"
+ },
+ {
   "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",
   "image": "/assets/themes/space-monkey.webp",
   "name": "Space Monkey"
