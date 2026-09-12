@@ -439,8 +439,7 @@
     "formatLocale": "sw-TZ",
     "ogLocale": "sw_TZ",
     "manual": false,
-    "flag": "TZ",
-    "draft": true
+    "flag": "TZ"
   },
   "ha": {
     "name": "Hausa",
