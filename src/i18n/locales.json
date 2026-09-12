@@ -240,9 +240,7 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "NZ",
-    "aliases": [
-      "www.omarchy.nz"
-    ]
+    "aliases": ["www.omarchy.nz"]
   },
   "en-US": {
     "name": "English (US)",
@@ -252,9 +250,7 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "US",
-    "aliases": [
-      "www.omarchy.us"
-    ]
+    "aliases": ["www.omarchy.us"]
   },
   "en-SG": {
     "name": "English (SG)",
@@ -264,9 +260,7 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "SG",
-    "aliases": [
-      "www.omarchy.sg"
-    ]
+    "aliases": ["www.omarchy.sg"]
   },
   "en-AU": {
     "name": "English (AU)",
@@ -301,6 +295,7 @@
     "formatLocale": "sq-AL",
     "ogLocale": "sq_AL",
     "manual": false,
-    "flag": "AL"
+    "flag": "AL",
+    "published": false
   }
 }

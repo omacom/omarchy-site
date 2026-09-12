@@ -15,13 +15,13 @@ Each output contains its own domain, CNAME, canonical URLs, language metadata, l
 
 ## Add another language
 
-1. Register its language code, native name, domain, date/number formatting locale, Open Graph locale, and manual availability in `src/i18n/locales.json`. Use a unique domain. Keep `manual: false` until its manual is translated.
+1. Register its language code, native name, domain, date/number formatting locale, Open Graph locale, and manual availability in `src/i18n/locales.json`. Use a unique domain. Set `published: false` until the address has been deployed and verified over HTTPS; the locale can still be built, translated, and deployed, but is omitted from public language menus, footer links, and alternate-language metadata. Remove that flag after verification. Keep `manual: false` until its manual is translated.
 2. Add `src/i18n/messages/<code>.json`. English strings are keys; translations are values. Product names, commands, keyboard shortcuts, URLs, and menu paths shown in the actual Omarchy interface remain unchanged. Start with an empty JSON object and use `npm run site:translate` to populate it from current English sources; review the result.
 3. Add `src/i18n/<code>/blocks.json` for authored HTML prose on the imported main pages. Keys are the original HTML inside prose blocks. Preserve links, IDs, classes, images, and code. This avoids duplicating live patron and team lists.
 4. Add `src/i18n/<code>/news.json` with each article's translated title and `sourceHash`, plus the full article HTML in `news/<original-slug>.html`. Keep original slugs across languages so language switching lands on the same article. The source hash is SHA-256 of the English title, a newline, and the English HTML from `src/data/news-posts.json`.
 5. Run `npm run port`, `npm run check:translations`, and `npm run build:locale -- <code>`. Review the rendered pages at desktop and mobile widths before configuring the domain.
 
-Only register a language when its main pages and news are ready. The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
+Only publish a language when its main pages, news, and primary address are ready. The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
 
 ## Updating copy
 
@@ -133,3 +133,9 @@ Configure these repository Actions settings:
 The repository must allow GitHub Actions to write commits to master (or grant the bot the appropriate ruleset bypass). The workers only run on trusted master after the English workflow, never on pull-request code. Bot translation commits do not trigger the English workflow again; the same translation run publishes its own results.
 
 For a local catch-up, run `bin/build-news`, `npm run port`, then `npm run site:translate` and `npm run news:translate`. The Muse CLI must be installed and authenticated. `npm run site:pending` and `npm run news:pending` report remaining queues without invoking a model. Pass `-- --locale da` to either translation command to process just Danish; `--limit` is applied after language selection. Use `npm run check:translations -- --strict-site --strict-news` after a full catch-up. The manual remains English until the separate manual workflow is implemented.
+
+## Formatting in hydrated pages
+
+Format locale-dependent display data in the Astro build and pass it as island props, as news dates already do. `getFigures()` and `getMeetups()` provide the statistics, dates, country names, and tooltip labels used by the homepage and meetup page. The short count-up animation also receives preformatted frames. Components must reuse these strings during hydration and later interactions: browser Intl support and locale data can differ from the build machine, even for the same locale tag.
+
+After changes to hydrated formatting, build English and Albanian, run `npx playwright install chromium`, then `npm run test:hydration`. This browser check forces English Intl fallbacks and verifies that the original server DOM and localized text survive hydration, counter animations, and meetup filtering at desktop and mobile widths. It runs in the Pages checks too.
