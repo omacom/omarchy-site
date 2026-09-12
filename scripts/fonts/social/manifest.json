@@ -70,6 +70,11 @@
       "file": "gurmukhi.ttf",
       "characters": " ,।ਂਅਈਏਕਗਘਚਜਟਢਣਤਦਧਬਮਯਰਲਵਸਹ਼ਾਿੀੁੇੋੰੱ"
     },
+    "Ethiopic": {
+      "family": "Omarchy Social Ethiopic",
+      "file": "ethiopic.ttf",
+      "characters": " ለሊልሓሕመሚማምርሲስቆቕበቡቢብቫተታትቶችነናንኝአኣኤእኦከካክወዊውዕዘዙዝየያይደዱዳጀጆገጉግጓጠጢጥጸጽፍ።፣"
+    },
     "Gujarati": {
       "family": "Omarchy Social Gujarati",
       "file": "gujarati.ttf",
@@ -104,11 +109,6 @@
       "family": "Omarchy Social Hebrew",
       "file": "hebrew.ttf",
       "characters": " אגדהוזיכלםמןנסעפצקרשת"
-    },
-    "Ethiopic": {
-      "family": "Omarchy Social Ethiopic",
-      "file": "ethiopic.ttf",
-      "characters": " ለልሓሕመማምሲስቕቡቢብታትነንኣኤከወዊውዕዘዝይደጀገጉጢጸጽፍ።፣"
     },
     "Armenian": {
       "family": "Omarchy Social Armenian",
@@ -163,6 +163,7 @@
     "ha": "Latin",
     "pa": "Gurmukhi",
     "fa": "Arabic",
+    "am": "Ethiopic",
     "jv": "Latin",
     "gu": "Gujarati",
     "kn": "Kannada",
