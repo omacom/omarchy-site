@@ -388,8 +388,7 @@
     "formatLocale": "id-ID",
     "ogLocale": "id_ID",
     "manual": false,
-    "flag": "ID",
-    "draft": true
+    "flag": "ID"
   },
   "de": {
     "name": "Deutsch",
