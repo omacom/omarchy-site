@@ -75,6 +75,11 @@
       "file": "gujarati.ttf",
       "characters": " ંઅઇએકગજટતદનફબમયરલવશસાિીુેો્"
     },
+    "Kannada": {
+      "family": "Omarchy Social Kannada",
+      "file": "kannada.ttf",
+      "characters": " ,.ಂಅಏಕಗಜಟಡಣತಥದನಪಬಮಯರಲಳವಸಾಿುೂೆೈೊೋ್ೕೖ‌"
+    },
     "Myanmar": {
       "family": "Omarchy Social Myanmar",
       "file": "myanmar.ttf",
@@ -139,6 +144,7 @@
     "fa": "Arabic",
     "jv": "Latin",
     "gu": "Gujarati",
+    "kn": "Kannada",
     "yo": "Latin",
     "bho": "Devanagari",
     "ms": "Latin",
