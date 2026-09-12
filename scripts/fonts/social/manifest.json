@@ -13,7 +13,7 @@
     "Arabic": {
       "family": "Omarchy Social Arabic",
       "file": "arabic.ttf",
-      "characters": " .،ءأئابةتجحخدذرزسشصظعغفقكلمنهوىئِټٽپچړښکڪڭگھۆۇۈۋیېە۽"
+      "characters": " .،ءأئابةتثجحخدذرزسشصظعغفقكلمنهوىئِټٽپچړښکڪڭگھۆۇۈۋیېە۽‌"
     },
     "Devanagari": {
       "family": "Omarchy Social Devanagari",
@@ -125,6 +125,7 @@
     "mr": "Devanagari",
     "te": "Telugu",
     "sw": "Latin",
+    "fa": "Arabic",
     "jv": "Latin",
     "gu": "Gujarati",
     "yo": "Latin",
