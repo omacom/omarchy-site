@@ -1049,8 +1049,7 @@
     "formatLocale": "be-BY",
     "ogLocale": "be_BY",
     "manual": false,
-    "flag": "BY",
-    "draft": true
+    "flag": "BY"
   },
   "ka": {
     "name": "ქართული",

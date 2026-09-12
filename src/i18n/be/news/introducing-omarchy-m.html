@@ -1,0 +1,40 @@
+<p>Apple робіць цудоўнае жалеза. Заўсёды рабіла (мінус той адзін раз з клавіятурай-матыльком). І шмат хто з тых, хто прыходзіць у Omarchy, прыходзіць з Mac. Многія з іх хацелі б захаваць машыну і пазбавіцца аперацыйнай сістэмы. Таму мы збіраемся скончыць тое, што пачаў Asahi: Omarchy, якая цудоўна працуе на Apple Silicon, з мінімумам мітусні пры ўсталёўцы.</p>
+
+<p>За гэтай працай ужо стаіць каманда. Сёння мы робім гэта афіцыйна: <a href="/teams/#m">Omarchy M</a> — наша каманда для Mac на Apple Silicon (плюс некалькі ўдзельнікаў, якія трымаюць у сям’і старэйшыя Mac).</p>
+
+<p>Дазвольце прадставіць удзельнікаў.</p>
+
+<p><strong>Усталёўшчык.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> будуе <a href="https://github.com/maralcbr/omarchy-mx-mac">родны Mac-усталёўшчык</a>. Вы спампоўваеце праграму на macOS, яна падцягвае падпісаны рэліз Omarchy, наразае раздзелы і загружае вас у Omarchy побач з вашым існуючым macOS. Без USB-флэшкі, без заклінанняў у тэрмінале. Ён таксама сабраў зборку, якая засвяціла знешнія маніторы праз USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> год вядзе <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>, зацягваючы Omarchy на машыны M1 і M2 задаўга да таго, як усё гэта стала афіцыйным, і збіраючы вакол гэтага Discord-супольнасць больш чым з 800 чалавек. <a href="https://x.com/bi9kahuna">Scott Jones</a> — другая палова таго праекта з боку Linux ва ўсталёўцы. Нядаўна ён завёў дысплей M3 Air на апаратным кантролеры дысплея Apple, што за ноч перавяло тую машыну з непрыдатнай у прыдатную.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> пабудаваў <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: сапраўдны працоўны стол Omarchy як родная праграма з апаратным паскарэннем на вашым Mac, з праведзенымі камерай, гукам, буферам абмену і агульнай папкай. Нічога разбіваць не трэба. Проста спампуйце і паглядзіце, з-за чаго шум.</p>
+
+<p><strong>Пакеты.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> сочыць, каб усё патрэбнае Omarchy існавала ў выглядзе <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">пакета aarch64</a>, разам з агульнымі вобразамі дыскаў ARM64 для віртуальных машын і гасцявымі інструментамі, якія робяць іх прыемнымі ў карыстанні.</p>
+
+<p><strong>Драйверы і ядро.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> падымае Neo і будуе падмурак, з якога працуе астатняя каманда. Ён распрацоўвае эмулятар SPTM, які дазваляе трасіраваць macOS на чыпах M4 і навейшых. Гэтыя трэйсы неабходныя, каб завесці дысплеі, GPU, гук, бесправадную сувязь і Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> піша драйверы GPU і завёў Touch ID, размаўляючы наўпрост з Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> спецыялізуецца на працы з M5: ён рэверс-інжыніраваў прапрыетарны чып N1 ад Apple і завёў яго Wi-Fi і Bluetooth у Linux. Ён таксама ўнёс апаратнае кадаванне і дэкадаванне відэа, Bluetooth і паляпшэнні працоўнага стала на Neo. <a href="https://x.com/LiamRay1O">Liam</a> падымае трэкпад Neo, кіраванне сілкаваннем, дынамікі і выхад на навушнікі, прычым трэйсы macOS ад Ryan даюць неабходную аснову. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> вядзе падтрымку M4 і чыстыя рэалізацыі, а таксама працуе над інтэграцыяй і пакаваннем. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> уключыў <a href="https://github.com/subedijaidip/dp-altmode-t8112">знешнія дысплеі праз USB-C на M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> будуе <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, які прыносіць фрэймворк машыннага навучання MLX ад Apple у Linux на GPU Apple праз Vulkan. Ваш код усё яшчэ кажа <code>import mlx.core as mx</code>, але цяпер працуе на Omarchy.</p>
+
+<p><strong>Старэйшыя Mac.</strong> У <a href="https://x.com/shawnyeager">Shawn Yeager</a> стос пул-рэквестаў для Touch Bar MacBook Pro 2016 і 2017 гадоў: дынамікі, Wi-Fi, датчык навакольнага святла, сам Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> рэверс-інжыніруе чып бяспекі T2, каб прынесці Touch ID на Intel Mac, і дакументуе кожны фікс для MacBook Pro 2019 года па дарозе. <a href="https://x.com/jondkinney">Jon Kinney</a> яшчэ год таму калупаў ARM-падтрымку для Omarchy, а цяпер трымае ўсю каманду ў курсе, хто што робіць.</p>
+
+<p>Разам яны — грозная група. Пятнаццаць чалавек, якія не чакалі дазволу і якія карыстаюцца агентамі, каб рухацца ў тэмпе, які год таму здаўся б абсурдным.</p>
+
+<p>Мэта першага рэлізу — ідэальная сумяшчальнасць з M1 і M2, уключна з варыянтамі Pro і Max:</p>
+
+<ul>
+  <li>Бясшвоўны ўсталёўшчык, з варыянтамі ўсталёўкі і пробы</li>
+  <li>Поўная падтрымка GPU</li>
+  <li>Знешнія маніторы праз USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Шыфраванне дыска</li>
+</ul>
+
+<p>Навейшыя машыны робяцца паралельна, але M1 і M2 — там, дзе мы ўтыкаем сцяг спачатку. У дадатак да M-машын, там вонкі мільёны вінтажных наўтбукаў, многія ўжо спісаныя з апошніх амбіцый Apple наконт macOS, і кожны з іх — цудоўны камп’ютар Omarchy, які толькі чакае свайго часу.</p>
+
+<p>Неабавязкова чакаць адпаліраванага рэлізу, каб пачаць. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> пакажа вам сапраўдны працоўны стол на вашым Mac за хвіліны. А калі гатовыя ўвайсці ўсур’ёз, <a href="https://github.com/maralcbr/omarchy-mx-mac">усталёўшчык</a> паставіць Omarchy побач з macOS на M1 або M2 ужо сёння.</p>
+
+<p>І нарэшце, просьба. Калі вы працавалі над Linux для жалеза Apple — ці то драйверы ядра, прашыўкі, пакаванне, усталёўшчыкі або машыннае навучанне, — мы хацелі б вас пачуць. Ёсць добры шанец, што вы ўжо вырашылі нешта, за чым мы яшчэ ганяемся, або наадварот. Звяжыцеся праз <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Давайце скончым тое, што пачаў Asahi.</p>
