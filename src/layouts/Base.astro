@@ -8,6 +8,7 @@ import { SiteFooter } from '@/components/SiteFooter'
 import { ThemePicker } from '@/components/ThemePicker'
 import { SearchPalette } from '@/components/SearchPalette'
 import { PixelSnap } from '@/components/PixelSnap'
+import { Rally } from '@/components/Rally'
 import { MusicControl } from '@/components/MusicControl'
 import { themeInitScript } from '@/lib/theme'
 import { etchInitScript } from '@/lib/etch'
@@ -91,6 +92,7 @@ const ogImage = socialImage(path)
     <SearchPalette client:load />
     <MusicControl client:load path={Astro.url.pathname} transition:persist="music-control" />
     <PixelSnap client:load />
+    <Rally client:idle />
     <script>
       import type { TransitionBeforeSwapEvent } from 'astro:transitions/client'
       import { readTheme } from '@/lib/theme'
