@@ -786,8 +786,7 @@
     "formatLocale": "rw-RW",
     "ogLocale": "rw_RW",
     "manual": false,
-    "flag": "RW",
-    "draft": true
+    "flag": "RW"
   },
   "ku": {
     "name": "Kurdî",
