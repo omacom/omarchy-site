@@ -698,8 +698,7 @@
     "formatLocale": "az-AZ",
     "ogLocale": "az_AZ",
     "manual": false,
-    "flag": "AZ",
-    "draft": true
+    "flag": "AZ"
   },
   "as": {
     "name": "অসমীয়া",
