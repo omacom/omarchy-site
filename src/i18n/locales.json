@@ -686,8 +686,7 @@
     "formatLocale": "ro-RO",
     "ogLocale": "ro_RO",
     "manual": false,
-    "flag": "RO",
-    "draft": true
+    "flag": "RO"
   },
   "zu": {
     "name": "isiZulu",
