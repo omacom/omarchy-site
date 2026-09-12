@@ -35,7 +35,7 @@ const BRAND_BANDS: [color: string, rows: number][] = [
 const BAND_ROWS = BRAND_BANDS.reduce((sum, [, rows]) => sum + rows, 0)
 
 /** Band edges in percent of the height. */
-const BAND_STOPS = BRAND_BANDS.reduce<{
+export const BAND_STOPS = BRAND_BANDS.reduce<{
   stops: [string, number, number][]
   rows: number
 }>(
