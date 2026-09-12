@@ -1,10 +1,11 @@
 # Progress
 
-**Current phase:** Phase 5 — News Articles Localization complete. All 26 news articles in `src/i18n/ka/news.json` and `src/i18n/ka/news/*.html` translated into Georgian, 0 pending articles, strict validation passed, 82/82 tests passing, and static build `dist/ka` verified.
+**Current phase:** Phase 6 — Verification, Local Preview & Review in progress. Launched local preview (`http://localhost:3115`), added `build:ka` and `dev:ka` scripts to `package.json`, created `REVIEW_NOTES.md`. Razmik began manual visual review of the homepage and refined terminology in `src/i18n/messages/ka.json` and `src/i18n/ka/news.json` up to the "It even runs Windows!" section. All 82 tests pass, strict translation check passes, and `dist/ka` rebuilt cleanly.
 
-**Next task:** Phase 6 — Verification, Local Preview & PR Submission: preview with `npm run dev:ka`, verify site pages in browser, and prepare upstream PR for `omacom/omarchy-site`.
+**Next task:** Continue manual visual review from "It even runs Windows!" onward, complete remaining sections of the homepage, secondary pages, and news, then prepare upstream PR for `omacom/omarchy-site`.
 
 ## Done
+- 2026-09-12 — Phase 6 (In Progress): Ran local preview on port 3115, added `build:ka` and `dev:ka` convenience scripts in `package.json`, and created `REVIEW_NOTES.md`. Razmik manually reviewed and refined Georgian copy across the homepage up to "It even runs Windows!" (including natural phrasing for terms like stack -> დასტა, community plugins, patron terminology, and installation guides). Verified with 82 passing tests, strict translation check, and updated static build `dist/ka`.
 - 2026-09-12 — Phase 5: Translated all 26 news articles into natural Georgian (`src/i18n/ka/news.json` and `src/i18n/ka/news/*.html`), strictly preserved all HTML structure, tags, attributes, links, images, and code blocks, applied explicit USD formatting, verified with 0 pending news items, strict translation check (`npm run check:translations -- --strict-site --strict-news`), 82 passing tests, and successful `npm run build:locale -- ka`.
 - 2026-09-12 — Phase 4: Translated all 118 authored HTML prose blocks in `src/i18n/ka/blocks.json` into natural Georgian, preserved all HTML tags, attributes, and links, applied explicit USD formatting, verified with 0 pending site items, 82 passing tests, and successful `npm run build:locale -- ka`.
 - 2026-09-12 — Phase 3: Translated all 338 UI messages in `src/i18n/messages/ka.json` into natural Georgian, preserved all brand names, shortcuts, and commands, applied explicit USD formatting, updated 22 social card preview PNGs, verified with 0 pending messages, 82 passing tests, and successful `npm run build:locale -- ka`.
