@@ -1034,8 +1034,7 @@
     "formatLocale": "sq-AL",
     "ogLocale": "sq_AL",
     "manual": false,
-    "flag": "AL",
-    "draft": true
+    "flag": "AL"
   },
   "hr": {
     "name": "Hrvatski",
