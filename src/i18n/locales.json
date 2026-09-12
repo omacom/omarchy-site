@@ -525,8 +525,7 @@
     "formatLocale": "yo-NG",
     "ogLocale": "yo_NG",
     "manual": false,
-    "flag": "NG",
-    "draft": true
+    "flag": "NG"
   },
   "bho": {
     "name": "भोजपुरी",
