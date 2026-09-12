@@ -218,7 +218,8 @@ jobs:
             changed=true
           fi
           echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          locales=$(node --input-type=module -e 'import l from "./src/i18n/locales.json" with {type:"json"}; console.log(JSON.stringify(Object.keys(l).filter(k=>k!=="en")))')
+          # Published editions only: a draft translates above but is not deployed until its flag is dropped.
+          locales=$(node --input-type=module -e 'import l from "./src/i18n/locales.json" with {type:"json"}; console.log(JSON.stringify(Object.keys(l).filter(k=>k!=="en" && !l[k].draft)))')
           echo "locales=$locales" >> "$GITHUB_OUTPUT"
           previous=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/translate-news.yml/runs?status=completed&per_page=1" --jq '(.workflow_runs[0].conclusion // "none")')
           if [ "$changed" = true ] || [ "$EVENT_NAME" != schedule ] || [ "$previous" != success ]; then

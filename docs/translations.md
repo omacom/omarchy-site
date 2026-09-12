@@ -15,13 +15,15 @@ Each output contains its own domain, CNAME, canonical URLs, language metadata, l
 
 ## Add another language
 
-1. Register its language code, native name, domain, date/number formatting locale, Open Graph locale, and manual availability in `src/i18n/locales.json`. Use a unique domain. Keep `manual: false` until its manual is translated.
+1. Register its language code, native name (`name`), English name (`englishName`), ISO 15924 script code (`script`: `Latn`, `Cyrl`, `Arab`, `Deva`, `Hans`…), domain, date/number formatting locale, Open Graph locale, and manual availability in `src/i18n/locales.json`. Use a unique domain. Keep `manual: false` until its manual is translated. A right-to-left script (`Arab`, `Hebr`, `Thaa`, `Nkoo`, `Syrc`) must declare `direction: "rtl"`; no other entry sets `direction`. An edition whose domain does not end in a two-letter country code needs an explicit `flag`. Optional `searchTerms` lists other spellings the language switcher should find it by (`["farsi"]`); the native name, English name, code and formatting locale are always searchable, ignoring accents and case. `npm run check:translations` validates every field, including that Node's `Intl` supports the formatting locale.
 2. Add `src/i18n/messages/<code>.json`. English strings are keys; translations are values. Product names, commands, keyboard shortcuts, URLs, and menu paths shown in the actual Omarchy interface remain unchanged. Start with an empty JSON object and use `npm run site:translate` to populate it from current English sources; review the result.
 3. Add `src/i18n/<code>/blocks.json` for authored HTML prose on the imported main pages. Keys are the original HTML inside prose blocks. Preserve links, IDs, classes, images, and code. This avoids duplicating live patron and team lists.
 4. Add `src/i18n/<code>/news.json` with each article's translated title and `sourceHash`, plus the full article HTML in `news/<original-slug>.html`. Keep original slugs across languages so language switching lands on the same article. The source hash is SHA-256 of the English title, a newline, and the English HTML from `src/data/news-posts.json`.
 5. Run `npm run port`, `npm run check:translations`, and `npm run build:locale -- <code>`. Review the rendered pages at desktop and mobile widths before configuring the domain.
 
-Only register a language when its main pages and news are ready. The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
+Register a language before its translations are ready by adding `"draft": true` to its entry. A draft is fully translatable and buildable on its own: the pending queues, `translate-news.yml`'s translation matrix, strict checks, `npm run build:locale -- <code>`, `scripts/verify-locales.py <code>` and manual `npm run deploy:locale` all include it, and its own build lists itself in its switcher, footer and alternate links. Nothing else does: every published edition's switcher, footer, `hreflang` links, social-card set and deployment matrix skip drafts, so readers never reach an unfinished site. Drop the flag once `npm run check:translations -- --strict-site --strict-news <code>` passes and the domain is ready; the next workflow run deploys it and every other edition starts linking to it. In code, `publishedLocales` is the registry without drafts, `locales` and `sortedLocales` are what the current build links to (published, plus itself when it is a draft) and `allLocales` is the registry as written.
+
+The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
 
 ## Updating copy
 
@@ -32,6 +34,34 @@ Imported main-page prose uses exact English HTML keys. Changing the source creat
 Video titles, event names, theme names, and product names retain their original wording. Quoted article prose is translated with its attribution preserved. Each language uses its own date and number formatting, while funding amounts remain in USD. Write those amounts with an explicit currency — `1,000,000 USD`, not `$1,000,000` — because a bare `$` is the local currency sign in several countries.
 
 The separate `translate-news.yml` workflow runs after a successful English deployment, on manual dispatch, and hourly to retry unfinished translations. Adding a language to the registry includes it automatically.
+
+## One Muse owner per language
+
+For a large catch-up, such as adding many editions at once, `scripts/translate-owners.py`
+starts one headless Muse session per language instead of one request per batch.
+Each owner gets a workspace outside the repository (under
+`~/.local/state/omarchy-owners/<repo>/<code>/`) holding a frozen snapshot of the
+English sources, copies of the repository validators as `tools/validate.py`, and
+its output files. The session translates UI strings, page blocks, and every
+article over many steps, validating its own work as it goes. It cannot see the
+repository, has no network, and cannot delegate to other agents.
+
+```sh
+scripts/translate-owners.py prepare --roster        # seed roster editions as drafts and build workspaces
+scripts/translate-owners.py run                     # launch every owner, supervise, retry, resume
+scripts/translate-owners.py status
+scripts/translate-owners.py collect                 # validate again and write into src/i18n
+```
+
+`prepare --roster` reads `plans/100-languages-roster.json` (generated by
+`scripts/language-roster.py`) and adds each edition to the registry with
+`draft: true` and empty catalogues. `run` resumes: complete owners are skipped,
+incomplete or dead ones restart with a prompt pointing them at their own
+validator output, and rate-limited sessions back off. `collect` only writes
+translations that pass the same validators the workflow uses, keeps existing
+reviewed values, and skips articles whose English changed after the snapshot so
+the hourly workflow retranslates them. Review, run `npm run check:translations`,
+build the edition, and remove `draft` when it is ready to publish.
 
 ## Publish to Cloudflare
 
