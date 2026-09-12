@@ -8,7 +8,7 @@
     "Latin": {
       "family": "Omarchy Social Latin",
       "file": "latin.ttf",
-      "characters": " &',-.:?ABCDEFHIJKLMNOPSTUVWZabcdefghijklmnopqrstuvwxyzÁÄßàáäåæçèéëíðòóöøúüýþąđėęğıłşųžșţ̨̛̦̣̦̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώВОПСабвгдезийклмнопрстухчшяјљњạắẹềễệỉịọốờụứừử‘’“„"
+      "characters": " &',-.:?ABCDEFHIJKLMNOPSTUVWZabcdefghijklmnopqrstuvwxyzÁÄßàáäåæçèéëíðòóöøúüýþąđėęğıłşųžșțɛɲ̧̨̛̣̦̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώВОПСабвгдезийклмнопрстухчшяјљњạắẹềễệỉịọốờụứừử‘’“„"
     },
     "Arabic": {
       "family": "Omarchy Social Arabic",
@@ -104,6 +104,7 @@
     "ln": "Latin",
     "mg": "Latin",
     "af": "Latin",
+    "bm": "Latin",
     "ht": "Latin",
     "lg": "Latin",
     "rn": "Latin",

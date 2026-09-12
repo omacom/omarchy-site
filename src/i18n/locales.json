@@ -842,8 +842,7 @@
     "formatLocale": "bm-ML",
     "ogLocale": "bm_ML",
     "manual": false,
-    "flag": "ML",
-    "draft": true
+    "flag": "ML"
   },
   "cs": {
     "name": "Čeština",
