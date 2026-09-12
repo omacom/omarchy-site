@@ -207,7 +207,7 @@ function HeroCallout({ href, html }: { href: string; html: string }) {
         className="min-w-0 [&_s]:text-current/60"
         dangerouslySetInnerHTML={{ __html: t(html) }}
       />
-      <ArrowRightIcon className="size-4 shrink-0 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+      <ArrowRightIcon className="size-4 shrink-0 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
     </>
   )
   const news = NEWS_PATH.exec(href)
@@ -265,19 +265,19 @@ export function HomePage({ data }: { data: HomeData }) {
   const allPlugins = (
     <a href="https://plugins.omarchy.org" className={sectionLink}>
       {t('All plugins')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </a>
   )
   const extraThemes = (
     <Link to="/themes/" className={sectionLink}>
       {t('More community themes')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const allNews = (
     <Link to="/news/" className={sectionLink}>
       {t('All news')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const installGuide = (
@@ -287,7 +287,7 @@ export function HomePage({ data }: { data: HomeData }) {
       className={sectionLink}
     >
       {t('Full installation guide')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const moreOnX = (
@@ -304,19 +304,19 @@ export function HomePage({ data }: { data: HomeData }) {
   const allTeams = (
     <Link to="/teams/" className={sectionLink}>
       {t('All teams')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const allPatrons = (
     <Link to="/$/" params={{ _splat: 'patrons' }} className={sectionLink}>
       {t('All patrons')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const allMeetups = (
     <Link to="/meetups/" className={sectionLink}>
       {t('All meetups')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
 
@@ -879,7 +879,7 @@ export function HomePage({ data }: { data: HomeData }) {
                   </p>
                   <span className="mt-auto flex items-center gap-1 pt-4 text-[13px] font-medium text-brand">
                     {card.cta}
-                    <ArrowRightIcon className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+                    <ArrowRightIcon className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
                   </span>
                 </>
               )
