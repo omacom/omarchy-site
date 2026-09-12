@@ -965,8 +965,7 @@
     "formatLocale": "sr-RS",
     "ogLocale": "sr_RS",
     "manual": false,
-    "flag": "RS",
-    "draft": true
+    "flag": "RS"
   },
   "he": {
     "name": "עברית",
