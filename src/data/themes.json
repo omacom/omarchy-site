@@ -305,6 +305,11 @@
   "name": "Harbor Dark"
  },
  {
+  "repo": "https://github.com/simoz/omarchy-haven-theme",
+  "image": "/assets/themes/haven.webp",
+  "name": "Haven"
+ },
+ {
   "repo": "https://github.com/archer-clawbot/omarchy-hermarchy-theme",
   "image": "/assets/themes/hermarchy.webp",
   "name": "Hermarchy"
