@@ -178,9 +178,15 @@
    },
    {
     "name": "Dj",
-    "meta": "USA",
+    "meta": "Canada",
     "href": "https://x.com/buildwithdjdev",
     "avatar": "/assets/images/team/dj.webp"
+   },
+   {
+    "name": "Ryan Murray",
+    "meta": "Australia",
+    "href": "https://github.com/RyanTheTide",
+    "avatar": "/assets/images/team/ryan-murray.webp"
    },
    {
     "name": "Miguel Cruz",

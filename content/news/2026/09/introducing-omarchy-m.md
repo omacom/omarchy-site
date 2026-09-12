@@ -3,7 +3,7 @@ title: Introducing Omarchy M
 date: 2026-09-11 14:00 +0200
 author: DHH
 author_url: https://dhh.dk
-description: Fourteen people are making Omarchy run on Apple Silicon, from a native Mac installer to GPU drivers, MLX, and Touch ID. Meet the team, try it today, and get in touch if you've been working on the same problem.
+description: Fifteen people are making Omarchy run on Apple Silicon, from a native Mac installer to GPU drivers, MLX, and Touch ID. Meet the team, try it today, and get in touch if you've been working on the same problem.
 ---
 
 Apple makes great hardware. They always have (minus that one time with the butterfly keyboard). And a lot of the people arriving at Omarchy are arriving from a Mac. Many of them would love to keep the machine and lose the operating system. So we're going to finish what Asahi started: Omarchy running beautifully on Apple Silicon, with a minimum of setup fuss.
@@ -20,13 +20,13 @@ Allow me to introduce the members.
 
 **Packages.** [Shun Li](https://x.com/riverleaf88) is making sure everything Omarchy needs exists as an [aarch64 package](https://github.com/riverscn/omarchy-pkgs-aarch64), along with generic ARM64 disk images for virtual machines and the guest tools that make them pleasant to use.
 
-**Drivers and the kernel.** [Dj](https://x.com/buildwithdjdev) is writing the GPU drivers, and got Touch ID working by talking directly to the Secure Enclave. [Miguel Cruz](https://x.com/acelogic_) reverse-engineered Apple's proprietary N1 chip in the M5 machines and now has its Wi-Fi and Bluetooth fully functional in Linux. [Liam](https://x.com/LiamRay1O) is bringing up speakers, trackpad, and power management on the newest machines. [Eryk Wieliczko](https://x.com/ewninjaofficial) runs [Aurora Silicon](https://aurorasilicon.org/) and is turning all of this into clean-room implementations that can go upstream. [Jaidip Subedi](https://x.com/jaidipsubedi) enabled [external displays over USB-C on the M2 MacBook Air](https://github.com/subedijaidip/dp-altmode-t8112).
+**Drivers and the kernel.** [Ryan Murray](https://github.com/RyanTheTide) is bringing up the Neo and building the foundations the rest of the team works from. He's developing an SPTM emulator that makes it possible to trace macOS on M4 and newer chips. Those traces are essential to getting displays, GPUs, audio, wireless, and Bluetooth working. [Dj](https://x.com/buildwithdjdev) is writing the GPU drivers, and got Touch ID working by talking directly to the Secure Enclave. [Miguel Cruz](https://x.com/acelogic_) specialises in M5 work: he reverse-engineered Apple's proprietary N1 chip and got its Wi-Fi and Bluetooth working in Linux. He's also contributed hardware video encoding and decoding, Bluetooth, and desktop improvements on the Neo. [Liam](https://x.com/LiamRay1O) is bringing up the Neo's trackpad, power management, speakers, and headphone output, with Ryan's macOS traces providing essential groundwork. [Eryk Wieliczko](https://x.com/ewninjaofficial) maintains M4 support and clean-room implementations, and works on integration and packaging. [Jaidip Subedi](https://x.com/jaidipsubedi) enabled [external displays over USB-C on the M2 MacBook Air](https://github.com/subedijaidip/dp-altmode-t8112).
 
 **MLX.** [Joshua Warren](https://x.com/JoshuaSWarren) is building [mlx-omarchy](https://github.com/joshuaswarren/mlx-omarchy), which brings Apple's MLX machine learning framework to Linux on Apple GPUs through Vulkan. Your code still says `import mlx.core as mx`, but now it runs on Omarchy.
 
 **Older Macs.** [Shawn Yeager](https://x.com/shawnyeager) has a stack of pull requests for the 2016 and 2017 Touch Bar MacBook Pros: speakers, Wi-Fi, the ambient light sensor, the Touch Bar itself. [Randy](https://x.com/novuon_ai) is reverse-engineering the T2 security chip to bring Touch ID to Intel Macs, and documenting every fix for the 2019 MacBook Pro along the way. [Jon Kinney](https://x.com/jondkinney) was chipping away at ARM support for Omarchy a year ago, and now keeps the whole team coordinated on who's doing what.
 
-Together, they're a formidable group. Fourteen people who didn't wait for permission, and who've been using agents to move at a pace that would have seemed absurd a year ago.
+Together, they're a formidable group. Fifteen people who didn't wait for permission, and who've been using agents to move at a pace that would have seemed absurd a year ago.
 
 The target for the first release is perfect compatibility with M1 and M2, including the Pro and Max variants:
 
