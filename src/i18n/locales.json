@@ -741,8 +741,7 @@
     "formatLocale": "km-KH",
     "ogLocale": "km_KH",
     "manual": false,
-    "flag": "KH",
-    "draft": true
+    "flag": "KH"
   },
   "mg": {
     "name": "Malagasy",

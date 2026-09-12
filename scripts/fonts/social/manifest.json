@@ -95,6 +95,11 @@
       "file": "malayalam.ttf",
       "characters": " -.ംഎഏകഗങചജടണതനപബമയരറലളവശസഹാിീുൂെേൈോ്"
     },
+    "Khmer": {
+      "family": "Omarchy Social Khmer",
+      "file": "khmer.ttf",
+      "characters": " កគងចឆញដណតនបផភមយរលវសហអឬាិីុូើែៃោ់៍៏័្។"
+    },
     "Hebrew": {
       "family": "Omarchy Social Hebrew",
       "file": "hebrew.ttf",
@@ -183,6 +188,7 @@
     "ceb": "Latin",
     "xh": "Latin",
     "ln": "Latin",
+    "km": "Khmer",
     "mg": "Latin",
     "af": "Latin",
     "kk": "Latin",
