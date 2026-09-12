@@ -225,6 +225,14 @@
     "manual": false,
     "flag": "NL"
   },
+  "uk": {
+    "name": "Українська",
+    "domain": "https://uk.omarchy.org",
+    "formatLocale": "uk-UA",
+    "ogLocale": "uk_UA",
+    "manual": false,
+    "flag": "UA"
+  },
   "no": {
     "name": "Norsk",
     "domain": "https://omarchy.no",
