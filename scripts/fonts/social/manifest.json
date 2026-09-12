@@ -69,6 +69,11 @@
       "family": "Omarchy Social Gujarati",
       "file": "gujarati.ttf",
       "characters": " ંઅઇએકગજટતદનફબમયરલવશસાિીુેો્"
+    },
+    "Georgian": {
+      "family": "Omarchy Social Georgian",
+      "file": "georgian.ttf",
+      "characters": " აბგდევზთიკლმნოპრსტუქყშცწხ"
     }
   },
   "locales": {
@@ -131,6 +136,7 @@
     "bg": "Latin",
     "sq": "Latin",
     "hr": "Latin",
-    "mn": "Latin"
+    "mn": "Latin",
+    "ka": "Georgian"
   }
 }

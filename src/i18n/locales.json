@@ -1090,8 +1090,7 @@
     "formatLocale": "ka-GE",
     "ogLocale": "ka_GE",
     "manual": false,
-    "flag": "GE",
-    "draft": true
+    "flag": "GE"
   },
   "sl": {
     "name": "Slovenščina",
