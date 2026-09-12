@@ -410,8 +410,7 @@
     "formatLocale": "pcm-NG",
     "ogLocale": "pcm_NG",
     "manual": false,
-    "flag": "NG",
-    "draft": true
+    "flag": "NG"
   },
   "mr": {
     "name": "मराठी",

@@ -1,0 +1,40 @@
+<p>Apple dey make great hardware. Dem always don (minus dat one time with butterfly keyboard). And plenty of di pipo wey dey arrive Omarchy dey arrive from Mac. Many of dem go love to keep di machine and lose di operating system. So we go finish wetin Asahi start: Omarchy dey run fine-fine for Apple Silicon, with minimum setup wahala.</p>
+
+<p>Dat work don already get team behind am. Today we dey make am official: <a href="/teams/#m">Omarchy M</a>, our team for Macs with Apple Silicon (plus few members wey dey keep older Macs for di fold).</p>
+
+<p>Make I introduce di members.</p>
+
+<p><strong>Di installer.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> dey build di <a href="https://github.com/maralcbr/omarchy-mx-mac">native Mac installer</a>. You go daunlod app for macOS, e go fetch di signed Omarchy release, carve out di partitions, and boot you enter Omarchy beside your existing macOS. No USB stick, no incantations for terminal. E still cut di build wey light up external monitors over USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> don maintain <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> for one year, e dey carry Omarchy go M1 and M2 machines long before any of dis become official, and e dey build Discord community of pass 800 pipo around am. <a href="https://x.com/bi9kahuna">Scott Jones</a> na di oda half of dat project for di Linux side of di instal. E just get M3 Air display to dey run for Apple hardware display controller, wey take dat machine from unusable go usable for one night.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> build <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: di real Omarchy desktop wey dey run as native, hardware-accelerated app for your Mac, with your camera, audio, clipboard, and shared folder wired through. Nothing to partition. Just daunlod am and see wetin di noise be about.</p>
+
+<p><strong>Packages.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> dey make sure say everything wey Omarchy need dey as <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package</a>, togeda with generic ARM64 disk images for virtual machines and di guest tools wey dey make dem pleasant to use.</p>
+
+<p><strong>Drivers and di kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> dey bring up di Neo and dey build di foundations wey di rest of di team dey work from. E dey develop SPTM emulator wey dey make am possible to trace macOS for M4 and newer chips. Those traces na essential to take get displays, GPUs, audio, wireless, and Bluetooth to dey work. <a href="https://x.com/buildwithdjdev">Dj</a> dey write di GPU drivers, and e get Touch ID to dey work by to dey tok directly to Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> dey specialise for M5 work: e reverse-engineer Apple proprietary N1 chip and get im Wi-Fi and Bluetooth to dey work for Linux. E still don contribute hardware video encoding and decoding, Bluetooth, and desktop improvements for di Neo. <a href="https://x.com/LiamRay1O">Liam</a> dey bring up di Neo trackpad, power management, speakers, and headphone output, with Ryan macOS traces dey provide essential groundwork. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> dey maintain M4 support and clean-room implementations, and e dey work for integration and packaging. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> enable <a href="https://github.com/subedijaidip/dp-altmode-t8112">external displays over USB-C for M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> dey build <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, wey dey bring Apple MLX machine learning framework come Linux for Apple GPUs through Vulkan. Your code still dey tok <code>import mlx.core as mx</code>, but now e dey run for Omarchy.</p>
+
+<p><strong>Older Macs.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> get stack of pull requests for 2016 and 2017 Touch Bar MacBook Pros: speakers, Wi-Fi, di ambient light sensor, di Touch Bar imself. <a href="https://x.com/novuon_ai">Randy</a> dey reverse-engineer di T2 security chip to bring Touch ID come Intel Macs, and e dey document every fix for 2019 MacBook Pro along di way. <a href="https://x.com/jondkinney">Jon Kinney</a> bin dey chip away for ARM support for Omarchy one year ago, and now e dey keep di whole team coordinated on who dey do wetin.</p>
+
+<p>Togeda, dem na formidable group. Fifteen pipo wey no wait for permission, and wey don dey use agents take move for pace wey for seem absurd one year ago.</p>
+
+<p>Di target for di first release na perfect compatibility with M1 and M2, including Pro and Max variants:</p>
+
+<ul>
+  <li>Seamless installer, with both instal and try options</li>
+  <li>Full GPU support</li>
+  <li>External monitors over USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Disk encryption</li>
+</ul>
+
+<p>Dem dey work on newer machines for parallel, but M1 and M2 na where we plant flag first. Plus di M machines, millions of vintage laptops dey out there, many of dem Apple latest macOS ambitions don already retire, and every one of dem na wonderful Omarchy computer wey dey wait to happen.</p>
+
+<p>You no need to wait for di polished release before you start. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> go make you dey look di real desktop for your Mac inside minutes. And if you ready to commit, <a href="https://github.com/maralcbr/omarchy-mx-mac">the installer</a> go put Omarchy beside macOS for M1 or M2 today.</p>
+
+<p>Finally, one request. If you don dey work on Linux for Apple hardware, whether na kernel drivers, firmware, packaging, installers, or machine learning, we go love to hear from you. Good chance dey say you don solve sometin wey we still dey chase, or vice versa. Get in touch for <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Make we finish wetin Asahi start.</p>
