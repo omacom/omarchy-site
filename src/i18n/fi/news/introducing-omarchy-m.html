@@ -1,0 +1,40 @@
+<p>Apple tekee erinomaista rautaa. Niin se on aina tehnyt (lukuun ottamatta sitä yhtä kertaa perhosnäppäimistön kanssa). Ja monet Omarchyyn saapuvista tulevat Macilta. Monet heistä haluaisivat pitää koneen mutta luopua käyttöjärjestelmästä. Joten aiomme viedä loppuun sen, minkä Asahi aloitti: Omarchy pyörimässä kauniisti Apple Siliconilla, mahdollisimman pienellä säätämisellä.</p>
+
+<p>Tällä työllä on jo tiimi takanaan. Tänään teemme siitä virallista: <a href="/teams/#m">Omarchy M</a>, tiimimme Apple Siliconilla varustetuille Maceille (sekä muutama jäsen, jotka pitävät vanhemmat Macit mukana menossa).</p>
+
+<p>Saanko esitellä jäsenet.</p>
+
+<p><strong>Asennusohjelma.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> rakentaa <a href="https://github.com/maralcbr/omarchy-mx-mac">natiivia Mac-asennusohjelmaa</a>. Lataat sovelluksen macOS:ssä, se hakee allekirjoitetun Omarchy-julkaisun, lohkaisee levyosiot ja käynnistää sinut Omarchyyn nykyisen macOS:si rinnalle. Ei USB-tikkua, ei loitsuja terminaalissa. Hän teki myös buildin, joka herätti ulkoiset näytöt henkiin USB-C:n yli.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> on ylläpitänyt <a href="https://github.com/omacom/omarchy-mac">Omarchy Macia</a> vuoden ajan, saaden Omarchyn M1- ja M2-koneille kauan ennen kuin mikään tästä oli virallista, ja rakentaen sen ympärille yli 800 ihmisen Discord-yhteisön. <a href="https://x.com/bi9kahuna">Scott Jones</a> on projektin toinen puolisko asennuksen Linux-puolella. Hän sai hiljattain M3 Airin näytön toimimaan Applen laitteistonäyttöohjaimella, mikä muutti koneen käyttökelvottomasta käyttökelpoiseksi yhdessä yössä.</p>
+
+<p><strong>Kokeile Omarchyä.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> rakensi <a href="https://github.com/omacom/try-omarchy">Try Omarchyn</a>: aidon Omarchy-työpöydän pyörimässä natiivina, laitteistokiihdytettynä sovelluksena Macillasi, kamera, ääni, leikepöytä ja jaettu kansio kytkettyinä. Ei mitään osioitavaa. Lataa se vain ja katso, mistä hälinä johtuu.</p>
+
+<p><strong>Paketit.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> varmistaa, että kaikki Omarchyn tarvitsema on olemassa <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64-pakettina</a>, sekä yleiset ARM64-levykuvat virtuaalikoneille ja vierastyökalut, jotka tekevät niistä miellyttäviä käyttää.</p>
+
+<p><strong>Ajurit ja kerneli.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> tuo Neoa ylös ja rakentaa perustuksia, joiden päälle muu tiimi työskentelee. Hän kehittää SPTM-emulaattoria, joka mahdollistaa macOS:n jäljittämisen M4- ja uudemmilla siruilla. Nuo jäljitykset ovat välttämättömiä näyttöjen, GPU:iden, äänen, langattoman verkon ja Bluetoothin toimimaan saamiseksi. <a href="https://x.com/buildwithdjdev">Dj</a> kirjoittaa GPU-ajureita ja sai Touch ID:n toimimaan puhumalla suoraan Secure Enclavelle. <a href="https://x.com/acelogic_">Miguel Cruz</a> on erikoistunut M5-työhön: hän käänteismallinsi Applen suljetun N1-sirun ja sai sen Wi-Fin ja Bluetoothin toimimaan Linuxissa. Hän on myös tehnyt laitteistopohjaisen videon koodauksen ja dekoodauksen, Bluetoothin ja työpöytäparannuksia Neolle. <a href="https://x.com/LiamRay1O">Liam</a> tuo ylös Neon kosketuslevyä, virranhallintaa, kaiuttimia ja kuulokelähtöä, Ryanin macOS-jäljitysten tarjotessa välttämättömän pohjatyön. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> ylläpitää M4-tukea ja clean-room-toteutuksia sekä työskentelee integraation ja paketoinnin parissa. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> mahdollisti <a href="https://github.com/subedijaidip/dp-altmode-t8112">ulkoiset näytöt USB-C:n yli M2 MacBook Airilla</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> rakentaa <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchyä</a>, joka tuo Applen MLX-koneoppimiskehyksen Linuxiin Applen GPU:illa Vulkanin kautta. Koodisi sanoo edelleen <code>import mlx.core as mx</code>, mutta nyt se pyörii Omarchyssa.</p>
+
+<p><strong>Vanhemmat Macit.</strong> <a href="https://x.com/shawnyeager">Shawn Yeagerilla</a> on pino pull requesteja vuoden 2016 ja 2017 Touch Bar MacBook Proille: kaiuttimet, Wi-Fi, ympäristön valoisuusanturi, itse Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> käänteismallintaa T2-turvasirua tuodakseen Touch ID:n Intel-Maceille ja dokumentoi jokaisen korjauksen vuoden 2019 MacBook Prolle matkan varrella. <a href="https://x.com/jondkinney">Jon Kinney</a> nakersi ARM-tukea Omarchylle vuosi sitten, ja pitää nyt koko tiimin kartalla siitä, kuka tekee mitä.</p>
+
+<p>Yhdessä he ovat pelottavan kova porukka. Viisitoista ihmistä, jotka eivät jääneet odottamaan lupaa ja jotka ovat käyttäneet agentteja edetäkseen vauhtia, joka olisi tuntunut absurdilta vuosi sitten.</p>
+
+<p>Ensimmäisen julkaisun tavoitteena on täydellinen yhteensopivuus M1:n ja M2:n kanssa, mukaan lukien Pro- ja Max-variantit:</p>
+
+<ul>
+  <li>Saumaton asennusohjelma, sekä asennus- että kokeiluvaihtoehdoilla</li>
+  <li>Täysi GPU-tuki</li>
+  <li>Ulkoiset näytöt USB-C:n yli</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Levysalaus</li>
+</ul>
+
+<p>Uudempia koneita työstetään rinnakkain, mutta M1 ja M2 ovat siellä, minne iskemme lippumme ensin. M-koneiden lisäksi maailmalla on miljoonia vintage-kannettavia, joista monet ovat jo jääneet Applen uusimpien macOS-haaveiden ulkopuolelle, ja jokainen niistä on upea Omarchy-tietokone odottamassa syntymistään.</p>
+
+<p>Sinun ei tarvitse odottaa hiottua julkaisua päästäksesi alkuun. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> saa sinut katsomaan aitoa työpöytää Macillasi minuuteissa. Ja jos olet valmis sitoutumaan, <a href="https://github.com/maralcbr/omarchy-mx-mac">asennusohjelma</a> laittaa Omarchyn macOS:n rinnalle M1:lle tai M2:lle jo tänään.</p>
+
+<p>Lopuksi pyyntö. Jos olet työskennellyt Linuxin parissa Applen raudalla, oli kyse sitten kerneliajureista, firmwaresta, paketoinnista, asennusohjelmista tai koneoppimisesta, haluaisimme kuulla sinusta. On hyvä mahdollisuus, että olet ratkaissut jotain, mitä me vielä jahtaamme, tai päinvastoin. Ota yhteyttä osoitteessa <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Viedään loppuun se, minkä Asahi aloitti.</p>

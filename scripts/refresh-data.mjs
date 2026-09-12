@@ -19,6 +19,11 @@ import prettier from 'prettier'
 import { assetId } from './lib/asset-id.mjs'
 import { decodeCalendarText } from './lib/ical.mjs'
 import { geocodeTitle } from './lib/geocode.mjs'
+import {
+  fetchDonations,
+  replaceSections,
+  tierSections,
+} from './lib/zeffy-patrons.mjs'
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'src/data')
@@ -120,15 +125,26 @@ const version = String(release.tag_name ?? '').replace(/^v/, '')
 if (!/^\d+\.\d+\.\d+$/.test(version)) {
   throw new Error(`unexpected release tag: ${release.tag_name}`)
 }
-await writeFile(
-  path.join(OUT, 'version.json'),
-  JSON.stringify(
-    { version, isoUrl: `https://iso.omarchy.org/omarchy-${version}.iso` },
-    null,
-    1,
-  ),
-)
-console.log(`version.json: ${version}`)
+const versionPath = path.join(OUT, 'version.json')
+const currentRelease = JSON.parse(await readFile(versionPath, 'utf8'))
+// An ISO can be published before GitHub marks its release as latest.
+if (
+  version.localeCompare(currentRelease.version, 'en', { numeric: true }) < 0
+) {
+  console.log(
+    `version.json: keeping ${currentRelease.version} (GitHub latest is ${version})`,
+  )
+} else {
+  await writeFile(
+    versionPath,
+    JSON.stringify(
+      { version, isoUrl: `https://iso.omarchy.org/omarchy-${version}.iso` },
+      null,
+      1,
+    ),
+  )
+  console.log(`version.json: ${version}`)
+}
 
 // Refresh GitHub figures; foundation and download announcements are maintained separately.
 const MOMENTUM = path.join(OUT, 'momentum.json')
@@ -277,13 +293,24 @@ if (CF_TOKEN && CF_ZONE) {
       )
       const isoBytes = Number(head.headers.get('content-length'))
       if (!(isoBytes > 1e9)) throw new Error(`odd ISO size: ${isoBytes}`)
-      const rows = await isoTraffic(start, yesterday)
+      // Reach back far enough for the period rows even when the ledger
+      // only needs a day, so one query serves both.
+      const periodDays = Math.max(
+        30,
+        ...(momentum.downloads.periods ?? []).map((p) => p.days),
+      )
+      const fetchStart =
+        start < day(daysAgo(periodDays)) ? start : day(daysAgo(periodDays))
+      const rows = await isoTraffic(fetchStart, yesterday)
       let bytes = 0
+      const perDay = new Map()
       const countries = new Set(counting.countries)
       const perCountryDay = new Map()
       for (const row of rows) {
-        bytes += row.sum.edgeResponseBytes
-        const key = `${row.dimensions.date} ${row.dimensions.clientCountryName}`
+        const date = row.dimensions.date
+        perDay.set(date, (perDay.get(date) ?? 0) + row.sum.edgeResponseBytes)
+        if (date >= start) bytes += row.sum.edgeResponseBytes
+        const key = `${date} ${row.dimensions.clientCountryName}`
         perCountryDay.set(
           key,
           (perCountryDay.get(key) ?? 0) + row.sum.edgeResponseBytes,
@@ -293,6 +320,14 @@ if (CF_TOKEN && CF_ZONE) {
         if (sent >= isoBytes) countries.add(key.split(' ')[1])
       }
       const added = Math.round(bytes / isoBytes)
+      // The Yesterday / Last week / Last month rows on the figures card:
+      // each is its trailing window's bytes ending yesterday, in ISOs.
+      for (const period of momentum.downloads.periods ?? []) {
+        const cutoff = day(daysAgo(period.days))
+        let sent = 0
+        for (const [date, b] of perDay) if (date >= cutoff) sent += b
+        period.count = Math.round(sent / isoBytes)
+      }
       momentum.downloads.total += added
       momentum.downloads.countries = Math.max(
         momentum.downloads.countries,
@@ -325,6 +360,27 @@ if (CF_TOKEN && CF_ZONE) {
 } else {
   console.log(
     'momentum.json: ISO downloads left as they were, no Cloudflare token',
+  )
+}
+
+// ---------------------------------------------------------- open patrons
+// The tier sections on /patrons, rebuilt from Zeffy's public donor list -
+// no credentials needed. The generated span lives between markers in
+// patrons/index.html, the page source port_content.py carries into
+// pages.json at build; when Zeffy is unreachable the page stays as it is.
+try {
+  const PATRONS_PAGE = path.join(ROOT, 'patrons/index.html')
+  const page = await readFile(PATRONS_PAGE, 'utf8')
+  const donations = await fetchDonations()
+  const replaced = replaceSections(page, tierSections(donations))
+  if (replaced == null) throw new Error('markers missing')
+  if (replaced !== page) await writeFile(PATRONS_PAGE, replaced)
+  console.log(
+    `patrons/index.html: ${donations.length} donations across the open patron tiers`,
+  )
+} catch (error) {
+  console.warn(
+    `patrons/index.html: open patrons left as they were, ${error.message}`,
   )
 }
 

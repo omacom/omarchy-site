@@ -45,6 +45,18 @@
     "meta": "Japan",
     "href": "https://x.com/kwilczynski",
     "avatar": "/assets/images/team/krzysztof-wilczynski.webp"
+   },
+   {
+    "name": "outfoxxed",
+    "meta": "USA",
+    "href": "https://x.com/outfoxxedd",
+    "avatar": "/assets/images/team/outfoxxed.webp"
+   },
+   {
+    "name": "Emir Beganovi\u0107",
+    "meta": "Netherlands",
+    "href": "https://x.com/emirbeganovic",
+    "avatar": "/assets/images/team/emir-beganovic.webp"
    }
   ],
   "note": null
@@ -62,7 +74,7 @@
    },
    {
     "name": "Mehmet \u0130nce",
-    "meta": "UK",
+    "meta": "UK/T\u00fcrkiye",
     "href": "https://x.com/mdisec",
     "avatar": "/assets/images/team/mehmet-ince.webp"
    },
@@ -128,6 +140,108 @@
    }
   ],
   "note": null
+ },
+ {
+  "id": "m",
+  "name": "Omarchy M",
+  "description": "Bringing Omarchy to the Mac",
+  "members": [
+   {
+    "name": "Marcelo Alcantara",
+    "meta": "Brazil/Australia",
+    "href": "https://x.com/maralcbr",
+    "avatar": "/assets/images/team/marcelo-alcantara.webp"
+   },
+   {
+    "name": "Naeem Malik",
+    "meta": "India",
+    "href": "https://x.com/tiredkebab",
+    "avatar": "/assets/images/team/naeem-malik.webp"
+   },
+   {
+    "name": "Scott Jones",
+    "meta": "USA",
+    "href": "https://x.com/bi9kahuna",
+    "avatar": "/assets/images/team/scott-jones.webp"
+   },
+   {
+    "name": "Eduardo Martinez",
+    "meta": "Portugal",
+    "href": "https://x.com/martiano",
+    "avatar": "/assets/images/team/eduardo-martinez.webp"
+   },
+   {
+    "name": "Shun Li",
+    "meta": "China",
+    "href": "https://x.com/riverleaf88",
+    "avatar": "/assets/images/team/shun-li.webp"
+   },
+   {
+    "name": "Dj",
+    "meta": "Canada",
+    "href": "https://x.com/buildwithdjdev",
+    "avatar": "/assets/images/team/dj.webp"
+   },
+   {
+    "name": "Ryan Murray",
+    "meta": "Australia",
+    "href": "https://github.com/RyanTheTide",
+    "avatar": "/assets/images/team/ryan-murray.webp"
+   },
+   {
+    "name": "Miguel Cruz",
+    "meta": "USA",
+    "href": "https://x.com/acelogic_",
+    "avatar": "/assets/images/team/miguel-cruz.webp"
+   },
+   {
+    "name": "Liam",
+    "meta": "USA",
+    "href": "https://x.com/LiamRay1O",
+    "avatar": "/assets/images/team/liam.webp"
+   },
+   {
+    "name": "Eryk Wieliczko",
+    "meta": "Poland",
+    "href": "https://x.com/ewninjaofficial",
+    "avatar": "/assets/images/team/eryk-wieliczko.webp"
+   },
+   {
+    "name": "Jaidip Subedi",
+    "meta": "Nepal",
+    "href": "https://x.com/jaidipsubedi",
+    "avatar": "/assets/images/team/jaidip-subedi.webp"
+   },
+   {
+    "name": "Joshua Warren",
+    "meta": "USA",
+    "href": "https://x.com/JoshuaSWarren",
+    "avatar": "/assets/images/team/joshua-warren.webp"
+   },
+   {
+    "name": "Shawn Yeager",
+    "meta": "USA",
+    "href": "https://x.com/shawnyeager",
+    "avatar": "/assets/images/team/shawn-yeager.webp"
+   },
+   {
+    "name": "Randy",
+    "meta": "Netherlands",
+    "href": "https://x.com/novuon_ai",
+    "avatar": "/assets/images/team/randy.webp"
+   },
+   {
+    "name": "Jon Kinney",
+    "meta": "USA",
+    "href": "https://x.com/jondkinney",
+    "avatar": "/assets/images/team/jon-kinney.webp"
+   }
+  ],
+  "note": {
+   "text": "Working on Linux for Apple hardware? Get in touch at apple@omarchy.org",
+   "href": "mailto:apple@omarchy.org",
+   "linkText": "apple@omarchy.org"
+  }
  },
  {
   "id": "rangers",

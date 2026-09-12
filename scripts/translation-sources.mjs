@@ -2,8 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 import ts from 'typescript'
 
-// Runtime translateHtml uses these exact innerHTML keys, including whitespace.
-const PROSE = /<(p|h2|h3|figcaption|li)\b([^>]*)>([\s\S]*?)<\/\1>/g
+import { PROSE } from '../src/lib/prose.ts'
 const literal = (node) =>
   node && (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node))
 const unwrap = (node) => {
@@ -139,6 +138,10 @@ export function collectSources(root = process.cwd()) {
     add(team.description)
     add(team.note?.text)
     add(team.note?.linkText)
+    // A member's countries are copy; their name is not. "USA/Denmark"
+    // is two of them, translated one at a time.
+    for (const member of team.members ?? [])
+      for (const country of member.meta?.split('/') ?? []) add(country)
   }
   for (const plugin of readJson('src/data/plugins.json', {}).plugins ?? [])
     if (featured.has(plugin.id)) add(plugin.description)
@@ -148,6 +151,8 @@ export function collectSources(root = process.cwd()) {
     // These routes render dedicated React pages, not the imported page HTML.
     if (['teams', 'meetups'].includes(slug)) continue
     add(page.title)
+    add(page.seoTitle)
+    add(page.description)
     const html = (page.html ?? '').replace(
       /<ul\b[^>]*class="[^"]*\bpatrons__supporters\b[^"]*"[^>]*>[\s\S]*?<\/ul>/g,
       '',

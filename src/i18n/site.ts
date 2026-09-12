@@ -7,6 +7,7 @@ export type Locale = {
   formatLocale: string
   ogLocale: string
   manual: boolean
+  aliases?: string[]
   contentLocale?: string
   direction?: 'ltr' | 'rtl'
   flag?: string
@@ -16,11 +17,39 @@ export const language = import.meta.env?.PUBLIC_SITE_LOCALE || 'en'
 if (!locales[language]) throw new Error(`Unknown site language: ${language}`)
 export const locale = locales[language]
 export const siteUrl = locale.domain
+
+/**
+ * The languages in the order a list shows them: English first, since it is
+ * the source, then the rest by their own name. The registry is in the order
+ * the languages arrived, which reads as no order at all.
+ */
+const byName = new Intl.Collator('en').compare
+export const sortedLocales: Array<[string, Locale]> = Object.entries(
+  locales,
+).sort(([a, la], [b, lb]) =>
+  a === 'en' ? -1 : b === 'en' ? 1 : byName(la.name, lb.name),
+)
 export const contentLocale = locale.contentLocale ?? language
 
 /** English is the source copy; each language keeps its own reviewed catalogue. */
 export function t(english: string): string {
   return catalogue[english] ?? english
+}
+
+/** A locale's flag, from its country code or its domain's suffix; a globe where
+ *  there is no country to show. */
+export function flag(domain: string, countryCode?: string) {
+  const country = countryCode ?? new URL(domain).hostname.split('.').at(-1)!
+  return country.length === 2
+    ? [...country.toUpperCase()]
+        .map((letter) => String.fromCodePoint(127397 + letter.charCodeAt(0)))
+        .join('')
+    : '🌐'
+}
+
+/** A team member's countries, "USA/Denmark", each translated on its own. */
+export function tCountries(meta: string): string {
+  return meta.split('/').map(t).join('/')
 }
 
 export function hasTranslation(code: string, path: string): boolean {

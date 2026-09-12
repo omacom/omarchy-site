@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 31 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each language has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
 
 ## Build and preview
 
@@ -47,11 +47,11 @@ The token stays in the child process environment and is never written to the rep
 
 To connect the registered domain, create its Cloudflare zone, preserve any existing DNS records, and set the assigned nameservers through the registrar. Once the zone is active, run the same deployment command with `--domain`. It attaches the language’s primary domain from the locale registry, and Cloudflare provisions HTTPS. This is a separate step from deploying the workers.dev preview.
 
-Language publishing is automatic through `translate-news.yml`. Manual deployment remains available for recovery.
+Language and country publishing is automatic through `translate-news.yml`. Before building, the workflow checks the live Worker inventory against the registry so a deployed edition cannot silently lose updates. Manual deployment remains available for recovery.
 
-## One primary address per language
+## Language and country editions
 
-The locale registry defines one public address for each language. The language menu, canonical URLs, Open Graph metadata, alternate-language links and deployment all use that same address. Do not register additional addresses or regional English editions. English has a single global edition at omarchy.org.
+The locale registry defines every deployed language and country edition. Country editions reuse English through `contentLocale: "en"`, while retaining their own domain, formatting locale, flag, and deployment so country-specific themes can be added independently. Keep all deployed editions in this registry: removing one stops its automatic updates without removing the live Worker. The global English edition remains at omarchy.org. Existing `www` domains are listed in `aliases` and preserved during deployment.
 
 The language menu shows colored country flags and preserves the current pathname, query and fragment when the destination has a translation. Otherwise it opens that language’s home page. Labels use native names, and English uses a globe. The `flag` field supplies the two-letter country code when needed. Arabic declares `direction: "rtl"`.
 
@@ -89,6 +89,7 @@ Cloudflare custom domains handle routing and TLS directly. Registered national d
 | Lietuvių         | [lt.omarchy.org](https://lt.omarchy.org) |
 | Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
 | Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
+| Norsk            | [omarchy.no](https://omarchy.no)         |
 | Shqip            | [sq.omarchy.org](https://sq.omarchy.org) |
 
 ## Pointing a new domain to a language site
@@ -118,7 +119,7 @@ Keep English chapters in the existing source repository. Store translations sepa
 
 ## Publish English first, translate afterward
 
-Push English component, prose, or Markdown news changes to master. The Pages workflow renders the Markdown and deploys English without waiting for any translations. After that deployment succeeds, the translation workflow regenerates the same English source, finds missing UI/prose keys and missing or stale news by source hash, and runs the site and news queues concurrently, each with up to eight Muse batches or stories in flight (at most sixteen combined). News does not wait behind site-copy translations. UI/prose batches contain at most 20 strings or 8,000 source characters (an indivisible longer HTML block remains intact). Each result must preserve HTML structure and links before it is saved; UI/prose also validates placeholders, numeric values, and command literals. Shared layout, styling, images, and code changes reach every language through the same builds without requiring translation. Successful translations are committed by the Actions bot; failed items remain queued for the hourly retry. A newer English edit invalidates older translations automatically.
+Push English component, prose, or Markdown news changes to master. The Pages workflow renders the Markdown and deploys English without waiting for any translations. After that deployment succeeds, the translation workflow regenerates the same English source, finds missing UI/prose keys and missing or stale news by source hash, and starts a separate GitHub Actions runner for each language with pending work. Each runner processes only that language, with the site and news queues running concurrently and up to two Muse requests per queue (four per runner). Languages without pending translations do not start a Muse runner. GitHub runs the language matrix in parallel up to the account’s runner capacity; Muse rate limits can also affect throughput. News does not wait behind site-copy translations. UI/prose batches contain at most 20 strings or 8,000 source characters (an indivisible longer HTML block remains intact). Each result must preserve HTML structure and links before it is saved; UI/prose also validates placeholders, numeric values, and command literals. Shared layout, styling, images, and code changes reach every language through the same builds without requiring translation. Runners upload only their own language changes as artifacts from the same source revision. One collection job validates and commits the combined results, so language runners never compete to push to master. Successful translations are committed by the Actions bot; failed items remain queued for the hourly retry. A newer English edit invalidates older translations automatically.
 
 The workflow builds and deploys language sites in a separate six-runner matrix. A model failure does not roll back English publication. If a language deployment fails, the hourly run retries deployment; you can also rerun failed jobs or manually dispatch the workflow. Concurrent runs are serialized; if a rebase conflicts with an editorial change, no forced push is attempted and the next run starts from current master.
 
@@ -129,6 +130,6 @@ Configure these repository Actions settings:
 - Variable `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account hosting the language Workers.
 - Optional variable `MUSE_MODEL`: defaults to `muse-spark-1.3-contributor`.
 
-The repository must allow GitHub Actions to write commits to master (or grant the bot the appropriate ruleset bypass). The worker only runs on trusted master after the English workflow, never on pull-request code. Bot translation commits do not trigger the English workflow again; the same translation run publishes its own results.
+The repository must allow GitHub Actions to write commits to master (or grant the bot the appropriate ruleset bypass). The workers only run on trusted master after the English workflow, never on pull-request code. Bot translation commits do not trigger the English workflow again; the same translation run publishes its own results.
 
-For a local catch-up, run `bin/build-news`, `npm run port`, then `npm run site:translate` and `npm run news:translate`. The Muse CLI must be installed and authenticated. `npm run site:pending` and `npm run news:pending` report remaining queues without invoking a model. Use `npm run check:translations -- --strict-site --strict-news` after a full catch-up. The manual remains English until the separate manual workflow is implemented.
+For a local catch-up, run `bin/build-news`, `npm run port`, then `npm run site:translate` and `npm run news:translate`. The Muse CLI must be installed and authenticated. `npm run site:pending` and `npm run news:pending` report remaining queues without invoking a model. Pass `-- --locale da` to either translation command to process just Danish; `--limit` is applied after language selection. Use `npm run check:translations -- --strict-site --strict-news` after a full catch-up. The manual remains English until the separate manual workflow is implemented.

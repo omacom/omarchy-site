@@ -54,7 +54,8 @@ def validate_value(source, value):
         raise TranslationError('placeholders changed')
     if Counter(LITERALS.findall(source_text)) != Counter(LITERALS.findall(target_text)):
         raise TranslationError('commands or literal references changed')
-    if numbers(source_text) != numbers(target_text):
+    # A number the source spells out may come back as a numeral, so only the source's digits are held to.
+    if numbers(source_text) - numbers(target_text):
         raise TranslationError('numeric values changed')
     return value
 
@@ -214,12 +215,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--concurrency', type=news.positive, default=8)
     parser.add_argument('--limit', type=news.positive, help='maximum number of source strings')
+    parser.add_argument('--locale', help='translate only this content language')
     args = parser.parse_args()
     try:
-        pending = collect_pending(ROOT)[:args.limit]
+        pending = collect_pending(ROOT)
         locales = json.loads((ROOT / 'src/i18n/locales.json').read_text(encoding='utf-8'))
         names = {code: data['name'] for code, data in locales.items()
                  if data.get('contentLocale', code) == code and code != 'en'}
+        pending = news.select_jobs(pending, names, args.locale, args.limit)
         batches = batch_jobs(pending)
         print(f'Translating {len(pending)} site strings in {len(batches)} batches', flush=True)
         saved, failed = process_batches(ROOT, batches, names, args.concurrency,
