@@ -64,6 +64,11 @@
       "family": "Omarchy Social Telugu",
       "file": "telugu.ttf",
       "characters": " ,.ంఅఇఏకగచజటడతదనపబమయరలళవసాిీుూెేైో్ౖ‌"
+    },
+    "Gujarati": {
+      "family": "Omarchy Social Gujarati",
+      "file": "gujarati.ttf",
+      "characters": " ંઅઇએકગજટતદનફબમયરલવશસાિીુેો્"
     }
   },
   "locales": {
@@ -103,6 +108,7 @@
     "pcm": "Latin",
     "te": "Telugu",
     "jv": "Latin",
+    "gu": "Gujarati",
     "ms": "Latin",
     "mai": "Devanagari",
     "ig": "Latin",
