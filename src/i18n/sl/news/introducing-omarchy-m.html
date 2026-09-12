@@ -1,0 +1,40 @@
+<p>Apple izdeluje odlično strojno opremo. Vedno jo je (minus tisti enkratni izlet s tipkovnico butterfly). In veliko ljudi, ki prihajajo k Omarchyju, prihaja z Maca. Mnogi bi radi obdržali stroj in izgubili operacijski sistem. Zato bomo dokončali, kar je Asahi začel: Omarchy, ki lepo teče na Apple Silicon, z minimalno muke pri nastavitvi.</p>
+
+<p>To delo že ima ekipo za seboj. Danes to uradno potrjujejo: <a href="/teams/#m">Omarchy M</a>, naša ekipa za Mace z Apple Silicon (plus nekaj članov, ki v krogu ohranjajo starejše Mace).</p>
+
+<p>Dovolite, da predstavim člane.</p>
+
+<p><strong>Namestitveni program.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> gradi <a href="https://github.com/maralcbr/omarchy-mx-mac">izvorni namestitveni program za Mac</a>. Na macOS prenesete aplikacijo, ta pridobi podpisano izdajo Omarchy, izreže particije in vas zažene v Omarchy ob vašem obstoječem macOS. Brez ključka USB, brez urokov v terminalu. Pripravil je tudi gradnjo, ki je prižgala zunanje monitorje prek USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> že leto vzdržuje <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>, spravlja Omarchy na stroje M1 in M2 dolgo preden je bilo karkoli od tega uradno, in gradi Discord skupnost več kot 800 ljudi okrog tega. <a href="https://x.com/bi9kahuna">Scott Jones</a> je druga polovica tega projekta na Linux strani namestitve. Nedavno je spravil v tek zaslon M3 Air na Applovem strojnim krmilniku zaslona, kar je ta stroj čez noč spremenilo iz neuporabnega v uporabnega.</p>
+
+<p><strong>Preizkusite Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> je zgradil <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: pravi namizni Omarchy, ki teče kot izvorna, strojno pospešena aplikacija na vašem Macu, s povezano kamero, zvokom, odložiščem in mapo v skupni rabi. Ničesar ni treba particionirati. Samo prenesite in poglejte, kaj je ves ta hrup.</p>
+
+<p><strong>Paketi.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> skrbi, da vse, kar Omarchy potrebuje, obstaja kot <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paket aarch64</a>, skupaj z generičnimi diskovnimi slikami ARM64 za navidezne stroje in gostujočimi orodji, ki jih naredijo prijetne za uporabo.</p>
+
+<p><strong>Gonilniki in jedro.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> dviguje Neo in gradi temelje, s katerih dela preostanek ekipe. Razvija emulator SPTM, ki omogoča sledenje macOS na čipih M4 in novejših. Ta sledenja so bistvena, da zasloni, GPU, zvok, brezžična povezava in Bluetooth delujejo. <a href="https://x.com/buildwithdjdev">Dj</a> piše gonilnike GPU in spravil v tek Touch ID tako, da govori neposredno s Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> je specialist za delo na M5: povratno je inženiral Applov lastniški čip N1 in spravil njegov Wi-Fi in Bluetooth v tek na Linuxu. Prispeval je tudi strojno kodiranje in dekodiranje videa, Bluetooth ter izboljšave namizja na Neu. <a href="https://x.com/LiamRay1O">Liam</a> dviguje sledilno ploščico Nea, upravljanje porabe, zvočnike in izhod za slušalke, pri čemer Ryanova sledenja macOS zagotavljajo bistveno podlago. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> vzdržuje podporo za M4 in čiste implementacije ter dela na integraciji in pakiranju. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> je omogočil <a href="https://github.com/subedijaidip/dp-altmode-t8112">zunanje zaslone prek USB-C na M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> gradi <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, ki prinaša Applovo ogrodje za strojno učenje MLX na Linux na Applovih GPU prek Vulkana. Vaša koda še vedno pravi <code>import mlx.core as mx</code>, a zdaj teče na Omarchyju.</p>
+
+<p><strong>Starejši Maci.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> ima sklad pull requestov za Touch Bar MacBook Pro iz let 2016 in 2017: zvočniki, Wi-Fi, senzor ambientalne svetlobe, sam Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> povratno inženira varnostni čip T2, da prinese Touch ID na Intel Mace, in sproti dokumentira vsak popravek za MacBook Pro 2019. <a href="https://x.com/jondkinney">Jon Kinney</a> je že pred letom dni kljuval podporo ARM za Omarchy, zdaj pa koordinira celotno ekipo, kdo kaj počne.</p>
+
+<p>Skupaj so mogočna skupina. Petnajst ljudi, ki niso čakali na dovoljenje in ki uporabljajo agente za gibanje v tempu, ki bi se bil pred letom dni zdel absurden.</p>
+
+<p>Cilj prve izdaje je popolna združljivost z M1 in M2, vključno z različicama Pro in Max:</p>
+
+<ul>
+  <li>Brezhiben namestitveni program, z možnostma namestitve in preizkusa</li>
+  <li>Polna podpora GPU</li>
+  <li>Zunanji monitorji prek USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Šifriranje diska</li>
+</ul>
+
+<p>Na novejših strojih se vzporedno dela, a zastavo najprej zasadimo pri M1 in M2. Poleg strojev M je tam zunaj še milijone starinskih prenosnikov, mnogi že upokojeni iz Applovih najnovejših ambicij macOS, in vsak od njih je čudovit računalnik Omarchy, ki samo čaka, da se zgodi.</p>
+
+<p>Ni vam treba čakati na spolirano izdajo, da začnete. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> vas bo v minutah postavil pred pravo namizje na vašem Macu. In če ste pripravljeni na zavezo, vas bo <a href="https://github.com/maralcbr/omarchy-mx-mac">namestitveni program</a> danes postavil Omarchy ob macOS na M1 ali M2.</p>
+
+<p>Na koncu še prošnja. Če ste delali na Linuxu za Applovo strojno opremo, pa naj bodo to jedrni gonilniki, vdelana programska oprema, pakiranje, namestitveni programi ali strojno učenje, bi radi slišali od vas. Obstaja velika verjetnost, da ste rešili nekaj, čemur mi še sledimo, ali obratno. Pišite na <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Dokončajmo, kar je Asahi začel.</p>

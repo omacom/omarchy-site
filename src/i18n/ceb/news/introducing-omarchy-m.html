@@ -1,0 +1,40 @@
+<p>Naghimo og maayong hardware ang Apple. Kanunay sila (gawas niadtong usa ka higayon sa butterfly keyboard). Ug daghan sa mga tawo nga moabot sa Omarchy gikan sa Mac. Daghan kanila gusto magpabilin sa makina ug isalikway ang operating system. Busa tapuson namo ang gisugdan sa Asahi: ang Omarchy nga matahum modagan sa Apple Silicon, nga gamay ra kaayog hasol sa setup.</p>
+
+<p>Kini nga trabaho aduna nay team sa luyo niini. Karon himoon namo kini nga opisyal: <a href="/teams/#m">Omarchy M</a>, among team alang sa mga Mac nga may Apple Silicon (uban sa pipila ka miyembro nga nagpabilin sa daang mga Mac).</p>
+
+<p>Tugoti ko sa pagpaila sa mga miyembro.</p>
+
+<p><strong>Ang installer.</strong> Si <a href="https://x.com/maralcbr">Marcelo Alcantara</a> maoy nagtukod sa <a href="https://github.com/maralcbr/omarchy-mx-mac">lumad nga Mac installer</a>. Mag-download kag app sa macOS, kuhaon niini ang signed nga Omarchy release, magkulit og mga partition, ug i-boot ka ngadto sa Omarchy tapad sa imong kasamtangang macOS. Walay USB stick, walay mga orasyon sa terminal. Siya usab ang naghimo sa build nga nagpasiga sa mga external monitor pinaagi sa USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> Si <a href="https://x.com/tiredkebab">Naeem Malik</a> maoy nagmentinar sa <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> sulod sa usa ka tuig, nga nagdala sa Omarchy ngadto sa mga M1 ug M2 machine dugay na sa wala pa kini mahimong opisyal, ug nagtukod og Discord community nga kapin 800 ka tawo libot niini. Si <a href="https://x.com/bi9kahuna">Scott Jones</a> mao ang laing katunga nianang proyekto sa Linux nga bahin sa install. Bag-o lang niyang napaandar ang display sa M3 Air sa hardware display controller sa Apple, nga nagdala nianang makina gikan sa dili magamit ngadto sa magamit sulod sa usa ka gabii.</p>
+
+<p><strong>Try Omarchy.</strong> Si <a href="https://x.com/martiano">Eduardo Martinez</a> maoy nagtukod sa <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: ang tinuod nga Omarchy desktop nga nagdagan isip lumad, hardware-accelerated nga app sa imong Mac, uban sa imong camera, audio, clipboard, ug gipaambit nga folder nga konektado. Walay i-partition. I-download lang kini ug tan-awa kon unsa ang kasamok.</p>
+
+<p><strong>Mga package.</strong> Si <a href="https://x.com/riverleaf88">Shun Li</a> maoy nagsiguro nga ang tanan nga gikinahanglan sa Omarchy anaa isip <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package</a>, uban sa generic ARM64 disk images alang sa mga virtual machine ug sa mga guest tool nga naghimo niini nga nindot gamiton.</p>
+
+<p><strong>Mga driver ug ang kernel.</strong> Si <a href="https://github.com/RyanTheTide">Ryan Murray</a> maoy nagpadagan sa Neo ug nagtukod sa mga pundasyon nga gitrabahoan sa ubang team. Nag-develop siya og SPTM emulator nga naghimo nga posible ang pag-trace sa macOS sa M4 ug mas bag-ong mga chip. Kining mga trace esensyal aron mogana ang mga display, GPU, audio, wireless, ug Bluetooth. Si <a href="https://x.com/buildwithdjdev">Dj</a> maoy nagsulat sa mga GPU driver, ug napaandar ang Touch ID pinaagi sa direktang pakigsulti sa Secure Enclave. Si <a href="https://x.com/acelogic_">Miguel Cruz</a> espesyalista sa M5 nga trabaho: gi-reverse-engineer niya ang proprietary N1 chip sa Apple ug napaandar ang Wi-Fi ug Bluetooth niini sa Linux. Nitampo usab siya og hardware video encoding ug decoding, Bluetooth, ug mga pagpaayo sa desktop sa Neo. Si <a href="https://x.com/LiamRay1O">Liam</a> maoy nagpadagan sa trackpad, power management, mga speaker, ug headphone output sa Neo, uban sa mga macOS trace ni Ryan nga naghatag og esensyal nga pundasyon. Si <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> maoy nagmentinar sa M4 nga suporta ug mga clean-room implementation, ug nagtrabaho sa integration ug packaging. Si <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> maoy nagpahimo sa <a href="https://github.com/subedijaidip/dp-altmode-t8112">mga external display pinaagi sa USB-C sa M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> Si <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> maoy nagtukod sa <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, nga nagdala sa MLX machine learning framework sa Apple ngadto sa Linux sa mga Apple GPU pinaagi sa Vulkan. Ang imong code mag-ingon gihapon og <code>import mlx.core as mx</code>, apan karon modagan na kini sa Omarchy.</p>
+
+<p><strong>Daang mga Mac.</strong> Si <a href="https://x.com/shawnyeager">Shawn Yeager</a> adunay tapok sa mga pull request alang sa 2016 ug 2017 Touch Bar MacBook Pros: mga speaker, Wi-Fi, ambient light sensor, ang Touch Bar mismo. Si <a href="https://x.com/novuon_ai">Randy</a> maoy nag-reverse-engineer sa T2 security chip aron dalhon ang Touch ID ngadto sa mga Intel Mac, ug nagdokumento sa matag ayo alang sa 2019 MacBook Pro sa dalan. Si <a href="https://x.com/jondkinney">Jon Kinney</a> naghinay-hinay og trabaho sa ARM nga suporta alang sa Omarchy usa ka tuig na ang milabay, ug karon nagpabilin nga koordinado ang tibuok team kon kinsa ang nagbuhat og unsa.</p>
+
+<p>Sa tingub, makalilisang sila nga grupo. Kinse ka tawo nga wala maghulat og pagtugot, ug nga naggamit og mga agent aron molihok sa kakusog nga daw absurd usa ka tuig na ang milabay.</p>
+
+<p>Ang target alang sa unang release mao ang hingpit nga compatibility sa M1 ug M2, apil ang Pro ug Max nga mga variant:</p>
+
+<ul>
+  <li>Usa ka hapsay nga installer, nga may install ug try nga mga opsyon</li>
+  <li>Kompletong suporta sa GPU</li>
+  <li>Mga external monitor pinaagi sa USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Pag-encrypt sa disk</li>
+</ul>
+
+<p>Ang mas bag-ong mga makina gitrabaho nga dungan, apan ang M1 ug M2 mao ang among unang itanom nga bandera. Dugang sa mga M machine, adunay minilyon ka vintage laptop diha, daghan niini retirado na gikan sa pinakabag-ong mga ambisyon sa macOS sa Apple, ug ang matag usa niini usa ka talagsaong Omarchy computer nga naghulat mahitabo.</p>
+
+<p>Dili ka kinahanglan maghulat sa polished nga release aron magsugod. Ang <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> magpakita kanimo sa tinuod nga desktop sa imong Mac sulod sa mga minuto. Ug kon andam ka nga mopasalig, ang <a href="https://github.com/maralcbr/omarchy-mx-mac">installer</a> magbutang sa Omarchy tapad sa macOS sa usa ka M1 o M2 karon.</p>
+
+<p>Sa kataposan, usa ka hangyo. Kon nagtrabaho ka sa Linux alang sa Apple hardware, mapa kernel driver, firmware, packaging, installer, o machine learning kana, gusto namo makadungog gikan kanimo. Dako ang tsansa nga nasulbad na nimo ang usa ka butang nga among gipangita pa, o baliktad. Pagkontak sa <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Tapuson nato ang gisugdan sa Asahi.</p>

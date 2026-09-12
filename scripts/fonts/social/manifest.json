@@ -8,17 +8,17 @@
     "Latin": {
       "family": "Omarchy Social Latin",
       "file": "latin.ttf",
-      "characters": " &',-.:?ABCDEFHIKLMOPSTUVWabcdefghijklmnopqrstuvwxyzÁàáäåæçèéíðóöøúüýþąđėęğıłşųẓ̧̨̛̌̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώạắẹềễệỉốờụứừử‘’“„"
+      "characters": " &',-.:?ABCDEFGHIJKLMNOPSTUVWYZabcdefghijklmnopqrstuvwxyzÁÄßàáãäåæçèéêëìíîðòóöøúûüýþąčđėęěğıłňşšůųžƏƙșțɔɗəɛɲ̧̨̛̣̦̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώАБВГЖОПСабвгдежзийклмнопрстуфхцчшыьэюяёіјљњўғқңүҳӘәӨөṣạắẹềễệỉịọốờụứừử‘’“„"
     },
     "Arabic": {
       "family": "Omarchy Social Arabic",
       "file": "arabic.ttf",
-      "characters": " .ءأابةتجحدرزسشصظعغقكلمنوئ"
+      "characters": " .،ءأئابةتثجحخدذرزسشصظعغفقكلمنهوىئِټٽپچړښکڪڭگھۆۇۈۋیېە۽‌"
     },
     "Devanagari": {
       "family": "Omarchy Social Devanagari",
       "file": "devanagari.ttf",
-      "characters": " ,ँंअएऔकगचजटढतदधनपबमयरलवशसह़ािीुेो।"
+      "characters": " ,.ँंअआइएऔकखगघचछजझटठडढणतदधनपफबभमयरलवशसह़ऽािीुूृेैो्।"
     },
     "Japanese": {
       "family": "Omarchy Social Japanese",
@@ -38,7 +38,7 @@
     "Bengali": {
       "family": "Omarchy Social Bengali",
       "file": "bengali.ttf",
-      "characters": " ।ঁআএওকখগঙজটডতথদধনপবমযরলস়ািুৃেো্"
+      "characters": " ।ঁআইএওকখগঙজটডণতথদধনপবভমযরলস়ািীুৃেো্ৰৱ"
     },
     "Sinhala": {
       "family": "Omarchy Social Sinhala",
@@ -59,6 +59,71 @@
       "family": "Omarchy Social Chinese",
       "file": "chinese.otf",
       "characters": " ,?ADHLVbegintux、。一不个亲代作功加原可坑好定小就心手打搞操改时玩生由的看系统置能自设该调路踩造随，？"
+    },
+    "Telugu": {
+      "family": "Omarchy Social Telugu",
+      "file": "telugu.ttf",
+      "characters": " ,.ంఅఇఏకగచజటడతదనపబమయరలళవసాిీుూెేైో్ౖ‌"
+    },
+    "Gurmukhi": {
+      "family": "Omarchy Social Gurmukhi",
+      "file": "gurmukhi.ttf",
+      "characters": " ,।ਂਅਈਏਕਗਘਚਜਟਢਣਤਦਧਬਮਯਰਲਵਸਹ਼ਾਿੀੁੇੋੰੱ"
+    },
+    "Ethiopic": {
+      "family": "Omarchy Social Ethiopic",
+      "file": "ethiopic.ttf",
+      "characters": " ለሊልሓሕመሚማምርሲስቆቕበቡቢብቫተታትቶችነናንኝአኣኤእኦከካክወዊውዕዘዙዝየያይደዱዳጀጆገጉግጓጠጢጥጸጽፍ።፣"
+    },
+    "Gujarati": {
+      "family": "Omarchy Social Gujarati",
+      "file": "gujarati.ttf",
+      "characters": " ંઅઇએકગજટતદનફબમયરલવશસાિીુેો્"
+    },
+    "Kannada": {
+      "family": "Omarchy Social Kannada",
+      "file": "kannada.ttf",
+      "characters": " ,.ಂಅಏಕಗಜಟಡಣತಥದನಪಬಮಯರಲಳವಸಾಿುೂೆೈೊೋ್ೕೖ‌"
+    },
+    "Myanmar": {
+      "family": "Omarchy Social Myanmar",
+      "file": "myanmar.ttf",
+      "characters": " ကခဂငစဆညတနပဖမရလသအါာိီုေဲံ့း်ျြွှဿ၊။၏"
+    },
+    "Odia": {
+      "family": "Omarchy Social Odia",
+      "file": "odia.ttf",
+      "characters": " ,।ଁଂଅଇଏକଗଙଜଟଣତଦଧନପବଭମଯରସାିୀୁେ୍ୟୱ"
+    },
+    "Malayalam": {
+      "family": "Omarchy Social Malayalam",
+      "file": "malayalam.ttf",
+      "characters": " -.ംഎഏകഗങചജടണതനപബമയരറലളവശസഹാിീുൂെേൈോ്"
+    },
+    "Khmer": {
+      "family": "Omarchy Social Khmer",
+      "file": "khmer.ttf",
+      "characters": " កគងចឆញដណតនបផភមយរលវសហអឬាិីុូើែៃោ់៍៏័្។"
+    },
+    "Hebrew": {
+      "family": "Omarchy Social Hebrew",
+      "file": "hebrew.ttf",
+      "characters": " אגדהוזיכלםמןנסעפצקרשת"
+    },
+    "Armenian": {
+      "family": "Omarchy Social Armenian",
+      "file": "armenian.ttf",
+      "characters": " -ԳՀՃՎՕ՝աբգդեզըթիլխծկհղճմյնշոչպջվրցւփքև։"
+    },
+    "Lao": {
+      "family": "Omarchy Social Lao",
+      "file": "lao.ttf",
+      "characters": " ກຂງຈຍດຕທນບປມລວສຫອະັາຳີືຸົຼຽເແໂໄ່້໌ໍ"
+    },
+    "Georgian": {
+      "family": "Omarchy Social Georgian",
+      "file": "georgian.ttf",
+      "characters": " აბგდევზთიკლმნოპრსტუქყშცწხ"
     }
   },
   "locales": {
@@ -92,6 +157,75 @@
     "lt": "Latin",
     "ga": "Latin",
     "nl": "Latin",
-    "no": "Latin"
+    "no": "Latin",
+    "ru": "Latin",
+    "id": "Latin",
+    "de": "Latin",
+    "pcm": "Latin",
+    "mr": "Devanagari",
+    "te": "Telugu",
+    "sw": "Latin",
+    "ha": "Latin",
+    "pa": "Gurmukhi",
+    "fa": "Arabic",
+    "am": "Ethiopic",
+    "jv": "Latin",
+    "gu": "Gujarati",
+    "kn": "Kannada",
+    "yo": "Latin",
+    "bho": "Devanagari",
+    "ms": "Latin",
+    "my": "Myanmar",
+    "ps": "Arabic",
+    "or": "Odia",
+    "ml": "Malayalam",
+    "uk": "Latin",
+    "om": "Latin",
+    "sd": "Arabic",
+    "mai": "Devanagari",
+    "su": "Latin",
+    "ne": "Devanagari",
+    "ig": "Latin",
+    "ro": "Latin",
+    "zu": "Latin",
+    "az": "Latin",
+    "as": "Bengali",
+    "so": "Latin",
+    "ceb": "Latin",
+    "xh": "Latin",
+    "ln": "Latin",
+    "km": "Khmer",
+    "mg": "Latin",
+    "af": "Latin",
+    "kk": "Latin",
+    "rw": "Latin",
+    "ku": "Latin",
+    "ny": "Latin",
+    "bm": "Latin",
+    "cs": "Latin",
+    "ht": "Latin",
+    "wo": "Latin",
+    "ak": "Latin",
+    "sn": "Latin",
+    "lg": "Latin",
+    "rn": "Latin",
+    "tk": "Latin",
+    "ug": "Arabic",
+    "tg": "Latin",
+    "sr": "Latin",
+    "he": "Hebrew",
+    "ti": "Ethiopic",
+    "bg": "Latin",
+    "sk": "Latin",
+    "hy": "Armenian",
+    "sq": "Latin",
+    "hr": "Latin",
+    "lo": "Lao",
+    "gn": "Latin",
+    "mn": "Latin",
+    "ky": "Latin",
+    "be": "Latin",
+    "ka": "Georgian",
+    "sl": "Latin"
   }
 }

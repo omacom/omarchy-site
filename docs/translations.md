@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 31 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each of the 100 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
 
 ## Build and preview
 
@@ -15,13 +15,15 @@ Each output contains its own domain, CNAME, canonical URLs, language metadata, l
 
 ## Add another language
 
-1. Register its language code, native name, domain, date/number formatting locale, Open Graph locale, and manual availability in `src/i18n/locales.json`. Use a unique domain. Keep `manual: false` until its manual is translated.
+1. Register its language code, native name (`name`), English name (`englishName`), ISO 15924 script code (`script`: `Latn`, `Cyrl`, `Arab`, `Deva`, `Hans`…), domain, date/number formatting locale, Open Graph locale, and manual availability in `src/i18n/locales.json`. Use a unique domain. Keep `manual: false` until its manual is translated. A right-to-left script (`Arab`, `Hebr`, `Thaa`, `Nkoo`, `Syrc`) must declare `direction: "rtl"`; no other entry sets `direction`. An edition whose domain does not end in a two-letter country code needs an explicit `flag`. Optional `searchTerms` lists other spellings the language switcher should find it by (`["farsi"]`); the native name, English name, code and formatting locale are always searchable, ignoring accents and case. `npm run check:translations` validates every field, including that Node's `Intl` supports the formatting locale.
 2. Add `src/i18n/messages/<code>.json`. English strings are keys; translations are values. Product names, commands, keyboard shortcuts, URLs, and menu paths shown in the actual Omarchy interface remain unchanged. Start with an empty JSON object and use `npm run site:translate` to populate it from current English sources; review the result.
 3. Add `src/i18n/<code>/blocks.json` for authored HTML prose on the imported main pages. Keys are the original HTML inside prose blocks. Preserve links, IDs, classes, images, and code. This avoids duplicating live patron and team lists.
 4. Add `src/i18n/<code>/news.json` with each article's translated title and `sourceHash`, plus the full article HTML in `news/<original-slug>.html`. Keep original slugs across languages so language switching lands on the same article. The source hash is SHA-256 of the English title, a newline, and the English HTML from `src/data/news-posts.json`.
 5. Run `npm run port`, `npm run check:translations`, and `npm run build:locale -- <code>`. Review the rendered pages at desktop and mobile widths before configuring the domain.
 
-Only register a language when its main pages and news are ready. The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
+Register a language before its translations are ready by adding `"draft": true` to its entry. A draft is fully translatable and buildable on its own: the pending queues, `translate-news.yml`'s translation matrix, strict checks, `npm run build:locale -- <code>`, `scripts/verify-locales.py <code>` and manual `npm run deploy:locale` all include it, and its own build lists itself in its switcher, footer and alternate links. Nothing else does: every published edition's switcher, footer, `hreflang` links, social-card set and deployment matrix skip drafts, so readers never reach an unfinished site. Drop the flag once `npm run check:translations -- --strict-site --strict-news <code>` passes and the domain is ready; the next workflow run deploys it and every other edition starts linking to it. In code, `publishedLocales` is the registry without drafts, `locales` and `sortedLocales` are what the current build links to (published, plus itself when it is a draft) and `allLocales` is the registry as written.
+
+The registry also controls the globe switcher beside the theme button, the footer language switch and search-engine alternate links. Translation builds include redirects from manual URLs to the English domain, preserving the chapter path. Once manual translation is implemented, the registry flag can be enabled for that language.
 
 ## Updating copy
 
@@ -32,6 +34,35 @@ Imported main-page prose uses exact English HTML keys. Changing the source creat
 Video titles, event names, theme names, and product names retain their original wording. Quoted article prose is translated with its attribution preserved. Each language uses its own date and number formatting, while funding amounts remain in USD. Write those amounts with an explicit currency — `1,000,000 USD`, not `$1,000,000` — because a bare `$` is the local currency sign in several countries.
 
 The separate `translate-news.yml` workflow runs after a successful English deployment, on manual dispatch, and hourly to retry unfinished translations. Adding a language to the registry includes it automatically.
+
+## One Muse owner per language
+
+For a large catch-up, such as adding many editions at once, `scripts/translate-owners.py`
+starts one headless Muse session per language instead of one request per batch.
+Each owner gets a workspace outside the repository (under
+`~/.local/state/omarchy-owners/<repo>/<code>/`) holding a frozen snapshot of the
+English sources, copies of the repository validators as `tools/validate.py`, and
+its output files. The session translates UI strings, page blocks, and every
+article over many steps, validating its own work as it goes. It cannot see the
+repository, has no network, and cannot delegate to other agents.
+
+```sh
+scripts/translate-owners.py prepare --roster        # seed roster editions as drafts and build workspaces
+scripts/translate-owners.py run                     # launch every owner, supervise, retry, resume
+scripts/translate-owners.py status
+scripts/translate-owners.py collect                 # validate again and write into src/i18n
+scripts/translate-owners.py publish --locale de     # strict check, social fonts, build, verify, then drop draft
+```
+
+`prepare --roster` reads `plans/100-languages-roster.json` (generated by
+`scripts/language-roster.py`) and adds each edition to the registry with
+`draft: true` and empty catalogues. `run` resumes: complete owners are skipped,
+incomplete or dead ones restart with a prompt pointing them at their own
+validator output, and rate-limited sessions back off. `collect` only writes
+translations that pass the same validators the workflow uses, keeps existing
+reviewed values, and skips articles whose English changed after the snapshot so
+the hourly workflow retranslates them. Review, run `npm run check:translations`,
+build the edition, and remove `draft` when it is ready to publish.
 
 ## Publish to Cloudflare
 
@@ -57,39 +88,108 @@ The language menu shows colored country flags and preserves the current pathname
 
 Cloudflare custom domains handle routing and TLS directly. Registered national domains use their assigned Cloudflare nameservers; language subdomains use the omarchy.org zone. Verify HTTPS and the page language before publishing a new primary address.
 
-| Language         | Primary address                          |
-| ---------------- | ---------------------------------------- |
-| English          | [omarchy.org](https://omarchy.org)       |
-| Dansk            | [omarchy.dk](https://omarchy.dk)         |
-| العربية          | [omarchy.ae](https://omarchy.ae)         |
-| Suomi            | [omarchy.fi](https://omarchy.fi)         |
-| Français         | [omarchy.fr](https://omarchy.fr)         |
-| Ελληνικά         | [omarchy.gr](https://omarchy.gr)         |
-| Magyar           | [omarchy.hu](https://omarchy.hu)         |
-| हिन्दी           | [omarchy.in](https://omarchy.in)         |
-| Íslenska         | [omarchy.is](https://omarchy.is)         |
-| 日本語           | [omarchy.jp](https://omarchy.jp)         |
-| 한국어           | [omarchy.kr](https://omarchy.kr)         |
-| Español (México) | [omarchy.mx](https://omarchy.mx)         |
-| Filipino         | [omarchy.ph](https://omarchy.ph)         |
-| Português        | [omarchy.pt](https://omarchy.pt)         |
-| Svenska          | [omarchy.se](https://omarchy.se)         |
-| Türkçe           | [omarchy.tr](https://omarchy.tr)         |
-| Tiếng Việt       | [vi.omarchy.org](https://vi.omarchy.org) |
-| اردو             | [ur.omarchy.org](https://ur.omarchy.org) |
-| বাংলা            | [bn.omarchy.org](https://bn.omarchy.org) |
-| Català           | [ca.omarchy.org](https://ca.omarchy.org) |
-| සිංහල            | [si.omarchy.org](https://si.omarchy.org) |
-| தமிழ்            | [ta.omarchy.org](https://ta.omarchy.org) |
-| ไทย              | [th.omarchy.org](https://th.omarchy.org) |
-| Oʻzbekcha        | [uz.omarchy.org](https://uz.omarchy.org) |
-| Italiano         | [it.omarchy.org](https://it.omarchy.org) |
-| 简体中文         | [zh.omarchy.org](https://zh.omarchy.org) |
-| Polski           | [pl.omarchy.org](https://pl.omarchy.org) |
-| Lietuvių         | [lt.omarchy.org](https://lt.omarchy.org) |
-| Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
-| Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
-| Norsk            | [omarchy.no](https://omarchy.no)         |
+| Language         | English name         | Primary address                            |
+| ---------------- | -------------------- | ------------------------------------------ |
+| English          | English              | [omarchy.org](https://omarchy.org)         |
+| Dansk            | Danish               | [omarchy.dk](https://omarchy.dk)           |
+| العربية          | Arabic               | [omarchy.ae](https://omarchy.ae)           |
+| Suomi            | Finnish              | [omarchy.fi](https://omarchy.fi)           |
+| Français         | French               | [omarchy.fr](https://omarchy.fr)           |
+| Ελληνικά         | Greek                | [omarchy.gr](https://omarchy.gr)           |
+| Magyar           | Hungarian            | [omarchy.hu](https://omarchy.hu)           |
+| हिन्दी           | Hindi                | [omarchy.in](https://omarchy.in)           |
+| Íslenska         | Icelandic            | [omarchy.is](https://omarchy.is)           |
+| 日本語              | Japanese             | [omarchy.jp](https://omarchy.jp)           |
+| 한국어              | Korean               | [omarchy.kr](https://omarchy.kr)           |
+| Español (México) | Spanish (Mexico)     | [omarchy.mx](https://omarchy.mx)           |
+| Filipino         | Filipino             | [omarchy.ph](https://omarchy.ph)           |
+| Português        | Portuguese           | [omarchy.pt](https://omarchy.pt)           |
+| Svenska          | Swedish              | [omarchy.se](https://omarchy.se)           |
+| Türkçe           | Turkish              | [omarchy.tr](https://omarchy.tr)           |
+| Tiếng Việt       | Vietnamese           | [vi.omarchy.org](https://vi.omarchy.org)   |
+| اردو             | Urdu                 | [ur.omarchy.org](https://ur.omarchy.org)   |
+| বাংলা            | Bengali              | [bn.omarchy.org](https://bn.omarchy.org)   |
+| Català           | Catalan              | [ca.omarchy.org](https://ca.omarchy.org)   |
+| සිංහල            | Sinhala              | [si.omarchy.org](https://si.omarchy.org)   |
+| தமிழ்            | Tamil                | [ta.omarchy.org](https://ta.omarchy.org)   |
+| ไทย              | Thai                 | [th.omarchy.org](https://th.omarchy.org)   |
+| Oʻzbekcha        | Uzbek                | [uz.omarchy.org](https://uz.omarchy.org)   |
+| Italiano         | Italian              | [it.omarchy.org](https://it.omarchy.org)   |
+| 简体中文             | Chinese (Simplified) | [zh.omarchy.org](https://zh.omarchy.org)   |
+| Polski           | Polish               | [pl.omarchy.org](https://pl.omarchy.org)   |
+| Lietuvių         | Lithuanian           | [lt.omarchy.org](https://lt.omarchy.org)   |
+| Gaeilge          | Irish                | [ga.omarchy.org](https://ga.omarchy.org)   |
+| Nederlands       | Dutch                | [nl.omarchy.org](https://nl.omarchy.org)   |
+| Norsk            | Norwegian            | [omarchy.no](https://omarchy.no)           |
+| Русский          | Russian              | [ru.omarchy.org](https://ru.omarchy.org)   |
+| Bahasa Indonesia | Indonesian           | [id.omarchy.org](https://id.omarchy.org)   |
+| Deutsch          | German               | [de.omarchy.org](https://de.omarchy.org)   |
+| Naijá            | Nigerian Pidgin      | [pcm.omarchy.org](https://pcm.omarchy.org) |
+| मराठी            | Marathi              | [mr.omarchy.org](https://mr.omarchy.org)   |
+| తెలుగు           | Telugu               | [te.omarchy.org](https://te.omarchy.org)   |
+| Kiswahili        | Swahili              | [sw.omarchy.org](https://sw.omarchy.org)   |
+| Hausa            | Hausa                | [ha.omarchy.org](https://ha.omarchy.org)   |
+| ਪੰਜਾਬੀ           | Punjabi              | [pa.omarchy.org](https://pa.omarchy.org)   |
+| فارسی            | Persian              | [fa.omarchy.org](https://fa.omarchy.org)   |
+| አማርኛ             | Amharic              | [am.omarchy.org](https://am.omarchy.org)   |
+| Basa Jawa        | Javanese             | [jv.omarchy.org](https://jv.omarchy.org)   |
+| ગુજરાતી          | Gujarati             | [gu.omarchy.org](https://gu.omarchy.org)   |
+| ಕನ್ನಡ            | Kannada              | [kn.omarchy.org](https://kn.omarchy.org)   |
+| Yorùbá           | Yoruba               | [yo.omarchy.org](https://yo.omarchy.org)   |
+| भोजपुरी          | Bhojpuri             | [bho.omarchy.org](https://bho.omarchy.org) |
+| Bahasa Melayu    | Malay                | [ms.omarchy.org](https://ms.omarchy.org)   |
+| မြန်မာ           | Burmese              | [my.omarchy.org](https://my.omarchy.org)   |
+| پښتو             | Pashto               | [ps.omarchy.org](https://ps.omarchy.org)   |
+| ଓଡ଼ିଆ            | Odia                 | [or.omarchy.org](https://or.omarchy.org)   |
+| മലയാളം           | Malayalam            | [ml.omarchy.org](https://ml.omarchy.org)   |
+| Українська       | Ukrainian            | [uk.omarchy.org](https://uk.omarchy.org)   |
+| Afaan Oromoo     | Oromo                | [om.omarchy.org](https://om.omarchy.org)   |
+| سنڌي             | Sindhi               | [sd.omarchy.org](https://sd.omarchy.org)   |
+| मैथिली           | Maithili             | [mai.omarchy.org](https://mai.omarchy.org) |
+| Basa Sunda       | Sundanese            | [su.omarchy.org](https://su.omarchy.org)   |
+| नेपाली           | Nepali               | [ne.omarchy.org](https://ne.omarchy.org)   |
+| Igbo             | Igbo                 | [ig.omarchy.org](https://ig.omarchy.org)   |
+| Română           | Romanian             | [ro.omarchy.org](https://ro.omarchy.org)   |
+| isiZulu          | Zulu                 | [zu.omarchy.org](https://zu.omarchy.org)   |
+| Azərbaycan dili  | Azerbaijani          | [az.omarchy.org](https://az.omarchy.org)   |
+| অসমীয়া          | Assamese             | [as.omarchy.org](https://as.omarchy.org)   |
+| Soomaali         | Somali               | [so.omarchy.org](https://so.omarchy.org)   |
+| Binisaya         | Cebuano              | [ceb.omarchy.org](https://ceb.omarchy.org) |
+| isiXhosa         | Xhosa                | [xh.omarchy.org](https://xh.omarchy.org)   |
+| Lingála          | Lingala              | [ln.omarchy.org](https://ln.omarchy.org)   |
+| ខ្មែរ            | Khmer                | [km.omarchy.org](https://km.omarchy.org)   |
+| Malagasy         | Malagasy             | [mg.omarchy.org](https://mg.omarchy.org)   |
+| Afrikaans        | Afrikaans            | [af.omarchy.org](https://af.omarchy.org)   |
+| Қазақ тілі       | Kazakh               | [kk.omarchy.org](https://kk.omarchy.org)   |
+| Ikinyarwanda     | Kinyarwanda          | [rw.omarchy.org](https://rw.omarchy.org)   |
+| Kurdî            | Kurdish              | [ku.omarchy.org](https://ku.omarchy.org)   |
+| Chichewa         | Chichewa             | [ny.omarchy.org](https://ny.omarchy.org)   |
+| Bamanankan       | Bambara              | [bm.omarchy.org](https://bm.omarchy.org)   |
+| Čeština          | Czech                | [cs.omarchy.org](https://cs.omarchy.org)   |
+| Kreyòl ayisyen   | Haitian Creole       | [ht.omarchy.org](https://ht.omarchy.org)   |
+| Wolof            | Wolof                | [wo.omarchy.org](https://wo.omarchy.org)   |
+| Akan             | Akan                 | [ak.omarchy.org](https://ak.omarchy.org)   |
+| chiShona         | Shona                | [sn.omarchy.org](https://sn.omarchy.org)   |
+| Luganda          | Luganda              | [lg.omarchy.org](https://lg.omarchy.org)   |
+| Ikirundi         | Kirundi              | [rn.omarchy.org](https://rn.omarchy.org)   |
+| Türkmen dili     | Turkmen              | [tk.omarchy.org](https://tk.omarchy.org)   |
+| ئۇيغۇرچە         | Uyghur               | [ug.omarchy.org](https://ug.omarchy.org)   |
+| Тоҷикӣ           | Tajik                | [tg.omarchy.org](https://tg.omarchy.org)   |
+| Српски           | Serbian              | [sr.omarchy.org](https://sr.omarchy.org)   |
+| עברית            | Hebrew               | [he.omarchy.org](https://he.omarchy.org)   |
+| ትግርኛ             | Tigrinya             | [ti.omarchy.org](https://ti.omarchy.org)   |
+| Български        | Bulgarian            | [bg.omarchy.org](https://bg.omarchy.org)   |
+| Slovenčina       | Slovak               | [sk.omarchy.org](https://sk.omarchy.org)   |
+| Հայերեն          | Armenian             | [hy.omarchy.org](https://hy.omarchy.org)   |
+| Shqip            | Albanian             | [sq.omarchy.org](https://sq.omarchy.org)   |
+| Hrvatski         | Croatian             | [hr.omarchy.org](https://hr.omarchy.org)   |
+| ລາວ              | Lao                  | [lo.omarchy.org](https://lo.omarchy.org)   |
+| Avañeʼẽ          | Guarani              | [gn.omarchy.org](https://gn.omarchy.org)   |
+| Монгол           | Mongolian            | [mn.omarchy.org](https://mn.omarchy.org)   |
+| Кыргызча         | Kyrgyz               | [ky.omarchy.org](https://ky.omarchy.org)   |
+| Беларуская       | Belarusian           | [be.omarchy.org](https://be.omarchy.org)   |
+| ქართული          | Georgian             | [ka.omarchy.org](https://ka.omarchy.org)   |
+| Slovenščina      | Slovenian            | [sl.omarchy.org](https://sl.omarchy.org)   |
 
 ## Pointing a new domain to a language site
 
@@ -128,6 +228,7 @@ Configure these repository Actions settings:
 - Secret `CLOUDFLARE_DEPLOY_API_TOKEN`: Workers deployment and custom-domain permissions; separate from the analytics token.
 - Variable `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account hosting the language Workers.
 - Optional variable `MUSE_MODEL`: defaults to `muse-spark-1.3-contributor`.
+- Optional variable `LANGUAGE_DEPLOY_PARALLEL`: how many language builds deploy at once (default 6). GitHub-hosted runners on the Free plan allow 20 concurrent jobs for the whole account, shared with the translation matrix and the English deploy.
 
 The repository must allow GitHub Actions to write commits to master (or grant the bot the appropriate ruleset bypass). The workers only run on trusted master after the English workflow, never on pull-request code. Bot translation commits do not trigger the English workflow again; the same translation run publishes its own results.
 

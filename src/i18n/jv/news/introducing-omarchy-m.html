@@ -1,0 +1,40 @@
+<p>Apple nggawe hardware sing apik. Mesthi wae (kajaba sing sepisan kae karo keyboard butterfly). Lan akeh wong sing teka menyang Omarchy teka saka Mac. Akeh sing pengin tetep nganggo mesine lan mbuwang sistem operasine. Dadi kita bakal ngrampungake sing diwiwiti Asahi: Omarchy mlaku kanthi endah ing Apple Silicon, kanthi repot setup seminimal mungkin.</p>
+
+<p>Kerja iku wis ana time ing mburine. Dina iki kita resmikake: <a href="/teams/#m">Omarchy M</a>, tim kita kanggo Mac nganggo Apple Silicon (plus sawetara anggota sing njaga Mac lawas tetep melu).</p>
+
+<p>Idinake aku ngenalake anggotane.</p>
+
+<p><strong>Installer.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> lagi nggawe <a href="https://github.com/maralcbr/omarchy-mx-mac">installer Mac asli</a>. Kowe ngundhuh aplikasi ing macOS, iki njupuk rilis Omarchy sing ditandatangani, ngukir partisine, lan nge-boot kowe menyang Omarchy ing sandhinge macOS sing wis ana. Ora perlu USB stick, ora perlu mantra ing terminal. Dheweke uga nggawe build sing nguripi monitor eksternal lewat USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> wis ngopeni <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> setaun, nggawa Omarchy menyang mesin M1 lan M2 suwe sadurunge kabeh iki resmi, lan mbangun komunitas Discord luwih saka 800 wong ing sakupenge. <a href="https://x.com/bi9kahuna">Scott Jones</a> iku separone proyek iku ing sisi Linux instalasi. Dheweke lagi wae nguripi layar M3 Air ing kontroler tampilan hardware Apple, sing ngowahi mesin iku saka ora bisa dianggo dadi bisa dianggo sewengi.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> nggawe <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: desktop Omarchy asli mlaku minangka aplikasi asli sing diakselerasi hardware ing Macmu, kanthi kamera, audio, clipboard, lan folder bareng sing disambungake. Ora ana sing perlu dipartisi. Cukup undhuh lan deloken rame-ramene apa.</p>
+
+<p><strong>Paket.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> mesthekake kabeh sing dibutuhake Omarchy ana minangka <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paket aarch64</a>, bebarengan karo image disk ARM64 umum kanggo mesin virtual lan guest tools sing nggawe kepenak dianggo.</p>
+
+<p><strong>Driver lan kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> lagi nguripi Neo lan mbangun fondasi sing dadi tumpuane tim liyane. Dheweke ngembangake emulator SPTM sing ngidini trace macOS ing chip M4 lan luwih anyar. Trace iku penting kanggo nguripi layar, GPU, audio, nirkabel, lan Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> lagi nulis driver GPU, lan nguripi Touch ID kanthi omongan langsung karo Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> spesialis kerja M5: dheweke reverse-engineering chip N1 proprietary Apple lan nguripi Wi-Fi lan Bluetooth ing Linux. Dheweke uga kontribusi encoding lan decoding video hardware, Bluetooth, lan perbaikan desktop ing Neo. <a href="https://x.com/LiamRay1O">Liam</a> lagi nguripi trackpad Neo, manajemen daya, speaker, lan output headphone, kanthi trace macOS saka Ryan minangka fondasi penting. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> ngopeni dhukungan M4 lan implementasi clean-room, lan kerja ing integrasi lan packaging. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> nguripi <a href="https://github.com/subedijaidip/dp-altmode-t8112">layar eksternal lewat USB-C ing M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> lagi nggawe <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, sing nggawa framework machine learning MLX Apple menyang Linux ing GPU Apple lewat Vulkan. Kodemu tetep muni <code>import mlx.core as mx</code>, nanging saiki mlaku ing Omarchy.</p>
+
+<p><strong>Mac lawas.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> duwe tumpukan pull request kanggo MacBook Pro Touch Bar 2016 lan 2017: speaker, Wi-Fi, sensor cahya sekitar, Touch Bar dhewe. <a href="https://x.com/novuon_ai">Randy</a> lagi reverse-engineering chip keamanan T2 kanggo nggawa Touch ID menyang Mac Intel, lan ndokumentasikake saben perbaikan kanggo MacBook Pro 2019 ing dalane. <a href="https://x.com/jondkinney">Jon Kinney</a> nggarap dhukungan ARM kanggo Omarchy setaun kepungkur, lan saiki njaga kabeh tim terkoordinasi sapa nggarap apa.</p>
+
+<p>Bebarengan, dheweke kelompok sing tangguh. Limalas wong sing ora ngenteni ijin, lan sing wis nganggo agen kanggo obah kanthi cepet sing setaun kepungkur bakal katon mokal.</p>
+
+<p>Target rilis pertama yaiku kompatibilitas sampurna karo M1 lan M2, kalebu varian Pro lan Max:</p>
+
+<ul>
+  <li>Installer sing mulus, karo opsi instal lan coba</li>
+  <li>Dhukungan GPU kebak</li>
+  <li>Monitor eksternal lewat USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Enkripsi disk</li>
+</ul>
+
+<p>Mesin luwih anyar digarap paralel, nanging M1 lan M2 sing dadi tancepan gendera pertama. Saliyane mesin M, ana jutaan laptop lawas ing kana, akeh sing wis dipensiunake saka ambisi macOS paling anyar Apple, lan saben sijine komputer Omarchy sing apik sing nunggu kedaden.</p>
+
+<p>Kowe ora kudu ngenteni rilis sing wis gilap kanggo miwiti. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> bakal nggawe kowe ndeleng desktop asli ing Macmu ing sawetara menit. Lan yen kowe siap komitmen, <a href="https://github.com/maralcbr/omarchy-mx-mac">installer</a> bakal nyelehake Omarchy ing sandhinge macOS ing M1 utawa M2 dina iki.</p>
+
+<p>Pungkasan, panjaluk. Yen kowe wis kerja ing Linux kanggo hardware Apple, apa iku driver kernel, firmware, packaging, installer, utawa machine learning, kita pengin krungu saka kowe. Ana kemungkinan apik kowe wis ngrampungake apa sing isih kita oyak, utawa kosok baline. Hubungi <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Ayo ngrampungake sing diwiwiti Asahi.</p>

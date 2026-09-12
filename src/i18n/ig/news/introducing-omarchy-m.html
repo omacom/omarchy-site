@@ -1,0 +1,40 @@
+<p>Apple na-eme great hardware. Ha na-eme mgbe niile (wepụ otu oge ahụ na butterfly keyboard). Ọtụtụ ndị mmadụ na-abata na Omarchy na-esi na Mac abata. Ọtụtụ n'ime ha ga-achọ idebe igwe ma tufuo operating system. Ya mere anyị ga-emecha ihe Asahi malitere: Omarchy na-agba ọsọ nke ọma na Apple Silicon, na minimum nke setup fuss.</p>
+
+<p>Ọrụ ahụ enweelarị team n'azụ ya. Taa anyị na-eme ya official: <a href="/teams/#m">Omarchy M</a>, team anyị maka Macs na Apple Silicon (gbakwunye members ole na ole na-edebe older Macs na fold).</p>
+
+<p>Kwe ka m webata members.</p>
+
+<p><strong>Installer.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> na-ewu <a href="https://github.com/maralcbr/omarchy-mx-mac">native Mac installer</a>. Ị na-ebudata app na macOS, ọ na-eweta signed Omarchy release, na-akpụ partitions, ma na-boot gị na Omarchy n'akụkụ macOS dị adị gị. Enweghị USB stick, enweghị incantations na terminal. O bechapụrụ build nke mụnyere external monitors ọkụ site na USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> edebewo <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> otu afọ, na-eweta Omarchy na igwe M1 na M2 ogologo oge tupu ihe ọ bụla n'ime nke a bụrụ official, ma na-ewu Discord community nke ihe karịrị 800 mmadụ gburugburu ya. <a href="https://x.com/bi9kahuna">Scott Jones</a> bụ ọkara ọzọ nke ọrụ ahụ na Linux side nke install. O nwetara display nke M3 Air na-agba ọsọ na Apple's hardware display controller n'oge na-adịbeghị anya, nke were igwe ahụ site na unusable ruo usable n'otu abalị.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> wuru <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: ezigbo desktọpụ Omarchy na-agba ọsọ dị ka native, hardware-accelerated app na Mac gị, na camera gị, audio, clipboard, na shared folder wired through. Ọ dịghị ihe i-partition. Naanị budata ya hụ ihe fuss dị.</p>
+
+<p><strong>Packages.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> na-ahụ na ihe niile Omarchy chọrọ dị dị ka <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package</a>, tinyere generic ARM64 disk images maka virtual machines na guest tools na-eme ha pleasant iji.</p>
+
+<p><strong>Drivers na kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> na-eweta Neo ma na-ewu ntọala ndị ọzọ nke team na-arụ ọrụ site na ha. Ọ na-azụlite SPTM emulator nke na-eme ka ọ kwe omume trace macOS na M4 na newer chips. Traces ndị ahụ dị mkpa iwere displays, GPUs, audio, wireless, na Bluetooth na-arụ ọrụ. <a href="https://x.com/buildwithdjdev">Dj</a> na-ede GPU drivers, wee mee ka Touch ID na-arụ ọrụ site n'ịgwa Secure Enclave okwu ozugbo. <a href="https://x.com/acelogic_">Miguel Cruz</a> specialises na M5 work: ọ reverse-engineered Apple's proprietary N1 chip wee mee ka Wi-Fi na Bluetooth ya na-arụ ọrụ na Linux. O nyekwara hardware video encoding na decoding, Bluetooth, na desktop improvements na Neo. <a href="https://x.com/LiamRay1O">Liam</a> na-eweta trackpad nke Neo, power management, speakers, na headphone output, na macOS traces nke Ryan na-enye essential groundwork. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> na-edebe M4 support na clean-room implementations, ma na-arụ ọrụ na integration na packaging. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> mere ka <a href="https://github.com/subedijaidip/dp-altmode-t8112">external displays site na USB-C na M2 MacBook Air</a> kwe omume.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> na-ewu <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, nke na-eweta Apple's MLX machine learning framework na Linux na Apple GPUs site na Vulkan. Koodu gị ka na-asị <code>import mlx.core as mx</code>, mana ugbu a ọ na-agba ọsọ na Omarchy.</p>
+
+<p><strong>Older Macs.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> nwere stack nke pull requests maka 2016 na 2017 Touch Bar MacBook Pros: speakers, Wi-Fi, ambient light sensor, Touch Bar n'onwe ya. <a href="https://x.com/novuon_ai">Randy</a> na-reverse-engineering T2 security chip iweta Touch ID na Intel Macs, ma na-edekọ fix ọ bụla maka 2019 MacBook Pro n'ụzọ. <a href="https://x.com/jondkinney">Jon Kinney</a> na-arụsi ọrụ ike na ARM support maka Omarchy otu afọ gara aga, ugbu a na-eme ka team niile coordinated na onye na-eme ihe.</p>
+
+<p>ọnụ, ha bụ formidable group. Mmadụ iri na ise na-echeghị ikike, ndị na-eji agents aga na pace nke gaara dị absurd otu afọ gara aga.</p>
+
+<p>Target maka release mbụ bụ perfect compatibility na M1 na M2, gụnyere Pro na Max variants:</p>
+
+<ul>
+  <li>Seamless installer, na install na try options abụọ</li>
+  <li>Full GPU support</li>
+  <li>External monitors site na USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Disk encryption</li>
+</ul>
+
+<p>Igwe ọhụrụ ka a na-arụ ọrụ na parallel, mana M1 na M2 bụ ebe anyị na-akụ flag mbụ. Na mgbakwunye na igwe M, enwere millions nke vintage laptops n'èzí, ọtụtụ n'ime ha alala ezumike nká site na latest macOS ambitions nke Apple, nke ọ bụla n'ime ha bụ wonderful Omarchy computer na-eche ime.</p>
+
+<p>Ị chọghị ichere polished release ịmalite. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> ga-eme ka ị na-ele ezigbo desktọpụ na Mac gị na nkeji. Ma ọ bụrụ na ị dị njikere commit, <a href="https://github.com/maralcbr/omarchy-mx-mac">installer</a> ga-etinye Omarchy n'akụkụ macOS na M1 ma ọ bụ M2 taa.</p>
+
+<p>N'ikpeazụ, arịrịọ. Ọ bụrụ na ị na-arụ ọrụ na Linux maka Apple hardware, ma nke ahụ bụ kernel drivers, firmware, packaging, installers, ma ọ bụ machine learning, anyị ga-achọ ịnụ site na gị. Enwere ezigbo ohere ị dozila ihe anyị ka na-achụ, ma ọ bụ vice versa. Kpọtụrụ na <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Ka anyị mechaa ihe Asahi malitere.</p>

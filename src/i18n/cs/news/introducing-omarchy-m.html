@@ -1,0 +1,40 @@
+<p>Apple dělá skvělý hardware. Vždycky dělal (minus ten jeden případ s motýlkovou klávesnicí). A spousta lidí přicházejících k Omarchy přichází z Macu. Mnozí z nich by si rádi nechali stroj a zbavili se operačního systému. Takže dokončíme to, co začalo Asahi: Omarchy krásně běžící na Apple Silicon s minimem instalačních starostí.</p>
+
+<p>Ta práce už za sebou má tým. Dnes to děláme oficiálním: <a href="/teams/#m">Omarchy M</a>, náš tým pro Macy s Apple Silicon (plus pár členů, kteří drží v rodině i starší Macy).</p>
+
+<p>Dovolte mi představit členy.</p>
+
+<p><strong>Instalátor.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> staví <a href="https://github.com/maralcbr/omarchy-mx-mac">nativní instalátor pro Mac</a>. Stáhnete si aplikaci na macOS, ta si stáhne podepsané vydání Omarchy, vyčlení oddíly a nabootuje vás do Omarchy vedle vašeho stávajícího macOS. Žádná USB flashka, žádná zaříkávání v terminálu. Také sestavil build, který rozsvítil externí monitory přes USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> rok spravoval <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>, dostal Omarchy na stroje M1 a M2 dávno předtím, než to bylo oficiální, a vybudoval kolem toho Discord komunitu o více než 800 lidech. <a href="https://x.com/bi9kahuna">Scott Jones</a> je druhá polovina toho projektu na linuxové straně instalace. Nedávno rozchodil displej M3 Airu na hardwarovém řadiči displeje od Applu, čímž ten stroj přes noc posunul z nepoužitelného na použitelný.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> postavil <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: skutečnou plochu Omarchy běžící jako nativní, hardwarově akcelerovaná aplikace na vašem Macu, s proklemovanou kamerou, zvukem, schránkou a sdílenou složkou. Nic k rozdělování. Jen si to stáhněte a podívejte se, kolem čeho je ten rozruch.</p>
+
+<p><strong>Balíčky.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> zajišťuje, aby všechno, co Omarchy potřebuje, existovalo jako <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 balíček</a>, spolu s generickými ARM64 obrazy disků pro virtuální stroje a hostovskými nástroji, které je dělají příjemnými k používání.</p>
+
+<p><strong>Ovladače a jádro.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> rozchází Neo a staví základy, ze kterých pracuje zbytek týmu. Vyvíjí emulátor SPTM, který umožňuje trasovat macOS na čipech M4 a novějších. Tyto trasy jsou zásadní pro rozchození displejů, GPU, zvuku, bezdrátu a Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> píše ovladače GPU a rozchodil Touch ID přímou komunikací se Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> se specializuje na práci s M5: reverzně analyzoval proprietární čip N1 od Applu a rozchodil v Linuxu jeho Wi-Fi a Bluetooth. Přispěl také hardwarovým kódováním a dekódováním videa, Bluetooth a vylepšeními plochy na Neo. <a href="https://x.com/LiamRay1O">Liam</a> rozchází na Neo trackpad, správu napájení, reproduktory a výstup na sluchátka, přičemž Ryanovy trasy macOS poskytují zásadní základy. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> spravuje podporu M4 a clean-room implementace a pracuje na integraci a balíčkování. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> umožnil <a href="https://github.com/subedijaidip/dp-altmode-t8112">externí displeje přes USB-C na M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> staví <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, které přináší MLX framework strojového učení od Applu na Linux na Apple GPU přes Vulkan. Váš kód stále říká <code>import mlx.core as mx</code>, ale teď běží na Omarchy.</p>
+
+<p><strong>Starší Macy.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> má zásobu pull requestů pro Touch Bar MacBooky Pro z let 2016 a 2017: reproduktory, Wi-Fi, senzor okolního světla, samotný Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> reverzně analyzuje bezpečnostní čip T2, aby přinesl Touch ID na Intel Macy, a cestou dokumentuje každou opravu pro MacBook Pro 2019. <a href="https://x.com/jondkinney">Jon Kinney</a> před rokem dloubal do ARM podpory pro Omarchy a teď drží celý tým v koordinaci, kdo co dělá.</p>
+
+<p>Dohromady jsou to obávaná skupina. Patnáct lidí, kteří nečekali na svolení a kteří používají agenty k tempu, které by před rokem vypadalo absurdně.</p>
+
+<p>Cílem prvního vydání je dokonalá kompatibilita s M1 a M2, včetně variant Pro a Max:</p>
+
+<ul>
+  <li>Bezproblémový instalátor s možnostmi instalace i vyzkoušení</li>
+  <li>Plná podpora GPU</li>
+  <li>Externí monitory přes USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Šifrování disku</li>
+</ul>
+
+<p>Na novějších strojích se pracuje paralelně, ale M1 a M2 jsou místo, kde nejdřív zapíchneme vlajku. Kromě strojů M jsou venku miliony starých notebooků, mnohé už vyřazené z nejnovějších macOS ambicí Applu, a každý z nich je úžasný počítač Omarchy, který čeká na svou chvíli.</p>
+
+<p>Na vybroušené vydání nemusíte čekat, abyste začali. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> vám během minut ukáže skutečnou plochu na vašem Macu. A pokud jste připraveni se zavázat, <a href="https://github.com/maralcbr/omarchy-mx-mac">instalátor</a> dá Omarchy vedle macOS na M1 nebo M2 ještě dnes.</p>
+
+<p>Nakonec prosba. Pokud jste pracovali na Linuxu pro hardware Apple, ať už jde o ovladače jádra, firmware, balíčkování, instalátory nebo strojové učení, rádi o vás uslyšíme. Je velká šance, že jste vyřešili něco, co my teprve honíme, nebo naopak. Ozvěte se na <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Dokončeme to, co začalo Asahi.</p>
