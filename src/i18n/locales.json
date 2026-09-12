@@ -843,8 +843,7 @@
     "formatLocale": "cs-CZ",
     "ogLocale": "cs_CZ",
     "manual": false,
-    "flag": "CZ",
-    "draft": true
+    "flag": "CZ"
   },
   "ht": {
     "name": "Kreyòl ayisyen",
