@@ -871,8 +871,7 @@
     "formatLocale": "fr-HT",
     "ogLocale": "fr_HT",
     "manual": false,
-    "flag": "HT",
-    "draft": true
+    "flag": "HT"
   },
   "wo": {
     "name": "Wolof",
