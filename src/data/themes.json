@@ -190,6 +190,11 @@
   "name": "Dracula"
  },
  {
+  "repo": "https://github.com/beijingrong/omarchy-dream-of-the-red-chamber-theme",
+  "image": "/assets/themes/dream-of-the-red-chamber.webp",
+  "name": "Dream of the Red Chamber"
+ },
+ {
   "repo": "https://github.com/eldritch-theme/omarchy",
   "image": "/assets/themes/eldritch.webp",
   "name": "Eldritch"
