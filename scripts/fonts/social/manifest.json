@@ -13,7 +13,7 @@
     "Arabic": {
       "family": "Omarchy Social Arabic",
       "file": "arabic.ttf",
-      "characters": " .،ءأئابةتجحخدرزسشصظعغقكلمنهوئټپړښکیې"
+      "characters": " .،ءأئابةتجحخدرزسشصظعغقكلمنهوىئټپچړښکڭگھۆۇۈۋیېە"
     },
     "Devanagari": {
       "family": "Omarchy Social Devanagari",
@@ -134,6 +134,7 @@
     "lg": "Latin",
     "rn": "Latin",
     "tk": "Latin",
+    "ug": "Arabic",
     "sr": "Latin",
     "bg": "Latin",
     "sq": "Latin",
