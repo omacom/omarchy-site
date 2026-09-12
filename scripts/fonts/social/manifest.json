@@ -38,7 +38,7 @@
     "Bengali": {
       "family": "Omarchy Social Bengali",
       "file": "bengali.ttf",
-      "characters": " ।ঁআএওকখগঙজটডতথদধনপবমযরলস়ািুৃেো্"
+      "characters": " ।ঁআইএওকখগঙজটডণতথদধনপবভমযরলস়ািীুৃেো্ৰৱ"
     },
     "Sinhala": {
       "family": "Omarchy Social Sinhala",
@@ -107,6 +107,7 @@
     "mai": "Devanagari",
     "ig": "Latin",
     "ro": "Latin",
+    "as": "Bengali",
     "ln": "Latin",
     "mg": "Latin",
     "af": "Latin",
