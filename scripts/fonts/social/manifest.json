@@ -70,6 +70,11 @@
       "file": "gujarati.ttf",
       "characters": " ંઅઇએકગજટતદનફબમયરલવશસાિીુેો્"
     },
+    "Myanmar": {
+      "family": "Omarchy Social Myanmar",
+      "file": "myanmar.ttf",
+      "characters": " ကခဂငစဆညတနပဖမရလသအါာိီုေဲံ့း်ျြွှဿ၊။၏"
+    },
     "Georgian": {
       "family": "Omarchy Social Georgian",
       "file": "georgian.ttf",
@@ -120,6 +125,7 @@
     "yo": "Latin",
     "bho": "Devanagari",
     "ms": "Latin",
+    "my": "Myanmar",
     "ps": "Arabic",
     "uk": "Latin",
     "mai": "Devanagari",

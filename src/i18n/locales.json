@@ -553,8 +553,7 @@
     "formatLocale": "my-MM",
     "ogLocale": "my_MM",
     "manual": false,
-    "flag": "MM",
-    "draft": true
+    "flag": "MM"
   },
   "ps": {
     "name": "پښتو",
