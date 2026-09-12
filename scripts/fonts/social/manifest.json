@@ -65,6 +65,11 @@
       "file": "telugu.ttf",
       "characters": " ,.ంఅఇఏకగచజటడతదనపబమయరలళవసాిీుూెేైో్ౖ‌"
     },
+    "Gurmukhi": {
+      "family": "Omarchy Social Gurmukhi",
+      "file": "gurmukhi.ttf",
+      "characters": " ,।ਂਅਈਏਕਗਘਚਜਟਢਣਤਦਧਬਮਯਰਲਵਸਹ਼ਾਿੀੁੇੋੰੱ"
+    },
     "Gujarati": {
       "family": "Omarchy Social Gujarati",
       "file": "gujarati.ttf",
@@ -125,6 +130,7 @@
     "mr": "Devanagari",
     "te": "Telugu",
     "sw": "Latin",
+    "pa": "Gurmukhi",
     "fa": "Arabic",
     "jv": "Latin",
     "gu": "Gujarati",
