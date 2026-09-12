@@ -4,3 +4,35 @@ html[dir='rtl'] :is(code, pre, kbd) {
   unicode-bidi: isolate;
   text-align: left;
 }
+
+/* The default Latin fonts have no Persian glyphs. Keep their Latin text and
+   give Persian prose a consistent fallback instead of system monospace. */
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/noto-sans-arabic-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/noto-sans-arabic-bold.woff2') format('woff2');
+}
+
+html[lang='fa'] {
+  --font-sans: 'Geist Variable', 'Noto Sans Arabic', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'Noto Sans Arabic', monospace;
+}
+
+/* Tailwind's inline theme expands these utilities to literal font stacks. */
+html[lang='fa'] .font-sans {
+  font-family: var(--font-sans);
+}
+
+html[lang='fa'] .font-mono {
+  font-family: var(--font-mono);
+}
