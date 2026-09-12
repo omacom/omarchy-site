@@ -247,7 +247,10 @@ jobs:
     if: ${{ !cancelled() && needs.commit.result == 'success' && needs.commit.outputs.deploy == 'true' }}
     strategy:
       fail-fast: false
-      max-parallel: 6
+      # GitHub-hosted runners on the Free plan allow 20 concurrent jobs across the
+      # account; raise LANGUAGE_DEPLOY_PARALLEL (a repository variable) after
+      # checking the plan and what else runs at the same time.
+      max-parallel: ${{ fromJSON(vars.LANGUAGE_DEPLOY_PARALLEL || '6') }}
       matrix:
         locale: ${{ fromJSON(needs.commit.outputs.locales) }}
     runs-on: ubuntu-latest

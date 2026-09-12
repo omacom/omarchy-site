@@ -14,6 +14,7 @@ ledger, retries, and copying validated results back into the repository.
     scripts/translate-owners.py run [--max-owners N] [--max-steps N] [--attempts N]
     scripts/translate-owners.py status
     scripts/translate-owners.py collect [--locale de] [--partial]
+    scripts/translate-owners.py publish --locale de              # strict check, fonts, build, verify, undraft
 
 Workspaces live under ~/.local/state/omarchy-owners/<repo>/<code>/ (override
 with OMARCHY_OWNERS_DIR), outside the repository. The ledger is ledger.json
@@ -494,6 +495,39 @@ def collect(args):
               + (f" ({added['stale']} articles stale since snapshot)" if added['stale'] else ''))
 
 
+def step(title, command, cwd=ROOT, env=None):
+    print(f'== {title}: {" ".join(command)}', flush=True)
+    result = subprocess.run(command, cwd=cwd, env=env)
+    if result.returncode:
+        sys.exit(f'{title} failed (exit {result.returncode}); the edition stays a draft')
+
+
+def publish(args):
+    """Collect, check strictly, cover its script in the social fonts, build, verify, then drop the draft flag."""
+    venv_python = ROOT / '.venv-fonts/bin/python'
+    if not venv_python.exists():
+        sys.exit('missing .venv-fonts (see scripts/fonts/social/README.md); the social-card subsetter needs fontTools')
+    for code in args.locale:
+        reg = registry()
+        if code not in reg:
+            sys.exit(f'{code} is not in the registry')
+        collect_args = argparse.Namespace(locale=[code], partial=False)
+        collect(collect_args)
+        step('strict translation check', ['node', 'scripts/check-translations.mjs', code, '--strict-site', '--strict-news'])
+        report = subprocess.run([str(venv_python), 'scripts/prepare-social-fonts.py', '--report'], cwd=ROOT, capture_output=True, text=True)
+        if report.returncode or 'skipped' in report.stdout and code in report.stdout:
+            step('regenerate social-card font subsets', [str(venv_python), 'scripts/prepare-social-fonts.py'])
+            step('social-card glyph coverage', [str(venv_python), 'scripts/prepare-social-fonts.py', '--report'])
+        step('build the edition', ['npm', 'run', 'build:locale', '--', code])
+        step('verify the built edition', [sys.executable, 'scripts/verify-locales.py', code])
+        reg = registry()
+        if reg[code].pop('draft', None):
+            REGISTRY.write_text(json.dumps(reg, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            print(f'{code}: published in the registry (draft flag removed). Review `git status`, then commit the edition.')
+        else:
+            print(f'{code}: was already published')
+
+
 def prepare(args):
     WORK.mkdir(exist_ok=True)
     snap = snapshot(refresh=args.refresh_snapshot)
@@ -534,6 +568,9 @@ def main():
     c.add_argument('--locale', action='append')
     c.add_argument('--partial', action='store_true', help='collect valid items from incomplete owners too')
     c.set_defaults(func=collect)
+    u = sub.add_parser('publish', help='collect, check, cover fonts, build, verify, then remove the draft flag')
+    u.add_argument('--locale', action='append', required=True)
+    u.set_defaults(func=publish)
     args = parser.parse_args()
     args.func(args)
 
