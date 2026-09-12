@@ -635,8 +635,7 @@
     "formatLocale": "su-ID",
     "ogLocale": "su_ID",
     "manual": false,
-    "flag": "ID",
-    "draft": true
+    "flag": "ID"
   },
   "ne": {
     "name": "नेपाली",
