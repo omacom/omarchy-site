@@ -115,6 +115,11 @@
       "file": "armenian.ttf",
       "characters": " -ԳՀՃՎՕ՝աբգդեզըթիլխծկհղճմյնշոչպջվրցւփքև։"
     },
+    "Lao": {
+      "family": "Omarchy Social Lao",
+      "file": "lao.ttf",
+      "characters": " ກຂງຈຍດຕທນບປມລວສຫອະັາຳີືຸົຼຽເແໂໄ່້໌ໍ"
+    },
     "Georgian": {
       "family": "Omarchy Social Georgian",
       "file": "georgian.ttf",
@@ -215,6 +220,7 @@
     "hy": "Armenian",
     "sq": "Latin",
     "hr": "Latin",
+    "lo": "Lao",
     "gn": "Latin",
     "mn": "Latin",
     "ky": "Latin",
