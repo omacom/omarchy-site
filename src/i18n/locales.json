@@ -893,8 +893,7 @@
     "formatLocale": "sn-ZW",
     "ogLocale": "sn_ZW",
     "manual": false,
-    "flag": "ZW",
-    "draft": true
+    "flag": "ZW"
   },
   "lg": {
     "name": "Luganda",
