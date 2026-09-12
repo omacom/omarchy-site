@@ -1086,7 +1086,6 @@
     "formatLocale": "sl-SI",
     "ogLocale": "sl_SI",
     "manual": false,
-    "flag": "SI",
-    "draft": true
+    "flag": "SI"
   }
 }
