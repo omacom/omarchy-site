@@ -75,6 +75,11 @@
       "file": "myanmar.ttf",
       "characters": " ကခဂငစဆညတနပဖမရလသအါာိီုေဲံ့း်ျြွှဿ၊။၏"
     },
+    "Hebrew": {
+      "family": "Omarchy Social Hebrew",
+      "file": "hebrew.ttf",
+      "characters": " אגדהוזיכלםמןנסעפצקרשת"
+    },
     "Georgian": {
       "family": "Omarchy Social Georgian",
       "file": "georgian.ttf",
@@ -148,6 +153,7 @@
     "tk": "Latin",
     "ug": "Arabic",
     "sr": "Latin",
+    "he": "Hebrew",
     "bg": "Latin",
     "sq": "Latin",
     "hr": "Latin",
