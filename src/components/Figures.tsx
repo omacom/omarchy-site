@@ -1,36 +1,15 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { BankIcon, DownloadIcon, GithubIcon } from '@/components/icons'
-import momentum from '@/data/momentum.json'
+import { COUNT_DURATION } from '@/lib/figure-data'
+import type { FiguresData } from '@/lib/figure-data'
 
 const STEP_WIDTH = 22
 const CHART_ROWS = 8
 const EIGHTHS = ' ▁▂▃▄▅▆▇'
-
-const shortDate = (iso: string) =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale.formatLocale, {
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC',
-  })
-
-/** The Monday of the week a column stands for, `back` weeks before the day
- *  these figures were last checked. */
-function weekOf(checked: string, back: number) {
-  const d = new Date(`${checked}T00:00:00Z`)
-  d.setUTCDate(d.getUTCDate() - back * 7)
-  // With the year: a year of weeks reaches back into the last one, and
-  // "Sep 12" on its own reads as this month.
-  return d.toLocaleDateString(locale.formatLocale, {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: 'UTC',
-  })
-}
 
 /** Weekly commits as rows of eighth-blocks, oldest week on the left. */
 function commitRows(weeks: Array<number>) {
@@ -68,38 +47,34 @@ function useInView() {
 
 /** Renders the final value until told to run, then counts up to it once. */
 function Count({
-  value,
+  frames,
   live,
   prefix = '',
   suffix = '',
 }: {
-  value: number
+  frames: string[]
   live: boolean
   prefix?: string
   suffix?: string
 }) {
-  const [shown, setShown] = useState(value)
+  const [frame, setFrame] = useState(frames.length - 1)
   useEffect(() => {
     if (!live) return
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const t0 = performance.now()
-    let frame = 0
+    let request = 0
     const step = (t: number) => {
-      const p = Math.min(1, (t - t0) / 1100)
-      setShown(value * (1 - Math.pow(1 - p, 3)))
-      if (p < 1) frame = requestAnimationFrame(step)
+      const p = Math.min(1, (t - t0) / COUNT_DURATION)
+      setFrame(Math.round(p * (frames.length - 1)))
+      if (p < 1) request = requestAnimationFrame(step)
     }
-    frame = requestAnimationFrame(step)
-    return () => cancelAnimationFrame(frame)
-  }, [live, value])
-  const digits = Number.isInteger(value) ? 0 : 1
+    request = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(request)
+  }, [live, frames])
   return (
     <>
       {prefix}
-      {shown.toLocaleString(locale.formatLocale, {
-        minimumFractionDigits: digits,
-        maximumFractionDigits: digits,
-      })}
+      {frames[frame]}
       {suffix}
     </>
   )
@@ -140,10 +115,10 @@ const more =
 /** One tooltip follows the active column without remounting between weeks. */
 function WeekHover({
   weeks,
-  checked,
+  labels,
 }: {
   weeks: Array<number>
-  checked: string
+  labels: FiguresData['github']['weekLabels']
 }) {
   const [at, setAt] = useState<number | null>(null)
   const [width, setWidth] = useState(0)
@@ -207,11 +182,11 @@ function WeekHover({
             }
           >
             <span className="block text-[13px] text-text">
-              {count.toLocaleString(locale.formatLocale)} commit
+              {labels[at].count} commit
               {count === 1 ? '' : 's'}
             </span>
             <span className="block text-[11px] text-text-muted">
-              {t('week of')} {weekOf(checked, weeks.length - 1 - at)}
+              {t('week of')} {labels[at].date}
             </span>
           </motion.div>
         ) : null}
@@ -220,8 +195,8 @@ function WeekHover({
   )
 }
 
-export function Figures() {
-  const { foundation, downloads, github } = momentum
+export function Figures({ data }: { data: FiguresData }) {
+  const { foundation, downloads, github } = data
   const funding = useInView()
   const isos = useInView()
   const repo = useInView()
@@ -234,11 +209,7 @@ export function Figures() {
         innerRef={funding.ref}
       >
         <span className={number}>
-          <Count
-            value={foundation.total * 1_000_000}
-            live={funding.inView}
-            prefix="$"
-          />
+          <Count frames={foundation.frames} live={funding.inView} prefix="$" />
           <BankIcon className="size-5 shrink-0 text-brand md:hidden" />
         </span>
         <span className={label}>{t('pledged to the Omacom Foundation')}</span>
@@ -249,9 +220,7 @@ export function Figures() {
               to={step.post}
               className="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              <span className="text-text-muted">
-                {shortDate(step.date).padEnd(7)}
-              </span>
+              <span className="text-text-muted">{step.date.padEnd(7)}</span>
               <span className="text-brand">
                 {'█'.repeat(
                   Math.round((STEP_WIDTH * step.amount) / foundation.total),
@@ -274,7 +243,7 @@ export function Figures() {
         innerRef={isos.ref}
       >
         <span className={number}>
-          <Count value={downloads.total} live={isos.inView} />
+          <Count frames={downloads.frames} live={isos.inView} />
           <DownloadIcon className="size-5 shrink-0 text-brand md:hidden" />
         </span>
         <span className={label}>{t('ISO downloads in year one')}</span>
@@ -291,7 +260,7 @@ export function Figures() {
                     {period.label}
                   </th>
                   <td className="py-2 text-right text-text-secondary tabular-nums">
-                    {period.count.toLocaleString(locale.formatLocale)}
+                    {period.count}
                   </td>
                 </tr>
               ))}
@@ -309,7 +278,7 @@ export function Figures() {
         innerRef={repo.ref}
       >
         <span className={number}>
-          <Count value={github.stars} live={repo.inView} />
+          <Count frames={github.frames} live={repo.inView} />
           <GithubIcon className="size-5 shrink-0 text-brand md:hidden" />
         </span>
         <span className={label}>{t('stars on GitHub')}</span>
@@ -324,11 +293,11 @@ export function Figures() {
           >
             {commitRows(github.weeks)}
           </pre>
-          <WeekHover weeks={github.weeks} checked={momentum.checked} />
+          <WeekHover weeks={github.weeks} labels={github.weekLabels} />
         </div>
         <p className={`${meta} mt-[14px]`}>
-          {github.pullRequests.toLocaleString(locale.formatLocale)}{' '}
-          {t('pull requests ·')} {github.contributors} {t('contributors')}
+          {github.pullRequests} {t('pull requests ·')} {github.contributors}{' '}
+          {t('contributors')}
         </p>
         <a href="https://github.com/omacom/omarchy" className={more}>
           {t('The repo')}

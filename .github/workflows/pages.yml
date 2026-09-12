@@ -39,6 +39,9 @@ jobs:
       - run: bin/build-news
       - run: npm run build
       - run: npm run parity
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build:locale -- sq
+      - run: npm run test:hydration
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'
         with:

@@ -1,65 +1,16 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
 import { PageHeading } from '@/components/PageHeading'
 import { useEffect, useState } from 'react'
 import { MeetupCover } from '@/components/MeetupCover'
 import { MeetupMap, PIN_AT, WHOLE_MAP, boxAround } from '@/components/MeetupMap'
 import { SectionActions } from '@/components/SectionHeading'
 import { ArrowRightIcon } from '@/components/icons'
-import meetups from '@/data/meetups.json'
+import type { MeetupsData, LocalizedMeetup as Meetup } from '@/lib/meetup-data'
 import { COUNTRIES_OF, REGIONS, regionOf } from '@/lib/regions'
 import type { Region } from '@/lib/regions'
 import { cn } from '@/lib/utils'
 
-/** A meetup as the data carries it. Written out rather than read off the
- *  JSON, whose shape shifts with what the calendar happens to hold. */
-type Meetup = {
-  id: string
-  title: string
-  url: string
-  start: string
-  timezone: string | null
-  address: string | null
-  city: string | null
-  country: string | null
-  cover: string | null
-  coverWidth?: number
-  coverHeight?: number
-  geo: { lat: number; lon: number; approximate?: boolean } | null
-}
-const events: Meetup[] = meetups.events
-
 const CALENDAR_URL = 'https://luma.com/omarchy'
-
-const regionNames = new Intl.DisplayNames([locale.formatLocale], {
-  type: 'region',
-})
-
-/** The country's name from its code, or the code when it is not one. */
-function countryOf(code: string) {
-  try {
-    return regionNames.of(code) || code
-  } catch {
-    return code
-  }
-}
-
-/** Where a meetup is: city and country, the address when there is no
- *  city, or nothing when the calendar keeps the place for its guests. */
-function whereOf(meetup: Meetup) {
-  const country = meetup.country ? countryOf(meetup.country) : ''
-  if (meetup.city) {
-    // Some calendars name the country in the city already.
-    if (!country || meetup.city.includes(country)) return meetup.city
-    return `${meetup.city}, ${country}`
-  }
-  return meetup.address || country
-}
-
-const inZone = (meetup: Meetup, options: Intl.DateTimeFormatOptions) =>
-  new Intl.DateTimeFormat(locale.formatLocale, {
-    ...options,
-    timeZone: meetup.timezone || 'UTC',
-  }).format(new Date(meetup.start))
 
 function MeetupCard({
   meetup,
@@ -70,7 +21,7 @@ function MeetupCard({
   active: boolean
   onActive: (id: string | null) => void
 }) {
-  const where = whereOf(meetup)
+  const where = meetup.where
   return (
     <li
       id={`meetup-${meetup.id}`}
@@ -103,15 +54,7 @@ function MeetupCard({
           </div>
         )}
         <p className="mt-3 font-mono text-xs text-text-muted">
-          <time dateTime={meetup.start}>
-            {inZone(meetup, {
-              weekday: 'short',
-              month: 'short',
-              day: 'numeric',
-            })}
-            {' · '}
-            {inZone(meetup, { hour: 'numeric', minute: '2-digit' })}
-          </time>
+          <time dateTime={meetup.start}>{meetup.when}</time>
         </p>
         <h3 className="mt-1 line-clamp-2 text-lg font-medium text-text group-hover:text-brand">
           {meetup.title}
@@ -126,7 +69,15 @@ function MeetupCard({
   )
 }
 
-export function MeetupsPage({ rules }: { rules: string }) {
+export function MeetupsPage({
+  rules,
+  data: meetups,
+}: {
+  rules: string
+  data: MeetupsData
+}) {
+  const { events, countries: countryNames } = meetups
+  const countryOf = (code: string) => countryNames[code] || code
   // The first render matches the built page, then the visitor's own clock
   // decides what has passed, the same way the home page's strip does.
   const [now, setNow] = useState(() =>
@@ -165,8 +116,8 @@ export function MeetupsPage({ rules }: { rules: string }) {
     id: event.id,
     title: event.title,
     url: event.url,
-    when: `${inZone(event, { weekday: 'short', month: 'short', day: 'numeric' })} · ${inZone(event, { hour: 'numeric', minute: '2-digit' })}`,
-    where: whereOf(event),
+    when: event.when,
+    where: event.where,
     cover: event.cover,
     shown: matches(event),
     past: Date.parse(event.start) < now,
@@ -188,7 +139,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
 
   const months: { name: string; id: string; meetups: Meetup[] }[] = []
   for (const meetup of upcoming) {
-    const name = inZone(meetup, { month: 'long', year: 'numeric' })
+    const name = meetup.month
     const last = months.at(-1)
     if (last && last.name === name) last.meetups.push(meetup)
     else
@@ -375,7 +326,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
           </div>
           <ul className="mt-5 grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4 lg:grid-cols-6">
             {past.map((meetup) => {
-              const where = whereOf(meetup)
+              const where = meetup.where
               return (
                 <li
                   key={meetup.id}
@@ -410,9 +361,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
                       )}
                     </div>
                     <p className="mt-2 font-mono text-xs text-text-muted">
-                      <time dateTime={meetup.start}>
-                        {inZone(meetup, { month: 'short', day: 'numeric' })}
-                      </time>
+                      <time dateTime={meetup.start}>{meetup.shortDate}</time>
                       {where ? ` · ${where}` : ''}
                     </p>
                     <p className="mt-0.5 line-clamp-1 text-sm text-text-secondary transition-colors duration-150 ease-out group-hover:text-text">

@@ -47,7 +47,12 @@ import bannerData from '@/data/banner.json'
 import type { CatalogueEntry } from '@/lib/plugin-filter'
 import type { NewsSummary } from '@/lib/news'
 
+import type { FiguresData } from '@/lib/figure-data'
+import type { MeetupsData } from '@/lib/meetup-data'
+
 export interface HomeData {
+  figures: FiguresData
+  meetups: MeetupsData
   top: Array<CatalogueEntry>
   total: number
   news: Array<NewsSummary>
@@ -797,7 +802,7 @@ export function HomePage({ data }: { data: HomeData }) {
               'Donations, downloads, and contributions. Momentum is based on all of it.',
             )}
           />
-          <Figures />
+          <Figures data={data.figures} />
         </div>
       </section>
 
@@ -853,7 +858,7 @@ export function HomePage({ data }: { data: HomeData }) {
         id="meetups"
         className="border-t border-border-subtle bg-bg-deep py-12 lg:py-24"
       >
-        <MeetupShowcase action={allMeetups} />
+        <MeetupShowcase data={data.meetups} action={allMeetups} />
       </section>
 
       {/* community */}
