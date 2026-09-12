@@ -599,8 +599,7 @@
     "formatLocale": "uk-UA",
     "ogLocale": "uk_UA",
     "manual": false,
-    "flag": "UA",
-    "draft": true
+    "flag": "UA"
   },
   "om": {
     "name": "Afaan Oromoo",
