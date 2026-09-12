@@ -8,7 +8,7 @@
     "Latin": {
       "family": "Omarchy Social Latin",
       "file": "latin.ttf",
-      "characters": " &',-.:?ABCDEFGHIJKLMNOPSTUVWYZabcdefghijklmnopqrstuvwxyzÁÄßàáäåæçèéêëìíîðòóöøúûüýþąčđėęěğıłňşšůųžƏșțɔəɛɲ̧̨̛̣̦̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώАБВГЖОПСабвгдежзийклмнопрстухцчшыьэяёіјљњғқңүҳӘәӨөṣạắẹềễệỉịọốờụứừử‘’“„"
+      "characters": " &',-.:?ABCDEFGHIJKLMNOPSTUVWYZabcdefghijklmnopqrstuvwxyzÁÄßàáäåæçèéêëìíîðòóöøúûüýþąčđėęěğıłňşšůųžƏƙșțɔɗəɛɲ̧̨̛̣̦̀́̂̃̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώАБВГЖОПСабвгдежзийклмнопрстухцчшыьэяёіјљњғқңүҳӘәӨөṣạắẹềễệỉịọốờụứừử‘’“„"
     },
     "Arabic": {
       "family": "Omarchy Social Arabic",
@@ -145,6 +145,7 @@
     "mr": "Devanagari",
     "te": "Telugu",
     "sw": "Latin",
+    "ha": "Latin",
     "pa": "Gurmukhi",
     "fa": "Arabic",
     "jv": "Latin",
