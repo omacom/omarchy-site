@@ -97,6 +97,16 @@ export function SiteFooter({ path }: { path: string }) {
                       {t('By DHH')}
                     </a>
                   </>
+                ) : language === 'azb' ? (
+                  <>
+                    {t('Beautiful, fun & agentic Linux')}{' '}
+                    <span className="whitespace-nowrap">
+                      <a href="https://dhh.dk" className={footerLink}>
+                        DHH
+                      </a>{' '}
+                      {t('by')}
+                    </span>
+                  </>
                 ) : (
                   <>
                     {t('Beautiful, fun & agentic Linux')}{' '}
