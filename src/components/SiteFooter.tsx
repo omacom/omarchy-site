@@ -1,4 +1,4 @@
-import { t, language, sortedLocales, hasTranslation } from '@/i18n/site'
+import { t, language, locale, scriptGroups } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { OmarchyWordmark } from '@/components/Brand'
 import { PixelBackdrop } from '@/components/HeroShader'
@@ -8,6 +8,8 @@ import {
   ThirtySevenSignalsMark,
 } from '@/components/PartnerLogos'
 import { useTopLink } from '@/lib/hash-scroll'
+import { localeHref } from '@/lib/menu'
+import { scriptName } from '@/lib/language-switcher'
 
 const columns = [
   {
@@ -58,6 +60,13 @@ const focusRing =
 
 const footerLink = `text-text-secondary underline decoration-transparent underline-offset-4 transition-colors duration-150 ease-out hover:text-brand hover:decoration-current ${focusRing}`
 
+/** Han and kana editions put no space between words, so "by DHH" cannot
+ *  trail the tagline on the same line the way it does in a spaced script. */
+const ideographic = ['Hans', 'Hant', 'Jpan'].includes(locale.script)
+
+/** The footer's language list, every reachable edition by script. */
+const languageGroups = scriptGroups()
+
 export function SiteFooter({ path }: { path: string }) {
   const homeLink = useTopLink()
   const currentPath = path
@@ -90,7 +99,7 @@ export function SiteFooter({ path }: { path: string }) {
               className="mt-4 text-sm leading-relaxed text-text-muted [text-wrap:pretty]"
             >
               <span className="block">
-                {language === 'zh-CN' ? (
+                {ideographic ? (
                   <>
                     {t('Beautiful, fun & agentic Linux')}
                     <a href="https://dhh.dk" className={`block ${footerLink}`}>
@@ -119,21 +128,21 @@ export function SiteFooter({ path }: { path: string }) {
                 {t('Incubated at')}{' '}
                 {/* Keep the link inline to preserve the paragraph baseline. */}
                 <a href="https://37signals.com" className={footerLink}>
-                  <ThirtySevenSignalsMark className="mr-[3px] inline-block size-4 shrink-0 align-[-0.28em]" />
+                  <ThirtySevenSignalsMark className="me-[3px] inline-block size-4 shrink-0 align-[-0.28em]" />
                   37signals
                 </a>
               </p>
               <p data-quiet>
                 {t('Hosting by')}{' '}
                 <a href="https://cloudflare.com" className={footerLink}>
-                  <CloudflareMark className="mr-[5px] inline-block h-3 w-auto shrink-0 align-[-0.15em]" />
+                  <CloudflareMark className="me-[5px] inline-block h-3 w-auto shrink-0 align-[-0.15em]" />
                   Cloudflare
                 </a>
               </p>
               <p data-quiet>
                 {t('Compute by')}{' '}
                 <a href="https://www.digitalocean.com" className={footerLink}>
-                  <DigitalOceanMark className="mr-[5px] inline-block size-4 shrink-0 align-[-0.2em]" />
+                  <DigitalOceanMark className="me-[5px] inline-block size-4 shrink-0 align-[-0.2em]" />
                   DigitalOcean
                 </a>
               </p>
@@ -174,24 +183,56 @@ export function SiteFooter({ path }: { path: string }) {
           </div>
         </div>
 
+        {/* One real link per edition, to this page where that site has it
+            and its front page where it does not, grouped by script so a
+            reader scans their own alphabet's block rather than a hundred
+            names. A script with a handful of languages is a small block that
+            sits beside the next one; a script with a page of them takes the
+            full width as a grid. scripts/verify-locales.py reads this nav:
+            one anchor per reachable locale, lang matching hreflang, one
+            aria-current. */}
         <nav
           aria-label={t('Language')}
-          className="mt-12 flex flex-wrap gap-x-4 gap-y-2 text-sm"
+          className="mt-12 flex flex-wrap gap-x-10 gap-y-5 text-sm"
         >
-          {sortedLocales
-            .filter(([code]) => hasTranslation(code, currentPath))
-            .map(([code, entry]) => (
-              <a
-                key={code}
-                href={`${entry.domain}${currentPath}`}
-                hrefLang={code}
-                lang={code}
-                aria-current={language === code ? 'page' : undefined}
-                className={footerLink}
+          {languageGroups.map((group) => {
+            const wide = group.locales.length > 4
+            return (
+              <div
+                key={group.script}
+                data-quiet
+                className={wide ? 'w-full' : 'min-w-0'}
               >
-                {entry.name}
-              </a>
-            ))}
+                {languageGroups.length > 1 ? (
+                  <h2 className="font-sans text-[11px] text-text-muted">
+                    {scriptName(group.script)}
+                  </h2>
+                ) : null}
+                <ul
+                  className={
+                    wide
+                      ? 'mt-2 grid grid-cols-2 gap-x-4 gap-y-1.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'
+                      : 'mt-2 flex flex-wrap gap-x-4 gap-y-1.5'
+                  }
+                >
+                  {group.locales.map(([code, entry]) => (
+                    <li key={code} className="min-w-0">
+                      <a
+                        href={localeHref(code, currentPath)}
+                        hrefLang={code}
+                        lang={code}
+                        dir="auto"
+                        aria-current={language === code ? 'page' : undefined}
+                        className={`inline-block max-w-full break-words aria-[current=page]:text-brand aria-[current=page]:decoration-current ${footerLink}`}
+                      >
+                        {entry.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
         </nav>
         <div className="mt-12 flex flex-col gap-2 border-t border-border-subtle pt-6 text-[13px] text-text-muted sm:flex-row sm:items-center sm:justify-between">
           <p data-quiet>

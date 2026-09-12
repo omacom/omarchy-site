@@ -288,8 +288,14 @@ def load_ledger():
     return read_json(WORK / 'ledger.json', {})
 
 
-def save_ledger(ledger):
-    write_json(WORK / 'ledger.json', ledger)
+def save_ledger(ledger, codes=None):
+    """Merge into the ledger on disk so two supervisors never clobber each other's records."""
+    current = load_ledger()
+    for code in (codes or ledger):
+        if code in ledger:
+            current[code] = ledger[code]
+    write_json(WORK / 'ledger.json', current)
+    ledger.update(current)
 
 
 def alive(pid):
@@ -315,7 +321,7 @@ def launch(code, entry, snap, ledger, args):
     process = subprocess.Popen(command, cwd=ws, stdout=log.open('ab'), stderr=err.open('ab'), stdin=subprocess.DEVNULL)
     record.update({'status': 'running', 'pid': process.pid, 'started': now(), 'finished': None,
                    'log': str(log), 'revision': snap['revision'], 'model': args.model})
-    save_ledger(ledger)
+    save_ledger(ledger, [code])
     print(f'{now()} {code}: launched attempt {attempt} (pid {process.pid})', flush=True)
     return process
 
@@ -341,7 +347,9 @@ def finish(code, ledger, exit_code):
     else:
         record['status'] = 'incomplete'
         record['retry_reason'] = 'rate limited' if rate_limited(code, record['attempts']) else f'exit {exit_code}, {summary(report)}'
-    save_ledger(ledger)
+    if exit_code is None and record.get('exit') is None:
+        record['exit'] = 'unknown (supervisor restarted)'
+    save_ledger(ledger, [code])
     print(f"{now()} {code}: {record['status']} after attempt {record['attempts']} ({summary(report)})", flush=True)
 
 
@@ -354,18 +362,22 @@ def run(args):
         sys.exit('nothing to run: prepare workspaces first')
     ledger = load_ledger()
     queue = []
+    running = {}  # code -> Popen for owners this supervisor started, None for adopted ones
     for code in codes:
         record = ledger.get(code, {})
+        if record.get('status') == 'running':
+            if alive(record.get('pid')):
+                print(f'{code}: adopting running owner (pid {record["pid"]})')
+                running[code] = None
+                continue
+            finish(code, ledger, None)  # a supervisor died before recording the outcome
+            record = ledger[code]
         if record.get('status') == 'complete' and not args.force:
-            continue
-        if record.get('status') == 'running' and alive(record.get('pid')):
-            print(f'{code}: already running (pid {record["pid"]}); rerun after it exits')
             continue
         if record.get('attempts', 0) >= args.attempts and not args.force:
             print(f'{code}: gave up after {record["attempts"]} attempts; pass --force to retry')
             continue
         queue.append(code)
-    running = {}
     backoff_until = {}
     try:
         while queue or running:
@@ -381,9 +393,14 @@ def run(args):
             if not launched or running:
                 time.sleep(args.poll)
             for code, process in list(running.items()):
-                exit_code = process.poll()
-                if exit_code is None:
-                    continue
+                if process is not None:
+                    exit_code = process.poll()
+                    if exit_code is None:
+                        continue
+                else:
+                    if alive(ledger[code].get('pid')):
+                        continue
+                    exit_code = None
                 del running[code]
                 finish(code, ledger, exit_code)
                 record = ledger[code]
@@ -472,7 +489,7 @@ def collect(args):
             news_mod.atomic_write(meta_path, json.dumps(meta, ensure_ascii=False, indent=2) + '\n')
             added['news'] += 1
         ledger.setdefault(code, {})['collected'] = now()
-        save_ledger(ledger)
+        save_ledger(ledger, [code])
         print(f"{code}: collected messages+{added['messages']} blocks+{added['blocks']} news+{added['news']}"
               + (f" ({added['stale']} articles stale since snapshot)" if added['stale'] else ''))
 
