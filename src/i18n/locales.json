@@ -232,6 +232,14 @@
     "ogLocale": "nb_NO",
     "manual": false
   },
+  "ru": {
+    "name": "Русский",
+    "domain": "https://ru.omarchy.org",
+    "formatLocale": "ru-RU",
+    "ogLocale": "ru_RU",
+    "manual": false,
+    "flag": "RU"
+  },
   "en-NZ": {
     "name": "English (NZ)",
     "domain": "https://omarchy.nz",
