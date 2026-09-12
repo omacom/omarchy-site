@@ -643,8 +643,7 @@
     "formatLocale": "ne-NP",
     "ogLocale": "ne_NP",
     "manual": false,
-    "flag": "NP",
-    "draft": true
+    "flag": "NP"
   },
   "ig": {
     "name": "Igbo",
