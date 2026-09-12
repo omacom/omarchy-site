@@ -703,8 +703,7 @@
     "formatLocale": "so-SO",
     "ogLocale": "so_SO",
     "manual": false,
-    "flag": "SO",
-    "draft": true
+    "flag": "SO"
   },
   "ceb": {
     "name": "Binisaya",
