@@ -157,6 +157,8 @@ export function MusicControl({ path = '/' }: { path?: string }) {
   const readout = useRef<HTMLSpanElement>(null)
   const bars = useRef<Array<HTMLSpanElement | null>>([])
   const scrubbing = useRef(false)
+  const scrubTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const lastCommitted = useRef<number | null>(null)
   useEffect(() => {
     if (!shown) return
     const levels = new Float32Array(METER_BARS)
@@ -181,16 +183,36 @@ export function MusicControl({ path = '/' }: { path?: string }) {
       }
     }
     frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
+    return () => {
+      cancelAnimationFrame(frame)
+      if (scrubTimeout.current) clearTimeout(scrubTimeout.current)
+    }
   }, [shown])
 
-  /** The range moved, by hand or key: show it at once, and go there. */
-  const onScrub = (value: number) => {
+  /** Show scrub position immediately without hammering audio.currentTime. */
+  const onScrubInput = (value: number) => {
+    scrubbing.current = true
+    if (scrubTimeout.current) clearTimeout(scrubTimeout.current)
     const at = value / 1000
     if (line.current) line.current.style.transform = `scaleX(${at})`
     if (readout.current)
       readout.current.textContent = `${clock(at * music.duration)} / ${clock(music.duration)}`
+  }
+
+  /** Commit the seek when user releases the slider or commits a keyboard change. */
+  const onScrubCommit = (value: number) => {
+    const at = value / 1000
+    if (lastCommitted.current === at) return
+    lastCommitted.current = at
+    if (line.current) line.current.style.transform = `scaleX(${at})`
+    if (readout.current)
+      readout.current.textContent = `${clock(at * music.duration)} / ${clock(music.duration)}`
     music.seek(at * music.duration)
+    if (scrubTimeout.current) clearTimeout(scrubTimeout.current)
+    scrubTimeout.current = setTimeout(() => {
+      scrubbing.current = false
+      lastCommitted.current = null
+    }, 150)
   }
 
   if (!shown) return null
@@ -283,14 +305,17 @@ export function MusicControl({ path = '/' }: { path?: string }) {
         aria-label={t('Position in the track')}
         onPointerDown={() => {
           scrubbing.current = true
+          if (scrubTimeout.current) clearTimeout(scrubTimeout.current)
         }}
-        onPointerUp={() => {
-          scrubbing.current = false
+        onPointerUp={(event) => {
+          onScrubCommit(Number(event.currentTarget.value))
         }}
         onPointerCancel={() => {
           scrubbing.current = false
+          if (scrubTimeout.current) clearTimeout(scrubTimeout.current)
         }}
-        onInput={(event) => onScrub(Number(event.currentTarget.value))}
+        onInput={(event) => onScrubInput(Number(event.currentTarget.value))}
+        onChange={(event) => onScrubCommit(Number(event.currentTarget.value))}
         className="music-seek absolute inset-x-0 -bottom-[6px] h-[14px] w-full cursor-pointer touch-none appearance-none bg-transparent focus-visible:outline-none"
       />
     </div>

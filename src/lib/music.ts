@@ -172,6 +172,16 @@ function wire() {
   audio.addEventListener('pause', () => {
     running = false
   })
+  audio.addEventListener('seeked', () => {
+    if (audio && !audio.paused) {
+      running = true
+    }
+  })
+  audio.addEventListener('play', () => {
+    if (audio && !audio.paused) {
+      running = true
+    }
+  })
   audio.addEventListener('error', () => {
     state = 'failed'
     announce()
@@ -354,7 +364,13 @@ export const music = {
     const at = Math.max(0, Math.min(timeline.duration - 0.5, seconds))
     // The track itself if it is running, sound on or off; the silent
     // clock in any case, so the two agree if the sound stops.
-    if (live()) audio!.currentTime = at
+    if (audio) {
+      try {
+        audio.currentTime = at
+      } catch {
+        /* audio element not ready to seek */
+      }
+    }
     clockZero = performance.now() - at * 1000
     timelineAt = at
   },
