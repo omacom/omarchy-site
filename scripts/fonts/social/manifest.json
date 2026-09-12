@@ -80,6 +80,11 @@
       "file": "myanmar.ttf",
       "characters": " ကခဂငစဆညတနပဖမရလသအါာိီုေဲံ့း်ျြွှဿ၊။၏"
     },
+    "Malayalam": {
+      "family": "Omarchy Social Malayalam",
+      "file": "malayalam.ttf",
+      "characters": " -.ംഎഏകഗങചജടണതനപബമയരറലളവശസഹാിീുൂെേൈോ്"
+    },
     "Hebrew": {
       "family": "Omarchy Social Hebrew",
       "file": "hebrew.ttf",
@@ -139,6 +144,7 @@
     "ms": "Latin",
     "my": "Myanmar",
     "ps": "Arabic",
+    "ml": "Malayalam",
     "uk": "Latin",
     "om": "Latin",
     "sd": "Arabic",
