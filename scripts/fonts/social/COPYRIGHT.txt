@@ -17,3 +17,7 @@ NotoSansThai: Copyright 2022 The Noto Project Authors (https://github.com/notofo
 Noto Sans CJK: © 2014-2021 Adobe (http://www.adobe.com/).
 
 JetBrains Mono: Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+
+Xaqan-Code: Public-domain changes by Saber Rastikerdar; glyphs and data
+from Inconsolata (SIL OFL) and DejaVu (Bitstream license) are included in the
+original font. https://scripts.sil.org/OFL
