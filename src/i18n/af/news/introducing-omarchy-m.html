@@ -1,0 +1,40 @@
+<p>Apple maak goeie hardeware. Nog altyd (minus daardie een keer met die vlinder-sleutelbord). En baie van die mense wat by Omarchy aankom, kom van 'n Mac af. Baie van hulle sal graag die masjien wil hou en die bedryfstelsel wil verloor. Dus gaan ons klaarmaak wat Asahi begin het: Omarchy wat pragtig op Apple Silicon loop, met 'n minimum aan opstel-moeite.</p>
+
+<p>Daardie werk het reeds 'n span daaragter. Vandag maak ons dit amptelik: <a href="/teams/#m">Omarchy M</a>, ons span vir Macs met Apple Silicon (plus 'n paar lede wat ouer Macs in die kudde hou).</p>
+
+<p>Laat my toe om die lede bekend te stel.</p>
+
+<p><strong>Die installeerder.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> bou die <a href="https://github.com/maralcbr/omarchy-mx-mac">inheemse Mac-installeerder</a>. Jy laai 'n app op macOS af, dit haal die getekende Omarchy-vrystelling, kerf die partisies uit en begin jou in Omarchy naas jou bestaande macOS. Geen USB-stok, geen beswerings in die terminaal nie. Hy het ook die bou gesny wat eksterne monitors oor USB-C aan die brand gesteek het.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> het <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> 'n jaar lank onderhou, Omarchy op M1- en M2-masjiene gekry lank voordat enige hiervan amptelik was, en 'n Discord-gemeenskap van meer as 800 mense daar rondom gebou. <a href="https://x.com/bi9kahuna">Scott Jones</a> is die ander helfte van daardie projek aan die Linux-kant van die installasie. Hy het onlangs die M3 Air se skerm aan die gang gekry op Apple se hardeware-skermbeheerder, wat daardie masjien in 'n nag van onbruikbaar na bruikbaar geneem het.</p>
+
+<p><strong>Probeer Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> het <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> gebou: die regte Omarchy-lessenaar wat as 'n inheemse, hardeware-versnelde app op jou Mac loop, met jou kamera, klank, knipbord en 'n gedeelde vouer deurbedraad. Niks om te partisioneer nie. Laai dit net af en kyk waaroor die bohaai gaan.</p>
+
+<p><strong>Pakette.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> maak seker dat alles wat Omarchy nodig het as 'n <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64-pakket</a> bestaan, tesame met generiese ARM64-skyfbeelde vir virtuele masjiene en die gasgereedskap wat hulle aangenaam maak om te gebruik.</p>
+
+<p><strong>Drywers en die kern.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> bring die Neo op en bou die fondamente waarop die res van die span werk. Hy ontwikkel 'n SPTM-emulator wat dit moontlik maak om macOS op M4- en nuwer skyfies na te spoor. Daardie nasporings is noodsaaklik om skerms, GPU's, klank, draadloos en Bluetooth werkend te kry. <a href="https://x.com/buildwithdjdev">Dj</a> skryf die GPU-drywers, en het Touch ID werkend gekry deur direk met die Secure Enclave te praat. <a href="https://x.com/acelogic_">Miguel Cruz</a> spesialiseer in M5-werk: hy het Apple se eie N1-skyfie reverse-engineer en sy Wi-Fi en Bluetooth in Linux werkend gekry. Hy het ook hardeware-video-enkodering en -dekodering, Bluetooth en lessenaar-verbeterings op die Neo bygedra. <a href="https://x.com/LiamRay1O">Liam</a> bring die Neo se trackpad, kragbestuur, luidsprekers en koptelefoon-uitset op, met Ryan se macOS-nasporings wat noodsaaklike grondwerk verskaf. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> onderhou M4-ondersteuning en skoonkamer-implementerings, en werk aan integrasie en verpakking. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> het <a href="https://github.com/subedijaidip/dp-altmode-t8112">eksterne skerms oor USB-C op die M2 MacBook Air</a> moontlik gemaak.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> bou <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, wat Apple se MLX-masjienleerraamwerk na Linux op Apple-GPU's deur Vulkan bring. Jou kode sê steeds <code>import mlx.core as mx</code>, maar nou loop dit op Omarchy.</p>
+
+<p><strong>Ouer Macs.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> het 'n stapel pull requests vir die 2016- en 2017-Touch Bar-MacBook Pro's: luidsprekers, Wi-Fi, die omgewingsligsensor, die Touch Bar self. <a href="https://x.com/novuon_ai">Randy</a> reverse-engineer die T2-sekuriteitskyfie om Touch ID na Intel Macs te bring, en dokumenteer elke oplossing vir die 2019 MacBook Pro langs die pad. <a href="https://x.com/jondkinney">Jon Kinney</a> het 'n jaar gelede aan ARM-ondersteuning vir Omarchy gekap, en hou nou die hele span gekoördineer oor wie wat doen.</p>
+
+<p>Saam is hulle 'n gedugte groep. Vyftien mense wat nie vir toestemming gewag het nie, en wat agente gebruik om te beweeg teen 'n pas wat 'n jaar gelede absurd sou gelyk het.</p>
+
+<p>Die teiken vir die eerste vrystelling is perfekte versoenbaarheid met M1 en M2, insluitend die Pro- en Max-variante:</p>
+
+<ul>
+  <li>'n Naatlose installeerder, met beide installeer- en probeer-opsies</li>
+  <li>Volledige GPU-ondersteuning</li>
+  <li>Eksterne monitors oor USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Skyf-enkripsie</li>
+</ul>
+
+<p>Nuwer masjiene word in parallel aan gewerk, maar M1 en M2 is waar ons eerste die vlag plant. Benewens die M-masjiene is daar miljoene oesjaar-skootrekenaars daar buite, baie van hulle reeds afgetree uit Apple se nuutste macOS-ambisies, en elkeen van hulle is 'n wonderlike Omarchy-rekenaar wat wag om te gebeur.</p>
+
+<p>Jy hoef nie vir die gepoleerde vrystelling te wag om te begin nie. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> sal jou binne minute na die regte lessenaar op jou Mac laat kyk. En as jy gereed is om jou te verbind, sal <a href="https://github.com/maralcbr/omarchy-mx-mac">die installeerder</a> Omarchy vandag naas macOS op 'n M1 of M2 sit.</p>
+
+<p>Laastens, 'n versoek. As jy aan Linux vir Apple-hardeware gewerk het, of dit nou kerndrywers, firmware, verpakking, installeerders of masjienleer is, sal ons graag van jou hoor. Daar is 'n goeie kans dat jy iets opgelos het waarna ons nog soek, of andersom. Kontak ons by <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Kom ons maak klaar wat Asahi begin het.</p>
