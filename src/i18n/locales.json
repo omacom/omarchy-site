@@ -981,8 +981,7 @@
     "formatLocale": "hy-AM",
     "ogLocale": "hy_AM",
     "manual": false,
-    "flag": "AM",
-    "draft": true
+    "flag": "AM"
   },
   "sq": {
     "name": "Shqip",

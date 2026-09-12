@@ -95,6 +95,11 @@
       "file": "hebrew.ttf",
       "characters": " אגדהוזיכלםמןנסעפצקרשת"
     },
+    "Armenian": {
+      "family": "Omarchy Social Armenian",
+      "file": "armenian.ttf",
+      "characters": " -ԳՀՃՎՕ՝աբգդեզըթիլխծկհղճմյնշոչպջվրցւփքև։"
+    },
     "Georgian": {
       "family": "Omarchy Social Georgian",
       "file": "georgian.ttf",
@@ -183,6 +188,7 @@
     "sr": "Latin",
     "he": "Hebrew",
     "bg": "Latin",
+    "hy": "Armenian",
     "sq": "Latin",
     "hr": "Latin",
     "mn": "Latin",
