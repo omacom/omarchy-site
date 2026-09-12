@@ -1016,8 +1016,7 @@
     "formatLocale": "es-PY",
     "ogLocale": "es_PY",
     "manual": false,
-    "flag": "PY",
-    "draft": true
+    "flag": "PY"
   },
   "mn": {
     "name": "Монгол",
