@@ -18,7 +18,7 @@
     "Devanagari": {
       "family": "Omarchy Social Devanagari",
       "file": "devanagari.ttf",
-      "characters": " ,.ँंअआइएऔकगचछजटठडढणतदधनपफबभमयरलवशसह़ऽािीुूृेो्।"
+      "characters": " ,.ँंअआइएऔकखगचछजझटठडढणतदधनपफबभमयरलवशसह़ऽािीुूृेो्।"
     },
     "Japanese": {
       "family": "Omarchy Social Japanese",
@@ -118,6 +118,7 @@
     "jv": "Latin",
     "gu": "Gujarati",
     "yo": "Latin",
+    "bho": "Devanagari",
     "ms": "Latin",
     "ps": "Arabic",
     "uk": "Latin",

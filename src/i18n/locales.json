@@ -533,8 +533,7 @@
     "formatLocale": "bho-IN",
     "ogLocale": "bho_IN",
     "manual": false,
-    "flag": "IN",
-    "draft": true
+    "flag": "IN"
   },
   "ms": {
     "name": "Bahasa Melayu",
