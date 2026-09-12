@@ -429,8 +429,7 @@
     "formatLocale": "te-IN",
     "ogLocale": "te_IN",
     "manual": false,
-    "flag": "IN",
-    "draft": true
+    "flag": "IN"
   },
   "sw": {
     "name": "Kiswahili",

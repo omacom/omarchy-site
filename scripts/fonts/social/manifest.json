@@ -59,6 +59,11 @@
       "family": "Omarchy Social Chinese",
       "file": "chinese.otf",
       "characters": " ,?ADHLVbegintux、。一不个亲代作功加原可坑好定小就心手打搞操改时玩生由的看系统置能自设该调路踩造随，？"
+    },
+    "Telugu": {
+      "family": "Omarchy Social Telugu",
+      "file": "telugu.ttf",
+      "characters": " ,.ంఅఇఏకగచజటడతదనపబమయరలళవసాిీుూెేైో్ౖ‌"
     }
   },
   "locales": {
@@ -96,6 +101,7 @@
     "id": "Latin",
     "de": "Latin",
     "pcm": "Latin",
+    "te": "Telugu",
     "jv": "Latin",
     "ms": "Latin",
     "mai": "Devanagari",
