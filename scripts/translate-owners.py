@@ -514,10 +514,10 @@ def publish(args):
         collect_args = argparse.Namespace(locale=[code], partial=False)
         collect(collect_args)
         step('strict translation check', ['node', 'scripts/check-translations.mjs', code, '--strict-site', '--strict-news'])
-        report = subprocess.run([str(venv_python), 'scripts/prepare-social-fonts.py', '--report'], cwd=ROOT, capture_output=True, text=True)
-        if report.returncode or 'skipped' in report.stdout and code in report.stdout:
-            step('regenerate social-card font subsets', [str(venv_python), 'scripts/prepare-social-fonts.py'])
-            step('social-card glyph coverage', [str(venv_python), 'scripts/prepare-social-fonts.py', '--report'])
+        # The subsetter is deterministic, so regenerating is cheap and guarantees the
+        # checked-in subsets cover this edition's card copy before the build renders it.
+        step('regenerate social-card font subsets', [str(venv_python), 'scripts/prepare-social-fonts.py'])
+        step('social-card glyph coverage', [str(venv_python), 'scripts/prepare-social-fonts.py', '--report'])
         step('build the edition', ['npm', 'run', 'build:locale', '--', code])
         step('verify the built edition', [sys.executable, 'scripts/verify-locales.py', code])
         reg = registry()
