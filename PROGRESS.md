@@ -1,10 +1,11 @@
 # Progress
 
-**Current phase:** Phase 6 — Verification, Local Preview & Review in progress. Standardized the term "community" to "თემი" across all UI messages, page blocks, and news articles with proper grammatical declensions. All 82 tests pass, strict translation check passes, and `dist/ka` rebuilt cleanly.
+**Current phase:** Phase 6 — Homepage visual review complete. Refined partner inquiries copy in `src/i18n/messages/ka.json`. All 82 tests pass, strict translation check passes, and `dist/ka` rebuilt cleanly.
 
-**Next task:** Continue manual visual review of the homepage and secondary pages, then prepare upstream PR for `omacom/omarchy-site`.
+**Next task:** Visual review of secondary pages (`/doctrine`, `/foundation`, `/teams`, etc.) and prepare upstream PR for `omacom/omarchy-site`.
 
 ## Done
+- 2026-09-13 — Phase 6 (In Progress): Finished manual visual review of the homepage. Refined partner inquiries copy to "პარტნიორობისთვის:" in `src/i18n/messages/ka.json`. Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Replaced all occurrences of "საზოგადოება" with "თემი" across UI messages, page blocks, and news articles with context-appropriate grammatical declensions (`თემი`, `თემის`, `თემს`, `თემში`, `თემად`, `თემის მიერ`). Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Standardized team names in natural Georgian (`Core` -> `ძირითადი გუნდი`, `Rangers` -> `რეინჯერები`, aligned team intro sentence and `/teams` SEO description). Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Applied review notes from `REVIEW_NOTES.md` to `src/i18n/messages/ka.json` (fine-tuned site title with grammatical `-ი`, refined intro story on Linux setup, omakase, and Omarchy Doctrine, natural phrasing for vibe coding and 35-second install speed). Rebuilt `dist/ka`, updated social card PNGs, verified with 82 passing tests and strict translation checks. Marked items applied in `REVIEW_NOTES.md`.
