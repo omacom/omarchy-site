@@ -40,6 +40,7 @@ Navigation & Header / Footer
 ### Applied (2026-09-13)
 - [x] **/foundation & /meetups buttons:** Translated standalone button links into Georgian (`The Patrons` -> `პატრონები`, `The Staff` -> `თანამშრომლები`, `The Sponsorships` -> `სპონსორობა`, `Open in Luma` -> `Luma-ში გახსნა`).
 - [x] **/teams (გუნდები):** Enabled translation for the `Open GitHub` button in `src/astro/pages/TeamsPage.tsx` and added Georgian translation (`გახსენით GitHub`) in `src/i18n/messages/ka.json`.
+- [x] **/meetups (შეხვედრები):** Translated the region filter fallback button ("Everywhere" -> "ყველგან") in `src/astro/pages/MeetupsPage.tsx` and `src/i18n/messages/ka.json`.
 - [x] **/doctrine (Omarchy-ის დოქტრინა):** Applied full Georgian translation for the 10 Principles, page title, SEO title, and description using polite/plural „თქვენ“ form and standard Georgian typography („...“). Rebuilt `src/data/pages.json`, `src/i18n/messages/ka.json`, and `src/i18n/ka/blocks.json`.
 
 ### New / Pending Notes
