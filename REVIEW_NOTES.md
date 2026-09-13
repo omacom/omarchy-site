@@ -38,6 +38,7 @@ Navigation & Header / Footer
 
 ## 4. Other Pages & General Phrasing
 ### Applied (2026-09-13)
+- [x] **/foundation & /meetups buttons:** Translated standalone button links into Georgian (`The Patrons` -> `პატრონები`, `The Staff` -> `თანამშრომლები`, `The Sponsorships` -> `სპონსორობა`, `Open in Luma` -> `Luma-ში გახსნა`).
 - [x] **/doctrine (Omarchy-ის დოქტრინა):** Applied full Georgian translation for the 10 Principles, page title, SEO title, and description using polite/plural „თქვენ“ form and standard Georgian typography („...“). Rebuilt `src/data/pages.json`, `src/i18n/messages/ka.json`, and `src/i18n/ka/blocks.json`.
 
 ### New / Pending Notes
