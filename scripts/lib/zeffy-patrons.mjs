@@ -60,7 +60,11 @@ const dollars = (cents) => `$${(cents / 100).toLocaleString('en-US')}`
 export function tierMembers(donations, extras = OFF_PLATFORM) {
   const totals = new Map()
   for (const { fullName, amount } of donations) {
-    const name = fullName?.trim()
+    // Zeffy joins first and last name, spelling an empty half as "null".
+    const name = fullName
+      ?.split(/\s+/)
+      .filter((part) => part && part !== 'null')
+      .join(' ')
     if (!name || !(amount > 0)) continue
     totals.set(name, (totals.get(name) ?? 0) + amount)
   }
