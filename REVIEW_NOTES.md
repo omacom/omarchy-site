@@ -37,5 +37,9 @@ Navigation & Header / Footer
 
 
 ## 4. Other Pages & General Phrasing
+### Applied (2026-09-13)
+- [x] **/doctrine (Omarchy-ის დოქტრინა):** Applied full Georgian translation for the 10 Principles, page title, SEO title, and description using polite/plural „თქვენ“ form and standard Georgian typography („...“). Rebuilt `src/data/pages.json`, `src/i18n/messages/ka.json`, and `src/i18n/ka/blocks.json`.
+
+### New / Pending Notes
 <!-- Add any feedback for /doctrine, /foundation, /brand, etc., or general terms you'd like adjusted across the whole site -->
 

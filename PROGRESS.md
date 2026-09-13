@@ -1,10 +1,11 @@
 # Progress
 
-**Current phase:** Phase 6 — Homepage visual review complete. Refined partner inquiries copy in `src/i18n/messages/ka.json`. All 82 tests pass, strict translation check passes, and `dist/ka` rebuilt cleanly.
+**Current phase:** Phase 6 — Registered, translated, and verified the Omarchy Doctrine page (`/doctrine`). All 82 tests pass, strict translation checks pass with 0 pending items, and `dist/ka` built cleanly.
 
-**Next task:** Visual review of secondary pages (`/doctrine`, `/foundation`, `/teams`, etc.) and prepare upstream PR for `omacom/omarchy-site`.
+**Next task:** Visual review of remaining secondary pages (`/foundation`, `/teams`, `/themes`, `/meetups`, `/news`, etc.) and prepare upstream PR for `omacom/omarchy-site`.
 
 ## Done
+- 2026-09-13 — Phase 6 (In Progress): Registered and translated the full Omarchy Doctrine page (`/doctrine`) into natural Georgian across `src/data/pages.json`, `src/i18n/messages/ka.json`, and `src/i18n/ka/blocks.json` (all 10 principles, page headers, and descriptions using polite/plural „თქვენ“ form and standard Georgian typography). Verified with 82 passing tests, 0 pending items, and successful `npm run build:locale -- ka`.
 - 2026-09-13 — Phase 6 (In Progress): Finished manual visual review of the homepage. Refined partner inquiries copy to "პარტნიორობისთვის:" in `src/i18n/messages/ka.json`. Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Replaced all occurrences of "საზოგადოება" with "თემი" across UI messages, page blocks, and news articles with context-appropriate grammatical declensions (`თემი`, `თემის`, `თემს`, `თემში`, `თემად`, `თემის მიერ`). Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Standardized team names in natural Georgian (`Core` -> `ძირითადი გუნდი`, `Rangers` -> `რეინჯერები`, aligned team intro sentence and `/teams` SEO description). Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
