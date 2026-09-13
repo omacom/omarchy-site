@@ -70,6 +70,17 @@ test('tiers order largest total first and escape markup in names', () => {
   )
 })
 
+test('an empty half of the name, spelled null by Zeffy, is dropped', () => {
+  const members = tierMembers(
+    [donation('Psyh null', 16), donation('null Solo', 16)],
+    [],
+  )
+  assert.deepEqual(
+    members.get('patrons-16b').map((m) => m.name),
+    ['Psyh', 'Solo'],
+  )
+})
+
 test('off-platform patrons join their tier', () => {
   const members = tierMembers([])
   assert.ok(members.get('patrons-8k').some((m) => m.name === 'Zeno'))

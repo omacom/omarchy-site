@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-09-12",
+  "refreshed": "2026-09-13",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -569,11 +569,11 @@
       "start": "2026-09-16T22:00:00.000Z",
       "end": "2026-09-17T00:30:00.000Z",
       "timezone": "America/Argentina/Buenos_Aires",
-      "address": "CABA · Lugar a confirmar",
-      "city": "Buenos Aires",
+      "address": "Möoi Vicente López, Av. del Libertador 105, B1638 Vicente López, Provincia de Buenos Aires, Argentina",
+      "city": "Vicente López",
       "country": "AR",
       "online": false,
-      "geo": { "lat": -34.6095579, "lon": -58.3887904, "approximate": true },
+      "geo": { "lat": -34.5330935, "lon": -58.467462000000005 },
       "hosts": [],
       "cover": "/images/meetups/evt-qxE1td01KCFXH7O-full.webp",
       "coverWidth": 800,
@@ -632,9 +632,9 @@
     },
     {
       "id": "evt-9fBfsMazGFKMmsE",
-      "title": "Software Freedom Day with Omarchy",
+      "title": "Software Freedom Day (\\w Omarchy & Ampixa)",
       "url": "https://luma.com/nq6agann",
-      "start": "2026-09-19T08:45:00.000Z",
+      "start": "2026-09-19T10:15:00.000Z",
       "end": "2026-09-19T11:45:00.000Z",
       "timezone": "Asia/Kathmandu",
       "address": "Kathmandu University, JG9Q+PGG, Dhulikhel 45200, Nepal",
@@ -678,23 +678,6 @@
       "geo": { "lat": -10.3333333, "lon": -53.2, "approximate": true },
       "hosts": [],
       "cover": "/images/meetups/evt-B35A5EQ0vox0GoY-full.webp",
-      "coverWidth": 800,
-      "coverHeight": 800
-    },
-    {
-      "id": "evt-PxPJVCnzOvx3MSu",
-      "title": "Linux & Omarchy Meetup - Northampton, UK",
-      "url": "https://luma.com/da9jp6p4",
-      "start": "2026-09-24T15:00:00.000Z",
-      "end": "2026-09-24T17:30:00.000Z",
-      "timezone": "Europe/London",
-      "address": "Vulcan Works, 34-38 Guildhall Rd, Northampton NN1 1EW, UK",
-      "city": "Northampton",
-      "country": "GB",
-      "online": false,
-      "geo": { "lat": 52.235849599999995, "lon": -0.8944494 },
-      "hosts": [],
-      "cover": "/images/meetups/evt-PxPJVCnzOvx3MSu-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },
@@ -833,6 +816,23 @@
       "cover": "/images/meetups/evt-CDLEcZNMJtilaTP-full.webp",
       "coverWidth": 800,
       "coverHeight": 600
+    },
+    {
+      "id": "evt-FSyUPQyjUYvFKfn",
+      "title": "Omarchy Prague",
+      "url": "https://luma.com/v9bjvpbu",
+      "start": "2026-09-29T16:00:00.000Z",
+      "end": "2026-09-29T19:00:00.000Z",
+      "timezone": "Europe/Prague",
+      "address": "Scout Institute, Staroměstské nám. 4/1, Staré Město, 110 00 Praha-Praha 1, Czechia",
+      "city": "Hlavní město Praha",
+      "country": "CZ",
+      "online": false,
+      "geo": { "lat": 50.0866666, "lon": 14.419858699999999 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-FSyUPQyjUYvFKfn-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
     },
     {
       "id": "evt-XY4PE0sSpMrxY7t",
@@ -1124,6 +1124,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-PxPJVCnzOvx3MSu",
+      "title": "Linux & Omarchy Meetup - Northampton, UK",
+      "url": "https://luma.com/da9jp6p4",
+      "start": "2026-10-22T15:00:00.000Z",
+      "end": "2026-10-22T17:30:00.000Z",
+      "timezone": "Europe/London",
+      "address": "Vulcan Works, 34-38 Guildhall Rd, Northampton NN1 1EW, UK",
+      "city": "Northampton",
+      "country": "GB",
+      "online": false,
+      "geo": { "lat": 52.235849599999995, "lon": -0.8944494 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-PxPJVCnzOvx3MSu-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-bwIotEyWDuDPayu",
       "title": "DOmarchy 001 - Omarchy Santo Domingo 🇩🇴",
       "url": "https://luma.com/abahralp",
@@ -1139,6 +1156,23 @@
       "cover": "/images/meetups/evt-bwIotEyWDuDPayu-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
+    },
+    {
+      "id": "evt-Go579QoFlyA9E5r",
+      "title": "Omarchy Ghana",
+      "url": "https://luma.com/fzp8rdnm",
+      "start": "2026-10-31T19:00:00.000Z",
+      "end": "2026-10-31T20:00:00.000Z",
+      "timezone": "Africa/Abidjan",
+      "address": null,
+      "city": null,
+      "country": "GH",
+      "online": false,
+      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
+      "hosts": [],
+      "cover": "/images/meetups/evt-Go579QoFlyA9E5r-full.webp",
+      "coverWidth": 400,
+      "coverHeight": 400
     },
     {
       "id": "evt-SrfYTm4gfXfmvv3",
