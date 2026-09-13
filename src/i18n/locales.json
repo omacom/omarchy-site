@@ -288,5 +288,13 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "ZW"
+  },
+  "az": {
+    "name": "Azərbaycanca",
+    "domain": "https://az.omarchy.org",
+    "formatLocale": "az-AZ",
+    "ogLocale": "az_AZ",
+    "manual": false,
+    "flag": "AZ"
   }
 }
