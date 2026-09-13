@@ -5,6 +5,7 @@
 **Next task:** Visual review of remaining secondary pages (`/foundation`, `/teams`, `/themes`, `/meetups`, `/news`, etc.) and prepare upstream PR for `omacom/omarchy-site`.
 
 ## Done
+- 2026-09-13 — Phase 6 (In Progress): Applied custom review notes for the complete "Run Your Own Omarchy Meetup" guidelines on `/meetups` (all 9 rules, header, subheader, and footer notes) in `src/i18n/messages/ka.json`. Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Translated the complete "Run Your Own Omarchy Meetup" guidelines on `/meetups` (all 9 rules, header, subheader, and footer notes) into natural Georgian in `src/i18n/messages/ka.json`. Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Translated the region filter fallback button on `/meetups` (`src/astro/pages/MeetupsPage.tsx`) by making `Everywhere` statically extractable and adding Georgian translation `ყველგან` in `src/i18n/messages/ka.json`. Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Enabled translation for the `Open GitHub` button on `/teams` (`src/astro/pages/TeamsPage.tsx`) and added Georgian translation `გახსენით GitHub` in `src/i18n/messages/ka.json`. Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.

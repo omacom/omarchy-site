@@ -41,9 +41,8 @@ Navigation & Header / Footer
 - [x] **/foundation & /meetups buttons:** Translated standalone button links into Georgian (`The Patrons` -> `პატრონები`, `The Staff` -> `თანამშრომლები`, `The Sponsorships` -> `სპონსორობა`, `Open in Luma` -> `Luma-ში გახსნა`).
 - [x] **/teams (გუნდები):** Enabled translation for the `Open GitHub` button in `src/astro/pages/TeamsPage.tsx` and added Georgian translation (`გახსენით GitHub`) in `src/i18n/messages/ka.json`.
 - [x] **/meetups (შეხვედრები):** Translated the region filter fallback button ("Everywhere" -> "ყველგან") in `src/astro/pages/MeetupsPage.tsx` and `src/i18n/messages/ka.json`.
-- [x] **/meetups (შეხვედრები - წესები):** Translated the full "Run Your Own Omarchy Meetup" guidelines (all 9 rules, title, subtitle, and footer note) into natural Georgian in `src/i18n/messages/ka.json`.
+- [x] **/meetups (შეხვედრები - წესები):** Applied updated phrasing from review notes for the full "Run Your Own Omarchy Meetup" guidelines (all 9 rules, title, subtitle, and footer note) in `src/i18n/messages/ka.json`.
 - [x] **/doctrine (Omarchy-ის დოქტრინა):** Applied full Georgian translation for the 10 Principles, page title, SEO title, and description using polite/plural „თქვენ“ form and standard Georgian typography („...“). Rebuilt `src/data/pages.json`, `src/i18n/messages/ka.json`, and `src/i18n/ka/blocks.json`.
 
 ### New / Pending Notes
 <!-- Add any feedback for /doctrine, /foundation, /brand, etc., or general terms you'd like adjusted across the whole site -->
-
