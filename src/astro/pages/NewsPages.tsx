@@ -1,4 +1,4 @@
-import { t } from '@/i18n/site'
+import { t, language } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/icons'
 import { NewsHeader } from '@/components/NewsHeader'
@@ -56,8 +56,9 @@ export function NewsPostPage({ post }: { post: NewsPost }) {
               className="text-text-secondary"
             >
               DHH
-            </a>{' '}
-            {t('on')} <time dateTime={post.date}>{post.dateStr}</time>
+            </a>
+            {language === 'zh-CN' ? '\u3000' : ` ${t('on')} `}
+            <time dateTime={post.date}>{post.dateStr}</time>
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight text-text">
             {post.title}
