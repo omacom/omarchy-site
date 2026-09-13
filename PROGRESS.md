@@ -1,10 +1,11 @@
 # Progress
 
-**Current phase:** Phase 6 — Verification, Local Preview & Review in progress. Applied review notes from `REVIEW_NOTES.md` for homepage title, intro story paragraphs (chore to setup, omakase, Omarchy Doctrine), vibe coding quote, and 35-second install speed. All 82 tests pass, strict translation check passes, and `dist/ka` rebuilt cleanly.
+**Current phase:** Phase 6 — Verification, Local Preview & Review in progress. Standardized team names across the site in natural Georgian (Core -> ძირითადი გუნდი, Rangers -> რეინჯერები, and aligned prose/SEO descriptions). All 82 tests pass, strict translation check passes, and `dist/ka` rebuilt cleanly.
 
-**Next task:** Continue manual visual review from "It even runs Windows!" onward, complete remaining sections of the homepage, secondary pages, and news, then prepare upstream PR for `omacom/omarchy-site`.
+**Next task:** Continue manual visual review of the homepage and secondary pages, then prepare upstream PR for `omacom/omarchy-site`.
 
 ## Done
+- 2026-09-13 — Phase 6 (In Progress): Standardized team names in natural Georgian (`Core` -> `ძირითადი გუნდი`, `Rangers` -> `რეინჯერები`, aligned team intro sentence and `/teams` SEO description). Rebuilt `dist/ka`, verified with 82 passing tests and strict translation checks.
 - 2026-09-13 — Phase 6 (In Progress): Applied review notes from `REVIEW_NOTES.md` to `src/i18n/messages/ka.json` (fine-tuned site title with grammatical `-ი`, refined intro story on Linux setup, omakase, and Omarchy Doctrine, natural phrasing for vibe coding and 35-second install speed). Rebuilt `dist/ka`, updated social card PNGs, verified with 82 passing tests and strict translation checks. Marked items applied in `REVIEW_NOTES.md`.
 - 2026-09-12 — Phase 6 (In Progress): Ran local preview on port 3115, added `build:ka` and `dev:ka` convenience scripts in `package.json`, and created `REVIEW_NOTES.md`. Razmik manually reviewed and refined Georgian copy across the homepage up to "It even runs Windows!" (including natural phrasing for terms like stack -> დასტა, community plugins, patron terminology, and installation guides). Verified with 82 passing tests, strict translation check, and updated static build `dist/ka`.
 - 2026-09-12 — Phase 5: Translated all 26 news articles into natural Georgian (`src/i18n/ka/news.json` and `src/i18n/ka/news/*.html`), strictly preserved all HTML structure, tags, attributes, links, images, and code blocks, applied explicit USD formatting, verified with 0 pending news items, strict translation check (`npm run check:translations -- --strict-site --strict-news`), 82 passing tests, and successful `npm run build:locale -- ka`.
