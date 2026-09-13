@@ -1,4 +1,5 @@
 import sharp from 'sharp'
+import locales from '../../src/i18n/locales.json' with { type: 'json' }
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import fonts from '../fonts/social/manifest.json' with { type: 'json' }
@@ -12,7 +13,7 @@ const escape = (text) =>
   text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
 export function validateSocialCharacters(code, copy = socialCopies[code]) {
-  const font = fonts.fonts[fonts.locales[code]]
+  const font = fonts.fonts[fonts.locales[locales[code]?.contentLocale ?? code]]
   if (!font || !copy) throw new Error(`Prepare social-card fonts for ${code}`)
   const supported = new Set(font.characters + fonts.fonts.Latin.characters)
   for (const char of copy.lines.join('')) {
@@ -45,10 +46,11 @@ export async function socialLabelMasks(codes = Object.keys(socialCopies)) {
   for (const code of codes) {
     const copy = socialCopies[code]
     validateSocialCharacters(code, copy)
-    const font = fonts.fonts[fonts.locales[code]]
+    const font =
+      fonts.fonts[fonts.locales[locales[code]?.contentLocale ?? code]]
     masks[code] = []
     for (const [index, line] of copy.lines.entries()) {
-      const english = code === 'en'
+      const english = (locales[code].contentLocale ?? code) === 'en'
       const maxSize = index === 0 ? 28 : english ? 17 : 20
       const top = english ? [390, 454, 482][index] : [370, 454, 510][index]
       const height = [70, 50, 60][index]

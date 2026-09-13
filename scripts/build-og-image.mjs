@@ -1,5 +1,6 @@
 /** Build a 1200x630 social card for every site theme from its CSS palette. */
 import sharp from 'sharp'
+import locales from '../src/i18n/locales.json' with { type: 'json' }
 import { socialLabelMasks, colorSocialLabels } from './lib/social-labels.mjs'
 import { SITE_THEMES } from '../src/lib/site-themes.ts'
 import fs from 'node:fs'
@@ -13,9 +14,10 @@ const css = fs.readFileSync(path.join(root, 'src/styles.css'), 'utf8')
 
 const W = 1200
 const H = 630
+const language = process.env.PUBLIC_SITE_LOCALE || 'en'
 const labelMasks = await socialLabelMasks(
   process.argv.includes('--site')
-    ? [process.env.PUBLIC_SITE_LOCALE || 'en']
+    ? [locales[language].contentLocale ?? language]
     : undefined,
 )
 

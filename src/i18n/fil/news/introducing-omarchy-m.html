@@ -1,0 +1,40 @@
+<p>Gumagawa ang Apple ng magagaling na hardware. Noon pa man (liban na lang noong minsang pumalpak ang butterfly keyboard). At marami sa mga dumarating sa Omarchy ay galing sa Mac. Marami sa kanila ang gustong itago ang machine pero alisin ang operating system. Kaya tatapusin namin ang sinimulan ng Asahi: Omarchy na tumatakbong maganda sa Apple Silicon, na halos walang abala sa pag-setup.</p>
+
+<p>May team na sa likod ng gawaing iyan. Ngayon ginagawa na namin itong opisyal: <a href="/teams/#m">Omarchy M</a>, ang aming team para sa mga Mac na may Apple Silicon (plus ilang miyembrong nag-aalaga sa mas lumang mga Mac).</p>
+
+<p>Hayahan ninyong ipakilala ko ang mga miyembro.</p>
+
+<p><strong>Ang installer.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> ang gumagawa ng <a href="https://github.com/maralcbr/omarchy-mx-mac">katutubong Mac installer</a>. Nagda-download ka ng app sa macOS, kinukuha nito ang pirmadong Omarchy release, hinahati nito ang mga partition, at ibinoboot ka nito sa Omarchy katabi ng umiiral mong macOS. Walang USB stick, walang mga orasyon sa terminal. Siya rin ang gumawa ng build na nagpagana sa mga external monitor sa pamamagitan ng USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> ang nagmentina ng <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> sa loob ng isang taon, na nagpapatakbo ng Omarchy sa mga M1 at M2 machine bago pa man naging opisyal ang alinman dito, at bumuo ng Discord community na may mahigit 800 katao sa paligid nito. <a href="https://x.com/bi9kahuna">Scott Jones</a> ang kabilang kalahati ng proyektong iyon sa Linux side ng pag-install. Kamakailan ay pinagana niya ang display ng M3 Air sa hardware display controller ng Apple, na nagdala sa machine na iyon mula sa hindi magamit tungo sa magagamit sa loob ng isang gabi.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> ang gumawa ng <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: ang tunay na Omarchy desktop na tumatakbo bilang katutubo, hardware-accelerated na app sa iyong Mac, na nakakonekta ang iyong camera, audio, clipboard, at isang shared folder. Walang kailangang i-partition. I-download lang ito at makita kung ano ang pinagkakaguluhan.</p>
+
+<p><strong>Mga Package.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> ang sumisiguro na ang lahat ng kailangan ng Omarchy ay umiiral bilang isang <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 package</a>, kasama ng mga generic na ARM64 disk image para sa mga virtual machine at ng mga guest tool na nagpapadali sa paggamit sa mga ito.</p>
+
+<p><strong>Mga driver at ang kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> ang nagbubuhay sa Neo at nagtatayo ng mga pundasyong pinagbabasehan ng iba pang team. Gumagawa siya ng SPTM emulator na nagbibigay-daan para ma-trace ang macOS sa M4 at mas bagong mga chip. Mahalaga ang mga trace na iyon para mapagana ang mga display, GPU, audio, wireless, at Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> ang nagsusulat ng mga GPU driver, at pinagana ang Touch ID sa pamamagitan ng direktang pakikipag-usap sa Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> ay eksperto sa M5: ni-reverse-engineer niya ang proprietary na N1 chip ng Apple at pinagana ang Wi-Fi at Bluetooth nito sa Linux. Nag-ambag din siya ng hardware video encoding at decoding, Bluetooth, at mga pagpapabuti sa desktop sa Neo. <a href="https://x.com/LiamRay1O">Liam</a> ang nagbubuhay sa trackpad, power management, mga speaker, at headphone output ng Neo, na may mahalagang pundasyon mula sa mga macOS trace ni Ryan. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> ang nagmementina ng M4 support at mga clean-room implementation, at nagtatrabaho sa integration at packaging. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> ang nagpagana ng <a href="https://github.com/subedijaidip/dp-altmode-t8112">mga external display sa pamamagitan ng USB-C sa M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> ang gumagawa ng <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, na nagdadala ng MLX machine learning framework ng Apple sa Linux sa mga Apple GPU sa pamamagitan ng Vulkan. Ang code mo ay nagsasabi pa ring <code>import mlx.core as mx</code>, pero ngayon tumatakbo na ito sa Omarchy.</p>
+
+<p><strong>Mas lumang mga Mac.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> ay may tambak na mga pull request para sa 2016 at 2017 Touch Bar MacBook Pro: mga speaker, Wi-Fi, ang ambient light sensor, ang Touch Bar mismo. <a href="https://x.com/novuon_ai">Randy</a> ay ni-reverse-engineer ang T2 security chip para dalhin ang Touch ID sa mga Intel Mac, at idinodokumento ang bawat fix para sa 2019 MacBook Pro habang ginagawa ito. <a href="https://x.com/jondkinney">Jon Kinney</a> ay unti-unting bumuo ng ARM support para sa Omarchy noong isang taon, at ngayon ay pinapanatiling koordinado ang buong team kung sino ang gumagawa ng ano.</p>
+
+<p>Sama-sama, sila ay isang kahanga-hangang grupo. Labinlimang taong hindi naghintay ng pahintulot, at gumagamit ng mga agent para kumilos sa bilis na tila katawa-tawa noong isang taon.</p>
+
+<p>Ang target para sa unang release ay perpektong compatibility sa M1 at M2, kabilang ang mga Pro at Max variant:</p>
+
+<ul>
+  <li>Isang seamless na installer, na may parehong install at try na opsyon</li>
+  <li>Buong suporta sa GPU</li>
+  <li>Mga external monitor sa pamamagitan ng USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Pag-encrypt ng disk</li>
+</ul>
+
+<p>K umsabay na ginagawa ang mas bagong mga machine, pero sa M1 at M2 namin unang itinatanim ang bandera. Bukod sa mga M machine, may milyun-milyong vintage laptop diyan, marami sa kanila ay retirado na sa pinakabagong mga ambisyon ng macOS ng Apple, at bawat isa sa kanila ay isang kahanga-hangang Omarchy computer na naghihintay na mangyari.</p>
+
+<p>Hindi mo kailangang hintayin ang pinakintab na release para magsimula. Ang <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> ay magdadala sa iyo sa tunay na desktop sa iyong Mac sa loob ng ilang minuto. At kung handa ka nang mag-commit, ilalagay ng <a href="https://github.com/maralcbr/omarchy-mx-mac">installer</a> ang Omarchy katabi ng macOS sa isang M1 o M2 ngayon.</p>
+
+<p>Sa wakas, isang pakiusap. Kung nagtatrabaho ka sa Linux para sa hardware ng Apple, maging ito ay mga kernel driver, firmware, packaging, mga installer, o machine learning, gusto naming makarinig mula sa iyo. Malaki ang tsansang nalutas mo na ang isang bagay na hinahabol pa rin namin, o baliktad. Makipag-ugnayan sa <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Tapusin natin ang sinimulan ng Asahi.</p>

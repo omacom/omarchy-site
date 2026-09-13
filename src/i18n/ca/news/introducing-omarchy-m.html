@@ -1,0 +1,40 @@
+<p>Apple fa un maquinari excel·lent. Sempre l'ha fet (menys aquella vegada amb el teclat de papallona). I molta de la gent que arriba a Omarchy ve d'un Mac. A molts els encantaria conservar la màquina i perdre el sistema operatiu. Així que acabarem el que Asahi va començar: Omarchy funcionant de meravella a Apple Silicon, amb el mínim d'embolic en la configuració.</p>
+
+<p>Aquesta feina ja té un equip al darrere. Avui ho fem oficial: <a href="/teams/#m">Omarchy M</a>, el nostre equip per als Mac amb Apple Silicon (més uns quants membres que mantenen els Mac més antics dins del grup).</p>
+
+<p>Permeteu-me que us presenti els membres.</p>
+
+<p><strong>L'instal·lador.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> està creant l'<a href="https://github.com/maralcbr/omarchy-mx-mac">instal·lador nadiu per a Mac</a>. Baixes una app a macOS, obté la versió signada d'Omarchy, prepara les particions i t'arrenca a Omarchy al costat del teu macOS actual. Sense llapis USB, sense encanteris al terminal. Ell també va fer la compilació que va fer funcionar els monitors externs per USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> ha mantingut <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> durant un any, fent arribar Omarchy a les màquines M1 i M2 molt abans que res d'això fos oficial, i creant al seu voltant una comunitat de Discord de més de 800 persones. <a href="https://x.com/bi9kahuna">Scott Jones</a> és l'altra meitat d'aquest projecte pel que fa a la part de Linux de la instal·lació. Recentment va fer funcionar la pantalla del M3 Air amb el controlador de pantalla de maquinari d'Apple, cosa que va fer passar aquella màquina d'inutilitzable a utilitzable en una nit.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> va crear <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: l'escriptori real d'Omarchy funcionant com una app nativa amb acceleració de maquinari al teu Mac, amb la càmera, l'àudio, el porta-retalls i una carpeta compartida connectats. Res per particionar. Només baixa'l i mira per què hi ha tant d'enrenou.</p>
+
+<p><strong>Paquets.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> s'assegura que tot el que Omarchy necessita existeixi com a <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paquet aarch64</a>, juntament amb imatges de disc ARM64 genèriques per a màquines virtuals i les eines de convidat que les fan agradables d'utilitzar.</p>
+
+<p><strong>Controladors i el nucli.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> està posant en marxa el Neo i construint els fonaments sobre els quals treballa la resta de l'equip. Està desenvolupant un emulador SPTM que permet traçar macOS en xips M4 i posteriors. Aquestes traces són essencials per fer funcionar les pantalles, les GPU, l'àudio, la connexió sense fil i el Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> està escrivint els controladors de GPU, i va fer funcionar Touch ID parlant directament amb Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> s'especialitza en la feina d'M5: va aplicar enginyeria inversa al xip propietari N1 d'Apple i va fer funcionar el seu Wi-Fi i Bluetooth a Linux. També ha contribuït amb la codificació i descodificació de vídeo per maquinari, Bluetooth i millores d'escriptori al Neo. <a href="https://x.com/LiamRay1O">Liam</a> està posant en marxa el trackpad, la gestió d'energia, els altaveus i la sortida d'auriculars del Neo, amb les traces de macOS de Ryan com a base essencial. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> manté el suport per a M4 i les implementacions de sala neta, i treballa en la integració i l'empaquetatge. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> va habilitar <a href="https://github.com/subedijaidip/dp-altmode-t8112">les pantalles externes per USB-C al MacBook Air M2</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> està creant <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, que porta el framework d'aprenentatge automàtic MLX d'Apple a Linux en GPU d'Apple a través de Vulkan. El teu codi continua dient <code>import mlx.core as mx</code>, però ara s'executa a Omarchy.</p>
+
+<p><strong>Mac antics.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> té una pila de pull requests per als MacBook Pro amb Touch Bar de 2016 i 2017: altaveus, Wi-Fi, sensor de llum ambiental, la mateixa Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> està aplicant enginyeria inversa al xip de seguretat T2 per portar Touch ID als Mac amb Intel, i documentant cada correcció per al MacBook Pro de 2019 pel camí. <a href="https://x.com/jondkinney">Jon Kinney</a> ja treballava en el suport ARM per a Omarchy fa un any, i ara manté tot l'equip coordinat sobre qui fa què.</p>
+
+<p>Junts, són un grup formidable. Quinze persones que no van esperar permís, i que han estat utilitzant agents per avançar a un ritme que hauria semblat absurd fa un any.</p>
+
+<p>L'objectiu per a la primera versió és la compatibilitat perfecta amb M1 i M2, incloses les variants Pro i Max:</p>
+
+<ul>
+  <li>Un instal·lador sense friccions, amb opcions tant d'instal·lació com de prova</li>
+  <li>Suport complet de GPU</li>
+  <li>Monitors externs per USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Xifratge de disc</li>
+</ul>
+
+<p>Les màquines més noves s'estan treballant en paral·lel, però M1 i M2 són on plantem la bandera primer. A més de les màquines M, hi ha milions de portàtils clàssics per aquí fora, molts d'ells ja jubilats de les últimes ambicions de macOS d'Apple, i cadascun d'ells és un meravellós ordinador Omarchy en potència.</p>
+
+<p>No cal que esperis la versió polida per començar. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> et farà veure l'escriptori real al teu Mac en qüestió de minuts. I si estàs a punt per comprometre-t'hi, <a href="https://github.com/maralcbr/omarchy-mx-mac">l'instal·lador</a> posarà Omarchy al costat de macOS en un M1 o M2 avui mateix.</p>
+
+<p>Finalment, una petició. Si has estat treballant en Linux per a maquinari d'Apple, ja sigui en controladors de nucli, microprogramari, empaquetatge, instal·ladors o aprenentatge automàtic, ens encantaria saber de tu. Hi ha moltes possibilitats que hagis resolt alguna cosa que nosaltres encara perseguim, o viceversa. Posa't en contacte a <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Acabem el que Asahi va començar.</p>
