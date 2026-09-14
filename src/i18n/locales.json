@@ -195,11 +195,10 @@
   },
   "pl": {
     "name": "Polski",
-    "domain": "https://pl.omarchy.org",
+    "domain": "https://omarchy.pl",
     "formatLocale": "pl-PL",
     "ogLocale": "pl_PL",
-    "manual": false,
-    "flag": "PL"
+    "manual": false
   },
   "lt": {
     "name": "Lietuvių",
