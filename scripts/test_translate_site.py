@@ -49,6 +49,13 @@ class ValidationTests(unittest.TestCase):
         worker.validate_value('Over 1,000 downloads', 'Plus de 1 000 téléchargements')
         with self.assertRaises(worker.TranslationError):
             worker.validate_value('29 languages', '28 sprog')
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value('29 languages', 'sprog')
+
+    def test_spelled_out_numbers_may_become_numerals(self):
+        worker.validate_value('ten principles', '10の原則')
+        worker.validate_value('more than twenty years', '20年以上')
+        worker.validate_value('29 languages and ten themes', '29言語と10テーマ')
 
     def test_code_and_empty_paragraphs_rejected(self):
         with self.assertRaises(worker.TranslationError):

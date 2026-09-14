@@ -1,5 +1,4 @@
 import manualJson from '../data/manual.json'
-import pluginsJson from '../data/plugins.json'
 import themesJson from '../data/themes.json'
 import { loadNews } from '../lib/news'
 import type { NewsPost } from '../lib/news'
@@ -22,7 +21,6 @@ export type SearchEntry =
       meta: string
       text: string
     }
-  | { kind: 'plugin'; slug: string; title: string; meta: string; text: string }
   | { kind: 'theme'; slug: string; title: string; meta: string; text: string }
 
 const ENTITIES: Record<string, string> = {
@@ -110,23 +108,6 @@ export async function buildSearchIndex(): Promise<Array<SearchEntry>> {
     manualPart.push(...manualSections(chapter))
   }
   const rest: SearchEntry[] = []
-  const catalogue = (pluginsJson as { plugins: Array<Record<string, unknown>> })
-    .plugins
-  for (const plugin of catalogue) {
-    rest.push({
-      kind: 'plugin',
-      slug: String(plugin.id),
-      title: String(plugin.name),
-      meta: [plugin.category, plugin.author].filter(Boolean).join(' · '),
-      text: [
-        plugin.category,
-        plugin.author,
-        ...((plugin.tags as string[] | undefined) ?? []),
-      ]
-        .filter(Boolean)
-        .join(' '),
-    })
-  }
   for (const theme of themesJson as Array<{ name: string; repo: string }>) {
     rest.push({
       kind: 'theme',

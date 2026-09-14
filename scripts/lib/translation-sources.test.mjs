@@ -121,3 +121,44 @@ test('dynamic authored copy is extracted without donor, event, or plugin names',
     ].sort(),
   )
 })
+
+test('doctrine headings and prose enter the queue with exact rendered keys', (t) => {
+  const { root, put } = fixture(t)
+  const heading = '<a href="#unite-the-nerds">Unite the nerds</a>'
+  const paragraph = 'We <em>can</em> do this. <a href="/staff">Meet us</a>.'
+  put('src/data/pages.json', {
+    doctrine: {
+      title: 'Doctrine by DHH',
+      seoTitle: 'The Omarchy Doctrine',
+      description: 'Ten principles.',
+      html: `<h2 id="unite-the-nerds">${heading}</h2>\n<p>${paragraph}</p>\n`,
+    },
+  })
+  assert.deepEqual(collectSources(root), {
+    messages: ['Doctrine by DHH', 'Ten principles.', 'The Omarchy Doctrine'],
+    blocks: [heading, paragraph].sort(),
+  })
+})
+
+test('all heading levels, tables, and definition lists enter the prose queue', (t) => {
+  const { root, put } = fixture(t)
+  put('src/data/pages.json', {
+    example: {
+      html: '<h1>Title</h1><h4>Detail</h4><h5>Further</h5><h6>Last</h6><table><caption>Results</caption><tr><th>Column</th><td>Cell</td></tr></table><dl><dt>Term</dt><dd>Definition</dd></dl>',
+    },
+  })
+  assert.deepEqual(
+    collectSources(root).blocks,
+    [
+      'Title',
+      'Detail',
+      'Further',
+      'Last',
+      'Results',
+      'Column',
+      'Cell',
+      'Term',
+      'Definition',
+    ].sort(),
+  )
+})

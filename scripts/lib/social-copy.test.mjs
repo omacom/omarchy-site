@@ -26,7 +26,8 @@ test('every language has complete, renderable social-card text', () => {
 test('every language and theme has a 1200x630 PNG', () => {
   for (const code of Object.keys(locales)) {
     for (const theme of SITE_THEMES) {
-      const path = `${code === 'en' ? '' : `${code}/`}${theme.id}.png`
+      const content = locales[code].contentLocale ?? code
+      const path = `${content === 'en' ? '' : `${content}/`}${theme.id}.png`
       const image = readFileSync(
         new URL(`../../public/brand/social/${path}`, import.meta.url),
       )
