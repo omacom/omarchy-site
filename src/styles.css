@@ -2333,7 +2333,15 @@ h6 {
 
 .brand__preview {
   width: 100%;
-  background: linear-gradient(to bottom, var(--t-field-crest) 0 26.316%, var(--t-field-hover) 26.316% 36.842%, var(--t-field-lit) 36.842% 57.895%, var(--t-field-mid) 57.895% 73.684%, var(--t-field-dim) 73.684% 100%);
+  /* 4-3-4-3-5 of 19 rows; keep in lockstep with src/lib/field-bands.ts */
+  background: linear-gradient(
+    to bottom,
+    var(--t-field-crest) 0% 21.053%,
+    var(--t-field-hover) 21.053% 36.842%,
+    var(--t-field-lit) 36.842% 57.895%,
+    var(--t-field-mid) 57.895% 73.684%,
+    var(--t-field-dim) 73.684% 100%
+  );
   mask: var(--brand-mask) no-repeat center / 100% 100%;
   -webkit-mask: var(--brand-mask) no-repeat center / 100% 100%;
 }

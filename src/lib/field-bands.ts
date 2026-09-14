@@ -1,11 +1,5 @@
 /** Horizontal field inks on the wordmark, in crest→dim order. */
-export const FIELD_BAND_INKS = [
-  'crest',
-  'hover',
-  'lit',
-  'mid',
-  'dim',
-] as const
+export const FIELD_BAND_INKS = ['crest', 'hover', 'lit', 'mid', 'dim'] as const
 
 export type FieldBandInk = (typeof FIELD_BAND_INKS)[number]
 
@@ -48,7 +42,10 @@ export function fieldBandInkAtT(t: number): FieldBandInk {
 }
 
 /** Ink for bitmap row `row` when the glyph is `height` rows tall. */
-export function fieldBandInkAtRow(row: number, height = FIELD_BAND_ROWS): FieldBandInk {
+export function fieldBandInkAtRow(
+  row: number,
+  height = FIELD_BAND_ROWS,
+): FieldBandInk {
   const inks = fieldBandRowInks()
   if (height === inks.length) {
     const i = Math.min(inks.length - 1, Math.max(0, Math.floor(row)))
@@ -57,18 +54,25 @@ export function fieldBandInkAtRow(row: number, height = FIELD_BAND_ROWS): FieldB
   return fieldBandInkAtT((row + 0.5) / Math.max(1, height))
 }
 
+/** Cumulative band edges as percents of height: 0, 21.053, …, 100. */
+export function fieldBandStopPercents(): number[] {
+  const pct = (n: number) => Math.round((n / FIELD_BAND_ROWS) * 100000) / 1000
+  const stops = [0]
+  let acc = 0
+  for (const [, units] of FIELD_BAND_UNITS) {
+    acc += units
+    stops.push(pct(acc))
+  }
+  return stops
+}
+
 /** CSS linear-gradient: 4/19, 3/19, 4/19, 3/19, 5/19 of the word. */
 export function fieldBandGradientCss(
   colorOf: (ink: FieldBandInk) => string = (ink) => `var(--t-field-${ink})`,
 ): string {
-  const pct = (n: number) =>
-    `${Math.round((n / FIELD_BAND_ROWS) * 100000) / 1000}%`
-  const stops: string[] = []
-  let acc = 0
-  for (const [ink, units] of FIELD_BAND_UNITS) {
-    const from = acc
-    acc += units
-    stops.push(`${colorOf(ink)} ${pct(from)} ${pct(acc)}`)
-  }
+  const edges = fieldBandStopPercents()
+  const stops = FIELD_BAND_UNITS.map(
+    ([ink], i) => `${colorOf(ink)} ${edges[i]}% ${edges[i + 1]}%`,
+  )
   return `linear-gradient(to bottom, ${stops.join(', ')})`
 }
