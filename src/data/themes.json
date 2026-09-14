@@ -10,6 +10,11 @@
   "name": "Amberbyte"
  },
  {
+  "repo": "https://github.com/zigmoo/omarchy-amber-console-theme",
+  "image": "/assets/themes/amber-console.webp",
+  "name": "Amber Console"
+ },
+ {
   "repo": "https://github.com/vale-c/omarchy-arc-blueberry",
   "image": "/assets/themes/arc-blueberry.webp",
   "name": "Arc Blueberry"
