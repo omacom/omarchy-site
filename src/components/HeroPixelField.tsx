@@ -39,6 +39,7 @@ function readPalette() {
     lit: token('--t-field-lit', '#9ece6a'),
     hover: token('--t-field-hover', '#bbdd97'),
     crest: token('--t-field-crest', '#daecc6'),
+    tricolor: document.documentElement.lang === 'ro',
   }
 }
 
@@ -895,6 +896,14 @@ export function HeroPixelField({
        * is still being made.
        */
       const wordmarkInk = (cx: number, cy: number) => {
+        if (palette.tricolor) {
+          const position = (cx - wmX) / (glyph.width * wmCW)
+          return position < 1 / 3
+            ? palette.crest
+            : position < 2 / 3
+              ? palette.hover
+              : palette.lit
+        }
         let crest = stamps.length > 0 ? stampAt(cx, cy) : 0
 
         for (const glow of glowsOnWordmark) {
@@ -925,7 +934,7 @@ export function HeroPixelField({
         const y = Math.round(yTop)
         const rowHeight = Math.round(yTop + wmCH) - y
 
-        if (stamps.length === 0 && !cursorOnWordmark) {
+        if (!palette.tricolor && stamps.length === 0 && !cursorOnWordmark) {
           ctx.fillStyle = restInks[row]
           let run = 0
           for (let col = 0; col <= glyph.width; col++) {

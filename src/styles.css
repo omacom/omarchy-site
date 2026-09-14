@@ -908,6 +908,21 @@
   --t-hdr-surface: #141414;
 }
 
+/* Romanian branding: vertical blue, yellow, and red flag bands. */
+html[lang='ro'] {
+  --t-field-dim: #002b7f;
+  --t-field-mid: #fcd116;
+  --t-field-lit: #ce1126;
+  --t-field-hover: #fcd116;
+  --t-field-crest: #002b7f;
+  --t-wordmark-gradient: linear-gradient(
+    to right,
+    #002b7f 0% 33.333333%,
+    #fcd116 33.333333% 66.666667%,
+    #ce1126 66.666667% 100%
+  );
+}
+
 /* The explore galaxy draws a dark starfield whatever the theme; this scope
    pins the Tokyo Night dark tokens for everything inside it. */
 .dark-scope {
