@@ -1,0 +1,150 @@
+<p>
+  Apple prodhon pajisje të shkëlqyera. Gjithmonë e ka bërë këtë (përveç asaj
+  here me tastierën butterfly). Dhe shumë nga njerëzit që vijnë te Omarchy vijnë
+  nga një Mac. Shumë prej tyre do të donin ta mbanin pajisjen dhe të hiqnin
+  sistemin operativ. Prandaj do ta përfundojmë atë që nisi Asahi: Omarchy që
+  punon për mrekulli në Apple Silicon, me sa më pak telashe konfigurimi.
+</p>
+
+<p>
+  Kjo punë tashmë ka një ekip pas vetes. Sot po e bëjmë zyrtare:
+  <a href="/teams/#m">Omarchy M</a>, ekipi ynë për Mac me Apple Silicon (plus
+  disa anëtarë që mbajnë në lojë edhe Mac-ët më të vjetër).
+</p>
+
+<p>Më lejoni t’ju prezantoj anëtarët.</p>
+
+<p>
+  <strong>Instaluesi.</strong>
+  <a href="https://x.com/maralcbr">Marcelo Alcantara</a> po ndërton
+  <a href="https://github.com/maralcbr/omarchy-mx-mac"
+    >instaluesin vendas për Mac</a
+  >. Shkarkon një aplikacion në macOS, ai merr versionin e nënshkruar të
+  Omarchy, krijon ndarjet e diskut dhe të nis në Omarchy krahas macOS-it
+  ekzistues. Pa memorie USB, pa magji në terminal. Ai përgatiti edhe versionin
+  që aktivizoi monitorët e jashtëm përmes USB-C.
+</p>
+
+<p>
+  <strong>Omarchy Mac.</strong>
+  <a href="https://x.com/tiredkebab">Naeem Malik</a> e ka mirëmbajtur
+  <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> për një vit,
+  duke e sjellë Omarchy në pajisje M1 dhe M2 shumë kohë përpara se kjo të bëhej
+  zyrtare dhe duke ndërtuar rreth tij një komunitet Discord me mbi 800 njerëz.
+  <a href="https://x.com/bi9kahuna">Scott Jones</a> është gjysma tjetër e atij
+  projekti, nga ana Linux e instalimit. Së fundmi vuri në punë ekranin e M3 Air
+  mbi kontrolluesin fizik të ekranit të Apple, duke e kthyer atë pajisje nga e
+  papërdorshme në të përdorshme brenda një nate.
+</p>
+
+<p>
+  <strong>Try Omarchy.</strong>
+  <a href="https://x.com/martiano">Eduardo Martinez</a> ndërtoi
+  <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: desktopin e
+  vërtetë të Omarchy si aplikacion vendas në Mac, me përshpejtim nga pajisja dhe
+  me kamerën, audion, kujtesën e kopjimit dhe një dosje të përbashkët të
+  lidhura. Asgjë për të ndarë në disk. Thjesht shkarkoje dhe shiko për çfarë
+  bëhet gjithë ajo zhurmë.
+</p>
+
+<p>
+  <strong>Paketat.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> po
+  sigurohet që gjithçka që i duhet Omarchy të ekzistojë si
+  <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paketë aarch64</a>,
+  bashkë me imazhe të përgjithshme disku ARM64 për makina virtuale dhe mjetet
+  për sistemin mysafir që i bëjnë të këndshme për t’u përdorur.
+</p>
+
+<p>
+  <strong>Drejtuesit dhe kerneli.</strong>
+  <a href="https://github.com/RyanTheTide">Ryan Murray</a> po vë në punë Neo-n
+  dhe po ndërton themelet mbi të cilat punon pjesa tjetër e ekipit. Ai po
+  zhvillon një emulator SPTM që mundëson gjurmimin e macOS në çipa M4 dhe më të
+  rinj. Ato gjurmë janë thelbësore për të vënë në punë ekranet, GPU-të, audion,
+  rrjetin pa tel dhe Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> po
+  shkruan drejtuesit e GPU-së dhe vuri në punë Touch ID duke komunikuar
+  drejtpërdrejt me Secure Enclave.
+  <a href="https://x.com/acelogic_">Miguel Cruz</a> specializohet në M5: ai
+  analizoi përmes inxhinierisë së kundërt çipin pronësor N1 të Apple dhe vuri në
+  punë Wi-Fi-n dhe Bluetooth-in e tij në Linux. Gjithashtu ka kontribuar me
+  kodim dhe dekodim video nga pajisja, Bluetooth dhe përmirësime të desktopit në
+  Neo. <a href="https://x.com/LiamRay1O">Liam</a> po vë në punë trackpad-in,
+  menaxhimin e energjisë, altoparlantët dhe daljen e kufjeve të Neo-s, me
+  gjurmët e macOS nga Ryan si bazë thelbësore.
+  <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> mirëmban
+  mbështetjen për M4 dhe zbatimet e pavarura pa përdorur kodin origjinal, si dhe
+  punon me integrimin dhe paketimin.
+  <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> mundësoi
+  <a href="https://github.com/subedijaidip/dp-altmode-t8112"
+    >ekranet e jashtme përmes USB-C në M2 MacBook Air</a
+  >.
+</p>
+
+<p>
+  <strong>MLX.</strong>
+  <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> po ndërton
+  <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, që
+  sjell framework-un MLX të Apple për mësimin makinerik në Linux mbi GPU-të e
+  Apple përmes Vulkan. Kodi yt ende thotë <code>import mlx.core as mx</code>,
+  por tani ekzekutohet në Omarchy.
+</p>
+
+<p>
+  <strong>Mac-ët më të vjetër.</strong>
+  <a href="https://x.com/shawnyeager">Shawn Yeager</a> ka një grumbull kërkesash
+  për bashkim për MacBook Pro me Touch Bar të viteve 2016 dhe 2017:
+  altoparlantët, Wi-Fi, sensori i dritës së ambientit dhe vetë Touch Bar.
+  <a href="https://x.com/novuon_ai">Randy</a> po analizon përmes inxhinierisë së
+  kundërt çipin e sigurisë T2 për të sjellë Touch ID në Mac me Intel, duke
+  dokumentuar gjatë rrugës çdo ndreqje për MacBook Pro të vitit 2019.
+  <a href="https://x.com/jondkinney">Jon Kinney</a> po punonte me mbështetjen
+  ARM për Omarchy një vit më parë dhe tani e mban gjithë ekipin të koordinuar
+  mbi punën e secilit.
+</p>
+
+<p>
+  Së bashku formojnë një grup të jashtëzakonshëm. Pesëmbëdhjetë njerëz që nuk
+  pritën leje dhe që kanë përdorur agjentë për të ecur me një ritëm që një vit
+  më parë do të dukej absurd.
+</p>
+
+<p>
+  Synimi i versionit të parë është pajtueshmëri e përsosur me M1 dhe M2,
+  përfshirë variantet Pro dhe Max:
+</p>
+
+<ul>
+  <li>Një instalues pa telashe, me mundësi instalimi dhe prove</li>
+  <li>Mbështetje e plotë e GPU-së</li>
+  <li>Monitorë të jashtëm përmes USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Enkriptim disku</li>
+</ul>
+
+<p>
+  Po punohet paralelisht edhe me pajisjet më të reja, por M1 dhe M2 janë aty ku
+  do ta ngulim flamurin fillimisht. Krahas pajisjeve M, ka miliona laptopë të
+  vjetër, shumë prej të cilëve tashmë janë lënë jashtë ambicieve më të fundit të
+  Apple për macOS, dhe secili është një kompjuter i mrekullueshëm Omarchy që
+  pret të marrë jetë.
+</p>
+
+<p>
+  Nuk ke pse të presësh versionin e përfunduar për të filluar.
+  <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> do të të
+  sjellë desktopin e vërtetë në Mac brenda pak minutash. Dhe nëse je gati të
+  hedhësh hapin,
+  <a href="https://github.com/maralcbr/omarchy-mx-mac">instaluesi</a> do ta
+  vendosë Omarchy krahas macOS në një M1 ose M2 që sot.
+</p>
+
+<p>
+  Në fund, një kërkesë. Nëse ke punuar me Linux për pajisje Apple, qoftë me
+  drejtues kerneli, firmware, paketim, instalues apo mësim makinerik, do të na
+  pëlqente të dëgjonim nga ti. Ka shumë gjasa që të kesh zgjidhur diçka që ne
+  ende po e ndjekim, ose anasjelltas. Na kontakto në
+  <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.
+</p>
+
+<p>Le ta përfundojmë atë që nisi Asahi.</p>
