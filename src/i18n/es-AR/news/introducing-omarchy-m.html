@@ -1,0 +1,144 @@
+<p>
+  Apple hace buen hardware. Siempre lo hizo (salvo aquella vez del teclado
+  mariposa). Y mucha de la gente que llega a Omarchy viene de una Mac. A muchos
+  les encantaría quedarse con la máquina y perder el sistema operativo. Así que
+  vamos a terminar lo que empezó Asahi: Omarchy andando de maravilla en Apple
+  Silicon, con un mínimo de vueltas para configurarlo.
+</p>
+
+<p>
+  Ese trabajo ya tiene un equipo detrás. Hoy lo hacemos oficial:
+  <a href="/teams/#m">Omarchy M</a>, nuestro equipo para las Mac con Apple
+  Silicon (más algunos integrantes que mantienen a las Mac más viejas en la
+  vuelta).
+</p>
+
+<p>Permítanme presentarles a sus integrantes.</p>
+
+<p>
+  <strong>El instalador.</strong>
+  <a href="https://x.com/maralcbr">Marcelo Alcantara</a> está construyendo el
+  <a href="https://github.com/maralcbr/omarchy-mx-mac"
+    >instalador nativo para Mac</a
+  >. Descargás una app en macOS, busca la versión firmada de Omarchy, arma las
+  particiones y te arranca Omarchy al lado de tu macOS actual. Sin pendrive, sin
+  conjuros en la terminal. También sacó la compilación que encendió los
+  monitores externos por USB-C.
+</p>
+
+<p>
+  <strong>Omarchy Mac.</strong>
+  <a href="https://x.com/tiredkebab">Naeem Malik</a> mantiene
+  <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> desde hace un
+  año: puso Omarchy en máquinas M1 y M2 mucho antes de que todo esto fuera
+  oficial y armó alrededor una comunidad de más de 800 personas en Discord.
+  <a href="https://x.com/bi9kahuna">Scott Jones</a> es la otra mitad de ese
+  proyecto, del lado Linux de la instalación. Hace poco hizo andar la pantalla
+  de la M3 Air sobre el controlador de pantalla de Apple, lo que llevó a esa
+  máquina de inutilizable a utilizable en una noche.
+</p>
+
+<p>
+  <strong>Try Omarchy.</strong>
+  <a href="https://x.com/martiano">Eduardo Martinez</a> construyó
+  <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: el escritorio
+  real de Omarchy corriendo como una app nativa y acelerada por hardware en tu
+  Mac, con la cámara, el audio, el portapapeles y una carpeta compartida ya
+  conectados. Nada que particionar. Lo descargás y ves de qué se trata tanto
+  alboroto.
+</p>
+
+<p>
+  <strong>Paquetes.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> se
+  está asegurando de que todo lo que Omarchy necesita exista como
+  <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">paquete aarch64</a
+  >, junto con imágenes de disco ARM64 genéricas para máquinas virtuales y las
+  herramientas de invitado que las hacen agradables de usar.
+</p>
+
+<p>
+  <strong>Drivers y kernel.</strong>
+  <a href="https://x.com/buildwithdjdev">Dj</a> está escribiendo los drivers de
+  GPU y logró que Touch ID funcione hablando directamente con el Secure Enclave.
+  <a href="https://x.com/acelogic_">Miguel Cruz</a> le hizo ingeniería inversa
+  al chip propietario N1 de las máquinas M5 y ya tiene su Wi-Fi y su Bluetooth
+  funcionando por completo en Linux.
+  <a href="https://x.com/LiamRay1O">Liam</a> está poniendo en marcha los
+  parlantes, el trackpad y la gestión de energía en las máquinas más nuevas.
+  <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> dirige
+  <a href="https://aurorasilicon.org/">Aurora Silicon</a> y está convirtiendo
+  todo esto en implementaciones clean room que puedan ir upstream.
+  <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> habilitó las
+  <a href="https://github.com/subedijaidip/dp-altmode-t8112"
+    >pantallas externas por USB-C en la MacBook Air M2</a
+  >.
+</p>
+
+<p>
+  <strong>MLX.</strong>
+  <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> está construyendo
+  <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, que
+  trae MLX, el framework de aprendizaje automático de Apple, a Linux sobre GPU
+  de Apple mediante Vulkan. Tu código sigue diciendo
+  <code>import mlx.core as mx</code>, pero ahora corre en Omarchy.
+</p>
+
+<p>
+  <strong>Mac más viejas.</strong>
+  <a href="https://x.com/shawnyeager">Shawn Yeager</a> tiene una pila de pull
+  requests para las MacBook Pro con Touch Bar de 2016 y 2017: parlantes, Wi-Fi,
+  el sensor de luz ambiente, la propia Touch Bar.
+  <a href="https://x.com/novuon_ai">Randy</a> le está haciendo ingeniería
+  inversa al chip de seguridad T2 para llevar Touch ID a las Mac con Intel, y
+  documenta cada arreglo para la MacBook Pro de 2019 en el camino.
+  <a href="https://x.com/jondkinney">Jon Kinney</a> venía picando piedra con el
+  soporte ARM para Omarchy hace un año, y ahora mantiene coordinado a todo el
+  equipo sobre quién hace qué.
+</p>
+
+<p>
+  Juntos son un grupo formidable. Catorce personas que no esperaron permiso y
+  que vienen usando agentes para moverse a un ritmo que hace un año habría
+  parecido absurdo.
+</p>
+
+<p>
+  El objetivo de la primera versión es compatibilidad perfecta con M1 y M2,
+  incluidas las variantes Pro y Max:
+</p>
+
+<ul>
+  <li>Un instalador sin fricciones, con opciones de instalar y de probar</li>
+  <li>Soporte completo de GPU</li>
+  <li>Monitores externos por USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Cifrado de disco</li>
+</ul>
+
+<p>
+  Las máquinas más nuevas se están trabajando en paralelo, pero M1 y M2 son
+  donde plantamos la bandera primero. Además de las máquinas M, hay millones de
+  notebooks vintage dando vueltas por ahí, muchas ya retiradas de las últimas
+  ambiciones de macOS, y cada una de ellas es una hermosa computadora Omarchy
+  esperando a que la despierten.
+</p>
+
+<p>
+  No hace falta que esperes la versión pulida para empezar.
+  <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> te va a
+  mostrar el escritorio real en tu Mac en minutos. Y si estás listo para dar el
+  paso,
+  <a href="https://github.com/maralcbr/omarchy-mx-mac">el instalador</a> te pone
+  Omarchy al lado de macOS en una M1 o M2 hoy mismo.
+</p>
+
+<p>
+  Por último, un pedido. Si venís trabajando en Linux para hardware de Apple, ya
+  sea en drivers del kernel, firmware, empaquetado, instaladores o aprendizaje
+  automático, nos encantaría saber de vos. Es muy probable que hayas resuelto
+  algo que nosotros seguimos persiguiendo, o al revés. Escribinos a
+  <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.
+</p>
+
+<p>Terminemos lo que empezó Asahi.</p>
