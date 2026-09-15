@@ -22,6 +22,8 @@
     "test": "node --test src/lib/*.test.ts scripts/lib/*.test.mjs assets/js/modules/screensaver-picker.test.js && python3 -m unittest discover -s scripts -p 'test_*.py'",
     "build:da": "npm run build:locale -- da",
     "dev:da": "PUBLIC_SITE_LOCALE=da ASTRO_DEV_BACKGROUND=1 astro dev --ignore-lock --port 3114",
+    "build:id": "npm run build:locale -- id",
+    "dev:id": "PUBLIC_SITE_LOCALE=id ASTRO_DEV_BACKGROUND=1 astro dev --ignore-lock --port 3115",
     "build:locale": "node scripts/build-locale.mjs",
     "check:translations": "node scripts/check-translations.mjs",
     "site:pending": "node scripts/check-translations.mjs --pending-site",
