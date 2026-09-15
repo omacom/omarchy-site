@@ -1,18 +1,46 @@
-NotoSans: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
+NotoSans (Latin, Greek, Cyrillic): Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
 
 NotoSansArabic: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)
 
 NotoNastaliqUrdu: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)
 
+NotoSansHebrew: Copyright 2024 The Noto Project Authors (https://github.com/notofonts/hebrew)
+
+NotoSansArmenian: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/armenian)
+
+NotoSansGeorgian: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/georgian)
+
+NotoSansEthiopic: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ethiopic)
+
 NotoSansDevanagari: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari)
 
 NotoSansBengali: Copyright 2025 The Noto Project Authors (https://github.com/notofonts/bengali)
 
-NotoSansSinhala: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sinhala)
+NotoSansGurmukhi: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/gurmukhi)
+
+NotoSansGujarati: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/gujarati)
+
+NotoSansOriya: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/oriya)
 
 NotoSansTamil: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)
 
+NotoSansTelugu: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/telugu)
+
+NotoSansKannada: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/kannada)
+
+NotoSansMalayalam: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/malayalam)
+
+NotoSansSinhala: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sinhala)
+
 NotoSansThai: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)
+
+NotoSansLao: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lao)
+
+NotoSansMyanmar: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/myanmar)
+
+NotoSansKhmer: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khmer)
+
+NotoSerifTibetan: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tibetan)
 
 Noto Sans CJK: © 2014-2021 Adobe (http://www.adobe.com/).
 

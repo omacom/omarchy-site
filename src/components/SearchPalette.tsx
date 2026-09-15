@@ -37,6 +37,11 @@ import {
   opensMenu,
   providerRows,
 } from '@/lib/menu'
+import {
+  ALL_LANGUAGES_ID,
+  allLanguagesRow,
+  partitionLanguageRows,
+} from '@/lib/language-switcher'
 
 /**
  * Site-wide command menu, built to read like the one SUPER+SPACE opens on the
@@ -76,6 +81,12 @@ const ICONS: Record<MenuIcon, typeof PageIcon> = {
 
 /** A row is either a menu entry or a search hit; both navigate on Enter. */
 type Row = { sort: 'menu'; item: MenuItem } | { sort: 'hit'; hit: SearchHit }
+
+const asMenu = (item: MenuItem): Row => ({ sort: 'menu', item })
+
+/** A row that opens a submenu: one with children, or the languages' stand-in. */
+const walksIn = (item: MenuItem) =>
+  item.id === ALL_LANGUAGES_ID || opensMenu(item)
 
 export function SearchPalette() {
   const navigate = useNavigate()
@@ -118,13 +129,22 @@ export function SearchPalette() {
     const own = searching
       ? everyRow()
       : [...childrenOf(menu), ...providerRows(menuItem(menu)?.provider, index)]
-    const entries: Row[] = filterRows(own, query).map((row) => ({
-      sort: 'menu',
-      item: row,
-    }))
-    if (!searching || !index) return entries
-    const hits = searchAll(index, query)
-    return [...entries, ...hits.map((hit) => ({ sort: 'hit' as const, hit }))]
+    const found = filterRows(own, query)
+    if (!searching) return found.map(asMenu)
+    // A root query reaches every language too, and a short one lands on a
+    // dozen of them, which would bury the manual and the news under flags.
+    // So the languages come last, a handful of them, with one row into the
+    // full list when more matched than are shown.
+    const { content, languages, more } = partitionLanguageRows(found)
+    const hits: Row[] = index
+      ? searchAll(index, query).map((hit) => ({ sort: 'hit' as const, hit }))
+      : []
+    return [
+      ...content.map(asMenu),
+      ...hits,
+      ...languages.map(asMenu),
+      ...(more ? [asMenu(allLanguagesRow())] : []),
+    ]
   }, [searching, menu, query, index])
 
   useEffect(() => setActive(0), [menu, query])
@@ -205,8 +225,8 @@ export function SearchPalette() {
   }
 
   const goItem = (item: MenuItem) => {
-    if (opensMenu(item)) {
-      setMenu(item.id)
+    if (walksIn(item)) {
+      setMenu(item.id === ALL_LANGUAGES_ID ? 'language' : item.id)
       setQuery('')
       return
     }
@@ -269,7 +289,7 @@ export function SearchPalette() {
       // Right only walks into a submenu; on a leaf it belongs to the caret.
       if (
         event.key === 'ArrowRight' &&
-        !(row.sort === 'menu' && opensMenu(row.item))
+        !(row.sort === 'menu' && walksIn(row.item))
       )
         return
       event.preventDefault()
@@ -312,7 +332,7 @@ export function SearchPalette() {
               onClick={back}
               aria-label={t('Back')}
               tabIndex={-1}
-              className="-ml-1 shrink-0 text-text-muted transition-colors duration-150 ease-out hover:text-text"
+              className="-ms-1 shrink-0 text-text-muted transition-colors duration-150 ease-out hover:text-text"
             >
               <ChevronRightIcon className="size-4 rotate-180" />
             </button>
@@ -385,7 +405,7 @@ export function SearchPalette() {
                       setActive(at)
                     }}
                     className={
-                      'flex w-full items-center gap-3 px-3 text-left ' +
+                      'flex w-full items-center gap-3 px-3 text-start ' +
                       (row.sort === 'hit' ? 'py-2.5 ' : 'h-[40px] ') +
                       // The desktop menu fills the selected row with its
                       // foreground at 8%. surface-2 collapses onto surface in
@@ -441,11 +461,11 @@ function MenuRow({ item, crumb }: { item: MenuItem; crumb?: string }) {
         {item.label}
       </span>
       {crumb ? (
-        <span className="ml-auto shrink-0 font-mono text-[10px] tracking-wide text-text-muted uppercase">
+        <span className="ms-auto shrink-0 font-mono text-[10px] tracking-wide text-text-muted uppercase">
           {crumb}
         </span>
       ) : null}
-      {opensMenu(item) ? (
+      {walksIn(item) ? (
         <ChevronRightIcon className="size-3.5 shrink-0 opacity-50" />
       ) : null}
     </>
@@ -459,7 +479,7 @@ function HitRow({ hit }: { hit: SearchHit }) {
         <span className="truncate font-mono text-[13px]">
           {hit.kind === 'manual' ? (hit.heading ?? hit.title) : hit.title}
         </span>
-        <span className="ml-auto shrink-0 font-mono text-[10px] tracking-wide text-text-muted uppercase">
+        <span className="ms-auto shrink-0 font-mono text-[10px] tracking-wide text-text-muted uppercase">
           {t(KIND_LABEL[hit.kind])}
         </span>
       </span>

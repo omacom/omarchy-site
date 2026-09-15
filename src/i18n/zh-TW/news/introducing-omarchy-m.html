@@ -1,0 +1,40 @@
+<p>Apple 的硬體很棒，一直都是（蝶式鍵盤那次不算）。而來到 Omarchy 的很多人都是從 Mac 來的，他們多半想留著機器、換掉作業系統。所以我們要把 Asahi 未竟之業做完：讓 Omarchy 在 Apple Silicon 上漂亮運行，設定毫不費事。</p>
+
+<p>這項工作背後已經有一支團隊。今天正式官宣：<a href="/teams/#m">Omarchy M</a>——我們的 Apple Silicon Mac 團隊（另有幾位成員照顧老 Mac）。</p>
+
+<p>容我介紹成員。</p>
+
+<p><strong>安裝程式。</strong><a href="https://x.com/maralcbr">Marcelo Alcantara</a> 正在打造<a href="https://github.com/maralcbr/omarchy-mx-mac">原生 Mac 安裝程式</a>：在 macOS 下載一個 app，它會抓取簽署過的 Omarchy 版本、切好分割區，把你開機進 Omarchy，和原本的 macOS 並存。不必 USB 隨身碟，不必在終端機唸咒。他還砍出一個版本，讓 USB-C 外接螢幕亮了起來。</p>
+
+<p><strong>Omarchy Mac。</strong><a href="https://x.com/tiredkebab">Naeem Malik</a> 維護 <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> 一年了，早在一切官宣前就把 Omarchy 送上 M1、M2 機器，還圍繞它建了個 800 多人的 Discord 社群。<a href="https://x.com/bi9kahuna">Scott Jones</a> 是這個專案在 Linux 安裝端的另一半。他最近讓 M3 Air 的螢幕在 Apple 的硬體顯示控制器上跑起來，一夜之間把那台機器從不能用變成能用。</p>
+
+<p><strong>Try Omarchy。</strong><a href="https://x.com/martiano">Eduardo Martinez</a> 打造了<a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>：真正的 Omarchy 桌面，以原生硬體加速 app 跑在你的 Mac 上，相機、音訊、剪貼簿、共用資料夾全都接通。不必切分割區，下載即看，看看大家在嗨什麼。</p>
+
+<p><strong>套件。</strong><a href="https://x.com/riverleaf88">Shun Li</a> 確保 Omarchy 需要的一切都有 <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 套件</a>，外加給虛擬機器的通用 ARM64 磁碟映像，以及讓它們好用的客戶工具。</p>
+
+<p><strong>驅動與核心。</strong><a href="https://github.com/RyanTheTide">Ryan Murray</a> 負責點亮 Neo，打下全隊工作的地基。他正在開發 SPTM 模擬器，讓在 M4 與更新晶片上追蹤 macOS 成為可能。這些追蹤記錄是讓螢幕、GPU、音訊、無線網路、藍牙動起來的關鍵。<a href="https://x.com/buildwithdjdev">Dj</a> 在寫 GPU 驅動，直接跟 Secure Enclave 對話讓 Touch ID 動了起來。<a href="https://x.com/acelogic_">Miguel Cruz</a> 專攻 M5：他逆向了 Apple 專有的 N1 晶片，讓它的 Wi-Fi 與藍牙在 Linux 上工作。他還貢獻了 Neo 上的硬體影像編解碼、藍牙與桌面改進。<a href="https://x.com/LiamRay1O">Liam</a> 負責 Neo 的觸控板、電源管理、喇叭與耳機輸出，Ryan 的 macOS 追蹤記錄是關鍵地基。<a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> 維護 M4 支援與 淨室實作，並做整合與打包。<a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> 實現了<a href="https://github.com/subedijaidip/dp-altmode-t8112">M2 MacBook Air 的 USB-C 外接螢幕</a>。</p>
+
+<p><strong>MLX。</strong><a href="https://x.com/JoshuaSWarren">Joshua Warren</a> 正在打造 <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>，透過 Vulkan 把 Apple 的 MLX 機器學習框架帶到 Apple GPU 上的 Linux。你的程式碼照寫 <code>import mlx.core as mx</code>，現在跑在 Omarchy 上。</p>
+
+<p><strong>老 Mac。</strong><a href="https://x.com/shawnyeager">Shawn Yeager</a> 手上有一疊給 2016、2017 年 Touch Bar MacBook Pro 的 pull request：喇叭、Wi-Fi、環境光感測器、Touch Bar 本體。<a href="https://x.com/novuon_ai">Randy</a> 正在逆向 T2 安全晶片，要把 Touch ID 帶給 Intel Mac，順手把 2019 年 MacBook Pro 的每個修法寫成文件。<a href="https://x.com/jondkinney">Jon Kinney</a> 一年前就在啃 Omarchy 的 ARM 支援，現在負責全隊分工協調。</p>
+
+<p>合在一起，陣容堅強。十五個人，沒等誰批准，用代理跑出一年前看來荒謬的速度。</p>
+
+<p>首個版本的目標是 M1、M2 完美相容，含 Pro 與 Max 版本：</p>
+
+<ul>
+  <li>無縫安裝程式，安裝與試用兩種選項都有</li>
+  <li>完整 GPU 支援</li>
+  <li>USB-C 外接螢幕</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>磁碟加密</li>
+</ul>
+
+<p>新機器同步推進中，但我們先在 M1、M2 插旗。除了 M 系列，外面還有數百萬台老筆電，很多已被 Apple 最新 macOS 野心淘汰，每一台都是等待發生的絕佳 Omarchy 電腦。</p>
+
+<p>不必等拋光版才開始。<a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> 幾分鐘就讓你在 Mac 上看到真正的桌面。準備好跳槽的話，<a href="https://github.com/maralcbr/omarchy-mx-mac">安裝程式</a>今天就能把 Omarchy 裝到 M1、M2 上，和 macOS 並存。</p>
+
+<p>最後一個請求。如果你一直在為 Apple 硬體做 Linux，無論核心驅動、韌體、打包、安裝程式或機器學習，都歡迎跟我們聊聊。你很可能已經解決了我們還在追的問題，反之亦然。寫信至 <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>。</p>
+
+<p>把 Asahi 未竟之業做完吧。</p>

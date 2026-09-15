@@ -17,7 +17,7 @@ export function SearchField({
   placeholder: string
   /** Names the field for screen readers; there is no visible label. */
   label: string
-  /** Sits at the right edge, inside the field. Decorative or a real control. */
+  /** Sits at the end edge, inside the field. Decorative or a real control. */
   trailing?: ReactNode
   /** For fields that open something on focus, like a results list. */
   onFocus?: () => void
@@ -26,7 +26,7 @@ export function SearchField({
 }) {
   return (
     <div className={cn('relative min-w-0', className)}>
-      <SearchIcon className="pointer-events-none absolute top-1/2 left-3 size-5 -translate-y-1/2 text-text-muted" />
+      <SearchIcon className="pointer-events-none absolute top-1/2 start-3 size-5 -translate-y-1/2 text-text-muted" />
       <input
         ref={inputRef}
         type="search"
@@ -40,14 +40,14 @@ export function SearchField({
         autoCorrect="off"
         enterKeyHint="search"
         className={cn(
-          'h-10 w-full border border-border-strong bg-bg-deep pl-10 text-base text-text placeholder:text-text-muted',
+          'h-10 w-full border border-border-strong bg-bg-deep ps-10 text-base text-text placeholder:text-text-muted',
           'transition-[border-color] duration-150 ease-out hover:border-border-strong',
           'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
-          trailing ? 'pr-10' : 'pr-3',
+          trailing ? 'pe-10' : 'pe-3',
         )}
       />
       {trailing ? (
-        <div className="absolute top-1/2 right-2.5 -translate-y-1/2">
+        <div className="absolute top-1/2 end-2.5 -translate-y-1/2">
           {trailing}
         </div>
       ) : null}

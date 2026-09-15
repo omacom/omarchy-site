@@ -1,0 +1,40 @@
+<p>Apple membuat perkakasan yang hebat. Mereka sentiasa begitu (kecuali sekali dengan papan kekunci butterfly). Dan ramai yang tiba di Omarchy datang dari Mac. Ramai antara mereka ingin mengekalkan mesin dan membuang sistem pengendalian. Jadi kami akan menyempurnakan apa yang dimulakan Asahi: Omarchy berjalan dengan cantik di Apple Silicon, dengan kerumitan persediaan yang minimum.</p>
+
+<p>Kerja itu sudah ada pasukan di sebaliknya. Hari ini kami merasmikannya: <a href="/teams/#m">Omarchy M</a>, pasukan kami untuk Mac dengan Apple Silicon (ditambah beberapa anggota yang menjaga Mac lama dalam lipatan).</p>
+
+<p>Izinkan saya memperkenalkan para anggotanya.</p>
+
+<p><strong>Pemasang.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> sedang membina <a href="https://github.com/maralcbr/omarchy-mx-mac">pemasang Mac natif</a>. Anda memuat turun aplikasi di macOS, ia mengambil keluaran Omarchy yang ditandatangani, mengukir partisinya, dan membut anda ke Omarchy di samping macOS sedia ada anda. Tiada stik USB, tiada mantera di terminal. Beliau juga memotong binaan yang menyalakan monitor luaran melalui USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> telah menyelenggara <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> selama setahun, membawa Omarchy ke mesin M1 dan M2 lama sebelum semua ini rasmi, dan membina komuniti Discord lebih 800 orang di sekelilingnya. <a href="https://x.com/bi9kahuna">Scott Jones</a> ialah separuh lagi projek itu di bahagian pemasangan Linux. Beliau baru-baru ini menghidupkan paparan M3 Air pada pengawal paparan perkakasan Apple, yang membawa mesin itu dari tidak boleh digunakan kepada boleh digunakan dalam satu malam.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> membina <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: desktop Omarchy sebenar yang berjalan sebagai aplikasi natif dipercepat perkakasan pada Mac anda, dengan kamera, audio, papan klip, dan folder kongsi anda disambungkan. Tiada apa-apa untuk dipartisi. Hanya muat turun dan lihat apa yang diperkatakan.</p>
+
+<p><strong>Pakej.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> memastikan semua yang diperlukan Omarchy wujud sebagai <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">pakej aarch64</a>, bersama imej cakera ARM64 generik untuk mesin maya dan peralatan tetamu yang menjadikannya selesa digunakan.</p>
+
+<p><strong>Pemacu dan kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> sedang menghidupkan Neo dan membina asas tempat pasukan lain bekerja. Beliau membangunkan emulator SPTM yang membolehkan pengesanan macOS pada cip M4 dan lebih baharu. Kesan itu penting untuk menghidupkan paparan, GPU, audio, wayarles, dan Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> sedang menulis pemacu GPU, dan menghidupkan Touch ID dengan bercakap terus kepada Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> pakar dalam kerja M5: beliau merekayasa balik cip N1 proprietari Apple dan menghidupkan Wi-Fi dan Bluetoothnya di Linux. Beliau juga telah menyumbang pengekodan dan penyahkodan video perkakasan, Bluetooth, dan penambahbaikan desktop pada Neo. <a href="https://x.com/LiamRay1O">Liam</a> sedang menghidupkan pad jejak Neo, pengurusan kuasa, pembesar suara, dan output fon kepala, dengan kesan macOS Ryan menyediakan asas penting. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> menyelenggara sokongan M4 dan pelaksanaan bilik bersih, dan mengerjakan penyepaduan dan pembungkusan. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> membolehkan <a href="https://github.com/subedijaidip/dp-altmode-t8112">paparan luaran melalui USB-C pada MacBook Air M2</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> sedang membina <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, yang membawa rangka kerja pembelajaran mesin MLX Apple ke Linux pada GPU Apple melalui Vulkan. Kod anda masih menyebut <code>import mlx.core as mx</code>, tetapi kini ia berjalan di Omarchy.</p>
+
+<p><strong>Mac lama.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> mempunyai timbunan pull request untuk MacBook Pro Touch Bar 2016 dan 2017: pembesar suara, Wi-Fi, penderia cahaya ambien, Touch Bar itu sendiri. <a href="https://x.com/novuon_ai">Randy</a> sedang merekayasa balik cip keselamatan T2 untuk membawa Touch ID ke Mac Intel, dan mendokumenkan setiap pembaikan untuk MacBook Pro 2019 sepanjang jalan. <a href="https://x.com/jondkinney">Jon Kinney</a> telah mengusahakan sokongan ARM untuk Omarchy setahun lalu, dan kini menyelaraskan seluruh pasukan tentang siapa melakukan apa.</p>
+
+<p>Bersama-sama, mereka kumpulan yang hebat. Lima belas orang yang tidak menunggu kebenaran, dan yang telah menggunakan ejen untuk bergerak pada rentak yang kelihatan tidak masuk akal setahun lalu.</p>
+
+<p>Sasaran untuk keluaran pertama ialah keserasian sempurna dengan M1 dan M2, termasuk varian Pro dan Max:</p>
+
+<ul>
+  <li>Pemasang yang lancar, dengan pilihan pasang dan cuba</li>
+  <li>Sokongan GPU penuh</li>
+  <li>Monitor luaran melalui USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Penyulitan cakera</li>
+</ul>
+
+<p>Mesin lebih baharu dikerjakan selari, tetapi M1 dan M2 ialah tempat kami memacak bendera dahulu. Selain mesin M, terdapat berjuta-juta komputer riba vintaj di luar sana, kebanyakannya sudah bersara daripada cita-cita macOS terkini Apple, dan setiap satunya ialah komputer Omarchy yang hebat yang menanti untuk menjadi.</p>
+
+<p>Anda tidak perlu menunggu keluaran yang digilap untuk bermula. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> akan memaparkan desktop sebenar pada Mac anda dalam beberapa minit. Dan jika anda bersedia untuk komited, <a href="https://github.com/maralcbr/omarchy-mx-mac">pemasang</a> akan meletakkan Omarchy di samping macOS pada M1 atau M2 hari ini.</p>
+
+<p>Akhir sekali, satu permintaan. Jika anda telah mengerjakan Linux untuk perkakasan Apple, sama ada pemacu kernel, perisian tegar, pembungkusan, pemasang, atau pembelajaran mesin, kami ingin mendengar daripada anda. Besar kemungkinan anda telah menyelesaikan sesuatu yang masih kami kejar, atau sebaliknya. Hubungi di <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Mari sempurnakan apa yang dimulakan Asahi.</p>
