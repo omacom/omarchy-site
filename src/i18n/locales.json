@@ -193,6 +193,14 @@
     "manual": false,
     "flag": "CN"
   },
+  "ru": {
+    "name": "Русский",
+    "domain": "https://ru.omarchy.org",
+    "formatLocale": "ru-RU",
+    "ogLocale": "ru_RU",
+    "manual": false,
+    "flag": "RU"
+  },
   "pl": {
     "name": "Polski",
     "domain": "https://pl.omarchy.org",
