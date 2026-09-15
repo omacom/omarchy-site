@@ -201,6 +201,14 @@
     "manual": false,
     "flag": "PL"
   },
+  "ru": {
+    "name": "Русский",
+    "domain": "https://ru.omarchy.org",
+    "formatLocale": "ru-RU",
+    "ogLocale": "ru_RU",
+    "manual": false,
+    "flag": "RU"
+  },
   "lt": {
     "name": "Lietuvių",
     "domain": "https://lt.omarchy.org",
