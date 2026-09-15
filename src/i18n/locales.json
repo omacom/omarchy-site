@@ -232,6 +232,13 @@
     "ogLocale": "nb_NO",
     "manual": false
   },
+  "te": {
+    "name": "తెలుగు",
+    "domain": "https://te.omarchy.in",
+    "formatLocale": "te-IN",
+    "ogLocale": "te_IN",
+    "manual": false,
+    "flag": "IN"
   "en-NZ": {
     "name": "English (NZ)",
     "domain": "https://omarchy.nz",
