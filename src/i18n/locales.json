@@ -225,6 +225,14 @@
     "manual": false,
     "flag": "NL"
   },
+  "ka": {
+    "name": "ქართული",
+    "domain": "https://ge.omarchy.org",
+    "formatLocale": "ka-GE",
+    "ogLocale": "ka_GE",
+    "manual": false,
+    "flag": "GE"
+  },
   "no": {
     "name": "Norsk",
     "domain": "https://omarchy.no",
