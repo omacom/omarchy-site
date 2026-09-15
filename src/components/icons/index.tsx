@@ -201,14 +201,38 @@ export function DownloadIcon(props: IconProps) {
 }
 
 /** IconVolumeFull from the square outlined set. */
-export function VolumeIcon(props: IconProps) {
+export function VolumeIcon({
+  bars = 3,
+  ...props
+}: IconProps & { bars?: number }) {
   return (
     <svg {...base(props)}>
       <path
-        d="M19.2478 4.75216C21.1027 6.60704 22.25 9.16954 22.25 12C22.25 14.8305 21.1027 17.393 19.2478 19.2478M15.8891 8.11091C16.8844 9.10622 17.5 10.4812 17.5 12C17.5 13.5188 16.8844 14.8938 15.8891 15.8891M1.75 7.75H6L12.25 4.25V19.75L6 16.25H1.75V7.75Z"
+        d="M1.75 7.75H6L12.25 4.25V19.75L6 16.25H1.75V7.75Z"
         stroke="currentColor"
         strokeWidth="1.5"
       />
+      {bars >= 1 && (
+        <path
+          d="M14.5 9.5C15.1 10.2 15.5 11.1 15.5 12C15.5 12.9 15.1 13.8 14.5 14.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      )}
+      {bars >= 2 && (
+        <path
+          d="M17.25 7C18.3 8.3 19 10.1 19 12C19 13.9 18.3 15.7 17.25 17"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      )}
+      {bars >= 3 && (
+        <path
+          d="M20 4.75C21.5 6.7 22.5 9.2 22.5 12C22.5 14.8 21.5 17.3 20 19.25"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      )}
     </svg>
   )
 }
