@@ -42,7 +42,10 @@ const columns = [
   {
     title: t('Project'),
     links: [
-      { label: t('Security'), splat: 'security' },
+      {
+        label: language === 'zh-CN' ? t('Site security') : t('Security'),
+        splat: 'security',
+      },
       { label: 'GitHub', href: 'https://github.com/omacom/omarchy' },
       { label: t('Brand'), splat: 'brand' },
       {
@@ -110,7 +113,12 @@ export function SiteFooter({ path }: { path: string }) {
                 )}
               </span>
               <span className="block">
-                {t('The malleable OS for the age of agents.')}
+                {language === 'zh-CN'
+                  ? t('The malleable OS for the age of agents.').replace(
+                      /。$/,
+                      '',
+                    )
+                  : t('The malleable OS for the age of agents.')}
               </span>
             </p>
 
@@ -129,6 +137,7 @@ export function SiteFooter({ path }: { path: string }) {
                   <CloudflareMark className="mr-[5px] inline-block h-3 w-auto shrink-0 align-[-0.15em]" />
                   Cloudflare
                 </a>
+                {language === 'zh-CN' && <> {t('provides hosting')}</>}
               </p>
               <p data-quiet>
                 {t('Compute by')}{' '}
@@ -136,6 +145,7 @@ export function SiteFooter({ path }: { path: string }) {
                   <DigitalOceanMark className="mr-[5px] inline-block size-4 shrink-0 align-[-0.2em]" />
                   DigitalOcean
                 </a>
+                {language === 'zh-CN' && <> {t('provides compute')}</>}
               </p>
             </div>
           </div>
