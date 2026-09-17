@@ -1,0 +1,40 @@
+<p>Apple face hardware grozav. A făcut mereu (minus episodul cu tastatura butterfly). Și mulți dintre oamenii care ajung la Omarchy vin de pe un Mac. Mulți dintre ei ar vrea să păstreze mașina și să scape de sistemul de operare. Așa că vom termina ce a început Asahi: Omarchy rulând superb pe Apple Silicon, cu un minim de bătăi de cap la instalare.</p>
+
+<p>Munca aceasta are deja o echipă în spate. Azi o facem oficială: <a href="/teams/#m">Omarchy M</a>, echipa noastră pentru Macuri cu Apple Silicon (plus câțiva membri care țin Macurile mai vechi în rând).</p>
+
+<p>Permiteți-mi să-i prezint pe membri.</p>
+
+<p><strong>Instalatorul.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> construiește <a href="https://github.com/maralcbr/omarchy-mx-mac">instalatorul nativ pentru Mac</a>. Descarci o aplicație pe macOS, aceasta aduce release-ul Omarchy semnat, decupează partițiile și te pornește în Omarchy alături de macOS-ul tău existent. Fără stick USB, fără incantații în terminal. El a tăiat și buildul care a aprins monitoarele externe prin USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> a întreținut <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> timp de un an, ducând Omarchy pe mașini M1 și M2 cu mult înainte ca toate acestea să fie oficiale, și construind în jur o comunitate Discord de peste 800 de oameni. <a href="https://x.com/bi9kahuna">Scott Jones</a> e cealaltă jumătate a acelui proiect pe partea Linux a instalării. El a pus recent pe picioare displayul lui M3 Air pe controllerul hardware de display al Apple, ceea ce a dus acea mașină de la inutilizabilă la utilizabilă într-o noapte.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> a construit <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: desktopul Omarchy adevărat rulând ca o aplicație nativă, accelerată hardware, pe Macul tău, cu camera, sunetul, clipboardul și un dosar partajat conectate. Nimic de partiționat. Doar descarc-o și vezi despre ce e zarva.</p>
+
+<p><strong>Pachetele.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> se asigură că tot ce-i trebuie lui Omarchy există ca <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">pachet aarch64</a>, alături de imagini generice de disc ARM64 pentru mașini virtuale și de uneltele guest care le fac plăcut de folosit.</p>
+
+<p><strong>Driverele și nucleul.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> aduce la viață Neo și construiește fundațiile de la care lucrează restul echipei. Dezvoltă un emulator SPTM care face posibilă trasarea macOS pe chipuri M4 și mai noi. Acele trasee sunt esențiale pentru punerea pe picioare a displayurilor, GPU-urilor, sunetului, wirelessului și Bluetoothului. <a href="https://x.com/buildwithdjdev">Dj</a> scrie driverele GPU și a pus Touch ID pe picioare vorbind direct cu Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> e specializat pe lucruri M5: a făcut reverse-engineering chipului proprietar N1 al Apple și i-a pus Wi-Fi-ul și Bluetoothul pe picioare în Linux. A contribuit și cu encodare și decodare video hardware, Bluetooth și îmbunătățiri de desktop pe Neo. <a href="https://x.com/LiamRay1O">Liam</a> aduce la viață trackpadul, managementul de energie, difuzoarele și ieșirea de căști ale Neo, traseele macOS ale lui Ryan oferind munca esențială de teren. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> întreține suportul M4 și implementările clean-room și lucrează la integrare și împachetare. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> a activat <a href="https://github.com/subedijaidip/dp-altmode-t8112">displayurile externe prin USB-C pe MacBook Air M2</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> construiește <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, care aduce frameworkul Apple MLX de machine learning pe Linux, pe GPU-uri Apple, prin Vulkan. Codul tău tot <code>import mlx.core as mx</code> spune, dar acum rulează pe Omarchy.</p>
+
+<p><strong>Macurile mai vechi.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> are un teanc de pull requesturi pentru MacBook Pro-urile Touch Bar din 2016 și 2017: difuzoare, Wi-Fi, senzorul de lumină ambientală, Touch Bar-ul însuși. <a href="https://x.com/novuon_ai">Randy</a> face reverse-engineering chipului de securitate T2 ca să aducă Touch ID pe Macurile Intel și documentează pe drum fiecare corecție pentru MacBook Pro 2019. <a href="https://x.com/jondkinney">Jon Kinney</a> cioplea la suportul ARM pentru Omarchy acum un an, iar acum ține toată echipa coordonată cu cine ce face.</p>
+
+<p>Împreună, sunt un grup redutabil. Cincisprezece oameni care n-au așteptat permisiunea și care folosesc agenți ca să se miște într-un ritm care ar fi părut absurd acum un an.</p>
+
+<p>Ținta pentru primul release e compatibilitatea perfectă cu M1 și M2, inclusiv variantele Pro și Max:</p>
+
+<ul>
+  <li>Un instalator fără cusur, cu ambele opțiuni, de instalare și de încercare</li>
+  <li>Suport GPU complet</li>
+  <li>Monitoare externe prin USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Criptarea discului</li>
+</ul>
+
+<p>Mașinile mai noi sunt lucrate în paralel, dar M1 și M2 sunt unde plantăm steagul mai întâi. Pe lângă mașinile M, sunt acolo milioane de laptopuri de epocă, multe deja retrase din cele mai noi ambiții macOS ale Apple, și fiecare dintre ele e un minunat computer Omarchy în devenire.</p>
+
+<p>Nu trebuie să aștepți release-ul șlefuit ca să începi. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> te pune în fața desktopului adevărat pe Macul tău în câteva minute. Iar dacă ești gata să te angajezi, <a href="https://github.com/maralcbr/omarchy-mx-mac">instalatorul</a> pune azi Omarchy lângă macOS pe un M1 sau M2.</p>
+
+<p>În final, o rugăminte. Dacă ai lucrat la Linux pentru hardware Apple, fie că-s drivere de nucleu, firmware, împachetare, instalatoare sau machine learning, ne-ar plăcea să auzim de tine. Sunt șanse bune să fi rezolvat ceva ce noi încă vânăm, sau invers. Ia legătura la <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Hai să terminăm ce a început Asahi.</p>

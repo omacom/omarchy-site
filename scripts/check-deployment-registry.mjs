@@ -18,14 +18,26 @@ if (!response.ok || !body.success) {
     `Cannot inventory deployed Workers: ${JSON.stringify(body.errors)}`,
   )
 }
+const workerName = (code) =>
+  code === 'en' ? 'omarchy' : `omarchy-${code.toLowerCase()}`
+const codes = Object.keys(locales)
 const registered = new Set(
-  Object.keys(locales).map((code) =>
-    code === 'en' ? 'omarchy' : `omarchy-${code.toLowerCase()}`,
-  ),
+  codes.filter((code) => !locales[code].draft).map(workerName),
 )
-const unmanaged = body.result
-  .map((worker) => worker.id)
-  .filter((name) => name.startsWith('omarchy-') && !registered.has(name))
+// A draft may have a preview Worker; it is not in automatic updates yet.
+const drafts = new Set(
+  codes.filter((code) => locales[code].draft).map(workerName),
+)
+const deployed = body.result.map((worker) => worker.id)
+const previews = deployed.filter((name) => drafts.has(name))
+if (previews.length)
+  console.log(
+    `Draft previews deployed, not updated until published: ${previews.join(', ')}.`,
+  )
+const unmanaged = deployed.filter(
+  (name) =>
+    name.startsWith('omarchy-') && !registered.has(name) && !drafts.has(name),
+)
 if (unmanaged.length) {
   throw new Error(
     `Deployed editions missing from src/i18n/locales.json: ${unmanaged.join(', ')}. Restore them to automatic updates before publishing.`,

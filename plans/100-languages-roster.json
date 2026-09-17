@@ -1,0 +1,1997 @@
+{
+ "generated": "2026-09-12",
+ "target": 100,
+ "existing": [
+  "en",
+  "da",
+  "ar",
+  "fi",
+  "fr",
+  "el",
+  "hu",
+  "hi",
+  "is",
+  "ja",
+  "ko",
+  "es-MX",
+  "fil",
+  "pt",
+  "sv",
+  "tr",
+  "vi",
+  "ur",
+  "bn",
+  "ca",
+  "si",
+  "ta",
+  "th",
+  "uz",
+  "it",
+  "zh-CN",
+  "pl",
+  "lt",
+  "ga",
+  "nl",
+  "no"
+ ],
+ "new": [
+  {
+   "code": "ru",
+   "englishName": "Russian",
+   "nativeName": "Русский",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "ru-RU",
+   "ogLocale": "ru_RU",
+   "flag": "RU",
+   "domain": "https://ru.omarchy.org",
+   "preferredCountryDomain": "omarchy.ru",
+   "countryDomainStatus": {
+    "domain": "omarchy.ru",
+    "ip": "78.17.97.53",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 210
+   },
+   "intl": {
+    "date": "12 сентября 2026 г.",
+    "number": "1 234 567,89",
+    "resolved": "ru-RU",
+    "supported": true
+   }
+  },
+  {
+   "code": "id",
+   "englishName": "Indonesian",
+   "nativeName": "Bahasa Indonesia",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "id-ID",
+   "ogLocale": "id_ID",
+   "flag": "ID",
+   "domain": "https://id.omarchy.org",
+   "preferredCountryDomain": "omarchy.id",
+   "countryDomainStatus": {
+    "domain": "omarchy.id",
+    "ip": "192.64.119.230",
+    "rdap": "registered",
+    "registrar": "PT Jagat Informasi Solusi (int)",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 255
+   },
+   "intl": {
+    "date": "12 September 2026",
+    "number": "1.234.567,89",
+    "resolved": "id-ID",
+    "supported": true
+   }
+  },
+  {
+   "code": "de",
+   "englishName": "German",
+   "nativeName": "Deutsch",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "de-DE",
+   "ogLocale": "de_DE",
+   "flag": "DE",
+   "domain": "https://de.omarchy.org",
+   "preferredCountryDomain": "omarchy.de",
+   "countryDomainStatus": {
+    "domain": "omarchy.de",
+    "ip": "185.139.158.40",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "301",
+    "redirect": "https://www.omarchy.de/",
+    "serves_omarchy": true,
+    "verdict": "taken-serves-omarchy-content"
+   },
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 133
+   },
+   "intl": {
+    "date": "12. September 2026",
+    "number": "1.234.567,89",
+    "resolved": "de-DE",
+    "supported": true
+   }
+  },
+  {
+   "code": "pcm",
+   "englishName": "Nigerian Pidgin",
+   "nativeName": "Naijá",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "pcm-NG",
+   "ogLocale": "pcm_NG",
+   "flag": "NG",
+   "domain": "https://pcm.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 121
+   },
+   "intl": {
+    "date": "12 Sẹptẹ́mba 2026",
+    "number": "1,234,567.89",
+    "resolved": "pcm-NG",
+    "supported": true
+   }
+  },
+  {
+   "code": "mr",
+   "englishName": "Marathi",
+   "nativeName": "मराठी",
+   "script": "Deva",
+   "scriptName": "Devanagari",
+   "direction": "ltr",
+   "formatLocale": "mr-IN",
+   "ogLocale": "mr_IN",
+   "flag": "IN",
+   "domain": "https://mr.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 99
+   },
+   "intl": {
+    "date": "१२ सप्टेंबर, २०२६",
+    "number": "१२,३४,५६७.८९",
+    "resolved": "mr-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "te",
+   "englishName": "Telugu",
+   "nativeName": "తెలుగు",
+   "script": "Telu",
+   "scriptName": "Telugu",
+   "direction": "ltr",
+   "formatLocale": "te-IN",
+   "ogLocale": "te_IN",
+   "flag": "IN",
+   "domain": "https://te.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 96
+   },
+   "intl": {
+    "date": "12 సెప్టెంబర్, 2026",
+    "number": "12,34,567.89",
+    "resolved": "te-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "sw",
+   "englishName": "Swahili",
+   "nativeName": "Kiswahili",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "sw-TZ",
+   "ogLocale": "sw_TZ",
+   "flag": "TZ",
+   "domain": "https://sw.omarchy.org",
+   "preferredCountryDomain": "omarchy.tz",
+   "countryDomainStatus": {
+    "domain": "omarchy.tz",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 95
+   },
+   "intl": {
+    "date": "12 Septemba 2026",
+    "number": "1,234,567.89",
+    "resolved": "sw-TZ",
+    "supported": true
+   }
+  },
+  {
+   "code": "ha",
+   "englishName": "Hausa",
+   "nativeName": "Hausa",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ha-NG",
+   "ogLocale": "ha_NG",
+   "flag": "NG",
+   "domain": "https://ha.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 94
+   },
+   "intl": {
+    "date": "12 Satumba, 2026",
+    "number": "1,234,567.89",
+    "resolved": "ha-NG",
+    "supported": true
+   }
+  },
+  {
+   "code": "pa",
+   "englishName": "Punjabi",
+   "nativeName": "ਪੰਜਾਬੀ",
+   "script": "Guru",
+   "scriptName": "Gurmukhi",
+   "direction": "ltr",
+   "formatLocale": "pa-IN",
+   "ogLocale": "pa_IN",
+   "flag": "IN",
+   "domain": "https://pa.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 90
+   },
+   "intl": {
+    "date": "12 ਸਤੰਬਰ 2026",
+    "number": "12,34,567.89",
+    "resolved": "pa-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "fa",
+   "englishName": "Persian",
+   "nativeName": "فارسی",
+   "script": "Arab",
+   "scriptName": "Arabic",
+   "direction": "rtl",
+   "formatLocale": "fa-IR",
+   "ogLocale": "fa_IR",
+   "flag": "IR",
+   "domain": "https://fa.omarchy.org",
+   "preferredCountryDomain": "omarchy.ir",
+   "countryDomainStatus": {
+    "domain": "omarchy.ir",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 82
+   },
+   "intl": {
+    "date": "۲۱ شهریور ۱۴۰۵",
+    "number": "۱٬۲۳۴٬۵۶۷٫۸۹",
+    "resolved": "fa-IR",
+    "supported": true
+   }
+  },
+  {
+   "code": "am",
+   "englishName": "Amharic",
+   "nativeName": "አማርኛ",
+   "script": "Ethi",
+   "scriptName": "Ethiopic",
+   "direction": "ltr",
+   "formatLocale": "am-ET",
+   "ogLocale": "am_ET",
+   "flag": "ET",
+   "domain": "https://am.omarchy.org",
+   "preferredCountryDomain": "omarchy.et",
+   "countryDomainStatus": {
+    "domain": "omarchy.et",
+    "ip": "104.21.40.216",
+    "rdap": "unregistered",
+    "https": "200",
+    "serves_omarchy": true,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 78
+   },
+   "intl": {
+    "date": "12 ሴፕቴምበር 2026",
+    "number": "1,234,567.89",
+    "resolved": "am-ET",
+    "supported": true
+   }
+  },
+  {
+   "code": "jv",
+   "englishName": "Javanese",
+   "nativeName": "Basa Jawa",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "jv-ID",
+   "ogLocale": "jv_ID",
+   "flag": "ID",
+   "domain": "https://jv.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 69
+   },
+   "intl": {
+    "date": "12 September 2026",
+    "number": "1.234.567,89",
+    "resolved": "jv-ID",
+    "supported": true
+   }
+  },
+  {
+   "code": "gu",
+   "englishName": "Gujarati",
+   "nativeName": "ગુજરાતી",
+   "script": "Gujr",
+   "scriptName": "Gujarati",
+   "direction": "ltr",
+   "formatLocale": "gu-IN",
+   "ogLocale": "gu_IN",
+   "flag": "IN",
+   "domain": "https://gu.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 62
+   },
+   "intl": {
+    "date": "12 સપ્ટેમ્બર, 2026",
+    "number": "12,34,567.89",
+    "resolved": "gu-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "kn",
+   "englishName": "Kannada",
+   "nativeName": "ಕನ್ನಡ",
+   "script": "Knda",
+   "scriptName": "Kannada",
+   "direction": "ltr",
+   "formatLocale": "kn-IN",
+   "ogLocale": "kn_IN",
+   "flag": "IN",
+   "domain": "https://kn.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 59
+   },
+   "intl": {
+    "date": "ಸೆಪ್ಟೆಂಬರ್ 12, 2026",
+    "number": "1,234,567.89",
+    "resolved": "kn-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "yo",
+   "englishName": "Yoruba",
+   "nativeName": "Yorùbá",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "yo-NG",
+   "ogLocale": "yo_NG",
+   "flag": "NG",
+   "domain": "https://yo.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 53
+   },
+   "intl": {
+    "date": "12 Oṣù Owewe 2026",
+    "number": "1,234,567.89",
+    "resolved": "yo-NG",
+    "supported": true
+   }
+  },
+  {
+   "code": "bho",
+   "englishName": "Bhojpuri",
+   "nativeName": "भोजपुरी",
+   "script": "Deva",
+   "scriptName": "Devanagari",
+   "direction": "ltr",
+   "formatLocale": "bho-IN",
+   "ogLocale": "bho_IN",
+   "flag": "IN",
+   "domain": "https://bho.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2026",
+    "totalSpeakersMillions": 53
+   },
+   "intl": {
+    "date": "२०२६ सितम्बर १२",
+    "number": "१,२३४,५६७.८९",
+    "resolved": "bho-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "ms",
+   "englishName": "Malay",
+   "nativeName": "Bahasa Melayu",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ms-MY",
+   "ogLocale": "ms_MY",
+   "flag": "MY",
+   "domain": "https://ms.omarchy.org",
+   "preferredCountryDomain": "omarchy.my",
+   "countryDomainStatus": {
+    "domain": "omarchy.my",
+    "ip": "52.40.42.113",
+    "rdap": "unregistered",
+    "https": "200",
+    "serves_omarchy": true,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 77
+   },
+   "intl": {
+    "date": "12 September 2026",
+    "number": "1,234,567.89",
+    "resolved": "ms-MY",
+    "supported": true
+   }
+  },
+  {
+   "code": "my",
+   "englishName": "Burmese",
+   "nativeName": "မြန်မာ",
+   "script": "Mymr",
+   "scriptName": "Myanmar",
+   "direction": "ltr",
+   "formatLocale": "my-MM",
+   "ogLocale": "my_MM",
+   "flag": "MM",
+   "domain": "https://my.omarchy.org",
+   "preferredCountryDomain": "omarchy.mm",
+   "countryDomainStatus": {
+    "domain": "omarchy.mm",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "ethnologue-2023",
+    "totalSpeakersMillions": 43
+   },
+   "intl": {
+    "date": "၂၀၂၆ စက်တင်ဘာ ၁၂",
+    "number": "၁,၂၃၄,၅၆၇.၈၉",
+    "resolved": "my-MM",
+    "supported": true
+   }
+  },
+  {
+   "code": "ps",
+   "englishName": "Pashto",
+   "nativeName": "پښتو",
+   "script": "Arab",
+   "scriptName": "Arabic",
+   "direction": "rtl",
+   "formatLocale": "ps-AF",
+   "ogLocale": "ps_AF",
+   "flag": "AF",
+   "domain": "https://ps.omarchy.org",
+   "preferredCountryDomain": "omarchy.af",
+   "countryDomainStatus": {
+    "domain": "omarchy.af",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 39
+   },
+   "intl": {
+    "date": "AP ۱۴۰۵ وږی ۲۱",
+    "number": "۱٬۲۳۴٬۵۶۷٫۸۹",
+    "resolved": "ps-AF",
+    "supported": true
+   }
+  },
+  {
+   "code": "or",
+   "englishName": "Odia",
+   "nativeName": "ଓଡ଼ିଆ",
+   "script": "Orya",
+   "scriptName": "Odia",
+   "direction": "ltr",
+   "formatLocale": "or-IN",
+   "ogLocale": "or_IN",
+   "flag": "IN",
+   "domain": "https://or.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "ethnologue-2023",
+    "totalSpeakersMillions": 40
+   },
+   "intl": {
+    "date": "ସେପ୍ଟେମ୍ବର 12, 2026",
+    "number": "12,34,567.89",
+    "resolved": "or-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "ml",
+   "englishName": "Malayalam",
+   "nativeName": "മലയാളം",
+   "script": "Mlym",
+   "scriptName": "Malayalam",
+   "direction": "ltr",
+   "formatLocale": "ml-IN",
+   "ogLocale": "ml_IN",
+   "flag": "IN",
+   "domain": "https://ml.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 37
+   },
+   "intl": {
+    "date": "2026 സെപ്റ്റംബർ 12",
+    "number": "12,34,567.89",
+    "resolved": "ml-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "uk",
+   "englishName": "Ukrainian",
+   "nativeName": "Українська",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "uk-UA",
+   "ogLocale": "uk_UA",
+   "flag": "UA",
+   "domain": "https://uk.omarchy.org",
+   "preferredCountryDomain": "omarchy.ua",
+   "countryDomainStatus": {
+    "domain": "omarchy.ua",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 40
+   },
+   "intl": {
+    "date": "12 вересня 2026 р.",
+    "number": "1 234 567,89",
+    "resolved": "uk-UA",
+    "supported": true
+   }
+  },
+  {
+   "code": "om",
+   "englishName": "Oromo",
+   "nativeName": "Afaan Oromoo",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "om-ET",
+   "ogLocale": "om_ET",
+   "flag": "ET",
+   "domain": "https://om.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 37
+   },
+   "intl": {
+    "date": "Fulbaana 12, 2026",
+    "number": "1,234,567.89",
+    "resolved": "om-ET",
+    "supported": true
+   }
+  },
+  {
+   "code": "sd",
+   "englishName": "Sindhi",
+   "nativeName": "سنڌي",
+   "script": "Arab",
+   "scriptName": "Arabic",
+   "direction": "rtl",
+   "formatLocale": "sd-PK",
+   "ogLocale": "sd_PK",
+   "flag": "PK",
+   "domain": "https://sd.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 35
+   },
+   "intl": {
+    "date": "٢٠٢٦ سيپٽمبر ١٢",
+    "number": "١٬٢٣٤٬٥٦٧.٨٩",
+    "resolved": "sd-PK",
+    "supported": true
+   }
+  },
+  {
+   "code": "mai",
+   "englishName": "Maithili",
+   "nativeName": "मैथिली",
+   "script": "Deva",
+   "scriptName": "Devanagari",
+   "direction": "ltr",
+   "formatLocale": "mai-IN",
+   "ogLocale": "mai_IN",
+   "flag": "IN",
+   "domain": "https://mai.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 34
+   },
+   "intl": {
+    "date": "12 सितंबर 2026",
+    "number": "1,234,567.89",
+    "resolved": "mai-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "su",
+   "englishName": "Sundanese",
+   "nativeName": "Basa Sunda",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "su-ID",
+   "ogLocale": "su_ID",
+   "flag": "ID",
+   "domain": "https://su.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 32
+   },
+   "intl": {
+    "date": "12 Séptémber 2026",
+    "number": "1.234.567,89",
+    "resolved": "su-ID",
+    "supported": true
+   }
+  },
+  {
+   "code": "ne",
+   "englishName": "Nepali",
+   "nativeName": "नेपाली",
+   "script": "Deva",
+   "scriptName": "Devanagari",
+   "direction": "ltr",
+   "formatLocale": "ne-NP",
+   "ogLocale": "ne_NP",
+   "flag": "NP",
+   "domain": "https://ne.omarchy.org",
+   "preferredCountryDomain": "omarchy.np",
+   "countryDomainStatus": {
+    "domain": "omarchy.np",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 32
+   },
+   "intl": {
+    "date": "२०२६ सेप्टेम्बर १२",
+    "number": "१२,३४,५६७.८९",
+    "resolved": "ne-NP",
+    "supported": true
+   }
+  },
+  {
+   "code": "ig",
+   "englishName": "Igbo",
+   "nativeName": "Igbo",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ig-NG",
+   "ogLocale": "ig_NG",
+   "flag": "NG",
+   "domain": "https://ig.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 31
+   },
+   "intl": {
+    "date": "12 Septemba 2026",
+    "number": "1,234,567.89",
+    "resolved": "ig-NG",
+    "supported": true
+   }
+  },
+  {
+   "code": "ro",
+   "englishName": "Romanian",
+   "nativeName": "Română",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ro-RO",
+   "ogLocale": "ro_RO",
+   "flag": "RO",
+   "domain": "https://ro.omarchy.org",
+   "preferredCountryDomain": "omarchy.ro",
+   "countryDomainStatus": {
+    "domain": "omarchy.ro",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "registered",
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 28
+   },
+   "intl": {
+    "date": "12 septembrie 2026",
+    "number": "1.234.567,89",
+    "resolved": "ro-RO",
+    "supported": true
+   }
+  },
+  {
+   "code": "zu",
+   "englishName": "Zulu",
+   "nativeName": "isiZulu",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "zu-ZA",
+   "ogLocale": "zu_ZA",
+   "flag": "ZA",
+   "domain": "https://zu.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 28
+   },
+   "intl": {
+    "date": "Septhemba 12, 2026",
+    "number": "1,234,567.89",
+    "resolved": "zu-ZA",
+    "supported": true
+   }
+  },
+  {
+   "code": "az",
+   "englishName": "Azerbaijani",
+   "nativeName": "Azərbaycan dili",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "az-AZ",
+   "ogLocale": "az_AZ",
+   "flag": "AZ",
+   "domain": "https://az.omarchy.org",
+   "preferredCountryDomain": "omarchy.az",
+   "countryDomainStatus": {
+    "domain": "omarchy.az",
+    "ip": "185.199.110.153",
+    "rdap": "unregistered",
+    "https": "200",
+    "serves_omarchy": true,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 24
+   },
+   "intl": {
+    "date": "12 sentyabr 2026",
+    "number": "1.234.567,89",
+    "resolved": "az-AZ",
+    "supported": true
+   }
+  },
+  {
+   "code": "as",
+   "englishName": "Assamese",
+   "nativeName": "অসমীয়া",
+   "script": "Beng",
+   "scriptName": "Bengali",
+   "direction": "ltr",
+   "formatLocale": "as-IN",
+   "ogLocale": "as_IN",
+   "flag": "IN",
+   "domain": "https://as.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 24
+   },
+   "intl": {
+    "date": "১২ ছেপ্তেম্বৰ, ২০২৬",
+    "number": "১২,৩৪,৫৬৭.৮৯",
+    "resolved": "as-IN",
+    "supported": true
+   }
+  },
+  {
+   "code": "so",
+   "englishName": "Somali",
+   "nativeName": "Soomaali",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "so-SO",
+   "ogLocale": "so_SO",
+   "flag": "SO",
+   "domain": "https://so.omarchy.org",
+   "preferredCountryDomain": "omarchy.so",
+   "countryDomainStatus": {
+    "domain": "omarchy.so",
+    "ip": "185.53.179.128",
+    "rdap": "unregistered",
+    "https": "403",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 22
+   },
+   "intl": {
+    "date": "Sebtembar 12, 2026",
+    "number": "1,234,567.89",
+    "resolved": "so-SO",
+    "supported": true
+   }
+  },
+  {
+   "code": "ceb",
+   "englishName": "Cebuano",
+   "nativeName": "Binisaya",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ceb-PH",
+   "ogLocale": "ceb_PH",
+   "flag": "PH",
+   "domain": "https://ceb.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 20
+   },
+   "intl": {
+    "date": "Septiyembre 12, 2026",
+    "number": "1,234,567.89",
+    "resolved": "ceb-PH",
+    "supported": true
+   }
+  },
+  {
+   "code": "xh",
+   "englishName": "Xhosa",
+   "nativeName": "isiXhosa",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "xh-ZA",
+   "ogLocale": "xh_ZA",
+   "flag": "ZA",
+   "domain": "https://xh.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 20
+   },
+   "intl": {
+    "date": "Septemba 12, 2026",
+    "number": "1 234 567.89",
+    "resolved": "xh-ZA",
+    "supported": true
+   }
+  },
+  {
+   "code": "ln",
+   "englishName": "Lingala",
+   "nativeName": "Lingála",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ln-CD",
+   "ogLocale": "ln_CD",
+   "flag": "CD",
+   "domain": "https://ln.omarchy.org",
+   "preferredCountryDomain": "omarchy.cd",
+   "countryDomainStatus": {
+    "domain": "omarchy.cd",
+    "ip": null,
+    "rdap": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 20
+   },
+   "intl": {
+    "date": "12 sánzá ya libwa 2026",
+    "number": "1.234.567,89",
+    "resolved": "ln-CD",
+    "supported": true
+   }
+  },
+  {
+   "code": "km",
+   "englishName": "Khmer",
+   "nativeName": "ខ្មែរ",
+   "script": "Khmr",
+   "scriptName": "Khmer",
+   "direction": "ltr",
+   "formatLocale": "km-KH",
+   "ogLocale": "km_KH",
+   "flag": "KH",
+   "domain": "https://km.omarchy.org",
+   "preferredCountryDomain": "omarchy.kh",
+   "countryDomainStatus": {
+    "domain": "omarchy.kh",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 18
+   },
+   "intl": {
+    "date": "12 កញ្ញា 2026",
+    "number": "1,234,567.89",
+    "resolved": "km-KH",
+    "supported": true
+   }
+  },
+  {
+   "code": "mg",
+   "englishName": "Malagasy",
+   "nativeName": "Malagasy",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "mg-MG",
+   "ogLocale": "mg_MG",
+   "flag": "MG",
+   "domain": "https://mg.omarchy.org",
+   "preferredCountryDomain": "omarchy.mg",
+   "countryDomainStatus": {
+    "domain": "omarchy.mg",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 18
+   },
+   "intl": {
+    "date": "12 Septambra 2026",
+    "number": "1,234,567.89",
+    "resolved": "mg-MG",
+    "supported": true
+   }
+  },
+  {
+   "code": "af",
+   "englishName": "Afrikaans",
+   "nativeName": "Afrikaans",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "af-ZA",
+   "ogLocale": "af_ZA",
+   "flag": "ZA",
+   "domain": "https://af.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 17
+   },
+   "intl": {
+    "date": "12 September 2026",
+    "number": "1 234 567,89",
+    "resolved": "af-ZA",
+    "supported": true
+   }
+  },
+  {
+   "code": "kk",
+   "englishName": "Kazakh",
+   "nativeName": "Қазақ тілі",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "kk-KZ",
+   "ogLocale": "kk_KZ",
+   "flag": "KZ",
+   "domain": "https://kk.omarchy.org",
+   "preferredCountryDomain": "omarchy.kz",
+   "countryDomainStatus": {
+    "domain": "omarchy.kz",
+    "ip": "172.67.173.155",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "301",
+    "redirect": "https://omarchy.org/",
+    "serves_omarchy": true,
+    "verdict": "taken-serves-omarchy-content"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 17
+   },
+   "intl": {
+    "date": "2026 ж. 12 қыркүйек",
+    "number": "1 234 567,89",
+    "resolved": "kk-KZ",
+    "supported": true
+   }
+  },
+  {
+   "code": "rw",
+   "englishName": "Kinyarwanda",
+   "nativeName": "Ikinyarwanda",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "rw-RW",
+   "ogLocale": "rw_RW",
+   "flag": "RW",
+   "domain": "https://rw.omarchy.org",
+   "preferredCountryDomain": "omarchy.rw",
+   "countryDomainStatus": {
+    "domain": "omarchy.rw",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 15
+   },
+   "intl": {
+    "date": "2026 Nzeri 12",
+    "number": "1.234.567,89",
+    "resolved": "rw-RW",
+    "supported": true
+   }
+  },
+  {
+   "code": "ku",
+   "englishName": "Kurdish",
+   "nativeName": "Kurdî",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ku-TR",
+   "ogLocale": "ku_TR",
+   "flag": "IQ",
+   "domain": "https://ku.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 15
+   },
+   "intl": {
+    "date": "12ê îlona 2026an",
+    "number": "1.234.567,89",
+    "resolved": "ku-TR",
+    "supported": true
+   }
+  },
+  {
+   "code": "ny",
+   "englishName": "Chichewa",
+   "nativeName": "Chichewa",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "en-MW",
+   "ogLocale": "en_MW",
+   "flag": "MW",
+   "domain": "https://ny.omarchy.org",
+   "preferredCountryDomain": "omarchy.mw",
+   "countryDomainStatus": {
+    "domain": "omarchy.mw",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 14
+   },
+   "intl": {
+    "date": "12 September 2026",
+    "number": "1,234,567.89",
+    "resolved": "en-MW",
+    "supported": true
+   }
+  },
+  {
+   "code": "bm",
+   "englishName": "Bambara",
+   "nativeName": "Bamanankan",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "bm-ML",
+   "ogLocale": "bm_ML",
+   "flag": "ML",
+   "domain": "https://bm.omarchy.org",
+   "preferredCountryDomain": "omarchy.ml",
+   "countryDomainStatus": {
+    "domain": "omarchy.ml",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 14
+   },
+   "intl": {
+    "date": "12 sɛtanburu 2026",
+    "number": "1,234,567.89",
+    "resolved": "bm-ML",
+    "supported": true
+   }
+  },
+  {
+   "code": "cs",
+   "englishName": "Czech",
+   "nativeName": "Čeština",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "cs-CZ",
+   "ogLocale": "cs_CZ",
+   "flag": "CZ",
+   "domain": "https://cs.omarchy.org",
+   "preferredCountryDomain": "omarchy.cz",
+   "countryDomainStatus": {
+    "domain": "omarchy.cz",
+    "ip": "37.9.175.163",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 13
+   },
+   "intl": {
+    "date": "12. září 2026",
+    "number": "1 234 567,89",
+    "resolved": "cs-CZ",
+    "supported": true
+   }
+  },
+  {
+   "code": "ht",
+   "englishName": "Haitian Creole",
+   "nativeName": "Kreyòl ayisyen",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "fr-HT",
+   "ogLocale": "fr_HT",
+   "flag": "HT",
+   "domain": "https://ht.omarchy.org",
+   "preferredCountryDomain": "omarchy.ht",
+   "countryDomainStatus": {
+    "domain": "omarchy.ht",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 12
+   },
+   "intl": {
+    "date": "12 septembre 2026",
+    "number": "1 234 567,89",
+    "resolved": "fr-HT",
+    "supported": true
+   }
+  },
+  {
+   "code": "wo",
+   "englishName": "Wolof",
+   "nativeName": "Wolof",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "wo-SN",
+   "ogLocale": "wo_SN",
+   "flag": "SN",
+   "domain": "https://wo.omarchy.org",
+   "preferredCountryDomain": "omarchy.sn",
+   "countryDomainStatus": {
+    "domain": "omarchy.sn",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 12
+   },
+   "intl": {
+    "date": "12 Sàttumbar, 2026",
+    "number": "1.234.567,89",
+    "resolved": "wo-SN",
+    "supported": true
+   }
+  },
+  {
+   "code": "ak",
+   "englishName": "Akan",
+   "nativeName": "Akan",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "ak-GH",
+   "ogLocale": "ak_GH",
+   "flag": "GH",
+   "domain": "https://ak.omarchy.org",
+   "preferredCountryDomain": "omarchy.gh",
+   "countryDomainStatus": {
+    "domain": "omarchy.gh",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 11
+   },
+   "intl": {
+    "date": "12, Ɛbɔ, 2026",
+    "number": "1,234,567.89",
+    "resolved": "ak-GH",
+    "supported": true
+   }
+  },
+  {
+   "code": "sn",
+   "englishName": "Shona",
+   "nativeName": "chiShona",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "sn-ZW",
+   "ogLocale": "sn_ZW",
+   "flag": "ZW",
+   "domain": "https://sn.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 11
+   },
+   "intl": {
+    "date": "2026 Gunyana 12",
+    "number": "1,234,567.89",
+    "resolved": "sn-ZW",
+    "supported": true
+   }
+  },
+  {
+   "code": "lg",
+   "englishName": "Luganda",
+   "nativeName": "Luganda",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "lg-UG",
+   "ogLocale": "lg_UG",
+   "flag": "UG",
+   "domain": "https://lg.omarchy.org",
+   "preferredCountryDomain": "omarchy.ug",
+   "countryDomainStatus": {
+    "domain": "omarchy.ug",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 11
+   },
+   "intl": {
+    "date": "12 Sebuttemba 2026",
+    "number": "1,234,567.89",
+    "resolved": "lg-UG",
+    "supported": true
+   }
+  },
+  {
+   "code": "rn",
+   "englishName": "Kirundi",
+   "nativeName": "Ikirundi",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "rn-BI",
+   "ogLocale": "rn_BI",
+   "flag": "BI",
+   "domain": "https://rn.omarchy.org",
+   "preferredCountryDomain": "omarchy.bi",
+   "countryDomainStatus": {
+    "domain": "omarchy.bi",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 11
+   },
+   "intl": {
+    "date": "12 Nyakanga 2026",
+    "number": "1.234.567,89",
+    "resolved": "rn-BI",
+    "supported": true
+   }
+  },
+  {
+   "code": "tk",
+   "englishName": "Turkmen",
+   "nativeName": "Türkmen dili",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "tk-TM",
+   "ogLocale": "tk_TM",
+   "flag": "TM",
+   "domain": "https://tk.omarchy.org",
+   "preferredCountryDomain": "omarchy.tm",
+   "countryDomainStatus": {
+    "domain": "omarchy.tm",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 11
+   },
+   "intl": {
+    "date": "12 sentýabr 2026",
+    "number": "1 234 567,89",
+    "resolved": "tk-TM",
+    "supported": true
+   }
+  },
+  {
+   "code": "ug",
+   "englishName": "Uyghur",
+   "nativeName": "ئۇيغۇرچە",
+   "script": "Arab",
+   "scriptName": "Arabic",
+   "direction": "rtl",
+   "formatLocale": "ug-CN",
+   "ogLocale": "ug_CN",
+   "flag": "CN",
+   "domain": "https://ug.omarchy.org",
+   "preferredCountryDomain": null,
+   "countryDomainStatus": null,
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 10
+   },
+   "intl": {
+    "date": "12-سېنتەبىر، 2026",
+    "number": "1,234,567.89",
+    "resolved": "ug-CN",
+    "supported": true
+   }
+  },
+  {
+   "code": "tg",
+   "englishName": "Tajik",
+   "nativeName": "Тоҷикӣ",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "tg-TJ",
+   "ogLocale": "tg_TJ",
+   "flag": "TJ",
+   "domain": "https://tg.omarchy.org",
+   "preferredCountryDomain": "omarchy.tj",
+   "countryDomainStatus": {
+    "domain": "omarchy.tj",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 10
+   },
+   "intl": {
+    "date": "12 Сентябр 2026",
+    "number": "1 234 567,89",
+    "resolved": "tg-TJ",
+    "supported": true
+   }
+  },
+  {
+   "code": "sr",
+   "englishName": "Serbian",
+   "nativeName": "Српски",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "sr-RS",
+   "ogLocale": "sr_RS",
+   "flag": "RS",
+   "domain": "https://sr.omarchy.org",
+   "preferredCountryDomain": "omarchy.rs",
+   "countryDomainStatus": {
+    "domain": "omarchy.rs",
+    "ip": "217.26.214.190",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 10
+   },
+   "intl": {
+    "date": "12. септембар 2026.",
+    "number": "1.234.567,89",
+    "resolved": "sr-RS",
+    "supported": true
+   }
+  },
+  {
+   "code": "he",
+   "englishName": "Hebrew",
+   "nativeName": "עברית",
+   "script": "Hebr",
+   "scriptName": "Hebrew",
+   "direction": "rtl",
+   "formatLocale": "he-IL",
+   "ogLocale": "he_IL",
+   "flag": "IL",
+   "domain": "https://he.omarchy.org",
+   "preferredCountryDomain": "omarchy.il",
+   "countryDomainStatus": {
+    "domain": "omarchy.il",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 9
+   },
+   "intl": {
+    "date": "12 בספטמבר 2026",
+    "number": "1,234,567.89",
+    "resolved": "he-IL",
+    "supported": true
+   }
+  },
+  {
+   "code": "ti",
+   "englishName": "Tigrinya",
+   "nativeName": "ትግርኛ",
+   "script": "Ethi",
+   "scriptName": "Ethiopic",
+   "direction": "ltr",
+   "formatLocale": "ti-ER",
+   "ogLocale": "ti_ER",
+   "flag": "ER",
+   "domain": "https://ti.omarchy.org",
+   "preferredCountryDomain": "omarchy.er",
+   "countryDomainStatus": {
+    "domain": "omarchy.er",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 9
+   },
+   "intl": {
+    "date": "መስከረም 12, 2026",
+    "number": "1,234,567.89",
+    "resolved": "ti-ER",
+    "supported": true
+   }
+  },
+  {
+   "code": "bg",
+   "englishName": "Bulgarian",
+   "nativeName": "Български",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "bg-BG",
+   "ogLocale": "bg_BG",
+   "flag": "BG",
+   "domain": "https://bg.omarchy.org",
+   "preferredCountryDomain": "omarchy.bg",
+   "countryDomainStatus": {
+    "domain": "omarchy.bg",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "registered",
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 8
+   },
+   "intl": {
+    "date": "12 септември 2026 г.",
+    "number": "1 234 567,89",
+    "resolved": "bg-BG",
+    "supported": true
+   }
+  },
+  {
+   "code": "sk",
+   "englishName": "Slovak",
+   "nativeName": "Slovenčina",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "sk-SK",
+   "ogLocale": "sk_SK",
+   "flag": "SK",
+   "domain": "https://sk.omarchy.org",
+   "preferredCountryDomain": "omarchy.sk",
+   "countryDomainStatus": {
+    "domain": "omarchy.sk",
+    "ip": "37.9.175.163",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 7
+   },
+   "intl": {
+    "date": "12. septembra 2026",
+    "number": "1 234 567,89",
+    "resolved": "sk-SK",
+    "supported": true
+   }
+  },
+  {
+   "code": "hy",
+   "englishName": "Armenian",
+   "nativeName": "Հայերեն",
+   "script": "Armn",
+   "scriptName": "Armenian",
+   "direction": "ltr",
+   "formatLocale": "hy-AM",
+   "ogLocale": "hy_AM",
+   "flag": "AM",
+   "domain": "https://hy.omarchy.org",
+   "preferredCountryDomain": "omarchy.am",
+   "countryDomainStatus": {
+    "domain": "omarchy.am",
+    "ip": "172.67.200.180",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "200",
+    "serves_omarchy": true,
+    "verdict": "taken-serves-omarchy-content"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 7
+   },
+   "intl": {
+    "date": "12 սեպտեմբերի, 2026 թ.",
+    "number": "1 234 567,89",
+    "resolved": "hy-AM",
+    "supported": true
+   }
+  },
+  {
+   "code": "sq",
+   "englishName": "Albanian",
+   "nativeName": "Shqip",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "sq-AL",
+   "ogLocale": "sq_AL",
+   "flag": "AL",
+   "domain": "https://sq.omarchy.org",
+   "preferredCountryDomain": "omarchy.al",
+   "countryDomainStatus": {
+    "domain": "omarchy.al",
+    "ip": "91.239.7.58",
+    "rdap": "http 429",
+    "whois": "unknown",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 7
+   },
+   "intl": {
+    "date": "12 shtator 2026",
+    "number": "1 234 567,89",
+    "resolved": "sq-AL",
+    "supported": true
+   }
+  },
+  {
+   "code": "hr",
+   "englishName": "Croatian",
+   "nativeName": "Hrvatski",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "hr-HR",
+   "ogLocale": "hr_HR",
+   "flag": "HR",
+   "domain": "https://hr.omarchy.org",
+   "preferredCountryDomain": "omarchy.hr",
+   "countryDomainStatus": {
+    "domain": "omarchy.hr",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "registered",
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 7
+   },
+   "intl": {
+    "date": "12. rujna 2026.",
+    "number": "1.234.567,89",
+    "resolved": "hr-HR",
+    "supported": true
+   }
+  },
+  {
+   "code": "lo",
+   "englishName": "Lao",
+   "nativeName": "ລາວ",
+   "script": "Laoo",
+   "scriptName": "Lao",
+   "direction": "ltr",
+   "formatLocale": "lo-LA",
+   "ogLocale": "lo_LA",
+   "flag": "LA",
+   "domain": "https://lo.omarchy.org",
+   "preferredCountryDomain": "omarchy.la",
+   "countryDomainStatus": {
+    "domain": "omarchy.la",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 7
+   },
+   "intl": {
+    "date": "12 ກັນຍາ 2026",
+    "number": "1.234.567,89",
+    "resolved": "lo-LA",
+    "supported": true
+   }
+  },
+  {
+   "code": "gn",
+   "englishName": "Guarani",
+   "nativeName": "Avañeʼẽ",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "es-PY",
+   "ogLocale": "es_PY",
+   "flag": "PY",
+   "domain": "https://gn.omarchy.org",
+   "preferredCountryDomain": "omarchy.py",
+   "countryDomainStatus": {
+    "domain": "omarchy.py",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unknown",
+    "verdict": "unknown"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 6
+   },
+   "intl": {
+    "date": "12 de septiembre de 2026",
+    "number": "1.234.567,89",
+    "resolved": "es-PY",
+    "supported": true
+   }
+  },
+  {
+   "code": "mn",
+   "englishName": "Mongolian",
+   "nativeName": "Монгол",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "mn-MN",
+   "ogLocale": "mn_MN",
+   "flag": "MN",
+   "domain": "https://mn.omarchy.org",
+   "preferredCountryDomain": "omarchy.mn",
+   "countryDomainStatus": {
+    "domain": "omarchy.mn",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 6
+   },
+   "intl": {
+    "date": "2026 оны есдүгээр сарын 12",
+    "number": "1,234,567.89",
+    "resolved": "mn-MN",
+    "supported": true
+   }
+  },
+  {
+   "code": "ky",
+   "englishName": "Kyrgyz",
+   "nativeName": "Кыргызча",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "ky-KG",
+   "ogLocale": "ky_KG",
+   "flag": "KG",
+   "domain": "https://ky.omarchy.org",
+   "preferredCountryDomain": "omarchy.kg",
+   "countryDomainStatus": {
+    "domain": "omarchy.kg",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "unregistered",
+    "verdict": "available"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 5
+   },
+   "intl": {
+    "date": "2026-ж., 12-сентябрь",
+    "number": "1 234 567,89",
+    "resolved": "ky-KG",
+    "supported": true
+   }
+  },
+  {
+   "code": "be",
+   "englishName": "Belarusian",
+   "nativeName": "Беларуская",
+   "script": "Cyrl",
+   "scriptName": "Cyrillic",
+   "direction": "ltr",
+   "formatLocale": "be-BY",
+   "ogLocale": "be_BY",
+   "flag": "BY",
+   "domain": "https://be.omarchy.org",
+   "preferredCountryDomain": "omarchy.by",
+   "countryDomainStatus": {
+    "domain": "omarchy.by",
+    "ip": "104.21.25.211",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "403",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 5
+   },
+   "intl": {
+    "date": "12 верасня 2026 г.",
+    "number": "1 234 567,89",
+    "resolved": "be-BY",
+    "supported": true
+   }
+  },
+  {
+   "code": "ka",
+   "englishName": "Georgian",
+   "nativeName": "ქართული",
+   "script": "Geor",
+   "scriptName": "Georgian",
+   "direction": "ltr",
+   "formatLocale": "ka-GE",
+   "ogLocale": "ka_GE",
+   "flag": "GE",
+   "domain": "https://ka.omarchy.org",
+   "preferredCountryDomain": "omarchy.ge",
+   "countryDomainStatus": {
+    "domain": "omarchy.ge",
+    "ip": "217.147.225.26",
+    "rdap": "http 429",
+    "whois": "registered",
+    "https": "000",
+    "serves_omarchy": false,
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 4
+   },
+   "intl": {
+    "date": "12 სექტემბერი, 2026",
+    "number": "1 234 567,89",
+    "resolved": "ka-GE",
+    "supported": true
+   }
+  },
+  {
+   "code": "sl",
+   "englishName": "Slovenian",
+   "nativeName": "Slovenščina",
+   "script": "Latn",
+   "scriptName": "Latin",
+   "direction": "ltr",
+   "formatLocale": "sl-SI",
+   "ogLocale": "sl_SI",
+   "flag": "SI",
+   "domain": "https://sl.omarchy.org",
+   "preferredCountryDomain": "omarchy.si",
+   "countryDomainStatus": {
+    "domain": "omarchy.si",
+    "ip": null,
+    "rdap": "http 429",
+    "whois": "registered",
+    "verdict": "taken"
+   },
+   "rank": {
+    "source": "wikidata",
+    "totalSpeakersMillions": 2.5
+   },
+   "intl": {
+    "date": "12. september 2026",
+    "number": "1.234.567,89",
+    "resolved": "sl-SI",
+    "supported": true
+   }
+  }
+ ],
+ "setAside": {
+  "zh-TW": "Traditional Chinese is a script and regional edition of zh-CN; strong candidate for a country edition later",
+  "pt-BR": "regional edition of pt; strongest candidate for a country edition (Brazil) once translations exist",
+  "es-ES": "regional edition of es-MX; country edition candidate",
+  "yue/wuu/nan/hak/cjy/hsn/gan": "Chinese varieties without a separate written standard used online; covered by zh-CN",
+  "arz/apc/apd/ary/arq/aec/acm": "Arabic dialects; the written web uses Modern Standard Arabic, covered by ar",
+  "awa/mag/hne/bgc/mwr/raj": "Hindi-belt varieties written in Devanagari and read through hi; Bhojpuri and Maithili kept for size and official status",
+  "pnb": "Western Punjabi in Shahmukhi; Pakistani readers have ur, Gurmukhi pa chosen as the Punjabi edition",
+  "ff": "Fula macrolanguage without one written standard",
+  "qu": "Quechua macrolanguage without one written standard",
+  "lv/et/mt/bs/mk/ilo/hil/min/mad/st/tn/nso/ki/ee": "next candidates below the cut; country editions may pull some forward"
+ },
+ "sources": {
+  "ethnologue-2026": "https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers (Ethnologue 2026 table, read 2026-09-12)",
+  "ethnologue-2023": "https://en.wikipedia.org/w/index.php?oldid=1210841975",
+  "wikidata": "https://query.wikidata.org/ P1098 number of speakers, queried 2026-09-12"
+ }
+}

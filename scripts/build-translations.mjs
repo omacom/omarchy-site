@@ -1,7 +1,11 @@
 import { spawnSync } from 'node:child_process'
 import locales from '../src/i18n/locales.json' with { type: 'json' }
 
-for (const code of Object.keys(locales).filter((code) => code !== 'en')) {
+// Drafts build on their own with npm run build:locale; they are not deployed.
+const published = Object.keys(locales).filter(
+  (code) => code !== 'en' && !locales[code].draft,
+)
+for (const code of published) {
   const result = spawnSync(
     process.execPath,
     ['scripts/build-locale.mjs', code],

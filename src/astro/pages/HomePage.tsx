@@ -1,4 +1,4 @@
-import { t, language } from '@/i18n/site'
+import { t, language, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import {
@@ -87,6 +87,15 @@ const FIXES = [
   t(' paper cut.'),
 ] as const
 const ISO_URL = release.isoUrl
+
+/**
+ * Han and kana editions set no space between words and close a sentence with
+ * their own full-width stop, so the joins the English copy makes with a space
+ * and a period are made differently there. The registry's script says which
+ * editions those are, so a Traditional Chinese or Japanese edition needs no
+ * branch of its own.
+ */
+const ideographic = ['Hans', 'Hant', 'Jpan'].includes(locale.script)
 
 const noteLink =
   'text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand'
@@ -374,7 +383,7 @@ export function HomePage({ data }: { data: HomeData }) {
               }
               className="text-2xl font-medium tracking-tight text-text [text-wrap:balance] sm:text-3xl"
             >
-              {language === 'zh-CN' ? (
+              {ideographic ? (
                 <>
                   <span className="block">
                     <SectionAnchor anchor="home">
@@ -481,14 +490,14 @@ export function HomePage({ data }: { data: HomeData }) {
                 </SectionAnchor>
               </h2>
               <p
-                className={`mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
+                className={`mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${ideographic ? 'whitespace-pre-line' : ''}`}
               >
                 {t(
                   'Linux used to be a chore to setup, difficult to debug, and full of confusing upfront choices. Omarchy solves all of it with a lightning fast installation, agents that debug all issues, and fantastic defaults that give you a fully functioning system that looks amazing out of the box.',
                 )}
               </p>
               <p
-                className={`mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
+                className={`mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${ideographic ? 'whitespace-pre-line' : ''}`}
               >
                 {t(
                   "Oma is for omakase, chef's choice: we pick the tools and tune the details, so you can get straight to work. But this is your computer. You're free to change everything.",
@@ -505,14 +514,14 @@ export function HomePage({ data }: { data: HomeData }) {
                 {t(
                   ": ten principles for uniting the nerds, welcoming the agents, and building the perfect computer. We're not there yet, but",
                 )}
-                {language === 'zh-CN' ? '' : ' '}
+                {ideographic ? '' : ' '}
                 <a
                   href="https://wecanfixeverything.com/"
                   className="underline decoration-border-strong underline-offset-4 hover:decoration-current"
                 >
                   {t('we can fix everything now.')}
                 </a>
-                {language === 'zh-CN' && '。'}
+                {ideographic && '。'}
               </p>
             </div>
 
@@ -582,11 +591,11 @@ export function HomePage({ data }: { data: HomeData }) {
                     >
                       SHA-256
                     </a>
-                    {language === 'zh-CN' ? '、' : ', '}
+                    {ideographic ? '、' : ', '}
                     <a href={`${ISO_URL}.sig`} className={noteLink}>
                       {t('signature')}
                     </a>
-                    {language === 'zh-CN' ? '。' : '.'}
+                    {ideographic ? '。' : '.'}
                   </span>
                 </p>
               </div>
@@ -642,7 +651,7 @@ export function HomePage({ data }: { data: HomeData }) {
             <ManualLink slug="unattended-installs">
               {t('unattended installs')}
             </ManualLink>
-            {language === 'zh-CN' ? t(' detailed guides.') : '.'}
+            {ideographic ? t(' detailed guides.') : '.'}
           </p>
           <SectionActions>{installGuide}</SectionActions>
         </div>
@@ -693,7 +702,7 @@ export function HomePage({ data }: { data: HomeData }) {
                 {t(
                   'A theme restyles the whole system at once: terminal, bar, notifications, wallpaper. Pick one and this site wears it too.',
                 )}
-                {language === 'zh-CN' && (
+                {ideographic && (
                   <>
                     <span className="sm:hidden">。</span>
                     <span className="hidden sm:inline">；</span>

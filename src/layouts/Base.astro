@@ -12,8 +12,13 @@ import { MusicControl } from '@/components/MusicControl'
 import { themeInitScript } from '@/lib/theme'
 import { etchInitScript } from '@/lib/etch'
 import { socialImage, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo'
-import geistWoff2 from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
-import monoWoff2 from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
+import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
+import geistCyrillic from '@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2?url'
+import geistVietnamese from '@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2?url'
+import monoLatin from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
+import monoCyrillic from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-cyrillic-wght-normal.woff2?url'
+import monoGreek from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-greek-wght-normal.woff2?url'
+import monoVietnamese from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-vietnamese-wght-normal.woff2?url'
 
 export interface Props {
   title?: string
@@ -34,6 +39,21 @@ const {
 } = Astro.props
 const url = `${SITE_URL}${path}`
 const ogImage = socialImage(path)
+
+// The font subsets this edition's own text is set in, preloaded ahead of the
+// stylesheet's discovery of them. Vietnamese is Latin script with tone letters
+// that live in a subset of their own; Geist has no Greek, so a Greek edition's
+// sans falls to the system while its mono still comes from the brand face.
+// Every edition also warms the Latin file: digits, commands and URLs are Latin
+// on every page. Scripts the faces do not carry preload Latin alone.
+const subsets: Record<string, [string, string]> = {
+  Cyrl: [geistCyrillic, monoCyrillic],
+  Grek: [geistLatin, monoGreek],
+  Latn: [geistLatin, monoLatin],
+  vietnamese: [geistVietnamese, monoVietnamese],
+}
+const own = subsets[language === 'vi' ? 'vietnamese' : locale.script] ?? subsets.Latn
+const fontPreloads = [...new Set([...own, geistLatin, monoLatin])]
 ---
 
 <!doctype html>
@@ -70,8 +90,9 @@ const ogImage = socialImage(path)
     <link rel="alternate" hreflang="x-default" href={`${locales.en.domain}${path}`} />
     <meta property="og:locale" content={locale.ogLocale} />
     <link rel="preload" href="/brand/omarchy-wordmark.svg" as="image" type="image/svg+xml" crossorigin="anonymous" />
-    <link rel="preload" href={geistWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href={monoWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+    {fontPreloads.map((href) => (
+      <link rel="preload" href={href} as="font" type="font/woff2" crossorigin="anonymous" />
+    ))}
     <script is:inline data-astro-rerun set:html={themeInitScript} />
     <script is:inline data-astro-rerun set:html={etchInitScript} />
   </head>
