@@ -64,6 +64,12 @@ const ogImage = socialImage(path)
     <meta name="theme-color" content="#1a1b26" />
     <link rel="icon" href="/brand/omarchy-logo.svg" type="image/svg+xml" data-theme-icon transition:persist="theme-icon" />
     <link rel="canonical" href={url} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={t('Omarchy RSS feed')}
+      href={`${SITE_URL}/news/rss.xml`}
+    />
     {Object.entries(locales).filter(([code]) => hasTranslation(code, path)).map(([code, entry]) => (
       <link rel="alternate" hreflang={code} href={`${entry.domain}${path}`} />
     ))}
