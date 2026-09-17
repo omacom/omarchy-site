@@ -26,6 +26,7 @@ const columns = [
       { label: t('Meetups'), to: '/meetups/' },
       { label: t('Teams'), to: '/teams/' },
       { label: t('Workstations'), splat: 'workstations' },
+      { label: t('Phone'), splat: 'phone' },
       { label: t('Doctrine'), to: '/doctrine/' },
     ],
   },

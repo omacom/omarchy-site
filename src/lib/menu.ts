@@ -110,6 +110,7 @@ const ITEMS: Array<MenuItem> = [
     icon: 'page',
     to: '/workstations/',
   },
+  { id: 'community.phone', label: t('Phone'), icon: 'page', to: '/phone/' },
   {
     id: 'community.doctrine',
     label: t('Doctrine'),

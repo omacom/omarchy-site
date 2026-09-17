@@ -1416,6 +1416,7 @@ h6 {
 .ported:has(
   .team__members,
   .workstations__images,
+  .phone__grid,
   .sponsorship,
   .resident,
   .rule
@@ -1784,6 +1785,69 @@ h6 {
 .ported .workstations__images a {
   display: block;
   cursor: zoom-in;
+}
+
+/* Phone: wallpaper wall */
+.ported .phone__intro {
+  max-width: var(--measure);
+  margin: 0;
+}
+.ported .phone__intro + .phone__intro {
+  margin-top: 1em;
+}
+.ported .phone__faq {
+  max-width: var(--measure);
+  margin: 1.75rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ported .phone__faq dt {
+  margin: 0;
+  font-weight: 600;
+}
+.ported .phone__faq dd {
+  margin: 0.25rem 0 1rem;
+  color: var(--color-text-secondary);
+}
+.ported .phone__faq dd:last-child {
+  margin-bottom: 0;
+}
+.ported .phone__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 2.5rem 2rem;
+  margin-top: 1.75rem;
+}
+.ported .phone__wallpaper {
+  margin: 0;
+}
+.ported .phone__wallpaper a {
+  display: block;
+  cursor: pointer;
+}
+.ported .phone__wallpaper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1206 / 2622;
+  object-fit: cover;
+  margin: 0;
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border-subtle);
+}
+.ported .phone__wallpaper figcaption {
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.ported .phone__next {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ported .phone__next p {
+  max-width: var(--measure);
+  margin: 0 0 0.75rem;
 }
 
 /* Meetup rules: two-column list */

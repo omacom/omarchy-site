@@ -128,6 +128,11 @@ const PORTED: Partial<Record<string, { title: string; description: string }>> =
       description:
         'Every patron of the Omacom Foundation gets a digital rally credential: a badge, a social card, and wallpapers, in four classes, one for each tier of patronage.',
     },
+    phone: {
+      title: 'Phone - Omarchy',
+      description:
+        "Omarchy doesn't run on your phone yet, but every official theme has a wallpaper that does. Pick the one that matches your desktop.",
+    },
     potato: {
       title: 'Ancient Hardware - Omarchy',
       description: 'Omarchy runs great on ancient hardware.',
