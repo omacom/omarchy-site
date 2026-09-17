@@ -1,18 +1,18 @@
 {
-  "checked": "2026-09-11",
+  "checked": "2026-09-17",
   "github": {
-    "stars": 40302,
-    "pullRequests": 5250,
-    "contributors": 516,
-    "commitsYear": 3924,
+    "stars": 41699,
+    "pullRequests": 5765,
+    "contributors": 520,
+    "commitsYear": 3860,
     "weeks": [
-      98, 18, 15, 71, 121, 86, 48, 40, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17,
-      14, 37, 51, 23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263,
-      437, 142, 42, 30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 39, 140, 53, 38
+      18, 15, 71, 121, 86, 48, 40, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14,
+      37, 51, 23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263, 437,
+      142, 42, 30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 39, 142, 56, 40, 27
     ]
   },
   "foundation": {
-    "total": 18.5,
+    "total": 18.55,
     "steps": [
       {
         "date": "2026-08-21",
@@ -41,34 +41,39 @@
       },
       {
         "date": "2026-09-03",
-        "amount": 14.95,
+        "amount": 14.8,
         "post": "/news/2026/09/omacom-foundation-secures-tokens-from-leading-labs/"
       },
       {
         "date": "2026-09-07",
-        "amount": 15.5,
+        "amount": 15.35,
         "post": "/news/2026/09/omacom-foundation-raises-another-half-a-million-dollars/"
       },
       {
         "date": "2026-09-09",
-        "amount": 18.5,
+        "amount": 18.35,
         "post": "/news/2026/09/digitalocean-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-09-17",
+        "amount": 18.55,
+        "post": "/news/2026/09/brian-cartmell-and-american-cloud-join-as-open-patronage-doubles/"
       }
     ]
   },
   "downloads": {
-    "total": 1094473,
+    "total": 1139620,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
     "periods": [
-      { "label": "Yesterday", "days": 1, "count": 9158 },
-      { "label": "Last week", "days": 7, "count": 75071 },
-      { "label": "Last month", "count": 242851, "days": 30 }
+      { "label": "Yesterday", "days": 1, "count": 8049 },
+      { "label": "Last week", "days": 7, "count": 53474 },
+      { "label": "Last month", "count": 312157, "days": 30 }
     ],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-09-10",
-      "lastAdded": 8565,
+      "through": "2026-09-16",
+      "lastAdded": 8049,
       "countries": [
         "AD",
         "AE",
@@ -80,6 +85,7 @@
         "AR",
         "AT",
         "AU",
+        "AW",
         "AX",
         "AZ",
         "BA",
@@ -110,6 +116,7 @@
         "CO",
         "CR",
         "CU",
+        "CV",
         "CY",
         "CZ",
         "DE",
@@ -126,6 +133,7 @@
         "FI",
         "FJ",
         "FK",
+        "FM",
         "FO",
         "FR",
         "GA",
@@ -141,6 +149,9 @@
         "GQ",
         "GR",
         "GT",
+        "GU",
+        "GW",
+        "GY",
         "HK",
         "HN",
         "HR",
@@ -162,6 +173,8 @@
         "KE",
         "KG",
         "KH",
+        "KI",
+        "KM",
         "KN",
         "KR",
         "KW",
@@ -170,13 +183,16 @@
         "LA",
         "LB",
         "LC",
+        "LI",
         "LK",
+        "LR",
         "LS",
         "LT",
         "LU",
         "LV",
         "LY",
         "MA",
+        "MC",
         "MD",
         "ME",
         "MF",
@@ -209,6 +225,7 @@
         "PA",
         "PE",
         "PF",
+        "PG",
         "PH",
         "PK",
         "PL",
@@ -231,10 +248,14 @@
         "SI",
         "SK",
         "SL",
+        "SM",
         "SN",
         "SO",
+        "SR",
         "SS",
+        "ST",
         "SV",
+        "SX",
         "SY",
         "SZ",
         "T1",
@@ -243,8 +264,10 @@
         "TG",
         "TH",
         "TJ",
+        "TL",
         "TM",
         "TN",
+        "TO",
         "TR",
         "TT",
         "TW",
@@ -254,8 +277,10 @@
         "US",
         "UY",
         "UZ",
+        "VC",
         "VE",
         "VG",
+        "VI",
         "VN",
         "WS",
         "XK",

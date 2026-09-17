@@ -1601,13 +1601,19 @@ h6 {
   color: var(--color-text-secondary);
   text-decoration-color: var(--color-border-strong);
 }
+.ported .patrons__tier {
+  margin: 2.5em 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+}
 .ported .patrons__supporters {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem 1.5rem;
   max-width: none;
-  margin: 1.75rem 0 0;
-  padding: 0.5rem 0 0;
+  margin: 0.75rem 0 0;
+  padding: 0;
   list-style: none;
   font-size: 13px;
   color: var(--color-text-secondary);

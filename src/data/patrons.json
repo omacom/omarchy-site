@@ -127,6 +127,12 @@
     "meta": "Notion",
     "href": "https://x.com/mschoening",
     "avatar": "/assets/images/patrons/max-schoening.webp"
+   },
+   {
+    "name": "Brian Cartmell",
+    "meta": "Entrepreneur",
+    "href": "https://x.com/briancartmell",
+    "avatar": "/assets/images/patrons/brian-cartmell.webp"
    }
   ],
   "note": null
@@ -147,12 +153,6 @@
     "meta": "",
     "href": "https://37signals.com",
     "avatar": "/assets/images/patrons/37signals.webp"
-   },
-   {
-    "name": "Anthropic",
-    "meta": "",
-    "href": "https://www.anthropic.com",
-    "avatar": "/assets/images/patrons/anthropic.webp"
    },
    {
     "name": "Fireworks",
