@@ -390,6 +390,11 @@
   "name": "Moodpeak"
  },
  {
+  "repo": "https://github.com/Davedes83/omarchy-mountain-landscape-theme",
+  "image": "/assets/themes/mountain-landscape.webp",
+  "name": "Mountain Landscape"
+ },
+ {
   "repo": "https://github.com/somerocketeer/omarchy-nagai-poolside-theme",
   "image": "/assets/themes/nagai-poolside.webp",
   "name": "Nagai Poolside"
