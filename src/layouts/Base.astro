@@ -67,7 +67,7 @@ const ogImage = socialImage(path)
     <link
       rel="alternate"
       type="application/rss+xml"
-      title={t('Omarchy RSS feed')}
+      title={`Omarchy – ${t('News')}`}
       href={`${SITE_URL}/news/rss.xml`}
     />
     {Object.entries(locales).filter(([code]) => hasTranslation(code, path)).map(([code, entry]) => (
