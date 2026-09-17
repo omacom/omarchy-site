@@ -50,7 +50,7 @@ test('the document head advertises the news RSS feed', () => {
   )
   assert.match(
     layout,
-    /rel="alternate"[\s\S]*?type="application\/rss\+xml"[\s\S]*?news\/rss\.xml/,
+    /rel="alternate"[\s\S]*?type="application\/rss\+xml"[\s\S]*?\$\{SITE_URL\}\/news\/rss\.xml/,
   )
 })
 
