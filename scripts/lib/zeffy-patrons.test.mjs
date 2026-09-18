@@ -14,6 +14,7 @@ const donation = (fullName, dollars) => ({ fullName, amount: dollars * 100 })
 test('donations round down to the nearest tier point', () => {
   const members = tierMembers(
     [
+      donation('Twenty-five K', 25088),
       donation('Exactly Eight', 8192),
       donation('Nearly Eight', 8191),
       donation('Custom Amount', 500),
@@ -27,6 +28,7 @@ test('donations round down to the nearest tier point', () => {
       TIERS.map((t) => [t.name, members.get(t.id).map((m) => m.name)]),
     ),
     {
+      '25K': ['Twenty-five K'],
       '8K': ['Exactly Eight'],
       '2K': ['Nearly Eight'],
       '256B': ['Custom Amount'],
@@ -84,6 +86,9 @@ test('an empty half of the name, spelled null by Zeffy, is dropped', () => {
 test('off-platform patrons join their tier', () => {
   const members = tierMembers([])
   assert.ok(members.get('patrons-8k').some((m) => m.name === 'Zeno'))
+  assert.ok(
+    members.get('patrons-25k').some((m) => m.name === 'American Cloud'),
+  )
 })
 
 test('replaceSections swaps exactly the generated span', () => {
