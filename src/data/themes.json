@@ -655,6 +655,11 @@
   "name": "Terminus"
  },
  {
+  "repo": "https://github.com/crypiehef/omarchy-threatspire-theme",
+  "image": "/assets/themes/threatspire.webp",
+  "name": "ThreatSpire"
+ },
+ {
   "repo": "https://github.com/Justin-De-Sio/omarchy-tokyoled-theme",
   "image": "/assets/themes/tokyo-night-oled.webp",
   "name": "Tokyo Night OLED"
