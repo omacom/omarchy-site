@@ -665,6 +665,11 @@
   "name": "Tycho"
  },
  {
+  "repo": "https://github.com/DankCoder8360/omarchy-violet-oni-theme",
+  "image": "/assets/themes/violet-oni.webp",
+  "name": "Violet Oni"
+ },
+ {
   "repo": "https://github.com/OldJobobo/omarchy-waffle-cat-theme",
   "image": "/assets/themes/waffle-cat.webp",
   "name": "Waffle Cat"
