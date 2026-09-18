@@ -14,6 +14,8 @@ import { etchInitScript } from '@/lib/etch'
 import { socialImage, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo'
 import geistWoff2 from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
 import monoWoff2 from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
+import plexArabicWoff2 from '@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-500-normal.woff2?url'
+import alexandriaWoff2 from '@fontsource-variable/alexandria/files/alexandria-arabic-wght-normal.woff2?url'
 
 export interface Props {
   title?: string
@@ -72,6 +74,12 @@ const ogImage = socialImage(path)
     <link rel="preload" href="/brand/omarchy-wordmark.svg" as="image" type="image/svg+xml" crossorigin="anonymous" />
     <link rel="preload" href={geistWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={monoWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+    {locale.direction === 'rtl' && (
+      <>
+        <link rel="preload" href={plexArabicWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href={alexandriaWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+      </>
+    )}
     <script is:inline data-astro-rerun set:html={themeInitScript} />
     <script is:inline data-astro-rerun set:html={etchInitScript} />
   </head>
