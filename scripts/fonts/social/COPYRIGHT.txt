@@ -2,6 +2,8 @@ NotoSans: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/
 
 NotoSansArabic: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)
 
+NotoSansArabic (Persian subset): Copyright 2015-2021 Google LLC. All Rights Reserved.
+
 NotoNastaliqUrdu: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)
 
 NotoSansDevanagari: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari)
