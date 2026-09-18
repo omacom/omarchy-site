@@ -1,12 +1,11 @@
 import { t } from '@/i18n/site'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
+import { BrushIcon, CrossIcon } from '@/components/icons'
 import {
-  BrushIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CrossIcon,
-} from '@/components/icons'
+  ChevronEndIcon,
+  ChevronStartIcon,
+} from '@/components/icons/ReadingChevrons'
 import {
   HINT_KEY,
   OPEN_PICKER_EVENT,
@@ -442,10 +441,10 @@ export function ThemePicker() {
             step(-1)
           }}
           className={cn(
-            'absolute left-3 top-1/2 flex size-11 cursor-pointer -translate-y-1/2 items-center justify-center border border-border-subtle bg-bg text-text transition-colors duration-150 ease-out hover:bg-surface-2 sm:left-6',
+            'absolute start-3 top-1/2 flex size-11 cursor-pointer -translate-y-1/2 items-center justify-center border border-border-subtle bg-bg text-text transition-colors duration-150 ease-out hover:bg-surface-2 sm:start-6',
           )}
         >
-          <ChevronLeftIcon className="size-5" />
+          <ChevronStartIcon className="size-5" />
         </button>
         <button
           type="button"
@@ -455,10 +454,10 @@ export function ThemePicker() {
             step(1)
           }}
           className={cn(
-            'absolute right-3 top-1/2 flex size-11 cursor-pointer -translate-y-1/2 items-center justify-center border border-border-subtle bg-bg text-text transition-colors duration-150 ease-out hover:bg-surface-2 sm:right-6',
+            'absolute end-3 top-1/2 flex size-11 cursor-pointer -translate-y-1/2 items-center justify-center border border-border-subtle bg-bg text-text transition-colors duration-150 ease-out hover:bg-surface-2 sm:end-6',
           )}
         >
-          <ChevronRightIcon className="size-5" />
+          <ChevronEndIcon className="size-5" />
         </button>
       </div>
     </>
