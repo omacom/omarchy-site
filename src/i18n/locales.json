@@ -288,5 +288,13 @@
     "manual": false,
     "contentLocale": "en",
     "flag": "ZW"
+  },
+  "ro": {
+    "name": "Română",
+    "domain": "https://ro.omarchy.org",
+    "formatLocale": "ro-RO",
+    "ogLocale": "ro_RO",
+    "manual": false,
+    "flag": "RO"
   }
 }
