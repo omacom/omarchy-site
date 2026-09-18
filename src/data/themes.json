@@ -425,6 +425,11 @@
   "name": "NES"
  },
  {
+  "repo": "https://github.com/jgrigorian/omarchy-night-owl-theme",
+  "image": "/assets/themes/night-owl.webp",
+  "name": "Night Owl"
+ },
+ {
   "repo": "https://github.com/tahadx/omarchy-noir-theme",
   "image": "/assets/themes/noir.webp",
   "name": "Noir"
