@@ -161,6 +161,14 @@
     "manual": false,
     "flag": "LK"
   },
+  "te": {
+    "name": "తెలుగు",
+    "domain": "https://te.omarchy.org",
+    "formatLocale": "te-IN",
+    "ogLocale": "te_IN",
+    "manual": false,
+    "flag": "IN"
+  },
   "th": {
     "name": "ไทย",
     "domain": "https://th.omarchy.org",

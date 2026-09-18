@@ -12,6 +12,8 @@ NotoSansSinhala: Copyright 2022 The Noto Project Authors (https://github.com/not
 
 NotoSansTamil: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)
 
+NotoSansTelugu: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/telugu)
+
 NotoSansThai: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)
 
 Noto Sans CJK: © 2014-2021 Adobe (http://www.adobe.com/).
