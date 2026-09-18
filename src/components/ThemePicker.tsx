@@ -13,6 +13,7 @@ import {
   PICKER_STATE_EVENT,
   SITE_THEMES,
   switchTheme,
+  applyTheme,
   paintFavicon,
   watchChrome,
   readTheme,
@@ -97,6 +98,7 @@ export function ThemePicker() {
   const choose = useCallback(() => {
     const next = SITE_THEMES[indexRef.current]
     if (next.id === readTheme()) {
+      applyTheme(next.id)
       close()
       return
     }
@@ -142,7 +144,7 @@ export function ThemePicker() {
     }
   }, [open, openPicker, close])
 
-  // The stored theme is stamped before first paint by a script in <head>,
+  // The active theme is stamped before first paint by a script in <head>,
   // which never goes through applyTheme, so the tab icon needs painting
   // once on arrival as well as on every later change.
   useEffect(() => {

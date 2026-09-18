@@ -54,6 +54,22 @@ The screensaver and the Discord redirect are still served
 directly. Their styles, fonts, and scripts remain under `assets/`, alongside
 shared images and public downloads.
 
+## Opening a page in a theme
+
+Add a supported site theme ID to any site page, for example:
+<https://omarchy.org/doctrine/?theme=catppuccin#beauty-is-truth>.
+This lets the Omarchy CLI open documentation in the desktop's current theme.
+URL themes do not overwrite the saved preference. Empty or unsupported values
+behave like a missing parameter.
+
+The palette stays active during client-side navigation, including back/forward.
+A destination with a valid `theme` replaces it; destinations without one keep
+it. Choosing a theme in the picker saves that preference and removes `theme`
+from the current URL, preserving other parameters and the section anchor—even
+when choosing the already active theme. Older history entries with an explicit
+valid theme can activate it again. A fresh load without `theme` uses the saved
+preference or the site's existing system-color-scheme fallback.
+
 ## Adding your theme
 
 Community themes are listed on [omarchy.org/themes](https://omarchy.org/themes/).
