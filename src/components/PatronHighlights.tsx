@@ -40,7 +40,7 @@ export function PatronHighlights() {
       <TeamClusters
         groups={groups}
         maxFaces={12}
-        className="sm:grid-cols-1 lg:grid-cols-2 lg:gap-y-2 lg:[&_.team-cluster>p]:h-8"
+        className="team-clusters-wrap sm:grid-cols-1 lg:grid-cols-2 lg:gap-y-2 lg:[&_.team-cluster>p]:h-8"
       />
       <p className="mt-4 font-mono text-xs text-text-muted">
         <a
