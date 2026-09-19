@@ -1,0 +1,62 @@
+---
+import { chapterHref, pathOf } from '@/components/ManualLayout'
+
+interface TocEntry {
+  slug: string
+  title: string
+}
+
+interface Props {
+  toc: Array<TocEntry>
+  activePath: string
+}
+
+const { toc, activePath } = Astro.props
+---
+
+{/* Static grid shell. The desktop sidebar arrives through the `nav` slot as a
+    persisted island; the mobile picker and chapter below remount per chapter,
+    which also resets the picker's open state on arrival. */}
+<main class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+  <div class="grid gap-12 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-x-8">
+    <slot name="nav" />
+
+    <div class="min-w-0 lg:ml-auto lg:w-full lg:max-w-(--measure)">
+      {/* Mobile chapter picker */}
+      <details class="mb-8 border border-border-subtle lg:hidden">
+        <summary
+          class="cursor-pointer px-4 py-2.5 font-mono text-[13px] text-text-secondary select-none"
+        >
+          Chapters
+        </summary>
+        <ol
+          class="scroll-accent max-h-80 overflow-y-auto border-t border-border-subtle p-2"
+        >
+          {
+            toc.map((entry) => {
+              const active =
+                pathOf(chapterHref(entry.slug)) === pathOf(activePath)
+              return (
+                <li>
+                  <a
+                    href={chapterHref(entry.slug)}
+                    data-astro-prefetch="hover"
+                    class={
+                      active
+                        ? 'block px-2 py-1.5 text-[13px] text-text font-medium'
+                        : 'block px-2 py-1.5 text-[13px] text-text-secondary'
+                    }
+                  >
+                    {entry.title}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ol>
+      </details>
+
+      <slot />
+    </div>
+  </div>
+</main>
