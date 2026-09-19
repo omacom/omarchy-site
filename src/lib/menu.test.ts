@@ -123,10 +123,20 @@ test('the root runs Home to Project, Plugins before Themes and GitHub before Ins
   )
 })
 
-test('every locale is a language row, English first, linking to the page only where that site has it', () => {
+test('every published locale is a language row, English first, linking to the page only where that site has it', () => {
   const rows = childrenOf('language')
-  assert.equal(rows.length, Object.keys(locales).length)
+  assert.equal(
+    rows.length,
+    Object.values(locales).filter((entry) => entry.published !== false).length,
+  )
   assert.equal(rows[0]?.locale, 'en')
+  for (const [code, entry] of Object.entries(locales)) {
+    if (entry.published === false)
+      assert.equal(
+        rows.some((row) => row.locale === code),
+        false,
+      )
+  }
   assert.ok(rows.every((row) => row.glyph && row.locale && row.label))
   assert.equal(
     localeHref('da', '/themes/', '?x=1'),
