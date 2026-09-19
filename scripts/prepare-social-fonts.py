@@ -26,6 +26,7 @@ GROUPS = {
     'ja': ('Japanese', 'NotoSansCJK', 0),
     'ko': ('Korean', 'NotoSansCJK', 1),
     'zh-CN': ('Chinese', 'NotoSansCJK', 2),
+    'ka': ('Georgian', 'NotoSansGeorgian', None),
 }
 LATIN = ('Latin', 'NotoSans', None)
 manifest = {'fonts': {}, 'locales': {}}

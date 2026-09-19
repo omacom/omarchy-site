@@ -288,7 +288,7 @@ export function Figures() {
                     scope="row"
                     className="py-2 text-left font-normal text-text-muted"
                   >
-                    {period.label}
+                    {t(period.label)}
                   </th>
                   <td className="py-2 text-right text-text-secondary tabular-nums">
                     {period.count.toLocaleString(locale.formatLocale)}
