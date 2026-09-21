@@ -1,0 +1,159 @@
+name: Deploy zh-CN to OSS used by omarchy.cn
+
+# omarchy.cn serves traffic from mainland China, so the zh-CN edition is
+# published to Aliyun OSS in a mainland region. Every other locale, and the
+# English GitHub Pages site, are untouched by this workflow -- see
+# .github/workflows/pages.yml for those.
+#
+# Object storage rather than an edge Pages product: Aliyun's caps a project at
+# 2000 static files, and a zh-CN build is around 5500 -- roughly 3300 of them
+# the generated plugins/ redirect pages -- so no useful split fits under it.
+# ref: https://help.aliyun.com/zh/edge-security-acceleration/esa/user-guide/what-is-functions-and-pages/
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-zh-cn-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  # Pinned so a deployment is reproducible. Not named RCLONE_*: rclone maps
+  # every RCLONE_<FLAG> environment variable onto the matching flag, so
+  # RCLONE_VERSION is read as --version and aborts the run.
+  # ref: https://rclone.org/docs/#environment-variables
+  OMARCHY_RCLONE_VERSION: 1.75.1
+  # SHA-256 of rclone-v1.75.1-linux-amd64.zip. Recorded here rather than fetched
+  # alongside the archive: a checksum served by the same host as the download
+  # would be replaced by anyone able to replace the download. Update both lines
+  # together when moving version, taking the digest from a trusted machine.
+  OMARCHY_RCLONE_SHA256: 982b5aa772841168f8e380f139e9e787b2a105403e32b94da8676a0e1c0a13ab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      # No lint, typecheck or tests here: pages.yml runs them on the same
+      # events, and its `npm test` already discovers scripts/test_*.py, so
+      # repeating them would only double the cost of every push and pull
+      # request. This job does the zh-CN-specific work and nothing else.
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run build:locale -- zh-CN
+      - run: python3 scripts/verify-locales.py zh-CN
+      # Required files, matching CNAME, no symlinks -- refuses a build that is
+      # not publishable, without contacting the bucket or needing credentials.
+      - run: npm run deploy:zh-cn -- --check
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: github.event_name != 'pull_request'
+        with:
+          name: omarchy-zh-cn
+          path: dist/zh-CN
+          if-no-files-found: error
+          retention-days: 14
+          include-hidden-files: true
+
+  deploy:
+    # Publishing is enabled by configuring where to publish: a repository
+    # without OMARCHY_CN_OSS_HOST skips this job rather than failing, so the
+    # workflow stays inert until one opts in with that variable and the secrets.
+    if: >-
+      vars.OMARCHY_CN_OSS_HOST != '' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: omarchy-cn
+    # This job holds the publishing credentials, so its actions are pinned to
+    # commit SHAs: a retargeted tag could otherwise introduce code that runs on
+    # the same runner before the credential step and read it. The build job has
+    # no credentials and follows the repository's existing tag style.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: omarchy-zh-cn
+          path: dist/zh-CN
+      # Called directly rather than through npm: this job sets up no Node.
+      - run: python3 scripts/deploy-zh-cn.py --check
+
+      - name: Install rclone
+        run: |
+          set -euo pipefail
+          archive="rclone-v${OMARCHY_RCLONE_VERSION}-linux-amd64"
+          curl -fsSL -o /tmp/rclone.zip \
+            "https://downloads.rclone.org/v${OMARCHY_RCLONE_VERSION}/${archive}.zip"
+          # Verified before anything is unpacked, so a substituted archive never
+          # gets executed on the runner that holds the publishing credentials.
+          echo "${OMARCHY_RCLONE_SHA256}  /tmp/rclone.zip" | sha256sum -c -
+          unzip -q /tmp/rclone.zip -d /tmp
+          install -m 0755 "/tmp/${archive}/rclone" /usr/local/bin/rclone
+          rclone version
+
+      # Three copies then one sync, because --header-upload takes one value per
+      # invocation. Assets go up before HTML, so a page never references an
+      # asset that is not there yet; the final sync carries no filter and no
+      # header, and exists only to delete what the build dropped. It copies
+      # nothing, because the three passes above already did.
+      #
+      # Every pass is --checksum: rclone compares the MD5 it reads from the
+      # bucket listing, so an unchanged file is skipped without a request of
+      # its own. --size-only would be cheaper still, but it cannot see an edit
+      # that leaves a file the same length, and that is a page silently not
+      # republished. rclone falls back to size only when no checksum exists;
+      # here one always does, since every object is written whole.
+      # ref: https://rclone.org/docs/#c-checksum
+      - name: Publish to OSS
+        env:
+          # rclone reads its whole configuration from the environment, so no
+          # config file is written and no credential appears in argv.
+          # ref: https://rclone.org/docs/#config-file
+          RCLONE_CONFIG_OSS_TYPE: s3
+          RCLONE_CONFIG_OSS_PROVIDER: Alibaba
+          RCLONE_CONFIG_OSS_ACCESS_KEY_ID: ${{ secrets.OMARCHY_CN_ACCESS_KEY }}
+          RCLONE_CONFIG_OSS_SECRET_ACCESS_KEY: ${{ secrets.OMARCHY_CN_SECRET_KEY }}
+          HOST: ${{ vars.OMARCHY_CN_OSS_HOST }}
+        run: |
+          set -euo pipefail
+          bucket="${HOST%%.*}"
+          export RCLONE_CONFIG_OSS_ENDPOINT="${HOST#*.}"
+          echo "publishing dist/zh-CN to oss:$bucket via $RCLONE_CONFIG_OSS_ENDPOINT"
+          # Transfer stats are logged at INFO, below rclone's default NOTICE, so
+          # without this the log records nothing about what was copied.
+          common=(--checksum --fast-list --transfers 32 --checkers 32 --stats-log-level NOTICE)
+
+          rclone copy dist/zh-CN "oss:$bucket" "${common[@]}" --include '/_astro/**' \
+            --header-upload 'Cache-Control: public, max-age=31536000, immutable'
+          rclone copy dist/zh-CN "oss:$bucket" "${common[@]}" --exclude '/_astro/**' --exclude '*.html' \
+            --header-upload 'Cache-Control: public, max-age=300'
+          rclone copy dist/zh-CN "oss:$bucket" "${common[@]}" --include '*.html' \
+            --header-upload 'Cache-Control: no-cache'
+          rclone sync dist/zh-CN "oss:$bucket" "${common[@]}"
