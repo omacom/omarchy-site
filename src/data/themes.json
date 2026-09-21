@@ -10,6 +10,11 @@
   "name": "Amberbyte"
  },
  {
+  "repo": "https://github.com/Jonathan-de-Villiers/omarchy-amethyst-theme",
+  "image": "/assets/themes/amethyst.webp",
+  "name": "Amethyst"
+ },
+ {
   "repo": "https://github.com/vale-c/omarchy-arc-blueberry",
   "image": "/assets/themes/arc-blueberry.webp",
   "name": "Arc Blueberry"
