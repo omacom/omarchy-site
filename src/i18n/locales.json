@@ -232,6 +232,14 @@
     "ogLocale": "nb_NO",
     "manual": false
   },
+  "af": {
+    "name": "Afrikaans",
+    "domain": "https://af.omarchy.org",
+    "formatLocale": "af-ZA",
+    "ogLocale": "af_ZA",
+    "manual": false,
+    "flag": "ZA"
+  },
   "en-NZ": {
     "name": "English (NZ)",
     "domain": "https://omarchy.nz",
