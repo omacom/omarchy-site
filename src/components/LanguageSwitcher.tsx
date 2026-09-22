@@ -3,16 +3,14 @@ import { useState } from 'react'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { hasTranslation, language, locale, sortedLocales, t } from '@/i18n/site'
-
-function flag(domain: string, countryCode?: string) {
-  const country = countryCode ?? new URL(domain).hostname.split('.').at(-1)!
-  return country.length === 2
-    ? [...country.toUpperCase()]
-        .map((letter) => String.fromCodePoint(127397 + letter.charCodeAt(0)))
-        .join('')
-    : '🌐'
-}
+import {
+  flag,
+  hasTranslation,
+  language,
+  locale,
+  sortedLocales,
+  t,
+} from '@/i18n/site'
 
 export function LanguageSwitcher({ path }: { path: string }) {
   const [suffix, setSuffix] = useState('')

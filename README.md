@@ -32,7 +32,8 @@ dated `news/` directories is **content input**, not a second site design.
 layout, navigation, and styling in `src/`; preview through the dev server.
 After editing content inputs, run `npm run port` to refresh the dev data.
 
-- Edit standalone page content in its existing `index.html`.
+- Edit standalone page content in its existing `index.html`. Page directories are discovered automatically; there is no route or translation allowlist.
+- Add standalone pages as `content/<path>.md` with YAML frontmatter (`title`, optional `seoTitle` and `description`), then run `npm run port`. All pages are automatically routed and their metadata and prose enter the shared translation pipeline. News under `content/news/` uses its existing separate pipeline. Set `presentation: principles` for compact linked headings, as in `content/doctrine.md`.
 - Edit the homepage announcement in `src/data/banner.json` (`null` hides it).
 - Run `bin/build-news` after editing Markdown in `content/news/`; it updates
   article inputs, images, and the RSS feed.
