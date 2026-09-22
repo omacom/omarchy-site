@@ -35,6 +35,12 @@ export function t(english: string): string {
   return catalogue[english] ?? english
 }
 
+/** Translate a count-aware label, falling back to the ordinary catalogue entry. */
+export function tCount(english: string, count: number): string {
+  const form = new Intl.PluralRules(language).select(count)
+  return catalogue[`${english}::${form}`] ?? catalogue[english] ?? english
+}
+
 /** A team member's countries, "USA/Denmark", each translated on its own. */
 export function tCountries(meta: string): string {
   return meta.split('/').map(t).join('/')
