@@ -282,7 +282,11 @@ export function Figures() {
           <table className="w-full font-mono text-xs leading-relaxed">
             <caption className="sr-only">{t('Recent ISO downloads')}</caption>
             <tbody className="divide-y-2 divide-border-strong">
-              {downloads.periods.map((period) => (
+              {[
+                ...downloads.periods,
+                { label: 'Quattro', count: downloads.quattro },
+                { label: 'Total', count: downloads.total },
+              ].map((period) => (
                 <tr key={period.label}>
                   <th
                     scope="row"
