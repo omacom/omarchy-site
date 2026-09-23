@@ -4,3 +4,18 @@ html[dir='rtl'] :is(code, pre, kbd) {
   unicode-bidi: isolate;
   text-align: left;
 }
+
+/* South Azerbaijani pages render Arabic-script text with Xaqan Code; the
+   unicode range keeps the browser from loading it for Latin-only pages. */
+@font-face {
+  font-family: 'Xaqan Code';
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/Xaqan-Code.ttf') format('truetype');
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F;
+}
+html[lang='azb'] {
+  --font-sans: 'Xaqan Code', 'Geist Variable', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'Xaqan Code', monospace;
+}
