@@ -1,0 +1,200 @@
+<p>
+  Podés agregar tus propios temas en <code>~/.config/omarchy/themes</code>.
+  Copiá uno de los existentes como base (mirá en
+  <code>/usr/share/omarchy/themes</code>) y después ajustalo a tu gusto.
+  Mientras tu tema esté dentro de esa carpeta, va a aparecer en el menú de
+  selección de temas.
+</p>
+
+<p>
+  El archivo principal que tenés que ajustar es <code>colors.toml</code>. Ese
+  define el conjunto de colores que después se usa para generar las
+  configuraciones de la terminal (Foot/Alacritty/Ghostty/Kitty), btop, Chromium,
+  Hyprland, Neovim, Helix, VSCode, Obsidian y todo el shell de Omarchy (barra
+  superior, menú, notificaciones, OSD y pantalla de bloqueo).
+</p>
+
+<p>
+  También podés usar la aplicación Aether que viene incluida para crear un tema
+  nuevo con una interfaz gráfica muy linda, donde jugás con los colores y buscás
+  fondos. Abrila desde el menú de aplicaciones con
+  <code>Super + Alt + Space</code>.
+</p>
+
+<h3 id="what-an-installed-theme-can-contain">
+  Qué puede contener un tema instalado
+  <a
+    class="manual__heading-link"
+    href="#what-an-installed-theme-can-contain"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Un tema que escribís vos en <code>~/.config/omarchy/themes</code> puede
+  contener lo que quieras: es tu máquina y tu archivo, y Omarchy aplica todo.
+</p>
+
+<p>
+  Un tema que instalás del repositorio de otra persona con
+  <code>omarchy theme install</code> conserva todo lo que sea color, y pierde el
+  puñado de archivos que ejecutarían código en tu máquina: cualquier archivo
+  <code>.lua</code>, las configuraciones de terminal
+  (<code>alacritty.toml</code>, <code>foot.ini</code>,
+  <code>ghostty.conf</code>, <code>kitty.conf</code>) y
+  <code>vscode.json</code>. El <code>hyprland.lua</code> de un tema es código
+  Lua que tu compositor ejecuta al iniciar sesión, una configuración de terminal
+  nombra el programa que arranca tu terminal, y <code>vscode.json</code> nombra
+  una extensión de VSCode a instalar. Instalar el tema de otra persona debería
+  cambiar cómo se ve tu escritorio, nunca qué ejecuta.
+</p>
+
+<p>
+  Todo lo demás sigue funcionando exactamente como lo escribió el autor del
+  tema: <code>btop.theme</code>, <code>chromium.theme</code>,
+  <code>helix.toml</code>, <code>icons.theme</code>, <code>shell.toml</code>,
+  los fondos y las vistas previas se conservan todos. Solo lo que se descartó se
+  regenera a partir de <code>colors.toml</code> en tu máquina.
+</p>
+
+<p>
+  Omarchy distingue entre los dos casos según si el tema tiene su propio
+  repositorio git adentro, que es lo que deja
+  <code>omarchy theme install</code> cuando clona. Así, un tema que escribiste
+  sigue siendo tuyo, y uno que bajaste de internet queda en colores.
+</p>
+
+<h3 id="light-mode">
+  Modo claro
+  <a
+    class="manual__heading-link"
+    href="#light-mode"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si estás haciendo un tema de modo claro, poné
+  <code>mode = "light"</code> arriba de tu <code>colors.toml</code>. Así se va a
+  emparejar automáticamente con el modo claro de todas las aplicaciones. (La
+  vieja forma de dejar un archivo vacío llamado <code>light.mode</code> en la
+  raíz de tu tema también sigue funcionando).
+</p>
+
+<h3 id="icon-colors">
+  Colores de los íconos
+  <a
+    class="manual__heading-link"
+    href="#icon-colors"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si querés que los íconos del gestor de archivos combinen con tu tema, agregá
+  un archivo llamado <code>icons.theme</code> con el nombre del juego de íconos
+  que quieras usar. De forma predeterminada, las opciones son:
+  <code
+    >Yaru Yaru-blue Yaru-dark Yaru-magenta Yaru-olive Yaru-prussiangreen
+    Yaru-purple Yaru-red Yaru-sage Yaru-wartybrown Yaru-yellow</code
+  >.
+</p>
+
+<h3 id="unlock-image">
+  Imagen de desbloqueo
+  <a
+    class="manual__heading-link"
+    href="#unlock-image"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Los temas que traigan imágenes <code>unlock.png</code> y
+  <code>preview-unlock.png</code> van a aparecer listados en
+  <em>Style &gt; Unlock</em>. Lo ideal es que tu <code>unlock.png</code> sea un
+  png con transparencia. Y podés crear la imagen de vista previa con
+  <code>omarchy plymouth preview</code>.
+</p>
+
+<h3 id="theming-apps-omarchy-doesnt-cover">
+  Ponerle tema a aplicaciones que Omarchy no cubre
+  <a
+    class="manual__heading-link"
+    href="#theming-apps-omarchy-doesnt-cover"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si usás una aplicación que no está en esa lista, podés enseñarle a Omarchy a
+  ponerle tema con una plantilla. Dejá un archivo en
+  <code>~/.config/omarchy/themed/</code> con el nombre de la configuración que
+  genera más la extensión <code>.tpl</code>, y escribí la configuración usando
+  <code>{{ background }}</code>, <code>{{ foreground }}</code>,
+  <code>{{ accent }}</code>, <code>{{ red }}</code>,
+  <code>{{ color0 }}</code> hasta <code>{{ color15 }}</code>, y el resto de la
+  paleta como marcadores. Cada vez que cambiás de tema, el archivo se regenera
+  con los colores de ese tema.
+</p>
+
+<p>
+  Hay un <code>alacritty.toml.tpl.sample</code> completamente comentado en esa
+  carpeta para copiar: lista todas las variables que podés usar, más los
+  modificadores <code>_strip</code> y <code>_rgb</code> para aplicaciones que
+  quieren sus colores sin el <code>#</code> o en RGB decimal. Tus plantillas
+  tienen prioridad sobre las de Omarchy, así que también podés usar esto para
+  cambiar cómo se le aplica el tema a una aplicación incorporada.
+</p>
+
+<h3 id="distributing-your-theme">
+  Distribuir tu tema
+  <a
+    class="manual__heading-link"
+    href="#distributing-your-theme"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si querés distribuir tu tema para que otros lo usen, tenés que ponerlo en un
+  servidor git público, como GitHub. Después la gente lo puede instalar desde
+  <em>Install &gt; Style &gt; Theme</em> en el menú de Omarchy usando esa URL.
+  Se recomienda que sigas la convención de nombres
+  <code>omarchy-[themename]-theme</code>, porque así el tema se va a mostrar
+  correctamente como solo <code>[themename]</code> en el menú de selección
+  después de instalarlo.
+</p>
+
+<p>
+  Ese <code>[themename]</code> que queda se convierte en el nombre del
+  directorio del tema, así que tiene que ser uno que Omarchy pueda manejar sin
+  riesgo: tiene que empezar con una letra, un dígito o un guion bajo, y el resto
+  puede tener letras, dígitos, <code>.</code>, <code>_</code>, <code>+</code> y
+  <code>-</code>. Las mayúsculas se convierten a minúsculas por vos, pero
+  cualquier otra cosa, sea un espacio, una comilla o un carácter que no sea del
+  inglés, se rechaza al instalar en lugar de convertirse en un nombre de
+  directorio. Así que <code>omarchy-tokyo-night-theme</code>,
+  <code>omarchy-flexoki_light-theme</code> y <code>omarchy-c++-theme</code> se
+  instalan sin problema.
+</p>
+
+<p>
+  Acordate de que, una vez instalado desde un repositorio, cualquier
+  <code>.lua</code>, configuración de terminal o <code>vscode.json</code> que
+  traiga se descarta, así que no armes el tema alrededor de eso.
+</p>
+
+<p>
+  Podés hacer que agreguen tu tema a
+  <a href="/themes/">la página de temas extra</a> enviando un pull request al
+  <a href="https://github.com/omacom-io/omarchy-site"
+    >repositorio omarchy-site</a
+  >.
+</p>

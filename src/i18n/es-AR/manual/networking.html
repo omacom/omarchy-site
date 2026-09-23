@@ -1,0 +1,173 @@
+<p>
+  La red en Omarchy la maneja NetworkManager, y la controlás desde el ícono de
+  red en la <a href="/manual/the-top-bar/">barra superior</a> o con
+  <code>Super + Ctrl + W</code>.
+</p>
+
+<p>
+  Ese panel busca redes Wi-Fi, muestra la intensidad de la señal y se conecta.
+  La conexión por cable no necesita nada: la enchufás y funciona. Si preferís
+  quedarte en la terminal, <code>nmtui</code> te da los mismos controles, y
+  también existe el grupo de comandos <code>omarchy network</code>.
+</p>
+
+<h2 id="sharing-your-wi-fi">
+  Compartir tu Wi-Fi
+  <a
+    class="manual__heading-link"
+    href="#sharing-your-wi-fi"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  En lugar de leer una contraseña larga en voz alta, ejecutá
+  <em>Setup &gt; Network &gt; QR Code</em> mientras estás conectado al Wi-Fi.
+  Eso pone en pantalla un código QR que cualquier cámara de teléfono puede
+  escanear para conectarse. Es una de esas cosas que vas a usar más de lo que
+  imaginás una vez que sabés que está.
+</p>
+
+<p>
+  Si lo que necesitás es la contraseña en sí,
+  <code>omarchy network password &lt;interface&gt;</code> la imprime.
+</p>
+
+<h2 id="dns">
+  DNS
+  <a class="manual__heading-link" href="#dns" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Omarchy usa el DNS que te entrega tu red por DHCP. Podés cambiarlo para toda
+  la máquina desde <em>Setup &gt; Network &gt; DNS</em>, donde Cloudflare y
+  Google están a un clic. Elegí <em>Custom</em> para escribir tus propios
+  servidores.
+</p>
+
+<p>
+  Desde la terminal, <code>omarchy dns</code> imprime el proveedor actual y
+  <code>omarchy dns Cloudflare</code> configura uno.
+</p>
+
+<h2 id="pinning-the-wi-fi-band">
+  Fijar la banda de Wi-Fi
+  <a
+    class="manual__heading-link"
+    href="#pinning-the-wi-fi-band"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Si tu router pone 2.4GHz, 5GHz y 6GHz con el mismo nombre de red, a veces tu
+  notebook se queda pegada a la más lenta. <code>omarchy network band</code> te
+  muestra en qué banda estás, y <code>omarchy network band 5</code> la fija. Usá
+  <code>auto</code> para que vuelva a elegir sola.
+</p>
+
+<p>
+  Esto fija la banda y no un punto de acceso específico, así que seguís
+  moviéndote entre puntos de acceso con normalidad.
+</p>
+
+<h2 id="how-fast-is-it">
+  ¿Qué tan rápido es?
+  <a
+    class="manual__heading-link"
+    href="#how-fast-is-it"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <em>Trigger &gt; Speed Test &gt; Network Speed Test</em> mide tu velocidad
+  real de subida y bajada con un par de diales. Desde la terminal es
+  <code>omarchy network speedtest down</code> o <code>up</code>. (Al lado, en
+  ese mismo menú, hay un test de velocidad de disco, si estás midiendo el otro
+  cuello de botella).
+</p>
+
+<h2 id="the-firewall">
+  El firewall
+  <a
+    class="manual__heading-link"
+    href="#the-firewall"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  El firewall está activado de forma predeterminada y bloquea todo el tráfico
+  entrante, con una excepción: el puerto 53317, para que
+  <a href="/manual/guis/">LocalSend</a> funcione de entrada.
+</p>
+
+<p>
+  SSH está apagado hasta que lo enciendas con
+  <em>Setup &gt; Security &gt; SSHD</em>, que arranca el demonio, abre el puerto
+  22 con límite de velocidad contra ataques de fuerza bruta y autoriza una
+  clave. Docker también queda restringido, así los contenedores no pueden
+  exponerse al mundo por accidente. Mirá
+  <a href="/manual/security/">seguridad</a> para la historia completa.
+</p>
+
+<h2 id="tailscale">
+  Tailscale
+  <a
+    class="manual__heading-link"
+    href="#tailscale"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://tailscale.com/">Tailscale</a> es una VPN de malla que hace
+  simple y seguro llegar a todas tus computadoras y servidores por internet.
+  Instalalo con <em>Install &gt; Service &gt; Tailscale</em>.
+</p>
+
+<p>
+  Eso te da un panel de Tailscale en la barra, que conecta y desconecta la
+  tailnet, cambia de cuenta y elige un nodo de salida: en la lista aparecen
+  tanto tus propias máquinas como las regiones de Mullvad. También te deja
+  recorrer tus máquinas, y ahí vive Taildrop: elegí una máquina y apretá
+  <code>s</code> para mandarle archivos, o <code>c</code>, <code>n</code> y
+  <code>d</code> para copiar su IP, su nombre o su nombre DNS completo. El
+  equivalente en la terminal es
+  <code>omarchy tailscale send &lt;machine&gt; [file...]</code>, y los archivos
+  que te manden caen en <code>~/Downloads</code> automáticamente. La
+  notificación que anuncia la llegada espera hasta que la abras o la descartes,
+  así que un archivo que llega mientras no estás sigue ahí esperándote cuando
+  volvés.
+</p>
+
+<p>
+  Instalarlo también agrega una aplicación web para la consola de administración
+  de Tailscale.
+</p>
+
+<h2 id="when-it-stops-working">
+  Cuando deja de funcionar
+  <a
+    class="manual__heading-link"
+    href="#when-it-stops-working"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Antes de reiniciar, probá reiniciar solo la pieza que falla.
+  <em>Update &gt; Hardware</em> tiene Wi-Fi, Bluetooth, Audio y Trackpad, y
+  recargar uno de esos resuelve la mayoría de las situaciones tipo "hace cinco
+  minutos funcionaba". Mirá
+  <a href="/manual/troubleshooting/">solución de problemas</a>.
+</p>

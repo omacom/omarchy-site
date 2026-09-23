@@ -1,0 +1,175 @@
+<p>
+  Omarchy viene con un conjunto de funciones de shell para simplificar tareas
+  comunes y encapsular llamadas con parámetros enrevesados.
+</p>
+
+<h2 id="compression">
+  Compresión
+  <a
+    class="manual__heading-link"
+    href="#compression"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>compress [file/dir]</code>: Crea un archivo tar.gz a partir del
+    archivo o directorio.
+  </li>
+  <li><code>decompress [file.tar.gz]</code>: Descomprime un archivo tar.gz.</li>
+</ul>
+
+<h2 id="drives">
+  Discos
+  <a
+    class="manual__heading-link"
+    href="#drives"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>iso2sd [image.iso]</code>: Crea un disco de arranque en una tarjeta SD
+    con la iso indicada, eligiendo la unidad de forma interactiva.
+  </li>
+  <li>
+    <code>format-drive [device] [name]</code>: Formatea un disco entero con una
+    sola partición exFAT (que también funciona en Windows y macOS). Ejecutalo
+    sin argumentos para ver los discos disponibles. ¡Cuidado con esto!
+  </li>
+</ul>
+
+<h2 id="dev-layouts">
+  Disposiciones de desarrollo
+  <a
+    class="manual__heading-link"
+    href="#dev-layouts"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>Disposiciones de desarrollo con varios paneles, al instante, para tmux:</p>
+
+<ul>
+  <li>
+    <code>tdl [ai]</code>: Crea un Tmux Dev Layout con tu editor, un agente de
+    IA y una terminal. Usá los alias de los agentes, como
+    <code>tdl c</code> para opencode o <code>tdl cx</code> para Claude Code, o
+    pasá un segundo agente para correr los dos, como <code>tdl c cx</code>.
+  </li>
+  <li>
+    <code>tds</code>: Crea un Tmux Dev Square con editor, seguimiento de
+    diferencias (con <code>hunk diff --watch</code>), terminal y opencode.
+  </li>
+  <li>
+    <code>tdlm [ai]</code>: Crea una ventana <code>tdl</code> para cada
+    subdirectorio del directorio actual.
+  </li>
+  <li>
+    <code>tsl [count] [command]</code>: Crea un enjambre de paneles en grilla,
+    todos corriendo el mismo comando (ideal para agentes de IA).
+  </li>
+</ul>
+
+<p>
+  Las mismas disposiciones están disponibles para Herdr como <code>hdl</code>,
+  <code>hds</code>, <code>hdlm</code> y <code>hsl</code>.
+</p>
+
+<h2 id="git-worktrees">
+  Worktrees de Git
+  <a
+    class="manual__heading-link"
+    href="#git-worktrees"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>ga [branch]</code>: Crea un worktree y una rama nuevos al lado del
+    repositorio actual y te mete adentro.
+  </li>
+  <li>
+    <code>gd</code>: Elimina el worktree actual y su rama (te pide confirmación
+    antes).
+  </li>
+</ul>
+
+<h2 id="rsync-watchers">
+  Observadores de rsync
+  <a
+    class="manual__heading-link"
+    href="#rsync-watchers"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<ul>
+  <li>
+    <code>rsw [source] [destination]</code>: Arranca un observador en segundo
+    plano que sincroniza con rsync el origen hacia el destino cada vez que algo
+    cambia. El destino puede ser una máquina remota, como
+    <code>rsw ~/Work/app nyc-dev:Work/app</code>.
+  </li>
+  <li><code>lsw</code>: Lista todos los observadores activos.</li>
+  <li><code>dsw</code>: Detiene todos los observadores activos.</li>
+</ul>
+
+<h2 id="ssh-portforwarding">
+  Reenvío de puertos por SSH
+  <a
+    class="manual__heading-link"
+    href="#ssh-portforwarding"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Ideal para hacer desarrollo web con los privilegios de contexto seguro de
+  localhost contra una máquina remota.
+</p>
+
+<ul>
+  <li>
+    <code>fip</code>: Reenvía uno o más puertos de una máquina remota a
+    localhost por SSH.
+  </li>
+  <li><code>dip</code>: Desconecta uno o más puertos reenviados.</li>
+  <li><code>lip</code>: Lista todos los reenvíos de puertos SSH activos.</li>
+</ul>
+
+<p>
+  Supongamos que levantás un servidor de desarrollo en el puerto
+  <code>3000</code> de una máquina a la que llegás como <code>nyc-dev</code>.
+  Entonces podés ejecutar <code>fip nyc-dev 3000</code> para reenviar ese
+  puerto, y así <code>localhost:3000</code> llega en realidad a
+  <code>nyc-dev:3000</code>, pero sin necesidad de certificados SSL para
+  establecer el contexto seguro que hace falta para probar web sockets y cosas
+  por el estilo.
+</p>
+
+<h2 id="ssh-reconnection">
+  Reconexión por SSH
+  <a
+    class="manual__heading-link"
+    href="#ssh-reconnection"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>ssh</code> está envuelto en una función que limpia la terminal si una
+  conexión se corta mientras un tmux, un Herdr o un editor remoto la tenían
+  tomada, y después se reconecta automáticamente cuando se cae una sesión
+  interactiva (Ctrl-C corta el ciclo de reintentos).
+</p>

@@ -1,0 +1,119 @@
+<p>
+  Podés instalar Omarchy en una sola partición junto a Windows u otras
+  instalaciones.
+</p>
+
+<p>
+  Este método de instalación también viene con cifrado LUKS para la partición de
+  forma predeterminada, así que en la práctica no se diferencia del disco
+  completo y solo necesita que haya espacio libre disponible en el disco.
+</p>
+
+<h2 id="making-space-on-windows">
+  Hacer espacio en Windows
+  <a
+    class="manual__heading-link"
+    href="#making-space-on-windows"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Para instalar junto a Windows, escribí <code>disk management</code> en el menú
+  de inicio y elegí la opción
+  <strong>Create and format hard disk partitions</strong>.
+</p>
+
+<p><img src="/manual/images/dual-boot-1.webp" alt="dual-boot-1" /></p>
+
+<p>
+  Buscá la partición que corresponda, hacé clic derecho y elegí
+  <strong>Shrink Volume</strong>.
+</p>
+
+<p><img src="/manual/images/dual-boot-2.webp" alt="dual-boot-2" /></p>
+
+<p>
+  Ingresá cuánto querés reducir el volumen. Tené en cuenta que ese va a ser el
+  tamaño de tu futura instalación de Omarchy, incluida la partición de arranque.
+</p>
+
+<p><img src="/manual/images/dual-boot-3.webp" alt="dual-boot-3" /></p>
+
+<p>
+  Cuando termines, deberías ver algo así, donde la sección de 50GB es donde
+  vamos a instalar Omarchy en este ejemplo.
+</p>
+
+<p><img src="/manual/images/dual-boot-4.webp" alt="dual-boot-4" /></p>
+
+<h2 id="installing-omarchy">
+  Instalar Omarchy
+  <a
+    class="manual__heading-link"
+    href="#installing-omarchy"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  El proceso de instalación de Omarchy es prácticamente el mismo que el normal.
+  Después de elegir tu disco, te va a aparecer la opción
+  <strong>Free space install</strong>. Elegí esa opción para no borrar el disco
+  completo.
+</p>
+
+<p><img src="/manual/images/dual-boot-5.webp" alt="dual-boot-5" /></p>
+
+<p>
+  Confirmá que todo esté bien y esperá a que termine la instalación como
+  siempre. Acá también podés elegir instalar sin cifrado (no recomendado), igual
+  que en una instalación de disco completo.
+  <img src="/manual/images/dual-boot-6.webp" alt="dual-boot-6" />
+</p>
+
+<h2 id="adding-other-installs-to-the-bootloader">
+  Agregar otras instalaciones al gestor de arranque
+  <a
+    class="manual__heading-link"
+    href="#adding-other-installs-to-the-bootloader"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Cuando termines de instalar Omarchy, vas a notar que ahora el gestor de
+  arranque predeterminado es Limine. Con eso también podés agregarle a Limine
+  opciones para tus otras instalaciones, como Windows.
+</p>
+
+<p>
+  Para hacerlo, ejecutá <code>limine-scan</code> y seguí las indicaciones para
+  agregar a tu configuración de limine los elementos que quieras. Después, al
+  arrancar, vas a ver tus opciones normales de Omarchy y también Windows Boot
+  Manager u otras.
+</p>
+
+<h2 id="bitlocker">
+  Bitlocker
+  <a
+    class="manual__heading-link"
+    href="#bitlocker"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Es importante aclarar que este método de instalación no es compatible con
+  Bitlocker, porque Bitlocker cifra el disco entero y no solo la partición. Si
+  te aparece un error diciendo que Bitlocker está activado, arrancá Windows,
+  andá a
+  <strong>Settings -&gt; Privacy &amp; Security -&gt; Device encryption</strong>
+  y desactivá Bitlocker. Puede llevar un rato descifrar el disco.
+</p>
+
+<p><img src="/manual/images/dual-boot-7.webp" alt="dual-boot-7" /></p>

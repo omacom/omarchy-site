@@ -1,0 +1,227 @@
+<p>
+  Todo en Omarchy pasa por el teclado, <em>¡TODO!</em> Cuando el sistema arranca
+  por primera vez, literalmente no podés hacer nada solo con el mouse. Pero
+  podés apretar <code>Super + Space</code> para abrir el menú de Omarchy, y
+  desde ahí hacés prácticamente todo.
+</p>
+
+<p>
+  Pero el menú de Omarchy no está pensado ni siquiera como la forma principal de
+  manejar el sistema la mayor parte del tiempo. ¡Podemos ir más rápido! Todas
+  las aplicaciones más importantes están asignadas directamente a atajos
+  individuales. Abrís la terminal con <code>Super + Return</code> y un navegador
+  con <code>Super + Shift + Return</code>. Probá hacer uno después del otro y
+  vas a ver la magia del mosaico de Hyprland en acción:
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-browser-terminal.webp"
+    alt="navigation-browser-terminal"
+  />
+</p>
+
+<p>
+  Después podés apretar <code>Super + J</code> para apilarlas una sobre la otra
+  en lugar de lado a lado:
+</p>
+
+<p>
+  <img src="/manual/images/navigation-stacked.webp" alt="navigation-stacked" />
+</p>
+
+<p>
+  Apretá <code>Super + J</code> de nuevo para devolverlas a sus posiciones lado
+  a lado. Después probá <code>Super + Shift + Arrow Right</code> estando en el
+  navegador para intercambiar las ventanas.
+</p>
+
+<p>
+  Ahora probá <code>Super + Ctrl + T</code> para abrir el monitor de actividad.
+  Va a aparecer como ventana flotante. Podés ponerla en mosaico con
+  <code>Super + T</code> (y apretar eso de nuevo para volverla flotante). Ahora
+  apretá <code>Super + Shift + F</code> para abrir el gestor de archivos. Vas a
+  tener un prolijo esquema de cuatro:
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-fourway-tiling.webp"
+    alt="navigation-fourway-tiling"
+  />
+</p>
+
+<p>
+  Te movés hacia la ventana que querés activar con <code>Super + Arrow</code>.
+  Eso cambia el foco y lleva el cursor al centro de la nueva aplicación.
+</p>
+
+<p>
+  Si apretás <code>Super + Shift + 2</code>, mandás la aplicación enfocada al
+  segundo escritorio. <code>Super + Shift + 1</code> la trae de vuelta. (Y
+  <code>Super + Shift + Alt + 2</code> manda la aplicación enfocada al segundo
+  escritorio sin cambiar a ese escritorio).
+</p>
+
+<p>
+  Si mantenés apretado <code>Super</code> y usás el mouse para hacer clic en una
+  ventana, vas a poder reubicarla. Si mantenés <code>Super</code> y usás el
+  botón derecho del mouse, podés redimensionar la ventana libremente.
+</p>
+
+<p>
+  Cerrás una ventana con <code>Super + W</code> o <code>Super + Q</code> (y
+  cerrás todas las ventanas con <code>Ctrl + Alt + Delete</code>).
+</p>
+
+<p>
+  También podés pasar a pantalla completa con <code>Super + F</code>, o solo a
+  ancho completo (manteniendo la barra superior) con
+  <code>Super + Alt + F</code>, o a pantalla completa dentro de una ventana con
+  <code>Super + Ctrl + F</code> (¡ideal para YouTube!).
+</p>
+
+<h3 id="dwindle-vs-scrolling-layout">
+  Disposición dwindle frente a scrolling
+  <a
+    class="manual__heading-link"
+    href="#dwindle-vs-scrolling-layout"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  La disposición predeterminada de Omarchy se llama dwindle. Mantiene visibles
+  todo el tiempo todas las ventanas que abrís en un mismo escritorio, incluso si
+  tiene que achicarlas.
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-dwindle-layout.webp"
+    alt="navigation-dwindle-layout"
+  />
+</p>
+
+<p>
+  Pero también podés convertir un escritorio a la disposición scrolling, donde
+  las ventanas se alinean lado a lado, más allá del borde visible de la
+  pantalla. Convertís un escritorio a esta disposición con
+  <code>Super + L</code>.
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-scrolling-layout.webp"
+    alt="navigation-scrolling-layout"
+  />
+</p>
+
+<p>
+  La elección es por escritorio, y queda guardada. Así que podés dejar el
+  escritorio 1 en dwindle para navegar y el escritorio 2 en scrolling para
+  programar, y van a volver así después de reiniciar. (El mismo interruptor está
+  en <em>Trigger &gt; Toggle &gt; Workspace Layout</em> en el menú de Omarchy).
+</p>
+
+<p>
+  Si querés usar la disposición scrolling como predeterminada, podés
+  configurarlo en <code>~/.config/hypr/looknfeel.lua</code>:
+</p>
+
+<pre><code class="language-lua">hl.config({
+  general = {
+    layout = "scrolling",
+  },
+})
+</code></pre>
+
+<h3 id="grouping-windows">
+  Agrupar ventanas
+  <a
+    class="manual__heading-link"
+    href="#grouping-windows"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Las ventanas se pueden agrupar con <code>Super + G</code>. Una vez que estás
+  en un grupo, cada ventana que abras mientras ese grupo esté activo va a
+  pertenecer al grupo. Podés moverte entre esas ventanas agrupadas con
+  <code>Super + Ctrl + Arrow Left/Right</code>, o con
+  <code>Super + Alt + 1/2/3/4</code> para ir directo a una ventana del grupo por
+  orden.
+</p>
+
+<p>
+  Podés sacar una ventana del grupo con <code>Super + Alt + G</code>, o desarmar
+  el grupo entero apretando <code>Super + G</code> de nuevo. Y por último, podés
+  meter al grupo ventanas que estén afuera con
+  <code>Super + Alt + Arrows</code>.
+</p>
+
+<h3 id="popping-windows">
+  Ventanas que sobresalen
+  <a
+    class="manual__heading-link"
+    href="#popping-windows"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Podés sacar una ventana de su escritorio asignado con <code>Super + O</code>.
+  Eso la fija como ventana flotante que te sigue a cualquier escritorio al que
+  vayas. Ideal para reproductores de video y cosas así.
+</p>
+
+<p>
+  <img
+    src="/manual/images/navigation-popped-window.webp"
+    alt="navigation-popped-window"
+  />
+</p>
+
+<h3 id="scratchpad-workspace">
+  El escritorio borrador
+  <a
+    class="manual__heading-link"
+    href="#scratchpad-workspace"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Por último, hay un escritorio borrador especial que baja sobre el escritorio
+  en el que estés, muy parecido a la consola de Quake. Mostralo y ocultalo con
+  <code>Super + Grave</code> o <code>Super + S</code>, y poné una ventana ahí
+  con <code>Super + Shift + Grave</code> o <code>Super + Alt + S</code>.
+</p>
+
+<p>
+  Funciona especialmente bien para una terminal corriendo un agente, o para
+  controles con los que querés interactuar rápido sin salir del escritorio
+  actual. Para sacar una ventana del borrador, mandala directo a otro escritorio
+  con algo como <code>Super + Shift + 1</code>.
+</p>
+
+<h3 id="it-takes-some-getting-used-to">
+  ¡Lleva un tiempo acostumbrarse!
+  <a
+    class="manual__heading-link"
+    href="#it-takes-some-getting-used-to"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Lleva un rato acostumbrarse a navegar el escritorio así, pero una vez que lo
+  hacés, ¡te va a costar volver a la experiencia tradicional de escritorio
+  manejado con el mouse!
+</p>

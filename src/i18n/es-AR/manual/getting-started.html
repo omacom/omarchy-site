@@ -1,0 +1,142 @@
+<p>
+  Omarchy se instala con una ISO. Podés elegir entre una instalación de disco
+  completo, que se queda con toda la unidad, o una instalación en espacio libre,
+  que pone Omarchy en el espacio sin asignar de un disco: así es como hacés
+  arranque dual junto a Windows u otro sistema (mirá
+  <a href="/manual/dual-boot-install/">instalación en arranque dual</a>, y tené
+  en cuenta que primero vas a tener que desactivar BitLocker en Windows). En
+  cualquiera de los dos casos, la instalación cifra todo de forma
+  predeterminada, y la opción de disco completo borra la unidad elegida, ¡así
+  que hacé una copia de seguridad antes de usar un disco que ya tenga cosas!
+</p>
+
+<p>
+  <a href="/">Descargá la ISO de Omarchy</a> primero, pasala a un pendrive (usá
+  <a href="https://etcher.balena.io/">balenaEtcher</a> en Mac/Windows o
+  <a href="https://github.com/ifd3f/caligula">caligula</a> en Linux) y arrancá
+  desde el pendrive.
+</p>
+
+<p>
+  <em
+    >Tenés que desactivar Secure Boot y/o TPM en el BIOS. Hay que apagarlos para
+    poder instalar Omarchy. Son esquemas de seguridad de Microsoft pensados para
+    Windows y para las distribuciones de Linux afiliadas a Microsoft.</em
+  >
+</p>
+
+<p>Después respondé las preguntas de configuración y confirmalas así:</p>
+
+<p><img src="/manual/images/install-config.webp" alt="install-config" /></p>
+
+<p>
+  Luego elegí un disco para la instalación, y sentate a mirar el show. En las
+  máquinas modernas más rápidas se puede hacer en menos de un minuto, pero no
+  debería llevar más de 5 minutos ni siquiera en una computadora vieja.
+</p>
+
+<p><img src="/manual/images/install-done.webp" alt="install-done" /></p>
+
+<p>¡Ahora sí, a usar Omarchy!</p>
+
+<h3 id="use-a-wired-or-24ghz-keyboard">
+  ¡Usá un teclado con cable o de 2.4ghz!
+  <a
+    class="manual__heading-link"
+    href="#use-a-wired-or-24ghz-keyboard"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El cifrado de disco completo no te va a dejar escribir la contraseña con un
+  teclado Bluetooth al arrancar. Igual que no podés usar un teclado Bluetooth
+  para entrar al BIOS de una PC. Vas a necesitar un teclado con dongle de 2.4ghz
+  o con cable (que además es mucho mejor para la latencia). ¡A mí personalmente
+  me encanta el
+  <a
+    href="https://www.lofree.co/products/lofree-flow-the-smoothest-mechanical-keyboard"
+    >Lofree Flow84</a
+  >!
+</p>
+
+<h3 id="installing-for-another-owner">
+  Instalar para otra persona
+  <a
+    class="manual__heading-link"
+    href="#installing-for-another-owner"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si estás preparando una máquina para otra persona, sea de tu familia, alguien
+  que entra a trabajar o quien te la compra, no deberías responder las preguntas
+  personales en su nombre. Apretá <code>Ctrl + C</code> en la primera pantalla
+  del instalador (la selección de teclado) y Omarchy te va a ofrecer preparar la
+  máquina para otro dueño. El sistema se instala enseguida, pero toda la
+  configuración personal, o sea la distribución del teclado, el nombre de
+  usuario y la contraseña, queda para cuando la máquina arranque por primera
+  vez. El disco sigue cifrado de forma predeterminada, y la contraseña que elija
+  esa persona en el primer arranque pasa a ser también la contraseña de cifrado.
+  (Una máquina que ya venís usando también se puede entregar sin reinstalar:
+  mirá <a href="/manual/security/">cómo reiniciar la computadora</a>).
+</p>
+
+<h3 id="unattended-installs">
+  Instalaciones desatendidas
+  <a
+    class="manual__heading-link"
+    href="#unattended-installs"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  La ISO también puede instalarse sola, sin teclado ni asistente, cuando le
+  pasás su configuración en un segundo disco. Esa es la forma de usar Omarchy
+  como imagen base para máquinas virtuales y flotas de equipos. Mirá
+  <a href="/manual/unattended-installs/">instalaciones desatendidas</a>.
+</p>
+
+<h3 id="no-encryption-installations">
+  Instalaciones sin cifrado
+  <a
+    class="manual__heading-link"
+    href="#no-encryption-installations"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy se instala con cifrado de forma predeterminada. Es la opción segura y
+  responsable para cualquier computadora que se pueda perder o te puedan robar.
+  ¡No querés que cualquiera con acceso al hardware pueda llegar a tus datos!
+</p>
+
+<p>
+  Pero en casos especiales, como instalaciones remotas de Omarchy en
+  computadoras protegidas, o instalaciones descartables sin datos sensibles, tal
+  vez quieras instalar sin cifrado. Podés apretar <code>Ctrl + C</code> en la
+  confirmación del formateo del disco para pasar a una instalación sin cifrado.
+</p>
+
+<h3 id="help-if-youre-stuck">
+  Ayuda si te trabás
+  <a
+    class="manual__heading-link"
+    href="#help-if-youre-stuck"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si te trabás, casi siempre vas a encontrar a alguien dispuesto a ayudarte en
+  el canal <em>#omarchy-help</em> del
+  <a href="/discord/">Discord de la comunidad</a>.
+</p>
