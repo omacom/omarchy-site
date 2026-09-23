@@ -150,7 +150,10 @@ export function TeamClusters({
                 >
                   <Link
                     to="/teams/"
-                    aria-label={`${rest} more on the teams page`}
+                    aria-label={t('{count} more on the teams page').replace(
+                      '{count}',
+                      String(rest),
+                    )}
                     className="flex size-(--team-face) items-center justify-center rounded-full bg-surface-2 font-mono text-xs text-text-secondary ring-2 ring-bg-deep transition-colors duration-150 ease-out hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     +{rest}
