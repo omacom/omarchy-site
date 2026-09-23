@@ -21,6 +21,13 @@
     "manual": false,
     "direction": "rtl"
   },
+  "es-AR": {
+    "name": "Español (Argentina)",
+    "domain": "https://omarchy.ar",
+    "formatLocale": "es-AR",
+    "ogLocale": "es_AR",
+    "manual": false
+  },
   "fi": {
     "name": "Suomi",
     "domain": "https://omarchy.fi",
