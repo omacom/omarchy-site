@@ -1,0 +1,195 @@
+<p>
+  Omarchy asume de forma predeterminada que estás en una pantalla tipo retina
+  capaz de 2x. Eso es lo que necesitás para tener esas tipografías de
+  programación nítidas y lindas. Es para lo que están optimizadas casi todas las
+  notebooks premium nuevas con pantallas de alta resolución. Es lo que querrías
+  usar en una 5K de 27" como la
+  <a href="https://www.apple.com/studio-display/">Apple Studio Display</a>, la
+  <a
+    href="https://www.asus.com/us/displays-desktops/monitors/proart/proart-display-5k-pa27jcv/"
+    >ProArt PA27JCV</a
+  >, la
+  <a
+    href="https://www.samsung.com/us/computing/monitors/5k/27-viewfinity-s9-5k-monitor-with-thunderbolt-4-matte-display-and-smart-features-ls27c900panxza/"
+    >Samsung S9</a
+  >
+  o la <a href="https://kuycon.us/monitors/G27P/">Kuycon G27P</a>, o en una 6K
+  de 32" como la <a href="https://www.apple.com/pro-display-xdr/">Apple XDR</a>,
+  la
+  <a
+    href="https://www.asus.com/displays-desktops/monitors/proart/proart-display-6k-pa32qcv/"
+    >ProArt PA32QCV</a
+  >
+  o la <a href="https://kuycon.us/monitors/G32P/">Kuycon G32P</a>.
+</p>
+
+<p>
+  Pero si no estás usando una pantalla con una densidad de 218 PPI o más, vas a
+  querer cambiar la configuración del monitor. Por ejemplo, si tenés una 4K de
+  27" o 32", podés usar escalado fraccionario abriendo
+  <code>~/.config/hypr/monitors.lua</code> (desde
+  <em>Setup &gt; Monitors</em> en el menú de Omarchy) y pasando a la
+  recomendación para esa combinación:
+</p>
+
+<pre><code class="language-lua">local omarchy_gdk_scale = 2
+local omarchy_monitor_scale = 1.6
+</code></pre>
+
+<p>
+  Si usás una pantalla de 1080p o 1440p, probablemente quieras escalado 1x, así
+  que podés usar:
+</p>
+
+<pre><code class="language-lua">local omarchy_gdk_scale = 1
+local omarchy_monitor_scale = 1
+</code></pre>
+
+<p>
+  Los cambios en <code>GDK_SCALE</code> se aplican a las aplicaciones que
+  arranques después del cambio (y GTK solo respeta números enteros, así que
+  dejalo en el entero más cercano al escalado de tu monitor). Por eso, asegurate
+  de cerrar las ventanas que te queden demasiado grandes después del cambio (¡o
+  cerrá todas las ventanas con <code>Ctrl + Alt + Del</code>!).
+</p>
+
+<p>
+  También podés recorrer rápido los escalados de monitor principales (1x, 1.25x,
+  1.6x, 2x, 3x, 4x) usando <code>Super + /</code> para subir y
+  <code>Super + Alt + /</code> para bajar. Si tenés la configuración
+  predeterminada, estos cambios también se mantienen después de reiniciar.
+</p>
+
+<h3 id="making-text-bigger-or-smaller">
+  Hacer el texto más grande o más chico
+  <a
+    class="manual__heading-link"
+    href="#making-text-bigger-or-smaller"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El escalado del monitor cambia el tamaño de todo. Si lo único que querés es
+  <em>texto</em> más grande o más chico, hay una sola perilla para eso:
+</p>
+
+<pre><code>omarchy display text size 14
+</code></pre>
+
+<p>
+  Acepta un tamaño en píxeles entre 9 y 20, y mueve juntos el shell de Omarchy,
+  las aplicaciones GTK y tu terminal, así todo el escritorio queda en
+  proporción. Ejecutalo sin argumentos para ver en cuánto estás, y
+  <code>omarchy display text size reset</code> para volver al valor
+  predeterminado. Foot es el único que se queda atrás: no tiene forma de
+  recargar su configuración, así que las terminales abiertas mantienen el tamaño
+  anterior hasta que abrís una nueva.
+</p>
+
+<h3 id="extending-and-mirroring-laptop-displays">
+  Extender y duplicar la pantalla de la notebook
+  <a
+    class="manual__heading-link"
+    href="#extending-and-mirroring-laptop-displays"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Cuando conectás una pantalla externa a tu notebook, la imagen se extiende
+  automáticamente. Pero podés cambiarlo a duplicado desde
+  <em>Trigger &gt; Hardware</em> en el menú de Omarchy o con
+  <code>Super + Ctrl + Alt + Delete</code>. Esto sirve especialmente si esa
+  pantalla externa es un proyector y querés mostrar algo mientras trabajás.
+</p>
+
+<p>
+  Cuando estás extendiendo, cerrar la tapa de la notebook apaga automáticamente
+  la pantalla interna. Abrirla la vuelve a encender. También podés controlarlo a
+  mano desde <em>Trigger &gt; Hardware</em> en el menú de Omarchy o con
+  <code>Super + Ctrl + Delete</code>.
+</p>
+
+<h3 id="arranging-multiple-screens">
+  Acomodar varias pantallas
+  <a
+    class="manual__heading-link"
+    href="#arranging-multiple-screens"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Hyprland funciona muy bien con varias pantallas. Leé más sobre cómo
+  acomodarlas en
+  <a href="https://wiki.hypr.land/Configuring/Basics/Monitors/"
+    >la documentación de monitores de Hyprland</a
+  >. También podés
+  <a href="https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/"
+    >atar escritorios específicos a monitores específicos</a
+  >. En Omarchy, esas reglas van en
+  <code>~/.config/hypr/monitors.lua</code> como entradas
+  <code>hl.monitor</code>, y el archivo viene con ejemplos comentados para
+  fijarle a un monitor una resolución, una posición y una rotación.
+</p>
+
+<p>
+  También podés probar <a href="https://github.com/erans/hyprmon/">Hyprmon</a>,
+  si querés una TUI que te ayude a posicionar varias pantallas.
+</p>
+
+<h3 id="controlling-brightness">
+  Controlar el brillo
+  <a
+    class="manual__heading-link"
+    href="#controlling-brightness"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El brillo del monitor se controla con las teclas de función dedicadas para
+  subir y bajar brillo. Si mantenés shift mientras las apretás, vas al brillo
+  máximo o mínimo. Las teclas controlan la pantalla en la que estás enfocado,
+  así que los monitores externos que hablan DDC/CI se ajustan igual que la
+  pantalla de la notebook.
+</p>
+
+<h3 id="apple-displays">
+  Pantallas de Apple
+  <a
+    class="manual__heading-link"
+    href="#apple-displays"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si usás una pantalla de Apple, las teclas de brillo del teclado también
+  funcionan automáticamente cuando estás enfocado en esa pantalla. Eso se logra
+  con el comando <code>asdcontrol</code>.
+</p>
+
+<p>
+  Tené en cuenta que si usás una pantalla Apple 6K XDR puede aparecerte una
+  pantalla fantasma en el listado de <code>hyprctl monitors</code>. Podés
+  desactivarla con algo como
+  <code>hl.monitor({ output = "DP-2", disabled = true })</code> desde
+  <em>Setup &gt; Monitors</em>.
+</p>
+
+<p>
+  En máquinas Intel deberías conectarte a las pantallas de Apple con un cable
+  Thunderbolt normal. En otras máquinas sin Thunderbolt, normalmente vas a tener
+  que usar un
+  <a href="https://www.amazon.com/dp/B0BNX7MS6N"
+    >cable DP + USB-A -&gt; USB-C</a
+  >
+  para que funcione.
+</p>

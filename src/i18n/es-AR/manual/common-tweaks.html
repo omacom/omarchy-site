@@ -1,0 +1,87 @@
+<p>
+  Esta es una colección de ajustes habituales a la configuración de Omarchy.
+  Tené en cuenta que, de vez en cuando, las actualizaciones del sistema pueden
+  necesitar restaurar ciertas configuraciones a su estado original. Si eso pasa,
+  tus cambios no se pierden: quedan en un archivo <code>.bak</code> en el mismo
+  directorio.
+</p>
+
+<p>
+  Si rompés algo, podés restaurar configuraciones individuales a su estado
+  original desde <em>Update &gt; Config</em> en el menú de Omarchy. Y si rompés
+  <em>todo</em> de verdad, podés reiniciar todas las configuraciones con
+  <code>omarchy-reinstall</code>.
+</p>
+
+<h3 id="reveal-all-tray-icons-all-the-time">
+  Mostrar siempre todos los íconos de la bandeja
+  <a
+    class="manual__heading-link"
+    href="#reveal-all-tray-icons-all-the-time"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  De forma predeterminada, los íconos de la bandeja, como Dropbox, 1Password o
+  Steam, quedan escondidos detrás de la flecha que los despliega y aparecen al
+  pasar el mouse por encima. Si querés tenerlos siempre a la vista, hacé clic
+  derecho en esa flecha para abrir el administrador de íconos de la bandeja y
+  fijá los que quieras dejar visibles (también podés ocultar los que no querés
+  ver nunca).
+</p>
+
+<h3 id="rounded-window-corners">
+  Esquinas redondeadas en las ventanas
+  <a
+    class="manual__heading-link"
+    href="#rounded-window-corners"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El diseño predeterminado de Omarchy usa esquinas rectas, pero si querés
+  suavizarlas un poco, podés editar
+  <code>~/.config/hypr/looknfeel.lua</code> para que el redondeo deje de estar
+  comentado:
+</p>
+
+<pre><code>hl.config({
+  decoration = {
+    -- Use round window corners.
+    rounding = 8,
+  },
+})
+</code></pre>
+
+<h3 id="remove-window-gaps">
+  Quitar los espacios entre ventanas
+  <a
+    class="manual__heading-link"
+    href="#remove-window-gaps"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  En las pantallas de notebook, hay gente que prefiere no desperdiciar ni un
+  pixel en espacios entre ventanas (ni siquiera en la barra superior, que podés
+  ocultar con <code>Super + Shift + Space</code>). Podés desactivar todos los
+  espacios y bordes con <code>Super + Shift + Backspace</code>, o sacarlos de
+  forma permanente quitando los comentarios de esta sección de
+  <code>~/.config/hypr/looknfeel.lua</code>:
+</p>
+
+<pre><code>hl.config({
+  general = {
+    -- No gaps between windows or borders.
+    gaps_in = 0,
+    gaps_out = 0,
+    border_size = 0,
+  },
+})
+</code></pre>

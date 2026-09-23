@@ -1,0 +1,464 @@
+<p>
+  La franja en el borde superior de tu pantalla es la barra de Omarchy. No es
+  una barra de estado pegada por encima, sino parte del shell de Omarchy, ese
+  único proceso de Quickshell de larga vida que también dibuja el menú, las
+  notificaciones, los avisos en pantalla y la pantalla de bloqueo. Por eso
+  combina perfecto con todo lo demás y por eso un panel se abre al instante en
+  lugar de levantar una aplicación nueva.
+</p>
+
+<p>
+  También es la única parte del escritorio que está siempre en pantalla, así que
+  vale la pena saber qué hacen todos esos simbolitos.
+</p>
+
+<h2 id="whats-on-it-by-default">
+  Qué trae de forma predeterminada
+  <a
+    class="manual__heading-link"
+    href="#whats-on-it-by-default"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  La barra tiene tres secciones. A la izquierda está el logo de Omarchy (el
+  lanzador del menú) y los indicadores de escritorio. En el centro están los
+  indicadores de estado, el reloj, la distribución del teclado, el clima y la
+  insignia de actualización de Omarchy. A la derecha: la bandeja del sistema,
+  los agentes, el bluetooth, la red, el audio, la pantalla y la energía.
+</p>
+
+<p>
+  Algunos de esos solo aparecen cuando tienen algo que decir. La distribución
+  del teclado aparece únicamente si configuraste más de una. La insignia de
+  actualización aparece solo cuando hay una actualización de Omarchy esperando.
+  Y el ícono de agentes aparece la primera vez que Omarchy detecta uso de IA
+  para programar en la máquina (mirá <a href="/manual/ai/">IA</a>).
+</p>
+
+<h2 id="clicking-around">
+  Hacer clic por ahí
+  <a
+    class="manual__heading-link"
+    href="#clicking-around"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Casi todos los widgets hacen algo con clic izquierdo, derecho y del medio, y
+  varios responden al desplazamiento de la rueda. Esta es la parte que la gente
+  se pierde: los botones derecho y del medio es donde se esconde mucho de lo
+  bueno.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Widget</th>
+      <th>Izquierdo</th>
+      <th>Derecho</th>
+      <th>Del medio / rueda</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Menú</td>
+      <td>Menú de Omarchy</td>
+      <td>Terminal nueva</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Escritorios</td>
+      <td>Enfocar ese escritorio</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Reloj</td>
+      <td>Calendario emergente</td>
+      <td>Cambiar el formato de la etiqueta</td>
+      <td>Del medio: selector de zona horaria</td>
+    </tr>
+    <tr>
+      <td>Clima</td>
+      <td>Pronóstico emergente</td>
+      <td>Clima completo como notificación</td>
+      <td>Del medio: actualizar</td>
+    </tr>
+    <tr>
+      <td>Audio</td>
+      <td>Panel de audio</td>
+      <td>Silenciar</td>
+      <td>Del medio: panel · rueda: volumen</td>
+    </tr>
+    <tr>
+      <td>Micrófono</td>
+      <td>Silenciar el micrófono</td>
+      <td>-</td>
+      <td>Del medio: panel de audio · rueda: volumen de entrada</td>
+    </tr>
+    <tr>
+      <td>Red</td>
+      <td>Panel de red</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Bluetooth</td>
+      <td>Panel de bluetooth</td>
+      <td>Prender o apagar la radio</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Pantalla</td>
+      <td>Panel de pantalla</td>
+      <td>-</td>
+      <td>Rueda: brillo</td>
+    </tr>
+    <tr>
+      <td>Energía</td>
+      <td>Panel de energía</td>
+      <td>Mostrar u ocultar el porcentaje de batería</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Medios</td>
+      <td>Reproducir o pausar</td>
+      <td>Tapa del álbum emergente</td>
+      <td>Del medio: siguiente · rueda: anterior o siguiente</td>
+    </tr>
+    <tr>
+      <td>Agentes</td>
+      <td>Panel de agentes</td>
+      <td>Lanzar tu agente</td>
+      <td>Del medio: suscripción siguiente</td>
+    </tr>
+    <tr>
+      <td>Bandeja</td>
+      <td>Pasá el mouse para desplegar el cajón</td>
+      <td>Clic derecho en la flecha para administrar</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Actualización de Omarchy</td>
+      <td>Ejecutar la actualización</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  No todo lo de esa tabla está en tu barra de entrada. El widget de medios (lo
+  que suena por MPRIS, con el tema y el artista desplazándose) y el widget de
+  micrófono vienen incorporados pero desactivados: agregalos si los querés, como
+  se explica más abajo.
+</p>
+
+<h2 id="the-panels">
+  Los paneles
+  <a
+    class="manual__heading-link"
+    href="#the-panels"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Hacer clic en un ícono de la barra abre un panel, que es una ventana emergente
+  de verdad, con deslizadores, listas y navegación por teclado, y no un simple
+  globo de ayuda. Cada uno también tiene un atajo, así que nunca tenés que
+  apuntarle a un símbolo de 16 píxeles:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atajo</th>
+      <th>Panel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Ctrl + A</code></td>
+      <td>Audio</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + W</code></td>
+      <td>Red</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + B</code></td>
+      <td>Bluetooth</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + D</code></td>
+      <td>Pantalla</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + P</code></td>
+      <td>Energía</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + D</code></td>
+      <td>Calendario</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + 1-9</code></td>
+      <td>Abrir o cerrar el panel número n de la sección derecha</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Los paneles no son carteles informativos. Son donde realmente hacés la cosa:
+</p>
+
+<ul>
+  <li>
+    <strong>Audio</strong> tiene un deslizador de volumen general, un selector
+    de dispositivo de salida y un mezclador por aplicación, así podés bajarle a
+    esa única pestaña del navegador sin tocar todo lo demás.
+  </li>
+  <li>
+    <strong>Red</strong> busca redes Wi-Fi, muestra la intensidad de la señal,
+    se conecta y te deja elegir un proveedor de DNS.
+  </li>
+  <li>
+    <strong>Bluetooth</strong> lista tus dispositivos con conectar y
+    desconectar, y con el nivel de batería.
+  </li>
+  <li>
+    <strong>Energía</strong> muestra las estadísticas de la batería, cambia los
+    perfiles de energía (recuerda una elección distinta para batería y para
+    cable) e imprime algo de información del sistema.
+  </li>
+  <li>
+    <strong>Pantalla</strong> trae un deslizador de brillo, el tamaño del texto,
+    valores predefinidos de escalado del monitor y, cuando tenés más de una
+    pantalla, controles por monitor. Mirá
+    <a href="/manual/monitors/">monitores</a> para la historia más a fondo.
+  </li>
+  <li>
+    <strong>Reloj</strong> abre una grilla del mes con números de semana ISO y
+    avance por mes.
+  </li>
+</ul>
+
+<p>
+  Todos los paneles aceptan el teclado además del mouse: las flechas se mueven,
+  Return activa, Tab pasa al panel vecino y Escape cierra.
+</p>
+
+<p>
+  <code>Super + Ctrl + 1-9</code> cuenta los paneles de izquierda a derecha en
+  la sección derecha, salteando la bandeja porque no tiene panel propio. Así el
+  número coincide con el ícono al que le apuntarías.
+</p>
+
+<h3 id="tailscale-and-dropbox">
+  Tailscale y Dropbox
+  <a
+    class="manual__heading-link"
+    href="#tailscale-and-dropbox"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Hay dos widgets más que aparecen en la barra solo cuando instalás el servicio
+  correspondiente desde <strong>Install → Service</strong>, y vale la pena
+  conocer los dos porque hacen más que informar el estado.
+</p>
+
+<p>
+  El panel de <strong>Tailscale</strong> conecta y desconecta la tailnet, cambia
+  entre cuentas y elige un nodo de salida (en esa lista aparecen tanto tus
+  propias máquinas como las regiones de Mullvad). También te deja recorrer tus
+  máquinas, y con una seleccionada, <code>s</code> le manda archivos por
+  Taildrop, que es la forma más rápida de pasar un archivo a tu teléfono o a
+  otra notebook. <code>c</code> copia la IP de la máquina, <code>n</code> su
+  nombre y <code>d</code> su nombre DNS completo. También hay un botón de envío
+  en la fila de cada máquina, si preferís hacer clic. Lo mismo desde la terminal
+  es <code>omarchy tailscale send &lt;machine&gt; [file...]</code>.
+</p>
+
+<p>
+  El panel de <strong>Dropbox</strong> se encarga del inicio de sesión, muestra
+  cuánto espacio usaste y lista los archivos sincronizados recientemente.
+</p>
+
+<p>Si quitás cualquiera de los dos servicios, su widget se va de la barra.</p>
+
+<h2 id="indicators">
+  Indicadores
+  <a
+    class="manual__heading-link"
+    href="#indicators"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  El pequeño grupo del centro es el widget de indicadores. Son símbolos de
+  estado para los modos que activaste: no molestar, luz nocturna, un
+  <a href="/manual/reminders/">recordatorio</a> en cola, una grabación de
+  pantalla activa, mantenerse despierto y
+  <a href="/manual/text-extraction-dictation/">dictado</a>. Se encienden cuando
+  el modo está activo y el resto del tiempo no molestan: pasá el mouse por el
+  centro de la barra para espiar los inactivos. Hacer clic en un indicador
+  activa o desactiva ese modo.
+</p>
+
+<p>
+  Si preferís que estén siempre visibles, poné <code>alwaysShow</code> en
+  <code>true</code> en el widget. Y si solo te importan algunos, listá los que
+  querés en <code>items</code>: <code>["Dnd", "Reminder", "NightLight"]</code>.
+  Podés tener más de un widget de indicadores, así distintas secciones pueden
+  mostrar distintos subconjuntos.
+</p>
+
+<h2 id="rearranging-the-bar">
+  Reacomodar la barra
+  <a
+    class="manual__heading-link"
+    href="#rearranging-the-bar"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  La barra se configura sola. No necesitás abrir un archivo de configuración
+  para mover cosas.
+</p>
+
+<p>
+  Agarrá un pedazo vacío de la barra cerca del centro y arrastralo hacia otro
+  borde de la pantalla, y la barra se muda ahí: izquierda, derecha, arriba y
+  abajo funcionan todos, y cada widget se adapta (las barras verticales pasan a
+  formas compactas de solo ícono). Un clic sostenido inicia el mismo arrastre.
+  Doble clic izquierdo en ese mismo espacio vacío activa o desactiva la
+  transparencia. Y arrastrá cualquier widget para reordenarlo o tirarlo a otra
+  sección.
+</p>
+
+<p>
+  Si preferís elegir desde un menú, <strong>Style → Menu Bar</strong> tiene
+  tanto la posición como la transparencia.
+</p>
+
+<p>
+  Esas mismas cosas tienen comandos, que es lo que querés para una configuración
+  con <a href="/manual/dotfiles/">dotfiles</a>:
+</p>
+
+<pre><code class="language-bash">omarchy bar position bottom
+omarchy bar transparent toggle
+omarchy bar move omarchy.clock --section center --index 0
+omarchy bar set omarchy.clock format "HH:mm"
+omarchy bar defaults          # back to the shipped layout
+</code></pre>
+
+<p>
+  Para agregar o quitar un widget por completo, usá los comandos de plugins.
+  <code>omarchy plugin list</code> imprime todos los widgets que el shell conoce
+  con su id, y después:
+</p>
+
+<pre><code class="language-bash">omarchy plugin enable omarchy.media --section center
+omarchy plugin disable omarchy.weather
+</code></pre>
+
+<h2 id="hiding-the-bar">
+  Ocultar la barra
+  <a
+    class="manual__heading-link"
+    href="#hiding-the-bar"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Super + Shift + Space</code> oculta y vuelve a mostrar la barra sin
+  matar el shell: los paneles y los atajos siguen funcionando, solo recuperás
+  los píxeles. También está en el menú, en
+  <strong>Trigger → Toggle → Menu Bar</strong>.
+</p>
+
+<h2 id="the-config-file">
+  El archivo de configuración
+  <a
+    class="manual__heading-link"
+    href="#the-config-file"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Todo se guarda en <code>~/.config/omarchy/shell.json</code>, bajo la clave
+  <code>bar</code>. Acá va una versión recortada:
+</p>
+
+<pre><code class="language-json">{
+  "version": 1,
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "centerAnchor": "omarchy.clock",
+    "layout": {
+      "left": [{ "id": "omarchy.menu" }, { "id": "omarchy.workspaces" }],
+      "center": [{ "id": "omarchy.clock", "format": "HH:mm" }],
+      "right": [{ "id": "omarchy.audio" }, { "id": "omarchy.power" }]
+    }
+  }
+}
+</code></pre>
+
+<p>
+  Cada widget es una entrada en uno de los tres arreglos de la disposición, y
+  sus opciones van en línea en esa misma entrada: no hay un archivo de opciones
+  aparte ni un subobjeto <code>config</code>. El <code>format</code> del reloj,
+  su <code>formatAlt</code> (al que pasa con el clic derecho) y su
+  <code>verticalFormat</code> viven todos ahí mismo, en
+  <code>{ "id": "omarchy.clock" }</code>.
+</p>
+
+<p>
+  <code>centerAnchor</code> nombra al único widget del centro que queda fijado
+  al centro exacto de la pantalla, con los demás flanqueándolo. Así es como el
+  reloj se mantiene perfectamente centrado aunque el clima y la insignia de
+  actualización aparezcan y desaparezcan. Ponelo en una cadena vacía y la lista
+  del centro simplemente queda centrada como grupo.
+</p>
+
+<p>
+  Una regla que conviene grabarse:
+  <strong
+    >una vez que tenés tu propio <code>shell.json</code>, ese es el que
+    manda</strong
+  >. Hasta que personalizás algo, el shell lee el archivo predeterminado de
+  Omarchy. En el momento en que arrastrás un widget, ejecutás
+  <code>omarchy bar</code> o editás el archivo a mano, pasa a ser tuyo: no hay
+  una fusión profunda, así que los widgets nuevos que vengan por defecto en
+  futuras versiones de Omarchy no van a aparecer solos en tu barra.
+  <code>omarchy bar defaults</code> devuelve la disposición original cuando
+  quieras empezar de nuevo.
+</p>
+
+<p>
+  Ese mismo archivo también guarda tus tiempos de inactividad en el nivel
+  superior, fuera de la clave <code>bar</code>: <code>idle.screensaver</code> e
+  <code>idle.lock</code>, los dos en segundos desde que quedaste inactivo. Así,
+  de forma predeterminada el protector de pantalla entra a los 150 segundos y el
+  bloqueo a los 300.
+</p>

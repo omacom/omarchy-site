@@ -1,0 +1,82 @@
+<p>
+  Creamos instantáneas automáticamente en cada actualización de Omarchy, pero si
+  querés crear las tuyas, podés usar <code>omarchy-snapshot create</code>.
+</p>
+
+<p>
+  Para arrancar y restaurar una instantánea, la elegís desde el gestor de
+  arranque Limine. (Si ahora arrancás directo a la pantalla de descifrado de
+  Omarchy, primero vas a tener que elegir Limine como opción de arranque desde
+  el BIOS).
+</p>
+
+<p>
+  Desde esa pantalla, elegí la instantánea a la que querés arrancar según la
+  fecha y la versión. La versión de Omarchy al momento de la instantánea se ve
+  en la esquina inferior izquierda.
+</p>
+
+<p>
+  <img
+    src="/manual/images/snapshots-bootloader.webp"
+    alt="snapshots-bootloader"
+  />
+</p>
+
+<p>
+  Cuando entrás, aparece una notificación que te avisa que estás en una
+  instantánea de arranque, y si le hacés clic arranca el proceso de
+  restauración. Si preferís, también podés usar
+  <code>omarchy-snapshot restore</code>.
+</p>
+
+<p>
+  <img src="/manual/images/snapshots-restore.webp" alt="snapshots-restore" />
+</p>
+
+<p>
+  Esto restaura tu sistema de archivos raíz, pero no tu <code>/home</code>. Así
+  que sirve para revertir una actualización que rompió el sistema, pero no para
+  recuperar archivos personales perdidos.
+</p>
+
+<p>
+  También significa que tu directorio <code>~/.config</code> queda tal cual
+  está. Así que si estás volviendo a una versión anterior de una biblioteca o
+  aplicación que guarda su configuración en un formato nuevo, eso lo vas a tener
+  que resolver a mano.
+</p>
+
+<p>
+  <em
+    >Nota: esta función solo está disponible en instalaciones que usan el gestor
+    de arranque Limine, que es el predeterminado desde Omarchy 2.0. No está
+    disponible si usás GRUB o systemd-boot.</em
+  >
+</p>
+
+<h3 id="skipping-the-boot-menu">
+  Saltear el menú de arranque
+  <a
+    class="manual__heading-link"
+    href="#skipping-the-boot-menu"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si nunca tocás el menú de arranque y querés que la máquina vaya directo a la
+  pantalla de descifrado, ejecutá <em>Setup &gt; Direct Boot</em> en el menú de
+  Omarchy. Eso agrega una entrada EFI que apunta directamente a Omarchy, así el
+  firmware lo arranca sin detenerse en Limine.
+</p>
+
+<p>
+  La contra es la que mencionamos arriba: con el arranque directo activado,
+  llegar a una instantánea implica elegir Limine desde el menú de arranque del
+  BIOS primero. Ejecutá <em>Setup &gt; Direct Boot</em> de nuevo para quitar la
+  entrada y volver a arrancar a través de Limine. Algunos firmwares no se llevan
+  bien con las entradas EFI personalizadas, así que la configuración se niega a
+  correr en firmware de American Megatrends y de Apple.
+</p>
