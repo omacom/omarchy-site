@@ -201,6 +201,10 @@ export function SearchPalette() {
       })
       return
     }
+    if (hit.kind === 'page') {
+      void navigate({ to: `/${hit.slug}/` })
+      return
+    }
     void navigate({ to: '/themes/' })
   }
 
