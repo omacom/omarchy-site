@@ -5,8 +5,37 @@
     <link>https://omarchy.org/news</link>
     <description>Notes on the people, ideas, and releases shaping Omarchy.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Sep 2026 11:20:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 11:26:00 GMT</lastBuildDate>
     <atom:link href="https://omarchy.org/news/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+  <title>Omacom Foundation to be premier sponsor of 0xSero&#39;s work on local AI</title>
+  <link>https://omarchy.org/news/2026/09/omacom-foundation-to-be-premier-sponsor-of-0xsero</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/09/omacom-foundation-to-be-premier-sponsor-of-0xsero</guid>
+  <pubDate>Wed, 23 Sep 2026 11:26:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[A three-year sponsorship through Sybil Solutions to make local models work beautifully out of the box and connect your own hardware into a mesh of intelligence.]]></description>
+  <content:encoded><![CDATA[<p>The <a href="https://omarchy.org/foundation/">Omacom Foundation</a> is becoming a <strong>premier sponsor of <a href="https://x.com/0xSero">0xSero</a>’s work on local AI for the next three years</strong>, through his company <a href="https://sybilsolutions.ai/">Sybil Solutions</a>!</p>
+
+<p>We’re going to collaborate on making local models work beautifully out of the box on Omarchy. Picking a model that fits your machine, tuning it to make the most of the hardware, and getting it connected to your agents should be a great first experience. Today, there’s still too much homework between buying a powerful computer and putting its intelligence to work. We want to close that gap.</p>
+
+<p>Sero is already working on exactly these problems. His <a href="https://github.com/0xSero/local-ai-registry">Local AI Registry</a> brings together model configurations, hardware-specific recipes, and performance measurements. That’s the kind of practical knowledge we need to turn into good defaults. You shouldn’t have to become an inference engineer to get a useful local model running on your own computer.</p>
+
+<p>And your own computer doesn’t have to do all the work alone. We also want to make it easy to connect the hardware you own into a <strong>mesh of intelligence</strong>. Your laptop, the powerful desktop in your office, a machine tucked away at home. Let your agents draw on the computers available to you, without making you manage a small data center first.</p>
+
+<p>This is a big part of how I see the promise of the agentic OS being fulfilled. With hardware like NVIDIA’s N1x and <a href="https://www.qianwenai.com/product/qwenbook">Alibaba’s upcoming Qwen Book</a>, we’re moving toward a world where powerful local AI machines are ordinary personal computers. The operating system should make that power available from the moment you start using it.</p>
+
+<p>I think we’re getting close to everyone having access to solid intelligence at home. Models that can help you write code, work with your documents, and carry out useful tasks on hardware you control. A great alternative to frontier models and subscription-based intelligence for more and more of the work people actually do.</p>
+
+<p>I love what the frontier models can do, and Omarchy will continue to make them easy to use. But I also want the choice to run intelligence that doesn’t depend on a monthly subscription or sending my work to someone else’s servers. Being able to buy a computer and keep putting it to work is one of the great things about personal computing. That should apply to agents too.</p>
+
+<p>Backing Sero for three years gives us time to work on the whole experience: the models, the tuning, the connections between machines, and the defaults that make it all approachable. I’m excited to see how much better we can make this together.</p>
+
+<p>Thank you to <a href="https://omarchy.org/patrons/">our patrons</a> for making this sponsorship possible. Their support lets us give developers the time and resources to work on the future we want for Linux. We’re grateful for their patronage.</p>
+
+<p>Let’s put more intelligence in the hands of the people who own the computers!</p>
+]]></content:encoded>
+</item>
+
 <item>
   <title>Alibaba Cloud joins as a Founding Corporate Patron with $3 million</title>
   <link>https://omarchy.org/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron</link>
