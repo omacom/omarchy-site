@@ -57,7 +57,9 @@ import release from '@/data/version.json'
 const TRY = {
   mac: {
     label: t('Try on Mac'),
-    href: 'https://github.com/omacom/try-omarchy',
+    // GitHub answers this with Content-Disposition: attachment, so the click
+    // saves the DMG. The asset name has been TryOmarchy.dmg since v0.2.0.
+    href: 'https://github.com/omacom/try-omarchy/releases/latest/download/TryOmarchy.dmg',
     icon: AppleIcon,
   },
   windows: {
@@ -618,7 +620,11 @@ export function HomePage({ data }: { data: HomeData }) {
                       >
                         <Mark data-icon="inline-start" />
                         {TRY[key].label}
-                        <ArrowUpRightIcon data-icon="inline-end" />
+                        {key === 'mac' ? (
+                          <DownloadIcon data-icon="inline-end" />
+                        ) : (
+                          <ArrowUpRightIcon data-icon="inline-end" />
+                        )}
                       </Button>
                     )
                   })}
