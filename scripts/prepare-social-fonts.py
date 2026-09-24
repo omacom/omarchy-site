@@ -17,7 +17,6 @@ COPIES = json.loads(subprocess.check_output([
 GROUPS = {
     'en': ('JetBrains', 'JetBrainsMono', None),
     'ar': ('Arabic', 'NotoSansArabic', None),
-    'ru': ('Cyrillic', 'NotoSans', None),
     'ur': ('Urdu', 'NotoNastaliqUrdu', None),
     'hi': ('Devanagari', 'NotoSansDevanagari', None),
     'bn': ('Bengali', 'NotoSansBengali', None),

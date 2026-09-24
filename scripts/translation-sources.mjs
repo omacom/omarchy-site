@@ -79,7 +79,7 @@ export function collectSources(root = process.cwd()) {
           if (
             ts.isCallExpression(node) &&
             ts.isIdentifier(node.expression) &&
-            ['t', 'tCount'].includes(node.expression.text) &&
+            node.expression.text === 't' &&
             literal(node.arguments[0])
           )
             add(node.arguments[0].text)

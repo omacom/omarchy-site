@@ -36,12 +36,6 @@ export function t(english: string): string {
   return catalogue[english] ?? english
 }
 
-/** Translate a count-aware label, falling back to the ordinary catalogue entry. */
-export function tCount(english: string, count: number): string {
-  const form = new Intl.PluralRules(language).select(count)
-  return catalogue[`${english}::${form}`] ?? catalogue[english] ?? english
-}
-
 /** A locale's flag, from its country code or its domain's suffix; a globe where
  *  there is no country to show. */
 export function flag(domain: string, countryCode?: string) {
