@@ -13,7 +13,7 @@ export class Session {
      */
     fill(symbols: Uint32Array, fg: Uint32Array, bg: Uint32Array, flags: Uint8Array): void;
     height(): number;
-    constructor(input: string, effect: string, columns: number, rows: number, seed: number | null | undefined, frame_rate: number, palette?: string | null, background?: string | null);
+    constructor(input: string, effect: string, columns: number, rows: number, seed: number | null | undefined, frame_rate: number, palette?: string | null, background?: string | null, bands?: boolean | null);
     /**
      * Advance one animation frame. Returns false when the effect is finished.
      */
@@ -26,16 +26,22 @@ export class Session {
  */
 export function effect_catalog(): string;
 
+/**
+ * Which 4-3-4-3-5 band `t` (0 at the top, 1 at the bottom) falls in.
+ */
+export function field_band_index(t: number): number;
+
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
     readonly memory: WebAssembly.Memory;
     readonly __wbg_session_free: (a: number, b: number) => void;
     readonly effect_catalog: () => [number, number];
+    readonly field_band_index: (a: number) => number;
     readonly session_done: (a: number) => number;
     readonly session_fill: (a: number, b: any, c: any, d: any, e: any) => [number, number];
     readonly session_height: (a: number) => number;
-    readonly session_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => [number, number, number];
+    readonly session_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number) => [number, number, number];
     readonly session_step: (a: number) => number;
     readonly session_width: (a: number) => number;
     readonly __wbindgen_externrefs: WebAssembly.Table;

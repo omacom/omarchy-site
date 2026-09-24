@@ -50,8 +50,9 @@ export class Session {
      * @param {number} frame_rate
      * @param {string | null} [palette]
      * @param {string | null} [background]
+     * @param {boolean | null} [bands]
      */
-    constructor(input, effect, columns, rows, seed, frame_rate, palette, background) {
+    constructor(input, effect, columns, rows, seed, frame_rate, palette, background, bands) {
         const ptr0 = passStringToWasm0(input, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
         const ptr1 = passStringToWasm0(effect, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
@@ -60,7 +61,7 @@ export class Session {
         var len2 = WASM_VECTOR_LEN;
         var ptr3 = isLikeNone(background) ? 0 : passStringToWasm0(background, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         var len3 = WASM_VECTOR_LEN;
-        const ret = wasm.session_new(ptr0, len0, ptr1, len1, columns, rows, !isLikeNone(seed), isLikeNone(seed) ? 0 : seed, frame_rate, ptr2, len2, ptr3, len3);
+        const ret = wasm.session_new(ptr0, len0, ptr1, len1, columns, rows, !isLikeNone(seed), isLikeNone(seed) ? 0 : seed, frame_rate, ptr2, len2, ptr3, len3, isLikeNone(bands) ? 0xFFFFFF : bands ? 1 : 0);
         if (ret[2]) {
             throw takeFromExternrefTable0(ret[1]);
         }
@@ -101,6 +102,16 @@ export function effect_catalog() {
     } finally {
         wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
     }
+}
+
+/**
+ * Which 4-3-4-3-5 band `t` (0 at the top, 1 at the bottom) falls in.
+ * @param {number} t
+ * @returns {number}
+ */
+export function field_band_index(t) {
+    const ret = wasm.field_band_index(t);
+    return ret >>> 0;
 }
 function __wbg_get_imports() {
     const import0 = {
