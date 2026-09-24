@@ -24,8 +24,8 @@
     "sourceHash": "40d10806f7a90648e312d9bdc550b3d6c2455062faa6646020bd835b5d594225"
   },
   "omacom-foundation-secures-tokens-from-leading-labs": {
-    "title": "Omacom Foundation yetakchi laboratoriyalardan 1,95 million dollarlik token oldi",
-    "sourceHash": "a76cd32b42674a074c278018eb2180207f7de4f171e5217e41e501fb360fc091"
+    "title": "Omacom Foundation yetakchi laboratoriyalardan $1.8M lik tokenlarni qo‘lga kiritdi",
+    "sourceHash": "c329b55bcb9b4b833f9d352944145ac5650e7bfa95dedf4233769240ffd0fa89"
   },
   "omacom-foundation-to-be-premier-quickshell-sponsor": {
     "title": "Omacom Foundation Quickshell’ning bosh homiysi bo‘ladi",
@@ -72,8 +72,8 @@
     "sourceHash": "524022d62a6e34bbbc189419752844e27e0cfa2b88cffb0107e302d80c3d6265"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Omacom Foundation $18.5 million bilan ishga tushdi",
-    "sourceHash": "a708f0134cba2d1616f7bc6021cc73fb7b063b838578d560e3fb1e3093004e42"
+    "title": "Omacom Foundation 21,7 million dollar bilan ish boshladi",
+    "sourceHash": "d9e32fe69c8ec12634c40c20e6ffe4668a63ea365a175af61fa78bc0acd5bcf7"
   },
   "omacom-foundation-funding-hits-10m": {
     "title": "Omacom Foundation mablag‘i 10 million dollarga yetdi",
@@ -84,16 +84,16 @@
     "sourceHash": "7f02bf079c6694aab55addbe70ff76ae0c09970195d274f7aed308b1b76b5295"
   },
   "omacom-foundation-raises-another-half-a-million-dollars": {
-    "title": "Omacom Foundation yana yarim million dollar yig‘di!",
-    "sourceHash": "0a0e75e5383dfa443527e945896e487bd803876f845bcaa62c1ad6fb5a3a301a"
+    "title": "Omacom Foundation yana yarim million dollar yig'di!",
+    "sourceHash": "0eb523e4e5d1d54c3d5b6e715d7dc18f8b3ae20644347e94039b310ab10d0190"
   },
   "omacom-foundation-hires-outfoxxed": {
     "title": "Omacom Foundation outfoxxed’ni Omarchy Shell rahbari etib ishga oldi",
     "sourceHash": "6b4c4987fc67ebfbd0295a23520056d21819c360a0932aec9a894ddf9edc6c15"
   },
   "digitalocean-joins-as-founding-corporate-patron": {
-    "title": "DigitalOcean $3 million bilan Ta’sischi korporativ homiy sifatida qo‘shildi",
-    "sourceHash": "9619006b80c5dbebf99d2fd691d1fd3294ac303c20e41cb8dba14cad9dd2381f"
+    "title": "DigitalOcean 3 million dollar bilan Ta'sis Korporativ Homiyi sifatida qo'shildi",
+    "sourceHash": "382fc59b20eb8b44aeb6c662af4c200a88b68625e903049706719a1ea76044e7"
   },
   "omacom-foundation-hires-emir-beganovic": {
     "title": "Omacom Foundation Emir Beganovićni Infratuzilma rahbari sifatida ishga oldi",
@@ -102,5 +102,21 @@
   "introducing-omarchy-m": {
     "title": "Omarchy M bilan tanishing",
     "sourceHash": "c251b6705d74e07cde8d9e7519e47231ebdd817b9853c813a46954ccad833f35"
+  },
+  "brian-cartmell-and-american-cloud-join-as-open-patronage-doubles": {
+    "title": "Brian Cartmell va American Cloud safiga qo‘shildi — ochiq homiylik ikki baravar oshdi!",
+    "sourceHash": "2fe9b8d3976c24f11fc38e764fa9ee37dd5e7a73187555688c9e535ed9762d36"
+  },
+  "orcarouter-joins-as-a-distinguished-corporate-patron": {
+    "title": "OrcaRouter Nufuzli Korporativ Homiy sifatida qo'shildi",
+    "sourceHash": "c6866592d6a537c584b7c1fa69da88d05a3cdc6be335b5b1dfb1328caf2a592c"
+  },
+  "introducing-omarchy-dragon": {
+    "title": "Omarchy Dragon bilan tanishing",
+    "sourceHash": "7d80f8f4d722b2eca804c794058ea56ffab72bf145fab5aa76a083e8b41704c1"
+  },
+  "alibaba-cloud-joins-as-founding-corporate-patron": {
+    "title": "Alibaba Cloud $3 million bilan Ta'sischi Korporativ Homiy sifatida qo'shildi",
+    "sourceHash": "6e9a4deec8e7e262ef6e7da4bcdf871b484f416ef49206500ff64ccb0d4ea8ea"
   }
 }

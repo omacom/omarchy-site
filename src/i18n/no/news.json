@@ -1,7 +1,7 @@
 {
   "digitalocean-joins-as-founding-corporate-patron": {
-    "title": "DigitalOcean blir med som Founding Corporate Patron med 3 millioner dollar",
-    "sourceHash": "9619006b80c5dbebf99d2fd691d1fd3294ac303c20e41cb8dba14cad9dd2381f"
+    "title": "DigitalOcean blir Founding Corporate Patron med 3 millioner dollar",
+    "sourceHash": "382fc59b20eb8b44aeb6c662af4c200a88b68625e903049706719a1ea76044e7"
   },
   "omacom-foundation-hires-outfoxxed": {
     "title": "Omacom Foundation ansetter outfoxxed som Head of Omarchy Shell",
@@ -9,15 +9,15 @@
   },
   "omacom-foundation-raises-another-half-a-million-dollars": {
     "title": "Omacom Foundation samler inn enda en halv million dollar!",
-    "sourceHash": "0a0e75e5383dfa443527e945896e487bd803876f845bcaa62c1ad6fb5a3a301a"
+    "sourceHash": "0eb523e4e5d1d54c3d5b6e715d7dc18f8b3ae20644347e94039b310ab10d0190"
   },
   "omarchy-org-redesign-launches-with-29-languages": {
     "title": "Omarchy.org-redesignet lanseres på 29 språk",
     "sourceHash": "7f02bf079c6694aab55addbe70ff76ae0c09970195d274f7aed308b1b76b5295"
   },
   "omacom-foundation-secures-tokens-from-leading-labs": {
-    "title": "Omacom Foundation sikrer 1,95 millioner dollar i tokens fra ledende AI-laboratorier",
-    "sourceHash": "a76cd32b42674a074c278018eb2180207f7de4f171e5217e41e501fb360fc091"
+    "title": "Omacom Foundation sikrer $1.8M i tokens fra ledende laboratorier",
+    "sourceHash": "c329b55bcb9b4b833f9d352944145ac5650e7bfa95dedf4233769240ffd0fa89"
   },
   "omacom-foundation-accelerates-spending-goals": {
     "title": "Omacom Foundation fremskynder målene for pengebruk",
@@ -80,8 +80,8 @@
     "sourceHash": "5c7a98a0d30bdf81bdf7743ed9510e7c6d47dad679c92a02767d895dd1b3b9a5"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Omacom Foundation lanseres med 18,5 millioner dollar",
-    "sourceHash": "a708f0134cba2d1616f7bc6021cc73fb7b063b838578d560e3fb1e3093004e42"
+    "title": "Omacom Foundation lanseres med 21,7 millioner dollar",
+    "sourceHash": "d9e32fe69c8ec12634c40c20e6ffe4668a63ea365a175af61fa78bc0acd5bcf7"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
     "title": "Omacom Foundation blir eksklusiv sponsor for Hyprland",
@@ -102,5 +102,21 @@
   "introducing-omarchy-m": {
     "title": "Vi introduserer Omarchy M",
     "sourceHash": "c251b6705d74e07cde8d9e7519e47231ebdd817b9853c813a46954ccad833f35"
+  },
+  "brian-cartmell-and-american-cloud-join-as-open-patronage-doubles": {
+    "title": "Brian Cartmell og American Cloud blir med når åpent patronskap dobles!",
+    "sourceHash": "2fe9b8d3976c24f11fc38e764fa9ee37dd5e7a73187555688c9e535ed9762d36"
+  },
+  "orcarouter-joins-as-a-distinguished-corporate-patron": {
+    "title": "OrcaRouter blir Distinguished Corporate Patron",
+    "sourceHash": "c6866592d6a537c584b7c1fa69da88d05a3cdc6be335b5b1dfb1328caf2a592c"
+  },
+  "introducing-omarchy-dragon": {
+    "title": "Vi introduserer Omarchy Dragon",
+    "sourceHash": "7d80f8f4d722b2eca804c794058ea56ffab72bf145fab5aa76a083e8b41704c1"
+  },
+  "alibaba-cloud-joins-as-founding-corporate-patron": {
+    "title": "Alibaba Cloud blir Founding Corporate Patron med 3 millioner dollar",
+    "sourceHash": "6e9a4deec8e7e262ef6e7da4bcdf871b484f416ef49206500ff64ccb0d4ea8ea"
   }
 }
