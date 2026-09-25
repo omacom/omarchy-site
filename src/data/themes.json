@@ -295,6 +295,11 @@
   "name": "Gruvu"
  },
  {
+  "repo": "https://github.com/ckyfan89/omarchy-hacker-keycode-theme",
+  "image": "/assets/themes/hacker-keycode.webp",
+  "name": "Hacker Keycode"
+ },
+ {
   "repo": "https://github.com/HANCORE-linux/omarchy-harbor-theme",
   "image": "/assets/themes/harbor.webp",
   "name": "Harbor"
