@@ -1,3 +1,4 @@
+import { PROSE } from '../lib/prose'
 import { locale, localizedHref, contentLocale } from './site'
 import {
   currentNewsTranslation,
@@ -67,7 +68,7 @@ import { t } from './site'
 export function translateHtml(html: string): string {
   if (contentLocale === 'en') return localizeLinks(html)
   const translated = html.replace(
-    /<(p|h2|h3|figcaption|li)\b([^>]*)>([\s\S]*?)<\/\1>/g,
+    PROSE,
     (whole, tag: string, attrs: string, inner: string) => {
       const replacement = (blocks as Record<string, string>)[inner]
       return replacement ? `<${tag}${attrs}>${replacement}</${tag}>` : whole

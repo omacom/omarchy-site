@@ -95,6 +95,12 @@
     "meta": "",
     "href": "https://www.digitalocean.com/",
     "avatar": "/assets/images/patrons/digitalocean.webp"
+   },
+   {
+    "name": "Alibaba Cloud",
+    "meta": "",
+    "href": "https://www.alibabacloud.com/",
+    "avatar": "/assets/images/patrons/alibaba-cloud.svg"
    }
   ],
   "note": null
@@ -127,6 +133,12 @@
     "meta": "Notion",
     "href": "https://x.com/mschoening",
     "avatar": "/assets/images/patrons/max-schoening.webp"
+   },
+   {
+    "name": "Brian Cartmell",
+    "meta": "Entrepreneur",
+    "href": "https://x.com/briancartmell",
+    "avatar": "/assets/images/patrons/brian-cartmell.webp"
    }
   ],
   "note": null
@@ -147,12 +159,6 @@
     "meta": "",
     "href": "https://37signals.com",
     "avatar": "/assets/images/patrons/37signals.webp"
-   },
-   {
-    "name": "Anthropic",
-    "meta": "",
-    "href": "https://www.anthropic.com",
-    "avatar": "/assets/images/patrons/anthropic.webp"
    },
    {
     "name": "Fireworks",
@@ -177,6 +183,12 @@
     "meta": "",
     "href": "https://openrouter.ai/",
     "avatar": "/assets/images/patrons/openrouter.svg"
+   },
+   {
+    "name": "OrcaRouter",
+    "meta": "",
+    "href": "https://www.orcarouter.ai/",
+    "avatar": "/assets/images/patrons/orcarouter.webp"
    }
   ],
   "note": null

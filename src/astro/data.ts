@@ -10,7 +10,13 @@ import type { CatalogueEntry, Engagement } from '../lib/plugin-filter'
 
 export type ManualChapter = { slug: string; title: string; html: string }
 export type { NewsPost, NewsSummary }
-export type PortedPage = { title: string; html: string }
+export type PortedPage = {
+  title: string
+  html: string
+  seoTitle?: string
+  description?: string
+  presentation?: string
+}
 
 const HEADING_LINK =
   /<h([23])([^>]*)>([\s\S]*?)\s*<a class="manual__heading-link"([^>]*)>#<\/a><\/h\1>/g
@@ -67,7 +73,15 @@ const pages = pagesJson as Record<string, PortedPage>
 
 export function getPortedPage(path: string): PortedPage | null {
   const page = pages[path]
-  return page ? { title: t(page.title), html: translateHtml(page.html) } : null
+  return page
+    ? {
+        ...page,
+        title: t(page.title),
+        seoTitle: page.seoTitle ? t(page.seoTitle) : undefined,
+        description: page.description ? t(page.description) : undefined,
+        html: translateHtml(page.html),
+      }
+    : null
 }
 
 export function getPortedSlugs(): Array<string> {

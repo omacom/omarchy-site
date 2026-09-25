@@ -47,11 +47,11 @@ The token stays in the child process environment and is never written to the rep
 
 To connect the registered domain, create its Cloudflare zone, preserve any existing DNS records, and set the assigned nameservers through the registrar. Once the zone is active, run the same deployment command with `--domain`. It attaches the language’s primary domain from the locale registry, and Cloudflare provisions HTTPS. This is a separate step from deploying the workers.dev preview.
 
-Language publishing is automatic through `translate-news.yml`. Manual deployment remains available for recovery.
+Language and country publishing is automatic through `translate-news.yml`. Before building, the workflow checks the live Worker inventory against the registry so a deployed edition cannot silently lose updates. Manual deployment remains available for recovery.
 
-## One primary address per language
+## Language and country editions
 
-The locale registry defines one public address for each language. The language menu, canonical URLs, Open Graph metadata, alternate-language links and deployment all use that same address. Do not register additional addresses or regional English editions. English has a single global edition at omarchy.org.
+The locale registry defines every deployed language and country edition. Country editions reuse English through `contentLocale: "en"`, while retaining their own domain, formatting locale, flag, and deployment so country-specific themes can be added independently. Keep all deployed editions in this registry: removing one stops its automatic updates without removing the live Worker. The global English edition remains at omarchy.org. Existing `www` domains are listed in `aliases` and preserved during deployment.
 
 The language menu shows colored country flags and preserves the current pathname, query and fragment when the destination has a translation. Otherwise it opens that language’s home page. Labels use native names, and English uses a globe. The `flag` field supplies the two-letter country code when needed. Arabic declares `direction: "rtl"`.
 

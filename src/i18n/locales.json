@@ -231,5 +231,62 @@
     "formatLocale": "nb-NO",
     "ogLocale": "nb_NO",
     "manual": false
+  },
+  "en-NZ": {
+    "name": "English (NZ)",
+    "domain": "https://omarchy.nz",
+    "formatLocale": "en-NZ",
+    "ogLocale": "en_NZ",
+    "manual": false,
+    "contentLocale": "en",
+    "flag": "NZ",
+    "aliases": ["www.omarchy.nz"]
+  },
+  "en-US": {
+    "name": "English (US)",
+    "domain": "https://omarchy.us",
+    "formatLocale": "en-US",
+    "ogLocale": "en_US",
+    "manual": false,
+    "contentLocale": "en",
+    "flag": "US",
+    "aliases": ["www.omarchy.us"]
+  },
+  "en-SG": {
+    "name": "English (SG)",
+    "domain": "https://omarchy.sg",
+    "formatLocale": "en-SG",
+    "ogLocale": "en_SG",
+    "manual": false,
+    "contentLocale": "en",
+    "flag": "SG",
+    "aliases": ["www.omarchy.sg"]
+  },
+  "en-AU": {
+    "name": "English (AU)",
+    "domain": "https://en-au.omarchy.org",
+    "formatLocale": "en-AU",
+    "ogLocale": "en_AU",
+    "manual": false,
+    "contentLocale": "en",
+    "flag": "AU"
+  },
+  "en-NG": {
+    "name": "English (NG)",
+    "domain": "https://en-ng.omarchy.org",
+    "formatLocale": "en-NG",
+    "ogLocale": "en_NG",
+    "manual": false,
+    "contentLocale": "en",
+    "flag": "NG"
+  },
+  "en-ZW": {
+    "name": "English (ZW)",
+    "domain": "https://en-zw.omarchy.org",
+    "formatLocale": "en-ZW",
+    "ogLocale": "en_ZW",
+    "manual": false,
+    "contentLocale": "en",
+    "flag": "ZW"
   }
 }
