@@ -147,6 +147,9 @@ export function MusicMenuControl({
 
 export function MusicControl({ path = '/' }: { path?: string }) {
   const { state, on, shown, untouched } = useMusicState(path)
+  const [vol, setVol] = useState(() => music.volume)
+  const [showVol, setShowVol] = useState(false)
+  const volTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // The progress line, the meter and the readout are driven straight from
   // the track each frame, outside React, so the card never re-renders for
@@ -168,7 +171,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
         const at = music.progress
         if (line.current) line.current.style.transform = `scaleX(${at})`
         if (range.current) range.current.value = String(at * 1000)
-        if (readout.current)
+        if (readout.current && !showVol)
           readout.current.textContent = `${clock(music.time)} / ${clock(music.duration)}`
       }
       music.meter(levels)
@@ -182,7 +185,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
     }
     frame = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(frame)
-  }, [shown])
+  }, [shown, showVol])
 
   /** The range moved, by hand or key: show it at once, and go there. */
   const onScrub = (value: number) => {
@@ -193,6 +196,24 @@ export function MusicControl({ path = '/' }: { path?: string }) {
     music.seek(at * music.duration)
   }
 
+  const onWheelVolume = (e: React.WheelEvent) => {
+    e.preventDefault()
+    const next = Math.max(
+      0,
+      Math.min(
+        1,
+        Math.round((music.volume - Math.sign(e.deltaY) * 0.05) * 100) / 100,
+      ),
+    )
+    music.volume = next
+    setVol(next)
+    if (volTimer.current) clearTimeout(volTimer.current)
+    if (readout.current)
+      readout.current.textContent = `Vol ${Math.round(next * 100)}%`
+    setShowVol(true)
+    volTimer.current = setTimeout(() => setShowVol(false), 1200)
+  }
+
   if (!shown) return null
   const title = TRACK.title.replace(/ \(.*\)$/, '')
 
@@ -200,6 +221,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
     <div
       data-hero-quiet
       data-no-stamp
+      onWheel={onWheelVolume}
       className="group/card pointer-events-auto fixed bottom-5 left-5 z-(--z-dropdown) hidden h-[46px] items-stretch border border-border-subtle bg-bg/85 supports-backdrop-filter:backdrop-blur-sm sm:flex"
     >
       <button
@@ -207,7 +229,11 @@ export function MusicControl({ path = '/' }: { path?: string }) {
         onClick={() => music.toggle()}
         aria-pressed={on}
         aria-label={on ? 'Turn the sound off' : 'Turn the sound on'}
-        title={on ? 'Sound off' : 'Sound on'}
+        title={
+          on
+            ? `Sound off (scroll to adjust volume: ${Math.round(vol * 100)}%)`
+            : 'Sound on'
+        }
         className="relative size-11 shrink-0 self-center border-r border-border-subtle bg-cover bg-center text-white touch-manipulation focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
         style={{ backgroundImage: `url(${TRACK.art})` }}
       >
@@ -225,8 +251,11 @@ export function MusicControl({ path = '/' }: { path?: string }) {
               : 'opacity-100')
           }
         >
-          {on ? (
-            <VolumeIcon className="size-[18px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]" />
+          {on && vol > 0 ? (
+            <VolumeIcon
+              bars={vol > 0.66 ? 3 : vol > 0.33 ? 2 : 1}
+              className="size-[18px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]"
+            />
           ) : (
             <VolumeOffIcon className="size-[18px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]" />
           )}
@@ -237,13 +266,25 @@ export function MusicControl({ path = '/' }: { path?: string }) {
           {state === 'failed' ? 'The sound could not start' : title}
         </span>
         <span className="relative mt-0.5 font-mono text-[12px] text-text-secondary">
-          <span className="transition-opacity duration-150 ease-out group-has-[input:hover]/card:opacity-0 group-has-[input:focus-visible]/card:opacity-0 group-has-[input:active]/card:opacity-0">
+          <span
+            className={
+              'transition-opacity duration-150 ease-out ' +
+              (showVol
+                ? 'opacity-0'
+                : 'group-has-[input:hover]/card:opacity-0 group-has-[input:focus-visible]/card:opacity-0 group-has-[input:active]/card:opacity-0')
+            }
+          >
             {TRACK.artist}
           </span>
           <span
             ref={readout}
             aria-hidden="true"
-            className="absolute inset-0 opacity-0 transition-opacity duration-150 ease-out group-has-[input:hover]/card:opacity-100 group-has-[input:focus-visible]/card:opacity-100 group-has-[input:active]/card:opacity-100"
+            className={
+              'absolute inset-0 transition-opacity duration-150 ease-out ' +
+              (showVol
+                ? 'opacity-100'
+                : 'opacity-0 group-has-[input:hover]/card:opacity-100 group-has-[input:focus-visible]/card:opacity-100 group-has-[input:active]/card:opacity-100')
+            }
           />
         </span>
       </span>
