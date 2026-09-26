@@ -62,6 +62,7 @@ const ogImage = socialImage(path)
     <meta name="twitter:image" content={ogImage.url} />
     <meta name="twitter:image:alt" content={ogImage.alt} />
     <meta name="theme-color" content="#1a1b26" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="300x300" />
     <link rel="icon" href="/brand/omarchy-logo.svg" type="image/svg+xml" data-theme-icon transition:persist="theme-icon" />
     <link rel="canonical" href={url} />
     {Object.entries(locales).filter(([code]) => hasTranslation(code, path)).map(([code, entry]) => (
