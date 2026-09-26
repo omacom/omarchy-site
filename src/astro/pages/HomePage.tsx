@@ -57,12 +57,12 @@ import release from '@/data/version.json'
 const TRY = {
   mac: {
     label: t('Try on Mac'),
-    href: 'https://github.com/omacom/try-omarchy',
+    href: '/try/#mac',
     icon: AppleIcon,
   },
   windows: {
     label: t('Try on Windows'),
-    href: 'https://github.com/omacom/try-omarchy-windows',
+    href: '/try/#windows',
     icon: WindowsIcon,
   },
 } as const
