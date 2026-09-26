@@ -180,3 +180,12 @@ export function portedSeo(
     path: `/${path}`,
   })
 }
+
+export function trySeo() {
+  return seo({
+    title: 'Try Omarchy on Mac and Windows - Omarchy',
+    description:
+      'Explore the Omarchy Linux desktop in a virtual machine on your Mac or Windows PC. Free, open source, and no dual boot required.',
+    path: '/try',
+  })
+}
