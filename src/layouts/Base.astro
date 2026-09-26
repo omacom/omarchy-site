@@ -99,14 +99,19 @@ const ogImage = socialImage(path)
 
       watchBrandDownloads()
       watchOutbound()
-      // Navigation should paint live text, not briefly rasterize it through
-      // the snapshot animation used for palette changes.
       document.addEventListener('astro:before-swap', (event) => {
-        (event as TransitionBeforeSwapEvent).viewTransition.skipTransition()
-      })
-      // Restore the selected palette before the incoming page is painted.
-      document.addEventListener('astro:after-swap', () => {
-        document.documentElement.dataset.theme = readTheme()
+        const swap = event as TransitionBeforeSwapEvent
+        // Navigation should paint live text, not briefly rasterize it through
+        // the snapshot animation used for palette changes.
+        swap.viewTransition.skipTransition()
+        // The palette is stamped on <html> at runtime, so the incoming document
+        // carries no data-theme. Astro rebuilds <html>'s attributes from that
+        // document, dropping the palette for a beat - and every persisted
+        // element with a colour transition tweens through the default one on
+        // the way back. Stamp it on the incoming document to carry it over.
+        if (swap.newDocument) {
+          swap.newDocument.documentElement.dataset.theme = readTheme()
+        }
       })
     </script>
   </body>
