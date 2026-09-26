@@ -3,8 +3,8 @@
 The /try page uses real host captures.
 
 - `public/images/try/mac.webp`: Mac README screenshot at https://github.com/user-attachments/assets/1368a8f5-5099-43e4-8d3b-3d7d7fba0326, linked from https://github.com/omacom/try-omarchy.
-- `public/images/try/windows.mp4`: recorded September 26, 2026 on the maintainer's AMD Windows 11 test laptop, with Try Omarchy running through WHPX and GPU rendering. The 29-second clip shows the terminal, tiled apps, workspaces, and Catppuccin, Everforest, and Tokyo Night themes. It retains the native Windows title bar; the unrelated taskbar is outside the capture. Idle pauses were trimmed without speeding up the footage. Playback is on request; switching platform tabs unmounts the video and stops playback.
-- `public/images/try/windows.webp`: a deliberate frame from the opening terminal view, with no open menu or notification.
+- `public/images/try/windows.mp4`: recorded September 26, 2026 on the maintainer's AMD Windows 11 test laptop, with Try Omarchy running through WHPX and GPU rendering. The 29-second clip opens on the app in a window over the stock Windows 11 desktop, then dissolves to the maximized app with the Windows title bar and taskbar in view. It shows btop beside omarchy.org in Chromium, the theme picker moving from Tokyo Night to Ristretto and then Osaka Jade, and fastfetch in a new terminal. Third-party taskbar pins and desktop icons were hidden for the capture. The opening shot and the main capture are separate real-time takes joined by a half-second dissolve, with no other cuts or speed changes. Playback is on request; switching platform tabs unmounts the video and stops playback.
+- `public/images/try/windows.webp`: the video's first frame, so starting playback does not change the picture.
 
 The Mac screenshot was retrieved September 25, 2026 and compressed to WebP without changing its content. Its app version is unknown. The Windows recording uses the maintainer's development installation, not a fresh stable-release acceptance run. These captures illustrate the experience and do not establish release or feature-parity acceptance.
 

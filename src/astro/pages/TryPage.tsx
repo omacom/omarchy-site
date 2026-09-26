@@ -258,7 +258,7 @@ export function TryPage() {
                 preload="none"
                 poster="/images/try/windows.webp"
                 width="1366"
-                height="720"
+                height="768"
                 className="aspect-[1280/803] w-full border border-border-subtle bg-bg-deep object-contain"
                 aria-label={t('Try Omarchy on Windows demonstration')}
               >
