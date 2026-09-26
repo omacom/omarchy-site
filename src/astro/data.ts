@@ -1,5 +1,9 @@
 import { translateHtml } from '../i18n/content'
-import { t } from '../i18n/site'
+import { t, locale } from '../i18n/site'
+import momentum from '../data/momentum.json'
+import meetups from '../data/meetups.json'
+import { formatFigures } from '../lib/figure-data'
+import { formatMeetups } from '../lib/meetup-data'
 import manualJson from '../data/manual.json'
 import pagesJson from '../data/pages.json'
 import pluginsJson from '../data/plugins.json'
@@ -113,4 +117,12 @@ export function getPluginHighlights(): {
   })
   const top = featured.map((p) => toCatalogueEntry({ ...p, stats: ZERO_STATS }))
   return { top, total: all.length }
+}
+
+export function getFigures() {
+  return formatFigures(momentum, locale.formatLocale)
+}
+
+export function getMeetups() {
+  return formatMeetups(meetups, locale.formatLocale)
 }
