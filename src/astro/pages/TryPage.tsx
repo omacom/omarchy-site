@@ -27,9 +27,7 @@ const platforms = [
     name: t('Try Omarchy for Mac'),
     icon: AppleIcon,
     requirements: t('Apple Silicon · macOS 15+'),
-    description: t(
-      'A native Mac app that brings the Omarchy desktop to Apple Silicon.',
-    ),
+    description: t('Omarchy in a native Mac app, built for Apple Silicon.'),
     features: [
       t('Hardware-accelerated graphics'),
       t('Shared clipboard and an optional shared Mac folder'),
@@ -50,7 +48,7 @@ const platforms = [
     icon: WindowsIcon,
     requirements: t('Windows 10 & 11 · x86_64'),
     description: t(
-      'The Omarchy desktop in a Windows app, with guided setup to get you started.',
+      'Omarchy in a Windows app, with guided setup and GPU acceleration.',
     ),
     features: [
       t('GPU acceleration with a CPU fallback'),
@@ -77,25 +75,25 @@ const benefits = [
   ],
   [
     t('The whole Linux desktop.'),
-    t(
-      'Tile your windows. Find your theme. Install Linux apps. Explore a different way to work.',
-    ),
+    t('Tile your windows. Find your theme. Install Linux apps. Make it yours.'),
   ],
   [
-    t('Your worlds, connected.'),
+    t('Move between desktops.'),
     t(
-      'Shared folders and clipboard integration help you move between Omarchy and your host desktop.',
+      'Copy text and images between desktops. Share a folder with your Mac or Windows PC.',
     ),
   ],
 ]
 const steps = [
   [
-    t('Get the app.'),
+    t('Download the app.'),
     t('Choose the Mac or Windows download for your computer.'),
   ],
   [
-    t('Follow the setup.'),
-    t('The app walks you through preparing your Omarchy environment.'),
+    t('Start Omarchy.'),
+    t(
+      'Open the app and follow the setup. The first launch takes longer while it prepares your Linux desktop.',
+    ),
   ],
   [
     t('Make yourself at home.'),
@@ -114,13 +112,13 @@ const questions = [
   [
     t('Is this the full Omarchy desktop?'),
     t(
-      'Yes. You can explore the desktop, themes, and Linux apps. Host integration and hardware support differ between the Mac and Windows versions. Performance depends on your computer and the app. Video decoding on Mac is currently CPU-only.',
+      'Yes. You get the Omarchy desktop, themes, and Linux apps. Hardware support and host integration differ between Mac and Windows. Performance depends on your computer; video decoding on Mac is currently CPU-only.',
     ),
   ],
   [
     t('Will my Linux files stay between sessions?'),
     t(
-      'Windows keeps your Linux files in its installation folder. On Mac, check the storage mode: persistent environments keep your changes, while disposable environments do not.',
+      'Yes, when using a persistent VM. Windows keeps the Linux disk in the folder you chose during setup. Mac saves changes by default; disposable mode discards them when you close the app.',
     ),
   ],
 ]
@@ -146,7 +144,7 @@ function scrollToDownload(event: React.MouseEvent, id: string) {
 export function TryPage() {
   const [painted, setPainted] = useState(false)
   return (
-    <>
+    <main>
       <section
         data-hero-sentinel
         className="pixel-container relative -mt-(--nav-h) flex min-h-svh flex-col overflow-hidden border-b border-border-subtle pt-(--nav-h)"
@@ -179,7 +177,7 @@ export function TryPage() {
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-text-secondary sm:text-base">
               {t(
-                'All of Omarchy, running in a virtual machine. Try it without repartitioning or dual boot.',
+                'The Omarchy desktop, running in a virtual machine. No repartitioning. No dual boot.',
               )}
             </p>
             <div
@@ -256,16 +254,21 @@ export function TryPage() {
           </TabsContent>
           <TabsContent value="windows">
             <figure>
-              <img
-                src="/images/try/windows.webp"
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster="/images/try/windows.webp"
                 width="1364"
-                height="768"
+                height="766"
                 className="aspect-[1280/803] w-full border border-border-subtle bg-bg-deep object-contain"
-                loading="lazy"
-                alt={t(
-                  'The Omarchy desktop running in a Try Omarchy window on Windows.',
-                )}
-              />
+                aria-label={t('Try Omarchy on Windows demonstration')}
+              >
+                <source src="/images/try/windows.mp4" type="video/mp4" />
+                <a href="/images/try/windows.mp4">
+                  {t('Download the Windows demo')}
+                </a>
+              </video>
               <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-x-4 text-xs text-text-secondary">
                 <span>
                   {t('Omarchy on Windows. Your Windows setup stays in place.')}
@@ -284,7 +287,7 @@ export function TryPage() {
           <SectionHeading
             title={t('The full desktop. In a window.')}
             description={t(
-              'Explore the desktop while keeping your familiar setup close at hand.',
+              'Get to know Omarchy without leaving your current operating system.',
             )}
           />
           <div className="mt-9 grid gap-8 md:grid-cols-3">
@@ -306,7 +309,7 @@ export function TryPage() {
         <div className={wrap}>
           <SectionHeading
             title={t('Try Omarchy on your computer')}
-            description={t('Choose your computer. We’ll take you from there.')}
+            description={t('Download the app for your Mac or Windows PC.')}
           />
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {platforms.map(
@@ -388,7 +391,7 @@ export function TryPage() {
       </section>
       <section className={section}>
         <div className={wrap}>
-          <SectionHeading title={t('From curious to exploring.')} />
+          <SectionHeading title={t('Up and running.')} />
           <ol className="mt-9 grid gap-8 md:grid-cols-3">
             {steps.map(([title, body], index) => (
               <li key={title}>
@@ -431,10 +434,13 @@ export function TryPage() {
               </summary>
               <p className="mt-4 text-sm leading-relaxed text-text-secondary">
                 {t(
-                  'Ready for a dedicated Linux machine? Start with the installation guide and hardware recommendations.',
+                  'The installation guide covers hardware, setup, and running Omarchy directly on your computer.',
                 )}
               </p>
-              <a className={link} href="/manual/getting-started/">
+              <a
+                className={link}
+                href="https://omarchy.org/manual/getting-started/"
+              >
                 {t('Full installation guide')}
                 <ArrowUpRightIcon className="size-4" />
               </a>
@@ -442,6 +448,6 @@ export function TryPage() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   )
 }
