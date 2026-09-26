@@ -40,7 +40,14 @@ const platforms = [
     label: t('Download for Mac'),
     source: MAC,
     guide: `${MAC}#quick-start`,
-    guideLabel: t('Mac setup and requirements'),
+    guideLabel: t('Mac quick start'),
+    quickStart: [
+      t('Download TryOmarchy.dmg and open it.'),
+      t('Drag Try Omarchy to Applications, then open it.'),
+      t(
+        'Start Omarchy and follow the account setup. The first launch takes longer while it prepares Linux.',
+      ),
+    ],
   },
   {
     id: 'windows',
@@ -61,8 +68,17 @@ const platforms = [
     download: `${WINDOWS}/releases/latest/download/TryOmarchy.exe`,
     label: t('Download for Windows'),
     source: WINDOWS,
-    guide: `${WINDOWS}/blob/master/docs/COMPATIBILITY.md`,
-    guideLabel: t('Windows setup and requirements'),
+    guide: `${WINDOWS}#try-it`,
+    guideLabel: t('Windows quick start'),
+    quickStart: [
+      t('Download TryOmarchy.exe and open it.'),
+      t(
+        'Choose where to store Omarchy. If prompted, allow Windows Hypervisor Platform, restart, and reopen the app.',
+      ),
+      t(
+        'Let setup download Linux, then choose an instant trial account or create your own.',
+      ),
+    ],
   },
 ]
 
@@ -81,24 +97,6 @@ const benefits = [
     t('Move between desktops.'),
     t(
       'Copy text and images between desktops. Share a folder with your Mac or Windows PC.',
-    ),
-  ],
-]
-const steps = [
-  [
-    t('Download the app.'),
-    t('Choose the Mac or Windows download for your computer.'),
-  ],
-  [
-    t('Start Omarchy.'),
-    t(
-      'Open the app and follow the setup. The first launch takes longer while it prepares your Linux desktop.',
-    ),
-  ],
-  [
-    t('Make yourself at home.'),
-    t(
-      'Open a terminal, try the shortcuts, and see where your curiosity takes you.',
     ),
   ],
 ]
@@ -246,7 +244,7 @@ export function TryPage() {
                   {t('Omarchy on macOS. Your Mac is still your Mac.')}
                 </span>
                 <a className={link} href={MAC}>
-                  {t('Screenshot source')}
+                  {t('Mac on GitHub')}
                   <ArrowUpRightIcon className="size-4" />
                 </a>
               </figcaption>
@@ -274,7 +272,7 @@ export function TryPage() {
                   {t('Omarchy on Windows. Your Windows setup stays in place.')}
                 </span>
                 <a className={link} href={WINDOWS}>
-                  {t('Windows project')}
+                  {t('Windows on GitHub')}
                   <ArrowUpRightIcon className="size-4" />
                 </a>
               </figcaption>
@@ -324,7 +322,6 @@ export function TryPage() {
                 download,
                 label,
                 source,
-                guide,
                 guideLabel,
               }) => (
                 <article
@@ -370,7 +367,7 @@ export function TryPage() {
                   </Button>
                   <a
                     className={`${link} mt-3 justify-center text-center`}
-                    href={guide}
+                    href={`#${id}-quick-start`}
                   >
                     {guideLabel}
                     <ArrowUpRightIcon className="size-4 shrink-0" />
@@ -391,23 +388,46 @@ export function TryPage() {
       </section>
       <section className={section}>
         <div className={wrap}>
-          <SectionHeading title={t('Up and running.')} />
-          <ol className="mt-9 grid gap-8 md:grid-cols-3">
-            {steps.map(([title, body], index) => (
-              <li key={title}>
-                <p
-                  aria-hidden="true"
-                  className="mb-5 border-b border-border-subtle pb-3 font-mono text-sm text-brand"
+          <SectionHeading
+            title={t('Up and running.')}
+            description={t('Three steps to your Linux desktop.')}
+          />
+          <div className="mt-9 grid gap-10 md:grid-cols-2">
+            {platforms.map(
+              ({ id, icon: Icon, guideLabel, quickStart, guide }) => (
+                <article
+                  key={id}
+                  id={`${id}-quick-start`}
+                  className="min-w-0 scroll-mt-24"
                 >
-                  0{index + 1}
-                </p>
-                <h3 className="text-base font-semibold text-text">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                  {body}
-                </p>
-              </li>
-            ))}
-          </ol>
+                  <h3 className="flex items-center gap-3 border-b border-border-subtle pb-4 text-lg font-semibold text-text">
+                    <Icon className="size-5 text-brand" />
+                    {guideLabel}
+                  </h3>
+                  <ol className="mt-5 space-y-5">
+                    {quickStart.map((step, index) => (
+                      <li
+                        key={step}
+                        className="flex gap-4 text-sm leading-relaxed text-text-secondary"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="font-mono text-brand"
+                        >
+                          0{index + 1}
+                        </span>
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                  <a className={`${link} mt-4`} href={guide}>
+                    {t('Full setup instructions')}
+                    <ArrowUpRightIcon className="size-4" />
+                  </a>
+                </article>
+              ),
+            )}
+          </div>
         </div>
       </section>
       <section className={`${section} bg-surface`}>
