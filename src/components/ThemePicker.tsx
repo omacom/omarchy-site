@@ -1,14 +1,8 @@
 import { t } from '@/i18n/site'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
+import { ChevronLeftIcon, ChevronRightIcon } from '@/components/icons'
 import {
-  BrushIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CrossIcon,
-} from '@/components/icons'
-import {
-  HINT_KEY,
   OPEN_PICKER_EVENT,
   PICKER_STATE_EVENT,
   SITE_THEMES,
@@ -45,21 +39,11 @@ export function ThemePicker() {
   const portrait = useIsNarrow()
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(0)
-  const [hint, setHint] = useState(false)
   const dialogRef = useRef<HTMLDivElement>(null)
   const restoreFocus = useRef<HTMLElement | null>(null)
   /** Whether the trigger was wearing a focus ring when it opened the picker. */
   const restoreRing = useRef(false)
   const indexRef = useRef(0)
-
-  const markHintSeen = useCallback(() => {
-    setHint(false)
-    try {
-      localStorage.setItem(HINT_KEY, 'true')
-    } catch {
-      /* storage unavailable */
-    }
-  }, [])
 
   const openPicker = useCallback(() => {
     const current = readTheme()
@@ -71,8 +55,7 @@ export function ThemePicker() {
     restoreFocus.current = trigger
     restoreRing.current = trigger?.matches(':focus-visible') ?? false
     setOpen(true)
-    markHintSeen()
-  }, [markHintSeen])
+  }, [])
 
   const close = useCallback(() => {
     setOpen(false)
@@ -193,19 +176,6 @@ export function ThemePicker() {
   }, [open, index, warmAround])
 
   useEffect(() => {
-    let seen = false
-    try {
-      seen = localStorage.getItem(HINT_KEY) === 'true'
-    } catch {
-      /* storage unavailable: show nothing rather than nag every visit */
-      seen = true
-    }
-    if (seen) return
-    const timer = setTimeout(() => setHint(true), 1600)
-    return () => clearTimeout(timer)
-  }, [])
-
-  useEffect(() => {
     if (!open) return
     dialogRef.current?.focus()
     const onKeyDown = (event: KeyboardEvent) => {
@@ -228,43 +198,7 @@ export function ThemePicker() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [open, step, close, choose])
 
-  if (!open) {
-    if (!hint) return null
-    return (
-      <div
-        role="status"
-        className="notice-in fixed top-[104px] right-4 z-(--z-dropdown) w-72 sm:top-[68px]"
-      >
-        <div className="ring-elevation relative bg-surface">
-          <button
-            type="button"
-            onClick={openPicker}
-            className="flex w-full items-start gap-3 p-4 pr-10 text-left transition-colors duration-150 ease-out hover:bg-surface-2"
-          >
-            <BrushIcon className="mt-0.5 size-5 shrink-0 text-brand" />
-            <span>
-              <span className="block font-sans text-sm font-medium text-text">
-                {t('Change the theme')}
-              </span>
-              <span className="mt-1 block text-[13px] leading-relaxed text-text-secondary">
-                {t(
-                  'Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.',
-                )}
-              </span>
-            </span>
-          </button>
-          <button
-            type="button"
-            aria-label={t('Dismiss')}
-            onClick={markHintSeen}
-            className="absolute top-2 right-2 flex size-8 items-center justify-center text-text-muted transition-colors duration-150 ease-out hover:text-text"
-          >
-            <CrossIcon className="size-4" />
-          </button>
-        </div>
-      </div>
-    )
-  }
+  if (!open) return null
 
   return (
     <>
