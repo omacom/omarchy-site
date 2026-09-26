@@ -149,13 +149,13 @@ export function TryPage() {
     <>
       <section
         data-hero-sentinel
-        className="pixel-container relative -mt-(--nav-h) overflow-hidden border-b border-border-subtle pt-(--nav-h)"
+        className="pixel-container relative -mt-(--nav-h) flex min-h-svh flex-col overflow-hidden border-b border-border-subtle pt-(--nav-h)"
         style={{ background: 'var(--t-field-bg)' }}
       >
         <HeroShader onPainted={() => setPainted(true)} />
         <HeroNavGhost />
         <div
-          className={`${wrap} pointer-events-none relative flex flex-col items-center py-12 text-center sm:py-16`}
+          className={`${wrap} pointer-events-none relative flex w-full flex-1 flex-col items-center justify-center py-12 text-center sm:py-16`}
         >
           <p
             data-hero-quiet
@@ -169,7 +169,10 @@ export function TryPage() {
             background={WORDMARK_BANDS}
           />
           <div data-hero-quiet className="pointer-events-auto mt-8 max-w-3xl">
-            <h1 className="font-mono text-2xl leading-snug font-semibold tracking-tight text-text sm:text-3xl">
+            <h1
+              style={{ fontFamily: 'var(--font-mono)' }}
+              className="text-2xl leading-snug font-medium tracking-tight text-text sm:text-3xl"
+            >
               {t('A taste of Omarchy.')}
               <br />
               {t('On your Mac or Windows PC.')}
