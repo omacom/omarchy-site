@@ -79,7 +79,7 @@ export function collectSources(root = process.cwd()) {
           if (
             ts.isCallExpression(node) &&
             ts.isIdentifier(node.expression) &&
-            node.expression.text === 't' &&
+            ['t', 'tPlural'].includes(node.expression.text) &&
             literal(node.arguments[0])
           )
             add(node.arguments[0].text)
@@ -133,6 +133,9 @@ export function collectSources(root = process.cwd()) {
   }
   walk(path.join(root, 'src'))
   add(readJson('src/data/banner.json', null)?.html)
+  for (const period of readJson('src/data/momentum.json', {}).downloads
+    ?.periods ?? [])
+    add(period.label)
   for (const team of readJson('src/data/teams.json', [])) {
     add(team.name?.replace(/^Omarchy /, ''))
     add(team.description)

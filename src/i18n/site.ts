@@ -1,5 +1,6 @@
 import catalogue from './current-messages.ts'
 import registry from './locales.json' with { type: 'json' }
+import { translatePlural } from '../lib/plural.ts'
 
 export type Locale = {
   name: string
@@ -34,6 +35,11 @@ export const contentLocale = locale.contentLocale ?? language
 /** English is the source copy; each language keeps its own reviewed catalogue. */
 export function t(english: string): string {
   return catalogue[english] ?? english
+}
+
+/** Optional CLDR forms, such as `contributors [few]`, fall back to the base copy. */
+export function tPlural(english: string, count: number): string {
+  return translatePlural(catalogue, locale.formatLocale, english, count)
 }
 
 /** A locale's flag, from its country code or its domain's suffix; a globe where

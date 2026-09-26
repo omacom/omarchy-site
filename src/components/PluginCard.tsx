@@ -1,4 +1,4 @@
-import { t } from '@/i18n/site'
+import { t, tPlural, locale } from '@/i18n/site'
 import { HeartIcon, StarIcon, VerifiedIcon } from '@/components/icons'
 import { pluginUrl } from '@/lib/plugins'
 import type { CatalogueEntry } from '@/lib/plugins'
@@ -65,15 +65,19 @@ export function PluginCard({ plugin }: { plugin: CatalogueEntry }) {
             {plugin.stats.hearts > 0 ? (
               <span className="flex items-center gap-1">
                 <HeartIcon className="size-3" />
-                {plugin.stats.hearts.toLocaleString('en-US')}
-                <span className="sr-only">{t('hearts')}</span>
+                {plugin.stats.hearts.toLocaleString(locale.formatLocale)}
+                <span className="sr-only">
+                  {tPlural('hearts', plugin.stats.hearts)}
+                </span>
               </span>
             ) : null}
             {plugin.stars > 0 ? (
               <span className="flex items-center gap-1">
                 <StarIcon className="size-3" />
-                {plugin.stars.toLocaleString('en-US')}
-                <span className="sr-only">{t('stars')}</span>
+                {plugin.stars.toLocaleString(locale.formatLocale)}
+                <span className="sr-only">
+                  {tPlural('stars', plugin.stars)}
+                </span>
               </span>
             ) : null}
           </span>
