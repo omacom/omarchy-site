@@ -10,6 +10,8 @@ All bundled fonts are licensed under the [SIL Open Font License](OFL.txt).
 See [copyright notices](COPYRIGHT.txt) for the original authors.
 
 Normal builds use the checked-in subsets and need no installed system fonts.
+Romanian uses a separate Noto Sans subset for its comma-below diacritics, leaving
+the existing Latin subset unchanged.
 When translations introduce new characters, the renderer fails with a missing
 glyph error. Refresh the subsets using Python with `fonttools[woff]` installed
 and the Noto fonts in `/usr/share/fonts/noto/` and `/usr/share/fonts/noto-cjk/`
