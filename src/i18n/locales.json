@@ -232,6 +232,15 @@
     "ogLocale": "nb_NO",
     "manual": false
   },
+  "azb": {
+    "name": "آذربایجان تۆرکجه‌سی",
+    "domain": "https://azb.omarchy.org",
+    "formatLocale": "azb",
+    "ogLocale": "azb_IR",
+    "manual": false,
+    "direction": "rtl",
+    "flag": "AZ"
+  },
   "en-NZ": {
     "name": "English (NZ)",
     "domain": "https://omarchy.nz",

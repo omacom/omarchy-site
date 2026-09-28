@@ -23,3 +23,7 @@ npm run build:social
 Commit the updated font subsets, manifest, and cards together. New scripts may
 need a font mapping in `scripts/prepare-social-fonts.py`. Keep copyright notices
 current when adding fonts.
+
+The South Azerbaijani (azb) subset comes from the checked-in `Xaqan-Code.ttf` at
+`assets/fonts/Xaqan-Code.ttf` instead of a Noto source font; the prepare script subsets it the
+same way and keeps its Arabic-script shaping tables.

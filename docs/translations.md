@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 31 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each of the 32 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
 
 ## Build and preview
 
@@ -57,39 +57,40 @@ The language menu shows colored country flags and preserves the current pathname
 
 Cloudflare custom domains handle routing and TLS directly. Registered national domains use their assigned Cloudflare nameservers; language subdomains use the omarchy.org zone. Verify HTTPS and the page language before publishing a new primary address.
 
-| Language         | Primary address                          |
-| ---------------- | ---------------------------------------- |
-| English          | [omarchy.org](https://omarchy.org)       |
-| Dansk            | [omarchy.dk](https://omarchy.dk)         |
-| العربية          | [omarchy.ae](https://omarchy.ae)         |
-| Suomi            | [omarchy.fi](https://omarchy.fi)         |
-| Français         | [omarchy.fr](https://omarchy.fr)         |
-| Ελληνικά         | [omarchy.gr](https://omarchy.gr)         |
-| Magyar           | [omarchy.hu](https://omarchy.hu)         |
-| हिन्दी           | [omarchy.in](https://omarchy.in)         |
-| Íslenska         | [omarchy.is](https://omarchy.is)         |
-| 日本語           | [omarchy.jp](https://omarchy.jp)         |
-| 한국어           | [omarchy.kr](https://omarchy.kr)         |
-| Español (México) | [omarchy.mx](https://omarchy.mx)         |
-| Filipino         | [omarchy.ph](https://omarchy.ph)         |
-| Português        | [omarchy.pt](https://omarchy.pt)         |
-| Svenska          | [omarchy.se](https://omarchy.se)         |
-| Türkçe           | [omarchy.tr](https://omarchy.tr)         |
-| Tiếng Việt       | [vi.omarchy.org](https://vi.omarchy.org) |
-| اردو             | [ur.omarchy.org](https://ur.omarchy.org) |
-| বাংলা            | [bn.omarchy.org](https://bn.omarchy.org) |
-| Català           | [ca.omarchy.org](https://ca.omarchy.org) |
-| සිංහල            | [si.omarchy.org](https://si.omarchy.org) |
-| தமிழ்            | [ta.omarchy.org](https://ta.omarchy.org) |
-| ไทย              | [th.omarchy.org](https://th.omarchy.org) |
-| Oʻzbekcha        | [uz.omarchy.org](https://uz.omarchy.org) |
-| Italiano         | [it.omarchy.org](https://it.omarchy.org) |
-| 简体中文         | [zh.omarchy.org](https://zh.omarchy.org) |
-| Polski           | [pl.omarchy.org](https://pl.omarchy.org) |
-| Lietuvių         | [lt.omarchy.org](https://lt.omarchy.org) |
-| Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
-| Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
-| Norsk            | [omarchy.no](https://omarchy.no)         |
+| Language            | Primary address                            |
+| ------------------- | ------------------------------------------ |
+| English             | [omarchy.org](https://omarchy.org)         |
+| Dansk               | [omarchy.dk](https://omarchy.dk)           |
+| العربية             | [omarchy.ae](https://omarchy.ae)           |
+| Suomi               | [omarchy.fi](https://omarchy.fi)           |
+| Français            | [omarchy.fr](https://omarchy.fr)           |
+| Ελληνικά            | [omarchy.gr](https://omarchy.gr)           |
+| Magyar              | [omarchy.hu](https://omarchy.hu)           |
+| हिन्दी              | [omarchy.in](https://omarchy.in)           |
+| Íslenska            | [omarchy.is](https://omarchy.is)           |
+| 日本語              | [omarchy.jp](https://omarchy.jp)           |
+| 한국어              | [omarchy.kr](https://omarchy.kr)           |
+| Español (México)    | [omarchy.mx](https://omarchy.mx)           |
+| Filipino            | [omarchy.ph](https://omarchy.ph)           |
+| Português           | [omarchy.pt](https://omarchy.pt)           |
+| Svenska             | [omarchy.se](https://omarchy.se)           |
+| Türkçe              | [omarchy.tr](https://omarchy.tr)           |
+| Tiếng Việt          | [vi.omarchy.org](https://vi.omarchy.org)   |
+| اردو                | [ur.omarchy.org](https://ur.omarchy.org)   |
+| বাংলা               | [bn.omarchy.org](https://bn.omarchy.org)   |
+| Català              | [ca.omarchy.org](https://ca.omarchy.org)   |
+| සිංහල               | [si.omarchy.org](https://si.omarchy.org)   |
+| தமிழ்               | [ta.omarchy.org](https://ta.omarchy.org)   |
+| ไทย                 | [th.omarchy.org](https://th.omarchy.org)   |
+| Oʻzbekcha           | [uz.omarchy.org](https://uz.omarchy.org)   |
+| Italiano            | [it.omarchy.org](https://it.omarchy.org)   |
+| 简体中文            | [zh.omarchy.org](https://zh.omarchy.org)   |
+| Polski              | [pl.omarchy.org](https://pl.omarchy.org)   |
+| Lietuvių            | [lt.omarchy.org](https://lt.omarchy.org)   |
+| Gaeilge             | [ga.omarchy.org](https://ga.omarchy.org)   |
+| Nederlands          | [nl.omarchy.org](https://nl.omarchy.org)   |
+| Norsk               | [omarchy.no](https://omarchy.no)           |
+| آذربایجان تۆرکجه‌سی | [azb.omarchy.org](https://azb.omarchy.org) |
 
 ## Pointing a new domain to a language site
 
