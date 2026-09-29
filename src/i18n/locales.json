@@ -98,6 +98,14 @@
     "ogLocale": "pt_PT",
     "manual": false
   },
+  "pt-BR": {
+    "name": "Português (Brasil)",
+    "domain": "https://pt-br.omarchy.org",
+    "formatLocale": "pt-BR",
+    "ogLocale": "pt_BR",
+    "manual": false,
+    "flag": "BR"
+  },
   "sv": {
     "name": "Svenska",
     "domain": "https://omarchy.se",
