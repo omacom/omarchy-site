@@ -84,6 +84,14 @@
     "ogLocale": "es_MX",
     "manual": false
   },
+  "es-PE": {
+    "name": "Español (Perú)",
+    "domain": "https://omarchy.pe",
+    "formatLocale": "es-PE",
+    "ogLocale": "es_PE",
+    "manual": false,
+    "flag": "PE"
+  },
   "fil": {
     "name": "Filipino",
     "domain": "https://omarchy.ph",
