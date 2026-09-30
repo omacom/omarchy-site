@@ -1,4 +1,4 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { SectionActions, SectionHeading } from '@/components/SectionHeading'
@@ -6,10 +6,16 @@ import { MeetupCover } from '@/components/MeetupCover'
 import { RailBar, useRail } from '@/components/Rail'
 import { Button } from '@/components/ui/button'
 import { ChevronLeftIcon, ChevronRightIcon } from '@/components/icons'
-import meetups from '@/data/meetups.json'
+import type { MeetupsData } from '@/lib/meetup-data'
 import { cn } from '@/lib/utils'
 
-export function MeetupShowcase({ action }: { action?: ReactNode }) {
+export function MeetupShowcase({
+  data: meetups,
+  action,
+}: {
+  data: MeetupsData
+  action?: ReactNode
+}) {
   // Keep the first render identical to the built page, then drop past events
   // using the visitor's current time when the page opens.
   const [now, setNow] = useState(() =>
@@ -119,14 +125,7 @@ export function MeetupShowcase({ action }: { action?: ReactNode }) {
                 </div>
               )}
               <p className="mt-3 font-mono text-xs text-text-muted">
-                <time dateTime={event.start}>
-                  {new Intl.DateTimeFormat(locale.formatLocale, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                    timeZone: event.timezone || 'UTC',
-                  }).format(new Date(event.start))}
-                </time>
+                <time dateTime={event.start}>{event.fullDate}</time>
                 {event.city ? ` · ${event.city}` : ''}
               </p>
               <h3 className="mt-1 line-clamp-2 text-lg font-medium text-text group-hover:text-brand">

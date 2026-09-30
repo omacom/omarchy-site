@@ -51,10 +51,11 @@ for code in codes:
         assert page.meta.get('og:url') == domain + path, (code, path, 'og:url')
         assert page.meta.get('og:locale') == locale['ogLocale'], (code, path, 'og:locale')
         for other, destination in registry.items():
-            assert any(link.get('hreflang') == other and link.get('href') == destination['domain'] + path for link in page.links), (code, path, 'alternate', other)
+            linked = any(link.get('hreflang') == other and link.get('href') == destination['domain'] + path for link in page.links)
+            assert linked == destination.get('published', True), (code, path, 'alternate', other)
         for destination in registry.values():
             navigation = destination['domain']
-            assert navigation + path in page.anchors, (code, path, 'footer language destination', navigation)
+            assert (navigation + path in page.anchors) == destination.get('published', True), (code, path, 'footer language destination', navigation)
         if not locale['manual']:
             assert not any(href == '/manual' or href.startswith(('/manual/', '/manual#', '/manual?')) for href in page.anchors), (code, path, 'local manual link')
     feed = ET.parse(output / 'news/rss.xml').getroot().find('channel')

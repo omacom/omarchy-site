@@ -7,6 +7,7 @@ export type Locale = {
   formatLocale: string
   ogLocale: string
   manual: boolean
+  published?: boolean
   aliases?: string[]
   contentLocale?: string
   direction?: 'ltr' | 'rtl'
@@ -24,11 +25,11 @@ export const siteUrl = locale.domain
  * the languages arrived, which reads as no order at all.
  */
 const byName = new Intl.Collator('en').compare
-export const sortedLocales: Array<[string, Locale]> = Object.entries(
-  locales,
-).sort(([a, la], [b, lb]) =>
-  a === 'en' ? -1 : b === 'en' ? 1 : byName(la.name, lb.name),
-)
+export const sortedLocales: Array<[string, Locale]> = Object.entries(locales)
+  .filter(([, entry]) => entry.published !== false)
+  .sort(([a, la], [b, lb]) =>
+    a === 'en' ? -1 : b === 'en' ? 1 : byName(la.name, lb.name),
+  )
 export const contentLocale = locale.contentLocale ?? language
 
 /** English is the source copy; each language keeps its own reviewed catalogue. */
@@ -55,6 +56,7 @@ export function tCountries(meta: string): string {
 export function hasTranslation(code: string, path: string): boolean {
   return (
     Boolean(locales[code]) &&
+    locales[code].published !== false &&
     (!path.startsWith('/manual') || locales[code].manual)
   )
 }

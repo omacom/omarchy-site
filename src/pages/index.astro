@@ -1,12 +1,12 @@
 ---
 import Base from '../layouts/Base.astro'
 import { HomePage } from '@/astro/pages/HomePage'
-import { getNewsIndex, getPluginHighlights } from '../astro/data'
+import { getNewsIndex, getPluginHighlights, getFigures, getMeetups } from '../astro/data'
 import { headProps } from '../astro/head'
 import { homeSeo } from '../astro/page-seo'
 
 const [highlights, news] = await Promise.all([getPluginHighlights(), getNewsIndex()])
-const data = { ...highlights, news }
+const data = { ...highlights, news, figures: getFigures(), meetups: getMeetups() }
 const head = headProps(homeSeo(), '/')
 ---
 <Base {...head}>
