@@ -64,7 +64,9 @@ const TRY = {
   },
   windows: {
     label: t('Try on Windows'),
-    href: 'https://github.com/omacom/try-omarchy-windows',
+    // GitHub answers this with Content-Disposition: attachment, so the click
+    // saves the launcher. The asset name has been TryOmarchy.exe since v0.1.0.
+    href: 'https://github.com/omacom/try-omarchy-windows/releases/latest/download/TryOmarchy.exe',
     icon: WindowsIcon,
   },
 } as const
@@ -620,11 +622,7 @@ export function HomePage({ data }: { data: HomeData }) {
                       >
                         <Mark data-icon="inline-start" />
                         {TRY[key].label}
-                        {key === 'mac' ? (
-                          <DownloadIcon data-icon="inline-end" />
-                        ) : (
-                          <ArrowUpRightIcon data-icon="inline-end" />
-                        )}
+                        <DownloadIcon data-icon="inline-end" />
                       </Button>
                     )
                   })}
