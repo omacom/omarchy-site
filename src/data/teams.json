@@ -57,6 +57,12 @@
     "meta": "Netherlands",
     "href": "https://x.com/emirbeganovic",
     "avatar": "/assets/images/team/emir-beganovic.webp"
+   },
+   {
+    "name": "ThePrimeagen",
+    "meta": "USA",
+    "href": "https://x.com/ThePrimeagen",
+    "avatar": "/assets/images/team/theprimeagen.webp"
    }
   ],
   "note": null
@@ -74,7 +80,7 @@
    },
    {
     "name": "Mehmet \u0130nce",
-    "meta": "UK/T\u00fcrkiye",
+    "meta": "UK",
     "href": "https://x.com/mdisec",
     "avatar": "/assets/images/team/mehmet-ince.webp"
    },
@@ -95,6 +101,12 @@
     "meta": "Germany",
     "href": "https://x.com/bastidotnet",
     "avatar": "/assets/images/team/sebastian-stange.webp"
+   },
+   {
+    "name": "Afonso Oliveira",
+    "meta": "Portugal",
+    "href": "https://x.com/AFOliveira__",
+    "avatar": "/assets/images/team/afonso-oliveira.png"
    }
   ],
   "note": {
