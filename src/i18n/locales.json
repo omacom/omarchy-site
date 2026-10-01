@@ -232,6 +232,13 @@
     "ogLocale": "nb_NO",
     "manual": false
   },
+  "bg": {
+    "name": "Български",
+    "domain": "https://omarchy.bg",
+    "formatLocale": "bg-BG",
+    "ogLocale": "bg_BG",
+    "manual": false
+  },
   "en-NZ": {
     "name": "English (NZ)",
     "domain": "https://omarchy.nz",

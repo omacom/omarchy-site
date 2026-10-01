@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 31 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each of the 32 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
 
 ## Build and preview
 
@@ -90,6 +90,7 @@ Cloudflare custom domains handle routing and TLS directly. Registered national d
 | Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
 | Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
 | Norsk            | [omarchy.no](https://omarchy.no)         |
+| Български        | [omarchy.bg](https://omarchy.bg)         |
 
 ## Pointing a new domain to a language site
 
