@@ -1,0 +1,41 @@
+<p>
+  Kita seharusnya memiliki tim yang bertanggung jawab atas setiap platform utama, dan Qualcomm Snapdragon tentu layak mendapatkannya! Pekan lalu, kami memperkenalkan <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> untuk hardware Apple. Hari ini, kami meresmikan <a href="/teams/#dragon">Omarchy Dragon</a>: tim kami yang bekerja untuk membuat Omarchy berjalan dengan indah di komputer Snapdragon.
+</p>
+
+<p>
+  Tujuannya adalah menjadikan laptop tipis dan ringan ini sebagai mesin Linux harian yang andal. Membuat desktop bisa boot hanyalah langkah awal. Membuat mesin bisa sleep, bangun kembali, memutar video secara efisien, memperbarui firmware, dan bertahan sepanjang hari kerja adalah yang menjadikannya komputer yang bisa diandalkan.
+</p>
+
+<p>Lima orang sudah mengerjakan berbagai bagiannya:</p>
+
+<p>
+  <strong>Jim Martin</strong> (<a href="https://github.com/jdvmi00">GitHub</a>) sedang membawa Linux ke Surface Laptop 8 dengan Snapdragon X2 Elite. Ia sebelumnya mengerjakan Omarchy untuk DGX Spark dan sudah berkontribusi pada perbaikan graphical disk unlock untuk installer ARM. Untuk Dragon, fokusnya adalah dukungan Surface dan X2 Elite, menguji pemasangan dan recovery pada hardware nyata, serta memasukkan perbaikan ARM yang berguna ke proyek-proyek Omarchy bersama.
+</p>
+
+<p>
+  <strong>Birk Skyum</strong> (<a href="https://x.com/BirkSkyum">X</a>) adalah engineer geoinformatika dan grafis sekaligus salah satu pendiri MapLibre. Mesinnya adalah Lenovo Yoga Slim 7x dengan Snapdragon X Elite. Ia sudah mengirim perbaikan upstream ke Arch Linux ARM, mengajukan patch ke libcamera, PipeWire, dan systemd, serta mengerjakan patch kernel untuk pemantauan kipas dan suhu. Sekarang ia sedang meneliti daya tahan baterai, sleep yang andal, virtualisasi KVM, video yang dipercepat hardware, pembaruan BIOS dari Linux, dan performa USB4. Ia juga berkomunikasi dengan Lenovo untuk meningkatkan dukungan firmware bagi Linux.
+</p>
+
+<p>
+  <strong>Matt Gilg</strong> (<a href="https://github.com/gilgm12">GitHub</a>) sudah berhasil menjalankan desktop Omarchy lengkap dengan Hyprland di Snapdragon X Yoga dan DGX Spark. Ia membangun dan meng-host package aarch64 yang dibutuhkan sebelum kemudian beralih ke Omarchy Package Repository. Matt menjalankan SignalRGB dan membawa pengalaman dalam kompatibilitas hardware lintas vendor, embedded system, dan pekerjaan Linux low-level. Ia juga sedang membawa Omarchy ke OmniBook X16 dengan Snapdragon X2 Elite, dengan minat khusus pada gaming dan membantu lebih banyak orang menemukan jalan keluar dari Windows.
+</p>
+
+<p>
+  <strong>Bob Prendergast</strong> (<a href="https://github.com/bprendie">GitHub</a>) adalah solution architect dan veteran Linux yang membangun <a href="https://github.com/bprendie/omarchy-snapdragon">setup Omarchy Snapdragon</a> miliknya sendiri menggunakan agen dan kernel Ubuntu. Ia menggunakan dengan HP EliteBook 14 G1q dan Lenovo ThinkPad T14s Gen 6. Lebih banyak mesin, lebih banyak pengujian, dan lebih banyak pekerjaan praktis yang dibutuhkan untuk mengubah platform yang menjanjikan menjadi sesuatu yang benar-benar bisa dipasang dan digunakan orang.
+</p>
+
+<p>
+  <strong>Miguel Cruz</strong> (<a href="https://x.com/acelogic_">X</a>) sudah menjadi bagian dari Omarchy M dan membawa pengalamannya dalam boot Apple Silicon serta kompatibilitas hardware ke sisi Qualcomm. Latar belakangnya mencakup internal OS, reverse engineering, dan embedded system, dengan kontribusi ke Linux, QEMU, dan Virtio. Ia bergabung dengan upaya ini menggunakan ASUS Zenbook A16 bertenaga Snapdragon X2 Elite Extreme, dengan fokus pada boot dan bring-up firmware, masalah driver (terutama GPU), serta pengujian perbaikan pada hardware nyata.
+</p>
+
+<p>
+  Ada juga tumpang tindih yang berguna dengan pekerjaan ARM kami yang lain juga. Package, peningkatan installer, dan perbaikan yang dikembangkan untuk satu mesin bisa membantu mesin lainnya. Jim dan Matt juga sama-sama tertarik memperluas pekerjaan ini ke Raspberry Pi dan platform ARM lainnya.
+</p>
+
+<p>
+  Saya juga sedang berupaya membangun jalur komunikasi langsung dengan Qualcomm. Seorang engineer di sana yang mengerjakan kompatibilitas Linux sudah menghubungi kami. Mari kita lihat apakah upaya ini bisa mendapatkan dukungan yang lebih serius.
+</p>
+
+<p>
+  Ini masih merupakan pekerjaan yang sedang berjalan, dengan kompatibilitas yang ditangani satu mesin demi satu mesin. Namun kini kami sudah memiliki tim yang bertanggung jawab atasnya, menguji di hardware nyata, dan mendorong perbaikan ke upstream. Selamat datang, Jim, Birk, Matt, Bob, dan Miguel. Mari bawa Linux yang indah, menyenangkan &amp; agentik ke Snapdragon!
+</p>
