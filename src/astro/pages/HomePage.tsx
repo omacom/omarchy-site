@@ -1,6 +1,11 @@
 import { t, language } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useState,
+  type ComponentProps,
+} from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -12,12 +17,15 @@ import {
   DisplayIcon,
   DownloadIcon,
   GithubIcon,
-  LinuxIcon,
   UsbIcon,
   PlayIcon,
   WindowsIcon,
 } from '@/components/icons'
-import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import {
+  OmarchyMark,
+  OmarchyWordmark,
+  WORDMARK_BANDS,
+} from '@/components/Brand'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
@@ -55,6 +63,11 @@ export interface HomeData {
 }
 import release from '@/data/version.json'
 
+/** The brand mark padded to the 15px glyph of WindowsIcon. */
+function TryLinuxMark(props: ComponentProps<typeof OmarchyMark>) {
+  return <OmarchyMark viewBox="-200 -200 1600 1600" {...props} />
+}
+
 const TRY = {
   mac: {
     label: t('Try on Mac'),
@@ -72,7 +85,7 @@ const TRY = {
     // saves the Flatpak installer. The asset name has been
     // com.tryomarchy.TryOmarchy.flatpakref since v0.1.0.
     href: 'https://github.com/btsouth/try-omarchy-linux/releases/latest/download/com.tryomarchy.TryOmarchy.flatpakref',
-    icon: LinuxIcon,
+    icon: TryLinuxMark,
   },
 } as const
 

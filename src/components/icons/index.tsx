@@ -380,19 +380,6 @@ export function WindowsIcon(props: IconProps) {
   )
 }
 
-/** Filled Tux, same 24px grid as AppleIcon and WindowsIcon. */
-export function LinuxIcon(props: IconProps) {
-  return (
-    <svg {...base(props)}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M12 2c-2.4 0-4.25 2-4.25 4.25 0 .7.18 1.35.5 1.92C6.15 8.95 4.75 10.9 4.75 13.4c0 2.7 1.95 4.25 4.2 5.35-.2.55-.3 1.15-.3 1.75 0 .85.7 1.5 1.55 1.5h2.6c.85 0 1.55-.65 1.55-1.5 0-.6-.1-1.2-.3-1.75 2.25-1.1 4.2-2.65 4.2-5.35 0-2.5-1.4-4.45-3.5-5.23.32-.57.5-1.22.5-1.92C16.25 4 14.4 2 12 2Zm-1.55 4.15a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9Zm3.1 0a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9Z"
-      />
-    </svg>
-  )
-}
-
 /** IconX from the square filled set: the X mark, for posts quoted from there. */
 export function XIcon(props: IconProps) {
   return (
