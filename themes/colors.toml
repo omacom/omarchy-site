@@ -1,0 +1,36 @@
+mode = "dark"
+
+# Peaky Blinders — Birmingham 1919
+# Aged newsprint sepia sampled from the wallpapers, ink-black night.
+accent = "#C6AC8F"
+selection = "#4D4236"
+muted = "#8A7763"
+
+background = "#13110E"
+dark_background = "#0E0C09"
+darker_background = "#090806"
+lighter_background = "#2A2318"
+
+foreground = "#D6C5A3"
+dark_foreground = "#8A7763"
+light_foreground = "#E5D5B5"
+bright_foreground = "#F2E6CC"
+
+red = "#A6503C"
+yellow = "#C6AC8F"
+orange = "#B9A085"
+green = "#96906A"
+cyan = "#9A9183"
+blue = "#7E7E78"
+magenta = "#A68A7C"
+brown = "#6E5C4A"
+
+bright_red = "#C06A4E"
+bright_yellow = "#D9C4A6"
+bright_green = "#AAA583"
+bright_cyan = "#AEA79A"
+bright_blue = "#94948E"
+bright_magenta = "#BFA08E"
+
+hyprland_active_border = "rgba(C6AC8Fee) rgba(6E5C4Aee) 45deg"
+hyprland_inactive_border = "rgba(2A231899)"
