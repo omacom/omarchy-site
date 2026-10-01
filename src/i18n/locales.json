@@ -225,6 +225,15 @@
     "manual": false,
     "flag": "NL"
   },
+  "fa": {
+    "name": "فارسی",
+    "domain": "https://fa.omarchy.org",
+    "formatLocale": "fa-IR",
+    "ogLocale": "fa_IR",
+    "manual": false,
+    "flag": "IR",
+    "direction": "rtl"
+  },
   "no": {
     "name": "Norsk",
     "domain": "https://omarchy.no",
