@@ -12,6 +12,7 @@ import {
   DisplayIcon,
   DownloadIcon,
   GithubIcon,
+  LinuxIcon,
   UsbIcon,
   PlayIcon,
   WindowsIcon,
@@ -65,17 +66,26 @@ const TRY = {
     href: 'https://github.com/omacom/try-omarchy-windows',
     icon: WindowsIcon,
   },
+  linux: {
+    label: t('Try on Linux'),
+    // GitHub answers this with Content-Disposition: attachment, so the click
+    // saves the Flatpak installer. The asset name has been
+    // com.tryomarchy.TryOmarchy.flatpakref since v0.1.0.
+    href: 'https://github.com/btsouth/try-omarchy-linux/releases/latest/download/com.tryomarchy.TryOmarchy.flatpakref',
+    icon: LinuxIcon,
+  },
 } as const
 
-/** Which of the two the visitor is most likely on, read after mount so the
- *  server and the first paint agree; null on Linux and on anything unsure. */
+/** Which of the three the visitor is most likely on, read after mount so the
+ *  server and the first paint agree; null on phones and on anything unsure. */
 function useTryDevice() {
   const [device, setDevice] = useState<keyof typeof TRY | null>(null)
   useEffect(() => {
     const ua = navigator.userAgent
-    if (/iPhone|iPad/.test(ua)) return
+    if (/iPhone|iPad|Android|CrOS/.test(ua)) return
     if (/Mac/.test(ua)) setDevice('mac')
     else if (/Win/.test(ua)) setDevice('windows')
+    else if (/Linux/.test(ua)) setDevice('linux')
   }, [])
   return device
 }
@@ -606,7 +616,7 @@ export function HomePage({ data }: { data: HomeData }) {
               </p>
               <div className="mt-auto pt-6">
                 <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
+                  {(['mac', 'windows', 'linux'] as const).map((key) => {
                     const Mark = TRY[key].icon
                     return (
                       <Button
@@ -618,16 +628,17 @@ export function HomePage({ data }: { data: HomeData }) {
                       >
                         <Mark data-icon="inline-start" />
                         {TRY[key].label}
-                        <ArrowUpRightIcon data-icon="inline-end" />
+                        {key === 'linux' ? (
+                          <DownloadIcon data-icon="inline-end" />
+                        ) : (
+                          <ArrowUpRightIcon data-icon="inline-end" />
+                        )}
                       </Button>
                     )
                   })}
                 </div>
                 <p className="mt-2.5 text-[13px] text-text-muted">
-                  {t('Apple Silicon Macs, Windows 10 and 11.')}
-                  <span className="block">
-                    {t('On Linux, the ISO is the way in.')}
-                  </span>
+                  {t('Apple Silicon Macs, Windows 10 and 11, Linux with KVM.')}
                 </p>
               </div>
             </div>
