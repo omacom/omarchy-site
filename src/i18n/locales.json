@@ -193,6 +193,14 @@
     "manual": false,
     "flag": "CN"
   },
+  "zh-TW": {
+    "name": "繁體中文",
+    "domain": "https://tw.omarchy.org",
+    "formatLocale": "zh-TW",
+    "ogLocale": "zh_TW",
+    "manual": false,
+    "flag": "TW"
+  },
   "pl": {
     "name": "Polski",
     "domain": "https://pl.omarchy.org",
