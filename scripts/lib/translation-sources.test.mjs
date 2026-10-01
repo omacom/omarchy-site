@@ -87,14 +87,22 @@ test('dynamic authored copy is extracted without donor, event, or plugin names',
         id: 'featured',
         name: 'Product Name',
         description: 'Featured description',
+        category: 'Widgets',
       },
-      { id: 'other', description: 'Unfeatured description' },
+      {
+        id: 'other',
+        description: 'Unfeatured description',
+        category: 'Unfeatured category',
+      },
     ],
   })
   put(
     'src/lib/regions.ts',
     "export const REGIONS = ['Europe', 'Asia'] as const",
   )
+  put('src/data/momentum.json', {
+    downloads: { periods: [{ label: 'Yesterday', days: 1, count: 123 }] },
+  })
   put('src/lib/search.ts', "export const KIND_LABEL = { plugin: 'Plugin' }")
   put('src/lib/seo.ts', "export const SITE_DESCRIPTION = 'Site summary'")
   put(
@@ -112,6 +120,8 @@ test('dynamic authored copy is extracted without donor, event, or plugin names',
       'Country',
       'Other Country',
       'Featured description',
+      'Widgets',
+      'Yesterday',
       'Europe',
       'Asia',
       'Plugin',
