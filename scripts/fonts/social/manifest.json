@@ -59,6 +59,11 @@
       "family": "Omarchy Social Chinese",
       "file": "chinese.otf",
       "characters": " ,?ADHLVbegintux、。一不个亲代作功加原可坑好定小就心手打搞操改时玩生由的看系统置能自设该调路踩造随，？"
+    },
+    "Cyrillic": {
+      "family": "Omarchy Social Cyrillic",
+      "file": "cyrillic.ttf",
+      "characters": " ,-.DHLinux̆ВГИКабвгдежийкмнопрстыя"
     }
   },
   "locales": {
@@ -89,9 +94,16 @@
     "it": "Latin",
     "zh-CN": "Chinese",
     "pl": "Latin",
+    "ru": "Cyrillic",
     "lt": "Latin",
     "ga": "Latin",
     "nl": "Latin",
-    "no": "Latin"
+    "no": "Latin",
+    "en-NZ": "Latin",
+    "en-US": "Latin",
+    "en-SG": "Latin",
+    "en-AU": "Latin",
+    "en-NG": "Latin",
+    "en-ZW": "Latin"
   }
 }
