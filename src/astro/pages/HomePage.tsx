@@ -70,17 +70,17 @@ function TryLinuxMark(props: ComponentProps<typeof OmarchyMark>) {
 
 const TRY = {
   mac: {
-    label: t('Try Omarchy on Mac'),
+    label: t('Try on Mac'),
     href: 'https://github.com/omacom/try-omarchy',
     icon: AppleIcon,
   },
   windows: {
-    label: t('Try Omarchy on Windows'),
+    label: t('Try on Windows'),
     href: 'https://github.com/omacom/try-omarchy-windows',
     icon: WindowsIcon,
   },
   linux: {
-    label: t('Try Omarchy on Linux'),
+    label: t('Try on Linux'),
     // The Flatpak installer, the link the Try Omarchy for Linux README uses.
     href: 'https://tryomarchy.com/linux.flatpakref',
     icon: TryLinuxMark,
