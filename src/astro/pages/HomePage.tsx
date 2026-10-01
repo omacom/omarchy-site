@@ -70,21 +70,19 @@ function TryLinuxMark(props: ComponentProps<typeof OmarchyMark>) {
 
 const TRY = {
   mac: {
-    label: t('Try on Mac'),
+    label: t('Try Omarchy on Mac'),
     href: 'https://github.com/omacom/try-omarchy',
     icon: AppleIcon,
   },
   windows: {
-    label: t('Try on Windows'),
+    label: t('Try Omarchy on Windows'),
     href: 'https://github.com/omacom/try-omarchy-windows',
     icon: WindowsIcon,
   },
   linux: {
-    label: t('Try on Linux'),
-    // GitHub answers this with Content-Disposition: attachment, so the click
-    // saves the Flatpak installer. The asset name has been
-    // com.tryomarchy.TryOmarchy.flatpakref since v0.1.0.
-    href: 'https://github.com/btsouth/try-omarchy-linux/releases/latest/download/com.tryomarchy.TryOmarchy.flatpakref',
+    label: t('Try Omarchy on Linux'),
+    // The Flatpak installer, the link the Try Omarchy for Linux README uses.
+    href: 'https://tryomarchy.com/linux.flatpakref',
     icon: TryLinuxMark,
   },
 } as const
