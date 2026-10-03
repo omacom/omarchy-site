@@ -43,6 +43,7 @@ type Ttfx = {
     frameRate: number,
     palette?: string | null,
     background?: string | null,
+    bands?: boolean | null,
   ) => Session
 }
 
@@ -415,6 +416,7 @@ export async function startEtch(
     stepsPerSecond,
     palette.join(','),
     null,
+    true, // 4-3-4-3-5 field bands; palette is crest, hover, lit, mid, dim
   )
 
   // The frame exists only once the effect has stepped, and it may grow as

@@ -1,3 +1,4 @@
+import { FIELD_BAND_INKS, fieldBandStopPercents } from '@/lib/field-bands'
 import { DEFAULT_THEME, THEME_EVENT } from '@/lib/theme'
 
 function downloadName(link: HTMLAnchorElement) {
@@ -13,7 +14,7 @@ const SVG_NS = 'http://www.w3.org/2000/svg'
 async function themedAsset(link: HTMLAnchorElement, preview: HTMLElement) {
   // Capture the visible palette before fetching, even if the theme changes later.
   const style = getComputedStyle(preview)
-  const colors = ['crest', 'hover', 'lit', 'mid', 'dim'].map((band) =>
+  const colors = FIELD_BAND_INKS.map((band) =>
     style.getPropertyValue(`--t-field-${band}`).trim(),
   )
   const filename = downloadName(link)
@@ -38,7 +39,7 @@ async function themedAsset(link: HTMLAnchorElement, preview: HTMLElement) {
   gradient.setAttribute('x2', String(x))
   gradient.setAttribute('y1', String(y))
   gradient.setAttribute('y2', String(y + height))
-  const boundaries = [0, 26.316, 36.842, 57.895, 73.684, 100]
+  const boundaries = fieldBandStopPercents()
   colors.forEach((color, index) => {
     for (const offset of [boundaries[index], boundaries[index + 1]]) {
       const stop = document.createElementNS(SVG_NS, 'stop')
