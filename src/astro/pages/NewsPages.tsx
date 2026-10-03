@@ -26,7 +26,7 @@ export function NewsIndexPage({ news }: { news: Array<NewsSummary> }) {
                 </time>
                 <span className="flex items-baseline gap-1.5 font-sans text-lg font-medium text-text transition-colors duration-150 ease-out group-hover:text-brand">
                   {post.title}
-                  <ArrowRightIcon className="size-5 shrink-0 self-center text-text-muted transition-[color,translate] duration-150 ease-out group-hover:translate-x-0.5 group-hover:text-brand" />
+                  <ArrowRightIcon className="size-5 shrink-0 self-center text-text-muted transition-[color,translate] duration-150 ease-out group-hover:translate-x-0.5 group-hover:text-brand rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
                 </span>
                 {post.excerpt ? (
                   <span className="text-sm leading-relaxed text-text-secondary [text-wrap:pretty]">
@@ -73,7 +73,7 @@ export function NewsPostPage({ post }: { post: NewsPost }) {
         to="/news/"
         className="mt-10 inline-flex items-center gap-1.5 text-sm text-text-secondary transition-colors duration-150 ease-out hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
       >
-        <ArrowLeftIcon className="size-5" />
+        <ArrowLeftIcon className="size-5 rtl:-scale-x-100" />
         {t('All news')}
       </Link>
     </main>
