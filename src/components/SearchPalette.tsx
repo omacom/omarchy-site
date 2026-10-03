@@ -327,7 +327,7 @@ export function SearchPalette() {
             autoComplete="off"
             spellCheck={false}
             enterKeyHint="go"
-            className="min-w-0 flex-1 bg-transparent font-mono text-[13px] text-text outline-none placeholder:text-text placeholder:opacity-60 [&::-webkit-search-cancel-button]:hidden"
+            className="min-w-0 flex-1 bg-transparent font-mono text-[13px] text-text outline-none pointer-coarse:text-base placeholder:text-text placeholder:opacity-60 [&::-webkit-search-cancel-button]:hidden"
           />
         </div>
 
