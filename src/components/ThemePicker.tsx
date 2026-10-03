@@ -18,6 +18,7 @@ import {
   readTheme,
 } from '@/lib/theme'
 import { useIsNarrow } from '@/lib/use-media-query'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 import { cn } from '@/lib/utils'
 
 const previewSrc = (id: string) => `/assets/images/theme-previews/${id}.webp`
@@ -44,6 +45,7 @@ const isTyping = (target: EventTarget | null) => {
 export function ThemePicker() {
   const portrait = useIsNarrow()
   const [open, setOpen] = useState(false)
+  useScrollLock(open)
   const [index, setIndex] = useState(0)
   const [hint, setHint] = useState(false)
   const dialogRef = useRef<HTMLDivElement>(null)
