@@ -10,12 +10,10 @@ export const DEFAULT_THEME = 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
-/** Ask the mounted ThemePicker to open (footer link, welcome notice). */
+/** Ask the mounted ThemePicker to open (footer link, menu). */
 export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 /** Fired with detail { open } whenever the picker opens or closes. */
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
-/** Set once the user has seen the picker or dismissed the welcome notice. */
-export const HINT_KEY = 'omarchy-theme-hint-seen'
 
 /** Apply the saved palette before paint, or select one matching the system color scheme.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */
