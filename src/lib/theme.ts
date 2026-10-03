@@ -1,13 +1,17 @@
-import { inlineJson } from './inline-json'
+import { saveTheme } from './theme-state.ts'
+export {
+  DEFAULT_THEME,
+  THEME_KEY,
+  themeInitScript,
+  readTheme,
+  themeForNavigation,
+} from './theme-state.ts'
 
 import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
-import { SITE_THEMES } from './site-themes.ts'
 export { SITE_THEMES, type SiteTheme } from './site-themes.ts'
 
-export const DEFAULT_THEME = 'tokyo-night'
-export const THEME_KEY = 'omarchy-site-theme'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
 /** Ask the mounted ThemePicker to open (footer link, welcome notice). */
@@ -16,26 +20,6 @@ export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
 /** Set once the user has seen the picker or dismissed the welcome notice. */
 export const HINT_KEY = 'omarchy-theme-hint-seen'
-
-/** Apply the saved palette before paint, or select one matching the system color scheme.
- * The favicon is owned outside React so replacing it cannot break reconciliation. */
-export const themeInitScript = `(function(){try{var t=localStorage.getItem(${inlineJson(THEME_KEY)});var ok=${inlineJson(
-  SITE_THEMES.map((t) => t.id),
-)};var light=${inlineJson(
-  SITE_THEMES.filter((t) => t.light).map((t) => t.id),
-)};var dark=${inlineJson(
-  SITE_THEMES.filter((t) => !t.light).map((t) => t.id),
-)};if(ok.indexOf(t)<0){var pool=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?light:dark;t=pool[Math.floor(Math.random()*pool.length)];localStorage.setItem(${inlineJson(THEME_KEY)},t)}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme=${inlineJson(DEFAULT_THEME)}}if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
-
-export function readTheme(): string {
-  try {
-    const stored = localStorage.getItem(THEME_KEY)
-    if (SITE_THEMES.some((t) => t.id === stored)) return stored as string
-  } catch {
-    /* storage unavailable */
-  }
-  return DEFAULT_THEME
-}
 
 /** Replace the favicon link to invalidate browsers that cache it by element. */
 export function paintFavicon() {
@@ -206,11 +190,7 @@ export function applyTheme(id: string) {
   const root = document.documentElement
   root.classList.add('no-transitions')
   root.dataset.theme = id
-  try {
-    localStorage.setItem(THEME_KEY, id)
-  } catch {
-    /* storage unavailable */
-  }
+  saveTheme(id)
   paintFavicon()
   paintChrome()
   window.dispatchEvent(new CustomEvent(THEME_EVENT, { detail: id }))
