@@ -1,3 +1,9 @@
+/* Geist/JetBrains Mono have no Arabic glyphs, so RTL langs get their own pair. */
+html[dir='rtl'] {
+  --font-sans: 'IBM Plex Sans Arabic', 'Geist Variable', sans-serif;
+  --font-mono: 'Alexandria Variable', 'JetBrains Mono Variable', monospace;
+}
+
 /* Commands and paths retain their literal order within right-to-left prose. */
 html[dir='rtl'] :is(code, pre, kbd) {
   direction: ltr;
