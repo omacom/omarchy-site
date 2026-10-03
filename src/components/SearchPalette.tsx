@@ -1,4 +1,4 @@
-import { t } from '@/i18n/site'
+import { t, tPlural } from '@/i18n/site'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import {
@@ -334,8 +334,8 @@ export function SearchPalette() {
         <div className="sr-only" aria-live="polite">
           {query.trim() && index
             ? rows.length === 0
-              ? 'No matches'
-              : `${rows.length} ${rows.length === 1 ? 'result' : 'results'}`
+              ? t('No matches')
+              : `${rows.length} ${rows.length === 1 ? t('result') : tPlural('results', rows.length)}`
             : ''}
         </div>
 

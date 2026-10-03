@@ -1,6 +1,6 @@
 # Translations
 
-One site, shared components, separate static builds. English remains the source of truth. Each of the 31 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
+One site, shared components, separate static builds. English remains the source of truth. Each of the 32 languages has one primary address, either a registered domain or a language subdomain under omarchy.org. English uses omarchy.org. Manual links currently lead to the canonical English manual.
 
 ## Build and preview
 
@@ -8,6 +8,8 @@ One site, shared components, separate static builds. English remains the source 
 npm run build                 # English → dist/client
 npm run build:locale -- da    # Danish → dist/da
 npm run dev:da               # Danish preview on port 3114
+npm run build:locale -- uk    # Ukrainian → dist/uk
+PUBLIC_SITE_LOCALE=uk npm run dev # Ukrainian preview on port 3113
 npm run check:translations   # Validate UI/prose and completed translations
 ```
 
@@ -26,6 +28,8 @@ Only register a language when its main pages and news are ready. The registry al
 ## Updating copy
 
 Use `t('English source copy')` for shared interface text. Push English edits normally; UI copy, imported prose, and news translations are filled in after English deploys. Missing or outdated translations use the current English title and body until the background workflow fills them in. Run `npm run news:pending` to see the queue, or `npm run check:translations -- --strict-news` to require complete, current news translations. Never update a source hash without translating or reviewing the new source.
+
+Use `tPlural('contributors', count)` for counted labels. The extractor queues the base English key; add language-specific CLDR forms such as `contributors [one]` and `contributors [few]` manually. The active locale's plural rules select the form, falling back to the base translation and then English when a form is absent. Ukrainian uses separate singular and few forms, with the base label for many.
 
 Imported main-page prose uses exact English HTML keys. Changing the source creates a new translation task; old translations are never reused for changed copy. Missing UI/prose uses English while Muse catches up. Existing nonempty translations are preserved, including human-reviewed edits. The extractor in `scripts/translation-sources.mjs` reads literal `t()` calls and maintained adapters for dynamic copy such as team descriptions, page prose, SEO, banners, and featured plugin descriptions. New dynamic `t(variable)` sources need an extractor adapter and a test. Use `npm run site:pending` to inspect current gaps, or `npm run check:translations -- --strict-site` to require complete UI/prose coverage.
 
@@ -90,6 +94,7 @@ Cloudflare custom domains handle routing and TLS directly. Registered national d
 | Gaeilge          | [ga.omarchy.org](https://ga.omarchy.org) |
 | Nederlands       | [nl.omarchy.org](https://nl.omarchy.org) |
 | Norsk            | [omarchy.no](https://omarchy.no)         |
+| Українська       | [uk.omarchy.org](https://uk.omarchy.org) |
 
 ## Pointing a new domain to a language site
 

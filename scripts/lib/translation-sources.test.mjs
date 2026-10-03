@@ -29,11 +29,12 @@ test('current literals replace old English without consulting translation catalo
   assert.deepEqual(collectSources(root).messages, ['Old English'])
   put(
     'src/page.tsx',
-    "const view = <div>{t('New English')}{t(`New literal`)}</div>",
+    "const view = <div>{t('New English')}{tPlural('New plural', 22)}{t(`New literal`)}</div>",
   )
   assert.deepEqual(collectSources(root).messages, [
     'New English',
     'New literal',
+    'New plural',
   ])
 })
 
@@ -67,6 +68,9 @@ test('dynamic authored copy is extracted without donor, event, or plugin names',
   put('src/data/banner.json', {
     html: 'New <strong>announcement</strong>',
     href: '/news/',
+  })
+  put('src/data/momentum.json', {
+    downloads: { periods: [{ label: 'Last month', count: 303452 }] },
   })
   put('src/data/teams.json', [
     {
@@ -105,6 +109,7 @@ test('dynamic authored copy is extracted without donor, event, or plugin names',
     collectSources(root).messages,
     [
       'New <strong>announcement</strong>',
+      'Last month',
       'Security',
       'Keep safe',
       'Help us',

@@ -1,4 +1,4 @@
-import { t, locale } from '@/i18n/site'
+import { t, tPlural, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
@@ -285,14 +285,14 @@ export function Figures() {
               {[
                 ...downloads.periods,
                 { label: 'Quattro', count: downloads.quattro },
-                { label: 'Total', count: downloads.total },
+                { label: t('Total'), count: downloads.total },
               ].map((period) => (
                 <tr key={period.label}>
                   <th
                     scope="row"
                     className="py-2 text-left font-normal text-text-muted"
                   >
-                    {period.label}
+                    {t(period.label)}
                   </th>
                   <td className="py-2 text-right text-text-secondary tabular-nums">
                     {period.count.toLocaleString(locale.formatLocale)}
@@ -332,7 +332,9 @@ export function Figures() {
         </div>
         <p className={`${meta} mt-[14px]`}>
           {github.pullRequests.toLocaleString(locale.formatLocale)}{' '}
-          {t('pull requests ·')} {github.contributors} {t('contributors')}
+          {tPlural('pull requests ·', github.pullRequests)}{' '}
+          {github.contributors.toLocaleString(locale.formatLocale)}{' '}
+          {tPlural('contributors', github.contributors)}
         </p>
         <a href="https://github.com/omacom/omarchy" className={more}>
           {t('The repo')}

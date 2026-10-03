@@ -16,6 +16,12 @@ export type CarouselVideo = {
   start?: number
 }
 
+const videoLabel = (template: string, video: CarouselVideo) =>
+  template.replace(
+    /\{(title|channel)\}/g,
+    (_match, key: 'title' | 'channel') => video[key],
+  )
+
 export function VideoCarousel({
   title,
   description,
@@ -80,7 +86,7 @@ export function VideoCarousel({
         ref={rail.scroller}
         {...rail.scrollerProps}
         className="rail-bare rail-column mt-6 lg:mt-10 flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto select-none active:cursor-grabbing motion-reduce:scroll-auto"
-        aria-roledescription="carousel"
+        aria-roledescription={t('carousel')}
         aria-label={title}
       >
         {videos.map((video, i) => (
@@ -91,8 +97,11 @@ export function VideoCarousel({
               i !== index && 'opacity-40 brightness-75',
             )}
             data-slide={i}
-            aria-roledescription="slide"
-            aria-label={`${i + 1} of ${videos.length}: ${video.title}`}
+            aria-roledescription={t('slide')}
+            aria-label={t('{index} of {count}: {title}')
+              .replace('{index}', String(i + 1))
+              .replace('{count}', String(videos.length))
+              .replace('{title}', () => video.title)}
           >
             {narrow || playing === video.id ? (
               <iframe
@@ -102,7 +111,7 @@ export function VideoCarousel({
                     ...(playing === video.id ? { autoplay: '1' } : {}),
                   },
                 )}`}
-                title={`${video.title} by ${video.channel}`}
+                title={videoLabel(t('{title} by {channel}'), video)}
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
@@ -113,11 +122,12 @@ export function VideoCarousel({
                 type="button"
                 onClick={() => (i === index ? setPlaying(video.id) : goTo(i))}
                 className="group relative block w-full cursor-grab text-left active:cursor-grabbing"
-                aria-label={
+                aria-label={videoLabel(
                   i === index
-                    ? `Play: ${video.title} by ${video.channel}`
-                    : `Show: ${video.title} by ${video.channel}`
-                }
+                    ? t('Play: {title} by {channel}')
+                    : t('Show: {title} by {channel}'),
+                  video,
+                )}
               >
                 <img
                   src={video.thumb}

@@ -23,3 +23,19 @@ npm run build:social
 Commit the updated font subsets, manifest, and cards together. New scripts may
 need a font mapping in `scripts/prepare-social-fonts.py`. Keep copyright notices
 current when adding fonts.
+
+Ukrainian uses a separate `Cyrillic` subset so adding its glyphs does not change
+the existing Latin cards. To refresh just that subset, supply a directory
+containing `NotoSans-Regular.ttf`:
+
+```sh
+python3 scripts/prepare-social-fonts.py --group Cyrillic --noto-dir /path/to/noto
+PUBLIC_SITE_LOCALE=uk npm run build:social -- --site
+```
+
+`--group` preserves the other bundled fonts and may be repeated. Without it,
+the script refreshes all groups. The Cyrillic subset was generated with
+fontTools 4.60.1 from Noto Sans 2.008 at
+[`notofonts/noto-fonts` revision `ffebf8c1ee449e544955a7e813c54f9b73848eac`](https://github.com/notofonts/noto-fonts/blob/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSans/NotoSans-Regular.ttf)
+(SHA-256 `b85c38ecea8a7cfb39c24e395a4007474fa5a4fc864f6ee33309eb4948d232d5`).
+The subset preserves the source timestamp for reproducible regeneration.
