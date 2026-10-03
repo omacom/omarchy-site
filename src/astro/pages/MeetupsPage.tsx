@@ -226,7 +226,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
                       : 'border-border-strong bg-surface text-text hover:bg-surface-2',
                   )}
                 >
-                  {t(r ?? 'Everywhere')}
+                  {r ? t(r) : t('Everywhere')}
                   <span
                     className={cn(
                       'font-mono text-xs',
