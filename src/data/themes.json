@@ -728,5 +728,15 @@
   "repo": "https://github.com/kyerpotts/omarchy-vulkanite-theme",
   "image": "/assets/themes/vulkanite.webp",
   "name": "Vulkanite"
+ },
+ {
+  "repo": "https://github.com/Orrok/omarchy-nz-forest-theme",
+  "image": "/assets/themes/nz-forest.webp",
+  "name": "NZ Forest"
+ },
+ {
+  "repo": "https://github.com/Orrok/omarchy-nz-mountains-and-lakes-theme",
+  "image": "/assets/themes/nz-mountains-and-lakes.webp",
+  "name": "NZ Mountains and Lakes"
  }
 ]
