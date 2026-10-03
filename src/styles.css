@@ -141,6 +141,7 @@
   /* z-index scale: no arbitrary values anywhere else */
   --z-nav: 100;
   --z-dropdown: 200;
+  --z-rally: 250;
   --z-modal: 300;
   --z-tooltip: 400;
 }
