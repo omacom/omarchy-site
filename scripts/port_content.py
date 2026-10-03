@@ -71,6 +71,71 @@ def get_repo(argv):
     return Path(__file__).resolve().parent.parent
 
 
+def webp_size(path: Path) -> tuple[int, int] | None:
+    """Pixel dimensions of a WebP file, read from the container header alone.
+
+    Covers the lossy (VP8), lossless (VP8L) and extended (VP8X) chunks.
+    Anything unrecognized returns None so the caller leaves the tag alone.
+    """
+    try:
+        data = path.read_bytes()[:30]
+    except OSError:
+        return None
+    if len(data) < 20 or data[:4] != b'RIFF' or data[8:12] != b'WEBP':
+        return None
+    chunk = data[12:16]
+    if chunk == b'VP8 ':
+        if len(data) < 30 or data[23:26] != b'\x9d\x01\x2a':
+            return None
+        width = int.from_bytes(data[26:28], 'little') & 0x3FFF
+        height = int.from_bytes(data[28:30], 'little') & 0x3FFF
+    elif chunk == b'VP8L':
+        if len(data) < 25 or data[20] != 0x2F:
+            return None
+        bits = int.from_bytes(data[21:25], 'little')
+        width, height = (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    elif chunk == b'VP8X':
+        if len(data) < 30:
+            return None
+        width = int.from_bytes(data[24:27], 'little') + 1
+        height = int.from_bytes(data[27:30], 'little') + 1
+    else:
+        return None
+    return (width, height) if width and height else None
+
+
+def size_images(html: str, repo: Path) -> str:
+    """Stamp content images with their dimensions, so pages do not jump as
+    screenshots load. Images the port cannot measure keep their tag as-is,
+    as do tags that already carry dimensions.
+    """
+    sizes: dict[str, tuple[int, int] | None] = {}
+
+    def sized(match: re.Match) -> str:
+        tag = match.group(0)
+        if re.search(r'\bwidth\s*=', tag, re.I):
+            return tag
+        src = re.search(r'\bsrc="([^"]+)"', tag, re.I)
+        if not src:
+            return tag
+        href = src.group(1)
+        if href not in sizes:
+            path = repo / href.lstrip('/')
+            sizes[href] = webp_size(path) if path.suffix == '.webp' else None
+        dims = sizes[href]
+        if dims is None:
+            return tag
+        body = tag.rstrip()
+        closing = '/>' if body.endswith('/>') else '>'
+        core = re.sub(r'\s*/$', '', body[:-len(closing)].rstrip())
+        width, height = dims
+        extra = (f' width="{width}" height="{height}"'
+                 ' loading="lazy" decoding="async"')
+        return f'{core}{extra}{closing}'
+
+    return re.sub(r'<img\b[^>]*>', sized, html, flags=re.I)
+
+
 def clean(html: str, *, manual_slug: str | None = None) -> str:
     """Rewrite links/assets for the new site and drop em dashes."""
     # The imported chapters end with their own prev/contents/next nav. The
@@ -224,7 +289,7 @@ def main() -> None:
         chapters.append({
             'slug': slug,
             'title': unescape(re.sub(r'<[^>]+>', '', label)).strip(),
-            'html': clean(body, manual_slug=slug),
+            'html': size_images(clean(body, manual_slug=slug), repo),
         })
     (OUT / 'manual.json').write_text(json.dumps(chapters))
     print(f'manual.json: {len(chapters)} chapters')

@@ -13,6 +13,9 @@ if (!Object.hasOwn(locales, language))
 export default defineConfig({
   server: { port: 3113 },
   output: 'static',
+  // Powers the manual's hover prefetching; links opt in individually with
+  // data-astro-prefetch, so nothing else on the site prefetches.
+  prefetch: true,
   site: locales[language].domain,
   trailingSlash: 'ignore',
   build: { format: 'directory' },

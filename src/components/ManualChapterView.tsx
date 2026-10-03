@@ -32,6 +32,7 @@ export function ManualChapterView({ data }: { data: ChapterData }) {
         {prev ? (
           <Link
             {...chapterLink(prev.slug)}
+            data-astro-prefetch="hover"
             className="group flex items-center gap-2 text-sm text-text-secondary transition-colors duration-150 ease-out hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             <ArrowLeftIcon className="size-5" />
@@ -43,6 +44,7 @@ export function ManualChapterView({ data }: { data: ChapterData }) {
         {next ? (
           <Link
             {...chapterLink(next.slug)}
+            data-astro-prefetch="hover"
             className="group ml-auto flex items-center gap-2 text-sm text-text-secondary transition-colors duration-150 ease-out hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             {next.title}
