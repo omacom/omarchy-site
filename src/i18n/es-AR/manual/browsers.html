@@ -1,0 +1,129 @@
+<p>
+  Omarchy viene con <a href="https://www.chromium.org/">Chromium</a> como
+  navegador predeterminado. Es la compilación abierta y simple, con el tema del
+  resto de tu sistema, y es lo que abre <code>Super + Shift + Return</code> y
+  donde corre cada <a href="/manual/web-apps/">aplicación web</a>.
+</p>
+
+<p>
+  Si Chromium no es lo tuyo, no te quedás atado a él. En
+  <em>Install &gt; Browser</em> del menú de Omarchy vas a encontrar Chrome,
+  Edge, Brave, Brave Origin, Firefox y
+  <a href="https://zen-browser.app/">Zen</a>. Elegí uno y Omarchy lo instala, le
+  prepara su directorio de políticas y le aplica tu tema actual.
+</p>
+
+<h2 id="making-one-the-default">
+  Poner uno como predeterminado
+  <a
+    class="manual__heading-link"
+    href="#making-one-the-default"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Instalar un navegador no lo asciende. Una vez que está en la máquina, andá a
+  <em>Setup &gt; Defaults &gt; Browser</em> y elegilo: el menú solo lista los
+  navegadores que tenés instalados y marca el predeterminado actual con un
+  tilde.
+</p>
+
+<p>Desde la terminal es así:</p>
+
+<pre><code class="language-bash">omarchy default browser firefox
+</code></pre>
+
+<p>
+  Ejecutalo sin argumentos y te dice cuál es el predeterminado actual. Esto
+  define el manejador XDG, así que no son solo los atajos de Omarchy los que lo
+  siguen: cualquier cosa que abra un enlace, desde una aplicación de chat hasta
+  un comando de la terminal, va al navegador que elegiste.
+</p>
+
+<h2 id="copy-url-and-download-video">
+  Copy URL y Download Video
+  <a
+    class="manual__heading-link"
+    href="#copy-url-and-download-video"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Los navegadores de la familia Chromium (Chromium mismo, Chrome, Edge y Brave)
+  vienen con dos extensiones de Omarchy que salen del navegador hacia el resto
+  de tu sistema.
+</p>
+
+<p>
+  <strong>Copy URL</strong> pone la dirección de la pestaña actual en tu
+  portapapeles con <code>Alt + Shift + L</code>. Es más rápido que hacer clic en
+  la barra de direcciones y copiar, y como pasa por el portapapeles del sistema
+  y no por el del navegador, recibís una notificación de Omarchy confirmándolo y
+  la URL queda disponible al instante en el
+  <a href="/manual/unified-clipboard-history/">historial del portapapeles</a> y
+  en todas las demás aplicaciones. También hay un botón en la barra de
+  herramientas, si preferís hacer clic.
+</p>
+
+<p>
+  <strong>Download Video</strong> baja el video que se está reproduciendo en la
+  página que estás viendo con <code>Alt + Shift + D</code>. Le pasa la URL a
+  <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>, así que funciona en
+  muchos más sitios que YouTube, y la descarga cae en <code>~/Videos</code>. El
+  progreso aparece en el mismo indicador en pantalla que usan el volumen y el
+  brillo, actualizándose en el lugar en vez de apilar notificaciones. Definí
+  <code>OMARCHY_YTDLP_DIR</code> si preferís que los archivos vayan a otra
+  parte, y mirá las <a href="/manual/faq/">preguntas frecuentes</a> para saber
+  dónde poner las variables de entorno.
+</p>
+
+<p>
+  Las dos extensiones se comunican con Omarchy a través de un pequeño host de
+  mensajería nativa, que se instala junto con el navegador. Esa es la pieza que
+  permite que el video de una página web termine en tu directorio personal y que
+  una URL termine en tu gestor de portapapeles, algo que una extensión normal no
+  puede hacer sola.
+</p>
+
+<p>Esto es solo para la familia Chromium. Firefox y Zen no las tienen.</p>
+
+<h2 id="firefox-and-zen">
+  Firefox y Zen
+  <a
+    class="manual__heading-link"
+    href="#firefox-and-zen"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Firefox y Zen son de otra familia, así que reciben otro tratamiento: Omarchy
+  les instala un archivo de políticas con valores razonables y los pasa a modo
+  Wayland nativo, que es lo que querés para el escalado fraccionario y el
+  desplazamiento suave del trackpad.
+</p>
+
+<p>
+  No reciben las extensiones de Chromium de arriba, y Omarchy no les aplica el
+  tema, así que esas partes de la experiencia quedan en tus manos.
+</p>
+
+<h2 id="removing-one-again">
+  Quitar uno de nuevo
+  <a
+    class="manual__heading-link"
+    href="#removing-one-again"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Todo lo que instalaste acá se puede sacar desde <em>Remove &gt; Browser</em>.
+  Chromium no está en esa lista: es parte del sistema base.
+</p>

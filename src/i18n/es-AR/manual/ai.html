@@ -1,0 +1,262 @@
+<p>
+  Omarchy trata a los agentes de programación con IA como ciudadanos de primera
+  clase, pero no elige un favorito por vos. En cambio, cada CLI importante de
+  agentes viene preparada como un lanzador que se carga en el momento. Los
+  lanzadores son pequeños stubs manejados por
+  <a href="https://mise.jdx.dev/">mise</a> en <code>~/.local/bin/</code>, así
+  que no se descarga nada hasta la primera vez que realmente ejecutás uno.
+  Invocá cualquiera de estos y autenticate cuando te lo pida:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Agente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>claude</code></td>
+      <td>
+        <a href="https://code.claude.com/docs/en/overview">Claude Code</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>codex</code></td>
+      <td><a href="https://github.com/openai/codex">OpenAI Codex</a></td>
+    </tr>
+    <tr>
+      <td><code>opencode</code></td>
+      <td><a href="https://opencode.ai/">OpenCode</a></td>
+    </tr>
+    <tr>
+      <td><code>agy</code></td>
+      <td>
+        <a href="https://github.com/google-antigravity/antigravity-cli"
+          >Google Antigravity CLI</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td><code>copilot</code></td>
+      <td>
+        <a href="https://github.com/github/copilot-cli">GitHub Copilot CLI</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>crush</code></td>
+      <td><a href="https://github.com/charmbracelet/crush">Crush</a></td>
+    </tr>
+    <tr>
+      <td><code>grok</code></td>
+      <td>Grok CLI, de xAI</td>
+    </tr>
+    <tr>
+      <td><code>pi</code></td>
+      <td>
+        <a href="https://github.com/badlogic/pi-mono">Pi, de Mario Zechner</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>omp</code></td>
+      <td><a href="https://github.com/can1357/oh-my-pi">Oh My Pi</a></td>
+    </tr>
+    <tr>
+      <td><code>ori</code></td>
+      <td>
+        <a href="https://openrouter.ai/docs/guides/ori/harness">Ori</a>, el
+        entorno de OpenRouter
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <code>ori</code> es el distinto de la lista: corre los otros entornos contra
+  todo el catálogo de modelos de OpenRouter, así que <code>ori claude</code>,
+  <code>ori codex</code> u <code>ori opencode</code> arrancan esos agentes con
+  el modelo que les indiques, y <code>ori code</code> es el agente propio de
+  Ori.
+</p>
+
+<p>
+  Para envolver otra CLI de la misma manera, ejecutá
+  <code>omarchy-mise-install &lt;package&gt; [command-name]</code>. Los stubs se
+  mantienen al día junto con todo lo demás que maneja mise cuando ejecutás
+  <code>omarchy update</code> (o el alias <code>mup</code>).
+</p>
+
+<h3 id="the-default-agent">
+  El agente predeterminado
+  <a
+    class="manual__heading-link"
+    href="#the-default-agent"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Elegí tu agente predeterminado con
+  <code>omarchy default agent &lt;name&gt;</code> o desde
+  <em>Setup &gt; Defaults &gt; Agent</em> en el menú de Omarchy (<code
+    >Super + Space</code
+  >). Si el agente todavía no está instalado, elegirlo lo instala primero. Un
+  Omarchy recién instalado te va a invitar a hacer esta elección con una
+  notificación por única vez.
+</p>
+
+<p>
+  Una vez que elegiste, <code>Super + Shift + Ctrl + A</code> abre el agente
+  predeterminado en una ventana de terminal dedicada (o te muestra el selector
+  si todavía no elegiste). También podés lanzarlo directo con una tarea usando
+  <code>omarchy agent prompt "Review this project"</code>. Los agentes lanzados
+  así corren sin supervisión, en sus modos de no detenerse a preguntar, ¡así que
+  prepárate para que efectivamente hagan cosas! Y como los agentes se niegan a
+  recordar la confianza sobre tu directorio personal, los lanzamientos desde
+  <code>$HOME</code> arrancan en <code>~/Work</code>.
+</p>
+
+<p>
+  También hay atajos de terminal: <code>a</code> corre el agente predeterminado
+  dentro de la terminal actual, mientras que <code>c</code>, <code>cx</code> y
+  <code>cy</code> arrancan OpenCode, Claude Code y Codex directamente (otra vez,
+  en sus modos de aprobación automática). Los cambios de tema también se
+  sincronizan con los agentes: Claude Code, Pi y OpenCode siguen el tema de
+  Omarchy cuando lo cambiás.
+</p>
+
+<h3 id="the-agents-panel">
+  El panel de agentes
+  <a
+    class="manual__heading-link"
+    href="#the-agents-panel"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  A la barra superior le aparece un ícono de agentes la primera vez que Omarchy
+  detecta uso de IA para programar en la máquina (y hasta entonces no molesta).
+  El panel detrás de ese ícono sigue todas tus suscripciones en un solo lugar:
+  tu plan, el porcentaje usado de los límites de la sesión de 5 horas y los
+  semanales (o el saldo prepago restante), y el uso de tokens por día y por
+  modelo. Claude Code, Codex y Fireworks están cubiertos de entrada.
+</p>
+
+<p>
+  Clic izquierdo en el ícono de la barra para abrir el panel, clic derecho para
+  lanzar tu agente predeterminado. Los registros de uso que lo alimentan se
+  regeneran cada 15 minutos con <code>omarchy agent usage-update</code>, y el
+  panel incluso puede combinar el uso de tus otras máquinas a través de una
+  carpeta sincronizada. Mirá el README en
+  <code>$OMARCHY_PATH/shell/plugins/agents/</code> para ver todas las opciones.
+</p>
+
+<h3 id="crash-diagnosis">
+  Diagnóstico de fallos
+  <a
+    class="manual__heading-link"
+    href="#crash-diagnosis"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy vigila systemd-coredump para detectar fallos de procesos. Cuando algo
+  hace segfault, te llega una notificación de "Process crashed": hacele clic y
+  el fallo pasa a tu agente predeterminado junto con la habilidad diagnose-crash
+  de Omarchy, que guía al agente para establecer los hechos a partir del volcado
+  de memoria y decidir si vale la pena reportarlo. También podés ejecutarlo a
+  mano contra cualquier PID de <code>coredumpctl list</code> con
+  <code>omarchy agent crash &lt;pid&gt;</code>.
+</p>
+
+<p>
+  La vigilancia está activada de forma predeterminada. Desactivala desde
+  <em>Trigger &gt; Toggle &gt; Crash Capture</em> (o con
+  <code>omarchy toggle crash-capture</code>) y las notificaciones se detienen;
+  <code>omarchy agent crash &lt;pid&gt;</code> sigue funcionando a mano.
+</p>
+
+<p>
+  Los fallos también se pueden silenciar programa por programa, que es lo que te
+  ofrece el diagnóstico al final.
+  <code>omarchy crash mute hyprland</code> detiene las notificaciones solo de
+  ese programa, <code>omarchy crash mute hyprland off</code> las vuelve a traer,
+  y <code>omarchy crash mute</code> a secas lista lo que silenciaste. Acepta
+  tanto la ruta del binario como su nombre, así que
+  <code>omarchy crash mute /usr/bin/hyprland</code> hace lo mismo. Poné entre
+  comillas un nombre con espacios, como en
+  <code>omarchy crash mute 'Some App'</code>. Todo lo demás sigue notificando, y
+  el programa silenciado sigue fallando: esto esconde el recordatorio, no
+  arregla nada.
+</p>
+
+<h3 id="desktop-apps">
+  Aplicaciones de escritorio
+  <a
+    class="manual__heading-link"
+    href="#desktop-apps"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El menú <em>Install &gt; AI</em> también trae un par de aplicaciones gráficas
+  de IA: la aplicación de escritorio de ChatGPT y Grok Bot, para chatear con los
+  modelos de xAI.
+</p>
+
+<h3 id="local-llms">
+  Modelos locales
+  <a
+    class="manual__heading-link"
+    href="#local-llms"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy recomienda dos formas de correr modelos de lenguaje locales: LM Studio
+  y Ollama. LM Studio ofrece una interfaz gráfica para buscar modelos de pesos
+  abiertos, instalarlos y ejecutarlos. Es una gran forma de arrancar sin
+  complicaciones. Ollama ofrece una CLI para hacer algo parecido. Pero si sos
+  nuevo en los modelos locales, yo empezaría con LM Studio. Podés instalar
+  cualquiera de los dos desde <em>Install &gt; AI</em> en el menú de Omarchy.
+</p>
+
+<h3 id="the-omarchy-skill">
+  La habilidad de Omarchy
+  <a
+    class="manual__heading-link"
+    href="#the-omarchy-skill"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Las habilidades de agentes ayudan a que la IA use herramientas específicas de
+  una forma específica, y Omarchy incluye una habilidad predeterminada para
+  personalizar el sistema. Por ejemplo, ajustar tu configuración de Hyprland,
+  modificar la barra o incluso crear un tema nuevo desde cero. Está enlazada en
+  los directorios de habilidades de Claude Code (<code>~/.claude/skills</code>),
+  Codex (<code>~/.codex/skills</code>), Pi (<code>~/.pi/agent/skills</code>),
+  Antigravity (<code>~/.gemini/config/skills</code>) y la ubicación genérica
+  <code>~/.agents/skills</code>, así que la mayoría de los entornos la levantan
+  automáticamente.
+</p>
+
+<p>
+  Pero conviene tratar esta habilidad como experimental. Distintos modelos la
+  van a aprovechar con distinto resultado. Lo mejor es correr primero en modo de
+  planificación, así tenés una idea de lo que el agente quiere cambiar. Y
+  después estar listo para revertir cambios o incluso invocar
+  <code>omarchy reinstall configs</code> si el agente hace un desastre.
+</p>

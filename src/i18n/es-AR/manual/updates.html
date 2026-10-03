@@ -1,0 +1,147 @@
+<p>
+  Omarchy y tus paquetes se mantienen al día desde
+  <em>Update &gt; Omarchy</em> en el menú de Omarchy (<code>Super + Space</code
+  >).
+</p>
+
+<p>
+  Omarchy mismo se instala como paquetes pacman normales desde el
+  <a href="https://github.com/omacom-io/omarchy-pkgs"
+    >Omarchy Package Repository</a
+  >, así que una actualización instala
+  <a href="https://github.com/basecamp/omarchy/releases"
+    >la última versión de Omarchy</a
+  >, corre las migraciones pendientes para poner tu sistema en sintonía con lo
+  más nuevo, y actualiza todos los paquetes del sistema desde el
+  <a href="https://github.com/omacom-io/omarchy-mirror"
+    >espejo de Arch de Omarchy</a
+  >
+  y el <a href="https://aur.archlinux.org/">AUR</a> (si instalaste algún paquete
+  del AUR).
+</p>
+
+<p>
+  Cuando sale una versión nueva, aparece un ícono de flecha circular a la
+  derecha del reloj. Hacele clic y arranca el proceso de actualización.
+</p>
+
+<p><img src="/manual/images/update-available.webp" alt="update-available" /></p>
+
+<h3 id="four-channels">
+  Cuatro canales
+  <a
+    class="manual__heading-link"
+    href="#four-channels"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy se actualiza por cuatro canales: stable, RC, edge y dev. Las
+  instalaciones nuevas arrancan en el canal stable, que sigue las
+  <a href="https://github.com/basecamp/omarchy/releases/"
+    >versiones oficiales</a
+  >
+  y también el
+  <a href="https://github.com/omacom-io/omarchy-mirror"
+    >espejo estable de Arch de Omarchy</a
+  >, que va un mes atrás de lo último, así podemos detectar nuevas
+  incompatibilidades que requieran cambios de configuración antes de que le
+  causen problemas a la gente.
+</p>
+
+<p>
+  Pero si querés ayudar a detectar esos posibles problemas, podés usar el canal
+  edge. Eso hace que tus paquetes de Omarchy sigan las compilaciones de
+  desarrollo más recientes, y te permite actualizar a los últimos paquetes de
+  Arch en cuanto están disponibles. Solo deberías hacer esto si tenés
+  experiencia con Linux y sabés cómo recuperar un sistema con problemas.
+</p>
+
+<p>
+  Antes de cada versión mayor hacemos la validación final usando el canal RC. Si
+  te interesa ayudar con los últimos ajustes, pasá por
+  #omarchy-release-candidates en el Discord.
+</p>
+
+<p>
+  Por último está el canal dev, que conecta Omarchy directamente con una copia
+  git del código fuente en <code>~/omarchy</code>, combinada con los paquetes
+  edge. Solo deberías usar este canal si sos un usuario experimentado de Linux,
+  estás trabajando directamente sobre Omarchy y estás dispuesto a tolerar que se
+  rompan cosas.
+</p>
+
+<p>
+  Podés cambiar de canal desde <em>Update &gt; Channel</em> en el menú de
+  Omarchy (o con <code>omarchy-channel-set</code> en la terminal).
+</p>
+
+<h3 id="firmware-updates">
+  Actualizaciones de firmware
+  <a
+    class="manual__heading-link"
+    href="#firmware-updates"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Tus paquetes no son lo único que queda viejo. Muchas notebooks y periféricos
+  distribuyen firmware de BIOS, SSD y docks a través del Linux Vendor Firmware
+  Service, y <em>Update &gt; Firmware</em> en el menú de Omarchy va a buscar e
+  instalar lo que tu hardware tenga esperando. La primera vez que lo ejecutás
+  instala <code>fwupd</code>. Mucho firmware solo se puede escribir durante un
+  reinicio, así que no te sorprenda que te pida uno.
+</p>
+
+<h3 id="warning-about-direct-pacmanyay-updates">
+  Advertencia sobre actualizar directo con pacman o yay
+  <a
+    class="manual__heading-link"
+    href="#warning-about-direct-pacmanyay-updates"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si ya conocés Arch, te puede tentar ejecutar <code>pacman -Syu</code> o
+  <code>yay -Syu</code> por tu cuenta, pero si lo hacés te vas a perder la
+  instantánea, las migraciones y las actualizaciones de configuración que
+  Omarchy corre junto con los paquetes nuevos. Por eso Omarchy en realidad
+  detiene una actualización directa del sistema y te manda a
+  <code>omarchy update</code>. (Si de verdad sabés lo que estás haciendo, la
+  protección te dice cómo saltearla para una sola transacción).
+</p>
+
+<h3 id="rolling-back-bad-updates">
+  Volver atrás una actualización mala
+  <a
+    class="manual__heading-link"
+    href="#rolling-back-bad-updates"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si alguna vez tenés un problema después de actualizar, podés volver tu sistema
+  a la instantánea que se tomó antes de la actualización. Simplemente reiniciá y
+  elegí en el menú de arranque la instantánea anterior a cuando empezaste la
+  actualización.
+</p>
+
+<p><img src="/manual/images/bootloader.webp" alt="bootloader" /></p>
+
+<p>
+  Si de alguna forma se corrompieron tus archivos de configuración, también
+  podés reinstalar Omarchy con <code>omarchy reinstall</code> en la terminal.
+  Eso reinstala todos los paquetes predeterminados de Omarchy, te pasa a stable,
+  baja de versión cualquier paquete que esté demasiado nuevo y reinicia todos
+  los archivos de configuración. ¡Tené en cuenta que al hacerlo se sobrescriben
+  todos los cambios que le hiciste a las configuraciones predeterminadas de
+  Omarchy!
+</p>

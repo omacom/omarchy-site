@@ -1,0 +1,145 @@
+<p>
+  Omarchy se toma la seguridad muy en serio. La idea es que sea un sistema
+  operativo con el que puedas hacer <em>trabajo real</em> en el
+  <em>mundo real</em>. Donde perder una notebook no pueda derivar en una
+  emergencia de seguridad. Así que esto es lo que hacemos:
+</p>
+
+<ol>
+  <li>
+    <em>El cifrado de disco completo es obligatorio</em>: es el paso más
+    importante para proteger físicamente tus datos. Si perdés la computadora o
+    te la roban, los datos están completamente cifrados con LUKS estándar (Linux
+    Unified Key Setup).
+  </li>
+  <li>
+    <em>El firewall está activado de forma predeterminada</em>: todo el tráfico
+    entrante está bloqueado por defecto, salvo el puerto 53317 para
+    <a href="https://localsend.org/">LocalSend</a>. Incluso ssh está apagado
+    hasta que lo enciendas desde <em>Setup &gt; Security &gt; SSHD</em>, que
+    abre el puerto 22 (con límite de velocidad contra ataques de fuerza bruta)
+    como parte de la configuración. Hasta restringimos el acceso de Docker con
+    la configuración de
+    <a href="https://github.com/chaifeng/ufw-docker">ufw-docker</a>, para evitar
+    que tus contenedores queden expuestos al mundo por accidente.
+  </li>
+  <li>
+    <em>Arch siempre tiene las últimas actualizaciones</em>: Arch, la
+    distribución sobre la que está construido Omarchy, es de lanzamiento
+    continuo. Eso significa que cualquier vulnerabilidad de seguridad que se
+    descubra y se parchee en cualquier paquete queda disponible enseguida para
+    instalar con <code>omarchy-update</code>. De esa forma siempre corrés las
+    versiones más nuevas y seguras de todo.
+  </li>
+  <li>
+    <em>Omarchy mantiene sus propios paquetes y su propio espejo</em>: de forma
+    predeterminada, Omarchy solo depende de paquetes de los repositorios
+    core/extra/multilib de Arch y de su propio Omarchy Package Repository. Podés
+    instalar software directamente del AUR, pero la instalación base no lo hace:
+    solo unas pocas instalaciones opcionales, como los navegadores de terceros,
+    salen del AUR.
+  </li>
+  <li>
+    <em>Cloudflare nos protege de los DDoS</em>: toda la infraestructura de
+    distribución de Omarchy, o sea las ISO, los paquetes de Omarchy y el espejo
+    de Arch, está protegida detrás del formidable escudo anti-DDoS de Cloudflare
+    y alojada en su CDN. Eso da una disponibilidad excelente.
+  </li>
+</ol>
+
+<h2 id="changing-your-passwords">
+  Cambiar tus contraseñas
+  <a
+    class="manual__heading-link"
+    href="#changing-your-passwords"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  En una instalación cifrada tenés dos contraseñas: la que desbloquea el disco
+  al arrancar y la que usás para iniciar sesión y para <code>sudo</code>. Las
+  dos se pueden cambiar desde <em>Update &gt; Password</em> en el menú de
+  Omarchy: <em>Drive Encryption</em> para la primera, <em>User</em> para la
+  segunda. Para cambiar la contraseña del disco te pide la actual primero, así
+  que tenela a mano.
+</p>
+
+<h2 id="passing-on-a-machine-youve-already-used">
+  Entregar una máquina que ya venías usando
+  <a
+    class="manual__heading-link"
+    href="#passing-on-a-machine-youve-already-used"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Si le vas a pasar tu máquina a otra persona, no hace falta reinstalarla.
+  Ejecutá <em>Setup &gt; Reset Computer</em> en el menú de Omarchy, escribí
+  <code>reset</code> para confirmar y reiniciá. Eso borra todas las cuentas de
+  usuario y todo lo que hay en <code>/home</code>, descarta todos los paquetes y
+  cambios al sistema que hiciste desde la instalación, y limpia la identidad de
+  la máquina: conexiones de red, claves de host, todo. Lo que vuelve a arrancar
+  es el asistente de configuración del primer arranque, listo para que el nuevo
+  dueño ponga su propio nombre, contraseña y contraseña de cifrado.
+</p>
+
+<p>
+  Funciona restaurando la instantánea base que toma el instalador, así que solo
+  está disponible en máquinas instaladas desde la ISO de Omarchy. Y en un disco
+  sin cifrado, un reinicio es un borrado común y no un borrado seguro, así que
+  si los datos eran sensibles, mejor hacé una instalación desde cero.
+</p>
+
+<h2 id="passwordless-sudo">
+  Sudo sin contraseña
+  <a
+    class="manual__heading-link"
+    href="#passwordless-sudo"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  A veces querés que <code>sudo</code> deje de preguntar, sobre todo cuando un
+  agente de IA está haciendo un tramo largo de trabajo sobre el sistema.
+  <em>Setup &gt; Security &gt; Passwordless Sudo</em> lo desactiva por 15
+  minutos y después lo vuelve a poner automáticamente. Ejecutalo de nuevo antes
+  de que se cumpla el tiempo para cortarlo antes, y pasá tu propia cantidad de
+  minutos con <code>omarchy-sudo-passwordless 30</code> si 15 no te alcanzan.
+</p>
+
+<p>
+  Tené los ojos abiertos con esto: mientras está activado, cualquier cosa que
+  corra con tu usuario puede hacer cualquier cosa como root sin que te
+  pregunten. Ese es todo el sentido, y también todo el riesgo.
+</p>
+
+<h2 id="signing-keys">
+  Claves de firma
+  <a
+    class="manual__heading-link"
+    href="#signing-keys"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  La clave pública de todas las firmas de las ISO y de los paquetes del
+  repositorio de Omarchy es
+  <code>40DFB630FF42BCFFB047046CF0134EE680CAC571</code> (<a
+    href="https://keys.openpgp.org/search?q=pkgs%40omarchy.org"
+    >verificala en openpgp.org</a
+  >). El paquete <code>omarchy/omarchy-keyring</code> también la contiene y se
+  va a usar para distribuir cualquier actualización futura sin fricción.
+</p>
+
+<p>
+  Podés encontrar la firma de cualquier ISO publicada agregando .sig a la URL.
+  Por ejemplo https://iso.omarchy.org/omarchy-x.x.x.iso.sig.
+</p>

@@ -1,0 +1,249 @@
+<h3 id="how-do-i-switch-between-keyboard-layouts">
+  ¿Cómo cambio entre distribuciones de teclado?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-switch-between-keyboard-layouts"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Editá tu archivo <code>~/.config/hypr/input.lua</code> y agregá esto para
+  alternar entre distribuciones con <code>Left Alt + Right Alt</code>:
+</p>
+
+<pre><code>hl.config({
+  input = {
+    -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt
+    kb_layout = "us,fr",
+    kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+  },
+})
+</code></pre>
+
+<p>
+  La barra va a mostrar automáticamente tu distribución de teclado actual cuando
+  tengas varias configuradas (y también podés hacerle clic para cambiar).
+</p>
+
+<h3 id="how-do-i-change-the-clock-format-to-12-hour">
+  ¿Cómo cambio el formato del reloj a 12 horas?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-change-the-clock-format-to-12-hour"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Hacé clic derecho en el reloj de la barra para ir pasando por los formatos
+  comunes, incluidos los de 12 horas. También podés definir el formato
+  directamente:
+</p>
+
+<pre><code>omarchy bar set omarchy.clock format "dddd h:mm AP"
+</code></pre>
+
+<p>Eso va a mostrar Sunday 10:55 AM.</p>
+
+<h3 id="how-do-i-change-my-timezone">
+  ¿Cómo cambio mi zona horaria?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-change-my-timezone"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Ejecutá <em>Update &gt; Timezone</em> en el menú de Omarchy y elegí de la
+  lista. Si la zona horaria está bien pero el reloj se corrió,
+  <em>Update &gt; Time</em> reinicia la sincronización de hora por vos.
+</p>
+
+<h3 id="how-do-i-change-my-dns-share-my-wi-fi-or-check-my-connection-speed">
+  ¿Cómo cambio mi DNS, comparto mi Wi-Fi o mido la velocidad de mi conexión?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-change-my-dns-share-my-wi-fi-or-check-my-connection-speed"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>Todo eso está en <a href="/manual/networking/">redes</a>.</p>
+
+<h3 id="how-do-i-check-how-fast-my-disk-is">
+  ¿Cómo mido qué tan rápido es mi disco?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-check-how-fast-my-disk-is"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  <em>Trigger &gt; Speed Test &gt; Disk Speed Test</em> mide en vivo la
+  velocidad de lectura y escritura de tu disco, o
+  <code>omarchy disk speedtest</code> desde la terminal.
+</p>
+
+<h3 id="why-cant-i-sign-into-my-google-account-in-chromium">
+  ¿Por qué no puedo iniciar sesión en mi cuenta de Google en Chromium?
+  <a
+    class="manual__heading-link"
+    href="#why-cant-i-sign-into-my-google-account-in-chromium"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  La compilación abierta y simple de Chromium no incluye las credenciales OAuth
+  que Google exige para iniciar sesión con una cuenta. Ejecutá
+  <em>Install &gt; Service &gt; Chromium Account</em> en el menú de Omarchy para
+  agregarlas, reiniciá el navegador y el inicio de sesión va a funcionar.
+</p>
+
+<h3 id="how-do-i-add-a-printer">
+  ¿Cómo agrego una impresora?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-add-a-printer"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  La impresión viene configurada y funcionando de entrada, y cada impresora la
+  agregás vos desde <em>Print Settings</em> en el lanzador de aplicaciones
+  (<code>Super + Space</code>).
+</p>
+
+<p>
+  Elegí <em>Add</em> y dale un momento para que busque: una impresora conectada
+  por USB, y la mayoría de las impresoras de red, se encuentran solas. Si la
+  tuya no aparece en la lista, elegí
+  <em>Network Printer &gt; Internet Printing Protocol (ipp)</em> e ingresá su
+  dirección. La pantalla de la impresora o su página web te va a decir cuál es,
+  normalmente algo como <code>192.168.1.50</code> con una cola
+  <code>ipp/print</code>. Después <em>Forward</em> te ofrece un controlador,
+  donde una impresora moderna funciona mejor con el perfil sin controlador
+  <em>IPP Everywhere</em> y una más vieja quiere el controlador propio del
+  modelo.
+</p>
+
+<p>
+  Hacé clic derecho en una impresora y elegí <em>Set as Default</em> para
+  definir cuál usan primero tus aplicaciones, y <em>Properties</em> para
+  configurar el tamaño del papel, el doble faz y la calidad.
+</p>
+
+<p>
+  El descubrimiento automático, donde las impresoras de la red aparecen sin que
+  las agregues, está desactivado temporalmente mientras lo rehacen, y por eso el
+  primer paso de arriba es tuyo y no automático. Imprimir a un archivo PDF
+  funciona sin ninguna impresora.
+</p>
+
+<h3 id="how-do-i-change-where-screenshots-or-screenrecordings-are-saved">
+  ¿Cómo cambio dónde se guardan las capturas o las grabaciones de pantalla?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-change-where-screenshots-or-screenrecordings-are-saved"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si querés que las capturas se guarden en <code>~/Pictures/Screenshots</code> y
+  no simplemente en <code>~/Pictures</code>, podés agregar esto a un archivo
+  dentro de <code>~/.config/uwsm/env.d/</code> (como
+  <code>~/.config/uwsm/env.d/capture</code>):
+</p>
+
+<pre><code>export OMARCHY_SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
+</code></pre>
+
+<p>
+  Podés hacer lo mismo con las grabaciones de pantalla usando
+  <code>OMARCHY_SCREENRECORD_DIR</code>.
+</p>
+
+<p>
+  Eso sí, acordate de crear el directorio donde querés guardar y de reiniciar
+  Omarchy para que tome efecto.
+</p>
+
+<h3 id="how-do-i-get-the-speakers--webcam-working-on-my-apple-studio-display">
+  ¿Cómo hago funcionar los parlantes y la webcam de mi Apple Studio Display?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-get-the-speakers--webcam-working-on-my-apple-studio-display"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Uno pensaría que todo debería funcionar con solo enchufar el USB C, pero
+  lamentablemente no es así. La solución que encontré para que ande de forma
+  confiable es usar
+  <a
+    href="https://www.amazon.com/WJESOG-DisplayPort-Adapter-Converter-Thunderbolt/dp/B0BNX7MS6N/"
+    >el cable WJESOG DisplayPort + USB-A =&gt; USB-C</a
+  >. Con eso, los parlantes y la webcam funcionan de maravilla.
+</p>
+
+<p>
+  Acordate de que en Omarchy tenés control de brillo incorporado para las
+  pantallas de Apple (tanto la Studio como la XDR) usando las teclas de brillo
+  normales del teclado.
+</p>
+
+<h3 id="how-do-i-get-rid-of-all-the-extra-software">
+  ¿Cómo me saco de encima todo el software extra?
+  <a
+    class="manual__heading-link"
+    href="#how-do-i-get-rid-of-all-the-extra-software"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si no querés programas como Obsidian o LibreOffice, ni nada de lo demás que
+  viene preinstalado, lo podés quitar muy fácil.
+</p>
+
+<p>
+  Ejecutá <em>Remove &gt; Package</em> para ver todos los paquetes instalados.
+  Después podés marcar con tab cualquier paquete que quieras eliminar, y empezar
+  a quitar todo lo seleccionado con enter.
+</p>
+
+<p>
+  Y podés usar <em>Remove &gt; Web App</em> en el menú de Omarchy para eliminar
+  cualquiera de las aplicaciones web preinstaladas que no quieras.
+</p>
+
+<p>
+  O ejecutá <em>Remove &gt; Preinstalls</em> para barrer de una sola vez todos
+  los extras preinstalados: aplicaciones web, TUI y aplicaciones opcionales. Los
+  atajos que las abrían se van con ellas, así que te queda una pizarra limpia de
+  asignaciones para llenar con las tuyas en
+  <code>~/.config/hypr/bindings.lua</code>.
+</p>
+
+<hr />
+
+<p>
+  Para errores y cosas rotas, mirá
+  <a href="/manual/troubleshooting/">la sección de solución de problemas</a>.
+</p>
