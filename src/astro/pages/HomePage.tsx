@@ -17,6 +17,7 @@ import {
   WindowsIcon,
 } from '@/components/icons'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import { LinuxIcon } from '@/components/icons/LinuxIcon'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
@@ -57,25 +58,31 @@ import release from '@/data/version.json'
 const TRY = {
   mac: {
     label: t('Try on Mac'),
-    href: 'https://github.com/omacom/try-omarchy',
+    href: '/try/#mac',
     icon: AppleIcon,
   },
   windows: {
     label: t('Try on Windows'),
-    href: 'https://github.com/omacom/try-omarchy-windows',
+    href: '/try/#windows',
     icon: WindowsIcon,
+  },
+  linux: {
+    label: t('Try on Linux'),
+    href: '/try/#linux',
+    icon: LinuxIcon,
   },
 } as const
 
-/** Which of the two the visitor is most likely on, read after mount so the
- *  server and the first paint agree; null on Linux and on anything unsure. */
+/** Read the visitor's desktop platform after mount so the server and the
+ *  first paint agree; leave mobile devices and unknown platforms neutral. */
 function useTryDevice() {
   const [device, setDevice] = useState<keyof typeof TRY | null>(null)
   useEffect(() => {
     const ua = navigator.userAgent
-    if (/iPhone|iPad/.test(ua)) return
+    if (/iPhone|iPad|Android/.test(ua)) return
     if (/Mac/.test(ua)) setDevice('mac')
     else if (/Win/.test(ua)) setDevice('windows')
+    else if (/Linux/.test(ua)) setDevice('linux')
   }, [])
   return device
 }
@@ -606,7 +613,7 @@ export function HomePage({ data }: { data: HomeData }) {
               </p>
               <div className="mt-auto pt-6">
                 <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
+                  {(['mac', 'windows', 'linux'] as const).map((key) => {
                     const Mark = TRY[key].icon
                     return (
                       <Button
@@ -624,10 +631,9 @@ export function HomePage({ data }: { data: HomeData }) {
                   })}
                 </div>
                 <p className="mt-2.5 text-[13px] text-text-muted">
-                  {t('Apple Silicon Macs, Windows 10 and 11.')}
-                  <span className="block">
-                    {t('On Linux, the ISO is the way in.')}
-                  </span>
+                  {t(
+                    'Apple Silicon Macs, Windows 10 and 11, and Linux with KVM.',
+                  )}
                 </p>
               </div>
             </div>

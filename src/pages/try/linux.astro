@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro'
+import { TryLinuxPage } from '@/astro/pages/TryLinuxPage'
+import { headProps } from '../../astro/head'
+import { tryLinuxSeo } from '../../astro/page-seo'
+
+const head = headProps(tryLinuxSeo(), '/try/linux/')
+---
+<Base {...head}>
+  <TryLinuxPage client:load />
+</Base>
