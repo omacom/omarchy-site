@@ -57,7 +57,7 @@ export function CardRail({
         aria-hidden="true"
         className="mt-5 h-2 bg-border-subtle/50 sm:hidden"
       >
-        <div ref={thumb} className="h-full bg-brand" />
+        <div ref={thumb} className="h-full bg-brand-fill" />
       </div>
     </>
   )

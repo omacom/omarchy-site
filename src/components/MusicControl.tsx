@@ -136,7 +136,7 @@ export function MusicMenuControl({
             ref={(el) => {
               bars.current[i] = el
             }}
-            className="block w-[3px] shrink-0 bg-brand"
+            className="block w-[3px] shrink-0 bg-brand-fill"
             style={{ height: 2 }}
           />
         ))}
@@ -258,7 +258,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
             ref={(el) => {
               bars.current[i] = el
             }}
-            className="block w-[3px] shrink-0 bg-brand"
+            className="block w-[3px] shrink-0 bg-brand-fill"
             style={{ height: 2 }}
           />
         ))}
@@ -270,7 +270,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
       <span
         ref={line}
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-brand transition-[height] duration-150 ease-out group-hover/card:h-[4px] group-has-[:focus-visible]/card:h-[4px]"
+        className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-brand-fill transition-[height] duration-150 ease-out group-hover/card:h-[4px] group-has-[:focus-visible]/card:h-[4px]"
         style={{ transform: 'scaleX(0)' }}
       />
       <input

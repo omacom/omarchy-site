@@ -426,7 +426,7 @@ export function RailBar({
       <div
         ref={rail.thumb}
         {...rail.thumbProps}
-        className="h-full cursor-grab bg-brand transition-colors duration-150 ease-out hover:bg-(--t-field-hover) active:cursor-grabbing active:bg-(--t-field-crest)"
+        className="h-full cursor-grab bg-brand-fill transition-colors duration-150 ease-out hover:bg-(--t-field-hover) active:cursor-grabbing active:bg-(--t-field-crest)"
       />
     </div>
   )

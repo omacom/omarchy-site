@@ -3,11 +3,20 @@ import { inlineJson } from './inline-json'
 import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
-import { SITE_THEMES } from './site-themes.ts'
-export { SITE_THEMES, type SiteTheme } from './site-themes.ts'
+import { ALL_THEMES, HOME_THEME } from './site-themes.ts'
+export {
+  ALL_THEMES,
+  HOME_THEME,
+  SITE_THEMES,
+  STOCK_THEMES,
+  type SiteTheme,
+} from './site-themes.ts'
 
 export const DEFAULT_THEME = 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
+/** Set once a visitor picks a theme themselves. Until then a national site
+ *  opens in its own country's theme, whatever was stored before. */
+export const CHOSEN_KEY = 'omarchy-site-theme-chosen'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
 /** Ask the mounted ThemePicker to open (footer link, menu). */
@@ -15,20 +24,24 @@ export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 /** Fired with detail { open } whenever the picker opens or closes. */
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
 
-/** Apply the saved palette before paint, or Tokyo Night for anyone who hasn't picked one.
+/** Apply the saved palette before paint. A national site opens in its own
+ * country's theme until the visitor picks another; anyone else who hasn't
+ * picked one gets Tokyo Night.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */
-export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});if(${inlineJson(
-  SITE_THEMES.map((t) => t.id),
+export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});var home=${inlineJson(
+  HOME_THEME?.id ?? null,
+)};var chosen=localStorage.getItem(${inlineJson(CHOSEN_KEY)})==='true';if(home&&!chosen){t=home;localStorage.setItem(${inlineJson(THEME_KEY)},t)}else if(${inlineJson(
+  ALL_THEMES.map((t) => t.id),
 )}.indexOf(s)>=0)t=s}catch(e){}document.documentElement.dataset.theme=t;if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
 
 export function readTheme(): string {
   try {
     const stored = localStorage.getItem(THEME_KEY)
-    if (SITE_THEMES.some((t) => t.id === stored)) return stored as string
+    if (ALL_THEMES.some((t) => t.id === stored)) return stored as string
   } catch {
     /* storage unavailable */
   }
-  return DEFAULT_THEME
+  return HOME_THEME?.id ?? DEFAULT_THEME
 }
 
 /** Replace the favicon link to invalidate browsers that cache it by element. */
@@ -202,6 +215,7 @@ export function applyTheme(id: string) {
   root.dataset.theme = id
   try {
     localStorage.setItem(THEME_KEY, id)
+    localStorage.setItem(CHOSEN_KEY, 'true')
   } catch {
     /* storage unavailable */
   }
