@@ -14,6 +14,7 @@ import {
 } from '@/lib/etch'
 import { BANDS, loadMusic, music } from '@/lib/music'
 import type { Etch } from '@/lib/etch'
+import { wordGrid, WORD_COLUMNS, WORD_ROWS } from '@/lib/word-shade'
 
 export type FieldGlyph = {
   rows: readonly string[]
@@ -39,7 +40,43 @@ function readPalette() {
     lit: token('--t-field-lit', '#9ece6a'),
     hover: token('--t-field-hover', '#bbdd97'),
     crest: token('--t-field-crest', '#daecc6'),
+    /** A theme's own colours for the word, one per row or per column. */
+    word: wordCells(token('--t-word-cells', '')),
+    /** A block of one colour over them from the top left: a flag's hoist
+     *  or canton, as its colour, columns and rows. */
+    hoist: wordHoist(token('--t-word-hoist', '')),
+    /** Bars down the whole word: a cross's upright. */
+    uprights: wordUprights(token('--t-word-uprights', '')),
   }
+}
+
+/** Reads `--t-word-hoist`: a colour, then its columns and rows. */
+function wordHoist(value: string) {
+  const [color, columns, rows] = value.split(/\s+/)
+  return color && Number(columns) > 0
+    ? { color, columns: Number(columns), rows: Number(rows) }
+    : null
+}
+
+/** Reads `--t-word-uprights`: bars of a colour, from and to columns. */
+function wordUprights(value: string) {
+  return value
+    .split(',')
+    .map((bar) => bar.trim().split(/\s+/))
+    .filter(([color, from, to]) => color && Number(to) > Number(from))
+    .map(([color, from, to]) => ({
+      color,
+      from: Number(from),
+      to: Number(to),
+    }))
+}
+
+/** Reads `--t-word-cells`: "rows" or "cols", then one colour per cell. */
+function wordCells(value: string) {
+  const [axis, ...cells] = value.split(/\s+/).filter(Boolean)
+  return (axis === 'rows' || axis === 'cols') && cells.length > 0
+    ? { axis: axis as 'rows' | 'cols', cells }
+    : null
 }
 
 /** Classic 8x8 ordered dither matrix, 0..63. */
@@ -332,21 +369,49 @@ export function HeroPixelField({
         if (Math.abs(ink.l - l) < Math.abs(best.l - l)) best = ink
       return best.css
     }
-    /** The resting ink of each row of the word, in this theme. A word of
-     *  another height (the 404's) takes the bands in proportion. */
-    let restInks: string[] = []
+    /** The resting ink of every cell of the word, by row then column: the
+     *  brand bands, or a theme's own colours with any hoist and shading. A
+     *  word of another size (the 404's) takes them in proportion. */
+    let restGrid: string[][] = []
+    /** Where a theme's own word lifts toward under the cursor. */
+    let wordLift = '#ffffff'
     const buildRestInks = () => {
-      restInks = []
+      wordLift =
+        luma(parse(palette.bg) ?? [0, 0, 0]) < 0.5 ? '#ffffff' : '#000000'
+      const word = palette.word
+      const own = word
+        ? wordGrid(
+            {
+              axis: word.axis,
+              cells: word.cells,
+              hoist: palette.hoist,
+              uprights: palette.uprights,
+            },
+            palette.bg,
+          )
+        : null
+      restGrid = []
       for (let row = 0; row < glyph.height; row++) {
-        const band = Math.floor((row / glyph.height) * LASER_BANDS.length)
-        restInks.push(palette[LASER_BANDS[band]])
+        const line: string[] = []
+        const r = Math.floor((row / glyph.height) * WORD_ROWS)
+        const band =
+          palette[
+            LASER_BANDS[Math.floor((row / glyph.height) * LASER_BANDS.length)]
+          ]
+        for (let col = 0; col < glyph.width; col++)
+          line.push(
+            own ? own[r][Math.floor((col / glyph.width) * WORD_COLUMNS)] : band,
+          )
+        restGrid.push(line)
       }
     }
     buildRestInks()
-    /** The resting ink at a device-px height within the word. */
-    const restInkAt = (cy: number) => {
+    /** The resting ink at a device-px point within the word. */
+    const restInkAt = (cx: number, cy: number) => {
       const row = Math.floor((cy - wmY) / wmCH)
-      return restInks[Math.max(0, Math.min(restInks.length - 1, row))]
+      const col = Math.floor((cx - wmX) / wmCW)
+      const line = restGrid[Math.max(0, Math.min(glyph.height - 1, row))]
+      return line[Math.max(0, Math.min(glyph.width - 1, col))]
     }
     /** A colour part way from one CSS colour to another. */
     const mix = (from: string, to: string, t: number) => {
@@ -908,11 +973,20 @@ export function HeroPixelField({
           }
         }
 
+        const rest = restInkAt(cx, cy)
+        // A theme's own word lifts toward white on a dark page, or black on
+        // a light one, since the bands' inks would paint over its colours.
+        if (palette.word)
+          return crest > 0.45
+            ? mix(rest, wordLift, 0.5)
+            : crest > 0.12
+              ? mix(rest, wordLift, 0.25)
+              : rest
         return crest > 0.45
           ? palette.crest
           : crest > 0.12
             ? palette.hover
-            : restInkAt(cy)
+            : rest
       }
 
       // Cell edges snap to whole device px with rounding against the shared
@@ -926,18 +1000,21 @@ export function HeroPixelField({
         const rowHeight = Math.round(yTop + wmCH) - y
 
         if (stamps.length === 0 && !cursorOnWordmark) {
-          ctx.fillStyle = restInks[row]
+          // At rest, each run of lit cells in one ink is a single rect.
+          const inks = restGrid[row]
           let run = 0
           for (let col = 0; col <= glyph.width; col++) {
-            if (bits[col] === '1') {
+            const lit = bits[col] === '1'
+            if (lit && (run === 0 || inks[col] === inks[col - 1])) {
               run++
               continue
             }
             if (run > 0) {
+              ctx.fillStyle = inks[col - 1]
               const x = Math.round(wmX + (col - run) * wmCW)
               ctx.fillRect(x, y, Math.round(wmX + col * wmCW) - x, rowHeight)
-              run = 0
             }
+            run = lit ? 1 : 0
           }
           continue
         }
@@ -973,7 +1050,7 @@ export function HeroPixelField({
           const y = Math.round(yTop)
           const cw = Math.round(xLeft + wmCW) - x
           const ch = Math.round(yTop + wmCH) - y
-          const rest = restInkAt(yTop + wmCH / 2)
+          const rest = restInkAt(xLeft + wmCW / 2, yTop + wmCH / 2)
           const resting = wordmarkInk(xLeft + wmCW / 2, yTop + wmCH / 2)
           const effectInk = themeInk(cell.rgb)
           const ink =

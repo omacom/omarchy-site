@@ -222,7 +222,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
                   className={cn(
                     'inline-flex min-h-11 items-center gap-2 border px-3 text-sm transition-colors sm:min-h-9 duration-150 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
                     on
-                      ? 'border-brand bg-brand text-brand-ink'
+                      ? 'border-brand-fill bg-brand-fill text-brand-ink'
                       : 'border-border-strong bg-surface text-text hover:bg-surface-2',
                   )}
                 >
