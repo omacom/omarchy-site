@@ -510,6 +510,11 @@
   "name": "Quattrocento Light"
  },
  {
+  "repo": "https://github.com/Ahmed-Sinkeat/omarchy-quicksilver-theme",
+  "image": "/assets/themes/quicksilver.webp",
+  "name": "Quicksilver"
+ },
+ {
   "repo": "https://github.com/atif-1402/omarchy-rainynight-theme",
   "image": "/assets/themes/rainy-night.webp",
   "name": "Rainy Night"
