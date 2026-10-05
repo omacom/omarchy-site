@@ -12,6 +12,7 @@ import {
   resolveEffect,
   startEtch,
 } from '@/lib/etch'
+import { fieldBandInkAtRow } from '@/lib/field-bands'
 import { BANDS, loadMusic, music } from '@/lib/music'
 import type { Etch } from '@/lib/etch'
 
@@ -86,28 +87,6 @@ function wordWasHeld() {
     heldAnswer = document.documentElement.hasAttribute('data-etch-held')
   return heldAnswer
 }
-
-const LASER_BANDS = [
-  'crest',
-  'crest',
-  'crest',
-  'crest',
-  'crest',
-  'hover',
-  'hover',
-  'lit',
-  'lit',
-  'lit',
-  'lit',
-  'mid',
-  'mid',
-  'mid',
-  'dim',
-  'dim',
-  'dim',
-  'dim',
-  'dim',
-] as const
 
 /** How much of a band's height a beat adds, and how fast that fades. */
 const BEAT_REACH = 0.8
@@ -332,21 +311,24 @@ export function HeroPixelField({
         if (Math.abs(ink.l - l) < Math.abs(best.l - l)) best = ink
       return best.css
     }
-    /** The resting ink of each row of the word, in this theme. A word of
-     *  another height (the 404's) takes the bands in proportion. */
+    /** The resting ink of each row of the word, in this theme. */
     let restInks: string[] = []
     const buildRestInks = () => {
       restInks = []
+      const h = Math.max(1, glyph.height)
       for (let row = 0; row < glyph.height; row++) {
-        const band = Math.floor((row / glyph.height) * LASER_BANDS.length)
-        restInks.push(palette[LASER_BANDS[band]])
+        restInks.push(palette[fieldBandInkAtRow(row, h)])
       }
     }
     buildRestInks()
     /** The resting ink at a device-px height within the word. */
     const restInkAt = (cy: number) => {
-      const row = Math.floor((cy - wmY) / wmCH)
-      return restInks[Math.max(0, Math.min(restInks.length - 1, row))]
+      if (wmCH <= 0 || restInks.length === 0) return palette.lit
+      const row = Math.min(
+        restInks.length - 1,
+        Math.max(0, Math.floor((cy - wmY) / wmCH)),
+      )
+      return restInks[row]!
     }
     /** A colour part way from one CSS colour to another. */
     const mix = (from: string, to: string, t: number) => {
@@ -385,7 +367,7 @@ export function HeroPixelField({
         glyph.rows,
         glyph.width,
         glyph.height,
-        [palette.lit, palette.hover, palette.crest],
+        [palette.crest, palette.hover, palette.lit, palette.mid, palette.dim],
         resolveEffect(effect),
       )
         .then((next) => {
@@ -633,6 +615,7 @@ export function HeroPixelField({
           ramp[r * cols + c] = shape * clear * clearOf(x, y)
         }
       }
+      buildRestInks()
       return true
     }
 

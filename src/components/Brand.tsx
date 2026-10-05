@@ -1,4 +1,5 @@
 import { NOT_FOUND_HEIGHT, NOT_FOUND_WIDTH } from '@/data/not-found-bitmap'
+import { FIELD_BAND_UNITS, fieldBandGradientCss } from '@/lib/field-bands'
 import { cn } from '@/lib/utils'
 
 /** The square-spiral glyph from public/brand/omarchy-logo.svg, inlined. The
@@ -25,13 +26,9 @@ export function OmarchyMark({ className }: { className?: string }) {
 }
 
 /** Brand gradient bands as wordmark pixel rows, shared by wordmark and mark. */
-const BRAND_BANDS: [color: string, rows: number][] = [
-  ['var(--t-field-crest)', 5],
-  ['var(--t-field-hover)', 2],
-  ['var(--t-field-lit)', 4],
-  ['var(--t-field-mid)', 3],
-  ['var(--t-field-dim)', 5],
-]
+const BRAND_BANDS: [color: string, rows: number][] = FIELD_BAND_UNITS.map(
+  ([ink, rows]) => [`var(--t-field-${ink})`, rows],
+)
 const BAND_ROWS = BRAND_BANDS.reduce((sum, [, rows]) => sum + rows, 0)
 
 /** Band edges in percent of the height. */
@@ -87,9 +84,7 @@ export function OmarchyMarkDrawn({ className }: { className?: string }) {
   )
 }
 
-export const WORDMARK_BANDS = `linear-gradient(to bottom, ${BAND_STOPS.map(
-  ([color, from, to]) => `${color} ${from}% ${to}%`,
-).join(', ')})`
+export const WORDMARK_BANDS = fieldBandGradientCss()
 
 type WordmarkProps = {
   className?: string
