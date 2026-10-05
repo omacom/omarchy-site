@@ -635,12 +635,17 @@
   "name": "Sunset Drive"
  },
  {
-  "repo": "https://github.com/TyRichards/omarchy-super-game-bro-theme",
-  "image": "/assets/themes/super-game-bro.webp",
-  "name": "Super Game Bro"
- },
+   "repo": "https://github.com/TyRichards/omarchy-super-game-bro-theme",
+   "image": "/assets/themes/super-game-bro.webp",
+   "name": "Super Game Bro"
+  },
  {
-  "repo": "https://github.com/omacom-io/omarchy-synthwave84-theme/",
+   "repo": "https://github.com/pxllbt/synctax",
+   "image": "/assets/themes/synctax.webp",
+   "name": "Synctax"
+  },
+  {
+   "repo": "https://github.com/omacom-io/omarchy-synthwave84-theme/",
   "image": "/assets/themes/synthwave-84.webp",
   "name": "Synthwave '84"
  },
