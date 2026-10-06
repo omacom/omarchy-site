@@ -5,6 +5,11 @@
   "name": "Aetheria"
  },
  {
+  "repo": "https://github.com/guilhermetk/omarchy-all-hallows-eve-theme",
+  "image": "/assets/themes/all-hallow-s-eve.webp",
+  "name": "All Hallow's Eve"
+ },
+ {
   "repo": "https://github.com/tahfizhabib/omarchy-amberbyte-theme",
   "image": "/assets/themes/amberbyte.webp",
   "name": "Amberbyte"
@@ -20,29 +25,24 @@
   "name": "Archwave"
  },
  {
-  "repo": "https://github.com/bjarneo/omarchy-ash-theme",
-  "image": "/assets/themes/ash.webp",
-  "name": "Ash"
- },
- {
   "repo": "https://github.com/tahfizhabib/omarchy-artzen-theme",
   "image": "/assets/themes/artzen.webp",
   "name": "Artzen"
  },
  {
-  "repo": "https://github.com/bjarneo/omarchy-aura-theme",
-  "image": "/assets/themes/aura.webp",
-  "name": "Aura"
- },
- {
-  "repo": "https://github.com/guilhermetk/omarchy-all-hallows-eve-theme",
-  "image": "/assets/themes/all-hallow-s-eve.webp",
-  "name": "All Hallow's Eve"
+  "repo": "https://github.com/bjarneo/omarchy-ash-theme",
+  "image": "/assets/themes/ash.webp",
+  "name": "Ash"
  },
  {
   "repo": "https://github.com/atif-1402/omarchy-atelier-theme",
   "image": "/assets/themes/atelier.webp",
   "name": "Atelier"
+ },
+ {
+  "repo": "https://github.com/bjarneo/omarchy-aura-theme",
+  "image": "/assets/themes/aura.webp",
+  "name": "Aura"
  },
  {
   "repo": "https://github.com/abhijeet-swami/omarchy-ayaka-theme",
@@ -95,14 +95,14 @@
   "name": "Black Turq"
  },
  {
-  "repo": "https://github.com/dotsilva/omarchy-bluedotrb-theme",
-  "image": "/assets/themes/bluedotrb.webp",
-  "name": "bluedotrb"
- },
- {
   "repo": "https://github.com/hipsterusername/omarchy-blueridge-dark-theme",
   "image": "/assets/themes/blue-ridge-dark.webp",
   "name": "Blue Ridge Dark"
+ },
+ {
+  "repo": "https://github.com/dotsilva/omarchy-bluedotrb-theme",
+  "image": "/assets/themes/bluedotrb.webp",
+  "name": "bluedotrb"
  },
  {
   "repo": "https://github.com/shmall03/omarchy-castle-on-a-lake-theme",
@@ -150,6 +150,11 @@
   "name": "Commit"
  },
  {
+  "repo": "https://github.com/arsh240311/omarchy-cozy-ui",
+  "image": "/assets/themes/cozy-harbor-ae86.webp",
+  "name": "Cozy Harbor AE86"
+ },
+ {
   "repo": "https://github.com/stannorbvb-cmd/cpunk",
   "image": "/assets/themes/cpunk.webp",
   "name": "CpUnk"
@@ -170,14 +175,14 @@
   "name": "Demon"
  },
  {
-  "repo": "https://github.com/dotsilva/omarchy-dotrb-theme",
-  "image": "/assets/themes/dotrb.webp",
-  "name": "Dotrb"
- },
- {
   "repo": "https://github.com/HANCORE-linux/omarchy-dos-moos-theme",
   "image": "/assets/themes/dos-moos.webp",
   "name": "Dos Moos"
+ },
+ {
+  "repo": "https://github.com/dotsilva/omarchy-dotrb-theme",
+  "image": "/assets/themes/dotrb.webp",
+  "name": "Dotrb"
  },
  {
   "repo": "https://github.com/ShehabShaef/omarchy-drac-theme",
@@ -268,11 +273,6 @@
   "repo": "https://github.com/atif-1402/omarchy-golden-brown-theme",
   "image": "/assets/themes/golden-brown.webp",
   "name": "Golden Brown"
- },
- {
-  "repo": "https://github.com/HANCORE-linux/omarchy-thegreek-theme",
-  "image": "/assets/themes/the-greek.webp",
-  "name": "The Greek"
  },
  {
   "repo": "https://github.com/HANCORE-linux/omarchy-greek-noir-theme",
@@ -430,14 +430,14 @@
   "name": "Noir"
  },
  {
-  "repo": "https://github.com/EF-Code/omarchy-oligarchy-theme",
-  "image": "/assets/themes/oligarchy.webp",
-  "name": "Oligarchy"
- },
- {
   "repo": "https://github.com/HalmyLyseas/omarchy-nujabes-theme",
   "image": "/assets/themes/nujabes.webp",
   "name": "Nujabes"
+ },
+ {
+  "repo": "https://github.com/EF-Code/omarchy-oligarchy-theme",
+  "image": "/assets/themes/oligarchy.webp",
+  "name": "Oligarchy"
  },
  {
   "repo": "https://github.com/RiO7MAKK3R/omarchy-omacarchy-theme",
@@ -540,6 +540,11 @@
   "name": "RobZee84"
  },
  {
+  "repo": "https://github.com/HANCORE-linux/omarchy-roseofdune-theme",
+  "image": "/assets/themes/rose-of-dune.webp",
+  "name": "Rose of Dune"
+ },
+ {
   "repo": "https://github.com/guilhermetk/omarchy-rose-pine-dark",
   "image": "/assets/themes/rose-pine-dark.webp",
   "name": "Rose Pine Dark"
@@ -550,14 +555,14 @@
   "name": "Rose Pine Moon"
  },
  {
-  "repo": "https://github.com/HANCORE-linux/omarchy-roseofdune-theme",
-  "image": "/assets/themes/rose-of-dune.webp",
-  "name": "Rose of Dune"
- },
- {
   "repo": "https://github.com/HANCORE-linux/omarchy-ryu-theme",
   "image": "/assets/themes/ryu.webp",
   "name": "Ryu"
+ },
+ {
+  "repo": "https://github.com/HANCORE-linux/omarchy-saga-theme",
+  "image": "/assets/themes/saga.webp",
+  "name": "Saga"
  },
  {
   "repo": "https://github.com/bjarneo/omarchy-sakura-theme",
@@ -570,11 +575,6 @@
   "name": "Sakura Mochi"
  },
  {
-  "repo": "https://github.com/HANCORE-linux/omarchy-saga-theme",
-  "image": "/assets/themes/saga.webp",
-  "name": "Saga"
- },
- {
   "repo": "https://github.com/HANCORE-linux/omarchy-sapphire-theme",
   "image": "/assets/themes/sapphire.webp",
   "name": "Sapphire"
@@ -583,11 +583,6 @@
   "repo": "https://github.com/HANCORE-linux/omarchy-shadesofjade-theme",
   "image": "/assets/themes/shades-of-jade.webp",
   "name": "Shades of Jade"
- },
- {
-  "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",
-  "image": "/assets/themes/space-monkey.webp",
-  "name": "Space Monkey"
  },
  {
   "repo": "https://github.com/bjarneo/omarchy-snow-theme",
@@ -613,6 +608,11 @@
   "repo": "https://github.com/motorsss/omarchy-solarizedosaka-theme",
   "image": "/assets/themes/solarized-osaka.webp",
   "name": "Solarized Osaka"
+ },
+ {
+  "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",
+  "image": "/assets/themes/space-monkey.webp",
+  "name": "Space Monkey"
  },
  {
   "repo": "https://github.com/juangalt/omarchy-starry-night-theme",
@@ -655,6 +655,11 @@
   "name": "Terminus"
  },
  {
+  "repo": "https://github.com/HANCORE-linux/omarchy-thegreek-theme",
+  "image": "/assets/themes/the-greek.webp",
+  "name": "The Greek"
+ },
+ {
   "repo": "https://github.com/Justin-De-Sio/omarchy-tokyoled-theme",
   "image": "/assets/themes/tokyo-night-oled.webp",
   "name": "Tokyo Night OLED"
@@ -663,31 +668,6 @@
   "repo": "https://github.com/leonardobetti/omarchy-tycho",
   "image": "/assets/themes/tycho.webp",
   "name": "Tycho"
- },
- {
-  "repo": "https://github.com/OldJobobo/omarchy-waffle-cat-theme",
-  "image": "/assets/themes/waffle-cat.webp",
-  "name": "Waffle Cat"
- },
- {
-  "repo": "https://github.com/hipsterusername/omarchy-waveform-dark-theme",
-  "image": "/assets/themes/waveform-dark.webp",
-  "name": "Waveform Dark"
- },
- {
-  "repo": "https://github.com/HANCORE-linux/omarchy-whitegold-theme",
-  "image": "/assets/themes/white-gold.webp",
-  "name": "White Gold"
- },
- {
-  "repo": "https://github.com/oldjobobo/omarchy-windows-dark-mode-theme",
-  "image": "/assets/themes/windows-dark-mode.webp",
-  "name": "Windows Dark Mode"
- },
- {
-  "repo": "https://github.com/chipkoziara/omarchy-winslow-theme",
-  "image": "/assets/themes/winslow.webp",
-  "name": "Winslow"
  },
  {
   "repo": "https://github.com/Nirmal314/omarchy-van-gogh-theme",
@@ -728,5 +708,30 @@
   "repo": "https://github.com/kyerpotts/omarchy-vulkanite-theme",
   "image": "/assets/themes/vulkanite.webp",
   "name": "Vulkanite"
+ },
+ {
+  "repo": "https://github.com/OldJobobo/omarchy-waffle-cat-theme",
+  "image": "/assets/themes/waffle-cat.webp",
+  "name": "Waffle Cat"
+ },
+ {
+  "repo": "https://github.com/hipsterusername/omarchy-waveform-dark-theme",
+  "image": "/assets/themes/waveform-dark.webp",
+  "name": "Waveform Dark"
+ },
+ {
+  "repo": "https://github.com/HANCORE-linux/omarchy-whitegold-theme",
+  "image": "/assets/themes/white-gold.webp",
+  "name": "White Gold"
+ },
+ {
+  "repo": "https://github.com/oldjobobo/omarchy-windows-dark-mode-theme",
+  "image": "/assets/themes/windows-dark-mode.webp",
+  "name": "Windows Dark Mode"
+ },
+ {
+  "repo": "https://github.com/chipkoziara/omarchy-winslow-theme",
+  "image": "/assets/themes/winslow.webp",
+  "name": "Winslow"
  }
 ]
