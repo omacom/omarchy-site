@@ -150,6 +150,11 @@
   "name": "Commit"
  },
  {
+  "repo": "https://github.com/arsh240311/omarchy-cozy-ui",
+  "image": "/assets/themes/cozy-harbor-ae86.webp",
+  "name": "Cozy Harbor AE86"
+ },
+ {
   "repo": "https://github.com/stannorbvb-cmd/cpunk",
   "image": "/assets/themes/cpunk.webp",
   "name": "CpUnk"
