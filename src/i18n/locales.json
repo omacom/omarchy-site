@@ -6,6 +6,14 @@
     "ogLocale": "en_US",
     "manual": true
   },
+  "de": {
+    "name": "Deutsch",
+    "domain": "https://de.omarchy.org",
+    "formatLocale": "de-DE",
+    "ogLocale": "de_DE",
+    "manual": false,
+    "flag": "DE"
+  },
   "da": {
     "name": "Dansk",
     "domain": "https://omarchy.dk",
