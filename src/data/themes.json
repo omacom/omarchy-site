@@ -490,6 +490,11 @@
   "name": "Pink Blood"
  },
  {
+  "repo": "https://github.com/mshagirov/omarchy-plasma-585-theme",
+  "image": "/assets/themes/plasma-585.webp",
+  "name": "Plasma 585"
+ },
+ {
   "repo": "https://github.com/bjarneo/omarchy-pulsar-theme",
   "image": "/assets/themes/pulsar.webp",
   "name": "Pulsar"
