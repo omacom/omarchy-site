@@ -325,6 +325,11 @@
   "name": "Inky Pinky"
  },
  {
+  "repo": "https://github.com/Benadict-Git/omarchy-iron-man-theme",
+  "image": "/assets/themes/iron-man.webp",
+  "name": "Iron Man"
+ },
+ {
   "repo": "https://github.com/devgtv/omarchy-japan-night-theme",
   "image": "/assets/themes/japan-night.webp",
   "name": "Japan Night"
