@@ -1,0 +1,339 @@
+<p>
+  Muchas de las cosas que cambiás día a día no son realmente una configuración.
+  Son un modo que activás por una hora y después apagás: luz nocturna cuando
+  trabajás de noche, no molestar cuando estás presentando, mantenerse despierto
+  cuando estás mirando algo. Omarchy los llama interruptores, y todos funcionan
+  igual: un atajo, una entrada de menú y un comando, los tres tocando la misma
+  llave.
+</p>
+
+<h3 id="the-toggle-menu">
+  El menú de interruptores
+  <a
+    class="manual__heading-link"
+    href="#the-toggle-menu"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + O</code> abre <em>Trigger &gt; Toggle</em> directamente,
+  o podés llegar caminando desde el menú de Omarchy (<code>Super + Space</code
+  >). Todo lo que está en esa lista es una llave que podés accionar sin pensar
+  dónde vive el estado.
+</p>
+
+<p>
+  Desde la terminal, esas mismas llaves son
+  <code>omarchy toggle &lt;thing&gt;</code>. Ejecutá
+  <code>omarchy toggle</code> a secas para ver el grupo completo.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interruptor</th>
+      <th>Atajo</th>
+      <th>Comando</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Luz nocturna</td>
+      <td><code>Super + Ctrl + N</code></td>
+      <td><code>omarchy toggle nightlight</code></td>
+    </tr>
+    <tr>
+      <td>Silenciar notificaciones</td>
+      <td><code>Super + Ctrl + ,</code></td>
+      <td><code>omarchy toggle notification silencing</code></td>
+    </tr>
+    <tr>
+      <td>Mantenerse despierto (sin bloqueo por inactividad)</td>
+      <td><code>Super + Ctrl + I</code></td>
+      <td><code>omarchy toggle idle</code></td>
+    </tr>
+    <tr>
+      <td>Captura de fallos</td>
+      <td>-</td>
+      <td><code>omarchy toggle crash-capture</code></td>
+    </tr>
+    <tr>
+      <td>Protector de pantalla</td>
+      <td>-</td>
+      <td><code>omarchy toggle screensaver</code></td>
+    </tr>
+    <tr>
+      <td>Barra de menú</td>
+      <td><code>Super + Shift + Space</code></td>
+      <td><code>omarchy toggle bar</code></td>
+    </tr>
+    <tr>
+      <td>Touchpad</td>
+      <td><code>XF86TouchpadToggle</code></td>
+      <td><code>omarchy toggle touchpad</code></td>
+    </tr>
+    <tr>
+      <td>Pantalla táctil</td>
+      <td>-</td>
+      <td><code>omarchy toggle touchscreen</code></td>
+    </tr>
+    <tr>
+      <td>Suspensión</td>
+      <td>-</td>
+      <td><code>omarchy toggle suspend</code></td>
+    </tr>
+    <tr>
+      <td>Placa de video híbrida</td>
+      <td>-</td>
+      <td><code>omarchy toggle hybrid gpu</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Las llaves de touchpad, pantalla táctil y placa de video híbrida viven en
+  <em>Trigger &gt; Hardware</em> (<code>Super + Ctrl + H</code>) en lugar de
+  Toggle, porque solo aparecen cuando realmente tenés ese hardware. Las de
+  touchpad y pantalla táctil sobreviven a una recarga de Hyprland: el nombre del
+  dispositivo desactivado se guarda en un archivo de estado chico que Hyprland
+  lee al arrancar para volver a desactivarlo.
+</p>
+
+<p>
+  El menú Toggle también trae algunas cosas que no son comandos
+  <code>omarchy toggle</code> pero se comportan igual: el porcentaje de batería
+  en la barra, la disposición del escritorio (<code>Super + L</code>), los
+  espacios entre ventanas (<code>Super + Shift + Backspace</code>) y el formato
+  cuadrado de una sola ventana (<code>Super + Ctrl + Backspace</code>).
+</p>
+
+<p>
+  La mayoría de estos son simplemente un archivo marcador en
+  <code>~/.local/state/omarchy/toggles/</code>. Si querés ramificar según uno de
+  ellos en un script, <code>omarchy-toggle-enabled</code> te da un código de
+  salida en lugar de hacerte buscar:
+</p>
+
+<pre><code class="language-bash">omarchy-toggle-enabled screensaver-off &amp;&amp; echo "screensaver is off"
+</code></pre>
+
+<p>
+  Los marcadores llevan el nombre del estado apagado
+  (<code>screensaver-off</code>, <code>suspend-off</code>,
+  <code>bar-off</code>), así que su presencia significa que la función está
+  desactivada.
+</p>
+
+<h3 id="indicators-in-the-bar">
+  Indicadores en la barra
+  <a
+    class="manual__heading-link"
+    href="#indicators-in-the-bar"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Cuando un modo está activo, aparece un pequeño símbolo en el medio de la barra
+  superior, al lado del reloj. Ese es el widget de indicadores, y lleva el
+  dictado, la grabación de pantalla, los recordatorios pendientes, la luz
+  nocturna, el no molestar y el mantenerse despierto.
+</p>
+
+<p>
+  Los indicadores inactivos están ocultos. Pasá el mouse por esa zona y aparecen
+  atenuados, así podés hacer clic en uno para activarlo sin saber su atajo. Si
+  hacés clic en uno activo, se apaga. Si preferís verlos todos todo el tiempo,
+  poné <code>alwaysShow</code> en <code>true</code> en la entrada
+  <code>omarchy.indicators</code> de <code>~/.config/omarchy/shell.json</code>,
+  y mirá <a href="/manual/the-top-bar/">la barra superior</a> para ver cómo se
+  configuran los widgets de la barra.
+</p>
+
+<h3 id="night-light">
+  Luz nocturna
+  <a
+    class="manual__heading-link"
+    href="#night-light"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + N</code> entibia la pantalla a 4000K, y si lo apretás de
+  nuevo la devuelve a 6500K. Lo maneja hyprsunset, que el interruptor arranca
+  por vos si todavía no está corriendo.
+</p>
+
+<p>
+  De forma predeterminada, hyprsunset no le hace nada a tu pantalla.
+  <code>~/.config/hypr/hyprsunset.conf</code> viene con un perfil neutro
+  justamente para que la pantalla quede intacta hasta que pidas calidez. Si
+  preferís que cambie según el reloj, reemplazalo por un perfil con horario:
+</p>
+
+<pre><code>profile {
+    time = 20:00
+    temperature = 4000
+}
+</code></pre>
+
+<p>
+  Después arrancá hyprsunset al iniciar sesión agregando
+  <code>o.launch_on_start("hyprsunset")</code> a
+  <code>~/.config/hypr/autostart.lua</code>. El par 4000K/6500K que usa el
+  interruptor es fijo, así que el archivo de configuración es el lugar al que
+  vas si querés otra temperatura.
+</p>
+
+<h3 id="do-not-disturb">
+  No molestar
+  <a
+    class="manual__heading-link"
+    href="#do-not-disturb"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + ,</code> silencia las notificaciones. No aparece ningún
+  aviso mientras está activo, y el indicador de la campana tachada queda en la
+  barra para recordarte por qué el escritorio se quedó callado.
+</p>
+
+<p>
+  Igual no se pierde nada. Una notificación silenciada se escribe directo en tu
+  historial de notificaciones, que es justo el registro que querés cuando volvés
+  y te preguntás qué te perdiste. Abrilo con
+  <code>Super + Shift + Alt + ,</code>. Mirá
+  <a href="/manual/notices/">avisos</a> para el resto de la historia de las
+  notificaciones.
+</p>
+
+<p>
+  Hay dos tipos de mensaje que siguen pasando: los avisos de confirmación
+  propios de Omarchy por algo que acabás de hacer ("Theme changed", "Screenshot
+  saved") y las alertas críticas enviadas desde la línea de comandos. Las
+  aplicaciones de chat que marcan todo como crítico para meterse adelante tuyo
+  no califican.
+</p>
+
+<h3 id="idle">
+  Inactividad
+  <a
+    class="manual__heading-link"
+    href="#idle"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El shell de Omarchy es el dueño del comportamiento ante inactividad, y los
+  tiempos son un bloque <code>idle</code> de primer nivel en
+  <code>~/.config/omarchy/shell.json</code>:
+</p>
+
+<pre><code class="language-json">{
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  }
+}
+</code></pre>
+
+<p>
+  Los dos números son segundos contados desde el momento en que quedaste
+  inactivo, no uno desde el otro. Así, con los valores predeterminados, el
+  protector de pantalla aparece a los dos minutos y medio y la pantalla de
+  bloqueo toma el control a los cinco minutos, haya corrido o no el protector.
+  Guardá el archivo y el shell toma los tiempos nuevos enseguida.
+</p>
+
+<p>
+  Si cerrás el protector de pantalla antes del plazo de bloqueo, eso cuenta como
+  actividad y el bloqueo pendiente se cancela. No te quedás afuera por mirar de
+  reojo tu máquina.
+</p>
+
+<p>
+  Para dejar de bloquear por inactividad del todo,
+  <code>Super + Ctrl + I</code> (o <code>omarchy toggle idle</code>) activa el
+  modo de mantenerse despierto, y aparece el indicador de la taza de café en la
+  barra. Ese es el que hay que apretar antes de una presentación larga o de una
+  compilación que querés ver. Apretalo de nuevo para volver a la normalidad.
+  <code>omarchy toggle idle status</code> imprime el estado actual en JSON si lo
+  necesitás desde un script.
+</p>
+
+<p>
+  Esto es sobre el bloqueo y el protector de pantalla, no sobre la energía. La
+  suspensión y la hibernación tienen su propia configuración en
+  <a href="/manual/system-sleep/">suspensión del sistema</a>.
+</p>
+
+<h3 id="the-screensaver">
+  El protector de pantalla
+  <a
+    class="manual__heading-link"
+    href="#the-screensaver"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El protector de pantalla de Omarchy es arte ASCII pasando por efectos de texto
+  al azar, una instancia por monitor. Cualquier tecla o movimiento del mouse lo
+  cierra.
+</p>
+
+<p>
+  Podés arrancarlo cuando quieras desde <em>System &gt; Screensaver</em> (<code
+    >Super + Esc</code
+  >), que lo fuerza incluso si desactivaste el protector por inactividad. De
+  forma predeterminada no tiene ningún atajo asignado.
+</p>
+
+<p>
+  <code>omarchy toggle screensaver</code> es lo que apaga el de inactividad, si
+  preferís pasar directo de trabajar a bloqueado. Necesita una terminal que sepa
+  configurar, o sea Alacritty, Foot, Ghostty o Kitty, y te lo va a avisar si tu
+  terminal predeterminada es otra.
+</p>
+
+<p>
+  El logo que dibuja lo podés cambiar desde <em>Style &gt; Screensaver</em>.
+  Subí un png o svg y Omarchy lo convierte a ASCII. Mirá
+  <a href="/manual/branding/">identidad visual</a>.
+</p>
+
+<h3 id="the-lock-screen">
+  La pantalla de bloqueo
+  <a
+    class="manual__heading-link"
+    href="#the-lock-screen"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>Super + Ctrl + L</code> bloquea la máquina. Eso ejecuta la pantalla de
+  bloqueo del shell de Omarchy, apaga la pantalla, devuelve tu distribución de
+  teclado a la primera para que no escribas tu contraseña en el alfabeto
+  equivocado y, si lo tenés corriendo, bloquea 1Password al salir.
+</p>
+
+<p>
+  La pantalla de bloqueo acepta una contraseña, y también va a aceptar una
+  huella digital una vez que la configures. Eso, y las otras formas de
+  autenticarse, están explicadas en
+  <a href="/manual/hardware-authentication/">autenticación por hardware</a>.
+</p>

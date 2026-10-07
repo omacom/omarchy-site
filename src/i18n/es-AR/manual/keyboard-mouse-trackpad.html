@@ -1,0 +1,133 @@
+<p>
+  Hyprland te deja configurar todos tus dispositivos de entrada con mucho
+  detalle. Podés hacer que la repetición del teclado sea supersónica o que el
+  trackpad use desplazamiento natural. Todo eso se cambia en
+  <code>~/.config/hypr/input.lua</code>, al que también llegás desde
+  <em>Setup &gt; Input</em> en el menú de Omarchy (<code>Super + Space</code>).
+  Todo lo que pongas ahí reemplaza los valores predeterminados de Omarchy.
+</p>
+
+<p>Acá va un ejemplo:</p>
+
+<pre><code class="language-lua">hl.config({
+  input = {
+    -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt
+    kb_layout = "us,dk",
+    kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+
+    -- Change speed of keyboard repeat
+    repeat_rate = 40,
+    repeat_delay = 600,
+
+    -- Increase sensitivity for mouse/trackpad (default: 0)
+    sensitivity = 0.35,
+
+    touchpad = {
+      -- Use natural (inverse) scrolling
+      natural_scroll = true,
+
+      -- Use two-finger clicks for right-click instead of lower-right corner
+      clickfinger_behavior = true,
+
+      -- Control the speed of your scrolling
+      scroll_factor = 0.3,
+    },
+  },
+})
+
+-- Scroll faster in the terminal
+o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
+</code></pre>
+
+<p>
+  Podés
+  <a href="https://wiki.hypr.land/Configuring/Basics/Variables/#input"
+    >ver todas las opciones de entrada</a
+  >
+  en la wiki de Hyprland.
+</p>
+
+<p>
+  De forma predeterminada, Omarchy usa CapsLock como tecla de composición para
+  los <a href="/manual/hotkeys/#quick-emojis">emojis rápidos</a> y
+  <a href="/manual/hotkeys/#quick-completions">otros autocompletados</a>. Si
+  preferís usar CapsLock como Caps Lock, mové la tecla de composición a otro
+  lado cambiando <code>compose:caps</code> en <code>kb_options</code>. Por
+  ejemplo, así la pasás al Alt derecho:
+</p>
+
+<pre><code class="language-lua">hl.config({
+  input = {
+    kb_options = "compose:ralt",
+  },
+})
+</code></pre>
+
+<h3 id="trackpad-gestures">
+  Gestos del trackpad
+  <a
+    class="manual__heading-link"
+    href="#trackpad-gestures"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  También podés activar los
+  <a href="https://wiki.hypr.land/Configuring/Advanced-and-Cool/Gestures/"
+    >gestos del touchpad</a
+  >, como deslizar con tres dedos para cambiar de escritorio:
+</p>
+
+<pre><code class="language-lua">hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+</code></pre>
+
+<p>
+  En las notebooks Dell XPS con touchpad háptico, también podés ajustar la
+  fuerza del clic a baja, media o alta desde
+  <em>Trigger &gt; Hardware &gt; Touchpad Haptics</em>.
+</p>
+
+<h3 id="typing-in-chinese-japanese-and-other-languages">
+  Escribir en chino, japonés y otros idiomas
+  <a
+    class="manual__heading-link"
+    href="#typing-in-chinese-japanese-and-other-languages"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy corre el framework de métodos de entrada
+  <a href="https://fcitx-im.org/">fcitx5</a> en cada sesión: es lo que hace
+  funcionar las secuencias de composición del CapsLock. Eso significa que la
+  infraestructura para escritura no latina ya está lista: instalá un motor de
+  entrada como <code>fcitx5-mozc</code> (japonés) o
+  <code>fcitx5-chinese-addons</code> (chino) con <code>omarchy pkg add</code>,
+  más <code>fcitx5-configtool</code> para agregar el motor a tus métodos de
+  entrada y definir la tecla que alterna entre ellos.
+</p>
+
+<h3 id="use-alt-as-super">
+  Usar ALT como SUPER
+  <a
+    class="manual__heading-link"
+    href="#use-alt-as-super"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  En algunos teclados no es cómodo usar la tecla meta principal (la de Windows o
+  cmd) como SUPER. Podés cambiarla por ALT con este ajuste:
+</p>
+
+<pre><code class="language-lua">hl.config({
+  input = {
+    kb_options = "compose:caps,shift:both_capslock_cancel,altwin:swap_alt_win",
+  },
+})
+</code></pre>

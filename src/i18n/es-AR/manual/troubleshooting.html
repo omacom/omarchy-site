@@ -1,0 +1,174 @@
+<h3 id="i-broke-my-system-with-an-update">
+  ¡Rompí el sistema con una actualización!
+  <a
+    class="manual__heading-link"
+    href="#i-broke-my-system-with-an-update"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Primero probá
+  <a href="/manual/system-snapshots/">volver el sistema atrás</a> a la versión
+  anterior a la actualización. Si eso no funciona, usá
+  <code>omarchy-debug</code> para compartir tu problema en #omarchy-help en el
+  Discord. Y si todo eso falla, podés reinstalar las configuraciones y los
+  paquetes predeterminados con <code>omarchy-reinstall</code>.
+</p>
+
+<h3 id="why-are-some-apps-so-large-on-my-display">
+  ¿Por qué algunas aplicaciones se ven enormes en mi pantalla?
+  <a
+    class="manual__heading-link"
+    href="#why-are-some-apps-so-large-on-my-display"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Omarchy asume una pantalla de alta resolución 2x, lo que requiere poner
+  <code>GDK_SCALE</code> en 2 dentro de
+  <code>~/.config/hypr/monitors.lua</code>. Pero si tenés una pantalla 1x, podés
+  cambiar <code>local omarchy_gdk_scale = 2</code> a 1 (y después reiniciar
+  cualquier aplicación que se vea demasiado grande). Mirá
+  <a href="/manual/monitors/">el capítulo sobre monitores</a>.
+</p>
+
+<p>
+  En Spotify podés usar <code>Ctrl + Minus</code> para achicar la interfaz (y
+  <code>Ctrl + Plus</code> para agrandarla).
+</p>
+
+<h3 id="why-isnt-caps-lock-working">
+  ¿Por qué no funciona el Caps Lock?
+  <a
+    class="manual__heading-link"
+    href="#why-isnt-caps-lock-working"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  En Omarchy, el Caps Lock quedó designado como la tecla xcompose. Así es como
+  conseguís <a href="/manual/hotkeys/#quick-emojis">emojis rápidos</a> y
+  <a href="/manual/hotkeys/#quick-completions">otros autocompletados</a>. Si
+  realmente extrañás usar el Caps Lock, podés reasignar la tecla xcompose a otra
+  editando <code>~/.config/hypr/input.lua</code>, por ejemplo poniéndola en el
+  alt derecho:
+</p>
+
+<pre><code>hl.config({
+  input = {
+    kb_options = "compose:ralt",
+  },
+})
+</code></pre>
+
+<h3 id="my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working">
+  El Wi-Fi, el Bluetooth, el audio o el trackpad dejaron de funcionar de golpe
+  <a
+    class="manual__heading-link"
+    href="#my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Antes de reiniciar, probá reiniciar solo el subsistema que falla.
+  <em>Update &gt; Hardware</em> en el menú de Omarchy tiene Wi-Fi, Bluetooth,
+  Audio y Trackpad, y recargar uno de esos resuelve la mayoría de las
+  situaciones tipo "hace cinco minutos funcionaba": unos auriculares Bluetooth
+  que no se reconectan, un trackpad que murió después de una suspensión, el
+  sonido que desapareció cuando desenchufaste un monitor.
+</p>
+
+<h3 id="why-are-my-external-speakers-not-playing">
+  ¿Por qué no suenan mis parlantes externos?
+  <a
+    class="manual__heading-link"
+    href="#why-are-my-external-speakers-not-playing"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Seguramente porque no están puestos como salida principal. Hacé clic en el
+  ícono del parlante en el lado derecho de la barra y se va a abrir el panel de
+  volumen, donde podés elegir el dispositivo de salida (y también mezclar el
+  volumen de cada aplicación).
+</p>
+
+<h3 id="my-laptop-speakers-sound-off">
+  Los parlantes de mi notebook suenan raro
+  <a
+    class="manual__heading-link"
+    href="#my-laptop-speakers-sound-off"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  En algunas notebooks, Omarchy aplica automáticamente un ajuste de parlantes
+  que corrige la respuesta de frecuencia de los parlantes internos.
+  <code>omarchy audio tuning status</code> te dice si hay uno activo en tu
+  máquina, y <code>omarchy audio tuning off</code> lo desactiva si preferís
+  escuchar los parlantes tal como son.
+</p>
+
+<h3 id="why-cant-i-login-or-sudo-with-my-password">
+  ¿Por qué no puedo iniciar sesión ni usar sudo con mi contraseña?
+  <a
+    class="manual__heading-link"
+    href="#why-cant-i-login-or-sudo-with-my-password"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Probablemente la escribiste mal demasiadas veces y quedaste bloqueado. Si te
+  pasa en la pantalla de bloqueo, podés apretar
+  <code>CTRL + ALT + F2</code> para abrir una TTY nueva donde iniciás sesión
+  como root, y después ejecutar
+  <code>faillock --reset --user [your-username]</code>. Eso limpia el bloqueo y
+  listo.
+</p>
+
+<h3
+  id="why-isnt-my-1password-authorization-prompts-for-1password-ssh-agent--cli-appearing"
+>
+  ¿Por qué no aparecen los pedidos de autorización de 1Password para el agente
+  SSH o la CLI de 1Password?
+  <a
+    class="manual__heading-link"
+    href="#why-isnt-my-1password-authorization-prompts-for-1password-ssh-agent--cli-appearing"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>Esto puede pasar por 2 razones:</p>
+
+<p>
+  Para que aparezca el pedido de aprobación completo, Settings &gt; Advanced
+  &gt; Use Hardware Acceleration tiene que estar activado.
+  <em>Nota: hay que reiniciar para que empiece a funcionar.</em>
+</p>
+
+<p>
+  <img
+    src="/manual/images/troubleshooting-1password.webp"
+    alt="troubleshooting-1password"
+  />
+</p>
+
+<p>
+  O si no abriste 1Password desde que encendiste la máquina, el pedido no va a
+  aparecer.
+</p>

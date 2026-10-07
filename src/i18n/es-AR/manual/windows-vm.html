@@ -1,0 +1,163 @@
+<p>
+  Omarchy ofrece una forma fácil de correr Windows en una máquina virtual con
+  Docker. Podés instalarla desde <em>Install &gt; Windows</em> en el menú de
+  Omarchy (<code>Super + Space</code>).
+</p>
+
+<p>
+  Tu máquina necesita virtualización KVM para esto, algo que casi todas tienen,
+  aunque a veces viene desactivada en el BIOS, y el instalador te lo va a avisar
+  si es el caso. También vas a querer tener espacio en disco: lo que le des a
+  Windows, más unos 10GB para la imagen en sí.
+</p>
+
+<p>
+  El instalador te pregunta cuánta RAM, cuántos núcleos de procesador y cuánto
+  disco le querés entregar (64GB o más es el piso razonable), y después un
+  usuario y contraseña de Windows. Si los dejás en blanco, te quedan
+  <code>docker</code> / <code>admin</code>. La descarga lleva su tiempo, entre
+  10 y 15 minutos es lo normal, y podés seguir el progreso en el navegador en
+  <code>http://127.0.0.1:8006</code>. El navegador pide el mismo usuario y
+  contraseña antes de abrir la consola.
+</p>
+
+<p><img src="/manual/images/windows-vm.webp" alt="windows-vm" /></p>
+
+<h2 id="using-it">
+  Cómo usarla
+  <a
+    class="manual__heading-link"
+    href="#using-it"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Una vez instalada, abrí <em>Windows</em> desde el lanzador de aplicaciones.
+  Eso arranca la máquina virtual si no está corriendo y te conecta por RDP, a
+  pantalla completa. Dale entre 15 y 30 segundos en un arranque en frío.
+</p>
+
+<p>
+  La sesión RDP lleva sonido, tu micrófono y un portapapeles compartido, así que
+  copiar texto entre Linux y Windows funciona sin más. La resolución sigue el
+  tamaño de tu ventana, y Omarchy le pasa el escalado de tu pantalla, así que no
+  queda todo borroso en una pantalla HiDPI.
+</p>
+
+<p>
+  Cuando cerrás la ventana de RDP, la máquina virtual se apaga automáticamente.
+  Si preferís dejarla corriendo, por ejemplo porque tenés algo trabajando ahí
+  adentro, abrila con <code>omarchy windows vm launch --keep-alive</code>.
+</p>
+
+<p>El resto de los controles están en el mismo comando:</p>
+
+<pre><code class="language-bash">omarchy windows vm status    # is it running?
+omarchy windows vm stop      # shut it down
+omarchy windows vm launch    # start and connect
+</code></pre>
+
+<h2 id="sharing-files">
+  Compartir archivos
+  <a
+    class="manual__heading-link"
+    href="#sharing-files"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  El directorio <code>~/Windows</code> de tu carpeta personal se comparte
+  automáticamente con la máquina virtual. Poné ahí los archivos que quieras que
+  Windows pueda ver. La máquina virtual no tiene acceso a ninguna otra parte de
+  tu sistema de archivos, así que estás a salvo de cualquier cosa fea del lado
+  de Windows. Su propio disco virtual está en <code>~/.windows</code>.
+</p>
+
+<p>
+  Esas rutas conocidas de tu carpeta personal se quedan en sus propios sistemas
+  de archivos. También pueden ser enlaces simbólicos a directorios que te
+  pertenezcan, lo que es útil cuando el disco virtual vive en una unidad más
+  grande. El instalador mide el espacio libre del sistema de archivos que
+  realmente contiene <code>~/.windows</code>, no necesariamente el que contiene
+  tu carpeta personal.
+</p>
+
+<p>
+  Mantené el disco y las rutas compartidas como directorios separados, que no se
+  solapen. La desinstalación vacía deliberadamente el directorio del disco pero
+  conserva el directorio compartido. Justo antes de borrar, Omarchy hace una
+  verificación acotada de contención y se niega a eliminar nada si esa
+  verificación se pasa de tiempo o no puede probar que los dos árboles están
+  separados.
+</p>
+
+<p>
+  Antes de que arranque la máquina virtual, Omarchy abre y fija esos dos
+  directorios, y después monta los inodos exactos de esos directorios sobre
+  anclas privadas por usuario debajo de
+  <code>/var/lib/omarchy/windows/mounts</code>. Docker solo ve esas anclas
+  protegidas por root. Eso preserva las ubicaciones de disco personalizadas y al
+  mismo tiempo evita que otro proceso corriendo con tu usuario cambie una ruta
+  ya verificada antes de que el contenedor privilegiado la consuma. Los
+  directorios de disco y compartido existentes se ajustan al modo
+  <code>0700</code> durante la migración, así otras cuentas locales no pueden
+  mirar su contenido.
+</p>
+
+<p>
+  Los puertos de la máquina virtual están atados solo a localhost, así que nada
+  en tu red puede llegar a la máquina con Windows. La consola web también exige
+  el usuario y la contraseña de Windows configurados, lo que evita que otra
+  cuenta local maneje la máquina virtual a través del puerto 8006.
+</p>
+
+<h2 id="limits-and-licensing">
+  Límites y licencias
+  <a
+    class="manual__heading-link"
+    href="#limits-and-licensing"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Esta configuración no pasa la placa de video, así que no sirve para juegos ni
+  edición de video. Es una gran forma de correr Microsoft Office o lo que sea
+  que necesites sí o sí.
+</p>
+
+<p>
+  La versión que se instala es Windows 11 Pro, sin activar. Vas a necesitar tu
+  propia clave de licencia para usar las funciones bloqueadas.
+</p>
+
+<p>
+  Si esta computadora vino con Windows, la clave OEM sigue en el firmware
+  incluso después de instalar Omarchy. Mostrala con
+  <code>omarchy windows key</code>. Esa clave está atada a esta máquina: va a
+  activar un Windows reinstalado en este hardware, pero normalmente no va a
+  activar la máquina virtual.
+</p>
+
+<p>
+  Podés cambiar la asignación de recursos más adelante volviendo a ejecutar
+  <code>omarchy-windows-vm install</code>, que reescribe la configuración de la
+  máquina virtual a partir de tus respuestas. El archivo compose ahora vive en
+  <code>/var/lib/omarchy/windows/docker-compose.yml</code> y le pertenece a
+  root: eso es a propósito, así un proceso corriendo con tu usuario no puede
+  reescribirlo y hacer que el arranque privilegiado monte todo tu disco dentro
+  del contenedor. Si necesitás editarlo a mano (por ejemplo para montar un
+  dispositivo USB), editalo con <code>sudo</code> y mirá todas las opciones en
+  <a href="https://github.com/dockur/windows">el proyecto Dockur Windows</a>.
+</p>
+
+<p>
+  Para sacarte todo esto de encima, usá <em>Remove &gt; Windows</em> en el menú
+  de Omarchy. Eso borra el disco de la máquina virtual y todos sus datos, así
+  que asegurate de sacar antes de <code>~/Windows</code> todo lo que te importe.
+</p>
