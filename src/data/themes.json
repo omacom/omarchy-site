@@ -585,6 +585,11 @@
   "name": "Shades of Jade"
  },
  {
+  "repo": "https://github.com/arsh240311/omarchy-silver-phantom",
+  "image": "/assets/themes/silver-phantom.webp",
+  "name": "Silver Phantom"
+ },
+ {
   "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",
   "image": "/assets/themes/space-monkey.webp",
   "name": "Space Monkey"
