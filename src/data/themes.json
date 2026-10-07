@@ -400,6 +400,11 @@
   "name": "Naysayer"
  },
  {
+  "repo": "https://github.com/TarasKim/omarchy-neo-brutalism-theme",
+  "image": "/assets/themes/neo-brutalism.webp",
+  "name": "Neo Brutalism"
+ },
+ {
   "repo": "https://github.com/monoooki/omarchy-neo-sploosh-theme",
   "image": "/assets/themes/neo-sploosh.webp",
   "name": "Neo Sploosh"
