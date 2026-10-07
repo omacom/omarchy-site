@@ -193,6 +193,16 @@ export function SiteFooter({ path }: { path: string }) {
               </a>
             ))}
         </nav>
+        {language !== 'en' && (
+          <p
+            data-quiet
+            className="mt-8 text-xs text-text-muted [text-wrap:pretty]"
+          >
+            {t(
+              'This page contains machine-translated content, which may differ from the meaning of the original English text.',
+            )}
+          </p>
+        )}
         <div className="mt-12 flex flex-col gap-2 border-t border-border-subtle pt-6 text-[13px] text-text-muted sm:flex-row sm:items-center sm:justify-between">
           <p data-quiet>
             <Link to="/$/" params={{ _splat: 'brand' }} className={footerLink}>
