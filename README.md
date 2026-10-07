@@ -32,16 +32,6 @@ dated `news/` directories is **content input**, not a second site design.
 layout, navigation, and styling in `src/`; preview through the dev server.
 After editing content inputs, run `npm run port` to refresh the dev data.
 
-For Korean translations, run `npm run check:ko-japanese` (or
-`python3 scripts/check-korean-japanese.py --json`) to find Japanese-script
-review candidates in the UI catalog, content blocks, news titles and articles.
-The check reports source/key, prose-block line, sentence and kana without editing
-files. It excludes URLs, placeholders, inline code and code/pre/script/style
-content, but checks visible alt/title/aria-label text. Exit status is 1 when
-candidates need human review, 0 otherwise. Japanese names or quotes may be
-intentional; shared Han characters alone are not classified as Japanese. This
-is a character-based check, not a complete language or translation assessment.
-
 - Edit standalone page content in its existing `index.html`. Page directories are discovered automatically; there is no route or translation allowlist.
 - Add standalone pages as `content/<path>.md` with YAML frontmatter (`title`, optional `seoTitle` and `description`), then run `npm run port`. All pages are automatically routed and their metadata and prose enter the shared translation pipeline. News under `content/news/` uses its existing separate pipeline. Set `presentation: principles` for compact linked headings, as in `content/doctrine.md`.
 - Edit the homepage announcement in `src/data/banner.json` (`null` hides it).

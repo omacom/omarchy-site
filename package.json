@@ -24,7 +24,6 @@
     "dev:da": "PUBLIC_SITE_LOCALE=da ASTRO_DEV_BACKGROUND=1 astro dev --ignore-lock --port 3114",
     "build:locale": "node scripts/build-locale.mjs",
     "check:translations": "node scripts/check-translations.mjs",
-    "check:ko-japanese": "python3 scripts/check-korean-japanese.py",
     "site:pending": "node scripts/check-translations.mjs --pending-site",
     "site:translate": "python3 scripts/translate-site.py",
     "news:pending": "node scripts/check-translations.mjs --pending-news",
