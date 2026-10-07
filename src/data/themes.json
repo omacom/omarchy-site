@@ -285,6 +285,11 @@
   "name": "Green Garden"
  },
  {
+  "repo": "https://github.com/Sinnohman/omarchy-gruvbox-lady-theme",
+  "image": "/assets/themes/gruvbox-lady.webp",
+  "name": "Gruvbox Lady"
+ },
+ {
   "repo": "https://github.com/curbol/omarchy-gruvbox-material",
   "image": "/assets/themes/gruvbox-material.webp",
   "name": "Gruvbox Material"
