@@ -29,7 +29,8 @@
     "news:pending": "node scripts/check-translations.mjs --pending-news",
     "news:translate": "python3 scripts/translate-news.py",
     "build:translations": "npm run port && npm run check:translations && node scripts/build-translations.mjs",
-    "deploy:locale": "node scripts/deploy-locale.mjs"
+    "deploy:locale": "node scripts/deploy-locale.mjs",
+    "deploy:redirects": "node scripts/deploy-redirects.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

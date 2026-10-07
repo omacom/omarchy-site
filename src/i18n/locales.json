@@ -249,16 +249,6 @@
     "flag": "NZ",
     "aliases": ["www.omarchy.nz"]
   },
-  "en-US": {
-    "name": "English (US)",
-    "domain": "https://omarchy.us",
-    "formatLocale": "en-US",
-    "ogLocale": "en_US",
-    "manual": false,
-    "contentLocale": "en",
-    "flag": "US",
-    "aliases": ["www.omarchy.us"]
-  },
   "en-SG": {
     "name": "English (SG)",
     "domain": "https://omarchy.sg",

@@ -1,5 +1,6 @@
 /** Every deployed country or language Worker must remain in automatic updates. */
 import locales from '../src/i18n/locales.json' with { type: 'json' }
+import redirects from '../src/i18n/redirects.json' with { type: 'json' }
 
 const account = process.env.CLOUDFLARE_ACCOUNT_ID
 const token = process.env.CLOUDFLARE_API_TOKEN
@@ -18,17 +19,18 @@ if (!response.ok || !body.success) {
     `Cannot inventory deployed Workers: ${JSON.stringify(body.errors)}`,
   )
 }
-const registered = new Set(
-  Object.keys(locales).map((code) =>
+const registered = new Set([
+  ...Object.keys(locales).map((code) =>
     code === 'en' ? 'omarchy' : `omarchy-${code.toLowerCase()}`,
   ),
-)
+  ...Object.keys(redirects),
+])
 const unmanaged = body.result
   .map((worker) => worker.id)
   .filter((name) => name.startsWith('omarchy-') && !registered.has(name))
 if (unmanaged.length) {
   throw new Error(
-    `Deployed editions missing from src/i18n/locales.json: ${unmanaged.join(', ')}. Restore them to automatic updates before publishing.`,
+    `Deployed editions missing from src/i18n/locales.json and redirects.json: ${unmanaged.join(', ')}. Restore them to automatic updates before publishing.`,
   )
 }
 console.log(

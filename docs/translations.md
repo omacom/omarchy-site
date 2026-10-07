@@ -55,6 +55,10 @@ The locale registry defines every deployed language and country edition. Country
 
 The language menu shows colored country flags and preserves the current pathname, query and fragment when the destination has a translation. Otherwise it opens that language’s home page. Labels use native names, and English uses a globe. The `flag` field supplies the two-letter country code when needed. Arabic declares `direction: "rtl"`.
 
+### Retired domains
+
+A domain that should no longer serve its own edition is listed in `src/i18n/redirects.json` instead of the locale registry. Each entry names the Worker that owns the domain, the target origin and the hostnames to attach. `npm run deploy:redirects` publishes `scripts/redirect-worker.js` to that Worker, which answers every request with a 301 to the same path and query on the target. The workflow republishes redirects alongside the language sites, and the deployment registry check accepts these Workers. omarchy.us and www.omarchy.us redirect to omarchy.org this way.
+
 Cloudflare custom domains handle routing and TLS directly. Registered national domains use their assigned Cloudflare nameservers; language subdomains use the omarchy.org zone. Verify HTTPS and the page language before publishing a new primary address.
 
 | Language         | Primary address                          |
