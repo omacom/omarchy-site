@@ -130,6 +130,16 @@
   "name": "City-783"
  },
  {
+  "repo": "https://github.com/unusepluribus/omarchy-claude-atelier-theme",
+  "image": "/assets/themes/claude-atelier.webp",
+  "name": "Claude Atelier"
+ },
+ {
+  "repo": "https://github.com/unusepluribus/omarchy-claude-atelier-heller-theme",
+  "image": "/assets/themes/claude-atelier-heller.webp",
+  "name": "Claude Atelier Heller"
+ },
+ {
   "repo": "https://github.com/hoblin/omarchy-cobalt2-theme",
   "image": "/assets/themes/cobalt2.webp",
   "name": "Cobalt2"
