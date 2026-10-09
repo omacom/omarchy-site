@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { readFileSync } from 'node:fs'
 import locales from '../../src/i18n/locales.json' with { type: 'json' }
-import { SITE_THEMES } from '../../src/lib/site-themes.ts'
+import { STOCK_THEMES } from '../../src/lib/site-themes.ts'
 import { socialCopies, socialCopy } from './social-copy.mjs'
 import { validateSocialCharacters } from './social-labels.mjs'
 
@@ -25,7 +25,7 @@ test('every language has complete, renderable social-card text', () => {
 
 test('every language and theme has a 1200x630 PNG', () => {
   for (const code of Object.keys(locales)) {
-    for (const theme of SITE_THEMES) {
+    for (const theme of STOCK_THEMES) {
       const content = locales[code].contentLocale ?? code
       const path = `${content === 'en' ? '' : `${content}/`}${theme.id}.png`
       const image = readFileSync(
