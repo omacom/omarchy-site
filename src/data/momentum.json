@@ -12,7 +12,7 @@
     ]
   },
   "foundation": {
-    "total": 23.2,
+    "total": 23.5,
     "steps": [
       {
         "date": "2026-08-21",
@@ -73,6 +73,11 @@
         "date": "2026-10-08",
         "amount": 23.2,
         "post": "/news/2026/10/spacexai-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-09",
+        "amount": 23.5,
+        "post": "/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
