@@ -72,8 +72,8 @@
     "sourceHash": "524022d62a6e34bbbc189419752844e27e0cfa2b88cffb0107e302d80c3d6265"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Az Omacom Foundation 23,2 millió dollárral indul",
-    "sourceHash": "a07fd1786bf95e85cb99f9e93d71585f90405ab6339ed2f8486ef673ad9b4354"
+    "title": "Az Omacom Foundation 23,5 millió dollárral indul",
+    "sourceHash": "481a227c030eca3dfcb46c4c1daf18de9bfaff7151f47edf45ddf306275294e9"
   },
   "omacom-foundation-funding-hits-10m": {
     "title": "Az Omacom Foundation finanszírozása elérte a 10 millió dollárt",
@@ -134,5 +134,9 @@
   "spacexai-joins-as-founding-corporate-patron": {
     "title": "A SpaceXAI $1,5 milliónyi Grok-tokennel alapító vállalati támogatóként csatlakozik",
     "sourceHash": "d32d3f956ed8e2a1b979db10cf7d7fe2b4c0ab7800e494f6a517270ae00a9ac7"
+  },
+  "namespace-joins-as-a-distinguished-corporate-patron": {
+    "title": "A Namespace Kiemelt Vállalati Támogatóként csatlakozik",
+    "sourceHash": "e4e14b2fc8e25a6b929f62e97e61ecce7e0754f3dca5933046b4c7405b0c27ab"
   }
 }
