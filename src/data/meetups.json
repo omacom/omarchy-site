@@ -1066,7 +1066,7 @@
       "city": "Austin",
       "country": "US",
       "online": false,
-      "geo": { "lat": 30.2711286, "lon": -97.7436995, "approximate": true },
+      "geo": { "lat": 30.2649261, "lon": -97.7474086, "approximate": true },
       "hosts": [],
       "cover": "/images/meetups/evt-vg2EDFGF9BS2GPF-full.webp",
       "coverWidth": 800,
