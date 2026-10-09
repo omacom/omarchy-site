@@ -21,6 +21,7 @@ import {
 } from '@/components/icons'
 import { OmarchyMark } from '@/components/Brand'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 import type { SearchEntry } from '@/lib/content'
 import { getSearchIndex } from '@/lib/content'
 import type { SearchHit } from '@/lib/search'
@@ -87,6 +88,7 @@ export function SearchPalette() {
   const restore = useRef<HTMLElement | null>(null)
 
   const [open, setOpen] = useState(false)
+  useScrollLock(open)
   const [query, setQuery] = useState('')
   const [menu, setMenu] = useState('root')
   const [index, setIndex] = useState<SearchEntry[] | null>(null)
