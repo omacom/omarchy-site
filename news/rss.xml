@@ -5,8 +5,35 @@
     <link>https://omarchy.org/news</link>
     <description>Notes on the people, ideas, and releases shaping Omarchy.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2026 10:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 10:00:00 GMT</lastBuildDate>
     <atom:link href="https://omarchy.org/news/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+  <title>Namespace joins as a Distinguished Corporate Patron</title>
+  <link>https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron</guid>
+  <pubDate>Fri, 09 Oct 2026 10:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[Namespace joins the Omacom Foundation as a Distinguished Corporate Patron with $100,000 a year in compute, which we're dedicating to ARM development and builds.]]></description>
+  <content:encoded><![CDATA[<p>I’m delighted to welcome <a href="https://namespace.so/">Namespace</a> to the <a href="https://omarchy.org/foundation/">Omacom Foundation</a> as a <a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Distinguished Corporate Patron</a>, contributing <strong>$100,000 a year in compute for three years</strong> that we’re plowing straight into ARM builds and QA.</p>
+
+<p>Omarchy grew up on x86. That’s where most of our users are today, and that’s what all our testing was built around. But ARM is coming fast. <a href="https://omarchy.org/news/2026/09/introducing-omarchy-m/">Omarchy M</a> is bringing Omarchy to Apple Silicon, <a href="https://omarchy.org/news/2026/09/introducing-omarchy-dragon/">Omarchy Dragon</a> is doing the same for Snapdragon laptops, Alibaba’s <a href="https://omarchy.org/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/">Qwen Book</a> is launching on ARM first, and there’s a whole crop of ARM laptops on the way that deserve better than whatever they’ll ship with.</p>
+
+<p>If Omarchy is going to be great on all of these new machines, every change has to work on ARM before it ships. Compiling isn’t enough. We have to actually install the thing and watch it boot.</p>
+
+<p>And that’s where it gets annoying. You can rent plenty of ARM machines in the cloud, and they’ll compile ARM software all day long. But most of them won’t let you run a virtual machine, and you can’t test an installer without one. So you’re stuck emulating the whole processor in software. Booting our ARM ISO that way took over three minutes. Three minutes! Just to boot!</p>
+
+<p>Namespace has a much better answer: They <a href="https://x.com/namespacelabs/status/2091895197151952950">run Linux on Apple Silicon</a>. On their runners, that same ISO boots in four seconds. Four! That’s the kind of speed a distro backed by <a href="https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron/">an actual rocket company</a> needs to hit.</p>
+
+<p>Namespace already runs the builds for <a href="https://zed.dev/">Zed</a> and <a href="https://duckdb.org/">DuckDB</a>, and for <a href="https://mise.jdx.dev/">mise</a>, which the foundation <a href="https://omarchy.org/news/2026/08/omacom-foundation-to-be-premier-mise-sponsor/">also sponsors</a>. Great company to be in!</p>
+
+<p><a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Namespace joins 1Password, 37signals, Four Technologies, Fireworks, OpenAI, OpenRouter, and OrcaRouter as a Distinguished Corporate Patron</a>. Their pledge brings our <a href="https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million/">total backing to approximately <strong>$23.5 million</strong></a>.</p>
+
+<p>Thank you, Hugo and everyone at Namespace! And to <a href="https://omarchy.org/staff/">Emir</a>, our new Head of Infrastructure, for making the connection. Let’s make Omarchy run beautifully on every ARM machine out there.</p>
+
+<p>If your company would like to <a href="https://omarchy.org/patrons/">join our patrons</a>, write <a href="mailto:david@omarchy.org">david@omarchy.org</a>.</p>
+]]></content:encoded>
+</item>
+
 <item>
   <title>SpaceXAI joins as a Founding Corporate Patron with $1.5 million in Grok tokens</title>
   <link>https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron</link>
@@ -784,7 +811,7 @@
 </item>
 
 <item>
-  <title>Omacom Foundation launches with $23.2 million</title>
+  <title>Omacom Foundation launches with $23.5 million</title>
   <link>https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million</link>
   <guid isPermaLink="true">https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million</guid>
   <pubDate>Fri, 21 Aug 2026 15:57:00 GMT</pubDate>
@@ -841,9 +868,10 @@
   <li><a href="https://openai.com">OpenAI</a></li>
   <li><a href="https://openrouter.ai/">OpenRouter</a></li>
   <li><a href="https://www.orcarouter.ai/">OrcaRouter</a></li>
+  <li><a href="https://namespace.so/">Namespace</a></li>
 </ul>
 
-<p>Over 800 donors have also raised over $120,000 through <a href="https://www.zeffy.com/en-US/donation-form/omarchy-patronage">open patronage</a>, bringing the total in pledges and donations to approximately $23.2 million.</p>
+<p>Over 800 donors have also raised over $120,000 through <a href="https://www.zeffy.com/en-US/donation-form/omarchy-patronage">open patronage</a>, bringing the total in pledges and donations to approximately $23.5 million.</p>
 
 <p>This is a ridiculous sum of money, so I intend to make sure it lasts a long time, and that we make the most of it. But just as important as the incredible cushion is the vote of confidence delivered by these pledges.</p>
 
@@ -870,6 +898,8 @@
 <p><em>UPDATE: Alibaba Cloud <a href="https://omarchy.org/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/">joined as a Founding Corporate Patron with $1 million a year for three years on September 22</a>.</em></p>
 
 <p><em>UPDATE: SpaceXAI <a href="https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron/">joined as a Founding Corporate Patron with $1.5 million in Grok tokens on October 8</a>.</em></p>
+
+<p><em>UPDATE: Namespace <a href="https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $100,000 a year in compute on October 9</a>.</em></p>
 ]]></content:encoded>
 </item>
 
