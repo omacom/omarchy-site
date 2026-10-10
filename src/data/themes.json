@@ -625,6 +625,11 @@
   "name": "Starsend"
  },
  {
+  "repo": "https://github.com/cube-one-ber/omarchy-starship-theme",
+  "image": "/assets/themes/starship.webp",
+  "name": "Starship"
+ },
+ {
   "repo": "https://github.com/rondilley/omarchy-sunset-theme",
   "image": "/assets/themes/sunset.webp",
   "name": "Sunset"
