@@ -29,6 +29,7 @@
     "news:pending": "node scripts/check-translations.mjs --pending-news",
     "news:translate": "python3 scripts/translate-news.py",
     "build:translations": "npm run port && npm run check:translations && node scripts/build-translations.mjs",
+    "deploy:zh-cn": "python3 scripts/deploy-zh-cn.py",
     "deploy:locale": "node scripts/deploy-locale.mjs"
   },
   "dependencies": {
