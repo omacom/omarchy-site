@@ -45,6 +45,11 @@
   "name": "Atelier"
  },
  {
+  "repo": "https://github.com/BennetMC2/omarchy-australiana-theme",
+  "image": "/assets/themes/australiana.webp",
+  "name": "Australiana"
+ },
+ {
   "repo": "https://github.com/abhijeet-swami/omarchy-ayaka-theme",
   "image": "/assets/themes/ayaka.webp",
   "name": "Ayaka"
