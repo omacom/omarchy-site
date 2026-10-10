@@ -1141,6 +1141,23 @@
       "coverHeight": 400
     },
     {
+      "id": "evt-oHYkEenuAGwI1Ur",
+      "title": "Ai | OMARCHY PVD MEETUP ØØ3",
+      "url": "https://luma.com/gl4b9gck",
+      "start": "2026-10-11T15:00:00.000Z",
+      "end": "2026-10-11T16:30:00.000Z",
+      "timezone": "America/New_York",
+      "address": "Providence, RI",
+      "city": "Providence",
+      "country": "US",
+      "online": false,
+      "geo": { "lat": 41.821602797755126, "lon": -71.40984519170256 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-oHYkEenuAGwI1Ur-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-ycKae6WiBSI64kk",
       "title": "2° Omarchy Minas - Brasil",
       "url": "https://luma.com/21bvqq4h",
@@ -1579,6 +1596,23 @@
       "cover": "/images/meetups/evt-FlmSjVfDHvGwMCi-full.webp",
       "coverWidth": 800,
       "coverHeight": 670
+    },
+    {
+      "id": "evt-QJjjJAicOtcPPCs",
+      "title": "Ai | OMARCHY PVD MEETUP ØØ4",
+      "url": "https://luma.com/lq4s1ih2",
+      "start": "2026-11-08T16:00:00.000Z",
+      "end": "2026-11-08T17:30:00.000Z",
+      "timezone": "America/New_York",
+      "address": "Providence, RI",
+      "city": "Providence",
+      "country": "US",
+      "online": false,
+      "geo": { "lat": 41.8182047502129, "lon": -71.40889818478264 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-QJjjJAicOtcPPCs-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
     },
     {
       "id": "evt-SrfYTm4gfXfmvv3",
