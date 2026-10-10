@@ -160,6 +160,11 @@
   "name": "Crimson Gold"
  },
  {
+  "repo": "https://github.com/zanonz/omarchy-cyberpunk-blackwall-theme",
+  "image": "/assets/themes/cyberpunk-blackwall.webp",
+  "name": "Cyberpunk Blackwall"
+ },
+ {
   "repo": "https://github.com/noahljungberg/omarchy-darcula-theme",
   "image": "/assets/themes/darcula.webp",
   "name": "Darcula"
