@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { t } from '@/i18n/site'
 import { scrollToAnchor } from '@/lib/anchor-scroll'
 import { LINUX_INSTALLER, LINUX_REPO as LINUX } from '@/lib/try-linux'
+import { latestMacDownload, MAC_RELEASES } from '@/lib/try-mac'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
@@ -38,13 +39,13 @@ const platforms = [
     note: t(
       'Allow at least 8 GB of free disk space to get started. Intel Macs are not supported.',
     ),
-    download: `${MAC}/releases/latest/download/TryOmarchy.dmg`,
+    download: MAC_RELEASES,
     label: t('Download for Mac'),
     source: MAC,
     guide: `${MAC}#quick-start`,
     guideLabel: t('Mac quick start'),
     quickStart: [
-      t('Download TryOmarchy.dmg and open it.'),
+      t('Download the Try Omarchy DMG and open it.'),
       t('Drag Try Omarchy to Applications, then open it.'),
       t(
         'Start Omarchy and follow the account setup. The first launch takes longer while it prepares Linux.',
@@ -178,6 +179,62 @@ function scrollToDownload(event: React.MouseEvent, id: string) {
   // Keep repeated clicks on this page, without invoking the homepage hash helper.
   window.history.replaceState(window.history.state, '', `#${id}`)
   scrollToAnchor(target, true)
+}
+
+function MacDownloadButton() {
+  const [loading, setLoading] = useState(false)
+  const pending = useRef(false)
+
+  async function download(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return
+
+    event.preventDefault()
+    if (pending.current) return
+    pending.current = true
+    setLoading(true)
+    try {
+      // A stalled lookup should still lead to the release page.
+      const url = await latestMacDownload(AbortSignal.timeout(8000))
+      window.location.assign(url)
+    } catch {
+      // Browsers without AbortSignal.timeout still reach the release page.
+      window.location.assign(MAC_RELEASES)
+    } finally {
+      pending.current = false
+      setLoading(false)
+    }
+  }
+
+  return (
+    <Button
+      nativeButton={false}
+      render={<a href={MAC_RELEASES} onClick={download} />}
+      className="mt-auto w-full"
+      size="lg"
+      disabled={loading}
+      aria-busy={loading}
+    >
+      {loading ? (
+        <span
+          aria-hidden="true"
+          className="size-5 rounded-full border-2 border-current border-r-transparent motion-safe:animate-spin"
+        />
+      ) : (
+        <DownloadIcon />
+      )}
+      <span role="status">
+        {loading ? t('Finding download…') : t('Download for Mac')}
+      </span>
+    </Button>
+  )
 }
 
 export function TryPage() {
@@ -419,15 +476,19 @@ export function TryPage() {
                   <p className="mb-6 text-xs leading-relaxed text-text-secondary">
                     {note}
                   </p>
-                  <Button
-                    nativeButton={false}
-                    render={<a href={download} />}
-                    className="mt-auto w-full"
-                    size="lg"
-                  >
-                    <DownloadIcon />
-                    {label}
-                  </Button>
+                  {id === 'mac' ? (
+                    <MacDownloadButton />
+                  ) : (
+                    <Button
+                      nativeButton={false}
+                      render={<a href={download} />}
+                      className="mt-auto w-full"
+                      size="lg"
+                    >
+                      <DownloadIcon />
+                      {label}
+                    </Button>
+                  )}
                   <a
                     className={`${link} mt-3 justify-center text-center`}
                     href={`#${id}-quick-start`}
