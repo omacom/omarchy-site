@@ -180,3 +180,21 @@ export function portedSeo(
     path: `/${path}`,
   })
 }
+
+export function trySeo() {
+  return seo({
+    title: 'Try Omarchy on Mac, Windows and Linux - Omarchy',
+    description:
+      'Explore the Omarchy Linux desktop in a virtual machine on your Mac, Windows or Linux PC. Free, open source, and no dual boot required.',
+    path: '/try',
+  })
+}
+
+export function tryLinuxSeo() {
+  return seo({
+    title: 'Try Omarchy for Linux - Omarchy',
+    description:
+      'Run the Omarchy desktop in a window on your Linux PC. A Flatpak app with guided setup and automatic updates, without replacing your distro.',
+    path: '/try/linux',
+  })
+}
