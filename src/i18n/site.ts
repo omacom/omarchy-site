@@ -36,6 +36,17 @@ export function t(english: string): string {
   return catalogue[english] ?? english
 }
 
+/** A locale's flag, from its country code or its domain's suffix; a globe where
+ *  there is no country to show. */
+export function flag(domain: string, countryCode?: string) {
+  const country = countryCode ?? new URL(domain).hostname.split('.').at(-1)!
+  return country.length === 2
+    ? [...country.toUpperCase()]
+        .map((letter) => String.fromCodePoint(127397 + letter.charCodeAt(0)))
+        .join('')
+    : '🌐'
+}
+
 /** A team member's countries, "USA/Denmark", each translated on its own. */
 export function tCountries(meta: string): string {
   return meta.split('/').map(t).join('/')

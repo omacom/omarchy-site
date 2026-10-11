@@ -1,4 +1,5 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
+import { date, number as formatNumber } from '@/i18n/format'
 import { Link } from '@tanstack/react-router'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
@@ -11,11 +12,7 @@ const CHART_ROWS = 8
 const EIGHTHS = ' ▁▂▃▄▅▆▇'
 
 const shortDate = (iso: string) =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale.formatLocale, {
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC',
-  })
+  date('monthDay', new Date(`${iso}T00:00:00Z`))
 
 /** The Monday of the week a column stands for, `back` weeks before the day
  *  these figures were last checked. */
@@ -24,12 +21,7 @@ function weekOf(checked: string, back: number) {
   d.setUTCDate(d.getUTCDate() - back * 7)
   // With the year: a year of weeks reaches back into the last one, and
   // "Sep 12" on its own reads as this month.
-  return d.toLocaleDateString(locale.formatLocale, {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: 'UTC',
-  })
+  return date('shortDate', d)
 }
 
 /** Weekly commits as rows of eighth-blocks, oldest week on the left. */
@@ -96,10 +88,7 @@ function Count({
   return (
     <>
       {prefix}
-      {shown.toLocaleString(locale.formatLocale, {
-        minimumFractionDigits: digits,
-        maximumFractionDigits: digits,
-      })}
+      {formatNumber(shown, digits)}
       {suffix}
     </>
   )
@@ -207,7 +196,7 @@ function WeekHover({
             }
           >
             <span className="block text-[13px] text-text">
-              {count.toLocaleString(locale.formatLocale)} commit
+              {formatNumber(count)} commit
               {count === 1 ? '' : 's'}
             </span>
             <span className="block text-[11px] text-text-muted">
@@ -282,7 +271,11 @@ export function Figures() {
           <table className="w-full font-mono text-xs leading-relaxed">
             <caption className="sr-only">{t('Recent ISO downloads')}</caption>
             <tbody className="divide-y-2 divide-border-strong">
-              {downloads.periods.map((period) => (
+              {[
+                ...downloads.periods,
+                { label: 'Quattro', count: downloads.quattro },
+                { label: 'Total', count: downloads.total },
+              ].map((period) => (
                 <tr key={period.label}>
                   <th
                     scope="row"
@@ -291,7 +284,7 @@ export function Figures() {
                     {period.label}
                   </th>
                   <td className="py-2 text-right text-text-secondary tabular-nums">
-                    {period.count.toLocaleString(locale.formatLocale)}
+                    {formatNumber(period.count)}
                   </td>
                 </tr>
               ))}
@@ -327,8 +320,8 @@ export function Figures() {
           <WeekHover weeks={github.weeks} checked={momentum.checked} />
         </div>
         <p className={`${meta} mt-[14px]`}>
-          {github.pullRequests.toLocaleString(locale.formatLocale)}{' '}
-          {t('pull requests ·')} {github.contributors} {t('contributors')}
+          {formatNumber(github.pullRequests)} {t('pull requests ·')}{' '}
+          {github.contributors} {t('contributors')}
         </p>
         <a href="https://github.com/omacom/omarchy" className={more}>
           {t('The repo')}

@@ -40,6 +40,7 @@ const ogImage = socialImage(path)
 <html lang={language} dir={locale.direction ?? 'ltr'} transition:name="root" transition:animate="none">
   <head>
     <ClientRouter fallback="swap" />
+    <script is:inline defer data-domain="omarchy.org" src="https://plausible.io/js/script.js" transition:persist="plausible" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
@@ -61,8 +62,15 @@ const ogImage = socialImage(path)
     <meta name="twitter:image" content={ogImage.url} />
     <meta name="twitter:image:alt" content={ogImage.alt} />
     <meta name="theme-color" content="#1a1b26" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="300x300" />
     <link rel="icon" href="/brand/omarchy-logo.svg" type="image/svg+xml" data-theme-icon transition:persist="theme-icon" />
     <link rel="canonical" href={url} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`Omarchy – ${t('News')}`}
+      href={`${SITE_URL}/news/rss.xml`}
+    />
     {Object.entries(locales).filter(([code]) => hasTranslation(code, path)).map(([code, entry]) => (
       <link rel="alternate" hreflang={code} href={`${entry.domain}${path}`} />
     ))}

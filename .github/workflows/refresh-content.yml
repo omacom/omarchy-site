@@ -62,7 +62,7 @@ jobs:
 
       - name: Commit what changed
         run: |
-          git add src/data public/data public/images/meetups
+          git add src/data public/data public/images/meetups patrons
           if git diff --cached --quiet; then
             echo "Nothing changed upstream."
             exit 0

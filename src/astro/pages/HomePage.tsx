@@ -825,7 +825,7 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="teams"
             title={t('It takes a village to raise a distro')}
             description={t(
-              'Omarchy Core sets the direction, the Security team keeps your system safe, Design shapes how it looks and feels, and the Rangers help others find their way.',
+              'Omarchy Core sets the direction, the Security team keeps your system safe, Design shapes how it looks and feels, Omarchy M brings it to the Mac, and the Rangers help others find their way.',
             )}
             action={allTeams}
           />

@@ -1,4 +1,5 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
+import { date, region, type DateFormatName } from '@/i18n/format'
 import { PageHeading } from '@/components/PageHeading'
 import { useEffect, useState } from 'react'
 import { MeetupCover } from '@/components/MeetupCover'
@@ -30,18 +31,8 @@ const events: Meetup[] = meetups.events
 
 const CALENDAR_URL = 'https://luma.com/omarchy'
 
-const regionNames = new Intl.DisplayNames([locale.formatLocale], {
-  type: 'region',
-})
-
 /** The country's name from its code, or the code when it is not one. */
-function countryOf(code: string) {
-  try {
-    return regionNames.of(code) || code
-  } catch {
-    return code
-  }
-}
+const countryOf = region
 
 /** Where a meetup is: city and country, the address when there is no
  *  city, or nothing when the calendar keeps the place for its guests. */
@@ -55,11 +46,8 @@ function whereOf(meetup: Meetup) {
   return meetup.address || country
 }
 
-const inZone = (meetup: Meetup, options: Intl.DateTimeFormatOptions) =>
-  new Intl.DateTimeFormat(locale.formatLocale, {
-    ...options,
-    timeZone: meetup.timezone || 'UTC',
-  }).format(new Date(meetup.start))
+const inZone = (meetup: Meetup, format: DateFormatName) =>
+  date(format, new Date(meetup.start), meetup.timezone || 'UTC')
 
 function MeetupCard({
   meetup,
@@ -104,13 +92,9 @@ function MeetupCard({
         )}
         <p className="mt-3 font-mono text-xs text-text-muted">
           <time dateTime={meetup.start}>
-            {inZone(meetup, {
-              weekday: 'short',
-              month: 'short',
-              day: 'numeric',
-            })}
+            {inZone(meetup, 'weekdayMonthDay')}
             {' · '}
-            {inZone(meetup, { hour: 'numeric', minute: '2-digit' })}
+            {inZone(meetup, 'time')}
           </time>
         </p>
         <h3 className="mt-1 line-clamp-2 text-lg font-medium text-text group-hover:text-brand">
@@ -165,7 +149,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
     id: event.id,
     title: event.title,
     url: event.url,
-    when: `${inZone(event, { weekday: 'short', month: 'short', day: 'numeric' })} · ${inZone(event, { hour: 'numeric', minute: '2-digit' })}`,
+    when: `${inZone(event, 'weekdayMonthDay')} · ${inZone(event, 'time')}`,
     where: whereOf(event),
     cover: event.cover,
     shown: matches(event),
@@ -188,7 +172,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
 
   const months: { name: string; id: string; meetups: Meetup[] }[] = []
   for (const meetup of upcoming) {
-    const name = inZone(meetup, { month: 'long', year: 'numeric' })
+    const name = inZone(meetup, 'monthYear')
     const last = months.at(-1)
     if (last && last.name === name) last.meetups.push(meetup)
     else
@@ -411,7 +395,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
                     </div>
                     <p className="mt-2 font-mono text-xs text-text-muted">
                       <time dateTime={meetup.start}>
-                        {inZone(meetup, { month: 'short', day: 'numeric' })}
+                        {inZone(meetup, 'monthDay')}
                       </time>
                       {where ? ` · ${where}` : ''}
                     </p>

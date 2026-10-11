@@ -1,0 +1,21 @@
+<p>主要なプラットフォームにはそれぞれ担当チームを置くべきですし、QualcommのSnapdragonには間違いなくその資格があります！先週はAppleハードウェア向けの<a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a>を紹介しました。今日はSnapdragonコンピューター上でOmarchyを美しく動作させるためのチーム、<a href="/teams/#dragon">Omarchy Dragon</a>を正式に発足します。</p>
+
+<p>目標は、これらの薄型軽量ノートパソコンを、毎日頼れるLinuxマシンに変えることです。デスクトップを起動できるようにするのは始まりにすぎません。きちんとスリープして、目覚めて、動画を効率的に再生し、ファームウェアを更新し、一日の仕事を乗り切れること——それこそが信頼できるコンピューターになる条件です。</p>
+
+<p>すでに5人が各パーツに取り組んでいます：</p>
+
+<p><strong>Jim Martin</strong> (<a href="https://github.com/jdvmi00">GitHub</a>)は、Snapdragon X2 Elite搭載のSurface Laptop 8でLinuxの立ち上げに取り組んでいます。DGX Spark向けのOmarchyにも取り組んでおり、すでにARMインストーラー向けにグラフィカルなディスクアンロック修正を寄稿しています。Dragonでは、SurfaceとX2 Eliteのサポートに注力し、実機でのインストールとリカバリーのテスト、そして役立つARM修正を共有のOmarchyプロジェクトに取り込むことを進めています。</p>
+
+<p><strong>Birk Skyum</strong> (<a href="https://x.com/BirkSkyum">X</a>)は、地理情報・グラフィックスエンジニアであり、MapLibreの共同創設者です。彼のマシンはSnapdragon X Elite搭載のLenovo Yoga Slim 7xです。Arch Linux ARMにアップストリーム修正を取り込まれ、libcamera、PipeWire、systemdにパッチを提出し、ファンと温度監視のためのカーネルパッチにも取り組んできました。現在はバッテリー持ち、安定したスリープ、KVM仮想化、ハードウェアアクセラレーションによる動画再生、LinuxからのBIOSアップデート、USB4のパフォーマンスに取り組んでいます。また、Linux向けファームウェアサポートの改善についてLenovoとも連絡を取り合っています。</p>
+
+<p><strong>Matt Gilg</strong> (<a href="https://github.com/gilgm12">GitHub</a>)は、すでにSnapdragon X YogaとDGX Spark上でHyprlandも含めた動作するOmarchyデスクトップを実現しています。Omarchy Package Repositoryに移行する前には、そのためにaarch64パッケージをビルドしてホストしていました。MattはSignalRGBを運営しており、ベンダーを横断したハードウェア互換性、組み込みシステム、低レイヤーのLinux作業の経験を持っています。また、Snapdragon X2 Elite搭載のOmniBook X16の立ち上げにも取り組んでおり、特にゲーミングと、より多くの人がWindowsから抜け出す道を見つけられるよう支援することに関心を持っています。</p>
+
+<p><strong>Bob Prendergast</strong> (<a href="https://github.com/bprendie">GitHub</a>)はソリューションアーキテクトでありLinuxベテランで、エージェントとUbuntuカーネルを使って独自の<a href="https://github.com/bprendie/omarchy-snapdragon">Omarchy Snapdragon setup</a>を構築しました。HP EliteBook 14 G1qとLenovo ThinkPad T14s Gen 6で作業しています。マシンの数を増やし、テストを重ね、有望なプラットフォームを誰もがインストールして使えるものに変えるための実務を積み重ねています。</p>
+
+<p><strong>Miguel Cruz</strong> (<a href="https://x.com/acelogic_">X</a>)はすでにOmarchy Mのメンバーであり、Apple Siliconのブートとハードウェア互換性で得た経験をQualcomm側に持ち込んでいます。彼の経歴はOS内部構造、リバースエンジニアリング、組み込みシステムにわたり、Linux、QEMU、Virtioへのコントリビューションがあります。Snapdragon X2 Elite Extreme搭載のASUS Zenbook A16とともにこの取り組みに参加し、ブートとファームウェアの立ち上げ、ドライバーの問題（特にGPU）、そして実機での修正のテストに注力しています。</p>
+
+<p>私たちの他のARM作業との有益な重なりもあります。一つのマシンのために開発されたパッケージ、インストーラーの改善、修正は、別のマシンにも役立ちます。JimとMattはともに、その作業をRaspberry Piや他のARMプラットフォームにも広げることに関心を持っています。</p>
+
+<p>私もQualcommとの直接の窓口を作ろうとしています。向こうでLinux互換性に取り組んでいるエンジニアからすでに連絡がありました。この取り組みの背後にしっかりしたサポートを得られるか、見てみましょう。</p>
+
+<p>これは進行中の作業であり、互換性はマシンごとに対応を進めています。しかし今は、それに責任を持つチームがあり、実機でテストし、修正をアップストリームに送っています。ようこそ、Jim、Birk、Matt、Bob、そしてMiguel。美しく、楽しく、そしてagenticなLinuxをSnapdragonに届けましょう！</p>

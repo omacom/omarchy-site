@@ -48,6 +48,12 @@ for code in codes:
         assert page.root.get('dir') == locale.get('direction', 'ltr'), (code, path, 'dir')
         canonical = [link.get('href') for link in page.links if link.get('rel') == 'canonical']
         assert canonical == [domain + path], (code, path, 'canonical', canonical)
+        assert any(
+            link.get('rel') == 'alternate'
+            and link.get('type') == 'application/rss+xml'
+            and link.get('href') == domain + '/news/rss.xml'
+            for link in page.links
+        ), (code, path, 'rss autodiscovery')
         assert page.meta.get('og:url') == domain + path, (code, path, 'og:url')
         assert page.meta.get('og:locale') == locale['ogLocale'], (code, path, 'og:locale')
         for other, destination in registry.items():
