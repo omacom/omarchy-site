@@ -460,6 +460,11 @@
   "name": "One Dark Pro"
  },
  {
+  "repo": "https://github.com/simoz/omarchy-outpost-theme",
+  "image": "/assets/themes/outpost.webp",
+  "name": "Outpost"
+ },
+ {
   "repo": "https://github.com/HANCORE-linux/omarchy-oxocarbon-theme",
   "image": "/assets/themes/oxo-carbon.webp",
   "name": "Oxo Carbon"
