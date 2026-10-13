@@ -1,0 +1,147 @@
+<p>
+  Apple əla avadanlıq hazırlayır. Həmişə belə olub (kəpənək klaviaturalı o bir
+  dəfəni çıxmaq şərtilə). Omarchy-yə gələnlərin böyük hissəsi də Mac-dan gəlir.
+  Onların çoxu maşını saxlayıb əməliyyat sistemindən qurtulmaq istəyərdi. Ona
+  görə də Asahi-nin başladığını tamamlayacağıq: Omarchy minimum quraşdırma
+  əziyyəti ilə Apple Silicon üzərində əla işləsin.
+</p>
+
+<p>
+  Bu işin arxasında artıq bir komanda var. Bu gün onu rəsmiləşdiririk:
+  <a href="/teams/#m">Omarchy M</a>, Apple Silicon-lu Mac-lar üçün komandamız
+  (üstəgəl köhnə Mac-ları da diqqətdə saxlayan bir neçə üzv).
+</p>
+
+<p>İcazə verin, üzvləri təqdim edim.</p>
+
+<p>
+  <strong>Quraşdırıcı.</strong>
+  <a href="https://x.com/maralcbr">Marcelo Alcantara</a>
+  <a href="https://github.com/maralcbr/omarchy-mx-mac"
+    >doğma Mac quraşdırıcısını</a
+  >
+  qurur. macOS-də bir tətbiq endirirsiniz, o, imzalanmış Omarchy buraxılışını
+  çəkir, bölmələri ayırır və sizi mövcud macOS-unuzla yanaşı Omarchy-yə
+  yükləyir. Nə USB fleşka, nə də terminalda sehrli əmrlər. O, həmçinin USB-C
+  üzərindən xarici monitorları işə salan quruluşu hazırlayıb.
+</p>
+
+<p>
+  <strong>Omarchy Mac.</strong>
+  <a href="https://x.com/tiredkebab">Naeem Malik</a> bir ildir
+  <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>-i dəstəkləyir;
+  bütün bunlar rəsmiləşməzdən çox əvvəl Omarchy-ni M1 və M2 maşınlarına gətirib
+  və ətrafında 800-dən çox adamlıq Discord icması qurub.
+  <a href="https://x.com/bi9kahuna">Scott Jones</a> isə həmin layihənin
+  quraşdırmanın Linux tərəfindəki digər yarısıdır. O, bu yaxınlarda M3 Air-in
+  ekranını Apple-ın doğma ekran nəzarətçisində işə salıb və bu, həmin maşını bir
+  gecədə işlənməz vəziyyətdən işlək hala gətirib.
+</p>
+
+<p>
+  <strong>Try Omarchy.</strong>
+  <a href="https://x.com/martiano">Eduardo Martinez</a>
+  <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>-ni qurub: real
+  Omarchy masaüstü Mac-ınızda doğma, avadanlıqla sürətləndirilmiş tətbiq kimi
+  işləyir; kameranız, səsiniz, mübadilə buferiniz və ortaq qovluq qoşulub. Heç
+  nəyi bölmələrə ayırmaq lazım deyil. Sadəcə endirin və səs-küyün nə üstündə
+  olduğunu görün.
+</p>
+
+<p>
+  <strong>Paketlər.</strong>
+  <a href="https://x.com/riverleaf88">Shun Li</a> Omarchy-yə lazım olan hər
+  şeyin
+  <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 paketi</a>
+  kimi mövcudluğunu təmin edir; üstəlik virtual maşınlar üçün ümumi ARM64 disk
+  imicləri və onları rahat işlətməyə imkan verən qonaq alətləri.
+</p>
+
+<p>
+  <strong>Sürücülər və nüvə.</strong>
+  <a href="https://github.com/RyanTheTide">Ryan Murray</a> Neo-nu işə salır və
+  komandanın qalan hissəsinin üzərində işlədiyi təməli qurur. O, M4 və daha yeni
+  çiplərdə macOS-u izləməyə imkan verən SPTM emulyatoru hazırlayır. Bu izləmələr
+  ekranların, qrafik prosessorların, səsin, simsiz bağlantının və Bluetooth-un
+  işləməsi üçün vacibdir. <a href="https://x.com/buildwithdjdev">Dj</a> GPU
+  sürücülərini yazır və Secure Enclave ilə birbaşa danışaraq Touch ID-ni
+  işlədib. <a href="https://x.com/acelogic_">Miguel Cruz</a> M5 işi üzrə
+  ixtisaslaşıb: Apple-ın özəl N1 çipini əks mühəndislikdən keçirib və onun Wi-Fi
+  və Bluetooth-unu Linux-da işlədib. Həmçinin Neo-da avadanlıqla video
+  kodlaşdırma və dekodlaşdırma, Bluetooth və masaüstü təkmilləşdirmələri ilə
+  töhfə verib. <a href="https://x.com/LiamRay1O">Liam</a> Neo-nun toxunma
+  paneli, enerji idarəetməsi, dinamikləri və qulaqlıq çıxışı üzərində işləyir;
+  Ryan-ın macOS izləmələri əsas təməli verir.
+  <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> M4 dəstəyini və
+  təmiz otaq icralarını dəstəkləyir, inteqrasiya və paketləmə üzərində işləyir.
+  <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a>
+  <a href="https://github.com/subedijaidip/dp-altmode-t8112"
+    >M2 MacBook Air-də USB-C üzərindən xarici ekranları</a
+  >
+  işə salıb.
+</p>
+
+<p>
+  <strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a>
+  <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>-ni
+  qurur; bu, Apple-ın MLX maşın öyrənmə çərçivəsini Vulkan vasitəsilə Apple
+  GPU-larında Linux-a gətirir. Kodunuz yenə
+  <code>import mlx.core as mx</code> deyir, amma indi Omarchy-də işləyir.
+</p>
+
+<p>
+  <strong>Köhnə Mac-lar.</strong>
+  <a href="https://x.com/shawnyeager">Shawn Yeager</a>-in 2016 və 2017 Touch
+  Bar-lı MacBook Pro-lar üçün bir yığın pull request-i var: dinamiklər, Wi-Fi,
+  ətraf işıq sensoru, Touch Bar-ın özü.
+  <a href="https://x.com/novuon_ai">Randy</a> Intel Mac-lara Touch ID gətirmək
+  üçün T2 təhlükəsizlik çipini əks mühəndislikdən keçirir və yol boyu 2019
+  MacBook Pro üçün hər düzəlişi sənədləşdirir.
+  <a href="https://x.com/jondkinney">Jon Kinney</a> bir il əvvəl Omarchy üçün
+  ARM dəstəyi üzərində addım-addım işləyirdi, indi isə bütün komandanın kimin nə
+  etdiyi üzrə əlaqələndirilməsini təmin edir.
+</p>
+
+<p>
+  Birlikdə onlar möhtəşəm bir qrupdur. İcazə gözləməyən və bir il əvvəl absurd
+  görünəcək sürətlə irəliləmək üçün agentlərdən istifadə edən on beş nəfər.
+</p>
+
+<p>
+  İlk buraxılışın hədəfi M1 və M2 ilə — Pro və Max variantları daxil olmaqla —
+  mükəmməl uyğunluqdur:
+</p>
+
+<ul>
+  <li>Həm quraşdırma, həm də sınaq variantı olan rahat quraşdırıcı</li>
+  <li>Tam GPU dəstəyi</li>
+  <li>USB-C üzərindən xarici monitorlar</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Disk şifrələməsi</li>
+</ul>
+
+<p>
+  Daha yeni maşınlar üzərində paralel işlənir, amma bayrağı əvvəlcə M1 və M2-də
+  sancırıq. M maşınlarından əlavə, dünyada milyonlarla köhnə noutbuk var — çoxu
+  artıq Apple-ın ən son macOS iddialarından kənarda qalıb — və onların hər biri
+  yaranmağı gözləyən möhtəşəm bir Omarchy kompüteridir.
+</p>
+
+<p>
+  Başlamaq üçün cilalanmış buraxılışı gözləməyə ehtiyac yoxdur.
+  <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> bir neçə
+  dəqiqəyə sizi Mac-ınızda real masaüstünə baxdıracaq. Qərarınızı vermisinizsə,
+  <a href="https://github.com/maralcbr/omarchy-mx-mac">quraşdırıcı</a> elə bu
+  gün M1 və ya M2-də Omarchy-ni macOS-un yanına qoyacaq.
+</p>
+
+<p>
+  Son olaraq bir xahiş. Apple avadanlığı üçün Linux üzərində işləmisinizsə —
+  istər nüvə sürücüləri, proshivka, paketləmə, quraşdırıcılar, istərsə də maşın
+  öyrənməsi — sizdən eşitmək istərdik. Böyük ehtimalla bizim hələ də dalınca
+  düşdüyümüz bir şeyi siz həll etmisiniz, ya da əksinə.
+  <a href="mailto:apple@omarchy.org">apple@omarchy.org</a> ünvanına yazın.
+</p>
+
+<p>Gəlin Asahi-nin başladığını tamamlayaq.</p>
