@@ -1,6 +1,6 @@
 import { inlineJson } from './inline-json'
 
-import { OMARCHY_MARK_PATH } from '@/components/Brand'
+import { BAND_STOPS, OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
 import { SITE_THEMES } from './site-themes.ts'
@@ -39,11 +39,20 @@ export function readTheme(): string {
 
 /** Replace the favicon link to invalidate browsers that cache it by element. */
 export function paintFavicon() {
-  const brand = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-brand')
-    .trim()
-  if (!brand) return
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><path fill="${brand}" fill-rule="evenodd" clip-rule="evenodd" d="${OMARCHY_MARK_PATH}"/></svg>`
+  const style = getComputedStyle(document.documentElement)
+  const bands = BAND_STOPS.map(([token, from, to]) => ({
+    color: style.getPropertyValue(token.slice('var('.length, -1)).trim(),
+    from,
+    to,
+  }))
+  if (bands.some(({ color }) => !color)) return
+  const stops = bands
+    .map(
+      ({ color, from, to }) =>
+        `<stop offset="${from}%" stop-color="${color}"/><stop offset="${to}%" stop-color="${color}"/>`,
+    )
+    .join('')
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><defs><linearGradient id="bands" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1200">${stops}</linearGradient></defs><path fill="url(#bands)" fill-rule="evenodd" clip-rule="evenodd" d="${OMARCHY_MARK_PATH}"/></svg>`
   const link = document.createElement('link')
   link.rel = 'icon'
   link.type = 'image/svg+xml'
