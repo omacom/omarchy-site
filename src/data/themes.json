@@ -460,6 +460,11 @@
   "name": "One Dark Pro"
  },
  {
+  "repo": "https://github.com/iam-wisman/omarchy-one-piece-theme",
+  "image": "/assets/themes/one-piece.webp",
+  "name": "One Piece"
+ },
+ {
   "repo": "https://github.com/HANCORE-linux/omarchy-oxocarbon-theme",
   "image": "/assets/themes/oxo-carbon.webp",
   "name": "Oxo Carbon"
