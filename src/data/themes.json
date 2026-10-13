@@ -1,5 +1,10 @@
 [
  {
+  "repo": "https://github.com/Warexpor/omarchy-43pr-theme",
+  "image": "/assets/themes/43pr.webp",
+  "name": "43PR"
+ },
+ {
   "repo": "https://github.com/JJDizz1L/aetheria",
   "image": "/assets/themes/aetheria.webp",
   "name": "Aetheria"
