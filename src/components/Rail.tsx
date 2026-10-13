@@ -1,5 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, MouseEvent } from 'react'
+import { locale } from '@/i18n/site'
+import { edgesAt, slideSpan, slideTarget, startPad } from '@/lib/rail-geometry'
+import type { RailAlign } from '@/lib/rail-geometry'
+
+/** The site builds one language at a time, and the page's `dir` comes from
+ *  this same value, so the rails cannot disagree with the document. */
+const RTL = locale.direction === 'rtl'
 
 const GLIDE_MS = 420
 const EASE_OUT = (t: number) => 1 - Math.pow(1 - t, 3)
@@ -22,7 +29,7 @@ const capture = (el: Element, pointerId: number) => {
   }
 }
 
-export type RailAlign = 'center' | 'start'
+export type { RailAlign }
 
 export function useRail<T extends HTMLElement = HTMLDivElement>({
   count,
@@ -66,11 +73,15 @@ export function useRail<T extends HTMLElement = HTMLDivElement>({
   const targetFor = useCallback(
     (el: HTMLElement, slide: HTMLElement) => {
       const first = el.children[0] as HTMLElement | undefined
-      const raw =
-        align === 'center'
-          ? slide.offsetLeft - (el.clientWidth - slide.clientWidth) / 2
-          : slide.offsetLeft - (first?.offsetLeft ?? 0)
-      return Math.max(0, Math.min(el.scrollWidth - el.clientWidth, raw))
+      return slideTarget({
+        align,
+        slideOffset: slide.offsetLeft,
+        slideWidth: slide.clientWidth,
+        firstOffset: first?.offsetLeft ?? 0,
+        clientWidth: el.clientWidth,
+        reach: el.scrollWidth - el.clientWidth,
+        rtl: RTL,
+      })
     },
     [align],
   )
@@ -104,11 +115,19 @@ export function useRail<T extends HTMLElement = HTMLDivElement>({
     const first = el?.children[0] as HTMLElement | undefined
     const second = el?.children[1] as HTMLElement | undefined
     if (!el || !first) return 1
-    const step = second
-      ? second.offsetLeft - first.offsetLeft
-      : first.clientWidth
+    const step = slideSpan(
+      first.offsetLeft,
+      second?.offsetLeft,
+      first.clientWidth,
+    )
     const gap = Math.max(0, step - first.clientWidth)
-    const room = el.clientWidth - first.offsetLeft * 2 + gap
+    const pad = startPad({
+      clientWidth: el.clientWidth,
+      firstOffset: first.offsetLeft,
+      firstWidth: first.clientWidth,
+      rtl: RTL,
+    })
+    const room = el.clientWidth - pad * 2 + gap
     // A hair of tolerance, so four cards sized to fill the column exactly
     // never round down to three.
     return Math.max(1, Math.floor(room / Math.max(1, step) + 0.05))
@@ -126,7 +145,12 @@ export function useRail<T extends HTMLElement = HTMLDivElement>({
    */
   const columnAt = (el: HTMLElement, scrollLeft: number) => {
     const first = el.children[0] as HTMLElement | undefined
-    const pad = first?.offsetLeft ?? 0
+    const pad = startPad({
+      clientWidth: el.clientWidth,
+      firstOffset: first?.offsetLeft ?? 0,
+      firstWidth: first?.clientWidth ?? 0,
+      rtl: RTL,
+    })
     const left = scrollLeft + pad - 1
     const right = scrollLeft + el.clientWidth - pad + 1
     const inside = new Set<number>()
@@ -165,8 +189,7 @@ export function useRail<T extends HTMLElement = HTMLDivElement>({
     // Percentages here are of the thumb's own width, so the travel is
     // expressed relative to it rather than to the track.
     bar.style.transform = `translateX(${(progress * (1 - ratio) * 100) / ratio}%)`
-    const start = el.scrollLeft <= 1
-    const end = el.scrollLeft >= reach - 1
+    const { start, end } = edgesAt(el.scrollLeft, reach, RTL)
     setEdges((was) =>
       was.start === start && was.end === end ? was : { start, end },
     )
