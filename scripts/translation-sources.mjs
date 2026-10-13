@@ -133,6 +133,9 @@ export function collectSources(root = process.cwd()) {
   }
   walk(path.join(root, 'src'))
   add(readJson('src/data/banner.json', null)?.html)
+  for (const period of readJson('src/data/momentum.json', {}).downloads
+    ?.periods ?? [])
+    add(period.label)
   for (const team of readJson('src/data/teams.json', [])) {
     add(team.name?.replace(/^Omarchy /, ''))
     add(team.description)
@@ -148,12 +151,20 @@ export function collectSources(root = process.cwd()) {
   for (const [slug, page] of Object.entries(
     readJson('src/data/pages.json', {}),
   )) {
-    // These routes render dedicated React pages, not the imported page HTML.
-    if (['teams', 'meetups'].includes(slug)) continue
-    add(page.title)
+    // Teams is fully React-rendered. Meetups still imports its authored rules,
+    // but replaces the old calendar and page heading with React components.
+    if (slug === 'teams') continue
+    if (slug !== 'meetups') add(page.title)
     add(page.seoTitle)
     add(page.description)
-    const html = (page.html ?? '').replace(
+    const pageHtml =
+      slug === 'meetups'
+        ? (page.html ?? '').replace(
+            /<div class="meetups__calendar">[\s\S]*?<\/div>\s*/,
+            '',
+          )
+        : (page.html ?? '')
+    const html = pageHtml.replace(
       /<ul\b[^>]*class="[^"]*\bpatrons__supporters\b[^"]*"[^>]*>[\s\S]*?<\/ul>/g,
       '',
     )
