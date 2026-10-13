@@ -105,6 +105,21 @@
   "name": "Blue Ridge Dark"
  },
  {
+  "repo": "https://github.com/sonderbydk/omarchy-cthulhu-deep-one-theme",
+  "image": "/assets/themes/cthulhu-deep-one.webp",
+  "name": "Call of Cthulhu: Deep One"
+ },
+ {
+  "repo": "https://github.com/sonderbydk/omarchy-cthulhu-rlyeh-theme",
+  "image": "/assets/themes/cthulhu-rlyeh.webp",
+  "name": "Call of Cthulhu: R'lyeh"
+ },
+ {
+  "repo": "https://github.com/sonderbydk/omarchy-cthulhu-colour-out-of-space-theme",
+  "image": "/assets/themes/cthulhu-colour-out-of-space.webp",
+  "name": "Call of Cthulhu: Colour Out of Space"
+ },
+ {
   "repo": "https://github.com/shmall03/omarchy-castle-on-a-lake-theme",
   "image": "/assets/themes/castle-on-a-lake.webp",
   "name": "Castle on a Lake"
