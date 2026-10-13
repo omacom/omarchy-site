@@ -315,6 +315,16 @@
   "name": "Hinterlands"
  },
  {
+  "repo": "https://github.com/terrizoaguimor/omarchy-hydropunk-theme",
+  "image": "/assets/themes/hydropunk.webp",
+  "name": "Hydropunk"
+ },
+ {
+  "repo": "https://github.com/terrizoaguimor/omarchy-hydropunk-light-theme",
+  "image": "/assets/themes/hydropunk-light.webp",
+  "name": "Hydropunk Light"
+ },
+ {
   "repo": "https://github.com/RiO7MAKK3R/omarchy-infernium-dark-theme",
   "image": "/assets/themes/infernium.webp",
   "name": "Infernium"
