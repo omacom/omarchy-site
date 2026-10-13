@@ -165,6 +165,11 @@
   "name": "Darcula"
  },
  {
+  "repo": "https://github.com/paulnunezm/omarchy-dark-voyage-theme",
+  "image": "/assets/themes/dark-voyage.webp",
+  "name": "Dark Voyage"
+ },
+ {
   "repo": "https://github.com/HANCORE-linux/omarchy-demon-theme",
   "image": "/assets/themes/demon.webp",
   "name": "Demon"
