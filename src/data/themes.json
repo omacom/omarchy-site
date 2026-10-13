@@ -105,6 +105,11 @@
   "name": "Blue Ridge Dark"
  },
  {
+  "repo": "https://github.com/peterholko/omarchy-bubblegum-theme",
+  "image": "/assets/themes/bubblegum.webp",
+  "name": "Bubblegum"
+ },
+ {
   "repo": "https://github.com/shmall03/omarchy-castle-on-a-lake-theme",
   "image": "/assets/themes/castle-on-a-lake.webp",
   "name": "Castle on a Lake"
