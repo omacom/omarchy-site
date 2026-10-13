@@ -1,10 +1,4 @@
-import {
-  flag,
-  hasTranslation,
-  locales,
-  sortedLocales,
-  t,
-} from '../i18n/site.ts'
+import { hasTranslation, locales, sortedLocales, t } from '../i18n/site.ts'
 import type { SearchEntry } from '@/lib/content'
 
 /**
@@ -55,8 +49,6 @@ export type MenuItem = {
   title?: string
   /** A locale to switch to, keeping the page where that site has it. */
   locale?: string
-  /** A text glyph drawn in place of the icon: a locale's flag. */
-  glyph?: string
 }
 
 /** The whole tree, flat. `parentOf` reads the hierarchy back out of the ids. */
@@ -166,7 +158,6 @@ const ITEMS: Array<MenuItem> = [
     id: `language.${code}`,
     label: entry.name,
     icon: 'language' as const,
-    glyph: flag(entry.domain, entry.flag),
     locale: code,
   })),
 ]
