@@ -67,7 +67,12 @@ export function searchAll(
         score += 1
         // Only prose carries a snippet worth showing. A theme's index text
         // is its owner's name, which is not worth a line of its own.
-        if (!snippet && (entry.kind === 'manual' || entry.kind === 'news')) {
+        if (
+          !snippet &&
+          (entry.kind === 'manual' ||
+            entry.kind === 'news' ||
+            entry.kind === 'page')
+        ) {
           snippet = snippetAround(entry.text, at, term.length)
         }
       }
@@ -90,4 +95,5 @@ export const KIND_LABEL: Record<SearchEntry['kind'], string> = {
   manual: 'Manual',
   news: 'News',
   theme: 'Theme',
+  page: 'Page',
 }
