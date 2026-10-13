@@ -660,6 +660,11 @@
   "name": "Tokyo Night OLED"
  },
  {
+  "repo": "https://github.com/simoz/omarchy-turner-theme",
+  "image": "/assets/themes/turner.webp",
+  "name": "Turner"
+ },
+ {
   "repo": "https://github.com/leonardobetti/omarchy-tycho",
   "image": "/assets/themes/tycho.webp",
   "name": "Tycho"
