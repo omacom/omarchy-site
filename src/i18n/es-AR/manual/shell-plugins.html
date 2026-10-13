@@ -1,0 +1,302 @@
+<p>
+  El escritorio de Omarchy corre como un único proceso de Quickshell de larga
+  vida llamado <code>omarchy-shell</code>, y casi todo lo que ves en pantalla es
+  un plugin adentro de ese proceso. La barra es un plugin. También lo son los
+  paneles que bajan de ella, las superposiciones a pantalla completa como el
+  selector de emojis y el gestor del portapapeles, el propio menú de Omarchy, la
+  pantalla de bloqueo, el diálogo de polkit y los servicios sin interfaz que
+  vigilan tu batería y entibian la pantalla de noche.
+</p>
+
+<p>
+  Eso no es solo un detalle de implementación. Significa que podés apagar partes
+  del escritorio, reemplazarlas o escribir las tuyas sin tocar una línea del
+  código fuente de Omarchy.
+</p>
+
+<p>
+  Los plugins propios vienen con Omarchy y viven en
+  <code>$OMARCHY_PATH/shell/plugins/</code>. Todo lo que agregues vos, sean tus
+  propios experimentos o algo que encontraste en GitHub, vive en
+  <code>~/.config/omarchy/plugins/</code>. Los dos se descubren de la misma
+  forma al arrancar; la única diferencia es dónde están en el disco.
+</p>
+
+<h2 id="seeing-what-you-have">
+  Ver qué tenés
+  <a
+    class="manual__heading-link"
+    href="#seeing-what-you-have"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<pre><code>omarchy plugin list
+</code></pre>
+
+<p>
+  Eso imprime todos los plugins descubiertos con su id, si están activados, si
+  son propios o de terceros, sus tipos y su nombre visible. Agregá
+  <code>--json</code> si se lo vas a pasar a otra cosa.
+</p>
+
+<p>
+  Los ids de los plugins usan espacios de nombres. Los incorporados arrancan
+  todos con <code>omarchy.</code> (<code>omarchy.clock</code>,
+  <code>omarchy.network</code>, <code>omarchy.notifications</code>) y ese
+  espacio de nombres está reservado, así que un plugin de terceros nunca puede
+  reclamarlo.
+</p>
+
+<h2 id="turning-them-on-and-off">
+  Activarlos y desactivarlos
+  <a
+    class="manual__heading-link"
+    href="#turning-them-on-and-off"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<pre><code>omarchy plugin enable omarchy.tailscale
+omarchy plugin disable omarchy.weather
+</code></pre>
+
+<p>
+  O usá el menú: <em>Setup &gt; Plugins</em> tiene Enable, Disable, Add, Clone y
+  Remove, cada uno con un selector que solo ofrece los plugins que tienen
+  sentido para esa acción.
+</p>
+
+<p>
+  El estado de activación se guarda en
+  <code>~/.config/omarchy/shell.json</code>, y la regla cambia un poco según el
+  tipo de plugin. Un plugin de terceros está activado exactamente cuando su id
+  aparece en algún lugar de ese archivo: como entrada en la disposición de la
+  barra, como entrada en <code>plugins[]</code> o como <code>bar.id</code>. Los
+  plugins propios que no son widgets de la barra funcionan al revés: están
+  activados de forma predeterminada y solo se apagan si los listás en
+  <code>disabledPlugins[]</code>.
+</p>
+
+<p>
+  Un plugin de barra completa no tiene estado apagado. Siempre hay exactamente
+  una barra, así que la reemplazás activando otra. La ubicación de los widgets
+  de la barra está explicada en
+  <a href="/manual/the-top-bar/">la barra superior</a>.
+</p>
+
+<h2 id="adding-a-plugin-from-git">
+  Agregar un plugin desde git
+  <a
+    class="manual__heading-link"
+    href="#adding-a-plugin-from-git"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Un plugin de terceros es simplemente un repositorio git con un
+  <code>manifest.json</code> en su raíz.
+</p>
+
+<pre><code>omarchy plugin add https://github.com/acme/omarchy-weather.git --enable
+</code></pre>
+
+<p>
+  Antes de hacer nada, te avisa claramente que los plugins corren como código
+  arbitrario y sin aislamiento dentro de tu proceso de shell de larga vida, te
+  muestra la URL y te pide confirmación. Tomate eso en serio. Un plugin no es un
+  archivo de configuración: es código que corre todo el tiempo que dure tu
+  sesión, con acceso a todo lo que alcanza tu cuenta de usuario. Agregá solo
+  repositorios que estés dispuesto a ejecutar, y leelos antes de activarlos.
+</p>
+
+<p>
+  Después clona el repositorio en un directorio de preparación, valida el
+  manifiesto, rechaza la instalación si otro plugin ya reclama ese id, y lo
+  mueve a <code>~/.config/omarchy/plugins/&lt;id&gt;/</code>. Sin
+  <code>--enable</code> te pregunta si lo querés activar ahora, y podés decir
+  que no e ir a leer el código primero. Nunca ejecuta nada del plugin, nunca
+  ejecuta un enganche de instalación y nunca pide sudo: clona archivos, revisa
+  el manifiesto y cambia un bit por IPC.
+</p>
+
+<p>Actualizar es un pull de avance rápido sobre esa misma copia:</p>
+
+<pre><code>omarchy plugin update acme.weather
+omarchy plugin update
+</code></pre>
+
+<p>
+  Sin un id, actualiza todos los plugins manejados por git que tengas. Te
+  muestra las diferencias antes de aplicarlas, se niega a actualizar si tenés
+  cambios locales que no puede saltear con un avance rápido, y revierte si la
+  nueva revisión no pasa la validación.
+</p>
+
+<pre><code>omarchy plugin remove acme.weather
+</code></pre>
+
+<p>
+  Quitarlo primero lo desactiva, y después lo borra si es una copia de git (el
+  repositorio sigue estando arriba) o lo desenlaza si es un enlace simbólico.
+  Una carpeta de plugin hecha a mano y sin repositorio git se mueve a una copia
+  de respaldo con fecha dentro del directorio de plugins, en lugar de borrarse
+  directamente.
+</p>
+
+<h2 id="cloning-a-built-in-to-modify-it">
+  Clonar un plugin incorporado para modificarlo
+  <a
+    class="manual__heading-link"
+    href="#cloning-a-built-in-to-modify-it"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Esta es mi parte favorita. Si querés cambiar cómo se comporta un widget
+  incorporado, no edites los archivos que están en <code>$OMARCHY_PATH</code>:
+  le pertenecen al paquete y la próxima actualización los va a sobrescribir.
+  Clonalo en su lugar:
+</p>
+
+<pre><code>omarchy plugin clone omarchy.clock
+</code></pre>
+
+<p>
+  Eso copia el plugin entero a
+  <code>~/.config/omarchy/plugins/dhh.clock</code> (con tu nombre de usuario, no
+  el mío), le cambia el nombre a "My Clock", lo activa y hace que el shell pase
+  del incorporado a tu copia, conservando la posición y las opciones del widget
+  de barra que ya tenías. Agregá <code>--edit</code> para abrir enseguida el
+  directorio nuevo en tu <code>$EDITOR</code>, que es lo que hace por vos
+  <em>Setup &gt; Plugins &gt; Clone Plugin</em> desde el menú.
+</p>
+
+<p>
+  El prefijo con tu nombre de usuario hace que el id de tu clon sea tuyo, así
+  compartirlo no choca con el de nadie más. Las llamadas al id incorporado
+  original se enrutan a tu clon, así que nada de lo que apuntaba a
+  <code>omarchy.clock</code> necesita cambios. Y si haces un lío,
+  <code>omarchy plugin remove dhh.clock</code> vuelve a poner el incorporado.
+</p>
+
+<p>
+  Guardar un archivo en cualquier lugar debajo de
+  <code>~/.config/omarchy/plugins/</code> recarga el código del plugin
+  automáticamente, así que podés dejar el editor abierto y ver cómo caen tus
+  cambios.
+</p>
+
+<h2 id="writing-your-own">
+  Escribir el tuyo
+  <a
+    class="manual__heading-link"
+    href="#writing-your-own"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Un plugin es un directorio con un <code>manifest.json</code> y algo de QML. El
+  manifiesto declara <code>schemaVersion: 1</code>, un <code>id</code>, un
+  <code>name</code>, una <code>version</code>, uno o más <code>kinds</code>, y
+  un objeto <code>entryPoints</code> que apunta al archivo QML de cada tipo:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Qué es</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bar-widget</code></td>
+      <td>Un componente que la barra activa puede colocar en una sección</td>
+    </tr>
+    <tr>
+      <td><code>panel</code></td>
+      <td>Una ventana flotante persistente o invocada</td>
+    </tr>
+    <tr>
+      <td><code>overlay</code></td>
+      <td>Una superposición a pantalla completa</td>
+    </tr>
+    <tr>
+      <td><code>menu</code></td>
+      <td>Una superficie de menú invocada</td>
+    </tr>
+    <tr>
+      <td><code>service</code></td>
+      <td>Un singleton sin interfaz</td>
+    </tr>
+    <tr>
+      <td><code>bar</code></td>
+      <td>Una barra completa que reemplaza la incorporada</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Un plugin puede declarar varios tipos a la vez: el plugin de medios es a la
+  vez <code>service</code> y <code>bar-widget</code>. Los widgets de barra
+  reciben un bloque extra <code>barWidget</code> con un nombre visible, una
+  categoría, un <code>defaultSection</code> opcional y
+  <code>allowMultiple</code>, que indica si tiene sentido tener más de uno en la
+  barra. La mayoría de los widgets lo ponen en <code>false</code>; los
+  separadores y los indicadores lo ponen en <code>true</code>.
+</p>
+
+<p>Antes de publicar nada, revisalo:</p>
+
+<pre><code>omarchy plugin validate ./my-plugin
+</code></pre>
+
+<p>
+  Eso corre las mismas verificaciones que hace el shell al cargar: la versión
+  del esquema, los campos obligatorios, un id que no esté reservado, puntos de
+  entrada que sean rutas relativas seguras y que existan de verdad, un punto de
+  entrada por cada tipo que declaraste, y ningún enlace simbólico en ninguna
+  parte de la carpeta.
+</p>
+
+<p>
+  Para el panorama completo, el código es la documentación:
+  <code>shell/README.md</code> en el repositorio de Omarchy cubre el esquema del
+  manifiesto, el contrato de IPC del shell y la forma exacta de
+  <code>shell.json</code>, y <code>shell/plugins/README.md</code> lista todos
+  los plugins propios con su id, sus tipos y sus puntos de entrada.
+</p>
+
+<h2 id="sharing-yours-with-the-world">
+  Compartir el tuyo con el mundo
+  <a
+    class="manual__heading-link"
+    href="#sharing-yours-with-the-world"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Una vez que hiciste algo que te gusta, ponelo en un repositorio git público.
+  Ese es todo el mecanismo de distribución: cualquiera puede después ejecutar
+  <code>omarchy plugin add</code> contra tu URL y tenerlo funcionando en
+  segundos.
+</p>
+
+<p>
+  Para que la gente lo encuentre de verdad, publicalo en
+  <a href="https://plugins.omarchy.org">omarchyplugins.com</a>. Ese es el
+  directorio comunitario de plugins del shell de Omarchy, y es el primer lugar
+  donde mirar cuando te preguntás si alguien ya construyó el widget que estás
+  por escribir. ¡Recorrelo antes de empezar!
+</p>

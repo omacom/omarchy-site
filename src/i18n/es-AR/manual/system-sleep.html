@@ -1,0 +1,74 @@
+<p>
+  Omarchy activa la suspensión y la hibernación de forma predeterminada, pero si
+  alguna de las dos te da problemas en tu máquina, podés desactivarlas.
+</p>
+
+<h3 id="power-profiles">
+  Perfiles de energía
+  <a
+    class="manual__heading-link"
+    href="#power-profiles"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  En una notebook, Omarchy recuerda tu perfil de energía por separado para
+  cuando está enchufada y para cuando anda a batería, y cambia entre los dos a
+  medida que la enchufás y desenchufás. De fábrica eso significa rendimiento con
+  el cable y equilibrado con batería.
+</p>
+
+<p>
+  Podés ver qué ofrece tu máquina con <code>omarchy powerprofiles list</code>, y
+  poner el que quieras para el estado en el que estás ahora con
+  <code>omarchy powerprofiles set autodetect power-saver</code>. Para configurar
+  el otro estado sin desenchufar nada, nombralo directamente:
+  <code>omarchy powerprofiles set battery power-saver</code>. Lo que elijas es
+  lo que vas a tener la próxima vez que estés en ese estado.
+</p>
+
+<h3 id="toggle-suspend">
+  Activar o desactivar la suspensión
+  <a
+    class="manual__heading-link"
+    href="#toggle-suspend"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Activás o desactivás la suspensión ejecutando
+  <code>omarchy toggle suspend</code> desde la terminal. Eso simplemente muestra
+  u oculta la opción en <em>System</em> (o <code>Super + Esc</code>), y así
+  podés ver si funciona de forma consistente en tu sistema. Si no, la volvés a
+  ocultar con el mismo comando.
+</p>
+
+<h3 id="toggle-hibernation">
+  Activar o desactivar la hibernación
+  <a
+    class="manual__heading-link"
+    href="#toggle-hibernation"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  La hibernación se configura ejecutando
+  <code>omarchy hibernation setup</code> desde la terminal. La hibernación crea
+  un subvolumen /swap en tu disco de arranque del tamaño de tu memoria RAM
+  física, así que asegurate de tener lugar de sobra. En una máquina de 32GB vas
+  a necesitar siempre 32GB o más libres para ese volumen. La hibernación también
+  requiere el gestor de arranque Limine, que es el predeterminado.
+</p>
+
+<p>
+  Una vez configurada, vas a ver la opción de hibernar en <em>System</em> (o
+  <code>Super + Esc</code>), y así podés ver si funciona de forma consistente en
+  tu sistema. Si no, la quitás de nuevo ejecutando
+  <code>omarchy hibernation remove</code>.
+</p>

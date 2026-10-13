@@ -1,0 +1,59 @@
+<h3 id="fingerprint-authentication">
+  Autenticación con huella digital
+  <a
+    class="manual__heading-link"
+    href="#fingerprint-authentication"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Muchas notebooks vienen con un sensor de huella digital para autenticarse.
+  Podés usarlo con Omarchy ejecutando
+  <em>Setup &gt; Security &gt; Fingerprint</em> en el menú de Omarchy (<code
+    >Super + Space</code
+  >).
+</p>
+
+<p>
+  Eso instala el paquete de huella digital, registra tu huella, la verifica, y
+  ya vas a poder usarla para desbloquear desde la pantalla de bloqueo (que
+  activás con <code>Super + Ctrl + L</code>), entrar en modo sudo y autorizar
+  los pedidos del sistema.
+</p>
+
+<p>
+  Cuando la tapa de la notebook está cerrada, el pedido de huella se saltea
+  automáticamente, así vas directo a la contraseña en lugar de esperar un sensor
+  que no podés alcanzar. Y si tenés que trabajar con un teclado externo que no
+  tiene sensor, simplemente apretá <code>CTRL + C</code> cuando te pida la
+  huella durante <code>sudo</code>.
+</p>
+
+<p>
+  Podés quitar la autenticación con huella desde
+  <em>Remove &gt; Security &gt; Fingerprint</em> en el menú de Omarchy.
+</p>
+
+<h3 id="fido2-authentication">
+  Autenticación Fido2
+  <a
+    class="manual__heading-link"
+    href="#fido2-authentication"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Si usás un dispositivo Fido2, podés configurarlo para autenticarte con
+  <code>sudo</code> desde <em>Setup &gt; Security &gt; Fido2</em> en el menú de
+  Omarchy (<code>Super + Space</code>). Cubre <code>sudo</code> y los pedidos de
+  autorización del sistema, pero no el desbloqueo de la computadora.
+</p>
+
+<p>
+  Podés quitar la autenticación fido2 desde
+  <em>Remove &gt; Security &gt; Fido2</em> en el menú de Omarchy.
+</p>

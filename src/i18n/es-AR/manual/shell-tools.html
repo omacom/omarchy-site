@@ -1,0 +1,175 @@
+<p>
+  Además de las herramientas estándar de Linux, Omarchy trae un montón de
+  herramientas de shell mejoradas. Estas son las principales.
+</p>
+
+<h2 id="fzf">
+  fzf
+  <a class="manual__heading-link" href="#fzf" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://junegunn.github.io/fzf/">fzf</a> te da búsqueda difusa de
+  archivos con el alias <code>ff</code>. Andá a cualquier directorio, escribí
+  <code>ff</code> y vas a poder llegar por búsqueda difusa a cualquier archivo
+  de ese árbol, viendo una vista previa de los archivos que vas filtrando en el
+  panel derecho.
+</p>
+
+<p>
+  Podés usar <code>Ctrl + R</code> para buscar de forma difusa en el historial
+  de comandos con fzf.
+</p>
+
+<p>
+  Neovim también usa esta herramienta cuando escribís <code>Space Space</code>.
+</p>
+
+<p>El manual completo está en <code>man fzf</code>.</p>
+
+<h2 id="zoxide">
+  Zoxide
+  <a
+    class="manual__heading-link"
+    href="#zoxide"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/ajeetdsouza/zoxide">Zoxide</a> reemplaza a cd. Se
+  acuerda de los directorios en los que estuviste, así te resulta más fácil
+  volver la próxima vez. Supongamos que hacés
+  <code>cd ~/.config/omarchy</code> una vez. La próxima te alcanza con
+  <code>cd omarchy</code> (o incluso <code>cd oma</code>) y Zoxide te lleva
+  directo.
+</p>
+
+<p>El manual completo está en <code>man zoxide</code>.</p>
+
+<h2 id="ripgrep">
+  ripgrep
+  <a
+    class="manual__heading-link"
+    href="#ripgrep"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> busca dentro del
+  contenido de los archivos con <code>rg &lt;pattern&gt; &lt;path&gt;</code>,
+  como <code>rg Controller app/</code> para encontrar todas las menciones de
+  <code>Controller</code> en el directorio app.
+</p>
+
+<p>
+  Neovim también usa esta herramienta cuando escribís <code>Space S G</code>.
+</p>
+
+<p>El manual completo está en <code>man rg</code>.</p>
+
+<h2 id="eza">
+  eza
+  <a class="manual__heading-link" href="#eza" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://eza.rocks/">eza</a> reemplaza a ls. Te da listados de
+  directorios con más información, color e íconos. De forma predeterminada, eza
+  está puesto como alias de ls. También podés usar <code>lt</code> para ver un
+  listado con dos niveles de anidamiento. <code>lsa</code> te da un listado que
+  incluye los archivos ocultos. Y <code>lta</code>, un listado anidado con
+  archivos ocultos.
+</p>
+
+<p>El manual completo está en <code>man eza</code>.</p>
+
+<h2 id="fd">
+  fd
+  <a class="manual__heading-link" href="#fd" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/sharkdp/fd">fd</a> es un reemplazo más fácil de
+  usar para <code>find</code>. Usá <code>fd person.rb</code> para encontrar un
+  archivo llamado <code>person.rb</code> dentro del árbol actual.
+  <code>fd person.rb /</code> busca en todo el sistema de archivos.
+  <code>fd person.rb / -H</code> busca en todo el sistema de archivos, incluidos
+  los directorios ocultos.
+</p>
+
+<p>El manual completo está en <code>man fd</code>.</p>
+
+<h2 id="bat">
+  bat
+  <a class="manual__heading-link" href="#bat" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/sharkdp/bat">bat</a> es <code>cat</code> con
+  resaltado de sintaxis, números de línea y paginado. Ejecutá
+  <code>bat somefile.rb</code> y vas a entender por qué cuesta volver atrás.
+  Además trabaja para vos sin que te des cuenta: es lo que le da color a tus
+  páginas de manual y lo que dibuja las vistas previas en <code>ff</code>.
+</p>
+
+<p>El manual completo está en <code>man bat</code>.</p>
+
+<h2 id="tldr">
+  tldr
+  <a
+    class="manual__heading-link"
+    href="#tldr"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://tldr.sh/">tldr</a> es el antídoto para esas páginas de manual
+  que arrancan con tres pantallas de historia antes de mostrarte un solo
+  ejemplo. <code>tldr tar</code> te da el puñado de invocaciones que realmente
+  querías.
+</p>
+
+<h2 id="yt-dlp">
+  yt-dlp
+  <a
+    class="manual__heading-link"
+    href="#yt-dlp"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> descarga video de
+  YouTube y de cientos de otros sitios. <code>yt-dlp &lt;url&gt;</code> baja la
+  mejor calidad disponible al directorio actual.
+</p>
+
+<p>El manual completo está en <code>man yt-dlp</code>.</p>
+
+<h2 id="try">
+  try
+  <a class="manual__heading-link" href="#try" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/tobi/try">try</a> hace fácil manejar experimentos
+  de programación en directorios con fecha. Todos los experimentos viven en
+  <code>~/Work/tries</code> y llegás a ellos con <code>try</code>.
+</p>

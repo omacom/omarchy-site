@@ -1,0 +1,86 @@
+<p>
+  Normalmente Omarchy se maneja con los atajos de teclado y el menú de Omarchy
+  (<code>Super + Space</code>). Pero también podés manejarlo desde la línea de
+  comandos <code>omarchy</code>. Esto sirve muchísimo cuando tenés un agente de
+  IA trabajando con vos en la personalización o la configuración.
+</p>
+
+<p>
+  La línea de comandos tiene acceso a todas las herramientas internas que usa el
+  menú y lo demás. Podés ver todo lo que hay disponible ejecutando
+  <code>omarchy</code> en la terminal.
+</p>
+
+<p>Se ve más o menos así:</p>
+
+<pre><code>~ ❯ omarchy
+Omarchy command center
+
+Usage:
+  omarchy &lt;command&gt; [args...]
+  omarchy commands [--all] [--json] [--check]
+  omarchy &lt;group&gt; --help
+  omarchy &lt;group&gt; &lt;command&gt; --help
+
+Common commands:
+  omarchy update              Update Omarchy and system packages
+  omarchy theme list          List available themes
+  omarchy theme set &lt;name&gt;    Apply a theme
+  omarchy font list           List available fonts
+  omarchy screenshot          Take a screenshot
+  omarchy debug               Print debugging information
+
+Groups:
+  agent          AI coding agent usage data
+  audio          Audio input and output controls
+  bar            Omarchy shell bar layout and settings
+  battery        Battery status helpers
+  bluetooth      Bluetooth device controls
+  branch         Omarchy git branch management
+  branding       About and screensaver branding
+  brightness     Display and keyboard brightness
+  capture        Screenshots and screen recording
+  channel        Omarchy release channel management
+  clipboard      Clipboard helpers
+  cmd            Command and shortcut helpers
+  config         System configuration helpers
+  debug          Diagnostics and support logs
+  ...
+</code></pre>
+
+<p>Y podés profundizar en cada grupo:</p>
+
+<pre><code>~ ❯ omarchy capture
+Capture commands - Screenshots and screen recording:
+  omarchy capture qr                                                                                                                                                                                                       Decode a QR code from a screenshot region
+  omarchy capture screenrecording [--fullscreen] [--with-desktop-audio] [--with-microphone-audio] [--with-webcam] [--webcam-device=&lt;device&gt;] [--webcam-size=&lt;small|medium|large&gt;] [--resolution=&lt;size&gt;] [--stop-recording]  Start or stop screen recording
+  omarchy capture screenrecording with webcam                                                                                                                                                                              Pick a webcam and start a screen recording with it
+  omarchy capture screenshot [smart|region|windows|fullscreen] [slurp|copy|save] [--editor=&lt;name&gt;]                                                                                                                         Take a screenshot
+  omarchy capture text                                                                                                                                                                                                     Extract text from a screenshot region with OCR
+  omarchy capture webcam resize &lt;smaller|larger|reset|small|medium|large&gt;                                                                                                                                                  Resize the active webcam recording overlay
+</code></pre>
+
+<p>
+  Todos los comandos aceptan <code>--help</code>, ya sea que preguntes por un
+  grupo entero (<code>omarchy capture --help</code>) o por un comando suelto
+  (<code>omarchy capture screenshot --help</code>).
+</p>
+
+<h3 id="opening-the-menu-from-the-terminal">
+  Abrir el menú desde la terminal
+  <a
+    class="manual__heading-link"
+    href="#opening-the-menu-from-the-terminal"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  El menú de Omarchy también se puede automatizar, lo que viene bárbaro para tus
+  propios atajos. <code>omarchy menu</code> lo abre en la raíz, y podés saltar
+  directo a cualquier punto del árbol nombrándolo:
+  <code>omarchy menu summon style.theme</code> te lleva al selector de temas,
+  <code>omarchy menu toggle system</code> abre el menú del sistema y lo vuelve a
+  cerrar si ya estaba abierto, y <code>omarchy menu close</code> lo guarda.
+</p>

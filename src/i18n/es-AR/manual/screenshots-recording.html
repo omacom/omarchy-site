@@ -1,0 +1,321 @@
+<p>
+  Todo lo que podés agarrar de la pantalla cuelga de la tecla Print Screen. La
+  tecla sola saca una foto, y los modificadores sacan una grabación, un color o
+  el texto que hay dentro de una zona. Si tu teclado no tiene tecla Print
+  Screen, <code>Super + Ctrl + C</code> abre el mismo juego de opciones como
+  menú.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atajo</th>
+      <th>Función</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Print Screen</code></td>
+      <td>Captura de pantalla</td>
+    </tr>
+    <tr>
+      <td><code>Alt + Print Screen</code></td>
+      <td>Grabar la pantalla (o detener la grabación en curso)</td>
+    </tr>
+    <tr>
+      <td><code>Super + Print Screen</code></td>
+      <td>Selector de color</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Print Screen</code></td>
+      <td>Extraer el texto de una zona</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + C</code></td>
+      <td>Menú de captura</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + .</code></td>
+      <td>Convertir una imagen o un video</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="screenshots">
+  Capturas de pantalla
+  <a
+    class="manual__heading-link"
+    href="#screenshots"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Apretá <code>Print Screen</code> y la pantalla se congela, así nada se mueve
+  debajo mientras apuntás. Arrastrá un recuadro para una zona libre, o hacé un
+  solo clic y la captura se ajusta al rectángulo donde clickeaste: una ventana
+  si caíste sobre una, todo el monitor si caíste en la barra o en un espacio
+  vacío. ¿Cambiaste de idea? Apretá <code>Print Screen</code> otra vez para
+  cerrar el selector.
+</p>
+
+<p>
+  El resultado va a dos lugares a la vez: un PNG en tu directorio de imágenes y
+  el portapapeles, así que podés pegarlo directo en una ventana de chat con
+  <code>Super + V</code>. Aparece una notificación con una miniatura. Hacele
+  clic (o apretá <code>Super + Alt + ,</code> para invocar la última
+  notificación) y la captura se abre en Tensaku, el editor de anotaciones, donde
+  podés dibujarle flechas y recuadros antes de mandarla.
+</p>
+
+<p>
+  Los archivos caen en <code>~/Pictures</code> de forma predeterminada, con
+  nombres como <code>screenshot-2026-08-13_14-22-05.png</code>. Si preferís
+  guardarlos en su propia carpeta, definí <code>OMARCHY_SCREENSHOT_DIR</code>, y
+  mirá <a href="/manual/faq/">las preguntas frecuentes</a> para saber dónde
+  poner las variables de entorno de la sesión. Omarchy crea el directorio por
+  vos si no existe. También podés cambiar el editor con
+  <code>OMARCHY_SCREENSHOT_EDITOR</code>.
+</p>
+
+<p>
+  Desde la terminal, <code>omarchy screenshot</code> saca la misma captura, y
+  podés ser explícito: <code>omarchy capture screenshot region</code> para zona
+  libre solamente, <code>windows</code> para ajustarse a los rectángulos de
+  ventanas y monitores, o <code>fullscreen</code> para saltear el selector por
+  completo y agarrar el monitor enfocado. Un segundo argumento
+  <code>copy</code> deja la captura solo en el portapapeles, y
+  <code>save</code> solo en el disco.
+</p>
+
+<h3 id="driving-the-picker-from-the-keyboard">
+  Manejar el selector desde el teclado
+  <a
+    class="manual__heading-link"
+    href="#driving-the-picker-from-the-keyboard"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>Mientras está abierta la selección, no necesitás usar el mouse para nada:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tecla</th>
+      <th>Función</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Return</code></td>
+      <td>Capturar la ventana resaltada</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Return</code></td>
+      <td>Capturar toda la pantalla</td>
+    </tr>
+    <tr>
+      <td><code>Tab</code> / <code>Ctrl + Tab</code></td>
+      <td>Resaltar la ventana siguiente o anterior</td>
+    </tr>
+    <tr>
+      <td>Teclas de flecha</td>
+      <td>Resaltar la ventana en esa dirección</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Las flechas y el Tab llevan el cursor a la ventana que eligen, así el
+  resaltado los sigue y podés ver qué estás por capturar. Estas asignaciones
+  solo existen mientras hay una selección en pantalla, así que no pueden chocar
+  con nada de tu propia configuración.
+</p>
+
+<h2 id="screen-recording">
+  Grabación de pantalla
+  <a
+    class="manual__heading-link"
+    href="#screen-recording"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Alt + Print Screen</code> abre
+  <em>Trigger &gt; Capture &gt; Screenrecord</em>, que te pregunta qué querés en
+  el audio: sin audio, audio del escritorio, escritorio más micrófono, o
+  escritorio más micrófono más webcam. Esa última opción solo aparece si
+  realmente tenés una cámara conectada. Elegí una y vas a tener el mismo
+  selector que en una captura: arrastrá una zona, o hacé clic en una ventana o
+  un monitor.
+</p>
+
+<p>
+  La grabación corre sobre gpu-screen-recorder, que codifica en la placa de
+  video a 60fps y recurre al procesador si hace falta. El resultado es un MP4 en
+  <code>~/Videos</code>, con nombres como
+  <code>screenrecording-2026-08-13_14-22-05.mp4</code>. Definí
+  <code>OMARCHY_SCREENRECORD_DIR</code> para cambiarlo, pero ojo: a diferencia
+  del directorio de capturas, este tiene que existir de antes, o la grabación se
+  niega a arrancar.
+</p>
+
+<p>
+  Mientras estás grabando, aparece un pequeño indicador en la barra. Hacele clic
+  para detenerla. También podés detenerla con
+  <code>Alt + Print Screen</code> otra vez, o con la entrada
+  <em>Stop Screenrecording</em> en
+  <em>Trigger &gt; Capture &gt; Screenrecord</em>, que solo aparece mientras
+  algo está grabando de verdad.
+</p>
+
+<p>
+  Al detenerla se hace un poco de prolijidad antes de entregarte el archivo: se
+  recorta el primer fotograma, y si hay audio se normaliza a -14 LUFS y se
+  silencia el chasquido de captura de PipeWire del comienzo. Después aparece una
+  notificación con una miniatura de la grabación. Hacele clic para reproducir el
+  archivo en mpv.
+</p>
+
+<h3 id="the-webcam-overlay">
+  La superposición de la webcam
+  <a
+    class="manual__heading-link"
+    href="#the-webcam-overlay"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Cuando grabás con webcam, la cámara aparece como una ventana vertical
+  recortada y fijada en la esquina inferior derecha de lo que estés grabando. Si
+  queda tapando algo que necesitás, cambiale el tamaño al vuelo:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atajo</th>
+      <th>Función</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Alt + [</code></td>
+      <td>Hacer más chica la superposición de la webcam</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + ]</code></td>
+      <td>Hacer más grande la superposición de la webcam</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Hay tres tamaños, chico, mediano y grande, y los atajos van pasando entre
+  ellos. El mediano es el predeterminado. Son proporcionales a la grabación, así
+  que la cámara ocupa la misma porción del cuadro tanto si grabás un monitor
+  1080p como uno 6K. Y si grabaste una zona en lugar de una pantalla completa,
+  la superposición se ancla a la esquina de esa zona y no a la del monitor, así
+  queda dentro de la toma.
+</p>
+
+<p>
+  También podés llamarla directamente con
+  <code>omarchy-capture-webcam-resize small</code>, o <code>reset</code> para
+  volver al mediano.
+</p>
+
+<h2 id="text-qr-codes-and-colours">
+  Texto, códigos QR y colores
+  <a
+    class="manual__heading-link"
+    href="#text-qr-codes-and-colours"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <code>Super + Ctrl + Print Screen</code> selecciona una zona y le hace OCR al
+  portapapeles. Eso está explicado como corresponde en
+  <a href="/manual/text-extraction-dictation/">Extracción de texto y dictado</a
+  >.
+</p>
+
+<p>
+  <em>Trigger &gt; Capture &gt; QR Code</em> hace lo mismo con los códigos QR.
+  Seleccioná la zona donde está el código y el valor decodificado va al
+  portapapeles. Solo busca códigos QR, porque el contenido denso de la pantalla
+  tiende a dar falsos positivos como código de barras. Vale saberlo: el valor
+  decodificado va al portapapeles y a ningún otro lado. No se imprime, no está
+  en la notificación, y se marca como sensible para que no quede dando vueltas
+  en el
+  <a href="/manual/unified-clipboard-history/">historial del portapapeles</a>.
+  Los códigos QR habitualmente llevan secretos, por ejemplo el URI
+  <code>otpauth://</code> detrás de un código de configuración de 2FA, y no
+  querés eso en un registro. Pegar sigue funcionando sin problema.
+</p>
+
+<p>
+  <code>Super + Print Screen</code> (o <em>Trigger &gt; Capture &gt; Color</em>)
+  convierte el cursor en un cuentagotas. Hacé clic en cualquier cosa de la
+  pantalla y el color queda en el portapapeles. Apretá el atajo de nuevo para
+  salir sin elegir.
+</p>
+
+<h2 id="transcoding-before-you-share">
+  Convertir antes de compartir
+  <a
+    class="manual__heading-link"
+    href="#transcoding-before-you-share"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Una grabación de pantalla en 4K o un HEIC crudo salido de tu teléfono suelen
+  ser demasiado grandes para mandar así nomás. <code>Super + Ctrl + .</code> (o
+  <em>Trigger &gt; Transcode</em>) resuelve eso. Te ofrece un selector de
+  archivos con búsqueda difusa sobre <code>~/Pictures</code> y
+  <code>~/Videos</code>, y después te pregunta formato y tamaño.
+</p>
+
+<p>
+  Las imágenes van a jpg o png en calidad alta, media o baja, que limitan el
+  ancho a 3160, 2160 y 1080 píxeles. Los videos van a mp4 o a un gif animado en
+  4k, 1080p o 720p. El archivo convertido se escribe al lado del original con la
+  resolución en el nombre, como <code>demo-1080p.mp4</code>, y la ruta se copia
+  al portapapeles como URI de archivo, así podés pegarla directo en una
+  aplicación que acepte archivos arrastrados.
+</p>
+
+<p>
+  También funciona desde la terminal, si ya sabés qué querés:
+  <code>omarchy transcode ~/Videos/demo.mov mp4 1080p</code>. También existe
+  <code>omarchy transcode ascii</code>, que convierte una imagen en arte ASCII,
+  aunque eso es más para <a href="/manual/branding/">la identidad visual</a>.
+</p>
+
+<h2 id="sending-it-somewhere">
+  Mandarlo a algún lado
+  <a
+    class="manual__heading-link"
+    href="#sending-it-somewhere"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Una vez que tenés el archivo, <code>Super + Ctrl + S</code> abre el menú de
+  compartir y lo manda a otro dispositivo de tu red con LocalSend. Mirá
+  <a href="/manual/guis/">interfaces gráficas</a> para eso.
+</p>

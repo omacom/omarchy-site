@@ -1,0 +1,323 @@
+<h2 id="files">
+  Files
+  <a
+    class="manual__heading-link"
+    href="#files"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  Files (Nautilus) es el gestor gráfico de archivos.
+  <code>Super + Shift + F</code> lo abre, y
+  <code>Super + Shift + Alt + F</code> lo abre en el directorio donde está
+  parada tu terminal, lo que ahorra muchísimos clics. <code>Ctrl + L</code> te
+  deja escribir una ruta, y apretar <code>Space</code> sobre cualquier archivo
+  te da una vista previa rápida sin abrir nada.
+</p>
+
+<p>
+  Enchufá un pendrive o una tarjeta SD y se monta automáticamente, así que
+  aparece solo en la barra lateral. Para cualquier cosa más seria, como
+  formatear un disco, revisar la salud SMART o crear particiones, abrí
+  <em>Disks</em> desde el lanzador de aplicaciones (<code>Super + Space</code>).
+</p>
+
+<p>
+  El doble clic sigue valores razonables: las imágenes se abren en imv, el video
+  en mpv, los PDF en Document Viewer y el texto plano en Neovim.
+</p>
+
+<h2 id="obsidian">
+  Obsidian
+  <a
+    class="manual__heading-link"
+    href="#obsidian"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://obsidian.md/">Obsidian</a> es una aplicación de notas
+  gratuita y muy extensible que guarda todo en simples archivos Markdown.
+</p>
+
+<p>
+  Obsidian es gratis para todos los usos, incluidos el personal, el comercial y
+  el sin fines de lucro.
+</p>
+
+<p>
+  Obsidian también ofrece un
+  <a href="https://obsidian.md/sync">complemento comercial para sincronizar</a>
+  con aplicaciones móviles en iOS y Android. (https://obsidian.md/pricing).
+</p>
+
+<p>
+  Abrís Obsidian con <code>Super + Shift + O</code>. Para que el tema se
+  sincronice, tenés que elegir el tema <code>Omarchy</code> en la configuración.
+</p>
+
+<h2 id="omawrite">
+  Omawrite
+  <a
+    class="manual__heading-link"
+    href="#omawrite"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/omawrite">Omawrite</a> es la aplicación
+  de escritura en Markdown de Omarchy, simple como el agua. Sin bóvedas, sin
+  plugins, solo vos y las palabras.
+</p>
+
+<p>Abrís Omawrite con <code>Super + Shift + W</code>.</p>
+
+<h2 id="pinta">
+  Pinta
+  <a
+    class="manual__heading-link"
+    href="#pinta"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://www.pinta-project.com/">Pinta</a> es una herramienta básica
+  de edición de imágenes, muy buena para recortar, cambiar tamaños y otras
+  manipulaciones simples. Eso sí, no esperes una alternativa a Photoshop. ¡Pero
+  igual tiene varita mágica y capas!
+</p>
+
+<p>
+  Abrís Pinta desde el lanzador de aplicaciones (<code>Super + Space</code>).
+</p>
+
+<h2 id="aether">
+  Aether
+  <a
+    class="manual__heading-link"
+    href="#aether"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/bjarneo/aether">Aether</a> es una aplicación de
+  temas que puede extraer los colores de una imagen de fondo y convertirlos en
+  un tema completo y coherente. Es la forma más fácil de
+  <a href="/manual/making-your-own-theme/">hacer tu propio tema</a>.
+</p>
+
+<p>
+  Abrís Aether desde el lanzador de aplicaciones (<code>Super + Space</code>).
+</p>
+
+<h2 id="localsend">
+  LocalSend
+  <a
+    class="manual__heading-link"
+    href="#localsend"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://localsend.org/">LocalSend</a> te permite mandar archivos a
+  otros dispositivos de la misma red que tengan la aplicación, como el AirDrop
+  de Apple. Pero es multiplataforma, así que podés mandar y recibir archivos con
+  Windows, macOS, Android, iOS y, por supuesto, Linux.
+</p>
+
+<p>
+  Podés abrir el menú de compartir con <code>Super + Ctrl + S</code> o desde
+  <em>Trigger &gt; Share</em> en el menú de Omarchy. Te da cuatro opciones:
+</p>
+
+<ul>
+  <li>
+    <strong>Clipboard</strong> manda lo que hayas copiado como archivo de texto.
+    Ideal para pasarle un enlace o un fragmento a tu teléfono sin mandarte un
+    correo a vos mismo.
+  </li>
+  <li>
+    <strong>File</strong> abre un selector de archivos donde podés elegir varios
+    a la vez.
+  </li>
+  <li><strong>Folder</strong> manda un directorio entero.</li>
+  <li>
+    <strong>Receive</strong> abre LocalSend propiamente dicho, para que otro
+    dispositivo pueda mandarte algo.
+  </li>
+</ul>
+
+<p>
+  Lo mismo funciona desde la terminal con <code>omarchy share clipboard</code>,
+  <code>omarchy share file [path]</code> y
+  <code>omarchy share folder [path]</code>. Si no pasás la ruta, te aparece el
+  selector.
+</p>
+
+<p>
+  También podés mandar directo desde el gestor de archivos: hacé clic derecho en
+  cualquier selección en Nautilus y elegí <em>Send via LocalSend</em>.
+</p>
+
+<p>
+  El firewall de Omarchy está cerrado de forma predeterminada salvo para el
+  puerto de LocalSend, así que esto funciona de entrada en una instalación
+  nueva. Mirá <a href="/manual/security/">seguridad</a>.
+</p>
+
+<h2 id="libreoffice">
+  LibreOffice
+  <a
+    class="manual__heading-link"
+    href="#libreoffice"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://www.libreoffice.org/">LibreOffice</a> es un paquete de
+  oficina completo, con procesador de texto, hoja de cálculo, presentaciones,
+  aplicación de dibujo y más. Es compatible con los archivos de Microsoft
+  Office, así que es una gran forma de poder abrir esos documentos de Word.
+</p>
+
+<p>
+  Abrís LibreOffice desde el lanzador de aplicaciones (<code>Super + Space</code
+  >).
+</p>
+
+<h2 id="omacalc">
+  Omacalc
+  <a
+    class="manual__heading-link"
+    href="#omacalc"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/omacalc">Omacalc</a> es la calculadora
+  de Omarchy, simple como el agua, que se abre en una ventana flotante.
+</p>
+
+<p>
+  Abrís Omacalc con <code>Super + Ctrl + Q</code> (o con la tecla de
+  calculadora, si tu teclado tiene una).
+</p>
+
+<h2 id="signal">
+  Signal
+  <a
+    class="manual__heading-link"
+    href="#signal"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://signal.org/">Signal</a> es el pionero de la mensajería
+  cifrada de punta a punta, y una gran opción de comunicación para quien
+  prefiera no pasar por uno de los grandes conglomerados tecnológicos.
+</p>
+
+<p>
+  Abrís Signal con <code>Super + Shift + G</code>. No es parte de la instalación
+  base, así que la primera vez que lo apretés, Omarchy te va a ofrecer
+  instalarlo (también está en <em>Install &gt; Service</em> en el menú de
+  Omarchy).
+</p>
+
+<h2 id="mpv">
+  mpv
+  <a class="manual__heading-link" href="#mpv" aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://mpv.io/">mpv</a> es un reproductor de medios simple y rápido
+  que reproduce casi cualquier cosa de cualquier fuente. Ideal para ver videos.
+</p>
+
+<p>
+  Abrís mpv desde el lanzador de aplicaciones (<code>Super + Space</code>) o
+  simplemente con doble clic en un video dentro del gestor de archivos.
+</p>
+
+<h2 id="obs-studio">
+  OBS Studio
+  <a
+    class="manual__heading-link"
+    href="#obs-studio"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://obsproject.com/">OBS Studio</a> te permite grabar o
+  transmitir video desde varias entradas. Podés mezclar una captura de pantalla
+  con una webcam y una entrada de micrófono. Es lo que se usó para grabar los
+  screencasts de Omarchy.
+</p>
+
+<p>
+  Abrís OBS Studio desde el lanzador de aplicaciones (<code>Super + Space</code
+  >).
+</p>
+
+<h2 id="kdenlive">
+  Kdenlive
+  <a
+    class="manual__heading-link"
+    href="#kdenlive"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://kdenlive.org/">Kdenlive</a> es un editor de video excelente.
+  Perfecto para trabajar sobre el video que sale de OBS Studio antes de
+  compartirlo.
+</p>
+
+<p>
+  Abrís Kdenlive desde el lanzador de aplicaciones (<code>Super + Space</code>).
+</p>
+
+<h2 id="omacut">
+  Omacut
+  <a
+    class="manual__heading-link"
+    href="#omacut"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h2>
+
+<p>
+  <a href="https://github.com/omacom-io/omacut">Omacut</a> es el recortador de
+  video de Omarchy, simple como el agua. Cuando lo único que necesitás es
+  cortarle el principio y el final a un clip, le gana a abrir un editor de video
+  completo.
+</p>
+
+<p>
+  Abrís Omacut desde el lanzador de aplicaciones (<code>Super + Space</code>).
+</p>

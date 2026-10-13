@@ -1,0 +1,167 @@
+<p>
+  Omarchy te permite poner el logo de tu empresa o una imagen personal en el
+  desbloqueo de arranque, el protector de pantalla y la pantalla de información.
+</p>
+
+<h3 id="boot-unlock">
+  Desbloqueo de arranque
+  <a
+    class="manual__heading-link"
+    href="#boot-unlock"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Podés usar <code>omarchy plymouth preview</code> para ver cómo quedarían tu
+  logo y tus colores. Toma un color de fondo, un color de texto, un logo png y
+  una ruta para la imagen de vista previa:
+</p>
+
+<pre><code>omarchy plymouth preview '#1d2021' '#ebdbb2' logo.png preview.png
+</code></pre>
+
+<p>
+  Después aplicá la configuración con
+  <code>omarchy plymouth set '#1d2021' '#ebdbb2' logo.png</code>, que también le
+  va a dar a la pantalla de inicio de sesión de SDDM los mismos colores y el
+  mismo logo. Si querés volver atrás, podés usar
+  <code>omarchy plymouth reset</code>.
+</p>
+
+<p>
+  <img
+    src="/manual/images/branding-plymouth-shopify.webp"
+    alt="branding-plymouth-shopify"
+  />
+</p>
+
+<h3 id="screensaver">
+  Protector de pantalla
+  <a
+    class="manual__heading-link"
+    href="#screensaver"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Podés cambiar el logo que usa el protector de pantalla desde
+  <em>Style &gt; Screensaver</em>. Es un logo ASCII, así que podés editar el
+  texto directamente, pero también le podés pasar una imagen png o svg y
+  nosotros la convertimos a ASCII. Queda bastante lindo.
+</p>
+
+<p>
+  <img
+    src="/manual/images/branding-screensaver.webp"
+    alt="branding-screensaver"
+  />
+</p>
+
+<p>Hay tres entradas en ese menú:</p>
+
+<ul>
+  <li>
+    <strong>Edit Text</strong> abre
+    <code>~/.config/omarchy/branding/screensaver.txt</code> en tu editor.
+    Escribí o pegá lo que quieras: arte ASCII, tu nombre, una mala palabra.
+    Guardá y salí, y el protector de pantalla arranca enseguida para que lo
+    veas.
+  </li>
+  <li>
+    <strong>Set From Image</strong> abre un selector de archivos para un png o
+    svg, lo convierte a ASCII y te muestra el resultado. Los logos con una
+    silueta clara funcionan mucho mejor que las fotos.
+  </li>
+  <li><strong>Restore Default</strong> vuelve a poner el logo de Omarchy.</li>
+</ul>
+
+<h3 id="about-screen">
+  Pantalla de información
+  <a
+    class="manual__heading-link"
+    href="#about-screen"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Las mismas tres opciones están en <em>Style &gt; About</em> para la pantalla
+  <em>About</em> que abrís desde el menú de Omarchy, y funcionan igual: el
+  archivo es <code>~/.config/omarchy/branding/about.txt</code>, y la ventana de
+  About aparece después de cada cambio. El arte de About se convierte a un
+  tamaño más chico que el del protector de pantalla, porque tiene que entrar en
+  una ventana en lugar de llenar la pantalla.
+</p>
+
+<p>
+  Mientras la ventana está abierta, un destello verde se inclina sobre el arte
+  cada unos segundos y después lo deja quieto de nuevo. Tu propio arte también
+  lo recibe, siempre que cada carácter ocupe una sola columna, y todo lo que
+  produce <em>Set From Image</em> cumple con eso. El arte hecho con emojis o
+  caracteres de doble ancho se queda quieto, y lo mismo pasa si mantenés una
+  configuración propia de fastfetch: en esos casos, un logo quieto es la
+  animación haciéndose a un lado y no fallando, porque deslizar un destello
+  sobre ellos dejaría el resto de la línea en el lugar equivocado.
+</p>
+
+<p><img src="/manual/images/branding-about.webp" alt="branding-about" /></p>
+
+<h3 id="converting-images-yourself">
+  Convertir imágenes por tu cuenta
+  <a
+    class="manual__heading-link"
+    href="#converting-images-yourself"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  Las dos opciones de <em>Set From Image</em> simplemente llaman a
+  <code>omarchy transcode ascii</code>, que podés ejecutar directamente si
+  querés control sobre la conversión:
+</p>
+
+<pre><code>omarchy transcode ascii ~/logo.svg ~/.config/omarchy/branding/screensaver.txt --width 100
+</code></pre>
+
+<p>
+  Toma <code>--width</code> y <code>--height</code> en columnas y filas de
+  terminal, un <code>--mode</code> que puede ser <code>braille</code> (el
+  predeterminado, y mucho más fino) o <code>block</code>, un porcentaje
+  <code>--threshold</code> para decidir qué píxeles cuentan como parte del logo,
+  y <code>--invert</code> para cuando tu logo es claro sobre fondo oscuro. Si
+  una conversión sale como un manchón, el umbral es normalmente la perilla que
+  hay que mover.
+</p>
+
+<h3 id="words-instead-of-a-logo">
+  Palabras en lugar de un logo
+  <a
+    class="manual__heading-link"
+    href="#words-instead-of-a-logo"
+    aria-label="Enlace a esta sección"
+    >#</a
+  >
+</h3>
+
+<p>
+  <code>omarchy ascii</code> dibuja texto en Delta Corps Priest 1, la tipografía
+  FIGlet con la que está dibujado el propio logotipo de Omarchy, así que un
+  protector de pantalla puede decir algo en lugar de mostrar una imagen:
+</p>
+
+<pre><code>omarchy ascii "Back in five" &gt; ~/.config/omarchy/branding/screensaver.txt
+</code></pre>
+
+<p>
+  Toma el texto como argumentos, o lo lee de una tubería si no le pasás ninguno.
+  La tipografía solo trae letras y espacios, porque se dibujó sin dígitos ni
+  signos de puntuación, así que cualquier otra cosa se descarta y se informa por
+  stderr en lugar de desaparecer en silencio.
+</p>
