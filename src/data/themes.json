@@ -10,6 +10,16 @@
   "name": "Amberbyte"
  },
  {
+  "repo": "https://github.com/santiagoei/omarchy-argentina",
+  "image": "/assets/themes/argentina.webp",
+  "name": "Argentina"
+ },
+ {
+  "repo": "https://github.com/santiagoei/omarchy-argentina-light",
+  "image": "/assets/themes/argentina-light.webp",
+  "name": "Argentina Light"
+ },
+ {
   "repo": "https://github.com/vale-c/omarchy-arc-blueberry",
   "image": "/assets/themes/arc-blueberry.webp",
   "name": "Arc Blueberry"
