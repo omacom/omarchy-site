@@ -2180,23 +2180,6 @@ h6 {
   }
 }
 
-/* ----------------------------------------------------------------- figures */
-
-.figure-chart {
-  clip-path: inset(0 100% 0 0);
-}
-.figure-live .figure-chart {
-  clip-path: inset(0);
-  transition: clip-path 1.2s cubic-bezier(0.21, 0.47, 0.32, 0.98);
-}
-@media (prefers-reduced-motion: reduce) {
-  .figure-chart,
-  .figure-live .figure-chart {
-    clip-path: none;
-    transition: none;
-  }
-}
-
 /* ----------------------------------------------------------- team clusters */
 
 .team-cluster {

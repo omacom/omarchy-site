@@ -72,8 +72,8 @@
     "sourceHash": "524022d62a6e34bbbc189419752844e27e0cfa2b88cffb0107e302d80c3d6265"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "มูลนิธิ Omacom เปิดตัวพร้อมเงินทุน 21.7 ล้านดอลลาร์",
-    "sourceHash": "d9e32fe69c8ec12634c40c20e6ffe4668a63ea365a175af61fa78bc0acd5bcf7"
+    "title": "มูลนิธิ Omacom เปิดตัวพร้อมเงิน 23.5 ล้านดอลลาร์",
+    "sourceHash": "481a227c030eca3dfcb46c4c1daf18de9bfaff7151f47edf45ddf306275294e9"
   },
   "omacom-foundation-funding-hits-10m": {
     "title": "เงินทุน Omacom Foundation ถึง 10 ล้านดอลลาร์",
@@ -126,5 +126,17 @@
   "omacom-foundation-to-be-premier-sponsor-of-0xsero": {
     "title": "Omacom Foundation จะเป็นผู้สนับสนุนหลักของการทำงานด้าน Local AI ของ 0xSero",
     "sourceHash": "3f625eef4d2f3826ca59ea448abf415af9ff7774f887309f57e81bf8334382d7"
+  },
+  "omarchy-launches-bug-bounty-program-on-hackerone": {
+    "title": "Omarchy เปิดตัวโปรแกรม bug bounty มูลค่า $100,000 บน HackerOne",
+    "sourceHash": "09e834cfd5c67b5c1b5434c4921b506f7fc73e736d7fdf37b575ed1d1483dc2c"
+  },
+  "spacexai-joins-as-founding-corporate-patron": {
+    "title": "SpaceXSI เข้าร่วมเป็น Founding Corporate Patron ด้วย Grok โทเค็นมูลค่า $1.5 million",
+    "sourceHash": "d32d3f956ed8e2a1b979db10cf7d7fe2b4c0ab7800e494f6a517270ae00a9ac7"
+  },
+  "namespace-joins-as-a-distinguished-corporate-patron": {
+    "title": "Namespace เข้าร่วมในฐานะ Distinguished Corporate Patron",
+    "sourceHash": "e4e14b2fc8e25a6b929f62e97e61ecce7e0754f3dca5933046b4c7405b0c27ab"
   }
 }

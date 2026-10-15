@@ -64,8 +64,8 @@
     "sourceHash": "5c7a98a0d30bdf81bdf7743ed9510e7c6d47dad679c92a02767d895dd1b3b9a5"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Omacom Foundation $21.7 मिलियन के साथ लॉन्च",
-    "sourceHash": "d9e32fe69c8ec12634c40c20e6ffe4668a63ea365a175af61fa78bc0acd5bcf7"
+    "title": "Omacom Foundation $23.5 मिलियन के साथ लॉन्च",
+    "sourceHash": "481a227c030eca3dfcb46c4c1daf18de9bfaff7151f47edf45ddf306275294e9"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
     "title": "Omacom Foundation बनेगी Hyprland की विशेष प्रायोजक",
@@ -126,5 +126,17 @@
   "omacom-foundation-to-be-premier-sponsor-of-0xsero": {
     "title": "Omacom Foundation अगले तीन सालों तक 0xSero के लोकल AI पर काम का प्रीमियर प्रायोजक बनेगा",
     "sourceHash": "3f625eef4d2f3826ca59ea448abf415af9ff7774f887309f57e81bf8334382d7"
+  },
+  "omarchy-launches-bug-bounty-program-on-hackerone": {
+    "title": "Omarchy ने HackerOne पर $100,000 बग बाउंटी प्रोग्राम लॉन्च किया",
+    "sourceHash": "09e834cfd5c67b5c1b5434c4921b506f7fc73e736d7fdf37b575ed1d1483dc2c"
+  },
+  "spacexai-joins-as-founding-corporate-patron": {
+    "title": "SpaceXSI $1.5 मिलियन के Grok टोकन के साथ संस्थापक कॉर्पोरेट संरक्षक के रूप में शामिल हुआ",
+    "sourceHash": "d32d3f956ed8e2a1b979db10cf7d7fe2b4c0ab7800e494f6a517270ae00a9ac7"
+  },
+  "namespace-joins-as-a-distinguished-corporate-patron": {
+    "title": "Namespace Distinguished Corporate Patron के रूप में शामिल हुआ",
+    "sourceHash": "e4e14b2fc8e25a6b929f62e97e61ecce7e0754f3dca5933046b4c7405b0c27ab"
   }
 }

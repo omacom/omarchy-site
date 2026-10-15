@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Omarchy CLI</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -89,7 +87,7 @@ Common commands:
   omarchy debug               Print debugging information
 
 Groups:
-  agent          AI coding agent usage data
+  agent          AI coding agents, their usage, and subscription accounts
   audio          Audio input and output controls
   bar            Omarchy shell bar layout and settings
   battery        Battery status helpers
@@ -113,7 +111,7 @@ Capture commands — Screenshots and screen recording:
   omarchy capture qr                                                                                                                                                                                                       Decode a QR code from a screenshot region
   omarchy capture screenrecording [--fullscreen] [--with-desktop-audio] [--with-microphone-audio] [--with-webcam] [--webcam-device=&lt;device&gt;] [--webcam-size=&lt;small|medium|large&gt;] [--resolution=&lt;size&gt;] [--stop-recording]  Start or stop screen recording
   omarchy capture screenrecording with webcam                                                                                                                                                                              Pick a webcam and start a screen recording with it
-  omarchy capture screenshot [smart|region|windows|fullscreen] [slurp|copy|save] [--editor=&lt;name&gt;]                                                                                                                         Take a screenshot
+  omarchy capture screenshot [smart|region|windows|fullscreen|scroll] [copy|save]                                                                                                                                          Take a screenshot
   omarchy capture text                                                                                                                                                                                                     Extract text from a screenshot region with OCR
   omarchy capture webcam resize &lt;smaller|larger|reset|small|medium|large&gt;                                                                                                                                                  Resize the active webcam recording overlay
 </code></pre>
@@ -123,8 +121,8 @@ Capture commands — Screenshots and screen recording:
 <h3 id="opening-the-menu-from-the-terminal">Opening the menu from the terminal <a class="manual__heading-link" href="#opening-the-menu-from-the-terminal" aria-label="Link to this section">#</a></h3>
 
 <p>The Omarchy menu is scriptable as well, which is handy for your own keybindings. <code>omarchy menu</code> opens it at the root, and you can jump straight to any point in the tree by naming it: <code>omarchy menu summon style.theme</code> goes right to the theme picker, <code>omarchy menu toggle system</code> opens the system menu and closes it again if it’s already up, and <code>omarchy menu close</code> puts it away.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

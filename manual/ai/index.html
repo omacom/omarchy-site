@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>AI</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -65,7 +63,7 @@
 
     <article class="manual__content">
       <h1>AI</h1>
-<p>Omarchy treats AI coding agents as first-class citizens, but it doesn’t pick a favorite for you. Instead, every major coding-agent CLI comes pre-wired as a lazy-loaded launcher. The launchers are tiny <a href="https://mise.jdx.dev/">mise</a>-managed stubs in <code>~/.local/bin/</code>, so nothing is downloaded until the first time you actually run one. Invoke any of these and authenticate when prompted:</p>
+<p>Omarchy treats AI coding agents as first-class citizens, but it doesn’t pick a favorite for you. Instead, every major coding-agent CLI comes pre-wired as a lazy-loaded launcher. The launchers are tiny <a href="https://mise.jdx.dev/">mise</a>-managed stubs in <code>~/.local/bin/</code>, so nothing is downloaded until the first time you actually run one. Hermes is the exception: nothing is stubbed for it, and choosing it installs Hermes Desktop, as <em>Desktop apps</em> below explains. Invoke any of these and authenticate when prompted:</p>
 
 <table>
   <thead>
@@ -101,7 +99,7 @@
     </tr>
     <tr>
       <td><code>grok</code></td>
-      <td>Grok CLI from xAI</td>
+      <td><a href="https://x.ai/build">Grok Build</a> from xAI</td>
     </tr>
     <tr>
       <td><code>pi</code></td>
@@ -115,6 +113,18 @@
       <td><code>ori</code></td>
       <td><a href="https://openrouter.ai/docs/guides/ori/harness">Ori</a>, OpenRouter’s harness</td>
     </tr>
+    <tr>
+      <td><code>hermes</code></td>
+      <td><a href="https://hermes-agent.nousresearch.com/">Hermes</a>, Nous Research’s agent</td>
+    </tr>
+    <tr>
+      <td><code>muse</code></td>
+      <td><a href="https://dev.meta.ai">Muse Code</a>, Meta’s coding agent</td>
+    </tr>
+    <tr>
+      <td><code>cursor-agent</code></td>
+      <td><a href="https://cursor.com/cli">Cursor CLI</a></td>
+    </tr>
   </tbody>
 </table>
 
@@ -122,19 +132,35 @@
 
 <p>To wrap an additional CLI the same way, run <code>omarchy-mise-install &lt;package&gt; [command-name]</code>. The stubs are kept current along with everything else mise manages when you run <code>omarchy update</code> (or the <code>mup</code> alias).</p>
 
+<p><code>grok</code> is installed through mise’s first-party <code>grok</code> package, the same way as <code>claude</code> and <code>codex</code>. Run <code>grok</code>, or pick it under <em>Setup &gt; Defaults &gt; Agent</em>. Skip the <code>curl | bash</code> installer on x.ai. That path puts a second copy in <code>~/.grok/bin</code>, prepends it on <code>PATH</code>, and overwrites Omarchy’s wrapper.</p>
+
 <h3 id="the-default-agent">The default agent <a class="manual__heading-link" href="#the-default-agent" aria-label="Link to this section">#</a></h3>
 
 <p>Pick your default agent with <code>omarchy default agent &lt;name&gt;</code> or under <em>Setup &gt; Defaults &gt; Agent</em> in the Omarchy Menu (<code>Super + Space</code>). If the agent isn’t installed yet, picking it installs it first. A fresh Omarchy will invite you to make this choice with a one-time notification.</p>
 
+<p>Choosing Claude also attempts to set up its browser extension for Chromium, Chrome, Brave, Brave Origin, and Edge. The extension setup applies to all users and may ask for your system password; cancelling or a failed extension install still selects and launches Claude. Restart your browser, enable the extension if prompted, and sign in to Claude to finish connecting it. Run <code>/chrome</code> in Claude to check the connection. Firefox and Zen do not support this extension. If Claude was already your default before this setup was added, select it again to install the extension.</p>
+
+<p><a href="https://dev.meta.ai">Muse Code</a> — Meta’s <code>muse</code> — uses a preinstalled mise stub like the other agents. Picking it as the default installs Meta’s official launcher through mise’s HTTP backend. The launcher verifies and updates the native binary for your machine.</p>
+
 <p>Once you’ve chosen, <code>Super + Shift + Ctrl + A</code> launches the default agent in a dedicated terminal window (or brings up the picker if you haven’t chosen yet). You can also launch it straight into a task with <code>omarchy agent prompt "Review this project"</code>. Agents launched this way run unattended in their respective don’t-stop-to-ask modes, so be ready for them to actually do things! And since agents refuse to remember trust for your home directory, launches from <code>$HOME</code> start in <code>~/Work</code> instead.</p>
 
-<p>There are terminal shortcuts too: <code>a</code> runs the default agent inline in the current terminal, while <code>c</code>, <code>cx</code>, and <code>cy</code> start OpenCode, Claude Code, and Codex directly (again in their auto-approving modes). Theme changes sync to the agents as well: Claude Code, Pi, and OpenCode all follow along when you switch the Omarchy theme.</p>
+<p>There are terminal shortcuts too: <code>a</code> runs the default agent inline in the current terminal, while <code>c</code>, <code>cx</code>, and <code>cy</code> start OpenCode, Claude Code, and Codex directly (again in their auto-approving modes). Theme changes sync to the agents as well: Claude Code, Pi, OpenCode, and Hermes (once Omarchy has installed it) all follow along when you switch the Omarchy theme.</p>
 
 <h3 id="the-agents-panel">The agents panel <a class="manual__heading-link" href="#the-agents-panel" aria-label="Link to this section">#</a></h3>
 
-<p>The top bar grows an agents icon the first time Omarchy finds AI coding usage on the machine (and stays out of the way until then). The panel behind it tracks every subscription in one place: your plan, the percentage used of the 5-hour session and weekly limits (or the remaining prepaid balance), and token usage by day and by model. Claude Code, Codex, and Fireworks are covered out of the box.</p>
+<p>The top bar has an agents icon. Before you’ve set up an agent, its panel walks you through signing in to Claude, Codex, or Grok, and the first one becomes your default agent. After that, the panel puts every subscription on one page: each agent and account with its plan and the percentage used of its 5-hour session and weekly limits (or the remaining prepaid balance), under a line that rotates through what you’ve used across all of them, like tokens this week and your most used model. Under <em>Make something</em> it offers starter prompts for a new theme, plugin, or app that hand the task to your default agent. Apps are built the way Omarchy’s own Hype, Monologue, and Omacut are, in C++ and Qt Quick, following the omarchy-app agent skill, and the compiler and Qt pieces they need come installed. Claude Code, Codex, Grok, and Fireworks are covered out of the box.</p>
 
 <p>Left-click the bar icon for the panel, right-click to launch your default agent. The usage records behind it are regenerated every 15 minutes by <code>omarchy agent usage-update</code>, and the panel can even merge usage from your other machines via a synced folder. See the README under <code>$OMARCHY_PATH/shell/plugins/agents/</code> for the full settings.</p>
+
+<h3 id="several-subscriptions">Several subscriptions <a class="manual__heading-link" href="#several-subscriptions" aria-label="Link to this section">#</a></h3>
+
+<p>If you pay for more than one Claude, Codex, or Grok plan — a personal Max and a work one, say — Omarchy can keep them all signed in and move between them. Add a subscription with the + in the agents panel, which walks you through it right there, or with <code>omarchy agent account add claude Work</code> (or <code>codex</code>, or <code>grok</code>). It installs the CLI if it’s missing. The first account for a provider signs in through your normal browser, right where the CLI always looks. Every one after that signs in through a private window, so the account your browser is already signed in to doesn’t get picked up by mistake; sign in there as the account you’re adding, and close any private window you already had open first. Never log out of the CLI to do this: logging out revokes the saved sign-in, and that account would have to be added again.</p>
+
+<p>One account per provider is active, and every new session starts as it: <code>cx</code>, <code>cy</code>, a plain <code>claude</code>, <code>codex</code>, or <code>grok</code>, and anything launched through <code>omarchy agent</code>. Switch with <code>omarchy agent account use work</code> (and back with <code>omarchy agent account use main</code>), or in the panel by pressing an account’s number and then <code>Enter</code> (or clicking its Use button). Sessions that are already running stay on the account they started with. Conversation history, settings, skills, and plugins are shared across accounts, so <code>claude --continue</code> in the same folder picks up where you left off on the new account.</p>
+
+<p>With more than one account, the panel shows each account’s limits side by side, with the active one marked. By default Omarchy notifies you when the active account passes 95% of a limit, and clicking the notification switches to the account with the most headroom. Hover an account’s line in the panel and click the Autoswitch that appears beside Use (or press <code>m</code>), or run <code>omarchy agent account mode auto</code>, to have it switch on its own instead; while it’s on, Autoswitch takes Use’s place, and clicking it again goes back to notifying. Add a number to change the threshold, as in <code>omarchy agent account mode auto 90</code>. If every account is over the threshold, you’ll hear about it once, along with which account frees up first. While an active account is within 15 points of its threshold (80% at the default), its limits are checked every three minutes rather than every 15.</p>
+
+<p><code>omarchy agent account list</code> shows every account and its latest limits, <code>omarchy agent account remove work</code> forgets one, and <code>omarchy agent account rename primary Hey</code> renames one (or click an account’s name in the panel). These commands work on your default agent’s accounts; to reach the other provider, name it first, as in <code>omarchy agent account use codex side</code>. The login you already had in <code>~/.claude</code> or <code>~/.codex</code> is the <em>Main</em> account and stays where it is. An account left unused for more than about eight hours shows its last known limits until a session runs in it again. MCP servers you had when an account was added come along to it, but ones you add later with <code>claude mcp add</code> only reach the account you added them in. Claude Desktop and editors that start <code>claude</code> themselves don’t follow the switch.</p>
 
 <h3 id="crash-diagnosis">Crash diagnosis <a class="manual__heading-link" href="#crash-diagnosis" aria-label="Link to this section">#</a></h3>
 
@@ -146,7 +172,11 @@
 
 <h3 id="desktop-apps">Desktop apps <a class="manual__heading-link" href="#desktop-apps" aria-label="Link to this section">#</a></h3>
 
-<p>The <em>Install &gt; AI</em> menu also carries a couple of graphical AI apps: the ChatGPT desktop app, and Grok Bot for chatting with xAI’s models.</p>
+<p>The <em>Install &gt; AI</em> menu also carries a few graphical AI apps: the ChatGPT desktop app, the Claude desktop app (Anthropic’s Linux beta, with Chat, Cowork, and Claude Code tabs), Grok Bot for chatting with xAI’s models, Hermes Desktop, OpenClaw, and the Perplexity desktop app. Grok Bot is the desktop chat app. The coding agent is the <code>grok</code> command.</p>
+
+<p>Hermes Desktop is the one to know about, because a machine has one Hermes, and it is the app’s: Hermes is only ever installed through the app, and the <code>hermes</code> command the default agent runs is the app’s. Choosing Hermes as the default agent installs the same thing the <em>Install &gt; AI</em> entry does: the package, and a Hermes runtime under <code>~/.hermes</code> set up by Hermes’ own installer, which takes a few minutes the first time. That runtime is the one Hermes the terminal <code>hermes</code> command, the default agent and the app all use, and it updates itself with <code>hermes update</code> rather than waiting on an Omarchy release. Installing it also hands Hermes the Omarchy theme as a skin named <code>omarchy</code>, which every Hermes surface follows as you switch themes; pick another under Hermes’ Appearance settings or with <code>/skin</code> if you’d rather it didn’t, and Omarchy leaves that choice alone. Removing the app under <em>Remove &gt; AI</em> closes Hermes first, gateway included, takes that runtime with it, and keeps your chats, memories, and the skills Hermes wrote for itself unless you tell it otherwise: it asks, defaulting to no, whether that data and your connection settings should go too.</p>
+
+<p>OpenClaw’s desktop experience is its Control UI, which opens as a web app backed by its own local gateway. OpenClaw lives in <code>~/.openclaw</code> and updates itself: use the Control UI’s “Update Gateway” button or run <code>openclaw update</code>, and the gateway restarts on the new version. Omarchy only chooses the release a fresh install starts from. Removing OpenClaw under <em>Remove &gt; AI</em> takes the gateway service and the app with it and then asks whether <code>~/.openclaw</code> should go too, since that holds your chats and credentials alongside OpenClaw itself and the plugin runtimes it downloads; the default keeps it, and installing OpenClaw again picks it back up.</p>
 
 <h3 id="local-llms">Local LLMs <a class="manual__heading-link" href="#local-llms" aria-label="Link to this section">#</a></h3>
 
@@ -154,11 +184,11 @@
 
 <h3 id="the-omarchy-skill">The Omarchy Skill <a class="manual__heading-link" href="#the-omarchy-skill" aria-label="Link to this section">#</a></h3>
 
-<p>Agent skills help AI use specific tools in a specific way, and Omarchy ships with a default skill for tailoring the system. Like tweaking your Hyprland config, adjusting the bar, or even creating a new theme from scratch. It’s symlinked into the skill directories for Claude Code (<code>~/.claude/skills</code>), Codex (<code>~/.codex/skills</code>), Pi (<code>~/.pi/agent/skills</code>), Antigravity (<code>~/.gemini/config/skills</code>), and the generic <code>~/.agents/skills</code> location, so most harnesses pick it up automatically.</p>
+<p>Agent skills help AI use specific tools in a specific way, and Omarchy ships with a default skill for tailoring the system. Like tweaking your Hyprland config, adjusting the bar, or even creating a new theme from scratch. It’s symlinked into the skill directories for Claude Code (<code>~/.claude/skills</code>), Codex (<code>~/.codex/skills</code>), Pi (<code>~/.pi/agent/skills</code>), Antigravity (<code>~/.gemini/config/skills</code>), Hermes (<code>~/.hermes/skills</code> and each <code>~/.hermes/profiles/*/skills</code>), and the generic <code>~/.agents/skills</code> location, so most harnesses pick it up automatically.</p>
 
 <p>But you should treat this skill as experimental. Different models will use it to different effect. It’s best to run in plan mode first, so you have an idea of what the agent would like to change. And then be ready to rollback changes or even invoking <code>omarchy reinstall configs</code>, if the agent makes a mess of everything.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

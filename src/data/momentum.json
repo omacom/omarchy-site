@@ -1,18 +1,18 @@
 {
-  "checked": "2026-10-01",
+  "checked": "2026-10-15",
   "github": {
-    "stars": 43699,
-    "pullRequests": 6740,
-    "contributors": 534,
-    "commitsYear": 3986,
+    "stars": 44849,
+    "pullRequests": 7744,
+    "contributors": 571,
+    "commitsYear": 4091,
     "weeks": [
-      71, 121, 86, 48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51,
-      23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263, 437, 142, 42,
-      30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 40, 142, 72, 66, 57, 50, 35
+      86, 48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195,
+      83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 261, 437, 142, 42, 30, 15,
+      35, 57, 9, 78, 230, 121, 70, 178, 42, 142, 74, 66, 75, 66, 76, 72, 148
     ]
   },
   "foundation": {
-    "total": 21.7,
+    "total": 23.65,
     "steps": [
       {
         "date": "2026-08-21",
@@ -68,19 +68,34 @@
         "date": "2026-09-22",
         "amount": 21.7,
         "post": "/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-08",
+        "amount": 23.2,
+        "post": "/news/2026/10/spacexai-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-09",
+        "amount": 23.5,
+        "post": "/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-10-15",
+        "amount": 23.65,
+        "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1220026,
+    "total": 1277006,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "quattro": 405384,
-    "periods": [{ "label": "Last month", "count": 220497, "days": 30 }],
+    "quattro": 462364,
+    "periods": [{ "label": "Last month", "count": 151701, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-09-30",
-      "lastAdded": 5271,
+      "through": "2026-10-14",
+      "lastAdded": 4009,
       "countries": [
         "AD",
         "AE",
@@ -249,6 +264,7 @@
         "RU",
         "RW",
         "SA",
+        "SB",
         "SC",
         "SD",
         "SE",

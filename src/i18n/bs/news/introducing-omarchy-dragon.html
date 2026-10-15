@@ -1,0 +1,21 @@
+<p>Trebali bismo imati timove zadužene za svaku veću platformu, a Qualcommov Snapdragon definitivno zaslužuje svoj! Prošle sedmice predstavili smo <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> za Apple hardver. Danas <a href="/teams/#dragon">Omarchy Dragon</a> postaje i zvaničan: naš tim koji radi na tome da Omarchy besprijekorno radi na Snapdragon računarima.</p>
+
+<p>Cilj je pretvoriti ove tanke i lagane laptope u pouzdane Linux računare za svaki dan. Natjerati desktop da se podigne tek je početak. Natjerati računar da ode u sleep, probudi se, efikasno pušta video, ažurira firmware i izdrži cijeli radni dan: e to je ono što ga čini računarom na koji se možeš osloniti.</p>
+
+<p>Pet ljudi već radi na dijelovima slagalice:</p>
+
+<p><strong>Jim Martin</strong> (<a href="https://github.com/jdvmi00">GitHub</a>) osposobljava Linux na Surface Laptopu 8 sa Snapdragon X2 Elite čipom. Radio je na Omarchyju za DGX Spark i već je doprinio popravkom grafičkog otključavanja diska u ARM instaleru. U Dragonu se fokusira na podršku za Surface i X2 Elite, testiranje instalacije i oporavka na stvarnom hardveru, te na to da korisni ARM popravci završe u zajedničkim Omarchy projektima.</p>
+
+<p><strong>Birk Skyum</strong> (<a href="https://x.com/BirkSkyum">X</a>) je inženjer geoinformatike i grafike i suosnivač projekta MapLibre. Njegov računar je Lenovo Yoga Slim 7x sa Snapdragon X Elite čipom. Ubacio je upstream popravke u Arch Linux ARM, poslao patcheve za libcamera, PipeWire i systemd, i radio na kernel patchevima za praćenje ventilatora i temperature. Sada se bavi trajanjem baterije, pouzdanim sleepom, KVM virtualizacijom, hardverski ubrzanim videom, BIOS ažuriranjima iz Linuxa i USB4 performansama. U kontaktu je i s Lenovom oko bolje firmware podrške za Linux.</p>
+
+<p><strong>Matt Gilg</strong> (<a href="https://github.com/gilgm12">GitHub</a>) je već podigao funkcionalan Omarchy desktop, s Hyprlandom i svim ostalim, na Snapdragon X Yogi i DGX Sparku. Da bi stigao dotle, sam je buildao i hostao aarch64 pakete, prije nego što su prebačeni u Omarchy Package Repository. Matt vodi SignalRGB i donosi iskustvo s kompatibilnošću hardvera različitih proizvođača, embedded sistemima i low-level radom na Linuxu. Podiže i OmniBook X16 sa Snapdragon X2 Elite čipom, a posebno ga zanimaju gaming i to da pomogne većem broju ljudi da pronađu izlaz iz Windowsa.</p>
+
+<p><strong>Bob Prendergast</strong> (<a href="https://github.com/bprendie">GitHub</a>) je solution architect i Linux veteran koji je uz pomoć agenata i Ubuntu kernela napravio vlastiti <a href="https://github.com/bprendie/omarchy-snapdragon">Omarchy Snapdragon setup</a>. Radi na računarima HP EliteBook 14 G1q i Lenovo ThinkPad T14s Gen 6. Više računara, više testiranja i više praktičnog rada koji je potreban da se platforma koja obećava pretvori u nešto što ljudi mogu instalirati i koristiti.</p>
+
+<p><strong>Miguel Cruz</strong> (<a href="https://x.com/acelogic_">X</a>) je već dio Omarchy M tima i svoje iskustvo s bootanjem i hardverskom kompatibilnošću na Apple Siliconu donosi na Qualcommovu stranu. Iskustvo mu obuhvata OS internals, reverse engineering i embedded sisteme, uz doprinose projektima Linux, QEMU i Virtio. Pridružuje se s računarom ASUS Zenbook A16 koji pokreće Snapdragon X2 Elite Extreme, a fokusira se na to da boot i firmware prorade, na probleme s drajverima (posebno za GPU) i testiranje popravaka na stvarnom hardveru.</p>
+
+<p>Od svega toga koristi ima i ostatak našeg rada na ARM-u. Paketi, poboljšanja instalera i popravci razvijeni za jedan računar mogu pomoći drugom. I Jim i Matt žele taj rad proširiti i na Raspberry Pi i druge ARM platforme.</p>
+
+<p>Radim i na tome da uspostavim direktnu liniju s Qualcommom. Jedan inženjer koji tamo radi na kompatibilnosti s Linuxom već nam se javio. Da vidimo hoćemo li za ovo dobiti i ozbiljnu podršku s njihove strane.</p>
+
+<p>Ovo je još u izradi, a kompatibilnost se rješava računar po računar. Ali sada imamo tim koji preuzima odgovornost za to, testira na stvarnom hardveru i gura popravke upstream. Dobro došli, Jim, Birk, Matt, Bob i Miguel. Donesimo prelijep, zabavan i agentski Linux na Snapdragon!</p>

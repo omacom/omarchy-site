@@ -135,7 +135,7 @@ const PORTED: Partial<Record<string, { title: string; description: string }>> =
     security: {
       title: 'Security - Omarchy',
       description:
-        'How to report a vulnerability in Omarchy - tell the Security Team privately at security@omarchy.org - and the people credited for doing exactly that.',
+        'How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.',
     },
     'security/credits': {
       title: 'Security Credits - Omarchy',
