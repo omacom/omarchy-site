@@ -1,7 +1,7 @@
 import { t } from '@/i18n/site'
 import { Link, useLocation } from '@tanstack/react-router'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import type { ReactElement, RefObject } from 'react'
+import type { RefObject } from 'react'
 import {
   DownloadIcon,
   GithubIcon,
@@ -14,42 +14,14 @@ import {
 import { OmarchyMarkDrawn, OmarchyWordmark } from '@/components/Brand'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { NavTooltip } from '@/components/NavTooltip'
 import { MusicMenuControl } from '@/components/MusicControl'
 import { Button } from '@/components/ui/button'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
+import { TooltipProvider } from '@/components/ui/tooltip'
 import { useHashLink } from '@/lib/hash-scroll'
 import { OPEN_PICKER_EVENT, THEME_EVENT, groundOf } from '@/lib/theme'
 import { OPEN_SEARCH_EVENT } from '@/lib/search'
 import { cn } from '@/lib/utils'
-
-function NavTooltip({
-  children,
-  label,
-  shortcut,
-}: {
-  children: ReactElement
-  label: string
-  shortcut?: string
-}) {
-  return (
-    <Tooltip>
-      <TooltipTrigger render={children} />
-      <TooltipContent side="bottom" sideOffset={10}>
-        {label}
-        {shortcut && (
-          <kbd className="ml-1 rounded border border-current/25 px-1 font-mono text-[11px] opacity-75">
-            {shortcut}
-          </kbd>
-        )}
-      </TooltipContent>
-    </Tooltip>
-  )
-}
 
 const navLinks = [
   { to: '/news/', label: t('News') },
@@ -466,7 +438,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
       size="icon"
       aria-label={t('Change website theme')}
       data-nav-glyph
-      className="relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
+      className="relative h-8 w-8 cursor-pointer text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
       onClick={() => window.dispatchEvent(new CustomEvent(OPEN_PICKER_EVENT))}
     >
       <PaletteIcon className="size-5" />
@@ -542,7 +514,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
                 <NavTooltip label={t('Change website theme')} shortcut="T">
                   {theme}
                 </NavTooltip>
-                <LanguageSwitcher path={pathname} />
+                <LanguageSwitcher path={pathname} withTooltip />
                 <NavTooltip label={t('Subscribe via RSS')}>
                   <Button
                     variant="ghost"

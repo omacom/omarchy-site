@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { NavTooltip } from '@/components/NavTooltip'
 import {
   flag,
   hasTranslation,
@@ -12,8 +13,30 @@ import {
   t,
 } from '@/i18n/site'
 
-export function LanguageSwitcher({ path }: { path: string }) {
+export function LanguageSwitcher({
+  path,
+  withTooltip = false,
+}: {
+  path: string
+  withTooltip?: boolean
+}) {
   const [suffix, setSuffix] = useState('')
+
+  const trigger = (
+    <Popover.Trigger
+      render={
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label={`${t('Language')}: ${locale.name}`}
+          data-nav-glyph
+          className="relative h-8 w-8 cursor-pointer text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
+        />
+      }
+    >
+      <GlobeIcon className="size-5" />
+    </Popover.Trigger>
+  )
 
   return (
     <Popover.Root
@@ -23,19 +46,11 @@ export function LanguageSwitcher({ path }: { path: string }) {
         }
       }}
     >
-      <Popover.Trigger
-        render={
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-label={`${t('Language')}: ${locale.name}`}
-            data-nav-glyph
-            className="relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
-          />
-        }
-      >
-        <GlobeIcon className="size-5" />
-      </Popover.Trigger>
+      {withTooltip ? (
+        <NavTooltip label={t('Language')}>{trigger}</NavTooltip>
+      ) : (
+        trigger
+      )}
       <Popover.Portal>
         <Popover.Positioner
           side="bottom"
