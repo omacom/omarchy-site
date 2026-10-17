@@ -415,6 +415,11 @@
   "name": "Neovoid"
  },
  {
+  "repo": "https://github.com/ishansing/omarchy-neptune-theme",
+  "image": "/assets/themes/neptune.webp",
+  "name": "Neptune"
+ },
+ {
   "repo": "https://github.com/davydotcom/omarchy-neptune-blue-theme",
   "image": "/assets/themes/neptune-blue.webp",
   "name": "Neptune Blue"
