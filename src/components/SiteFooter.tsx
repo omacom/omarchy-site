@@ -1,4 +1,4 @@
-import { t, language, sortedLocales, hasTranslation } from '@/i18n/site'
+import { t, language, chineseScript, sortedLocales, hasTranslation } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { OmarchyWordmark } from '@/components/Brand'
 import { PixelBackdrop } from '@/components/HeroShader'
@@ -90,7 +90,7 @@ export function SiteFooter({ path }: { path: string }) {
               className="mt-4 text-sm leading-relaxed text-text-muted [text-wrap:pretty]"
             >
               <span className="block">
-                {language === 'zh-CN' ? (
+                {chineseScript ? (
                   <>
                     {t('Beautiful, fun & agentic Linux')}
                     <a href="https://dhh.dk" className={`block ${footerLink}`}>
