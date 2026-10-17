@@ -127,7 +127,7 @@ test('every locale is a language row, English first, linking to the page only wh
   const rows = childrenOf('language')
   assert.equal(rows.length, Object.keys(locales).length)
   assert.equal(rows[0]?.locale, 'en')
-  assert.ok(rows.every((row) => row.glyph && row.locale && row.label))
+  assert.ok(rows.every((row) => row.locale && locales[row.locale] && row.label))
   assert.equal(
     localeHref('da', '/themes/', '?x=1'),
     'https://omarchy.dk/themes/?x=1',
