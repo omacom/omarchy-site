@@ -1,6 +1,11 @@
 import { t, language } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useState,
+  type ComponentProps,
+} from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -16,7 +21,11 @@ import {
   PlayIcon,
   WindowsIcon,
 } from '@/components/icons'
-import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import {
+  OmarchyMark,
+  OmarchyWordmark,
+  WORDMARK_BANDS,
+} from '@/components/Brand'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
@@ -54,6 +63,11 @@ export interface HomeData {
 }
 import release from '@/data/version.json'
 
+/** The brand mark padded to the 15px glyph of WindowsIcon. */
+function TryLinuxMark(props: ComponentProps<typeof OmarchyMark>) {
+  return <OmarchyMark viewBox="-200 -200 1600 1600" {...props} />
+}
+
 const TRY = {
   mac: {
     label: t('Try on Mac'),
@@ -65,17 +79,24 @@ const TRY = {
     href: 'https://github.com/omacom/try-omarchy-windows',
     icon: WindowsIcon,
   },
+  linux: {
+    label: t('Try on Linux'),
+    // The Flatpak installer, the link the Try Omarchy for Linux README uses.
+    href: 'https://tryomarchy.com/linux.flatpakref',
+    icon: TryLinuxMark,
+  },
 } as const
 
-/** Which of the two the visitor is most likely on, read after mount so the
- *  server and the first paint agree; null on Linux and on anything unsure. */
+/** Which of the three the visitor is most likely on, read after mount so the
+ *  server and the first paint agree; null on phones and on anything unsure. */
 function useTryDevice() {
   const [device, setDevice] = useState<keyof typeof TRY | null>(null)
   useEffect(() => {
     const ua = navigator.userAgent
-    if (/iPhone|iPad/.test(ua)) return
+    if (/iPhone|iPad|Android|CrOS/.test(ua)) return
     if (/Mac/.test(ua)) setDevice('mac')
     else if (/Win/.test(ua)) setDevice('windows')
+    else if (/Linux/.test(ua)) setDevice('linux')
   }, [])
   return device
 }
@@ -606,7 +627,7 @@ export function HomePage({ data }: { data: HomeData }) {
               </p>
               <div className="mt-auto pt-6">
                 <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
+                  {(['mac', 'windows', 'linux'] as const).map((key) => {
                     const Mark = TRY[key].icon
                     return (
                       <Button
@@ -618,16 +639,17 @@ export function HomePage({ data }: { data: HomeData }) {
                       >
                         <Mark data-icon="inline-start" />
                         {TRY[key].label}
-                        <ArrowUpRightIcon data-icon="inline-end" />
+                        {key === 'linux' ? (
+                          <DownloadIcon data-icon="inline-end" />
+                        ) : (
+                          <ArrowUpRightIcon data-icon="inline-end" />
+                        )}
                       </Button>
                     )
                   })}
                 </div>
                 <p className="mt-2.5 text-[13px] text-text-muted">
-                  {t('Apple Silicon Macs, Windows 10 and 11.')}
-                  <span className="block">
-                    {t('On Linux, the ISO is the way in.')}
-                  </span>
+                  {t('Apple Silicon Macs, Windows 10 and 11, Linux with KVM.')}
                 </p>
               </div>
             </div>
