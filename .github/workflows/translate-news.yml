@@ -163,7 +163,8 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: write
-      actions: read
+      # Write, to start the omarchy.cn deploy after committing translations.
+      actions: write
     outputs:
       revision: ${{ steps.commit.outputs.revision }}
       locales: ${{ steps.commit.outputs.locales }}
@@ -216,6 +217,9 @@ jobs:
             git pull --rebase origin master
             git push origin HEAD:master
             changed=true
+            # A push made with the workflow's token starts no other workflows,
+            # so omarchy.cn, which deploys on push, is started by hand.
+            gh workflow run deploy-zh-cn.yml --ref master
           fi
           echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           locales=$(node --input-type=module -e 'import l from "./src/i18n/locales.json" with {type:"json"}; console.log(JSON.stringify(Object.keys(l).filter(k=>k!=="en")))')

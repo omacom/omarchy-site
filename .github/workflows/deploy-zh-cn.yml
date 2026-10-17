@@ -78,9 +78,11 @@ jobs:
     # Deploying is enabled by configuring where to deploy: a repository
     # without OMARCHY_CN_OSS_HOST skips this job rather than failing, so the
     # workflow stays inert until one opts in with that variable and the secrets.
+    # Manual runs on master deploy too: translate-news.yml starts one after it
+    # commits translations, since its own push cannot trigger this workflow.
     if: >-
       vars.OMARCHY_CN_OSS_HOST != '' &&
-      github.event_name == 'push' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
       github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
