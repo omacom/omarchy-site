@@ -400,6 +400,11 @@
   "name": "Naysayer"
  },
  {
+  "repo": "https://github.com/aidenlangley/omarchy-nedia-theme",
+  "image": "/assets/themes/nedia.webp",
+  "name": "Nedia"
+ },
+ {
   "repo": "https://github.com/monoooki/omarchy-neo-sploosh-theme",
   "image": "/assets/themes/neo-sploosh.webp",
   "name": "Neo Sploosh"
