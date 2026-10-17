@@ -585,6 +585,11 @@
   "name": "Shades of Jade"
  },
  {
+  "repo": "https://github.com/simpleprim8/omarchy-singularity-theme",
+  "image": "/assets/themes/singularity.webp",
+  "name": "Singularity"
+ },
+ {
   "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",
   "image": "/assets/themes/space-monkey.webp",
   "name": "Space Monkey"
