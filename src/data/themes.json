@@ -410,6 +410,11 @@
   "name": "Neon Dusk"
  },
  {
+  "repo": "https://github.com/egulay/neon-foundry",
+  "image": "/assets/themes/neon-foundry.webp",
+  "name": "Neon Foundry"
+ },
+ {
   "repo": "https://github.com/RiO7MAKK3R/omarchy-neovoid-theme",
   "image": "/assets/themes/neovoid.webp",
   "name": "Neovoid"
