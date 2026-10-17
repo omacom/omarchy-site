@@ -15,6 +15,7 @@ const columns = [
     links: [
       { label: t('News'), to: '/news/' },
       { label: t('Manual'), to: '/manual/' },
+      { label: t('At work'), splat: 'workplace' },
       { label: t('Plugins'), href: 'https://plugins.omarchy.org' },
       { label: t('Themes'), to: '/themes/' },
     ],
