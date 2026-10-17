@@ -240,6 +240,13 @@
     "ogLocale": "nb_NO",
     "manual": false
   },
+  "bs": {
+    "name": "Bosanski",
+    "domain": "https://omarchy.ba",
+    "formatLocale": "bs-BA",
+    "ogLocale": "bs_BA",
+    "manual": false
+  },
   "en-NZ": {
     "name": "English (NZ)",
     "domain": "https://omarchy.nz",

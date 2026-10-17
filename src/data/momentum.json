@@ -1,18 +1,18 @@
 {
-  "checked": "2026-09-18",
+  "checked": "2026-10-17",
   "github": {
-    "stars": 41902,
-    "pullRequests": 5833,
-    "contributors": 521,
-    "commitsYear": 3867,
+    "stars": 44984,
+    "pullRequests": 7871,
+    "contributors": 576,
+    "commitsYear": 4101,
     "weeks": [
-      18, 15, 71, 121, 86, 48, 40, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14,
-      37, 51, 23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263, 437,
-      142, 42, 30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 39, 142, 56, 40, 34
+      86, 48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195,
+      83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 261, 437, 142, 42, 30, 15,
+      35, 57, 9, 78, 230, 121, 70, 178, 42, 142, 74, 66, 75, 66, 76, 72, 158
     ]
   },
   "foundation": {
-    "total": 18.7,
+    "total": 23.65,
     "steps": [
       {
         "date": "2026-08-21",
@@ -63,22 +63,39 @@
         "date": "2026-09-17",
         "amount": 18.7,
         "post": "/news/2026/09/orcarouter-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-09-22",
+        "amount": 21.7,
+        "post": "/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-08",
+        "amount": 23.2,
+        "post": "/news/2026/10/spacexai-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-09",
+        "amount": 23.5,
+        "post": "/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-10-15",
+        "amount": 23.65,
+        "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1146747,
+    "total": 1284367,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "periods": [
-      { "label": "Yesterday", "days": 1, "count": 7127 },
-      { "label": "Last week", "days": 7, "count": 52031 },
-      { "label": "Last month", "count": 315415, "days": 30 }
-    ],
+    "quattro": 469725,
+    "periods": [{ "label": "Last month", "count": 144766, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-09-17",
-      "lastAdded": 7127,
+      "through": "2026-10-16",
+      "lastAdded": 3724,
       "countries": [
         "AD",
         "AE",
@@ -247,6 +264,7 @@
         "RU",
         "RW",
         "SA",
+        "SB",
         "SC",
         "SD",
         "SE",

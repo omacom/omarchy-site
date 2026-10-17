@@ -95,6 +95,18 @@
     "meta": "",
     "href": "https://www.digitalocean.com/",
     "avatar": "/assets/images/patrons/digitalocean.webp"
+   },
+   {
+    "name": "Alibaba Cloud",
+    "meta": "",
+    "href": "https://www.alibabacloud.com/",
+    "avatar": "/assets/images/patrons/alibaba-cloud.svg"
+   },
+   {
+    "name": "SpaceXSI",
+    "meta": "",
+    "href": "https://x.ai/",
+    "avatar": "/assets/images/patrons/spacexai.svg"
    }
   ],
   "note": null
@@ -183,6 +195,18 @@
     "meta": "",
     "href": "https://www.orcarouter.ai/",
     "avatar": "/assets/images/patrons/orcarouter.webp"
+   },
+   {
+    "name": "Namespace",
+    "meta": "",
+    "href": "https://namespace.so/",
+    "avatar": "/assets/images/patrons/namespace.svg"
+   },
+   {
+    "name": "Greptile",
+    "meta": "",
+    "href": "https://www.greptile.com/",
+    "avatar": "/assets/images/patrons/greptile.svg"
    }
   ],
   "note": null

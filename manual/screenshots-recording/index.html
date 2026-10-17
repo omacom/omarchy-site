@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Screenshots &amp; Recording</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -104,13 +102,15 @@
 
 <h2 id="screenshots">Screenshots <a class="manual__heading-link" href="#screenshots" aria-label="Link to this section">#</a></h2>
 
-<p>Hit <code>Print Screen</code> and the screen freezes so nothing shifts under you while you aim. Drag a box for a freeform region, or just click once and the shot snaps to whatever rectangle you clicked in — a window if you landed on one, the whole monitor if you landed on the bar or in a gap. Changed your mind? Hit <code>Print Screen</code> again to dismiss the picker.</p>
+<p>Hit <code>Print Screen</code> and Omasnap captures the focused monitor before its overlay appears, so nothing shifts under you while you aim. Drag a freeform region, click a window to capture it, or click open space to capture the whole monitor. Press <code>S</code> before drawing to capture a scrolling region. Changed your mind? Hit <code>Print Screen</code> again to dismiss Omasnap.</p>
 
-<p>The result goes two places at once: a PNG in your pictures directory, and the clipboard, so you can paste it straight into a chat window with <code>Super + V</code>. A notification pops up with a thumbnail. Click it (or hit <code>Super + Alt + ,</code> to invoke the last notification) and the shot opens in Tensaku, the annotation editor, where you can draw arrows and boxes on it before you send it.</p>
+<p>After you select an area, Omasnap saves the capture, copies it to the clipboard, and shows a preview for 10 seconds. Use the preview’s pin button or <code>Ctrl + P</code> to keep it on screen, or choose Edit to annotate it.</p>
 
-<p>Files land in <code>~/Pictures</code> by default, named <code>screenshot-2026-08-13_14-22-05.png</code>. If you’d rather keep them in their own folder, set <code>OMARCHY_SCREENSHOT_DIR</code> — see <a href="../faq/">the FAQ</a> for where to put session environment variables. Omarchy creates the directory for you if it isn’t there. You can swap the editor too with <code>OMARCHY_SCREENSHOT_EDITOR</code>.</p>
+<p>The annotation editor can draw arrows, lines, shapes, highlights, numbered markers, text, and secure redactions; crop or cut out part of the image; OCR its text; and add a backdrop. In the editor, press <code>Enter</code> to copy and save the finished PNG, <code>Ctrl + C</code> to copy it without saving, or <code>Ctrl + S</code> to save it without copying.</p>
 
-<p>From the terminal, <code>omarchy screenshot</code> takes the same shot, and you can be explicit about it: <code>omarchy capture screenshot region</code> for freeform only, <code>windows</code> to snap to window and monitor rectangles, or <code>fullscreen</code> to skip the picker entirely and grab the focused monitor. A second argument of <code>copy</code> puts the shot only on the clipboard, and <code>save</code> only on disk.</p>
+<p>Saved screenshots land in <code>~/Pictures/Screenshots</code> by default, with a name such as <code>screenshot-2026-08-13_14-22-05-firefox.png</code>. Set <code>OMASNAP_SCREENSHOT_DIR</code> to use another directory — see <a href="../faq/">the FAQ</a> for where to put session environment variables. Omasnap creates the directory when it saves the first shot. Set <code>[output] autosave = false</code> in <code>~/.config/omasnap/omasnap.conf</code> to disable automatic saving.</p>
+
+<p>From the terminal, <code>omarchy screenshot</code> opens the same overlay, and you can choose its starting mode: <code>omarchy capture screenshot region</code>, <code>windows</code>, <code>fullscreen</code>, or <code>scroll</code>. A second argument of <code>copy</code> or <code>save</code> skips the preview and sends the shot straight to that destination. To edit before output, use <code>omarchy screenshot --editor=overlay</code> for a fullscreen editor or <code>omarchy screenshot --editor=window</code> for a separate window.</p>
 
 <h3 id="driving-the-picker-from-the-keyboard">Driving the picker from the keyboard <a class="manual__heading-link" href="#driving-the-picker-from-the-keyboard" aria-label="Link to this section">#</a></h3>
 
@@ -125,29 +125,37 @@
   </thead>
   <tbody>
     <tr>
+      <td><code>S</code></td>
+      <td>Toggle scrolling-region mode</td>
+    </tr>
+    <tr>
+      <td><code>Super + Arrow keys</code></td>
+      <td>Move among windows in Window mode</td>
+    </tr>
+    <tr>
       <td><code>Return</code></td>
       <td>Capture the highlighted window</td>
     </tr>
     <tr>
-      <td><code>Ctrl + Return</code></td>
-      <td>Capture the whole screen</td>
+      <td><code>Ctrl + A</code></td>
+      <td>Capture the full focused monitor</td>
     </tr>
     <tr>
-      <td><code>Tab</code> / <code>Ctrl + Tab</code></td>
-      <td>Highlight the next / previous window</td>
+      <td><code>R</code></td>
+      <td>Restore the last region drawn in this session</td>
     </tr>
     <tr>
-      <td>Arrow keys</td>
-      <td>Highlight the window in that direction</td>
+      <td><code>Esc</code></td>
+      <td>Dismiss Omasnap</td>
     </tr>
   </tbody>
 </table>
 
-<p>The arrows and Tab move the cursor to the window they pick, so the highlight follows along and you can see what you’re about to capture. These bindings only exist while a selection is on screen, so they can’t collide with anything in your own config.</p>
+<p>These bindings only exist while Omasnap is open, so they can’t collide with anything in your own config.</p>
 
 <h2 id="screen-recording">Screen recording <a class="manual__heading-link" href="#screen-recording" aria-label="Link to this section">#</a></h2>
 
-<p><code>Alt + Print Screen</code> opens <em>Trigger &gt; Capture &gt; Screenrecord</em>, which asks what you want on the soundtrack: no audio, desktop audio, desktop plus microphone, or desktop plus microphone plus webcam. That last one only shows up if you actually have a camera plugged in. Pick one and you get the same picker as a screenshot: drag a region, or click a window or monitor.</p>
+<p><code>Alt + Print Screen</code> opens <em>Trigger &gt; Capture &gt; Screenrecord</em>, which asks what you want on the soundtrack: no audio, desktop audio, desktop plus microphone, or desktop plus microphone plus webcam. That last one only shows up if you actually have a camera plugged in. Pick one and Omarchy’s recording picker lets you drag a region or click a window or monitor.</p>
 
 <p>Recording runs on gpu-screen-recorder, which encodes on the GPU at 60fps and falls back to the CPU if it has to. The result is an MP4 in <code>~/Videos</code>, named <code>screenrecording-2026-08-13_14-22-05.mp4</code>. Set <code>OMARCHY_SCREENRECORD_DIR</code> to change that — but note that unlike the screenshot directory, this one has to exist already, or the recording refuses to start.</p>
 
@@ -201,8 +209,8 @@
 <h2 id="sending-it-somewhere">Sending it somewhere <a class="manual__heading-link" href="#sending-it-somewhere" aria-label="Link to this section">#</a></h2>
 
 <p>Once you’ve got the file, <code>Super + Ctrl + S</code> opens the Share menu and sends it to another device on your network via LocalSend. See <a href="../guis/">GUIs</a> for that.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>
