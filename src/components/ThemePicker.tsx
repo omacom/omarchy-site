@@ -247,9 +247,16 @@ export function ThemePicker() {
                 {t('Change the theme')}
               </span>
               <span className="mt-1 block text-[13px] leading-relaxed text-text-secondary">
-                {t(
-                  'Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.',
-                )}
+                <span className="pointer-coarse:hidden">
+                  {t(
+                    'Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.',
+                  )}
+                </span>
+                <span className="hidden pointer-coarse:inline">
+                  {t(
+                    'Tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.',
+                  )}
+                </span>
               </span>
             </span>
           </button>
