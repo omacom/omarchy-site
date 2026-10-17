@@ -2,7 +2,7 @@
 import sharp from 'sharp'
 import locales from '../src/i18n/locales.json' with { type: 'json' }
 import { socialLabelMasks, colorSocialLabels } from './lib/social-labels.mjs'
-import { SITE_THEMES } from '../src/lib/site-themes.ts'
+import { STOCK_THEMES } from '../src/lib/site-themes.ts'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -39,7 +39,7 @@ const GRID_ROWS = Math.ceil(H / CH)
 const WM_COL = Math.round((COLS - 81) / 2)
 const WM_ROW = 10
 
-for (const theme of SITE_THEMES) {
+for (const theme of STOCK_THEMES) {
   const block = css.split(`[data-theme='${theme.id}'] {`)[1]?.split('}')[0]
   if (!block) throw new Error(`Missing CSS palette for ${theme.id}`)
   const color = (name) => {
