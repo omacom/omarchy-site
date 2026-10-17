@@ -389,6 +389,19 @@ export function HomePage({ data }: { data: HomeData }) {
                     {t('By DHH')}
                   </a>
                 </>
+              ) : language === 'ka' ? (
+                <>
+                  <SectionAnchor anchor="home">
+                    <span className="sr-only">Omarchy: </span>
+                    {t('Beautiful, fun & agentic Linux')}
+                  </SectionAnchor>{' '}
+                  <a
+                    href="https://dhh.dk"
+                    className="underline decoration-transparent underline-offset-[6px] transition-colors duration-150 ease-out hover:decoration-brand"
+                  >
+                    {t('By DHH')}
+                  </a>
+                </>
               ) : (
                 <>
                   <SectionAnchor anchor="home">
