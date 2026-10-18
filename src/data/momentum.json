@@ -1,18 +1,18 @@
 {
-  "checked": "2026-09-12",
+  "checked": "2026-10-17",
   "github": {
-    "stars": 40570,
-    "pullRequests": 5365,
-    "contributors": 516,
-    "commitsYear": 3924,
+    "stars": 45016,
+    "pullRequests": 7896,
+    "contributors": 576,
+    "commitsYear": 4105,
     "weeks": [
-      98, 18, 15, 71, 121, 86, 48, 40, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17,
-      14, 37, 51, 23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263,
-      437, 142, 42, 30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 39, 140, 53, 38
+      86, 48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195,
+      83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 261, 437, 142, 42, 30, 15,
+      35, 57, 9, 78, 230, 121, 70, 178, 42, 142, 74, 66, 75, 66, 76, 72, 162
     ]
   },
   "foundation": {
-    "total": 18.5,
+    "total": 23.65,
     "steps": [
       {
         "date": "2026-08-21",
@@ -41,34 +41,61 @@
       },
       {
         "date": "2026-09-03",
-        "amount": 14.95,
+        "amount": 14.8,
         "post": "/news/2026/09/omacom-foundation-secures-tokens-from-leading-labs/"
       },
       {
         "date": "2026-09-07",
-        "amount": 15.5,
+        "amount": 15.35,
         "post": "/news/2026/09/omacom-foundation-raises-another-half-a-million-dollars/"
       },
       {
         "date": "2026-09-09",
-        "amount": 18.5,
+        "amount": 18.35,
         "post": "/news/2026/09/digitalocean-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-09-17",
+        "amount": 18.55,
+        "post": "/news/2026/09/brian-cartmell-and-american-cloud-join-as-open-patronage-doubles/"
+      },
+      {
+        "date": "2026-09-17",
+        "amount": 18.7,
+        "post": "/news/2026/09/orcarouter-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-09-22",
+        "amount": 21.7,
+        "post": "/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-08",
+        "amount": 23.2,
+        "post": "/news/2026/10/spacexai-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-09",
+        "amount": 23.5,
+        "post": "/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-10-15",
+        "amount": 23.65,
+        "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1102980,
+    "total": 1284367,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "periods": [
-      { "label": "Yesterday", "days": 1, "count": 9158 },
-      { "label": "Last week", "days": 7, "count": 75071 },
-      { "label": "Last month", "count": 242851, "days": 30 }
-    ],
+    "quattro": 469725,
+    "periods": [{ "label": "Last month", "count": 144766, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-09-11",
-      "lastAdded": 8507,
+      "through": "2026-10-16",
+      "lastAdded": 3724,
       "countries": [
         "AD",
         "AE",
@@ -80,6 +107,7 @@
         "AR",
         "AT",
         "AU",
+        "AW",
         "AX",
         "AZ",
         "BA",
@@ -110,6 +138,7 @@
         "CO",
         "CR",
         "CU",
+        "CV",
         "CY",
         "CZ",
         "DE",
@@ -126,6 +155,7 @@
         "FI",
         "FJ",
         "FK",
+        "FM",
         "FO",
         "FR",
         "GA",
@@ -136,12 +166,15 @@
         "GH",
         "GI",
         "GL",
+        "GM",
         "GN",
         "GP",
         "GQ",
         "GR",
         "GT",
         "GU",
+        "GW",
+        "GY",
         "HK",
         "HN",
         "HR",
@@ -164,6 +197,7 @@
         "KG",
         "KH",
         "KI",
+        "KM",
         "KN",
         "KR",
         "KW",
@@ -174,6 +208,7 @@
         "LC",
         "LI",
         "LK",
+        "LR",
         "LS",
         "LT",
         "LU",
@@ -213,6 +248,7 @@
         "PA",
         "PE",
         "PF",
+        "PG",
         "PH",
         "PK",
         "PL",
@@ -228,6 +264,7 @@
         "RU",
         "RW",
         "SA",
+        "SB",
         "SC",
         "SD",
         "SE",
@@ -238,9 +275,11 @@
         "SM",
         "SN",
         "SO",
+        "SR",
         "SS",
         "ST",
         "SV",
+        "SX",
         "SY",
         "SZ",
         "T1",
@@ -249,8 +288,10 @@
         "TG",
         "TH",
         "TJ",
+        "TL",
         "TM",
         "TN",
+        "TO",
         "TR",
         "TT",
         "TW",
@@ -260,8 +301,10 @@
         "US",
         "UY",
         "UZ",
+        "VC",
         "VE",
         "VG",
+        "VI",
         "VN",
         "WS",
         "XK",

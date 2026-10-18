@@ -320,8 +320,8 @@ if (CF_TOKEN && CF_ZONE) {
         if (sent >= isoBytes) countries.add(key.split(' ')[1])
       }
       const added = Math.round(bytes / isoBytes)
-      // The Yesterday / Last week / Last month rows on the figures card:
-      // each is its trailing window's bytes ending yesterday, in ISOs.
+      // The Last month row on the figures card: its trailing window's
+      // bytes ending yesterday, in ISOs.
       for (const period of momentum.downloads.periods ?? []) {
         const cutoff = day(daysAgo(period.days))
         let sent = 0
@@ -329,6 +329,9 @@ if (CF_TOKEN && CF_ZONE) {
         period.count = Math.round(sent / isoBytes)
       }
       momentum.downloads.total += added
+      // Quattro's own count, from the figure quoted by hand on 2026-09-21,
+      // plus everything counted since: every ISO served now is a Quattro one.
+      momentum.downloads.quattro += added
       momentum.downloads.countries = Math.max(
         momentum.downloads.countries,
         countries.size,

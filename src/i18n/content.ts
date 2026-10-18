@@ -1,5 +1,6 @@
 import { PROSE } from '../lib/prose'
-import { locale, localizedHref, contentLocale } from './site'
+import { localizedHref, contentLocale } from './site'
+import { date } from './format'
 import {
   currentNewsTranslation,
   type NewsTranslation,
@@ -23,12 +24,7 @@ export function translateNews(post: NewsPost): NewsPost {
     return {
       ...post,
       html: localizeLinks(post.html),
-      dateStr: new Intl.DateTimeFormat(locale.formatLocale, {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        timeZone: 'UTC',
-      }).format(new Date(post.date)),
+      dateStr: date('longDate', new Date(post.date)),
     }
   const meta = (newsMeta as Record<string, NewsTranslation>)[post.slug]
   const html = newsHtml[`./${contentLocale}/news/${post.slug}.html`]
@@ -36,24 +32,14 @@ export function translateNews(post: NewsPost): NewsPost {
     return {
       ...post,
       html: `<div lang="en" dir="ltr">${localizeLinks(post.html)}</div>`,
-      dateStr: new Intl.DateTimeFormat(locale.formatLocale, {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        timeZone: 'UTC',
-      }).format(new Date(post.date)),
+      dateStr: date('longDate', new Date(post.date)),
     }
   return {
     ...post,
     title: meta.title,
     html: localizeLinks(html),
     excerpt: excerptFromHtml(html),
-    dateStr: new Intl.DateTimeFormat(locale.formatLocale, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-      timeZone: 'UTC',
-    }).format(new Date(post.date)),
+    dateStr: date('longDate', new Date(post.date)),
   }
 }
 
