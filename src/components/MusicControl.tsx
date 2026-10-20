@@ -77,7 +77,7 @@ export function MusicMenuControl({
       onClick={() => music.toggle()}
       aria-pressed={on}
       data-no-stamp
-      className="flex h-[47px] w-full items-center gap-2.5 text-left text-[15px] text-text-secondary touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+      className="flex h-[47px] w-full cursor-pointer items-center gap-2.5 text-left text-[15px] text-text-secondary touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
     >
       {on ? (
         <VolumeIcon className="size-5 shrink-0" />
@@ -208,7 +208,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
         aria-pressed={on}
         aria-label={on ? 'Turn the sound off' : 'Turn the sound on'}
         title={on ? 'Sound off' : 'Sound on'}
-        className="relative size-11 shrink-0 self-center border-r border-border-subtle bg-cover bg-center text-white touch-manipulation focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+        className="relative size-11 shrink-0 cursor-pointer self-center border-r border-border-subtle bg-cover bg-center text-white touch-manipulation focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
         style={{ backgroundImage: `url(${TRACK.art})` }}
       >
         {untouched ? (
