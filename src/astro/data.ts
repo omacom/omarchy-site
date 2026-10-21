@@ -3,6 +3,7 @@ import { t } from '../i18n/site'
 import manualJson from '../data/manual.json'
 import pagesJson from '../data/pages.json'
 import pluginsJson from '../data/plugins.json'
+import { FEATURED_PLUGIN_IDS } from '../lib/featured-plugins'
 import { loadNews, summarize } from '../lib/news'
 import type { NewsPost, NewsSummary } from '../lib/news'
 import { toCatalogueEntry } from '../lib/plugin-filter'
@@ -89,14 +90,6 @@ export function getPortedSlugs(): Array<string> {
 }
 
 const ZERO_STATS: Engagement = { views: 0, copies: 0, hearts: 0 }
-
-const FEATURED_PLUGIN_IDS = [
-  'akshar.radio-atlas',
-  'slcode777.omagotchi',
-  'io.github.thisisgm.omapods',
-  'jankeesvw.omasweeper',
-  'jankeesvw.time-machine',
-]
 
 type PluginRecord = Omit<CatalogueEntry, 'stats'>
 

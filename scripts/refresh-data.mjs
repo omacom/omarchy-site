@@ -2,6 +2,7 @@
 /**
  * Refreshes the data snapshots that come from outside this repository:
  *   src/data/plugins.json      the marketplace's built catalogue (full field set)
+ *   public/images/plugins      the featured plugins' thumbnails, for the homepage
  *   public/data/explorer.json  the plugin similarity map for /plugins/explore
  *   src/data/version.json      the current release, from the OS repo's releases
  * Everything the site shows from its own files - the manual, the news, the
@@ -12,10 +13,11 @@
  * CI runs it on a schedule and commits what changed.
  */
 import { existsSync } from 'node:fs'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import prettier from 'prettier'
+import { FEATURED_PLUGIN_IDS } from '../src/lib/featured-plugins.ts'
 import { assetId } from './lib/asset-id.mjs'
 import { decodeCalendarText } from './lib/ical.mjs'
 import { geocodeTitle } from './lib/geocode.mjs'
@@ -90,6 +92,36 @@ const plugins = catalog.plugins
     accent: p.accent ?? null,
     initials: p.initials ?? null,
   }))
+
+// The homepage's plugin cards load their thumbnails from the site itself, so
+// a domain like omarchy.cn serves its homepage without plugins.omarchy.org.
+// A thumbnail that will not download keeps the copy from the last refresh,
+// or its marketplace URL when there is none.
+const THUMBS = path.join(ROOT, 'public/images/plugins')
+await mkdir(THUMBS, { recursive: true })
+const thumbs = new Set()
+for (const id of FEATURED_PLUGIN_IDS) {
+  const plugin = plugins.find((p) => p.id === id)
+  if (!plugin?.thumb) continue
+  const name = assetId(`${id}${path.extname(new URL(plugin.thumb).pathname)}`)
+  thumbs.add(name)
+  try {
+    const res = await fetch(plugin.thumb)
+    if (!res.ok) throw new Error(`${plugin.thumb} → ${res.status}`)
+    await writeFile(
+      path.join(THUMBS, name),
+      Buffer.from(await res.arrayBuffer()),
+    )
+  } catch (error) {
+    console.warn(`${id}: thumbnail not downloaded, ${error.message}`)
+    if (!existsSync(path.join(THUMBS, name))) continue
+  }
+  plugin.thumb = `/images/plugins/${name}`
+}
+for (const name of await readdir(THUMBS))
+  if (!thumbs.has(name)) await rm(path.join(THUMBS, name))
+console.log(`public/images/plugins: ${thumbs.size} featured thumbnails`)
+
 await writeFile(
   path.join(OUT, 'plugins.json'),
   JSON.stringify({ generatedAt: catalog.generatedAt, plugins }),

@@ -117,7 +117,7 @@ export function collectSources(root = process.cwd()) {
                 if (ts.isPropertyAssignment(item) && literal(item.initializer))
                   add(item.initializer.text)
             if (
-              relative === 'src/astro/data.ts' &&
+              relative === 'src/lib/featured-plugins.ts' &&
               node.name.text === 'FEATURED_PLUGIN_IDS' &&
               value &&
               ts.isArrayLiteralExpression(value)
