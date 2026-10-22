@@ -1,0 +1,15 @@
+<p>非常高興歡迎 <a href="https://www.greptile.com/">Greptile</a> 加入 <a href="/foundation/">Omacom Foundation</a>，成為<a href="/patrons/#distinguished-corporate-patrons">傑出企業贊助人</a>！他們提供<strong>價值 15 萬美元、用於他們 PR 審查服務的 token</strong>，讓每個送進 Omarchy 的 pull request 都能繼續有第二雙眼睛仔細把關。</p>
+
+<p>而且我們不是從零開始。Greptile 已經幫 Omarchy 審查了<strong>將近 1,500 個 pull request</strong>，幾乎都是在 8 月 Quattro 推出之後，光是 10 月上半就將近 700 個！當<a href="/news/2026/09/quattro-crosses-200000-iso-downloads/">數十萬使用者</a>開始送來他們的修正，量就是這麼大，沒有哪個人類審查團隊能單靠自己跟上。</p>
+
+<p>但如果審查只是一堆雜訊，量再大也沒什麼意義。Greptile 厲害的地方在於它常常找到真正的問題。在它審查過、我們最近合併的 60 個 PR 裡，Greptile 標出了 39 個它評為嚴重的問題。而且不是 lint 那種吹毛求疵，是真的會咬到使用者的 bug。</p>
+
+<p>像是 <a href="https://github.com/birkskyum">Birk</a> 加了一個用 device tree 比對筆電型號的方法，Greptile 指出在土耳其語系下，Bash 會把 <code>I</code> 轉成沒有點的 <code>ı</code>，所以 <code>MICROSOFT,Denali-OLED</code> 永遠比對不到 <code>microsoft,denali-oled</code>。誰會想得到啊？！<a href="https://github.com/omacom/omarchy/pull/15064">合併前就修好了</a>。還有一次我寫了一個指令，要把空的工作區重設成新的預設版面，Greptile 發現只要 <code>hyprctl</code> 哪天回傳亂七八糟的東西，我的腳本就會很開心地把所有存好的版面都刪掉，連正在用的也不放過。<a href="https://github.com/omacom/omarchy/pull/15266">也修好了</a>！誰都不會被放水，我自己更不會。</p>
+
+<p>agent 同儕審查就該是這個樣子。一個不分晝夜、讀遍每個 PR 每一行的審查者，會把哪裡會出錯、為什麼會出錯講得清清楚楚，常常還直接附上修正的 patch。它取代不了 <a href="/teams/">Omarchy 各團隊</a>的判斷，但等到有人親自看 PR 的時候，尖銳的稜角通常已經先磨平了。我們就是這樣消化好幾千個 PR 的待辦，又不讓品質下滑。</p>
+
+<p><a href="/patrons/#distinguished-corporate-patrons">Greptile 與 1Password、37signals、Four Technologies、Fireworks、OpenAI、OpenRouter、OrcaRouter 和 Namespace 一同成為傑出企業贊助人</a>。他們的認捐讓我們的<a href="/news/2026/08/omacom-foundation-launches-with-8-million/">總支持金額達到約 <strong>2,370 萬美元</strong></a>。非常感謝他們的贊助。</p>
+
+<p>歡迎加入，Greptile！讓我們繼續把每個 PR 都當回事來審查，因為它們真的重要。</p>
+
+<p>如果你的公司想<a href="/patrons/">加入我們的贊助人行列</a>，請寫信到 <a href="mailto:david@omarchy.org">david@omarchy.org</a>。</p>
