@@ -340,6 +340,11 @@
   "name": "Lawson Night"
  },
  {
+  "repo": "https://github.com/MahderK/omarchy-lone-snow-theme",
+  "image": "/assets/themes/lone-snow.webp",
+  "name": "Lone Snow"
+ },
+ {
   "repo": "https://github.com/ItsABigIgloo/omarchy-mapquest-theme",
   "image": "/assets/themes/map-quest.webp",
   "name": "Map Quest"
