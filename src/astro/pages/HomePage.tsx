@@ -1,6 +1,6 @@
 import { t, language } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useState } from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -43,6 +43,7 @@ import { Voices } from '@/components/Voices'
 import { Button } from '@/components/ui/button'
 import { useHashLink } from '@/lib/hash-scroll'
 import { cn } from '@/lib/utils'
+import { isoArch, type ArchHints, type IsoArch } from '@/lib/iso-arch'
 import bannerData from '@/data/banner.json'
 import type { CatalogueEntry } from '@/lib/plugin-filter'
 import type { NewsSummary } from '@/lib/news'
@@ -52,7 +53,14 @@ export interface HomeData {
   total: number
   news: Array<NewsSummary>
 }
-import release from '@/data/version.json'
+import releaseData from '@/data/version.json'
+
+/** The release and its ISOs by architecture. The refresh lists an
+ *  architecture once its ISO is served, and its button appears with it. */
+const release: { version: string; isos: Record<string, { url: string }> } =
+  releaseData
+const ISOS = Object.entries(release.isos)
+const ISO_LABEL: Record<string, string> = { aarch64: 'ARM64' }
 
 const TRY = {
   mac: {
@@ -80,13 +88,35 @@ function useTryDevice() {
   return device
 }
 
+/** The release's ISOs with the visitor's own architecture first, read after
+ *  mount like useTryDevice; x86_64 first until then. */
+function useIsos() {
+  const [arch, setArch] = useState<IsoArch>('x86_64')
+  useEffect(() => {
+    if (ISOS.length < 2) return
+    const ua = navigator.userAgent
+    const hints = (
+      navigator as Navigator & {
+        userAgentData?: {
+          getHighEntropyValues(keys: Array<string>): Promise<ArchHints>
+        }
+      }
+    ).userAgentData
+    setArch(isoArch(ua))
+    hints?.getHighEntropyValues(['architecture', 'bitness']).then(
+      (values) => setArch(isoArch(ua, values)),
+      () => {},
+    )
+  }, [])
+  return [...ISOS].sort(([a], [b]) => Number(b === arch) - Number(a === arch))
+}
+
 const FIXES = [
   t('thing.'),
   t(' missing app.'),
   t(' incompatibility.'),
   t(' paper cut.'),
 ] as const
-const ISO_URL = release.isoUrl
 
 const noteLink =
   'text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand'
@@ -231,6 +261,7 @@ function HeroCallout({ href, html }: { href: string; html: string }) {
 export function HomePage({ data }: { data: HomeData }) {
   const { top, news } = data
   const device = useTryDevice()
+  const isos = useIsos()
   const [intro, setIntro] = useState(false)
   const installLink = useHashLink('install')
   const watchLink = useHashLink('watch')
@@ -564,28 +595,49 @@ export function HomePage({ data }: { data: HomeData }) {
                 )}
               </p>
               <div className="mt-auto pt-6">
-                <Button
-                  size="lg"
-                  nativeButton={false}
-                  render={<a href={ISO_URL} />}
-                >
-                  <DownloadIcon data-icon="inline-start" />
-                  {t('Download Omarchy')} {release.version}
-                </Button>
+                <div className="flex flex-wrap gap-2">
+                  {isos.map(([arch, iso], i) => (
+                    // On a phone, or in a longer language, the label wraps
+                    // inside the button rather than running out of the card.
+                    <Button
+                      key={arch}
+                      size="lg"
+                      variant={i === 0 ? 'default' : 'outline'}
+                      nativeButton={false}
+                      render={<a href={iso.url} />}
+                      className="h-auto min-h-11 max-w-full shrink py-2.5 whitespace-normal"
+                    >
+                      <DownloadIcon data-icon="inline-start" />
+                      <span>
+                        {t('Download Omarchy')} {release.version}{' '}
+                        <span className="whitespace-nowrap">
+                          {language === 'zh-CN'
+                            ? `（${ISO_LABEL[arch] ?? arch}）`
+                            : `(${ISO_LABEL[arch] ?? arch})`}
+                        </span>
+                      </span>
+                    </Button>
+                  ))}
+                </div>
                 <p className="mt-2.5 text-[13px] text-text-muted">
                   {t('Under a minute from stick to desktop.')}{' '}
                   <span className="block @min-[44rem]:inline">
                     {t('Verify the file:')}{' '}
-                    <a
-                      href={`${ISO_URL}.sha256`}
-                      className={`${noteLink} whitespace-nowrap`}
-                    >
-                      SHA-256
-                    </a>
-                    {language === 'zh-CN' ? '、' : ', '}
-                    <a href={`${ISO_URL}.sig`} className={noteLink}>
-                      {t('signature')}
-                    </a>
+                    {isos.map(([arch, iso], i) => (
+                      <Fragment key={arch}>
+                        {i > 0 && (language === 'zh-CN' ? '；' : '; ')}
+                        <span className="whitespace-nowrap">
+                          {ISO_LABEL[arch] ?? arch}{' '}
+                          <a href={`${iso.url}.sha256`} className={noteLink}>
+                            SHA-256
+                          </a>
+                          {language === 'zh-CN' ? '、' : ', '}
+                          <a href={`${iso.url}.sig`} className={noteLink}>
+                            {t('signature')}
+                          </a>
+                        </span>
+                      </Fragment>
+                    ))}
                     {language === 'zh-CN' ? '。' : '.'}
                   </span>
                 </p>
