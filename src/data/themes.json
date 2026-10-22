@@ -430,6 +430,11 @@
   "name": "Noir"
  },
  {
+  "repo": "https://github.com/Ninnix/omarchy-nthing-theme",
+  "image": "/assets/themes/nothing.webp",
+  "name": "Nothing"
+ },
+ {
   "repo": "https://github.com/EF-Code/omarchy-oligarchy-theme",
   "image": "/assets/themes/oligarchy.webp",
   "name": "Oligarchy"
