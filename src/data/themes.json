@@ -10,6 +10,11 @@
   "name": "Amberbyte"
  },
  {
+  "repo": "https://github.com/simoz/omarchy-another-world-theme",
+  "image": "/assets/themes/another-world.webp",
+  "name": "Another World"
+ },
+ {
   "repo": "https://github.com/vale-c/omarchy-arc-blueberry",
   "image": "/assets/themes/arc-blueberry.webp",
   "name": "Arc Blueberry"
