@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "GitHub-এ Omarchy",
   "Main pages": "মূল পৃষ্ঠাগুলো",
   "Change the theme": "থিম বদলান",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "T চাপুন বা এখানে ট্যাপ করুন। Omarchy-তে শর্টকাট Super + Ctrl + Shift + Space।",
   "Dismiss": "বন্ধ করুন",
   "Theme picker": "থিম বাছাইকারী",
   "Previous theme": "আগের থিম",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "Snapdragon-এ Omarchy নিয়ে আসছি",
   "Dragon": "Dragon",
   "Switzerland": "সুইজারল্যান্ড",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud 3 মিলিয়ন USD সহ Founding Corporate Patron হিসেবে যোগ দিয়েছে"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud 3 মিলিয়ন USD সহ Founding Corporate Patron হিসেবে যোগ দিয়েছে",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "HackerOne বাগ বাউন্টি প্রোগ্রামের মাধ্যমে অথবা ইমেইলে ব্যক্তিগতভাবে Omarchy-তে দুর্বলতা রিপোর্ট করার উপায়, এবং ঠিক এই কাজটি করে যারা কৃতিত্ব পেয়েছেন।",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI 1.5 মিলিয়ন USD মূল্যের Grok টোকেন নিয়ে প্রতিষ্ঠাতা কর্পোরেট পৃষ্ঠপোষক হিসেবে যোগ দিচ্ছে"
 }

@@ -96,7 +96,6 @@ const FEATURED_PLUGIN_IDS = [
   'io.github.thisisgm.omapods',
   'jankeesvw.omasweeper',
   'jankeesvw.time-machine',
-  'raiden-meixelysia.omarchy-pets',
 ]
 
 type PluginRecord = Omit<CatalogueEntry, 'stats'>
@@ -106,10 +105,14 @@ export function getPluginHighlights(): {
   total: number
 } {
   const all = (pluginsJson as { plugins: Array<PluginRecord> }).plugins
-  const featured = FEATURED_PLUGIN_IDS.map((id) => {
+  // The catalogue is refreshed from the marketplace on a schedule, and the
+  // marketplace delists a plugin whose repository disappears. Skip it here so
+  // a delisting never stops the site from deploying.
+  const featured = FEATURED_PLUGIN_IDS.flatMap((id) => {
     const plugin = all.find((p) => p.id === id)
-    if (!plugin) throw new Error(`Featured plugin missing: ${id}`)
-    return plugin
+    if (!plugin)
+      console.warn(`Featured plugin missing from the catalogue: ${id}`)
+    return plugin ? [plugin] : []
   })
   const top = featured.map((p) => toCatalogueEntry({ ...p, stats: ZERO_STATS }))
   return { top, total: all.length }

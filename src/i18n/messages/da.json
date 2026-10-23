@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "Omarchy på GitHub",
   "Main pages": "Hovedsider",
   "Change the theme": "Skift tema",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "Tryk på T, eller klik her. I Omarchy er genvejen Super + Ctrl + Shift + Space.",
   "Dismiss": "Luk",
   "Theme picker": "Temavælger",
   "Previous theme": "Forrige tema",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "Bringer Omarchy til Snapdragon",
   "Dragon": "Dragon",
   "Switzerland": "Schweiz",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud tilslutter sig som stiftende virksomhedspatron med 3 millioner USD"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud tilslutter sig som stiftende virksomhedspatron med 3 millioner USD",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "Sådan rapporterer du en sårbarhed i Omarchy via vores HackerOne bug bounty-program eller privat på e-mail, og de personer, der krediteres for netop det.",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI tilslutter sig som stiftende virksomhedssponsor med 1,5 millioner USD i Grok-tokens"
 }

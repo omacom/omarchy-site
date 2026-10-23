@@ -120,6 +120,11 @@
   "name": "Catppuccin Mocha Dark"
  },
  {
+  "repo": "https://github.com/tsak/omarchy-cga-theme",
+  "image": "/assets/themes/cga.webp",
+  "name": "CGA"
+ },
+ {
   "repo": "https://github.com/jkwuc89/omarchy-cincinnati-theme",
   "image": "/assets/themes/cincinnati.webp",
   "name": "Cincinnati"
@@ -158,6 +163,11 @@
   "repo": "https://github.com/stannorbvb-cmd/cpunk",
   "image": "/assets/themes/cpunk.webp",
   "name": "CpUnk"
+ },
+ {
+  "repo": "https://github.com/PedroAugustoOK/omarchy-crimson-theme",
+  "image": "/assets/themes/crimson.webp",
+  "name": "Crimson"
  },
  {
   "repo": "https://github.com/knappkevin/omarchy-crimson-gold-theme",
@@ -335,6 +345,11 @@
   "name": "Japan Night"
  },
  {
+  "repo": "https://github.com/Anhelm01/omarchy-kupola-theme",
+  "image": "/assets/themes/kupola.webp",
+  "name": "Kupola"
+ },
+ {
   "repo": "https://github.com/thisisgm/omarchy-lamplight-theme",
   "image": "/assets/themes/lamplight.webp",
   "name": "Lamplight"
@@ -405,6 +420,11 @@
   "name": "Naysayer"
  },
  {
+  "repo": "https://github.com/aidenlangley/omarchy-nedia-theme",
+  "image": "/assets/themes/nedia.webp",
+  "name": "Nedia"
+ },
+ {
   "repo": "https://github.com/monoooki/omarchy-neo-sploosh-theme",
   "image": "/assets/themes/neo-sploosh.webp",
   "name": "Neo Sploosh"
@@ -463,6 +483,11 @@
   "repo": "https://github.com/sc0ttman/omarchy-one-dark-pro-theme",
   "image": "/assets/themes/one-dark-pro.webp",
   "name": "One Dark Pro"
+ },
+ {
+  "repo": "https://github.com/simoz/omarchy-outpost-theme",
+  "image": "/assets/themes/outpost.webp",
+  "name": "Outpost"
  },
  {
   "repo": "https://github.com/HANCORE-linux/omarchy-oxocarbon-theme",
@@ -588,6 +613,11 @@
   "repo": "https://github.com/HANCORE-linux/omarchy-shadesofjade-theme",
   "image": "/assets/themes/shades-of-jade.webp",
   "name": "Shades of Jade"
+ },
+ {
+  "repo": "https://github.com/simpleprim8/omarchy-singularity-theme",
+  "image": "/assets/themes/singularity.webp",
+  "name": "Singularity"
  },
  {
   "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",

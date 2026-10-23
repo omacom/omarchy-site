@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "GitHub의 Omarchy",
   "Main pages": "주요 페이지",
   "Change the theme": "테마 바꾸기",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "T를 누르거나 여기를 탭하세요. Omarchy에서는 Super + Ctrl + Shift + Space입니다.",
   "Dismiss": "닫기",
   "Theme picker": "테마 선택기",
   "Previous theme": "이전 테마",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "Snapdragon에 Omarchy 가져오기",
   "Dragon": "드래곤",
   "Switzerland": "스위스",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud가 3백만 USD 규모의 창립 기업 후원자로 합류합니다"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud가 3백만 USD 규모의 창립 기업 후원자로 합류합니다",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "HackerOne 버그 바운티 프로그램을 통하거나 이메일로 비공개로 Omarchy의 취약점을 제보하는 방법과, 그렇게 제보해 크레딧에 오른 사람들.",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI가 1.5백만 USD 상당의 Grok 토큰으로 창립 기업 후원자에 합류"
 }

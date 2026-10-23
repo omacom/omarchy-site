@@ -1,18 +1,18 @@
 {
-  "checked": "2026-10-02",
+  "checked": "2026-10-23",
   "github": {
-    "stars": 43774,
-    "pullRequests": 6776,
-    "contributors": 534,
-    "commitsYear": 3989,
+    "stars": 45516,
+    "pullRequests": 8268,
+    "contributors": 592,
+    "commitsYear": 4199,
     "weeks": [
-      71, 121, 86, 48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51,
-      23, 195, 83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263, 437, 142, 42,
-      30, 15, 35, 57, 9, 78, 230, 121, 70, 178, 40, 142, 72, 66, 57, 50, 38
+      48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195, 83,
+      30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 263, 437, 142, 42, 30, 15, 35,
+      57, 9, 78, 230, 121, 70, 178, 43, 142, 75, 66, 75, 66, 82, 102, 172, 130
     ]
   },
   "foundation": {
-    "total": 21.7,
+    "total": 23.65,
     "steps": [
       {
         "date": "2026-08-21",
@@ -68,19 +68,34 @@
         "date": "2026-09-22",
         "amount": 21.7,
         "post": "/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-08",
+        "amount": 23.2,
+        "post": "/news/2026/10/spacexai-joins-as-founding-corporate-patron/"
+      },
+      {
+        "date": "2026-10-09",
+        "amount": 23.5,
+        "post": "/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-10-15",
+        "amount": 23.65,
+        "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1224272,
+    "total": 1307284,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "quattro": 409630,
-    "periods": [{ "label": "Last month", "count": 213035, "days": 30 }],
+    "quattro": 492642,
+    "periods": [{ "label": "Last month", "count": 125879, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-10-01",
-      "lastAdded": 4246,
+      "through": "2026-10-22",
+      "lastAdded": 3443,
       "countries": [
         "AD",
         "AE",

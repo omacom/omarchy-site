@@ -5,8 +5,100 @@
     <link>https://omarchy.org/news</link>
     <description>Notes on the people, ideas, and releases shaping Omarchy.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 26 Sep 2026 10:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 10:00:00 GMT</lastBuildDate>
     <atom:link href="https://omarchy.org/news/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+  <title>Greptile joins as a Distinguished Corporate Patron</title>
+  <link>https://omarchy.org/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron</guid>
+  <pubDate>Thu, 15 Oct 2026 10:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[Greptile joins the Omacom Foundation as a Distinguished Corporate Patron with $150,000 in tokens for their PR review service, which has already reviewed almost 1,500 Omarchy pull requests.]]></description>
+  <content:encoded><![CDATA[<p>I’m thrilled to welcome <a href="https://www.greptile.com/">Greptile</a> to the <a href="https://omarchy.org/foundation/">Omacom Foundation</a> as a <a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Distinguished Corporate Patron</a>! They’re contributing <strong>$150,000 in tokens for their PR review service</strong>, so every pull request coming into Omarchy can keep getting a careful second pair of eyes.</p>
+
+<p>And it’s not like we’re starting from scratch. Greptile has already reviewed <strong>almost 1,500 pull requests</strong> for Omarchy. Nearly all of them since the launch of Quattro in August, and almost 700 in the first half of October alone! That’s the kind of volume you get when <a href="https://omarchy.org/news/2026/09/quattro-crosses-200000-iso-downloads/">hundreds of thousands of users</a> start sending in their fixes, and no team of human reviewers could keep up with that on their own.</p>
+
+<p>But volume doesn’t mean much if the reviews are just noise. What makes Greptile great is how often it finds real issues. Across our 60 most recently merged PRs that it reviewed, Greptile flagged 39 problems it rated as serious. And not lint-style nitpicks either, but the kind of bugs that would have bitten real users.</p>
+
+<p>Like when <a href="https://github.com/birkskyum">Birk</a> added a way to match laptop models by their device tree, and Greptile pointed out that under a Turkish locale, Bash lowercases <code>I</code> to a dotless <code>ı</code>, so <code>MICROSOFT,Denali-OLED</code> would never match <code>microsoft,denali-oled</code>. Who would have caught that?! <a href="https://github.com/omacom/omarchy/pull/15064">It was fixed before merging</a>. Or when I wrote a command to reset empty workspaces to a new default layout, and Greptile noticed that if <code>hyprctl</code> ever returned garbage, my script would happily delete every saved layout, including the ones in use. <a href="https://github.com/omacom/omarchy/pull/15266">Fixed too</a>! Nobody gets a pass, least of all me.</p>
+
+<p>This is what agentic peer review should feel like. A reviewer who reads every line of every PR, at any hour, explains exactly what will go wrong and why, and often hands you the patch to fix it. It doesn’t replace the judgment of the <a href="https://omarchy.org/teams/">Omarchy teams</a>, but it means that by the time a human looks at a PR, the sharp edges have usually already been filed down. That’s how we get through a backlog of thousands of PRs without letting quality slip.</p>
+
+<p><a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Greptile joins 1Password, 37signals, Four Technologies, Fireworks, OpenAI, OpenRouter, OrcaRouter, and Namespace as a Distinguished Corporate Patron</a>. Their pledge brings our <a href="https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million/">total backing to approximately <strong>$23.7 million</strong></a>. We’re grateful for their patronage.</p>
+
+<p>Welcome aboard, Greptile! Let’s keep reviewing every PR like it matters, because it does.</p>
+
+<p>If your company would like to <a href="https://omarchy.org/patrons/">join our patrons</a>, write <a href="mailto:david@omarchy.org">david@omarchy.org</a>.</p>
+]]></content:encoded>
+</item>
+
+<item>
+  <title>Namespace joins as a Distinguished Corporate Patron</title>
+  <link>https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron</guid>
+  <pubDate>Fri, 09 Oct 2026 10:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[Namespace joins the Omacom Foundation as a Distinguished Corporate Patron with $100,000 a year in compute, which we're dedicating to ARM development and builds.]]></description>
+  <content:encoded><![CDATA[<p>I’m delighted to welcome <a href="https://namespace.so/">Namespace</a> to the <a href="https://omarchy.org/foundation/">Omacom Foundation</a> as a <a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Distinguished Corporate Patron</a>, contributing <strong>$100,000 a year in compute for three years</strong> that we’re plowing straight into ARM builds and QA.</p>
+
+<p>Omarchy grew up on x86. That’s where most of our users are today, and that’s what all our testing was built around. But ARM is coming fast. <a href="https://omarchy.org/news/2026/09/introducing-omarchy-m/">Omarchy M</a> is bringing Omarchy to Apple Silicon, <a href="https://omarchy.org/news/2026/09/introducing-omarchy-dragon/">Omarchy Dragon</a> is doing the same for Snapdragon laptops, Alibaba’s <a href="https://omarchy.org/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/">Qwen Book</a> is launching on ARM first, and there’s a whole crop of ARM laptops on the way that deserve better than whatever they’ll ship with.</p>
+
+<p>If Omarchy is going to be great on all of these new machines, every change has to work on ARM before it ships. Compiling isn’t enough. We have to actually install the thing and watch it boot.</p>
+
+<p>And that’s where it gets annoying. You can rent plenty of ARM machines in the cloud, and they’ll compile ARM software all day long. But most of them won’t let you run a virtual machine, and you can’t test an installer without one. So you’re stuck emulating the whole processor in software. Booting our ARM ISO that way took over three minutes. Three minutes! Just to boot!</p>
+
+<p>Namespace has a much better answer: They <a href="https://x.com/namespacelabs/status/2091895197151952950">run Linux on Apple Silicon</a>. On their runners, that same ISO boots in four seconds. Four! That’s the kind of speed a distro backed by <a href="https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron/">an actual rocket company</a> needs to hit.</p>
+
+<p>Namespace already runs the builds for <a href="https://zed.dev/">Zed</a> and <a href="https://duckdb.org/">DuckDB</a>, and for <a href="https://mise.jdx.dev/">mise</a>, which the foundation <a href="https://omarchy.org/news/2026/08/omacom-foundation-to-be-premier-mise-sponsor/">also sponsors</a>. Great company to be in!</p>
+
+<p><a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Namespace joins 1Password, 37signals, Four Technologies, Fireworks, OpenAI, OpenRouter, and OrcaRouter as a Distinguished Corporate Patron</a>. Their pledge brings our <a href="https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million/">total backing to approximately <strong>$23.5 million</strong></a>.</p>
+
+<p>Thank you, Hugo and everyone at Namespace! And to <a href="https://omarchy.org/staff/">Emir</a>, our new Head of Infrastructure, for making the connection. Let’s make Omarchy run beautifully on every ARM machine out there.</p>
+
+<p>If your company would like to <a href="https://omarchy.org/patrons/">join our patrons</a>, write <a href="mailto:david@omarchy.org">david@omarchy.org</a>.</p>
+]]></content:encoded>
+</item>
+
+<item>
+  <title>SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens</title>
+  <link>https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron</guid>
+  <pubDate>Thu, 08 Oct 2026 10:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[SpaceXSI is backing the Omacom Foundation with $1.5 million in Grok tokens to help power Omabot and all the Omarchy teams.]]></description>
+  <content:encoded><![CDATA[<p><a href="https://x.ai/">SpaceXSI</a> is joining the <a href="https://omarchy.org/foundation/">Omacom Foundation</a> as a <strong><a href="https://omarchy.org/patrons/#founding-token-patrons">Founding Corporate Patron</a></strong>, donating <strong>$1.5 million in <a href="https://grok.com/">Grok</a> tokens</strong>! That’s a serious stack of tokens to further accelerate the agents and teams that build, review, and fix Omarchy. And we’re going to put them to great use.</p>
+
+<p>Grok 4.7 and beyond will be helping power our automated agents, like Omabot, who’s been reviewing the flood of PRs that keep pouring in. And it has its work cut out. We’re closing in on 7,000 pull requests from more than 550 contributors, and every one of them deserves a proper look. That’s not a job for mere humans!</p>
+
+<p>But it’s not just the bots: every Omarchy team is going to get to tap into these tokens, whether they’re hunting bugs, polishing themes, porting to new hardware, or tackling whatever crazy idea comes next. More tokens means more of the backlog getting cleared, faster.</p>
+
+<p>What an honor it is to have SpaceXSI on board! I mean, what’s cooler than partnering with a literal rocket-science space company? These are the folks catching boosters with chopsticks. And given where they’re headed, there’s a real chance we’ll soon be consuming tokens beamed down from data centers in space. “Omarchy, now powered by intelligence from orbit” — I can’t think of a more fitting future for the Year of Linux on the Desktop.</p>
+
+<p><a href="https://omarchy.org/patrons/#founding-token-patrons">SpaceXSI joins Meta Superintelligence Labs, DigitalOcean, and Alibaba Cloud as a Founding Corporate Patron</a>. Their pledge brings our <a href="https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million/">total backing to approximately <strong>$23.2 million</strong></a>. Which means even more room to invest in the people, infrastructure, and open-source projects that make Omarchy possible. Not bad for a project that started as a pile of dotfiles.</p>
+
+<p>Thank you to the whole Grok team at SpaceXSI for making this happen.</p>
+]]></content:encoded>
+</item>
+
+<item>
+  <title>Omarchy launches $100,000 bug bounty program on HackerOne</title>
+  <link>https://omarchy.org/news/2026/10/omarchy-launches-bug-bounty-program-on-hackerone</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/10/omarchy-launches-bug-bounty-program-on-hackerone</guid>
+  <pubDate>Fri, 02 Oct 2026 10:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[Omarchy now has a bug bounty program on HackerOne, funded with $100,000 for bounties, and Mehmet İnce joins Omarchy Core as head of security.]]></description>
+  <content:encoded><![CDATA[<p>Omarchy now has an official <a href="https://hackerone.com/omarchy">bug bounty program on HackerOne</a>! The <a href="https://omarchy.org/foundation/">Omacom Foundation</a> has funded it with <strong>$100,000 for bounties</strong>, so researchers who find a real vulnerability and report it privately can now get paid for their work.</p>
+
+<p>HackerOne gives researchers a familiar place to submit their findings, follow along as we work on a fix, and collect their bounty. It also gives the <a href="https://omarchy.org/teams/#security">Omarchy Security Team</a> a proper workflow for triaging all the reports coming in. If you’d rather not create a HackerOne account, you can still email security@omarchy.org. The <a href="https://omarchy.org/security/">security page</a> has all the details on what we consider a vulnerability and how to report one.</p>
+
+<p>To lead all of this, I’m thrilled to announce that <a href="https://x.com/mdisec">Mehmet İnce</a> is joining <a href="https://omarchy.org/teams/">Omarchy Core</a> as our <strong>head of security</strong>! Mehmet has been a key member of the Omarchy Security Team, and now he’ll be setting the direction for how we keep Omarchy safe, from running the bounty program to making sure security is built into everything we ship.</p>
+
+<p>Thanks to <a href="https://omarchy.org/patrons/">our patrons</a>, we can put real money behind making Omarchy secure. We’re grateful for their patronage.</p>
+
+<p>Welcome to Omarchy Core, Mehmet! Let’s make Omarchy as secure as it is beautiful.</p>
+]]></content:encoded>
+</item>
+
 <item>
   <title>ThePrimeagen joins Omarchy Core to lead Agentic QA</title>
   <link>https://omarchy.org/news/2026/09/theprimeagen-joins-omarchy-core</link>
@@ -744,7 +836,7 @@
 </item>
 
 <item>
-  <title>Omacom Foundation launches with $21.7 million</title>
+  <title>Omacom Foundation launches with $23.7 million</title>
   <link>https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million</link>
   <guid isPermaLink="true">https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million</guid>
   <pubDate>Fri, 21 Aug 2026 15:57:00 GMT</pubDate>
@@ -779,6 +871,7 @@
   <li><a href="https://www.meta.com/superintelligence/">Meta Superintelligence Labs</a></li>
   <li><a href="https://www.digitalocean.com/">DigitalOcean</a></li>
   <li><a href="https://www.alibabacloud.com/">Alibaba Cloud</a></li>
+  <li><a href="https://x.ai/">SpaceXSI</a></li>
 </ul>
 
 <p>These Distinguished Patrons are each contributing $100,000 to the mission:</p>
@@ -800,9 +893,11 @@
   <li><a href="https://openai.com">OpenAI</a></li>
   <li><a href="https://openrouter.ai/">OpenRouter</a></li>
   <li><a href="https://www.orcarouter.ai/">OrcaRouter</a></li>
+  <li><a href="https://namespace.so/">Namespace</a></li>
+  <li><a href="https://www.greptile.com/">Greptile</a></li>
 </ul>
 
-<p>Over 800 donors have also raised over $120,000 through <a href="https://www.zeffy.com/en-US/donation-form/omarchy-patronage">open patronage</a>, bringing the total in pledges and donations to approximately $21.7 million.</p>
+<p>Over 800 donors have also raised over $120,000 through <a href="https://www.zeffy.com/en-US/donation-form/omarchy-patronage">open patronage</a>, bringing the total in pledges and donations to approximately $23.7 million.</p>
 
 <p>This is a ridiculous sum of money, so I intend to make sure it lasts a long time, and that we make the most of it. But just as important as the incredible cushion is the vote of confidence delivered by these pledges.</p>
 
@@ -827,6 +922,12 @@
 <p><em>UPDATE: OrcaRouter <a href="https://omarchy.org/news/2026/09/orcarouter-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $150,000 in tokens on September 17</a>.</em></p>
 
 <p><em>UPDATE: Alibaba Cloud <a href="https://omarchy.org/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/">joined as a Founding Corporate Patron with $1 million a year for three years on September 22</a>.</em></p>
+
+<p><em>UPDATE: SpaceXSI <a href="https://omarchy.org/news/2026/10/spacexai-joins-as-founding-corporate-patron/">joined as a Founding Corporate Patron with $1.5 million in Grok tokens on October 8</a>.</em></p>
+
+<p><em>UPDATE: Namespace <a href="https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $100,000 a year in compute on October 9</a>.</em></p>
+
+<p><em>UPDATE: Greptile <a href="https://omarchy.org/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $150,000 in tokens for PR reviews on October 15</a>.</em></p>
 ]]></content:encoded>
 </item>
 

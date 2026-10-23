@@ -86,7 +86,12 @@ const FIXES = [
   t(' incompatibility.'),
   t(' paper cut.'),
 ] as const
-const ISO_URL = release.isoUrl
+// A build can name the host the ISO comes from: omarchy.cn's copy of the zh-CN
+// edition serves mainland China, so it links the ISO served from there.
+const ISO_URL = new URL(
+  new URL(release.isoUrl).pathname,
+  import.meta.env?.PUBLIC_ISO_ORIGIN || release.isoUrl,
+).href
 
 const noteLink =
   'text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand'
@@ -113,31 +118,31 @@ const videos = [
     id: 'F7fe9pa8OeE',
     title: 'Omarchy Quattro by David Heinemeier Hansson',
     channel: 'DHH',
-    thumb: 'https://omarchy.org/assets/images/video/omarchy-quattro.webp',
+    thumb: '/assets/images/video/omarchy-quattro.webp',
   },
   {
     id: '9SDkU5VDQEQ',
     title: 'You need to switch to Linux RIGHT NOW!!',
     channel: 'NetworkChuck',
-    thumb: 'https://omarchy.org/assets/images/video/networkchuck.webp',
+    thumb: '/assets/images/video/networkchuck.webp',
   },
   {
     id: '5JPYJfN7HY0',
     title: 'They finally fixed linux',
     channel: 'typecraft',
-    thumb: 'https://omarchy.org/assets/images/video/typecraft.webp',
+    thumb: '/assets/images/video/typecraft.webp',
   },
   {
     id: 'qBKMe8AatY0',
     title: "I Didn't Expect Omarchy 4 to Be This Good",
     channel: 'LinuxBTW',
-    thumb: 'https://omarchy.org/assets/images/video/linuxbtw.webp',
+    thumb: '/assets/images/video/linuxbtw.webp',
   },
   {
     id: 'KO2T0oET9go',
     title: 'If you use AI, switch to Omarchy immediately',
     channel: 'Alex Finn',
-    thumb: 'https://omarchy.org/assets/images/video/alex-finn.webp',
+    thumb: '/assets/images/video/alex-finn.webp',
   },
   {
     id: '2IDjteRQgMQ',

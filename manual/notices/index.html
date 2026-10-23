@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Notices</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -65,7 +63,21 @@
 
     <article class="manual__content">
       <h1>Notices</h1>
-<p>You can quickly access the date and time, battery status, and current weather using the hotkey notices.</p>
+<p>Notifications land in the top-right corner of the focused display. You can also quickly access the date and time, battery status, and current weather using the hotkey notices.</p>
+
+<h2 id="notifications">Notifications <a class="manual__heading-link" href="#notifications" aria-label="Link to this section">#</a></h2>
+
+<p>Notifications from the same app or site stack into a deck, so a chatty Slack channel doesn’t push your build failure off the screen. Hover a deck to fan it out; nothing new slides in under your pointer while you’re reading. Click a card to jump to where it came from, middle-click or hit the ✕ to dismiss it.</p>
+
+<p>Cards offer what they carry: <em>Copy code</em> for verification codes (kept out of <a href="../unified-clipboard-history/">clipboard history</a> and cleared after a minute), plus any buttons the app provides. Links in a notification’s text open when clicked.</p>
+
+<p>Hover a card and click the zzz next to its close mark, or right-click the card, to snooze its source for 15 minutes, an hour, or until tomorrow morning. Snoozed notifications are held back, not thrown away.</p>
+
+<p>Right-click the bell in the bar (hover the middle of the bar to reveal it) to open the notification panel: what’s been held back, recent notifications, and the past day’s history. From there you can snooze everything, wake a snoozed source, or choose whether verification codes get through while you’re quiet (they do by default). The cog opens preferences for which display to use, stepping aside for fullscreen games, and the screen-sharing snooze. When you share your screen, the bell offers a timed snooze; nothing is muted until you pick one.</p>
+
+<p>History is kept for a day. To change that, set <code>historyHours</code> in the <code>notifications</code> section of <code>~/.config/omarchy/shell.json</code> to <code>1</code>, <code>168</code> for a week, or <code>0</code> to keep no history on disk, for example <code>"notifications": { "historyHours": 168 }</code>.</p>
+
+<h2 id="hotkey-notices">Hotkey notices <a class="manual__heading-link" href="#hotkey-notices" aria-label="Link to this section">#</a></h2>
 
 <h3 id="date--time">Date &amp; Time <a class="manual__heading-link" href="#date--time" aria-label="Link to this section">#</a></h3>
 
@@ -86,8 +98,8 @@
 <p><code>Super + Ctrl + Alt + B</code></p>
 
 <p><img src="/manual/images/notice-battery.webp" alt="notice-battery" /></p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

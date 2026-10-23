@@ -23,9 +23,13 @@ const registered = new Set(
     code === 'en' ? 'omarchy' : `omarchy-${code.toLowerCase()}`,
   ),
 )
+// An edition is named for a language code that check-translations.mjs
+// accepts, like omarchy-da or omarchy-en-au; other omarchy-* Workers,
+// like omarchy-ping, are infrastructure.
+const edition = /^omarchy-[a-z]{2,3}(-[a-z0-9]+)*$/
 const unmanaged = body.result
   .map((worker) => worker.id)
-  .filter((name) => name.startsWith('omarchy-') && !registered.has(name))
+  .filter((name) => edition.test(name) && !registered.has(name))
 if (unmanaged.length) {
   throw new Error(
     `Deployed editions missing from src/i18n/locales.json: ${unmanaged.join(', ')}. Restore them to automatic updates before publishing.`,

@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "GitHub 上的 Omarchy",
   "Main pages": "主要页面",
   "Change the theme": "更换主题",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "按 T，或点这里。在 Omarchy 中的快捷键是 Super + Ctrl + Shift + Space。",
   "Dismiss": "关闭",
   "Theme picker": "主题选择器",
   "Previous theme": "上一个主题",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "将 Omarchy 带到 Snapdragon",
   "Dragon": "龙",
   "Switzerland": "瑞士",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud 以创始企业赞助人身份加入，赞助 3 百万美元"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud 以创始企业赞助人身份加入，赞助 3 百万美元",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "如何通过我们的 HackerOne 漏洞赏金计划报告 Omarchy 中的漏洞，或通过电子邮件私下报告，以及因此受到致谢的人员。",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI 以 1.5百万美元（USD）的 Grok 代币加入，成为创始企业赞助人"
 }

@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "Omarchy ar GitHub",
   "Main pages": "Príomhleathanaigh",
   "Change the theme": "Athraigh an téama",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "Brúigh T, nó tapáil anseo. In Omarchy is é Super + Ctrl + Shift + Space é.",
   "Dismiss": "Dún",
   "Theme picker": "Roghnóir téama",
   "Previous theme": "An téama roimhe",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "Omarchy á thabhairt go Snapdragon",
   "Dragon": "Dragan",
   "Switzerland": "An Eilvéis",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Tá Alibaba Cloud ag teacht isteach mar Phátrún Corparáideach Bunaitheach le USD 3 mhilliún"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Tá Alibaba Cloud ag teacht isteach mar Phátrún Corparáideach Bunaitheach le USD 3 mhilliún",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "Conas leochaileacht in Omarchy a thuairisciú tríd ár gclár bounty fabhtanna HackerOne, nó go príobháideach ar ríomhphost, agus na daoine a fuair aitheantas as é sin a dhéanamh.",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "Tá SpaceXSI ag teacht isteach mar Phátrún Corparáideach Bunaitheach le USD 1.5 milliún i dtócain Grok"
 }

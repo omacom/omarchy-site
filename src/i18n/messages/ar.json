@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "Omarchy على GitHub",
   "Main pages": "الصفحات الرئيسية",
   "Change the theme": "غيّر السمة",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "اضغط T أو انقر هنا. داخل Omarchy الاختصار هو Super + Ctrl + Shift + Space.",
   "Dismiss": "إغلاق",
   "Theme picker": "منتقي السمات",
   "Previous theme": "السمة السابقة",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "جلب Omarchy إلى Snapdragon",
   "Dragon": "تنين",
   "Switzerland": "سويسرا",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "تنضم Alibaba Cloud كراعٍ مؤسس للشركات بمبلغ 3 مليون دولار أمريكي"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "تنضم Alibaba Cloud كراعٍ مؤسس للشركات بمبلغ 3 مليون دولار أمريكي",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "كيفية الإبلاغ عن ثغرة أمنية في Omarchy عبر برنامج مكافآت الثغرات HackerOne الخاص بنا، أو privately عبر البريد الإلكتروني، والأشخاص الذين تم تكريمهم لقيامهم بذلك بالضبط.",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "تنضم SpaceXSI كراعٍ مؤسسي مؤسس بقيمة 1.5 مليون USD من رموز Grok"
 }

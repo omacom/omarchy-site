@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "Omarchy op GitHub",
   "Main pages": "Hoofdpagina's",
   "Change the theme": "Thema wijzigen",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "Druk op T, of tik hier. In Omarchy is het Super + Ctrl + Shift + Space.",
   "Dismiss": "Sluiten",
   "Theme picker": "Themakiezer",
   "Previous theme": "Vorig thema",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "Omarchy naar Snapdragon brengen",
   "Dragon": "Dragon",
   "Switzerland": "Zwitserland",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud sluit zich aan als Founding Corporate Patron met 3 miljoen USD"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud sluit zich aan als Founding Corporate Patron met 3 miljoen USD",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "Hoe je een kwetsbaarheid in Omarchy meldt via ons HackerOne bug bounty-programma, of privé per e-mail, en de mensen die precies dat hebben gedaan.",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI sluit zich aan als oprichtende bedrijfssponsor met 1,5 miljoen USD aan Grok-tokens"
 }

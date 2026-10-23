@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "Omarchy บน GitHub",
   "Main pages": "หน้าหลัก",
   "Change the theme": "เปลี่ยนธีม",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "กด T หรือแตะที่นี่ ใน Omarchy ใช้ Super + Ctrl + Shift + Space",
   "Dismiss": "ปิด",
   "Theme picker": "ตัวเลือกธีม",
   "Previous theme": "ธีมก่อนหน้า",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "นำ Omarchy มาสู่ Snapdragon",
   "Dragon": "มังกร",
   "Switzerland": "สวิตเซอร์แลนด์",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud เข้าร่วมเป็น Founding Corporate Patron ด้วยเงินสนับสนุน 3 ล้าน USD"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud เข้าร่วมเป็น Founding Corporate Patron ด้วยเงินสนับสนุน 3 ล้าน USD",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "วิธีรายงานช่องโหว่ใน Omarchy ผ่านโปรแกรม Bug Bounty ของเราบน HackerOne หรือแบบส่วนตัวทางอีเมล และรายชื่อผู้ที่ได้รับเครดิตจากการทำแบบนั้น",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI เข้าร่วมเป็นผู้อุปถัมภ์องค์กรผู้ก่อตั้งพร้อมโทเค็น Grok มูลค่า 1.5 ล้าน USD"
 }

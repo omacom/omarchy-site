@@ -181,7 +181,6 @@
   "Omarchy on GitHub": "GitHub-இல் Omarchy",
   "Main pages": "முதன்மைப் பக்கங்கள்",
   "Change the theme": "தோற்றக்கருவை மாற்றுங்கள்",
-  "Press T, or tap here. Inside Omarchy it is Super + Ctrl + Shift + Space.": "T அழுத்துங்கள் அல்லது இங்கே தட்டுங்கள். Omarchy-இல் Super + Ctrl + Shift + Space.",
   "Dismiss": "மூடவும்",
   "Theme picker": "தோற்றக்கருத் தேர்வி",
   "Previous theme": "முந்தைய தோற்றக்கரு",
@@ -394,5 +393,7 @@
   "Bringing Omarchy to Snapdragon": "Omarchy-ஐ Snapdragon-க்கு கொண்டு வருகிறோம்",
   "Dragon": "டிராகன்",
   "Switzerland": "சுவிட்சர்லாந்து",
-  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud USD 3 மில்லியனுடன் நிறுவனர் கார்ப்பரேட் புரவலராக இணைகிறது"
+  "Alibaba Cloud joins as a Founding Corporate Patron with $3 million": "Alibaba Cloud USD 3 மில்லியனுடன் நிறுவனர் கார்ப்பரேட் புரவலராக இணைகிறது",
+  "How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.": "HackerOne bug bounty திட்டம் மூலமாகவோ அல்லது மின்னஞ்சல் மூலம் தனிப்பட்ட முறையிலோ Omarchy-இல் உள்ள பாதிப்பை எப்படிப் புகாரளிப்பது, மேலும் அப்படிச் செய்ததற்காகப் பாராட்டப்பட்டவர்கள் யார் என்பது.",
+  "SpaceXSI joins as a Founding Corporate Patron with $1.5 million in Grok tokens": "SpaceXSI, USD 1.5 மில்லியன் மதிப்புள்ள Grok டோக்கன்களுடன், நிறுவனர் கார்ப்பரேட் புரவலராக இணைகிறது"
 }
