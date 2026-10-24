@@ -1,7 +1,7 @@
 {
   "source": "luma-feed",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-10-23",
+  "refreshed": "2026-10-24",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1402,14 +1402,14 @@
       "id": "evt-2h0vxlgK0HC9Weh",
       "title": "Omarchy DFW 001: Get Set Up, Show & Tell, and Dig In",
       "url": "https://luma.com/pj5yrzgv",
-      "start": "2026-11-10T00:30:00.000Z",
-      "end": "2026-11-10T01:30:00.000Z",
+      "start": "2026-11-10T00:00:00.000Z",
+      "end": "2026-11-10T02:00:00.000Z",
       "timezone": null,
-      "address": "Carrollton Public Library at Hebron and Josey, 4220 N Josey Ln, Carrollton, TX 75010, USA",
+      "address": "25N Coworking Frisco, 9355 John W. Elliott Dr #25, Frisco, TX 75033, USA",
       "city": null,
       "country": "USA",
       "online": null,
-      "geo": { "lat": 33.0259, "lon": -96.8837255 },
+      "geo": { "lat": 33.1551055, "lon": -96.830513 },
       "hosts": ["Matt Gleason"],
       "cover": null
     },
