@@ -500,6 +500,16 @@
   "name": "Pandora"
  },
  {
+  "repo": "https://github.com/novuon/omarchy-patch-dark-theme",
+  "image": "/assets/themes/patch-dark.webp",
+  "name": "Patch Dark"
+ },
+ {
+  "repo": "https://github.com/novuon/omarchy-patch-light-theme",
+  "image": "/assets/themes/patch-light.webp",
+  "name": "Patch Light"
+ },
+ {
   "repo": "https://github.com/r-bart/omarchy-periphery-theme",
   "image": "/assets/themes/periphery.webp",
   "name": "Periphery"
