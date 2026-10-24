@@ -15,12 +15,12 @@ const clock = (seconds: number) => {
 }
 
 /** What the sound is doing, kept in step with the track, and whether this
- *  page shows a control at all: always on the home page, elsewhere only once
+ *  page shows a control at all: always on the home and try pages, elsewhere only once
  *  the sound has been touched. */
 function useMusicState(path = '/') {
   const home = useLocation({
     serverPath: path,
-    select: (at) => at.pathname === '/',
+    select: (at) => at.pathname === '/' || /^\/try\/?$/.test(at.pathname),
   })
   // Starts from what the sound is doing now, not from "muted": the
   // control can be mounted fresh while the sound is already on.
