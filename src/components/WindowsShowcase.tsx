@@ -1,4 +1,4 @@
-import { t, localizedHref } from '@/i18n/site'
+import { t, localizedHref, language } from '@/i18n/site'
 import { SectionActions, SectionHeading } from '@/components/SectionHeading'
 import { ArrowRightIcon } from '@/components/icons'
 
@@ -39,7 +39,8 @@ export function WindowsShowcase() {
             {t('Your Windows apps, at home')}
           </h3>
           <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-            {t('Choose')} <em>Install &gt; Windows</em>{' '}
+            {t('Choose')} <em>Install &gt; Windows</em>
+            {language === 'ko' ? '' : ' '}
             {t(
               'from the Omarchy menu. Hardware virtualization brings near-native CPU performance for Office and everyday work, with a shared clipboard and a folder for moving files between Windows and Linux.',
             )}
@@ -53,7 +54,8 @@ export function WindowsShowcase() {
             {t('Bring a Windows 11 Pro license valid for a VM. Run')}{' '}
             <code className="whitespace-nowrap rounded bg-surface-2 px-1.5 py-0.5 font-mono text-[0.9em] text-text">
               omarchy windows key
-            </code>{' '}
+            </code>
+            {language === 'ko' ? '' : ' '}
             {t(
               "to retrieve your machine's original key (this only works on Pro, not Home licenses).",
             )}
