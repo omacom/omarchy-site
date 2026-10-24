@@ -1,10 +1,5 @@
 [
  {
-  "repo": "https://github.com/Semperius/omarchy-gladius-supreme-theme",
-  "image": "/assets/themes/gladius-supreme.webp",
-  "name": "Warhammer 40,000 Gladius: Relics of War Supreme Theme"
- },
- {
   "repo": "https://github.com/JJDizz1L/aetheria",
   "image": "/assets/themes/aetheria.webp",
   "name": "Aetheria"
@@ -263,6 +258,11 @@
   "repo": "https://github.com/row-huh/omarchy-ghost-pastel-theme",
   "image": "/assets/themes/ghost-pastel.webp",
   "name": "Ghost Pastel"
+ },
+ {
+  "repo": "https://github.com/Semperius/omarchy-gladius-supreme-theme",
+  "image": "/assets/themes/gladius-supreme.webp",
+  "name": "Gladius Supreme"
  },
  {
   "repo": "https://github.com/tahayvr/omarchy-gold-rush-theme",
