@@ -550,6 +550,11 @@
   "name": "Red Pill"
  },
  {
+  "repo": "https://github.com/andybarilla/omarchy-retro-74-theme",
+  "image": "/assets/themes/retro-74.webp",
+  "name": "Retro 74"
+ },
+ {
   "repo": "https://github.com/rondilley/omarchy-retropc-theme",
   "image": "/assets/themes/retropc.webp",
   "name": "RetroPC"
