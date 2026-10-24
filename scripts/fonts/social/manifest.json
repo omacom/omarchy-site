@@ -8,7 +8,7 @@
     "Latin": {
       "family": "Omarchy Social Latin",
       "file": "latin.ttf",
-      "characters": " &',-.:?ABCDEFGHIKLMOPRSTUVWZabcdefghijklmnopqrstuvwxyzÁÄßàáäåæçèéêíðóõöøúüýþāąčđēėęěğģıķļłņşšůųžșțʻʼ̧̨̛̣̦̀́̂̃̄̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώВГОПСабвгдежзийклмнопрстухцчшыьэяёіјљњạắẹềễệỉốờụứừử’“„"
+      "characters": " &',-.:ABCDEFGHIKLMOPSTUVWZabcdefghijklmnopqrstuvwxyzÁÄßàáäåæçèéêíðóõöøúüýþāąčđėęěğģıķļņşšůųžșțʻʼ̧̨̛̣̦̀́̂̃̄̆̇̈̉̊̌ΌΟΠΤάέήίαγδεηθικλμνξοπρςστυφχωόύώВГОПСабвгдежзийклмнопрстухцчшъыьэяёіјљњạắẹềễệỉốờụủứử’“„"
     },
     "Arabic": {
       "family": "Omarchy Social Arabic",
@@ -23,7 +23,7 @@
     "Japanese": {
       "family": "Omarchy Social Japanese",
       "file": "japanese.otf",
-      "characters": "DHLOSinux、。いうえくこごしてとにのもよらりるれを゙ェエシジトンー代伝使困在変思整時更楽決美自解調"
+      "characters": "DHLOSinux、。いうえくこごしてとなにのもよらりるれを゙ィェエクシジッテトンー代伝困在変思整時更楽決美自解調"
     },
     "Korean": {
       "family": "Omarchy Social Korean",
@@ -38,7 +38,7 @@
     "Bengali": {
       "family": "Omarchy Social Bengali",
       "file": "bengali.ttf",
-      "characters": " ।ঁআএওকখগঙজটডতথদধনপবমযরলস়ািুৃেো্"
+      "characters": " ।ঁএওকখগঙজটডতথদনপবমযরলস়ািুেো্"
     },
     "Sinhala": {
       "family": "Omarchy Social Sinhala",
@@ -58,7 +58,7 @@
     "Chinese": {
       "family": "Omarchy Social Chinese",
       "file": "chinese.otf",
-      "characters": " ,?ADHLVbegintux、。一不个亲代作功加原可坑好定小就心手打搞操改时玩生由的看系统置能自设该调路踩造随，？"
+      "characters": " ,DHLbeinuvx、。个代体作修出原可塑定微或搞操改时智有每烦生由的系统美能自观调趣造都靠麻，"
     },
     "Hebrew": {
       "family": "Omarchy Social Hebrew",
@@ -68,7 +68,7 @@
     "ChineseTraditional": {
       "family": "Omarchy Social ChineseTraditional",
       "file": "chinesetraditional.otf",
-      "characters": " DHLbeinuvx、。一代作修動可塑定或打搞改整時有業次每理用疑症的系統美調趣造雜難驅麗"
+      "characters": " DHLbeinuvx、。一代作修可塑定式或打搞改整時有業次每理用疑症的系統美調趣造雜難麗"
     }
   },
   "locales": {

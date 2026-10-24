@@ -8,11 +8,11 @@
     "sourceHash": "50b9e588ad6c9188d1b9c8bf4f8a3de18ff1be21890f8732904c6b6e0dce0687"
   },
   "digitalocean-joins-as-founding-corporate-patron": {
-    "title": "DigitalOcean sa pripája ako zakladajúci firemný patrón s 3 miliónmi dolárov",
+    "title": "DigitalOcean sa pripája ako zakladajúci firemný patrón s 3 miliónmi USD",
     "sourceHash": "382fc59b20eb8b44aeb6c662af4c200a88b68625e903049706719a1ea76044e7"
   },
   "omacom-foundation-hires-outfoxxed": {
-    "title": "Nadácia Omacom Foundation najíma outfoxxeda ako šéfa Omarchy Shell",
+    "title": "Nadácia Omacom Foundation najíma outfoxxeda ako vedúceho Omarchy Shell",
     "sourceHash": "6b4c4987fc67ebfbd0295a23520056d21819c360a0932aec9a894ddf9edc6c15"
   },
   "omacom-foundation-raises-another-half-a-million-dollars": {
@@ -24,7 +24,7 @@
     "sourceHash": "7f02bf079c6694aab55addbe70ff76ae0c09970195d274f7aed308b1b76b5295"
   },
   "omacom-foundation-secures-tokens-from-leading-labs": {
-    "title": "Omacom Foundation získala od popredných laboratórií tokeny za $1.8M",
+    "title": "Omacom Foundation získala od popredných laboratórií tokeny za 1,8 milióna USD",
     "sourceHash": "c329b55bcb9b4b833f9d352944145ac5650e7bfa95dedf4233769240ffd0fa89"
   },
   "omacom-foundation-accelerates-spending-goals": {
@@ -32,15 +32,15 @@
     "sourceHash": "40d10806f7a90648e312d9bdc550b3d6c2455062faa6646020bd835b5d594225"
   },
   "omacom-patronage-is-open-to-everyone": {
-    "title": "Patrónstvo Omarchy je teraz otvorené všetkým",
+    "title": "Patronát Omarchy je teraz otvorený všetkým",
     "sourceHash": "77a532e3645bf5ed7851c46ae06e0247799ee67cec98a6971a2500901c09a536"
   },
   "omacom-foundation-hires-krzysztof-wilczynski": {
-    "title": "Nadácia Omacom Foundation najíma kernel vývojára Krzysztofa Wilczyńského",
+    "title": "Nadácia Omacom Foundation najíma vývojára jadra Krzysztofa Wilczyńského",
     "sourceHash": "110a8020edd04bf79cf6015e054a690e608b75d4f135a716fa529a38d3dc465a"
   },
   "quattro-crosses-200000-iso-downloads": {
-    "title": "Omarchy Quattro prekonalo 200,000 stiahnutí ISO",
+    "title": "Omarchy Quattro prekonalo 200 000 stiahnutí ISO",
     "sourceHash": "16e2f413427daf42a7fea2c0e2e61f2d1b7494a31bb623a955e4c6eb5b39e1da"
   },
   "omacom-foundation-reaches-13-million": {
@@ -60,7 +60,7 @@
     "sourceHash": "88bafa2c7109cc1a4f08bd79badb5a123bd8bc926e0d6991d6c10d9c02e4d14d"
   },
   "100000-downloads-in-a-week": {
-    "title": "Omarchy prekonalo 100,000 stiahnutí za týždeň",
+    "title": "Omarchy prekonalo 100 000 stiahnutí za týždeň",
     "sourceHash": "21ee90c6eef09c337db3b2139e6c6a8863a58ab874b1a48392680ea316a64dff"
   },
   "introducing-omarchy-air": {
@@ -72,7 +72,7 @@
     "sourceHash": "3a5b53223955538c18a153a3e6a443a4d439931063b25d95a52624a791fe636c"
   },
   "omacom-foundation-to-be-premier-mise-sponsor": {
-    "title": "Nadácia Omacom Foundation bude premiérovým sponzorom mise",
+    "title": "Nadácia Omacom Foundation bude hlavným sponzorom mise",
     "sourceHash": "7f69c84e9e4c6a24d832b17b31bac481800d78eaf7b172b8460aa5fbffd25b04"
   },
   "omarchy-meetups-around-the-world": {
@@ -80,7 +80,7 @@
     "sourceHash": "577ad8123132562e9e5155ee4cb444b371c265fc62de839cc789fd44836dd8d6"
   },
   "omacom-foundation-to-be-premier-quickshell-sponsor": {
-    "title": "Nadácia Omacom Foundation bude premiérovým sponzorom Quickshellu",
+    "title": "Nadácia Omacom Foundation bude hlavným sponzorom Quickshellu",
     "sourceHash": "cd8c462ecac862cc4f0af0eddbeee5d3a7577d2c1c70dd8d04ed8ebfc221effd"
   },
   "omacom-foundation-funding-hits-10m": {
@@ -88,7 +88,7 @@
     "sourceHash": "5c7a98a0d30bdf81bdf7743ed9510e7c6d47dad679c92a02767d895dd1b3b9a5"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Omacom Foundation štartuje s 23,7 milióna dolárov",
+    "title": "Omacom Foundation štartuje s 23,7 milióna USD",
     "sourceHash": "c8398860f4f9b8c8ccf40853ac6ac6edd9b7c6677dc55f76b8e0da7d8732d691"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
@@ -112,23 +112,23 @@
     "sourceHash": "e4e14b2fc8e25a6b929f62e97e61ecce7e0754f3dca5933046b4c7405b0c27ab"
   },
   "omarchy-launches-bug-bounty-program-on-hackerone": {
-    "title": "Omarchy spúšťa program odmien za chyby v hodnote $100,000 na HackerOne",
+    "title": "Omarchy spúšťa program odmien za chyby v hodnote 100 000 USD na HackerOne",
     "sourceHash": "09e834cfd5c67b5c1b5434c4921b506f7fc73e736d7fdf37b575ed1d1483dc2c"
   },
   "spacexai-joins-as-founding-corporate-patron": {
-    "title": "SpaceXSI sa pridáva ako zakladajúci firemný patrón s $1,5 milióna v Grok tokenoch",
+    "title": "SpaceXSI sa pridáva ako zakladajúci firemný patrón s 1,5 milióna USD v tokenoch Grok",
     "sourceHash": "4249ba562d91dcc6fffcd175e7e22ee77abdc1808ba6329339c04624e25a43b0"
   },
   "theprimeagen-joins-omarchy-core": {
-    "title": "ThePrimeagen sa pripája k Omarchy Core, aby viedol Agentic QA",
+    "title": "ThePrimeagen sa pripája k Omarchy Core, aby viedol Agentné QA",
     "sourceHash": "f529ba4841ab631a5e7c03a4cc95e4c53fca804b6ad5b8203092365c5cfca284"
   },
   "omacom-foundation-to-be-premier-sponsor-of-0xsero": {
-    "title": "Omacom Foundation bude premiérovým sponzorom práce od 0xSero na lokálnej AI",
+    "title": "Omacom Foundation bude hlavným sponzorom práce od 0xSero na lokálnej AI",
     "sourceHash": "3f625eef4d2f3826ca59ea448abf415af9ff7774f887309f57e81bf8334382d7"
   },
   "alibaba-cloud-joins-as-founding-corporate-patron": {
-    "title": "Alibaba Cloud sa pripája ako zakladajúci firemný patrón s $3 miliónmi",
+    "title": "Alibaba Cloud sa pripája ako zakladajúci firemný patrón s 3 miliónmi USD",
     "sourceHash": "6e9a4deec8e7e262ef6e7da4bcdf871b484f416ef49206500ff64ccb0d4ea8ea"
   },
   "orcarouter-joins-as-a-distinguished-corporate-patron": {
