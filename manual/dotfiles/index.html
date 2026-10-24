@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Dotfiles</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -147,11 +145,11 @@
     </tr>
     <tr>
       <td><code>post-update</code></td>
-      <td>During <code>omarchy update</code>, after packages and migrations</td>
+      <td>Near the end of <code>omarchy update</code>, after packages, migrations, and service restarts, before mise tools are updated</td>
     </tr>
     <tr>
       <td><code>pre-refresh-pacman</code></td>
-      <td>Before <code>omarchy refresh pacman</code> re-syncs the package config</td>
+      <td>After <code>omarchy refresh pacman</code> re-syncs the package config, before it updates packages; a channel switch runs it during that same refresh step</td>
     </tr>
     <tr>
       <td><code>theme-set</code></td>
@@ -167,6 +165,8 @@
     </tr>
   </tbody>
 </table>
+
+<p>The <code>pre-refresh-pacman</code> hook is where custom repositories or <code>IgnorePkg</code> lines belong, since it runs before the package transaction. Both update-related hooks run as your user after Omarchy clears its cached sudo authorization, so a hook that uses <code>sudo</code> needs its own authorization and may ask for your password.</p>
 
 <p>Each of those directories already holds a <code>.sample</code> file showing the shape of a hook — drop the <code>.sample</code> from the name to put it to work. To install a script you’ve written elsewhere, use <code>omarchy hook install post-boot ~/my-hook</code>, which copies it in and makes it executable.</p>
 
@@ -190,17 +190,18 @@
 
 <p>You can change just about everything that way, like the default keybindings. Just edit <code>~/.config/hypr/bindings.lua</code> to, say, replace <a href="https://obsidian.md/">Obsidian</a> with <a href="https://joplinapp.org/">Joplin</a> (install with <code>omarchy-pkg-add joplin-bin</code>):</p>
 
-<pre><code>hl.unbind("SUPER + SHIFT + O")
-o.bind("SUPER + SHIFT + O", "Joplin", "joplin-desktop")
+<pre><code class="language-lua">o.rebind("SUPER + SHIFT + O", "Joplin", "joplin-desktop")
 </code></pre>
+
+<p><code>o.rebind</code> removes the existing binding before adding its replacement. It takes the same arguments as <code>o.bind</code>, including launch helpers and binding options. Use <code>o.bind</code> to add a binding, or <code>hl.unbind</code> to remove one without replacing it.</p>
 
 <p>If you insist on hacking on the internal Omarchy files, switch to the dev channel via <em>Update &gt; Channel &gt; Dev</em>. That links Omarchy to a git checkout of the source code in <code>~/omarchy</code>, which you’re free to change to your heart’s content. Ain’t nobody here to tell you what to do!</p>
 
 <h3 id="resetting-any-changes">Resetting any changes <a class="manual__heading-link" href="#resetting-any-changes" aria-label="Link to this section">#</a></h3>
 
 <p>If you end up making a mess of the configurations, you can always revert them to the defaults via <em>Update &gt; Config</em> in the Omarchy menu. Or by running <code>omarchy reinstall configs</code> to reset everything.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

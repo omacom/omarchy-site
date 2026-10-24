@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Hardware authentication</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -71,6 +69,8 @@
 
 <p>That’ll install the fingerprint package, collect your print, verify it, and you’ll be set to go using your fingerprint to unlock from the lock screen (which you can trigger with <code>Super + Ctrl + L</code>), enter sudo mode, and authorize system prompts.</p>
 
+<p>Once the lock screen has turned the display off, the sensor rests to save power, so wake the screen with any key or the touchpad before touching it.</p>
+
 <p>When your laptop lid is closed, the fingerprint prompt is automatically skipped, so you go straight to the password prompt instead of waiting on a sensor you can’t reach. If you otherwise need to work on an external keyboard that doesn’t have a sensor, just hit <code>CTRL + C</code>, when you’re prompted for your fingerprint during <code>sudo</code>.</p>
 
 <p>You can remove the fingerprint authentication under <em>Remove &gt; Security &gt; Fingerprint</em> in the Omarchy menu.</p>
@@ -80,8 +80,8 @@
 <p>If you’re using a Fido2 device, you can set it up for <code>sudo</code> authentication using <em>Setup &gt; Security &gt; Fido2</em> in the Omarchy menu (<code>Super + Space</code>). It covers <code>sudo</code> and system authorization prompts, though, not unlocking your computer.</p>
 
 <p>You can remove the fido2 authentication under <em>Remove &gt; Security &gt; Fido2</em> in the Omarchy menu.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

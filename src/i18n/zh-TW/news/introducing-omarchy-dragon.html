@@ -1,0 +1,21 @@
+<p>我們應該為每個主要平台設立專責團隊，而 Qualcomm 的 Snapdragon 絕對值得擁有一個！上週，我們為 Apple 硬體推出了 <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a>。今天，我們正式成立 <a href="/teams/#dragon">Omarchy Dragon</a>：這是我們負責讓 Omarchy 在 Snapdragon 電腦上優美運行的團隊。</p>
+
+<p>我們的目標是把這些輕薄筆電變成可靠的日常 Linux 電腦。能開機進入桌面只是起點。能順利休眠、喚醒、高效播放影片、更新韌體，並撐過一整天的工作，才算是一台值得信賴的電腦。</p>
+
+<p>已經有五個人在分工負責各個部分：</p>
+
+<p><strong>Jim Martin</strong> (<a href="https://github.com/jdvmi00">GitHub</a>) 正在搭載 Snapdragon X2 Elite 的 Surface Laptop 8 上啟用 Linux。他一直在為 DGX Spark 開發 Omarchy，並已向 ARM 安裝程式貢獻了圖形化磁碟解鎖修正。在 Dragon 團隊中，他專注於 Surface 與 X2 Elite 的支援，在實體硬體上測試安裝與還原，並將實用的 ARM 修正整合進共用的 Omarchy 專案中。</p>
+
+<p><strong>Birk Skyum</strong> (<a href="https://x.com/BirkSkyum">X</a>) 是一位地理資訊與圖學工程師，也是 MapLibre 的共同創辦人。他的電腦是搭載 Snapdragon X Elite 的 Lenovo Yoga Slim 7x。他已向上游 Arch Linux ARM 提交修正，向 libcamera、PipeWire 和 systemd 提交補丁，也曾撰寫風扇與溫度監控的核心補丁。現在他正在關注電池續航、穩定的休眠、KVM 虛擬化、硬體加速影片、從 Linux 更新 BIOS，以及 USB4 效能。他也正在與 Lenovo 聯繫，以改善對 Linux 的韌體支援。</p>
+
+<p><strong>Matt Gilg</strong> (<a href="https://github.com/gilgm12">GitHub</a>) 已經成功在 Snapdragon X Yoga 和 DGX Spark 上跑起完整可用的 Omarchy 桌面，連 Hyprland 也包含在內。在轉移到 Omarchy Package Repository 之前，他自行建置並託管了 aarch64 套件來達成目標。Matt 經營 SignalRGB，擁有跨廠商硬體相容性、嵌入式系統與底層 Linux 開發經驗。他也正在為搭載 Snapdragon X2 Elite 的 OmniBook X16 啟用系統，特別關注遊戲，並希望幫助更多人找到離開 Windows 的出路。</p>
+
+<p><strong>Bob Prendergast</strong> (<a href="https://github.com/bprendie">GitHub</a>) 是一位解決方案架構師，也是 Linux 老手，他利用 agents 與 Ubuntu 核心打造了自己的 <a href="https://github.com/bprendie/omarchy-snapdragon">Omarchy Snapdragon setup</a>。他目前使用 HP EliteBook 14 G1q 和 Lenovo ThinkPad T14s Gen 6 進行開發。更多機器、更多測試，以及更多實務工作，才能把一個有潛力的平台變成大家能安裝、能使用的系統。</p>
+
+<p><strong>Miguel Cruz</strong> (<a href="https://x.com/acelogic_">X</a>) 本來就是 Omarchy M 的成員，現在他把在 Apple Silicon 開機與硬體相容性方面的經驗帶到 Qualcomm 這邊。他的背景橫跨作業系統內部、逆向工程與嵌入式系統，並曾對 Linux、QEMU 和 Virtio 做出貢獻。他帶著一台搭載 Snapdragon X2 Elite Extreme 的 ASUS Zenbook A16 加入這項工作，專注於開機與韌體啟用、驅動程式問題（特別是 GPU），以及在實體硬體上測試修正。</p>
+
+<p>這份工作與我們其他的 ARM 工作也有不少可以互相呼應之處。為一台機器開發的套件、安裝程式改進與修正，也能幫助另一台機器。Jim 和 Matt 都有興趣把這份工作延伸到 Raspberry Pi 與其他 ARM 平台。</p>
+
+<p>我也在努力與 Qualcomm 建立直接聯繫。那邊一位負責 Linux 相容性的工程師已經主動聯絡我們。看看我們能不能為這份工作爭取到一些正式的支援吧。</p>
+
+<p>這項工作仍在進行中，相容性會一台一台機器逐步解決。但現在我們已經有一個負責的團隊，在實體硬體上測試，並把修正推向上游。歡迎 Jim、Birk、Matt、Bob 和 Miguel。讓我們把美麗、有趣 &amp; agentic 的 Linux 帶到 Snapdragon 上吧！</p>

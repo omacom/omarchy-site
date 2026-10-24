@@ -1,0 +1,15 @@
+<p><a href="https://www.greptile.com/">Greptile</a>を<a href="/foundation/">Omacom Foundation</a>の<a href="/patrons/#distinguished-corporate-patrons">Distinguished Corporate Patron</a>として迎えられることを、心から嬉しく思います！彼らは<strong>PRレビューサービス用の$150,000分のトークン</strong>を提供してくれるので、Omarchyに届くすべてのプルリクエストは、これからも丁寧なもう一人の目によるチェックを受け続けられます。</p>
+
+<p>しかも、ゼロからのスタートではないんです。GreptileはすでにOmarchyのために<strong>約1,500件のプルリクエスト</strong>をレビューしてきました。そのほぼすべてが8月のQuattroのローンチ以降のもので、10月前半だけでも700件近くにのぼります！<a href="/news/2026/09/quattro-crosses-200000-iso-downloads/">何十万人ものユーザー</a>が修正を送ってくるようになると、こういう量になるんです。そして、これほどの量を人間のレビュアーのチームだけでさばくのは到底無理な話です。</p>
+
+<p>でも、レビューがただのノイズだったら量が多くても意味がありません。Greptileのすごいところは、本物の問題をどれだけ高い頻度で見つけてくれるかです。Greptileがレビューした直近のマージ済みPR60件のうち、深刻だと判断した問題が39件指摘されました。しかもlint的な細かい指摘ではなく、実際のユーザーが確実に踏んでしまうような種類のバグです。</p>
+
+<p>たとえば、<a href="https://github.com/birkskyum">Birk</a>がデバイスツリーでラップトップのモデルを照合する方法を追加したとき、Greptileはトルコ語ロケールではBashが<code>I</code>をドットなしの<code>ı</code>に小文字化するため、<code>MICROSOFT,Denali-OLED</code>は決して<code>microsoft,denali-oled</code>に一致しなくなることを指摘しました。こんなの、誰が気づけますか？！<a href="https://github.com/omacom/omarchy/pull/15064">マージ前に修正されました</a>。それから、私が空のワークスペースを新しいデフォルトレイアウトにリセットするコマンドを書いたときも、もし<code>hyprctl</code>がゴミデータを返したら、私のスクリプトは使用中のものも含めて保存済みのレイアウトをすべて喜んで削除してしまうだろうとGreptileが気づいてくれました。<a href="https://github.com/omacom/omarchy/pull/15266">こちらも修正済み</a>！誰も見逃してもらえません。特に私がね。</p>
+
+<p>これこそ、エージェンティックなピアレビューがあるべき姿です。すべてのPRのすべての行を、昼夜を問わず読んでくれて、何がなぜマズくなるのかを正確に説明し、しかも修正パッチまで渡してくれることが多いレビュアーです。<a href="/teams/">Omarchyチーム</a>の判断に取って代わるものではありませんが、人間がPRを見るときには、たいていすでに尖った部分が丸くなっているということです。だからこそ、品質を落とすことなく、何千件ものPRの山をさばいていけるんです。</p>
+
+<p><a href="/patrons/#distinguished-corporate-patrons">Greptileは1Password、37signals、Four Technologies、Fireworks、OpenAI、OpenRouter、OrcaRouter、そしてNamespaceに加わりDistinguished Corporate Patronとなりました</a>。彼らの支援により、私たちの<a href="/news/2026/08/omacom-foundation-launches-with-8-million/">支援総額は約<strong>$23.7 million</strong>になりました</a>。彼らのパトロネージに感謝します。</p>
+
+<p>ようこそ、Greptile！すべてのPRは大切だからこそ、一件一件を大切にレビューし続けましょう。だって、本当に大切なんですから。</p>
+
+<p>貴社も<a href="/patrons/">パトロンに参加</a>したい場合は、<a href="mailto:david@omarchy.org">david@omarchy.org</a>までご連絡ください。</p>

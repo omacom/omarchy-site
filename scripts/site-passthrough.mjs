@@ -33,6 +33,8 @@ export const ASSETS_ONLY = ['news', 'manual', 'omakub', 'brand']
 export const PLUGINS_SITE = 'https://plugins.omarchy.org'
 
 export const REDIRECTS = {
+  '/mac/setup/':
+    'https://raw.githubusercontent.com/omarchy-mac/omarchy-mac/quattro/bin/omarchy-mac-setup',
   '/manual/toc/': '/manual/',
 }
 

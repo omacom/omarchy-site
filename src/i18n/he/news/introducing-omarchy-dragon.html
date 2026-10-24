@@ -1,0 +1,21 @@
+<p>צריכים להיות לנו צוותים שאחראים לכל פלטפורמה מרכזית, וה-Snapdragon של Qualcomm בהחלט ראוי לאחד כזה! בשבוע שעבר הצגנו את <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> לחומרת Apple. היום אנחנו הופכים את <a href="/teams/#dragon">Omarchy Dragon</a> לרשמי: הצוות שלנו שעובד כדי לגרום ל-Omarchy לרוץ בצורה יפהפייה על מחשבי Snapdragon.</p>
+
+<p>המטרה היא להפוך את הלפטופים הדקים והקלים האלה למכונות Linux אמינות ליום-יום. לגרום לסביבת שולחן עבודה לעלות זה התחלה. לגרום למכונה להירדם, להתעורר, לנגן וידאו ביעילות, לעדכן את הקושחה שלה, ולהחזיק מעמד לאורך יום עבודה שלם — זה מה שהופך אותה למחשב שאפשר לסמוך עליו.</p>
+
+<p>חמישה אנשים כבר עובדים על החלקים השונים:</p>
+
+<p><strong>Jim Martin</strong> (<a href="https://github.com/jdvmi00">GitHub</a>) מעלה את Linux על Surface Laptop 8 עם Snapdragon X2 Elite. הוא עבד על Omarchy עבור DGX Spark וכבר תרם תיקון גרפי לשחרור נעילה של הדיסק למתקין ה-ARM. עבור Dragon, הוא מתמקד בתמיכה ב-Surface וב-X2 Elite, בבדיקת התקנה ושחזור על חומרה אמיתית, ובהכנסת תיקוני ARM שימושיים לפרויקטים המשותפים של Omarchy.</p>
+
+<p><strong>Birk Skyum</strong> (<a href="https://x.com/BirkSkyum">X</a>) הוא מהנדס גיאו-אינפורמטיקה וגרפיקה וממייסדי MapLibre. המכונה שלו היא Lenovo Yoga Slim 7x עם Snapdragon X Elite. הוא כבר הכניס תיקוני upstream ב-Arch Linux ARM, שלח טלאים ל-libcamera, ל-PipeWire ול-systemd, ועבד על טלאים לקרנל לניטור מאווררים וטמפרטורה. עכשיו הוא בוחן חיי סוללה, שינה אמינה, וירטואליזציית KVM, וידאו עם האצת חומרה, עדכוני BIOS מתוך Linux, וביצועי USB4. הוא גם בקשר עם Lenovo לגבי שיפור תמיכת הקושחה ב-Linux.</p>
+
+<p><strong>Matt Gilg</strong> (<a href="https://github.com/gilgm12">GitHub</a>) כבר הצליח להעלות שולחן עבודה עובד של Omarchy, כולל Hyprland וכל השאר, על Snapdragon X Yoga ועל DGX Spark. הוא בנה ואירח את חבילות ה-aarch64 כדי להגיע לשם לפני המעבר ל-Omarchy Package Repository. Matt מנהל את SignalRGB ומביא ניסיון בתאימות חומרה חוצת-ספקים, מערכות משובצות ועבודת Linux ברמה נמוכה. הוא גם מעלה OmniBook X16 עם Snapdragon X2 Elite, עם עניין מיוחד בגיימינג ובלעזור ליותר אנשים למצוא דרך החוצה מ-Windows.</p>
+
+<p><strong>Bob Prendergast</strong> (<a href="https://github.com/bprendie">GitHub</a>) הוא ארכיטקט פתרונות ומשתמש Linux ותיק שבנה בעצמו <a href="https://github.com/bprendie/omarchy-snapdragon">Omarchy Snapdragon setup</a> באמצעות סוכנים והקרנל של Ubuntu. הוא עובד עם HP EliteBook 14 G1q ו-Lenovo ThinkPad T14s Gen 6. יותר מכונות, יותר בדיקות, ויותר מהעבודה המעשית שנדרשת כדי להפוך פלטפורמה מבטיחה למשהו שאנשים יכולים להתקין ולהשתמש בו.</p>
+
+<p><strong>Miguel Cruz</strong> (<a href="https://x.com/acelogic_">X</a>) כבר חלק מ-Omarchy M ומביא את הניסיון שלו עם אתחול Apple Silicon ותאימות חומרה לצד של Qualcomm. הרקע שלו כולל פנימיות של מערכות הפעלה, הנדסה לאחור ומערכות משובצות, עם תרומות ל-Linux, ל-QEMU ול-Virtio. הוא מצטרף למאמץ עם ASUS Zenbook A16 שמונע על ידי Snapdragon X2 Elite Extreme, תוך התמקדות באתחול ובהעלאת קושחה, בבעיות דרייברים (במיוחד ה-GPU), ובבדיקת תיקונים על חומרה אמיתית.</p>
+
+<p>יש גם חפיפה שימושית עם שאר עבודת ה-ARM שלנו. חבילות, שיפורים למתקין ותיקונים שפותחו עבור מכונה אחת יכולים לעזור לאחרת. Jim ו-Matt מעוניינים שניהם להרחיב את העבודה הזו גם ל-Raspberry Pi ולפלטפורמות ARM נוספות.</p>
+
+<p>אני גם עובד על יצירת קשר ישיר עם Qualcomm. מהנדס שעובד שם על תאימות Linux כבר יצר קשר. בואו נראה אם נצליח להשיג תמיכה רצינית מאחורי המאמץ הזה.</p>
+
+<p>זו עבודה בתהליך, כשהתאימות מטופלת מכונה אחר מכונה. אבל עכשיו יש לנו צוות שלוקח על זה אחריות, בודק על חומרה אמיתית, ודוחף תיקונים upstream. ברוכים הבאים, Jim, Birk, Matt, Bob ו-Miguel. בואו נביא Linux יפהפה, מהנה וסוכני ל-Snapdragon!</p>

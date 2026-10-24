@@ -9,7 +9,7 @@ export function WindowsShowcase() {
       className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0"
     >
       {t('Set up Windows')}
-      <ArrowRightIcon aria-hidden="true" />
+      <ArrowRightIcon className="rtl:-scale-x-100" aria-hidden="true" />
     </a>
   )
   return (

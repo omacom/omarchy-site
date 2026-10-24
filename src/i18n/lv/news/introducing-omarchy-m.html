@@ -1,0 +1,40 @@
+<p>Apple ražo lielisku aparatūru. Vienmēr ir ražojis (izņemot to vienu reizi ar tauriņu tastatūru). Un daudzi cilvēki, kas nonāk pie Omarchy, nāk no Mac. Daudzi no viņiem labprāt paturētu mašīnu un zaudētu operētājsistēmu. Tāpēc mēs pabeigsim to, ko Asahi iesāka: Omarchy, kas skaisti darbojas uz Apple Silicon, ar minimālu uzstādīšanas ņemšanos.</p>
+
+<p>Šim darbam jau ir komanda aiz muguras. Šodien mēs to padarām oficiālu: <a href="/teams/#m">Omarchy M</a> — mūsu komanda Mac datoriem ar Apple Silicon (plus daži dalībnieki, kas pulkā tur vecākus Mac).</p>
+
+<p>Ļauj man iepazīstināt ar dalībniekiem.</p>
+
+<p><strong>Instalētājs.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> būvē <a href="https://github.com/maralcbr/omarchy-mx-mac">īsto Mac instalētāju</a>. Tu lejupielādē lietotni uz macOS, tā paņem parakstīto Omarchy laidienu, izgriež nodalījumus un iebootē tevi Omarchy līdzās tavam esošajam macOS. Bez USB zibatmiņas, bez buramvārdiem terminālī. Viņš arī sagrieza būvi, kas iedegusi ārējos monitorus caur USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> gadu ir uzturējis <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a>, uzdabūjot Omarchy uz M1 un M2 mašīnām ilgi pirms visa šī kļuva oficiāls, un ap to uzbūvējot Discord kopienu ar vairāk nekā 800 cilvēkiem. <a href="https://x.com/bi9kahuna">Scott Jones</a> ir otra puse no šī projekta instalācijas Linux pusē. Viņš nesen M3 Air displeju palaida uz Apple aparatūras displeja kontrollera, kas to mašīnu vienas nakts laikā pārvērta no nelietojamas par lietojamu.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> uzbūvēja <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: īsto Omarchy darbvirsmu, kas darbojas kā īsta, aparatūriski paātrināta lietotne uz tava Mac, ar pieslēgtu kameru, audio, starpliktuvi un koplietotu mapi. Nekā jāpartitionē. Vienkārši lejupielādē un skaties, par ko ir tā jezga.</p>
+
+<p><strong>Pakotnes.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> gādā, lai viss, kas Omarchy vajadzīgs, pastāvētu kā <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 pakotne</a>, līdz ar vispārīgiem ARM64 diska attēliem virtuālajām mašīnām un viesa rīkiem, kas tās padara patīkami lietojamas.</p>
+
+<p><strong>Draiveri un kernels.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> ceļ augšā Neo un būvē pamatus, no kuriem strādā pārējā komanda. Viņš izstrādā SPTM emulatoru, kas ļauj trasēt macOS uz M4 un jaunākiem čipiem. Šīs trases ir būtiskas, lai palaistu displejus, GPU, audio, bezvadu tīklu un Bluetooth. <a href="https://x.com/buildwithdjdev">Dj</a> raksta GPU draiverus un palaida Touch ID, runājot tieši ar Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> specializējas M5 darbā: viņš reversi inženierēja Apple patentēto N1 čipu un palaida tā Wi-Fi un Bluetooth uz Linux. Viņš arī devis aparatūras video kodēšanu un dekodēšanu, Bluetooth un darbvirsmas uzlabojumus uz Neo. <a href="https://x.com/LiamRay1O">Liam</a> ceļ augšā Neo skārienpaliktni, enerģijas pārvaldību, skaļruņus un austiņu izeju, ar Ryan macOS trasēm kā būtisku pamatu. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> uztur M4 atbalstu un tīrtelpas implementācijas un strādā pie integrācijas un pakošanas. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> iespējoja <a href="https://github.com/subedijaidip/dp-altmode-t8112">ārējos displejus caur USB-C uz M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> būvē <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, kas nes Apple MLX mašīnmācīšanās ietvaru uz Linux uz Apple GPU caur Vulkan. Tavs kods joprojām saka <code>import mlx.core as mx</code>, bet tagad tas darbojas uz Omarchy.</p>
+
+<p><strong>Vecāki Mac.</strong> <a href="https://x.com/shawnyeager">Shawn Yeager</a> ir kaudze ar pull request 2016. un 2017. gada Touch Bar MacBook Pro: skaļruņi, Wi-Fi, apkārtējās gaismas sensors, pats Touch Bar. <a href="https://x.com/novuon_ai">Randy</a> reversi inženierē T2 drošības čipu, lai nestu Touch ID uz Intel Mac, un pa ceļam dokumentē katru labojumu 2019. gada MacBook Pro. <a href="https://x.com/jondkinney">Jon Kinney</a> jau pirms gada knibināja ARM atbalstu Omarchy, un tagad tur visu komandu koordinētu par to, kurš ko dara.</p>
+
+<p>Kopā viņi ir milzīga grupa. Piecpadsmit cilvēku, kas negaidīja atļauju un kas izmantojuši aģentus, lai kustētos tempā, kas pirms gada būtu šķitis absurds.</p>
+
+<p>Pirmā laidiena mērķis ir perfekta saderība ar M1 un M2, ieskaitot Pro un Max variantus:</p>
+
+<ul>
+  <li>Nemanāms instalētājs gan ar instalēšanas, gan izmēģināšanas opcijām</li>
+  <li>Pilns GPU atbalsts</li>
+  <li>Ārējie monitori caur USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>Diska šifrēšana</li>
+</ul>
+
+<p>Pie jaunākām mašīnām strādā paralēli, bet M1 un M2 ir vieta, kur pirmo ieduram karogu. Papildus M mašīnām tur ārā ir miljoniem vintāžas klēpjdatoru, daudzi no tiem jau pensionēti no Apple jaunākajām macOS ambīcijām, un katrs no tiem ir brīnišķīgs Omarchy dators, kas gaida savu brīdi.</p>
+
+<p>Tev nav jāgaida pulētais laidiens, lai sāktu. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> dažu minūšu laikā liks tev skatīties uz īsto darbvirsmu uz tava Mac. Un, ja esi gatavs apņemties, <a href="https://github.com/maralcbr/omarchy-mx-mac">instalētājs</a> šodien noliks Omarchy blakus macOS uz M1 vai M2.</p>
+
+<p>Visbeidzot, lūgums. Ja esi strādājis pie Linux Apple aparatūrai, vai tie būtu kernela draiveri, firmware, pakošana, instalētāji vai mašīnmācīšanās, mēs labprāt par tevi dzirdētu. Pastāv laba iespēja, ka tu esi atrisinājis kaut ko, kam mēs vēl dzenamies pakaļ, vai otrādi. Sazinies uz <a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>Pabeigsim to, ko Asahi iesāka.</p>

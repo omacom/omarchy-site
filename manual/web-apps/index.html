@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Web Apps</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -138,8 +136,23 @@
 <p><a href="https://discord.com/">Discord</a> is where most gaming and open source communities hang out, including <a href="https://discord.gg/tXFUdasqhY">Omarchy’s own</a>.</p>
 
 <p>You start Discord using the application launcher (<code>Super + Space</code>).</p>
+
+<h2 id="microsoft-apps">Microsoft apps <a class="manual__heading-link" href="#microsoft-apps" aria-label="Link to this section">#</a></h2>
+
+<p>Select <em>Install &gt; Service &gt; Microsoft</em> to add Outlook, Word, Excel, PowerPoint, Teams, and OneDrive as web apps. Each app has its own launcher and opens directly, using the commercial Microsoft 365 URLs and your existing browser profile. They open in the same browser app windows as Omarchy’s other web apps; they do not install the separate Teams for Linux client.</p>
+
+<p>Remove the bundle with <em>Remove &gt; Service &gt; Microsoft</em>, or remove individual apps with <em>Remove &gt; Web App</em>. You can also install just the apps you want through <em>Install &gt; Web App</em>.</p>
+
+<p>For a government or sovereign cloud, edit the URL on the <code>Exec=</code> line in the relevant launcher under <code>~/.local/share/applications/</code>, such as <code>Microsoft Teams.desktop</code>, using the URL supplied by your organization. Write any literal <code>%</code> in that line as <code>%%</code>. Changes apply on the next launch. Running the bundle installer again replaces its launchers with the default URLs.</p>
+
+<p>To keep work sign-ins separate, append a browser data directory to each launcher’s <code>Exec=</code> line:</p>
+
+<pre><code class="language-ini">Exec=omarchy-launch-webapp "https://teams.cloud.microsoft/" --user-data-dir=/absolute/path/to/work-browser-profile
+</code></pre>
+
+<p>Replace the example directory with an absolute path of your choice and use the same path for all six launchers to share work sign-ins between them. The web apps use Omarchy’s selected supported browser, falling back to Chromium when the default browser is unsupported.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

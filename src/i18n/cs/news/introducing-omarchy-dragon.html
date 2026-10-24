@@ -1,0 +1,21 @@
+<p>Měli bychom mít týmy zodpovědné za každou hlavní platformu a Snapdragon od Qualcommu si ho rozhodně zaslouží! Minulý týden jsme představili <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> pro hardware od Applu. Dnes oficiálně vyhlašujeme <a href="/teams/#dragon">Omarchy Dragon</a>: náš tým, který pracuje na tom, aby Omarchy běžel krásně na počítačích se Snapdragonem.</p>
+
+<p>Cílem je proměnit tyto tenké a lehké notebooky ve spolehlivé každodenní linuxové stroje. Rozjet desktop je začátek. Teprve když se stroj uspí, probudí, efektivně přehraje video, aktualizuje si firmware a vydrží celý pracovní den, stává se z něj počítač, na který se můžete spolehnout.</p>
+
+<p>Na jednotlivých částech už pracuje pět lidí:</p>
+
+<p><strong>Jim Martin</strong> (<a href="https://github.com/jdvmi00">GitHub</a>) rozjíždí Linux na Surface Laptop 8 se Snapdragon X2 Elite. Pracoval na Omarchy pro DGX Spark a do ARM instalátoru už přispěl opravou grafického odemykání disku. V rámci Dragonu se soustředí na podporu Surface a X2 Elite, testování instalace a obnovy na reálném hardwaru a dostávání užitečných ARM oprav do sdílených projektů Omarchy.</p>
+
+<p><strong>Birk Skyum</strong> (<a href="https://x.com/BirkSkyum">X</a>) je inženýr v oblasti geoinformatiky a grafiky a spoluzakladatel MapLibre. Jeho strojem je Lenovo Yoga Slim 7x se Snapdragon X Elite. Do upstreamu dostal opravy v Arch Linux ARM, poslal patche do libcamera, PipeWire a systemd a pracoval na kernelových patchech pro sledování ventilátoru a teploty. Teď se dívá na výdrž baterie, spolehlivé uspávání, virtualizaci KVM, hardwarově akcelerované video, aktualizace BIOSu z Linuxu a výkon USB4. S Lenovem je navíc v kontaktu ohledně zlepšení podpory firmwaru pro Linux.</p>
+
+<p><strong>Matt Gilg</strong> (<a href="https://github.com/gilgm12">GitHub</a>) už dostal funkční desktop Omarchy, včetně Hyprlandu, na Snapdragon X Yoga a DGX Spark. Aby se tam dostal, sám sestavil a hostoval balíčky aarch64, než přešel na Omarchy Package Repository. Matt vede SignalRGB a přináší zkušenosti s kompatibilitou hardwaru napříč výrobci, vestavěnými systémy a nízkoúrovňovou prací na Linuxu. Rozjíždí také OmniBook X16 se Snapdragon X2 Elite, přičemž se zajímá zejména o hraní a o to, aby pomohl více lidem najít cestu pryč z Windows.</p>
+
+<p><strong>Bob Prendergast</strong> (<a href="https://github.com/bprendie">GitHub</a>) je architekt řešení a linuxový veterán, který si pomocí agentů a kernelu Ubuntu postavil vlastní <a href="https://github.com/bprendie/omarchy-snapdragon">Omarchy Snapdragon setup</a>. Pracuje s HP EliteBook 14 G1q a Lenovo ThinkPad T14s Gen 6. Více strojů, více testování a více praktické práce, kterou je potřeba k tomu, aby se ze slibné platformy stalo něco, co si lidé mohou nainstalovat a používat.</p>
+
+<p><strong>Miguel Cruz</strong> (<a href="https://x.com/acelogic_">X</a>) už je součástí Omarchy M a své zkušenosti se zaváděním Apple Silicon a kompatibilitou hardwaru přináší na stranu Qualcommu. Jeho zázemí zahrnuje vnitřnosti OS, reverzní inženýrství a vestavěné systémy, s příspěvky do Linuxu, QEMU a Virtio. Do úsilí se zapojuje s ASUS Zenbook A16 poháněným Snapdragon X2 Elite Extreme, přičemž se zaměřuje na zavádění a zprovoznění firmwaru, problémy s ovladači (zejména GPU) a testování oprav na reálném hardwaru.</p>
+
+<p>Se zbytkem naší ARM práce je tu také užitečný překryv. Balíčky, vylepšení instalátoru a opravy vyvinuté pro jeden stroj mohou pomoci dalšímu. Jim i Matt mají zájem rozšířit tuto práci i na Raspberry Pi a další ARM platformy.</p>
+
+<p>Pracuji také na navázání přímého spojení s Qualcommem. Inženýr, který tam pracuje na kompatibilitě s Linuxem, už se ozval. Uvidíme, jestli se nám za tímto úsilím nepodaří získat pořádnou podporu.</p>
+
+<p>Je to rozpracovaná práce, kompatibilita se řeší stroj po stroji. Ale teď už za ni máme tým, který za ni přebírá zodpovědnost, testuje na reálném hardwaru a tlačí opravy do upstreamu. Vítejte, Jim, Birk, Matt, Bob a Miguel. Pojďme přinést krásný, zábavný &amp; agentní Linux na Snapdragon!</p>

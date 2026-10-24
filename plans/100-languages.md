@@ -1,5 +1,13 @@
 # Expand Omarchy to 100 languages with concurrent Muse agents
 
+> **Outcome (2026-09-13).** All 100 editions were produced on the `100-languages`
+> branch, then the target was cut to **50**: everything macOS and Windows ship as a
+> full system language (39 languages), the 8 existing smaller editions, and Persian and
+> Swahili by speakers, and Brazilian Portuguese as its own edition. The other translated editions stay
+> in that branch's history and in the owner workspaces; re-adding one is one
+> registry line plus `translate-owners.py publish`. The roster file still records
+> the full 100 and the domain probe.
+
 ## Handoff and user requirements
 
 This is an implementation brief for a coordinating agent on another computer.

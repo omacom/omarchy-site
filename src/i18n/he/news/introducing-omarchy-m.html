@@ -1,0 +1,40 @@
+<p>Apple מייצרת חומרה נהדרת. תמיד ייצרה (חוץ מהפעם ההיא עם מקלדת הפרפר). והרבה מהאנשים שמגיעים ל־Omarchy מגיעים מ־Mac. רבים מהם היו שמחים לשמור על המכונה ולהיפטר ממערכת ההפעלה. אז אנחנו הולכים לסיים את מה ש־Asahi התחילה: Omarchy רצה נהדר על Apple Silicon, עם מינימום טרחה בהתקנה.</p>
+
+<p>מאחורי העבודה הזאת כבר עומד צוות. היום אנחנו הופכים את זה לרשמי: <a href="/teams/#m">Omarchy M</a>, הצוות שלנו ל־Mac עם Apple Silicon (בתוספת כמה חברים ששומרים על ה־Mac הישנים בתמונה).</p>
+
+<p>הרשו לי להציג את החברים.</p>
+
+<p><strong>המתקין.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> בונה את <a href="https://github.com/maralcbr/omarchy-mx-mac">מתקין ה־Mac המקורי</a>. אתם מורידים אפליקציה על macOS, היא מביאה את גרסת ה־Omarchy החתומה, חוצבת את המחיצות, ומעלה אתכם לתוך Omarchy לצד ה־macOS הקיימת שלכם. בלי סטיק USB, בלי לחשים במסוף. הוא גם חתך את הבנייה שהדליקה מוניטורים חיצוניים דרך USB-C.</p>
+
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> תחזק את <a href="https://github.com/omacom/omarchy-mac">Omarchy Mac</a> במשך שנה, והעלה את Omarchy למכונות M1 ו־M2 הרבה לפני שמשהו מזה היה רשמי, ובנה סביב זה קהילת Discord של יותר מ־800 אנשים. <a href="https://x.com/bi9kahuna">Scott Jones</a> הוא החצי השני של הפרויקט הזה בצד הלינוקס של ההתקנה. לאחרונה הוא גרם לתצוגה של M3 Air לרוץ על בקר התצוגה החומרתי של Apple, מה שהעביר את המכונה הזאת מלא־שמישה לשמישה בלילה אחד.</p>
+
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> בנה את <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: שולחן ה־Omarchy האמיתי רץ כאפליקציה מקורית, מואצת חומרה, על ה־Mac שלכם, עם המצלמה, האודיו, הלוח ותייקיה משותפת מחוברים פנימה. בלי לחלק למחיצות. פשוט הורידו אותו ותראו על מה כל המהומה.</p>
+
+<p><strong>חבילות.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> דואג שכל מה ש־Omarchy צריכה יתקיים כ־<a href="https://github.com/riverscn/omarchy-pkgs-aarch64">חבילת aarch64</a>, יחד עם דימויי דיסק ARM64 גנריים למכונות וירטואליות וכלי האורח שהופכים אותן לנעימות לשימוש.</p>
+
+<p><strong>דרייברים והקרנל.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> מעלה את ה־Neo ובונה את היסודות שמהם שאר הצוות עובד. הוא מפתח אמולטור SPTM שמאפשר לעקוב אחרי macOS על שבבי M4 וחדשים יותר. העקבות האלה חיוניות כדי לגרום לתצוגות, GPU, אודיו, אלחוטי ו־Bluetooth לעבוד. <a href="https://x.com/buildwithdjdev">Dj</a> כותב את דרייברי ה־GPU, וגרם ל־Touch ID לעבוד בכך שדיבר ישירות עם ה־Secure Enclave. <a href="https://x.com/acelogic_">Miguel Cruz</a> מתמחה בעבודת M5: הוא עשה reverse-engineering לשבב ה־N1 הקנייני של Apple וגרם ל־Wi-Fi ול־Bluetooth שלו לעבוד בלינוקס. הוא גם תרם קידוד ופענוח וידאו חומרתי, Bluetooth ושיפורי שולחן עבודה על ה־Neo. <a href="https://x.com/LiamRay1O">Liam</a> מעלה את משטח המגע של ה־Neo, ניהול צריכת החשמל, הרמקולים ויציאת האוזניות, כשהעקבות ה־macOS של Ryan מספקות עבודת בסיס חיונית. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> מתחזק תמיכת M4 ומימושי clean-room, ועובד על אינטגרציה ואריזה. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> אפשר <a href="https://github.com/subedijaidip/dp-altmode-t8112">תצוגות חיצוניות דרך USB-C על ה־M2 MacBook Air</a>.</p>
+
+<p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> בונה את <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>, שמביא את מסגרת למידת המכונה MLX של Apple ללינוקס על GPU של Apple דרך Vulkan. הקוד שלכם עדיין אומר <code>import mlx.core as mx</code>, אבל עכשיו הוא רץ על Omarchy.</p>
+
+<p><strong>Mac ישנים יותר.</strong> ל־<a href="https://x.com/shawnyeager">Shawn Yeager</a> יש ערימת בקשות משיכה ל־MacBook Pro עם Touch Bar מ־2016 ו־2017: רמקולים, Wi-Fi, חיישן האור הסביבתי, ה־Touch Bar עצמו. <a href="https://x.com/novuon_ai">Randy</a> עושה reverse-engineering לשבב האבטחה T2 כדי להביא את Touch ID ל־Mac עם Intel, ומתעד כל תיקון ל־MacBook Pro מ־2019 לאורך הדרך. <a href="https://x.com/jondkinney">Jon Kinney</a> כרסם בתמיכת ARM ל־Omarchy לפני שנה, ועכשיו משאיר את כל הצוות מתואם לגבי מי עושה מה.</p>
+
+<p>יחד, הם קבוצה אימתנית. חמישה־עשר אנשים שלא חיכו לרשות, ושמשתמשים בסוכנים כדי לנוע בקצב שהיה נראה אבסורדי לפני שנה.</p>
+
+<p>היעד לגרסה הראשונה הוא תאימות מושלמת עם M1 ו־M2, כולל גרסאות ה־Pro וה־Max:</p>
+
+<ul>
+  <li>מתקין חלק, עם אפשרויות התקנה וניסיון כאחד</li>
+  <li>תמיכת GPU מלאה</li>
+  <li>מוניטורים חיצוניים דרך USB-C</li>
+  <li>Touch ID</li>
+  <li>MLX</li>
+  <li>הצפנת דיסק</li>
+</ul>
+
+<p>על מכונות חדשות יותר עובדים במקביל, אבל M1 ו־M2 הם המקום שבו אנחנו תוקעים את הדגל קודם. בנוסף למכונות ה־M, יש שם בחוץ מיליוני מחשבים ניידים וינטג׳יים, רבים מהם כבר פרשו מהשאיפות ה־macOS העדכניות של Apple, וכל אחד מהם הוא מחשב Omarchy נפלא שמחכה לקרות.</p>
+
+<p>אינכם חייבים לחכות לגרסה המלוטשת כדי להתחיל. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> יגרום לכם לראות את שולחן העבודה האמיתי על ה־Mac שלכם תוך דקות. ואם אתם מוכנים להתחייב, <a href="https://github.com/maralcbr/omarchy-mx-mac">המתקין</a> ישים את Omarchy ליד macOS על M1 או M2 כבר היום.</p>
+
+<p>ולבסוף, בקשה. אם עבדתם על לינוקס לחומרת Apple, בין אם זה דרייברי קרנל, קושחה, אריזה, מתקינים או למידת מכונה, נשמח לשמוע מכם. יש סיכוי טוב שפתרתם משהו שאנחנו עדיין רודפים אחריו, או להפך. צרו קשר ב־<a href="mailto:apple@omarchy.org">apple@omarchy.org</a>.</p>
+
+<p>בואו נסיים את מה ש־Asahi התחילה.</p>

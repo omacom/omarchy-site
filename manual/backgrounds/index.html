@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Backgrounds</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -67,11 +65,19 @@
       <h1>Backgrounds</h1>
 <p>Every theme ships with its own set of backgrounds, and you can add extras of your own in <code>~/.config/omarchy/backgrounds/[theme]</code>. If you want to add an extra background image to, say, the nord theme, you just put the file in <code>~/.config/omarchy/backgrounds/nord</code>.</p>
 
-<p>You can do this most easily by going to <em>Install &gt; Style &gt; Background</em> in the Omarchy Menu. That’ll bring up the folder where the backgrounds for that theme is stored. Hit <code>Super + Shift + F</code> to start another file manager, find your background, copy it over.  Now it’ll be included in the choices of backgrounds you can select between using <code>Super + Ctrl + Space</code>.</p>
+<p>You can do this most easily by going to <em>Install &gt; Style &gt; Background</em> in the Omarchy Menu. That’ll bring up the folder where the backgrounds for that theme is stored. Hit <code>Super + Shift + F</code> to start another file manager, find your background, copy it over.  Now it’ll be included in the choices of backgrounds you can select between using <code>Super + Ctrl + W</code>.</p>
+
+<p>Backgrounds can be videos as well as stills. Drop an <code>mp4</code>, <code>m4v</code>, <code>mov</code>, <code>webm</code>, <code>mkv</code>, or <code>avi</code> file in the same folder and it appears alongside the images. Videos are played by the OWE wallpaper engine. It decodes the video once for all monitors and plays its sound through the default audio output, and it stops playback whenever nothing can see it. The lock screen draws the same decode, muted, through OWE. A video wallpaper still costs far more power than a still one.</p>
+
+<p>Themes can include a short intro for a still background. For <code>backgrounds/road.webp</code>, the matching video lives at <code>backgrounds/intros/road.mp4</code>. It plays automatically at boot and when switching to a theme with that background selected, then returns to the still. Intro videos stay out of the background picker and never loop.</p>
+
+<p>Turning off <em>Appearance &gt; Animations</em> also turns off background intros. Omarchy does this by default in a virtual machine. The <code>omarchy theme bg intro toggle</code> command can toggle intros separately. Refreshing a theme or choosing another background within the same theme does not play an intro.</p>
 
 <p>You can find a huge collection of cool curated backgrounds on https://github.com/dharmx/walls.</p>
+
+<p>Video backgrounds keep a cached still on the lock screen while playback is paused or unavailable. Animated GIFs play on the desktop and show a still frame on the lock screen.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

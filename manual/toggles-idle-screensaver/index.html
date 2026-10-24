@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Toggles, Idle &amp; the Screensaver</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -69,7 +67,7 @@
 
 <h3 id="the-toggle-menu">The toggle menu <a class="manual__heading-link" href="#the-toggle-menu" aria-label="Link to this section">#</a></h3>
 
-<p><code>Super + Ctrl + O</code> opens <em>Trigger &gt; Toggle</em> directly, or you can walk there from the Omarchy menu (<code>Super + Space</code>). Everything in that list is a switch you can flip without thinking about where the state lives.</p>
+<p><code>Super + Ctrl + O</code> opens <em>Trigger &gt; Toggle</em> directly, or you can walk there from the Omarchy menu (<code>Super + Space</code>). Everything in that list is a switch you can flip without thinking about where the state lives. Switches for how the desktop looks sit next to it, under <em>Appearance</em>.</p>
 
 <p>From the terminal, the same switches are <code>omarchy toggle &lt;thing&gt;</code>. Run <code>omarchy toggle</code> on its own to see the whole group.</p>
 
@@ -84,7 +82,7 @@
   <tbody>
     <tr>
       <td>Night light</td>
-      <td><code>Super + Ctrl + N</code></td>
+      <td>—</td>
       <td><code>omarchy toggle nightlight</code></td>
     </tr>
     <tr>
@@ -106,6 +104,11 @@
       <td>Screensaver</td>
       <td>—</td>
       <td><code>omarchy toggle screensaver</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://herdr.dev">Herdr</a> theme sync</td>
+      <td>—</td>
+      <td><code>omarchy toggle theme sync</code></td>
     </tr>
     <tr>
       <td>Menu bar</td>
@@ -137,7 +140,7 @@
 
 <p>The touchpad, touchscreen, and hybrid GPU switches live under <em>Trigger &gt; Hardware</em> (<code>Super + Ctrl + H</code>) rather than under Toggle, since they only show up when you actually have that hardware. The touchpad and touchscreen ones survive a Hyprland reload — the disabled device’s name is saved to a small state file that Hyprland reads on startup to disable it again.</p>
 
-<p>The Toggle menu also carries a few things that aren’t <code>omarchy toggle</code> commands but behave the same: battery percentage in the bar, workspace layout (<code>Super + L</code>), window gaps (<code>Super + Shift + Backspace</code>), and the 1-window square aspect (<code>Super + Ctrl + Backspace</code>).</p>
+<p><em>Appearance</em> holds the menu bar and animations, plus a few things that aren’t <code>omarchy toggle</code> commands but behave the same: battery percentage in the bar, the default workspace layout, and under <em>Windows</em>, window gaps (<code>Super + Shift + Backspace</code>) and the 1-window square aspect (<code>Super + Ctrl + Backspace</code>).</p>
 
 <p>Most of these are just a flag file under <code>~/.local/state/omarchy/toggles/</code>. If you want to branch on one in a script, <code>omarchy-toggle-enabled</code> gives you an exit code instead of making you go looking:</p>
 
@@ -150,11 +153,11 @@
 
 <p>When a mode is on, you get a small glyph in the middle of the top bar next to the clock. That’s the indicators widget, and it carries dictation, screen recording, pending reminders, night light, do not disturb, and stay awake.</p>
 
-<p>Inactive indicators are hidden. Hover the area around them and they fade in dimmed, so you can click one to turn it on without knowing its hotkey. Clicking an active one turns it back off. If you’d rather see all of them all the time, set <code>alwaysShow</code> to <code>true</code> on the <code>omarchy.indicators</code> entry in <code>~/.config/omarchy/shell.json</code> — see <a href="../the-top-bar/">the top bar</a> for how bar widgets are configured.</p>
+<p>Inactive indicators are hidden. Hover anywhere on the bar and they fade in dimmed, so you can click one to turn it on without knowing its hotkey. Clicking an active one turns it back off. If you’d rather see all of them all the time, set <code>alwaysShow</code> to <code>true</code> on the <code>omarchy.indicators</code> entry in <code>~/.config/omarchy/shell.json</code> — see <a href="../the-top-bar/">the top bar</a> for how bar widgets are configured.</p>
 
 <h3 id="night-light">Night light <a class="manual__heading-link" href="#night-light" aria-label="Link to this section">#</a></h3>
 
-<p><code>Super + Ctrl + N</code> warms the screen to 4000K, and hitting it again puts it back to 6500K. It’s driven by hyprsunset, which the toggle starts for you if it isn’t already running.</p>
+<p>Night light warms the screen to 4000K, and toggling it again puts it back to 6500K. Flip it from the toggle menu (<code>Super + Ctrl + O</code>) or with <code>omarchy toggle nightlight</code>. It’s driven by hyprsunset, which the toggle starts for you if it isn’t already running.</p>
 
 <p>By default hyprsunset does nothing to your screen at all. <code>~/.config/hypr/hyprsunset.conf</code> ships with an identity profile precisely so the display stays untouched until you ask for warmth. If you’d rather have it switch by the clock, replace that with a time profile:</p>
 
@@ -170,7 +173,7 @@
 
 <p><code>Super + Ctrl + ,</code> silences notifications. No toasts pop up while it’s on, and the crossed-out bell indicator sits in the bar to remind you why the desktop has gone quiet.</p>
 
-<p>Nothing is lost, though. A silenced notification is written straight into your notification history, which is exactly the record you want when you come back and wonder what you missed. Open it with <code>Super + Shift + Alt + ,</code>. See <a href="../notices/">notices</a> for the rest of the notification story.</p>
+<p>Nothing is lost, though. Silenced notifications are held back: put the last few back on screen with <code>Super + Shift + Alt + ,</code>. See <a href="../notices/">notices</a> for the rest.</p>
 
 <p>Two kinds of message still get through: Omarchy’s own confirmation toasts for something you just did (“Theme changed”, “Screenshot saved”), and critical alerts sent from the command line. Chat apps that mark everything critical to force their way in front of you don’t qualify.</p>
 
@@ -203,15 +206,15 @@
 
 <p><code>omarchy toggle screensaver</code> is what turns the idle one off, if you’d rather go straight from working to locked. It needs a terminal it knows how to configure — Alacritty, Foot, Ghostty, or Kitty — and will tell you so if your default terminal is something else.</p>
 
-<p>The logo it draws is yours to change, under <em>Style &gt; Screensaver</em>. Upload a png or svg and Omarchy converts it to ASCII. See <a href="../branding/">branding</a>.</p>
+<p>The logo it draws is yours to change, under <em>Appearance &gt; Branding &gt; Screensaver</em>. Upload a png or svg and Omarchy converts it to ASCII. See <a href="../branding/">branding</a>.</p>
 
 <h3 id="the-lock-screen">The lock screen <a class="manual__heading-link" href="#the-lock-screen" aria-label="Link to this section">#</a></h3>
 
 <p><code>Super + Ctrl + L</code> locks the machine. That runs the lock screen from the Omarchy shell, blanks the display, resets your keyboard layout to the first one so you’re not typing your password in the wrong alphabet, and — if you have it running — locks 1Password on the way out.</p>
 
 <p>The lock screen takes a password, and it’ll take a fingerprint too once you’ve set one up. That, and the other ways to authenticate, are covered in <a href="../hardware-authentication/">hardware authentication</a>.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>
