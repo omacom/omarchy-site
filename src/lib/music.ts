@@ -272,6 +272,8 @@ function liveBand(b: number) {
   return { raw, level: (raw - floor[b]) / Math.max(0.15, peak[b] - floor[b]) }
 }
 
+let userVolume = 0.5
+
 export const music = {
   get state() {
     return state
@@ -283,6 +285,13 @@ export const music = {
   get touched() {
     return touched
   },
+  get volume() {
+    return userVolume
+  },
+  set volume(level: number) {
+    userVolume = Math.max(0, Math.min(1, level))
+    if (live() && this.sounding) setVolume(userVolume)
+  },
 
   /**
    * Turn the sound on. The first time, that loads the track and starts it
@@ -292,7 +301,7 @@ export const music = {
   async unmute() {
     touched = true
     if (live()) {
-      setVolume(1)
+      setVolume(userVolume)
       state = 'playing'
       announce()
       return
@@ -303,7 +312,7 @@ export const music = {
       state = 'loading'
       announce()
       if (context!.state !== 'running') await context!.resume()
-      setVolume(1)
+      setVolume(userVolume)
       audio!.currentTime = clockPosition(performance.now())
       await audio!.play()
     } catch {
@@ -438,23 +447,24 @@ export const music = {
    * frame sampler above.
    */
   meter(out: Float32Array) {
-    const per = BANDS / out.length
     if (!live() || !this.sounding) {
-      timelineBands(this.time, meterBands)
-      for (let m = 0; m < out.length; m++) {
-        let level = 0
-        for (let b = Math.floor(m * per); b < Math.floor((m + 1) * per); b++)
-          level = Math.max(level, meterBands[b])
-        out[m] = level
-      }
+      out.fill(0)
       return
     }
+    const per = BANDS / out.length
     analyser!.getFloatFrequencyData(freq)
     for (let m = 0; m < out.length; m++) {
-      let level = 0
-      for (let b = Math.floor(m * per); b < Math.floor((m + 1) * per); b++)
-        level = Math.max(level, liveBand(b).level)
-      out[m] = Math.max(0, Math.min(1, level)) * LIVE_GAIN
+      let sum = 0
+      const from = Math.floor(m * per)
+      const to = Math.floor((m + 1) * per)
+      for (let b = from; b < to; b++) {
+        const { raw } = liveBand(b)
+        peak[b] = Math.max(peak[b] * 0.9993, raw, 0.2)
+        floor[b] = Math.min(raw, floor[b] + (peak[b] - floor[b]) * 0.003)
+        const span = Math.max(0.15, peak[b] - floor[b])
+        sum += Math.max(0, Math.min(1, (raw - floor[b]) / span))
+      }
+      out[m] = (sum / (to - from)) * LIVE_GAIN
     }
   },
 }
