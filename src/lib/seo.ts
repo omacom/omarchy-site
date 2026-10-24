@@ -1,5 +1,5 @@
 import { siteUrl, contentLocale, t } from '../i18n/site.ts'
-import { SITE_THEMES } from './site-themes.ts'
+import { STOCK_THEMES } from './site-themes.ts'
 
 /**
  * The tags social sites read when a link is pasted: Open Graph for Slack,
@@ -23,14 +23,15 @@ export const SITE_URL = siteUrl
 export const SITE_DESCRIPTION =
   'The malleable OS for the age of agents. Vibe your way through every alteration, tweak, and desire.'
 
-/** Select by canonical path so translations share a theme and repeated builds stay stable. */
+/** Select by canonical path so translations share a theme and repeated builds stay stable.
+ *  Cards come in the stock themes, which every language has. */
 export function socialImage(path: string) {
   const pathname = canonicalPath(path.split(/[?#]/, 1)[0])
   let hash = 2166136261
   for (const char of pathname) {
     hash = Math.imul(hash ^ char.charCodeAt(0), 16777619) >>> 0
   }
-  const theme = SITE_THEMES[hash % SITE_THEMES.length]
+  const theme = STOCK_THEMES[hash % STOCK_THEMES.length]
   return {
     url: `${SITE_URL}/brand/social/${contentLocale === 'en' ? '' : `${contentLocale}/`}${theme.id}.png`,
     width: '1200',
