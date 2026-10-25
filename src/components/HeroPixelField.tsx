@@ -13,6 +13,8 @@ import {
   startEtch,
 } from '@/lib/etch'
 import { BANDS, loadMusic, music } from '@/lib/music'
+import { createPixelRenderer } from '@/lib/pixel-renderer'
+import { paintFieldBackdrops } from '@/lib/field-backdrop'
 import type { Etch } from '@/lib/etch'
 
 export type FieldGlyph = {
@@ -237,6 +239,8 @@ const SLOT_MAX = 896
 const CLEAR_REACH = 150
 const HUSH_REACH = 96
 const CLEAR_CURVE = 3
+const INKS = ['bg', 'dim', 'mid', 'lit', 'hover', 'crest'] as const
+const INK_INDEX = { bg: 0, dim: 1, mid: 2, lit: 3, hover: 4, crest: 5 }
 
 type Props = {
   /** Fired once the field has painted, so the SSR wordmark can step aside. */
@@ -268,18 +272,25 @@ export function HeroPixelField({
   // tear down and rebuild the canvas whenever the parent re-rendered.
   const press = useRef(onGlyphPress)
   press.current = onGlyphPress
+  const firstPaint = useRef(onPainted)
+  firstPaint.current = onPainted
 
   const isHero = variant === 'hero'
 
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const etchCanvasRef = useRef<HTMLCanvasElement>(null)
   const paintedRef = useRef(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
+    const etchCanvas = etchCanvasRef.current
     const host = canvas?.parentElement
-    if (!canvas || !host) return
-    const ctx = canvas.getContext('2d', { alpha: false })
-    if (!ctx) return
+    if (!canvas || !etchCanvas || !host) return
+    const fieldCtx = canvas.getContext('2d', { alpha: false })
+    const ctx = etchCanvas.getContext('2d')
+    if (!fieldCtx || !ctx) return
+    const renderer = createPixelRenderer(fieldCtx)
+    const started = performance.now()
 
     const reducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
@@ -291,6 +302,9 @@ export function HeroPixelField({
     const jitter = buildJitter(0x0a1f14)
 
     let palette = readPalette()
+    const updatePalette = () =>
+      renderer.setPalette(INKS.map((ink) => palette[ink]))
+    updatePalette()
 
     /** A CSS colour as [r, g, b], or null if it is not a plain hex/rgb. */
     const parse = (css: string): [number, number, number] | null => {
@@ -335,11 +349,14 @@ export function HeroPixelField({
     /** The resting ink of each row of the word, in this theme. A word of
      *  another height (the 404's) takes the bands in proportion. */
     let restInks: string[] = []
+    let restColors: number[] = []
     const buildRestInks = () => {
       restInks = []
+      restColors = []
       for (let row = 0; row < glyph.height; row++) {
         const band = Math.floor((row / glyph.height) * LASER_BANDS.length)
         restInks.push(palette[LASER_BANDS[band]])
+        restColors.push(INK_INDEX[LASER_BANDS[band]])
       }
     }
     buildRestInks()
@@ -395,10 +412,12 @@ export function HeroPixelField({
           }
           etch = next
           awaitingFirstEtch = false
+          wake()
         })
         .catch((error: unknown) => {
           console.warn('etch: not played', error)
           awaitingFirstEtch = false
+          wake()
         })
     }
     if (awaitingFirstEtch) beginEtch()
@@ -414,10 +433,11 @@ export function HeroPixelField({
 
     const onTheme = () => {
       palette = readPalette()
+      updatePalette()
       buildRamp()
       buildRestInks()
-      if (reducedMotion) draw(lastDraw)
-      else if (isHero) {
+      wake()
+      if (!reducedMotion && isHero) {
         if (pickerOpen) etchPending = true
         else beginEtch()
       }
@@ -434,6 +454,7 @@ export function HeroPixelField({
         targetStrength = 0
         if (sectionEl) sectionEl.style.cursor = ''
       }
+      wake()
     }
     window.addEventListener(PICKER_STATE_EVENT, onPickerState)
 
@@ -457,6 +478,9 @@ export function HeroPixelField({
     let cMin = 0
     let rMin = 0
     let ramp = new Float32Array(0)
+    let spectrumLevels = new Float64Array(0)
+    let thresholds = new Float64Array(0)
+    let wasEtching = false
     let publishedGrid = ''
 
     // The quiet block's own box is much taller and wider than the words in
@@ -540,17 +564,10 @@ export function HeroPixelField({
       dpr = Math.min(window.devicePixelRatio || 1, 2)
       const nextWidth = Math.round(box.width * dpr)
       const nextHeight = Math.round(box.height * dpr)
-      // Assigning canvas.width wipes the buffer, so only do it when the size
-      // has actually changed. A drag-resize fires this observer continuously
-      // and every needless reset shows up as a flash of empty background.
-      if (nextWidth !== width || nextHeight !== height) {
-        width = nextWidth
-        height = nextHeight
-        canvas.width = width
-        canvas.height = height
-      }
-      canvas.style.width = `${box.width}px`
-      canvas.style.height = `${box.height}px`
+      width = nextWidth
+      height = nextHeight
+      etchCanvas.style.width = `${box.width}px`
+      etchCanvas.style.height = `${box.height}px`
 
       // Scope slot measurements to this hero so the footer cannot use its geometry.
       const slot = isHero
@@ -591,6 +608,33 @@ export function HeroPixelField({
       rMin = -Math.ceil(wmY / wmCH) - 1
       cols = Math.ceil((width - wmX) / wmCW) - cMin + 1
       rows = Math.ceil((height - wmY) / wmCH) - rMin + 1
+      // Every field/wordmark cell is a flat square. One source pixel per
+      // cell is enough; CSS nearest-neighbor scaling lands it on the same
+      // fractional lattice without a viewport-sized Retina texture.
+      if (canvas.width !== cols) canvas.width = cols
+      if (canvas.height !== rows) canvas.height = rows
+      canvas.style.left = '0px'
+      canvas.style.top = '0px'
+      canvas.style.width = `${cols}px`
+      canvas.style.height = `${rows}px`
+      // A transform avoids layout's 1/64px rounding of a scaled box. The
+      // nearest-neighbor cell edges then match the original device-pixel
+      // rounding, including the wordmark's server-rendered SVG.
+      canvas.style.transform = `matrix(${wmCW / dpr},0,0,${wmCH / dpr},${(wmX + cMin * wmCW) / dpr},${(wmY + rMin * wmCH) / dpr})`
+      renderer.setGrid({
+        width: cols,
+        height: rows,
+        cols,
+        rows,
+        x: 0,
+        y: 0,
+        cellWidth: 1,
+        cellHeight: 1,
+        firstCol: 0,
+        firstRow: 0,
+      })
+      spectrumLevels = new Float64Array(cols)
+      thresholds = new Float64Array(cols * rows)
 
       const quietBoxes = isHero
         ? []
@@ -631,6 +675,11 @@ export function HeroPixelField({
           const eased = Math.min(1, Math.max(0, (rr - 0.42) / 0.85))
           const shape = isHero ? eased * eased : 1
           ramp[r * cols + c] = shape * clear * clearOf(x, y)
+          const row = rMin + r
+          const col = cMin + c
+          thresholds[r * cols + c] =
+            0.78 * ((BAYER[(row & 7) * 8 + (col & 7)] + 0.5) / 64) +
+            0.22 * jitter[(row & 63) * 64 + (col & 63)]
         }
       }
       return true
@@ -685,9 +734,6 @@ export function HeroPixelField({
       // response is eased.
       strength += (targetStrength - strength) * 0.3
 
-      ctx.fillStyle = palette.bg
-      ctx.fillRect(0, 0, width, height)
-
       let beatNow = 0
       let listening = false
       if (spectrumOn) {
@@ -700,6 +746,26 @@ export function HeroPixelField({
         beatNow = heard.beat
         beatPulse = Math.max(beatPulse * BEAT_DECAY, beatNow)
         if (beatPulse < 0.005) beatPulse = 0
+      }
+
+      // A spectrum column has the same level in every row. Resolve it once
+      // per frame instead of repeating its interpolation for every cell.
+      for (let c = 0; c < cols; c++) {
+        if (!listening) {
+          spectrumLevels[c] = 0
+          continue
+        }
+        const across = (c + 0.5) / cols
+        const side = Math.abs(across - 0.5) * 2
+        const bandPos = (1 - side) * BANDS - 0.5
+        const b0 = Math.max(0, Math.min(BANDS - 1, Math.floor(bandPos)))
+        const b1 = Math.min(BANDS - 1, b0 + 1)
+        const mixB = Math.max(0, Math.min(1, bandPos - b0))
+        const raw = bandsNow[b0] * (1 - mixB) + bandsNow[b1] * mixB
+        spectrumLevels[c] = Math.max(
+          0,
+          (raw - SPECTRUM_FLOOR) / (1 - SPECTRUM_FLOOR),
+        )
       }
 
       const reachOf = (level: number) =>
@@ -762,6 +828,21 @@ export function HeroPixelField({
         etch = null
       }
       const etching = etch !== null || awaitingFirstEtch
+      // Etch particles can cover fractions of cells and extend beyond the
+      // word. Clear those transient frames, including the final transition
+      // back to the retained field; ordinary animation only paints changes.
+      renderer.begin(etching || wasEtching)
+      // Keep the Retina buffer only while fine-detail effects use it. The
+      // always-moving field needs just its small one-pixel-per-cell buffer.
+      const etchWidth = etch ? width : 1
+      const etchHeight = etch ? height : 1
+      if (etchCanvas.width !== etchWidth) etchCanvas.width = etchWidth
+      if (etchCanvas.height !== etchHeight) etchCanvas.height = etchHeight
+      if (etch) ctx.clearRect(0, 0, width, height)
+      const etchVisibility = etch ? 'visible' : 'hidden'
+      if (etchCanvas.style.visibility !== etchVisibility)
+        etchCanvas.style.visibility = etchVisibility
+      wasEtching = etching
 
       /** The strongest live stamp covering a device-px point, if any. */
       const stampAt = (cx: number, cy: number) => {
@@ -778,8 +859,6 @@ export function HeroPixelField({
       for (let r = 0; r < rows; r++) {
         const row = rMin + r
         const yTop = wmY + row * wmCH
-        const y = Math.round(yTop)
-        const cellH = Math.round(yTop + wmCH) - y
         const cy = yTop + wmCH / 2
         for (let c = 0; c < cols; c++) {
           const col = cMin + c
@@ -836,17 +915,7 @@ export function HeroPixelField({
 
           let specAmount = 0
           if (listening && shade > 0.002) {
-            const across = (c + 0.5) / cols
-            const side = Math.abs(across - 0.5) * 2
-            const bandPos = (1 - side) * BANDS - 0.5
-            const b0 = Math.max(0, Math.min(BANDS - 1, Math.floor(bandPos)))
-            const b1 = Math.min(BANDS - 1, b0 + 1)
-            const mixB = Math.max(0, Math.min(1, bandPos - b0))
-            const raw = bandsNow[b0] * (1 - mixB) + bandsNow[b1] * mixB
-            const level = Math.max(
-              0,
-              (raw - SPECTRUM_FLOOR) / (1 - SPECTRUM_FLOOR),
-            )
+            const level = spectrumLevels[c]
             const fromBottom = rows - 1 - r
             const tall = level * rows * SPECTRUM_REACH
             if (level > 0 && fromBottom < tall) {
@@ -859,20 +928,18 @@ export function HeroPixelField({
           // read as a regular lattice at this density, so a fixed per-cell
           // offset scatters the resting field while the ordered structure
           // still shows up where the cursor pushes luminance high.
-          const threshold =
-            0.78 * ((BAYER[(row & 7) * 8 + (col & 7)] + 0.5) / 64) +
-            0.22 * jitter[(row & 63) * 64 + (col & 63)]
-          if (lum <= threshold) continue
+          const index = r * cols + c
+          if (lum <= thresholds[index]) {
+            renderer.cell(index, 0)
+            continue
+          }
 
           const heat = Math.max(
             glowAmount,
             waveAmount,
             specAmount * SPECTRUM_HEAT,
           )
-          ctx.fillStyle =
-            heat > 0.34 ? palette.lit : heat > 0.1 ? palette.mid : palette.dim
-          const x = Math.round(xLeft)
-          ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, cellH)
+          renderer.cell(index, heat > 0.34 ? 3 : heat > 0.1 ? 2 : 1)
         }
       }
 
@@ -894,7 +961,7 @@ export function HeroPixelField({
        * metal the laser has cut, so the word answers the pointer while it
        * is still being made.
        */
-      const wordmarkInk = (cx: number, cy: number) => {
+      const wordmarkColor = (cx: number, cy: number) => {
         let crest = stamps.length > 0 ? stampAt(cx, cy) : 0
 
         for (const glow of glowsOnWordmark) {
@@ -909,11 +976,21 @@ export function HeroPixelField({
         }
 
         return crest > 0.45
-          ? palette.crest
+          ? 5
           : crest > 0.12
-            ? palette.hover
-            : restInkAt(cy)
+            ? 4
+            : restColors[
+                Math.max(
+                  0,
+                  Math.min(
+                    restColors.length - 1,
+                    Math.floor((cy - wmY) / wmCH),
+                  ),
+                )
+              ]
       }
+      const wordmarkInk = (cx: number, cy: number) =>
+        palette[INKS[wordmarkColor(cx, cy)]]
 
       // Cell edges snap to whole device px with rounding against the shared
       // fractional grid, so adjacent cells always meet exactly: no seams
@@ -922,38 +999,23 @@ export function HeroPixelField({
       for (let row = 0; isHero && !etching && row < glyph.height; row++) {
         const bits = glyph.rows[row]
         const yTop = wmY + row * wmCH
-        const y = Math.round(yTop)
-        const rowHeight = Math.round(yTop + wmCH) - y
-
-        if (stamps.length === 0 && !cursorOnWordmark) {
-          ctx.fillStyle = restInks[row]
-          let run = 0
-          for (let col = 0; col <= glyph.width; col++) {
-            if (bits[col] === '1') {
-              run++
-              continue
-            }
-            if (run > 0) {
-              const x = Math.round(wmX + (col - run) * wmCW)
-              ctx.fillRect(x, y, Math.round(wmX + col * wmCW) - x, rowHeight)
-              run = 0
-            }
-          }
-          continue
-        }
 
         for (let col = 0; col < glyph.width; col++) {
           if (bits[col] !== '1') continue
           const xLeft = wmX + col * wmCW
-          const x = Math.round(xLeft)
 
           const cx = xLeft + wmCW / 2
           const cy = yTop + wmCH / 2
 
-          ctx.fillStyle = wordmarkInk(cx, cy)
-          ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, rowHeight)
+          renderer.cell(
+            (row - rMin) * cols + col - cMin,
+            stamps.length === 0 && !cursorOnWordmark
+              ? restColors[row]
+              : wordmarkColor(cx, cy),
+          )
         }
       }
+      renderer.flush()
 
       // The effect's frame on the lattice. A block is a whole cell in the
       // word's own ink, answering the pointer like the resting word. A line
@@ -1034,19 +1096,40 @@ export function HeroPixelField({
         }
       }
 
+      paintFieldBackdrops({
+        canvas,
+        host,
+        quiet: quietElements,
+        background: palette.bg,
+        ready: !etching && (reducedMotion || time - started >= 900),
+        hasDamage: renderer.hasDamage,
+      })
+
       if (!paintedRef.current) {
         paintedRef.current = true
-        onPainted?.()
+        firstPaint.current?.()
       }
     }
 
     let frame = 0
     let lastDraw = 0
-    const loop = (time: number) => {
+    let drawing = false
+    const requestDraw = () => {
+      if (disposed || !drawing || !visible || document.hidden || frame !== 0)
+        return
       frame = requestAnimationFrame(loop)
-      if (time - lastDraw < 25) return
-      lastDraw = time
-      draw(time)
+    }
+    const wake = () => {
+      requestDraw()
+    }
+    const loop = (time: number) => {
+      frame = 0
+      if (disposed || !visible || document.hidden) return
+      if (reducedMotion || time - lastDraw >= 25) {
+        lastDraw = time
+        draw(time)
+      }
+      if (!reducedMotion) requestDraw()
     }
 
     /** Distance to the nearest text or control, used to attenuate the pointer glow. */
@@ -1092,6 +1175,7 @@ export function HeroPixelField({
     const onPointerMove = (event: PointerEvent) => {
       if (!visible) return
       const { inside, strength: level, x, y } = locate(event)
+      const wasInside = targetStrength > 0
       // While a press is held or the picker is up, the glow stays muted no
       // matter where the cursor wanders; only a move after both are done
       // wakes it back up.
@@ -1100,16 +1184,20 @@ export function HeroPixelField({
       const pressable = Boolean(press.current) || (isHero && !reducedMotion)
       const onLogo = pressable && !pickerOpen && inside && onLogoAt(x, y)
       if (sectionEl) sectionEl.style.cursor = onLogo ? 'pointer' : ''
-      if (!inside) return
+      if (!inside) {
+        if (wasInside) wake()
+        return
+      }
       pointer.x = x
       pointer.y = y
-      if (reducedMotion) draw(0)
+      wake()
     }
 
     const onPointerDown = (event: PointerEvent) => {
       if (!visible) return
       const { inside, x, y } = locate(event)
       if (!inside) return
+      wake()
       pointer.x = x
       pointer.y = y
       if (onLogoAt(x, y)) {
@@ -1140,6 +1228,7 @@ export function HeroPixelField({
       const now = performance.now()
       launch(holding.x, holding.y, chargeOf(now, holding.start), now)
       holding = null
+      wake()
     }
 
     // Losing the pointer, or the right-click theme picker opening over a
@@ -1150,12 +1239,10 @@ export function HeroPixelField({
     }
 
     // Keep observing zero-size hosts so drawing can start when they become visible.
-    let drawing = false
     const startDrawing = () => {
       if (drawing) return
       drawing = true
-      if (reducedMotion) draw(0)
-      else frame = requestAnimationFrame(loop)
+      wake()
     }
     if (measure()) startDrawing()
 
@@ -1163,17 +1250,30 @@ export function HeroPixelField({
     const visibility = new IntersectionObserver(
       ([entry]) => {
         visible = entry.isIntersecting
-        if (reducedMotion) return
-        if (visible && frame === 0) {
-          frame = requestAnimationFrame(loop)
-        } else if (!visible && frame !== 0) {
+        if (visible) {
+          wake()
+        } else {
           cancelAnimationFrame(frame)
           frame = 0
+          targetStrength = 0
+          onPointerCancel()
         }
       },
       { rootMargin: '64px' },
     )
     visibility.observe(host)
+
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(frame)
+        frame = 0
+        targetStrength = 0
+        onPointerCancel()
+      } else {
+        wake()
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
 
     if (finePointer) {
       window.addEventListener('pointermove', onPointerMove, { passive: true })
@@ -1193,7 +1293,7 @@ export function HeroPixelField({
       startDrawing()
       // Repaint in the same tick as the resize. Waiting for the throttled
       // frame would leave a just-cleared buffer on screen mid-drag.
-      draw(reducedMotion ? 0 : lastDraw)
+      if (visible && !document.hidden) draw(reducedMotion ? 0 : lastDraw)
     })
     observer.observe(host)
     const slot = isHero ? document.querySelector('[data-hero-wordmark]') : null
@@ -1201,11 +1301,20 @@ export function HeroPixelField({
 
     return () => {
       disposed = true
+      paintFieldBackdrops({
+        canvas,
+        host,
+        quiet: quietElements,
+        background: palette.bg,
+        ready: false,
+        hasDamage: renderer.hasDamage,
+      })
       etch?.free()
       etch = null
       cancelAnimationFrame(frame)
       observer.disconnect()
       visibility.disconnect()
+      document.removeEventListener('visibilitychange', onVisibility)
       window.removeEventListener(THEME_EVENT, onTheme)
       window.removeEventListener(ETCH_EVENT, onEtch)
       window.removeEventListener(PICKER_STATE_EVENT, onPickerState)
@@ -1216,13 +1325,20 @@ export function HeroPixelField({
       window.removeEventListener('contextmenu', onPointerCancel)
       if (isHero) window.dispatchEvent(new CustomEvent(GRID_CLEAR_EVENT))
     }
-  }, [onPainted, isHero])
+  }, [glyph, isHero])
 
   return (
-    <canvas
-      ref={canvasRef}
-      aria-hidden="true"
-      className="hero-canvas-in absolute inset-0 h-full w-full select-none"
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        aria-hidden="true"
+        className="hero-canvas-in absolute origin-top-left select-none [image-rendering:pixelated]"
+      />
+      <canvas
+        ref={etchCanvasRef}
+        aria-hidden="true"
+        className="hero-canvas-in invisible absolute inset-0 h-full w-full select-none"
+      />
+    </>
   )
 }
