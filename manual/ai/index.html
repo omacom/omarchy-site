@@ -90,6 +90,14 @@
       <td><a href="https://github.com/google-antigravity/antigravity-cli">Google Antigravity CLI</a></td>
     </tr>
     <tr>
+      <td><code>amp</code></td>
+      <td><a href="https://ampcode.com/">Amp</a></td>
+    </tr>
+    <tr>
+      <td><code>commandcode</code></td>
+      <td><a href="https://commandcode.ai">Command Code</a></td>
+    </tr>
+    <tr>
       <td><code>copilot</code></td>
       <td><a href="https://github.com/github/copilot-cli">GitHub Copilot CLI</a></td>
     </tr>
@@ -98,16 +106,48 @@
       <td><a href="https://github.com/charmbracelet/crush">Crush</a></td>
     </tr>
     <tr>
+      <td><code>cursor-agent</code></td>
+      <td><a href="https://cursor.com/cli">Cursor CLI</a></td>
+    </tr>
+    <tr>
+      <td><code>devin</code></td>
+      <td><a href="https://devin.ai/cli">Devin CLI</a> from Cognition</td>
+    </tr>
+    <tr>
+      <td><code>dsh</code></td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">DeepSeek Harness</a></td>
+    </tr>
+    <tr>
+      <td><code>freebuff</code></td>
+      <td><a href="https://freebuff.com">Freebuff</a>, Codebuff’s free, ad-supported coding agent</td>
+    </tr>
+    <tr>
       <td><code>grok</code></td>
       <td><a href="https://x.ai/build">Grok Build</a> from xAI</td>
+    </tr>
+    <tr>
+      <td><code>hermes</code></td>
+      <td><a href="https://hermes-agent.nousresearch.com/">Hermes</a>, Nous Research’s agent</td>
+    </tr>
+    <tr>
+      <td><code>kilo</code></td>
+      <td><a href="https://kilo.ai/docs/code-with-ai/platforms/cli">Kilo</a>, an OpenCode-based coding agent</td>
     </tr>
     <tr>
       <td><code>kimi</code></td>
       <td><a href="https://www.kimi.com/code/docs/en/">Kimi Code</a></td>
     </tr>
     <tr>
-      <td><code>pi</code></td>
-      <td><a href="https://github.com/badlogic/pi-mono">Mario Zechner’s Pi</a></td>
+      <td><code>kiro-cli</code></td>
+      <td><a href="https://kiro.dev/docs/cli/">Kiro CLI</a></td>
+    </tr>
+    <tr>
+      <td><code>mcode</code></td>
+      <td><a href="https://github.com/MiniMax-AI/minimax-code">MiniMax Code</a>, MiniMax’s coding agent</td>
+    </tr>
+    <tr>
+      <td><code>muse</code></td>
+      <td><a href="https://dev.meta.ai">Muse Code</a>, Meta’s coding agent</td>
     </tr>
     <tr>
       <td><code>omp</code></td>
@@ -118,16 +158,12 @@
       <td><a href="https://openrouter.ai/docs/guides/ori/harness">Ori</a>, OpenRouter’s harness</td>
     </tr>
     <tr>
-      <td><code>hermes</code></td>
-      <td><a href="https://hermes-agent.nousresearch.com/">Hermes</a>, Nous Research’s agent</td>
+      <td><code>pi</code></td>
+      <td><a href="https://github.com/badlogic/pi-mono">Mario Zechner’s Pi</a></td>
     </tr>
     <tr>
-      <td><code>muse</code></td>
-      <td><a href="https://dev.meta.ai">Muse Code</a>, Meta’s coding agent</td>
-    </tr>
-    <tr>
-      <td><code>cursor-agent</code></td>
-      <td><a href="https://cursor.com/cli">Cursor CLI</a></td>
+      <td><code>qwen</code></td>
+      <td><a href="https://github.com/QwenLM/qwen-code">Qwen Code</a>, Alibaba’s coding agent</td>
     </tr>
   </tbody>
 </table>
@@ -144,19 +180,21 @@
 
 <p><code>grok</code> is installed through mise’s first-party <code>grok</code> package, the same way as <code>claude</code> and <code>codex</code>. Run <code>grok</code>, or pick it under <em>Setup &gt; Defaults &gt; Agent</em>. Skip the <code>curl | bash</code> installer on x.ai. That path puts a second copy in <code>~/.grok/bin</code>, prepends it on <code>PATH</code>, and overwrites Omarchy’s wrapper.</p>
 
+<p><code>dsh</code> opens its browser UI on <code>127.0.0.1:3080</code>, with the launch directory as its default workspace. Its browser UI takes no starting prompt, so <code>omarchy agent prompt</code> opens it with the prompt on your clipboard to paste. Omarchy starts it with DeepSeek’s no-approval permission preset. DeepSeek Harness uploads session logs to DeepSeek when you use its official model API; turn that off under <em>Settings &gt; General &gt; Upload Session Log</em> in its browser UI. Feedback you send it is uploaded with the session too, unless you start it with <code>DSH_TELEMETRY_MODE=DISABLED</code>.</p>
+
 <h3 id="the-default-agent">The default agent <a class="manual__heading-link" href="#the-default-agent" aria-label="Link to this section">#</a></h3>
 
 <p>Pick your default agent with <code>omarchy default agent &lt;name&gt;</code> or under <em>Setup &gt; Defaults &gt; Agent</em> in the Omarchy Menu (<code>Super + Space</code>). If the agent isn’t installed yet, picking it installs it first. A fresh Omarchy will invite you to make this choice with a one-time notification.</p>
 
 <p>Choosing Claude also attempts to set up its browser extension for Chromium, Chrome, Brave, Brave Origin, and Edge. The extension setup applies to all users and may ask for your system password; cancelling or a failed extension install still selects and launches Claude. Restart your browser, enable the extension if prompted, and sign in to Claude to finish connecting it. Run <code>/chrome</code> in Claude to check the connection. Firefox and Zen do not support this extension. If Claude was already your default before this setup was added, select it again to install the extension.</p>
 
-<p>Once you’ve chosen, <code>Super + Shift + Ctrl + A</code> launches the default agent in a dedicated terminal window (or brings up the picker if you haven’t chosen yet). You can also launch it straight into a task with <code>omarchy agent prompt "Review this project"</code>. Agents launched this way run unattended in their respective don’t-stop-to-ask modes, so be ready for them to actually do things! And since agents refuse to remember trust for your home directory, launches from <code>$HOME</code> start in <code>~/Work</code> instead.</p>
+<p>Once you’ve chosen, <code>Super + Shift + Ctrl + A</code> launches the default agent in a dedicated terminal window (or brings up the picker if you haven’t chosen yet). You can also launch it straight into a task with <code>omarchy agent prompt "Review this project"</code>. Freebuff and DeepSeek Harness take no starting prompt, so they open with the prompt on your clipboard to paste instead. Agents launched this way run unattended in their respective don’t-stop-to-ask modes, so be ready for them to actually do things! MiniMax Code has no such mode for its interactive sessions, so it asks for permissions as usual. And since agents refuse to remember trust for your home directory, launches from <code>$HOME</code> start in <code>~/Work</code> instead.</p>
 
 <p>There are terminal shortcuts too: <code>a</code> runs the default agent inline in the current terminal, while <code>c</code>, <code>cx</code>, and <code>cy</code> start OpenCode, Claude Code, and Codex directly (again in their auto-approving modes). Theme changes sync to the agents as well: Claude Code, Pi, OpenCode, and Hermes (once Omarchy has installed it) all follow along when you switch the Omarchy theme.</p>
 
 <h3 id="the-agents-panel">The agents panel <a class="manual__heading-link" href="#the-agents-panel" aria-label="Link to this section">#</a></h3>
 
-<p>The top bar has an agents icon. Before you’ve set up an agent, its panel walks you through signing in to Claude, Codex, or Grok, and the first one becomes your default agent. After that, the panel puts every subscription on one page: each agent and account with its plan, a meter for each of its 5-hour session and weekly limits with the time until it resets (hover for the exact percentage), or the remaining prepaid balance, under a line that rotates through what you’ve used across all of them, like tokens this week and your most used model. Under <em>Make something</em> it offers starter prompts for a new theme, plugin, or app that hand the task to your default agent. Apps are built the way Omarchy’s own Hype, Monologue, and Omacut are, in C++ and Qt Quick, following the omarchy-app agent skill, and the compiler and Qt pieces they need come installed. Claude Code, Codex, Grok, Fireworks, and Kimi are covered out of the box. Kimi currently reports account quota limits without local token or prompt statistics.</p>
+<p>The top bar has an agents icon. Before you’ve set up an agent, its panel walks you through signing in to Claude, Codex, or Grok, and the first one becomes your default agent. After that, the panel puts every subscription on one page: each agent and account with its plan, a meter for each of its 5-hour session and weekly limits with the time until it resets (hover for the exact percentage), or the remaining prepaid balance, under a line that rotates through what you’ve used across all of them, like tokens this week and your most used model. Under <em>Make something</em> it offers starter prompts for a new theme, plugin, or app that hand the task to your default agent. Apps are built the way Omarchy’s own Hype, Monologue, and Omacut are, in C++ and Qt Quick, following the omarchy-app agent skill, and the compiler and Qt pieces they need come installed. Claude Code, Codex, Grok, Kimi, Cursor and its Grok Bot allowance, GitHub Copilot, Muse, Antigravity, Kimchi, and Devin are covered out of the box with their limits, and Hermes, Mistral Vibe, and Qwen Code show their sessions and tokens once you’ve used them. Provider plans and keys you use through pi, omp, or opencode show up as well: OpenCode Zen and Go, the Z.ai GLM Coding Plan, Ollama Cloud, the MiniMax Token Plan, and Synthetic with their limits; Fireworks, OpenRouter, and DeepSeek with their prepaid balances; and the models you run on your own hardware under Local models. Every agent is counted once, under whoever bills it, however many harnesses you drive it through.</p>
 
 <p>Left-click the bar icon for the panel, right-click to launch your default agent. The usage records behind it are regenerated every 15 minutes by <code>omarchy agent usage-update</code>, and the panel can even merge usage from your other machines via a synced folder. See the README under <code>$OMARCHY_PATH/shell/plugins/agents/</code> for the full settings.</p>
 
