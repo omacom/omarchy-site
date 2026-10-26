@@ -62,7 +62,7 @@ export function HardwareShowcase() {
               className="mt-auto inline-flex min-h-10 items-center gap-2 self-start pt-4 text-sm font-medium text-text underline-offset-4 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&:hover_span]:decoration-current"
             >
               <span className="underline decoration-current">{link}</span>
-              <ArrowRightIcon className="size-5 shrink-0" aria-hidden="true" />
+              <ArrowRightIcon className="size-5 shrink-0 rtl:-scale-x-100" aria-hidden="true" />
             </a>
           </div>
         ))}

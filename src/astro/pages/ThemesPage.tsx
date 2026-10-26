@@ -24,7 +24,7 @@ export function ThemesPage() {
             </span>
           </p>
           <a
-            href="https://github.com/omacom/omarchy-site/compare"
+            href="https://github.com/omacom/omarchy-site#adding-your-theme"
             className="mt-3 inline-flex min-h-10 items-center gap-1.5 text-xs text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-brand hover:decoration-brand sm:text-sm"
           >
             {t('Share your theme')}

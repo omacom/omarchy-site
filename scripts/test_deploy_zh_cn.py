@@ -47,6 +47,22 @@ class CheckTest(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'Missing required build file'):
                     deploy.check(root)
 
+    def test_an_iso_from_abroad_is_refused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = build(directory)
+            (root / 'index.html').write_text('<a href="https://iso.omarchy.org/omarchy-4.0.6.iso">')
+            with self.assertRaisesRegex(ValueError, 'PUBLIC_ISO_ORIGIN'):
+                deploy.check(root)
+
+    def test_text_naming_the_iso_host_is_accepted(self):
+        # A news excerpt reaches the page inside the island's escaped props.
+        with tempfile.TemporaryDirectory() as directory:
+            root = build(directory)
+            (root / 'index.html').write_text(
+                '<a href="https://iso.omarchy.cn/omarchy-4.0.6.iso">'
+                '<astro-island props="{&quot;excerpt&quot;:[0,&quot;https://iso.omarchy.org/&quot;]}">')
+            deploy.check(root)  # must not raise
+
     def test_symlinks_are_refused(self):
         # rclone skips them, so a linked page would go missing without an error.
         with tempfile.TemporaryDirectory() as directory:
