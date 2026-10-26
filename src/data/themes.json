@@ -670,6 +670,11 @@
   "name": "Spring"
  },
  {
+  "repo": "https://github.com/vwillcox/omarchy-stargate-sg1-theme",
+  "image": "/assets/themes/stargate-sg1.webp",
+  "name": "Stargate SG-1"
+ },
+ {
   "repo": "https://github.com/juangalt/omarchy-starry-night-theme",
   "image": "/assets/themes/starry-night.webp",
   "name": "Starry Night"
