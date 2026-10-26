@@ -1459,6 +1459,21 @@
       "cover": null
     },
     {
+      "id": "evt-jY7E9tlKPKPRwPK",
+      "title": "Omarchy Udaipur",
+      "url": "https://luma.com/2gf27i1e",
+      "start": "2026-11-14T09:30:00.000Z",
+      "end": "2026-11-14T12:30:00.000Z",
+      "timezone": null,
+      "address": "Ramada Encore by Wyndham Udaipur Roopnagar, Plot 3 Shobhagpura Bypass Road, 100 Feet Rd, near Occasion Garden, C Block, Bhuwana, Roopnagar, Rajasthan 313001, India",
+      "city": null,
+      "country": "India",
+      "online": null,
+      "geo": { "lat": 24.612932699999998, "lon": 73.7202995 },
+      "hosts": ["Team arroWebs"],
+      "cover": null
+    },
+    {
       "id": "calev-hpyAeRNiBjQJqEM",
       "title": "Omarchy Meetup Hangzhou",
       "url": "https://luma.com/omarchy",
