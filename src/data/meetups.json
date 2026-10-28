@@ -1519,6 +1519,21 @@
       "cover": null
     },
     {
+      "id": "evt-32MTML1HrsryRXv",
+      "title": "Omarchy Silesia Meetup",
+      "url": "https://luma.com/6ualcf7l",
+      "start": "2026-11-24T17:00:00.000Z",
+      "end": "2026-11-24T21:00:00.000Z",
+      "timezone": null,
+      "address": "plac Targowy 12, 43-200 Pszczyna, Poland",
+      "city": null,
+      "country": "Poland",
+      "online": null,
+      "geo": { "lat": 49.977164599999995, "lon": 18.945283 },
+      "hosts": ["Wojciech Wnętrzak"],
+      "cover": null
+    },
+    {
       "id": "evt-MwxCpSJVFMDYrGX",
       "title": "Omarchy Moscow Meetup",
       "url": "https://luma.com/q6hzbcen",
