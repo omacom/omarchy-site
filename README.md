@@ -41,7 +41,7 @@ After editing content inputs, run `npm run port` to refresh the dev data.
   images. The Astro site builds its table of contents and search index. The
   Refresh the manual workflow does this daily from omarchy's default branch.
 
-Social cards use the site's theme palettes and existing translations: 32 languages
+Social cards use the site's theme palettes and existing translations: 51 languages
 in all 22 themes. `npm run build:social` regenerates every 1200×630 PNG under
 `public/brand/social/`; normal builds regenerate only the active language.
 Each page selects a stable theme from its canonical path, and its locale selects

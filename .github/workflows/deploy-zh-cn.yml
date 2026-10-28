@@ -60,10 +60,15 @@ jobs:
           ruby-version: '3.4'
       - run: gem install kramdown kramdown-parser-gfm --no-document
       - run: bin/build-news
+      # Visitors to omarchy.cn are in mainland China, so the download button
+      # links the ISO served from there; zh.omarchy.org keeps iso.omarchy.org.
       - run: npm run build:locale -- zh-CN
+        env:
+          PUBLIC_ISO_ORIGIN: https://iso.omarchy.cn
       - run: python3 scripts/verify-locales.py zh-CN
-      # Required files, matching CNAME, no symlinks -- refuses a build that is
-      # not deployable, without contacting the bucket or needing credentials.
+      # Required files, matching CNAME, no symlinks, no ISO from abroad --
+      # refuses a build that is not deployable, without contacting the bucket
+      # or needing credentials.
       - run: npm run deploy:zh-cn -- --check
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: github.event_name != 'pull_request'
