@@ -46,9 +46,7 @@
   "Verify the file:": "A fájl ellenőrzése:",
   "signature": "aláírás",
   "Try it first": "Először próbáld ki",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "A teljes Omarchy egy virtuális gépben, hogy előbb megismerhesd.",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon alapú Macek, Windows 10 és 11.",
-  "On Linux, the ISO is the way in.": "Linuxon az ISO-val kezdj.",
   "The manual also covers": "A kézikönyv ezekre is kitér:",
   "dual booting beside Windows": "kettős rendszerindítás Windows mellett",
   "and": "és",
@@ -408,5 +406,8 @@
   "Sound unavailable": "A hang nem érhető el",
   "The sound could not start": "A hangot nem sikerült elindítani",
   "Turn the sound off": "Hang kikapcsolása",
-  "Turn the sound on": "Hang bekapcsolása"
+  "Turn the sound on": "Hang bekapcsolása",
+  "Try in Browser": "Kipróbálás böngészőben",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "A teljes Omarchy egy virtuális gépben a Maceden vagy PC-den, vagy egy böngészőlapra streamelve, hogy először belekóstolhass.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "Bármi, amin van böngészőlap: nincs mit letölteni, bezáráskor eltűnik."
 }

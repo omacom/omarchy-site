@@ -46,9 +46,7 @@
   "Verify the file:": "تحقّق من الملف:",
   "signature": "التوقيع",
   "Try it first": "جرّبه أولاً",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "Omarchy بالكامل يعمل في جهاز افتراضي لتأخذ فكرة عنه أولاً.",
   "Apple Silicon Macs, Windows 10 and 11.": "أجهزة Mac بمعالجات Apple Silicon، وWindows 10 و11.",
-  "On Linux, the ISO is the way in.": "على لينكس، تبدأ بملف ISO.",
   "The manual also covers": "يغطي الدليل أيضاً",
   "dual booting beside Windows": "الإقلاع المزدوج بجانب Windows",
   "and": "و",
@@ -408,5 +406,8 @@
   "Sound unavailable": "الصوت غير متاح",
   "The sound could not start": "تعذّر تشغيل الصوت",
   "Turn the sound off": "أطفئ الصوت",
-  "Turn the sound on": "شغّل الصوت"
+  "Turn the sound on": "شغّل الصوت",
+  "Try in Browser": "جرّبه في المتصفح",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Omarchy بالكامل في آلة افتراضية على جهاز Mac أو PC، أو مبثوثًا إلى تبويب في المتصفح، لتتذوقه أولًا.",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "أي جهاز به تبويب متصفح: لا شيء للتنزيل، ويختفي عند إغلاقه."
 }
