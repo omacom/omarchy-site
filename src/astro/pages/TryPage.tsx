@@ -42,7 +42,7 @@ const platforms = [
     download: MAC_RELEASES,
     label: t('Download for Mac'),
     source: MAC,
-    guide: `${MAC}#quick-start`,
+    guide: `${MAC}#get-started`,
     guideLabel: t('Mac quick start'),
     quickStart: [
       t('Download the Try Omarchy DMG and open it.'),
@@ -62,7 +62,7 @@ const platforms = [
     ),
     features: [
       t('GPU acceleration with a CPU fallback'),
-      t('Clipboard, file transfers, and shared folders'),
+      t('Clipboard, file transfers, and a shared folder'),
       t('Setup may enable virtualization and require a restart'),
     ],
     note: t(

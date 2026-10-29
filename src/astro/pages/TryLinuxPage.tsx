@@ -93,7 +93,7 @@ const requirements = [
     'A Wayland or X11 desktop. Tested on Ubuntu, Fedora, Linux Mint and NixOS, and with KDE Plasma and Xfce.',
   ),
   t(
-    'The app runs in the Flatpak sandbox with no access to your home folder. Files reach it through your desktop’s file chooser or a shared folder you pick.',
+    'The Flatpak has no direct access to your home folder. Files reach it through your desktop’s file chooser or a shared folder you pick. It can start programs outside its sandbox, which it uses only to list your apps and open the ones you allow in Settings.',
   ),
 ]
 
@@ -142,7 +142,7 @@ const questions: Array<[string, React.ReactNode]> = [
     t('What is not in the Linux app yet?'),
     <>
       {t(
-        'Touchpad gestures, USB passthrough, bridged networking and fingerprint sign-in. Omarchy inside it is the regular desktop, and files, backups, recovery, the camera and audio device switching all work. Reports from real hardware help.',
+        'Touchpad gestures, USB passthrough, bridged networking and fingerprint unlock for sudo. Omarchy inside it is the regular desktop, and files, backups, recovery, the camera and audio device switching all work. Reports from real hardware help.',
       )}{' '}
       <a className={inlineLink} href={TESTING}>
         {t('See the hardware testing checklist.')}
