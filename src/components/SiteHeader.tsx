@@ -289,7 +289,7 @@ function useNavSurface(
     // inside the bar, the bar paints the upper section's colour down to the
     // edge and the lower section's below it, both at the usual 90% over the
     // blur, and the split moves with the scroll.
-    const phone = window.matchMedia('(max-width: 639.98px)')
+    const phone = window.matchMedia('(max-width: 767.98px)')
     const wash = (colour: string) =>
       `color-mix(in srgb, ${colour} 90%, transparent)`
 
@@ -455,8 +455,8 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
       }}
       className="mark-draw-trigger relative flex items-center"
     >
-      <OmarchyMarkDrawn className="size-[22px] shrink-0 transition-opacity duration-150 ease-out max-sm:group-data-[nav-past-hero]/bar:opacity-0 lg:size-[calc(var(--pxc)*2)]" />
-      <OmarchyWordmark className="absolute top-1/2 left-0 w-28 -translate-y-1/2 text-brand opacity-0 transition-opacity duration-150 ease-out group-data-[nav-past-hero]/bar:opacity-100 sm:hidden" />
+      <OmarchyMarkDrawn className="size-[22px] shrink-0 transition-opacity duration-150 ease-out max-md:group-data-[nav-past-hero]/bar:opacity-0 lg:size-[calc(var(--pxc)*2)]" />
+      <OmarchyWordmark className="absolute top-1/2 left-0 w-28 -translate-y-1/2 text-brand opacity-0 transition-opacity duration-150 ease-out group-data-[nav-past-hero]/bar:opacity-100 md:hidden" />
     </Link>
   )
 
@@ -512,14 +512,14 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           <nav
             data-nav-links
             aria-label={t('Main')}
-            className="hidden items-center sm:flex"
+            className="hidden items-center md:flex"
           >
             {navLinks.map((link) =>
               'href' in link ? (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="px-3 py-1.5 text-sm whitespace-nowrap text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  className="px-2 py-1.5 text-sm whitespace-nowrap lg:px-3 text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                 >
                   {link.label}
                 </a>
@@ -527,7 +527,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className="px-3 py-1.5 text-sm whitespace-nowrap text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  className="px-2 py-1.5 text-sm whitespace-nowrap lg:px-3 text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   activeProps={{ className: 'text-text bg-surface-2' }}
                 >
                   {link.label}
@@ -537,7 +537,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           </nav>
 
           <div className="ml-auto flex items-center gap-2.5">
-            <div className="hidden items-center gap-1 sm:flex">
+            <div className="hidden items-center gap-1 md:flex">
               <TooltipProvider delay={300}>
                 <NavTooltip label={t('Change website theme')} shortcut="T">
                   {theme}
@@ -572,7 +572,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
               </TooltipProvider>
               <span className="ml-2 flex">{install}</span>
             </div>
-            <div className="flex items-center gap-1 sm:hidden">
+            <div className="flex items-center gap-1 md:hidden">
               {theme}
               <LanguageSwitcher path={pathname} />
             </div>
@@ -580,10 +580,10 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
               variant="ghost"
               size="icon"
               data-nav-toggle
-              className="relative size-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 sm:hidden"
+              className="relative size-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 md:hidden"
               aria-expanded={menuOpen}
               aria-controls="site-menu"
-              aria-label={menuOpen ? 'Close menu' : 'Menu'}
+              aria-label={menuOpen ? t('Close menu') : t('Menu')}
               onClick={() => setMenuOpen((open) => !open)}
             >
               <MenuBarsIcon open={menuOpen} className="size-[22px]" />
@@ -603,7 +603,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           data-menu-scrim
           aria-hidden="true"
           onClick={() => setMenuOpen(false)}
-          className="absolute inset-x-0 top-(--nav-h) h-svh bg-black/55 supports-backdrop-filter:backdrop-blur-xs sm:hidden"
+          className="absolute inset-x-0 top-(--nav-h) h-svh bg-black/55 supports-backdrop-filter:backdrop-blur-xs md:hidden"
         />
       ) : null}
 
@@ -613,7 +613,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
       <div
         id="site-menu"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-(--nav-h) border-b border-border-subtle bg-bg/95 backdrop-blur-lg sm:hidden"
+        className="absolute inset-x-0 top-(--nav-h) border-b border-border-subtle bg-bg/95 backdrop-blur-lg md:hidden"
       >
         <nav
           aria-label={t('Main pages')}
@@ -727,11 +727,11 @@ export function HeroNavGhost() {
           <span className="block size-[22px] shrink-0 lg:size-[calc(var(--pxc)*2)]" />
         </span>
 
-        <span className="hidden items-center sm:flex">
+        <span className="hidden items-center md:flex">
           {navLinks.map((link) => (
             <span
               key={link.label}
-              className="px-3 py-1.5 text-sm whitespace-nowrap"
+              className="px-2 py-1.5 text-sm whitespace-nowrap lg:px-3"
               style={{ color: 'var(--t-hdr-text-2)' }}
             >
               {link.label}
@@ -741,7 +741,7 @@ export function HeroNavGhost() {
 
         <span className="ml-auto flex items-center gap-2.5">
           <span
-            className="hidden items-center gap-1 sm:flex"
+            className="hidden items-center gap-1 md:flex"
             style={{ color: 'var(--t-hdr-text-2)' }}
           >
             <span className="flex h-8 w-8 items-center justify-center lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]">
@@ -772,7 +772,7 @@ export function HeroNavGhost() {
           </span>
 
           <span
-            className="flex size-8 items-center justify-center sm:hidden"
+            className="flex size-8 items-center justify-center md:hidden"
             style={{ color: 'var(--t-hdr-text-2)' }}
           >
             <MenuBarsIcon className="size-[22px]" />

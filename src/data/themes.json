@@ -45,6 +45,11 @@
   "name": "Atelier"
  },
  {
+  "repo": "https://github.com/SirJul1337/omarchy-autumn-theme",
+  "image": "/assets/themes/autumn.webp",
+  "name": "Autumn"
+ },
+ {
   "repo": "https://github.com/abhijeet-swami/omarchy-ayaka-theme",
   "image": "/assets/themes/ayaka.webp",
   "name": "Ayaka"
@@ -105,6 +110,11 @@
   "name": "Blue Ridge Dark"
  },
  {
+  "repo": "https://github.com/peterholko/omarchy-bubblegum-theme",
+  "image": "/assets/themes/bubblegum.webp",
+  "name": "Bubblegum"
+ },
+ {
   "repo": "https://github.com/shmall03/omarchy-castle-on-a-lake-theme",
   "image": "/assets/themes/castle-on-a-lake.webp",
   "name": "Castle on a Lake"
@@ -113,6 +123,11 @@
   "repo": "https://github.com/Luquatic/omarchy-catppuccin-dark",
   "image": "/assets/themes/catppuccin-mocha-dark.webp",
   "name": "Catppuccin Mocha Dark"
+ },
+ {
+  "repo": "https://github.com/tsak/omarchy-cga-theme",
+  "image": "/assets/themes/cga.webp",
+  "name": "CGA"
  },
  {
   "repo": "https://github.com/jkwuc89/omarchy-cincinnati-theme",
@@ -153,6 +168,11 @@
   "repo": "https://github.com/stannorbvb-cmd/cpunk",
   "image": "/assets/themes/cpunk.webp",
   "name": "CpUnk"
+ },
+ {
+  "repo": "https://github.com/PedroAugustoOK/omarchy-crimson-theme",
+  "image": "/assets/themes/crimson.webp",
+  "name": "Crimson"
  },
  {
   "repo": "https://github.com/knappkevin/omarchy-crimson-gold-theme",
@@ -285,6 +305,11 @@
   "name": "Green Garden"
  },
  {
+  "repo": "https://github.com/Sinnohman/omarchy-gruvbox-lady-theme",
+  "image": "/assets/themes/gruvbox-lady.webp",
+  "name": "Gruvbox Lady"
+ },
+ {
   "repo": "https://github.com/curbol/omarchy-gruvbox-material",
   "image": "/assets/themes/gruvbox-material.webp",
   "name": "Gruvbox Material"
@@ -328,6 +353,11 @@
   "repo": "https://github.com/devgtv/omarchy-japan-night-theme",
   "image": "/assets/themes/japan-night.webp",
   "name": "Japan Night"
+ },
+ {
+  "repo": "https://github.com/Anhelm01/omarchy-kupola-theme",
+  "image": "/assets/themes/kupola.webp",
+  "name": "Kupola"
  },
  {
   "repo": "https://github.com/thisisgm/omarchy-lamplight-theme",
@@ -400,6 +430,11 @@
   "name": "Naysayer"
  },
  {
+  "repo": "https://github.com/aidenlangley/omarchy-nedia-theme",
+  "image": "/assets/themes/nedia.webp",
+  "name": "Nedia"
+ },
+ {
   "repo": "https://github.com/monoooki/omarchy-neo-sploosh-theme",
   "image": "/assets/themes/neo-sploosh.webp",
   "name": "Neo Sploosh"
@@ -413,6 +448,11 @@
   "repo": "https://github.com/RiO7MAKK3R/omarchy-neovoid-theme",
   "image": "/assets/themes/neovoid.webp",
   "name": "Neovoid"
+ },
+ {
+  "repo": "https://github.com/ishansing/omarchy-neptune-theme",
+  "image": "/assets/themes/neptune.webp",
+  "name": "Neptune"
  },
  {
   "repo": "https://github.com/davydotcom/omarchy-neptune-blue-theme",
@@ -458,6 +498,11 @@
   "repo": "https://github.com/sc0ttman/omarchy-one-dark-pro-theme",
   "image": "/assets/themes/one-dark-pro.webp",
   "name": "One Dark Pro"
+ },
+ {
+  "repo": "https://github.com/simoz/omarchy-outpost-theme",
+  "image": "/assets/themes/outpost.webp",
+  "name": "Outpost"
  },
  {
   "repo": "https://github.com/HANCORE-linux/omarchy-oxocarbon-theme",
@@ -585,6 +630,11 @@
   "name": "Shades of Jade"
  },
  {
+  "repo": "https://github.com/simpleprim8/omarchy-singularity-theme",
+  "image": "/assets/themes/singularity.webp",
+  "name": "Singularity"
+ },
+ {
   "repo": "https://github.com/TyRichards/omarchy-space-monkey-theme/",
   "image": "/assets/themes/space-monkey.webp",
   "name": "Space Monkey"
@@ -613,6 +663,11 @@
   "repo": "https://github.com/motorsss/omarchy-solarizedosaka-theme",
   "image": "/assets/themes/solarized-osaka.webp",
   "name": "Solarized Osaka"
+ },
+ {
+  "repo": "https://github.com/SirJul1337/omarchy-spring-theme",
+  "image": "/assets/themes/spring.webp",
+  "name": "Spring"
  },
  {
   "repo": "https://github.com/juangalt/omarchy-starry-night-theme",
@@ -658,6 +713,11 @@
   "repo": "https://github.com/Justin-De-Sio/omarchy-tokyoled-theme",
   "image": "/assets/themes/tokyo-night-oled.webp",
   "name": "Tokyo Night OLED"
+ },
+ {
+  "repo": "https://github.com/simoz/omarchy-turner-theme",
+  "image": "/assets/themes/turner.webp",
+  "name": "Turner"
  },
  {
   "repo": "https://github.com/leonardobetti/omarchy-tycho",

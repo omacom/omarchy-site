@@ -57,6 +57,27 @@ class ValidationTests(unittest.TestCase):
         worker.validate_value('more than twenty years', '20年以上')
         worker.validate_value('29 languages and ten themes', '29言語と10テーマ')
 
+    def test_scaled_amounts_may_use_cjk_units_but_keep_their_value(self):
+        worker.validate_value('with $1.5 million in tokens', '150万USD相当のトークン')
+        worker.validate_value('with $1.5 million in tokens', '150萬 USD 的代幣')
+        worker.validate_value('with $1.5 million in tokens', '150만 USD 상당의 토큰')
+        worker.validate_value('$23.7 million raised', '2,370万USD')
+        worker.validate_value('$1.5 million', '1,500,000 USD')
+        worker.validate_value('$1.5 million', '1.500.000 USD')
+        worker.validate_value('$1.5 million', '1 500 000 USD')
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value('$1.5 million', '1.600.000 USD')
+        worker.validate_value('$100,000 from each', '各10万USD')
+        worker.validate_value('$1,000,000 to the mission', '100만 USD')
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value('$100,000 from each', '各100万USD')
+        worker.validate_value('with $1.5 million in tokens', 'با ۱٬۵۰۰٬۰۰۰ USD توکن')
+        worker.validate_value('$1.5 million', '1\u00a0500\u00a0000 USD')
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value('with $1.5 million in tokens', '160万USD')
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value('1.5 seconds', '150万')
+
     def test_code_and_empty_paragraphs_rejected(self):
         with self.assertRaises(worker.TranslationError):
             worker.validate_value('<p>Hello</p><p><code>ls</code></p>', '<p>Hej</p><p><code>cd</code></p>')

@@ -3,12 +3,16 @@ import { test } from 'node:test'
 import { readFileSync } from 'node:fs'
 import locales from '../../src/i18n/locales.json' with { type: 'json' }
 import { SITE_THEMES } from '../../src/lib/site-themes.ts'
-import { socialCopies, socialCopy } from './social-copy.mjs'
+import { socialCopies, socialCopy, stripTitlePrefix } from './social-copy.mjs'
 import { validateSocialCharacters } from './social-labels.mjs'
 
-test('every language has complete, renderable social-card text', () => {
-  assert.deepEqual(Object.keys(socialCopies), Object.keys(locales))
-  for (const [code, copy] of Object.entries(socialCopies)) {
+// Drafts translate in their own time; only published editions must be whole.
+const published = Object.keys(locales).filter((code) => !locales[code].draft)
+
+test('every published language has complete, renderable social-card text', () => {
+  for (const code of published) assert.ok(socialCopies[code], code)
+  for (const code of published) {
+    const copy = socialCopies[code]
     assert.equal(copy.lines.length, 3)
     assert.ok(copy.lines.every((line) => line.trim()))
     assert.ok(!copy.lines[0].includes('Omarchy'))
@@ -23,8 +27,38 @@ test('every language has complete, renderable social-card text', () => {
   )
 })
 
-test('every language and theme has a 1200x630 PNG', () => {
-  for (const code of Object.keys(locales)) {
+test('the title prefix accepts translator separators and may be absent', () => {
+  const rest = 'Beautiful, fun & agentic Linux by DHH'
+  for (const separator of [
+    '-',
+    '–',
+    '—',
+    '―',
+    ':',
+    '：',
+    '՝',
+    '፦',
+    '፡',
+    '|',
+    '｜',
+  ])
+    assert.equal(
+      stripTitlePrefix(`Omarchy ${separator} ${rest}`),
+      rest,
+      separator,
+    )
+  assert.equal(stripTitlePrefix(`Omarchy：${rest}`), rest)
+  assert.equal(stripTitlePrefix(`Omarchy- ${rest}`), rest)
+  assert.equal(stripTitlePrefix(`„Omarchy“ – ${rest}`), rest)
+  assert.equal(stripTitlePrefix(`«Omarchy» : ${rest}`), rest)
+  assert.equal(stripTitlePrefix(`「Omarchy」— ${rest}`), rest)
+  assert.equal(stripTitlePrefix(rest), rest)
+  assert.equal(stripTitlePrefix(`${rest} - Omarchy`), `${rest} - Omarchy`)
+  assert.equal(stripTitlePrefix('Omarchy Linux'), 'Omarchy Linux')
+})
+
+test('every published language and theme has a 1200x630 PNG', () => {
+  for (const code of published) {
     for (const theme of SITE_THEMES) {
       const content = locales[code].contentLocale ?? code
       const path = `${content === 'en' ? '' : `${content}/`}${theme.id}.png`

@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Text Extraction &amp; Dictation</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -75,11 +73,19 @@
 
 <h3 id="dictation">Dictation <a class="manual__heading-link" href="#dictation" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy offers AI dictation via <a href="https://voxtype.io/">Voxtype</a>. You install it via <em>Install &gt; AI &gt; Dictation</em> through the Omarchy menu. By default, it’ll load a base English model that takes up 150MB. But you can tweak which model you’d like to use by running <code>voxtype setup model</code> in the terminal. And you can tweak all the settings via <code>~/.config/voxtype/config.toml</code>.</p>
+<p>On fresh installs, <a href="https://superwhisper.com/">Superwhisper</a> is the default dictation backend, using cloud processing without offline model downloads. Choose Superwhisper or <a href="https://voxtype.io/">Voxtype</a> through <em>Setup &gt; Defaults &gt; Dictation</em> in the Omarchy menu. Selecting a backend installs it if needed and makes it the default for dictation. Voxtype loads a base English model that takes up 150MB; change the model with <code>voxtype setup model</code> and other settings through <code>~/.config/voxtype/config.toml</code>. Superwhisper opens its settings to choose cloud or local processing, and OPR keeps the application updated.</p>
 
-<p>Once installed, you dictate by holding down <code>F9</code> or by toggling with <code>Super + Ctrl + X</code>, and the dictated text will appear in the focused input area.</p>
+<p>You dictate by holding down <code>Right Alt</code> or <code>F9</code>, or by toggling with <code>Super + Ctrl + X</code>, and the dictated text will appear in the focused input area. These shortcuts use the selected backend. Right Alt also starts dictation when used in a modifier chord; use Left Alt for those chords. On keyboard layouts where Right Alt is AltGr, use <code>F9</code> to keep AltGr available for typing.</p>
+
+<p>The same shortcuts work with either backend. Select your backend through Setup &gt; Defaults &gt; Dictation. The backend installer configures it and saves the selection. Run <code>omarchy default dictation</code> to see which one is selected. The selection is saved in <code>~/.config/omarchy/defaults/dictation</code>. Fresh installs select Superwhisper automatically.</p>
+
+<p>Omarchy loads the selected backend’s desktop integration automatically. No Superwhisper configuration is needed in <code>~/.config/hypr/</code>.</p>
+
+<p>Custom bindings and scripts can use <code>omarchy dictation start</code>, <code>omarchy dictation stop</code>, and <code>omarchy dictation toggle</code>. The selected backend handles the recording and transcription. Selecting Superwhisper disables its native hold shortcut and sets its native toggle to <code>Alt + Space</code>, keeping it separate from Omarchy’s recording keys. Superwhisper requires at least one native recording shortcut, and its cancellation shortcut stays available.</p>
+
+<p>Additional backends can integrate without changing Omarchy. Provide an executable named <code>omarchy-dictation-&lt;backend&gt;</code> on PATH that accepts <code>start</code>, <code>stop</code>, and <code>toggle</code> and returns promptly, with a nonzero status on failure. Its installer configures the provider and calls <code>omarchy-dictation-use &lt;backend&gt;</code> after successful setup. This stops the previous backend and saves the selection atomically; <code>stop</code> must succeed when the provider is idle or unavailable. Backend names use lowercase letters, digits, and hyphens. Provide <code>omarchy-install-dictation-&lt;backend&gt;</code> for setup; <code>omarchy default dictation &lt;backend&gt;</code> launches it. Add a Defaults menu entry through an Omarchy menu extension to call that selector. Optional desktop integration can live in <code>${XDG_CONFIG_HOME:-$HOME/.config}/&lt;backend&gt;/shortcuts.lua</code>.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

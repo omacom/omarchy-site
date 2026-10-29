@@ -1,0 +1,36 @@
+name: Set up Muse
+description: Install the pinned Muse launcher and give it the API key.
+inputs:
+  api-key:
+    description: The MUSE_API_KEY secret; composite actions cannot read secrets themselves.
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install Muse
+      shell: bash
+      run: |
+        mkdir -p "$RUNNER_TEMP/muse-bin"
+        curl --fail --silent --show-error --location https://api.meta.ai/muse-launcher.sh --output "$RUNNER_TEMP/muse-bin/muse"
+        echo "c6db294799a190ca380da274beb3b9c0e160e0da9681a3d364ce8b0e5fa3a4bc  $RUNNER_TEMP/muse-bin/muse" | sha256sum --check
+        chmod +x "$RUNNER_TEMP/muse-bin/muse"
+        MUSE_LAUNCHER_INSTALL=1 "$RUNNER_TEMP/muse-bin/muse"
+        echo "MUSE_NO_AUTO_UPDATE=1" >> "$GITHUB_ENV"
+        echo "$RUNNER_TEMP/muse-bin" >> "$GITHUB_PATH"
+    - name: Configure Muse
+      shell: bash
+      env:
+        MUSE_API_KEY: ${{ inputs.api-key }}
+      run: |
+        python3 - <<'PY'
+        import json, os
+        from pathlib import Path
+        key = os.environ.get('MUSE_API_KEY')
+        if not key:
+            raise SystemExit('Add the MUSE_API_KEY Actions secret to enable automatic translations.')
+        config = Path.home() / '.config/muse'
+        config.mkdir(parents=True, exist_ok=True)
+        auth = config / 'auth.json'
+        auth.write_text(json.dumps({'schema_version': 1, 'providers': {'meta': {'api_key': key}}}))
+        auth.chmod(0o600)
+        PY

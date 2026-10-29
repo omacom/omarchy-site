@@ -63,6 +63,12 @@
     "meta": "USA",
     "href": "https://x.com/ThePrimeagen",
     "avatar": "/assets/images/team/theprimeagen.webp"
+   },
+   {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
    }
   ],
   "note": null
@@ -73,16 +79,16 @@
   "description": "Keeping your system safe",
   "members": [
    {
-    "name": "Adrian Rangel",
-    "meta": "Mexico",
-    "href": "https://x.com/acrogenesis",
-    "avatar": "/assets/images/team/adrian-rangel.webp"
-   },
-   {
     "name": "Mehmet \u0130nce",
     "meta": "UK",
     "href": "https://x.com/mdisec",
     "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
+    "name": "Adrian Rangel",
+    "meta": "Mexico",
+    "href": "https://x.com/acrogenesis",
+    "avatar": "/assets/images/team/adrian-rangel.webp"
    },
    {
     "name": "Erik Melton",

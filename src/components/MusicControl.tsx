@@ -94,10 +94,10 @@ export function MusicMenuControl({
           }
         >
           {state === 'failed'
-            ? 'Sound unavailable'
+            ? t('Sound unavailable')
             : on
-              ? 'Sound on'
-              : 'Sound off'}
+              ? t('Sound on')
+              : t('Sound off')}
         </span>
         <span
           aria-hidden={!on}
@@ -206,8 +206,8 @@ export function MusicControl({ path = '/' }: { path?: string }) {
         type="button"
         onClick={() => music.toggle()}
         aria-pressed={on}
-        aria-label={on ? 'Turn the sound off' : 'Turn the sound on'}
-        title={on ? 'Sound off' : 'Sound on'}
+        aria-label={on ? t('Turn the sound off') : t('Turn the sound on')}
+        title={on ? t('Sound off') : t('Sound on')}
         className="relative size-11 shrink-0 self-center border-r border-border-subtle bg-cover bg-center text-white touch-manipulation focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
         style={{ backgroundImage: `url(${TRACK.art})` }}
       >
@@ -234,7 +234,7 @@ export function MusicControl({ path = '/' }: { path?: string }) {
       </button>
       <span className="flex flex-col justify-center pr-4 pl-3 leading-tight">
         <span className="font-sans text-[12px] font-medium text-text">
-          {state === 'failed' ? 'The sound could not start' : title}
+          {state === 'failed' ? t('The sound could not start') : title}
         </span>
         <span className="relative mt-0.5 font-mono text-[12px] text-text-secondary">
           <span className="transition-opacity duration-150 ease-out group-has-[input:hover]/card:opacity-0 group-has-[input:focus-visible]/card:opacity-0 group-has-[input:active]/card:opacity-0">

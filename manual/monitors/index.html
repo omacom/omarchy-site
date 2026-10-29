@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Monitors</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -100,7 +98,50 @@ local omarchy_monitor_scale = 1
 
 <h3 id="arranging-multiple-screens">Arranging multiple screens <a class="manual__heading-link" href="#arranging-multiple-screens" aria-label="Link to this section">#</a></h3>
 
-<p>Hyprland works great with multiple screens. Read more about how to lay them out in <a href="https://wiki.hypr.land/Configuring/Basics/Monitors/">the Hyprland monitor documentation</a>. You can <a href="https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/">bind specific workspaces to specific monitors</a> as well. In Omarchy, these rules go in <code>~/.config/hypr/monitors.lua</code> as <code>hl.monitor</code> entries — the file ships with commented examples for pinning a specific monitor to a resolution, position, and rotation.</p>
+<p>Hyprland works great with multiple screens. Read more about how to lay them out in <a href="https://wiki.hypr.land/Configuring/Basics/Monitors/">the Hyprland monitor documentation</a>. In Omarchy, these go in <code>~/.config/hypr/monitors.lua</code> as <code>hl.monitor</code> entries — the file ships with commented examples for pinning a specific monitor to a resolution, position, and rotation.</p>
+
+<p>Every monitor has workspaces 1 through 10 of its own, so <code>Super + 1</code> always means the first workspace of the monitor you’re on. Behind the scenes, Hyprland still numbers workspaces across all monitors: your laptop screen (or first monitor) gets 1–10, the next monitor 11–20, and so on, and each monitor keeps its block every time you plug it in. Use those numbers if you write <a href="https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/">workspace rules</a> or window rules for a specific monitor, so workspace 12 is the second workspace of your second monitor. <code>~/.local/state/omarchy/monitor-workspaces</code> lists which block each monitor has.</p>
+
+<p>The arrow keys work across monitors that share an edge in your layout. Screens that only touch at a corner, or that have a gap between them, aren’t neighbors, so use <code>Ctrl + Alt + Tab</code> to get between them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hotkey</th>
+      <th>Across monitors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Arrow</code></td>
+      <td>Moves focus to the monitor on that side once there’s no window left in that direction</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Arrow</code></td>
+      <td>Swaps with a window on the monitor on that side</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Arrow</code></td>
+      <td>Moves the window into a group on the monitor on that side</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Ctrl + Arrow</code></td>
+      <td>Moves the window to the monitor on that side, onto the workspace it’s showing</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + Arrow</code></td>
+      <td>Moves the workspace to the monitor on that side, keeping its number if it’s free</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Tab</code> / <code>Ctrl + Alt + Shift + Tab</code></td>
+      <td>Moves focus to the next or previous monitor, whatever the layout</td>
+    </tr>
+    <tr>
+      <td><code>Super + 1-0</code>, <code>Super + Tab</code>, <code>Super + Scroll Wheel</code></td>
+      <td>Stay on the monitor you’re on</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>You can also checkout <a href="https://github.com/erans/hyprmon/">Hyprmon</a>, if you’d like a TUI to help you with the positioning of multiple screens.</p>
 
@@ -115,8 +156,8 @@ local omarchy_monitor_scale = 1
 <p>Note that if you’re using an Apple 6K XDR display, you may see a phantom screen in your <code>hyprctl monitors</code> listing. You can turn this off with something like <code>hl.monitor({ output = "DP-2", disabled = true })</code> via <em>Setup &gt; Monitors</em>.</p>
 
 <p>On Intel machines, you should be connecting to Apple displays using a regular Thunderbolt cable. On other machines without Thunderbolt, you’ll typically have to use a <a href="https://www.amazon.com/dp/B0BNX7MS6N">DP + USB-A -&gt; USB-C cable</a> to make it work.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>

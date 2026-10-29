@@ -4,3 +4,298 @@ html[dir='rtl'] :is(code, pre, kbd) {
   unicode-bidi: isolate;
   text-align: left;
 }
+
+/* ------------------------------------------------------------ font stacks */
+
+/* The brand faces carry Latin, Greek (mono only) and Cyrillic, each subset
+   claimed by its unicode-range. Every other script falls through them to the
+   next family in the stack, which is the generic one unless an edition names
+   something better: below the generic monospace, an Arabic or Thai page
+   renders in whatever the system's last-resort font is. So each script's
+   editions put the faces that carry it behind the brand face. JetBrains Mono
+   stays first everywhere, so Latin fragments - Omarchy, commands, keys -
+   keep the brand face inside foreign prose.
+
+   Tailwind inlines the theme's families into its utilities, so `font-mono`
+   would ignore the variable; the utilities are pointed back at it here. The
+   values agree in every edition that does not override the variable. */
+.font-mono {
+  font-family: var(--font-mono);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Arabic script: Arabic, Persian, Pashto, Urdu, Sindhi, Uyghur, Sorani Kurdish
+   and Kurdish written right to left. */
+html:is(
+  :lang(ar),
+  :lang(fa),
+  :lang(ps),
+  :lang(ur),
+  :lang(sd),
+  :lang(ug),
+  :lang(ckb)
+),
+html[lang^='ku'][dir='rtl'] {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Arabic', 'Segoe UI', 'Geeza Pro', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Arabic', 'Segoe UI', 'Geeza Pro',
+    system-ui;
+}
+
+html:is(:lang(he), :lang(yi)) {
+  --font-sans: 'Geist Variable', 'Noto Sans Hebrew', 'Arial Hebrew', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Hebrew', 'Arial Hebrew', system-ui;
+}
+
+/* Ethiopic: Amharic and Tigrinya. */
+html:is(:lang(am), :lang(ti)) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Ethiopic', 'Abyssinica SIL', 'Kefa', 'Nyala',
+    system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Ethiopic', 'Abyssinica SIL', 'Kefa',
+    'Nyala', system-ui;
+}
+
+/* Indic scripts, one stack per script: Noto first, then Windows' Nirmala UI,
+   which covers them all, then macOS's face for the script. */
+html:is(
+  :lang(hi),
+  :lang(mr),
+  :lang(ne),
+  :lang(sa),
+  :lang(mai),
+  :lang(bho),
+  :lang(kok)
+) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Devanagari', 'Nirmala UI',
+    'Kohinoor Devanagari', 'Devanagari Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Devanagari', 'Nirmala UI',
+    'Kohinoor Devanagari', 'Devanagari Sangam MN', system-ui;
+}
+html:is(:lang(bn), :lang(as)) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Bengali', 'Nirmala UI', 'Kohinoor Bangla',
+    'Bangla Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Bengali', 'Nirmala UI',
+    'Kohinoor Bangla', 'Bangla Sangam MN', system-ui;
+}
+html:lang(pa) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Gurmukhi', 'Nirmala UI', 'Kohinoor Gurmukhi',
+    'Gurmukhi MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Gurmukhi', 'Nirmala UI',
+    'Kohinoor Gurmukhi', 'Gurmukhi MN', system-ui;
+}
+html:lang(gu) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Gujarati', 'Nirmala UI', 'Kohinoor Gujarati',
+    'Gujarati Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Gujarati', 'Nirmala UI',
+    'Kohinoor Gujarati', 'Gujarati Sangam MN', system-ui;
+}
+html:lang(or) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Oriya', 'Nirmala UI', 'Oriya Sangam MN',
+    system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Oriya', 'Nirmala UI',
+    'Oriya Sangam MN', system-ui;
+}
+html:lang(ta) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Tamil', 'Nirmala UI', 'Kohinoor Tamil',
+    'Tamil Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Tamil', 'Nirmala UI',
+    'Kohinoor Tamil', 'Tamil Sangam MN', system-ui;
+}
+html:lang(te) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Telugu', 'Nirmala UI', 'Kohinoor Telugu',
+    'Telugu Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Telugu', 'Nirmala UI',
+    'Kohinoor Telugu', 'Telugu Sangam MN', system-ui;
+}
+html:lang(kn) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Kannada', 'Nirmala UI', 'Kohinoor Kannada',
+    'Kannada Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Kannada', 'Nirmala UI',
+    'Kohinoor Kannada', 'Kannada Sangam MN', system-ui;
+}
+html:lang(ml) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Malayalam', 'Nirmala UI', 'Kohinoor Malayalam',
+    'Malayalam Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Malayalam', 'Nirmala UI',
+    'Kohinoor Malayalam', 'Malayalam Sangam MN', system-ui;
+}
+html:lang(si) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Sinhala', 'Nirmala UI', 'Sinhala Sangam MN',
+    system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Sinhala', 'Nirmala UI',
+    'Sinhala Sangam MN', system-ui;
+}
+
+/* Southeast Asia. */
+html:lang(th) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Thai', 'Leelawadee UI', 'Thonburi', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Thai', 'Leelawadee UI', 'Thonburi',
+    system-ui;
+}
+html:lang(my) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Myanmar', 'Myanmar Text', 'Myanmar Sangam MN',
+    'Padauk', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Myanmar', 'Myanmar Text',
+    'Myanmar Sangam MN', 'Padauk', system-ui;
+}
+html:lang(km) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Khmer', 'Khmer UI', 'Khmer Sangam MN',
+    system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Khmer', 'Khmer UI', 'Khmer Sangam MN',
+    system-ui;
+}
+html:lang(lo) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Lao', 'Lao UI', 'Lao Sangam MN', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Lao', 'Lao UI', 'Lao Sangam MN',
+    system-ui;
+}
+html:is(:lang(bo), :lang(dz)) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Tibetan', 'Noto Serif Tibetan',
+    'Microsoft Himalaya', 'Kailasa', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Tibetan', 'Noto Serif Tibetan',
+    'Microsoft Himalaya', 'Kailasa', system-ui;
+}
+
+/* The Caucasus. */
+html:lang(ka) {
+  --font-sans: 'Geist Variable', 'Noto Sans Georgian', 'Sylfaen', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Georgian', 'Sylfaen', system-ui;
+}
+html:lang(hy) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans Armenian', 'Sylfaen', 'Mshtakan', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans Armenian', 'Sylfaen', 'Mshtakan',
+    system-ui;
+}
+
+/* East Asia: each edition names its own regional CJK face, since the shared
+   ideographs take different forms in each and a system picks one by its
+   own locale rather than the page's. */
+html:lang(ja) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans CJK JP', 'Noto Sans JP', 'Hiragino Sans',
+    'Yu Gothic', 'Meiryo', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans CJK JP', 'Noto Sans JP',
+    'Hiragino Sans', 'Yu Gothic', 'Meiryo', system-ui;
+}
+html:lang(ko) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans CJK KR', 'Noto Sans KR', 'Apple SD Gothic Neo',
+    'Malgun Gothic', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans CJK KR', 'Noto Sans KR',
+    'Apple SD Gothic Neo', 'Malgun Gothic', system-ui;
+}
+html:is(:lang(zh-CN), :lang(zh-SG), :lang(zh-Hans)) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC',
+    'Microsoft YaHei', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans CJK SC', 'Noto Sans SC',
+    'PingFang SC', 'Microsoft YaHei', system-ui;
+}
+html:is(:lang(zh-TW), :lang(zh-HK), :lang(zh-Hant)) {
+  --font-sans:
+    'Geist Variable', 'Noto Sans CJK TC', 'Noto Sans TC', 'PingFang TC',
+    'Microsoft JhengHei', system-ui;
+  --font-mono:
+    'JetBrains Mono Variable', 'Noto Sans CJK TC', 'Noto Sans TC',
+    'PingFang TC', 'Microsoft JhengHei', system-ui;
+}
+
+/* -------------------------------------------------------- script metrics */
+
+/* Stacked vowel marks and tone marks above and below the line: Thai, Lao,
+   Burmese, Khmer, Urdu's nastaliq and Tibetan all need more leading than
+   the Latin measure gives, in prose and in a row of navigation alike. */
+html:is(
+    :lang(th),
+    :lang(lo),
+    :lang(my),
+    :lang(km),
+    :lang(ur),
+    :lang(bo),
+    :lang(dz)
+  )
+  :is(
+    .prose,
+    .prose :is(p, li, blockquote, dd),
+    [class*='leading-']:not(.leading-none),
+    nav :is(a, li),
+    [role='listbox'] [role='option']
+  ) {
+  line-height: 1.85;
+}
+
+/* Scripts without spaces between words break lines by dictionary. Left to
+   the defaults, a browser that cannot find a break in a long run either
+   overflows the measure or breaks inside a syllable cluster. */
+html:is(:lang(my), :lang(km), :lang(th), :lang(lo))
+  :is(.prose, .prose *, p, li, blockquote, figcaption, dd) {
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+/* Arabic script joins its letters; tracking pulls the joins apart. The small
+   caps the site spaces out - footer headings, page subtitles, the palette's
+   crumbs - keep their size and case and lose the spacing. */
+html:is(
+    :lang(ar),
+    :lang(fa),
+    :lang(ps),
+    :lang(ur),
+    :lang(sd),
+    :lang(ug),
+    :lang(ckb)
+  )
+  :is([class*='tracking-'], .ported .badge__name, .docs .step-number),
+html[lang^='ku'][dir='rtl']
+  :is([class*='tracking-'], .ported .badge__name, .docs .step-number) {
+  letter-spacing: 0;
+}
+
+/* Mkhedruli has no case, and text-transform: uppercase turns it into
+   Mtavruli, which reads as shouting where the design meant small caps. */
+html:lang(ka) :is(.uppercase, .ported .badge__name) {
+  text-transform: none;
+}
