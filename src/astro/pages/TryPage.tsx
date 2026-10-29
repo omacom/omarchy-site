@@ -37,7 +37,7 @@ const platforms = [
       t('Open the DMG and drag the app to Applications'),
     ],
     note: t(
-      'Allow at least 8 GB of free disk space to get started. Intel Macs are not supported.',
+      'Allow about 15 GB of free disk space. Intel Macs are not supported.',
     ),
     download: MAC_RELEASES,
     label: t('Download for Mac'),
@@ -48,7 +48,7 @@ const platforms = [
       t('Download the Try Omarchy DMG and open it.'),
       t('Drag Try Omarchy to Applications, then open it.'),
       t(
-        'Start Omarchy and follow the account setup. The first launch takes longer while it prepares Linux.',
+        'Choose Launch Omarchy. The first launch downloads Omarchy (about 3 GB), then Omarchy’s setup asks for your account.',
       ),
     ],
   },
@@ -79,7 +79,7 @@ const platforms = [
         'Choose where to store Omarchy. If prompted, allow Windows Hypervisor Platform, restart, and reopen the app.',
       ),
       t(
-        'Pick your account. Choose my username and password lets Omarchy’s setup ask for them, or Quick start signs you in as omarchy with the password omarchy. Setup then downloads Omarchy (about 2 GB) and starts it.',
+        'Pick your account. My own username and password lets Omarchy’s setup ask for them, or Quick start signs you in as omarchy with the password omarchy. Setup then downloads Omarchy (about 2 GB) and starts it.',
       ),
     ],
   },
@@ -87,7 +87,7 @@ const platforms = [
     id: 'linux',
     name: t('Try Omarchy for Linux'),
     icon: LinuxIcon,
-    requirements: t('x86_64 · KVM · Flatpak · Preview'),
+    requirements: t('x86_64 · KVM · Flatpak'),
     description: t(
       'Omarchy in a Flatpak app for your Linux desktop, with guided setup.',
     ),
@@ -109,7 +109,7 @@ const platforms = [
         'Download TryOmarchy.flatpakref and open it with your software center, then choose Install.',
       ),
       t(
-        'Open Try Omarchy from your app menu and choose Set up Omarchy. Set up my own account lets you pick your username and password, or Quick start as omarchy skips that.',
+        'Open Try Omarchy from your app menu and choose Set up Omarchy. My own username and password lets Omarchy’s setup ask for them, or Quick start skips that.',
       ),
       t(
         'Setup downloads Omarchy (about 2 GB) and starts it. The quick-start account’s username and password are both omarchy.',
@@ -158,7 +158,7 @@ const questions = [
   [
     t('Will my Linux files stay between sessions?'),
     t(
-      'Yes. What you install and save stays in the VM. Windows keeps the Linux disk in the folder you chose during setup, and Linux keeps it with the app unless you choose another folder. Mac saves changes too, unless you turn on disposable mode, which discards them when you close the app.',
+      'Yes. What you install and save stays in the VM. Windows keeps the Linux disk in the folder you chose during setup, and Linux keeps it with the app unless you choose another folder. Mac keeps it in the app’s data folder, and updating or deleting the app leaves it in place.',
     ),
   ],
 ]

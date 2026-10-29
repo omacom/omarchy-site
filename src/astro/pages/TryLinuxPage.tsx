@@ -69,11 +69,11 @@ function Steps({ steps }: { steps: React.ReactNode[] }) {
 const openApp = (
   <>
     {t(
-      'Open Try Omarchy from your app menu, choose Set up Omarchy, then Set up my own account. It downloads Omarchy (about 2 GB) and starts it, and Omarchy’s normal setup asks for your username and password.',
+      'Open Try Omarchy from your app menu, choose Set up Omarchy, then My own username and password. It downloads Omarchy (about 2 GB) and starts it, and Omarchy’s normal setup asks for your username and password.',
     )}
     <span className="mt-2 block">
       {t(
-        'Just want a quick look? Choose Quick start as omarchy instead. It skips the account form and signs you in as omarchy, with the password omarchy. Customize lets you pick where to store Omarchy first.',
+        'Just want a quick look? Choose Quick start instead. It skips the account form and signs you in as omarchy, with the password omarchy. Choose location lets you pick another folder first.',
       )}
     </span>
   </>
@@ -106,7 +106,7 @@ const questions: Array<[string, React.ReactNode]> = [
       )}
       <span className="mt-3 block">
         {t(
-          'You choose the account once, when Omarchy is first set up: Set up my own account, or Quick start as omarchy. To start over with a VM in the app’s default storage, back up anything you want to keep, choose Delete this VM in the app’s home screen menu, and set it up again. This action does not delete a VM in a folder you chose yourself.',
+          'You choose the account once, when Omarchy is first set up: My own username and password, or Quick start. To start over with a VM in the app’s default storage, back up anything you want to keep, choose Delete this VM in the app’s home screen menu, and set it up again. This action does not delete a VM in a folder you chose yourself.',
         )}
       </span>
     </>,
@@ -139,10 +139,10 @@ const questions: Array<[string, React.ReactNode]> = [
     ),
   ],
   [
-    t('Is it finished?'),
+    t('What is not in the Linux app yet?'),
     <>
       {t(
-        'The app is a preview. Omarchy inside it is the regular desktop. Core use, files, backups and recovery work. Camera, live audio switching, gestures, USB passthrough and bridged networking are not in this release yet. Reports from real hardware help.',
+        'Touchpad gestures, USB passthrough, bridged networking and fingerprint sign-in. Omarchy inside it is the regular desktop, and files, backups, recovery, the camera and audio device switching all work. Reports from real hardware help.',
       )}{' '}
       <a className={inlineLink} href={TESTING}>
         {t('See the hardware testing checklist.')}
@@ -196,7 +196,7 @@ export function TryLinuxPage() {
           </Button>
         </div>
         <p className="mt-4 text-xs leading-relaxed text-text-secondary">
-          {t('Free & open source')} · x86_64 · KVM · Flatpak · {t('Preview')}
+          {t('Free & open source')} · x86_64 · KVM · Flatpak
         </p>
       </section>
       <section
