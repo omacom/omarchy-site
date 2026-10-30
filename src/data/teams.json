@@ -127,6 +127,12 @@
   "description": "Shaping how it looks and feels",
   "members": [
    {
+    "name": "HANCORE",
+    "meta": "Germany",
+    "href": "https://github.com/HANCORE-linux",
+    "avatar": "/assets/images/team/hancore.webp"
+   },
+   {
     "name": "Bar\u0131\u015f Giri\u015fmen",
     "meta": "T\u00fcrkiye",
     "href": "https://x.com/BarisGirismen",
