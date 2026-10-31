@@ -1,6 +1,11 @@
 import { t, language, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useState,
+  type ComponentProps,
+} from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -16,7 +21,11 @@ import {
   PlayIcon,
   WindowsIcon,
 } from '@/components/icons'
-import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import {
+  OmarchyMark,
+  OmarchyWordmark,
+  WORDMARK_BANDS,
+} from '@/components/Brand'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
@@ -72,6 +81,11 @@ const release: {
 const ISOS = isoLinks(release.isos, import.meta.env?.PUBLIC_ISO_ORIGIN)
 const ISO_LABEL: Record<string, string> = { x86_64: 'x86', aarch64: 'ARM' }
 
+/** The brand mark padded to the 15px glyph of WindowsIcon. */
+function TryLinuxMark(props: ComponentProps<typeof OmarchyMark>) {
+  return <OmarchyMark viewBox="-200 -200 1600 1600" {...props} />
+}
+
 const TRY = {
   mac: {
     label: t('Try on Mac'),
@@ -86,6 +100,12 @@ const TRY = {
     // saves the launcher. The asset name has been TryOmarchy.exe since v0.1.0.
     href: 'https://github.com/omacom/try-omarchy-windows/releases/latest/download/TryOmarchy.exe',
     icon: WindowsIcon,
+  },
+  linux: {
+    label: t('Try on Linux'),
+    // The Flatpak installer, the link the Try Omarchy for Linux README uses.
+    href: 'https://tryomarchy.com/linux.flatpakref',
+    icon: TryLinuxMark,
   },
 } as const
 
@@ -742,7 +762,7 @@ export function HomePage({ data }: { data: HomeData }) {
                 )}
               >
                 <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
+                  {(['mac', 'windows', 'linux'] as const).map((key) => {
                     const Mark = TRY[key].icon
                     return (
                       <Button
@@ -760,7 +780,7 @@ export function HomePage({ data }: { data: HomeData }) {
                   })}
                 </div>
                 <p className={installNote}>
-                  {t('Apple Silicon Macs, Windows 10 and 11.')}
+                  {t('Apple Silicon Macs, Windows 10 and 11, Linux with KVM.')}
                 </p>
               </InstallRow>
             </div>
