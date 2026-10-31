@@ -1,6 +1,11 @@
 import { t, language, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useState,
+  type ComponentProps,
+} from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -16,7 +21,11 @@ import {
   WindowsIcon,
 } from '@/components/icons'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
-import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import {
+  OmarchyMark,
+  OmarchyWordmark,
+  WORDMARK_BANDS,
+} from '@/components/Brand'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
@@ -70,6 +79,11 @@ const release: {
 } = releaseData
 const ISOS = isoLinks(release.isos, import.meta.env?.PUBLIC_ISO_ORIGIN)
 const ISO_LABEL: Record<string, string> = { x86_64: 'x86', aarch64: 'ARM' }
+
+/** The brand mark padded to the 15px glyph of WindowsIcon. */
+function TryLinuxMark(props: ComponentProps<typeof OmarchyMark>) {
+  return <OmarchyMark viewBox="-200 -200 1600 1600" {...props} />
+}
 
 type TryOption = {
   key: string
@@ -129,6 +143,31 @@ const TRY: ReadonlyArray<TryOption> = [
       {
         label: t('Source'),
         href: 'https://github.com/omacom/try-omarchy-windows',
+      },
+    ],
+  },
+  {
+    key: 'linux',
+    icon: TryLinuxMark,
+    title: t('Linux'),
+    platform: t('x86_64 · KVM · Flatpak'),
+    lead: t(
+      'Omarchy in a Flatpak app for your Linux desktop, with guided setup.',
+    ),
+    action: {
+      label: t('Try on Linux'),
+      // The Flatpak installer, the link the Try Omarchy for Linux README uses.
+      href: 'https://tryomarchy.com/linux.flatpakref',
+      icon: DownloadIcon,
+    },
+    links: [
+      {
+        label: t('Quick start'),
+        href: 'https://tryomarchy.com/#linux-quick-start',
+      },
+      {
+        label: t('Source'),
+        href: 'https://github.com/btsouth/try-omarchy-linux',
       },
     ],
   },
