@@ -1,0 +1,293 @@
+name: Translate site and deploy languages
+
+on:
+  workflow_run:
+    workflows: [Check and deploy site]
+    types: [completed]
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      smoke:
+        description: Only translate one sample string into this language (e.g. da) to prove the key and model work; commits and deploys nothing.
+        required: false
+        default: ''
+  schedule:
+    # Retry unfinished translations without delaying English publication.
+    - cron: '41 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: translate-news
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    if: github.event_name == 'workflow_dispatch' && inputs.smoke != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - uses: ./.github/actions/setup-muse
+        with:
+          api-key: ${{ secrets.MUSE_API_KEY }}
+      - name: Translate one sample string
+        env:
+          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-wonder-1.0' }}
+          LOCALE: ${{ inputs.smoke }}
+        run: python3 scripts/translate-site.py --smoke "$LOCALE"
+      - name: Remove Muse credentials
+        if: always()
+        run: rm -f "$HOME/.config/muse/auth.json"
+
+  prepare:
+    if: >-
+      (github.event_name != 'workflow_dispatch' || inputs.smoke == '') &&
+      (github.event_name != 'workflow_run' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event != 'pull_request' &&
+        github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      revision: ${{ steps.pending.outputs.revision }}
+      locales: ${{ steps.pending.outputs.locales }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run port
+      - name: Check every deployed edition is registered
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_DEPLOY_API_TOKEN }}
+        run: node scripts/check-deployment-registry.mjs
+      - name: Find languages with pending translations
+        id: pending
+        run: |
+          node scripts/check-translations.mjs --pending-news > "$RUNNER_TEMP/pending-news.json"
+          node scripts/check-translations.mjs --pending-site > "$RUNNER_TEMP/pending-site.json"
+          python3 - <<'PYQUEUE'
+          import json, os
+          from pathlib import Path
+          directory = Path(os.environ['RUNNER_TEMP'])
+          jobs = json.loads((directory / 'pending-news.json').read_text())
+          jobs += json.loads((directory / 'pending-site.json').read_text())
+          locales = sorted({job['locale'] for job in jobs})
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f'locales={json.dumps(locales)}\n')
+          PYQUEUE
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  translate:
+    needs: prepare
+    if: needs.prepare.outputs.locales != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: ${{ fromJSON(needs.prepare.outputs.locales) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.revision }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run port
+      - uses: ./.github/actions/setup-muse
+        with:
+          api-key: ${{ secrets.MUSE_API_KEY }}
+      - name: Translate this language's pending site and news
+        continue-on-error: true
+        env:
+          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-wonder-1.0' }}
+          LOCALE: ${{ matrix.locale }}
+        run: |
+          # Two queues per language; four Muse requests at most on each runner.
+          python3 scripts/translate-site.py --locale "$LOCALE" --concurrency 2 &
+          site_pid=$!
+          python3 scripts/translate-news.py --locale "$LOCALE" --concurrency 2 &
+          news_pid=$!
+          result=0
+          wait "$site_pid" || result=1
+          wait "$news_pid" || result=1
+          exit "$result"
+      - name: Validate completed translations
+        run: npm run check:translations
+      - name: Package only this language's translations
+        env:
+          LOCALE: ${{ matrix.locale }}
+        run: |
+          python3 scripts/translation-artifact.py pack "$LOCALE" "$RUNNER_TEMP/translations"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: translations-${{ matrix.locale }}
+          path: ${{ runner.temp }}/translations/*.patch
+          retention-days: 3
+          if-no-files-found: error
+      - name: Remove Muse credentials
+        if: always()
+        run: rm -f "$HOME/.config/muse/auth.json"
+
+  commit:
+    needs: [prepare, translate]
+    # Keep valid results even if a different language runner failed.
+    if: ${{ always() && !cancelled() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      # Write, to start the omarchy.cn deploy after committing translations.
+      actions: write
+    outputs:
+      revision: ${{ steps.commit.outputs.revision }}
+      locales: ${{ steps.commit.outputs.locales }}
+      deploy: ${{ steps.commit.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.revision }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run port
+      - name: Download completed languages
+        if: needs.prepare.outputs.locales != '[]'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: translations-*
+          path: ${{ runner.temp }}/translations
+          merge-multiple: true
+      - name: Collect completed translations
+        env:
+          EXPECTED_LOCALES: ${{ needs.prepare.outputs.locales }}
+        run: python3 scripts/translation-artifact.py collect "$RUNNER_TEMP/translations"
+      - name: Validate combined translations
+        run: npm run check:translations
+      - name: Commit completed translations
+        id: commit
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add news src/data/news-posts.json
+          changed=false
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Translate published site content'
+            # Discard only generated data from npm run port before rebasing.
+            git restore src/data public/data
+            git pull --rebase origin master
+            git push origin HEAD:master
+            changed=true
+            # A push made with the workflow's token starts no other workflows,
+            # so omarchy.cn, which deploys on push, is started by hand.
+            gh workflow run deploy-zh-cn.yml --ref master
+          fi
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          # Published editions only: a draft translates above but is not deployed until its flag is dropped.
+          locales=$(node --input-type=module -e 'import l from "./src/i18n/locales.json" with {type:"json"}; console.log(JSON.stringify(Object.keys(l).filter(k=>k!=="en" && !l[k].draft)))')
+          echo "locales=$locales" >> "$GITHUB_OUTPUT"
+          previous=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/translate-news.yml/runs?status=completed&per_page=1" --jq '(.workflow_runs[0].conclusion // "none")')
+          if [ "$changed" = true ] || [ "$EVENT_NAME" != schedule ] || [ "$previous" != success ]; then
+            echo 'deploy=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Report translations still pending
+        if: always()
+        run: |
+          node scripts/check-translations.mjs --pending-news > "$RUNNER_TEMP/pending-news.json"
+          node scripts/check-translations.mjs --pending-site > "$RUNNER_TEMP/pending-site.json"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          directory = Path(os.environ['RUNNER_TEMP'])
+          news = json.loads((directory / 'pending-news.json').read_text())
+          site = json.loads((directory / 'pending-site.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write(f'Pending news translations: **{len(news)}**.\n\n')
+              out.write(f'Pending UI and prose translations: **{len(site)}**.\n\n')
+              out.write('English remains available while translations catch up. Unfinished work is retried hourly.\n')
+          PY
+
+  deploy:
+    needs: commit
+    if: ${{ !cancelled() && needs.commit.result == 'success' && needs.commit.outputs.deploy == 'true' }}
+    strategy:
+      fail-fast: false
+      # GitHub-hosted runners on the Free plan allow 20 concurrent jobs across the
+      # account; raise LANGUAGE_DEPLOY_PARALLEL (a repository variable) after
+      # checking the plan and what else runs at the same time.
+      max-parallel: ${{ fromJSON(vars.LANGUAGE_DEPLOY_PARALLEL || '6') }}
+      matrix:
+        locale: ${{ fromJSON(needs.commit.outputs.locales) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.commit.outputs.revision }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
+      - run: npm run build:locale -- "${{ matrix.locale }}"
+      - run: python3 scripts/verify-locales.py "${{ matrix.locale }}"
+      - name: Publish language site
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_DEPLOY_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: npm run deploy:locale -- "${{ matrix.locale }}" --domain

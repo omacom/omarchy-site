@@ -1,0 +1,76 @@
+---
+import { t } from '../i18n/site'
+---
+
+<dialog class="workstation-lightbox" aria-label={t('Workstation photo viewer')}>
+  <button class="workstation-lightbox__close" type="button" aria-label={t('Close photo viewer')} autofocus>×</button>
+  <button class="workstation-lightbox__previous" type="button" aria-label={t('Previous photo')}>‹</button>
+  <img class="workstation-lightbox__photo" alt="" />
+  <button class="workstation-lightbox__next" type="button" aria-label={t('Next photo')}>›</button>
+  <span class="sr-only" aria-live="polite" data-photo-position></span>
+</dialog>
+
+<script>
+  import { setupWorkstationLightbox } from '../astro/workstation-lightbox'
+  setupWorkstationLightbox()
+  document.addEventListener('astro:page-load', setupWorkstationLightbox)
+  document.addEventListener('astro:before-swap', () => {
+    document.querySelector<HTMLDialogElement>('.workstation-lightbox[open]')?.close()
+  })
+</script>
+
+<style>
+  .workstation-lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 3.5rem;
+    border: 0;
+    background: transparent;
+    color: white;
+    overflow: hidden;
+  }
+  .workstation-lightbox[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .workstation-lightbox::backdrop {
+    background: rgb(0 0 0 / 92%);
+  }
+  .workstation-lightbox__photo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  button {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 55%);
+    color: white;
+    font: 2.25rem/1 sans-serif;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  button:hover { background: rgb(255 255 255 / 20%); }
+  button:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+  .workstation-lightbox__close { top: 0.75rem; right: 0.75rem; }
+  .workstation-lightbox__previous { left: 0.5rem; top: calc(50% - 1.375rem); }
+  .workstation-lightbox__next { right: 0.5rem; top: calc(50% - 1.375rem); }
+  @media (max-width: 640px) {
+    .workstation-lightbox { padding: 3.5rem 0.5rem; }
+    .workstation-lightbox__previous, .workstation-lightbox__next { top: auto; bottom: 0.5rem; }
+  }
+</style>

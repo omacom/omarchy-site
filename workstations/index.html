@@ -1,561 +1,1416 @@
 <!doctype html>
-
+<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
 <html lang="en">
-  <head>
-    <title>Omarchy — Beautiful, Fun &amp; Agentic Linux by DHH</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="Beautiful, Fun &amp; Agentic Linux by DHH">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Omarchy">
-    <meta property="og:description" content="Beautiful, Fun &amp; Agentic Linux by DHH">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="Omarchy">
-    <meta name="twitter:description" content="Beautiful, Fun &amp; Agentic Linux by DHH">
-    <meta name="twitter:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta name="twitter:image:alt" content="Omarchy">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/button.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/nav.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/notification.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/video.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/workstations.css">
-
-    <script src="/assets/js/script.js" type="module"></script>
-
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1><a href="https://discord.com/channels/1390012484194275541/1399365919293051010">#omarchy-workstations</a></h1>
-    </header>
-
-    <main class="main">
-
+<head><meta charset="utf-8"><title>#omarchy-workstations</title></head>
+<body>
+<main>
       <div class="workstations">
         <div class="workstations__images">
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/P1554011.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/6a74444a-0a73-46bc-817d-bce9c9c6c0e6.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250717_0355s50.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250728_142207.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250729_150758.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250730_154811.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250731_001547.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250805_210210.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250809_093527.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250809_093628.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250809_171842.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250809_171946.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250811_002205.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250819_130901.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250831_101137.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/20250906_0750391.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/1000001077.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/1000002829.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/AP1GczMavNW8EaWfHU4UmZNfqeu70P2RHVYjHZbM_6FtIpeoL92gDy_93QVXIAw1502.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/AP1GczNlx6FUkYeYXmMqZ1g3fCTRcK9ISkqOoul7Yq9E18Sj1k3EJPVXNhqY.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/Battlestation_-_1_1.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/c9373bba-9f10-42cf-9e26-5ce6dde7087c.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/Clockwork_Omarchy.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/desk (1).webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/desk.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/DSCF0576.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/fdfe53d1-8d98-41ac-872c-661b7d646882.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/Gwgz4X9XEAAy33W.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/GxrFYwQXUAAe0zI.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/image.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/image0 (1).webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/image0 (2).webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/image0.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_0643.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_0746.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1244.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1341.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1582.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1649.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1733.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1745.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1981.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_1989.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_2568.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_3207.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_4361.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_4760_togo.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_5347.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_5471.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_6661.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_6694.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_7357.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_8684.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_8686.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_9129.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_9631.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_20250730_114329551.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_20250731_011115.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_20250809_2048117022.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_20250818_091522853_1.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_20250904_215408.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/img_1755747110535.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG20250828104558.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/krbdg3hltfmf1.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/L1020621.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/new-omarchy-setup.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/omarchy_cat.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250728_155911110.MP.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250728_164020388-EDIT.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250801_104910508.RAW-01.COVER.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250805_105323887.RAW-01.COVER.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250810_141950367.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250812_063009857.RAW-01.MP.COVER.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250827_105330558.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/PXL_20250910_192624503.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/rn_image_picker_lib_temp_c303fde1-ff27-4a13-b59e-c393c29a3e63.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/rose-pine-dark.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/signal-2025-08-11-103847_002.webp" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/thumbnail.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
-
-          <button class="workstations__image" aria-label="View workstation photo">
-            <figure>
-              <img src="/assets/workstations/IMG_20250911_100847608.jpg" alt="" loading="lazy" decoding="async">
-            </figure>
-          </button>
+          <figure>
+            <a href="/assets/workstations/discord-1546242687592824902.webp" aria-label="View workstation photo: No mouse setup"><img src="/assets/workstations/previews/discord-1546242687592824902.webp" alt="No mouse setup" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1546031640701042850.webp" aria-label="View workstation photo: Omarchy on Surface Laptop 7"><img src="/assets/workstations/previews/discord-1546031640701042850.webp" alt="Omarchy on Surface Laptop 7" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545875351622778962.webp" aria-label="View workstation photo: S2"><img src="/assets/workstations/previews/discord-1545875351622778962.webp" alt="S2" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545623115734843462.webp" aria-label="View workstation photo: My Omarchy Gaming Laptop Setup (Downstairs Edition)"><img src="/assets/workstations/previews/discord-1545623115734843462.webp" alt="My Omarchy Gaming Laptop Setup (Downstairs Edition)" width="640" height="475" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545560830911840266.webp" aria-label="View workstation photo: I&#39;m in"><img src="/assets/workstations/previews/discord-1545560830911840266.webp" alt="I&#39;m in" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545374126179618867.webp" aria-label="View workstation photo: College Hostel Steup low effort"><img src="/assets/workstations/previews/discord-1545374126179618867.webp" alt="College Hostel Steup low effort" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545246489582764143.webp" aria-label="View workstation photo: home office workstation finally looking cool"><img src="/assets/workstations/previews/discord-1545246489582764143.webp" alt="home office workstation finally looking cool" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545220428136718336.webp" aria-label="View workstation photo: workstation and homelab"><img src="/assets/workstations/previews/discord-1545220428136718336.webp" alt="workstation and homelab" width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545060746835005530.webp" aria-label="View workstation photo: Home office, finally got the RGB to work in Omarchy with a custom plugin"><img src="/assets/workstations/previews/discord-1545060746835005530.webp" alt="Home office, finally got the RGB to work in Omarchy with a custom plugin" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545060669915664434.webp" aria-label="View workstation photo: lenovo thinkpad e40"><img src="/assets/workstations/previews/discord-1545060669915664434.webp" alt="lenovo thinkpad e40" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545036001817141310.webp" aria-label="View workstation photo: Brought my MacBook Pro 2010 — which I thought was dead—back to life."><img src="/assets/workstations/previews/discord-1545036001817141310.webp" alt="Brought my MacBook Pro 2010 — which I thought was dead—back to life." width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <video controls preload="none" playsinline poster="/assets/workstations/previews/discord-1545007906787819571.webp" aria-label="hp allinone boxes vm" width="640" height="360"><source src="/assets/workstations/discord-1545007906787819571.webm" type="video/webm"></video>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545007906322382918.webp" aria-label="View workstation photo: hp allinone boxes vm"><img src="/assets/workstations/previews/discord-1545007906322382918.webp" alt="hp allinone boxes vm" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1545007606932705360.webp" aria-label="View workstation photo: macbook air i5"><img src="/assets/workstations/previews/discord-1545007606932705360.webp" alt="macbook air i5" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544868066154909747.webp" aria-label="View workstation photo: Migrating from F44"><img src="/assets/workstations/previews/discord-1544868066154909747.webp" alt="Migrating from F44" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544843340846080062.webp" aria-label="View workstation photo: 2014"><img src="/assets/workstations/previews/discord-1544843340846080062.webp" alt="2014" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544838579543609435.webp" aria-label="View workstation photo: Omarchy setup Day 1 - Ultrawide Berserk theme"><img src="/assets/workstations/previews/discord-1544838579543609435.webp" alt="Omarchy setup Day 1 - Ultrawide Berserk theme" width="360" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544711446678605985.webp" aria-label="View workstation photo: Yep, I&#39;m loving it"><img src="/assets/workstations/previews/discord-1544711446678605985.webp" alt="Yep, I&#39;m loving it" width="404" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544511556971270305.webp" aria-label="View workstation photo: Dell Latitude 3310 Laptop"><img src="/assets/workstations/previews/discord-1544511556971270305.webp" alt="Dell Latitude 3310 Laptop" width="640" height="296" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544463633692631190.webp" aria-label="View workstation photo: Almost 100 days with Omarchy"><img src="/assets/workstations/previews/discord-1544463633692631190.webp" alt="Almost 100 days with Omarchy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544399266556940339.webp" aria-label="View workstation photo: is this peak gng"><img src="/assets/workstations/previews/discord-1544399266556940339.webp" alt="is this peak gng" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544399265932255423.webp" aria-label="View workstation photo: is this peak gng"><img src="/assets/workstations/previews/discord-1544399265932255423.webp" alt="is this peak gng" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544399265177145394.webp" aria-label="View workstation photo: is this peak gng"><img src="/assets/workstations/previews/discord-1544399265177145394.webp" alt="is this peak gng" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544390242004508722.webp" aria-label="View workstation photo: New to this and here is my setup"><img src="/assets/workstations/previews/discord-1544390242004508722.webp" alt="New to this and here is my setup" width="640" height="293" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544336848166592572.webp" aria-label="View workstation photo: A Simple and Comfortable Old Computer"><img src="/assets/workstations/previews/discord-1544336848166592572.webp" alt="A Simple and Comfortable Old Computer" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1544289662665756753.webp" aria-label="View workstation photo: My black and white setup as an engineer"><img src="/assets/workstations/previews/discord-1544289662665756753.webp" alt="My black and white setup as an engineer" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <video controls preload="none" playsinline poster="/assets/workstations/previews/discord-1544021728622153768.webp" aria-label="Kitt omarchy theme on 2016 mbp with touchbar" width="640" height="360"><source src="/assets/workstations/discord-1544021728622153768.webm" type="video/webm"></video>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1543634248161038347.webp" aria-label="View workstation photo: In Process BTW"><img src="/assets/workstations/previews/discord-1543634248161038347.webp" alt="In Process BTW" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1543448199761764392.webp" aria-label="View workstation photo: My Omaker space"><img src="/assets/workstations/previews/discord-1543448199761764392.webp" alt="My Omaker space" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1543062812656406598.webp" aria-label="View workstation photo: Minimalist Omarchy setup"><img src="/assets/workstations/previews/discord-1543062812656406598.webp" alt="Minimalist Omarchy setup" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542929152347344916.webp" aria-label="View workstation photo: A few days in..."><img src="/assets/workstations/previews/discord-1542929152347344916.webp" alt="A few days in..." width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542928881655353424.webp" aria-label="View workstation photo: A few days in..."><img src="/assets/workstations/previews/discord-1542928881655353424.webp" alt="A few days in..." width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542762472031789117.webp" aria-label="View workstation photo: It&#39;s been a week with omarchy"><img src="/assets/workstations/previews/discord-1542762472031789117.webp" alt="It&#39;s been a week with omarchy" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542762471561895936.webp" aria-label="View workstation photo: It&#39;s been a week with omarchy"><img src="/assets/workstations/previews/discord-1542762471561895936.webp" alt="It&#39;s been a week with omarchy" width="640" height="558" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542762471092256788.webp" aria-label="View workstation photo: It&#39;s been a week with omarchy"><img src="/assets/workstations/previews/discord-1542762471092256788.webp" alt="It&#39;s been a week with omarchy" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542762470416846958.webp" aria-label="View workstation photo: It&#39;s been a week with omarchy"><img src="/assets/workstations/previews/discord-1542762470416846958.webp" alt="It&#39;s been a week with omarchy" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542720926070734918.webp" aria-label="View workstation photo: Where have you been all my life Omarchy?"><img src="/assets/workstations/previews/discord-1542720926070734918.webp" alt="Where have you been all my life Omarchy?" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542634681114034237.webp" aria-label="View workstation photo: MacBook Pro late 2013 750m kepler"><img src="/assets/workstations/previews/discord-1542634681114034237.webp" alt="MacBook Pro late 2013 750m kepler" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542632370966892644.webp" aria-label="View workstation photo: HP  Pavillion - i5 (2014)"><img src="/assets/workstations/previews/discord-1542632370966892644.webp" alt="HP  Pavillion - i5 (2014)" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542620472061984918.webp" aria-label="View workstation photo: Macbook Pro (Intel i9, 2019)"><img src="/assets/workstations/previews/discord-1542620472061984918.webp" alt="Macbook Pro (Intel i9, 2019)" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542526610379513856.webp" aria-label="View workstation photo: Thinkpad C13 Yoga (Enterprise Chromebook)"><img src="/assets/workstations/previews/discord-1542526610379513856.webp" alt="Thinkpad C13 Yoga (Enterprise Chromebook)" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542459796727533608.webp" aria-label="View workstation photo: Thinkpad T480 - Testing to see if Omarchy will be my next daily driver :fire:"><img src="/assets/workstations/previews/discord-1542459796727533608.webp" alt="Thinkpad T480 - Testing to see if Omarchy will be my next daily driver :fire:" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542459793921286184.webp" aria-label="View workstation photo: Thinkpad T480 - Testing to see if Omarchy will be my next daily driver :fire:"><img src="/assets/workstations/previews/discord-1542459793921286184.webp" alt="Thinkpad T480 - Testing to see if Omarchy will be my next daily driver :fire:" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542372727330054195.webp" aria-label="View workstation photo: 13&quot; Macbook Pro - (Early 2015)"><img src="/assets/workstations/previews/discord-1542372727330054195.webp" alt="13&quot; Macbook Pro - (Early 2015)" width="640" height="615" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542261709119430746.webp" aria-label="View workstation photo: MacBook Pro 2014"><img src="/assets/workstations/previews/discord-1542261709119430746.webp" alt="MacBook Pro 2014" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542177746858418256.webp" aria-label="View workstation photo: On Apple Mac Book Pro mid 2012 ❤️"><img src="/assets/workstations/previews/discord-1542177746858418256.webp" alt="On Apple Mac Book Pro mid 2012 ❤️" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542171573790843102.webp" aria-label="View workstation photo: Home office setup"><img src="/assets/workstations/previews/discord-1542171573790843102.webp" alt="Home office setup" width="640" height="359" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542156825690902650.webp" aria-label="View workstation photo: On a 2012 Mac mini!"><img src="/assets/workstations/previews/discord-1542156825690902650.webp" alt="On a 2012 Mac mini!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1542116327706333255.webp" aria-label="View workstation photo: Home office setup"><img src="/assets/workstations/previews/discord-1542116327706333255.webp" alt="Home office setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541962757195173948.webp" aria-label="View workstation photo: Clean"><img src="/assets/workstations/previews/discord-1541962757195173948.webp" alt="Clean" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541931475899785277.webp" aria-label="View workstation photo: My setup"><img src="/assets/workstations/previews/discord-1541931475899785277.webp" alt="My setup" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541931474608066592.webp" aria-label="View workstation photo: My setup"><img src="/assets/workstations/previews/discord-1541931474608066592.webp" alt="My setup" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541854684422348962.webp" aria-label="View workstation photo: New user, installed on two machines yday!"><img src="/assets/workstations/previews/discord-1541854684422348962.webp" alt="New user, installed on two machines yday!" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541842428665929788.webp" aria-label="View workstation photo: Will make the setup better just installed it"><img src="/assets/workstations/previews/discord-1541842428665929788.webp" alt="Will make the setup better just installed it" width="482" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541829652560224316.webp" aria-label="View workstation photo: My little setup."><img src="/assets/workstations/previews/discord-1541829652560224316.webp" alt="My little setup." width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541797861920997526.webp" aria-label="View workstation photo: Omarchy in my home office."><img src="/assets/workstations/previews/discord-1541797861920997526.webp" alt="Omarchy in my home office." width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541538237485416609.webp" aria-label="View workstation photo: Omarchy Cyberdeck"><img src="/assets/workstations/previews/discord-1541538237485416609.webp" alt="Omarchy Cyberdeck" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541523473141342219.webp" aria-label="View workstation photo: Framework 13 (12th Gen Intel) running Omarchy"><img src="/assets/workstations/previews/discord-1541523473141342219.webp" alt="Framework 13 (12th Gen Intel) running Omarchy" width="640" height="431" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541508526462083182.webp" aria-label="View workstation photo: Framework Desktop with Omarchy"><img src="/assets/workstations/previews/discord-1541508526462083182.webp" alt="Framework Desktop with Omarchy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541422274362605600.webp" aria-label="View workstation photo: My favorite place in the world"><img src="/assets/workstations/previews/discord-1541422274362605600.webp" alt="My favorite place in the world" width="640" height="296" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541193571753918584.webp" aria-label="View workstation photo: Omarchy 4 is perfect on samsung galaxy book!"><img src="/assets/workstations/previews/discord-1541193571753918584.webp" alt="Omarchy 4 is perfect on samsung galaxy book!" width="640" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1541158332352430203.webp" aria-label="View workstation photo: Omarchy + OLED+ All AMD + Ristretto Theme (Don´t mind the mess)"><img src="/assets/workstations/previews/discord-1541158332352430203.webp" alt="Omarchy + OLED+ All AMD + Ristretto Theme (Don´t mind the mess)" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1540976922614308894.webp" aria-label="View workstation photo: My home setup"><img src="/assets/workstations/previews/discord-1540976922614308894.webp" alt="My home setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1540927110430986250.webp" aria-label="View workstation photo: Poweredge T440 and GeForce TX660... working!"><img src="/assets/workstations/previews/discord-1540927110430986250.webp" alt="Poweredge T440 and GeForce TX660... working!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1540874506841628783.webp" aria-label="View workstation photo: Surface Pro 9"><img src="/assets/workstations/previews/discord-1540874506841628783.webp" alt="Surface Pro 9" width="640" height="296" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1540856151074148393.webp" aria-label="View workstation photo: Omarchy Everywhere"><img src="/assets/workstations/previews/discord-1540856151074148393.webp" alt="Omarchy Everywhere" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1540630610522148925.webp" aria-label="View workstation photo: Omarchy on Fydetab Duo tablet"><img src="/assets/workstations/previews/discord-1540630610522148925.webp" alt="Omarchy on Fydetab Duo tablet" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1539677307579531315.webp" aria-label="View workstation photo: Productivity and joy corner."><img src="/assets/workstations/previews/discord-1539677307579531315.webp" alt="Productivity and joy corner." width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1539637418309722164.webp" aria-label="View workstation photo: My Omarchy 4.0 Workstation"><img src="/assets/workstations/previews/discord-1539637418309722164.webp" alt="My Omarchy 4.0 Workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1539614972353450054.webp" aria-label="View workstation photo: A500 Omarchy Mini-ITX build - here we go!"><img src="/assets/workstations/previews/discord-1539614972353450054.webp" alt="A500 Omarchy Mini-ITX build - here we go!" width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1538764673133052035.webp" aria-label="View workstation photo: Computer-1 / Samsung Odyssey G9"><img src="/assets/workstations/previews/discord-1538764673133052035.webp" alt="Computer-1 / Samsung Odyssey G9" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1538621562603966636.webp" aria-label="View workstation photo: MiniBook X + Boox Palma"><img src="/assets/workstations/previews/discord-1538621562603966636.webp" alt="MiniBook X + Boox Palma" width="640" height="421" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1538612543373705346.webp" aria-label="View workstation photo: This is where I post from"><img src="/assets/workstations/previews/discord-1538612543373705346.webp" alt="This is where I post from" width="640" height="361" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1538611744266784819.webp" aria-label="View workstation photo: The Acer Chromebook 14 (CB3-431)"><img src="/assets/workstations/previews/discord-1538611744266784819.webp" alt="The Acer Chromebook 14 (CB3-431)" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1537883333495627936.webp" aria-label="View workstation photo: Quattro"><img src="/assets/workstations/previews/discord-1537883333495627936.webp" alt="Quattro" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1537883333030322246.webp" aria-label="View workstation photo: Quattro"><img src="/assets/workstations/previews/discord-1537883333030322246.webp" alt="Quattro" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1537883332476407890.webp" aria-label="View workstation photo: Quattro"><img src="/assets/workstations/previews/discord-1537883332476407890.webp" alt="Quattro" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1537883331910180944.webp" aria-label="View workstation photo: Quattro"><img src="/assets/workstations/previews/discord-1537883331910180944.webp" alt="Quattro" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1537242780580192326.webp" aria-label="View workstation photo: Omarchy Station!"><img src="/assets/workstations/previews/discord-1537242780580192326.webp" alt="Omarchy Station!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1536874347942248588.webp" aria-label="View workstation photo: Main workstation setup"><img src="/assets/workstations/previews/discord-1536874347942248588.webp" alt="Main workstation setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1534327688901431366.webp" aria-label="View workstation photo: Workstation"><img src="/assets/workstations/previews/discord-1534327688901431366.webp" alt="Workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1533003326122098738.webp" aria-label="View workstation photo: My gaming/work setup"><img src="/assets/workstations/previews/discord-1533003326122098738.webp" alt="My gaming/work setup" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1538901138827509770.webp" aria-label="View workstation photo: mysetup"><img src="/assets/workstations/previews/discord-1538901138827509770.webp" alt="mysetup" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1532836387047604285.webp" aria-label="View workstation photo: mysetup"><img src="/assets/workstations/previews/discord-1532836387047604285.webp" alt="mysetup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1530385731590164711.webp" aria-label="View workstation photo: retro gaming corner at party"><img src="/assets/workstations/previews/discord-1530385731590164711.webp" alt="retro gaming corner at party" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1530385236851167323.webp" aria-label="View workstation photo: retro gaming corner at party"><img src="/assets/workstations/previews/discord-1530385236851167323.webp" alt="retro gaming corner at party" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1530383215511081000.webp" aria-label="View workstation photo: not as crazy as others but still productive"><img src="/assets/workstations/previews/discord-1530383215511081000.webp" alt="not as crazy as others but still productive" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1527409296483155998.webp" aria-label="View workstation photo: Alienware Omarchy"><img src="/assets/workstations/previews/discord-1527409296483155998.webp" alt="Alienware Omarchy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1527368317965177082.webp" aria-label="View workstation photo: Home office with MSI miniPC"><img src="/assets/workstations/previews/discord-1527368317965177082.webp" alt="Home office with MSI miniPC" width="640" height="412" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1526613585802039296.webp" aria-label="View workstation photo: Home/Work setup"><img src="/assets/workstations/previews/discord-1526613585802039296.webp" alt="Home/Work setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1525974199934390302.webp" aria-label="View workstation photo: Thinkpad and Desktop PC Omarchy"><img src="/assets/workstations/previews/discord-1525974199934390302.webp" alt="Thinkpad and Desktop PC Omarchy" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1523405912243437629.webp" aria-label="View workstation photo: My Omarchy setup"><img src="/assets/workstations/previews/discord-1523405912243437629.webp" alt="My Omarchy setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1522575528903708702.webp" aria-label="View workstation photo: Home office is finally done!"><img src="/assets/workstations/previews/discord-1522575528903708702.webp" alt="Home office is finally done!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1519809249847410838.webp" aria-label="View workstation photo: OMARCHY in MINISFORUM AI Mini PC M1 Pro-285H / Intel Arc Pro 140T"><img src="/assets/workstations/previews/discord-1519809249847410838.webp" alt="OMARCHY in MINISFORUM AI Mini PC M1 Pro-285H / Intel Arc Pro 140T" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1519807956705738953.webp" aria-label="View workstation photo: OMARCHY in MINISFORUM AI Mini PC M1 Pro-285H / Intel Arc Pro 140T"><img src="/assets/workstations/previews/discord-1519807956705738953.webp" alt="OMARCHY in MINISFORUM AI Mini PC M1 Pro-285H / Intel Arc Pro 140T" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1518991773244854443.webp" aria-label="View workstation photo: Asus Expertbook Ultra w Intel Panther Lake"><img src="/assets/workstations/previews/discord-1518991773244854443.webp" alt="Asus Expertbook Ultra w Intel Panther Lake" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1518991772141883422.webp" aria-label="View workstation photo: Asus Expertbook Ultra w Intel Panther Lake"><img src="/assets/workstations/previews/discord-1518991772141883422.webp" alt="Asus Expertbook Ultra w Intel Panther Lake" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1516428546803896524.webp" aria-label="View workstation photo: LAN Center"><img src="/assets/workstations/previews/discord-1516428546803896524.webp" alt="LAN Center" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1516428546510426273.webp" aria-label="View workstation photo: LAN Center"><img src="/assets/workstations/previews/discord-1516428546510426273.webp" alt="LAN Center" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1511238704822222948.webp" aria-label="View workstation photo: MacBook Pro M2 Omarchy (16k asahi kernel port)"><img src="/assets/workstations/previews/discord-1511238704822222948.webp" alt="MacBook Pro M2 Omarchy (16k asahi kernel port)" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1510058977327845506.webp" aria-label="View workstation photo: LoveOmarchy in my work, in my house"><img src="/assets/workstations/previews/discord-1510058977327845506.webp" alt="LoveOmarchy in my work, in my house" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1510058976669208606.webp" aria-label="View workstation photo: LoveOmarchy in my work, in my house"><img src="/assets/workstations/previews/discord-1510058976669208606.webp" alt="LoveOmarchy in my work, in my house" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1509452294293422242.webp" aria-label="View workstation photo: 2012 MacBook Pro Omarchy &quot;rebuild&quot;"><img src="/assets/workstations/previews/discord-1509452294293422242.webp" alt="2012 MacBook Pro Omarchy &quot;rebuild&quot;" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508979563068395581.webp" aria-label="View workstation photo: Basic workstation for gaming and code learning"><img src="/assets/workstations/previews/discord-1508979563068395581.webp" alt="Basic workstation for gaming and code learning" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508979562409758830.webp" aria-label="View workstation photo: Basic workstation for gaming and code learning"><img src="/assets/workstations/previews/discord-1508979562409758830.webp" alt="Basic workstation for gaming and code learning" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508979561441005588.webp" aria-label="View workstation photo: Basic workstation for gaming and code learning"><img src="/assets/workstations/previews/discord-1508979561441005588.webp" alt="Basic workstation for gaming and code learning" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508728860588376084.webp" aria-label="View workstation photo: Reviving an old Toshiba satellite a665"><img src="/assets/workstations/previews/discord-1508728860588376084.webp" alt="Reviving an old Toshiba satellite a665" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508567753928216718.webp" aria-label="View workstation photo: Time for a split keyboard 👀"><img src="/assets/workstations/previews/discord-1508567753928216718.webp" alt="Time for a split keyboard 👀" width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508567753391472680.webp" aria-label="View workstation photo: Time for a split keyboard 👀"><img src="/assets/workstations/previews/discord-1508567753391472680.webp" alt="Time for a split keyboard 👀" width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1508567752431112292.webp" aria-label="View workstation photo: Time for a split keyboard 👀"><img src="/assets/workstations/previews/discord-1508567752431112292.webp" alt="Time for a split keyboard 👀" width="640" height="468" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1507046870298660924.webp" aria-label="View workstation photo: If your workstation doesn’t look like this then are you even working?"><img src="/assets/workstations/previews/discord-1507046870298660924.webp" alt="If your workstation doesn’t look like this then are you even working?" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1507023652137340958.webp" aria-label="View workstation photo: 7 year old laptop, custom keyboard and 10€ mouse. Perfection."><img src="/assets/workstations/previews/discord-1507023652137340958.webp" alt="7 year old laptop, custom keyboard and 10€ mouse. Perfection." width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1506449153499205803.webp" aria-label="View workstation photo: Clean, minimalist, and perfectly dialed in."><img src="/assets/workstations/previews/discord-1506449153499205803.webp" alt="Clean, minimalist, and perfectly dialed in." width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1506449153151205458.webp" aria-label="View workstation photo: Clean, minimalist, and perfectly dialed in."><img src="/assets/workstations/previews/discord-1506449153151205458.webp" alt="Clean, minimalist, and perfectly dialed in." width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1506449152522064034.webp" aria-label="View workstation photo: Clean, minimalist, and perfectly dialed in."><img src="/assets/workstations/previews/discord-1506449152522064034.webp" alt="Clean, minimalist, and perfectly dialed in." width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1505932055345762477.webp" aria-label="View workstation photo: My workstation"><img src="/assets/workstations/previews/discord-1505932055345762477.webp" alt="My workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1505932054918070363.webp" aria-label="View workstation photo: My workstation"><img src="/assets/workstations/previews/discord-1505932054918070363.webp" alt="My workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1505932054280409208.webp" aria-label="View workstation photo: My workstation"><img src="/assets/workstations/previews/discord-1505932054280409208.webp" alt="My workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1505324494330269866.webp" aria-label="View workstation photo: omarchy / omacon / omaterm"><img src="/assets/workstations/previews/discord-1505324494330269866.webp" alt="omarchy / omacon / omaterm" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1505324493634146344.webp" aria-label="View workstation photo: omarchy / omacon / omaterm"><img src="/assets/workstations/previews/discord-1505324493634146344.webp" alt="omarchy / omacon / omaterm" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1504945730387710052.webp" aria-label="View workstation photo: Work+Home"><img src="/assets/workstations/previews/discord-1504945730387710052.webp" alt="Work+Home" width="640" height="469" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1504945729683198163.webp" aria-label="View workstation photo: Work+Home"><img src="/assets/workstations/previews/discord-1504945729683198163.webp" alt="Work+Home" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1503404175000600679.webp" aria-label="View workstation photo: wood"><img src="/assets/workstations/previews/discord-1503404175000600679.webp" alt="wood" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1503404174287831080.webp" aria-label="View workstation photo: wood"><img src="/assets/workstations/previews/discord-1503404174287831080.webp" alt="wood" width="640" height="343" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1503085180053881134.webp" aria-label="View workstation photo: Omarchill a la parmigiana"><img src="/assets/workstations/previews/discord-1503085180053881134.webp" alt="Omarchill a la parmigiana" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1503029450483437699.webp" aria-label="View workstation photo: Lenovo Slim 7i  x9 - can&#39;t believe its 975g"><img src="/assets/workstations/previews/discord-1503029450483437699.webp" alt="Lenovo Slim 7i  x9 - can&#39;t believe its 975g" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1503029450122465370.webp" aria-label="View workstation photo: Lenovo Slim 7i  x9 - can&#39;t believe its 975g"><img src="/assets/workstations/previews/discord-1503029450122465370.webp" alt="Lenovo Slim 7i  x9 - can&#39;t believe its 975g" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1503029449766207668.webp" aria-label="View workstation photo: Lenovo Slim 7i  x9 - can&#39;t believe its 975g"><img src="/assets/workstations/previews/discord-1503029449766207668.webp" alt="Lenovo Slim 7i  x9 - can&#39;t believe its 975g" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1500937109354053662.webp" aria-label="View workstation photo: omarchy is the way"><img src="/assets/workstations/previews/discord-1500937109354053662.webp" alt="omarchy is the way" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1500579171384950804.webp" aria-label="View workstation photo: La guarida"><img src="/assets/workstations/previews/discord-1500579171384950804.webp" alt="La guarida" width="640" height="288" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1500204953485180948.webp" aria-label="View workstation photo: All Intel Build - Arc B70 + 270K Plus"><img src="/assets/workstations/previews/discord-1500204953485180948.webp" alt="All Intel Build - Arc B70 + 270K Plus" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1500204952721686618.webp" aria-label="View workstation photo: All Intel Build - Arc B70 + 270K Plus"><img src="/assets/workstations/previews/discord-1500204952721686618.webp" alt="All Intel Build - Arc B70 + 270K Plus" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1500032252573126726.webp" aria-label="View workstation photo: Omarchy Work/Game station"><img src="/assets/workstations/previews/discord-1500032252573126726.webp" alt="Omarchy Work/Game station" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1499843841694498878.webp" aria-label="View workstation photo: MacBookPro14,1 Dell Latitude 5420 (X2) HP Pavilion x360 2 in 1"><img src="/assets/workstations/previews/discord-1499843841694498878.webp" alt="MacBookPro14,1 Dell Latitude 5420 (X2) HP Pavilion x360 2 in 1" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1499785482723397632.webp" aria-label="View workstation photo: Omarchy &gt; Windows"><img src="/assets/workstations/previews/discord-1499785482723397632.webp" alt="Omarchy &gt; Windows" width="640" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1499785481846652998.webp" aria-label="View workstation photo: Omarchy &gt; Windows"><img src="/assets/workstations/previews/discord-1499785481846652998.webp" alt="Omarchy &gt; Windows" width="640" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1499785480894550046.webp" aria-label="View workstation photo: Omarchy &gt; Windows"><img src="/assets/workstations/previews/discord-1499785480894550046.webp" alt="Omarchy &gt; Windows" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1499521884319121428.webp" aria-label="View workstation photo: Geekom Geekbookpro x14"><img src="/assets/workstations/previews/discord-1499521884319121428.webp" alt="Geekom Geekbookpro x14" width="360" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1499521883794706432.webp" aria-label="View workstation photo: Geekom Geekbookpro x14"><img src="/assets/workstations/previews/discord-1499521883794706432.webp" alt="Geekom Geekbookpro x14" width="360" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1498670177557024998.webp" aria-label="View workstation photo: Dell XPS 14 Panther Lake + Studio Display + Omarchy 3.6 🚀"><img src="/assets/workstations/previews/discord-1498670177557024998.webp" alt="Dell XPS 14 Panther Lake + Studio Display + Omarchy 3.6 🚀" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1498670176437014688.webp" aria-label="View workstation photo: Dell XPS 14 Panther Lake + Studio Display + Omarchy 3.6 🚀"><img src="/assets/workstations/previews/discord-1498670176437014688.webp" alt="Dell XPS 14 Panther Lake + Studio Display + Omarchy 3.6 🚀" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1498176349884518440.webp" aria-label="View workstation photo: Peak school setup"><img src="/assets/workstations/previews/discord-1498176349884518440.webp" alt="Peak school setup" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1498120330533928960.webp" aria-label="View workstation photo: Years of the Linux Desktop"><img src="/assets/workstations/previews/discord-1498120330533928960.webp" alt="Years of the Linux Desktop" width="640" height="471" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1497974972549828639.webp" aria-label="View workstation photo: Years of the Linux Desktop"><img src="/assets/workstations/previews/discord-1497974972549828639.webp" alt="Years of the Linux Desktop" width="640" height="438" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1496500940100997181.webp" aria-label="View workstation photo: New SFF - Omarchy Installed 1 Minute 52 Seconds!"><img src="/assets/workstations/previews/discord-1496500940100997181.webp" alt="New SFF - Omarchy Installed 1 Minute 52 Seconds!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1496500939551408240.webp" aria-label="View workstation photo: New SFF - Omarchy Installed 1 Minute 52 Seconds!"><img src="/assets/workstations/previews/discord-1496500939551408240.webp" alt="New SFF - Omarchy Installed 1 Minute 52 Seconds!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1496500938813214760.webp" aria-label="View workstation photo: New SFF - Omarchy Installed 1 Minute 52 Seconds!"><img src="/assets/workstations/previews/discord-1496500938813214760.webp" alt="New SFF - Omarchy Installed 1 Minute 52 Seconds!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1495245084038271089.webp" aria-label="View workstation photo: Long time Linux user :)"><img src="/assets/workstations/previews/discord-1495245084038271089.webp" alt="Long time Linux user :)" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1493714943659344025.webp" aria-label="View workstation photo: Ooomarchy"><img src="/assets/workstations/previews/discord-1493714943659344025.webp" alt="Ooomarchy" width="640" height="411" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1493638820472553573.webp" aria-label="View workstation photo: Work/Home setup"><img src="/assets/workstations/previews/discord-1493638820472553573.webp" alt="Work/Home setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1493638819847606375.webp" aria-label="View workstation photo: Work/Home setup"><img src="/assets/workstations/previews/discord-1493638819847606375.webp" alt="Work/Home setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1492927060895858708.webp" aria-label="View workstation photo: Lenovo Legion + 42&quot;4k Monitor + Corne keyboard"><img src="/assets/workstations/previews/discord-1492927060895858708.webp" alt="Lenovo Legion + 42&quot;4k Monitor + Corne keyboard" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1489719010273529926.webp" aria-label="View workstation photo: Thinkpad L390"><img src="/assets/workstations/previews/discord-1489719010273529926.webp" alt="Thinkpad L390" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <video controls preload="none" playsinline poster="/assets/workstations/previews/discord-1489719009858424913.webp" aria-label="Thinkpad L390" width="360" height="640"><source src="/assets/workstations/discord-1489719009858424913.webm" type="video/webm"></video>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1489719009459835061.webp" aria-label="View workstation photo: Thinkpad L390"><img src="/assets/workstations/previews/discord-1489719009459835061.webp" alt="Thinkpad L390" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1489690490252165335.webp" aria-label="View workstation photo: Miasma vibes"><img src="/assets/workstations/previews/discord-1489690490252165335.webp" alt="Miasma vibes" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1489321202626596996.webp" aria-label="View workstation photo: Loving my Minisforum with Omarchy (sorry for the mess)"><img src="/assets/workstations/previews/discord-1489321202626596996.webp" alt="Loving my Minisforum with Omarchy (sorry for the mess)" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1486852924020625429.webp" aria-label="View workstation photo: setup"><img src="/assets/workstations/previews/discord-1486852924020625429.webp" alt="setup" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1485709360024912012.webp" aria-label="View workstation photo: Took out the trash, installed Omarchy!"><img src="/assets/workstations/previews/discord-1485709360024912012.webp" alt="Took out the trash, installed Omarchy!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1485691350321074297.webp" aria-label="View workstation photo: Took out the trash, installed Omarchy!"><img src="/assets/workstations/previews/discord-1485691350321074297.webp" alt="Took out the trash, installed Omarchy!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1534400467755466783.webp" aria-label="View workstation photo: 4RCH4NG3L"><img src="/assets/workstations/previews/discord-1534400467755466783.webp" alt="4RCH4NG3L" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1534400466954485760.webp" aria-label="View workstation photo: 4RCH4NG3L"><img src="/assets/workstations/previews/discord-1534400466954485760.webp" alt="4RCH4NG3L" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1485023092672565339.webp" aria-label="View workstation photo: 4RCH4NG3L"><img src="/assets/workstations/previews/discord-1485023092672565339.webp" alt="4RCH4NG3L" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1484693862898467009.webp" aria-label="View workstation photo: Home Sweet Home"><img src="/assets/workstations/previews/discord-1484693862898467009.webp" alt="Home Sweet Home" width="639" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1482876962702627029.webp" aria-label="View workstation photo: This is the most light this setup gets"><img src="/assets/workstations/previews/discord-1482876962702627029.webp" alt="This is the most light this setup gets" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1482736556669272246.webp" aria-label="View workstation photo: My setup hehe"><img src="/assets/workstations/previews/discord-1482736556669272246.webp" alt="My setup hehe" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1482028095627202812.webp" aria-label="View workstation photo: Trashcan Mac running Omarchy"><img src="/assets/workstations/previews/discord-1482028095627202812.webp" alt="Trashcan Mac running Omarchy" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1480372184827301948.webp" aria-label="View workstation photo: My cozy place"><img src="/assets/workstations/previews/discord-1480372184827301948.webp" alt="My cozy place" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1480043741531209768.webp" aria-label="View workstation photo: MacBook Pro 2015"><img src="/assets/workstations/previews/discord-1480043741531209768.webp" alt="MacBook Pro 2015" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1480043740965109830.webp" aria-label="View workstation photo: MacBook Pro 2015"><img src="/assets/workstations/previews/discord-1480043740965109830.webp" alt="MacBook Pro 2015" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1478362731793879040.webp" aria-label="View workstation photo: My workstation"><img src="/assets/workstations/previews/discord-1478362731793879040.webp" alt="My workstation" width="640" height="296" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1498385174642163793.webp" aria-label="View workstation photo: Yea more OMARCHY!!"><img src="/assets/workstations/previews/discord-1498385174642163793.webp" alt="Yea more OMARCHY!!" width="640" height="425" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1477546292652539955.webp" aria-label="View workstation photo: Yea more OMARCHY!!"><img src="/assets/workstations/previews/discord-1477546292652539955.webp" alt="Yea more OMARCHY!!" width="640" height="427" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1477546030835699712.webp" aria-label="View workstation photo: OMARCHY!"><img src="/assets/workstations/previews/discord-1477546030835699712.webp" alt="OMARCHY!" width="427" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1474933184977178807.webp" aria-label="View workstation photo: My Workspace"><img src="/assets/workstations/previews/discord-1474933184977178807.webp" alt="My Workspace" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1473284792408866866.webp" aria-label="View workstation photo: in the computer science course"><img src="/assets/workstations/previews/discord-1473284792408866866.webp" alt="in the computer science course" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1473284791636983981.webp" aria-label="View workstation photo: in the computer science course"><img src="/assets/workstations/previews/discord-1473284791636983981.webp" alt="in the computer science course" width="360" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1473175679112839330.webp" aria-label="View workstation photo: Thinkpad setup"><img src="/assets/workstations/previews/discord-1473175679112839330.webp" alt="Thinkpad setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1471731813926965350.webp" aria-label="View workstation photo: My Omarchy Workststion (Open to suggestions)"><img src="/assets/workstations/previews/discord-1471731813926965350.webp" alt="My Omarchy Workststion (Open to suggestions)" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1471174836784070798.webp" aria-label="View workstation photo: My Omarchy setup (small space)"><img src="/assets/workstations/previews/discord-1471174836784070798.webp" alt="My Omarchy setup (small space)" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1470523399666270208.webp" aria-label="View workstation photo: Beelink SER 9"><img src="/assets/workstations/previews/discord-1470523399666270208.webp" alt="Beelink SER 9" width="640" height="361" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1469408003462664384.webp" aria-label="View workstation photo: Asus Tuf Gaming a15"><img src="/assets/workstations/previews/discord-1469408003462664384.webp" alt="Asus Tuf Gaming a15" width="640" height="361" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1469408002737176576.webp" aria-label="View workstation photo: Asus Tuf Gaming a15"><img src="/assets/workstations/previews/discord-1469408002737176576.webp" alt="Asus Tuf Gaming a15" width="361" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1489248688973942815.webp" aria-label="View workstation photo: Macbook 12"><img src="/assets/workstations/previews/discord-1489248688973942815.webp" alt="Macbook 12" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1489248688353050815.webp" aria-label="View workstation photo: Macbook 12"><img src="/assets/workstations/previews/discord-1489248688353050815.webp" alt="Macbook 12" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1469367750496616520.webp" aria-label="View workstation photo: Macbook 12"><img src="/assets/workstations/previews/discord-1469367750496616520.webp" alt="Macbook 12" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1469367749917806633.webp" aria-label="View workstation photo: Macbook 12"><img src="/assets/workstations/previews/discord-1469367749917806633.webp" alt="Macbook 12" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1469306152935231528.webp" aria-label="View workstation photo: You couldn&#39;t get enough Omarchy"><img src="/assets/workstations/previews/discord-1469306152935231528.webp" alt="You couldn&#39;t get enough Omarchy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1469356082114855118.webp" aria-label="View workstation photo: Asus tuff gaming a 15, omarchy is just good productivy OS, feels like its built for me"><img src="/assets/workstations/previews/discord-1469356082114855118.webp" alt="Asus tuff gaming a 15, omarchy is just good productivy OS, feels like its built for me" width="482" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1467592535290675293.webp" aria-label="View workstation photo: My Homeoffice / Bicycle Workshop 🥰"><img src="/assets/workstations/previews/discord-1467592535290675293.webp" alt="My Homeoffice / Bicycle Workshop 🥰" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1467268652062740783.webp" aria-label="View workstation photo: 12 year old Dell laptop resurrected into a new life!"><img src="/assets/workstations/previews/discord-1467268652062740783.webp" alt="12 year old Dell laptop resurrected into a new life!" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1467268651580133601.webp" aria-label="View workstation photo: 12 year old Dell laptop resurrected into a new life!"><img src="/assets/workstations/previews/discord-1467268651580133601.webp" alt="12 year old Dell laptop resurrected into a new life!" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1467268651173543957.webp" aria-label="View workstation photo: 12 year old Dell laptop resurrected into a new life!"><img src="/assets/workstations/previews/discord-1467268651173543957.webp" alt="12 year old Dell laptop resurrected into a new life!" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1465493322411016223.webp" aria-label="View workstation photo: Desktop build"><img src="/assets/workstations/previews/discord-1465493322411016223.webp" alt="Desktop build" width="640" height="368" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1464891410590470266.webp" aria-label="View workstation photo: Yoga Slim 7 Ultra 7-155H runs Omarchy very well"><img src="/assets/workstations/previews/discord-1464891410590470266.webp" alt="Yoga Slim 7 Ultra 7-155H runs Omarchy very well" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1464840316984098816.webp" aria-label="View workstation photo: Raspberry Pi 500+"><img src="/assets/workstations/previews/discord-1464840316984098816.webp" alt="Raspberry Pi 500+" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1464840316514472026.webp" aria-label="View workstation photo: Raspberry Pi 500+"><img src="/assets/workstations/previews/discord-1464840316514472026.webp" alt="Raspberry Pi 500+" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1464838635684888669.webp" aria-label="View workstation photo: Raspberry Pi 500+"><img src="/assets/workstations/previews/discord-1464838635684888669.webp" alt="Raspberry Pi 500+" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1463548978409771048.webp" aria-label="View workstation photo: Omarchy user from Myanmar 🇲🇲"><img src="/assets/workstations/previews/discord-1463548978409771048.webp" alt="Omarchy user from Myanmar 🇲🇲" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1463548977445212160.webp" aria-label="View workstation photo: Omarchy user from Myanmar 🇲🇲"><img src="/assets/workstations/previews/discord-1463548977445212160.webp" alt="Omarchy user from Myanmar 🇲🇲" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1462717749276053597.webp" aria-label="View workstation photo: Omarchy on iMac 27&quot;"><img src="/assets/workstations/previews/discord-1462717749276053597.webp" alt="Omarchy on iMac 27&quot;" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1462115467480006839.webp" aria-label="View workstation photo: My hooptie mobile workstation"><img src="/assets/workstations/previews/discord-1462115467480006839.webp" alt="My hooptie mobile workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1460951301306454149.webp" aria-label="View workstation photo: Framework 13"><img src="/assets/workstations/previews/discord-1460951301306454149.webp" alt="Framework 13" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1460697861103554581.webp" aria-label="View workstation photo: Computer-1 | ZSA Voyager | Samsung G9 | Yamaha HS4"><img src="/assets/workstations/previews/discord-1460697861103554581.webp" alt="Computer-1 | ZSA Voyager | Samsung G9 | Yamaha HS4" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1459777576888307763.webp" aria-label="View workstation photo: Framework 16 aka Orange Box"><img src="/assets/workstations/previews/discord-1459777576888307763.webp" alt="Framework 16 aka Orange Box" width="482" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1459594345429860453.webp" aria-label="View workstation photo: My Battlestation"><img src="/assets/workstations/previews/discord-1459594345429860453.webp" alt="My Battlestation" width="640" height="389" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1457242527429038102.webp" aria-label="View workstation photo: My Battlestation"><img src="/assets/workstations/previews/discord-1457242527429038102.webp" alt="My Battlestation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1455608773707169863.webp" aria-label="View workstation photo: Daily Workstation in my home :-)"><img src="/assets/workstations/previews/discord-1455608773707169863.webp" alt="Daily Workstation in my home :-)" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1455608772264464384.webp" aria-label="View workstation photo: Daily Workstation in my home :-)"><img src="/assets/workstations/previews/discord-1455608772264464384.webp" alt="Daily Workstation in my home :-)" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1455548951108517970.webp" aria-label="View workstation photo: Laptop made for the Kanagawa theme"><img src="/assets/workstations/previews/discord-1455548951108517970.webp" alt="Laptop made for the Kanagawa theme" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1455170869721829396.webp" aria-label="View workstation photo: minimalistic"><img src="/assets/workstations/previews/discord-1455170869721829396.webp" alt="minimalistic" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1455170869222703154.webp" aria-label="View workstation photo: minimalistic"><img src="/assets/workstations/previews/discord-1455170869222703154.webp" alt="minimalistic" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1455170862863876180.webp" aria-label="View workstation photo: minimalistic"><img src="/assets/workstations/previews/discord-1455170862863876180.webp" alt="minimalistic" width="360" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1454037989641555978.webp" aria-label="View workstation photo: simple and cozy"><img src="/assets/workstations/previews/discord-1454037989641555978.webp" alt="simple and cozy" width="640" height="295" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1451295345446359144.webp" aria-label="View workstation photo: Small workstation"><img src="/assets/workstations/previews/discord-1451295345446359144.webp" alt="Small workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1450801010137104487.webp" aria-label="View workstation photo: Happy newbie setup 😁"><img src="/assets/workstations/previews/discord-1450801010137104487.webp" alt="Happy newbie setup 😁" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1450747771278589985.webp" aria-label="View workstation photo: Omarchy in a Construction Firm"><img src="/assets/workstations/previews/discord-1450747771278589985.webp" alt="Omarchy in a Construction Firm" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1449988936419119146.webp" aria-label="View workstation photo: New Omarchy Build"><img src="/assets/workstations/previews/discord-1449988936419119146.webp" alt="New Omarchy Build" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1447924515077361756.webp" aria-label="View workstation photo: Omarchy on MacBook Pro 16 m1 max"><img src="/assets/workstations/previews/discord-1447924515077361756.webp" alt="Omarchy on MacBook Pro 16 m1 max" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1447663909417914682.webp" aria-label="View workstation photo: Desktop Setup"><img src="/assets/workstations/previews/discord-1447663909417914682.webp" alt="Desktop Setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1447235860335562984.webp" aria-label="View workstation photo: Desktop Setup"><img src="/assets/workstations/previews/discord-1447235860335562984.webp" alt="Desktop Setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1446494628420522167.webp" aria-label="View workstation photo: Windows Hyper-V VM on Minisforum UM780"><img src="/assets/workstations/previews/discord-1446494628420522167.webp" alt="Windows Hyper-V VM on Minisforum UM780" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1445520047974908225.webp" aria-label="View workstation photo: Trusty X230"><img src="/assets/workstations/previews/discord-1445520047974908225.webp" alt="Trusty X230" width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1444701301182300221.webp" aria-label="View workstation photo: framework laptop @ home"><img src="/assets/workstations/previews/discord-1444701301182300221.webp" alt="framework laptop @ home" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1444515649333366885.webp" aria-label="View workstation photo: Away from home setup"><img src="/assets/workstations/previews/discord-1444515649333366885.webp" alt="Away from home setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1444423254856171732.webp" aria-label="View workstation photo: Dual monitor setup + Asus vivobook 15"><img src="/assets/workstations/previews/discord-1444423254856171732.webp" alt="Dual monitor setup + Asus vivobook 15" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1444048658050973786.webp" aria-label="View workstation photo: Asus ZenBook from 2013, i7-3517U, 10GB DDR-3. Omarchy gave new life to laptop struggled with Win10"><img src="/assets/workstations/previews/discord-1444048658050973786.webp" alt="Asus ZenBook from 2013, i7-3517U, 10GB DDR-3. Omarchy gave new life to laptop struggled with Win10" width="640" height="528" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1443980740806185063.webp" aria-label="View workstation photo: $omarchy=&quot;New Macbook Air in 2025&quot;"><img src="/assets/workstations/previews/discord-1443980740806185063.webp" alt="$omarchy=&quot;New Macbook Air in 2025&quot;" width="640" height="427" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1443152079945203742.webp" aria-label="View workstation photo: My workstation"><img src="/assets/workstations/previews/discord-1443152079945203742.webp" alt="My workstation" width="640" height="481" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1443072795855687730.webp" aria-label="View workstation photo: framework 13 on the g9 odyssey oled 240hz"><img src="/assets/workstations/previews/discord-1443072795855687730.webp" alt="framework 13 on the g9 odyssey oled 240hz" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1442968306012258515.webp" aria-label="View workstation photo: Framework 13 docked to my Dell DELL-U3225QE UltraSharp 32 inch 4K UHD 120Hz . Peaceful and fun!"><img src="/assets/workstations/previews/discord-1442968306012258515.webp" alt="Framework 13 docked to my Dell DELL-U3225QE UltraSharp 32 inch 4K UHD 120Hz . Peaceful and fun!" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1442485129032499220.webp" aria-label="View workstation photo: HP revival"><img src="/assets/workstations/previews/discord-1442485129032499220.webp" alt="HP revival" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1442409226453520424.webp" aria-label="View workstation photo: Omarchy on a DL380p G8"><img src="/assets/workstations/previews/discord-1442409226453520424.webp" alt="Omarchy on a DL380p G8" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1442060553550958714.webp" aria-label="View workstation photo: Dell XPS 13 - 9370 @ HKG"><img src="/assets/workstations/previews/discord-1442060553550958714.webp" alt="Dell XPS 13 - 9370 @ HKG" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441802650625507568.webp" aria-label="View workstation photo: ThinkPad L14"><img src="/assets/workstations/previews/discord-1441802650625507568.webp" alt="ThinkPad L14" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441747011668938782.webp" aria-label="View workstation photo: Panasonic Toughbook"><img src="/assets/workstations/previews/discord-1441747011668938782.webp" alt="Panasonic Toughbook" width="452" height="600" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441747011203235960.webp" aria-label="View workstation photo: Panasonic Toughbook"><img src="/assets/workstations/previews/discord-1441747011203235960.webp" alt="Panasonic Toughbook" width="452" height="600" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441554120954740948.webp" aria-label="View workstation photo: Minisforum MiniPC 16gb - Omarchy - BeeLink 32gb - Omakub -"><img src="/assets/workstations/previews/discord-1441554120954740948.webp" alt="Minisforum MiniPC 16gb - Omarchy - BeeLink 32gb - Omakub -" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1531709368058253462.webp" aria-label="View workstation photo: Desktop PC and MacBook Pro 14,1"><img src="/assets/workstations/previews/discord-1531709368058253462.webp" alt="Desktop PC and MacBook Pro 14,1" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441503813055021186.webp" aria-label="View workstation photo: Desktop PC and MacBook Pro 14,1"><img src="/assets/workstations/previews/discord-1441503813055021186.webp" alt="Desktop PC and MacBook Pro 14,1" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441415354029965404.webp" aria-label="View workstation photo: MacBook Air 2017"><img src="/assets/workstations/previews/discord-1441415354029965404.webp" alt="MacBook Air 2017" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1441173234694230117.webp" aria-label="View workstation photo: Omarchy on Desktop"><img src="/assets/workstations/previews/discord-1441173234694230117.webp" alt="Omarchy on Desktop" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1439584671297048698.webp" aria-label="View workstation photo: Revived my 2017 dell XPS 15"><img src="/assets/workstations/previews/discord-1439584671297048698.webp" alt="Revived my 2017 dell XPS 15" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1439055615740608555.webp" aria-label="View workstation photo: My first thinkpad! with Omarchy btw :3"><img src="/assets/workstations/previews/discord-1439055615740608555.webp" alt="My first thinkpad! with Omarchy btw :3" width="640" height="361" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1439036055104786432.webp" aria-label="View workstation photo: On the go"><img src="/assets/workstations/previews/discord-1439036055104786432.webp" alt="On the go" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1438956141483655229.webp" aria-label="View workstation photo: ThinkPad x Omarchy setup no. 274628291"><img src="/assets/workstations/previews/discord-1438956141483655229.webp" alt="ThinkPad x Omarchy setup no. 274628291" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1438176606521786401.webp" aria-label="View workstation photo: Daytime Workstation"><img src="/assets/workstations/previews/discord-1438176606521786401.webp" alt="Daytime Workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1437967775459971076.webp" aria-label="View workstation photo: I love OMARCHY"><img src="/assets/workstations/previews/discord-1437967775459971076.webp" alt="I love OMARCHY" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1437598489767968868.webp" aria-label="View workstation photo: The Station"><img src="/assets/workstations/previews/discord-1437598489767968868.webp" alt="The Station" width="640" height="337" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1437480477153038336.webp" aria-label="View workstation photo: laptop and minipc with omarchy"><img src="/assets/workstations/previews/discord-1437480477153038336.webp" alt="laptop and minipc with omarchy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1437480476502790255.webp" aria-label="View workstation photo: laptop and minipc with omarchy"><img src="/assets/workstations/previews/discord-1437480476502790255.webp" alt="laptop and minipc with omarchy" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1437440404768424077.webp" aria-label="View workstation photo: Workstation"><img src="/assets/workstations/previews/discord-1437440404768424077.webp" alt="Workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1437153391188115517.webp" aria-label="View workstation photo: Home Station"><img src="/assets/workstations/previews/discord-1437153391188115517.webp" alt="Home Station" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1436393858706706546.webp" aria-label="View workstation photo: I&#39;m happy"><img src="/assets/workstations/previews/discord-1436393858706706546.webp" alt="I&#39;m happy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1436393493194080256.webp" aria-label="View workstation photo: I&#39;m happy"><img src="/assets/workstations/previews/discord-1436393493194080256.webp" alt="I&#39;m happy" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1436095682082771154.webp" aria-label="View workstation photo: Mission Control"><img src="/assets/workstations/previews/discord-1436095682082771154.webp" alt="Mission Control" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1435506629616336928.webp" aria-label="View workstation photo: Primary Workstation"><img src="/assets/workstations/previews/discord-1435506629616336928.webp" alt="Primary Workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1435457391243300875.webp" aria-label="View workstation photo: Omarchy with jakoolit dots"><img src="/assets/workstations/previews/discord-1435457391243300875.webp" alt="Omarchy with jakoolit dots" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1435457390475612171.webp" aria-label="View workstation photo: Omarchy with jakoolit dots"><img src="/assets/workstations/previews/discord-1435457390475612171.webp" alt="Omarchy with jakoolit dots" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1434706692049735720.webp" aria-label="View workstation photo: Another thinkpad"><img src="/assets/workstations/previews/discord-1434706692049735720.webp" alt="Another thinkpad" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1433349197285036094.webp" aria-label="View workstation photo: A small omarchy setup"><img src="/assets/workstations/previews/discord-1433349197285036094.webp" alt="A small omarchy setup" width="360" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1432390532084011068.webp" aria-label="View workstation photo: Complete with M4 MacBook Pro wrist rest."><img src="/assets/workstations/previews/discord-1432390532084011068.webp" alt="Complete with M4 MacBook Pro wrist rest." width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1432377092967891095.webp" aria-label="View workstation photo: broken Fujitsu Arrows Tab R727/R"><img src="/assets/workstations/previews/discord-1432377092967891095.webp" alt="broken Fujitsu Arrows Tab R727/R" width="640" height="443" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1432004572708208720.webp" aria-label="View workstation photo: ThinkPad T14s G1"><img src="/assets/workstations/previews/discord-1432004572708208720.webp" alt="ThinkPad T14s G1" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431712048735322162.webp" aria-label="View workstation photo: My purple setup."><img src="/assets/workstations/previews/discord-1431712048735322162.webp" alt="My purple setup." width="640" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431680595343310908.webp" aria-label="View workstation photo: My new setup"><img src="/assets/workstations/previews/discord-1431680595343310908.webp" alt="My new setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431656547662037123.webp" aria-label="View workstation photo: Yes"><img src="/assets/workstations/previews/discord-1431656547662037123.webp" alt="Yes" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431044706132820099.webp" aria-label="View workstation photo: The full station"><img src="/assets/workstations/previews/discord-1431044706132820099.webp" alt="The full station" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431044704958550036.webp" aria-label="View workstation photo: The full station"><img src="/assets/workstations/previews/discord-1431044704958550036.webp" alt="The full station" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431043935660408983.webp" aria-label="View workstation photo: Omarchy on my Minisforum x500"><img src="/assets/workstations/previews/discord-1431043935660408983.webp" alt="Omarchy on my Minisforum x500" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1431021070881652867.webp" aria-label="View workstation photo: Low wire setup"><img src="/assets/workstations/previews/discord-1431021070881652867.webp" alt="Low wire setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1430818842078220369.webp" aria-label="View workstation photo: Aluminum Alloy Open-Frame Workstation Setup"><img src="/assets/workstations/previews/discord-1430818842078220369.webp" alt="Aluminum Alloy Open-Frame Workstation Setup" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/discord-1430674377065889923.webp" aria-label="View workstation photo: Main Workstation"><img src="/assets/workstations/previews/discord-1430674377065889923.webp" alt="Main Workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/P1554011.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/P1554011.webp" alt="Omarchy workstation" width="640" height="427" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/6a74444a-0a73-46bc-817d-bce9c9c6c0e6.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/6a74444a-0a73-46bc-817d-bce9c9c6c0e6.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250717_0355s50.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250717_0355s50.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250728_142207.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250728_142207.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250729_150758.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250729_150758.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250731_001547.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250731_001547.webp" alt="Omarchy workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250805_210210.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250805_210210.webp" alt="Omarchy workstation" width="640" height="432" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250809_093527.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250809_093527.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250809_093628.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250809_093628.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250809_171842.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250809_171842.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250809_171946.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250809_171946.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250811_002205.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250811_002205.webp" alt="Omarchy workstation" width="640" height="296" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250819_130901.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250819_130901.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250831_101137.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250831_101137.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/20250906_0750391.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/20250906_0750391.webp" alt="Omarchy workstation" width="640" height="296" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/1000001077.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/1000001077.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/1000002829.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/1000002829.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/AP1GczMavNW8EaWfHU4UmZNfqeu70P2RHVYjHZbM_6FtIpeoL92gDy_93QVXIAw1502.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/AP1GczMavNW8EaWfHU4UmZNfqeu70P2RHVYjHZbM_6FtIpeoL92gDy_93QVXIAw1502.webp" alt="Omarchy workstation" width="482" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/AP1GczNlx6FUkYeYXmMqZ1g3fCTRcK9ISkqOoul7Yq9E18Sj1k3EJPVXNhqY.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/AP1GczNlx6FUkYeYXmMqZ1g3fCTRcK9ISkqOoul7Yq9E18Sj1k3EJPVXNhqY.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/Battlestation_-_1_1.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/Battlestation_-_1_1.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/c9373bba-9f10-42cf-9e26-5ce6dde7087c.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/c9373bba-9f10-42cf-9e26-5ce6dde7087c.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/Clockwork_Omarchy.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/Clockwork_Omarchy.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/desk (1).webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/desk (1).webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/desk.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/desk.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/DSCF0576.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/DSCF0576.webp" alt="Omarchy workstation" width="640" height="427" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/fdfe53d1-8d98-41ac-872c-661b7d646882.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/fdfe53d1-8d98-41ac-872c-661b7d646882.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/Gwgz4X9XEAAy33W.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/Gwgz4X9XEAAy33W.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/GxrFYwQXUAAe0zI.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/GxrFYwQXUAAe0zI.webp" alt="Omarchy workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/image.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/image.webp" alt="Omarchy workstation" width="640" height="358" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/image0 (1).webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/image0 (1).webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/image0 (2).webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/image0 (2).webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/image0.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/image0.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_0643.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_0643.webp" alt="Omarchy workstation" width="640" height="374" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_0746.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_0746.webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1244.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1244.webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1341.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1341.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1582.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1582.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1649.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1649.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1733.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1733.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1745.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1745.webp" alt="Omarchy workstation" width="640" height="307" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1981.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1981.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_1989.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_1989.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_2568.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_2568.webp" alt="Omarchy workstation" width="640" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_3207.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_3207.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_4361.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_4361.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_4760_togo.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_4760_togo.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_5347.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_5347.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_5471.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_5471.webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_6661.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_6661.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_6694.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_6694.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_7357.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_7357.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_8684.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_8684.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_8686.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_8686.webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_9129.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_9129.webp" alt="Omarchy workstation" width="640" height="458" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_9631.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_9631.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_20250730_114329551.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_20250730_114329551.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_20250731_011115.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_20250731_011115.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_20250809_2048117022.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_20250809_2048117022.webp" alt="Omarchy workstation" width="640" height="526" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_20250818_091522853_1.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_20250818_091522853_1.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_20250904_215408.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_20250904_215408.webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/img_1755747110535.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/img_1755747110535.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG20250828104558.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG20250828104558.webp" alt="Omarchy workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/krbdg3hltfmf1.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/krbdg3hltfmf1.webp" alt="Omarchy workstation" width="640" height="329" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/L1020621.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/L1020621.webp" alt="Omarchy workstation" width="640" height="512" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/new-omarchy-setup.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/new-omarchy-setup.webp" alt="Omarchy workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/omarchy_cat.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/omarchy_cat.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250728_155911110.MP.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250728_155911110.MP.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250728_164020388-EDIT.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250728_164020388-EDIT.webp" alt="Omarchy workstation" width="640" height="335" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250801_104910508.RAW-01.COVER.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250801_104910508.RAW-01.COVER.webp" alt="Omarchy workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250805_105323887.RAW-01.COVER.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250805_105323887.RAW-01.COVER.webp" alt="Omarchy workstation" width="482" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250810_141950367.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250810_141950367.webp" alt="Omarchy workstation" width="480" height="640" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250812_063009857.RAW-01.MP.COVER.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250812_063009857.RAW-01.MP.COVER.webp" alt="Omarchy workstation" width="640" height="427" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250827_105330558.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250827_105330558.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/PXL_20250910_192624503.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/PXL_20250910_192624503.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/rn_image_picker_lib_temp_c303fde1-ff27-4a13-b59e-c393c29a3e63.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/rn_image_picker_lib_temp_c303fde1-ff27-4a13-b59e-c393c29a3e63.webp" alt="Omarchy workstation" width="640" height="480" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/signal-2025-08-11-103847_002.webp" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/signal-2025-08-11-103847_002.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/thumbnail.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/thumbnail.webp" alt="Omarchy workstation" width="640" height="482" loading="lazy" decoding="async"></a>
+          </figure>
+
+          <figure>
+            <a href="/assets/workstations/IMG_20250911_100847608.jpg" aria-label="View workstation photo: Omarchy workstation"><img src="/assets/workstations/previews/IMG_20250911_100847608.webp" alt="Omarchy workstation" width="640" height="360" loading="lazy" decoding="async"></a>
+          </figure>
         </div>
-
-        <dialog class="workstations__modal">
-          <div class="workstations__backdrop"></div>
-          <div class="workstations__container"></div>
-        </dialog>
       </div>
-
-    </main>
-
-  </body>
+</main>
+</body>
 </html>

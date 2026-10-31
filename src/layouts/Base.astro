@@ -1,0 +1,143 @@
+---
+import '../styles.css'
+import '../i18n/international.css'
+import { language, locale, locales, hasTranslation, t } from '../i18n/site'
+import { ClientRouter } from 'astro:transitions'
+import { SiteHeader } from '@/components/SiteHeader'
+import { SiteFooter } from '@/components/SiteFooter'
+import { ThemePicker } from '@/components/ThemePicker'
+import { SearchPalette } from '@/components/SearchPalette'
+import { PixelSnap } from '@/components/PixelSnap'
+import { MusicControl } from '@/components/MusicControl'
+import { themeInitScript } from '@/lib/theme'
+import { etchInitScript } from '@/lib/etch'
+import { socialImage, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo'
+import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
+import geistCyrillic from '@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2?url'
+import geistVietnamese from '@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2?url'
+import monoLatin from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2?url'
+import monoCyrillic from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-cyrillic-wght-normal.woff2?url'
+import monoGreek from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-greek-wght-normal.woff2?url'
+import monoVietnamese from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-vietnamese-wght-normal.woff2?url'
+
+export interface Props {
+  title?: string
+  description?: string
+  path?: string
+  type?: 'website' | 'article'
+  robots?: string
+  published?: string
+}
+
+const {
+  title = 'Omarchy - Beautiful, fun & agentic Linux by DHH',
+  description = SITE_DESCRIPTION,
+  path = '/',
+  type = 'website',
+  robots,
+  published,
+} = Astro.props
+const url = `${SITE_URL}${path}`
+const ogImage = socialImage(path)
+
+// The font subsets this edition's own text is set in, preloaded ahead of the
+// stylesheet's discovery of them. Vietnamese is Latin script with tone letters
+// that live in a subset of their own; Geist has no Greek, so a Greek edition's
+// sans falls to the system while its mono still comes from the brand face.
+// Every edition also warms the Latin file: digits, commands and URLs are Latin
+// on every page. Scripts the faces do not carry preload Latin alone.
+const subsets: Record<string, [string, string]> = {
+  Cyrl: [geistCyrillic, monoCyrillic],
+  Grek: [geistLatin, monoGreek],
+  Latn: [geistLatin, monoLatin],
+  vietnamese: [geistVietnamese, monoVietnamese],
+}
+const own = subsets[language === 'vi' ? 'vietnamese' : locale.script] ?? subsets.Latn
+const fontPreloads = [...new Set([...own, geistLatin, monoLatin])]
+---
+
+<!doctype html>
+<html lang={language} dir={locale.direction ?? 'ltr'} transition:name="root" transition:animate="none">
+  <head>
+    <ClientRouter fallback="swap" />
+    <script is:inline defer data-domain="omarchy.org" src="https://plausible.io/js/script.js" transition:persist="plausible" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:site_name" content="Omarchy" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    {type === 'article' && published ? <meta property="article:published_time" content={published} /> : null}
+    {robots ? <meta name="robots" content={robots} /> : null}
+    <meta property="og:image" content={ogImage.url} />
+    <meta property="og:image:width" content={ogImage.width} />
+    <meta property="og:image:height" content={ogImage.height} />
+    <meta property="og:image:alt" content={ogImage.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage.url} />
+    <meta name="twitter:image:alt" content={ogImage.alt} />
+    <meta name="theme-color" content="#1a1b26" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="300x300" />
+    <link rel="icon" href="/brand/omarchy-logo.svg" type="image/svg+xml" data-theme-icon transition:persist="theme-icon" />
+    <link rel="canonical" href={url} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`Omarchy – ${t('News')}`}
+      href={`${SITE_URL}/news/rss.xml`}
+    />
+    {Object.entries(locales).filter(([code]) => hasTranslation(code, path)).map(([code, entry]) => (
+      <link rel="alternate" hreflang={code} href={`${entry.domain}${path}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${locales.en.domain}${path}`} />
+    <meta property="og:locale" content={locale.ogLocale} />
+    <link rel="preload" href="/brand/omarchy-wordmark.svg" as="image" type="image/svg+xml" crossorigin="anonymous" />
+    {fontPreloads.map((href) => (
+      <link rel="preload" href={href} as="font" type="font/woff2" crossorigin="anonymous" />
+    ))}
+    <script is:inline data-astro-rerun set:html={themeInitScript} />
+    <script is:inline data-astro-rerun set:html={etchInitScript} />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="bg-bg text-text focus-visible:outline-ring absolute left-4 z-(--z-modal) -translate-y-[120%] px-3 py-2 text-sm font-medium underline outline-offset-2 focus:translate-y-4 focus-visible:outline-2"
+    >
+      {t('Skip to content')}
+    </a>
+    <div class="flex min-h-dvh flex-col">
+      <SiteHeader client:load path={Astro.url.pathname} transition:persist="site-header" />
+      <div id="main" class="relative z-10 min-h-dvh flex-1 bg-bg"><slot /></div>
+      <SiteFooter path={Astro.url.pathname} client:visible={{ rootMargin: "300px" }} />
+    </div>
+    <ThemePicker client:load />
+    <SearchPalette client:load />
+    <MusicControl client:load path={Astro.url.pathname} transition:persist="music-control" />
+    <PixelSnap client:load />
+    <script>
+      import type { TransitionBeforeSwapEvent } from 'astro:transitions/client'
+      import { readTheme } from '@/lib/theme'
+      import { watchOutbound } from '@/lib/outbound'
+      import { watchBrandDownloads } from '@/lib/brand-downloads'
+      import { watchManualTocScroll } from '@/lib/manual-toc-scroll'
+
+      watchBrandDownloads()
+      watchManualTocScroll()
+      watchOutbound()
+      // Navigation should paint live text, not briefly rasterize it through
+      // the snapshot animation used for palette changes.
+      document.addEventListener('astro:before-swap', (event) => {
+        (event as TransitionBeforeSwapEvent).viewTransition.skipTransition()
+      })
+      // Restore the selected palette before the incoming page is painted.
+      document.addEventListener('astro:after-swap', () => {
+        document.documentElement.dataset.theme = readTheme()
+      })
+    </script>
+  </body>
+</html>

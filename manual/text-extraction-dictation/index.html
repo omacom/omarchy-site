@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>Text Extraction &amp; Dictation — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="Hit Super + Ctrl + PrtScr to select a region on the screen for text extraction. The tesseract open source OCR model will then quickly convert that selection...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Text Extraction &amp; Dictation">
-    <meta property="og:description" content="Hit Super + Ctrl + PrtScr to select a region on the screen for text extraction. The tesseract open source OCR model will then quickly convert that selection...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/text-extraction-dictation/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Text Extraction &amp; Dictation</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -137,18 +73,19 @@
 
 <h3 id="dictation">Dictation <a class="manual__heading-link" href="#dictation" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy offers AI dictation via <a href="https://voxtype.io/">Voxtype</a>. You install it via <em>Install &gt; AI &gt; Dictation</em> through the Omarchy menu. By default, it’ll load a base English model that takes up 150MB. But you can tweak which model you’d like to use by running <code>voxtype setup model</code> in the terminal. And you can tweak all the settings via <code>~/.config/voxtype/config.toml</code>.</p>
+<p>On fresh installs, <a href="https://superwhisper.com/">Superwhisper</a> is the default dictation backend, using cloud processing without offline model downloads. Choose Superwhisper or <a href="https://voxtype.io/">Voxtype</a> through <em>Setup &gt; Defaults &gt; Dictation</em> in the Omarchy menu. Selecting a backend installs it if needed and makes it the default for dictation. Voxtype loads a base English model that takes up 150MB; change the model with <code>voxtype setup model</code> and other settings through <code>~/.config/voxtype/config.toml</code>. Superwhisper opens its settings to choose cloud or local processing, and OPR keeps the application updated.</p>
 
-<p>Once installed, you dictate by holding down <code>F9</code> or by toggling with <code>Super + Ctrl + X</code>, and the dictated text will appear in the focused input area.</p>
+<p>You dictate by holding down <code>Right Alt</code> or <code>F9</code>, or by toggling with <code>Super + Ctrl + X</code>, and the dictated text will appear in the focused input area. These shortcuts use the selected backend. Right Alt also starts dictation when used in a modifier chord; use Left Alt for those chords. On keyboard layouts where Right Alt is AltGr, use <code>F9</code> to keep AltGr available for typing.</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/notices/" rel="prev">← Notices</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/screenshots-recording/" rel="next">Screenshots &amp; Recording →</a>
-      </nav>
+<p>The same shortcuts work with either backend. Select your backend through Setup &gt; Defaults &gt; Dictation. The backend installer configures it and saves the selection. Run <code>omarchy default dictation</code> to see which one is selected. The selection is saved in <code>~/.config/omarchy/defaults/dictation</code>. Fresh installs select Superwhisper automatically.</p>
+
+<p>Omarchy loads the selected backend’s desktop integration automatically. No Superwhisper configuration is needed in <code>~/.config/hypr/</code>.</p>
+
+<p>Custom bindings and scripts can use <code>omarchy dictation start</code>, <code>omarchy dictation stop</code>, and <code>omarchy dictation toggle</code>. The selected backend handles the recording and transcription. Selecting Superwhisper disables its native hold shortcut and sets its native toggle to <code>Alt + Space</code>, keeping it separate from Omarchy’s recording keys. Superwhisper requires at least one native recording shortcut, and its cancellation shortcut stays available.</p>
+
+<p>Additional backends can integrate without changing Omarchy. Provide an executable named <code>omarchy-dictation-&lt;backend&gt;</code> on PATH that accepts <code>start</code>, <code>stop</code>, and <code>toggle</code> and returns promptly, with a nonzero status on failure. Its installer configures the provider and calls <code>omarchy-dictation-use &lt;backend&gt;</code> after successful setup. This stops the previous backend and saves the selection atomically; <code>stop</code> must succeed when the provider is idle or unavailable. Backend names use lowercase letters, digits, and hyphens. Provide <code>omarchy-install-dictation-&lt;backend&gt;</code> for setup; <code>omarchy default dictation &lt;backend&gt;</code> launches it. Add a Defaults menu entry through an Omarchy menu extension to call that selector. Optional desktop integration can live in <code>${XDG_CONFIG_HOME:-$HOME/.config}/&lt;backend&gt;/shortcuts.lua</code>.</p>
+
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>

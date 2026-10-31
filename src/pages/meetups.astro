@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro'
+import { MeetupsPage } from '@/astro/pages/MeetupsPage'
+import { getPortedPage } from '../astro/data'
+import { headProps } from '../astro/head'
+import { meetupsSeo } from '../astro/page-seo'
+
+const page = getPortedPage('meetups')
+const rules = (page ? page.html : '').replace(
+  /<div class="meetups__calendar">[\s\S]*?<\/div>\s*/,
+  '',
+)
+const head = headProps(meetupsSeo(), '/meetups/')
+---
+<Base {...head}>
+  <MeetupsPage client:load rules={rules} />
+</Base>
