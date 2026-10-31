@@ -1,0 +1,332 @@
+[
+ {
+  "id": "core",
+  "name": "Omarchy Core",
+  "description": "Setting the direction",
+  "members": [
+   {
+    "name": "DHH",
+    "meta": "USA/Denmark",
+    "href": "https://dhh.dk",
+    "avatar": "/assets/images/team/dhh.webp"
+   },
+   {
+    "name": "Ryan R. Hughes",
+    "meta": "USA",
+    "href": "https://x.com/ryanrhughes",
+    "avatar": "/assets/images/team/ryan-hughes.webp"
+   },
+   {
+    "name": "Tobi L\u00fctke",
+    "meta": "Canada",
+    "href": "https://x.com/tobi",
+    "avatar": "/assets/images/team/tobi-lutke.webp"
+   },
+   {
+    "name": "Bjarne \u00d8verli",
+    "meta": "Norway",
+    "href": "https://x.com/iamdothash",
+    "avatar": "/assets/images/team/bjarne-overli.webp"
+   },
+   {
+    "name": "HANCORE",
+    "meta": "Germany",
+    "href": "https://github.com/HANCORE-linux",
+    "avatar": "/assets/images/team/hancore.webp"
+   },
+   {
+    "name": "Spencer Bull",
+    "meta": "USA",
+    "href": "https://x.com/SpencerGBull",
+    "avatar": "/assets/images/team/spencer-bull.webp"
+   },
+   {
+    "name": "Krzysztof Wilczy\u0144ski",
+    "meta": "Japan",
+    "href": "https://x.com/kwilczynski",
+    "avatar": "/assets/images/team/krzysztof-wilczynski.webp"
+   },
+   {
+    "name": "outfoxxed",
+    "meta": "USA",
+    "href": "https://x.com/outfoxxedd",
+    "avatar": "/assets/images/team/outfoxxed.webp"
+   },
+   {
+    "name": "Emir Beganovi\u0107",
+    "meta": "Netherlands",
+    "href": "https://x.com/emirbeganovic",
+    "avatar": "/assets/images/team/emir-beganovic.webp"
+   },
+   {
+    "name": "ThePrimeagen",
+    "meta": "USA",
+    "href": "https://x.com/ThePrimeagen",
+    "avatar": "/assets/images/team/theprimeagen.webp"
+   },
+   {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "security",
+  "name": "Omarchy Security",
+  "description": "Keeping your system safe",
+  "members": [
+   {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
+    "name": "Adrian Rangel",
+    "meta": "Mexico",
+    "href": "https://x.com/acrogenesis",
+    "avatar": "/assets/images/team/adrian-rangel.webp"
+   },
+   {
+    "name": "Erik Melton",
+    "meta": "Norway",
+    "href": "https://x.com/meltonaerik",
+    "avatar": "/assets/images/team/erik-melton.webp"
+   },
+   {
+    "name": "Sayem Chowdhury",
+    "meta": "Bangladesh",
+    "href": "https://x.com/Sayem314",
+    "avatar": "/assets/images/team/sayem-chowdhury.webp"
+   },
+   {
+    "name": "Sebastian Stange",
+    "meta": "Germany",
+    "href": "https://x.com/bastidotnet",
+    "avatar": "/assets/images/team/sebastian-stange.webp"
+   },
+   {
+    "name": "Afonso Oliveira",
+    "meta": "Portugal",
+    "href": "https://x.com/AFOliveira__",
+    "avatar": "/assets/images/team/afonso-oliveira.png"
+   }
+  ],
+  "note": {
+   "text": "Report a security issue",
+   "href": "/security/",
+   "linkText": "Report a security issue"
+  }
+ },
+ {
+  "id": "design",
+  "name": "Omarchy Design",
+  "description": "Shaping how it looks and feels",
+  "members": [
+   {
+    "name": "Bar\u0131\u015f Giri\u015fmen",
+    "meta": "T\u00fcrkiye",
+    "href": "https://x.com/BarisGirismen",
+    "avatar": "/assets/images/team/baris-girismen.webp"
+   },
+   {
+    "name": "Christoffer Hallas",
+    "meta": "USA",
+    "href": "https://x.com/hicsfh",
+    "avatar": "/assets/images/team/christoffer-hallas.webp"
+   },
+   {
+    "name": "Daniel Schmier",
+    "meta": "Germany",
+    "href": "https://x.com/captainscorch",
+    "avatar": "/assets/images/team/daniel-schmier.webp"
+   },
+   {
+    "name": "Andr\u00e9s Villagr\u00e1n",
+    "meta": "Chile",
+    "href": "https://x.com/avillagran",
+    "avatar": "/assets/images/team/andres-villagran.webp"
+   },
+   {
+    "name": "Niklas Jul",
+    "meta": "Denmark",
+    "href": "https://github.com/SirJul1337",
+    "avatar": "/assets/images/team/niklas-jul.webp"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "m",
+  "name": "Omarchy M",
+  "description": "Bringing Omarchy to the Mac",
+  "members": [
+   {
+    "name": "Marcelo Alcantara",
+    "meta": "Brazil/Australia",
+    "href": "https://x.com/maralcbr",
+    "avatar": "/assets/images/team/marcelo-alcantara.webp"
+   },
+   {
+    "name": "Naeem Malik",
+    "meta": "India",
+    "href": "https://x.com/tiredkebab",
+    "avatar": "/assets/images/team/naeem-malik.webp"
+   },
+   {
+    "name": "Scott Jones",
+    "meta": "USA",
+    "href": "https://x.com/bi9kahuna",
+    "avatar": "/assets/images/team/scott-jones.webp"
+   },
+   {
+    "name": "Eduardo Martinez",
+    "meta": "Portugal",
+    "href": "https://x.com/martiano",
+    "avatar": "/assets/images/team/eduardo-martinez.webp"
+   },
+   {
+    "name": "Shun Li",
+    "meta": "China",
+    "href": "https://x.com/riverleaf88",
+    "avatar": "/assets/images/team/shun-li.webp"
+   },
+   {
+    "name": "Dj",
+    "meta": "Canada",
+    "href": "https://x.com/buildwithdjdev",
+    "avatar": "/assets/images/team/dj.webp"
+   },
+   {
+    "name": "Ryan Murray",
+    "meta": "Australia",
+    "href": "https://github.com/RyanTheTide",
+    "avatar": "/assets/images/team/ryan-murray.webp"
+   },
+   {
+    "name": "Miguel Cruz",
+    "meta": "USA",
+    "href": "https://x.com/acelogic_",
+    "avatar": "/assets/images/team/miguel-cruz.webp"
+   },
+   {
+    "name": "Liam",
+    "meta": "USA",
+    "href": "https://x.com/LiamRay1O",
+    "avatar": "/assets/images/team/liam.webp"
+   },
+   {
+    "name": "Eryk Wieliczko",
+    "meta": "Poland",
+    "href": "https://x.com/ewninjaofficial",
+    "avatar": "/assets/images/team/eryk-wieliczko.webp"
+   },
+   {
+    "name": "Jaidip Subedi",
+    "meta": "Nepal",
+    "href": "https://x.com/jaidipsubedi",
+    "avatar": "/assets/images/team/jaidip-subedi.webp"
+   },
+   {
+    "name": "Joshua Warren",
+    "meta": "USA",
+    "href": "https://x.com/JoshuaSWarren",
+    "avatar": "/assets/images/team/joshua-warren.webp"
+   },
+   {
+    "name": "Shawn Yeager",
+    "meta": "USA",
+    "href": "https://x.com/shawnyeager",
+    "avatar": "/assets/images/team/shawn-yeager.webp"
+   },
+   {
+    "name": "Randy",
+    "meta": "Netherlands",
+    "href": "https://x.com/novuon_ai",
+    "avatar": "/assets/images/team/randy.webp"
+   },
+   {
+    "name": "Jon Kinney",
+    "meta": "USA",
+    "href": "https://x.com/jondkinney",
+    "avatar": "/assets/images/team/jon-kinney.webp"
+   }
+  ],
+  "note": {
+   "text": "Working on Linux for Apple hardware? Get in touch at apple@omarchy.org",
+   "href": "mailto:apple@omarchy.org",
+   "linkText": "apple@omarchy.org"
+  }
+ },
+ {
+  "id": "dragon",
+  "name": "Omarchy Dragon",
+  "description": "Bringing Omarchy to Snapdragon",
+  "members": [
+   {
+    "name": "Jim Martin",
+    "meta": "USA",
+    "href": "https://github.com/jdvmi00",
+    "avatar": "/assets/images/team/jim-martin.webp"
+   },
+   {
+    "name": "Birk Skyum",
+    "meta": "Switzerland",
+    "href": "https://x.com/BirkSkyum",
+    "avatar": "/assets/images/team/birk-skyum.webp"
+   },
+   {
+    "name": "Matt Gilg",
+    "meta": "USA",
+    "href": "https://github.com/gilgm12",
+    "avatar": "/assets/images/team/matt-gilg.webp"
+   },
+   {
+    "name": "Bob Prendergast",
+    "meta": "USA",
+    "href": "https://github.com/bprendie",
+    "avatar": "/assets/images/team/bob-prendergast.webp"
+   },
+   {
+    "name": "Miguel Cruz",
+    "meta": "USA",
+    "href": "https://x.com/acelogic_",
+    "avatar": "/assets/images/team/miguel-cruz.webp"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "rangers",
+  "name": "Omarchy Rangers",
+  "description": "Helping others find their way",
+  "members": [
+   {
+    "name": "Mihai",
+    "meta": "Romania",
+    "href": "https://x.com/SandorhaziM",
+    "avatar": "/assets/images/team/mihai.webp"
+   },
+   {
+    "name": "Mateo Vaz",
+    "meta": "Uruguay",
+    "href": "https://x.com/Mateo_VX",
+    "avatar": "/assets/images/team/mateo-vaz.webp"
+   },
+   {
+    "name": "Nira",
+    "meta": "Nepal",
+    "href": "https://x.com/niraletter",
+    "avatar": "/assets/images/team/nira.webp"
+   }
+  ],
+  "note": {
+   "text": "Want to help? Apply to rangers@omarchy.org",
+   "href": "mailto:rangers@omarchy.org",
+   "linkText": "rangers@omarchy.org"
+  }
+ }
+]

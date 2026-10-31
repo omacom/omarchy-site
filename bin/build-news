@@ -11,7 +11,6 @@ require "cgi"
 require "date"
 require "erb"
 require "fileutils"
-require "json"
 require "yaml"
 
 SITE_ROOT = File.expand_path("..", __dir__)
@@ -38,7 +37,7 @@ def split_front_matter(source, file)
   return [{}, source] unless source.start_with?("---\n")
 
   match = source.match(/\A---\s*\n(.*?)\n---\s*\n/m) or abort "Unclosed front matter in #{file}"
-  metadata = YAML.safe_load(match[1], permitted_classes: [Date], aliases: false) || {}
+  metadata = YAML.safe_load(match[1], permitted_classes: [Date, Time], aliases: false) || {}
   [metadata.transform_keys(&:to_s), source[match.end(0)..]]
 end
 
@@ -50,7 +49,7 @@ SITE_URL = "https://omarchy.org"
 FEED_URL = "#{SITE_URL}/news/rss.xml"
 
 def rfc822(date)
-  date.strftime("%a, %d %b %Y %H:%M:%S GMT")
+  date.new_offset(0).strftime("%a, %d %b %Y %H:%M:%S GMT")
 end
 
 def cdata(text)
@@ -106,8 +105,8 @@ def load_post(file)
   relative = file.delete_prefix("#{CONTENT_DIR}/").sub(/\.md\z/, "")
   year, month = relative.split("/")
   date = metadata["date"]
-  date = Date.parse(date.to_s) if date
-  date ||= Date.new(Integer(year), Integer(month), 1)
+  date = DateTime.parse(date.to_s) if date
+  date ||= DateTime.new(Integer(year), Integer(month), 1)
 
   assets = markdown.scan(RELATIVE_ASSET).flatten.uniq
   assets.each do |asset|
@@ -132,22 +131,10 @@ def load_post(file)
   )
 end
 
-def write_page(file, template, locals:, page_title:, social_title:, description:, author:, canonical_url:, article:, published_at: nil, json_ld:)
-  main = render(template, locals)
+def write_page(file, post)
+  main = render("post", post: post)
   FileUtils.mkdir_p File.dirname(file)
-  File.write(file, render("layout",
-    locals.merge(
-      main: main,
-      page_title: page_title,
-      social_title: social_title,
-      description: description,
-      author: author,
-      canonical_url: canonical_url,
-      article: article,
-      published_at: published_at,
-      json_ld: JSON.generate(json_ld).gsub("</", "<\\/")
-    )
-  ))
+  File.write file, render("layout", page_title: "#{post.title} — Omarchy News", main: main)
 end
 
 def build
@@ -157,52 +144,14 @@ def build
   posts = files.map { |file| load_post(file) }.sort_by(&:date).reverse
 
   posts.each do |post|
-    canonical_url = "https://omarchy.org#{post.path}"
     output = File.join(SITE_ROOT, post.path.delete_prefix("/"), "index.html")
 
     FileUtils.mkdir_p File.dirname(output)
     post.assets.each do |asset|
       FileUtils.cp File.join(File.dirname(post.source), asset), File.join(File.dirname(output), asset)
     end
-    write_page output, "post",
-      locals: { post: post },
-      page_title: "#{post.title} — Omarchy News",
-      social_title: post.title,
-      description: post.description,
-      author: post.author,
-      canonical_url: canonical_url,
-      article: true,
-      published_at: post.date,
-      json_ld: {
-        "@context" => "https://schema.org",
-        "@type" => "BlogPosting",
-        "headline" => post.title,
-        "description" => post.description,
-        "datePublished" => post.date.iso8601,
-        "author" => { "@type" => post.author_url ? "Person" : "Organization", "name" => post.author, "url" => post.author_url }.compact,
-        "publisher" => { "@type" => "Organization", "name" => "Omarchy", "logo" => { "@type" => "ImageObject", "url" => "https://omarchy.org/assets/images/favicon.png" } },
-        "image" => "https://omarchy.org/assets/images/favicon.png",
-        "mainEntityOfPage" => canonical_url
-      }
+    write_page output, post
   end
-
-  index_description = "Notes on the people, ideas, and releases shaping Omarchy."
-  write_page File.join(NEWS_DIR, "index.html"), "index",
-    locals: { posts: posts },
-    page_title: "Omarchy News",
-    social_title: "Omarchy News",
-    description: index_description,
-    author: "Omarchy",
-    canonical_url: "https://omarchy.org/news",
-    article: false,
-    json_ld: {
-      "@context" => "https://schema.org",
-      "@type" => "Blog",
-      "name" => "Omarchy News",
-      "description" => index_description,
-      "url" => "https://omarchy.org/news",
-      "publisher" => { "@type" => "Organization", "name" => "Omarchy" }
-    }
 
   write_feed posts
 

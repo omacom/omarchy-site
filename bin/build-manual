@@ -15,7 +15,6 @@ end
 require "cgi"
 require "erb"
 require "fileutils"
-require "json"
 require "tmpdir"
 
 SITE_ROOT = File.expand_path("..", __dir__)
@@ -30,11 +29,6 @@ Chapter = Struct.new(:number, :slug, :title, :body, keyword_init: true) do
   # The first chapter is the manual's front page
   def path = number == "01" ? "/manual/" : "/manual/#{slug}/"
 
-  def description
-    text = body.lines.find { |line| line =~ /\S/ && line !~ /^[#!\[<`\|]/ }.to_s
-    text = text.gsub(/!\[[^\]]*\]\([^)]*\)/, "").gsub(/\[([^\]]*)\]\([^)]*\)/, '\1').gsub(/[*_`]/, "").strip
-    text.length > 160 ? "#{text[0, 157].sub(/\s+\S*\z/, "")}..." : text
-  end
 end
 
 def load_chapters(dir)
@@ -66,7 +60,7 @@ def render_markdown(chapter)
   Kramdown::Document.new(markdown, input: "GFM", hard_wrap: false, syntax_highlighter: nil).to_html
 end
 
-# Applied after the search index has been taken, so the "#" stays out of the section titles
+# Add permalink anchors to chapter headings.
 def link_headings(html)
   html.gsub(HEADING) do
     level, id, content = $1, $2, $3
@@ -76,43 +70,16 @@ end
 
 def h(text) = CGI.escapeHTML(text)
 
-# Tags become spaces so the words either side of them stay apart, then the space an
-# inline tag left stranded in front of punctuation goes again
-def plain_text(html)
-  CGI.unescapeHTML(html.gsub(%r{<[^>]*>}, " ")).gsub(/\s+/, " ").gsub(/ ([.,;:!?)\]’])/, '\1').strip
-end
-
-# Splits a rendered chapter into one search entry per heading, so results can link
-# straight to the section that matched rather than to the top of the chapter.
-def index_entries(chapter, html)
-  headings = html.enum_for(:scan, HEADING).map { Regexp.last_match }
-  intro = plain_text(html[0, headings.first&.begin(0) || html.length])
-  entries = [{ chapter: chapter.title, title: chapter.title, url: chapter.path, text: intro }]
-
-  headings.each_with_index do |heading, index|
-    body = html[heading.end(0)...(headings[index + 1]&.begin(0) || html.length)]
-
-    entries << {
-      chapter: chapter.title,
-      title: plain_text(heading[3]),
-      url: "#{chapter.path}##{heading[2]}",
-      text: plain_text(body)
-    }
-  end
-
-  entries.reject { |entry| entry[:text].empty? }
-end
-
 def render(template, locals)
   scope = binding
   locals.each { |name, value| scope.local_variable_set(name, value) }
   ERB.new(File.read(File.join(TEMPLATE_DIR, "#{template}.html.erb")), trim_mode: "-").result(scope)
 end
 
-def write_page(file, template, title:, description:, path:, **locals)
+def write_page(file, template, title:, **locals)
   main = render(template, locals)
   FileUtils.mkdir_p File.dirname(file)
-  File.write file, render("layout", title: title, description: description, url: "https://omarchy.org#{path}", main: main)
+  File.write file, render("layout", title: title, main: main)
 end
 
 def build(source_dir)
@@ -121,36 +88,21 @@ def build(source_dir)
   manual_dir = File.join(SITE_ROOT, "manual")
   FileUtils.rm_rf manual_dir
 
-  write_page File.join(manual_dir, "toc/index.html"), "toc",
-    title: "Table of Contents",
-    description: "The complete manual for Omarchy — Beautiful, Fun & Agentic Linux by DHH.",
-    path: "/manual/toc/",
-    chapters: chapters
-
-  search_index = []
-
-  chapters.each_with_index do |chapter, index|
+  chapters.each do |chapter|
     content = render_markdown(chapter)
-    search_index.concat index_entries(chapter, content)
 
     write_page File.join(SITE_ROOT, chapter.path, "index.html"), "chapter",
       title: chapter.title,
-      description: chapter.description,
-      path: chapter.path,
       chapters: chapters,
       chapter: chapter,
-      content: link_headings(content),
-      previous_chapter: index > 0 ? chapters[index - 1] : nil,
-      next_chapter: chapters[index + 1]
+      content: link_headings(content)
   end
-
-  File.write File.join(manual_dir, "search-index.json"), JSON.generate(search_index)
 
   images_dir = File.join(source_dir, "images")
   FileUtils.cp_r images_dir, File.join(manual_dir, "images") if Dir.exist?(images_dir)
   convert_theme_previews source_dir, chapters, File.join(manual_dir, "images")
 
-  puts "Built #{chapters.size} chapters and #{search_index.size} search entries into manual/"
+  puts "Built #{chapters.size} chapter inputs into manual/"
 end
 
 # The themes chapter references themes/*/preview*.png straight from the omarchy

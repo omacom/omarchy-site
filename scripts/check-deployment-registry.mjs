@@ -1,0 +1,86 @@
+/** Every deployed country or language Worker must remain in automatic updates. */
+import locales from '../src/i18n/locales.json' with { type: 'json' }
+
+const account = process.env.CLOUDFLARE_ACCOUNT_ID
+const token = process.env.CLOUDFLARE_API_TOKEN
+if (!account || !token) {
+  throw new Error(
+    'Set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN to audit deployments.',
+  )
+}
+const response = await fetch(
+  `https://api.cloudflare.com/client/v4/accounts/${account}/workers/scripts`,
+  { headers: { Authorization: `Bearer ${token}` } },
+)
+const body = await response.json()
+if (!response.ok || !body.success) {
+  throw new Error(
+    `Cannot inventory deployed Workers: ${JSON.stringify(body.errors)}`,
+  )
+}
+const workerName = (code) =>
+  code === 'en' ? 'omarchy' : `omarchy-${code.toLowerCase()}`
+const codes = Object.keys(locales)
+const registered = new Set(
+  codes.filter((code) => !locales[code].draft).map(workerName),
+)
+// A draft may have a preview Worker; it is not in automatic updates yet.
+const drafts = new Set(
+  codes.filter((code) => locales[code].draft).map(workerName),
+)
+const deployed = body.result.map((worker) => worker.id)
+// Editions taken out of the registry whose Workers may still be deployed.
+// Delete each Worker (and its custom domain) in Cloudflare, then its name here.
+const retired = new Set([
+  'omarchy-en-au',
+  'omarchy-en-nz',
+  'omarchy-en-ng',
+  'omarchy-en-sg',
+  'omarchy-en-us',
+  'omarchy-en-zw',
+])
+const lingering = deployed.filter((name) => retired.has(name))
+if (lingering.length)
+  console.log(
+    `Retired editions still deployed, delete them in Cloudflare: ${lingering.join(', ')}.`,
+  )
+const previews = deployed.filter((name) => drafts.has(name))
+if (previews.length)
+  console.log(
+    `Draft previews deployed, not updated until published: ${previews.join(', ')}.`,
+  )
+// An edition is named for a canonical language code, like omarchy-da or
+// omarchy-en-au; other omarchy-* Workers, like omarchy-ping, are
+// infrastructure. Canonical, because omarchy-geo reads as Georgian's old
+// three-letter code, which Intl rewrites to ka.
+const languages = new Intl.DisplayNames(['en'], {
+  type: 'language',
+  fallback: 'none',
+})
+const isEdition = (name) => {
+  const code = name.match(/^omarchy-([a-z]{2,3}(-[a-z0-9]+)*)$/)?.[1]
+  if (!code) return false
+  try {
+    return (
+      Boolean(languages.of(code)) &&
+      Intl.getCanonicalLocales(code)[0].toLowerCase() === code
+    )
+  } catch {
+    return false
+  }
+}
+const unmanaged = deployed.filter(
+  (name) =>
+    isEdition(name) &&
+    !registered.has(name) &&
+    !drafts.has(name) &&
+    !retired.has(name),
+)
+if (unmanaged.length) {
+  throw new Error(
+    `Deployed editions missing from src/i18n/locales.json: ${unmanaged.join(', ')}. Restore them to automatic updates before publishing.`,
+  )
+}
+console.log(
+  `All ${body.result.filter((worker) => registered.has(worker.id)).length} deployed editions are registered for updates.`,
+)
