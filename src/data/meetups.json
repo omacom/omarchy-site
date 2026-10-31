@@ -1324,21 +1324,6 @@
       "cover": null
     },
     {
-      "id": "evt-Go579QoFlyA9E5r",
-      "title": "Omarchy Ghana",
-      "url": "https://luma.com/fzp8rdnm",
-      "start": "2026-10-31T19:00:00.000Z",
-      "end": "2026-10-31T20:00:00.000Z",
-      "timezone": null,
-      "address": null,
-      "city": null,
-      "country": "GH",
-      "online": null,
-      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
-      "hosts": ["Ebenezer Nana Ofosu"],
-      "cover": null
-    },
-    {
       "id": "evt-uASCAbX2odjzImy",
       "title": "Omarchy Sydney",
       "url": "https://luma.com/ufs7ing3",
@@ -1410,7 +1395,7 @@
       "country": "USA",
       "online": null,
       "geo": { "lat": 33.1551055, "lon": -96.830513 },
-      "hosts": ["Matt Gleason"],
+      "hosts": ["Matt Gleason", "Matt Guenther"],
       "cover": null
     },
     {
@@ -1441,6 +1426,21 @@
       "online": null,
       "geo": { "lat": 41.0866942, "lon": -112.0642882 },
       "hosts": ["Spencer Owen"],
+      "cover": null
+    },
+    {
+      "id": "evt-3KsScnXMteWmW7R",
+      "title": "Omarchy Buenos Aires Meetup 002",
+      "url": "https://luma.com/h8ja4bdg",
+      "start": "2026-11-11T22:00:00.000Z",
+      "end": "2026-11-12T00:30:00.000Z",
+      "timezone": null,
+      "address": "Working&Co Soler, Soler 4445, C1425 Soho, Cdad. Autónoma de Buenos Aires, Argentina",
+      "city": null,
+      "country": "Argentina",
+      "online": null,
+      "geo": { "lat": -34.5886097, "lon": -58.42263560000001 },
+      "hosts": ["Adrián Mugnolo"],
       "cover": null
     },
     {
@@ -1561,6 +1561,21 @@
       "online": null,
       "geo": { "lat": 36.3668749, "lon": -94.1998458 },
       "hosts": ["Matt Guenther"],
+      "cover": null
+    },
+    {
+      "id": "evt-Go579QoFlyA9E5r",
+      "title": "Omarchy Ghana",
+      "url": "https://luma.com/fzp8rdnm",
+      "start": "2026-12-20T19:00:00.000Z",
+      "end": "2026-12-20T20:00:00.000Z",
+      "timezone": null,
+      "address": null,
+      "city": null,
+      "country": "GH",
+      "online": null,
+      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
+      "hosts": ["Ebenezer Nana Ofosu"],
       "cover": null
     }
   ]
