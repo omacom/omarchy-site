@@ -1496,23 +1496,6 @@
       "coverHeight": 800
     },
     {
-      "id": "evt-Go579QoFlyA9E5r",
-      "title": "Omarchy Ghana",
-      "url": "https://luma.com/fzp8rdnm",
-      "start": "2026-10-31T19:00:00.000Z",
-      "end": "2026-10-31T20:00:00.000Z",
-      "timezone": "Africa/Abidjan",
-      "address": null,
-      "city": null,
-      "country": "GH",
-      "online": false,
-      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
-      "hosts": [],
-      "cover": "/images/meetups/evt-Go579QoFlyA9E5r-full.webp",
-      "coverWidth": 400,
-      "coverHeight": 400
-    },
-    {
       "id": "evt-uASCAbX2odjzImy",
       "title": "Omarchy Sydney",
       "url": "https://luma.com/ufs7ing3",
@@ -1628,6 +1611,23 @@
       "geo": { "lat": 41.0866942, "lon": -112.0642882 },
       "hosts": [],
       "cover": "/images/meetups/evt-GEqTRvnJhkug3Ca-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-3KsScnXMteWmW7R",
+      "title": "Omarchy Buenos Aires Meetup 002",
+      "url": "https://luma.com/h8ja4bdg",
+      "start": "2026-11-11T22:00:00.000Z",
+      "end": "2026-11-12T00:30:00.000Z",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "address": "Working&Co Soler, Soler 4445, C1425 Soho, Cdad. Autónoma de Buenos Aires, Argentina",
+      "city": "Soho",
+      "country": "AR",
+      "online": false,
+      "geo": { "lat": -34.5886097, "lon": -58.42263560000001 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-3KsScnXMteWmW7R-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },
@@ -1764,6 +1764,23 @@
       "cover": "/images/meetups/evt-qiN1tmB10AJNHS6-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
+    },
+    {
+      "id": "evt-Go579QoFlyA9E5r",
+      "title": "Omarchy Ghana",
+      "url": "https://luma.com/fzp8rdnm",
+      "start": "2026-12-20T19:00:00.000Z",
+      "end": "2026-12-20T20:00:00.000Z",
+      "timezone": "Africa/Abidjan",
+      "address": null,
+      "city": null,
+      "country": "GH",
+      "online": false,
+      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
+      "hosts": [],
+      "cover": "/images/meetups/evt-Go579QoFlyA9E5r-full.webp",
+      "coverWidth": 400,
+      "coverHeight": 400
     }
   ]
 }
