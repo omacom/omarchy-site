@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>The Top Bar — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="The strip along the top of your screen is the Omarchy bar. It&#39;s not a bolted-on status bar but part of the Omarchy shell, the single long-running Quickshell...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="The Top Bar">
-    <meta property="og:description" content="The strip along the top of your screen is the Omarchy bar. It&#39;s not a bolted-on status bar but part of the Omarchy shell, the single long-running Quickshell...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/the-top-bar/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>The Top Bar</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -133,7 +69,7 @@
 
 <h2 id="whats-on-it-by-default">What’s on it by default <a class="manual__heading-link" href="#whats-on-it-by-default" aria-label="Link to this section">#</a></h2>
 
-<p>The bar has three sections. On the left sits the Omarchy logo (the menu launcher) and the workspace indicators. In the center you get the status indicators, the clock, the keyboard layout, the weather, and an Omarchy update badge. On the right: the system tray, agents, bluetooth, network, audio, display, and power.</p>
+<p>The bar has three sections. On the left sits the Omarchy logo (the menu launcher) and the workspace indicators. In the center you get the status indicators, the clock, Elsewhen (a world clock), the weather, and an Omarchy update badge. On the right: the system tray, the keyboard layout (when more than one is configured), agents, bluetooth, network, audio, display, and power.</p>
 
 <p>A few of those only show up when they have something to say. The keyboard layout appears only if you’ve configured more than one layout. The update badge appears only when there’s an Omarchy update waiting. And the agents icon appears the first time Omarchy finds AI coding usage on the machine (see <a href="../ai/">AI</a>).</p>
 
@@ -159,9 +95,9 @@
     </tr>
     <tr>
       <td>Workspaces</td>
-      <td>Focus that workspace</td>
+      <td>Focus that workspace on this monitor</td>
       <td>—</td>
-      <td>—</td>
+      <td>Scroll: next/previous workspace</td>
     </tr>
     <tr>
       <td>Clock</td>
@@ -257,7 +193,7 @@
       <td>Audio</td>
     </tr>
     <tr>
-      <td><code>Super + Ctrl + W</code></td>
+      <td><code>Super + Ctrl + N</code></td>
       <td>Network</td>
     </tr>
     <tr>
@@ -277,6 +213,10 @@
       <td>Calendar</td>
     </tr>
     <tr>
+      <td><code>Super + Ctrl + Alt + E</code></td>
+      <td>World clock</td>
+    </tr>
+    <tr>
       <td><code>Super + Ctrl + 1-9</code></td>
       <td>Toggle the nth panel in the right section</td>
     </tr>
@@ -292,6 +232,7 @@
   <li><strong>Power</strong> shows battery stats, switches power profiles (it remembers a separate choice for battery and AC), and prints some system info.</li>
   <li><strong>Display</strong> carries a brightness slider, text size, monitor scaling presets, and — when you have more than one screen — per-monitor controls. See <a href="../monitors/">monitors</a> for the deeper story.</li>
   <li><strong>Clock</strong> opens a month grid with ISO week numbers and month stepping.</li>
+  <li><strong>World clock</strong> keeps a row per city, with its weather and how its day is going. Search finds towns as well as time zones, so Fort Lauderdale is Fort Lauderdale and not New York. If the line at the top names the wrong city, click it and say where you are; pick somewhere on another time zone and the system clock moves there too, which is handy when you travel. Hover a city and click the person button to say who lives there — plain names, or <code>@</code> GitHub handles to bring their faces along.</li>
 </ul>
 
 <p>Every panel takes the keyboard as well as the mouse: arrows move, Return activates, Tab steps to the neighbouring panel, and Escape closes.</p>
@@ -310,7 +251,7 @@
 
 <h2 id="indicators">Indicators <a class="manual__heading-link" href="#indicators" aria-label="Link to this section">#</a></h2>
 
-<p>The little cluster in the center is the indicators widget. These are status glyphs for modes you’ve turned on: do not disturb, night light, a queued <a href="../reminders/">reminder</a>, an active screen recording, stay awake, and <a href="../text-extraction-dictation/">dictation</a>. They light up when the mode is active and otherwise stay out of the way — hover the center of the bar to peek at the inactive ones. Clicking an indicator toggles that mode.</p>
+<p>The little cluster in the center is the indicators widget. These are status glyphs for modes you’ve turned on: do not disturb, night light, a queued <a href="../reminders/">reminder</a>, an active screen recording, stay awake, and <a href="../text-extraction-dictation/">dictation</a>. They light up when the mode is active and otherwise stay out of the way — hover anywhere on the bar to peek at the inactive ones. Clicking an indicator toggles that mode. One more is status only: a remote session lights up red while someone is connected to this machine through gliff.</p>
 
 <p>If you’d rather they were always visible, set <code>alwaysShow</code> to <code>true</code> on the widget. And if you only care about some of them, list the ones you want in <code>items</code>: <code>["Dnd", "Reminder", "NightLight"]</code>. You can have more than one indicators widget, so different sections can show different subsets.</p>
 
@@ -318,28 +259,33 @@
 
 <p>The bar configures itself. You don’t have to open a config file to move things.</p>
 
-<p>Grab an empty patch of the bar around the center and drag it toward another screen edge, and the bar moves there — left, right, top, or bottom all work, and every widget adapts (vertical bars fall back to compact icon-only forms). A click-and-hold starts the same drag. Double-left-click that same empty space to toggle transparency. And drag any widget to reorder it or throw it into another section.</p>
+<p>Grab an empty patch of the bar around the center and drag it toward another screen edge, and the bar moves there — left, right, top, or bottom all work, and every widget adapts (vertical bars fall back to compact icon-only forms). A click-and-hold starts the same drag. Double-left-click that same empty space to cycle the bar background from clear to glassy to opaque. And drag any widget to reorder it or throw it into another section; the other widgets slide apart to make room where it will land.</p>
 
-<p>If you’d rather pick from a menu, <strong>Style → Menu Bar</strong> has both position and transparency.</p>
+<p>The middle of the bar is a box: whatever is in it stays centered as one group, and the widgets either side of it hang off its edges. While you drag a widget the box shows as an outline, or a line across the bar when it’s empty, and you can drop into it or beside it. When a drop would land in the box, the box grows to take the widget in.</p>
+
+<p>A widget you want around but not always in view can go in the tray’s drawer: drag it onto the tray, and the drawer opens to take it. It sits there after the app icons, shows up whenever the drawer does, and keeps its drawer open while its panel is up. Drag it back out onto the bar to put it back.</p>
+
+<p>If you’d rather pick from a menu, <strong>Appearance → Menu Bar</strong> has the position, and <strong>Bar Background</strong> picks how the bar is drawn: <strong>Opaque Bar</strong>, <strong>Glassy Bar</strong> (see-through, with what’s behind it blurred), or <strong>Clear Bar</strong>.</p>
 
 <p>The same things have commands, which is what you want for a <a href="../dotfiles/">dotfiles</a> setup:</p>
 
 <pre><code class="language-bash">omarchy bar position bottom
-omarchy bar transparent toggle
-omarchy bar move omarchy.clock --section center --index 0
+omarchy bar background glassy  # opaque, glassy, none, or cycle
+omarchy bar move omarchy.weather --section centerBegin --index 0
+omarchy bar move omarchy.bluetooth --section tray  # into the tray's drawer
 omarchy bar set omarchy.clock format "HH:mm"
 omarchy bar defaults          # back to the shipped layout
 </code></pre>
 
 <p>To add or remove a widget entirely, use the plugin commands. <code>omarchy plugin list</code> prints every widget the shell knows about with its id, and then:</p>
 
-<pre><code class="language-bash">omarchy plugin enable omarchy.media --section center
+<pre><code class="language-bash">omarchy plugin enable omarchy.media --section centerEnd
 omarchy plugin disable omarchy.weather
 </code></pre>
 
 <h2 id="hiding-the-bar">Hiding the bar <a class="manual__heading-link" href="#hiding-the-bar" aria-label="Link to this section">#</a></h2>
 
-<p><code>Super + Shift + Space</code> toggles the bar off and back on without killing the shell — panels and hotkeys keep working, you just get the pixels back. It’s also in the menu under <strong>Trigger → Toggle → Menu Bar</strong>.</p>
+<p><code>Super + Shift + Space</code> toggles the bar off and back on without killing the shell — panels and hotkeys keep working, you just get the pixels back. It’s also in the menu under <strong>Appearance → Menu Bar → Hide Bar</strong>.</p>
 
 <h2 id="the-config-file">The config file <a class="manual__heading-link" href="#the-config-file" aria-label="Link to this section">#</a></h2>
 
@@ -349,33 +295,27 @@ omarchy plugin disable omarchy.weather
   "version": 1,
   "bar": {
     "position": "top",
-    "transparent": false,
-    "centerAnchor": "omarchy.clock",
+    "background": "opaque",
     "layout": {
       "left": [{ "id": "omarchy.menu" }, { "id": "omarchy.workspaces" }],
+      "centerBegin": [{ "id": "omarchy.indicators" }],
       "center": [{ "id": "omarchy.clock", "format": "HH:mm" }],
+      "centerEnd": [{ "id": "omarchy.weather" }],
       "right": [{ "id": "omarchy.audio" }, { "id": "omarchy.power" }]
     }
   }
 }
 </code></pre>
 
-<p>Every widget is one entry in one of the three layout arrays, and its settings sit inline on that entry — there’s no separate settings file and no <code>config</code> sub-object. The clock’s <code>format</code>, <code>formatAlt</code> (what right-click cycles to), and <code>verticalFormat</code> all live right there on <code>{ "id": "omarchy.clock" }</code>.</p>
+<p>Every widget is one entry in one of the five layout arrays, and its settings sit inline on that entry — there’s no separate settings file and no <code>config</code> sub-object. The clock’s <code>format</code>, <code>formatAlt</code> (what right-click cycles to), and <code>verticalFormat</code> all live right there on <code>{ "id": "omarchy.clock" }</code>.</p>
 
-<p><code>centerAnchor</code> names the one center widget that gets pinned to the exact center of the screen, with the others flanking it. That’s how the clock stays dead center even as the weather and update badge come and go. Set it to an empty string and the center list is just centered as a group instead.</p>
+<p><code>center</code> is the box in the middle of the bar: everything in it is centered on the screen as one group. <code>centerBegin</code> and <code>centerEnd</code> hang off either side of the box, which is how the clock stays dead center even as the weather and update badge come and go. Put more than one widget in <code>center</code> and they’re centered together; leave it empty and <code>centerBegin</code> and <code>centerEnd</code> meet in the middle of the bar.</p>
 
 <p>One rule worth internalizing: <strong>once you have your own <code>shell.json</code>, it’s canonical</strong>. Until you customize anything, the shell reads Omarchy’s default file. The moment you drag a widget, run <code>omarchy bar</code>, or edit the file yourself, you own it — there’s no deep merge, so new default widgets in future Omarchy releases won’t appear on your bar automatically. <code>omarchy bar defaults</code> puts the shipped layout back whenever you want a clean slate.</p>
 
 <p>The same file also holds your idle timings at the top level, outside the <code>bar</code> key: <code>idle.screensaver</code> and <code>idle.lock</code>, both in seconds since you went idle. So the default screensaver kicks in at 150 seconds and the lock at 300.</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/navigation/" rel="prev">← Navigation</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/themes/" rel="next">Themes →</a>
-      </nav>
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>

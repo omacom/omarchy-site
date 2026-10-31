@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>Troubleshooting — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="First try to rollback your system the version before your recent update. If that doesn&#39;t work, use omarchy-debug to share with your problem on #omarchy-help...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Troubleshooting">
-    <meta property="og:description" content="First try to rollback your system the version before your recent update. If that doesn&#39;t work, use omarchy-debug to share with your problem on #omarchy-help...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/troubleshooting/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Troubleshooting</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -137,17 +73,6 @@
 
 <p>For Spotify, you can use <code>Ctrl + Minus</code> to shrink the UI (and <code>Ctrl + Plus</code> to make it bigger).</p>
 
-<h3 id="why-isnt-caps-lock-working">Why isn’t Caps Lock working? <a class="manual__heading-link" href="#why-isnt-caps-lock-working" aria-label="Link to this section">#</a></h3>
-
-<p>In Omarchy, Caps Lock has been designated to be the xcompose key. That’s how you get <a href="../hotkeys/#quick-emojis">quick emojis</a> and <a href="../hotkeys/#quick-completions">other autocompletions</a> done. If you really miss using Caps Lock, you can remap the xcompose key to something else by editing <code>~/.config/hypr/input.lua</code>, like setting it to the right alt key:</p>
-
-<pre><code>hl.config({
-  input = {
-    kb_options = "compose:ralt",
-  },
-})
-</code></pre>
-
 <h3 id="my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working">My Wi-Fi, Bluetooth, audio, or trackpad just stopped working <a class="manual__heading-link" href="#my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working" aria-label="Link to this section">#</a></h3>
 
 <p>Before you reboot, try restarting the offending subsystem on its own. <em>Update &gt; Hardware</em> in the Omarchy menu has Wi-Fi, Bluetooth, Audio, and Trackpad, and reloading one of those clears up the majority of “it worked five minutes ago” situations — a Bluetooth headset that won’t reconnect, a trackpad that went dead after a suspend, sound that vanished when you unplugged a monitor.</p>
@@ -174,14 +99,7 @@
 
 <p>Or if you haven’t launched 1Password since booting up, the prompt will not appear.</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/mac-support/" rel="prev">← Mac support</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/faq/" rel="next">FAQ →</a>
-      </nav>
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>

@@ -1,0 +1,23 @@
+---
+import { locale, locales } from '@/i18n/site'
+import Base from '../../layouts/Base.astro'
+import { ManualIsland } from '@/astro/ManualIsland'
+import { ManualChapterView } from '@/components/ManualChapterView'
+import { getManualChapter } from '../../astro/data'
+import { headProps } from '../../astro/head'
+import { manualIndexSeo } from '../../astro/page-seo'
+
+const data = getManualChapter('index')
+const head = headProps(manualIndexSeo(), '/manual/')
+if (!locale.manual) return Astro.redirect(locales.en.domain + Astro.url.pathname, 302)
+
+---
+<Base {...head}>
+  <ManualIsland
+    client:load
+    toc={data.toc}
+    activePath="/manual/"
+  >
+    <ManualChapterView data={data} />
+  </ManualIsland>
+</Base>
