@@ -788,5 +788,10 @@
   "repo": "https://github.com/kyerpotts/omarchy-vulkanite-theme",
   "image": "/assets/themes/vulkanite.webp",
   "name": "Vulkanite"
+ },
+ {
+    "repo": "https://github.com/Adam-loy/Cyberpunk",
+    "image": "/assets/themes/cyberpunk.webp"
+    "name": "Cyberpunk"
  }
 ]
