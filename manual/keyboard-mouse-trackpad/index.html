@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Keyboard, Mouse, Trackpad</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -73,7 +71,7 @@
   input = {
     -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt
     kb_layout = "us,dk",
-    kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",
+    kb_options = "omarchy:shift_caps_compose,grp:alts_toggle",
 
     -- Change speed of keyboard repeat
     repeat_rate = 40,
@@ -101,7 +99,7 @@ o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
 
 <p>You can <a href="https://wiki.hypr.land/Configuring/Basics/Variables/#input">see all the input options</a> on the Hyprland wiki for inputs.</p>
 
-<p>By default, Omarchy uses CapsLock as the compose key for <a href="../hotkeys/#quick-emojis">quick emojis</a> and <a href="../hotkeys/#quick-completions">other completions</a>. If you’d rather use CapsLock as Caps Lock, move the compose key elsewhere by changing <code>compose:caps</code> in <code>kb_options</code>. For example, this moves the compose key to Right Alt:</p>
+<p>CapsLock works as a normal Caps Lock, and <code>Shift + CapsLock</code> is the compose key for <a href="../hotkeys/#quick-emojis">quick emojis</a> and <a href="../hotkeys/#quick-completions">other completions</a>. If you’d rather have the compose key elsewhere, replace <code>omarchy:shift_caps_compose</code> in <code>kb_options</code>. For example, this moves the compose key to Right Alt:</p>
 
 <pre><code class="language-lua">hl.config({
   input = {
@@ -121,7 +119,17 @@ o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
 
 <h3 id="typing-in-chinese-japanese-and-other-languages">Typing in Chinese, Japanese, and other languages <a class="manual__heading-link" href="#typing-in-chinese-japanese-and-other-languages" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy runs the <a href="https://fcitx-im.org/">fcitx5</a> input method framework as part of every session — it’s what powers the CapsLock compose sequences. That means the plumbing for non-Latin input is already in place: install an input engine like <code>fcitx5-mozc</code> (Japanese) or <code>fcitx5-chinese-addons</code> (Chinese) with <code>omarchy pkg add</code>, plus <code>fcitx5-configtool</code> to add the engine to your input methods and set the key that switches between them.</p>
+<p>Select Japanese, Korean, Chinese (Simplified, Pinyin), Taiwan (Zhuyin), or Hong Kong (Cangjie) when the installer asks for your keyboard. Omarchy configures the keyboard and matching input engine automatically, including during offline first-boot setup. Japanese uses Mozc, Korean uses standard two-set Hangul, Simplified Chinese uses Pinyin, Taiwan uses Chewing’s standard Zhuyin arrangement, and Hong Kong uses Cangjie with Hong Kong character forms. Japanese (US keyboard) provides Mozc with a US keyboard layout. Hangul, Zhuyin, and Cangjie keys stay in their standard positions even when you type Latin letters with Dvorak, Colemak, or AZERTY. If you added Hangul or Chewing before this, deselect and reselect it under <em>Setup &gt; Typing &gt; Input Methods</em> to move its keys there; Omarchy leaves an engine you already type with alone.</p>
+
+<p>Typing starts in Latin mode. Press <code>Super + I</code> to cycle through configured input methods, and <code>Super + Shift + I</code> to cycle back. Tap <code>Shift</code> on its own to step out of an input method like Pinyin into Latin letters, and tap it again to go back, the way Sogou, Microsoft Pinyin, and macOS work; <code>Shift</code> plus a letter still types a capital. On Japanese keyboards, 全角/半角 toggles input, 変換 turns it on, and 無変換 turns it off. With Korean, 한/영 switches Hangul and 한자 converts to Hanja, whether your keyboard has dedicated keys or sends Right Alt and Right Ctrl for them, as many laptops do, so Right Alt and Right Ctrl are not plain modifiers there; dictation push-to-talk stays on F9. <code>Ctrl + Space</code> stays available for Tmux and Herdr; <code>Shift + CapsLock</code> stays the compose key.</p>
+
+<p>The keyboard indicator appears on the right of the bar when you have multiple keyboard layouts or input methods. Click it to switch input languages; Japanese displays あ for hiragana. For Japanese character choices, switch to Japanese, type a word such as <code>nihongo</code>, then press Space twice. Press Enter to accept your choice. If you also have multiple keyboard layouts, right-click the indicator to cycle those.</p>
+
+<p>Use <em>Setup &gt; Typing &gt; Keyboard Layouts</em> to select layouts such as English and French, from the same choices offered during installation. Use <em>Setup &gt; Typing &gt; Input Methods</em> to select which composition engines are active. Both pickers open inside the Omarchy menu with your current selections checked. Click or press Enter to toggle a choice; each change applies immediately. Deselecting an input method removes it from the cycle without uninstalling it; the keyboard remains available.</p>
+
+<p>Run <code>omarchy setup keyboard</code> or <code>omarchy setup input</code> to open the same pickers. To append one language from the command line, use <code>omarchy setup input mozc</code>, <code>hangul</code>, <code>pinyin</code>, <code>chewing</code>, or <code>cangjie5</code>. Quick, Boshiamy, and Array come in the same package as Cangjie and appear in the Input Methods picker. Your custom switching keys are preserved. For alternative engine layouts or keys, install <code>fcitx5-configtool</code> with <code>omarchy pkg add fcitx5-configtool</code> and launch it from a terminal. Selecting an input language does not change the desktop language. Choosing Japanese, Korean, or Chinese under <em>Setup &gt; Language</em> adds its input method when you have none yet.</p>
+
+<p>Use <code>Super + I</code> to cycle through input methods or keyboard layouts, and <code>Super + Shift + I</code> to go back the other way, so with three configured you can move between two neighbours. The input indicator appears on the right of the bar only when more than one input method or layout is configured. This desktop binding works alongside your existing Fcitx switching keys; you can override it in <code>~/.config/hypr/bindings.lua</code>. Input engines and the compose sequences use the <a href="https://fcitx-im.org/">Fcitx5</a> service already running in every session.</p>
 
 <h3 id="use-alt-as-super">Use ALT as SUPER <a class="manual__heading-link" href="#use-alt-as-super" aria-label="Link to this section">#</a></h3>
 
@@ -129,12 +137,12 @@ o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
 
 <pre><code class="language-lua">hl.config({
   input = {
-    kb_options = "compose:caps,shift:both_capslock_cancel,altwin:swap_alt_win",
+    kb_options = "omarchy:shift_caps_compose,altwin:swap_alt_win",
   },
 })
 </code></pre>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>
