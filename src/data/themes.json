@@ -185,6 +185,11 @@
   "name": "Darcula"
  },
  {
+  "repo": "https://github.com/saikiranandula/omarchy-deccan-night-theme",
+  "image": "/assets/themes/deccan-night.webp",
+  "name": "Deccan Night"
+ },
+ {
   "repo": "https://github.com/HANCORE-linux/omarchy-demon-theme",
   "image": "/assets/themes/demon.webp",
   "name": "Demon"
