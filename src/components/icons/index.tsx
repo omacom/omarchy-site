@@ -369,6 +369,20 @@ export function AppleIcon(props: IconProps) {
   )
 }
 
+/** A browser window: three dots in the title bar, the page below, cut out
+ *  so the icon works on any button colour. */
+export function BrowserIcon(props: IconProps) {
+  return (
+    <svg {...base(props)} shapeRendering="crispEdges">
+      <path
+        fillRule="evenodd"
+        d="M2 3h20v18H2zM4 9v10h16V9zM4 5h2v2H4zM7 5h2v2H7zM10 5h2v2h-2z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export function WindowsIcon(props: IconProps) {
   return (
     <svg {...base(props)} shapeRendering="crispEdges">

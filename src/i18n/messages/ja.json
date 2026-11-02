@@ -46,9 +46,7 @@
   "Verify the file:": "ファイルを検証：",
   "signature": "署名",
   "Try it first": "まずは試してみる",
-  "All of Omarchy running in a virtual machine, so you can get a taste first.": "仮想マシンでOmarchyを丸ごと動かし、使い心地を試せます。",
   "Apple Silicon Macs, Windows 10 and 11.": "Apple Silicon搭載Mac、Windows 10と11に対応。",
-  "On Linux, the ISO is the way in.": "LinuxではISOから始めましょう。",
   "The manual also covers": "マニュアルでは、",
   "dual booting beside Windows": "Windowsとのデュアルブート",
   "and": "と",
@@ -408,5 +406,8 @@
   "Sound unavailable": "サウンドは使えません",
   "The sound could not start": "サウンドを開始できませんでした",
   "Turn the sound off": "サウンドをオフにする",
-  "Turn the sound on": "サウンドをオンにする"
+  "Turn the sound on": "サウンドをオンにする",
+  "Try in Browser": "ブラウザで試す",
+  "All of Omarchy in a virtual machine on your Mac or PC, or streamed to a browser tab, so you can get a taste first.": "Mac や PC の仮想マシン、あるいはブラウザのタブへのストリーミングで、Omarchy のすべてをまず体験できます。",
+  "Anything with a browser tab: nothing to download, gone when you close it.": "ブラウザのタブがあれば何でも。ダウンロード不要、閉じれば消えます。"
 }
