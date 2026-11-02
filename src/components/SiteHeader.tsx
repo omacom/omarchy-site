@@ -709,14 +709,6 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
               <GithubIcon className="size-5" />
               GitHub
             </Button>
-            <Button
-              variant="outline"
-              className="flex-1"
-              nativeButton={false}
-              render={<a href="https://x.com/omarchy" />}
-            >
-              <XIcon className="size-5" />X
-            </Button>
           </div>
         </nav>
       </div>
