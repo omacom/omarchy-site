@@ -10,6 +10,7 @@ import {
   PaletteIcon,
   RssIcon,
   SearchIcon,
+  XIcon,
 } from '@/components/icons'
 import { OmarchyMarkDrawn, OmarchyWordmark } from '@/components/Brand'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
@@ -569,6 +570,19 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
                     <GithubIcon className="size-5" />
                   </Button>
                 </NavTooltip>
+                <NavTooltip label={t('Follow Omarchy on X')}>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label={t('Omarchy on X')}
+                    data-nav-glyph
+                    className="relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
+                    nativeButton={false}
+                    render={<a href="https://x.com/omarchy" />}
+                  >
+                    <XIcon className="size-5" />
+                  </Button>
+                </NavTooltip>
               </TooltipProvider>
               <span className="ml-2 flex">{install}</span>
             </div>
@@ -694,6 +708,14 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
             >
               <GithubIcon className="size-5" />
               GitHub
+            </Button>
+            <Button
+              variant="outline"
+              className="flex-1"
+              nativeButton={false}
+              render={<a href="https://x.com/omarchy" />}
+            >
+              <XIcon className="size-5" />X
             </Button>
           </div>
         </nav>
