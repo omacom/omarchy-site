@@ -1330,11 +1330,11 @@
       "start": "2026-11-04T08:00:00.000Z",
       "end": "2026-11-04T10:00:00.000Z",
       "timezone": null,
-      "address": "Sydney NSW, Australia",
+      "address": "York 75, 2/75 York St, Sydney NSW 2000, Australia",
       "city": null,
       "country": "Australia",
       "online": null,
-      "geo": { "lat": -33.8622503, "lon": 151.207684 },
+      "geo": { "lat": -33.868533, "lon": 151.205886 },
       "hosts": ["Quintin Rodgers"],
       "cover": null
     },
