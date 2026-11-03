@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-02",
+  "refreshed": "2026-11-03",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1679,6 +1679,23 @@
       "geo": { "lat": 30.2489634, "lon": 120.2052342, "approximate": true },
       "hosts": [],
       "cover": null
+    },
+    {
+      "id": "evt-JBHHKJZRXrbLNGX",
+      "title": "Omarchy Singapore",
+      "url": "https://luma.com/w2adh2et",
+      "start": "2026-11-17T10:30:00.000Z",
+      "end": "2026-11-17T13:00:00.000Z",
+      "timezone": "Asia/Singapore",
+      "address": "20 Anson Rd, Singapore 079912",
+      "city": "Singapore",
+      "country": "SG",
+      "online": false,
+      "geo": { "lat": 1.2751804, "lon": 103.8456916 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-JBHHKJZRXrbLNGX-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
     },
     {
       "id": "evt-deNAAL5V3VjulA1",
