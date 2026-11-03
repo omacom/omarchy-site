@@ -170,6 +170,11 @@
   "name": "CpUnk"
  },
  {
+  "repo": "https://github.com/AdamIshbib/omarchy-creme-brulee-theme",
+  "image": "/assets/themes/creme-brulee.webp",
+  "name": "Crème Brûlée"
+ },
+ {
   "repo": "https://github.com/PedroAugustoOK/omarchy-crimson-theme",
   "image": "/assets/themes/crimson.webp",
   "name": "Crimson"
