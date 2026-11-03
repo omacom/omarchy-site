@@ -28,6 +28,8 @@ export function MusicBackdrop() {
     let dirty = true
     let sampled = false
     let source: HTMLCanvasElement | null = null
+    let scrolling = false
+    let scrollEnd = 0
     let crop = { x: 0, y: 0, width: 0, height: 0 }
     let scale = 0
     const show = (next: boolean) => {
@@ -42,39 +44,48 @@ export function MusicBackdrop() {
       // Restore the real page backdrop immediately while scrolling.
       show(false)
     }
+    const onScroll = () => {
+      scrolling = true
+      measure()
+      window.clearTimeout(scrollEnd)
+      scrollEnd = window.setTimeout(() => {
+        scrolling = false
+      }, 150)
+    }
     const resize = new ResizeObserver(measure)
     resize.observe(box)
     window.addEventListener('resize', measure)
-    window.addEventListener('scroll', measure, { passive: true })
+    window.addEventListener('scroll', onScroll, { passive: true })
 
     const unsubscribe = onFieldPaint((frame) => {
-      if (!frame.ready || rect.width < 1 || rect.height < 1) {
-        if (source === frame.canvas) show(false)
-        return
-      }
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
       if (
-        source === frame.canvas &&
-        sampled &&
-        !dirty &&
-        scale === dpr &&
-        !frame.hasDamage(crop.x, crop.y, crop.width, crop.height)
-      )
-        return
-
+        source &&
+        (!source.isConnected || (source === frame.canvas && !frame.ready))
+      ) {
+        show(false)
+        source = null
+        image.width = image.height = 1
+      }
+      if (scrolling || !frame.ready || rect.width < 1 || rect.height < 1) return
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
       const clip = frame.host.getBoundingClientRect()
       if (
-        rect.left < clip.left ||
-        rect.top < clip.top ||
-        rect.right > clip.right ||
-        rect.bottom > clip.bottom
+        rect.left - PAD < clip.left ||
+        rect.top - PAD < clip.top ||
+        rect.right + PAD > clip.right ||
+        rect.bottom + PAD > clip.bottom
       ) {
         if (source === frame.canvas) show(false)
         return
       }
       // A field texture contains its pixels, not the text layered above it.
       // Keep native blur whenever that text reaches the card's blur kernel.
-      for (const element of frame.quiet) {
+      for (const element of [
+        ...frame.quiet,
+        ...(frame.host.parentElement?.querySelectorAll<HTMLElement>(
+          '[data-backdrop-obstacle]',
+        ) ?? []),
+      ]) {
         if (box.parentElement?.contains(element)) continue
         const obstacle = element.getBoundingClientRect()
         if (
@@ -89,6 +100,15 @@ export function MusicBackdrop() {
           return
         }
       }
+
+      if (
+        source === frame.canvas &&
+        sampled &&
+        !dirty &&
+        scale === dpr &&
+        !frame.hasDamage(crop.x, crop.y, crop.width, crop.height)
+      )
+        return
 
       const field = frame.canvas.getBoundingClientRect()
       const width = Math.round(rect.width * dpr)
@@ -126,7 +146,11 @@ export function MusicBackdrop() {
       unsubscribe()
       resize.disconnect()
       window.removeEventListener('resize', measure)
-      window.removeEventListener('scroll', measure)
+      window.removeEventListener('scroll', onScroll)
+      window.clearTimeout(scrollEnd)
+      source = null
+      image.width = image.height = 1
+      show(false)
     }
   }, [])
 

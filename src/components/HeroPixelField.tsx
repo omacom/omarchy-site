@@ -1246,6 +1246,11 @@ export function HeroPixelField({
     }
     if (measure()) startDrawing()
 
+    const releaseEtchSurface = () => {
+      etchCanvas.width = etchCanvas.height = 1
+      etchCanvas.style.visibility = 'hidden'
+    }
+
     // Pause drawing while the field is outside the viewport.
     const visibility = new IntersectionObserver(
       ([entry]) => {
@@ -1257,6 +1262,7 @@ export function HeroPixelField({
           frame = 0
           targetStrength = 0
           onPointerCancel()
+          releaseEtchSurface()
         }
       },
       { rootMargin: '64px' },
@@ -1269,6 +1275,7 @@ export function HeroPixelField({
         frame = 0
         targetStrength = 0
         onPointerCancel()
+        releaseEtchSurface()
       } else {
         wake()
       }
@@ -1311,6 +1318,7 @@ export function HeroPixelField({
       })
       etch?.free()
       etch = null
+      releaseEtchSurface()
       cancelAnimationFrame(frame)
       observer.disconnect()
       visibility.disconnect()
