@@ -140,13 +140,24 @@ if (siteVersion !== version) {
     `version.json: keeping ${siteVersion} (GitHub latest is ${version})`,
   )
 }
-const isos = await releaseIsos(siteVersion, currentRelease)
-await writeFile(
-  versionPath,
-  JSON.stringify({ version: siteVersion, isos }, null, 1),
-)
+let listed = {
+  version: siteVersion,
+  isos: await releaseIsos(siteVersion, currentRelease),
+}
+// GitHub can mark a release as latest before its ISO is uploaded. Until the
+// x86_64 ISO is served, the site keeps offering the release before it.
+if (!listed.isos.x86_64 && siteVersion !== currentRelease.version) {
+  console.log(
+    `version.json: keeping ${currentRelease.version} (no ${siteVersion} ISO served yet)`,
+  )
+  listed = {
+    version: currentRelease.version,
+    isos: await releaseIsos(currentRelease.version, currentRelease),
+  }
+}
+await writeFile(versionPath, JSON.stringify(listed, null, 1))
 console.log(
-  `version.json: ${siteVersion}, ISOs for ${Object.keys(isos).join(' and ')}`,
+  `version.json: ${listed.version}, ISOs for ${Object.keys(listed.isos).join(' and ')}`,
 )
 
 // Refresh GitHub figures; foundation and download announcements are maintained separately.
@@ -290,10 +301,8 @@ if (CF_TOKEN && CF_ZONE) {
         : daysAgo(DOWNLOADS_CATCH_UP_DAYS),
     )
     if (start <= yesterday) {
-      const head = await fetch(
-        `https://iso.omarchy.org/omarchy-${version}.iso`,
-        { method: 'HEAD' },
-      )
+      // The x86_64 ISO is the unit a download is counted in.
+      const head = await fetch(listed.isos.x86_64?.url, { method: 'HEAD' })
       const isoBytes = Number(head.headers.get('content-length'))
       if (!(isoBytes > 1e9)) throw new Error(`odd ISO size: ${isoBytes}`)
       // Reach back far enough for the period rows even when the ledger
