@@ -3,7 +3,8 @@
  * Refreshes the data snapshots that come from outside this repository:
  *   src/data/plugins.json      the marketplace's built catalogue (full field set)
  *   public/data/explorer.json  the plugin similarity map for /plugins/explore
- *   src/data/version.json      the current release, from the OS repo's releases
+ *   src/data/version.json      the current release, from the OS repo's
+ *                              releases, and its ISOs on iso.omarchy.org
  * Everything the site shows from its own files - the manual, the news, the
  * pages, the teams, the theme gallery - is read at build time by
  * scripts/port_content.py instead, so it is never behind a deploy.
@@ -19,6 +20,7 @@ import prettier from 'prettier'
 import { assetId } from './lib/asset-id.mjs'
 import { decodeCalendarText } from './lib/ical.mjs'
 import { geocodeTitle } from './lib/geocode.mjs'
+import { releaseIsos } from './lib/release-isos.mjs'
 import {
   fetchDonations,
   replaceSections,
@@ -115,7 +117,8 @@ console.log(
   `explorer.json: ${explorer.nodes?.length ?? 0} nodes, ${explorer.edges?.length ?? 0} edges, ${explorer.clusters?.length ?? 0} clusters`,
 )
 
-// Release version and ISO URL from the latest GitHub release.
+// Release version from the latest GitHub release, and its ISOs from
+// iso.omarchy.org, one per architecture that is served.
 const release = JSON.parse(
   await fetchText(
     'https://api.github.com/repos/omacom/omarchy/releases/latest',
@@ -128,23 +131,23 @@ if (!/^\d+\.\d+\.\d+$/.test(version)) {
 const versionPath = path.join(OUT, 'version.json')
 const currentRelease = JSON.parse(await readFile(versionPath, 'utf8'))
 // An ISO can be published before GitHub marks its release as latest.
-if (
+const siteVersion =
   version.localeCompare(currentRelease.version, 'en', { numeric: true }) < 0
-) {
+    ? currentRelease.version
+    : version
+if (siteVersion !== version) {
   console.log(
-    `version.json: keeping ${currentRelease.version} (GitHub latest is ${version})`,
+    `version.json: keeping ${siteVersion} (GitHub latest is ${version})`,
   )
-} else {
-  await writeFile(
-    versionPath,
-    JSON.stringify(
-      { version, isoUrl: `https://iso.omarchy.org/omarchy-${version}.iso` },
-      null,
-      1,
-    ),
-  )
-  console.log(`version.json: ${version}`)
 }
+const isos = await releaseIsos(siteVersion, currentRelease)
+await writeFile(
+  versionPath,
+  JSON.stringify({ version: siteVersion, isos }, null, 1),
+)
+console.log(
+  `version.json: ${siteVersion}, ISOs for ${Object.keys(isos).join(' and ')}`,
+)
 
 // Refresh GitHub figures; foundation and download announcements are maintained separately.
 const MOMENTUM = path.join(OUT, 'momentum.json')
