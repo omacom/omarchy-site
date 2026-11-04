@@ -59,6 +59,30 @@ test('a check without an answer keeps the last answer for that version', async (
   })
 })
 
+test('a listed link stays only while its own check goes unanswered', async () => {
+  const before = { version: '4.0.6', isos: { x86_64: plain('4.0.6') } }
+  const answers = (byUrl) => async (url) => (url in byUrl ? byUrl[url] : false)
+  const x86Name = 'https://iso.omarchy.org/omarchy-4.0.6-x86.iso'
+  // No answer for the new name, a definite 404 for the listed one.
+  assert.deepEqual(
+    await releaseIsos(
+      '4.0.6',
+      before,
+      answers({ [x86Name]: null, [plain('4.0.6').url]: false }),
+    ),
+    {},
+  )
+  // A 404 for the new name, no answer for the listed one.
+  assert.deepEqual(
+    await releaseIsos(
+      '4.0.6',
+      before,
+      answers({ [x86Name]: false, [plain('4.0.6').url]: null }),
+    ),
+    { x86_64: plain('4.0.6') },
+  )
+})
+
 test('the version.json from before isos existed keeps its x86_64 ISO', async () => {
   const before = { version: '4.0.6', isoUrl: plain('4.0.6').url }
   assert.deepEqual(await releaseIsos('4.0.6', before, async () => null), {

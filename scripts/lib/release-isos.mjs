@@ -48,23 +48,24 @@ export async function served(url) {
 export async function releaseIsos(version, previous, isServed = served) {
   const isos = {}
   for (const arch of ISO_ARCHES) {
-    const urls = isoUrls(version, arch)
+    const answers = new Map()
     let url
-    let unanswered = false
-    for (const candidate of urls) {
+    for (const candidate of isoUrls(version, arch)) {
       const answer = await isServed(candidate)
+      answers.set(candidate, answer)
       if (answer) {
         url = candidate
         break
       }
-      if (answer === null) unanswered = true
     }
-    if (!url && unanswered && previous?.version === version) {
+    if (!url && previous?.version === version) {
       // version.json from before `isos` named only the x86_64 ISO, as isoUrl.
       const last =
         previous.isos?.[arch]?.url ??
         (arch === 'x86_64' ? previous.isoUrl : undefined)
-      if (urls.includes(last)) url = last
+      // Only its own check going unanswered keeps the last link: a 404 for it
+      // means it is gone, whatever another name's check said.
+      if (answers.get(last) === null) url = last
     }
     if (url) isos[arch] = { url }
   }
