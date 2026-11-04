@@ -1330,11 +1330,11 @@
       "start": "2026-11-04T08:00:00.000Z",
       "end": "2026-11-04T10:00:00.000Z",
       "timezone": null,
-      "address": "York 75, 2/75 York St, Sydney NSW 2000, Australia",
+      "address": "52 King St, Sydney NSW 2000, Australia",
       "city": null,
       "country": "Australia",
       "online": null,
-      "geo": { "lat": -33.868533, "lon": 151.205886 },
+      "geo": { "lat": -33.8684698, "lon": 151.2057388 },
       "hosts": ["Quintin Rodgers"],
       "cover": null
     },
@@ -1470,7 +1470,7 @@
       "country": "India",
       "online": null,
       "geo": { "lat": 24.585445, "lon": 73.712479 },
-      "hosts": ["Team arroWebs"],
+      "hosts": ["Team arroWebs", "GR", "Srijan Ramachandran"],
       "cover": null
     },
     {
@@ -1489,21 +1489,6 @@
       "cover": null
     },
     {
-      "id": "evt-JBHHKJZRXrbLNGX",
-      "title": "Omarchy Singapore",
-      "url": "https://luma.com/w2adh2et",
-      "start": "2026-11-18T10:30:00.000Z",
-      "end": "2026-11-18T13:00:00.000Z",
-      "timezone": null,
-      "address": "20 Anson Rd, Singapore 079912",
-      "city": null,
-      "country": "Singapore 079912",
-      "online": null,
-      "geo": { "lat": 1.2751804, "lon": 103.8456916 },
-      "hosts": ["Vivian Hu"],
-      "cover": null
-    },
-    {
       "id": "evt-deNAAL5V3VjulA1",
       "title": "OMARCHY WARSAW #2",
       "url": "https://luma.com/0tsjjf2d",
@@ -1516,6 +1501,21 @@
       "online": null,
       "geo": { "lat": 52.2329478, "lon": 20.999236000000003 },
       "hosts": ["Michał Sokół", "Paweł Strzałkowski"],
+      "cover": null
+    },
+    {
+      "id": "evt-JBHHKJZRXrbLNGX",
+      "title": "Omarchy Singapore",
+      "url": "https://luma.com/w2adh2et",
+      "start": "2026-11-19T10:30:00.000Z",
+      "end": "2026-11-19T13:00:00.000Z",
+      "timezone": null,
+      "address": null,
+      "city": null,
+      "country": null,
+      "online": null,
+      "geo": { "lat": 1.2979872440179592, "lon": 103.83962067974433 },
+      "hosts": ["Vivian Hu"],
       "cover": null
     },
     {
