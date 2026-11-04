@@ -1,0 +1,72 @@
+{
+  "name": "omarchy-site",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "dev": "astro dev --port 3113",
+    "build": "npm run build:social -- --site && npm run port && astro build && node scripts/assemble-static.mjs",
+    "preview": "astro preview",
+    "build:social": "node scripts/build-og-image.mjs",
+    "lint": "eslint",
+    "format": "prettier --write . && eslint --fix",
+    "check": "prettier --check .",
+    "refresh-data": "node scripts/refresh-data.mjs",
+    "sync:workstations": "python3 scripts/sync-workstations.py",
+    "port": "python3 scripts/port_content.py && node scripts/meetup-map.mjs && node scripts/build-content-pages.mjs",
+    "assemble": "node scripts/assemble-static.mjs",
+    "parity": "python3 scripts/parity.py",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test src/lib/*.test.ts scripts/lib/*.test.mjs assets/js/modules/screensaver-picker.test.js && python3 -m unittest discover -s scripts -p 'test_*.py'",
+    "build:da": "npm run build:locale -- da",
+    "dev:da": "PUBLIC_SITE_LOCALE=da ASTRO_DEV_BACKGROUND=1 astro dev --ignore-lock --port 3114",
+    "build:locale": "node scripts/build-locale.mjs",
+    "check:translations": "node scripts/check-translations.mjs",
+    "site:pending": "node scripts/check-translations.mjs --pending-site",
+    "site:translate": "python3 scripts/translate-site.py",
+    "news:pending": "node scripts/check-translations.mjs --pending-news",
+    "news:translate": "python3 scripts/translate-news.py",
+    "build:translations": "npm run port && npm run check:translations && node scripts/build-translations.mjs",
+    "deploy:zh-cn": "python3 scripts/deploy-zh-cn.py",
+    "deploy:locale": "node scripts/deploy-locale.mjs"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.7.0",
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@tailwindcss/vite": "4.3.3",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "motion": "13.1.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "shadcn": "4.19.0",
+    "tailwind-merge": "3.6.0",
+    "tailwindcss": "4.3.3",
+    "tw-animate-css": "1.4.0"
+  },
+  "devDependencies": {
+    "@astrojs/react": "6.0.5",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "astro": "7.3.1",
+    "d3-geo": "3.1.1",
+    "eslint": "10.10.0",
+    "marked": "18.0.12",
+    "prettier": "3.9.6",
+    "sharp": "0.35.2",
+    "topojson-client": "3.1.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.69.0",
+    "vite": "8.2.2",
+    "world-atlas": "2.0.2",
+    "world-countries": "5.1.0",
+    "wrangler": "4.129.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

@@ -1,6 +1,6 @@
 ---
-title: Omacom Foundation launches with $12.6 million
-date: 2026-08-21
+title: Omacom Foundation launches with $23.7 million
+date: 2026-08-21 17:57 +0200
 author: DHH
 author_url: https://dhh.dk
 ---
@@ -26,10 +26,33 @@ These twelve Founding Patrons are each contributing $1 million to this mission:
 - [Yunjie Dai](https://x.com/xdanger), cofounder of [TapTap](https://www.taptap.io)
 - Yours truly
 
-And these Distinguished Corporate Patrons are each contributing $100,000 a year for three years:
+These Founding Corporate Patrons are each contributing $1 million a year for three years or $1.5 million in tokens, with renewal by mutual agreement:
+
+- [Meta Superintelligence Labs](https://www.meta.com/superintelligence/)
+- [DigitalOcean](https://www.digitalocean.com/)
+- [Alibaba Cloud](https://www.alibabacloud.com/)
+- [SpaceXSI](https://x.ai/)
+
+These Distinguished Patrons are each contributing $100,000 to the mission:
+
+- [Ryan R. Hughes](https://x.com/ryanrhughes), partner at [Oodle](https://heyoodle.com/)
+- [Ed Huang](https://x.com/dxhuang), cofounder and CTO of [PingCAP](https://www.pingcap.com)
+- [Adrien Treccani](https://www.linkedin.com/in/atreccani/), founder of [Metaco](https://ripple.com/products/custody/)
+- [Max Schoening](https://x.com/mschoening), Head of Product at [Notion](https://www.notion.com)
+
+And these Distinguished Corporate Patrons are each contributing $100,000 a year for three years or $150,000 in tokens, with renewal by mutual agreement:
 
 - [1Password](https://1password.com)
 - [37signals](https://37signals.com)
+- [Four Technologies](https://www.paywithfour.com/)
+- [Fireworks](https://fireworks.ai)
+- [OpenAI](https://openai.com)
+- [OpenRouter](https://openrouter.ai/)
+- [OrcaRouter](https://www.orcarouter.ai/)
+- [Namespace](https://namespace.so/)
+- [Greptile](https://www.greptile.com/)
+
+Over 800 donors have also raised over $120,000 through [open patronage](https://www.zeffy.com/en-US/donation-form/omarchy-patronage), bringing the total in pledges and donations to approximately $23.7 million.
 
 This is a ridiculous sum of money, so I intend to make sure it lasts a long time, and that we make the most of it. But just as important as the incredible cushion is the vote of confidence delivered by these pledges.
 
@@ -40,3 +63,23 @@ We're going to make the prophecy of The Year of Linux on the Desktop come true. 
 *UPDATE: Brian and Yunjie [joined as Founding Patrons on August 31](/news/2026/08/omacom-foundation-welcomes-brian-armstrong-and-yunjie-dai).*
 
 *UPDATE: 1Password and 37signals [joined as Distinguished Corporate Patrons on August 31](/news/2026/08/1password-and-37signals-become-distinguished-corporate-patrons).*
+
+*UPDATE: Ryan, Ed, Adrien, and Max [joined as Distinguished Patrons on September 2](/news/2026/09/omacom-foundation-reaches-13-million).*
+
+*UPDATE: Meta Superintelligence Labs, OpenAI, and Fireworks [joined as Token Patrons on September 3](/news/2026/09/omacom-foundation-secures-tokens-from-leading-labs).*
+
+*UPDATE: OpenRouter, Four Technologies, and nearly 500 donors [added another half a million dollars on September 7](/news/2026/09/omacom-foundation-raises-another-half-a-million-dollars).*
+
+*UPDATE: DigitalOcean [joined as a Founding Corporate Patron with $1 million a year for three years](/news/2026/09/digitalocean-joins-as-founding-corporate-patron/).*
+
+*UPDATE: Brian Cartmell and American Cloud [joined as open patronage doubled on September 17](/news/2026/09/brian-cartmell-and-american-cloud-join-as-open-patronage-doubles/).*
+
+*UPDATE: OrcaRouter [joined as a Distinguished Corporate Patron with $150,000 in tokens on September 17](/news/2026/09/orcarouter-joins-as-a-distinguished-corporate-patron/).*
+
+*UPDATE: Alibaba Cloud [joined as a Founding Corporate Patron with $1 million a year for three years on September 22](/news/2026/09/alibaba-cloud-joins-as-founding-corporate-patron/).*
+
+*UPDATE: SpaceXSI [joined as a Founding Corporate Patron with $1.5 million in Grok tokens on October 8](/news/2026/10/spacexai-joins-as-founding-corporate-patron/).*
+
+*UPDATE: Namespace [joined as a Distinguished Corporate Patron with $100,000 a year in compute on October 9](/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/).*
+
+*UPDATE: Greptile [joined as a Distinguished Corporate Patron with $150,000 in tokens for PR reviews on October 15](/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/).*

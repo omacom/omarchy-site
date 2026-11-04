@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>Backgrounds — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="Every theme ships with its own set of backgrounds, and you can add extras of your own in ~/.config/omarchy/backgrounds/[theme]. If you want to add an extra...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Backgrounds">
-    <meta property="og:description" content="Every theme ships with its own set of backgrounds, and you can add extras of your own in ~/.config/omarchy/backgrounds/[theme]. If you want to add an extra...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/backgrounds/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Backgrounds</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -129,18 +65,19 @@
       <h1>Backgrounds</h1>
 <p>Every theme ships with its own set of backgrounds, and you can add extras of your own in <code>~/.config/omarchy/backgrounds/[theme]</code>. If you want to add an extra background image to, say, the nord theme, you just put the file in <code>~/.config/omarchy/backgrounds/nord</code>.</p>
 
-<p>You can do this most easily by going to <em>Install &gt; Style &gt; Background</em> in the Omarchy Menu. That’ll bring up the folder where the backgrounds for that theme is stored. Hit <code>Super + Shift + F</code> to start another file manager, find your background, copy it over.  Now it’ll be included in the choices of backgrounds you can select between using <code>Super + Ctrl + Space</code>.</p>
+<p>You can do this most easily by going to <em>Install &gt; Style &gt; Background</em> in the Omarchy Menu. That’ll bring up the folder where the backgrounds for that theme is stored. Hit <code>Super + Shift + F</code> to start another file manager, find your background, copy it over.  Now it’ll be included in the choices of backgrounds you can select between using <code>Super + Ctrl + W</code>.</p>
+
+<p>Backgrounds can be videos as well as stills. Drop an <code>mp4</code>, <code>m4v</code>, <code>mov</code>, <code>webm</code>, <code>mkv</code>, or <code>avi</code> file in the same folder and it appears alongside the images. Videos are played by the OWE wallpaper engine. It decodes the video once for all monitors and plays its sound through the default audio output, and it stops playback whenever nothing can see it. A video wallpaper still costs far more power than a still one.</p>
+
+<p>Themes can include a short intro for a still background. For <code>backgrounds/road.webp</code>, the matching video lives at <code>backgrounds/intros/road.mp4</code>. It plays automatically at boot and when switching to a theme with that background selected, then returns to the still. Intro videos stay out of the background picker and never loop.</p>
+
+<p>Turning off <em>Appearance &gt; Animations</em> also turns off background intros. Omarchy does this by default in a virtual machine. The <code>omarchy theme bg intro toggle</code> command can toggle intros separately. Refreshing a theme or choosing another background within the same theme does not play an intro.</p>
 
 <p>You can find a huge collection of cool curated backgrounds on https://github.com/dharmx/walls.</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/fonts/" rel="prev">← Fonts</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/prompt/" rel="next">Prompt →</a>
-      </nav>
+<p>The lock screen shows a still frame of a video background, the same way it shows a still frame of an animated GIF.</p>
+
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>

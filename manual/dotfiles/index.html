@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>Dotfiles — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="Omarchy is primarily configured through the so-called dotfiles that live in ~/.config. Those are considered your files for your changes. The files that live...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Dotfiles">
-    <meta property="og:description" content="Omarchy is primarily configured through the so-called dotfiles that live in ~/.config. Those are considered your files for your changes. The files that live...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/dotfiles/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Dotfiles</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -209,11 +145,11 @@
     </tr>
     <tr>
       <td><code>post-update</code></td>
-      <td>During <code>omarchy update</code>, after packages and migrations</td>
+      <td>Near the end of <code>omarchy update</code>, after packages, migrations, and service restarts, before mise tools are updated</td>
     </tr>
     <tr>
       <td><code>pre-refresh-pacman</code></td>
-      <td>Before <code>omarchy refresh pacman</code> re-syncs the package config</td>
+      <td>After <code>omarchy refresh pacman</code> re-syncs the package config, before it updates packages; a channel switch runs it during that same refresh step</td>
     </tr>
     <tr>
       <td><code>theme-set</code></td>
@@ -229,6 +165,8 @@
     </tr>
   </tbody>
 </table>
+
+<p>The <code>pre-refresh-pacman</code> hook is where custom repositories or <code>IgnorePkg</code> lines belong, since it runs before the package transaction. Both update-related hooks run as your user after Omarchy clears its cached sudo authorization, so a hook that uses <code>sudo</code> needs its own authorization and may ask for your password.</p>
 
 <p>Each of those directories already holds a <code>.sample</code> file showing the shape of a hook — drop the <code>.sample</code> from the name to put it to work. To install a script you’ve written elsewhere, use <code>omarchy hook install post-boot ~/my-hook</code>, which copies it in and makes it executable.</p>
 
@@ -252,9 +190,10 @@
 
 <p>You can change just about everything that way, like the default keybindings. Just edit <code>~/.config/hypr/bindings.lua</code> to, say, replace <a href="https://obsidian.md/">Obsidian</a> with <a href="https://joplinapp.org/">Joplin</a> (install with <code>omarchy-pkg-add joplin-bin</code>):</p>
 
-<pre><code>hl.unbind("SUPER + SHIFT + O")
-o.bind("SUPER + SHIFT + O", "Joplin", "joplin-desktop")
+<pre><code class="language-lua">o.rebind("SUPER + SHIFT + O", "Joplin", "joplin-desktop")
 </code></pre>
+
+<p><code>o.rebind</code> removes the existing binding before adding its replacement. It takes the same arguments as <code>o.bind</code>, including launch helpers and binding options. Use <code>o.bind</code> to add a binding, or <code>hl.unbind</code> to remove one without replacing it.</p>
 
 <p>If you insist on hacking on the internal Omarchy files, switch to the dev channel via <em>Update &gt; Channel &gt; Dev</em>. That links Omarchy to a git checkout of the source code in <code>~/omarchy</code>, which you’re free to change to your heart’s content. Ain’t nobody here to tell you what to do!</p>
 
@@ -262,14 +201,7 @@ o.bind("SUPER + SHIFT + O", "Joplin", "joplin-desktop")
 
 <p>If you end up making a mess of the configurations, you can always revert them to the defaults via <em>Update &gt; Config</em> in the Omarchy menu. Or by running <code>omarchy reinstall configs</code> to reset everything.</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/updates/" rel="prev">← Updates</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/shell-plugins/" rel="next">Shell Plugins →</a>
-      </nav>
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>

@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>Monitors — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="Omarchy assumes you&#39;re running on a 2x-capable retina-class display by default. This is what you need to get those nice, crisp programmer fonts. It&#39;s what...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Monitors">
-    <meta property="og:description" content="Omarchy assumes you&#39;re running on a 2x-capable retina-class display by default. This is what you need to get those nice, crisp programmer fonts. It&#39;s what...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/monitors/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Monitors</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -162,7 +98,50 @@ local omarchy_monitor_scale = 1
 
 <h3 id="arranging-multiple-screens">Arranging multiple screens <a class="manual__heading-link" href="#arranging-multiple-screens" aria-label="Link to this section">#</a></h3>
 
-<p>Hyprland works great with multiple screens. Read more about how to lay them out in <a href="https://wiki.hypr.land/Configuring/Basics/Monitors/">the Hyprland monitor documentation</a>. You can <a href="https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/">bind specific workspaces to specific monitors</a> as well. In Omarchy, these rules go in <code>~/.config/hypr/monitors.lua</code> as <code>hl.monitor</code> entries — the file ships with commented examples for pinning a specific monitor to a resolution, position, and rotation.</p>
+<p>Hyprland works great with multiple screens. Read more about how to lay them out in <a href="https://wiki.hypr.land/Configuring/Basics/Monitors/">the Hyprland monitor documentation</a>. In Omarchy, these go in <code>~/.config/hypr/monitors.lua</code> as <code>hl.monitor</code> entries — the file ships with commented examples for pinning a specific monitor to a resolution, position, and rotation.</p>
+
+<p>Every monitor has workspaces 1 through 10 of its own, so <code>Super + 1</code> always means the first workspace of the monitor you’re on. Behind the scenes, Hyprland still numbers workspaces across all monitors: your laptop screen (or first monitor) gets 1–10, the next monitor 11–20, and so on, and each monitor keeps its block every time you plug it in. Use those numbers if you write <a href="https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/">workspace rules</a> or window rules for a specific monitor, so workspace 12 is the second workspace of your second monitor. <code>~/.local/state/omarchy/monitor-workspaces</code> lists which block each monitor has.</p>
+
+<p>The arrow keys work across monitors that share an edge in your layout. Screens that only touch at a corner, or that have a gap between them, aren’t neighbors, so use <code>Ctrl + Alt + Tab</code> to get between them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hotkey</th>
+      <th>Across monitors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + Arrow</code></td>
+      <td>Moves focus to the monitor on that side once there’s no window left in that direction</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Arrow</code></td>
+      <td>Swaps with a window on the monitor on that side</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + Arrow</code></td>
+      <td>Moves the window into a group on the monitor on that side</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Ctrl + Arrow</code></td>
+      <td>Moves the window to the monitor on that side, onto the workspace it’s showing</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Alt + Arrow</code></td>
+      <td>Moves the workspace to the monitor on that side, keeping its number if it’s free</td>
+    </tr>
+    <tr>
+      <td><code>Ctrl + Alt + Tab</code> / <code>Ctrl + Alt + Shift + Tab</code></td>
+      <td>Moves focus to the next or previous monitor, whatever the layout</td>
+    </tr>
+    <tr>
+      <td><code>Super + 1-0</code>, <code>Super + Tab</code>, <code>Super + Scroll Wheel</code></td>
+      <td>Stay on the monitor you’re on</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>You can also checkout <a href="https://github.com/erans/hyprmon/">Hyprmon</a>, if you’d like a TUI to help you with the positioning of multiple screens.</p>
 
@@ -178,14 +157,7 @@ local omarchy_monitor_scale = 1
 
 <p>On Intel machines, you should be connecting to Apple displays using a regular Thunderbolt cable. On other machines without Thunderbolt, you’ll typically have to use a <a href="https://www.amazon.com/dp/B0BNX7MS6N">DP + USB-A -&gt; USB-C cable</a> to make it work.</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/shell-plugins/" rel="prev">← Shell Plugins</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/keyboard-mouse-trackpad/" rel="next">Keyboard, Mouse, Trackpad →</a>
-      </nav>
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>
