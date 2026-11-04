@@ -1,7 +1,7 @@
 {
   "source": "luma-feed",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-03",
+  "refreshed": "2026-11-04",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1492,8 +1492,8 @@
       "id": "evt-JBHHKJZRXrbLNGX",
       "title": "Omarchy Singapore",
       "url": "https://luma.com/w2adh2et",
-      "start": "2026-11-17T10:30:00.000Z",
-      "end": "2026-11-17T13:00:00.000Z",
+      "start": "2026-11-18T10:30:00.000Z",
+      "end": "2026-11-18T13:00:00.000Z",
       "timezone": null,
       "address": "20 Anson Rd, Singapore 079912",
       "city": null,
