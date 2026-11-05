@@ -103,7 +103,7 @@
     "avatar": "/assets/images/patrons/alibaba-cloud.svg"
    },
    {
-    "name": "SpaceXAI",
+    "name": "SpaceXSI",
     "meta": "",
     "href": "https://x.ai/",
     "avatar": "/assets/images/patrons/spacexai.svg"
@@ -195,6 +195,18 @@
     "meta": "",
     "href": "https://www.orcarouter.ai/",
     "avatar": "/assets/images/patrons/orcarouter.webp"
+   },
+   {
+    "name": "Namespace",
+    "meta": "",
+    "href": "https://namespace.so/",
+    "avatar": "/assets/images/patrons/namespace.svg"
+   },
+   {
+    "name": "Greptile",
+    "meta": "",
+    "href": "https://www.greptile.com/",
+    "avatar": "/assets/images/patrons/greptile.svg"
    }
   ],
   "note": null
