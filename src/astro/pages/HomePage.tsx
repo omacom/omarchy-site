@@ -1,6 +1,6 @@
 import { t, language, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
-import { Fragment, useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -57,8 +57,12 @@ import releaseData from '@/data/version.json'
 
 /** The release and its ISOs by architecture. The refresh lists an
  *  architecture once its ISO is served, and its button appears with it. */
-const release: { version: string; isos: Record<string, { url: string }> } =
-  releaseData
+type Download = { url: string; sha256?: string | null }
+const release: {
+  version: string
+  isos: Record<string, Download>
+  mac?: Download & { version: string }
+} = releaseData
 const ISOS = isoLinks(release.isos, import.meta.env?.PUBLIC_ISO_ORIGIN)
 const ISO_LABEL: Record<string, string> = { aarch64: 'ARM64' }
 
@@ -75,21 +79,8 @@ const TRY = {
   },
 } as const
 
-/** Which of the two the visitor is most likely on, read after mount so the
- *  server and the first paint agree; null on Linux and on anything unsure. */
-function useTryDevice() {
-  const [device, setDevice] = useState<keyof typeof TRY | null>(null)
-  useEffect(() => {
-    const ua = navigator.userAgent
-    if (/iPhone|iPad/.test(ua)) return
-    if (/Mac/.test(ua)) setDevice('mac')
-    else if (/Win/.test(ua)) setDevice('windows')
-  }, [])
-  return device
-}
-
 /** The release's ISOs with the visitor's own architecture first, read after
- *  mount like useTryDevice; x86_64 first until then. */
+ *  mount; x86_64 first until then. */
 function useIsos() {
   const [arch, setArch] = useState<IsoArch>('x86_64')
   useEffect(() => {
@@ -132,6 +123,59 @@ const noteLink =
 
 const sectionLink =
   'inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0'
+
+const installNote = 'mt-2 text-[13px] leading-relaxed text-text-muted'
+const installButton = 'h-11 w-full justify-start px-4 whitespace-nowrap sm:w-64'
+
+function InstallRow({
+  icon: Icon,
+  title,
+  lead,
+  children,
+}: {
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  lead: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="grid gap-4 border-t border-border-subtle py-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
+      <div className="min-w-0">
+        <h4 className="flex items-center gap-2.5 text-lg font-medium tracking-tight text-text">
+          <Icon className="size-5 shrink-0 text-brand" />
+          {title}
+        </h4>
+        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
+          {lead}
+        </p>
+      </div>
+      <div className="min-w-0">{children}</div>
+    </div>
+  )
+}
+
+/** A download's checksum, small enough to sit under its button. With a
+ *  signature to point at, it links there, for whoever checks. */
+function Checksum({ sha256, href }: { sha256?: string | null; href?: string }) {
+  if (!sha256) return null
+  return (
+    <p className="mt-2 font-mono text-[10px] leading-4 break-all text-text-muted">
+      {href ? (
+        <a
+          href={href}
+          title={t('signature')}
+          className="transition-colors duration-150 ease-out hover:text-text"
+        >
+          {sha256}
+        </a>
+      ) : (
+        <span title="SHA-256" className="select-all">
+          {sha256}
+        </span>
+      )}
+    </p>
+  )
+}
 
 function ManualLink({
   slug,
@@ -269,7 +313,6 @@ function HeroCallout({ href, html }: { href: string; html: string }) {
 
 export function HomePage({ data }: { data: HomeData }) {
   const { top, news } = data
-  const device = useTryDevice()
   const isos = useIsos()
   const [intro, setIntro] = useState(false)
   const installLink = useHashLink('install')
@@ -585,113 +628,103 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="install"
             title={t('Install Omarchy')}
             description={t(
-              'Be up and running in as little as 35 seconds on the fastest machines, and in less than two minutes on the majority of computers.',
+              'Be up and running in as little as seven seconds on the fastest machines, and in less than two minutes on the majority of computers.',
             )}
             action={installGuide}
           />
 
-          <div className="mt-6 lg:mt-10 grid gap-4 md:grid-cols-2">
-            <div className="@container ring-elevation flex min-w-0 flex-col bg-surface p-6">
-              <div className="flex items-center gap-2.5">
-                <UsbIcon className="size-5 text-brand" />
-                <h4 className="text-lg font-medium tracking-tight text-text">
-                  {t('Full-disk or dual-boot installation')}
-                </h4>
-              </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-                {t(
-                  'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
-                )}
-              </p>
-              <div className="mt-auto pt-6">
-                <div className="flex flex-wrap gap-2">
-                  {isos.map(([arch, iso], i) => (
-                    // On a phone, or in a longer language, the label wraps
-                    // inside the button rather than running out of the card.
+          {/* Three ways in, one per row: what it is on the left, the
+              downloads on the right, rows divided by rules rather than boxed. */}
+          <div className="mt-8 border-b border-border-subtle lg:mt-12">
+            <InstallRow
+              icon={UsbIcon}
+              title={t('Full-disk or dual-boot installation')}
+              lead={t(
+                'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
+              )}
+            >
+              <p className={installNote}>Omarchy {release.version}</p>
+              <ul className="mt-3 grid gap-4">
+                {isos.map(([arch, iso]) => (
+                  <li key={arch} className="min-w-0">
                     <Button
-                      key={arch}
                       size="lg"
-                      variant={i === 0 ? 'default' : 'outline'}
                       nativeButton={false}
                       render={<a href={iso.url} />}
-                      className="h-auto min-h-11 max-w-full shrink py-2.5 whitespace-normal"
+                      className={installButton}
                     >
                       <DownloadIcon data-icon="inline-start" />
-                      <span>
-                        {t('Download Omarchy')} {release.version}{' '}
-                        <span className="whitespace-nowrap">
-                          {ideographic
-                            ? `（${ISO_LABEL[arch] ?? arch}）`
-                            : `(${ISO_LABEL[arch] ?? arch})`}
-                        </span>
-                      </span>
+                      {t('Download')} {ISO_LABEL[arch] ?? arch}
                     </Button>
-                  ))}
-                </div>
-                <p className="mt-2.5 text-[13px] text-text-muted">
-                  {t('Under a minute from stick to desktop.')}{' '}
-                  <span className="block @min-[44rem]:inline">
-                    {t('Verify the file:')}{' '}
-                    {isos.map(([arch, iso], i) => (
-                      <Fragment key={arch}>
-                        {i > 0 && (ideographic ? '；' : '; ')}
-                        <span className="whitespace-nowrap">
-                          {ISO_LABEL[arch] ?? arch}{' '}
-                          <a href={`${iso.url}.sha256`} className={noteLink}>
-                            SHA-256
-                          </a>
-                          {ideographic ? '、' : ', '}
-                          <a href={`${iso.url}.sig`} className={noteLink}>
-                            {t('signature')}
-                          </a>
-                        </span>
-                      </Fragment>
-                    ))}
-                    {ideographic ? '。' : '.'}
-                  </span>
-                </p>
-              </div>
-            </div>
+                    <Checksum
+                      sha256={release.isos[arch]?.sha256}
+                      href={`${iso.url}.sig`}
+                    />
+                    {arch === 'aarch64' ? (
+                      <p className={installNote}>
+                        {t('Preliminary support for NVIDIA DGX Spark and N1X.')}
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </InstallRow>
 
-            <div className="ring-elevation flex min-w-0 flex-col bg-surface p-6">
-              <div className="flex items-center gap-2.5">
-                <DisplayIcon className="size-5 text-brand" />
-                <h4 className="text-lg font-medium tracking-tight text-text">
-                  {t('Try it first')}
-                </h4>
-              </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-                {t(
-                  'All of Omarchy running in a virtual machine, so you can get a taste first.',
+            {release.mac ? (
+              <InstallRow
+                icon={AppleIcon}
+                title={t('Apple Silicon Macs')}
+                lead={t(
+                  'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
                 )}
-              </p>
-              <div className="mt-auto pt-6">
-                <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
-                    const Mark = TRY[key].icon
-                    return (
-                      <Button
-                        key={key}
-                        size="lg"
-                        variant={device === key ? 'default' : 'outline'}
-                        nativeButton={false}
-                        render={<a href={TRY[key].href} />}
-                      >
-                        <Mark data-icon="inline-start" />
-                        {TRY[key].label}
-                        <ArrowUpRightIcon data-icon="inline-end" />
-                      </Button>
-                    )
-                  })}
-                </div>
-                <p className="mt-2.5 text-[13px] text-text-muted">
-                  {t('Apple Silicon Macs, Windows 10 and 11.')}
-                  <span className="block">
-                    {t('On Linux, the ISO is the way in.')}
-                  </span>
+              >
+                <p className={installNote}>
+                  Omarchy M {release.mac.version} · .dmg
                 </p>
+                <div className="mt-3">
+                  <Button
+                    size="lg"
+                    nativeButton={false}
+                    render={<a href={release.mac.url} />}
+                    className={installButton}
+                  >
+                    <DownloadIcon data-icon="inline-start" />
+                    {t('Download Mac installer')}
+                  </Button>
+                  <Checksum sha256={release.mac.sha256} />
+                </div>
+              </InstallRow>
+            ) : null}
+
+            <InstallRow
+              icon={DisplayIcon}
+              title={t('Try it first')}
+              lead={t(
+                'All of Omarchy running in a virtual machine, so you can get a taste first.',
+              )}
+            >
+              <div className="flex flex-wrap gap-2">
+                {(['mac', 'windows'] as const).map((key) => {
+                  const Mark = TRY[key].icon
+                  return (
+                    <Button
+                      key={key}
+                      size="lg"
+                      variant="outline"
+                      nativeButton={false}
+                      render={<a href={TRY[key].href} />}
+                    >
+                      <Mark data-icon="inline-start" />
+                      {TRY[key].label}
+                      <ArrowUpRightIcon data-icon="inline-end" />
+                    </Button>
+                  )
+                })}
               </div>
-            </div>
+              <p className={installNote}>
+                {t('Apple Silicon Macs, Windows 10 and 11.')}
+              </p>
+            </InstallRow>
           </div>
 
           <p className="mt-6 text-[13px] leading-relaxed text-text-muted [text-wrap:pretty]">
