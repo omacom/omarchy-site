@@ -8,15 +8,12 @@ import {
   ArrowUpRightIcon,
   BankIcon,
   CalendarFilledIcon,
-  CheckIcon,
-  CopyIcon,
   DiscordIcon,
   DisplayIcon,
   DownloadIcon,
   GithubIcon,
   UsbIcon,
   PlayIcon,
-  VerifiedIcon,
   WindowsIcon,
 } from '@/components/icons'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
@@ -166,10 +163,10 @@ function InstallRow({
   )
 }
 
-const verifyButton =
-  'relative flex size-7 shrink-0 items-center justify-center rounded-md text-text-muted transition-[background-color,color,scale] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.96] [&_svg]:size-4.5'
+const verifyLink =
+  'cursor-pointer underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring'
 
-/** Beside a download: copy its SHA-256, and fetch its signature when it has
+/** Under a download: copy its SHA-256, and fetch its signature when it has
  *  one. Each says what it does on hover, so the hash itself stays out of
  *  sight until someone wants it. */
 function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
@@ -187,38 +184,23 @@ function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
   }
 
   return (
-    <span className="ml-2 flex items-center">
+    <span className="mt-2 flex gap-4 text-[13px] text-text-muted">
       {sha256 ? (
         <Tooltip>
           <TooltipTrigger
             render={
-              <button
-                type="button"
-                onClick={copy}
-                aria-label={t('Copy the SHA-256 checksum')}
-                className={verifyButton}
-              />
+              <button type="button" onClick={copy} className={verifyLink} />
             }
           >
-            {copied ? <CheckIcon /> : <CopyIcon />}
+            {copied ? t('Copied') : 'SHA-256'}
           </TooltipTrigger>
-          <TooltipContent>
-            {copied ? t('Copied') : t('Copy the SHA-256 checksum')}
-          </TooltipContent>
+          <TooltipContent>{t('Copy the SHA-256 checksum')}</TooltipContent>
         </Tooltip>
       ) : null}
       {sig ? (
         <Tooltip>
-          <TooltipTrigger
-            render={
-              <a
-                href={sig}
-                aria-label={t('Download the GPG signature')}
-                className={verifyButton}
-              />
-            }
-          >
-            <VerifiedIcon />
+          <TooltipTrigger render={<a href={sig} className={verifyLink} />}>
+            {t('Signature')}
           </TooltipTrigger>
           <TooltipContent>{t('Download the GPG signature')}</TooltipContent>
         </Tooltip>
@@ -704,7 +686,7 @@ export function HomePage({ data }: { data: HomeData }) {
                 <p className={installNote}>Omarchy {release.version}</p>
                 <ul className="mt-3 grid w-fit gap-x-6 gap-y-3 sm:grid-cols-2">
                   {isos.map(([arch, iso]) => (
-                    <li key={arch} className="flex items-center gap-1">
+                    <li key={arch} className="flex flex-col items-start">
                       <Button
                         size="lg"
                         nativeButton={false}
@@ -732,7 +714,7 @@ export function HomePage({ data }: { data: HomeData }) {
                   )}
                 >
                   <p className={installNote}>Omarchy M {release.mac.version}</p>
-                  <div className="mt-3 flex items-center gap-1">
+                  <div className="mt-3 flex flex-col items-start">
                     <Button
                       size="lg"
                       nativeButton={false}
