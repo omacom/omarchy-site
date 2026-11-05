@@ -85,6 +85,28 @@ test('filtering keeps the rows whose label contains every term', () => {
     filterRows(everyRow(), 'dansk').map((row) => row.id),
     ['language.da'],
   )
+  // A language answers to its English name and its code as well as its own.
+  assert.deepEqual(
+    filterRows(everyRow(), 'danish').map((row) => row.id),
+    ['language.da'],
+  )
+  assert.deepEqual(
+    filterRows(childrenOf('language'), 'espanol').map((row) => row.id),
+    ['language.es-MX'],
+  )
+  assert.deepEqual(
+    filterRows(childrenOf('language'), 'Español').map((row) => row.id),
+    ['language.es-MX'],
+  )
+  assert.deepEqual(
+    filterRows(childrenOf('language'), 'zh-cn').map((row) => row.id),
+    ['language.zh-CN'],
+  )
+  assert.ok(
+    filterRows(childrenOf('language'), 'norwegian').some(
+      (row) => row.id === 'language.no',
+    ),
+  )
   // GitHub is at the root and under Project; a query lists it once.
   assert.deepEqual(
     filterRows(everyRow(), 'github').map((row) => row.id),
@@ -137,4 +159,14 @@ test('every locale is a language row, English first, linking to the page only wh
     localeHref('en', '/manual/faq/'),
     'https://omarchy.org/manual/faq/',
   )
+  // A three-letter code and a subdomain edition link the same way.
+  assert.equal(
+    localeHref('fil', '/news/', '#top'),
+    'https://omarchy.ph/news/#top',
+  )
+  assert.equal(
+    localeHref('zh-CN', '/themes/', '?q=1'),
+    'https://zh.omarchy.org/themes/?q=1',
+  )
+  assert.equal(localeHref('zh-CN', '/manual/'), 'https://zh.omarchy.org/')
 })
