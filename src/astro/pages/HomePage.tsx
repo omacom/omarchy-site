@@ -683,7 +683,6 @@ export function HomePage({ data }: { data: HomeData }) {
                     : undefined
                 }
               >
-                <p className={installNote}>Omarchy {release.version}</p>
                 <ul className="mt-3 grid w-fit gap-x-6 gap-y-3 sm:grid-cols-2">
                   {isos.map(([arch, iso]) => (
                     <li key={arch} className="flex flex-col items-start">
@@ -694,7 +693,10 @@ export function HomePage({ data }: { data: HomeData }) {
                         className={installButton}
                       >
                         <DownloadIcon data-icon="inline-start" />
-                        {t('Download')} {ISO_LABEL[arch] ?? arch}
+                        {t('Download')} {release.version}{' '}
+                        {ideographic
+                          ? `（${ISO_LABEL[arch] ?? arch}）`
+                          : `(${ISO_LABEL[arch] ?? arch})`}
                       </Button>
                       <Verify
                         sha256={release.isos[arch]?.sha256}
@@ -713,7 +715,6 @@ export function HomePage({ data }: { data: HomeData }) {
                     'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
                   )}
                 >
-                  <p className={installNote}>Omarchy M {release.mac.version}</p>
                   <div className="mt-3 flex flex-col items-start">
                     <Button
                       size="lg"
@@ -722,7 +723,7 @@ export function HomePage({ data }: { data: HomeData }) {
                       className={installButton}
                     >
                       <DownloadIcon data-icon="inline-start" />
-                      {t('Download Mac installer')}
+                      {t('Download Mac installer')} {release.mac.version}
                     </Button>
                     <Verify sha256={release.mac.sha256} />
                   </div>
