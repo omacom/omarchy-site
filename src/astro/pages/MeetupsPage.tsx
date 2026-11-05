@@ -1,4 +1,5 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
+import { date, region, type DateFormatName } from '@/i18n/format'
 import { PageHeading } from '@/components/PageHeading'
 import { useEffect, useState } from 'react'
 import { MeetupCover } from '@/components/MeetupCover'
@@ -30,22 +31,15 @@ const events: Meetup[] = meetups.events
 
 const CALENDAR_URL = 'https://luma.com/omarchy'
 
-const regionNames = new Intl.DisplayNames([locale.formatLocale], {
-  type: 'region',
-})
-
 /** The country's name from its code, or the code when it is not one. */
-function countryOf(code: string) {
-  try {
-    return regionNames.of(code) || code
-  } catch {
-    return code
-  }
-}
+const countryOf = region
 
 /** Where a meetup is: city and country, the address when there is no
  *  city, or nothing when the calendar keeps the place for its guests. */
 function whereOf(meetup: Meetup) {
+  // The Shenzhen organizer prefers a city-only label for this event.
+  if (meetup.id === 'evt-zrKN452ONQBHEun') return 'Shenzhen'
+
   const country = meetup.country ? countryOf(meetup.country) : ''
   if (meetup.city) {
     // Some calendars name the country in the city already.
@@ -55,11 +49,8 @@ function whereOf(meetup: Meetup) {
   return meetup.address || country
 }
 
-const inZone = (meetup: Meetup, options: Intl.DateTimeFormatOptions) =>
-  new Intl.DateTimeFormat(locale.formatLocale, {
-    ...options,
-    timeZone: meetup.timezone || 'UTC',
-  }).format(new Date(meetup.start))
+const inZone = (meetup: Meetup, format: DateFormatName) =>
+  date(format, new Date(meetup.start), meetup.timezone || 'UTC')
 
 function MeetupCard({
   meetup,
@@ -104,13 +95,9 @@ function MeetupCard({
         )}
         <p className="mt-3 font-mono text-xs text-text-muted">
           <time dateTime={meetup.start}>
-            {inZone(meetup, {
-              weekday: 'short',
-              month: 'short',
-              day: 'numeric',
-            })}
+            {inZone(meetup, 'weekdayMonthDay')}
             {' · '}
-            {inZone(meetup, { hour: 'numeric', minute: '2-digit' })}
+            {inZone(meetup, 'time')}
           </time>
         </p>
         <h3 className="mt-1 line-clamp-2 text-lg font-medium text-text group-hover:text-brand">
@@ -140,32 +127,21 @@ export function MeetupsPage({ rules }: { rules: string }) {
     .filter((event) => Date.parse(event.start) < now)
     .sort((a, b) => Date.parse(b.start) - Date.parse(a.start))
 
-  // A region, then a country in it, narrow what is shown: the cards, and
+  // A region narrows what is shown: the cards, and
   // which dots on the map are lit. Meetups whose place the calendar keeps
   // for its guests have no country, so they show under every region.
   const [region, setRegion] = useState<Region | null>(null)
-  const [country, setCountry] = useState<string | null>(null)
   const regions = REGIONS.filter((r) =>
     allUpcoming.some((e) => regionOf(e.country) === r),
   )
-  const countries = region
-    ? [
-        ...new Set(
-          allUpcoming
-            .filter((e) => regionOf(e.country) === region)
-            .flatMap((e) => (e.country ? [e.country] : [])),
-        ),
-      ].sort((a, b) => countryOf(a).localeCompare(countryOf(b)))
-    : []
   const matches = (event: Meetup) =>
-    (!region || !event.country || regionOf(event.country) === region) &&
-    (!country || event.country === country)
+    !region || !event.country || regionOf(event.country) === region
   const upcoming = allUpcoming.filter(matches)
   const pins = [...allUpcoming, ...past].map((event) => ({
     id: event.id,
     title: event.title,
     url: event.url,
-    when: `${inZone(event, { weekday: 'short', month: 'short', day: 'numeric' })} · ${inZone(event, { hour: 'numeric', minute: '2-digit' })}`,
+    when: `${inZone(event, 'weekdayMonthDay')} · ${inZone(event, 'time')}`,
     where: whereOf(event),
     cover: event.cover,
     shown: matches(event),
@@ -173,22 +149,17 @@ export function MeetupsPage({ rules }: { rules: string }) {
     approximate: Boolean(event.geo?.approximate),
   }))
   const focused = allUpcoming.filter(matches)
-  const box =
-    region || country
-      ? boxAround(
-          focused.flatMap((e) => (PIN_AT.get(e.id) ? [PIN_AT.get(e.id)!] : [])),
-        )
-      : WHOLE_MAP
-  const pickRegion = (next: Region | null) => {
-    setRegion(next)
-    setCountry(null)
-  }
+  const box = region
+    ? boxAround(
+        focused.flatMap((e) => (PIN_AT.get(e.id) ? [PIN_AT.get(e.id)!] : [])),
+      )
+    : WHOLE_MAP
 
   const [active, setActive] = useState<string | null>(null)
 
   const months: { name: string; id: string; meetups: Meetup[] }[] = []
   for (const meetup of upcoming) {
-    const name = inZone(meetup, { month: 'long', year: 'numeric' })
+    const name = inZone(meetup, 'monthYear')
     const last = months.at(-1)
     if (last && last.name === name) last.meetups.push(meetup)
     else
@@ -205,7 +176,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
       className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0"
     >
       {t('The calendar on Luma')}
-      <ArrowRightIcon aria-hidden="true" />
+      <ArrowRightIcon className="rtl:-scale-x-100" aria-hidden="true" />
     </a>
   )
 
@@ -234,7 +205,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
                 <button
                   type="button"
                   aria-pressed={on}
-                  onClick={() => pickRegion(r)}
+                  onClick={() => setRegion(r)}
                   className={cn(
                     'inline-flex min-h-11 items-center gap-2 border px-3 text-sm transition-colors sm:min-h-9 duration-150 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
                     on
@@ -256,60 +227,15 @@ export function MeetupsPage({ rules }: { rules: string }) {
             )
           })}
         </ul>
-        {/* The countries of the chosen region. Where the map is shown the
-            row keeps its height when there is nothing in it, so picking a
-            region does not push the map down a line. The names are plain
-            text, so their touch targets are grown underneath them rather
-            than by spacing the rows out. */}
-        <ul className="mt-3 flex flex-wrap gap-x-4 sm:min-h-9">
-          {countries.length > 1 ? (
-            <>
-              {countries.map((code) => {
-                const on = country === code
-                return (
-                  <li key={code}>
-                    <button
-                      type="button"
-                      aria-pressed={on}
-                      onClick={() => setCountry(on ? null : code)}
-                      className={cn(
-                        'relative min-h-9 text-sm underline-offset-4 transition-colors duration-150 ease-out before:absolute before:inset-x-0 before:-inset-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
-                        on
-                          ? 'text-brand underline decoration-current'
-                          : 'text-text-secondary hover:text-text',
-                      )}
-                    >
-                      {countryOf(code)}
-                      <span className="ml-1.5 font-mono text-xs text-text-muted">
-                        {allUpcoming.filter((e) => e.country === code).length}
-                      </span>
-                    </button>
-                  </li>
-                )
-              })}
-            </>
-          ) : null}
-        </ul>
       </nav>
 
       <MeetupMap
         pins={pins}
         box={box}
-        lit={
-          country
-            ? new Set([country])
-            : region
-              ? COUNTRIES_OF(region)
-              : new Set<string>()
-        }
-        chosen={country}
-        pickable={
+        lit={region ? COUNTRIES_OF(region) : new Set<string>()}
+        withMeetups={
           new Set(allUpcoming.flatMap((e) => (e.country ? [e.country] : [])))
         }
-        onPickCountry={(code) => {
-          if (code) setRegion(regionOf(code))
-          setCountry(code)
-        }}
         active={active}
         onActive={setActive}
         className="mt-6 hidden sm:block"
@@ -317,7 +243,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
 
       {months.length === 0 ? (
         <p className="mt-10 text-[15px] text-text-secondary">
-          {region || country
+          {region
             ? t('Nothing coming up there yet. The next one may be yours.')
             : t(
                 'Nothing on the calendar right now. The next one may be yours.',
@@ -411,7 +337,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
                     </div>
                     <p className="mt-2 font-mono text-xs text-text-muted">
                       <time dateTime={meetup.start}>
-                        {inZone(meetup, { month: 'short', day: 'numeric' })}
+                        {inZone(meetup, 'monthDay')}
                       </time>
                       {where ? ` · ${where}` : ''}
                     </p>

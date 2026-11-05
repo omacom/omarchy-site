@@ -57,6 +57,30 @@
     "meta": "Netherlands",
     "href": "https://x.com/emirbeganovic",
     "avatar": "/assets/images/team/emir-beganovic.webp"
+   },
+   {
+    "name": "ThePrimeagen",
+    "meta": "USA",
+    "href": "https://x.com/ThePrimeagen",
+    "avatar": "/assets/images/team/theprimeagen.webp"
+   },
+   {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
+    "name": "Marcelo Alcantara",
+    "meta": "Brazil/Australia",
+    "href": "https://x.com/maralcbr",
+    "avatar": "/assets/images/team/marcelo-alcantara.webp"
+   },
+   {
+    "name": "Birk Skyum",
+    "meta": "Switzerland",
+    "href": "https://x.com/BirkSkyum",
+    "avatar": "/assets/images/team/birk-skyum.webp"
    }
   ],
   "note": null
@@ -67,16 +91,16 @@
   "description": "Keeping your system safe",
   "members": [
    {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
     "name": "Adrian Rangel",
     "meta": "Mexico",
     "href": "https://x.com/acrogenesis",
     "avatar": "/assets/images/team/adrian-rangel.webp"
-   },
-   {
-    "name": "Mehmet \u0130nce",
-    "meta": "UK/T\u00fcrkiye",
-    "href": "https://x.com/mdisec",
-    "avatar": "/assets/images/team/mehmet-ince.webp"
    },
    {
     "name": "Erik Melton",
@@ -95,6 +119,12 @@
     "meta": "Germany",
     "href": "https://x.com/bastidotnet",
     "avatar": "/assets/images/team/sebastian-stange.webp"
+   },
+   {
+    "name": "Afonso Oliveira",
+    "meta": "Portugal",
+    "href": "https://x.com/AFOliveira__",
+    "avatar": "/assets/images/team/afonso-oliveira.png"
    }
   ],
   "note": {

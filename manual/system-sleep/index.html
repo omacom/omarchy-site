@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>System sleep</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -67,6 +65,8 @@
       <h1>System sleep</h1>
 <p>Omarchy enables suspend and hibernation by default, but if you’re having issues with either on your machine, you can toggle them off.</p>
 
+<p>On NVIDIA GB10 machines, such as the DGX Spark and the ASUS Ascent GX10, suspend and hibernation are turned off, as they are in NVIDIA’s DGX OS, because sleep hasn’t been shown to work on that hardware yet. The suspend toggle and hibernation setup don’t apply there. To turn sleep back on, remove <code>/etc/systemd/sleep.conf.d/omarchy-sleep-disabled.conf</code> with <code>sudo rm</code>; Suspend then returns to the menu, and hibernation can be set up as on other machines. Running <code>sudo omarchy apply hardware --install-user "$USER"</code> puts the file back.</p>
+
 <h3 id="power-profiles">Power profiles <a class="manual__heading-link" href="#power-profiles" aria-label="Link to this section">#</a></h3>
 
 <p>On a laptop, Omarchy remembers your power profile separately for plugged in and running on battery, and switches between the two as you plug and unplug. Out of the box that means performance on AC and balanced on battery.</p>
@@ -82,8 +82,8 @@
 <p>You set up hibernation by running <code>omarchy hibernation setup</code> from the terminal. Hibernation creates a /swap subvolume on your boot drive the size of your physical RAM allocation, so make sure you have plenty of room to spare. On a 32GB machine, you’ll always need 32GB+ free for this volume. Hibernation also requires the default Limine bootloader.</p>
 
 <p>When set up, you’ll see the hibernate option under <em>System</em> (or <code>Super + Esc</code>), and then you can see if it works consistently on your system. If not, you can remove it again by running <code>omarchy hibernation remove</code>.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>
