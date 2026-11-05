@@ -128,7 +128,7 @@ Backgrounds can now be videos. Drop one in, and your desktop comes alive with ro
 
 ## Jade Horse joins the default themes
 
-Jade Horse is all misty greens, with carved-jade backgrounds that make the whole desktop look like a scroll painting. It replaces Osaka Jade among the bundled themes (if you're on Osaka Jade, you keep your copy), and it's joined by Starship as the other new default theme.
+Jade Horse is all misty greens, with carved-jade backgrounds that make the whole desktop look like a scroll painting. It replaces Osaka Jade among the bundled themes, and it's joined by Starship as the other new default theme. If you're on Osaka Jade, you keep your copy, and it lives on as a [third-party theme](https://github.com/omacom/omarchy-osaka-jade-theme) for anyone who wants to install it fresh.
 
 ![The Jade Horse theme](omarchy-4-5-jade-horse.webp)
 
