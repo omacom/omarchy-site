@@ -155,6 +155,44 @@ if (!listed.isos.x86_64 && siteVersion !== currentRelease.version) {
     isos: await releaseIsos(currentRelease.version, currentRelease),
   }
 }
+/** The checksum a `.sha256` file names, or null when it can't be read. */
+const sha256Of = (url) =>
+  fetch(url).then(
+    async (res) =>
+      (res.ok && /^[0-9a-f]{64}\b/.exec(await res.text())?.[0]) || null,
+    () => null,
+  )
+// The download page prints each ISO's checksum. An unread one keeps the last
+// checksum read for the same file.
+for (const [arch, iso] of Object.entries(listed.isos)) {
+  const last = currentRelease.isos?.[arch]
+  iso.sha256 =
+    (await sha256Of(`${iso.url}.sha256`)) ??
+    (last?.url === iso.url ? last.sha256 : undefined)
+}
+// The Omarchy M installer for Apple Silicon Macs: the newest app release,
+// pre-releases included, with its DMG and that DMG's checksum.
+const macReleases = await fetch(
+  'https://api.github.com/repos/omacom/omarchy-mac-installer/releases?per_page=20',
+  { headers: { accept: 'application/vnd.github+json' } },
+).then(
+  (res) => (res.ok ? res.json() : []),
+  () => [],
+)
+const macRelease = macReleases.find(
+  (r) =>
+    !r.draft &&
+    /^v\d+\.\d+\.\d+$/.test(r.tag_name) &&
+    r.assets.some((a) => a.name.endsWith('.dmg')),
+)
+const dmg = macRelease?.assets.find((a) => a.name.endsWith('.dmg'))
+const dmgSha = macRelease?.assets.find((a) => a.name === `${dmg.name}.sha256`)
+const mac = dmg && {
+  version: macRelease.tag_name.replace(/^v/, ''),
+  url: dmg.browser_download_url,
+  sha256: dmgSha ? await sha256Of(dmgSha.browser_download_url) : null,
+}
+listed.mac = mac?.sha256 ? mac : currentRelease.mac
 await writeFile(versionPath, JSON.stringify(listed, null, 1))
 console.log(
   `version.json: ${listed.version}, ISOs for ${Object.keys(listed.isos).join(' and ')}`,
