@@ -147,7 +147,7 @@ function InstallRow({
   children: React.ReactNode
 }) {
   return (
-    <div className="grid gap-4 border-t border-border-subtle py-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
+    <div className="grid gap-4 border-t border-border-subtle py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-8 lg:gap-10">
       <div className="min-w-0">
         <h4 className="flex items-center gap-2.5 text-lg font-medium tracking-tight text-text">
           <Icon className="size-5 shrink-0 text-brand" />
