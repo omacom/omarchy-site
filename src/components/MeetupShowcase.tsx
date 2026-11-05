@@ -1,4 +1,5 @@
-import { t, locale } from '@/i18n/site'
+import { t } from '@/i18n/site'
+import { date } from '@/i18n/format'
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { SectionActions, SectionHeading } from '@/components/SectionHeading'
@@ -120,12 +121,11 @@ export function MeetupShowcase({ action }: { action?: ReactNode }) {
               )}
               <p className="mt-3 font-mono text-xs text-text-muted">
                 <time dateTime={event.start}>
-                  {new Intl.DateTimeFormat(locale.formatLocale, {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                    timeZone: event.timezone || 'UTC',
-                  }).format(new Date(event.start))}
+                  {date(
+                    'shortDate',
+                    new Date(event.start),
+                    event.timezone || 'UTC',
+                  )}
                 </time>
                 {event.city ? ` · ${event.city}` : ''}
               </p>
