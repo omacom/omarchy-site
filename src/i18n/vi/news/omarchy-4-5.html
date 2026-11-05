@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (hay còn gọi là Quattro RS!) là bản phát hành tính năng lớn đầu tiên kể từ <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, và nó cực kỳ hoành tráng: hơn 740 pull request được hợp nhất từ hơn 180 người đóng góp chỉ trong mười hai tuần. Giờ đây nó cung cấp chế độ desktop truyền thống bên cạnh chế độ tiling mặc định. Bạn có thể cài đặt native trên MacBook M1/M2/M3/Neo. Và nó nói được 50 ngôn ngữ. Cùng cả một đống tính năng, bản sửa lỗi và cải tiến khác nữa. Đã dùng Omarchy rồi? Hãy chạy <em>Update &gt; Omarchy</em>. Máy mới? <a href="/#install">Lấy tại đây</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Không gian làm việc nổi kèm dock</h2>
+
+<p><code>Super + L</code> giờ đây chuyển đổi bất kỳ không gian làm việc nào qua lại giữa tiling, scrolling và floating. Trên một không gian làm việc nổi, mọi cửa sổ đều có thanh tiêu đề theo màu của giao diện của bạn, và một dock hiển thị các ứng dụng đã ghim, mọi thứ đang chạy và một lưới gồm mọi ứng dụng đã cài đặt. Kéo để sắp xếp lại hoặc ghim, nhấp chuột phải để xem thêm, và <code>Super + M</code> thu nhỏ một cửa sổ xuống dock.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Đây là một lối vào tuyệt vời cho bất kỳ ai đến từ macOS hoặc Windows mà chưa sẵn sàng dấn thân hoàn toàn vào tiling. Hoặc cho bất kỳ ai chỉ muốn một không gian làm việc nơi các cửa sổ có thể dàn trải thoải mái. Trộn và kết hợp theo từng không gian làm việc, và thanh bar hiển thị bố cục mà mỗi không gian đang dùng.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy trên Apple Silicon</h2>
+
+<p>Đội ngũ <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> tuyệt vời của chúng ta đã cho ra mắt trình cài đặt Mac native. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Tải xuống một ứng dụng</a> trên macOS, và nó sẽ đặt Omarchy ngay bên cạnh hệ điều hành đó trên MacBook M1, M2, M3 hoặc Neo của bạn. Không cần USB, không cần những câu thần chú trong terminal. Thích Homebrew hơn? Chỉ một dòng thôi:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Trình cài đặt Omarchy trên Mac" /></p>
+
+<p>Đây là điều chúng ta đặt mục tiêu thực hiện vào tháng Chín: hoàn thành những gì Asahi đã khởi xướng. Hai tháng sau, bạn đã có thể chỉ cần tải xuống. Công việc tuyệt vời của mọi người trong đội.</p>
+
+<p>Và họ vẫn chưa dừng lại ở đó. M4, M5 và M6 đều đang được phát triển ngay lúc này, vì vậy có lẽ sẽ không lâu nữa cho đến khi Omarchy chạy được trên mọi máy Mac dùng Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy trên M2 Max, M3 Air, Neo, M4 Pro và M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Hỗ trợ ARM cho NVIDIA DGX Spark + N1X (và sắp tới là Snapdragon)</h2>
+
+<p>Omarchy 4.5 phát hành ISO ARM đầu tiên của mình, và cùng với đó là hỗ trợ sơ bộ cho các máy ARM của NVIDIA: máy tính để bàn DGX Spark và các laptop được xây dựng trên N1X, như <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> và <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Và sắp tới chúng ta cũng sẽ có hỗ trợ cho toàn bộ dòng máy ARM Snapdragon. Đây vẫn còn là giai đoạn đầu, vì vậy hãy chờ đợi một vài chỗ chưa hoàn thiện, và vui lòng báo cáo mọi thứ bị hỏng trên <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 ngôn ngữ và 5 phương thức nhập liệu</h2>
+
+<p>Omarchy giờ đây nói được 50 ngôn ngữ. Chọn một ngôn ngữ trong <em>Setup &gt; Language</em> (hoặc chạy <code>omarchy language &lt;code&gt;</code>), và menu, desktop cùng các thông báo của Omarchy sẽ chuyển đổi ngay lập tức. Ngôn ngữ hệ thống sẽ theo sau ở lần đăng nhập tiếp theo của bạn.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Chuyển đổi ngôn ngữ" /></p>
+
+<p>Tuy nhiên, nói được một ngôn ngữ mới chỉ là một nửa. Bạn còn cần gõ được nó nữa. Vì vậy Omarchy giờ đây thiết lập các phương thức nhập liệu phù hợp cho tiếng Nhật (Mozc), tiếng Hàn (Hangul), tiếng Trung giản thể (Pinyin), Đài Loan (Zhuyin) và Hồng Kông (Cangjie), ngay từ trình cài đặt hoặc sau này trong <em>Setup &gt; Keyboard</em>. Mỗi phương thức đều đi kèm các phông chữ phù hợp với dạng ký tự của nó, cửa sổ ứng cử tuân theo giao diện của bạn, và <code>Super + I</code> chuyển đổi giữa các ngôn ngữ nhập của bạn. Hangul, Zhuyin và Cangjie giữ các phím của chúng ở vị trí tiêu chuẩn ngay cả khi bạn gõ ký tự Latinh trên Dvorak, Colemak hoặc AZERTY, giống như trên Windows và macOS. Và việc chạm Shift một mình sẽ thoát khỏi một phương thức nhập liệu để chuyển sang ký tự Latinh rồi quay lại, theo cách Sogou, Microsoft Pinyin và macOS hoạt động.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Đăng nhập vào các captive portal Wi-Fi</h2>
+
+<p>Wi-Fi ở khách sạn, sân bay và quán cà phê cuối cùng cũng hoạt động trơn tru. Omarchy giờ đây nhận biết khi một mạng muốn bạn đăng nhập hoặc chấp nhận các điều khoản của nó trước khi cho bạn truy cập Internet. Biểu tượng mạng sẽ cảnh báo bạn, và panel mạng hiển thị một nút Open Captive Portal lớn đưa bạn thẳng đến trang đăng nhập. Khi bạn đã vào được, mọi thứ sẽ tự trở lại bình thường.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Đăng nhập vào một captive portal từ panel mạng" width="380" /></p>
+
+<h2 id="five-new-default-apps">Năm ứng dụng mặc định mới</h2>
+
+<p><strong>Hype</strong> tạo bản trình bày từ một file Markdown duy nhất, với trình chỉnh sửa slide trực quan bên cạnh mã nguồn, và xuất ra PDF hoặc PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> thay thế Xournal++ cho giấy tờ: mở một PDF, đặt chữ ký đã lưu, văn bản và ngày tháng của bạn, rồi lưu một bản sao đã ký.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> vẽ một treemap về những gì đang lấp đầy ổ đĩa của bạn, tô màu theo loại, chỉ ra các bộ nhớ đệm an toàn để tạo lại, và cho phép bạn đánh dấu những gì nên loại bỏ.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> ghi hình camera của bạn chỉ bằng một phím, được phối giao diện để phù hợp với desktop của bạn.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> mang đến cho bạn một desktop từ xa qua SSH. Kết nối tới một máy Omarchy khác và điều khiển toàn bộ desktop của nó từ một cửa sổ trên máy của bạn, với một tab cho mỗi máy. Và vì nó chạy trên SSH, không có gì thêm phải thiết lập hay phơi bày ra ngoài. Máy đang bị điều khiển hiển thị một chỉ báo phiên từ xa trên thanh bar, vì vậy luôn rõ ràng khi có ai đó đang ở trên máy.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Ngoài ra còn có <strong>Elsewhen</strong>, một đồng hồ thế giới nằm ngay bên cạnh đồng hồ trên thanh bar. Chạm vào một thành phố trên quả địa cầu để đặt vị trí của bạn, tìm kiếm các địa điểm thực, và đặt tên cho những người sống ở mỗi thành phố, để bạn luôn biết liệu đó có phải là giờ hợp lý để gọi điện hay không. Chuyển đổi giữa 12 và 24 giờ bằng <code>t</code>, giữa °F và °C bằng <code>Alt + T</code>, và triệu hồi nó bất cứ lúc nào bằng <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Với Monologue để ghi hình và Omacut để cắt ghép, các bản cài đặt mới không còn đi kèm OBS Studio và Kdenlive nữa. Lazydocker cũng biến mất khỏi các bản cài đặt mới, dù Docker và Docker Compose vẫn được bao gồm. Các máy đã có bất kỳ phần mềm nào trong số chúng sẽ vẫn giữ chúng.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Cần làm việc với những người sống trong Office? <em>Install &gt; Service &gt; Microsoft</em> giờ đây thiết lập Outlook, Word, Excel, PowerPoint, Teams và OneDrive dưới dạng ứng dụng web. Mỗi ứng dụng có cửa sổ và mục khởi chạy riêng, vì vậy chúng cảm thấy như ở nhà ngay bên cạnh mọi thứ khác. Không còn lý do gì để không chuyển sang Omarchy tại nơi làm việc nữa!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams và PowerPoint trên Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper cho đọc chính tả</h2>
+
+<p>Superwhisper giờ đây là công cụ đọc chính tả mặc định của Omarchy, và nó được thiết lập sẵn ngay từ đầu. Chạm <code>Alt + Space</code> để bắt đầu nói và chạm lần nữa để dừng, hoặc giữ <code>Right Alt</code> để push-to-talk. Nó cực kỳ nhanh và rất chính xác.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Đọc chính tả bằng Superwhisper" /></p>
+
+<p>Nó bắt đầu trên đám mây, vì vậy nó hoạt động ngay khi bạn cài đặt, và 10.000 từ đầu tiên được miễn phí. Nhưng bạn có thể chuyển sang một mô hình có thể tải xuống hoàn toàn miễn phí và chạy hoàn toàn cục bộ, mà không gửi một từ nào cho bất kỳ ai. Và nếu bạn muốn dùng một mô hình cục bộ khác, Voxtype vẫn được cung cấp như một lựa chọn thay thế.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Cài đặt trong chưa đầy mười giây</h2>
+
+<p>Omarchy trước đây thường cài đặt khoảng 940 gói từng cái một. Trình cài đặt F1 mới thay vào đó giải nén một image root được xây dựng sẵn và chỉ thêm các gói của riêng máy này lên trên. Điều đó cắt giảm thời gian cài đặt xuống khoảng một nửa trên bất kỳ máy nào.</p>
+
+<p>Và trên phần cứng nhanh, điều đó thật vô lý. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> từ AMD đã lập kỷ lục thế giới với một lần cài đặt Omarchy đầy đủ trong <strong>7 giây</strong> trên chiếc laptop AMD của anh ấy. <a href="https://x.com/dhh/status/2117222836620202375">Bảy giây!</a> Tôi nhớ khi năm phút từng có vẻ như một mục tiêu tham vọng.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Đã cài đặt Omarchy trong 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Nhanh hơn ở mọi nơi khác</h2>
+
+<p>Không chỉ trình cài đặt. Quá trình khởi động không còn bị đình trệ khi đăng ký binfmt. Trình chọn giao diện mở ngay lập tức thay vì sau một phần tư giây. Các menu và panel mở thẳng từ phím tắt Hyprland, bỏ qua 60 ms từng cần để khởi động một tiến trình trước. Các kiểm tra chậm nhất của menu Omarchy đã giảm từ 200 ms xuống 16 ms, một terminal mới hiển thị dấu nhắc sớm hơn 30 ms, và toàn bộ desktop giờ đây phản ứng với các thay đổi thay vì thăm dò chúng. Ngay cả đăng xuất, khởi động lại và tắt máy cũng diễn ra ngay khi các ứng dụng của bạn đóng xong.</p>
+
+<h2 id="agent-upgrades">Nâng cấp agent</h2>
+
+<p>Omarchy là hệ điều hành agentic, và 4.5 mang đến một vòng nâng cấp lớn cho việc làm việc với các agent. Panel agent giờ đây theo dõi 23 agent và nhà cung cấp, tăng từ 6, bao gồm Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter và Ollama. Mỗi giới hạn đều có đồng hồ đo riêng với thời gian cho đến khi nó được đặt lại, vì vậy bạn có thể thấy chính xác mình còn bao nhiêu dư địa. Và Grok giờ đây là một nhà cung cấp đầy đủ bên cạnh Claude và Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Panel agent với một số gói đăng ký Claude và Codex" width="380" /></p>
+
+<p>Và agent của bạn luôn chỉ cách một lần nhấn phím. <code>Super + ~</code> thả xuống một console kiểu Quake trên một desktop được làm mờ, và lần đầu tiên bạn mở nó, nó sẽ khởi động agent mặc định của bạn. Nhấn lại lần nữa để cất nó đi, và phiên của bạn vẫn nguyên tại nơi bạn đã rời đi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Console kiểu Quake đang chạy một agent trên desktop được làm mờ" /></p>
+
+<p>Nếu bạn dùng nhiều gói đăng ký cùng lúc, giờ đây bạn có thể giữ nhiều thông tin đăng nhập Claude, Codex và Grok trên cùng một máy và chọn cái nào các phiên mới sẽ bắt đầu bằng, sử dụng <code>omarchy agent account</code>. Lịch sử, cài đặt và kỹ năng được chia sẻ giữa chúng, vì vậy <code>claude --continue</code> tiếp tục ngay tại nơi bạn đã dừng sau khi chuyển đổi. Khi gần đạt giới hạn, Omarchy có thể đề xuất chuyển đổi bằng một cú nhấp hoặc tự chuyển các phiên mới sang tài khoản có nhiều dư địa nhất. Và khi bạn thiết lập một máy khác, <code>omarchy agent account copy</code> mang mọi thông tin đăng nhập của bạn qua SSH, vì vậy bạn không phải đăng nhập lại mọi thứ.</p>
+
+<p>Kimi và Ori, harness agent của OpenRouter, gia nhập các lựa chọn trong <em>Setup &gt; Defaults &gt; Agent</em>, và Antigravity của Google thay thế Gemini CLI đã lỗi thời (<code>gemini</code> vẫn hoạt động như một bí danh). Thích cửa sổ hơn terminal? Các ứng dụng desktop Claude và Amp giờ đây chỉ cách một cú nhấp trong <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Thông báo, được xây dựng lại</h2>
+
+<p>Thông báo giờ đây xếp chồng theo người gửi, tuân theo giao diện của bạn, và thu gọn các lần lặp giống hệt nhau. Các nút hành động, mã xác minh và liên kết đều hoạt động ngay từ thẻ. <code>Super + Comma</code> thực hiện hành động trên thông báo mới nhất (bỏ qua, mở hoặc nhấn nút của nó), và <code>Super + Ctrl + Comma</code> trao cho bạn bàn phím để điều khiển tất cả. Chuông trên thanh bar bật Do Not Disturb.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Thông báo mới" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Hình nền video và đoạn mở đầu của giao diện</h2>
+
+<p>Hình nền giờ đây có thể là video. Thả một video vào, và desktop của bạn trở nên sống động với những con sóng cuộn hoặc bất cứ thứ gì khác bạn thích, trong khi màn hình khóa hiển thị một khung hình tĩnh từ video đó. Và các giao diện giờ đây có màn xuất hiện: mỗi giao diện có thể phát một đoạn mở đầu ngắn, không tiếng khi bạn đăng nhập hoặc chuyển sang nó. (Muốn giữ yên tĩnh hơn? Tắt các đoạn mở đầu trong <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse gia nhập các giao diện mặc định</h2>
+
+<p>Jade Horse toàn là màu xanh lục sương mù, với các hình nền ngọc chạm khắc khiến toàn bộ desktop trông như một bức tranh cuộn. Nó thay thế Osaka Jade trong số các giao diện đi kèm, và cùng với Starship là giao diện mặc định mới còn lại. Nếu bạn đang dùng Osaka Jade, bạn vẫn giữ bản sao của mình, và nó tiếp tục tồn tại như một <a href="https://github.com/omacom/omarchy-osaka-jade-theme">giao diện của bên thứ ba</a> cho bất kỳ ai muốn cài đặt mới.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Giao diện Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff là hình nền mặc định mới</h2>
+
+<p>Các bản cài đặt mới giờ đây chào đón bạn bằng Liftoff, một cảnh phóng hoàng hôn tuyệt đẹp là hình nền mặc định mới cho Tokyo Night. Nó được tạo bởi <a href="https://github.com/tcballard">Tom Ballard</a>, người đầu tiên tạo ra nó cho <a href="https://github.com/tcballard/omarchy-theme-liftoff">giao diện Liftoff</a> của anh ấy. Cảm ơn, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Hình nền Liftoff của Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Menu khởi động giờ im lặng</h2>
+
+<p>Omarchy trước đây thường hiển thị menu khởi động khoảng sáu giây mỗi lần khởi động, phòng trường hợp bạn cần quay lại một snapshot trước đó. Nhưng hầu như không ai từng làm vậy. Vì vậy giờ đây Limine chỉ chờ một giây và khởi động lặng lẽ, và hầu hết thời gian bạn sẽ không thấy menu chút nào.</p>
+
+<p>Khi bạn cần một mục khác hoặc một snapshot, hãy cứ chạm bất kỳ phím nào (phím mũi tên xuống cũng được) trong khi máy khởi động, và nó sẽ dừng tại menu. Và nếu bạn muốn giữ menu lâu hơn vĩnh viễn, hãy đặt <code>timeout:</code> của riêng bạn trong <code>/boot/limine.conf</code> (như <code>timeout: 5</code>). Các bản cập nhật sẽ không động vào timeout bạn đã đặt.</p>
+
+<h2 id="changed-hotkeys">Phím tắt đã thay đổi</h2>
+
+<p>Một số phím tắt đã di chuyển:</p>
+
+<ul>
+  <li>Máy tính: <code>Super + Ctrl + Q</code> giờ là <code>Super + Shift + Q</code>.</li>
+  <li>Hoạt động: <code>Super + Ctrl + T</code> giờ là <code>Super + Shift + T</code>, và <code>Super + Ctrl + T</code> mở các giao diện.</li>
+  <li>Mạng: <code>Super + Ctrl + W</code> giờ là <code>Super + Ctrl + N</code>, và <code>Super + Ctrl + W</code> mở các hình nền.</li>
+  <li>Nightlight không còn phím tắt nữa (trước đây là <code>Super + Ctrl + N</code>); nó ở trong <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> mở Apps từ dock thay vì menu Apps.</li>
+</ul>
+
+<p>Phím tắt thông báo đã thay đổi:</p>
+
+<ul>
+  <li><code>Super + Comma</code> thực hiện hành động trên thẻ mới nhất (bỏ qua nó, mở nó hoặc nhấn nút duy nhất của nó) thay vì chỉ bỏ qua nó.</li>
+  <li>Việc bỏ qua thẻ cuối cùng đã chuyển sang <code>Super + Alt + Comma</code>, trước đây dùng để mở nó.</li>
+  <li>Việc tắt tiếng đã chuyển từ <code>Super + Ctrl + Comma</code> sang <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> giờ trao cho bạn quyền điều khiển bằng bàn phím.</li>
+</ul>
+
+<p>Một vài phím hoạt động khác đi:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> và <code>Super</code> + cuộn chuột ở lại trên các không gian làm việc của màn hình hiện tại, vì mỗi màn hình có các không gian riêng.</li>
+  <li>Trong terminal, <code>Super + C</code> và <code>Super + V</code> gửi <code>Ctrl + Shift + C</code> và <code>Ctrl + Shift + V</code> thay vì <code>Ctrl + Insert</code> và <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Các mặc định mới có thể xung đột với các gán phím của riêng bạn: <code>Super + Q</code> (đóng cửa sổ, bên cạnh <code>Super + W</code>), <code>Super + A</code> (chọn tất cả), <code>Super + M</code> (thu nhỏ xuống dock), <code>Super + ~</code> và <code>Super + Shift + ~</code> (console Quake), <code>Super + Alt + L</code> (bố cục trước), <code>Super + Shift + Ctrl + Arrows</code> (di chuyển cửa sổ sang màn hình khác), <code>Super + Ctrl + Alt + C</code> (ảnh chụp màn hình), <code>Super + Ctrl + Alt + E</code> (đồng hồ thế giới), <code>Super + Ctrl + Alt + F</code> (desktop toàn màn hình), và giữ <code>Right Alt</code> để đọc chính tả push-to-talk.</p>
+
+<h2 id="more-features">Thêm tính năng</h2>
+
+<ul>
+  <li>Cho mỗi màn hình bộ không gian làm việc riêng: <code>Super + 1-0</code> đi đến các không gian làm việc của màn hình bạn đang ở, và <code>Super + Arrows</code> di chuyển đến và đi từ các màn hình khác bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Tập hợp mọi thứ về diện mạo của desktop vào một menu Appearance mới, thay thế Style: giao diện, hình nền, phông chữ, thanh bar, cửa sổ, branding, dock, bố cục không gian làm việc, hiệu ứng chuyển động và màn hình mở khóa bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Chọn cửa sổ Opaque, Transparent hoặc Glassy trong <em>Appearance &gt; Window Transparency</em>, cộng thêm nền thanh bar Glassy bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Chọn góc cửa sổ theo giao diện, sắc nét hoặc bo tròn trong <em>Appearance &gt; Window Corners</em> bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Thêm chế độ không hiệu ứng chuyển động, bật mặc định trong VM bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Đặt ứng dụng mờ đục theo mặc định, giữ terminal trong suốt bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Thêm Slack vào Install &gt; Service bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Khiến Alt + Space bật/tắt đọc chính tả trên mọi backend bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Thêm nút Open và Edit vào thông báo ảnh chụp màn hình, và Open và Cut vào bản ghi màn hình và các tải xuống yt-dlp bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Thêm menu Update &gt; Kernel để chuyển đổi kernel mặc định bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Thêm đồng bộ giao diện tới các máy herdr bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Thêm o.rebind để thay thế các gán phím Hyprland bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Hỏi danh tính git của bạn sau lần đăng nhập đầu tiên thay vì trong trình cài đặt, với đăng nhập GitHub bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Cho phép phương tiện cài đặt đặt trước ngôn ngữ, bàn phím và múi giờ bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Cho phép các widget trên thanh bar sống trong ngăn kéo của khay bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Cho phép loại bỏ một widget trên thanh bar bằng cách kéo nó ra khỏi thanh bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Cho phép cuộn qua các không gian làm việc từ thanh bar bởi <a href="https://github.com/outfoxxed">@outfoxxed</a> trong <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Cho phép xóa các giao diện thừa khỏi trình chọn giao diện bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Thêm hey, basecamp và Cloudflare CLI dưới dạng công cụ cài đặt lười biếng bởi <a href="https://github.com/monorkin">@monorkin</a> trong <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Thêm SSH Agent dưới dạng dịch vụ tùy chọn bởi <a href="https://github.com/carletex">@carletex</a> trong <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Cho phép chọn thời gian sudo không cần mật khẩu kéo dài bao lâu bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Thêm nút đóng khi di chuột vào các toast thông báo bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Cho phép tắt tiếng thông báo của một chương trình từ chẩn đoán sự cố của nó bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Cho phép omarchy-notification-send thêm các nút hành động bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Thêm định dạng đồng hồ có giây trực tiếp bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Điều chỉnh độ sáng nền bàn phím bằng Ctrl và các phím độ sáng bởi <a href="https://github.com/ludagoo">@ludagoo</a> trong <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>In khóa sản phẩm Windows OEM từ firmware bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Thêm vi nguyên bản dưới dạng lựa chọn trình soạn thảo terminal bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Thêm hình nền Roadster Starlight vào Ethereal bởi <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> trong <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Bảo mật</h2>
+
+<ul>
+  <li>Giữ mật khẩu Windows VM khỏi các đối số của RDP client bởi <a href="https://github.com/dicemans">@dicemans</a> trong <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Di chuyển trạng thái ghi màn hình ra khỏi /tmp có thể ghi bởi mọi người bởi <a href="https://github.com/Chessing234">@Chessing234</a> trong <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Tăng cường hết hạn sudo không cần mật khẩu qua trạng thái tạm dừng bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Gắn việc dọn dẹp trình ức chế cập nhật với tiến trình đã tạo ra nó bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Cô lập ủy quyền dọn dẹp OCaml bởi <a href="https://github.com/ErikMelton">@ErikMelton</a> trong <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Ghim việc nâng quyền factory-reset vào lệnh đã đóng gói bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Loại bỏ các mẫu vân tay đã lưu cho người dùng đang gọi khi reset bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Từ chối các tên hook và state là đường dẫn bởi <a href="https://github.com/Adolanium">@Adolanium</a> trong <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Nhường cho system-auth trong ngăn xếp polkit được viết bởi thiết lập vân tay và FIDO2 bởi <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> trong <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Loại bỏ vân tay khỏi bộ lưu trữ riêng của đầu đọc khi loại bỏ chúng bởi <a href="https://github.com/scottjones">@scottjones</a> trong <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Ngăn thiết lập SSH để lại sshd đang chạy với đăng nhập bằng mật khẩu khi không có khóa nào được thêm bởi <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> trong <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Ngăn một người dùng cục bộ khác hoán đổi chương trình của riêng họ trong quá trình nâng cấp Voxtype bởi <a href="https://github.com/Vladkarok">@Vladkarok</a> trong <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Tăng cường cách factory reset truyền cài đặt gum của bạn qua sudo bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Sửa lỗi</h2>
+
+<ul>
+  <li>Sửa lỗi Hyprland bị sập khi màn hình bị rút ra, tắt hoặc tắt bằng cách đóng nắp bởi <a href="https://github.com/falkoro">@falkoro</a> trong <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Sửa lỗi các lần nâng cấp có thể để lại một image kernel mà không có tham số root= của nó bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Sửa lỗi factory reset xóa các mục khởi động của hệ thống khác bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Sửa lỗi một lần cài đặt bên cạnh một Omarchy khác loại bỏ mục khởi động của bản cài đặt đó bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Sửa lỗi các lần cài đặt vào dung lượng trống có thể lấy một phân vùng hiện có cho một phân vùng mới bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Sửa lỗi tiếp tục một lần thay đổi mật khẩu ổ đĩa bị gián đoạn loại bỏ sai khóa bởi <a href="https://github.com/scottjones">@scottjones</a> trong <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Hỏi mật khẩu sudo một lần cho mỗi lần cập nhật Omarchy bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Hỏi mật khẩu sudo một lần trong mười phút thay vì lại hỏi ở mọi lệnh bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Bao phủ các cập nhật AUR và kiểm tra khởi động bằng dấu nhắc sudo duy nhất của bản cập nhật bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Giữ các cập nhật gói an toàn khỏi việc đăng xuất giữa giao dịch bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Đăng xuất, khởi động lại và tắt máy ngay khi các ứng dụng đóng xong bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Thay thế Tensaku bằng Omasnap cho ảnh chụp màn hình bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Khiến các panel mọc ra từ thanh bar và biến đổi giữa chúng, với phản hồi nhấn trên các nút và biểu tượng thanh bar bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Trượt thông báo vào từ dưới thanh bar và trở ra theo cách chúng đã đến bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Kiểm tra kết nối với endpoint riêng của Omarchy, và sửa lỗi đăng nhập vào các captive portal bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Sửa lỗi chuyển từ edge sang stable hoặc RC để máy ở một bản dựng cũ bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Sửa lỗi bản cập nhật lên 4.5 dừng lại khi shell chậm trả lời bởi <a href="https://github.com/AnPod">@AnPod</a> trong <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Sửa lỗi các bản cập nhật thất bại âm thầm khi được bắt đầu ngoài phiên desktop bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Sửa lỗi một lần tải xuống công cụ mise thất bại làm dừng phần còn lại của cập nhật hệ thống bởi <a href="https://github.com/sanjyay">@sanjyay</a> trong <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Sửa lỗi các bản cập nhật thất bại khi omarchy-nvim không được cài đặt bởi <a href="https://github.com/imzihuailin">@imzihuailin</a> trong <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Sửa lỗi các lần cài đặt dual-boot không gắn được phân vùng EFI bởi <a href="https://github.com/Damian626">@Damian626</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Sửa lỗi các lần cài đặt dừng lại khi firmware không chấp nhận mục khởi động mới bởi <a href="https://github.com/ryanio">@ryanio</a> trong <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Sửa lỗi các lần cài đặt dừng lại trên các ổ đĩa có thành viên RAID cũ hoặc nhóm volume bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Bắt đầu trình cài đặt sớm hơn bằng cách không chờ mọi thiết bị USB và tác vụ khởi động bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Tăng tốc mã hóa ổ đĩa với các sector 4096-byte trên các bản cài đặt mới bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Liệt kê các ổ đĩa nội bộ trước và mở các màn hình cài đặt trên lựa chọn an toàn bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Liệt kê Full disk install trước trong trình cài đặt, và quay lại bằng Esc trên các màn hình ổ đĩa bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Sửa lỗi thay đổi tỷ lệ một màn hình làm thay đổi tỷ lệ của mọi màn hình khác bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Sửa lỗi các ứng dụng XWayland ra quá lớn khi các màn hình dùng tỷ lệ khác nhau bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Sửa lỗi màn hình HDR chuyển sang hình ảnh HDR bị bạc màu khi một cửa sổ chuyển sang toàn màn hình bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Sửa lỗi menu và trình chọn bị mờ trên các màn hình có tỷ lệ phân số bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Sửa lỗi màn hình laptop vẫn tắt sau khi rút màn hình ngoài bởi <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> trong <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Sửa lỗi bật lại một màn hình đặt lại vị trí, tỷ lệ và chế độ của nó bởi <a href="https://github.com/zihaomu">@zihaomu</a> trong <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Sửa lỗi menu và trình chọn không mở lại sau khi màn hình bị ngắt kết nối bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Sửa lỗi các không gian làm việc theo màn hình di chuyển sau khi màn hình bị rút ra bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Sửa lỗi shell bị sập khi thiết bị âm thanh ngắt kết nối trong khi panel âm thanh đang mở bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Sửa lỗi các cửa sổ toàn màn hình mất toàn màn hình sau trình bảo vệ màn hình bởi <a href="https://github.com/MGross21">@MGross21</a> trong <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Sửa lỗi con trỏ biến mất khi khởi động sau khi Hyprland tải lại bởi <a href="https://github.com/spencerbull">@spencerbull</a> trong <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Sửa lỗi con trỏ trở nên vô hình trên các ứng dụng XWayland bởi <a href="https://github.com/Sebo1411">@Sebo1411</a> trong <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Sửa lỗi việc chụp clipboard bị treo bởi <a href="https://github.com/maxcroy1">@maxcroy1</a> trong <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Sửa lỗi truy cập keyring qua XDG Secret portal bởi <a href="https://github.com/pkwagner">@pkwagner</a> trong <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Sửa lỗi đăng ký vân tay và khôi phục màn hình khóa bởi <a href="https://github.com/GeertJohan">@GeertJohan</a> trong <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Hướng dẫn đăng ký vân tay từng bước bởi <a href="https://github.com/scottjones">@scottjones</a> trong <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Sửa lỗi tự động lặp phím trong trường mật khẩu của màn hình khóa bởi <a href="https://github.com/berndb">@berndb</a> trong <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Sửa lỗi hình nền màn hình khóa tải sau trường mật khẩu khi thức dậy bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Sửa lỗi timeout khóa màn hình khi phiên nêu tên một màn hình đã biến mất bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Tăng tốc mở một terminal trong thư mục của cửa sổ hiện tại bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Khiến các trình soạn thảo thuộc họ VS Code tuân theo thay đổi giao diện trực tiếp bởi <a href="https://github.com/Macho0x">@Macho0x</a> trong <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Đổi giao diện các phiên Hunk đang chạy khi giao diện thay đổi bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Ghi nhớ hình nền đã chọn cho mỗi giao diện bởi <a href="https://github.com/OldJobobo">@OldJobobo</a> trong <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Giữ trình chọn hình ảnh nhanh và sắc nét với các bộ sưu tập lớn và HiDPI bởi <a href="https://github.com/keylimesoda">@keylimesoda</a> trong <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Cắt giảm CPU và bộ nhớ mà thanh bar trong suốt tốn để lấy mẫu hình nền bởi <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> trong <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Tăng tốc panel Tailscale trên các tailnet có hàng nghìn máy bởi <a href="https://github.com/iskakaushik">@iskakaushik</a> trong <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Đưa Grok ngang tầm với Claude và Codex trong panel agent bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Áp dụng lựa chọn tài khoản agent cho các tiến trình con CLI bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Hiển thị giới hạn chi tiêu cá nhân của Codex và thời gian đặt lại của chúng bởi <a href="https://github.com/Stegi56">@Stegi56</a> trong <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Thiết lập tích hợp trình duyệt khi chọn Claude bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Sửa lỗi các agent không tìm thấy các công cụ mise được cài đặt sau khi chúng khởi động bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Sửa lỗi dán ảnh chụp màn hình vào các agent trong các pane herdr được bắt đầu qua SSH bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Sửa lỗi panel agent bỏ sót các phiên Codex đã nén bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Đưa Caps Lock trở lại bình thường và biến Shift + Caps Lock thành phím compose bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Áp dụng bố cục bàn phím hệ thống cho màn hình đăng nhập bởi <a href="https://github.com/g-desoutter">@g-desoutter</a> trong <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Sửa lỗi chuyển đổi bố cục bỏ qua mỗi lần nhấn thứ hai với bố cục bàn phím không phải Latinh bởi <a href="https://github.com/manuaudio">@manuaudio</a> trong <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Bật giải mã video bằng phần cứng trong mpv bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Chuyển điều khiển tắc nghẽn TCP sang BBR và dùng trình lập lịch I/O kyber trên các ổ đĩa thực bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Cài đặt T3 Code dưới dạng AppImage tự cập nhật của nó bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Cải thiện việc cài đặt PHP và Laravel bởi <a href="https://github.com/nunomaduro">@nunomaduro</a> trong <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Cài đặt Node một cách lười biếng và để yên cấu hình mise của bạn bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Cài đặt các ứng dụng còn thiếu khi chọn mặc định bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Làm mờ phần mềm đã cài đặt trong các menu Install thay vì ẩn nó bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Đăng ký trình quản lý mật khẩu và các host nhắn tin native khác cho Brave Origin bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Nhóm các thông báo web của Brave Origin theo trang web, và mở đúng tab khi được nhấp bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Tự động phê duyệt việc loại bỏ gói mồ côi trong quá trình cập nhật bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Cập nhật keyring của Omarchy trước mỗi lần cập nhật bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Đề xuất khởi động lại sau khi chuyển kênh bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Chỉ đề xuất bản cập nhật lần chạy đầu tiên khi có thứ gì đó để cập nhật bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Tìm vị trí thời tiết và múi giờ của trình cài đặt bằng dịch vụ geo riêng của Omarchy bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Đặt đồng hồ từ ntp.omarchy.org thay vì pool NTP của Arch bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Đo tốc độ mạng bằng bài kiểm tra tốc độ riêng của Omarchy bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Hiển thị màn hình tiến trình biểu tượng được vẽ trong lần khởi động đầu tiên bởi <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> trong <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Khởi động ISO live trên kernel Omarchy, và trên kernel T2 chỉ trên máy Mac bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Ngừng việc các bản cài đặt ngoại tuyến chờ tra cứu phiên bản mise bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Sửa lỗi các bản cài đặt ngoại tuyến đặt mặc định múi giờ thành Africa/Abidjan bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Sửa lỗi trình chọn múi giờ của trình cài đặt không cho phép bạn gõ để tìm kiếm bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Sửa lỗi ISO live bị treo sau màn hình splash khi khởi động từ USB Ventoy bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Sửa lỗi keymap console tiếng Đức và tiếng Pháp trong biểu mẫu thiết lập của trình cài đặt bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Ẩn các gợi ý phím tiếng Anh của gum trong trình cài đặt và thiết lập git bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Loại bỏ các câu đùa chỉ bằng tiếng Anh khỏi màn hình tiến trình cài đặt bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Sửa lỗi đầu ra của trình cài đặt xuất hiện không có đệm trên màn hình trong khi nó chuẩn bị ổ đĩa bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Sửa lỗi bản nâng cấp Quattro đặt lại trình duyệt mặc định thành Chromium bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Sửa lỗi bản nâng cấp Quattro dừng lại trên các tên hình nền có ký tự không phải ASCII bởi <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> trong <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Sửa lỗi di chuyển kernel dừng lại trên các máy khởi động bằng GRUB hoặc systemd-boot bởi <a href="https://github.com/manuaudio">@manuaudio</a> trong <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Sửa lỗi ngủ đông trên các máy không mã hóa có nhiều hơn một ổ đĩa NVMe bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Sửa lỗi di chuyển FIDO2 bị đánh dấu hoàn thành trước khi nó được giải quyết bởi <a href="https://github.com/ErikMelton">@ErikMelton</a> trong <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Sửa lỗi một không gian làm việc nổi chiếm lấy cửa sổ đầu tiên mà quy tắc float của riêng bạn bao phủ bởi <a href="https://github.com/zihaomu">@zihaomu</a> trong <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Sửa lỗi compositor bị đình trệ khi Super + L chuyển một không gian làm việc vào và ra khỏi trạng thái nổi bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Sửa lỗi Alt + Shift + Tab không chuyển ngược qua mọi cửa sổ bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Sửa lỗi các cửa sổ bật ra không căn giữa khi di chuyển sang màn hình khác bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Sửa lỗi các terminal mới mở ngoài thư mục nhà của bạn khi một cửa sổ không phải terminal đang được tập trung bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Sửa lỗi các cửa sổ 1Password và Bitwarden không nổi bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Sửa lỗi 1Password đóng khi terminal của trình cài đặt thoát bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Sửa lỗi các hộp thoại DaVinci Resolve đánh cắp tập trung con trỏ bởi <a href="https://github.com/AksharP5">@AksharP5</a> trong <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Sửa lỗi desktop hiển thị xuyên qua các màn hình Windows VM bởi <a href="https://github.com/jmwall">@jmwall</a> trong <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Sửa lỗi mật khẩu Windows VM cũ chứa $$ sau khi di chuyển Quattro bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Ngừng cửa sổ bật lên quyên góp của Hyprland hiển thị sau khi nâng cấp bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Cải thiện việc kéo và sắp xếp các widget trên thanh bar bởi <a href="https://github.com/outfoxxed">@outfoxxed</a> trong <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Chuẩn hóa kích thước và căn chỉnh biểu tượng thanh bar bởi <a href="https://github.com/bjarneo">@bjarneo</a> trong <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Chỉ hiển thị các chỉ báo thanh bar ẩn khi di chuột ở phía trái của đồng hồ bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Căn chỉnh các biểu tượng khay với các biểu tượng khác của thanh bar bởi <a href="https://github.com/ayoubdya">@ayoubdya</a> trong <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Hiển thị chú giải thanh bar tiếp theo ngay lập tức trong khi một cái đã hiển thị bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Mở các panel đồng hồ và thời tiết dưới các widget của chúng bởi <a href="https://github.com/scottjones">@scottjones</a> trong <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Giữ panel mạng mở sau khi chọn một nhà cung cấp DNS bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Sửa lỗi một cửa sổ bật lên đang đóng khiến các widget trên thanh bar không phản hồi bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Sửa lỗi thanh bar ẩn bắt các cú nhấp dọc phía trên của các cửa sổ toàn màn hình bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Sửa lỗi các biểu tượng khay tối biến mất vào thanh bar bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Sửa lỗi các biểu tượng thanh bar nằm không đều hoặc lệch tâm bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Sửa lỗi các chú giải thanh bar vẽ khung hình đầu tiên của chúng ở kích thước sai bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Sửa lỗi lịch sử thông báo hiển thị mọi thẻ như vừa xong bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Sửa lỗi các thông báo lần đăng nhập đầu tiên thu gọn thành một ngăn xếp duy nhất bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Sửa lỗi các cú nhấp thông báo không tập trung các ứng dụng có tên nhiều từ bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Sửa lỗi thông báo Taildrop hiển thị văn bản trống và thiếu bản xem trước bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Sửa lỗi thông báo pin hiển thị thời gian trống và 0W trên pin đầy bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Sửa lỗi cảnh báo pin yếu vẫn ở lại sau khi cắm điện và quay lại sau khi khởi động lại bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Sửa lỗi mức tiêu thụ pin đọc 0W trên một số laptop bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Sửa lỗi pin đầy khi dùng AC hiển thị như đang xả bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Sửa lỗi Hibernate hiển thị khi kernel sẽ không ngủ đông bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Sửa lỗi các gắn kết gvfs biến mất sau khi tiếp tục bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Sửa lỗi đèn nền bàn phím vẫn tắt sau khi khóa làm trống hai lần bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Sửa lỗi đầu đọc vân tay thức dậy trong khi khóa đã tắt màn hình bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Sửa lỗi dấu nhắc mật khẩu khởi động lệch tâm khi một màn hình xuất hiện muộn bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Sửa lỗi phím thoát của trình bảo vệ màn hình nhấp nháy ở góc bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Sửa lỗi biểu tượng Wi-Fi nhấp nháy trên các mạng OWE ở chế độ chuyển tiếp bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Sửa lỗi một lỗi OWE được in trong terminal sau khi cài đặt một giao diện bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Sửa lỗi nhấp nháy khi chuyển từ hình nền tĩnh sang hình nền video bởi <a href="https://github.com/bjarneo">@bjarneo</a> trong <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Cập nhật Hackerman thành một hình nền hình học được nâng cấp bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Sửa lỗi các giao diện có tham chiếu màu vòng tròn làm treo việc chuyển giao diện bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Sửa lỗi Neovim không khởi động được với giao diện Catppuccin bởi <a href="https://github.com/anandude">@anandude</a> trong <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Sửa lỗi OpenCode 2 khởi động trên giao diện gốc của nó thay vì của Omarchy bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Sửa lỗi code inline có độ tương phản thấp trong giao diện VS Code được tạo bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Sửa lỗi các lần cài đặt T3 Code dừng lại trong khi khớp với giao diện hiện tại bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Sửa lỗi kích thước phông chữ terminal đặt lại khi thay đổi họ phông chữ bởi <a href="https://github.com/sbalbalosa">@sbalbalosa</a> trong <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Sửa lỗi thay đổi phông chữ in ID tiến trình của một terminal bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Sửa lỗi chuyển đổi ngôn ngữ xây dựng lại mọi locale và mất chúng trên một ổ đĩa gần đầy bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Sửa lỗi shell hiển thị các khóa dịch thô trước khi các bản dịch của nó tải bởi <a href="https://github.com/zihaomu">@zihaomu</a> trong <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Tăng tốc văn bản đã dịch trong các script của Omarchy bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Cập nhật bản dịch cho 686 chuỗi, 392 trong số đó trong hướng dẫn bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Sửa lỗi các điều khiển âm lượng và đầu ra trong các locale không phải tiếng Anh bởi <a href="https://github.com/Sebo1411">@Sebo1411</a> trong <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Sửa lỗi số đọc sử dụng CPU trong các locale không phải tiếng Anh bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Sửa lỗi dịch vụ fcitx5 khởi động lại mãi mãi khi fcitx5 không được cài đặt bởi <a href="https://github.com/therk">@therk</a> trong <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Sửa lỗi widget bố cục bàn phím chuyển đổi các thiết bị không ai gõ trên đó bởi <a href="https://github.com/bjarneo">@bjarneo</a> trong <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Sửa lỗi widget bố cục bàn phím chuyển sang các thiết bị phím tắt của nhà cung cấp bởi <a href="https://github.com/yashranaway">@yashranaway</a> trong <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Sửa lỗi menu gán phím để lại một tiến trình Lua đang chạy ở 100% CPU bởi <a href="https://github.com/tobi">@tobi</a> trong <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Sửa lỗi đồng hồ làm ngập log mỗi mili giây khi giờ tiết kiệm ánh sáng ban ngày kết thúc bởi <a href="https://github.com/falkoro">@falkoro</a> trong <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Sửa lỗi shell thay thế một shell.json mà nó không thể đọc bằng các mặc định bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Sửa lỗi menu Omarchy mất các hàng của nó trong khi file của nó đang được cập nhật bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Sửa lỗi bật lại một plugin không mang widget trên thanh bar của nó trở lại bởi <a href="https://github.com/berrimi">@berrimi</a> trong <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Sửa lỗi các plugin cục bộ tải lại trong một vòng lặp trên bytecode Python của riêng chúng bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Sửa lỗi các nút ẩn trong các plugin thu gọn thành phần đệm của chúng bởi <a href="https://github.com/dmkenney">@dmkenney</a> trong <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Sửa lỗi các dropdown cắt mất mục cuối cùng của chúng bởi <a href="https://github.com/sprajs">@sprajs</a> trong <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Sửa lỗi các dropdown không đóng khi nhấp lần thứ hai bởi <a href="https://github.com/felixzsh">@felixzsh</a> trong <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Sửa lỗi các núm trượt dừng lại trước cuối rãnh bởi <a href="https://github.com/erikrjohansson">@erikrjohansson</a> trong <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Sửa lỗi Update &gt; Hardware &gt; Trackpad bỏ sót hầu hết các touchpad và đặt lại bàn phím bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Giờ đây nó nhả một nút bị kẹt trên mọi touchpad, và chỉ đặt lại touchpad thay vì bàn phím và màn hình cảm ứng cùng với nó.</p>
+  </li>
+  <li>Khiến menu webcam kiểm tra camera mà không bật chúng bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Sửa lỗi chụp cuộn của Omasnap chỉ lấy các khung hình đen bởi <a href="https://github.com/falkoro">@falkoro</a> trong <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Sửa lỗi trình chọn ảnh chụp màn hình hủy gán các phím của riêng bạn bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Sửa lỗi dừng một bản ghi thông báo một bản ghi đã lưu trống bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Sửa lỗi trình chọn hình ảnh hiển thị hình thu nhỏ cũ cho các hình ảnh đã bị lưu đè bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Sửa lỗi đèn ban đêm không đặt lại hoàn toàn khi tắt bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Sửa lỗi widget media để lại một bản nhạc đã tạm dừng cho một trình phát đang rảnh bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Sửa lỗi quét màn hình lặp lại trên các màn hình không báo cáo độ sáng bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Sửa lỗi Super + Shift + Return thất bại khi trình duyệt đã cấu hình bị gỡ cài đặt bởi <a href="https://github.com/vitally">@vitally</a> trong <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Sửa lỗi các phím tắt máy tính vẫn ở lại sau khi loại bỏ các ứng dụng cài đặt sẵn bởi <a href="https://github.com/OldJobobo">@OldJobobo</a> trong <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Sửa lỗi phím tắt Copy URL trong các hồ sơ Brave Origin bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Sửa lỗi cửa sổ bật ra của tiện ích mở rộng Bitwarden mở ở kích thước sai bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Sửa lỗi Battle.net mở ở tỷ lệ 100% trên màn hình HiDPI bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Sửa lỗi các trình chọn file của Inkscape mở dạng tiling bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Sửa lỗi các gói Go AUR không xây dựng được trong quá trình cập nhật khi mise quản lý Go bởi <a href="https://github.com/shbernal">@shbernal</a> trong <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Sửa lỗi cài đặt ONCE khi bạn không ở trong nhóm docker bởi <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> trong <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Sửa lỗi các cú nhấp vào panel agent mở khay bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Sửa lỗi thiết lập tài khoản agent vấp phải một symlink dùng chung bị treo bởi <a href="https://github.com/manuaudio">@manuaudio</a> trong <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Sửa lỗi <code>--reauth</code> thêm một tài khoản agent mới khi không có tài khoản nào bởi <a href="https://github.com/manuaudio">@manuaudio</a> trong <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Khiến gợi ý đổi tên tài khoản agent nêu tên nhà cung cấp của nó bởi <a href="https://github.com/manuaudio">@manuaudio</a> trong <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Sửa lỗi các cập nhật keyring tuyên bố thành công khi các thao tác khóa thất bại bởi <a href="https://github.com/Adolanium">@Adolanium</a> trong <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Sửa lỗi một dấu nhắc factory reset trống khi chạy dưới sudo bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Sửa lỗi lời nhắc di chuyển đang chờ chất đống một lần cho mỗi lần đăng nhập bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Sửa lỗi OS Age trong About đếm từ bản dựng của ISO thay vì lần cài đặt bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Sửa lỗi Dropbox hiển thị “0y ago” cho các file từ 360 đến 364 ngày tuổi bởi <a href="https://github.com/manuaudio">@manuaudio</a> trong <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Sửa lỗi kiểm tra trạng thái Dropbox làm hết hạn một liên kết đăng nhập đang chờ bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Sửa lỗi cài đặt thư viện biểu tượng khay của Dropbox bởi <a href="https://github.com/omarchybot">@omarchybot</a> trong <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Bật thanh cuộn lớp phủ trong Chromium bởi <a href="https://github.com/robzolkos">@robzolkos</a> trong <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Hỏi trước khi bật Touch ID trên máy Mac dùng Apple Silicon bởi <a href="https://github.com/scottjones">@scottjones</a> trong <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Cung cấp kênh RC trên máy Mac dùng Apple Silicon bởi <a href="https://github.com/maralcbr">@maralcbr</a> trong <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Cung cấp kênh stable trên máy Mac dùng Apple Silicon bởi <a href="https://github.com/maralcbr">@maralcbr</a> trong <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Sửa lỗi các bí danh, hàm và môi trường của Omarchy bị thiếu khỏi các terminal mới trên Apple Silicon bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Thiết lập các ứng dụng NVIDIA đã cài đặt bởi <a href="https://github.com/jdvmi00">@jdvmi00</a> trong <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Sửa lỗi các lần cài đặt thất bại trên Lenovo Pro 9 với NVIDIA N1x bởi <a href="https://github.com/breymander">@breymander</a> trong <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Sửa lỗi thiếu loa trong và micro trên các laptop N1x đã chạy các hồ sơ âm thanh trước đó bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Sửa lỗi desktop chậm chạp trên các máy NVIDIA GB10 như DGX Spark bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Sửa lỗi gõ vào màn hình khóa sau khi tiếp tục trên NVIDIA bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Màn hình khóa cũng không còn tối trở lại ngay khi panel sáng lên.</p>
+  </li>
+  <li>Sửa lỗi Lutris và Battle.net cài đặt driver Vulkan 32-bit của một GPU khác bởi <a href="https://github.com/zihaomu">@zihaomu</a> trong <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Ngừng hỏi khởi động lại sau mỗi lần cập nhật trên ARM bởi <a href="https://github.com/birkskyum">@birkskyum</a> trong <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Cung cấp các kênh stable và RC trên aarch64 bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Khiến các hồ sơ nguồn hoạt động trên laptop ARM bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Cung cấp Dropbox trên các máy ARM có trang 4K, và Spotify dưới dạng ứng dụng web trên ARM bởi <a href="https://github.com/birkskyum">@birkskyum</a> trong <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Ẩn các lần cài đặt GeForce NOW, Battle.net và Lutris trên ARM bởi <a href="https://github.com/birkskyum">@birkskyum</a> trong <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Sửa lỗi ứng dụng Hermes không cập nhật tại chỗ trên ARM bởi <a href="https://github.com/ryanrhughes">@ryanrhughes</a> trong <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Sửa lỗi bàn phím laptop Snapdragon không gõ được tại dấu nhắc mở khóa ổ đĩa bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Sửa lỗi camera bị thiếu khi đăng nhập trên laptop Snapdragon bởi <a href="https://github.com/birkskyum">@birkskyum</a> trong <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Sửa lỗi màn hình đen trước khi mở khóa ổ đĩa trên laptop Snapdragon X2 bởi <a href="https://github.com/jdvmi00">@jdvmi00</a> trong <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Giải mã video bằng phần cứng trên Intel Wildcat Lake bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Sửa lỗi ISO live bị sập trên laptop Arrow Lake-H bởi <a href="https://github.com/emirb">@emirb</a> trong <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Sửa lỗi micro trong của HP EliteBook Ultra G1q bởi <a href="https://github.com/bprendie">@bprendie</a> trong <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Dùng hỗ trợ thượng nguồn cho Motorcomm YT6801 Ethernet bởi <a href="https://github.com/AFOliveira">@AFOliveira</a> trong <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Chuyển tiếp Elgato Cam Link 4K dưới dạng camera ảo 16:9 bởi <a href="https://github.com/dhh">@dhh</a> trong <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Hỗ trợ các đầu đọc vân tay mà một nền tảng đặt tên bởi <a href="https://github.com/scottjones">@scottjones</a> trong <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

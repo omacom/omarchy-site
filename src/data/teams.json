@@ -69,6 +69,18 @@
     "meta": "UK",
     "href": "https://x.com/mdisec",
     "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
+    "name": "Marcelo Alcantara",
+    "meta": "Brazil/Australia",
+    "href": "https://x.com/maralcbr",
+    "avatar": "/assets/images/team/marcelo-alcantara.webp"
+   },
+   {
+    "name": "Birk Skyum",
+    "meta": "Switzerland",
+    "href": "https://x.com/BirkSkyum",
+    "avatar": "/assets/images/team/birk-skyum.webp"
    }
   ],
   "note": null
