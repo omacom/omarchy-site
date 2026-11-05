@@ -8,12 +8,15 @@ import {
   ArrowUpRightIcon,
   BankIcon,
   CalendarFilledIcon,
+  CheckIcon,
+  CopyIcon,
   DiscordIcon,
   DisplayIcon,
   DownloadIcon,
   GithubIcon,
   UsbIcon,
   PlayIcon,
+  VerifiedIcon,
   WindowsIcon,
 } from '@/components/icons'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
@@ -41,6 +44,12 @@ import { ThemeShowcase } from '@/components/ThemeShowcase'
 import { VideoCarousel } from '@/components/VideoCarousel'
 import { Voices } from '@/components/Voices'
 import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { useHashLink } from '@/lib/hash-scroll'
 import { cn } from '@/lib/utils'
 import { isoArch, isoLinks, type ArchHints, type IsoArch } from '@/lib/iso-arch'
@@ -154,26 +163,64 @@ function InstallRow({
   )
 }
 
-/** A download's checksum, small enough to sit under its button. With a
- *  signature to point at, it links there, for whoever checks. */
-function Checksum({ sha256, href }: { sha256?: string | null; href?: string }) {
-  if (!sha256) return null
+const verifyButton =
+  'relative flex size-9 shrink-0 items-center justify-center rounded-md text-text-muted transition-[background-color,color,scale] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.96] [&_svg]:size-4.5'
+
+/** Beside a download: copy its SHA-256, and fetch its signature when it has
+ *  one. Each says what it does on hover, so the hash itself stays out of
+ *  sight until someone wants it. */
+function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
+  const [copied, setCopied] = useState(false)
+  if (!sha256 && !sig) return null
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(sha256 ?? '')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      // Clipboard unavailable (permissions, http): nothing to copy into.
+    }
+  }
+
   return (
-    <p className="mt-2 font-mono text-[10px] leading-4 break-all text-text-muted">
-      {href ? (
-        <a
-          href={href}
-          title={t('signature')}
-          className="transition-colors duration-150 ease-out hover:text-text"
-        >
-          {sha256}
-        </a>
-      ) : (
-        <span title="SHA-256" className="select-all">
-          {sha256}
-        </span>
-      )}
-    </p>
+    <>
+      {sha256 ? (
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <button
+                type="button"
+                onClick={copy}
+                aria-label={t('Copy the SHA-256 checksum')}
+                className={verifyButton}
+              />
+            }
+          >
+            {copied ? <CheckIcon /> : <CopyIcon />}
+          </TooltipTrigger>
+          <TooltipContent>
+            {copied ? t('Copied') : t('Copy the SHA-256 checksum')}
+          </TooltipContent>
+        </Tooltip>
+      ) : null}
+      {sig ? (
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <a
+                href={sig}
+                aria-label={t('Download the GPG signature')}
+                className={verifyButton}
+              />
+            }
+          >
+            <VerifiedIcon />
+          </TooltipTrigger>
+          <TooltipContent>{t('Download the GPG signature')}</TooltipContent>
+        </Tooltip>
+      ) : null}
+    </>
   )
 }
 
@@ -635,97 +682,104 @@ export function HomePage({ data }: { data: HomeData }) {
 
           {/* Three ways in, one per row: what it is on the left, the
               downloads on the right, rows divided by rules rather than boxed. */}
-          <div className="mt-8 border-b border-border-subtle lg:mt-12">
-            <InstallRow
-              icon={UsbIcon}
-              title={t('Full-disk or dual-boot installation')}
-              lead={t(
-                'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
-              )}
-            >
-              <p className={installNote}>Omarchy {release.version}</p>
-              <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-5">
-                {isos.map(([arch, iso]) => (
-                  <li key={arch} className="min-w-0">
+          <TooltipProvider delay={300}>
+            <div className="mt-8 border-b border-border-subtle lg:mt-12">
+              <InstallRow
+                icon={UsbIcon}
+                title={t('Full-disk or dual-boot installation')}
+                lead={t(
+                  'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
+                )}
+              >
+                <p className={installNote}>Omarchy {release.version}</p>
+                <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-5">
+                  {isos.map(([arch, iso]) => (
+                    <li
+                      key={arch}
+                      className="flex min-w-0 flex-wrap items-center gap-1"
+                    >
+                      <Button
+                        size="lg"
+                        nativeButton={false}
+                        render={<a href={iso.url} />}
+                        className={installButton}
+                      >
+                        <DownloadIcon data-icon="inline-start" />
+                        {t('Download')} {ISO_LABEL[arch] ?? arch}
+                      </Button>
+                      <Verify
+                        sha256={release.isos[arch]?.sha256}
+                        sig={`${iso.url}.sig`}
+                      />
+                    </li>
+                  ))}
+                </ul>
+                {release.isos.aarch64 ? (
+                  <p className={installNote}>
+                    {t(
+                      'ARM64 has preliminary support for NVIDIA DGX Spark and N1X.',
+                    )}
+                  </p>
+                ) : null}
+              </InstallRow>
+
+              {release.mac ? (
+                <InstallRow
+                  icon={AppleIcon}
+                  title={t('Apple Silicon Macs')}
+                  lead={t(
+                    'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
+                  )}
+                >
+                  <p className={installNote}>
+                    Omarchy M {release.mac.version} · .dmg
+                  </p>
+                  <div className="mt-3 flex items-center gap-1">
                     <Button
                       size="lg"
                       nativeButton={false}
-                      render={<a href={iso.url} />}
+                      render={<a href={release.mac.url} />}
                       className={installButton}
                     >
                       <DownloadIcon data-icon="inline-start" />
-                      {t('Download')} {ISO_LABEL[arch] ?? arch}
+                      {t('Download Mac installer')}
                     </Button>
-                    <Checksum
-                      sha256={release.isos[arch]?.sha256}
-                      href={`${iso.url}.sig`}
-                    />
-                    {arch === 'aarch64' ? (
-                      <p className={installNote}>
-                        {t('Preliminary support for NVIDIA DGX Spark and N1X.')}
-                      </p>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            </InstallRow>
+                    <Verify sha256={release.mac.sha256} />
+                  </div>
+                </InstallRow>
+              ) : null}
 
-            {release.mac ? (
               <InstallRow
-                icon={AppleIcon}
-                title={t('Apple Silicon Macs')}
+                icon={DisplayIcon}
+                title={t('Try it first')}
                 lead={t(
-                  'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
+                  'All of Omarchy running in a virtual machine, so you can get a taste first.',
                 )}
               >
-                <p className={installNote}>
-                  Omarchy M {release.mac.version} · .dmg
-                </p>
-                <div className="mt-3">
-                  <Button
-                    size="lg"
-                    nativeButton={false}
-                    render={<a href={release.mac.url} />}
-                    className={installButton}
-                  >
-                    <DownloadIcon data-icon="inline-start" />
-                    {t('Download Mac installer')}
-                  </Button>
-                  <Checksum sha256={release.mac.sha256} />
+                <div className="flex flex-wrap gap-2">
+                  {(['mac', 'windows'] as const).map((key) => {
+                    const Mark = TRY[key].icon
+                    return (
+                      <Button
+                        key={key}
+                        size="lg"
+                        variant="outline"
+                        nativeButton={false}
+                        render={<a href={TRY[key].href} />}
+                      >
+                        <Mark data-icon="inline-start" />
+                        {TRY[key].label}
+                        <ArrowUpRightIcon data-icon="inline-end" />
+                      </Button>
+                    )
+                  })}
                 </div>
+                <p className={installNote}>
+                  {t('Apple Silicon Macs, Windows 10 and 11.')}
+                </p>
               </InstallRow>
-            ) : null}
-
-            <InstallRow
-              icon={DisplayIcon}
-              title={t('Try it first')}
-              lead={t(
-                'All of Omarchy running in a virtual machine, so you can get a taste first.',
-              )}
-            >
-              <div className="flex flex-wrap gap-2">
-                {(['mac', 'windows'] as const).map((key) => {
-                  const Mark = TRY[key].icon
-                  return (
-                    <Button
-                      key={key}
-                      size="lg"
-                      variant="outline"
-                      nativeButton={false}
-                      render={<a href={TRY[key].href} />}
-                    >
-                      <Mark data-icon="inline-start" />
-                      {TRY[key].label}
-                      <ArrowUpRightIcon data-icon="inline-end" />
-                    </Button>
-                  )
-                })}
-              </div>
-              <p className={installNote}>
-                {t('Apple Silicon Macs, Windows 10 and 11.')}
-              </p>
-            </InstallRow>
-          </div>
+            </div>
+          </TooltipProvider>
 
           <p className="mt-6 text-[13px] leading-relaxed text-text-muted [text-wrap:pretty]">
             {t('The manual also covers')}{' '}
