@@ -59,3 +59,21 @@ jobs:
       - uses: actions/configure-pages@v6
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # A push to master deploys omarchy.cn through deploy-zh-cn.yml's own push
+  # trigger. A dispatched run comes from a refresh workflow instead, whose push,
+  # made with the workflow's token, started no other workflow; a dispatch is the
+  # one event that token can start, so this run starts the omarchy.cn deploy
+  # too. It waits on the checks rather than the Pages deployment, so a Pages
+  # outage does not hold omarchy.cn back.
+  # ref: https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow
+  deploy-cn:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-zh-cn.yml --repo "$GITHUB_REPOSITORY" --ref master

@@ -3,10 +3,10 @@ title: Omacom Foundation raises another half a million dollars!
 date: 2026-09-07 22:08 +0200
 author: DHH
 author_url: https://dhh.dk
-description: OpenRouter pledges $150,000 in tokens, Four Technologies commits $300,000 over three years, and nearly 500 donors add roughly $60,000, bringing the total to approximately $15.5 million.
+description: OpenRouter pledges $150,000 in tokens, Four Technologies commits $300,000 over three years, and nearly 500 donors add roughly $60,000, bringing the total to approximately $15.35 million.
 ---
 
-The [Omacom Foundation](/foundation/) has raised another half a million dollars! Between a fresh supply of tokens, a three-year corporate pledge, and thousands of dollars from open patronage, that's roughly $510,000 more committed to beautiful, fun & agentic Linux. That brings our total in pledges and donations to approximately $15.5 million!
+The [Omacom Foundation](/foundation/) has raised another half a million dollars! Between a fresh supply of tokens, a three-year corporate pledge, and thousands of dollars from open patronage, that's roughly $510,000 more committed to beautiful, fun & agentic Linux. That brings our total in pledges and donations to approximately $15.35 million!
 
 First, we're welcoming [OpenRouter](https://openrouter.ai/) as a [Distinguished Corporate Patron](/patrons/#distinguished-corporate-patrons) with $150,000 in tokens. Once that allotment is spent, we can renew the arrangement by mutual agreement. These tokens will power the agents that build, test, and maintain Omarchy. The more we can put agents to work fixing bugs, reviewing contributions, and improving the distro, the faster we can make everyone's computer better. More fuel for the mission!
 
