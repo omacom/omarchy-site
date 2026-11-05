@@ -723,7 +723,7 @@ export function HomePage({ data }: { data: HomeData }) {
                       className={installButton}
                     >
                       <DownloadIcon data-icon="inline-start" />
-                      {t('Download Mac installer')} {release.mac.version}
+                      {t('Omarchy M Installer')}
                     </Button>
                     <Verify sha256={release.mac.sha256} />
                   </div>
