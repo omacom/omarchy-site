@@ -1,0 +1,63 @@
+name: Sync Discord workstations
+
+on:
+  schedule:
+    - cron: '43 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+# Serialize commits with the other automated content refresh.
+concurrency:
+  group: refresh-content
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci
+      - name: Install video encoder
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Sync workstation media
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: npm run sync:workstations
+      - name: Check the updated site
+        run: |
+          npm run lint
+          npm run typecheck
+          npm test
+          npm run build
+          npm run parity
+      - name: Commit new workstations
+        id: commit
+        run: |
+          git add assets/workstations workstations/index.html scripts/data/workstations-media.json scripts/data/workstations-excluded.json src/data/pages.json
+          if git diff --cached --quiet; then
+            echo "No new workstations."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync Discord workstations"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin HEAD:"${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      # Pushes made with GITHUB_TOKEN do not trigger the deployment workflow.
+      - name: Deploy updated gallery
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
