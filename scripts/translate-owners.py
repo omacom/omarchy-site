@@ -39,7 +39,7 @@ ROOT = Path(__file__).resolve().parents[1]
 WORK = Path(os.environ.get('OMARCHY_OWNERS_DIR', Path.home() / '.local/state/omarchy-owners')) / ROOT.name
 REGISTRY = ROOT / 'src/i18n/locales.json'
 ROSTER = ROOT / 'plans/100-languages-roster.json'
-MODEL = os.environ.get('MUSE_MODEL', 'muse-spark-1.3-contributor')
+MODEL = os.environ.get('MUSE_MODEL', 'muse-wonder-1.0')
 TOOLS = ['translate-news.py', 'translate-site.py']
 RATE_LIMIT_MARKERS = ('rate limit', 'rate_limit', 'too many requests', 'overloaded', 'quota exceeded')
 

@@ -6,6 +6,11 @@ on:
     types: [completed]
     branches: [master]
   workflow_dispatch:
+    inputs:
+      smoke:
+        description: Only translate one sample string into this language (e.g. da) to prove the key and model work; commits and deploys nothing.
+        required: false
+        default: ''
   schedule:
     # Retry unfinished translations without delaying English publication.
     - cron: '41 * * * *'
@@ -18,12 +23,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  smoke:
+    if: github.event_name == 'workflow_dispatch' && inputs.smoke != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - uses: ./.github/actions/setup-muse
+        with:
+          api-key: ${{ secrets.MUSE_API_KEY }}
+      - name: Translate one sample string
+        env:
+          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-wonder-1.0' }}
+          LOCALE: ${{ inputs.smoke }}
+        run: python3 scripts/translate-site.py --smoke "$LOCALE"
+      - name: Remove Muse credentials
+        if: always()
+        run: rm -f "$HOME/.config/muse/auth.json"
+
   prepare:
     if: >-
-      github.event_name != 'workflow_run' ||
-      (github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.event != 'pull_request' &&
-       github.event.workflow_run.head_repository.full_name == github.repository)
+      (github.event_name != 'workflow_dispatch' || inputs.smoke == '') &&
+      (github.event_name != 'workflow_run' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event != 'pull_request' &&
+        github.event.workflow_run.head_repository.full_name == github.repository))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -98,35 +127,13 @@ jobs:
       - run: gem install kramdown kramdown-parser-gfm --no-document
       - run: bin/build-news
       - run: npm run port
-      - name: Install Muse
-        run: |
-          mkdir -p "$RUNNER_TEMP/muse-bin"
-          curl --fail --silent --show-error --location https://api.meta.ai/muse-launcher.sh --output "$RUNNER_TEMP/muse-bin/muse"
-          echo "c6db294799a190ca380da274beb3b9c0e160e0da9681a3d364ce8b0e5fa3a4bc  $RUNNER_TEMP/muse-bin/muse" | sha256sum --check
-          chmod +x "$RUNNER_TEMP/muse-bin/muse"
-          MUSE_LAUNCHER_INSTALL=1 "$RUNNER_TEMP/muse-bin/muse"
-          echo "MUSE_NO_AUTO_UPDATE=1" >> "$GITHUB_ENV"
-          echo "$RUNNER_TEMP/muse-bin" >> "$GITHUB_PATH"
-      - name: Configure Muse
-        env:
-          MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
-        run: |
-          python3 - <<'PY'
-          import json, os
-          from pathlib import Path
-          key = os.environ.get('MUSE_API_KEY')
-          if not key:
-              raise SystemExit('Add the MUSE_API_KEY Actions secret to enable automatic translations.')
-          config = Path.home() / '.config/muse'
-          config.mkdir(parents=True, exist_ok=True)
-          auth = config / 'auth.json'
-          auth.write_text(json.dumps({'schema_version': 1, 'providers': {'meta': {'api_key': key}}}))
-          auth.chmod(0o600)
-          PY
+      - uses: ./.github/actions/setup-muse
+        with:
+          api-key: ${{ secrets.MUSE_API_KEY }}
       - name: Translate this language's pending site and news
         continue-on-error: true
         env:
-          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-spark-1.3-contributor' }}
+          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-wonder-1.0' }}
           LOCALE: ${{ matrix.locale }}
         run: |
           # Two queues per language; four Muse requests at most on each runner.

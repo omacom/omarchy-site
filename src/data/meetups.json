@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-10-24",
+  "refreshed": "2026-11-05",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1496,34 +1496,17 @@
       "coverHeight": 800
     },
     {
-      "id": "evt-Go579QoFlyA9E5r",
-      "title": "Omarchy Ghana",
-      "url": "https://luma.com/fzp8rdnm",
-      "start": "2026-10-31T19:00:00.000Z",
-      "end": "2026-10-31T20:00:00.000Z",
-      "timezone": "Africa/Abidjan",
-      "address": null,
-      "city": null,
-      "country": "GH",
-      "online": false,
-      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
-      "hosts": [],
-      "cover": "/images/meetups/evt-Go579QoFlyA9E5r-full.webp",
-      "coverWidth": 400,
-      "coverHeight": 400
-    },
-    {
       "id": "evt-uASCAbX2odjzImy",
       "title": "Omarchy Sydney",
       "url": "https://luma.com/ufs7ing3",
       "start": "2026-11-04T08:00:00.000Z",
       "end": "2026-11-04T10:00:00.000Z",
       "timezone": "Australia/Sydney",
-      "address": "Sydney NSW, Australia",
+      "address": "52 King St, Sydney NSW 2000, Australia",
       "city": "Sydney",
       "country": "AU",
       "online": false,
-      "geo": { "lat": -33.8622503, "lon": 151.207684 },
+      "geo": { "lat": -33.8684698, "lon": 151.2057388 },
       "hosts": [],
       "cover": "/images/meetups/evt-uASCAbX2odjzImy-full.webp",
       "coverWidth": 800,
@@ -1533,8 +1516,8 @@
       "id": "evt-XJ3VtDVg2YLvHeE",
       "title": "Omarchy SF",
       "url": "https://luma.com/7c2wohwf",
-      "start": "2026-11-05T01:00:00.000Z",
-      "end": "2026-11-05T04:00:00.000Z",
+      "start": "2026-11-05T01:30:00.000Z",
+      "end": "2026-11-05T04:30:00.000Z",
       "timezone": "America/Los_Angeles",
       "address": "Cloudflare, 101 Townsend St, San Francisco, CA 94107, USA",
       "city": "San Francisco",
@@ -1632,6 +1615,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-3KsScnXMteWmW7R",
+      "title": "Omarchy Buenos Aires Meetup 002",
+      "url": "https://luma.com/h8ja4bdg",
+      "start": "2026-11-11T22:00:00.000Z",
+      "end": "2026-11-12T00:30:00.000Z",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "address": "Working&Co Soler, Soler 4445, C1425 Soho, Cdad. Autónoma de Buenos Aires, Argentina",
+      "city": "Soho",
+      "country": "AR",
+      "online": false,
+      "geo": { "lat": -34.5886097, "lon": -58.42263560000001 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-3KsScnXMteWmW7R-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-SrfYTm4gfXfmvv3",
       "title": "Omarchy Malmö Meetup 001",
       "url": "https://luma.com/774wosun",
@@ -1645,6 +1645,23 @@
       "geo": { "lat": 55.6084981, "lon": 12.998572099999999 },
       "hosts": [],
       "cover": "/images/meetups/evt-SrfYTm4gfXfmvv3-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-jY7E9tlKPKPRwPK",
+      "title": "Omarchy Udaipur",
+      "url": "https://luma.com/2gf27i1e",
+      "start": "2026-11-14T09:30:00.000Z",
+      "end": "2026-11-14T12:30:00.000Z",
+      "timezone": "Asia/Kolkata",
+      "address": "Udaipur, Rajasthan, India",
+      "city": "Udaipur",
+      "country": "IN",
+      "online": false,
+      "geo": { "lat": 24.585445, "lon": 73.712479 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-jY7E9tlKPKPRwPK-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },
@@ -1681,6 +1698,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-JBHHKJZRXrbLNGX",
+      "title": "Omarchy Singapore",
+      "url": "https://luma.com/w2adh2et",
+      "start": "2026-11-19T10:30:00.000Z",
+      "end": "2026-11-19T13:00:00.000Z",
+      "timezone": "Asia/Singapore",
+      "address": "Singapore",
+      "city": "Singapore",
+      "country": "SG",
+      "online": false,
+      "geo": { "lat": 1.2979872440179592, "lon": 103.83962067974433 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-JBHHKJZRXrbLNGX-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-R1T3FoigSaT4BA6",
       "title": "Omarchy London Meetup 002",
       "url": "https://luma.com/fyb1dq1k",
@@ -1695,6 +1729,23 @@
       "hosts": [],
       "cover": "/images/meetups/evt-R1T3FoigSaT4BA6-full.webp",
       "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-32MTML1HrsryRXv",
+      "title": "Omarchy Silesia Meetup",
+      "url": "https://luma.com/6ualcf7l",
+      "start": "2026-11-24T17:00:00.000Z",
+      "end": "2026-11-24T21:00:00.000Z",
+      "timezone": "Europe/Warsaw",
+      "address": "plac Targowy 12, 43-200 Pszczyna, Poland",
+      "city": "Pszczyna",
+      "country": "PL",
+      "online": false,
+      "geo": { "lat": 49.977164599999995, "lon": 18.945283 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-32MTML1HrsryRXv-full.webp",
+      "coverWidth": 533,
       "coverHeight": 800
     },
     {
@@ -1730,6 +1781,23 @@
       "cover": "/images/meetups/evt-qiN1tmB10AJNHS6-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
+    },
+    {
+      "id": "evt-Go579QoFlyA9E5r",
+      "title": "Omarchy Ghana",
+      "url": "https://luma.com/fzp8rdnm",
+      "start": "2026-12-20T19:00:00.000Z",
+      "end": "2026-12-20T20:00:00.000Z",
+      "timezone": "Africa/Abidjan",
+      "address": null,
+      "city": null,
+      "country": "GH",
+      "online": false,
+      "geo": { "lat": 8.0300284, "lon": -1.0800271, "approximate": true },
+      "hosts": [],
+      "cover": "/images/meetups/evt-Go579QoFlyA9E5r-full.webp",
+      "coverWidth": 400,
+      "coverHeight": 400
     }
   ]
 }

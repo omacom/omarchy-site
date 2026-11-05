@@ -29,6 +29,21 @@ const drafts = new Set(
   codes.filter((code) => locales[code].draft).map(workerName),
 )
 const deployed = body.result.map((worker) => worker.id)
+// Editions taken out of the registry whose Workers may still be deployed.
+// Delete each Worker (and its custom domain) in Cloudflare, then its name here.
+const retired = new Set([
+  'omarchy-en-au',
+  'omarchy-en-nz',
+  'omarchy-en-ng',
+  'omarchy-en-sg',
+  'omarchy-en-us',
+  'omarchy-en-zw',
+])
+const lingering = deployed.filter((name) => retired.has(name))
+if (lingering.length)
+  console.log(
+    `Retired editions still deployed, delete them in Cloudflare: ${lingering.join(', ')}.`,
+  )
 const previews = deployed.filter((name) => drafts.has(name))
 if (previews.length)
   console.log(
@@ -55,7 +70,11 @@ const isEdition = (name) => {
   }
 }
 const unmanaged = deployed.filter(
-  (name) => isEdition(name) && !registered.has(name) && !drafts.has(name),
+  (name) =>
+    isEdition(name) &&
+    !registered.has(name) &&
+    !drafts.has(name) &&
+    !retired.has(name),
 )
 if (unmanaged.length) {
   throw new Error(
