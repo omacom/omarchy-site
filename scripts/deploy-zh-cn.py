@@ -27,6 +27,11 @@ LOCALE = 'zh-CN'
 ROOT = Path(__file__).resolve().parent.parent
 REQUIRED = ('index.html', '404.html', 'news/index.html', 'news/rss.xml', 'themes/index.html')
 HOST = re.compile(r'^([a-z0-9][a-z0-9-]{1,61}[a-z0-9])\.(oss-[a-z0-9-]+\.aliyuncs\.com)$')
+# A link to the ISO host outside China. The homepage's download button and its
+# checksum links point there unless the build was given PUBLIC_ISO_ORIGIN. Only
+# an attribute counts: text that names the host, such as a news excerpt, is
+# serialized into the island's props with its quotes escaped.
+ABROAD_ISO = 'href="https://iso.omarchy.org/'
 
 # Three copies then one sync, because --header-upload takes one value per
 # invocation. Assets go up before HTML, so a page never references an asset
@@ -72,6 +77,8 @@ def check(directory):
     for key in REQUIRED:
         if not (directory / key).is_file():
             raise ValueError(f'Missing required build file: {key}')
+    if ABROAD_ISO in (directory / 'index.html').read_text():
+        raise ValueError('Homepage downloads the ISO from iso.omarchy.org; build with PUBLIC_ISO_ORIGIN')
     files = [path for path in directory.rglob('*') if not path.is_dir()]
     # rclone skips symlinks unless told to follow them, and the deploy still
     # succeeds, so a linked page would go missing without anything failing.
