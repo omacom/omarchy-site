@@ -158,7 +158,7 @@ function InstallRow({
         </p>
         {note ? <p className={cn(installNote, 'max-w-md')}>{note}</p> : null}
       </div>
-      <div className="min-w-0">{children}</div>
+      <div className="@container min-w-0">{children}</div>
     </div>
   )
 }
@@ -683,7 +683,7 @@ export function HomePage({ data }: { data: HomeData }) {
                     : undefined
                 }
               >
-                <ul className="mt-3 grid w-fit gap-x-6 gap-y-3 sm:grid-cols-2">
+                <ul className="grid w-fit gap-x-6 gap-y-3 @md:grid-cols-2">
                   {isos.map(([arch, iso]) => (
                     <li key={arch} className="flex flex-col items-start">
                       <Button
@@ -715,7 +715,7 @@ export function HomePage({ data }: { data: HomeData }) {
                     'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
                   )}
                 >
-                  <div className="mt-3 flex flex-col items-start">
+                  <div className="flex flex-col items-start">
                     <Button
                       size="lg"
                       nativeButton={false}
