@@ -15,6 +15,7 @@ const NARROW = new Set([
   'air',
   'foundation',
   'sponsorships',
+  'staff',
   'security',
   'security/credits',
   'brand',
@@ -24,6 +25,7 @@ const NARROW = new Set([
 export interface PortedPageData {
   title: string
   html: string
+  presentation?: string
 }
 
 export function PortedPage({
@@ -34,7 +36,7 @@ export function PortedPage({
   slug: string
 }) {
   const path = (slug ?? '').replace(/\/+$/, '')
-  const narrow = NARROW.has(path)
+  const narrow = NARROW.has(path) || page.presentation === 'principles'
 
   return (
     <main
@@ -52,7 +54,10 @@ export function PortedPage({
         />
       )}
       <div
-        className="prose ported"
+        className={cn(
+          'prose ported',
+          page.presentation === 'principles' && 'principles',
+        )}
         dangerouslySetInnerHTML={{ __html: page.html }}
       />
     </main>

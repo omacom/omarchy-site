@@ -1,4 +1,4 @@
-import { t } from '@/i18n/site'
+import { t, tCountries } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { ArrowUpRightIcon, DiscordIcon, GithubIcon } from '@/components/icons'
 import { Button } from '@/components/ui/button'
@@ -97,7 +97,7 @@ export function TeamsPage() {
                       ) : null}
                     </span>
                     <span className="block font-mono text-xs text-text-muted">
-                      {member.meta}
+                      {tCountries(member.meta)}
                     </span>
                   </span>
                 </>
@@ -154,7 +154,7 @@ export function TeamsPage() {
               render={<a href="https://github.com/omacom/omarchy" />}
             >
               <GithubIcon data-icon="inline-start" />
-              Open GitHub
+              {t('Open GitHub')}
             </Button>
           </div>
         </div>

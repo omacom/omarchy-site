@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import locales from '../src/i18n/locales.json' with { type: 'json' }
+import { currentNewsTranslation } from '../src/lib/news-translation.ts'
 /** Copy passthrough files and generate redirects in dist/client after the Astro build. */
 import { cp, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
@@ -123,7 +124,10 @@ if (LANGUAGE !== 'en') {
           await readFile(
             path.join(ROOT, `src/i18n/${CONTENT_LOCALE}/news.json`),
             'utf8',
-          ),
+          ).catch((error) => {
+            if (error.code === 'ENOENT') return '{}'
+            throw error
+          }),
         )
   const messages = JSON.parse(
     await readFile(
@@ -138,7 +142,7 @@ if (LANGUAGE !== 'en') {
     ] || feedTitle
   const items = await Promise.all(
     posts.map(async (post) => {
-      const rawBody =
+      const translatedBody =
         CONTENT_LOCALE === 'en'
           ? post.html
           : await readFile(
@@ -148,7 +152,17 @@ if (LANGUAGE !== 'en') {
                 `${post.slug}.html`,
               ),
               'utf8',
-            )
+            ).catch((error) => {
+              if (error.code === 'ENOENT') return undefined
+              throw error
+            })
+      const current = currentNewsTranslation(
+        post,
+        translations[post.slug],
+        translatedBody,
+      )
+      const rawBody = current ? translatedBody : post.html
+      const title = current ? translations[post.slug].title : post.title
       const body = rawBody.replace(
         /(href|src)="(\/[^" ]*)"/g,
         (_, attribute, href) => {
@@ -160,7 +174,7 @@ if (LANGUAGE !== 'en') {
         },
       )
       const url = `${SITE_URL}${post.path}`
-      return `<item><title>${escapeHtml(translations[post.slug].title)}</title><link>${escapeHtml(url)}</link><guid isPermaLink="true">${escapeHtml(url)}</guid><pubDate>${new Date(post.date).toUTCString()}</pubDate><description>${escapeHtml(body)}</description></item>`
+      return `<item><title>${escapeHtml(title)}</title><link>${escapeHtml(url)}</link><guid isPermaLink="true">${escapeHtml(url)}</guid><pubDate>${new Date(post.date).toUTCString()}</pubDate><description>${escapeHtml(body)}</description></item>`
     }),
   )
   await writeFile(

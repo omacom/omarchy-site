@@ -30,8 +30,8 @@ function snippetAround(text: string, at: number, length: number) {
 /**
  * Every term has to appear somewhere in an entry for it to be a hit, and
  * where it appears is what ranks it: a word in a title beats one in a
- * heading, which beats one buried in the prose. A plugin or a theme is a
- * name, so a name match there is worth as much as a chapter title.
+ * heading, which beats one buried in the prose. A theme is a name, so a
+ * name match there is worth as much as a chapter title.
  */
 export function searchAll(
   index: SearchEntry[],
@@ -65,8 +65,8 @@ export function searchAll(
       if (inHeading) score += heading.startsWith(term) ? 8 : 6
       if (at >= 0) {
         score += 1
-        // Only prose carries a snippet worth showing. A plugin's index text
-        // is its category and tags, which the row already prints.
+        // Only prose carries a snippet worth showing. A theme's index text
+        // is its owner's name, which is not worth a line of its own.
         if (!snippet && (entry.kind === 'manual' || entry.kind === 'news')) {
           snippet = snippetAround(entry.text, at, term.length)
         }
@@ -89,6 +89,5 @@ export function searchAll(
 export const KIND_LABEL: Record<SearchEntry['kind'], string> = {
   manual: 'Manual',
   news: 'News',
-  plugin: 'Plugin',
   theme: 'Theme',
 }

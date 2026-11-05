@@ -32,12 +32,24 @@ dated `news/` directories is **content input**, not a second site design.
 layout, navigation, and styling in `src/`; preview through the dev server.
 After editing content inputs, run `npm run port` to refresh the dev data.
 
-- Edit standalone page content in its existing `index.html`.
+- Edit standalone page content in its existing `index.html`. Page directories are discovered automatically; there is no route or translation allowlist.
+- Add standalone pages as `content/<path>.md` with YAML frontmatter (`title`, optional `seoTitle` and `description`), then run `npm run port`. All pages are automatically routed and their metadata and prose enter the shared translation pipeline. News under `content/news/` uses its existing separate pipeline. Set `presentation: principles` for compact linked headings, as in `content/doctrine.md`.
 - Edit the homepage announcement in `src/data/banner.json` (`null` hides it).
 - Run `bin/build-news` after editing Markdown in `content/news/`; it updates
   article inputs, images, and the RSS feed.
 - Run `bin/build-manual [path/to/omarchy/manual]` to refresh manual inputs and
-  images. The Astro site builds its table of contents and search index.
+  images. The Astro site builds its table of contents and search index. The
+  Refresh the manual workflow does this daily from omarchy's default branch.
+
+Social cards use the site's theme palettes and existing translations: 51 languages
+in all 22 themes. `npm run build:social` regenerates every 1200×630 PNG under
+`public/brand/social/`; normal builds regenerate only the active language.
+Each page selects a stable theme from its canonical path, and its locale selects
+the translated card. English cards stay at the directory root; other languages
+use a locale subdirectory. After changing palettes, themes, or card copy,
+regenerate and commit the images. Bundled font subsets support all scripts;
+see [font maintenance](scripts/fonts/social/README.md) when adding characters.
+Social platforms may retain cached previews for already-shared links.
 
 The screensaver and the Discord redirect are still served
 directly. Their styles, fonts, and scripts remain under `assets/`, alongside
@@ -99,4 +111,4 @@ which has its own submission guide.
 ## Translations
 
 The site uses shared components with separate language catalogues and domain builds.
-See [the translation guide](docs/translations.md) to preview Danish or add another language.
+English changes publish immediately. GitHub Actions fills in missing main-site copy and news translations with Muse afterward, then deploys the language sites. Existing human translations are preserved. See [the translation guide](docs/translations.md) for queues, local previews, and adding a language or domain.

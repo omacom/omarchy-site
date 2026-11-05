@@ -3,48 +3,17 @@ import { inlineJson } from './inline-json'
 import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
-export type SiteTheme = {
-  id: string
-  name: string
-  /** A light page: the theme's background is the lighter of its two inks. */
-  light?: true
-}
-
-export const SITE_THEMES: SiteTheme[] = [
-  { id: 'catppuccin', name: 'Catppuccin' },
-  { id: 'catppuccin-latte', name: 'Catppuccin Latte', light: true },
-  { id: 'ethereal', name: 'Ethereal' },
-  { id: 'everforest', name: 'Everforest' },
-  { id: 'flexoki-light', name: 'Flexoki Light', light: true },
-  { id: 'gruvbox', name: 'Gruvbox' },
-  { id: 'hackerman', name: 'Hackerman' },
-  { id: 'kanagawa', name: 'Kanagawa' },
-  { id: 'last-horizon', name: 'Last Horizon' },
-  { id: 'lumon', name: 'Lumon' },
-  { id: 'lupine', name: 'Lupine', light: true },
-  { id: 'matte-black', name: 'Matte Black' },
-  { id: 'miasma', name: 'Miasma' },
-  { id: 'nord', name: 'Nord' },
-  { id: 'osaka-jade', name: 'Osaka Jade' },
-  { id: 'retro-82', name: 'Retro 82' },
-  { id: 'ristretto', name: 'Ristretto' },
-  { id: 'rose-pine', name: 'Rosé Pine', light: true },
-  { id: 'solitude', name: 'Solitude' },
-  { id: 'tokyo-night', name: 'Tokyo Night' },
-  { id: 'vantablack', name: 'Vantablack' },
-  { id: 'white', name: 'White', light: true },
-]
+import { SITE_THEMES } from './site-themes.ts'
+export { SITE_THEMES, type SiteTheme } from './site-themes.ts'
 
 export const DEFAULT_THEME = 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
-/** Ask the mounted ThemePicker to open (footer link, welcome notice). */
+/** Ask the mounted ThemePicker to open (footer link, menu). */
 export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 /** Fired with detail { open } whenever the picker opens or closes. */
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
-/** Set once the user has seen the picker or dismissed the welcome notice. */
-export const HINT_KEY = 'omarchy-theme-hint-seen'
 
 /** Apply the saved palette before paint, or select one matching the system color scheme.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */

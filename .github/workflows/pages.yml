@@ -32,6 +32,11 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: '3.4'
+      - run: gem install kramdown kramdown-parser-gfm --no-document
+      - run: bin/build-news
       - run: npm run build
       - run: npm run parity
       - uses: actions/upload-pages-artifact@v5
@@ -39,27 +44,6 @@ jobs:
         with:
           path: dist/client
           include-hidden-files: true
-
-  translations:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-      - uses: actions/setup-python@v7
-        with:
-          python-version: '3.13'
-      - run: npm ci
-      - run: npm run build:translations
-      - uses: actions/upload-artifact@v6
-        with:
-          name: translated-sites
-          path: dist/
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -75,3 +59,21 @@ jobs:
       - uses: actions/configure-pages@v6
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # A push to master deploys omarchy.cn through deploy-zh-cn.yml's own push
+  # trigger. A dispatched run comes from a refresh workflow instead, whose push,
+  # made with the workflow's token, started no other workflow; a dispatch is the
+  # one event that token can start, so this run starts the omarchy.cn deploy
+  # too. It waits on the checks rather than the Pages deployment, so a Pages
+  # outage does not hold omarchy.cn back.
+  # ref: https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow
+  deploy-cn:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-zh-cn.yml --repo "$GITHUB_REPOSITORY" --ref master

@@ -1,4 +1,5 @@
-import { siteUrl, t } from '../i18n/site.ts'
+import { siteUrl, contentLocale, t } from '../i18n/site.ts'
+import { SITE_THEMES } from './site-themes.ts'
 
 /**
  * The tags social sites read when a link is pasted: Open Graph for Slack,
@@ -22,11 +23,20 @@ export const SITE_URL = siteUrl
 export const SITE_DESCRIPTION =
   'The malleable OS for the age of agents. Vibe your way through every alteration, tweak, and desire.'
 
-export const OG_IMAGE = {
-  url: `${SITE_URL}/brand/omarchy-og.png`,
-  width: '1200',
-  height: '630',
-  alt: 'The Omarchy wordmark, lit out of a field of green pixels',
+/** Select by canonical path so translations share a theme and repeated builds stay stable. */
+export function socialImage(path: string) {
+  const pathname = canonicalPath(path.split(/[?#]/, 1)[0])
+  let hash = 2166136261
+  for (const char of pathname) {
+    hash = Math.imul(hash ^ char.charCodeAt(0), 16777619) >>> 0
+  }
+  const theme = SITE_THEMES[hash % SITE_THEMES.length]
+  return {
+    url: `${SITE_URL}/brand/social/${contentLocale === 'en' ? '' : `${contentLocale}/`}${theme.id}.png`,
+    width: '1200',
+    height: '630',
+    alt: `The Omarchy wordmark in the ${theme.name} theme`,
+  }
 }
 
 export interface SeoInput {
