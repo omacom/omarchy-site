@@ -1,0 +1,24 @@
+---
+import Base from '../../../../layouts/Base.astro'
+import { NewsPostPage } from '@/astro/pages/NewsPages'
+import { loadNews } from '../../../../lib/news'
+import { headProps } from '../../../../astro/head'
+import { newsPostSeo } from '../../../../astro/page-seo'
+
+export async function getStaticPaths() {
+  const posts = await loadNews()
+  return posts.map((post) => ({
+    params: { year: post.year, month: post.month, slug: post.slug },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+if (!post || post.year !== Astro.params.year || post.month !== Astro.params.month) {
+  throw new Error(`News post not found: ${Astro.params.slug}`)
+}
+const head = headProps(newsPostSeo(post), post.path)
+---
+<Base {...head}>
+  <NewsPostPage post={post} />
+</Base>
