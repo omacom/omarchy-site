@@ -70,7 +70,7 @@ const release: {
   mac?: Download & { version: string }
 } = releaseData
 const ISOS = isoLinks(release.isos, import.meta.env?.PUBLIC_ISO_ORIGIN)
-const ISO_LABEL: Record<string, string> = { aarch64: 'ARM64' }
+const ISO_LABEL: Record<string, string> = { x86_64: 'x86', aarch64: 'ARM' }
 
 const TRY = {
   mac: {
@@ -693,7 +693,7 @@ export function HomePage({ data }: { data: HomeData }) {
                         className={installButton}
                       >
                         <DownloadIcon data-icon="inline-start" />
-                        {t('Download')} {release.version}{' '}
+                        Omarchy {release.version}{' '}
                         {ideographic
                           ? `（${ISO_LABEL[arch] ?? arch}）`
                           : `(${ISO_LABEL[arch] ?? arch})`}
