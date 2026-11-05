@@ -1,0 +1,31 @@
+---
+import { locale, locales } from '@/i18n/site'
+import Base from '../../layouts/Base.astro'
+import { ManualIsland } from '@/astro/ManualIsland'
+import { ManualChapterView } from '@/components/ManualChapterView'
+import { getManualChapter, getManualToc } from '../../astro/data'
+import { headProps } from '../../astro/head'
+import { chapterSeo } from '../../astro/page-seo'
+
+export function getStaticPaths() {
+  return getManualToc()
+    .filter((entry) => entry.slug !== 'index')
+    .map((entry) => ({ params: { slug: entry.slug } }))
+}
+
+const { slug } = Astro.params
+const data = getManualChapter(slug ?? '')
+if (!data.chapter) throw new Error(`Manual chapter not found: ${slug}`)
+const head = headProps(chapterSeo(data, slug ?? ''), `/manual/${slug}/`)
+if (!locale.manual) return Astro.redirect(locales.en.domain + Astro.url.pathname, 302)
+
+---
+<Base {...head}>
+  <ManualIsland
+    client:load
+    toc={data.toc}
+    activePath={`/manual/${slug}/`}
+  >
+    <ManualChapterView data={data} />
+  </ManualIsland>
+</Base>
