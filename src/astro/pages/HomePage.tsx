@@ -125,7 +125,7 @@ const sectionLink =
   'inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0'
 
 const installNote = 'mt-2 text-[13px] leading-relaxed text-text-muted'
-const installButton = 'h-11 w-full justify-start px-4 whitespace-nowrap sm:w-64'
+const installButton = 'h-11 px-4 whitespace-nowrap'
 
 function InstallRow({
   icon: Icon,
@@ -644,7 +644,7 @@ export function HomePage({ data }: { data: HomeData }) {
               )}
             >
               <p className={installNote}>Omarchy {release.version}</p>
-              <ul className="mt-3 grid gap-4">
+              <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-5">
                 {isos.map(([arch, iso]) => (
                   <li key={arch} className="min-w-0">
                     <Button
