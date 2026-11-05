@@ -1,4 +1,5 @@
 import manualJson from '../data/manual.json'
+import pagesJson from '../data/pages.json'
 import themesJson from '../data/themes.json'
 import { loadNews } from '../lib/news'
 import type { NewsPost } from '../lib/news'
@@ -22,6 +23,7 @@ export type SearchEntry =
       text: string
     }
   | { kind: 'theme'; slug: string; title: string; meta: string; text: string }
+  | { kind: 'page'; slug: string; title: string; text: string }
 
 const ENTITIES: Record<string, string> = {
   amp: '&',
@@ -89,6 +91,22 @@ function newsEntries(posts: Array<NewsPost>): SearchEntry[] {
   }))
 }
 
+/**
+ * The standalone pages ported from their own directories (doctrine, security,
+ * teams, foundation, brand, and the rest) - one entry per page, keyed by the
+ * same path that serves it, so a hit navigates straight there.
+ */
+function pageEntries(
+  pages: Record<string, { title: string; html: string }>,
+): SearchEntry[] {
+  return Object.entries(pages).map(([slug, page]) => ({
+    kind: 'page' as const,
+    slug,
+    title: page.title,
+    text: strip(page.html),
+  }))
+}
+
 function owner(repo: string) {
   try {
     return new URL(repo).pathname.split('/').filter(Boolean)[0] ?? 'community'
@@ -117,5 +135,8 @@ export async function buildSearchIndex(): Promise<Array<SearchEntry>> {
       text: owner(theme.repo),
     })
   }
-  return [...manualPart, ...news, ...rest]
+  const pages = pageEntries(
+    pagesJson as Record<string, { title: string; html: string }>,
+  )
+  return [...manualPart, ...news, ...pages, ...rest]
 }
