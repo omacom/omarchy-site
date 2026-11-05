@@ -43,6 +43,17 @@ test('canonical and social URLs use the production site and trailing slash', () 
   )
 })
 
+test('the document head advertises the news RSS feed', () => {
+  const layout = readFileSync(
+    new URL('../layouts/Base.astro', import.meta.url),
+    'utf8',
+  )
+  assert.match(
+    layout,
+    /rel="alternate"[\s\S]*?type="application\/rss\+xml"[\s\S]*?Omarchy – \$\{t\('News'\)\}[\s\S]*?\$\{SITE_URL\}\/news\/rss\.xml/,
+  )
+})
+
 test('excerpts skip short introductions and decode prose as plain text', () => {
   assert.equal(
     excerptFromHtml(

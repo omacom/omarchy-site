@@ -1,10 +1,8 @@
 <!doctype html>
-<!-- Content source for the React site; edit the article here, preview with npm run dev. -->
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-<head><meta charset="utf-8"><title>The Manual</title></head>
-<body>
-<main>
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Windows VM</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
@@ -111,8 +109,8 @@ omarchy windows vm launch    # start and connect
 <p>You can change the resource allocation later by re-running <code>omarchy-windows-vm install</code>, which rewrites the VM’s configuration from your answers. The compose file itself now lives at <code>/var/lib/omarchy/windows/docker-compose.yml</code> and is owned by root — that is deliberate, so a process running as you cannot rewrite it and have the privileged bring-up mount your whole disk into the container. If you need to hand-edit it (for example to mount a USB device), edit it with <code>sudo</code> and see all the options on <a href="https://github.com/dockur/windows">the Dockur Windows project</a>.</p>
 
 <p>To get rid of the whole thing, use <em>Remove &gt; Windows</em> from the Omarchy menu. That deletes the VM’s disk and all its data, so make sure anything you care about is out of <code>~/Windows</code> first.</p>
+
     </article>
   </div>
-    </main>
-</body>
+</main></body>
 </html>
