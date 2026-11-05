@@ -1,18 +1,18 @@
 {
-  "checked": "2026-10-13",
+  "checked": "2026-11-05",
   "github": {
-    "stars": 44736,
-    "pullRequests": 7598,
-    "contributors": 569,
-    "commitsYear": 4041,
+    "stars": 46266,
+    "pullRequests": 9106,
+    "contributors": 624,
+    "commitsYear": 4459,
     "weeks": [
-      86, 48, 41, 51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195,
-      83, 30, 44, 27, 51, 21, 18, 38, 77, 125, 196, 261, 437, 142, 42, 30, 15,
-      35, 57, 9, 78, 230, 121, 70, 178, 42, 142, 74, 66, 75, 66, 76, 72, 98
+      51, 95, 31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195, 83, 30, 44,
+      27, 51, 21, 18, 38, 77, 125, 196, 261, 437, 142, 42, 30, 15, 35, 57, 9,
+      78, 230, 121, 70, 178, 46, 142, 75, 66, 75, 67, 82, 103, 182, 165, 215, 86
     ]
   },
   "foundation": {
-    "total": 23.5,
+    "total": 23.65,
     "steps": [
       {
         "date": "2026-08-21",
@@ -78,19 +78,24 @@
         "date": "2026-10-09",
         "amount": 23.5,
         "post": "/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-10-15",
+        "amount": 23.65,
+        "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1269158,
+    "total": 1347502,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "quattro": 454516,
-    "periods": [{ "label": "Last month", "count": 157964, "days": 30 }],
+    "quattro": 532860,
+    "periods": [{ "label": "Last month", "count": 104205, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-10-12",
-      "lastAdded": 3769,
+      "through": "2026-11-04",
+      "lastAdded": 2679,
       "countries": [
         "AD",
         "AE",

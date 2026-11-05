@@ -3,7 +3,8 @@
  * Refreshes the data snapshots that come from outside this repository:
  *   src/data/plugins.json      the marketplace's built catalogue (full field set)
  *   public/data/explorer.json  the plugin similarity map for /plugins/explore
- *   src/data/version.json      the current release, from the OS repo's releases
+ *   src/data/version.json      the current release, from the OS repo's
+ *                              releases, and its ISOs on iso.omarchy.org
  * Everything the site shows from its own files - the manual, the news, the
  * pages, the teams, the theme gallery - is read at build time by
  * scripts/port_content.py instead, so it is never behind a deploy.
@@ -19,6 +20,7 @@ import prettier from 'prettier'
 import { assetId } from './lib/asset-id.mjs'
 import { decodeCalendarText } from './lib/ical.mjs'
 import { geocodeTitle } from './lib/geocode.mjs'
+import { releaseIsos } from './lib/release-isos.mjs'
 import {
   fetchDonations,
   replaceSections,
@@ -115,7 +117,8 @@ console.log(
   `explorer.json: ${explorer.nodes?.length ?? 0} nodes, ${explorer.edges?.length ?? 0} edges, ${explorer.clusters?.length ?? 0} clusters`,
 )
 
-// Release version and ISO URL from the latest GitHub release.
+// Release version from the latest GitHub release, and its ISOs from
+// iso.omarchy.org, one per architecture that is served.
 const release = JSON.parse(
   await fetchText(
     'https://api.github.com/repos/omacom/omarchy/releases/latest',
@@ -128,23 +131,72 @@ if (!/^\d+\.\d+\.\d+$/.test(version)) {
 const versionPath = path.join(OUT, 'version.json')
 const currentRelease = JSON.parse(await readFile(versionPath, 'utf8'))
 // An ISO can be published before GitHub marks its release as latest.
-if (
+const siteVersion =
   version.localeCompare(currentRelease.version, 'en', { numeric: true }) < 0
-) {
+    ? currentRelease.version
+    : version
+if (siteVersion !== version) {
   console.log(
-    `version.json: keeping ${currentRelease.version} (GitHub latest is ${version})`,
+    `version.json: keeping ${siteVersion} (GitHub latest is ${version})`,
   )
-} else {
-  await writeFile(
-    versionPath,
-    JSON.stringify(
-      { version, isoUrl: `https://iso.omarchy.org/omarchy-${version}.iso` },
-      null,
-      1,
-    ),
-  )
-  console.log(`version.json: ${version}`)
 }
+let listed = {
+  version: siteVersion,
+  isos: await releaseIsos(siteVersion, currentRelease),
+}
+// GitHub can mark a release as latest before its ISO is uploaded. Until the
+// x86_64 ISO is served, the site keeps offering the release before it.
+if (!listed.isos.x86_64 && siteVersion !== currentRelease.version) {
+  console.log(
+    `version.json: keeping ${currentRelease.version} (no ${siteVersion} ISO served yet)`,
+  )
+  listed = {
+    version: currentRelease.version,
+    isos: await releaseIsos(currentRelease.version, currentRelease),
+  }
+}
+/** The checksum a `.sha256` file names, or null when it can't be read. */
+const sha256Of = (url) =>
+  fetch(url).then(
+    async (res) =>
+      (res.ok && /^[0-9a-f]{64}\b/.exec(await res.text())?.[0]) || null,
+    () => null,
+  )
+// The download page prints each ISO's checksum. An unread one keeps the last
+// checksum read for the same file.
+for (const [arch, iso] of Object.entries(listed.isos)) {
+  const last = currentRelease.isos?.[arch]
+  iso.sha256 =
+    (await sha256Of(`${iso.url}.sha256`)) ??
+    (last?.url === iso.url ? last.sha256 : undefined)
+}
+// The Omarchy M installer for Apple Silicon Macs: the newest app release,
+// pre-releases included, with its DMG and that DMG's checksum.
+const macReleases = await fetch(
+  'https://api.github.com/repos/omacom/omarchy-mac-installer/releases?per_page=20',
+  { headers: { accept: 'application/vnd.github+json' } },
+).then(
+  (res) => (res.ok ? res.json() : []),
+  () => [],
+)
+const macRelease = macReleases.find(
+  (r) =>
+    !r.draft &&
+    /^v\d+\.\d+\.\d+$/.test(r.tag_name) &&
+    r.assets.some((a) => a.name.endsWith('.dmg')),
+)
+const dmg = macRelease?.assets.find((a) => a.name.endsWith('.dmg'))
+const dmgSha = macRelease?.assets.find((a) => a.name === `${dmg.name}.sha256`)
+const mac = dmg && {
+  version: macRelease.tag_name.replace(/^v/, ''),
+  url: dmg.browser_download_url,
+  sha256: dmgSha ? await sha256Of(dmgSha.browser_download_url) : null,
+}
+listed.mac = mac?.sha256 ? mac : currentRelease.mac
+await writeFile(versionPath, JSON.stringify(listed, null, 1))
+console.log(
+  `version.json: ${listed.version}, ISOs for ${Object.keys(listed.isos).join(' and ')}`,
+)
 
 // Refresh GitHub figures; foundation and download announcements are maintained separately.
 const MOMENTUM = path.join(OUT, 'momentum.json')
@@ -287,10 +339,8 @@ if (CF_TOKEN && CF_ZONE) {
         : daysAgo(DOWNLOADS_CATCH_UP_DAYS),
     )
     if (start <= yesterday) {
-      const head = await fetch(
-        `https://iso.omarchy.org/omarchy-${version}.iso`,
-        { method: 'HEAD' },
-      )
+      // The x86_64 ISO is the unit a download is counted in.
+      const head = await fetch(listed.isos.x86_64?.url, { method: 'HEAD' })
       const isoBytes = Number(head.headers.get('content-length'))
       if (!(isoBytes > 1e9)) throw new Error(`odd ISO size: ${isoBytes}`)
       // Reach back far enough for the period rows even when the ledger
