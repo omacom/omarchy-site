@@ -140,11 +140,13 @@ function InstallRow({
   icon: Icon,
   title,
   lead,
+  note,
   children,
 }: {
   icon: React.ComponentType<{ className?: string }>
   title: string
   lead: string
+  note?: string
   children: React.ReactNode
 }) {
   return (
@@ -157,6 +159,7 @@ function InstallRow({
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
           {lead}
         </p>
+        {note ? <p className={cn(installNote, 'max-w-md')}>{note}</p> : null}
       </div>
       <div className="min-w-0">{children}</div>
     </div>
@@ -164,7 +167,7 @@ function InstallRow({
 }
 
 const verifyButton =
-  'relative flex size-9 shrink-0 items-center justify-center rounded-md text-text-muted transition-[background-color,color,scale] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.96] [&_svg]:size-4.5'
+  'relative flex size-7 shrink-0 items-center justify-center rounded-md text-text-muted transition-[background-color,color,scale] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.96] [&_svg]:size-4.5'
 
 /** Beside a download: copy its SHA-256, and fetch its signature when it has
  *  one. Each says what it does on hover, so the hash itself stays out of
@@ -184,7 +187,7 @@ function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
   }
 
   return (
-    <>
+    <span className="ml-2 flex items-center">
       {sha256 ? (
         <Tooltip>
           <TooltipTrigger
@@ -220,7 +223,7 @@ function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
           <TooltipContent>{t('Download the GPG signature')}</TooltipContent>
         </Tooltip>
       ) : null}
-    </>
+    </span>
   )
 }
 
@@ -690,14 +693,18 @@ export function HomePage({ data }: { data: HomeData }) {
                 lead={t(
                   'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
                 )}
+                note={
+                  release.isos.aarch64
+                    ? t(
+                        'ARM64 has preliminary support for NVIDIA DGX Spark and N1X.',
+                      )
+                    : undefined
+                }
               >
                 <p className={installNote}>Omarchy {release.version}</p>
-                <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-5">
+                <ul className="mt-3 grid w-fit gap-x-6 gap-y-3 sm:grid-cols-2">
                   {isos.map(([arch, iso]) => (
-                    <li
-                      key={arch}
-                      className="flex min-w-0 flex-wrap items-center gap-1"
-                    >
+                    <li key={arch} className="flex items-center gap-1">
                       <Button
                         size="lg"
                         nativeButton={false}
@@ -714,13 +721,6 @@ export function HomePage({ data }: { data: HomeData }) {
                     </li>
                   ))}
                 </ul>
-                {release.isos.aarch64 ? (
-                  <p className={installNote}>
-                    {t(
-                      'ARM64 has preliminary support for NVIDIA DGX Spark and N1X.',
-                    )}
-                  </p>
-                ) : null}
               </InstallRow>
 
               {release.mac ? (
@@ -731,9 +731,7 @@ export function HomePage({ data }: { data: HomeData }) {
                     'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
                   )}
                 >
-                  <p className={installNote}>
-                    Omarchy M {release.mac.version} · .dmg
-                  </p>
+                  <p className={installNote}>Omarchy M {release.mac.version}</p>
                   <div className="mt-3 flex items-center gap-1">
                     <Button
                       size="lg"
