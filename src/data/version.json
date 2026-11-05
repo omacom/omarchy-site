@@ -3,11 +3,11 @@
  "isos": {
   "x86_64": {
    "url": "https://iso.omarchy.org/omarchy-4.5.0-x86.iso",
-   "sha256": "0f7d60b1dc43b35e20d2a484be41ca7aa5cb72350130e21464c20f453d59f40a"
+   "sha256": "5d6288bc57f96f6231719830457582c846a2291985201c36a9a7d1216978b00f"
   },
   "aarch64": {
    "url": "https://iso.omarchy.org/omarchy-4.5.0-aarch64.iso",
-   "sha256": "b69455c10c76d77e70cf25b29a698f662536ed184c8523c8cbcba2c8aedda064"
+   "sha256": "c9a9dd1107c10924eeb1e885226f9884080b1ffbf227d1f7f9ad255e4cebfb17"
   }
  },
  "mac": {
