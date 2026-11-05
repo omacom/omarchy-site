@@ -18,7 +18,11 @@ This is a wonderful on-ramp for anyone arriving from macOS or Windows who isn't 
 
 ## Omarchy on Apple Silicon
 
-Our incredible [Omarchy M](/news/2026/09/introducing-omarchy-m/) team has shipped the native Mac installer. Download an app on macOS, and it'll put Omarchy right alongside it on your M1, M2, M3, or Neo MacBook. No USB stick, no terminal incantations.
+Our incredible [Omarchy M](/news/2026/09/introducing-omarchy-m/) team has shipped the native Mac installer. [Download an app](https://github.com/omacom/omarchy-mac-installer/releases) on macOS, and it'll put Omarchy right alongside it on your M1, M2, M3, or Neo MacBook. No USB stick, no terminal incantations. Prefer Homebrew? That's one line:
+
+```
+brew install omacom/mac/omarchy
+```
 
 ![The Omarchy Mac installer](omarchy-4-5-mac-installer.webp)
 
