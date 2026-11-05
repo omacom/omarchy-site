@@ -6,11 +6,11 @@ author_url: https://dhh.dk
 description: Omarchy 4.5 brings floating workspaces with a dock, native Apple Silicon installs, 50 languages, five new default apps, Superwhisper dictation, agent upgrades, and installs in under ten seconds.
 ---
 
-Omarchy 4.5 is the first big feature release since [Quattro](https://github.com/omacom/omarchy/releases/tag/v4.0.0), and it's a doozy: over 740 pull requests merged from more than 180 contributors in just twelve weeks. Tiling is still the heart of Omarchy, but now you don't have to tile at all if you'd rather not. You can install it natively on a MacBook. And it speaks 50 languages. Already on Omarchy? Run _Update > Omarchy_. New machine? [Grab it here](/#install). Let's dig in!
+Omarchy 4.5 (aka Quattro RS!) is the first big feature release since [Quattro](https://github.com/omacom/omarchy/releases/tag/v4.0.0), and it's a whopper: over 740 pull requests merged from more than 180 contributors in just twelve weeks. It now offers a traditional desktop mode next to the tiling default. You can install it natively on a M1/M2/M3/Neo MacBooks. And it speaks 50 languages. And a gazillion other features, fixes, and improvements. Already on Omarchy? Run _Update > Omarchy_. New machine? [Grab it here](/#install).
 
 ## Floating workspaces with a dock
 
-`Super + L` now cycles any workspace between dwindle tiling, scrolling, and floating. On a floating workspace, every window gets a titlebar in your theme's colors, and a dock shows your pinned apps, everything that's running, and a grid of every app installed. Drag to reorder or pin, right-click for more, and `Super + M` minimizes a window down to the dock.
+`Super + L` now cycles any workspace between tiling, scrolling, and floating. On a floating workspace, every window gets a titlebar in your theme's colors, and a dock shows your pinned apps, everything that's running, and a grid of every app installed. Drag to reorder or pin, right-click for more, and `Super + M` minimizes a window down to the dock.
 
 <video src="omarchy-4-5-floating.mp4" autoplay muted loop playsinline aria-label="Floating workspace with the dock"></video>
 
@@ -18,27 +18,25 @@ This is a wonderful on-ramp for anyone arriving from macOS or Windows who isn't 
 
 ## Omarchy on Apple Silicon
 
-The [Omarchy M](/news/2026/09/introducing-omarchy-m/) team has shipped the native Mac installer. Download an app on macOS, and it'll put Omarchy right alongside it on your M1, M2, M3, or Neo MacBook. No USB stick, no terminal incantations.
+Our incredible [Omarchy M](/news/2026/09/introducing-omarchy-m/) team has shipped the native Mac installer. Download an app on macOS, and it'll put Omarchy right alongside it on your M1, M2, M3, or Neo MacBook. No USB stick, no terminal incantations.
 
 ![The Omarchy Mac installer](omarchy-4-5-mac-installer.webp)
 
-This is what we set out to do in September: finish what Asahi started. Two months later, you can just download it. Incredible work by everyone on the team.
+This is what we set out to do in September: finish what Asahi started. Two months later, you can just download it. Amazing work by everyone on the team.
 
 And they're not stopping there. M4, M5, and M6 are all being worked on right now, so it probably won't be long until Omarchy runs on every Apple Silicon Mac.
 
 ![Omarchy on an M2 Max, M3 Air, Neo, M4 Pro, and M5 Air](omarchy-4-5-macbooks.webp)
 
-## Preliminary support for NVIDIA DGX Spark + N1X
+## ARM support for NVIDIA DGX Spark + N1X (and soon Snapdragon)
 
-Omarchy 4.5 ships its first aarch64 ISO, and with it comes preliminary support for NVIDIA's ARM machines: the DGX Spark desktop and the laptops built on the N1X, like the [Dell XPS 16 Creator Edition](https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263) and the [ASUS ProArt P14](https://eshop.asus.com/us/31148-us-cnf-auto.html). Install from the ARM64 ISO and you get the full Omarchy desktop, with the speakers, microphones, and graphics sorted out. It's still early days, so expect a few rough edges, and please report anything that breaks on [GitHub](https://github.com/omacom/omarchy/issues).
+Omarchy 4.5 ships its first ARM ISO, and with it comes preliminary support for NVIDIA's ARM machines: the DGX Spark desktop and the laptops built on the N1X, like the [Dell XPS 16 Creator Edition](https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263) and the [ASUS ProArt P14](https://eshop.asus.com/us/31148-us-cnf-auto.html). And soon we'll have support for the entire lineup of Snapdragon ARM machines as well. It's still early days, so expect a few rough edges, and please report anything that breaks on [GitHub](https://github.com/omacom/omarchy/issues).
 
 ## 50 languages and 5 input methods
 
 Omarchy now speaks 50 languages. Pick one under _Setup > Language_ (or run `omarchy language <code>`), and the menu, the desktop, and Omarchy's notifications switch immediately. The system locale follows on your next login.
 
 ![Switching languages](omarchy-4-5-languages.webp)
-
-Omarchy is downloaded from over 200 countries and territories. Now it can greet more of them in their own language.
 
 Speaking a language is only half of it, though. You also need to type it. So Omarchy now sets up proper input methods for Japanese (Mozc), Korean (Hangul), Simplified Chinese (Pinyin), Taiwan (Zhuyin), and Hong Kong (Cangjie), right from the installer or later under _Setup > Keyboard_. Each one comes with the right fonts for its character forms, the candidate window follows your theme, and `Super + I` switches between your input languages. Hangul, Zhuyin, and Cangjie keep their keys in the standard positions even if you type Latin on Dvorak, Colemak, or AZERTY, just like on Windows and macOS. And tapping Shift on its own steps out of an input method into Latin letters and back again, the way Sogou, Microsoft Pinyin, and macOS work.
 
