@@ -1,2 +1,9 @@
-OMARCHY_REF=dev
-eval "$(curl -fsSL https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/dev/boot.sh)"
+#!/bin/bash
+
+# Omarchy installs from its ISO. The online installer this script used to
+# fetch only exists on the 3.x dev branch, so it only says where to go
+# instead. It ends on false rather than exit, so a shell that evals it fails
+# but stays open.
+echo "Omarchy installs from its ISO now. Download it at https://omarchy.org/#install," >&2
+echo "then pick a channel under Update > Channel in the Omarchy menu." >&2
+false
