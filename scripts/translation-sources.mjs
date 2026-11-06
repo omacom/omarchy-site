@@ -149,11 +149,13 @@ export function collectSources(root = process.cwd()) {
     readJson('src/data/pages.json', {}),
   )) {
     // Teams is fully React-rendered. Meetups still imports its authored rules,
-    // but replaces the old calendar and page heading with React components.
+    // but uses its own heading and SEO rather than the imported metadata.
     if (slug === 'teams') continue
-    if (slug !== 'meetups') add(page.title)
-    add(page.seoTitle)
-    add(page.description)
+    if (slug !== 'meetups') {
+      add(page.title)
+      add(page.seoTitle)
+      add(page.description)
+    }
     const pageHtml =
       slug === 'meetups'
         ? (page.html ?? '').replace(
