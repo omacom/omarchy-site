@@ -1,18 +1,18 @@
 <p>Apple teeb suurepärast riistvara. Alati on teinud (välja arvatud see üks kord liblikklaviatuuriga). Ja paljud inimesed, kes Omarchysse saabuvad, saabuvad Macilt. Paljud neist tahaksid masina alles hoida ja operatsioonisüsteemist lahti saada. Nii et me lõpetame selle, mida Asahi alustas: Omarchy jooksmas kaunilt Apple Siliconil, minimaalse seadistusjamaga.</p>
 
-<p>Selle töö taga on juba meeskond. Täna teeme selle ametlikuks: <a href="/teams/#m">Omarchy M</a>, meie meeskond Apple Siliconiga Macidele (pluss mõned liikmed, kes hoiavad vanemaid Mace hõlmas).</p>
+<p>Selle töö taga on juba meeskond. Täna teeme selle ametlikuks: <a href="/teams/#m">Omarchy M</a>, meie meeskond Apple Siliconiga Macidele (pluss mõned liikmed, kes tegelevad ka vanemate Macidega).</p>
 
 <p>Lubage mul liikmeid tutvustada.</p>
 
-<p><strong>Installija.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> ehitab <a href="https://github.com/maralcbr/omarchy-mx-mac">natiivset Maci installijat</a>. Laadid macOS-is alla rakenduse, see toob allkirjastatud Omarchy väljalaske, lõikab partitsioonid välja ja buutib sind Omarchysse sinu olemasoleva macOS-i kõrvale. Ei USB-pulka, ei loitse terminalis. Ta tegi ka versiooni, millega välimised monitorid hakkasid USB-C kaudu tööle.</p>
+<p><strong>Installija.</strong> <a href="https://x.com/maralcbr">Marcelo Alcantara</a> ehitab <a href="https://github.com/maralcbr/omarchy-mx-mac">natiivset Maci installijat</a>. Laadid macOS-is alla rakenduse, see toob allkirjastatud Omarchy väljalaske, loob partitsioonid ja buutib sind Omarchysse sinu olemasoleva macOS-i kõrvale. Ei USB-pulka, ei loitse terminalis. Ta tegi ka versiooni, millega välised monitorid hakkasid USB-C kaudu tööle.</p>
 
-<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> on aasta aega hooldanud <a href="https://github.com/omacom/omarchy-mac">Omarchy Maci</a>, tuues Omarchy M1- ja M2-masinatesse ammu enne, kui midagi sellest ametlik oli, ja ehitades selle ümber üle 800 inimesega Discordi kogukonna. <a href="https://x.com/bi9kahuna">Scott Jones</a> on selle projekti teine pool installi Linuxi-poolel. Ta sai hiljuti M3 Airi ekraani jooksma Apple'i riistvaralisele ekraanikontrollerile, mis viis selle masina ühe ööga kasutuskõlbmatust kasutatavaks.</p>
+<p><strong>Omarchy Mac.</strong> <a href="https://x.com/tiredkebab">Naeem Malik</a> on aasta aega hooldanud <a href="https://github.com/omacom/omarchy-mac">Omarchy Maci</a>, tuues Omarchy M1- ja M2-masinatesse ammu enne, kui midagi sellest ametlik oli, ja ehitades selle ümber üle 800 inimesega Discordi kogukonna. <a href="https://x.com/bi9kahuna">Scott Jones</a> on selle projekti teine pool installi Linuxi-poolel. Ta sai hiljuti M3 Airi ekraani tööle Apple'i riistvaralise ekraanikontrolleriga, mis viis selle masina ühe ööga kasutuskõlbmatust kasutatavaks.</p>
 
-<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> ehitas <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: tõeline Omarchy töölaud jooksmas natiivse, riistvaraliselt kiirendatud rakendusena sinu Macil, kaamera, heli, lõikelaua ja jagatud kaustaga läbi juhtmestatud. Midagi partitsioneerida pole. Laadi lihtsalt alla ja vaata, milles kisa on.</p>
+<p><strong>Try Omarchy.</strong> <a href="https://x.com/martiano">Eduardo Martinez</a> ehitas <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a>: tõeline Omarchy töölaud jooksmas natiivse, riistvaraliselt kiirendatud rakendusena sinu Macil, kaamera, heli, lõikelaua ja jagatud kausta toega. Midagi partitsioneerida pole. Laadi lihtsalt alla ja vaata, milles kisa on.</p>
 
 <p><strong>Paketid.</strong> <a href="https://x.com/riverleaf88">Shun Li</a> hoolitseb, et kõik, mida Omarchy vajab, oleks olemas <a href="https://github.com/riverscn/omarchy-pkgs-aarch64">aarch64 paketina</a>, koos üldiste ARM64 kettapiltidega virtuaalmasinatele ja külalistööriistadega, mis muudavad need meeldivaks kasutada.</p>
 
-<p><strong>Draiverid ja kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> toob üles Neo ja ehitab aluseid, millest ülejäänud meeskond lähtub. Ta arendab SPTM-i emulaatorit, mis võimaldab jälgida macOS-i M4 ja uuematel kiipidel. Need jäljed on hädavajalikud ekraanide, GPU-de, heli, traadita side ja Bluetoothi tööle saamiseks. <a href="https://x.com/buildwithdjdev">Dj</a> kirjutab GPU draivereid ja sai Touch ID tööle, rääkides otse Secure Enclave'iga. <a href="https://x.com/acelogic_">Miguel Cruz</a> on spetsialiseerunud M5 tööle: ta pöördprojekteeris Apple'i patenteeritud N1 kiibi ning sai selle Wi-Fi ja Bluetoothi Linuxis tööle. Ta on panustanud ka riistvaralist video kodeerimist ja dekodeerimist, Bluetoothi ning töölaua täiustusi Neo peal. <a href="https://x.com/LiamRay1O">Liam</a> toob Neo peal üles puuteplaadi, toitehalduse, kõlarid ja kõrvaklapiväljundi, kusjuures Ryani macOS-i jäljed pakuvad hädavajalikku alustööd. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> hooldab M4 tuge ja puhtalt uuesti kirjutatud (clean-room) lahendusi ning töötab integratsiooni ja pakendamise kallal. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> võimaldas <a href="https://github.com/subedijaidip/dp-altmode-t8112">väliseid ekraane USB-C kaudu M2 MacBook Airil</a>.</p>
+<p><strong>Draiverid ja kernel.</strong> <a href="https://github.com/RyanTheTide">Ryan Murray</a> paneb Neo tööle ja ehitab aluseid, millest ülejäänud meeskond lähtub. Ta arendab SPTM-i emulaatorit, mis võimaldab jälgida macOS-i M4 ja uuematel kiipidel. Need jäljed on hädavajalikud ekraanide, GPU-de, heli, traadita side ja Bluetoothi tööle saamiseks. <a href="https://x.com/buildwithdjdev">Dj</a> kirjutab GPU draivereid ja sai Touch ID tööle, rääkides otse Secure Enclave'iga. <a href="https://x.com/acelogic_">Miguel Cruz</a> on spetsialiseerunud M5 tööle: ta pöördprojekteeris Apple'i suletud N1 kiibi ning sai selle Wi-Fi ja Bluetoothi Linuxis tööle. Ta on panustanud ka riistvaralist video kodeerimist ja dekodeerimist, Bluetoothi ning töölaua täiustusi Neo peal. <a href="https://x.com/LiamRay1O">Liam</a> paneb Neol tööle puuteplaadi, toitehalduse, kõlarid ja kõrvaklapiväljundi, kusjuures Ryani macOS-i jäljed pakuvad hädavajalikku alustööd. <a href="https://x.com/ewninjaofficial">Eryk Wieliczko</a> hooldab M4 tuge ja originaalkoodi kasutamata loodud (clean-room) lahendusi ning töötab integratsiooni ja pakendamise kallal. <a href="https://x.com/jaidipsubedi">Jaidip Subedi</a> võimaldas <a href="https://github.com/subedijaidip/dp-altmode-t8112">väliseid ekraane USB-C kaudu M2 MacBook Airil</a>.</p>
 
 <p><strong>MLX.</strong> <a href="https://x.com/JoshuaSWarren">Joshua Warren</a> ehitab <a href="https://github.com/joshuaswarren/mlx-omarchy">mlx-omarchy</a>t, mis toob Apple'i MLX-i masinõppe raamistiku Linuxisse Apple'i GPU-del Vulkani kaudu. Su kood ütleb endiselt <code>import mlx.core as mx</code>, aga nüüd jookseb see Omarchyl.</p>
 
@@ -20,18 +20,18 @@
 
 <p>Koos on nad hirmuäratav grupp. Viisteist inimest, kes ei oodanud luba ja kes on kasutanud agente liikumaks tempos, mis oleks aasta tagasi tundunud absurdne.</p>
 
-<p>Esimese väljalaske siht on täiuslik ühilduvus M1 ja M2-ga, sealhulgas Pro ja Max variandid:</p>
+<p>Esimese väljalaske siht on täiuslik ühilduvus M1 ja M2-ga, sealhulgas Pro- ja Max-variantidega:</p>
 
 <ul>
   <li>Sujuv installija nii installi- kui ka proovimisvalikutega</li>
   <li>Täielik GPU tugi</li>
-  <li>Välimised monitorid USB-C kaudu</li>
+  <li>Välised monitorid USB-C kaudu</li>
   <li>Touch ID</li>
   <li>MLX</li>
   <li>Ketta krüpteerimine</li>
 </ul>
 
-<p>Uuemate masinate kallal töötatakse paralleelselt, kuid M1 ja M2 on koht, kuhu esmalt lipu istutame. Lisaks M-masinatele on seal väljas miljoneid vintage sülearvuteid, millest paljud on juba Apple'i uusimate macOS-i ambitsioonide juurest pensionile saadetud, ja igaüks neist on imeline Omarchy arvuti, mis ootab sündimist.</p>
+<p>Uuemate masinate kallal töötatakse paralleelselt, kuid M1 ja M2 on koht, kuhu esmalt lipu istutame. Lisaks M-masinatele on olemas miljoneid vintage sülearvuteid, millest paljud on juba Apple'i uusimate macOS-i ambitsioonide juurest pensionile saadetud, ja igaüks neist on imeline Omarchy arvuti, mis ootab sündimist.</p>
 
 <p>Alustamiseks ei pea ootama lihvitud väljalaset. <a href="https://github.com/omacom/try-omarchy">Try Omarchy</a> paneb sind minutitega vaatama tõelist töölauda oma Macil. Ja kui oled valmis pühenduma, paneb <a href="https://github.com/maralcbr/omarchy-mx-mac">installija</a> Omarchy täna macOS-i kõrvale M1-le või M2-le.</p>
 

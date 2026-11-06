@@ -20,11 +20,11 @@
     "sourceHash": "77a532e3645bf5ed7851c46ae06e0247799ee67cec98a6971a2500901c09a536"
   },
   "omacom-foundation-accelerates-spending-goals": {
-    "title": "Το Omacom Foundation επιταχύνει τους στόχους δαπανών του",
+    "title": "Το Omacom Foundation επισπεύδει τις δαπάνες του",
     "sourceHash": "40d10806f7a90648e312d9bdc550b3d6c2455062faa6646020bd835b5d594225"
   },
   "omacom-foundation-secures-tokens-from-leading-labs": {
-    "title": "Το Omacom Foundation εξασφαλίζει 1,8 εκατ. USD σε tokens από κορυφαία labs",
+    "title": "Το Omacom Foundation εξασφαλίζει 1,8 εκατ. USD σε tokens από κορυφαία εργαστήρια",
     "sourceHash": "c329b55bcb9b4b833f9d352944145ac5650e7bfa95dedf4233769240ffd0fa89"
   },
   "omacom-foundation-to-be-premier-quickshell-sponsor": {
@@ -142,5 +142,17 @@
   "greptile-joins-as-a-distinguished-corporate-patron": {
     "title": "Η Greptile γίνεται Διακεκριμένος εταιρικός υποστηρικτής",
     "sourceHash": "4ffd32894f47dd50753b4c36bfa50523e7f4632d081797ba871158a416ea2387"
+  },
+  "omacom-foundation-hires-hancore": {
+    "title": "Το Omacom Foundation προσλαμβάνει τον HANCORE ως επικεφαλής σχεδιασμού και κοινότητας",
+    "sourceHash": "7beda83026b2720160590af5cac11b52d2554413f9724f3ec34e9b8c0e7d11f7"
+  },
+  "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
+    "title": "Ο Marcelo Alcantara και ο Birk Skyum εντάσσονται στην Omarchy Core",
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
+  },
+  "omarchy-4-5": {
+    "title": "Το Omarchy 4.5 αιωρείται, μιλάει 50 γλώσσες και τρέχει στο Mac σου",
+    "sourceHash": "dd592006d6438aee85ff9774154db1b591c5c637cc3b1588a033064d3680d5f0"
   }
 }

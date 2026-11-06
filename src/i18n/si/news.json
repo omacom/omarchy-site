@@ -68,7 +68,7 @@
     "sourceHash": "c8398860f4f9b8c8ccf40853ac6ac6edd9b7c6677dc55f76b8e0da7d8732d691"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
-    "title": "Omacom Foundation Hyprlandහි සුවිශේෂී අනුග්‍රාහකයා වීමට නියමිතයි",
+    "title": "Omacom Foundation Hyprlandහි එකම අනුග්‍රාහකයා වීමට නියමිතයි",
     "sourceHash": "524022d62a6e34bbbc189419752844e27e0cfa2b88cffb0107e302d80c3d6265"
   },
   "the-first-plugin-competition": {
@@ -124,7 +124,7 @@
     "sourceHash": "f529ba4841ab631a5e7c03a4cc95e4c53fca804b6ad5b8203092365c5cfca284"
   },
   "omacom-foundation-to-be-premier-sponsor-of-0xsero": {
-    "title": "දේශීය AI පිළිබඳ 0xSeroගේ වැඩවල ප්‍රමුඛ අනුග්‍රාහකයා වීමට Omacom Foundation නියමිතයි",
+    "title": "ස්ථානීය AI පිළිබඳ 0xSeroගේ වැඩවල ප්‍රමුඛ අනුග්‍රාහකයා වීමට Omacom Foundation නියමිතයි",
     "sourceHash": "3f625eef4d2f3826ca59ea448abf415af9ff7774f887309f57e81bf8334382d7"
   },
   "omarchy-launches-bug-bounty-program-on-hackerone": {
@@ -142,5 +142,13 @@
   "greptile-joins-as-a-distinguished-corporate-patron": {
     "title": "Greptile විශිෂ්ට ආයතනික අනුග්‍රාහකයෙකු ලෙස එක්වෙයි",
     "sourceHash": "4ffd32894f47dd50753b4c36bfa50523e7f4632d081797ba871158a416ea2387"
+  },
+  "omacom-foundation-hires-hancore": {
+    "title": "Omacom Foundation විසින් HANCORE නිර්මාණ සහ ප්‍රජා ප්‍රධානියා ලෙස බඳවා ගනියි",
+    "sourceHash": "7beda83026b2720160590af5cac11b52d2554413f9724f3ec34e9b8c0e7d11f7"
+  },
+  "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
+    "title": "Marcelo Alcantara සහ Birk Skyum Omarchy Core වෙත එක් වෙති",
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
   }
 }

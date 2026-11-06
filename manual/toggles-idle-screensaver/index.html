@@ -87,7 +87,7 @@
     </tr>
     <tr>
       <td>Silence notifications</td>
-      <td><code>Super + Ctrl + ,</code></td>
+      <td><code>Super + Ctrl + Alt + ,</code></td>
       <td><code>omarchy toggle notification silencing</code></td>
     </tr>
     <tr>
@@ -142,6 +142,8 @@
 
 <p><em>Appearance</em> holds the menu bar and animations, plus a few things that aren’t <code>omarchy toggle</code> commands but behave the same: battery percentage in the bar, the default workspace layout, and under <em>Windows</em>, window gaps (<code>Super + Shift + Backspace</code>) and the 1-window square aspect (<code>Super + Ctrl + Backspace</code>).</p>
 
+<p>When Hyprland has no GPU to draw with and renders on the CPU instead (llvmpipe), as on Macs whose GPU isn’t supported yet, in most virtual machines, or when a graphics driver fails to load, Omarchy turns off animations, blur and shadows for that session and tells you so once with a notification. <em>Appearance &gt; Animations On</em> brings them back, and Omarchy remembers that for later sessions too.</p>
+
 <p>Most of these are just a flag file under <code>~/.local/state/omarchy/toggles/</code>. If you want to branch on one in a script, <code>omarchy-toggle-enabled</code> gives you an exit code instead of making you go looking:</p>
 
 <pre><code class="language-bash">omarchy-toggle-enabled screensaver-off &amp;&amp; echo "screensaver is off"
@@ -171,7 +173,7 @@
 
 <h3 id="do-not-disturb">Do not disturb <a class="manual__heading-link" href="#do-not-disturb" aria-label="Link to this section">#</a></h3>
 
-<p><code>Super + Ctrl + ,</code> silences notifications. No toasts pop up while it’s on, and the crossed-out bell indicator sits in the bar to remind you why the desktop has gone quiet.</p>
+<p><code>Super + Ctrl + Alt + ,</code> silences notifications. No toasts pop up while it’s on, and the crossed-out bell indicator sits in the bar to remind you why the desktop has gone quiet.</p>
 
 <p>Nothing is lost, though. Silenced notifications are held back: put the last few back on screen with <code>Super + Shift + Alt + ,</code>. See <a href="../notices/">notices</a> for the rest.</p>
 
@@ -204,7 +206,7 @@
 
 <p>You can start it on demand from <em>System &gt; Screensaver</em> (<code>Super + Esc</code>), which forces it up even if you’ve turned the idle screensaver off. There’s no hotkey bound to it by default.</p>
 
-<p><code>omarchy toggle screensaver</code> is what turns the idle one off, if you’d rather go straight from working to locked. It needs a terminal it knows how to configure — Alacritty, Foot, Ghostty, or Kitty — and will tell you so if your default terminal is something else.</p>
+<p><code>omarchy toggle screensaver</code> is what turns the idle one off, if you’d rather go straight from working to locked. Any key, click, scroll or mouse movement closes it.</p>
 
 <p>The logo it draws is yours to change, under <em>Appearance &gt; Branding &gt; Screensaver</em>. Upload a png or svg and Omarchy converts it to ASCII. See <a href="../branding/">branding</a>.</p>
 

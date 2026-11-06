@@ -8,7 +8,7 @@
     "sourceHash": "50b9e588ad6c9188d1b9c8bf4f8a3de18ff1be21890f8732904c6b6e0dce0687"
   },
   "digitalocean-joins-as-founding-corporate-patron": {
-    "title": "DigitalOcean junta-se como Patrono empresarial fundador com 3 milhões USD",
+    "title": "DigitalOcean junta-se como Mecenas empresarial fundador com 3 milhões USD",
     "sourceHash": "382fc59b20eb8b44aeb6c662af4c200a88b68625e903049706719a1ea76044e7"
   },
   "omacom-foundation-hires-outfoxxed": {
@@ -32,7 +32,7 @@
     "sourceHash": "40d10806f7a90648e312d9bdc550b3d6c2455062faa6646020bd835b5d594225"
   },
   "omacom-patronage-is-open-to-everyone": {
-    "title": "O patronato Omarchy está agora aberto a todos",
+    "title": "O mecenato Omarchy está agora aberto a todos",
     "sourceHash": "77a532e3645bf5ed7851c46ae06e0247799ee67cec98a6971a2500901c09a536"
   },
   "omacom-foundation-hires-krzysztof-wilczynski": {
@@ -44,11 +44,11 @@
     "sourceHash": "16e2f413427daf42a7fea2c0e2e61f2d1b7494a31bb623a955e4c6eb5b39e1da"
   },
   "omacom-foundation-reaches-13-million": {
-    "title": "A Omacom Foundation chega aos 13 milhões USD com quatro Patronos de destaque",
+    "title": "A Omacom Foundation chega aos 13 milhões USD com quatro Mecenas de destaque",
     "sourceHash": "b03661a31205b442c86c648a81a19ddf0febbafe3aba4819cb45f09456da20ef"
   },
   "1password-and-37signals-become-distinguished-corporate-patrons": {
-    "title": "1Password e 37signals tornam-se Patronos empresariais de destaque",
+    "title": "1Password e 37signals tornam-se Mecenas empresariais de destaque",
     "sourceHash": "241e19caba4825a49e126d5210f97ecb44ba7c0d334d77514a4d63dbe4b8a96b"
   },
   "omacom-foundation-welcomes-brian-armstrong-and-yunjie-dai": {
@@ -104,11 +104,11 @@
     "sourceHash": "22e41010ddffe0a254817dee505e1e1d6fee930e8265804a63d0861ce18868b3"
   },
   "brian-cartmell-and-american-cloud-join-as-open-patronage-doubles": {
-    "title": "Brian Cartmell e American Cloud juntam-se e o patronato aberto duplica!",
+    "title": "Brian Cartmell e American Cloud juntam-se e o mecenato aberto duplica!",
     "sourceHash": "2fe9b8d3976c24f11fc38e764fa9ee37dd5e7a73187555688c9e535ed9762d36"
   },
   "orcarouter-joins-as-a-distinguished-corporate-patron": {
-    "title": "OrcaRouter junta-se como Patrono empresarial de destaque",
+    "title": "OrcaRouter junta-se como Mecenas empresarial de destaque",
     "sourceHash": "c6866592d6a537c584b7c1fa69da88d05a3cdc6be335b5b1dfb1328caf2a592c"
   },
   "introducing-omarchy-dragon": {
@@ -116,7 +116,7 @@
     "sourceHash": "7d80f8f4d722b2eca804c794058ea56ffab72bf145fab5aa76a083e8b41704c1"
   },
   "alibaba-cloud-joins-as-founding-corporate-patron": {
-    "title": "Alibaba Cloud junta-se como Patrono empresarial fundador com 3 milhões USD",
+    "title": "Alibaba Cloud junta-se como Mecenas empresarial fundador com 3 milhões USD",
     "sourceHash": "6e9a4deec8e7e262ef6e7da4bcdf871b484f416ef49206500ff64ccb0d4ea8ea"
   },
   "omacom-foundation-to-be-premier-sponsor-of-0xsero": {
@@ -132,15 +132,23 @@
     "sourceHash": "09e834cfd5c67b5c1b5434c4921b506f7fc73e736d7fdf37b575ed1d1483dc2c"
   },
   "spacexai-joins-as-founding-corporate-patron": {
-    "title": "SpaceXSI junta-se como Patrono empresarial fundador com 1,5 milhões USD em tokens Grok",
+    "title": "SpaceXSI junta-se como Mecenas empresarial fundador com 1,5 milhões USD em tokens Grok",
     "sourceHash": "4249ba562d91dcc6fffcd175e7e22ee77abdc1808ba6329339c04624e25a43b0"
   },
   "namespace-joins-as-a-distinguished-corporate-patron": {
-    "title": "Namespace junta-se como Patrono empresarial de destaque",
+    "title": "Namespace junta-se como Mecenas empresarial de destaque",
     "sourceHash": "e4e14b2fc8e25a6b929f62e97e61ecce7e0754f3dca5933046b4c7405b0c27ab"
   },
   "greptile-joins-as-a-distinguished-corporate-patron": {
-    "title": "Greptile junta-se como Patrono empresarial de destaque",
+    "title": "Greptile junta-se como Mecenas empresarial de destaque",
     "sourceHash": "4ffd32894f47dd50753b4c36bfa50523e7f4632d081797ba871158a416ea2387"
+  },
+  "omacom-foundation-hires-hancore": {
+    "title": "A Omacom Foundation contrata HANCORE como Responsável de Design e Comunidade",
+    "sourceHash": "7beda83026b2720160590af5cac11b52d2554413f9724f3ec34e9b8c0e7d11f7"
+  },
+  "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
+    "title": "Marcelo Alcantara e Birk Skyum juntam-se à Omarchy Core",
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
   }
 }

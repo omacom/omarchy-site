@@ -8,7 +8,7 @@
     "sourceHash": "b03661a31205b442c86c648a81a19ddf0febbafe3aba4819cb45f09456da20ef"
   },
   "quattro-crosses-200000-iso-downloads": {
-    "title": "Omarchy Quattro ISO yuklashlari 200 000 dan oshdi",
+    "title": "Omarchy Quattro ISO yuklab olishlari 200 000 dan oshdi",
     "sourceHash": "16e2f413427daf42a7fea2c0e2e61f2d1b7494a31bb623a955e4c6eb5b39e1da"
   },
   "omacom-foundation-hires-krzysztof-wilczynski": {
@@ -48,7 +48,7 @@
     "sourceHash": "207606c7117d8f36469eb2ef0e90fa4637af8881fb8a5ea181c5780396815785"
   },
   "100000-downloads-in-a-week": {
-    "title": "Omarchy bir haftada 100 000 yuklashdan oshdi",
+    "title": "Omarchy bir haftada 100 000 yuklab olishdan oshdi",
     "sourceHash": "21ee90c6eef09c337db3b2139e6c6a8863a58ab874b1a48392680ea316a64dff"
   },
   "the-first-plugin-competition-winners": {
@@ -104,7 +104,7 @@
     "sourceHash": "c251b6705d74e07cde8d9e7519e47231ebdd817b9853c813a46954ccad833f35"
   },
   "brian-cartmell-and-american-cloud-join-as-open-patronage-doubles": {
-    "title": "Brian Cartmell va American Cloud safiga qoʻshildi — ochiq homiylik ikki baravar oshdi!",
+    "title": "Brian Cartmell va American Cloud homiylar safiga qoʻshildi — ochiq homiylik ikki baravar oshdi!",
     "sourceHash": "2fe9b8d3976c24f11fc38e764fa9ee37dd5e7a73187555688c9e535ed9762d36"
   },
   "orcarouter-joins-as-a-distinguished-corporate-patron": {
@@ -124,11 +124,11 @@
     "sourceHash": "f529ba4841ab631a5e7c03a4cc95e4c53fca804b6ad5b8203092365c5cfca284"
   },
   "omacom-foundation-to-be-premier-sponsor-of-0xsero": {
-    "title": "Omacom Foundation 0xSeroʻning mahalliy AI boʻyicha ishlariga bosh homiy boʻladi",
+    "title": "Omacom Foundation 0xSeroʼning mahalliy AI boʻyicha ishlariga bosh homiy boʻladi",
     "sourceHash": "3f625eef4d2f3826ca59ea448abf415af9ff7774f887309f57e81bf8334382d7"
   },
   "omarchy-launches-bug-bounty-program-on-hackerone": {
-    "title": "Omarchy HackerOneʼda 100 000 USD lik bug bounty dasturini ishga tushirdi",
+    "title": "Omarchy HackerOneʼda 100 000 USD lik bug bounty dasturini ishga tushirdi",
     "sourceHash": "09e834cfd5c67b5c1b5434c4921b506f7fc73e736d7fdf37b575ed1d1483dc2c"
   },
   "spacexai-joins-as-founding-corporate-patron": {
@@ -142,5 +142,13 @@
   "greptile-joins-as-a-distinguished-corporate-patron": {
     "title": "Greptile Taniqli Korporativ Homiy sifatida qoʻshildi",
     "sourceHash": "4ffd32894f47dd50753b4c36bfa50523e7f4632d081797ba871158a416ea2387"
+  },
+  "omacom-foundation-hires-hancore": {
+    "title": "Omacom Foundation HANCOREni Dizayn va hamjamiyat boʻyicha rahbar lavozimiga ishga oldi",
+    "sourceHash": "7beda83026b2720160590af5cac11b52d2554413f9724f3ec34e9b8c0e7d11f7"
+  },
+  "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
+    "title": "Marcelo Alcantara va Birk Skyum Omarchy Core jamoasiga qoʻshildi",
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
   }
 }

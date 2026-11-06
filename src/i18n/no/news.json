@@ -32,7 +32,7 @@
     "sourceHash": "110a8020edd04bf79cf6015e054a690e608b75d4f135a716fa529a38d3dc465a"
   },
   "quattro-crosses-200000-iso-downloads": {
-    "title": "Omarchy Quattro passerer 200 000 ISO-nedlastinger",
+    "title": "Omarchy Quattro passerer 200 000 ISO-nedlastinger",
     "sourceHash": "16e2f413427daf42a7fea2c0e2e61f2d1b7494a31bb623a955e4c6eb5b39e1da"
   },
   "omacom-foundation-reaches-13-million": {
@@ -52,7 +52,7 @@
     "sourceHash": "88bafa2c7109cc1a4f08bd79badb5a123bd8bc926e0d6991d6c10d9c02e4d14d"
   },
   "100000-downloads-in-a-week": {
-    "title": "Omarchy passerer 100 000 nedlastinger på en uke",
+    "title": "Omarchy passerer 100 000 nedlastinger på en uke",
     "sourceHash": "21ee90c6eef09c337db3b2139e6c6a8863a58ab874b1a48392680ea316a64dff"
   },
   "introducing-omarchy-air": {
@@ -128,7 +128,7 @@
     "sourceHash": "3f625eef4d2f3826ca59ea448abf415af9ff7774f887309f57e81bf8334382d7"
   },
   "omarchy-launches-bug-bounty-program-on-hackerone": {
-    "title": "Omarchy lanserer bug bounty-program på HackerOne med 100 000 USD i dusører",
+    "title": "Omarchy lanserer bug bounty-program på HackerOne med 100 000 USD i dusører",
     "sourceHash": "09e834cfd5c67b5c1b5434c4921b506f7fc73e736d7fdf37b575ed1d1483dc2c"
   },
   "spacexai-joins-as-founding-corporate-patron": {
@@ -142,5 +142,17 @@
   "greptile-joins-as-a-distinguished-corporate-patron": {
     "title": "Greptile blir med som Distinguished Corporate Patron",
     "sourceHash": "4ffd32894f47dd50753b4c36bfa50523e7f4632d081797ba871158a416ea2387"
+  },
+  "omacom-foundation-hires-hancore": {
+    "title": "Omacom Foundation ansetter HANCORE som Head of Design and Community",
+    "sourceHash": "7beda83026b2720160590af5cac11b52d2554413f9724f3ec34e9b8c0e7d11f7"
+  },
+  "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
+    "title": "Marcelo Alcantara og Birk Skyum blir med i Omarchy Core",
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
+  },
+  "omarchy-4-5": {
+    "title": "Omarchy 4.5 flyter, snakker 50 språk og kjører på Mac-en din",
+    "sourceHash": "dd592006d6438aee85ff9774154db1b591c5c637cc3b1588a033064d3680d5f0"
   }
 }

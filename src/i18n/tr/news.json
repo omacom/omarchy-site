@@ -4,7 +4,7 @@
     "sourceHash": "c329b55bcb9b4b833f9d352944145ac5650e7bfa95dedf4233769240ffd0fa89"
   },
   "omacom-foundation-accelerates-spending-goals": {
-    "title": "Omacom Foundation harcama hedeflerini hızlandırıyor",
+    "title": "Omacom Foundation harcama takvimini öne çekiyor",
     "sourceHash": "40d10806f7a90648e312d9bdc550b3d6c2455062faa6646020bd835b5d594225"
   },
   "omacom-patronage-is-open-to-everyone": {
@@ -68,7 +68,7 @@
     "sourceHash": "c8398860f4f9b8c8ccf40853ac6ac6edd9b7c6677dc55f76b8e0da7d8732d691"
   },
   "omacom-foundation-to-be-exclusive-hyprland-sponsor": {
-    "title": "Omacom Foundation, Hyprland’in özel sponsoru oluyor",
+    "title": "Omacom Foundation, Hyprland’in münhasır sponsoru oluyor",
     "sourceHash": "524022d62a6e34bbbc189419752844e27e0cfa2b88cffb0107e302d80c3d6265"
   },
   "the-first-plugin-competition": {
@@ -100,7 +100,7 @@
     "sourceHash": "50b9e588ad6c9188d1b9c8bf4f8a3de18ff1be21890f8732904c6b6e0dce0687"
   },
   "introducing-omarchy-m": {
-    "title": "Omarchy M'yi Tanıtıyoruz",
+    "title": "Omarchy M'i Tanıtıyoruz",
     "sourceHash": "c251b6705d74e07cde8d9e7519e47231ebdd817b9853c813a46954ccad833f35"
   },
   "brian-cartmell-and-american-cloud-join-as-open-patronage-doubles": {
@@ -142,5 +142,13 @@
   "greptile-joins-as-a-distinguished-corporate-patron": {
     "title": "Greptile, Seçkin Kurumsal Destekçi olarak katılıyor",
     "sourceHash": "4ffd32894f47dd50753b4c36bfa50523e7f4632d081797ba871158a416ea2387"
+  },
+  "omacom-foundation-hires-hancore": {
+    "title": "Omacom Foundation, HANCORE'u Tasarım ve Topluluk Başkanı olarak işe alıyor",
+    "sourceHash": "7beda83026b2720160590af5cac11b52d2554413f9724f3ec34e9b8c0e7d11f7"
+  },
+  "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
+    "title": "Marcelo Alcantara ve Birk Skyum, Omarchy Core'a katıldı",
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
   }
 }
