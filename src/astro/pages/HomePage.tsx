@@ -231,6 +231,12 @@ const videos = [
     thumb: '/assets/images/video/omarchy-quattro.webp',
   },
   {
+    id: 'ceQcmhUl3Xw',
+    title: "Omarchy 4.5 Is Here! Here's What's New",
+    channel: 'Nuno Maduro',
+    thumb: '/images/video/nunomaduro-omarchy-4-5.webp',
+  },
+  {
     id: '9SDkU5VDQEQ',
     title: 'You need to switch to Linux RIGHT NOW!!',
     channel: 'NetworkChuck',
