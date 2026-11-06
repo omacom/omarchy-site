@@ -500,6 +500,11 @@
   "name": "Itachi"
  },
  {
+  "repo": "https://github.com/fsrodrig/omarchy-japan-autumn-theme",
+  "image": "/assets/themes/japan-autumn.webp",
+  "name": "Japan Autumn"
+ },
+ {
   "repo": "https://github.com/devgtv/omarchy-japan-night-theme",
   "image": "/assets/themes/japan-night.webp",
   "name": "Japan Night"
