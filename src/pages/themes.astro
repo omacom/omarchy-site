@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro'
+import { ThemesPage } from '@/astro/pages/ThemesPage'
+import { headProps } from '../astro/head'
+import { themesSeo } from '../astro/page-seo'
+
+const head = headProps(themesSeo(), '/themes/')
+---
+<Base {...head}>
+  <ThemesPage />
+</Base>
