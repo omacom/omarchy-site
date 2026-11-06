@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro'
+import { TeamsPage } from '@/astro/pages/TeamsPage'
+import { headProps } from '../astro/head'
+import { teamsSeo } from '../astro/page-seo'
+
+const head = headProps(teamsSeo(), '/teams/')
+---
+<Base {...head}>
+  <TeamsPage />
+</Base>
