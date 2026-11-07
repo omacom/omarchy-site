@@ -530,6 +530,11 @@
   "name": "Map Quest"
  },
  {
+  "repo": "https://github.com/leolimasnts/Maplemarchy",
+  "image": "/assets/themes/maplemarchy.webp",
+  "name": "Maplemarchy"
+ },
+ {
   "repo": "https://github.com/steve-lohmeyer/omarchy-mars-theme",
   "image": "/assets/themes/mars.webp",
   "name": "Mars"
