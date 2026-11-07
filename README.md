@@ -90,6 +90,11 @@ order among the others:
 Both links point at the theme's own repository, which is where people
 install it from and where it needs to keep living.
 
+Each theme gets its own `<figure>`, even when you add two at once. If you
+resolve a merge conflict in `themes/index.html`, keep the `</figure>` and
+`<figure class="themes__theme">` lines between your entry and its neighbors.
+`npm test` checks that every entry is read and has its own figure.
+
 ### The screenshot matters
 
 The page is a grid of screenshots — that image is the whole pitch for your
