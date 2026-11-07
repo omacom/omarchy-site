@@ -12,7 +12,7 @@ That work already has a team behind it. Today we're making it official: [Omarchy
 
 Allow me to introduce the members.
 
-**The installer.** [Marcelo Alcantara](https://x.com/maralcbr) is building the [native Mac installer](https://github.com/maralcbr/omarchy-mx-mac). You download an app on macOS, it fetches the signed Omarchy release, carves out the partitions, and boots you into Omarchy alongside your existing macOS. No USB stick, no incantations in the terminal. He also cut the build that lit up external monitors over USB-C.
+**The installer.** [Marcelo Alcantara](https://x.com/maralcbr) is building the [native Mac installer](https://github.com/omacom/omarchy-mac-installer). You download an app on macOS, it fetches the signed Omarchy release, carves out the partitions, and boots you into Omarchy alongside your existing macOS. No USB stick, no incantations in the terminal. He also cut the build that lit up external monitors over USB-C.
 
 **Omarchy Mac.** [Naeem Malik](https://x.com/tiredkebab) has maintained [Omarchy Mac](https://github.com/omacom/omarchy-mac) for a year, getting Omarchy onto M1 and M2 machines long before any of this was official, and building a Discord community of over 800 people around it. [Scott Jones](https://x.com/bi9kahuna) is the other half of that project on the Linux side of the install. He recently got the M3 Air's display running on Apple's hardware display controller, which took that machine from unusable to usable in a night.
 
@@ -39,7 +39,7 @@ The target for the first release is perfect compatibility with M1 and M2, includ
 
 Newer machines are being worked on in parallel, but M1 and M2 are where we plant the flag first. In addition to the M machines, there are millions of vintage laptops out there, many of them already retired from Apple's latest macOS ambitions, and every one of them is a wonderful Omarchy computer waiting to happen.
 
-You don't have to wait for the polished release to get started. [Try Omarchy](https://github.com/omacom/try-omarchy) will have you looking at the real desktop on your Mac in minutes. And if you're ready to commit, [the installer](https://github.com/maralcbr/omarchy-mx-mac) will put Omarchy next to macOS on an M1 or M2 today.
+You don't have to wait for the polished release to get started. [Try Omarchy](https://github.com/omacom/try-omarchy) will have you looking at the real desktop on your Mac in minutes. And if you're ready to commit, [the installer](https://github.com/omacom/omarchy-mac-installer) will put Omarchy next to macOS on an M1 or M2 today.
 
 Finally, a request. If you've been working on Linux for Apple hardware, whether that's kernel drivers, firmware, packaging, installers, or machine learning, we'd love to hear from you. There's a good chance you've solved something we're still chasing, or vice versa. Get in touch at [apple@omarchy.org](mailto:apple@omarchy.org).
 

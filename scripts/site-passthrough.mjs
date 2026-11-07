@@ -34,7 +34,7 @@ export const PLUGINS_SITE = 'https://plugins.omarchy.org'
 
 export const REDIRECTS = {
   '/mac/setup/':
-    'https://raw.githubusercontent.com/omarchy-mac/omarchy-mac/quattro/bin/omarchy-mac-setup',
+    'https://raw.githubusercontent.com/omacom/omarchy-mac/quattro/bin/omarchy-mac-setup',
   '/manual/toc/': '/manual/',
 }
 
