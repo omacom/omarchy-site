@@ -18,6 +18,7 @@ import {
   ShieldIcon,
   StarIcon,
   StoreIcon,
+  XIcon,
 } from '@/components/icons'
 import { OmarchyMark } from '@/components/Brand'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
@@ -72,6 +73,7 @@ const ICONS: Record<MenuIcon, typeof PageIcon> = {
   meetups: MapPinIcon,
   teams: HeartIcon,
   discord: DiscordIcon,
+  x: XIcon,
   github: GithubIcon,
   security: ShieldIcon,
   patrons: HeartIcon,
