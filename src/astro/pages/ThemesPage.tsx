@@ -1,8 +1,14 @@
+import { useState } from 'react'
 import { t } from '@/i18n/site'
 import { PageHeading } from '@/components/PageHeading'
+import { SearchField } from '@/components/SearchField'
 import themes from '@/data/themes.json'
+import { matchesTheme } from '@/lib/theme-search'
 
 export function ThemesPage() {
+  const [query, setQuery] = useState('')
+  const noMatches = !themes.some((theme) => matchesTheme(theme.name, query))
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <PageHeading title={t('Community themes')}>
@@ -33,9 +39,24 @@ export function ThemesPage() {
         </div>
       </PageHeading>
 
+      <SearchField
+        value={query}
+        onChange={setQuery}
+        placeholder={t('Search themes')}
+        label={t('Search themes')}
+        className="mx-auto mb-8 max-w-md"
+      />
+
+      {/* Stays mounted so screen readers announce the message when it appears. */}
+      <p role="status" className="text-center text-sm text-text-secondary">
+        {noMatches ? t('No themes match') : null}
+      </p>
+
       <ul className="grid gap-x-4 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
         {themes.map((theme) => (
-          <li key={theme.name}>
+          // Hidden rather than removed, so clearing the search does not reload
+          // screenshots that have already been fetched.
+          <li key={theme.name} hidden={!matchesTheme(theme.name, query)}>
             <a
               href={theme.repo}
               className="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
