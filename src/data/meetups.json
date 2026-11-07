@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-03",
+  "refreshed": "2026-11-07",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1502,11 +1502,11 @@
       "start": "2026-11-04T08:00:00.000Z",
       "end": "2026-11-04T10:00:00.000Z",
       "timezone": "Australia/Sydney",
-      "address": "York 75, 2/75 York St, Sydney NSW 2000, Australia",
+      "address": "52 King St, Sydney NSW 2000, Australia",
       "city": "Sydney",
       "country": "AU",
       "online": false,
-      "geo": { "lat": -33.868533, "lon": 151.205886 },
+      "geo": { "lat": -33.8684698, "lon": 151.2057388 },
       "hosts": [],
       "cover": "/images/meetups/evt-uASCAbX2odjzImy-full.webp",
       "coverWidth": 800,
@@ -1681,23 +1681,6 @@
       "cover": null
     },
     {
-      "id": "evt-JBHHKJZRXrbLNGX",
-      "title": "Omarchy Singapore",
-      "url": "https://luma.com/w2adh2et",
-      "start": "2026-11-17T10:30:00.000Z",
-      "end": "2026-11-17T13:00:00.000Z",
-      "timezone": "Asia/Singapore",
-      "address": "20 Anson Rd, Singapore 079912",
-      "city": "Singapore",
-      "country": "SG",
-      "online": false,
-      "geo": { "lat": 1.2751804, "lon": 103.8456916 },
-      "hosts": [],
-      "cover": "/images/meetups/evt-JBHHKJZRXrbLNGX-full.webp",
-      "coverWidth": 800,
-      "coverHeight": 800
-    },
-    {
       "id": "evt-deNAAL5V3VjulA1",
       "title": "OMARCHY WARSAW #2",
       "url": "https://luma.com/0tsjjf2d",
@@ -1711,6 +1694,23 @@
       "geo": { "lat": 52.2329478, "lon": 20.999236000000003 },
       "hosts": [],
       "cover": "/images/meetups/evt-deNAAL5V3VjulA1-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-JBHHKJZRXrbLNGX",
+      "title": "Omarchy Singapore",
+      "url": "https://luma.com/w2adh2et",
+      "start": "2026-11-19T10:30:00.000Z",
+      "end": "2026-11-19T13:00:00.000Z",
+      "timezone": "Asia/Singapore",
+      "address": "Singapore",
+      "city": "Singapore",
+      "country": "SG",
+      "online": false,
+      "geo": { "lat": 1.2979872440179592, "lon": 103.83962067974433 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-JBHHKJZRXrbLNGX-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },
