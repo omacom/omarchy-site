@@ -460,6 +460,11 @@
   "name": "Harbor Dark"
  },
  {
+  "repo": "https://github.com/simoz/omarchy-haven-theme",
+  "image": "/assets/themes/haven.webp",
+  "name": "Haven"
+ },
+ {
   "repo": "https://github.com/randallyash/omarchy-hearthgrove-theme",
   "image": "/assets/themes/hearthgrove.webp",
   "name": "Hearthgrove"
