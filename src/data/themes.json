@@ -20,6 +20,11 @@
   "name": "Amberbyte"
  },
  {
+  "repo": "https://github.com/simoz/omarchy-another-world-theme",
+  "image": "/assets/themes/another-world.webp",
+  "name": "Another World"
+ },
+ {
   "repo": "https://github.com/leaflessbranch/omarchy-apollo-after-dark-theme",
   "image": "/assets/themes/apollo-after-dark.webp",
   "name": "Apollo After Dark"
