@@ -1,5 +1,10 @@
 [
  {
+  "repo": "https://github.com/simoz/omarchy-1800-theme",
+  "image": "/assets/themes/1800.webp",
+  "name": "1800"
+ },
+ {
   "repo": "https://github.com/leaflessbranch/omarchy-abyssal-cartographer-theme",
   "image": "/assets/themes/abyssal-cartographer.webp",
   "name": "Abyssal Cartographer"
