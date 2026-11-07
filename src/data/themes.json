@@ -495,6 +495,11 @@
   "name": "Inky Pinky"
  },
  {
+  "repo": "https://github.com/Benadict-Git/omarchy-iron-man-theme",
+  "image": "/assets/themes/iron-man.webp",
+  "name": "Iron Man"
+ },
+ {
   "repo": "https://github.com/ciancomerford21-spec/omarchy-itachi-theme",
   "image": "/assets/themes/itachi.webp",
   "name": "Itachi"
