@@ -77,9 +77,7 @@ export function MeetupMap({
   pins,
   box,
   lit,
-  chosen,
-  pickable,
-  onPickCountry,
+  withMeetups,
   active,
   onActive,
   className,
@@ -89,11 +87,8 @@ export function MeetupMap({
   box: MapBox
   /** Country codes to light: the region being looked at. */
   lit: Set<string>
-  /** The one country chosen, if any. */
-  chosen: string | null
-  /** Country codes with a meetup coming up, which a press can choose. */
-  pickable: Set<string>
-  onPickCountry: (code: string | null) => void
+  /** Country codes with a meetup coming up, drawn more prominently. */
+  withMeetups: Set<string>
   /** The meetup the reader is on, on the map or in the list. */
   active: string | null
   onActive: (id: string | null) => void
@@ -181,27 +176,18 @@ export function MeetupMap({
           }}
         >
           {mapData.countries.map((country) => {
-            const canPick = pickable.has(country.id)
-            const isChosen = chosen === country.id
+            const hasMeetup = withMeetups.has(country.id)
             return (
               <path
                 key={country.id}
                 d={country.d}
-                onClick={
-                  canPick
-                    ? () => onPickCountry(isChosen ? null : country.id)
-                    : undefined
-                }
                 className={cn(
                   'transition-[fill] duration-300 ease-out',
-                  isChosen
-                    ? 'fill-brand/40'
-                    : lit.has(country.id) && canPick
-                      ? 'fill-brand/20'
-                      : lit.has(country.id)
-                        ? 'fill-brand/8'
-                        : 'fill-surface-2',
-                  canPick && 'cursor-pointer hover:fill-brand/30',
+                  lit.has(country.id) && hasMeetup
+                    ? 'fill-brand/20'
+                    : lit.has(country.id)
+                      ? 'fill-brand/8'
+                      : 'fill-surface-2',
                 )}
                 stroke="var(--color-bg)"
                 strokeWidth={0.7 * k}

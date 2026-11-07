@@ -135,7 +135,7 @@ const PORTED: Partial<Record<string, { title: string; description: string }>> =
     security: {
       title: 'Security - Omarchy',
       description:
-        'How to report a vulnerability in Omarchy - tell the Security Team privately at security@omarchy.org - and the people credited for doing exactly that.',
+        'How to report a vulnerability in Omarchy through our HackerOne bug bounty program, or privately by email, and the people credited for doing exactly that.',
     },
     'security/credits': {
       title: 'Security Credits - Omarchy',
@@ -159,13 +159,22 @@ const PORTED: Partial<Record<string, { title: string; description: string }>> =
   }
 
 export function portedSeo(
-  page: { title: string; html: string } | null,
+  page: {
+    title: string
+    html: string
+    seoTitle?: string
+    description?: string
+  } | null,
   path: string,
 ) {
   const written = PORTED[path]
   return seo({
-    title: written?.title ?? `${page?.title ?? 'Omarchy'} - Omarchy`,
+    title:
+      page?.seoTitle ??
+      written?.title ??
+      `${page?.title ?? 'Omarchy'} - Omarchy`,
     description:
+      page?.description ??
       written?.description ??
       ((page && excerptFromHtml(page.html)) || SITE_DESCRIPTION),
     path: `/${path}`,

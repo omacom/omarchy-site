@@ -3,6 +3,7 @@ import { t } from '../i18n/site'
 import manualJson from '../data/manual.json'
 import pagesJson from '../data/pages.json'
 import pluginsJson from '../data/plugins.json'
+import { FEATURED_PLUGIN_IDS } from '../lib/featured-plugins'
 import { loadNews, summarize } from '../lib/news'
 import type { NewsPost, NewsSummary } from '../lib/news'
 import { toCatalogueEntry } from '../lib/plugin-filter'
@@ -10,7 +11,13 @@ import type { CatalogueEntry, Engagement } from '../lib/plugin-filter'
 
 export type ManualChapter = { slug: string; title: string; html: string }
 export type { NewsPost, NewsSummary }
-export type PortedPage = { title: string; html: string }
+export type PortedPage = {
+  title: string
+  html: string
+  seoTitle?: string
+  description?: string
+  presentation?: string
+}
 
 const HEADING_LINK =
   /<h([23])([^>]*)>([\s\S]*?)\s*<a class="manual__heading-link"([^>]*)>#<\/a><\/h\1>/g
@@ -67,7 +74,15 @@ const pages = pagesJson as Record<string, PortedPage>
 
 export function getPortedPage(path: string): PortedPage | null {
   const page = pages[path]
-  return page ? { title: t(page.title), html: translateHtml(page.html) } : null
+  return page
+    ? {
+        ...page,
+        title: t(page.title),
+        seoTitle: page.seoTitle ? t(page.seoTitle) : undefined,
+        description: page.description ? t(page.description) : undefined,
+        html: translateHtml(page.html),
+      }
+    : null
 }
 
 export function getPortedSlugs(): Array<string> {
@@ -76,15 +91,6 @@ export function getPortedSlugs(): Array<string> {
 
 const ZERO_STATS: Engagement = { views: 0, copies: 0, hearts: 0 }
 
-const FEATURED_PLUGIN_IDS = [
-  'akshar.radio-atlas',
-  'slcode777.omagotchi',
-  'io.github.thisisgm.omapods',
-  'jankeesvw.omasweeper',
-  'jankeesvw.time-machine',
-  'raiden-meixelysia.omarchy-pets',
-]
-
 type PluginRecord = Omit<CatalogueEntry, 'stats'>
 
 export function getPluginHighlights(): {
@@ -92,10 +98,14 @@ export function getPluginHighlights(): {
   total: number
 } {
   const all = (pluginsJson as { plugins: Array<PluginRecord> }).plugins
-  const featured = FEATURED_PLUGIN_IDS.map((id) => {
+  // The catalogue is refreshed from the marketplace on a schedule, and the
+  // marketplace delists a plugin whose repository disappears. Skip it here so
+  // a delisting never stops the site from deploying.
+  const featured = FEATURED_PLUGIN_IDS.flatMap((id) => {
     const plugin = all.find((p) => p.id === id)
-    if (!plugin) throw new Error(`Featured plugin missing: ${id}`)
-    return plugin
+    if (!plugin)
+      console.warn(`Featured plugin missing from the catalogue: ${id}`)
+    return plugin ? [plugin] : []
   })
   const top = featured.map((p) => toCatalogueEntry({ ...p, stats: ZERO_STATS }))
   return { top, total: all.length }

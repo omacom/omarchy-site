@@ -11,12 +11,17 @@ export function chapterLink(slug: string) {
     : ({ to: '/manual/$slug/', params: { slug } } as const)
 }
 
+const chapterPath = (slug: string) =>
+  slug === 'index' ? '/manual/' : `/manual/${slug}/`
+
 /** Sticky chapter navigation and the chapter content slot. */
 export function ManualLayout({
   toc,
+  activePath,
   children,
 }: {
   toc: Toc
+  activePath: string
   children: ReactNode
 }) {
   return (
@@ -24,6 +29,7 @@ export function ManualLayout({
       <div className="grid gap-12 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-x-8">
         <nav
           aria-label="Manual chapters"
+          data-manual-toc
           className="hidden self-start border-r border-border-subtle lg:sticky lg:top-[calc(var(--nav-h)+3rem)] lg:block"
         >
           {/* The scroll viewport needs a definite height to constrain its contents. */}
@@ -38,6 +44,11 @@ export function ManualLayout({
                       className: 'bg-surface-2 text-text font-medium',
                     }}
                     activeOptions={{ exact: true }}
+                    aria-current={
+                      chapterPath(entry.slug) === activePath
+                        ? 'page'
+                        : undefined
+                    }
                     title={entry.title}
                   >
                     {entry.title}

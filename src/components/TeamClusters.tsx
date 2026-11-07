@@ -6,7 +6,8 @@ import teams from '@/data/teams.json'
 import { cn } from '@/lib/utils'
 
 /** Faces shown per cluster before the rest fold into a "+N" that leads to
- *  the teams page, so a cluster stays one hand wide however the team grows. */
+ *  the teams page, so a cluster stays one hand wide however the team grows.
+ *  A lone overflow is shown as a face instead: "+1" takes the same room. */
 const MAX_FACES = 8
 
 export function TeamClusters({
@@ -49,7 +50,10 @@ export function TeamClusters({
     >
       {groups.map((team) => {
         const isOpen = open === team.id
-        const shown = team.members.slice(0, maxFaces)
+        const shown =
+          team.members.length <= maxFaces + 1
+            ? team.members
+            : team.members.slice(0, maxFaces)
         const named = shown.find((m) =>
           [picked, hovered].includes(`${team.id}/${m.name}`),
         )
