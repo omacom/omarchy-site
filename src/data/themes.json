@@ -695,6 +695,11 @@
   "name": "One Dark Pro"
  },
  {
+  "repo": "https://github.com/redeye1011/omarchy-the-origin-theme",
+  "image": "/assets/themes/the-origin.webp",
+  "name": "The Origin"
+ },
+ {
   "repo": "https://github.com/simoz/omarchy-outpost-theme",
   "image": "/assets/themes/outpost.webp",
   "name": "Outpost"
