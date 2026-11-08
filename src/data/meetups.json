@@ -1260,10 +1260,8 @@
       "country": "DO",
       "online": null,
       "geo": { "lat": 18.4713858, "lon": -69.8918436, "approximate": true },
-      "hosts": [],
-      "cover": "/images/meetups/evt-bwIotEyWDuDPayu-full.webp",
-      "coverWidth": 800,
-      "coverHeight": 800
+      "hosts": ["Cleyrol Santana Cristopher"],
+      "cover": null
     },
     {
       "id": "evt-vCYUvJpPxLYfUxv",
@@ -1551,21 +1549,19 @@
       "cover": null
     },
     {
-      "id": "evt-E0xJ81sqOj9SPBg",
-      "title": "OMARCHY Show Low, AZ",
-      "url": "https://luma.com/39voyojp",
-      "start": "2026-11-25T01:00:00.000Z",
-      "end": "2026-11-25T03:00:00.000Z",
-      "timezone": "America/Phoenix",
-      "address": "Starbucks, 421 N White Mountain Rd, Show Low, AZ 85901, USA",
-      "city": "Show Low",
-      "country": "US",
-      "online": false,
-      "geo": { "lat": 34.25343, "lon": -110.02816999999999 },
-      "hosts": [],
-      "cover": "/images/meetups/evt-E0xJ81sqOj9SPBg-full.webp",
-      "coverWidth": 800,
-      "coverHeight": 800
+      "id": "evt-uPsBGIfECd9kXxV",
+      "title": "Omarchy SF",
+      "url": "https://luma.com/ejid15jm",
+      "start": "2026-12-03T01:00:00.000Z",
+      "end": "2026-12-03T04:00:00.000Z",
+      "timezone": null,
+      "address": "Cloudflare, 101 Townsend St, San Francisco, CA 94107, USA",
+      "city": null,
+      "country": "USA",
+      "online": null,
+      "geo": { "lat": 37.7803014, "lon": -122.39072150000001 },
+      "hosts": ["Steve Derico"],
+      "cover": null
     },
     {
       "id": "evt-MwxCpSJVFMDYrGX",
