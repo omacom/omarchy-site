@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (dar vadinama Quattro RS!) yra pirmasis didelis funkcijų leidimas po <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, ir jis milžiniškas: per vos dvylika savaičių sujungta daugiau nei 740 pull request’ų iš daugiau nei 180 prisidėjusių žmonių. Dabar šalia numatytojo plytelių režimo ji siūlo ir tradicinį darbalaukio režimą. Galite ją savarankiškai įdiegti M1/M2/M3/Neo MacBook kompiuteriuose. Ir ji kalba 50 kalbų. Ir dar turi galybę kitų funkcijų, pataisymų bei patobulinimų. Jau naudojate Omarchy? Paleiskite <em>Update &gt; Omarchy</em>. Naujas kompiuteris? <a href="/#install">Atsisiųskite čia</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Plaukiojančios darbo erdvės su doku</h2>
+
+<p><code>Super + L</code> dabar perjungia bet kurią darbo erdvę tarp plytelių, slinkimo ir plaukiojančio režimų. Plaukiojančioje darbo erdvėje kiekvienas langas gauna antraštės juostą jūsų temos spalvomis, o dokas rodo prisegtas programas, viską, kas šiuo metu veikia, ir visų įdiegtų programų tinklelį. Vilkite, kad pertvarkytumėte arba prisegtumėte, dešiniuoju pelės mygtuku spustelėkite, kad pamatytumėte daugiau, o <code>Super + M</code> sumažina langą į doką.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Tai puikus įsiliejimo kelias visiems, atvykstantiems iš macOS ar Windows, kurie dar nėra pasiruošę visiškai pereiti prie plytelių režimo. Arba visiems, kurie tiesiog nori vienos darbo erdvės, kurioje langai gali laisvai išsiskleisti. Derinkite režimus kiekvienai darbo erdvei atskirai, o juosta rodo, kokį išdėstymą kiekviena jų naudoja.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy Apple Silicon platformoje</h2>
+
+<p>Mūsų neįtikėtina <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> komanda išleido savarankišką Mac diegimo programą. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Atsisiųskite programą</a> macOS sistemoje, ir ji įdiegs Omarchy šalia jos jūsų M1, M2, M3 ar Neo MacBook kompiuteryje. Nereikia jokio USB rakto, jokių terminalo užkeikimų. Labiau mėgstate Homebrew? Tai viena eilutė:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac diegimo programa" /></p>
+
+<p>Būtent tai rugsėjį ir ketinome padaryti: užbaigti tai, ką pradėjo Asahi. Po dviejų mėnesių galite tiesiog ją atsisiųsti. Nuostabus visos komandos darbas.</p>
+
+<p>Ir jie ties tuo nesustoja. M4, M5 ir M6 šiuo metu jau kuriami, tad tikriausiai netrukus Omarchy veiks kiekviename Apple Silicon Mac kompiuteryje.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy kompiuteriuose M2 Max, M3 Air, Neo, M4 Pro ir M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM palaikymas NVIDIA DGX Spark + N1X (ir netrukus Snapdragon)</h2>
+
+<p>Omarchy 4.5 išleidžia savo pirmąjį ARM ISO, o kartu su juo ateina preliminarus NVIDIA ARM kompiuterių palaikymas: DGX Spark stalinio kompiuterio ir nešiojamųjų kompiuterių, sukurtų su N1X, tokių kaip <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> ir <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. O netrukus palaikysime ir visą Snapdragon ARM kompiuterių liniją. Kol kas dar ankstyvas etapas, tad tikėkitės kelių nelygumų ir praneškite apie viską, kas sugenda, <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 kalbų ir 5 įvesties metodai</h2>
+
+<p>Dabar Omarchy kalba 50 kalbų. Pasirinkite vieną skiltyje <em>Setup &gt; Language</em> (arba paleiskite <code>omarchy language &lt;code&gt;</code>), ir meniu, darbalaukis bei Omarchy pranešimai iškart persijungs. Sistemos lokalė paseks kitą kartą prisijungus.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Kalbų perjungimas" /></p>
+
+<p>Tačiau kalbėti kalba – tik pusė darbo. Ją dar reikia ir rašyti. Todėl Omarchy dabar nustato tinkamus įvesties metodus japonų (Mozc), korėjiečių (Hangul), supaprastintai kinų (Pinyin), Taivano (Zhuyin) ir Honkongo (Cangjie) kalboms – tiesiai iš diegimo programos arba vėliau skiltyje <em>Setup &gt; Keyboard</em>. Kiekvienas jų gauna tinkamus šriftus savo rašmenų formoms, kandidatų langas seka jūsų temą, o <code>Super + I</code> perjungia jūsų įvesties kalbas. Hangul, Zhuyin ir Cangjie išlaiko savo klavišus standartinėse pozicijose, net jei lotyniškai rašote Dvorak, Colemak ar AZERTY klaviatūra, lygiai kaip Windows ir macOS. O bakstelėjus vien Shift, išeisite iš įvesties metodo į lotyniškas raides ir vėl grįšite atgal – taip, kaip veikia Sogou, Microsoft Pinyin ir macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Prisijungimas prie Wi-Fi prisijungimo portalų</h2>
+
+<p>Viešbučių, oro uostų ir kavinių Wi-Fi pagaliau tiesiog veikia. Omarchy dabar pastebi, kai tinklas nori, kad prisijungtumėte arba sutiktumėte su jo sąlygomis, prieš leisdamas jums prisijungti prie interneto. Tinklo piktograma jus įspėja, o tinklo skydelis rodo didelį mygtuką Open Captive Portal, kuris nukelia jus tiesiai į prisijungimo puslapį. Kai praeisite, viskas savaime grįš į įprastą būseną.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Prisijungimas prie prisijungimo portalo iš tinklo skydelio" width="380" /></p>
+
+<h2 id="five-new-default-apps">Penkios naujos numatytosios programos</h2>
+
+<p><strong>Hype</strong> kuria pristatymus iš vieno Markdown failo, su vaizdiniu skaidrių redaktoriumi šalia šaltinio, ir eksportuoja į PDF arba PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> pakeičia Xournal++ dokumentų tvarkymui: atidarykite PDF, įdėkite išsaugotą parašą, tekstą ir datas bei išsaugokite pasirašytą kopiją.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> nubraižo medžio žemėlapį to, kas užpildo jūsų diską, nuspalvintą pagal rūšį, išskiria talpyklas, kurias saugu atkurti, ir leidžia pažymėti, kas turi dingti.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> vienu klavišu įrašo jūsų kamerą, su tema, atitinkančia jūsų darbalaukį.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> suteikia jums nuotolinį darbalaukį per SSH. Prisijunkite prie kito Omarchy kompiuterio ir valdykite visą jo darbalaukį iš lango savajame, su skirtuku kiekvienam kompiuteriui. O kadangi jis važiuoja ant SSH, nėra nieko papildomo, ką reikėtų nustatyti ar atverti. Valdomas kompiuteris juostoje rodo nuotolinės sesijos indikatorių, tad visada aišku, kai kas nors prie jo prisijungęs.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Ir dar yra <strong>Elsewhen</strong> – pasaulio laikrodis, gyvenantis tiesiai šalia laikrodžio juostoje. Bakstelėkite miestą gaublyje, kad nustatytumėte, kur esate, ieškokite realių vietų ir įvardykite žmones, gyvenančius kiekviename mieste, kad visada žinotumėte, ar dabar tinkamas metas skambinti. Perjunkite tarp 12 ir 24 valandų klavišu <code>t</code>, tarp °F ir °C klavišais <code>Alt + T</code>, ir iškvieskite jį bet kada klavišais <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Su Monologue įrašymui ir Omacut apkarpymui nauji diegimai nebeturi OBS Studio ir Kdenlive. Lazydocker taip pat dingo iš naujų diegimų, nors Docker ir Docker Compose vis dar įtraukti. Kompiuteriai, kurie jau turi kurią nors iš jų, jas pasiliks.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Reikia dirbti su žmonėmis, gyvenančiais Office? <em>Install &gt; Service &gt; Microsoft</em> dabar nustato Outlook, Word, Excel, PowerPoint, Teams ir OneDrive kaip žiniatinklio programas. Kiekviena gauna savo langą ir paleidiklio įrašą, tad jos jaučiasi kaip namie šalia visko kito. Daugiau jokių pasiteisinimų neperjungti į Omarchy darbe!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams ir PowerPoint programoje Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper diktavimui</h2>
+
+<p>Superwhisper dabar yra numatytasis Omarchy diktavimo variklis, ir jis nustatytas iškart iš dėžės. Bakstelėkite <code>Alt + Space</code>, kad pradėtumėte kalbėti, ir dar kartą, kad sustotumėte, arba laikykite <code>Right Alt</code> kalbėjimui laikant nuspaudus. Jis neįtikėtinai greitas ir labai tikslus.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Diktavimas naudojant Superwhisper" /></p>
+
+<p>Jis prasideda debesyje, tad veikia tą pačią akimirką, kai įdiegiate, o pirmieji 10 000 žodžių yra nemokami. Tačiau galite persijungti į atsisiunčiamą modelį, kuris yra visiškai nemokamas ir veikia visiškai lokaliai, nesiųsdamas nė žodžio niekam. O jei labiau norėtumėte kito lokalaus modelio, Voxtype vis dar siūlomas kaip alternatyva.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Įdiegimas per mažiau nei dešimt sekundžių</h2>
+
+<p>Anksčiau Omarchy įdiegdavo maždaug 940 paketų vieną po kito. Naujoji F1 diegimo programa vietoj to išpakuoja iš anksto sukurtą šakninį atvaizdą ir ant viršaus prideda tik šio kompiuterio paketus. Tai bet kuriame kompiuteryje sutrumpina diegimo laiką maždaug perpus.</p>
+
+<p>O greitoje aparatinėje įrangoje tai absurdiška. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> iš AMD pasiekė pasaulio rekordą – visiškas Omarchy įdiegimas per <strong>7 sekundes</strong> jo AMD nešiojamajame kompiuteryje. <a href="https://x.com/dhh/status/2117222836620202375">Septynios sekundės!</a> Prisimenu, kai penkios minutės atrodė ambicingas tikslas.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy įdiegta per 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Greičiau visur kitur</h2>
+
+<p>Ne tik diegimo programa tapo greitesnė. Paleidimas nebestringa ties binfmt registracija. Temų parinkiklis atsidaro iškart, o ne po ketvirčio sekundės. Meniu ir skydeliai atsidaro tiesiai iš Hyprland sparčiųjų klavišų, praleisdami 60 ms, kurių anksčiau reikėdavo procesui paleisti. Lėčiausi Omarchy meniu patikrinimai sumažėjo nuo 200 ms iki 16 ms, naujas terminalas rodo eilutę 30 ms anksčiau, o visas darbalaukis dabar reaguoja į pokyčius, užuot jų klausęsis. Net atsijungimas, paleidimas iš naujo ir išjungimas įvyksta tą akimirką, kai jūsų programos baigia užsidaryti.</p>
+
+<h2 id="agent-upgrades">Agentų atnaujinimai</h2>
+
+<p>Omarchy yra operacinė sistema su agentais, o 4.5 atneša didelį atnaujinimų ratą darbui su agentais. Agentų skydelis dabar seka 23 agentus ir teikėjus, palyginti su 6 anksčiau, įskaitant Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter ir Ollama. Kiekvienas limitas gauna savo matuoklį su laiku iki jo atstatymo, tad galite tiksliai matyti, kiek kelio jums dar liko. O Grok dabar yra visavertis teikėjas šalia Claude ir Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Agentų skydelis su keliomis Claude ir Codex prenumeratomis" width="380" /></p>
+
+<p>O jūsų agentas visada yra už vieno klavišo paspaudimo. <code>Super + ~</code> nuleidžia Quake stiliaus konsolę virš pritemdyto darbalaukio, ir pirmą kartą ją atidarę, ji paleidžia jūsų numatytąjį agentą. Paspauskite dar kartą, kad ją paslėptumėte, ir jūsų sesija bus tiksliai ten, kur ją palikote.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Quake stiliaus konsolė, kurioje veikia agentas virš pritemdyto darbalaukio" /></p>
+
+<p>Jei žongliruojate daugiau nei viena prenumerata, dabar tame pačiame kompiuteryje galite turėti kelis Claude, Codex ir Grok prisijungimus ir pasirinkti, su kuriuo prasidės naujos sesijos, naudodami <code>omarchy agent account</code>. Istorija, nustatymai ir įgūdžiai tarp jų bendrinami, tad <code>claude --continue</code> po perjungimo tęsia tiksliai nuo ten, kur sustojote. Priartėję prie limito, Omarchy gali arba pasiūlyti perjungimą vienu spustelėjimu, arba savaime perkelti naujas sesijas į paskyrą, turinčią daugiausia atsargos. O kai nustatote kitą kompiuterį, <code>omarchy agent account copy</code> per SSH atneša visus jūsų prisijungimus, tad nereikės prie visko jungtis iš naujo.</p>
+
+<p>Kimi ir Ori, OpenRouter agentų aplinka, prisijungia prie pasirinkimų skiltyje <em>Setup &gt; Defaults &gt; Agent</em>, o Google Antigravity pakeičia pasenusią Gemini CLI (<code>gemini</code> vis dar veikia kaip slapyvardis). Labiau mėgstate langą nei terminalą? Claude ir Amp darbalaukio programos dabar yra už vieno spustelėjimo skiltyje <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Pranešimai, sukurti iš naujo</h2>
+
+<p>Pranešimai dabar kraunasi pagal siuntėją, seka jūsų temą ir sutraukia identiškus pasikartojimus. Veiksmų mygtukai, patvirtinimo kodai ir nuorodos veikia tiesiai iš kortelės. <code>Super + Comma</code> veikia su naujausia (ją atmeta, atidaro arba paspaudžia jos mygtuką), o <code>Super + Ctrl + Comma</code> perduoda jums klaviatūrą, kad galėtumėte valdyti juos visus. Varpelis juostoje įjungia režimą Netrukdyti.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Nauji pranešimai" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Vaizdo fonai ir temų įžangos</h2>
+
+<p>Fonai dabar gali būti vaizdo įrašai. Įmeskite vieną, ir jūsų darbalaukis atgis su riedančiomis bangomis ar kuo kitu, kas patinka, o užrakinimo ekranas rodys nejudantį kadrą iš jo. O temos dabar padaro įėjimą: kiekviena gali paleisti trumpą, tylią įžangą, kai prisijungiate arba persijungiate į ją. (Labiau norite ramybės? Išjunkite įžangas skiltyje <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse prisijungia prie numatytųjų temų</h2>
+
+<p>Jade Horse – tai vien miglotos žalios spalvos, su raižyto nefrito fonais, dėl kurių visas darbalaukis atrodo kaip ritininis paveikslas. Ji pakeičia Osaka Jade tarp pateikiamų temų, o prie jos prisijungia Starship kaip kita nauja numatytoji tema. Jei naudojate Osaka Jade, savo kopiją pasiliekate, ir ji toliau gyvena kaip <a href="https://github.com/omacom/omarchy-osaka-jade-theme">trečiosios šalies tema</a> visiems, norintiems ją įdiegti iš naujo.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse tema" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff yra naujas numatytasis fonas</h2>
+
+<p>Nauji diegimai dabar jus pasitinka su Liftoff – nuostabiu saulėlydžio paleidimu, kuris yra naujas numatytasis Tokyo Night fonas. Jį sukūrė <a href="https://github.com/tcballard">Tom Ballard</a>, pirmą kartą jį sukūręs savo <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff tema</a>. Ačiū, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Liftoff fonas, autorius Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Paleidimo meniu dabar tylus</h2>
+
+<p>Anksčiau Omarchy kiekvieno paleidimo metu maždaug šešias sekundes rodydavo paleidimo meniu, tam atvejui, jei reikėtų grįžti prie ankstesnės momentinės kopijos. Tačiau beveik niekas to niekada nedarė. Tad dabar Limine laukia tik vieną sekundę ir paleidžia tyliai, ir dažniausiai meniu visai nepamatysite.</p>
+
+<p>Kai jums prireikia kito įrašo arba momentinės kopijos, kompiuteriui paleidžiantis vis bakstelėkite bet kurį klavišą (rodyklė žemyn tinka), ir jis sustos ties meniu. O jei labiau norėtumėte meniu išlaikyti ilgiau visam laikui, nustatykite savo <code>timeout:</code> faile <code>/boot/limine.conf</code> (pvz., <code>timeout: 5</code>). Atnaujinimai paliks jūsų nustatytą timeout ramybėje.</p>
+
+<h2 id="changed-hotkeys">Pakeisti spartieji klavišai</h2>
+
+<p>Kai kurie spartieji klavišai persikėlė:</p>
+
+<ul>
+  <li>Skaičiuotuvas: <code>Super + Ctrl + Q</code> dabar yra <code>Super + Shift + Q</code>.</li>
+  <li>Veikla: <code>Super + Ctrl + T</code> dabar yra <code>Super + Shift + T</code>, o <code>Super + Ctrl + T</code> atveria temas.</li>
+  <li>Tinklas: <code>Super + Ctrl + W</code> dabar yra <code>Super + Ctrl + N</code>, o <code>Super + Ctrl + W</code> atveria fonus.</li>
+  <li>Naktinis apšvietimas nebeturi sparčiojo klavišo (jis buvo <code>Super + Ctrl + N</code>); jis yra <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> atveria Apps iš doko, o ne Apps meniu.</li>
+</ul>
+
+<p>Pranešimų spartieji klavišai pasikeitė:</p>
+
+<ul>
+  <li><code>Super + Comma</code> veikia su naujausia kortele (ją atmeta, atidaro arba paspaudžia jos vieną mygtuką), užuot tik ją atmetęs.</li>
+  <li>Paskutinės atmetimas persikėlė į <code>Super + Alt + Comma</code>, kuris anksčiau ją atverdavo.</li>
+  <li>Nutildymas persikėlė iš <code>Super + Ctrl + Comma</code> į <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> dabar perduoda jums klaviatūros valdymą.</li>
+</ul>
+
+<p>Keli klavišai veikia kitaip:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> ir <code>Super</code> + slinkimas lieka dabartinio monitoriaus darbo erdvėse, nes kiekvienas monitorius turi savas.</li>
+  <li>Terminale <code>Super + C</code> ir <code>Super + V</code> siunčia <code>Ctrl + Shift + C</code> ir <code>Ctrl + Shift + V</code>, o ne <code>Ctrl + Insert</code> ir <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Nauji numatytieji nustatymai, galintys susidurti su jūsų pačių susiejimais: <code>Super + Q</code> (uždaryti langą, šalia <code>Super + W</code>), <code>Super + A</code> (pasirinkti viską), <code>Super + M</code> (sumažinti į doką), <code>Super + ~</code> ir <code>Super + Shift + ~</code> (Quake konsolė), <code>Super + Alt + L</code> (ankstesnis išdėstymas), <code>Super + Shift + Ctrl + Arrows</code> (perkelti langą į kitą monitorių), <code>Super + Ctrl + Alt + C</code> (ekrano kopija), <code>Super + Ctrl + Alt + E</code> (pasaulio laikrodis), <code>Super + Ctrl + Alt + F</code> (viso ekrano darbalaukis) ir <code>Right Alt</code> laikymas diktavimui laikant nuspaudus.</p>
+
+<h2 id="more-features">Daugiau funkcijų</h2>
+
+<ul>
+  <li>Suteikite kiekvienam monitoriui savas darbo erdves: <code>Super + 1-0</code> pereina į monitoriaus, kuriame esate, darbo erdves, o <code>Super + Arrows</code> perkelia į kitus ekranus ir iš jų – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Surinkite viską apie darbalaukio išvaizdą į naują Appearance meniu, pakeičiantį Style: tema, fonas, šriftas, juosta, langai, firminis stilius, dokas, darbo erdvių išdėstymai, animacijos ir atrakinimo ekranas – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Pasirinkite Opaque, Transparent arba Glassy langus skiltyje <em>Appearance &gt; Window Transparency</em>, bei Glassy juostos foną – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Pasirinkite temos, aštrius arba suapvalintus langų kampus skiltyje <em>Appearance &gt; Window Corners</em> – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Pridėtas režimas be animacijų, virtualiosiose mašinose įjungtas pagal numatytuosius nustatymus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Programos pagal numatytuosius nustatymus padarytos nepermatomos, terminalus paliekant skaidrius – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Slack pridėtas į Install &gt; Service – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Alt + Space perjungia diktavimą kiekvienoje posistemėje – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Pridėti mygtukai Open ir Edit į ekrano kopijų pranešimus, o Open ir Cut – į ekrano įrašus ir yt-dlp atsisiuntimus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Pridėtas Update &gt; Kernel meniu numatytajam branduoliui perjungti – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Pridėtas temų sinchronizavimas į herdr kompiuterius – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Pridėtas o.rebind Hyprland klavišų susiejimams pakeisti – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Git tapatybės klausiama po pirmo prisijungimo, o ne diegimo programoje, su GitHub prisijungimu – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Diegimo laikmenai leista iš anksto nustatyti kalbą, klaviatūrą ir laiko juostą – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Juostos valdikliams leista gyventi dėklo stalčiuje – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Leista pašalinti juostos valdiklį nutempiant jį nuo juostos – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Leista slinkti per darbo erdves iš juostos – autorius <a href="https://github.com/outfoxxed">@outfoxxed</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Leista ištrinti papildomas temas iš temų parinkiklio – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Pridėti hey, basecamp ir Cloudflare CLI kaip tingiai įdiegiami įrankiai – autorius <a href="https://github.com/monorkin">@monorkin</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Pridėtas SSH Agent kaip pasirenkama paslauga – autorius <a href="https://github.com/carletex">@carletex</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Leista pasirinkti, kiek trunka sudo be slaptažodžio – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Pridėtas užvedus pelę rodomas uždarymo mygtukas pranešimų iššokantiems langams – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Leista nutildyti programos pranešimus iš jos strigimo diagnozės – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Leista omarchy-notification-send pridėti veiksmų mygtukus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Pridėtas laikrodžio formatas su gyvomis sekundėmis – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Klaviatūros apšvietimas reguliuojamas su Ctrl ir ryškumo klavišais – autorius <a href="https://github.com/ludagoo">@ludagoo</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Spausdinamas OEM Windows produkto raktas iš programinės aparatinės įrangos – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Pridėtas originalus vi kaip terminalo redaktoriaus pasirinkimas – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Roadster Starlight fonas pridėtas į Ethereal – autoriai <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Saugumas</h2>
+
+<ul>
+  <li>Windows VM slaptažodis nelaikomas RDP kliento argumentuose – autorius <a href="https://github.com/dicemans">@dicemans</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Ekrano įrašymo būsena perkelta iš visiems rašomo /tmp – autorius <a href="https://github.com/Chessing234">@Chessing234</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Sustiprintas sudo be slaptažodžio galiojimo pabaigos veikimas po pristabdymo – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Atnaujinimo inhibitoriaus valymas susietas su jį sukūrusiu procesu – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Izoliuotas OCaml valymo autorizavimas – autorius <a href="https://github.com/ErikMelton">@ErikMelton</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Gamyklinių nustatymų atkūrimo teisių suteikimas prisegtas prie supakuotos komandos – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Atkuriant pašalinami išsaugoti iškvietusio vartotojo pirštų atspaudų šablonai – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Atsisakoma kabliukų ir būsenos pavadinimų, kurie yra keliai – autorius <a href="https://github.com/Adolanium">@Adolanium</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Pirštų atspaudų ir FIDO2 nustatymo rašomame polkit rinkinyje pirmenybė teikiama system-auth – autorius <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Šalinant pirštų atspaudus, jie pašalinami ir iš paties skaitytuvo saugyklos – autorius <a href="https://github.com/scottjones">@scottjones</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Užkirstas kelias SSH nustatymui palikti sshd veikiantį su prisijungimais slaptažodžiu, kai nepridedamas joks raktas – autoriai <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Užkirstas kelias kitam vietiniam vartotojui Voxtype atnaujinimo metu sukeisti savą programą – autorius <a href="https://github.com/Vladkarok">@Vladkarok</a>, pakeitimas <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Sustiprinta, kaip gamyklinių nustatymų atkūrimas perduoda jūsų gum nustatymus per sudo – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Pataisymai</h2>
+
+<ul>
+  <li>Pataisytas Hyprland strigimas, kai monitorius atjungiamas, išjungiamas arba uždaromas dangtis – autorius <a href="https://github.com/falkoro">@falkoro</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Pataisyti atnaujinimai, galėję palikti branduolio atvaizdą be jo root= parametro – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Pataisytas gamyklinių nustatymų atkūrimas, ištrynęs kitų sistemų paleidimo įrašus – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Pataisytas diegimas šalia kito Omarchy, pašalinęs to diegimo paleidimo įrašą – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Pataisyti laisvos vietos diegimai, galėję paimti esamą skaidinį naujam – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Pataisytas nutrūkusio disko slaptažodžio keitimo tęsimas, pašalinęs netinkamą raktą – autorius <a href="https://github.com/scottjones">@scottjones</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Sudo slaptažodžio prašoma kartą per Omarchy atnaujinimą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Sudo slaptažodžio prašoma kartą dešimčiai minučių, o ne vėl kiekvienai komandai – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>AUR atnaujinimai ir paleidimo patikrinimas padengti vienu atnaujinimo sudo raginimu – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Paketų atnaujinimai apsaugoti nuo atsijungimo transakcijos viduryje – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Atsijungiama, paleidžiama iš naujo ir išjungiama, kai tik programos baigia užsidaryti – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Tensaku pakeistas Omasnap ekrano kopijoms – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Skydeliai išauga iš juostos ir virsta vienas kitu, su paspaudimo atsaku mygtukams ir juostos piktogramoms – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Pranešimai įslenka iš po juostos ir išeina tuo pačiu keliu – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Ryšys tikrinamas su pačios Omarchy galutiniu tašku ir pataisytas prisijungimas prie prisijungimo portalų – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Pataisytas perjungimas iš edge į stable arba RC, palikdavęs kompiuterį su senu kūriniu – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Pataisytas atnaujinimas į 4.5, sustodavęs, kai apvalkalas lėtai atsakydavo – autorius <a href="https://github.com/AnPod">@AnPod</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Pataisyti atnaujinimai, tyliai nepavykdavę, kai paleisti ne darbalaukio sesijoje – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Pataisytas nepavykęs mise įrankio atsisiuntimas, sustabdydavęs likusį sistemos atnaujinimą – autorius <a href="https://github.com/sanjyay">@sanjyay</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Pataisyti atnaujinimai, nepavykdavę, kai omarchy-nvim neįdiegtas – autorius <a href="https://github.com/imzihuailin">@imzihuailin</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Pataisyti dvigubo paleidimo diegimai, nesugebėję prijungti EFI skaidinio – autorius <a href="https://github.com/Damian626">@Damian626</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Pataisyti diegimai, sustodavę, kai programinė aparatinė įranga nepriimdavo naujo paleidimo įrašo – autorius <a href="https://github.com/ryanio">@ryanio</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Pataisyti diegimai, sustodavę diskuose su senu RAID nariu arba tomų grupe – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Diegimo programa paleidžiama anksčiau, nelaukiant kiekvieno USB įrenginio ir paleidimo užduoties – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Paspartintas disko šifravimas su 4096 baitų sektoriais naujuose diegimuose – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Vidiniai diskai išvardijami pirmiausia, o diegimo ekranai atidaromi ties saugiu pasirinkimu – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Full disk install diegimo programoje išvardijamas pirmiausia, o disko ekranuose grįžtama su Esc – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Pataisytas vieno monitoriaus mastelio keitimas, pakeisdavęs kiekvieno kito monitoriaus mastelį – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Pataisytos XWayland programos, per didelės, kai monitoriai naudoja skirtingus mastelius – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Pataisyti HDR ekranai, persijungdavę į išblukusį HDR vaizdą, kai langas pereidavo į viso ekrano režimą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Pataisyti neryškūs meniu ir parinkikliai trupmeniškai masteliuotuose ekranuose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Pataisytas nešiojamojo kompiuterio ekranas, likdavęs išjungtas atjungus išorinį ekraną – autoriai <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Pataisytas ekrano iš naujo įjungimas, atstatydavęs jo poziciją, mastelį ir režimą – autorius <a href="https://github.com/zihaomu">@zihaomu</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Pataisyti meniu ir parinkikliai, neatsidarę iš naujo atjungus monitorių – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Pataisytos kiekvieno monitoriaus darbo erdvės, judėjusios atjungus monitorių – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Pataisytas apvalkalo strigimas, kai garso įrenginys atsijungia su atviru garso skydeliu – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Pataisyti viso ekrano langai, prarasdavę viso ekrano režimą po ekrano užsklandos – autorius <a href="https://github.com/MGross21">@MGross21</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Pataisytas žymeklis, dingdavęs paleidžiant po Hyprland perkrovimo – autorius <a href="https://github.com/spencerbull">@spencerbull</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Pataisytas žymeklis, tapdavęs nematomas virš XWayland programų – autorius <a href="https://github.com/Sebo1411">@Sebo1411</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Pataisyti iškarpinės fiksavimo strigimai – autorius <a href="https://github.com/maxcroy1">@maxcroy1</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Pataisyta raktinės prieiga per XDG Secret portalą – autorius <a href="https://github.com/pkwagner">@pkwagner</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Pataisytas pirštų atspaudų registravimas ir užrakinimo ekrano atkūrimas – autorius <a href="https://github.com/GeertJohan">@GeertJohan</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Pirštų atspaudų registravimas vedamas žingsnis po žingsnio – autorius <a href="https://github.com/scottjones">@scottjones</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Pataisytas klavišų automatinis kartojimas užrakinimo ekrano slaptažodžio lauke – autorius <a href="https://github.com/berndb">@berndb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Pataisytas užrakinimo ekrano fonas, įkeliamas po slaptažodžio lauko pažadinus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Pataisyti ekrano užrakinimo skirtieji laiko limitai, kai sesija nurodo dingusį ekraną – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Paspartintas terminalo atidarymas dabartinio lango kataloge – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>VS Code šeimos redaktoriai gyvai seka temos pokyčius – autorius <a href="https://github.com/Macho0x">@Macho0x</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Veikiančios Hunk sesijos pertemuojamos pasikeitus temai – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Prisimenamas pasirinktas kiekvienos temos fonas – autorius <a href="https://github.com/OldJobobo">@OldJobobo</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Vaizdų parinkiklis išlieka greitas ir ryškus su didelėmis kolekcijomis ir HiDPI – autorius <a href="https://github.com/keylimesoda">@keylimesoda</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Sumažintas CPU ir atminties kiekis, kurį skaidri juosta išleidžia fono atrankai – autoriai <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Paspartintas Tailscale skydelis tailnet’uose su tūkstančiais kompiuterių – autorius <a href="https://github.com/iskakaushik">@iskakaushik</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Grok agentų skydelyje pakeltas iki Claude ir Codex lygio – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Agento paskyros pasirinkimas pritaikomas CLI subprocesams – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Rodomi Codex individualūs išlaidų limitai ir jų atstatymo laikai – autorius <a href="https://github.com/Stegi56">@Stegi56</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Naršyklės integracija nustatoma pasirinkus Claude – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Pataisyti agentai, neradę mise įrankių, įdiegtų jiems paleidus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Pataisytas ekrano kopijų įklijavimas į agentus herdr skyduose, paleistuose per SSH – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Pataisytas agentų skydelis, praleidęs suspaustas Codex sesijas – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Caps Lock grąžintas į įprastą, o Shift + Caps Lock padarytas komponavimo klavišu – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Sistemos klaviatūros išdėstymas pritaikomas prisijungimo ekranui – autorius <a href="https://github.com/g-desoutter">@g-desoutter</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Pataisytas išdėstymo perjungimas, praleisdavęs kas antrą paspaudimą su nelotynišku klaviatūros išdėstymu – autorius <a href="https://github.com/manuaudio">@manuaudio</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Įjungtas aparatinis vaizdo dekodavimas mpv – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>TCP spūsčių valdymas perjungtas į BBR, o kyber I/O planuoklė naudojama realiuose diskuose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>T3 Code diegiamas kaip savaime atsinaujinantis AppImage – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Patobulintas PHP ir Laravel diegimas – autorius <a href="https://github.com/nunomaduro">@nunomaduro</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Node diegiamas tingiai, o jūsų mise konfigūracija paliekama ramybėje – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Trūkstamos programos įdiegiamos renkantis numatytuosius nustatymus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Įdiegta programinė įranga Install meniu pritemdoma, užuot ją slėpus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Slaptažodžių tvarkyklė ir kiti savieji pranešimų pagrindiniai kompiuteriai registruojami Brave Origin – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Brave Origin žiniatinklio pranešimai grupuojami pagal svetainę, o spustelėjus atidaromas tinkamas skirtukas – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Našlaičių paketų pašalinimas atnaujinimų metu patvirtinamas automatiškai – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Omarchy raktinė atnaujinama prieš kiekvieną atnaujinimą – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Siūloma paleisti iš naujo perjungus kanalus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Pirmojo paleidimo atnaujinimas siūlomas tik kai yra ką atnaujinti – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Oro vieta ir diegimo programos laiko juosta randamos su pačios Omarchy geo paslauga – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Laikrodis nustatomas iš ntp.omarchy.org, o ne Arch NTP telkinio – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Tinklo greitis matuojamas su pačios Omarchy greičio testu – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Pirmojo paleidimo metu rodomas atsektos piktogramos progreso ekranas – autoriai <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Gyvas ISO paleidžiamas su Omarchy branduoliu, o su T2 branduoliu tik Mac kompiuteriuose – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Neprisijungus atliekami diegimai nebelūkuriuoja mise versijų paieškų – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Pataisyti neprisijungus atliekami diegimai, pagal numatytuosius nustatymus nustačiusieji laiko juostą į Africa/Abidjan – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Pataisytas diegimo programos laiko juostos parinkiklis, neleidęs rašyti paieškai – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Pataisytas gyvas ISO, strigęs už paleidimo vaizdo, kai paleidžiamas iš Ventoy rakto – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Pataisyti vokiečių ir prancūzų konsolės klaviatūrų žemėlapiai diegimo programos nustatymo formoje – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Paslėpti gum angliški klavišų patarimai diegimo programoje ir git nustatymuose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Pašalinti tik angliški juokai iš diegimo progreso ekrano – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Pataisyta diegimo programos išvestis, ekrane atsidurdavusi be paminkštinimo, kol ji rengė diską – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Pataisytas Quattro atnaujinimas, atstatęs numatytąją naršyklę į Chromium – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Pataisytas Quattro atnaujinimas, sustodavęs ties fonų pavadinimais su ne ASCII rašmenimis – autorius <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Pataisyta branduolio migracija, sustodavusi kompiuteriuose, paleidžiamuose su GRUB arba systemd-boot – autorius <a href="https://github.com/manuaudio">@manuaudio</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Pataisytas užmigdymas nešifruotuose kompiuteriuose su daugiau nei vienu NVMe disku – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Pataisyta FIDO2 migracija, pažymėta atlikta, kol ji nebuvo išspręsta – autorius <a href="https://github.com/ErikMelton">@ErikMelton</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Pataisyta plaukiojanti darbo erdvė, perėmusi pirmą langą, kurį apima jūsų pačių plūduriavimo taisyklė – autorius <a href="https://github.com/zihaomu">@zihaomu</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Pataisytas kompozitoriaus strigimas, kai Super + L perjungia darbo erdvę į plaukiojantį režimą ir iš jo – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Pataisytas Alt + Shift + Tab, necikliškai nėjės atgal per kiekvieną langą – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Pataisyti iššokę langai, nesicentravę, kai perkeliami į kitą monitorių – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Pataisyti nauji terminalai, atsidarę ne jūsų namų aplanke, kai sufokusuotas ne terminalo langas – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Pataisyti 1Password ir Bitwarden langai, neplūduriavę – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Pataisytas 1Password užsidarymas, kai diegimo programos terminalas išeina – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Pataisyti DaVinci Resolve dialogai, vogę žymeklio fokusą – autorius <a href="https://github.com/AksharP5">@AksharP5</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Pataisytas darbalaukis, matomas pro Windows VM ekranus – autorius <a href="https://github.com/jmwall">@jmwall</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Pataisyti senieji Windows VM slaptažodžiai, turintys $$ po Quattro migracijos – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Hyprland aukojimo iššokantis langas neberodomas po atnaujinimų – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Patobulintas juostos valdiklių vilkimas ir išdėstymas – autorius <a href="https://github.com/outfoxxed">@outfoxxed</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Sunormintas juostos piktogramų dydis ir lygiavimas – autorius <a href="https://github.com/bjarneo">@bjarneo</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Paslėpti juostos indikatoriai atskleidžiami tik užvedus pelę kairėje nuo laikrodžio – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Dėklo piktogramos sulygiuotos su kitomis juostos piktogramomis – autorius <a href="https://github.com/ayoubdya">@ayoubdya</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Kitas juostos patarimas rodomas iškart, kol vienas jau rodomas – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Laikrodžio ir oro skydeliai atidaromi po jų valdikliais – autorius <a href="https://github.com/scottjones">@scottjones</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Tinklo skydelis lieka atviras pasirinkus DNS teikėją – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Pataisytas užsidarantis iššokantis langas, palikdavęs juostos valdiklius neatsakančius – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Pataisyta paslėpta juosta, gaudžiusi spustelėjimus išilgai viso ekrano langų viršaus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Pataisytos tamsios dėklo piktogramos, dingusios juostoje – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Pataisytos juostos piktogramos, buvusios netolygiai arba ne centre – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Pataisyti juostos patarimai, pirmą kadrą nubraižę netinkamu dydžiu – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Pataisyta pranešimų istorija, kiekvieną kortelę rodžiusi kaip ką tik gautą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Pataisyti pirmo prisijungimo pranešimai, subyrėję į vieną krūvą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Pataisyti pranešimų spustelėjimai, nesufokusavę programų su kelių žodžių pavadinimais – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Pataisyti Taildrop pranešimai, rodę tuščią tekstą ir praleidę peržiūras – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Pataisytas baterijos pranešimas, rodęs tuščią laiką ir 0W su pilna baterija – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Pataisytas įspėjimas apie žemą bateriją, likęs po prijungimo ir grįžęs po pakartotinių paleidimų – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Pataisytas baterijos vartojimas, kai kuriuose nešiojamuosiuose rodęs 0W – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Pataisyta pilna baterija su AC, rodyta kaip išsikraunanti – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Pataisytas Hibernate rodymas, kai branduolys neužmigdys – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Pataisyti gvfs prijungimai, dingę po tęsimo – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Pataisytas klaviatūros apšvietimas, likęs išjungtas po to, kai užraktas du kartus užgeso – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Pataisytas pirštų atspaudų skaitytuvas, pabudęs, kol užraktas turėjo išjungtus ekranus – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Pataisytas paleidimo slaptažodžio raginimas ne centre, kai ekranas pasirodo vėlai – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Pataisytas ekrano užsklandos išėjimo klavišas, mirksėjęs kampe – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Pataisyta Wi-Fi piktograma, mirksėjusi OWE pereinamojo režimo tinkluose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Pataisyta OWE klaida, atspausdinta terminale įdiegus temą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Pataisytas mirksėjimas perjungiant iš nejudančio į vaizdo foną – autorius <a href="https://github.com/bjarneo">@bjarneo</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Hackerman atnaujintas į padidintą geometrinį foną – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Pataisytos temos su ciklinėmis spalvų nuorodomis, pakabinusios temos perjungimą – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Pataisytas Neovim, nesugebėjęs paleisti su Catppuccin tema – autorius <a href="https://github.com/anandude">@anandude</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Pataisytas OpenCode 2, paleistas su savo standartine tema, o ne Omarchy – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Pataisytas mažo kontrasto įterptinis kodas sugeneruotoje VS Code temoje – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Pataisyti T3 Code diegimai, sustodavę derinant dabartinę temą – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Pataisytas terminalo šrifto dydis, atsistatęs keičiant šrifto šeimą – autorius <a href="https://github.com/sbalbalosa">@sbalbalosa</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Pataisytas šriftų keitimas, atspausdinęs terminalo proceso ID – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Pataisytas kalbų perjungimas, perkūręs kiekvieną lokalę ir jas praradęs beveik pilname diske – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Pataisytas apvalkalas, rodęs neapdorotus vertimo raktus, kol jo vertimai įsikeldavo – autorius <a href="https://github.com/zihaomu">@zihaomu</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Paspartintas išverstas tekstas Omarchy scenarijuose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Atnaujinti vertimai 686 eilutėms, iš jų 392 – vadove – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Pataisyti garsumo ir išvesties valdikliai ne anglų lokalėse – autorius <a href="https://github.com/Sebo1411">@Sebo1411</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Pataisyti CPU naudojimo rodmenys ne anglų lokalėse – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Pataisyta fcitx5 paslauga, amžinai paleidusi iš naujo, kai fcitx5 neįdiegtas – autorius <a href="https://github.com/therk">@therk</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Pataisytas klaviatūros išdėstymo valdiklis, perjungęs įrenginius, kuriais niekas nerašo – autorius <a href="https://github.com/bjarneo">@bjarneo</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Pataisytas klaviatūros išdėstymo valdiklis, persijungęs į gamintojo sparčiųjų klavišų įrenginius – autorius <a href="https://github.com/yashranaway">@yashranaway</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Pataisytas klavišų susiejimų meniu, palikęs Lua procesą veikiantį 100% CPU – autorius <a href="https://github.com/tobi">@tobi</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Pataisytas laikrodis, užtvindęs žurnalą kiekvieną milisekundę, kai baigiasi vasaros laikas – autorius <a href="https://github.com/falkoro">@falkoro</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Pataisytas apvalkalas, pakeitęs shell.json, kurio negalėjo perskaityti, numatytaisiais nustatymais – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Pataisytas Omarchy meniu, praradęs savo eilutes, kol jo failas buvo atnaujinamas – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Pataisytas įskiepio iš naujo įjungimas, nesugrąžinęs jo juostos valdiklio – autorius <a href="https://github.com/berrimi">@berrimi</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Pataisyti vietiniai įskiepiai, perkraunami cikle dėl savo Python baitkodo – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Pataisyti paslėpti mygtukai įskiepiuose, subyrėję į savo paminkštinimą – autorius <a href="https://github.com/dmkenney">@dmkenney</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Pataisyti išskleidžiamieji sąrašai, nukirpę paskutinį elementą – autorius <a href="https://github.com/sprajs">@sprajs</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Pataisyti išskleidžiamieji sąrašai, neužsidarę antrą kartą spustelėjus – autorius <a href="https://github.com/felixzsh">@felixzsh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Pataisytos slankiklių rankenėlės, sustojusios nepasiekusios takelio galo – autorius <a href="https://github.com/erikrjohansson">@erikrjohansson</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Pataisytas Update &gt; Hardware &gt; Trackpad, praleidęs daugumą jutiklinių kilimėlių ir atstatęs klaviatūrą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Dabar jis atleidžia užstrigusį mygtuką kiekviename jutikliniame kilimėlyje ir atstato tik jutiklinį kilimėlį, o ne klaviatūrą ir jutiklinį ekraną kartu su juo.</p>
+  </li>
+  <li>Vaizdo kamerų meniu tikrina kameras jų neįjungdamas – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Pataisytas Omasnap slinkties fiksavimas, ėmęs tik juodus kadrus – autorius <a href="https://github.com/falkoro">@falkoro</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Pataisytas ekrano kopijų parinkiklis, atsiejęs jūsų pačių klavišus – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Pataisytas įrašymo sustabdymas, paskelbęs tuščią išsaugotą įrašą – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Pataisytas vaizdų parinkiklis, rodęs pasenusias miniatiūras perrašytiems vaizdams – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Pataisytas naktinis apšvietimas, ne visiškai atsistatęs, kai išjungtas – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Pataisytas medijos valdiklis, palikęs pristabdytą takelį tuščiam grotuvui – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Pataisyti pakartotiniai ekranų nuskaitymai monitoriuose, nepranešančiuose ryškumo – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Pataisytas Super + Shift + Return, nepavykęs, kai sukonfigūruota naršyklė buvo pašalinta – autorius <a href="https://github.com/vitally">@vitally</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Pataisyti skaičiuotuvo spartieji klavišai, likę pašalinus iš anksto įdiegtas programas – autorius <a href="https://github.com/OldJobobo">@OldJobobo</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Pataisytas Copy URL spartusis klavišas Brave Origin profiliuose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Pataisytas Bitwarden plėtinio iššokantis langas, atsidaręs netinkamu dydžiu – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Pataisytas Battle.net, atsidaręs 100% masteliu HiDPI monitoriuose – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Pataisyti Inkscape failų parinkikliai, atsidarę plytelėmis – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Pataisyti Go AUR paketai, nesugebėję susikurti atnaujinimų metu, kai mise valdo Go – autorius <a href="https://github.com/shbernal">@shbernal</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Pataisytas ONCE diegimas, kai nesate docker grupėje – autorius <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Pataisyti agentų skydelio spustelėjimai, atidarę dėklą – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Pataisytas agento paskyros nustatymas, užkliuvęs už kabančios bendros simbolinės nuorodos – autorius <a href="https://github.com/manuaudio">@manuaudio</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Pataisytas <code>--reauth</code>, pridėjęs naują agento paskyrą, kai jos nėra – autorius <a href="https://github.com/manuaudio">@manuaudio</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Agento paskyros pervadinimo patarimas įvardija jos teikėją – autorius <a href="https://github.com/manuaudio">@manuaudio</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Pataisyti raktinės atnaujinimai, teigę sėkmę, kai raktų operacijos nepavykdavo – autorius <a href="https://github.com/Adolanium">@Adolanium</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Pataisytas tuščias gamyklinių nustatymų atkūrimo raginimas, kai paleidžiamas su sudo – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Pataisytas laukiančių migracijų priminimas, kaupęsis kartą per prisijungimą – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Pataisytas OS Age skiltyje About, skaičiavęs nuo ISO sukūrimo, o ne diegimo – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Pataisytas Dropbox, rodęs „0y ago“ failams, kuriems 360–364 dienos – autorius <a href="https://github.com/manuaudio">@manuaudio</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Pataisytas Dropbox būsenos patikrinimas, pasibaigęs laukiančiai prisijungimo nuorodai – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Pataisytas Dropbox dėklo piktogramos bibliotekos diegimas – autorius <a href="https://github.com/omarchybot">@omarchybot</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Įjungtos perdangos slinkties juostos Chromium – autorius <a href="https://github.com/robzolkos">@robzolkos</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Klausiama prieš įjungiant Touch ID Apple Silicon Mac kompiuteriuose – autorius <a href="https://github.com/scottjones">@scottjones</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>RC kanalas siūlomas Apple Silicon Mac kompiuteriuose – autorius <a href="https://github.com/maralcbr">@maralcbr</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Stabilus kanalas siūlomas Apple Silicon Mac kompiuteriuose – autorius <a href="https://github.com/maralcbr">@maralcbr</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Pataisyti Omarchy slapyvardžiai, funkcijos ir aplinka, trūkusi naujuose terminaluose Apple Silicon – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Nustatomos įdiegtos NVIDIA programos – autorius <a href="https://github.com/jdvmi00">@jdvmi00</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Pataisyti diegimai, nepavykę Lenovo Pro 9 su NVIDIA N1x – autorius <a href="https://github.com/breymander">@breymander</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Pataisyti trūkstami vidiniai garsiakalbiai ir mikrofonai N1x nešiojamuosiuose, kuriuose veikė ankstesni garso profiliai – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Pataisytas vangus darbalaukis NVIDIA GB10 kompiuteriuose, tokiuose kaip DGX Spark – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Pataisytas rašymas į užrakinimo ekraną po tęsimo NVIDIA – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Užraktas taip pat nebetamsėja iš naujo vos skydeliui užsidegus.</p>
+  </li>
+  <li>Pataisyti Lutris ir Battle.net, įdiegę kito GPU 32 bitų Vulkan tvarkyklę – autorius <a href="https://github.com/zihaomu">@zihaomu</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Nustota prašyti paleisti iš naujo po kiekvieno atnaujinimo ARM – autorius <a href="https://github.com/birkskyum">@birkskyum</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Stabilus ir RC kanalai siūlomi aarch64 – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Galios profiliai padaryti veikiantys ARM nešiojamuosiuose – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Dropbox siūlomas ARM kompiuteriuose su 4K puslapiais, o Spotify kaip žiniatinklio programa ARM – autorius <a href="https://github.com/birkskyum">@birkskyum</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>GeForce NOW, Battle.net ir Lutris diegimai paslėpti ARM – autorius <a href="https://github.com/birkskyum">@birkskyum</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Pataisyta Hermes programa, vietoje neatnaujinusi ARM – autorius <a href="https://github.com/ryanrhughes">@ryanrhughes</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Pataisytos Snapdragon nešiojamųjų klaviatūros, nerašiusios disko atrakinimo raginime – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Pataisytos kameros, trūkstamos prisijungiant Snapdragon nešiojamuosiuose – autorius <a href="https://github.com/birkskyum">@birkskyum</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Pataisytas juodas ekranas prieš disko atrakinimą Snapdragon X2 nešiojamuosiuose – autorius <a href="https://github.com/jdvmi00">@jdvmi00</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Vaizdas dekoduojamas aparatinėje įrangoje Intel Wildcat Lake – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Pataisyti gyvo ISO strigimai Arrow Lake-H nešiojamuosiuose – autorius <a href="https://github.com/emirb">@emirb</a>, pakeitimas <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Pataisytas HP EliteBook Ultra G1q vidinis mikrofonas – autorius <a href="https://github.com/bprendie">@bprendie</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Naudojamas aukštesnio lygio palaikymas Motorcomm YT6801 Ethernet – autorius <a href="https://github.com/AFOliveira">@AFOliveira</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Elgato Cam Link 4K perduodamas kaip 16:9 virtuali kamera – autorius <a href="https://github.com/dhh">@dhh</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Palaikomi pirštų atspaudų skaitytuvai, kuriuos platforma įvardija – autorius <a href="https://github.com/scottjones">@scottjones</a>, pakeitimas <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>
