@@ -1,0 +1,111 @@
+# Keeps the manual current without anyone running bin/build-manual by hand.
+# The chapters and the theme previews they show live in the OS repository;
+# this renders them into manual/ once a day and commits what changed.
+#
+# The render runs in Arch, like a hand run of bin/build-manual on Omarchy.
+# The script calls ImageMagick 7's `magick`, which Ubuntu does not ship.
+# While both run current Arch, the same encoder writes byte-identical theme
+# previews, so a scheduled run and a hand run don't take turns rewriting them.
+#
+# Additions and edits go straight in. A chapter or image that disappears
+# fails the run instead: the site links to chapters and images by path, so
+# a rename or removal is done by hand, together with those links.
+#
+# Cloudflare Workers Builds deploys every push to master, this one
+# included, so the site is checked here before the push. A push with the
+# workflow's own token starts no other workflows, so this asks for the
+# deploy that leads to the language sites, whose search covers the manual.
+name: Refresh the manual
+
+on:
+  schedule:
+    - cron: '37 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+# Serialize commits with the other automated content refreshes.
+concurrency:
+  group: refresh-content
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Fetch the manual from omarchy
+        id: source
+        run: |
+          git clone --quiet --depth 1 --filter=blob:none --sparse https://github.com/omacom/omarchy "$RUNNER_TEMP/omarchy"
+          git -C "$RUNNER_TEMP/omarchy" sparse-checkout set --no-cone '/manual/' '/themes/*/preview*.png'
+          echo "commit=$(git -C "$RUNNER_TEMP/omarchy" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Render the manual
+        id: render
+        run: |
+          docker run --rm -e OWNER="$(id -u):$(id -g)" \
+            -v "$PWD:/site" -v "$RUNNER_TEMP/omarchy:/omarchy:ro" -w /site \
+            archlinux:latest bash -euc '
+              pacman -Syu --noconfirm --needed ruby ruby-erb ruby-kramdown ruby-kramdown-parser-gfm imagemagick >/dev/null
+              ruby bin/build-manual /omarchy/manual
+              chown -R "$OWNER" manual
+            '
+          removed=$(git ls-files --deleted -- manual)
+          if [ -n "$removed" ]; then
+            echo "::error::omarchy removed or renamed manual files; refresh by hand and update what links to them:"
+            echo "$removed"
+            exit 1
+          fi
+          if [ -z "$(git status --porcelain -- manual)" ]; then
+            echo "The manual is current."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v7
+        if: steps.render.outputs.changed == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-python@v7
+        if: steps.render.outputs.changed == 'true'
+        with:
+          python-version: '3.13'
+
+      - name: Check the site builds with it
+        if: steps.render.outputs.changed == 'true'
+        run: |
+          npm ci
+          npm run build
+          npm run parity
+
+      - name: Commit what changed
+        id: commit
+        if: steps.render.outputs.changed == 'true'
+        env:
+          SOURCE: ${{ steps.source.outputs.commit }}
+        run: |
+          git add -A manual src/data/manual.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh the manual from omarchy" \
+            -m "Rendered with bin/build-manual from omacom/omarchy at ${SOURCE:0:8}." \
+            -m "$(git diff --cached --stat | tail -1)"
+          # The build also rewrites data it does not own; drop that before rebasing.
+          git restore .
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin HEAD:"${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy what changed
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"

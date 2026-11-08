@@ -63,6 +63,24 @@
     "meta": "USA",
     "href": "https://x.com/ThePrimeagen",
     "avatar": "/assets/images/team/theprimeagen.webp"
+   },
+   {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
+    "name": "Marcelo Alcantara",
+    "meta": "Brazil/Australia",
+    "href": "https://x.com/maralcbr",
+    "avatar": "/assets/images/team/marcelo-alcantara.webp"
+   },
+   {
+    "name": "Birk Skyum",
+    "meta": "Switzerland",
+    "href": "https://x.com/BirkSkyum",
+    "avatar": "/assets/images/team/birk-skyum.webp"
    }
   ],
   "note": null
@@ -73,16 +91,16 @@
   "description": "Keeping your system safe",
   "members": [
    {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
     "name": "Adrian Rangel",
     "meta": "Mexico",
     "href": "https://x.com/acrogenesis",
     "avatar": "/assets/images/team/adrian-rangel.webp"
-   },
-   {
-    "name": "Mehmet \u0130nce",
-    "meta": "UK/T\u00fcrkiye",
-    "href": "https://x.com/mdisec",
-    "avatar": "/assets/images/team/mehmet-ince.webp"
    },
    {
     "name": "Erik Melton",
@@ -101,6 +119,12 @@
     "meta": "Germany",
     "href": "https://x.com/bastidotnet",
     "avatar": "/assets/images/team/sebastian-stange.webp"
+   },
+   {
+    "name": "Afonso Oliveira",
+    "meta": "Portugal",
+    "href": "https://x.com/AFOliveira__",
+    "avatar": "/assets/images/team/afonso-oliveira.png"
    }
   ],
   "note": {
@@ -159,16 +183,34 @@
     "avatar": "/assets/images/team/marcelo-alcantara.webp"
    },
    {
+    "name": "Scott Jones",
+    "meta": "USA",
+    "href": "https://x.com/bi9kahuna",
+    "avatar": "/assets/images/team/scott-jones.webp"
+   },
+   {
+    "name": "Chris Kearney",
+    "meta": "USA",
+    "href": "https://x.com/SiliconForested",
+    "avatar": "/assets/images/team/chris-kearney.webp"
+   },
+   {
     "name": "Naeem Malik",
     "meta": "India",
     "href": "https://x.com/tiredkebab",
     "avatar": "/assets/images/team/naeem-malik.webp"
    },
    {
-    "name": "Scott Jones",
+    "name": "Dj",
+    "meta": "Canada",
+    "href": "https://x.com/buildwithdjdev",
+    "avatar": "/assets/images/team/dj.webp"
+   },
+   {
+    "name": "Joshua Warren",
     "meta": "USA",
-    "href": "https://x.com/bi9kahuna",
-    "avatar": "/assets/images/team/scott-jones.webp"
+    "href": "https://x.com/JoshuaSWarren",
+    "avatar": "/assets/images/team/joshua-warren.webp"
    },
    {
     "name": "Eduardo Martinez",
@@ -181,12 +223,6 @@
     "meta": "China",
     "href": "https://x.com/riverleaf88",
     "avatar": "/assets/images/team/shun-li.webp"
-   },
-   {
-    "name": "Dj",
-    "meta": "Canada",
-    "href": "https://x.com/buildwithdjdev",
-    "avatar": "/assets/images/team/dj.webp"
    },
    {
     "name": "Ryan Murray",
@@ -217,12 +253,6 @@
     "meta": "Nepal",
     "href": "https://x.com/jaidipsubedi",
     "avatar": "/assets/images/team/jaidip-subedi.webp"
-   },
-   {
-    "name": "Joshua Warren",
-    "meta": "USA",
-    "href": "https://x.com/JoshuaSWarren",
-    "avatar": "/assets/images/team/joshua-warren.webp"
    },
    {
     "name": "Shawn Yeager",
