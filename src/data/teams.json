@@ -57,6 +57,30 @@
     "meta": "Netherlands",
     "href": "https://x.com/emirbeganovic",
     "avatar": "/assets/images/team/emir-beganovic.webp"
+   },
+   {
+    "name": "ThePrimeagen",
+    "meta": "USA",
+    "href": "https://x.com/ThePrimeagen",
+    "avatar": "/assets/images/team/theprimeagen.webp"
+   },
+   {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
+    "name": "Marcelo Alcantara",
+    "meta": "Brazil/Australia",
+    "href": "https://x.com/maralcbr",
+    "avatar": "/assets/images/team/marcelo-alcantara.webp"
+   },
+   {
+    "name": "Birk Skyum",
+    "meta": "Switzerland",
+    "href": "https://x.com/BirkSkyum",
+    "avatar": "/assets/images/team/birk-skyum.webp"
    }
   ],
   "note": null
@@ -67,16 +91,16 @@
   "description": "Keeping your system safe",
   "members": [
    {
+    "name": "Mehmet \u0130nce",
+    "meta": "UK",
+    "href": "https://x.com/mdisec",
+    "avatar": "/assets/images/team/mehmet-ince.webp"
+   },
+   {
     "name": "Adrian Rangel",
     "meta": "Mexico",
     "href": "https://x.com/acrogenesis",
     "avatar": "/assets/images/team/adrian-rangel.webp"
-   },
-   {
-    "name": "Mehmet \u0130nce",
-    "meta": "UK/T\u00fcrkiye",
-    "href": "https://x.com/mdisec",
-    "avatar": "/assets/images/team/mehmet-ince.webp"
    },
    {
     "name": "Erik Melton",
@@ -95,6 +119,12 @@
     "meta": "Germany",
     "href": "https://x.com/bastidotnet",
     "avatar": "/assets/images/team/sebastian-stange.webp"
+   },
+   {
+    "name": "Afonso Oliveira",
+    "meta": "Portugal",
+    "href": "https://x.com/AFOliveira__",
+    "avatar": "/assets/images/team/afonso-oliveira.png"
    }
   ],
   "note": {
@@ -153,16 +183,34 @@
     "avatar": "/assets/images/team/marcelo-alcantara.webp"
    },
    {
+    "name": "Scott Jones",
+    "meta": "USA",
+    "href": "https://x.com/bi9kahuna",
+    "avatar": "/assets/images/team/scott-jones.webp"
+   },
+   {
+    "name": "Chris Kearney",
+    "meta": "USA",
+    "href": "https://x.com/SiliconForested",
+    "avatar": "/assets/images/team/chris-kearney.webp"
+   },
+   {
     "name": "Naeem Malik",
     "meta": "India",
     "href": "https://x.com/tiredkebab",
     "avatar": "/assets/images/team/naeem-malik.webp"
    },
    {
-    "name": "Scott Jones",
+    "name": "Dj",
+    "meta": "Canada",
+    "href": "https://x.com/buildwithdjdev",
+    "avatar": "/assets/images/team/dj.webp"
+   },
+   {
+    "name": "Joshua Warren",
     "meta": "USA",
-    "href": "https://x.com/bi9kahuna",
-    "avatar": "/assets/images/team/scott-jones.webp"
+    "href": "https://x.com/JoshuaSWarren",
+    "avatar": "/assets/images/team/joshua-warren.webp"
    },
    {
     "name": "Eduardo Martinez",
@@ -177,10 +225,10 @@
     "avatar": "/assets/images/team/shun-li.webp"
    },
    {
-    "name": "Dj",
-    "meta": "USA",
-    "href": "https://x.com/buildwithdjdev",
-    "avatar": "/assets/images/team/dj.webp"
+    "name": "Ryan Murray",
+    "meta": "Australia",
+    "href": "https://github.com/RyanTheTide",
+    "avatar": "/assets/images/team/ryan-murray.webp"
    },
    {
     "name": "Miguel Cruz",
@@ -207,12 +255,6 @@
     "avatar": "/assets/images/team/jaidip-subedi.webp"
    },
    {
-    "name": "Joshua Warren",
-    "meta": "USA",
-    "href": "https://x.com/JoshuaSWarren",
-    "avatar": "/assets/images/team/joshua-warren.webp"
-   },
-   {
     "name": "Shawn Yeager",
     "meta": "USA",
     "href": "https://x.com/shawnyeager",
@@ -236,6 +278,44 @@
    "href": "mailto:apple@omarchy.org",
    "linkText": "apple@omarchy.org"
   }
+ },
+ {
+  "id": "dragon",
+  "name": "Omarchy Dragon",
+  "description": "Bringing Omarchy to Snapdragon",
+  "members": [
+   {
+    "name": "Jim Martin",
+    "meta": "USA",
+    "href": "https://github.com/jdvmi00",
+    "avatar": "/assets/images/team/jim-martin.webp"
+   },
+   {
+    "name": "Birk Skyum",
+    "meta": "Switzerland",
+    "href": "https://x.com/BirkSkyum",
+    "avatar": "/assets/images/team/birk-skyum.webp"
+   },
+   {
+    "name": "Matt Gilg",
+    "meta": "USA",
+    "href": "https://github.com/gilgm12",
+    "avatar": "/assets/images/team/matt-gilg.webp"
+   },
+   {
+    "name": "Bob Prendergast",
+    "meta": "USA",
+    "href": "https://github.com/bprendie",
+    "avatar": "/assets/images/team/bob-prendergast.webp"
+   },
+   {
+    "name": "Miguel Cruz",
+    "meta": "USA",
+    "href": "https://x.com/acelogic_",
+    "avatar": "/assets/images/team/miguel-cruz.webp"
+   }
+  ],
+  "note": null
  },
  {
   "id": "rangers",
