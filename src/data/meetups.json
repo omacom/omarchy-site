@@ -1749,6 +1749,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-uPsBGIfECd9kXxV",
+      "title": "Omarchy SF",
+      "url": "https://luma.com/ejid15jm",
+      "start": "2026-12-03T01:00:00.000Z",
+      "end": "2026-12-03T04:00:00.000Z",
+      "timezone": "America/Los_Angeles",
+      "address": "Cloudflare, 101 Townsend St, San Francisco, CA 94107, USA",
+      "city": "San Francisco",
+      "country": "US",
+      "online": false,
+      "geo": { "lat": 37.7803014, "lon": -122.39072150000001 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-uPsBGIfECd9kXxV-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-MwxCpSJVFMDYrGX",
       "title": "Omarchy Moscow Meetup",
       "url": "https://luma.com/q6hzbcen",
