@@ -87,15 +87,15 @@
     ]
   },
   "downloads": {
-    "total": 1356329,
+    "total": 1360256,
     "countries": 215,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "quattro": 541687,
-    "periods": [{ "label": "Last month", "count": 104675, "days": 30 }],
+    "quattro": 545614,
+    "periods": [{ "label": "Last month", "count": 104698, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-11-06",
-      "lastAdded": 4440,
+      "through": "2026-11-07",
+      "lastAdded": 3927,
       "countries": [
         "AD",
         "AE",
