@@ -1549,6 +1549,21 @@
       "cover": null
     },
     {
+      "id": "evt-uPsBGIfECd9kXxV",
+      "title": "Omarchy SF",
+      "url": "https://luma.com/ejid15jm",
+      "start": "2026-12-03T01:00:00.000Z",
+      "end": "2026-12-03T04:00:00.000Z",
+      "timezone": null,
+      "address": "Cloudflare, 101 Townsend St, San Francisco, CA 94107, USA",
+      "city": null,
+      "country": "USA",
+      "online": null,
+      "geo": { "lat": 37.7803014, "lon": -122.39072150000001 },
+      "hosts": ["Steve Derico"],
+      "cover": null
+    },
+    {
       "id": "evt-MwxCpSJVFMDYrGX",
       "title": "Omarchy Moscow Meetup",
       "url": "https://luma.com/q6hzbcen",
