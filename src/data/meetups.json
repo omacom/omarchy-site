@@ -1,7 +1,7 @@
 {
   "source": "luma-feed",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-07",
+  "refreshed": "2026-11-08",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1264,21 +1264,6 @@
       "cover": null
     },
     {
-      "id": "evt-E0xJ81sqOj9SPBg",
-      "title": "OMARCHY Show Low, AZ",
-      "url": "https://luma.com/39voyojp",
-      "start": "2026-10-23T02:00:00.000Z",
-      "end": "2026-10-23T04:00:00.000Z",
-      "timezone": null,
-      "address": "Starbucks, 421 N White Mountain Rd, Show Low, AZ 85901, USA",
-      "city": null,
-      "country": "USA",
-      "online": null,
-      "geo": { "lat": 34.25343, "lon": -110.02816999999999 },
-      "hosts": ["Jeff Sauer"],
-      "cover": null
-    },
-    {
       "id": "evt-vCYUvJpPxLYfUxv",
       "title": "2nd Omarchy Meetup Kuala Lumpur",
       "url": "https://luma.com/niglrw2p",
@@ -1546,6 +1531,21 @@
       "online": null,
       "geo": { "lat": 49.977164599999995, "lon": 18.945283 },
       "hosts": ["Wojciech Wnętrzak"],
+      "cover": null
+    },
+    {
+      "id": "evt-E0xJ81sqOj9SPBg",
+      "title": "OMARCHY Show Low, AZ",
+      "url": "https://luma.com/39voyojp",
+      "start": "2026-11-25T01:00:00.000Z",
+      "end": "2026-11-25T03:00:00.000Z",
+      "timezone": null,
+      "address": "Starbucks, 421 N White Mountain Rd, Show Low, AZ 85901, USA",
+      "city": null,
+      "country": "USA",
+      "online": null,
+      "geo": { "lat": 34.25343, "lon": -110.02816999999999 },
+      "hosts": ["Jeff Sauer"],
       "cover": null
     },
     {
