@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "omarchy",
+  "compatibility_date": "2026-09-07",
+  "preview_urls": true,
+  "build": {
+    "command": "npm run build",
+    // Content extraction writes src/data; watching it would rebuild forever.
+    // Use npm run dev for editing, and Wrangler for previewing the output.
+    "watch_dir": [],
+  },
+  "assets": {
+    "directory": "./dist/client",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+}

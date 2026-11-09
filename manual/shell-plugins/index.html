@@ -1,73 +1,9 @@
 <!doctype html>
-
+<!-- Generated content source; rendered for visitors by the React site. -->
 <html lang="en">
-  <head>
-    <title>Shell Plugins — The Omarchy Manual</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta name="description" content="The Omarchy desktop runs as a single long-lived Quickshell process called omarchy-shell, and almost everything you see on screen is a plugin inside it. The...">
-
-    <meta property="og:site_name" content="Omarchy">
-    <meta property="og:title" content="Shell Plugins">
-    <meta property="og:description" content="The Omarchy desktop runs as a single long-lived Quickshell process called omarchy-shell, and almost everything you see on screen is a plugin inside it. The...">
-    <meta property="og:image" content="https://omarchy.org/assets/images/opengraph.png">
-    <meta property="og:url" content="https://omarchy.org/manual/shell-plugins/">
-    <meta property="og:type" content="article">
-
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/root.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/pre.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/manual.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
-
-    <script src="/assets/js/manual.js" type="module"></script>
-    <script defer data-domain="omarchy.org" src="https://plausible.io/js/script.js"></script>
-  </head>
-
-  <body>
-    <div class="pre">
-      <a href="/">
-<pre>
-                 ▄▄▄
- ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
-███   ███  ███   ███   ███ ▄███▄▄▄███ ▄███▄▄▄██▀  ███       ▄███▄▄▄███▄ ███▄▄▄███
-███   ███  ███   ███   ███ ▀███▀▀▀███ ▀███▀▀▀▀    ███      ▀▀███▀▀▀███  ▀▀▀▀▀▀███
-███   ███  ███   ███   ███  ███   ███ ██████████  ███   █▄   ███   ███  ▄██   ███
-███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
- ▀█████▀    ▀█   ███   █▀   ███   █▀   ███   ███  ███████▀   ███   █▀    ▀█████▀
-                                       ███   █▀
-</pre>
-      </a>
-    </div>
-
-    <header class="header">
-      <h1>The Manual</h1>
-    </header>
-
-    <main class="main">
-  <div class="manual manual--chapter">
+<head><meta charset="utf-8"><title>Shell Plugins</title></head>
+<body><main>  <div class="manual manual--chapter">
     <div class="manual__sidebar">
-      <search class="search" hidden>
-        <div class="search__field">
-          <input class="search__input" id="search" type="search" role="combobox"
-                 placeholder="Search" aria-label="Search the manual"
-                 aria-controls="search-results" aria-expanded="false" aria-autocomplete="list"
-                 autocomplete="off" autocapitalize="off" spellcheck="false">
-          <kbd class="search__shortcut">/</kbd>
-        </div>
-
-        <div class="search__results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
-      </search>
       <nav class="manual__toc" aria-label="Chapters">
         <ol>
           <li><a href="/manual/">Welcome to Omarchy!</a></li>
@@ -131,7 +67,7 @@
 
 <p>That’s not just an implementation detail. It means you can turn pieces of the desktop off, swap them out, or write your own without touching a line of Omarchy’s source.</p>
 
-<p>The first-party plugins ship with Omarchy and live in <code>$OMARCHY_PATH/shell/plugins/</code>. Anything you add yourself — your own experiments, or something you found on GitHub — lives in <code>~/.config/omarchy/plugins/</code>. Both are discovered the same way at startup; the only difference is where they sit on disk.</p>
+<p>The first-party plugins ship with Omarchy and live in <code>$OMARCHY_PATH/shell/plugins/</code>. Anything you add yourself — your own experiments, or something you found on GitHub — lives in <code>~/.config/omarchy/plugins/</code>. Both are discovered the same way at startup, but built-ins receive trusted shell interfaces while third-party plugins receive a limited interface scoped to their own service and lifecycle. Clones of built-ins keep only the source-specific configuration and UI calls needed for the original behavior.</p>
 
 <h2 id="seeing-what-you-have">Seeing what you have <a class="manual__heading-link" href="#seeing-what-you-have" aria-label="Link to this section">#</a></h2>
 
@@ -161,7 +97,9 @@ omarchy plugin disable omarchy.weather
 <pre><code>omarchy plugin add https://github.com/acme/omarchy-weather.git --enable
 </code></pre>
 
-<p>Before it does anything, it tells you plainly that plugins run as arbitrary, unsandboxed code inside your long-lived shell process, shows you the URL, and asks you to confirm. Take that seriously. A plugin isn’t a config file — it’s code that runs for as long as your session does, with everything your user account can reach. Only add repos you’re willing to run, and read them before you enable them.</p>
+<p>Before it does anything, it tells you plainly that plugins run as arbitrary, unsandboxed code inside your long-lived shell process, shows you the URL, and asks you to confirm. Take that seriously. The third-party plugin interface does not directly expose authentication services, and a replacement bar receives only limited capabilities for configured non-authentication UI. Visual plugins still share the shell’s QML scene and can walk ordinary parent objects, while all plugin code runs with everything your user account can reach. Authentication state is protected separately by keeping those services outside the reachable host object graph. Only add repos you’re willing to run, and read them before you enable them.</p>
+
+<p>A replacement bar can render installed widgets, but service-backed third-party widgets may have reduced functionality there because the bar is not allowed to request another plugin’s live service object. Switch back to the built-in <code>omarchy.bar</code> if such a widget needs its companion service.</p>
 
 <p>Then it clones the repo into a staging directory, validates the manifest, refuses the install if another plugin already claims that id, and moves it into <code>~/.config/omarchy/plugins/&lt;id&gt;/</code>. Without <code>--enable</code> it asks whether you want it on now, and you can say no and go read the code first. It never runs anything from the plugin, never executes an install hook, and never asks for sudo — it clones files, checks the manifest, and flips a bit over IPC.</p>
 
@@ -239,22 +177,15 @@ omarchy plugin update
 
 <p>That runs the same checks the shell does at load time: the schema version, the required fields, an id that isn’t reserved, entry points that are safe relative paths and actually exist, an entry point for every kind you claimed, and no symlinks anywhere inside the folder.</p>
 
-<p>For the full picture, the source is the documentation: <code>shell/README.md</code> in the Omarchy repo covers the manifest schema, the shell’s IPC contract, and the exact shape of <code>shell.json</code>, and <code>shell/plugins/README.md</code> lists every first-party plugin with its id, kinds, and entry points.</p>
+<p>For plugin development, see the <a href="https://github.com/omacom/omarchy/blob/quattro/docs/omarchy-shell.md">shell reference</a> and <a href="https://github.com/omacom/omarchy/blob/quattro/shell/plugins/README.md">first-party plugin catalog</a>.</p>
 
 <h2 id="sharing-yours-with-the-world">Sharing yours with the world <a class="manual__heading-link" href="#sharing-yours-with-the-world" aria-label="Link to this section">#</a></h2>
 
 <p>Once you’ve made something you like, put it in a public git repo. That’s the whole distribution mechanism — anyone can then run <code>omarchy plugin add</code> against your URL and have it running in seconds.</p>
 
-<p>To help people actually find it, list it at <a href="https://omarchyplugins.com">omarchyplugins.com</a>. That’s the community directory of Omarchy shell plugins, and it’s the first place to look when you’re wondering whether someone has already built the widget you’re about to write. Browse it before you start!</p>
+<p>To help people actually find it, list it at <a href="https://plugins.omarchy.org">plugins.omarchy.org</a>. That’s the marketplace for Omarchy shell plugins, and it’s the first place to look when you’re wondering whether someone has already built the widget you’re about to write. Browse it before you start!</p>
 
-      <nav class="manual__pagination">
-        <a class="manual__pagination-previous" href="/manual/dotfiles/" rel="prev">← Dotfiles</a>
-        <a class="manual__pagination-contents" href="/manual/toc/">Table of Contents</a>
-        <a class="manual__pagination-next" href="/manual/monitors/" rel="next">Monitors →</a>
-      </nav>
     </article>
   </div>
-    </main>
-
-  </body>
+</main></body>
 </html>
