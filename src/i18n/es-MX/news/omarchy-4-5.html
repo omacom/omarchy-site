@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (también conocido como Quattro RS!) es la primera gran versión con funciones desde <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, y es enorme: más de 740 pull requests fusionados de más de 180 colaboradores en solo doce semanas. Ahora ofrece un modo de escritorio tradicional junto al modo en mosaico predeterminado. Puedes instalarlo de forma nativa en MacBooks M1/M2/M3/Neo. Y habla 50 idiomas. Y un montón de otras funciones, correcciones y mejoras. ¿Ya estás en Omarchy? Ejecuta <em>Update &gt; Omarchy</em>. ¿Máquina nueva? <a href="/#install">Descárgalo aquí</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Espacios de trabajo flotantes con un dock</h2>
+
+<p><code>Super + L</code> ahora alterna cualquier espacio de trabajo entre mosaico, desplazamiento y flotante. En un espacio de trabajo flotante, cada ventana recibe una barra de título con los colores de tu tema, y un dock muestra tus apps ancladas, todo lo que está en ejecución y una cuadrícula de cada app instalada. Arrastra para reordenar o anclar, haz clic derecho para ver más, y <code>Super + M</code> minimiza una ventana al dock.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Esta es una maravillosa puerta de entrada para cualquiera que llegue desde macOS o Windows y aún no esté listo para entregarse por completo al mosaico. O para cualquiera que solo quiera un espacio de trabajo donde las ventanas puedan extenderse a sus anchas. Combínalos por espacio de trabajo, y la barra muestra qué diseño usa cada uno.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy en Apple Silicon</h2>
+
+<p>Nuestro increíble equipo de <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> lanzó el instalador nativo para Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Descarga una app</a> en macOS, y pondrá Omarchy junto a él en tu MacBook M1, M2, M3 o Neo. Sin memoria USB, sin conjuros en la terminal. ¿Prefieres Homebrew? Eso es una sola línea:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="El instalador de Omarchy para Mac" /></p>
+
+<p>Esto es lo que nos propusimos hacer en septiembre: terminar lo que Asahi empezó. Dos meses después, ya puedes simplemente descargarlo. Un trabajo increíble de todas las personas del equipo.</p>
+
+<p>Y no se van a detener ahí. Ya están trabajando en M4, M5 y M6, así que probablemente no pasará mucho tiempo antes de que Omarchy funcione en cada Mac con Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy en una M2 Max, M3 Air, Neo, M4 Pro y M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Soporte ARM para NVIDIA DGX Spark + N1X (y pronto Snapdragon)</h2>
+
+<p>Omarchy 4.5 incluye su primera ISO para ARM, y con ella llega el soporte preliminar para las máquinas ARM de NVIDIA: la DGX Spark de escritorio y las laptops basadas en N1X, como la <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> y la <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Y pronto también tendremos soporte para toda la línea de máquinas ARM con Snapdragon. Todavía es temprano, así que espera algunos detalles sin pulir, y por favor reporta cualquier cosa que se rompa en <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 idiomas y 5 métodos de entrada</h2>
+
+<p>Omarchy ahora habla 50 idiomas. Elige uno en <em>Setup &gt; Language</em> (o ejecuta <code>omarchy language &lt;code&gt;</code>), y el menú, el escritorio y las notificaciones de Omarchy cambian de inmediato. La configuración regional del sistema se aplicará en tu próximo inicio de sesión.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Cambiando de idioma" /></p>
+
+<p>Sin embargo, hablar un idioma es solo la mitad. También necesitas escribirlo. Así que Omarchy ahora configura métodos de entrada adecuados para japonés (Mozc), coreano (Hangul), chino simplificado (Pinyin), Taiwán (Zhuyin) y Hong Kong (Cangjie), desde el instalador o más tarde en <em>Setup &gt; Keyboard</em>. Cada uno viene con las fuentes adecuadas para sus formas de caracteres, la ventana de candidatos sigue tu tema, y <code>Super + I</code> cambia entre tus idiomas de entrada. Hangul, Zhuyin y Cangjie mantienen sus teclas en las posiciones estándar incluso si escribes en latín con Dvorak, Colemak o AZERTY, igual que en Windows y macOS. Y tocar Shift por sí sola te saca de un método de entrada hacia las letras latinas y de vuelta, como funcionan Sogou, Microsoft Pinyin y macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Inicia sesión en portales cautivos de Wi-Fi</h2>
+
+<p>El Wi-Fi de hoteles, aeropuertos y cafeterías por fin simplemente funciona. Omarchy ahora se da cuenta cuando una red quiere que inicies sesión o aceptes sus términos antes de dejarte conectarte. El ícono de red te advierte, y el panel de red muestra un botón grande Open Captive Portal que te lleva directo a la página de inicio de sesión. Una vez que pasas, todo vuelve a la normalidad por sí solo.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Iniciar sesión en un portal cautivo desde el panel de red" width="380" /></p>
+
+<h2 id="five-new-default-apps">Cinco nuevas apps predeterminadas</h2>
+
+<p><strong>Hype</strong> crea presentaciones a partir de un solo archivo Markdown, con un editor visual de diapositivas junto al código fuente, y exporta a PDF o PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> reemplaza a Xournal++ para el papeleo: abre un PDF, coloca tu firma guardada, texto y fechas, y guarda una copia firmada.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> dibuja un mapa de árbol de lo que está llenando tu disco, coloreado por tipo, señala las cachés que son seguras para regenerar, y te permite marcar lo que debe irse.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> graba tu cámara con una sola tecla, con un tema a juego con tu escritorio.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> te ofrece un escritorio remoto por SSH. Conéctate a otra máquina con Omarchy y controla su escritorio completo desde una ventana en la tuya, con una pestaña para cada máquina. Y como funciona sobre SSH, no hay nada extra que configurar o exponer. La máquina que está siendo controlada muestra un indicador de sesión remota en la barra, así que siempre está claro cuando alguien está en ella.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Y está <strong>Elsewhen</strong>, un reloj mundial que vive justo al lado del reloj en la barra. Toca una ciudad en el globo para establecer dónde estás, busca lugares reales y nombra a las personas que viven en cada ciudad, para que siempre sepas si es una hora decente para llamar. Alterna entre 12 y 24 horas con <code>t</code>, entre °F y °C con <code>Alt + T</code>, y ábrelo en cualquier momento con <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Con Monologue para grabar y Omacut para recortar, las instalaciones nuevas ya no incluyen OBS Studio y Kdenlive. Lazydocker también desapareció de las instalaciones nuevas, aunque Docker y Docker Compose siguen incluidos. Las máquinas que ya tengan cualquiera de ellos los conservan.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>¿Necesitas trabajar con gente que vive en Office? <em>Install &gt; Service &gt; Microsoft</em> ahora configura Outlook, Word, Excel, PowerPoint, Teams y OneDrive como apps web. Cada una recibe su propia ventana y entrada en el lanzador, así que se sienten como en casa junto a todo lo demás. ¡Ya no hay excusas para no cambiarte a Omarchy en el trabajo!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams y PowerPoint en Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper para dictado</h2>
+
+<p>Superwhisper ahora es el motor de dictado predeterminado de Omarchy, y viene configurado desde el inicio. Toca <code>Alt + Space</code> para empezar a hablar y otra vez para detenerte, o mantén presionada <code>Right Alt</code> para push-to-talk. Es increíblemente rápido y muy preciso.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Dictando con Superwhisper" /></p>
+
+<p>Empieza en la nube, así que funciona en el momento en que instalas, y las primeras 10,000 palabras son gratis. Pero puedes cambiar a un modelo descargable que es totalmente gratis y funciona por completo de forma local, sin enviarle ni una palabra a nadie. Y si prefieres otro modelo local, Voxtype sigue disponible como alternativa.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Instalación en menos de diez segundos</h2>
+
+<p>Antes Omarchy instalaba unos 940 paquetes uno por uno. El nuevo instalador F1, en cambio, descomprime una imagen raíz preconstruida y agrega solo los paquetes de esta máquina encima. Eso reduce los tiempos de instalación aproximadamente a la mitad en cualquier máquina.</p>
+
+<p>Y en hardware rápido, es absurdo. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> de AMD estableció el récord mundial con una instalación completa de Omarchy en <strong>7 segundos</strong> en su laptop AMD. <a href="https://x.com/dhh/status/2117222836620202375">¡Siete segundos!</a> Recuerdo cuando cinco minutos parecía una meta ambiciosa.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy instalado en 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Más rápido en todas partes</h2>
+
+<p>No es solo el instalador. El arranque ya no se detiene en el registro de binfmt. El selector de temas se abre de inmediato en lugar de después de un cuarto de segundo. Los menús y paneles se abren directo desde los atajos de Hyprland, saltándose los 60 ms que tomaba iniciar primero un proceso. Las comprobaciones más lentas del menú de Omarchy pasaron de 200 ms a 16 ms, una terminal nueva muestra su prompt 30 ms antes, y todo el escritorio ahora reacciona a los cambios en lugar de estar consultándolos. Incluso cerrar sesión, reiniciar y apagar suceden en el momento en que tus apps terminan de cerrarse.</p>
+
+<h2 id="agent-upgrades">Mejoras para los agentes</h2>
+
+<p>Omarchy es el sistema operativo agéntico, y 4.5 trae una gran ronda de mejoras para trabajar con agentes. El panel de agentes ahora rastrea 23 agentes y proveedores, en lugar de 6, incluidos Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter y Ollama. Cada límite recibe su propio medidor con el tiempo hasta que se restablece, para que puedas ver exactamente cuánto margen te queda. Y Grok ahora es un proveedor completo junto a Claude y Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="El panel de agentes con varias suscripciones de Claude y Codex" width="380" /></p>
+
+<p>Y tu agente siempre está a una tecla de distancia. <code>Super + ~</code> despliega una consola estilo Quake sobre un escritorio atenuado, y la primera vez que la abres, inicia tu agente predeterminado. Presiónala de nuevo para guardarla, y tu sesión queda justo donde la dejaste.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="La consola estilo Quake ejecutando un agente sobre un escritorio atenuado" /></p>
+
+<p>Si manejas más de una suscripción, ahora puedes mantener varias sesiones de Claude, Codex y Grok en la misma máquina y elegir con cuál empiezan las sesiones nuevas, usando <code>omarchy agent account</code>. El historial, los ajustes y las habilidades se comparten entre ellas, así que <code>claude --continue</code> continúa justo donde lo dejaste después de un cambio. Cerca de un límite, Omarchy puede ofrecerte un cambio con un clic o mover las sesiones nuevas por su cuenta a la cuenta con más margen. Y cuando configuras otra máquina, <code>omarchy agent account copy</code> trae todas tus sesiones por SSH, para que no tengas que iniciar sesión en todo de nuevo.</p>
+
+<p>Kimi y Ori, el harness de agentes de OpenRouter, se suman a las opciones en <em>Setup &gt; Defaults &gt; Agent</em>, y Antigravity de Google reemplaza al obsoleto Gemini CLI (<code>gemini</code> sigue funcionando como alias). ¿Prefieres una ventana a una terminal? Las apps de escritorio de Claude y Amp ahora están a un clic en <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Notificaciones, reconstruidas</h2>
+
+<p>Las notificaciones ahora se apilan por remitente, siguen tu tema y colapsan las repeticiones idénticas. Los botones de acción, los códigos de verificación y los enlaces funcionan directo desde la tarjeta. <code>Super + Comma</code> actúa sobre la más reciente (la descarta, la abre o presiona su botón), y <code>Super + Ctrl + Comma</code> te da el teclado para controlarlas todas. La campana en la barra activa No molestar.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Nuevas notificaciones" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Fondos en video e intros de temas</h2>
+
+<p>Los fondos ahora pueden ser videos. Pon uno, y tu escritorio cobra vida con olas rodantes o lo que se te antoje, mientras la pantalla de bloqueo muestra un fotograma fijo de él. Y los temas ahora hacen una entrada: cada uno puede reproducir una intro corta y silenciosa cuando inicias sesión o cambias a él. (¿Prefieres mantener la calma? Desactiva las intros en <em>Appearance &gt; Animations</em>).</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse se suma a los temas predeterminados</h2>
+
+<p>Jade Horse es todo verdes brumosos, con fondos de jade tallado que hacen que todo el escritorio parezca una pintura en pergamino. Reemplaza a Osaka Jade entre los temas incluidos, y se le suma Starship como el otro nuevo tema predeterminado. Si estás en Osaka Jade, conservas tu copia, y sigue vivo como un <a href="https://github.com/omacom/omarchy-osaka-jade-theme">tema de terceros</a> para quien quiera instalarlo desde cero.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="El tema Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff es el nuevo fondo predeterminado</h2>
+
+<p>Las instalaciones nuevas ahora te reciben con Liftoff, un hermoso lanzamiento al atardecer que es el nuevo fondo predeterminado para Tokyo Night. Lo hizo <a href="https://github.com/tcballard">Tom Ballard</a>, quien lo creó primero para su <a href="https://github.com/tcballard/omarchy-theme-liftoff">tema Liftoff</a>. ¡Gracias, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="El fondo Liftoff de Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">El menú de arranque ahora es silencioso</h2>
+
+<p>Antes Omarchy mostraba el menú de arranque durante unos seis segundos en cada inicio, por si necesitabas revertir a una instantánea anterior. Pero casi nadie lo hacía nunca. Así que ahora Limine espera solo un segundo y arranca en silencio, y la mayoría de las veces ni siquiera verás el menú.</p>
+
+<p>Cuando sí necesites una entrada diferente o una instantánea, sigue tocando cualquier tecla (la flecha hacia abajo funciona) mientras la máquina arranca, y se detendrá en el menú. Y si prefieres mantener el menú visible más tiempo de forma permanente, establece tu propio <code>timeout:</code> en <code>/boot/limine.conf</code> (como <code>timeout: 5</code>). Las actualizaciones respetarán un tiempo de espera que tú hayas establecido.</p>
+
+<h2 id="changed-hotkeys">Atajos de teclado cambiados</h2>
+
+<p>Algunos atajos se movieron:</p>
+
+<ul>
+  <li>Calculadora: <code>Super + Ctrl + Q</code> ahora es <code>Super + Shift + Q</code>.</li>
+  <li>Actividad: <code>Super + Ctrl + T</code> ahora es <code>Super + Shift + T</code>, y <code>Super + Ctrl + T</code> abre los temas.</li>
+  <li>Red: <code>Super + Ctrl + W</code> ahora es <code>Super + Ctrl + N</code>, y <code>Super + Ctrl + W</code> abre los fondos.</li>
+  <li>La luz nocturna ya no tiene un atajo (era <code>Super + Ctrl + N</code>); está en <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> abre Apps desde el dock en lugar del menú Apps.</li>
+</ul>
+
+<p>Los atajos de notificaciones cambiaron:</p>
+
+<ul>
+  <li><code>Super + Comma</code> actúa sobre la tarjeta más reciente (la descarta, la abre o presiona su único botón) en lugar de solo descartarla.</li>
+  <li>Descartar la última se movió a <code>Super + Alt + Comma</code>, que antes la abría.</li>
+  <li>Silenciar se movió de <code>Super + Ctrl + Comma</code> a <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> ahora te da el control con el teclado.</li>
+</ul>
+
+<p>Algunas teclas funcionan de manera diferente:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> y <code>Super</code> + scroll permanecen en los espacios de trabajo del monitor actual, ya que cada monitor tiene los suyos.</li>
+  <li>En una terminal, <code>Super + C</code> y <code>Super + V</code> envían <code>Ctrl + Shift + C</code> y <code>Ctrl + Shift + V</code> en lugar de <code>Ctrl + Insert</code> y <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Nuevos valores predeterminados que podrían entrar en conflicto con tus propios atajos: <code>Super + Q</code> (cerrar ventana, junto a <code>Super + W</code>), <code>Super + A</code> (seleccionar todo), <code>Super + M</code> (minimizar al dock), <code>Super + ~</code> y <code>Super + Shift + ~</code> (consola Quake), <code>Super + Alt + L</code> (diseño anterior), <code>Super + Shift + Ctrl + Arrows</code> (mover una ventana a otro monitor), <code>Super + Ctrl + Alt + C</code> (captura de pantalla), <code>Super + Ctrl + Alt + E</code> (reloj mundial), <code>Super + Ctrl + Alt + F</code> (escritorio en pantalla completa), y mantener presionada <code>Right Alt</code> para dictado push-to-talk.</p>
+
+<h2 id="more-features">Más funciones</h2>
+
+<ul>
+  <li>Dale a cada monitor sus propios espacios de trabajo: <code>Super + 1-0</code> va a los espacios de trabajo del monitor en el que estás, y <code>Super + Arrows</code> se mueve hacia y desde las otras pantallas, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Reúne todo lo relacionado con el aspecto del escritorio en un nuevo menú Appearance, en reemplazo de Style: tema, fondo, fuente, barra, ventanas, marca, el dock, diseños de espacios de trabajo, animaciones y la pantalla de desbloqueo, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Elige ventanas Opaque, Transparent o Glassy en <em>Appearance &gt; Window Transparency</em>, además de un fondo Glassy para la barra, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Elige esquinas de ventana del tema, rectas o redondeadas en <em>Appearance &gt; Window Corners</em>, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Agrega un modo sin animaciones, activado de forma predeterminada en máquinas virtuales, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Haz que las apps sean opacas de forma predeterminada, manteniendo transparentes las terminales, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Agrega Slack a Install &gt; Service, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Haz que Alt + Space active o desactive el dictado en cada backend, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Agrega botones Open y Edit a las notificaciones de capturas de pantalla, y Open y Cut a las grabaciones de pantalla y descargas de yt-dlp, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Agrega un menú Update &gt; Kernel para cambiar el kernel predeterminado, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Agrega sincronización de temas a las máquinas herdr, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Agrega o.rebind para reemplazar los atajos de Hyprland, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Pide tu identidad de git después del primer inicio de sesión en lugar de en el instalador, con inicio de sesión en GitHub, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Permite que el medio de instalación preestablezca el idioma, el teclado y la zona horaria, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Permite que los widgets de la barra vivan en el cajón de la bandeja, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Permite quitar un widget de la barra arrastrándolo fuera de ella, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Permite desplazarte por los espacios de trabajo desde la barra, por <a href="https://github.com/outfoxxed">@outfoxxed</a> en <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Permite eliminar temas extra desde el selector de temas, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Agrega las CLI de hey, basecamp y Cloudflare como herramientas de instalación diferida, por <a href="https://github.com/monorkin">@monorkin</a> en <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Agrega SSH Agent como un servicio opcional, por <a href="https://github.com/carletex">@carletex</a> en <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Permite elegir cuánto dura el sudo sin contraseña, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Agrega un botón de cerrar al pasar el cursor a las notificaciones emergentes, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Permite silenciar las notificaciones de un programa desde su diagnóstico de fallos, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Permite que omarchy-notification-send agregue botones de acción, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Agrega un formato de reloj con segundos en vivo, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Ajusta la retroiluminación del teclado con Ctrl y las teclas de brillo, por <a href="https://github.com/ludagoo">@ludagoo</a> en <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Imprime la clave de producto OEM de Windows desde el firmware, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Agrega el vi original como opción de editor de terminal, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Agrega el fondo Roadster Starlight a Ethereal, por <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> en <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Seguridad</h2>
+
+<ul>
+  <li>Mantén la contraseña de la VM de Windows fuera de los argumentos del cliente RDP, por <a href="https://github.com/dicemans">@dicemans</a> en <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Mueve el estado de la grabación de pantalla fuera de /tmp, escribible por todo el mundo, por <a href="https://github.com/Chessing234">@Chessing234</a> en <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Refuerza la expiración del sudo sin contraseña tras la suspensión, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Vincula la limpieza del inhibidor de actualizaciones al proceso que lo creó, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Aísla la autorización de limpieza de OCaml, por <a href="https://github.com/ErikMelton">@ErikMelton</a> en <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Fija la elevación del restablecimiento de fábrica al comando empaquetado, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Elimina las plantillas de huellas digitales guardadas del usuario que invoca al restablecer, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Rechaza los nombres de hooks y de estado que sean rutas, por <a href="https://github.com/Adolanium">@Adolanium</a> en <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Delega a system-auth en la pila de polkit escrita por la configuración de huellas digitales y FIDO2, por <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> en <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Elimina las huellas digitales del almacenamiento propio del lector al eliminarlas, por <a href="https://github.com/scottjones">@scottjones</a> en <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Evita que la configuración de SSH deje sshd en ejecución con inicios de sesión con contraseña cuando no se agrega ninguna clave, por <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> en <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Evita que otro usuario local sustituya su propio programa durante una actualización de Voxtype, por <a href="https://github.com/Vladkarok">@Vladkarok</a> en <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Refuerza cómo el restablecimiento de fábrica pasa tus ajustes de gum a través de sudo, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Correcciones</h2>
+
+<ul>
+  <li>Corrige el fallo de Hyprland cuando un monitor se desconecta, se desactiva o se apaga al cerrar la tapa, por <a href="https://github.com/falkoro">@falkoro</a> en <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Corrige las actualizaciones que podían dejar una imagen del kernel sin su parámetro root=, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Corrige que el restablecimiento de fábrica borrara las entradas de arranque de otros sistemas, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Corrige que una instalación junto a otra de Omarchy eliminara la entrada de arranque de esa instalación, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Corrige las instalaciones en espacio libre que podían tomar una partición existente por una nueva, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Corrige que reanudar un cambio de contraseña de unidad interrumpido eliminara la clave equivocada, por <a href="https://github.com/scottjones">@scottjones</a> en <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Pide la contraseña de sudo una vez por actualización de Omarchy, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Pide la contraseña de sudo una vez durante diez minutos en lugar de pedirla de nuevo en cada comando, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Cubre las actualizaciones de AUR y la comprobación de arranque con la única solicitud de sudo de la actualización, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Mantén seguras las actualizaciones de paquetes frente a un cierre de sesión a mitad de la transacción, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Cierra sesión, reinicia y apaga en cuanto las apps terminan de cerrarse, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Reemplaza Tensaku con Omasnap para las capturas de pantalla, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Haz que los paneles crezcan desde la barra y se transformen entre ellos, con respuesta al presionar botones e íconos de la barra, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Desliza las notificaciones desde debajo de la barra y de vuelta por donde vinieron, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Comprueba la conectividad contra el endpoint propio de Omarchy, y corrige el inicio de sesión en portales cautivos, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Corrige que cambiar de edge a stable o RC dejara la máquina en una versión antigua, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Corrige que la actualización a 4.5 se detuviera cuando el shell tardaba en responder, por <a href="https://github.com/AnPod">@AnPod</a> en <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Corrige las actualizaciones que fallaban en silencio cuando se iniciaban fuera de la sesión de escritorio, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Corrige que una descarga fallida de una herramienta de mise detuviera el resto de una actualización del sistema, por <a href="https://github.com/sanjyay">@sanjyay</a> en <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Corrige las actualizaciones que fallaban cuando omarchy-nvim no estaba instalado, por <a href="https://github.com/imzihuailin">@imzihuailin</a> en <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Corrige las instalaciones de arranque dual que no lograban montar la partición EFI, por <a href="https://github.com/Damian626">@Damian626</a> en <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Corrige las instalaciones que se detenían cuando el firmware no aceptaba una nueva entrada de arranque, por <a href="https://github.com/ryanio">@ryanio</a> en <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Corrige las instalaciones que se detenían en discos con un antiguo miembro RAID o grupo de volúmenes, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Inicia el instalador antes al no esperar a cada dispositivo USB y tarea de arranque, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Acelera el cifrado de disco con sectores de 4096 bytes en instalaciones nuevas, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Enumera primero los discos internos y abre las pantallas de instalación en la opción segura, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Enumera primero Full disk install en el instalador, y regresa con Esc en las pantallas de disco, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Corrige que escalar un monitor cambiara la escala de todos los demás monitores, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Corrige que las apps XWayland salieran demasiado grandes cuando los monitores usan escalas diferentes, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Corrige que las pantallas HDR cambiaran a una imagen HDR deslavada cuando una ventana pasaba a pantalla completa, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Corrige los menús y selectores borrosos en pantallas con escala fraccionaria, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Corrige que la pantalla de la laptop se quedara apagada después de desconectar la pantalla externa, por <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> en <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Corrige que reactivar una pantalla restableciera su posición, escala y modo, por <a href="https://github.com/zihaomu">@zihaomu</a> en <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Corrige que los menús y selectores no se reabrieran después de desconectar un monitor, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Corrige que los espacios de trabajo por monitor se movieran después de desconectar un monitor, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Corrige el fallo del shell cuando un dispositivo de audio se desconecta con el panel de audio abierto, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Corrige que las ventanas en pantalla completa perdieran la pantalla completa después del salvapantallas, por <a href="https://github.com/MGross21">@MGross21</a> en <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Corrige que el cursor desapareciera al inicio después de que Hyprland se recargaba, por <a href="https://github.com/spencerbull">@spencerbull</a> en <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Corrige que el cursor se volviera invisible sobre apps XWayland, por <a href="https://github.com/Sebo1411">@Sebo1411</a> en <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Corrige los bloqueos en la captura del portapapeles, por <a href="https://github.com/maxcroy1">@maxcroy1</a> en <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Corrige el acceso al llavero a través del portal XDG Secret, por <a href="https://github.com/pkwagner">@pkwagner</a> en <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Corrige el registro de huellas digitales y la recuperación de la pantalla de bloqueo, por <a href="https://github.com/GeertJohan">@GeertJohan</a> en <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Guía el registro de huellas digitales paso a paso, por <a href="https://github.com/scottjones">@scottjones</a> en <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Corrige la repetición automática de teclas en el campo de contraseña de la pantalla de bloqueo, por <a href="https://github.com/berndb">@berndb</a> en <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Corrige que el fondo de la pantalla de bloqueo cargara después del campo de contraseña al despertar, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Corrige los tiempos de espera del bloqueo de pantalla cuando la sesión nombra una pantalla que ya no está, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Acelera la apertura de una terminal en el directorio de la ventana actual, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Haz que los editores de la familia VS Code sigan los cambios de tema en vivo, por <a href="https://github.com/Macho0x">@Macho0x</a> en <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Vuelve a aplicar el tema a las sesiones de Hunk en ejecución al cambiar de tema, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Recuerda el fondo seleccionado para cada tema, por <a href="https://github.com/OldJobobo">@OldJobobo</a> en <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Mantén rápido y nítido el selector de imágenes con colecciones grandes y HiDPI, por <a href="https://github.com/keylimesoda">@keylimesoda</a> en <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Reduce el uso de CPU y memoria que la barra transparente gasta al muestrear el fondo, por <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> en <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Acelera el panel de Tailscale en tailnets con miles de máquinas, por <a href="https://github.com/iskakaushik">@iskakaushik</a> en <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Pon a Grok a la altura de Claude y Codex en el panel de agentes, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Aplica la selección de cuenta del agente a los subprocesos de la CLI, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Muestra los límites de gasto individuales de Codex y sus horas de restablecimiento, por <a href="https://github.com/Stegi56">@Stegi56</a> en <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Configura la integración con el navegador al elegir Claude, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Corrige que los agentes no encontraran herramientas de mise instaladas después de que iniciaron, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Corrige el pegado de capturas de pantalla en agentes en paneles de herdr iniciados por SSH, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Corrige que al panel de agentes le faltaran sesiones comprimidas de Codex, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Devuelve Caps Lock a la normalidad y haz que Shift + Caps Lock sea la tecla de composición, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Aplica la distribución de teclado del sistema a la pantalla de inicio de sesión, por <a href="https://github.com/g-desoutter">@g-desoutter</a> en <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Corrige que el cambio de distribución se saltara una de cada dos pulsaciones con una distribución de teclado no latina, por <a href="https://github.com/manuaudio">@manuaudio</a> en <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Activa la decodificación de video por hardware en mpv, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Cambia el control de congestión TCP a BBR y usa el planificador de E/S kyber en discos reales, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Instala T3 Code como su AppImage autoactualizable, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Mejora la instalación de PHP y Laravel, por <a href="https://github.com/nunomaduro">@nunomaduro</a> en <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Instala Node de forma diferida y deja en paz tu configuración de mise, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Instala las apps faltantes al elegir valores predeterminados, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Atenúa el software instalado en los menús Install en lugar de ocultarlo, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Registra el gestor de contraseñas y otros hosts de mensajería nativa para Brave Origin, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Agrupa las notificaciones web de Brave Origin por sitio, y abre la pestaña correcta al hacer clic, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Aprueba automáticamente la eliminación de paquetes huérfanos durante las actualizaciones, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Actualiza el llavero de Omarchy antes de cada actualización, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Ofrece reiniciar después de cambiar de canal, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Ofrece la actualización de primera ejecución solo cuando hay algo que actualizar, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Encuentra la ubicación del clima y la zona horaria del instalador con el servicio de geolocalización propio de Omarchy, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Establece el reloj desde ntp.omarchy.org en lugar del pool NTP de Arch, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Mide la velocidad de red con la prueba de velocidad propia de Omarchy, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Muestra una pantalla de progreso con íconos trazados durante el primer arranque, por <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> en <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Arranca la ISO en vivo con el kernel de Omarchy, y con el kernel T2 solo en Macs, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Evita que las instalaciones sin conexión esperen en las consultas de versiones de mise, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Corrige que las instalaciones sin conexión establecieran la zona horaria de forma predeterminada en Africa/Abidjan, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Corrige que el selector de zona horaria del instalador no te dejara escribir para buscar, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Corrige que la ISO en vivo se quedara colgada detrás de la pantalla de presentación al arrancar desde una memoria Ventoy, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Corrige los mapas de teclado de consola en alemán y francés en el formulario de configuración del instalador, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Oculta las sugerencias de teclas en inglés de gum en el instalador y la configuración de git, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Elimina los chistes solo en inglés de la pantalla de progreso de la instalación, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Corrige que la salida del instalador apareciera sin margen en la pantalla mientras prepara el disco, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Corrige que la actualización a Quattro restableciera el navegador predeterminado a Chromium, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Corrige que la actualización a Quattro se detuviera con nombres de fondos con caracteres no ASCII, por <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> en <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Corrige que la migración del kernel se detuviera en máquinas que arrancan con GRUB o systemd-boot, por <a href="https://github.com/manuaudio">@manuaudio</a> en <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Corrige la hibernación en máquinas sin cifrar con más de un disco NVMe, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Corrige que la migración FIDO2 se marcara como completada antes de resolverse, por <a href="https://github.com/ErikMelton">@ErikMelton</a> en <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Corrige que un espacio de trabajo flotante se apoderara de la primera ventana cubierta por tu propia regla de flotación, por <a href="https://github.com/zihaomu">@zihaomu</a> en <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Corrige que el compositor se detuviera cuando Super + L alternaba un espacio de trabajo dentro y fuera del modo flotante, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Corrige que Alt + Shift + Tab no recorriera hacia atrás todas las ventanas, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Corrige que las ventanas desprendidas no se centraran al moverse a otro monitor, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Corrige que las terminales nuevas se abrieran fuera de tu carpeta personal cuando el foco estaba en una ventana que no era una terminal, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Corrige que las ventanas de 1Password y Bitwarden no flotaran, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Corrige que 1Password se cerrara cuando la terminal del instalador salía, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Corrige que los diálogos de DaVinci Resolve robaran el foco del puntero, por <a href="https://github.com/AksharP5">@AksharP5</a> en <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Corrige que el escritorio se viera a través de las pantallas de la VM de Windows, por <a href="https://github.com/jmwall">@jmwall</a> en <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Corrige las contraseñas heredadas de la VM de Windows que contenían $$ después de la migración a Quattro, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Evita que la ventana emergente de donaciones de Hyprland aparezca después de las actualizaciones, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Mejora el arrastre y la organización de los widgets de la barra, por <a href="https://github.com/outfoxxed">@outfoxxed</a> en <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normaliza el tamaño y la alineación de los íconos de la barra, por <a href="https://github.com/bjarneo">@bjarneo</a> en <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Muestra los indicadores ocultos de la barra solo al pasar el cursor a la izquierda del reloj, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Alinea los íconos de la bandeja con los demás íconos de la barra, por <a href="https://github.com/ayoubdya">@ayoubdya</a> en <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Muestra enseguida el siguiente tooltip de la barra mientras uno ya está visible, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Abre los paneles del reloj y del clima debajo de sus widgets, por <a href="https://github.com/scottjones">@scottjones</a> en <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Mantén abierto el panel de red después de elegir un proveedor de DNS, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Corrige que cerrar una ventana emergente dejara los widgets de la barra sin responder, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Corrige que la barra oculta captara clics a lo largo de la parte superior de las ventanas en pantalla completa, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Corrige que los íconos oscuros de la bandeja desaparecieran en la barra, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Corrige que los íconos de la barra quedaran desiguales o descentrados, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Corrige que los tooltips de la barra dibujaran su primer fotograma con el tamaño equivocado, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Corrige que el historial de notificaciones mostrara cada tarjeta como si fuera justo ahora, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Corrige que las notificaciones del primer inicio de sesión se colapsaran en una sola pila, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Corrige que los clics en notificaciones no enfocaran apps con nombres de varias palabras, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Corrige que las notificaciones de Taildrop mostraran texto vacío y sin vistas previas, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Corrige que la notificación de batería mostrara un tiempo vacío y 0W con una batería llena, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Corrige que la advertencia de batería baja permaneciera después de conectar y volviera después de reiniciar, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Corrige que el consumo de batería marcara 0W en algunas laptops, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Corrige que una batería llena con CA se mostrara como descargándose, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Corrige que Hibernate se mostrara cuando el kernel no puede hibernar, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Corrige que los montajes gvfs desaparecieran después de reanudar, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Corrige que la retroiluminación del teclado se quedara apagada después de que el bloqueo apagara la pantalla dos veces, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Corrige que el lector de huellas digitales se activara mientras el bloqueo tenía las pantallas apagadas, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Corrige que la solicitud de contraseña de arranque quedara descentrada cuando una pantalla aparecía tarde, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Corrige que la tecla para salir del salvapantallas parpadeara en la esquina, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Corrige el parpadeo del ícono de Wi-Fi en redes OWE en modo de transición, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Corrige un error de OWE impreso en la terminal después de instalar un tema, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Corrige un parpadeo al cambiar de un fondo fijo a uno en video, por <a href="https://github.com/bjarneo">@bjarneo</a> en <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Actualiza Hackerman a un fondo geométrico escalado, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Corrige que los temas con referencias de color cíclicas colgaran el cambio de tema, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Corrige que Neovim no iniciara con el tema Catppuccin, por <a href="https://github.com/anandude">@anandude</a> en <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Corrige que OpenCode 2 iniciara con su tema de fábrica en lugar del de Omarchy, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Corrige el código en línea de bajo contraste en el tema de VS Code generado, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Corrige que las instalaciones de T3 Code se detuvieran al coincidir con el tema actual, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Corrige que el tamaño de la fuente de la terminal se restableciera al cambiar la familia de fuentes, por <a href="https://github.com/sbalbalosa">@sbalbalosa</a> en <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Corrige que cambiar las fuentes imprimiera el ID de proceso de una terminal, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Corrige que cambiar de idioma reconstruyera todas las configuraciones regionales y las perdiera en un disco casi lleno, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Corrige que el shell mostrara claves de traducción sin procesar antes de que cargaran sus traducciones, por <a href="https://github.com/zihaomu">@zihaomu</a> en <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Acelera el texto traducido en los scripts de Omarchy, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Actualiza las traducciones de 686 cadenas, 392 de ellas en el manual, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Corrige los controles de volumen y salida en configuraciones regionales que no están en inglés, por <a href="https://github.com/Sebo1411">@Sebo1411</a> en <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Corrige las lecturas de uso de CPU en configuraciones regionales que no están en inglés, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Corrige que el servicio fcitx5 se reiniciara para siempre cuando fcitx5 no estaba instalado, por <a href="https://github.com/therk">@therk</a> en <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Corrige que el widget de distribución de teclado cambiara a dispositivos en los que nadie escribe, por <a href="https://github.com/bjarneo">@bjarneo</a> en <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Corrige que el widget de distribución de teclado cambiara a dispositivos de teclas rápidas del fabricante, por <a href="https://github.com/yashranaway">@yashranaway</a> en <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Corrige que el menú de atajos dejara un proceso de Lua ejecutándose al 100% de CPU, por <a href="https://github.com/tobi">@tobi</a> en <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Corrige que el reloj inundara el registro cada milisegundo cuando termina el horario de verano, por <a href="https://github.com/falkoro">@falkoro</a> en <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Corrige que el shell reemplazara un shell.json que no podía leer con los valores predeterminados, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Corrige que el menú de Omarchy perdiera sus filas mientras su archivo se estaba actualizando, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Corrige que reactivar un plugin no recuperara su widget de la barra, por <a href="https://github.com/berrimi">@berrimi</a> en <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Corrige que los plugins locales se recargaran en bucle con su propio bytecode de Python, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Corrige que los botones ocultos en los plugins se colapsaran hasta su relleno, por <a href="https://github.com/dmkenney">@dmkenney</a> en <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Corrige que los menús desplegables cortaran su último elemento, por <a href="https://github.com/sprajs">@sprajs</a> en <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Corrige que los menús desplegables no se cerraran con un segundo clic, por <a href="https://github.com/felixzsh">@felixzsh</a> en <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Corrige que los controles deslizantes se detuvieran antes del final de la pista, por <a href="https://github.com/erikrjohansson">@erikrjohansson</a> en <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Corrige que Update &gt; Hardware &gt; Trackpad no detectara la mayoría de los touchpads y restableciera el teclado, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Ahora libera un botón atascado en cada touchpad, y restablece solo el touchpad en lugar del teclado y la pantalla táctil junto con él.</p>
+  </li>
+  <li>Haz que el menú de la cámara web busque cámaras sin encenderlas, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Corrige que la captura con desplazamiento de Omasnap solo captara fotogramas negros, por <a href="https://github.com/falkoro">@falkoro</a> en <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Corrige que el selector de capturas de pantalla desvinculara tus propias teclas, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Corrige que detener una grabación anunciara una grabación guardada vacía, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Corrige que el selector de imágenes mostrara miniaturas obsoletas para imágenes sobrescritas, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Corrige que la luz nocturna no se restableciera por completo cuando se apagaba, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Corrige que el widget multimedia dejara una pista en pausa por un reproductor inactivo, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Corrige los escaneos repetidos de pantallas en monitores que no reportan el brillo, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Corrige que Super + Shift + Return fallara cuando el navegador configurado estaba desinstalado, por <a href="https://github.com/vitally">@vitally</a> en <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Corrige que los atajos de la calculadora permanecieran después de eliminar apps preinstaladas, por <a href="https://github.com/OldJobobo">@OldJobobo</a> en <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Corrige el atajo Copy URL en los perfiles de Brave Origin, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Corrige que la ventana emergente de la extensión de Bitwarden se abriera con el tamaño equivocado, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Corrige que Battle.net se abriera con una escala del 100% en monitores HiDPI, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Corrige que los selectores de archivos de Inkscape se abrieran en mosaico, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Corrige que los paquetes Go de AUR no se compilaran durante las actualizaciones cuando mise administra Go, por <a href="https://github.com/shbernal">@shbernal</a> en <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Corrige la instalación de ONCE cuando no estás en el grupo docker, por <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> en <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Corrige que los clics en el panel de agentes abrieran la bandeja, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Corrige que la configuración de cuentas de agentes fallara con un enlace simbólico compartido colgante, por <a href="https://github.com/manuaudio">@manuaudio</a> en <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Corrige que <code>--reauth</code> agregara una nueva cuenta de agente cuando no había una, por <a href="https://github.com/manuaudio">@manuaudio</a> en <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Haz que la sugerencia para renombrar la cuenta del agente nombre a su proveedor, por <a href="https://github.com/manuaudio">@manuaudio</a> en <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Corrige que las actualizaciones del llavero afirmaran que tuvieron éxito cuando las operaciones de claves fallaban, por <a href="https://github.com/Adolanium">@Adolanium</a> en <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Corrige una solicitud de restablecimiento de fábrica en blanco cuando se ejecutaba bajo sudo, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Corrige que el recordatorio de migraciones pendientes se acumulara una vez por inicio de sesión, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Corrige que OS Age en About contara desde la compilación de la ISO en lugar de la instalación, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Corrige que Dropbox mostrara “0y ago” para archivos de 360 a 364 días de antigüedad, por <a href="https://github.com/manuaudio">@manuaudio</a> en <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Corrige que la comprobación de estado de Dropbox expirara un enlace de inicio de sesión pendiente, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Corrige la instalación de la biblioteca del ícono de bandeja de Dropbox, por <a href="https://github.com/omarchybot">@omarchybot</a> en <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Activa las barras de desplazamiento superpuestas en Chromium, por <a href="https://github.com/robzolkos">@robzolkos</a> en <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Pregunta antes de activar Touch ID en Macs con Apple Silicon, por <a href="https://github.com/scottjones">@scottjones</a> en <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Ofrece el canal RC en Macs con Apple Silicon, por <a href="https://github.com/maralcbr">@maralcbr</a> en <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Ofrece el canal estable en Macs con Apple Silicon, por <a href="https://github.com/maralcbr">@maralcbr</a> en <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Corrige que los alias, las funciones y el entorno de Omarchy faltaran en las terminales nuevas en Apple Silicon, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Configura las aplicaciones de NVIDIA instaladas, por <a href="https://github.com/jdvmi00">@jdvmi00</a> en <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Corrige las instalaciones que fallaban en la Lenovo Pro 9 con NVIDIA N1x, por <a href="https://github.com/breymander">@breymander</a> en <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Corrige la falta de bocinas y micrófonos internos en laptops N1x que ejecutaron los perfiles de audio anteriores, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Corrige un escritorio lento en máquinas NVIDIA GB10 como la DGX Spark, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Corrige la escritura en la pantalla de bloqueo después de reanudar en NVIDIA, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>El bloqueo tampoco vuelve a oscurecerse justo cuando el panel se enciende.</p>
+  </li>
+  <li>Corrige que Lutris y Battle.net instalaran el controlador Vulkan de 32 bits de otra GPU, por <a href="https://github.com/zihaomu">@zihaomu</a> en <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Deja de pedir un reinicio después de cada actualización en ARM, por <a href="https://github.com/birkskyum">@birkskyum</a> en <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Ofrece los canales estable y RC en aarch64, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Haz que los perfiles de energía funcionen en laptops ARM, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Ofrece Dropbox en máquinas ARM con páginas 4K, y Spotify como app web en ARM, por <a href="https://github.com/birkskyum">@birkskyum</a> en <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Oculta las instalaciones de GeForce NOW, Battle.net y Lutris en ARM, por <a href="https://github.com/birkskyum">@birkskyum</a> en <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Corrige que la app Hermes no se actualizara en su lugar en ARM, por <a href="https://github.com/ryanrhughes">@ryanrhughes</a> en <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Corrige que los teclados de laptops Snapdragon no escribieran en la solicitud de desbloqueo del disco, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Corrige que las cámaras faltaran en el inicio de sesión en laptops Snapdragon, por <a href="https://github.com/birkskyum">@birkskyum</a> en <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Corrige una pantalla negra antes del desbloqueo del disco en laptops Snapdragon X2, por <a href="https://github.com/jdvmi00">@jdvmi00</a> en <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Decodifica video por hardware en Intel Wildcat Lake, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Corrige los fallos de la ISO en vivo en laptops Arrow Lake-H, por <a href="https://github.com/emirb">@emirb</a> en <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Corrige el micrófono interno de la HP EliteBook Ultra G1q, por <a href="https://github.com/bprendie">@bprendie</a> en <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Usa el soporte de upstream para Ethernet Motorcomm YT6801, por <a href="https://github.com/AFOliveira">@AFOliveira</a> en <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Retransmite la Elgato Cam Link 4K como una cámara virtual 16:9, por <a href="https://github.com/dhh">@dhh</a> en <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Admite lectores de huellas digitales que una plataforma nombra, por <a href="https://github.com/scottjones">@scottjones</a> en <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

@@ -1,0 +1,4 @@
+.git/
+.github/
+.wrangler/
+node_modules/
