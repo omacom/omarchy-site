@@ -1,4 +1,18 @@
 {
- "version": "4.0.4",
- "isoUrl": "https://iso.omarchy.org/omarchy-4.0.4.iso"
+ "version": "4.5.0",
+ "isos": {
+  "x86_64": {
+   "url": "https://iso.omarchy.org/omarchy-4.5.0-x86.iso",
+   "sha256": "5d6288bc57f96f6231719830457582c846a2291985201c36a9a7d1216978b00f"
+  },
+  "aarch64": {
+   "url": "https://iso.omarchy.org/omarchy-4.5.0-aarch64.iso",
+   "sha256": "c9a9dd1107c10924eeb1e885226f9884080b1ffbf227d1f7f9ad255e4cebfb17"
+  }
+ },
+ "mac": {
+  "version": "2.3.16",
+  "url": "https://github.com/omacom/omarchy-mac-installer/releases/download/v2.3.16/Omarchy-Mac-Installer-2.3.16.dmg",
+  "sha256": "0b70717b0bfa3277f41159b5de4a0cab9f75dda9ba64f13d4b4a02a7860dd027"
+ }
 }

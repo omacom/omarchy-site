@@ -2,5 +2,10 @@
 
 # Preview the Astro site, including its content inputs and static assets.
 Dir.chdir(File.expand_path("..", __dir__)) do
+  installed = "node_modules/.package-lock.json"
+  unless File.exist?(installed) && File.mtime(installed) >= File.mtime("package-lock.json")
+    system("npm", "ci") or abort "npm ci failed"
+  end
+
   exec "npm", "run", "dev", "--", "--port", ARGV[0] || ENV.fetch("PORT", "3113")
 end
