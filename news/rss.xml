@@ -5,8 +5,39 @@
     <link>https://omarchy.org/news</link>
     <description>Notes on the people, ideas, and releases shaping Omarchy.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Nov 2026 21:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 11:00:00 GMT</lastBuildDate>
     <atom:link href="https://omarchy.org/news/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+  <title>Marcelo Alcantara and Birk Skyum join Omarchy Core</title>
+  <link>https://omarchy.org/news/2026/11/marcelo-alcantara-and-birk-skyum-join-omarchy-core</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/11/marcelo-alcantara-and-birk-skyum-join-omarchy-core</guid>
+  <pubDate>Thu, 05 Nov 2026 11:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[Marcelo Alcantara, who coordinated Omarchy M through the native Mac installer in 4.5, and Birk Skyum, who is coordinating the Snapdragon bring-up, join Omarchy Core.]]></description>
+  <content:encoded><![CDATA[<p>Two of the people doing the most to take Omarchy beyond x86 are joining <a href="https://omarchy.org/teams/#core">Omarchy Core</a>: <a href="https://x.com/maralcbr">Marcelo Alcantara</a> and <a href="https://x.com/BirkSkyum">Birk Skyum</a>!</p>
+
+<h2 id="marcelo-alcantara">Marcelo Alcantara</h2>
+
+<p>When we <a href="https://omarchy.org/news/2026/09/introducing-omarchy-m/">introduced Omarchy M</a> in September, Marcelo was the guy building the native Mac installer. Since then, he’s become the one coordinating the whole effort. Sixteen people from all over the world, each working on a different layer of the stack, from GPU drivers and displays to Touch ID and the installer itself. Somebody has to keep all of that pulling in the same direction, and Marcelo has been that person.</p>
+
+<p>The result shipped in <a href="https://omarchy.org/news/2026/11/omarchy-4-5/">Omarchy 4.5</a>. You can now <a href="https://github.com/omacom/omarchy-mac-installer/releases">download an app</a> on macOS (or run <code>brew install omacom/mac/omarchy</code>), and it’ll put Omarchy right alongside it on your M1, M2, M3, or Neo MacBook. No USB stick, no terminal incantations. Two months from team announcement to “just download it” is an incredible pace.</p>
+
+<p>That’s a huge credit to everyone on <a href="https://omarchy.org/teams/#m">Omarchy M</a>: Scott, Chris, Naeem, Dj, Joshua, Eduardo, Shun, Ryan, Miguel, Liam, Eryk, Jaidip, Shawn, Randy, Jon, and Marcelo. You finished what Asahi started, and you’re already pushing on to M4, M5, and M6. Thank you!</p>
+
+<h2 id="birk-skyum">Birk Skyum</h2>
+
+<p>Birk joined <a href="https://omarchy.org/news/2026/09/introducing-omarchy-dragon/">Omarchy Dragon</a> in September with his Lenovo Yoga Slim 7x and a track record of upstream fixes in Arch Linux ARM, libcamera, PipeWire, systemd, and the kernel. Since then, he’s taken on coordinating the bring-up of the entire Snapdragon lineup. That means gathering the machines, figuring out what works and what doesn’t on each one, and making sure the fixes land where they help everyone.</p>
+
+<p>You can already see his fingerprints all over the ARM work in 4.5: no more pointless reboot prompts after every update, cameras that show up at login on Snapdragon laptops, and apps that are offered (or hidden) based on what actually runs on ARM. But that’s just the beginning. Birk is driving toward an upcoming release where every Snapdragon machine we support will just work. Sleep, battery, video, cameras, the lot. That’s the bar, and he’s the one making sure we clear it.</p>
+
+<h2 id="welcome">Welcome!</h2>
+
+<p>Omarchy is going to run beautifully on every major platform, and Core needs the people who are making that happen. Marcelo and Birk have been doing exactly that. Now it’s official.</p>
+
+<p>Welcome to Omarchy Core, Marcelo and Birk!</p>
+]]></content:encoded>
+</item>
+
 <item>
   <title>Omarchy 4.5 floats, speaks 50 languages, and runs on your Mac</title>
   <link>https://omarchy.org/news/2026/11/omarchy-4-5</link>
