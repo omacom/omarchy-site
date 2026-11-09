@@ -36,6 +36,7 @@ export type MenuIcon =
   | 'meetups'
   | 'teams'
   | 'discord'
+  | 'x'
   | 'github'
   | 'security'
   | 'patrons'
@@ -99,6 +100,12 @@ const ITEMS: Array<MenuItem> = [
     label: 'Discord',
     icon: 'discord',
     href: 'https://discord.gg/tXFUdasqhY',
+  },
+  {
+    id: 'community.x',
+    label: 'X',
+    icon: 'x',
+    href: 'https://x.com/omarchy',
   },
   {
     id: 'community.meetups',
