@@ -14,7 +14,9 @@ export function ManualIsland({
 }) {
   return (
     <LoaderProvider value={null} activePath={activePath}>
-      <ManualLayout toc={toc}>{children}</ManualLayout>
+      <ManualLayout toc={toc} activePath={activePath}>
+        {children}
+      </ManualLayout>
     </LoaderProvider>
   )
 }
