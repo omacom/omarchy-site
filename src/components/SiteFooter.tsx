@@ -25,6 +25,7 @@ const columns = [
     title: t('Community'),
     links: [
       { label: 'Discord', href: 'https://discord.gg/tXFUdasqhY' },
+      { label: 'X', href: 'https://x.com/omarchy' },
       { label: t('Meetups'), to: '/meetups/' },
       { label: t('Teams'), to: '/teams/' },
       { label: t('Workstations'), splat: 'workstations' },
