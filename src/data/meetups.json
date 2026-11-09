@@ -1594,6 +1594,21 @@
       "cover": null
     },
     {
+      "id": "evt-U925QBQtzBf2iX3",
+      "title": "Omarchy DFW 002: What's New, Deep Dive, and Show & Tell",
+      "url": "https://luma.com/7lpv9pv6",
+      "start": "2026-12-16T00:00:00.000Z",
+      "end": "2026-12-16T02:00:00.000Z",
+      "timezone": null,
+      "address": "Dallas, TX, USA",
+      "city": null,
+      "country": "USA",
+      "online": null,
+      "geo": { "lat": 32.7766642, "lon": -96.79698789999999 },
+      "hosts": ["Matt Gleason"],
+      "cover": null
+    },
+    {
       "id": "evt-Go579QoFlyA9E5r",
       "title": "Omarchy Ghana",
       "url": "https://luma.com/fzp8rdnm",
