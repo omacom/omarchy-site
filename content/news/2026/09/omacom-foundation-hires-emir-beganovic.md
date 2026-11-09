@@ -3,10 +3,10 @@ title: Omacom Foundation hires Emir Beganović as Head of Infrastructure
 date: 2026-09-10 15:46 +0200
 author: DHH
 author_url: https://dhh.dk
-description: Emir Beganović joins November 1 as the foundation's third full-time hire, leading the infrastructure that builds, tests, and ships Omarchy.
+description: Emir Beganović joins October 1 as the foundation's third full-time hire, leading the infrastructure that builds, tests, and ships Omarchy.
 ---
 
-We're hiring [Emir Beganović](https://x.com/emirbeganovic) as **Head of Infrastructure for Omarchy**! He starts **November 1** as the [Omacom Foundation](/foundation/)'s third [full-time hire](/staff/), joining [Krzysztof Wilczyński on Kernel](/news/2026/09/omacom-foundation-hires-krzysztof-wilczynski/) and [outfoxxed on Shell](/news/2026/09/omacom-foundation-hires-outfoxxed/).
+We're hiring [Emir Beganović](https://x.com/emirbeganovic) as **Head of Infrastructure for Omarchy**! He starts **October 1** as the [Omacom Foundation](/foundation/)'s third [full-time hire](/staff/), joining [Krzysztof Wilczyński on Kernel](/news/2026/09/omacom-foundation-hires-krzysztof-wilczynski/) and [outfoxxed on Shell](/news/2026/09/omacom-foundation-hires-outfoxxed/).
 
 Here's how Emir describes his own journey to Omarchy:
 
