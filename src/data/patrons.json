@@ -1,0 +1,221 @@
+[
+ {
+  "id": "founding-patrons",
+  "name": "Founding Patrons",
+  "description": "Each contributing $1,000,000.",
+  "members": [
+   {
+    "name": "Tobi L\u00fctke",
+    "meta": "Shopify",
+    "href": "https://x.com/tobi",
+    "avatar": "/assets/images/patrons/tobi-lutke.webp"
+   },
+   {
+    "name": "Patrick Collison",
+    "meta": "Stripe",
+    "href": "https://x.com/patrickc",
+    "avatar": "/assets/images/patrons/patrick-collison.webp"
+   },
+   {
+    "name": "Michael Dell",
+    "meta": "Dell Technologies",
+    "href": "https://x.com/MichaelDell",
+    "avatar": "/assets/images/patrons/michael-dell.webp"
+   },
+   {
+    "name": "Jack Dorsey",
+    "meta": "Block",
+    "href": "https://x.com/jack",
+    "avatar": "/assets/images/patrons/jack-dorsey.webp"
+   },
+   {
+    "name": "Matthew Prince",
+    "meta": "Cloudflare",
+    "href": "https://x.com/eastdakota",
+    "avatar": "/assets/images/patrons/matthew-prince.webp"
+   },
+   {
+    "name": "Brendan Iribe",
+    "meta": "Sesame",
+    "href": "https://x.com/brendaniribe",
+    "avatar": "/assets/images/patrons/brendan-iribe.webp"
+   },
+   {
+    "name": "Jason Fried",
+    "meta": "37signals",
+    "href": "https://x.com/jasonfried",
+    "avatar": "/assets/images/patrons/jason-fried.webp"
+   },
+   {
+    "name": "Drew Houston",
+    "meta": "Dropbox",
+    "href": "https://x.com/drewhouston",
+    "avatar": "/assets/images/patrons/drew-houston.webp"
+   },
+   {
+    "name": "Peter Steinberger",
+    "meta": "OpenClaw",
+    "href": "https://x.com/steipete",
+    "avatar": "/assets/images/patrons/peter-steinberger.webp"
+   },
+   {
+    "name": "Brian Armstrong",
+    "meta": "Coinbase",
+    "href": "https://x.com/brian_armstrong",
+    "avatar": "/assets/images/patrons/brian-armstrong.webp"
+   },
+   {
+    "name": "Yunjie Dai",
+    "meta": "TapTap",
+    "href": "https://x.com/xdanger",
+    "avatar": "/assets/images/patrons/yunjie-dai.webp"
+   },
+   {
+    "name": "DHH",
+    "meta": "37signals",
+    "href": "https://dhh.dk",
+    "avatar": "/assets/images/patrons/dhh.webp"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "founding-token-patrons",
+  "name": "Founding Corporate Patrons",
+  "description": "Each contributing $1,000,000/year for three years or $1,500,000 in tokens with option for refill.",
+  "members": [
+   {
+    "name": "Meta Superintelligence Labs",
+    "meta": "",
+    "href": "https://www.meta.com/superintelligence/",
+    "avatar": "/assets/images/patrons/meta.webp"
+   },
+   {
+    "name": "DigitalOcean",
+    "meta": "",
+    "href": "https://www.digitalocean.com/",
+    "avatar": "/assets/images/patrons/digitalocean.webp"
+   },
+   {
+    "name": "Alibaba Cloud",
+    "meta": "",
+    "href": "https://www.alibabacloud.com/",
+    "avatar": "/assets/images/patrons/alibaba-cloud.svg"
+   },
+   {
+    "name": "SpaceXSI",
+    "meta": "",
+    "href": "https://x.ai/",
+    "avatar": "/assets/images/patrons/spacexai.svg"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "distinguished-patrons",
+  "name": "Distinguished Patrons",
+  "description": "Each contributing $100,000.",
+  "members": [
+   {
+    "name": "Ryan R. Hughes",
+    "meta": "Oodle",
+    "href": "https://x.com/ryanrhughes",
+    "avatar": "/assets/images/patrons/ryan-hughes.webp"
+   },
+   {
+    "name": "Ed Huang",
+    "meta": "DXStudio",
+    "href": "https://x.com/dxhuang",
+    "avatar": "/assets/images/patrons/ed-huang.webp"
+   },
+   {
+    "name": "Adrien Treccani",
+    "meta": "Metaco",
+    "href": "https://www.linkedin.com/in/atreccani/",
+    "avatar": "/assets/images/patrons/adrien-treccani.webp"
+   },
+   {
+    "name": "Max Schoening",
+    "meta": "Notion",
+    "href": "https://x.com/mschoening",
+    "avatar": "/assets/images/patrons/max-schoening.webp"
+   },
+   {
+    "name": "Brian Cartmell",
+    "meta": "Entrepreneur",
+    "href": "https://x.com/briancartmell",
+    "avatar": "/assets/images/patrons/brian-cartmell.webp"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "distinguished-corporate-patrons",
+  "name": "Distinguished Corporate Patrons",
+  "description": "Each contributing $100,000/year for three years or $150,000 in tokens with option for refill.",
+  "members": [
+   {
+    "name": "1Password",
+    "meta": "",
+    "href": "https://1password.com",
+    "avatar": "/assets/images/patrons/1password.webp"
+   },
+   {
+    "name": "37signals",
+    "meta": "",
+    "href": "https://37signals.com",
+    "avatar": "/assets/images/patrons/37signals.webp"
+   },
+   {
+    "name": "Fireworks",
+    "meta": "",
+    "href": "https://fireworks.ai",
+    "avatar": "/assets/images/patrons/fireworks.webp"
+   },
+   {
+    "name": "Four Technologies",
+    "meta": "",
+    "href": "https://www.paywithfour.com/",
+    "avatar": "/assets/images/patrons/four-technologies.svg"
+   },
+   {
+    "name": "OpenAI",
+    "meta": "",
+    "href": "https://openai.com",
+    "avatar": "/assets/images/patrons/openai.webp"
+   },
+   {
+    "name": "OpenRouter",
+    "meta": "",
+    "href": "https://openrouter.ai/",
+    "avatar": "/assets/images/patrons/openrouter.svg"
+   },
+   {
+    "name": "OrcaRouter",
+    "meta": "",
+    "href": "https://www.orcarouter.ai/",
+    "avatar": "/assets/images/patrons/orcarouter.webp"
+   },
+   {
+    "name": "Namespace",
+    "meta": "",
+    "href": "https://namespace.so/",
+    "avatar": "/assets/images/patrons/namespace.svg"
+   },
+   {
+    "name": "Greptile",
+    "meta": "",
+    "href": "https://www.greptile.com/",
+    "avatar": "/assets/images/patrons/greptile.svg"
+   }
+  ],
+  "note": null
+ },
+ {
+  "id": "become-a-patron",
+  "name": "Become a Founding or Distinguished Patron",
+  "description": "Interested in becoming a founding or distinguished patron? Write",
+  "members": [],
+  "note": null
+ }
+]

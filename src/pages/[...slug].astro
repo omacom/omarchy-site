@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro'
+import WorkstationLightbox from '../components/WorkstationLightbox.astro'
+import { PortedPage } from '@/astro/pages/PortedPage'
+import { getPortedPage, getPortedSlugs } from '../astro/data'
+import { headProps } from '../astro/head'
+import { portedSeo } from '../astro/page-seo'
+
+// /teams/ and /meetups/ have dedicated pages; they win over the catch-all.
+export function getStaticPaths() {
+  return getPortedSlugs()
+    .filter((slug) => slug !== 'teams' && slug !== 'meetups')
+    .map((slug) => ({ params: { slug }, props: { slug } }))
+}
+
+const { slug } = Astro.params
+const page = getPortedPage(slug ?? '')
+if (!page) throw new Error(`Ported page not found: ${slug}`)
+const head = headProps(portedSeo(page, slug ?? ''), `/${slug}/`)
+---
+<Base {...head}>
+  <PortedPage page={page} slug={slug ?? ''} />
+  {slug === 'workstations' && <WorkstationLightbox />}
+</Base>

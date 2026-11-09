@@ -1,0 +1,137 @@
+@property --theme-wipe {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+::view-transition {
+  position: fixed;
+  inset: 0;
+  overflow: clip;
+  pointer-events: none;
+  filter: none;
+}
+
+::view-transition-group(root) {
+  animation: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+::view-transition-image-pair(root) {
+  animation: none;
+  inset: 0;
+  overflow: hidden;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+  object-position: 0 0;
+  filter: none;
+}
+
+::view-transition-new(root) {
+  z-index: 0;
+}
+
+/*
+  Viewport-sized old snapshot. 100deg = 10° off vertical, top leaning
+  right (/). Both leading edges share that lean (parallelogram slit).
+  The slit starts closed and grows outward along the axis perpendicular
+  to the lines.
+
+  The picker is its own layer (view-transition-name: theme-picker), so
+  the page's snapshot is the page under the dimmer's tint, with the
+  dimmer's blur left out, since a backdrop blur is not carried into
+  snapshots. That snapshot is frosted here with the same 4px the dimmer
+  gives the live page; the picker's layer, the cards alone, sits on top
+  sharp, as on screen. Both open along the same slit. A filter is
+  applied before the mask, so the blades stay sharp.
+*/
+::view-transition-old(root),
+::view-transition-old(theme-picker) {
+  animation: theme-split-wipe 200ms cubic-bezier(0.7, 0, 1, 1) both;
+  mask-image: linear-gradient(
+    100deg,
+    #000 0,
+    #000 calc(50% - var(--theme-wipe) + 1px),
+    #0000 calc(50% - var(--theme-wipe) + 1px),
+    #0000 calc(50% + var(--theme-wipe) - 1px),
+    #000 calc(50% + var(--theme-wipe) - 1px),
+    #000 100%
+  );
+  mask-mode: alpha;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+/* Frosted only for a wipe that starts from the picker, where the page
+   already wears this blur under the dimmer. A theme taken anywhere else,
+   the home page's theme section, wipes from a sharp page. */
+:root.theme-wipe-frosted::view-transition-old(root) {
+  filter: blur(4px);
+}
+
+/* The same box as the page's group, whatever box the picker was captured
+   in: the browser sizes a group to its element, and the picker's box stops
+   short of a scrollbar the page's snapshot includes. Two slits that are a
+   few pixels apart show as a line along each blade. */
+::view-transition-group(theme-picker) {
+  animation: none;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  transform: none;
+  z-index: 2;
+}
+
+::view-transition-image-pair(theme-picker) {
+  animation: none;
+  inset: 0;
+}
+
+::view-transition-old(theme-picker) {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+  object-position: 0 0;
+}
+
+@keyframes theme-split-wipe {
+  from {
+    --theme-wipe: 0px;
+  }
+
+  to {
+    --theme-wipe: 80%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(theme-picker) {
+    animation: none;
+  }
+}
+
+/* Page navigation swaps immediately; the split wipe belongs to theme changes. */
+:root[data-astro-transition]::view-transition-old(root) {
+  animation: none;
+  mask-image: none;
+  opacity: 0;
+}

@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro'
+import { NewsIndexPage } from '@/astro/pages/NewsPages'
+import { getNewsIndex } from '../../astro/data'
+import { headProps } from '../../astro/head'
+import { newsIndexSeo } from '../../astro/page-seo'
+
+const news = await getNewsIndex()
+const head = headProps(newsIndexSeo(), '/news/')
+---
+<Base {...head}>
+  <NewsIndexPage news={news} />
+</Base>
