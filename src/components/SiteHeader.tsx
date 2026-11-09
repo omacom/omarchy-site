@@ -10,6 +10,7 @@ import {
   PaletteIcon,
   RssIcon,
   SearchIcon,
+  XIcon,
 } from '@/components/icons'
 import { OmarchyMarkDrawn, OmarchyWordmark } from '@/components/Brand'
 import { GlobeIcon } from '@/components/icons/GlobeIcon'
@@ -22,7 +23,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { useHashLink, useTopLink } from '@/lib/hash-scroll'
+import { useHashLink } from '@/lib/hash-scroll'
 import { OPEN_PICKER_EVENT, THEME_EVENT, groundOf } from '@/lib/theme'
 import { OPEN_SEARCH_EVENT } from '@/lib/search'
 import { cn } from '@/lib/utils'
@@ -55,7 +56,7 @@ const navLinks = [
   { to: '/news/', label: t('News') },
   { to: '/manual/', label: t('Manual') },
   // Old /plugins/ addresses redirect to the standalone directory.
-  { href: 'https://plugins.omarchy.org', label: 'Plugins' },
+  { href: 'https://plugins.omarchy.org', label: t('Plugins') },
   { to: '/themes/', label: t('Themes') },
 ] as const
 
@@ -289,7 +290,7 @@ function useNavSurface(
     // inside the bar, the bar paints the upper section's colour down to the
     // edge and the lower section's below it, both at the usual 90% over the
     // blur, and the split moves with the scroll.
-    const phone = window.matchMedia('(max-width: 639.98px)')
+    const phone = window.matchMedia('(max-width: 767.98px)')
     const wash = (colour: string) =>
       `color-mix(in srgb, ${colour} 90%, transparent)`
 
@@ -413,7 +414,6 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
   const heroInView = useHeroInView(pathname === '/')
   const [menuOpen, setMenuOpen] = useState(false)
   const installLink = useHashLink('install')
-  const homeLink = useTopLink()
   const transparent = heroInView
 
   useEffect(() => setMenuOpen(false), [pathname])
@@ -425,7 +425,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
   }, [menuOpen])
   useEffect(() => {
     const root = document.documentElement
-    if (menuOpen) root.dataset.navMenu = t('open')
+    if (menuOpen) root.dataset.navMenu = 'open'
     else delete root.dataset.navMenu
     return () => {
       delete root.dataset.navMenu
@@ -438,26 +438,27 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
   const glyph = (
     <Link
       to="/"
-      aria-label={t('Omarchy home')}
-      onClick={homeLink}
+      aria-label={t('Search Omarchy')}
+      onClick={(event) => {
+        // A plain click opens the menu, whose first row is Home. A modified or
+        // middle click is still a link home, as the browser expects of one.
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        )
+          return
+        event.preventDefault()
+        window.dispatchEvent(new CustomEvent(OPEN_SEARCH_EVENT))
+      }}
       className="mark-draw-trigger relative flex items-center"
     >
-      <OmarchyMarkDrawn className="size-[22px] shrink-0 transition-opacity duration-150 ease-out max-sm:group-data-[nav-past-hero]/bar:opacity-0 lg:size-[calc(var(--pxc)*2)]" />
-      <OmarchyWordmark className="absolute top-1/2 left-0 w-28 -translate-y-1/2 text-brand opacity-0 transition-opacity duration-150 ease-out group-data-[nav-past-hero]/bar:opacity-100 sm:hidden" />
+      <OmarchyMarkDrawn className="size-[22px] shrink-0 transition-opacity duration-150 ease-out max-md:group-data-[nav-past-hero]/bar:opacity-0 lg:size-[calc(var(--pxc)*2)]" />
+      <OmarchyWordmark className="absolute top-1/2 left-0 w-28 -translate-y-1/2 text-brand opacity-0 transition-opacity duration-150 ease-out group-data-[nav-past-hero]/bar:opacity-100 md:hidden" />
     </Link>
-  )
-
-  const search = (
-    <Button
-      variant="ghost"
-      size="icon"
-      aria-label={t('Search Omarchy')}
-      data-nav-glyph
-      className="relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
-      onClick={() => window.dispatchEvent(new CustomEvent(OPEN_SEARCH_EVENT))}
-    >
-      <SearchIcon className="size-5" />
-    </Button>
   )
 
   const theme = (
@@ -509,13 +510,17 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
           {glyph}
 
-          <nav aria-label={t('Main')} className="hidden items-center sm:flex">
+          <nav
+            data-nav-links
+            aria-label={t('Main')}
+            className="hidden items-center md:flex"
+          >
             {navLinks.map((link) =>
               'href' in link ? (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="px-3 py-1.5 text-sm whitespace-nowrap text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  className="px-2 py-1.5 text-sm whitespace-nowrap lg:px-3 text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                 >
                   {link.label}
                 </a>
@@ -523,7 +528,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className="px-3 py-1.5 text-sm whitespace-nowrap text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  className="px-2 py-1.5 text-sm whitespace-nowrap lg:px-3 text-text-secondary transition-[background-color] duration-150 ease-out hover:bg-surface-2 hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   activeProps={{ className: 'text-text bg-surface-2' }}
                 >
                   {link.label}
@@ -533,11 +538,8 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           </nav>
 
           <div className="ml-auto flex items-center gap-2.5">
-            <div className="hidden items-center gap-1 sm:flex">
+            <div className="hidden items-center gap-1 md:flex">
               <TooltipProvider delay={300}>
-                <NavTooltip label={t('Search Omarchy')} shortcut="⌘K / Ctrl+K">
-                  {search}
-                </NavTooltip>
                 <NavTooltip label={t('Change website theme')} shortcut="T">
                   {theme}
                 </NavTooltip>
@@ -568,10 +570,23 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
                     <GithubIcon className="size-5" />
                   </Button>
                 </NavTooltip>
+                <NavTooltip label={t('Follow Omarchy on X')}>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label={t('Omarchy on X')}
+                    data-nav-glyph
+                    className="relative h-8 w-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]"
+                    nativeButton={false}
+                    render={<a href="https://x.com/omarchy" />}
+                  >
+                    <XIcon className="size-5" />
+                  </Button>
+                </NavTooltip>
               </TooltipProvider>
               <span className="ml-2 flex">{install}</span>
             </div>
-            <div className="flex items-center gap-1 sm:hidden">
+            <div className="flex items-center gap-1 md:hidden">
               {theme}
               <LanguageSwitcher path={pathname} />
             </div>
@@ -579,10 +594,10 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
               variant="ghost"
               size="icon"
               data-nav-toggle
-              className="relative size-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 sm:hidden"
+              className="relative size-8 text-text-secondary transition-[background-color,transform] hover:text-text before:absolute before:-inset-1 md:hidden"
               aria-expanded={menuOpen}
               aria-controls="site-menu"
-              aria-label={menuOpen ? 'Close menu' : 'Menu'}
+              aria-label={menuOpen ? t('Close menu') : t('Menu')}
               onClick={() => setMenuOpen((open) => !open)}
             >
               <MenuBarsIcon open={menuOpen} className="size-[22px]" />
@@ -602,7 +617,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           data-menu-scrim
           aria-hidden="true"
           onClick={() => setMenuOpen(false)}
-          className="absolute inset-x-0 top-(--nav-h) h-svh bg-black/55 supports-backdrop-filter:backdrop-blur-xs sm:hidden"
+          className="absolute inset-x-0 top-(--nav-h) h-svh bg-black/55 supports-backdrop-filter:backdrop-blur-xs md:hidden"
         />
       ) : null}
 
@@ -612,7 +627,7 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
       <div
         id="site-menu"
         hidden={!menuOpen}
-        className="absolute inset-x-0 top-(--nav-h) border-b border-border-subtle bg-bg/95 backdrop-blur-lg sm:hidden"
+        className="absolute inset-x-0 top-(--nav-h) border-b border-border-subtle bg-bg/95 backdrop-blur-lg md:hidden"
       >
         <nav
           aria-label={t('Main pages')}
@@ -726,11 +741,11 @@ export function HeroNavGhost() {
           <span className="block size-[22px] shrink-0 lg:size-[calc(var(--pxc)*2)]" />
         </span>
 
-        <span className="hidden items-center sm:flex">
+        <span className="hidden items-center md:flex">
           {navLinks.map((link) => (
             <span
               key={link.label}
-              className="px-3 py-1.5 text-sm whitespace-nowrap"
+              className="px-2 py-1.5 text-sm whitespace-nowrap lg:px-3"
               style={{ color: 'var(--t-hdr-text-2)' }}
             >
               {link.label}
@@ -740,12 +755,9 @@ export function HeroNavGhost() {
 
         <span className="ml-auto flex items-center gap-2.5">
           <span
-            className="hidden items-center gap-1 sm:flex"
+            className="hidden items-center gap-1 md:flex"
             style={{ color: 'var(--t-hdr-text-2)' }}
           >
-            <span className="flex h-8 w-8 items-center justify-center lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]">
-              <SearchIcon className="size-5" />
-            </span>
             <span className="flex h-8 w-8 items-center justify-center lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]">
               <PaletteIcon className="size-5" />
             </span>
@@ -774,7 +786,7 @@ export function HeroNavGhost() {
           </span>
 
           <span
-            className="flex size-8 items-center justify-center sm:hidden"
+            className="flex size-8 items-center justify-center md:hidden"
             style={{ color: 'var(--t-hdr-text-2)' }}
           >
             <MenuBarsIcon className="size-[22px]" />

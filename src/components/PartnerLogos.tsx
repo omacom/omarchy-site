@@ -77,3 +77,33 @@ export function HeyMark(props: LogoProps) {
     </svg>
   )
 }
+
+/** Official DigitalOcean icon, inheriting the credit link colour.
+ * Source: https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/ */
+export function DigitalOceanMark(props: LogoProps) {
+  return (
+    <svg
+      viewBox="0 0 103 103"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M52.1,102.1l0-19.6c20.8,0,36.8-20.6,28.9-42.4C78,32,71.6,25.5,63.5,22.6 c-21.8-7.9-42.4,8.1-42.4,28.9c0,0,0,0,0,0l-19.6,0c0-33.1,32-58.9,66.7-48.1c15.2,4.7,27.2,16.8,31.9,31.9 C110.9,70.1,85.2,102.1,52.1,102.1z" />
+      <polygon
+        fillRule="evenodd"
+        clipRule="evenodd"
+        points="52.1,82.5 32.6,82.5 32.6,63 32.6,63 52.1,63 52.1,63"
+      />
+      <polygon
+        fillRule="evenodd"
+        clipRule="evenodd"
+        points="32.6,97.5 17.6,97.5 17.6,97.5 17.6,82.5 32.6,82.5 32.6,97.5"
+      />
+      <polygon
+        fillRule="evenodd"
+        clipRule="evenodd"
+        points="17.6,82.5 5,82.5 5,82.5 5,70 5,70 17.6,70 17.6,70"
+      />
+    </svg>
+  )
+}
