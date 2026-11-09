@@ -126,7 +126,7 @@ jobs:
       - name: Translate this language's pending site and news
         continue-on-error: true
         env:
-          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-spark-1.3-contributor' }}
+          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-wonder-1.0' }}
           LOCALE: ${{ matrix.locale }}
         run: |
           # Two queues per language; four Muse requests at most on each runner.

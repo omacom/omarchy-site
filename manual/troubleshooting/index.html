@@ -69,9 +69,15 @@
 
 <h3 id="why-are-some-apps-so-large-on-my-display">Why are some apps so large on my display? <a class="manual__heading-link" href="#why-are-some-apps-so-large-on-my-display" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy assumes a 2x high-resolution display, which requires setting <code>GDK_SCALE</code> to 2 in <code>~/.config/hypr/monitors.lua</code>. But if you’re on a 1x display, you can change <code>local omarchy_gdk_scale = 2</code> to 1 (and then restart any app that’s oversized). See <a href="../monitors/">the manual on monitors</a>.</p>
+<p>Omarchy assumes a 2x high-resolution display, so it sets <code>GDK_SCALE</code> to 2 until you choose a scale in the monitor panel. If you’re on a 1x display and GTK or X11 apps come out oversized, pick 1x for it in the monitor panel, or add <code>hl.env("GDK_SCALE", "1")</code> to <code>~/.config/hypr/monitors.lua</code> (and then restart any app that’s oversized). See <a href="../monitors/">the manual on monitors</a>.</p>
 
 <p>For Spotify, you can use <code>Ctrl + Minus</code> to shrink the UI (and <code>Ctrl + Plus</code> to make it bigger).</p>
+
+<h3 id="why-did-all-my-super-key-binds-stop-working">Why did all my Super key binds stop working? <a class="manual__heading-link" href="#why-did-all-my-super-key-binds-stop-working" aria-label="Link to this section">#</a></h3>
+
+<p>On some ASUS ROG and TUF laptops, <code>Fn + Super</code> is an easy-to-miss chord that toggles a firmware Windows-key lock (meant for gaming so you don’t leave a game by accident). Nothing on screen tells you it happened. While the lock is on, Super emits nothing at all — so every Omarchy bind that uses Super just stops, and it looks like Hyprland broke.</p>
+
+<p>Press <code>Fn + Super</code> once before you dig into <code>~/.config/hypr/</code>, and if that doesn’t bring Super back, press it again so you don’t leave the lock on. This is not Fn-lock, which only changes what the F-key row does.</p>
 
 <h3 id="my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working">My Wi-Fi, Bluetooth, audio, or trackpad just stopped working <a class="manual__heading-link" href="#my-wi-fi-bluetooth-audio-or-trackpad-just-stopped-working" aria-label="Link to this section">#</a></h3>
 
@@ -88,6 +94,25 @@
 <h3 id="why-cant-i-login-or-sudo-with-my-password">Why can’t I login or sudo with my password? <a class="manual__heading-link" href="#why-cant-i-login-or-sudo-with-my-password" aria-label="Link to this section">#</a></h3>
 
 <p>You probably typed it wrong too many times and got locked out. If this is happening on the lock screen, you can hit <code>CTRL + ALT + F2</code> to start a new TTY where you can login as root, then run <code>faillock --reset --user [your-username]</code>. That’ll reset the lockout, and you’re good to go.</p>
+
+<h3 id="my-password-is-accepted-but-i-return-to-the-login-screen">My password is accepted, but I return to the login screen <a class="manual__heading-link" href="#my-password-is-accepted-but-i-return-to-the-login-screen" aria-label="Link to this section">#</a></h3>
+
+<p>A broken session environment file can prevent the desktop from starting even when your password is correct. This is especially worth checking after editing <code>~/.config/uwsm/env.d/</code>.</p>
+
+<p>Press <code>Ctrl + Alt + F2</code>, log in with your normal username and password, and inspect the current boot’s user journal:</p>
+
+<pre><code class="language-bash">journalctl --user -b -t uwsm_env-preloader --no-pager
+</code></pre>
+
+<p>Look for an error naming one of your environment files, such as <code>bad substitution</code>, just before a message that the env output mark was not found. Move that file out of <code>env.d</code> before trying to log in again. For example, if the error names <code>99-custom</code>:</p>
+
+<pre><code class="language-bash">mkdir -p ~/.config/uwsm/disabled
+mv -i ~/.config/uwsm/env.d/99-custom ~/.config/uwsm/disabled/
+</code></pre>
+
+<p>UWSM skips a file with a syntax error, but a fatal error that only shows up while the file runs, like <code>bad substitution</code>, can still prevent the desktop from starting. A system snapshot rollback does not repair these files, because <code>/home</code> is not rolled back.</p>
+
+<p>Once you can log in, fix the saved copy before moving it back. <code>sh -n</code> catches syntax errors without running the file, but cannot catch every error that occurs when it is sourced. Keep a working terminal open while testing changes.</p>
 
 <h3 id="why-isnt-my-1password-authorization-prompts-for-1password-ssh-agent--cli-appearing">Why isn’t my 1Password authorization prompts for 1Password SSH Agent / CLI appearing? <a class="manual__heading-link" href="#why-isnt-my-1password-authorization-prompts-for-1password-ssh-agent--cli-appearing" aria-label="Link to this section">#</a></h3>
 

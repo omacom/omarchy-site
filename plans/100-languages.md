@@ -105,7 +105,7 @@ suffix. Default missing domains to `<code>.omarchy.org`. Existing `zh-CN` at
 
 First inspect `muse exec --help` on the destination computer and verify its
 authenticated provider/model. Existing translators use
-`muse-spark-1.3-contributor` unless `MUSE_MODEL` overrides it. Keep credentials
+`muse-wonder-1.0` unless `MUSE_MODEL` overrides it. Keep credentials
 out of prompts, artifacts, logs, and Git. Do not copy credentials from this box.
 
 **Important:** the existing Python translators are not one persistent agent per
