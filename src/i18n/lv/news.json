@@ -149,6 +149,10 @@
   },
   "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
     "title": "Marcelo Alcantara un Birk Skyum pievienojas Omarchy Core",
-    "sourceHash": "288bff55bdaba34899b33d1cfba5008fe5ceed6259caff041659ed6b770de39a"
+    "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
+  },
+  "omarchy-4-5": {
+    "title": "Omarchy 4.5 peld, runā 50 valodās un darbojas tavā Mac datorā",
+    "sourceHash": "dd592006d6438aee85ff9774154db1b591c5c637cc3b1588a033064d3680d5f0"
   }
 }
