@@ -65,6 +65,63 @@
       <h1>Hotkeys</h1>
 <p>You can see all the main keyboard bindings with <code>Super + K</code> (Tmux bindings with <code>Super + Alt + K</code> and Herdr bindings with <code>Super + Ctrl + K</code>).</p>
 
+<h2 id="how-hotkeys-are-laid-out">How hotkeys are laid out <a class="manual__heading-link" href="#how-hotkeys-are-laid-out" aria-label="Link to this section">#</a></h2>
+
+<p>Every hotkey sits on a plane, set by its modifiers, and each plane has one job. That’s what keeps the hotkeys from blurring together, and it means you can usually guess where something lives.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plane</th>
+      <th>What lives there</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Super + key</code></td>
+      <td>The system: windows, workspaces, layouts, and core menus</td>
+      <td><code>Super + Space</code> Omarchy menu, <code>Super + W</code> close window, <code>Super + F</code> full screen</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + key</code></td>
+      <td>Apps</td>
+      <td><code>Super + Shift + B</code> browser, <code>Super + Shift + E</code> email, <code>Super + Shift + N</code> editor</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + key</code></td>
+      <td>Panels and system menus</td>
+      <td><code>Super + Ctrl + A</code> audio, <code>Super + Ctrl + N</code> network, <code>Super + Ctrl + C</code> capture menu</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + key</code></td>
+      <td>Quick actions and notices</td>
+      <td><code>Super + Ctrl + Alt + T</code> show time, <code>Super + Ctrl + Alt + B</code> battery, <code>Super + Ctrl + Alt + C</code> screenshot</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Adding <code>Alt</code> to a hotkey gives you a variant of the same thing, never something unrelated:</p>
+
+<ul>
+  <li><code>Super + Shift + B</code> opens the browser; <code>Super + Shift + Alt + B</code> opens a private window</li>
+  <li><code>Super + Shift + E</code> opens email; <code>Super + Shift + Alt + E</code> starts a new one</li>
+  <li><code>Super + F</code> goes full screen; <code>Super + Alt + F</code> goes full width</li>
+  <li><code>Super + Ctrl + C</code> opens the capture menu; <code>Super + Ctrl + Alt + C</code> skips the menu and takes a screenshot</li>
+</ul>
+
+<p>When adding a hotkey:</p>
+
+<ol>
+  <li>Pick the plane from what it does, then pick the key.</li>
+  <li>Don’t move an existing hotkey to make room. Find a free key on the right plane.</li>
+  <li>Only use <code>Alt</code> for a variant of the hotkey without it.</li>
+</ol>
+
+<p>A few hotkeys break these rules because they’re convenient. <code>Shift</code> with an arrow or <code>Tab</code> moves or reverses instead of opening an app, and <code>Print</code>, the media keys, <code>Alt + Tab</code>, and <code>Ctrl + Alt + Del</code> work the way they do everywhere else. They’re exceptions, not patterns to copy.</p>
+
+<p>If a default doesn’t suit you (say you want <code>Super + Shift + S</code> for screenshots like on Windows), rebind it in <code>~/.config/hypr/bindings.lua</code>.</p>
+
 <h2 id="navigating">Navigating <a class="manual__heading-link" href="#navigating" aria-label="Link to this section">#</a></h2>
 
 <table>
@@ -301,6 +358,8 @@
     </tr>
   </tbody>
 </table>
+
+<p>Resize shortcuts use physical keys <code>code:20</code> and <code>code:21</code> (XKB <code>&lt;AE11&gt;</code> and <code>&lt;AE12&gt;</code>), regardless of the characters printed on the keyboard. On US keyboards these keys are <code>-</code> and <code>=</code>; on Japanese (JIS) keyboards they are <code>-</code> and <code>^</code>; on Spanish keyboards they are <code>'</code> and <code>¡</code>. On JIS, <code>Super + ^</code> is <code>Super + Equal</code>, while <code>Super + Shift + -</code> (which types <code>=</code>) is <code>Super + Shift + Minus</code>.</p>
 
 <h2 id="system-controls">System controls <a class="manual__heading-link" href="#system-controls" aria-label="Link to this section">#</a></h2>
 
@@ -558,6 +617,10 @@
   </thead>
   <tbody>
     <tr>
+      <td><code>Super + A</code></td>
+      <td>Select all in apps that support <code>Ctrl + A</code></td>
+    </tr>
+    <tr>
       <td><code>Super + C</code></td>
       <td>Copy</td>
     </tr>
@@ -629,12 +692,12 @@
       <td>Download the video on the current page to <code>~/Videos</code></td>
     </tr>
     <tr>
-      <td><code>Super + Ctrl + X</code></td>
+      <td><code>Alt + Space</code></td>
       <td>Start/stop dictation (requires <em>Setup &gt; Defaults &gt; Dictation</em>)</td>
     </tr>
     <tr>
-      <td><code>Right Alt</code> / <code>F9</code></td>
-      <td>Push-to-talk dictation (requires Voxtype or Superwhisper)</td>
+      <td><code>Right Alt</code></td>
+      <td>Hold to dictate (requires <em>Setup &gt; Defaults &gt; Dictation</em>)</td>
     </tr>
   </tbody>
 </table>
@@ -655,7 +718,7 @@
   <tbody>
     <tr>
       <td><code>Super + ,</code></td>
-      <td>Dismiss latest notification</td>
+      <td>Act on latest notification: open it or press its only button, pick from its choices, or dismiss it when it has none</td>
     </tr>
     <tr>
       <td><code>Super + Shift + ,</code></td>
@@ -667,7 +730,7 @@
     </tr>
     <tr>
       <td><code>Super + Alt + ,</code></td>
-      <td>Invoke most recent notification</td>
+      <td>Dismiss latest notification</td>
     </tr>
     <tr>
       <td><code>Super + Shift + Alt + ,</code></td>
@@ -1094,8 +1157,8 @@
       <td>Preview file (arrows navigate)</td>
     </tr>
     <tr>
-      <td><code>Backspace</code></td>
-      <td>Go back one folder</td>
+      <td><code>Alt + Up</code></td>
+      <td>Go up to parent folder</td>
     </tr>
   </tbody>
 </table>
