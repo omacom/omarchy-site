@@ -108,24 +108,64 @@ o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
 })
 </code></pre>
 
+<h3 id="function-keys">Function keys <a class="manual__heading-link" href="#function-keys" aria-label="Link to this section">#</a></h3>
+
+<p>The top row of a laptop keyboard sends the media keys (volume, brightness and so on) by default, and holding <code>Fn</code> gives F1-F12; <code>Fn + Esc</code> locks it the other way round until you press it again. Most keyboards remember that lock themselves. ASUS laptops and Apple-style keyboards leave it to Linux, which starts them on the media keys at every boot. To have them start on F1-F12 instead, run <code>omarchy keyboard toprow fnkeys</code> (and <code>omarchy keyboard toprow mediakeys</code> to go back); on some laptops it takes effect after a reboot. Apple Silicon Macs keep their own setting.</p>
+
 <h3 id="trackpad-gestures">Trackpad gestures <a class="manual__heading-link" href="#trackpad-gestures" aria-label="Link to this section">#</a></h3>
 
-<p>You can also turn on <a href="https://wiki.hypr.land/Configuring/Advanced-and-Cool/Gestures/">touchpad gestures</a>, like swiping with three fingers to change workspaces:</p>
+<p>Swipe on the trackpad to move around the desktop:</p>
 
-<pre><code class="language-lua">hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+<table>
+  <thead>
+    <tr>
+      <th>Gesture</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Three fingers left / right</td>
+      <td>Previous / next workspace, including empty ones</td>
+    </tr>
+    <tr>
+      <td>Three fingers up</td>
+      <td>Toggle the AI console</td>
+    </tr>
+    <tr>
+      <td>Three fingers down</td>
+      <td>Open the Omarchy menu</td>
+    </tr>
+    <tr>
+      <td>Four fingers left / right</td>
+      <td>Move the active window to the previous / next workspace</td>
+    </tr>
+    <tr>
+      <td>Four fingers down</td>
+      <td>Toggle fullscreen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To change one, unset it in <code>~/.config/hypr/input.lua</code> before adding your own <a href="https://wiki.hypr.land/Configuring/Advanced-and-Cool/Gestures/">touchpad gesture</a>, since Hyprland won’t take two gestures on the same fingers and direction:</p>
+
+<pre><code class="language-lua">hl.gesture({ fingers = 3, direction = "up", action = "unset" })
+hl.gesture({ fingers = 3, direction = "up", action = "fullscreen" })
 </code></pre>
+
+<p>To turn all of Omarchy’s gestures off, set <code>omarchy_default_gestures = false</code> near the top of <code>~/.config/hypr/hyprland.lua</code>, before Omarchy’s defaults load.</p>
 
 <p>On Dell XPS laptops with a haptic touchpad, you can also set the click strength to low, mid, or high under <em>Trigger &gt; Hardware &gt; Touchpad Haptics</em>.</p>
 
 <h3 id="typing-in-chinese-japanese-and-other-languages">Typing in Chinese, Japanese, and other languages <a class="manual__heading-link" href="#typing-in-chinese-japanese-and-other-languages" aria-label="Link to this section">#</a></h3>
 
-<p>Select Japanese, Korean, Chinese (Simplified, Pinyin), Taiwan (Zhuyin), or Hong Kong (Cangjie) when the installer asks for your keyboard. Omarchy configures the keyboard and matching input engine automatically, including during offline first-boot setup. Japanese uses Mozc, Korean uses standard two-set Hangul, Simplified Chinese uses Pinyin, Taiwan uses Chewing’s standard Zhuyin arrangement, and Hong Kong uses Cangjie with Hong Kong character forms. Japanese (US keyboard) provides Mozc with a US keyboard layout. Hangul, Zhuyin, and Cangjie keys stay in their standard positions even when you type Latin letters with Dvorak, Colemak, or AZERTY. If you added Hangul or Chewing before this, deselect and reselect it under <em>Setup &gt; Typing &gt; Input Methods</em> to move its keys there; Omarchy leaves an engine you already type with alone.</p>
+<p>Select Japanese, Korean, Chinese (Simplified, Pinyin), Taiwan (Zhuyin), or Hong Kong (Cangjie) when the installer asks for your keyboard. Omarchy configures the keyboard and matching input engine automatically, including during offline first-boot setup. Japanese uses Mozc, Korean uses standard two-set Hangul, Simplified Chinese uses Pinyin, Taiwan uses Chewing’s standard Zhuyin arrangement, and Hong Kong uses Cangjie with Hong Kong character forms. Japanese (US keyboard) provides Mozc with a US keyboard layout. Hangul, Zhuyin, and Cangjie keys stay in their standard positions even when you type Latin letters with Dvorak, Colemak, or AZERTY. If you added Hangul or Chewing before this, deselect and reselect it under <em>Setup &gt; Keyboard &gt; Input Methods</em> to move its keys there; Omarchy leaves an engine you already type with alone.</p>
 
-<p>Typing starts in Latin mode. Press <code>Super + I</code> to cycle through configured input methods, and <code>Super + Shift + I</code> to cycle back. Tap <code>Shift</code> on its own to step out of an input method like Pinyin into Latin letters, and tap it again to go back, the way Sogou, Microsoft Pinyin, and macOS work; <code>Shift</code> plus a letter still types a capital. On Japanese keyboards, 全角/半角 toggles input, 変換 turns it on, and 無変換 turns it off. With Korean, 한/영 switches Hangul and 한자 converts to Hanja, whether your keyboard has dedicated keys or sends Right Alt and Right Ctrl for them, as many laptops do, so Right Alt and Right Ctrl are not plain modifiers there; dictation push-to-talk stays on F9. <code>Ctrl + Space</code> stays available for Tmux and Herdr; <code>Shift + CapsLock</code> stays the compose key.</p>
+<p>Typing starts in Latin mode. Press <code>Super + I</code> to cycle through configured input methods, and <code>Super + Shift + I</code> to cycle back. Tap <code>Shift</code> on its own to step out of an input method like Pinyin into Latin letters, and tap it again to go back, the way Sogou, Microsoft Pinyin, and macOS work; <code>Shift</code> plus a letter still types a capital. On Japanese keyboards, 全角/半角 toggles input, 変換 turns it on, and 無変換 turns it off. With Korean, 한/영 switches Hangul and 한자 converts to Hanja, whether your keyboard has dedicated keys or sends Right Alt and Right Ctrl for them, as many laptops do, so Right Alt and Right Ctrl are not plain modifiers there; dictation toggles with Alt + Space instead. <code>Ctrl + Space</code> stays available for Tmux and Herdr; <code>Shift + CapsLock</code> stays the compose key.</p>
 
 <p>The keyboard indicator appears on the right of the bar when you have multiple keyboard layouts or input methods. Click it to switch input languages; Japanese displays あ for hiragana. For Japanese character choices, switch to Japanese, type a word such as <code>nihongo</code>, then press Space twice. Press Enter to accept your choice. If you also have multiple keyboard layouts, right-click the indicator to cycle those.</p>
 
-<p>Use <em>Setup &gt; Typing &gt; Keyboard Layouts</em> to select layouts such as English and French, from the same choices offered during installation. Use <em>Setup &gt; Typing &gt; Input Methods</em> to select which composition engines are active. Both pickers open inside the Omarchy menu with your current selections checked. Click or press Enter to toggle a choice; each change applies immediately. Deselecting an input method removes it from the cycle without uninstalling it; the keyboard remains available.</p>
+<p>Use <em>Setup &gt; Keyboard &gt; Keyboard Inputs</em> to select layouts such as English and French, from the same choices offered during installation. Use <em>Setup &gt; Keyboard &gt; Input Methods</em> to select which composition engines are active. Both pickers open inside the Omarchy menu with your current selections checked. Click or press Enter to toggle a choice; each change applies immediately. Deselecting an input method removes it from the cycle without uninstalling it; the keyboard remains available.</p>
 
 <p>Run <code>omarchy setup keyboard</code> or <code>omarchy setup input</code> to open the same pickers. To append one language from the command line, use <code>omarchy setup input mozc</code>, <code>hangul</code>, <code>pinyin</code>, <code>chewing</code>, or <code>cangjie5</code>. Quick, Boshiamy, and Array come in the same package as Cangjie and appear in the Input Methods picker. Your custom switching keys are preserved. For alternative engine layouts or keys, install <code>fcitx5-configtool</code> with <code>omarchy pkg add fcitx5-configtool</code> and launch it from a terminal. Selecting an input language does not change the desktop language. Choosing Japanese, Korean, or Chinese under <em>Setup &gt; Language</em> adds its input method when you have none yet.</p>
 
