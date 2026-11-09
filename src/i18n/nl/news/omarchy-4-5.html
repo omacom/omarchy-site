@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (ook wel Quattro RS!) is de eerste grote feature-release sinds <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, en het is een joekel: meer dan 740 pull requests samengevoegd van meer dan 180 bijdragers in slechts twaalf weken. Het biedt nu een traditionele desktopmodus naast de standaard tiling-modus. Je kunt het native installeren op M1/M2/M3/Neo MacBooks. En het spreekt 50 talen. En een heleboel andere functies, oplossingen en verbeteringen. Zit je al op Omarchy? Voer <em>Update &gt; Omarchy</em> uit. Nieuwe machine? <a href="/#install">Pak hem hier</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Zwevende werkruimtes met een dock</h2>
+
+<p><code>Super + L</code> doorloopt nu elke werkruimte tussen tiling, scrolling en floating. Op een zwevende werkruimte krijgt elk venster een titelbalk in de kleuren van je thema, en een dock toont je vastgepinde apps, alles wat draait, en een raster van elke geïnstalleerde app. Sleep om te herordenen of vast te pinnen, klik rechts voor meer, en <code>Super + M</code> minimaliseert een venster naar het dock.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Dit is een heerlijke opstap voor iedereen die overstapt vanaf macOS of Windows en nog niet klaar is om volledig voor tiling te gaan. Of voor iedereen die gewoon één werkruimte wil waar vensters zich kunnen uitspreiden. Mix en match per werkruimte, en de balk toont welke lay-out elk gebruikt.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy op Apple Silicon</h2>
+
+<p>Ons ongelooflijke <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a>-team heeft het native Mac-installatieprogramma geleverd. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Download een app</a> op macOS, en die zet Omarchy er direct naast op je M1, M2, M3 of Neo MacBook. Geen USB-stick, geen terminalbezweringen. Liever Homebrew? Dat is één regel:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Het Omarchy Mac-installatieprogramma" /></p>
+
+<p>Dit is wat we ons in september ten doel stelden: afmaken waar Asahi mee begon. Twee maanden later kun je het gewoon downloaden. Geweldig werk van iedereen in het team.</p>
+
+<p>En ze stoppen daar niet. Er wordt op dit moment gewerkt aan M4, M5 en M6, dus het duurt waarschijnlijk niet lang voordat Omarchy op elke Apple Silicon Mac draait.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy op een M2 Max, M3 Air, Neo, M4 Pro en M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM-ondersteuning voor NVIDIA DGX Spark + N1X (en binnenkort Snapdragon)</h2>
+
+<p>Omarchy 4.5 levert zijn eerste ARM-ISO, en daarmee komt voorlopige ondersteuning voor NVIDIA's ARM-machines: de DGX Spark-desktop en de laptops gebouwd op de N1X, zoals de <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> en de <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. En binnenkort hebben we ook ondersteuning voor de volledige reeks Snapdragon ARM-machines. Het is nog vroeg, dus verwacht een paar ruwe randjes, en meld alles wat stukgaat op <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 talen en 5 invoermethoden</h2>
+
+<p>Omarchy spreekt nu 50 talen. Kies er een onder <em>Setup &gt; Language</em> (of voer <code>omarchy language &lt;code&gt;</code> uit), en het menu, de desktop en de meldingen van Omarchy schakelen meteen om. De systeemlocale volgt bij je volgende login.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Talen wisselen" /></p>
+
+<p>Een taal spreken is echter maar de helft. Je moet hem ook kunnen typen. Dus Omarchy stelt nu de juiste invoermethoden in voor Japans (Mozc), Koreaans (Hangul), Vereenvoudigd Chinees (Pinyin), Taiwan (Zhuyin) en Hongkong (Cangjie), direct vanuit het installatieprogramma of later onder <em>Setup &gt; Keyboard</em>. Elk wordt geleverd met de juiste lettertypen voor zijn karaktervormen, het kandidaatvenster volgt je thema, en <code>Super + I</code> wisselt tussen je invoertalen. Hangul, Zhuyin en Cangjie houden hun toetsen op de standaardposities, zelfs als je Latijn typt op Dvorak, Colemak of AZERTY, net als op Windows en macOS. En alleen op Shift tikken stapt uit een invoermethode naar Latijnse letters en weer terug, zoals Sogou, Microsoft Pinyin en macOS werken.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Inloggen op captive wifi-portals</h2>
+
+<p>Wifi in hotels, op luchthavens en in koffietenten werkt eindelijk gewoon. Omarchy merkt nu wanneer een netwerk wil dat je inlogt of de voorwaarden accepteert voordat je online mag. Het netwerkpictogram waarschuwt je, en het netwerkpaneel toont een grote knop Open Captive Portal die je rechtstreeks naar de inlogpagina brengt. Zodra je erdoor bent, wordt alles vanzelf weer normaal.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Inloggen op een captive portal vanuit het netwerkpaneel" width="380" /></p>
+
+<h2 id="five-new-default-apps">Vijf nieuwe standaardapps</h2>
+
+<p><strong>Hype</strong> maakt presentaties van één enkel Markdown-bestand, met een visuele dia-editor naast de bron, en exporteert naar PDF of PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> vervangt Xournal++ voor het papierwerk: open een PDF, plaats je opgeslagen handtekening, tekst en data, en bewaar een ondertekende kopie.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> tekent een treemap van wat je schijf vult, gekleurd op soort, wijst de caches aan die veilig opnieuw te genereren zijn, en laat je markeren wat weg moet.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> neemt je camera op met één toets, in een thema dat bij je desktop past.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> geeft je een extern bureaublad via SSH. Verbind met een andere Omarchy-machine en bestuur het volledige bureaublad ervan vanuit een venster op de jouwe, met een tabblad voor elke machine. En omdat het via SSH loopt, hoef je niets extra's in te stellen of bloot te stellen. De machine die wordt bestuurd, toont een indicator voor externe sessies in de balk, zodat altijd duidelijk is wanneer er iemand op zit.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>En er is <strong>Elsewhen</strong>, een wereldklok die direct naast de klok in de balk woont. Tik op een stad op de wereldbol om in te stellen waar je bent, zoek naar echte plaatsen, en benoem de mensen die in elke stad wonen, zodat je altijd weet of het een fatsoenlijk tijdstip is om te bellen. Wissel tussen 12 en 24 uur met <code>t</code>, tussen °F en °C met <code>Alt + T</code>, en roep hem op elk moment op met <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Met Monologue om op te nemen en Omacut om bij te snijden, leveren nieuwe installaties niet langer OBS Studio en Kdenlive. Lazydocker is ook weg uit nieuwe installaties, hoewel Docker en Docker Compose nog steeds zijn inbegrepen. Machines die er al een van hebben, houden ze.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Moet je werken met mensen die in Office leven? <em>Install &gt; Service &gt; Microsoft</em> stelt nu Outlook, Word, Excel, PowerPoint, Teams en OneDrive in als webapps. Elk krijgt zijn eigen venster en launcher-item, zodat ze zich helemaal thuis voelen naast al het andere. Geen excuses meer om op het werk niet over te stappen op Omarchy!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams en PowerPoint op Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper voor dicteren</h2>
+
+<p>Superwhisper is nu de standaard dicteerengine van Omarchy, en hij is uit de doos ingesteld. Tik op <code>Alt + Space</code> om te beginnen met praten en nogmaals om te stoppen, of houd <code>Right Alt</code> ingedrukt voor push-to-talk. Hij is ongelooflijk snel en heel nauwkeurig.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Dicteren met Superwhisper" /></p>
+
+<p>Hij begint in de cloud, dus hij werkt zodra je installeert, en de eerste 10.000 woorden zijn gratis. Maar je kunt overschakelen naar een downloadbaar model dat volledig gratis is en compleet lokaal draait, zonder een woord naar iemand te sturen. En als je liever een ander lokaal model gebruikt, wordt Voxtype nog steeds aangeboden als alternatief.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Installeren in minder dan tien seconden</h2>
+
+<p>Omarchy installeerde vroeger zo'n 940 pakketten één voor één. Het nieuwe F1-installatieprogramma pakt in plaats daarvan een voorgebouwde root-image uit en voegt daarbovenop alleen de pakketten van deze machine toe. Dat halveert de installatietijd ruwweg op elke machine.</p>
+
+<p>En op snelle hardware is het absurd. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> van AMD vestigde het wereldrecord met een volledige Omarchy-installatie in <strong>7 seconden</strong> op zijn AMD-laptop. <a href="https://x.com/dhh/status/2117222836620202375">Zeven seconden!</a> Ik weet nog dat vijf minuten een ambitieus doel leek.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy geïnstalleerd in 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Overal elders sneller</h2>
+
+<p>Het is niet alleen het installatieprogramma. Opstarten blijft niet meer hangen op binfmt-registratie. De themakiezer opent meteen in plaats van na een kwart seconde. Menu's en panelen openen rechtstreeks vanuit Hyprland-sneltoetsen, en slaan de 60 ms over die het kostte om eerst een proces te starten. De traagste controles van het Omarchy-menu gingen van 200 ms naar 16 ms, een nieuwe terminal toont zijn prompt 30 ms eerder, en de hele desktop reageert nu op veranderingen in plaats van ernaar te pollen. Zelfs uitloggen, herstarten en afsluiten gebeuren zodra je apps klaar zijn met sluiten.</p>
+
+<h2 id="agent-upgrades">Agent-upgrades</h2>
+
+<p>Omarchy is het agentic OS, en 4.5 brengt een grote ronde upgrades voor het werken met agents. Het agentspaneel houdt nu 23 agents en providers bij, tegenover 6 eerder, waaronder Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter en Ollama. Elke limiet krijgt zijn eigen meter met de tijd tot hij reset, zodat je precies kunt zien hoeveel speelruimte je nog hebt. En Grok is nu een volwaardige provider naast Claude en Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Het agentspaneel met meerdere Claude- en Codex-abonnementen" width="380" /></p>
+
+<p>En je agent is altijd één toetsaanslag van je verwijderd. <code>Super + ~</code> laat een console in Quake-stijl naar beneden vallen over een gedimde desktop, en de eerste keer dat je hem opent, start hij je standaardagent. Druk er nogmaals op om hem weg te stoppen, en je sessie is precies waar je hem achterliet.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="De console in Quake-stijl die een agent draait over een gedimde desktop" /></p>
+
+<p>Als je met meer dan één abonnement jongleert, kun je nu meerdere Claude-, Codex- en Grok-logins op dezelfde machine houden en kiezen waarmee nieuwe sessies beginnen, met <code>omarchy agent account</code>. Geschiedenis, instellingen en skills worden tussen hen gedeeld, zodat <code>claude --continue</code> precies doorgaat waar je gebleven was na een wissel. Dicht bij een limiet kan Omarchy ofwel een wissel met één klik aanbieden, of nieuwe sessies uit zichzelf verplaatsen naar het account met de meeste ruimte. En wanneer je een andere machine instelt, brengt <code>omarchy agent account copy</code> al je logins over via SSH, zodat je je niet overal opnieuw hoeft aan te melden.</p>
+
+<p>Kimi en Ori, de agent-harness van OpenRouter, voegen zich bij de keuzes onder <em>Setup &gt; Defaults &gt; Agent</em>, en Antigravity van Google vervangt de verouderde Gemini CLI (<code>gemini</code> werkt nog steeds als alias). Liever een venster dan een terminal? De Claude- en Amp-desktopapps zijn nu één klik verwijderd onder <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Meldingen, opnieuw opgebouwd</h2>
+
+<p>Meldingen stapelen nu per afzender, volgen je thema en vouwen identieke herhalingen samen. Actieknoppen, verificatiecodes en links werken allemaal rechtstreeks vanuit de kaart. <code>Super + Comma</code> handelt de nieuwste af (sluit hem, open hem of druk op zijn knop), en <code>Super + Ctrl + Comma</code> geeft je het toetsenbord om ze allemaal te bedienen. De bel in de balk schakelt Niet storen in.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Nieuwe meldingen" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Videoachtergronden en thema-intro's</h2>
+
+<p>Achtergronden kunnen nu video's zijn. Zet er een in, en je desktop komt tot leven met rollende golven of wat je verder maar leuk vindt, terwijl het vergrendelscherm een stilstaand beeld ervan toont. En thema's maken nu een entree: elk kan een korte, stille intro afspelen wanneer je inlogt of ernaar wisselt. (Hou je het liever rustig? Zet intro's uit onder <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse voegt zich bij de standaardthema's</h2>
+
+<p>Jade Horse is helemaal mistige groenen, met achtergronden van gesneden jade die de hele desktop eruit laten zien als een rolschildering. Het vervangt Osaka Jade onder de gebundelde thema's, en wordt vergezeld door Starship als het andere nieuwe standaardthema. Als je op Osaka Jade zit, hou je je exemplaar, en het leeft voort als een <a href="https://github.com/omacom/omarchy-osaka-jade-theme">thema van derden</a> voor iedereen die het vers wil installeren.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Het Jade Horse-thema" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff is de nieuwe standaardachtergrond</h2>
+
+<p>Nieuwe installaties begroeten je nu met Liftoff, een prachtige lancering bij zonsondergang die de nieuwe standaardachtergrond is voor Tokyo Night. Het is gemaakt door <a href="https://github.com/tcballard">Tom Ballard</a>, die het eerst creëerde voor zijn <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a>. Bedankt, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="De Liftoff-achtergrond van Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Opstartmenu nu stil</h2>
+
+<p>Omarchy toonde vroeger het opstartmenu ongeveer zes seconden bij elke start, voor het geval je moest terugrollen naar een eerdere snapshot. Maar bijna niemand deed dat ooit. Dus nu wacht Limine slechts één seconde en start het stil op, en meestal zie je het menu helemaal niet.</p>
+
+<p>Wanneer je wel een andere invoer of een snapshot nodig hebt, blijf dan op een willekeurige toets tikken (de pijl omlaag werkt) terwijl de machine start, en hij stopt bij het menu. En als je het menu liever voorgoed langer open houdt, stel dan je eigen <code>timeout:</code> in in <code>/boot/limine.conf</code> (zoals <code>timeout: 5</code>). Updates laten een door jou ingestelde timeout met rust.</p>
+
+<h2 id="changed-hotkeys">Gewijzigde sneltoetsen</h2>
+
+<p>Sommige sneltoetsen zijn verplaatst:</p>
+
+<ul>
+  <li>Rekenmachine: <code>Super + Ctrl + Q</code> is nu <code>Super + Shift + Q</code>.</li>
+  <li>Activiteit: <code>Super + Ctrl + T</code> is nu <code>Super + Shift + T</code>, en <code>Super + Ctrl + T</code> opent thema's.</li>
+  <li>Netwerk: <code>Super + Ctrl + W</code> is nu <code>Super + Ctrl + N</code>, en <code>Super + Ctrl + W</code> opent achtergronden.</li>
+  <li>Nightlight heeft geen sneltoets meer (het was <code>Super + Ctrl + N</code>); het staat in <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> opent Apps vanuit het dock in plaats van het Apps-menu.</li>
+</ul>
+
+<p>Sneltoetsen voor meldingen zijn veranderd:</p>
+
+<ul>
+  <li><code>Super + Comma</code> handelt de nieuwste kaart af (sluit hem, opent hem of drukt op zijn enige knop) in plaats van hem alleen te sluiten.</li>
+  <li>De laatste sluiten is verplaatst naar <code>Super + Alt + Comma</code>, waarmee je hem vroeger opende.</li>
+  <li>Dempen is verplaatst van <code>Super + Ctrl + Comma</code> naar <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> geeft je nu toetsenbordbediening.</li>
+</ul>
+
+<p>Een paar toetsen werken anders:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> en <code>Super</code> + scrollen blijven op de werkruimtes van de huidige monitor, aangezien elke monitor zijn eigen heeft.</li>
+  <li>In een terminal sturen <code>Super + C</code> en <code>Super + V</code> <code>Ctrl + Shift + C</code> en <code>Ctrl + Shift + V</code> in plaats van <code>Ctrl + Insert</code> en <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Nieuwe standaarden die kunnen botsen met bindingen van jezelf: <code>Super + Q</code> (venster sluiten, naast <code>Super + W</code>), <code>Super + A</code> (alles selecteren), <code>Super + M</code> (minimaliseren naar het dock), <code>Super + ~</code> en <code>Super + Shift + ~</code> (Quake-console), <code>Super + Alt + L</code> (vorige lay-out), <code>Super + Shift + Ctrl + Arrows</code> (een venster naar een andere monitor verplaatsen), <code>Super + Ctrl + Alt + C</code> (schermafbeelding), <code>Super + Ctrl + Alt + E</code> (wereldklok), <code>Super + Ctrl + Alt + F</code> (desktop op volledig scherm), en <code>Right Alt</code> ingedrukt houden voor push-to-talk dicteren.</p>
+
+<h2 id="more-features">Meer functies</h2>
+
+<ul>
+  <li>Geef elke monitor zijn eigen werkruimtes: <code>Super + 1-0</code> gaat naar de werkruimtes van de monitor waarop je zit, en <code>Super + Arrows</code> verplaatst naar en van de andere schermen door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Verzamel alles over hoe de desktop eruitziet in een nieuw Appearance-menu, ter vervanging van Style: thema, achtergrond, lettertype, balk, vensters, branding, het dock, werkruimtelay-outs, animaties en het ontgrendelscherm door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Kies Opaque, Transparent of Glassy vensters onder <em>Appearance &gt; Window Transparency</em>, plus een Glassy balkachtergrond door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Kies thema-, scherpe of afgeronde vensterhoeken onder <em>Appearance &gt; Window Corners</em> door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Voeg een modus zonder animaties toe, standaard aan in VM's door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Maak apps standaard ondoorzichtig, terwijl terminals transparant blijven door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Voeg Slack toe aan Install &gt; Service door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Laat Alt + Space dicteren wisselen op elke backend door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Voeg Open- en Edit-knoppen toe aan meldingen voor schermafbeeldingen, en Open en Cut aan schermopnames en yt-dlp-downloads door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Voeg een Update &gt; Kernel-menu toe om de standaardkernel te wisselen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Voeg themasynchronisatie toe aan herdr-machines door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Voeg o.rebind toe om Hyprland-toetsbindingen te vervangen door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Vraag naar je git-identiteit na de eerste login in plaats van in het installatieprogramma, met GitHub-aanmelding door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Sta installatiemedia toe om de taal, het toetsenbord en de tijdzone vooraf in te stellen door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Sta balkwidgets toe om in de lade van het systeemvak te wonen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Sta toe om een balkwidget te verwijderen door hem van de balk te slepen door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Sta scrollen door werkruimtes vanuit de balk toe door <a href="https://github.com/outfoxxed">@outfoxxed</a> in <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Sta toe om extra thema's te verwijderen uit de themakiezer door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Voeg hey, basecamp en Cloudflare CLI's toe als lui geïnstalleerde tools door <a href="https://github.com/monorkin">@monorkin</a> in <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Voeg SSH Agent toe als optionele service door <a href="https://github.com/carletex">@carletex</a> in <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Sta toe om te kiezen hoe lang wachtwoordloos sudo duurt door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Voeg een sluitknop bij hover toe aan meldings-toasts door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Sta toe om meldingen van een programma te dempen vanuit zijn crashdiagnose door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Sta omarchy-notification-send toe om actieknoppen toe te voegen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Voeg een klokformaat met live seconden toe door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Stel de toetsenbordachtergrondverlichting bij met Ctrl en de helderheidstoetsen door <a href="https://github.com/ludagoo">@ludagoo</a> in <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Print de OEM Windows-productsleutel uit de firmware door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Voeg originele vi toe als keuze voor terminaleditor door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Voeg de Roadster Starlight-achtergrond toe aan Ethereal door <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> in <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Beveiliging</h2>
+
+<ul>
+  <li>Houd het wachtwoord van de Windows-VM buiten de argumenten van de RDP-client door <a href="https://github.com/dicemans">@dicemans</a> in <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Verplaats de status van schermopname uit het door iedereen schrijfbaar /tmp door <a href="https://github.com/Chessing234">@Chessing234</a> in <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Verhard het verlopen van wachtwoordloos sudo over suspend heen door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Bind het opruimen van de update-remmer aan het proces dat hem creëerde door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Isoleer de autorisatie voor OCaml-opruiming door <a href="https://github.com/ErikMelton">@ErikMelton</a> in <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Pin de verhoging voor fabrieksreset vast aan het verpakte commando door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Verwijder opgeslagen vingerafdruksjablonen voor de aanroepende gebruiker bij reset door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Weiger hook- en statusnamen die paden zijn door <a href="https://github.com/Adolanium">@Adolanium</a> in <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Verwijs naar system-auth in de polkit-stack die door vingerafdruk- en FIDO2-setup wordt geschreven door <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> in <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Verwijder vingerafdrukken uit de eigen opslag van de lezer wanneer je ze verwijdert door <a href="https://github.com/scottjones">@scottjones</a> in <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Voorkom dat SSH-setup sshd laat draaien met wachtwoordlogins wanneer er geen sleutel wordt toegevoegd door <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> in <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Voorkom dat een andere lokale gebruiker zijn eigen programma verwisselt tijdens een Voxtype-upgrade door <a href="https://github.com/Vladkarok">@Vladkarok</a> in <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Verhard hoe fabrieksreset je gum-instellingen door sudo geeft door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Oplossingen</h2>
+
+<ul>
+  <li>Herstel dat Hyprland crasht wanneer een monitor wordt losgekoppeld, uitgeschakeld of uitgezet door het deksel te sluiten door <a href="https://github.com/falkoro">@falkoro</a> in <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Herstel upgrades die een kernelimage zonder zijn root=-parameter konden achterlaten door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Herstel dat fabrieksreset opstartitems van andere systemen wist door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Herstel dat een installatie naast een andere Omarchy het opstartitem van die installatie verwijdert door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Herstel installaties op vrije ruimte die een bestaande partitie voor een nieuwe konden nemen door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Herstel dat het hervatten van een onderbroken wachtwoordwijziging voor een schijf de verkeerde sleutel verwijdert door <a href="https://github.com/scottjones">@scottjones</a> in <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Vraag één keer per Omarchy-update naar het sudo-wachtwoord door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Vraag één keer voor tien minuten naar het sudo-wachtwoord in plaats van opnieuw bij elk commando door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Dek AUR-updates en de opstartcontrole met de enkele sudo-prompt van de update door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Houd pakketupdates veilig tegen uitloggen tijdens een transactie door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Log uit, herstart en sluit af zodra apps klaar zijn met sluiten door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Vervang Tensaku door Omasnap voor schermafbeeldingen door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Laat panelen uit de balk groeien en tussen elkaar morfen, met drukfeedback op knoppen en balkpictogrammen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Schuif meldingen onder de balk vandaan naar binnen en weer terug zoals ze kwamen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Controleer connectiviteit tegen Omarchy's eigen eindpunt, en herstel inloggen op captive portals door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Herstel dat wisselen van edge naar stable of RC de machine op een oude build achterlaat door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Herstel dat de update naar 4.5 stopt wanneer de shell traag antwoordt door <a href="https://github.com/AnPod">@AnPod</a> in <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Herstel dat updates stil falen wanneer ze buiten de desktopsessie worden gestart door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Herstel dat een mislukte download van een mise-tool de rest van een systeemupdate stopt door <a href="https://github.com/sanjyay">@sanjyay</a> in <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Herstel dat updates falen wanneer omarchy-nvim niet is geïnstalleerd door <a href="https://github.com/imzihuailin">@imzihuailin</a> in <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Herstel dat dual-boot-installaties de EFI-partitie niet kunnen koppelen door <a href="https://github.com/Damian626">@Damian626</a> in <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Herstel dat installaties stoppen wanneer de firmware geen nieuw opstartitem aanneemt door <a href="https://github.com/ryanio">@ryanio</a> in <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Herstel dat installaties stoppen op schijven met een oud RAID-lid of volumegroep door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Start het installatieprogramma eerder door niet op elk USB-apparaat en elke opstarttaak te wachten door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Versnel schijfversleuteling met sectoren van 4096 bytes op nieuwe installaties door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Lijst interne schijven eerst en open de installatieschermen op de veilige keuze door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Lijst Full disk install eerst in het installatieprogramma, en ga terug met Esc op de schijfschermen door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Herstel dat het schalen van één monitor de schaal van elke andere monitor verandert door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Herstel dat XWayland-apps te groot uitkomen wanneer monitors verschillende schalen gebruiken door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Herstel dat HDR-schermen overschakelen naar een uitgewassen HDR-beeld wanneer een venster volledig scherm wordt door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Herstel wazige menu's en kiezers op fractioneel geschaalde schermen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Herstel dat het laptopscherm uit blijft na het loskoppelen van het externe scherm door <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> in <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Herstel dat het opnieuw inschakelen van een scherm zijn positie, schaal en modus reset door <a href="https://github.com/zihaomu">@zihaomu</a> in <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Herstel dat menu's en kiezers niet opnieuw openen nadat een monitor is losgekoppeld door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Herstel dat werkruimtes per monitor verplaatsen nadat een monitor is losgekoppeld door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Herstel dat de shell crasht wanneer een audioapparaat loskoppelt met het audiopaneel open door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Herstel dat vensters op volledig scherm volledig scherm verliezen na de schermbeveiliging door <a href="https://github.com/MGross21">@MGross21</a> in <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Herstel dat de cursor verdwijnt bij opstarten nadat Hyprland herlaadt door <a href="https://github.com/spencerbull">@spencerbull</a> in <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Herstel dat de cursor onzichtbaar wordt boven XWayland-apps door <a href="https://github.com/Sebo1411">@Sebo1411</a> in <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Herstel vastlopers bij klembordvastlegging door <a href="https://github.com/maxcroy1">@maxcroy1</a> in <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Herstel toegang tot de sleutelring via de XDG Secret-portal door <a href="https://github.com/pkwagner">@pkwagner</a> in <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Herstel vingerafdrukinschrijving en herstel van het vergrendelscherm door <a href="https://github.com/GeertJohan">@GeertJohan</a> in <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Leid vingerafdrukinschrijving stap voor stap door <a href="https://github.com/scottjones">@scottjones</a> in <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Herstel automatische toetsherhaling in het wachtwoordveld van het vergrendelscherm door <a href="https://github.com/berndb">@berndb</a> in <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Herstel dat de achtergrond van het vergrendelscherm na het wachtwoordveld laadt bij ontwaken door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Herstel time-outs van schermvergrendeling wanneer de sessie een scherm noemt dat weg is door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Versnel het openen van een terminal in de map van het huidige venster door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Laat editors uit de VS Code-familie themawijzigingen live volgen door <a href="https://github.com/Macho0x">@Macho0x</a> in <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Retheme draaiende Hunk-sessies bij themawijziging door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Onthoud de geselecteerde achtergrond voor elk thema door <a href="https://github.com/OldJobobo">@OldJobobo</a> in <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Houd de afbeeldingskiezer snel en scherp met grote collecties en HiDPI door <a href="https://github.com/keylimesoda">@keylimesoda</a> in <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Verminder de CPU en het geheugen die de transparante balk besteedt aan het samplen van de achtergrond door <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> in <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Versnel het Tailscale-paneel op tailnets met duizenden machines door <a href="https://github.com/iskakaushik">@iskakaushik</a> in <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Breng Grok op gelijke hoogte met Claude en Codex in het agentspaneel door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Pas selectie van agentaccounts toe op CLI-subprocessen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Toon individuele bestedingslimieten van Codex en hun resettijden door <a href="https://github.com/Stegi56">@Stegi56</a> in <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Stel browserintegratie in bij het kiezen van Claude door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Herstel dat agents mise-tools die na hun start zijn geïnstalleerd niet vinden door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Herstel het plakken van schermafbeeldingen in agents in herdr-vensters die via SSH zijn gestart door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Herstel dat het agentspaneel gecomprimeerde Codex-sessies mist door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Breng Caps Lock terug naar normaal en maak Shift + Caps Lock de compose-toets door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Pas de systeemtoetsenbordlay-out toe op het inlogscherm door <a href="https://github.com/g-desoutter">@g-desoutter</a> in <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Herstel dat lay-outwisselen elke andere druk overslaat met een niet-Latijnse toetsenbordlay-out door <a href="https://github.com/manuaudio">@manuaudio</a> in <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Zet hardwarematige videodecodering aan in mpv door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Schakel TCP-congestiecontrole naar BBR en gebruik de kyber I/O-scheduler op echte schijven door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Installeer T3 Code als zijn zelf-updatende AppImage door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Verbeter installatie van PHP en Laravel door <a href="https://github.com/nunomaduro">@nunomaduro</a> in <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Installeer Node lui en laat je mise-config met rust door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Installeer ontbrekende apps bij het kiezen van standaarden door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Dim geïnstalleerde software in de Install-menu's in plaats van ze te verbergen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Registreer wachtwoordmanagers en andere native messaging-hosts voor Brave Origin door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Groepeer webmeldingen van Brave Origin per site, en open het juiste tabblad wanneer erop wordt geklikt door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Keur verwijdering van wees-pakketten automatisch goed tijdens updates door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Werk Omarchy's sleutelring bij vóór elke update door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Bied aan om te herstarten na het wisselen van kanalen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Bied de update bij eerste uitvoering alleen aan wanneer er iets te updaten is door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Vind de weerlocatie en de tijdzone van het installatieprogramma met Omarchy's eigen geo-service door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Stel de klok in vanaf ntp.omarchy.org in plaats van Arch's NTP-pool door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Meet netwerksnelheid met Omarchy's eigen snelheidstest door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Toon een voortgangsscherm met getraceerd pictogram tijdens de eerste start door <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> in <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Start de live ISO op de Omarchy-kernel, en alleen op Macs op de T2-kernel door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Stop dat offline installaties wachten op mise-versieopzoekingen door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Herstel dat offline installaties de tijdzone standaard op Africa/Abidjan zetten door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Herstel dat de tijdzonekiezer van het installatieprogramma je niet laat typen om te zoeken door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Herstel dat de live ISO achter het splashscherm blijft hangen wanneer hij vanaf een Ventoy-stick wordt gestart door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Herstel Duitse en Franse console-keymaps in het setupformulier van het installatieprogramma door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Verberg de Engelse toetshints van gum in het installatieprogramma en de git-setup door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Laat de alleen-Engelse grappen weg van het voortgangsscherm van de installatie door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Herstel dat uitvoer van het installatieprogramma zonder opvulling op het scherm terechtkomt terwijl het de schijf voorbereidt door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Herstel dat de Quattro-upgrade de standaardbrowser reset naar Chromium door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Herstel dat de Quattro-upgrade stopt op achtergrondnamen met niet-ASCII-tekens door <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> in <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Herstel dat de kernelmigratie stopt op machines die starten met GRUB of systemd-boot door <a href="https://github.com/manuaudio">@manuaudio</a> in <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Herstel slaapstand op onversleutelde machines met meer dan één NVMe-schijf door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Herstel dat de FIDO2-migratie als gedaan werd gemarkeerd voordat hij was opgelost door <a href="https://github.com/ErikMelton">@ErikMelton</a> in <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Herstel dat een zwevende werkruimte het eerste venster overneemt dat onder je eigen float-regel valt door <a href="https://github.com/zihaomu">@zihaomu</a> in <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Herstel dat de compositor vastloopt wanneer Super + L een werkruimte in en uit floating doorloopt door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Herstel dat Alt + Shift + Tab niet achterwaarts door elk venster doorloopt door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Herstel dat uitgepopte vensters niet centreren wanneer ze naar een andere monitor worden verplaatst door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Herstel dat nieuwe terminals buiten je thuismap openen wanneer een niet-terminalvenster is gefocust door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Herstel dat 1Password- en Bitwarden-vensters niet zweven door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Herstel dat 1Password sluit wanneer de terminal van het installatieprogramma afsluit door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Herstel dat dialoogvensters van DaVinci Resolve de aanwijzerfocus stelen door <a href="https://github.com/AksharP5">@AksharP5</a> in <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Herstel dat de desktop doorschemert door Windows-VM-schermen door <a href="https://github.com/jmwall">@jmwall</a> in <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Herstel legacy Windows-VM-wachtwoorden die $$ bevatten na de Quattro-migratie door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Stop dat Hyprland's donatiepopup verschijnt na upgrades door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Verbeter het slepen en rangschikken van balkwidgets door <a href="https://github.com/outfoxxed">@outfoxxed</a> in <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normaliseer grootte en uitlijning van balkpictogrammen door <a href="https://github.com/bjarneo">@bjarneo</a> in <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Toon de verborgen balkindicatoren alleen bij hoveren links van de klok door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Lijn systeemvakpictogrammen uit met de andere pictogrammen van de balk door <a href="https://github.com/ayoubdya">@ayoubdya</a> in <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Toon de volgende balktooltip meteen terwijl er al een open is door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Open de klok- en weerpanelen onder hun widgets door <a href="https://github.com/scottjones">@scottjones</a> in <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Houd het netwerkpaneel open na het kiezen van een DNS-provider door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Herstel dat een sluitende popup balkwidgets niet-reagerend achterlaat door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Herstel dat de verborgen balk klikken vangt langs de bovenkant van vensters op volledig scherm door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Herstel dat donkere systeemvakpictogrammen verdwijnen in de balk door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Herstel dat balkpictogrammen ongelijk of uit het midden zitten door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Herstel dat balktooltips hun eerste frame op de verkeerde grootte tekenen door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Herstel dat de meldingsgeschiedenis elke kaart als zojuist toont door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Herstel dat meldingen bij eerste login samenvallen in één stapel door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Herstel dat klikken op meldingen apps met namen van meerdere woorden niet focussen door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Herstel dat Taildrop-meldingen lege tekst tonen en voorbeelden missen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Herstel dat de batterijmelding een lege tijd en 0W toont op een volle batterij door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Herstel dat de waarschuwing voor lage batterij blijft staan na inpluggen en terugkomt na herstarts door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Herstel dat batterijverbruik op sommige laptops 0W leest door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Herstel dat een volle batterij op netstroom als ontladend wordt getoond door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Herstel dat Hibernate wordt getoond wanneer de kernel niet zal overwinteren door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Herstel dat gvfs-koppelingen verdwijnen na hervatten door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Herstel dat de toetsenbordachtergrondverlichting uit blijft nadat het vergrendelscherm twee keer blankt door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Herstel dat de vingerafdruklezer wakker wordt terwijl het vergrendelscherm schermen uit heeft door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Herstel dat de opstartwachtwoordprompt uit het midden staat wanneer een scherm laat verschijnt door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Herstel dat de afsluittoets van de schermbeveiliging in de hoek flitst door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Herstel dat het wifi-pictogram flikkert op OWE transition-mode netwerken door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Herstel een OWE-fout die in de terminal wordt geprint na het installeren van een thema door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Herstel een flikkering bij het wisselen van een stilstaande naar een videoachtergrond door <a href="https://github.com/bjarneo">@bjarneo</a> in <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Werk Hackerman bij naar een opgeschaalde geometrische achtergrond door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Herstel dat thema's met cyclische kleurverwijzingen de themawissel laten hangen door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Herstel dat Neovim niet start met het Catppuccin-thema door <a href="https://github.com/anandude">@anandude</a> in <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Herstel dat OpenCode 2 start op zijn standaardthema in plaats van dat van Omarchy door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Herstel inline code met laag contrast in het gegenereerde VS Code-thema door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Herstel dat T3 Code-installaties stoppen tijdens het matchen van het huidige thema door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Herstel dat de lettergrootte van de terminal reset bij het wisselen van lettertypefamilie door <a href="https://github.com/sbalbalosa">@sbalbalosa</a> in <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Herstel dat het wisselen van lettertypen de proces-ID van een terminal print door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Herstel dat het wisselen van talen elke locale opnieuw opbouwt en ze verliest op een bijna volle schijf door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Herstel dat de shell ruwe vertaalsleutels toont voordat zijn vertalingen laden door <a href="https://github.com/zihaomu">@zihaomu</a> in <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Versnel vertaalde tekst in Omarchy's scripts door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Werk vertalingen bij voor 686 strings, waarvan 392 in de Handleiding door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Herstel volume- en uitvoerbediening in niet-Engelse locales door <a href="https://github.com/Sebo1411">@Sebo1411</a> in <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Herstel CPU-gebruiksmetingen in niet-Engelse locales door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Herstel dat de fcitx5-service voor altijd herstart wanneer fcitx5 niet is geïnstalleerd door <a href="https://github.com/therk">@therk</a> in <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Herstel dat de widget voor toetsenbordlay-out apparaten wisselt waarop niemand typt door <a href="https://github.com/bjarneo">@bjarneo</a> in <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Herstel dat de widget voor toetsenbordlay-out wisselt naar leveranciers-sneltoetsapparaten door <a href="https://github.com/yashranaway">@yashranaway</a> in <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Herstel dat het toetsbindingenmenu een Lua-proces op 100% CPU laat draaien door <a href="https://github.com/tobi">@tobi</a> in <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Herstel dat de klok het log elke milliseconde overstroomt wanneer de zomertijd eindigt door <a href="https://github.com/falkoro">@falkoro</a> in <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Herstel dat de shell een shell.json die hij niet kon lezen vervangt door de standaarden door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Herstel dat het Omarchy-menu zijn rijen verliest terwijl zijn bestand wordt bijgewerkt door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Herstel dat het opnieuw inschakelen van een plugin zijn balkwidget niet terugbrengt door <a href="https://github.com/berrimi">@berrimi</a> in <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Herstel dat lokale plugins in een lus herladen op hun eigen Python-bytecode door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Herstel dat verborgen knoppen in plugins samenvallen tot hun opvulling door <a href="https://github.com/dmkenney">@dmkenney</a> in <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Herstel dat dropdowns hun laatste item afsnijden door <a href="https://github.com/sprajs">@sprajs</a> in <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Herstel dat dropdowns niet sluiten bij een tweede klik door <a href="https://github.com/felixzsh">@felixzsh</a> in <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Herstel dat schuifknoppen tekort stoppen vóór het einde van de baan door <a href="https://github.com/erikrjohansson">@erikrjohansson</a> in <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Herstel dat Update &gt; Hardware &gt; Trackpad de meeste touchpads mist en het toetsenbord reset door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Het laat nu een vastzittende knop los op elke touchpad, en reset alleen de touchpad in plaats van het toetsenbord en touchscreen ermee.</p>
+  </li>
+  <li>Laat het webcammenu naar camera's controleren zonder ze aan te zetten door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Herstel dat de scrollcapture van Omasnap alleen zwarte frames pakt door <a href="https://github.com/falkoro">@falkoro</a> in <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Herstel dat de kiezer voor schermafbeeldingen je eigen toetsen ontbindt door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Herstel dat het stoppen van een opname een lege opgeslagen opname aankondigt door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Herstel dat de afbeeldingskiezer verouderde miniaturen toont voor afbeeldingen die zijn overschreven door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Herstel dat nachtlicht niet volledig reset wanneer het wordt uitgezet door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Herstel dat de mediawidget een gepauzeerde track achterlaat voor een inactieve speler door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Herstel herhaalde schermscans op monitors die geen helderheid rapporteren door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Herstel dat Super + Shift + Return faalt wanneer de geconfigureerde browser was verwijderd door <a href="https://github.com/vitally">@vitally</a> in <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Herstel dat rekenmachinesneltoetsen blijven na het verwijderen van vooraf geïnstalleerde apps door <a href="https://github.com/OldJobobo">@OldJobobo</a> in <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Herstel de sneltoets Copy URL in Brave Origin-profielen door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Herstel dat de pop-out van de Bitwarden-extensie op de verkeerde grootte opent door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Herstel dat Battle.net opent op 100% schaal op HiDPI-monitors door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Herstel dat de bestandskeuzers van Inkscape getegeld openen door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Herstel dat Go AUR-pakketten niet bouwen tijdens updates wanneer mise Go beheert door <a href="https://github.com/shbernal">@shbernal</a> in <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Herstel ONCE-installatie wanneer je niet in de docker-groep zit door <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> in <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Herstel dat klikken op het agentpaneel het systeemvak opent door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Herstel dat setup van agentaccounts struikelt over een bungelende gedeelde symlink door <a href="https://github.com/manuaudio">@manuaudio</a> in <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Herstel dat <code>--reauth</code> een nieuw agentaccount toevoegt wanneer er geen is door <a href="https://github.com/manuaudio">@manuaudio</a> in <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Laat de hint voor het hernoemen van agentaccounts zijn provider noemen door <a href="https://github.com/manuaudio">@manuaudio</a> in <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Herstel dat sleutelringupdates succes claimen wanneer sleutelbewerkingen falen door <a href="https://github.com/Adolanium">@Adolanium</a> in <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Herstel een lege prompt voor fabrieksreset wanneer hij onder sudo wordt uitgevoerd door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Herstel dat de herinnering voor wachtende migraties zich één keer per login opstapelt door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Herstel dat OS Age in About telt vanaf de bouw van de ISO in plaats van de installatie door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Herstel dat Dropbox “0y ago” toont voor bestanden van 360 tot 364 dagen oud door <a href="https://github.com/manuaudio">@manuaudio</a> in <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Herstel dat de statuscontrole van Dropbox een wachtende inloglink laat verlopen door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Herstel het installeren van de bibliotheek voor het systeemvakpictogram van Dropbox door <a href="https://github.com/omarchybot">@omarchybot</a> in <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Schakel overlay-schuifbalken in Chromium in door <a href="https://github.com/robzolkos">@robzolkos</a> in <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Vraag voordat Touch ID wordt aangezet op Apple Silicon Macs door <a href="https://github.com/scottjones">@scottjones</a> in <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Bied het RC-kanaal aan op Apple Silicon Macs door <a href="https://github.com/maralcbr">@maralcbr</a> in <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Bied het stabiele kanaal aan op Apple Silicon Macs door <a href="https://github.com/maralcbr">@maralcbr</a> in <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Herstel dat Omarchy's aliassen, functies en omgeving ontbreken in nieuwe terminals op Apple Silicon door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Stel geïnstalleerde NVIDIA-applicaties in door <a href="https://github.com/jdvmi00">@jdvmi00</a> in <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Herstel dat installaties falen op de Lenovo Pro 9 met NVIDIA N1x door <a href="https://github.com/breymander">@breymander</a> in <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Herstel ontbrekende interne luidsprekers en microfoons op N1x-laptops die de eerdere audioprofielen draaiden door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Herstel een trage desktop op NVIDIA GB10-machines zoals de DGX Spark door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Herstel typen in het vergrendelscherm na hervatten op NVIDIA door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Het vergrendelscherm wordt nu ook niet meer donker net als het paneel oplicht.</p>
+  </li>
+  <li>Herstel dat Lutris en Battle.net de 32-bits Vulkan-driver van een andere GPU installeren door <a href="https://github.com/zihaomu">@zihaomu</a> in <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Stop met vragen om een herstart na elke update op ARM door <a href="https://github.com/birkskyum">@birkskyum</a> in <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Bied de stabiele en RC-kanalen aan op aarch64 door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Laat energieprofielen werken op ARM-laptops door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Bied Dropbox aan op ARM-machines met 4K-pagina's, en Spotify als webapp op ARM door <a href="https://github.com/birkskyum">@birkskyum</a> in <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Verberg installaties van GeForce NOW, Battle.net en Lutris op ARM door <a href="https://github.com/birkskyum">@birkskyum</a> in <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Herstel dat de Hermes-app niet ter plekke bijwerkt op ARM door <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Herstel dat toetsenborden van Snapdragon-laptops niet typen bij de prompt voor schijfontgrendeling door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Herstel dat camera's ontbreken bij login op Snapdragon-laptops door <a href="https://github.com/birkskyum">@birkskyum</a> in <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Herstel een zwart scherm vóór schijfontgrendeling op Snapdragon X2-laptops door <a href="https://github.com/jdvmi00">@jdvmi00</a> in <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Decodeer video in hardware op Intel Wildcat Lake door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Herstel crashes van de live ISO op Arrow Lake-H-laptops door <a href="https://github.com/emirb">@emirb</a> in <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Herstel de interne microfoon van de HP EliteBook Ultra G1q door <a href="https://github.com/bprendie">@bprendie</a> in <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Gebruik upstream-ondersteuning voor Motorcomm YT6801 Ethernet door <a href="https://github.com/AFOliveira">@AFOliveira</a> in <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Geef de Elgato Cam Link 4K door als een 16:9 virtuele camera door <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Ondersteun vingerafdruklezers die een platform bij naam noemt door <a href="https://github.com/scottjones">@scottjones</a> in <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>
