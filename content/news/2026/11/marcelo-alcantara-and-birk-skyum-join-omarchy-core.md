@@ -10,11 +10,11 @@ Two of the people doing the most to take Omarchy beyond x86 are joining [Omarchy
 
 ## Marcelo Alcantara
 
-When we [introduced Omarchy M](/news/2026/09/introducing-omarchy-m/) in September, Marcelo was the guy building the native Mac installer. Since then, he's become the one coordinating the whole effort. Fifteen people from all over the world, each working on a different layer of the stack, from GPU drivers and displays to Touch ID and the installer itself. Somebody has to keep all of that pulling in the same direction, and Marcelo has been that person.
+When we [introduced Omarchy M](/news/2026/09/introducing-omarchy-m/) in September, Marcelo was the guy building the native Mac installer. Since then, he's become the one coordinating the whole effort. Sixteen people from all over the world, each working on a different layer of the stack, from GPU drivers and displays to Touch ID and the installer itself. Somebody has to keep all of that pulling in the same direction, and Marcelo has been that person.
 
 The result shipped in [Omarchy 4.5](/news/2026/11/omarchy-4-5/). You can now [download an app](https://github.com/omacom/omarchy-mac-installer/releases) on macOS (or run `brew install omacom/mac/omarchy`), and it'll put Omarchy right alongside it on your M1, M2, M3, or Neo MacBook. No USB stick, no terminal incantations. Two months from team announcement to "just download it" is an incredible pace.
 
-That's a huge credit to everyone on [Omarchy M](/teams/#m): Naeem, Scott, Eduardo, Shun, Dj, Ryan, Miguel, Liam, Eryk, Jaidip, Joshua, Shawn, Randy, Jon, and Marcelo. You finished what Asahi started, and you're already pushing on to M4, M5, and M6. Thank you!
+That's a huge credit to everyone on [Omarchy M](/teams/#m): Scott, Chris, Naeem, Dj, Joshua, Eduardo, Shun, Ryan, Miguel, Liam, Eryk, Jaidip, Shawn, Randy, Jon, and Marcelo. You finished what Asahi started, and you're already pushing on to M4, M5, and M6. Thank you!
 
 ## Birk Skyum
 
