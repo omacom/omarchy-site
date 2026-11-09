@@ -3,16 +3,18 @@ import type { DateFormatName, IntlData, TableField } from './intl-data.ts'
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const zoneFormats = new Map<string, Intl.DateTimeFormat>()
 
-/** A date's year in a time zone, and where it falls in each field's table
- *  of values. Only numeric en-US output is used, which every browser ships,
- *  so no localized data is needed here. */
-function fieldsIn(
+/** A date's year in a time zone and calendar, and where it falls in each
+ *  field's table of values. Only numeric en-US output is used, which every
+ *  browser ships, so no localized data is needed here. */
+export function fieldsIn(
   date: Date,
   timeZone: string,
+  calendar = 'gregory',
 ): Record<TableField, number> & { year: number } {
-  let format = zoneFormats.get(timeZone)
+  const key = `${calendar} ${timeZone}`
+  let format = zoneFormats.get(key)
   if (!format) {
-    format = new Intl.DateTimeFormat('en-US', {
+    format = new Intl.DateTimeFormat(`en-US-u-ca-${calendar}`, {
       timeZone,
       hourCycle: 'h23',
       year: 'numeric',
@@ -22,7 +24,7 @@ function fieldsIn(
       minute: 'numeric',
       weekday: 'short',
     })
-    zoneFormats.set(timeZone, format)
+    zoneFormats.set(key, format)
   }
   const parts = Object.fromEntries(
     format.formatToParts(date).map((p) => [p.type, p.value] as const),
@@ -86,12 +88,11 @@ export function createFormat(data: IntlData) {
   }
 
   function date(name: DateFormatName, value: Date, timeZone = 'UTC') {
-    const at = fieldsIn(value, timeZone)
+    const at = fieldsIn(value, timeZone, data.calendar)
     return data.dates[name]
       .map((p) => {
         if ('text' in p) return p.text
-        if (p.field === 'year')
-          return localDigits(String(at.year + data.yearOffset))
+        if (p.field === 'year') return localDigits(String(at.year))
         return p.values[at[p.field]]
       })
       .join('')

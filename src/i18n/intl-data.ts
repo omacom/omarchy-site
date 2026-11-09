@@ -5,6 +5,8 @@
  * desktop Chrome strips for Bosnian, Uzbek, Icelandic, Irish and others.
  */
 
+import { fieldsIn } from './create-format.ts'
+
 /** Every date shape the site renders. */
 export const DATE_FORMATS = {
   longDate: { day: 'numeric', month: 'long', year: 'numeric' },
@@ -37,7 +39,8 @@ export type DatePart =
   { text: string } | { field: 'year' } | { field: TableField; values: string[] }
 
 export type IntlData = {
-  yearOffset: number
+  /** The edition's calendar, like 'gregory', 'buddhist' or 'persian'. */
+  calendar: string
   number: {
     digits: string[]
     decimal: string
@@ -81,17 +84,33 @@ const SAMPLES: Record<
   minute: { count: 60, at: (i) => Date.UTC(2026, 0, 1, 0, i) },
 }
 
+/** A date on which `field` reads value i in `calendar`. Months and days are
+ *  searched for, because a Persian month does not start on a Gregorian one. */
+function sampleAt(field: TableField, i: number, calendar: string, tag: string) {
+  if (field !== 'month' && field !== 'day') return SAMPLES[field].at(i)
+  for (let d = 0; d < 400; d++) {
+    const at = Date.UTC(2026, 0, 1 + d, 12)
+    if (fieldsIn(new Date(at), 'UTC', calendar)[field] === i) return at
+  }
+  throw new Error(`${tag}: no ${field} ${i + 1} in the ${calendar} calendar`)
+}
+
 function datePattern(
   tag: string,
   options: Intl.DateTimeFormatOptions,
+  calendar: string,
 ): DatePart[] {
   const format = new Intl.DateTimeFormat(tag, { ...options, timeZone: 'UTC' })
-  const valuesOf = (field: TableField) => {
-    const { count, at } = SAMPLES[field]
-    return Array.from({ length: count }, (_, i) =>
-      asFormatted(part(format.formatToParts(at(i)), field, tag)),
+  const valuesOf = (field: TableField) =>
+    Array.from({ length: SAMPLES[field].count }, (_, i) =>
+      asFormatted(
+        part(
+          format.formatToParts(sampleAt(field, i, calendar, tag)),
+          field,
+          tag,
+        ),
+      ),
     )
-  }
   // A two-digit day and an afternoon hour, so no value reads as a literal.
   return format
     .formatToParts(Date.UTC(2026, 8, 22, 14, 5))
@@ -139,17 +158,6 @@ function numberData(tag: string): IntlData['number'] {
   }
 }
 
-// The Thai calendar counts from 543 BCE.
-function yearOffset(tag: string) {
-  const format = new Intl.DateTimeFormat(tag, {
-    year: 'numeric',
-    numberingSystem: 'latn',
-    timeZone: 'UTC',
-  })
-  const year = part(format.formatToParts(Date.UTC(2026, 5, 1)), 'year', tag)
-  return Number(year) - 2026
-}
-
 const LETTERS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 
 function regionNames(tag: string) {
@@ -167,12 +175,15 @@ function regionNames(tag: string) {
 }
 
 export function intlData(tag: string): IntlData {
+  // Thai counts years from 543 BCE; Persian runs its own months as well.
+  const calendar = new Intl.DateTimeFormat(tag).resolvedOptions().calendar
   return {
-    yearOffset: yearOffset(tag),
+    calendar,
     number: numberData(tag),
     dates: Object.fromEntries(
       Object.entries(DATE_FORMATS).map(
-        ([name, options]) => [name, datePattern(tag, options)] as const,
+        ([name, options]) =>
+          [name, datePattern(tag, options, calendar)] as const,
       ),
     ) as IntlData['dates'],
     regions: regionNames(tag),
