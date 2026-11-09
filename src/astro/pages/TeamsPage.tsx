@@ -154,7 +154,7 @@ export function TeamsPage() {
               render={<a href="https://github.com/omacom/omarchy" />}
             >
               <GithubIcon data-icon="inline-start" />
-              Open GitHub
+              {t('Open GitHub')}
             </Button>
           </div>
         </div>
