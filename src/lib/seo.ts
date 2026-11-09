@@ -1,4 +1,4 @@
-import { siteUrl, t } from '../i18n/site.ts'
+import { siteUrl, contentLocale, t } from '../i18n/site.ts'
 import { SITE_THEMES } from './site-themes.ts'
 
 /**
@@ -23,7 +23,7 @@ export const SITE_URL = siteUrl
 export const SITE_DESCRIPTION =
   'The malleable OS for the age of agents. Vibe your way through every alteration, tweak, and desire.'
 
-/** Select by canonical path so translations and repeated builds share a card. */
+/** Select by canonical path so translations share a theme and repeated builds stay stable. */
 export function socialImage(path: string) {
   const pathname = canonicalPath(path.split(/[?#]/, 1)[0])
   let hash = 2166136261
@@ -32,7 +32,7 @@ export function socialImage(path: string) {
   }
   const theme = SITE_THEMES[hash % SITE_THEMES.length]
   return {
-    url: `${SITE_URL}/brand/social/${theme.id}.png`,
+    url: `${SITE_URL}/brand/social/${contentLocale === 'en' ? '' : `${contentLocale}/`}${theme.id}.png`,
     width: '1200',
     height: '630',
     alt: `The Omarchy wordmark in the ${theme.name} theme`,
