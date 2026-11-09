@@ -1,6 +1,11 @@
 import { t, localizedHref } from '@/i18n/site'
 import { SectionHeading } from '@/components/SectionHeading'
-import { AppleIcon, ArrowRightIcon, DisplayIcon } from '@/components/icons'
+import {
+  AppleIcon,
+  ArrowRightIcon,
+  DisplayIcon,
+  WindowsIcon,
+} from '@/components/icons'
 
 const examples = [
   {
@@ -11,6 +16,24 @@ const examples = [
     icon: DisplayIcon,
     href: '/news/2026/09/the-omarchy-core-team/',
     link: t('Meet the team behind it'),
+  },
+  {
+    title: t('Apple Silicon Macs'),
+    description: t(
+      'M1, M2, M3, and Neo MacBooks install Omarchy natively with the Omarchy M installer, right next to macOS. M4 and newer are on the way.',
+    ),
+    icon: AppleIcon,
+    href: '/news/2026/09/introducing-omarchy-m/',
+    link: t('Meet Omarchy M'),
+  },
+  {
+    title: t('NVIDIA DGX Spark and N1X'),
+    description: t(
+      "Omarchy's first ARM release brings preliminary support for NVIDIA's ARM machines, from the DGX Spark desktop to N1X laptops like the Dell XPS 16 Creator Edition.",
+    ),
+    icon: DisplayIcon,
+    href: '/news/2026/11/omarchy-4-5/',
+    link: t('Read about Omarchy 4.5'),
   },
   {
     title: t('Vintage Macs'),
@@ -30,6 +53,15 @@ const examples = [
     href: '/potato/',
     link: t('Watch the potato run'),
   },
+  {
+    title: t('Beside Windows'),
+    description: t(
+      'Not ready to let go of Windows? Omarchy installs right next to it, so you can keep both and pick one when you start the machine.',
+    ),
+    icon: WindowsIcon,
+    href: '/manual/dual-boot-install/',
+    link: t('Dual boot guide'),
+  },
 ]
 
 export function HardwareShowcase() {
@@ -42,7 +74,7 @@ export function HardwareShowcase() {
           "You don't need a new machine to try Omarchy. But if you get one, today's laptops are amazing.",
         )}
       />
-      <div className="mt-6 grid gap-6 md:grid-cols-3 lg:mt-10 lg:gap-8">
+      <div className="mt-6 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:mt-10 lg:grid-cols-3 lg:gap-x-8">
         {examples.map(({ title, description, icon: Icon, href, link }) => (
           <div
             key={title}
@@ -62,7 +94,10 @@ export function HardwareShowcase() {
               className="mt-auto inline-flex min-h-10 items-center gap-2 self-start pt-4 text-sm font-medium text-text underline-offset-4 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&:hover_span]:decoration-current"
             >
               <span className="underline decoration-current">{link}</span>
-              <ArrowRightIcon className="size-5 shrink-0 rtl:-scale-x-100" aria-hidden="true" />
+              <ArrowRightIcon
+                className="size-5 shrink-0 rtl:-scale-x-100"
+                aria-hidden="true"
+              />
             </a>
           </div>
         ))}
