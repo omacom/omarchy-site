@@ -80,7 +80,10 @@ test('dynamic authored copy is extracted without donor, event, or plugin names',
     { title: 'Event name', description: 'User event copy' },
   ])
   put('src/data/patrons.json', [{ name: 'Donor name' }])
-  put('src/astro/data.ts', "const FEATURED_PLUGIN_IDS = ['featured']")
+  put(
+    'src/lib/featured-plugins.ts',
+    "export const FEATURED_PLUGIN_IDS = ['featured']",
+  )
   put('src/data/plugins.json', {
     plugins: [
       {
