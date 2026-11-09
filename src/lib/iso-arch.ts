@@ -28,19 +28,16 @@ export type IsoLinks = Array<[string, { url: string }]>
 /**
  * The ISOs a build links, in version.json's order. A build can name the
  * host they come from: omarchy.cn's copy of the zh-CN edition serves
- * mainland China, so it links iso.omarchy.cn. The refresh checks only
- * iso.omarchy.org before it lists an architecture, and that mirror is only
- * known to carry the x86_64 ISO, so a build with its own host offers
- * x86_64 alone rather than a download that may not be there.
+ * mainland China, so it links iso.omarchy.cn. That host mirrors every ISO
+ * on iso.omarchy.org under the same path, synced every ten minutes, so it
+ * offers the same architectures.
  */
 export function isoLinks(
   isos: Record<string, { url: string }>,
   origin?: string,
 ): IsoLinks {
-  return Object.entries(isos)
-    .filter(([arch]) => !origin || arch === 'x86_64')
-    .map(([arch, iso]) => [
-      arch,
-      { url: new URL(new URL(iso.url).pathname, origin || iso.url).href },
-    ])
+  return Object.entries(isos).map(([arch, iso]) => [
+    arch,
+    { url: new URL(new URL(iso.url).pathname, origin || iso.url).href },
+  ])
 }
