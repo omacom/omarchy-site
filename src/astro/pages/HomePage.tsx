@@ -1,4 +1,4 @@
-import { t, language } from '@/i18n/site'
+import { t, language, locale } from '@/i18n/site'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import {
@@ -41,8 +41,15 @@ import { ThemeShowcase } from '@/components/ThemeShowcase'
 import { VideoCarousel } from '@/components/VideoCarousel'
 import { Voices } from '@/components/Voices'
 import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { useHashLink } from '@/lib/hash-scroll'
 import { cn } from '@/lib/utils'
+import { isoArch, isoLinks, type ArchHints, type IsoArch } from '@/lib/iso-arch'
 import bannerData from '@/data/banner.json'
 import type { CatalogueEntry } from '@/lib/plugin-filter'
 import type { NewsSummary } from '@/lib/news'
@@ -52,7 +59,18 @@ export interface HomeData {
   total: number
   news: Array<NewsSummary>
 }
-import release from '@/data/version.json'
+import releaseData from '@/data/version.json'
+
+/** The release and its ISOs by architecture. The refresh lists an
+ *  architecture once its ISO is served, and its button appears with it. */
+type Download = { url: string; sha256?: string | null }
+const release: {
+  version: string
+  isos: Record<string, Download>
+  mac?: Download & { version: string }
+} = releaseData
+const ISOS = isoLinks(release.isos, import.meta.env?.PUBLIC_ISO_ORIGIN)
+const ISO_LABEL: Record<string, string> = { x86_64: 'x86', aarch64: 'ARM' }
 
 const TRY = {
   mac: {
@@ -67,17 +85,27 @@ const TRY = {
   },
 } as const
 
-/** Which of the two the visitor is most likely on, read after mount so the
- *  server and the first paint agree; null on Linux and on anything unsure. */
-function useTryDevice() {
-  const [device, setDevice] = useState<keyof typeof TRY | null>(null)
+/** The release's ISOs with the visitor's own architecture first, read after
+ *  mount; x86_64 first until then. */
+function useIsos() {
+  const [arch, setArch] = useState<IsoArch>('x86_64')
   useEffect(() => {
+    if (ISOS.length < 2) return
     const ua = navigator.userAgent
-    if (/iPhone|iPad/.test(ua)) return
-    if (/Mac/.test(ua)) setDevice('mac')
-    else if (/Win/.test(ua)) setDevice('windows')
+    const hints = (
+      navigator as Navigator & {
+        userAgentData?: {
+          getHighEntropyValues(keys: Array<string>): Promise<ArchHints>
+        }
+      }
+    ).userAgentData
+    setArch(isoArch(ua))
+    hints?.getHighEntropyValues(['architecture', 'bitness']).then(
+      (values) => setArch(isoArch(ua, values)),
+      () => {},
+    )
   }, [])
-  return device
+  return [...ISOS].sort(([a], [b]) => Number(b === arch) - Number(a === arch))
 }
 
 const FIXES = [
@@ -86,13 +114,100 @@ const FIXES = [
   t(' incompatibility.'),
   t(' paper cut.'),
 ] as const
-const ISO_URL = release.isoUrl
+
+/**
+ * Han and kana editions set no space between words and close a sentence with
+ * their own full-width stop, so the joins the English copy makes with a space
+ * and a period are made differently there. The registry's script says which
+ * editions those are, so a Traditional Chinese or Japanese edition needs no
+ * branch of its own.
+ */
+const ideographic = ['Hans', 'Hant', 'Jpan'].includes(locale.script)
 
 const noteLink =
   'text-text-secondary underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand'
 
 const sectionLink =
   'inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0'
+
+const installNote = 'mt-2 text-[13px] leading-relaxed text-text-muted'
+const installButton = 'h-11 px-4 whitespace-nowrap'
+
+function InstallRow({
+  icon: Icon,
+  title,
+  lead,
+  note,
+  children,
+}: {
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  lead: string
+  note?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="grid gap-4 border-t border-border-subtle py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-8 lg:gap-10">
+      <div className="min-w-0">
+        <h4 className="flex items-center gap-2.5 text-lg font-medium tracking-tight text-text">
+          <Icon className="size-5 shrink-0 text-brand" />
+          {title}
+        </h4>
+        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
+          {lead}
+        </p>
+        {note ? <p className={cn(installNote, 'max-w-md')}>{note}</p> : null}
+      </div>
+      <div className="@container min-w-0">{children}</div>
+    </div>
+  )
+}
+
+const verifyLink =
+  'cursor-pointer underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring'
+
+/** Under a download: copy its SHA-256, and fetch its signature when it has
+ *  one. Each says what it does on hover, so the hash itself stays out of
+ *  sight until someone wants it. */
+function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
+  const [copied, setCopied] = useState(false)
+  if (!sha256 && !sig) return null
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(sha256 ?? '')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      // Clipboard unavailable (permissions, http): nothing to copy into.
+    }
+  }
+
+  return (
+    <span className="mt-2 flex gap-4 text-[13px] text-text-muted">
+      {sha256 ? (
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <button type="button" onClick={copy} className={verifyLink} />
+            }
+          >
+            {copied ? t('Copied') : 'SHA-256'}
+          </TooltipTrigger>
+          <TooltipContent>{t('Copy the SHA-256 checksum')}</TooltipContent>
+        </Tooltip>
+      ) : null}
+      {sig ? (
+        <Tooltip>
+          <TooltipTrigger render={<a href={sig} className={verifyLink} />}>
+            {t('Signature')}
+          </TooltipTrigger>
+          <TooltipContent>{t('Download the GPG signature')}</TooltipContent>
+        </Tooltip>
+      ) : null}
+    </span>
+  )
+}
 
 function ManualLink({
   slug,
@@ -113,31 +228,31 @@ const videos = [
     id: 'F7fe9pa8OeE',
     title: 'Omarchy Quattro by David Heinemeier Hansson',
     channel: 'DHH',
-    thumb: 'https://omarchy.org/assets/images/video/omarchy-quattro.webp',
+    thumb: '/assets/images/video/omarchy-quattro.webp',
   },
   {
     id: '9SDkU5VDQEQ',
     title: 'You need to switch to Linux RIGHT NOW!!',
     channel: 'NetworkChuck',
-    thumb: 'https://omarchy.org/assets/images/video/networkchuck.webp',
+    thumb: '/assets/images/video/networkchuck.webp',
   },
   {
     id: '5JPYJfN7HY0',
     title: 'They finally fixed linux',
     channel: 'typecraft',
-    thumb: 'https://omarchy.org/assets/images/video/typecraft.webp',
+    thumb: '/assets/images/video/typecraft.webp',
   },
   {
     id: 'qBKMe8AatY0',
     title: "I Didn't Expect Omarchy 4 to Be This Good",
     channel: 'LinuxBTW',
-    thumb: 'https://omarchy.org/assets/images/video/linuxbtw.webp',
+    thumb: '/assets/images/video/linuxbtw.webp',
   },
   {
     id: 'KO2T0oET9go',
     title: 'If you use AI, switch to Omarchy immediately',
     channel: 'Alex Finn',
-    thumb: 'https://omarchy.org/assets/images/video/alex-finn.webp',
+    thumb: '/assets/images/video/alex-finn.webp',
   },
   {
     id: '2IDjteRQgMQ',
@@ -207,7 +322,7 @@ function HeroCallout({ href, html }: { href: string; html: string }) {
         className="min-w-0 [&_s]:text-current/60"
         dangerouslySetInnerHTML={{ __html: t(html) }}
       />
-      <ArrowRightIcon className="size-4 shrink-0 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+      <ArrowRightIcon className="size-4 shrink-0 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
     </>
   )
   const news = NEWS_PATH.exec(href)
@@ -230,7 +345,7 @@ function HeroCallout({ href, html }: { href: string; html: string }) {
 
 export function HomePage({ data }: { data: HomeData }) {
   const { top, news } = data
-  const device = useTryDevice()
+  const isos = useIsos()
   const [intro, setIntro] = useState(false)
   const installLink = useHashLink('install')
   const watchLink = useHashLink('watch')
@@ -265,19 +380,19 @@ export function HomePage({ data }: { data: HomeData }) {
   const allPlugins = (
     <a href="https://plugins.omarchy.org" className={sectionLink}>
       {t('All plugins')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </a>
   )
   const extraThemes = (
     <Link to="/themes/" className={sectionLink}>
       {t('More community themes')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const allNews = (
     <Link to="/news/" className={sectionLink}>
       {t('All news')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const installGuide = (
@@ -287,7 +402,7 @@ export function HomePage({ data }: { data: HomeData }) {
       className={sectionLink}
     >
       {t('Full installation guide')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const moreOnX = (
@@ -304,19 +419,19 @@ export function HomePage({ data }: { data: HomeData }) {
   const allTeams = (
     <Link to="/teams/" className={sectionLink}>
       {t('All teams')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const allPatrons = (
     <Link to="/$/" params={{ _splat: 'patrons' }} className={sectionLink}>
       {t('All patrons')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
   const allMeetups = (
     <Link to="/meetups/" className={sectionLink}>
       {t('All meetups')}
-      <ArrowRightIcon />
+      <ArrowRightIcon className="rtl:-scale-x-100" />
     </Link>
   )
 
@@ -374,7 +489,7 @@ export function HomePage({ data }: { data: HomeData }) {
               }
               className="text-2xl font-medium tracking-tight text-text [text-wrap:balance] sm:text-3xl"
             >
-              {language === 'zh-CN' ? (
+              {ideographic ? (
                 <>
                   <span className="block">
                     <SectionAnchor anchor="home">
@@ -481,14 +596,14 @@ export function HomePage({ data }: { data: HomeData }) {
                 </SectionAnchor>
               </h2>
               <p
-                className={`mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
+                className={`mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${ideographic ? 'whitespace-pre-line' : ''}`}
               >
                 {t(
                   'Linux used to be a chore to setup, difficult to debug, and full of confusing upfront choices. Omarchy solves all of it with a lightning fast installation, agents that debug all issues, and fantastic defaults that give you a fully functioning system that looks amazing out of the box.',
                 )}
               </p>
               <p
-                className={`mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${language === 'zh-CN' ? 'whitespace-pre-line' : ''}`}
+                className={`mt-5 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${ideographic ? 'whitespace-pre-line' : ''}`}
               >
                 {t(
                   "Oma is for omakase, chef's choice: we pick the tools and tune the details, so you can get straight to work. But this is your computer. You're free to change everything.",
@@ -505,14 +620,14 @@ export function HomePage({ data }: { data: HomeData }) {
                 {t(
                   ": ten principles for uniting the nerds, welcoming the agents, and building the perfect computer. We're not there yet, but",
                 )}
-                {language === 'zh-CN' ? '' : ' '}
+                {ideographic ? '' : ' '}
                 <a
                   href="https://wecanfixeverything.com/"
                   className="underline decoration-border-strong underline-offset-4 hover:decoration-current"
                 >
                   {t('we can fix everything now.')}
                 </a>
-                {language === 'zh-CN' && '。'}
+                {ideographic && '。'}
               </p>
             </div>
 
@@ -545,66 +660,83 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="install"
             title={t('Install Omarchy')}
             description={t(
-              'Be up and running in as little as 35 seconds on the fastest machines, and in less than two minutes on the majority of computers.',
+              'Be up and running in as little as seven seconds on the fastest machines, and in less than two minutes on the majority of computers.',
             )}
             action={installGuide}
           />
 
-          <div className="mt-6 lg:mt-10 grid gap-4 md:grid-cols-2">
-            <div className="@container ring-elevation flex min-w-0 flex-col bg-surface p-6">
-              <div className="flex items-center gap-2.5">
-                <UsbIcon className="size-5 text-brand" />
-                <h4 className="text-lg font-medium tracking-tight text-text">
-                  {t('Full-disk or dual-boot installation')}
-                </h4>
-              </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-                {t(
+          {/* Three ways in, one per row: what it is on the left, the
+              downloads on the right, rows divided by rules rather than boxed. */}
+          <TooltipProvider delay={300}>
+            <div className="mt-8 border-b border-border-subtle lg:mt-12">
+              <InstallRow
+                icon={UsbIcon}
+                title={t('Full-disk or dual-boot installation')}
+                lead={t(
                   'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
                 )}
-              </p>
-              <div className="mt-auto pt-6">
-                <Button
-                  size="lg"
-                  nativeButton={false}
-                  render={<a href={ISO_URL} />}
-                >
-                  <DownloadIcon data-icon="inline-start" />
-                  {t('Download Omarchy')} {release.version}
-                </Button>
-                <p className="mt-2.5 text-[13px] text-text-muted">
-                  {t('Under a minute from stick to desktop.')}{' '}
-                  <span className="block @min-[44rem]:inline">
-                    {t('Verify the file:')}{' '}
-                    <a
-                      href={`${ISO_URL}.sha256`}
-                      className={`${noteLink} whitespace-nowrap`}
-                    >
-                      SHA-256
-                    </a>
-                    {language === 'zh-CN' ? '、' : ', '}
-                    <a href={`${ISO_URL}.sig`} className={noteLink}>
-                      {t('signature')}
-                    </a>
-                    {language === 'zh-CN' ? '。' : '.'}
-                  </span>
-                </p>
-              </div>
-            </div>
+                note={
+                  release.isos.aarch64
+                    ? t(
+                        'ARM64 has preliminary support for NVIDIA DGX Spark and N1X.',
+                      )
+                    : undefined
+                }
+              >
+                <ul className="grid w-fit gap-x-6 gap-y-3 @md:grid-cols-2">
+                  {isos.map(([arch, iso]) => (
+                    <li key={arch} className="flex flex-col items-start">
+                      <Button
+                        size="lg"
+                        nativeButton={false}
+                        render={<a href={iso.url} />}
+                        className={installButton}
+                      >
+                        <DownloadIcon data-icon="inline-start" />
+                        Omarchy {release.version}{' '}
+                        {ideographic
+                          ? `（${ISO_LABEL[arch] ?? arch}）`
+                          : `(${ISO_LABEL[arch] ?? arch})`}
+                      </Button>
+                      <Verify
+                        sha256={release.isos[arch]?.sha256}
+                        sig={`${iso.url}.sig`}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </InstallRow>
 
-            <div className="ring-elevation flex min-w-0 flex-col bg-surface p-6">
-              <div className="flex items-center gap-2.5">
-                <DisplayIcon className="size-5 text-brand" />
-                <h4 className="text-lg font-medium tracking-tight text-text">
-                  {t('Try it first')}
-                </h4>
-              </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-                {t(
+              {release.mac ? (
+                <InstallRow
+                  icon={AppleIcon}
+                  title={t('Apple Silicon Macs')}
+                  lead={t(
+                    'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
+                  )}
+                >
+                  <div className="flex flex-col items-start">
+                    <Button
+                      size="lg"
+                      nativeButton={false}
+                      render={<a href={release.mac.url} />}
+                      className={installButton}
+                    >
+                      <DownloadIcon data-icon="inline-start" />
+                      {t('Omarchy M Installer')}
+                    </Button>
+                    <Verify sha256={release.mac.sha256} />
+                  </div>
+                </InstallRow>
+              ) : null}
+
+              <InstallRow
+                icon={DisplayIcon}
+                title={t('Try it first')}
+                lead={t(
                   'All of Omarchy running in a virtual machine, so you can get a taste first.',
                 )}
-              </p>
-              <div className="mt-auto pt-6">
+              >
                 <div className="flex flex-wrap gap-2">
                   {(['mac', 'windows'] as const).map((key) => {
                     const Mark = TRY[key].icon
@@ -612,7 +744,7 @@ export function HomePage({ data }: { data: HomeData }) {
                       <Button
                         key={key}
                         size="lg"
-                        variant={device === key ? 'default' : 'outline'}
+                        variant="outline"
                         nativeButton={false}
                         render={<a href={TRY[key].href} />}
                       >
@@ -623,15 +755,12 @@ export function HomePage({ data }: { data: HomeData }) {
                     )
                   })}
                 </div>
-                <p className="mt-2.5 text-[13px] text-text-muted">
+                <p className={installNote}>
                   {t('Apple Silicon Macs, Windows 10 and 11.')}
-                  <span className="block">
-                    {t('On Linux, the ISO is the way in.')}
-                  </span>
                 </p>
-              </div>
+              </InstallRow>
             </div>
-          </div>
+          </TooltipProvider>
 
           <p className="mt-6 text-[13px] leading-relaxed text-text-muted [text-wrap:pretty]">
             {t('The manual also covers')}{' '}
@@ -642,7 +771,7 @@ export function HomePage({ data }: { data: HomeData }) {
             <ManualLink slug="unattended-installs">
               {t('unattended installs')}
             </ManualLink>
-            {language === 'zh-CN' ? t(' detailed guides.') : '.'}
+            {ideographic ? t(' detailed guides.') : '.'}
           </p>
           <SectionActions>{installGuide}</SectionActions>
         </div>
@@ -693,7 +822,7 @@ export function HomePage({ data }: { data: HomeData }) {
                 {t(
                   'A theme restyles the whole system at once: terminal, bar, notifications, wallpaper. Pick one and this site wears it too.',
                 )}
-                {language === 'zh-CN' && (
+                {ideographic && (
                   <>
                     <span className="sm:hidden">。</span>
                     <span className="hidden sm:inline">；</span>
@@ -825,7 +954,7 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="teams"
             title={t('It takes a village to raise a distro')}
             description={t(
-              'Omarchy Core sets the direction, the Security team keeps your system safe, Design shapes how it looks and feels, and the Rangers help others find their way.',
+              'Omarchy Core sets the direction, the Security team keeps your system safe, Design shapes how it looks and feels, Omarchy M brings it to the Mac, and the Rangers help others find their way.',
             )}
             action={allTeams}
           />
@@ -879,7 +1008,7 @@ export function HomePage({ data }: { data: HomeData }) {
                   </p>
                   <span className="mt-auto flex items-center gap-1 pt-4 text-[13px] font-medium text-brand">
                     {card.cta}
-                    <ArrowRightIcon className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5" />
+                    <ArrowRightIcon className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
                   </span>
                 </>
               )
