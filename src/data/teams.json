@@ -183,16 +183,34 @@
     "avatar": "/assets/images/team/marcelo-alcantara.webp"
    },
    {
+    "name": "Scott Jones",
+    "meta": "USA",
+    "href": "https://x.com/bi9kahuna",
+    "avatar": "/assets/images/team/scott-jones.webp"
+   },
+   {
+    "name": "Chris Kearney",
+    "meta": "USA",
+    "href": "https://x.com/SiliconForested",
+    "avatar": "/assets/images/team/chris-kearney.webp"
+   },
+   {
     "name": "Naeem Malik",
     "meta": "India",
     "href": "https://x.com/tiredkebab",
     "avatar": "/assets/images/team/naeem-malik.webp"
    },
    {
-    "name": "Scott Jones",
+    "name": "Dj",
+    "meta": "Canada",
+    "href": "https://x.com/buildwithdjdev",
+    "avatar": "/assets/images/team/dj.webp"
+   },
+   {
+    "name": "Joshua Warren",
     "meta": "USA",
-    "href": "https://x.com/bi9kahuna",
-    "avatar": "/assets/images/team/scott-jones.webp"
+    "href": "https://x.com/JoshuaSWarren",
+    "avatar": "/assets/images/team/joshua-warren.webp"
    },
    {
     "name": "Eduardo Martinez",
@@ -205,12 +223,6 @@
     "meta": "China",
     "href": "https://x.com/riverleaf88",
     "avatar": "/assets/images/team/shun-li.webp"
-   },
-   {
-    "name": "Dj",
-    "meta": "Canada",
-    "href": "https://x.com/buildwithdjdev",
-    "avatar": "/assets/images/team/dj.webp"
    },
    {
     "name": "Ryan Murray",
@@ -241,12 +253,6 @@
     "meta": "Nepal",
     "href": "https://x.com/jaidipsubedi",
     "avatar": "/assets/images/team/jaidip-subedi.webp"
-   },
-   {
-    "name": "Joshua Warren",
-    "meta": "USA",
-    "href": "https://x.com/JoshuaSWarren",
-    "avatar": "/assets/images/team/joshua-warren.webp"
    },
    {
     "name": "Shawn Yeager",
