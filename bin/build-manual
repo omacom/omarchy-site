@@ -9,7 +9,10 @@ begin
   require "kramdown"
   require "kramdown-parser-gfm"
 rescue LoadError
-  abort "Missing gems. Run: gem install kramdown kramdown-parser-gfm"
+  system("gem", "install", "kramdown", "kramdown-parser-gfm") or abort "Couldn't install kramdown and kramdown-parser-gfm"
+  Gem.clear_paths
+  require "kramdown"
+  require "kramdown-parser-gfm"
 end
 
 require "cgi"
