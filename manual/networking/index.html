@@ -63,7 +63,7 @@
 
     <article class="manual__content">
       <h1>Networking</h1>
-<p>Networking in Omarchy is handled by NetworkManager, and you drive it from the network icon in the <a href="../the-top-bar/">top bar</a> or with <code>Super + Ctrl + W</code>.</p>
+<p>Networking in Omarchy is handled by NetworkManager, and you drive it from the network icon in the <a href="../the-top-bar/">top bar</a> or with <code>Super + Ctrl + N</code>.</p>
 
 <p>That panel scans for Wi-Fi networks, shows signal strength, and connects. Ethernet needs nothing at all — plug it in and it works. If you’d rather stay in the terminal, <code>nmtui</code> gives you the same controls, and there’s an <code>omarchy network</code> command group too.</p>
 
@@ -87,7 +87,7 @@
 
 <h2 id="how-fast-is-it">How fast is it? <a class="manual__heading-link" href="#how-fast-is-it" aria-label="Link to this section">#</a></h2>
 
-<p><em>Trigger &gt; Speed Test &gt; Network Speed Test</em> measures your actual up and down speed with a pair of dials. From the terminal it’s <code>omarchy network speedtest down</code> or <code>up</code>. (There’s a disk speed test sitting next to it in that menu, if you’re benchmarking the other bottleneck.)</p>
+<p><em>Trigger &gt; Speed Test &gt; Network Speed Test</em> measures your actual up and down speed with a pair of dials. From the terminal it’s <code>omarchy network speedtest down</code> or <code>up</code>. It measures against Omarchy’s own service and counts only its test transfers. Other downloads can compete for bandwidth, but they aren’t added to the speed-test result. (There’s a disk speed test sitting next to it in that menu, if you’re benchmarking the other bottleneck.)</p>
 
 <h2 id="the-firewall">The firewall <a class="manual__heading-link" href="#the-firewall" aria-label="Link to this section">#</a></h2>
 
