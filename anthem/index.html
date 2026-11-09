@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Anthem — Omarchy</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta name="description" content="We Can Fix Everything, the Omarchy anthem, as a film drawn live in your browser: 66 scenes of JavaScript, no video file.">
+    <meta name="theme-color" content="#0e0e14">
+
+    <link rel="canonical" href="https://omarchy.org/anthem">
+
+    <meta property="og:site_name" content="Omarchy">
+    <meta property="og:title" content="Anthem">
+    <meta property="og:description" content="We Can Fix Everything, the Omarchy anthem, as a film drawn live in your browser.">
+    <meta property="og:image" content="https://omarchy.org/assets/images/social/anthem.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://omarchy.org/anthem">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/assets/images/favicon.png">
+
+    <!-- Exported from https://github.com/TripleU613/OmarchThemeVideo at 74eb1f8 by music-video/scripts/export-site.mjs. Edit there, not here. -->
+    <script>window.OM_LIVE = { scale: +new URLSearchParams(location.search).get('scale') || 0 }; // ?scale=0.5 draws at half resolution, for slower machines</script>
+    <script>window.OM_THREE = import('/assets/anthem/vendor/three.module.min.js').then((m) => { window.THREE = m; }); // upstream three 0.181.2</script>
+    <script src="/assets/anthem/lib/themes.js?v=a692c30a"></script>
+    <script src="/assets/anthem/lib/timing.js?v=7b4d2a2b"></script>
+    <script src="/assets/anthem/lib/audio.js?v=cf5d83aa"></script>
+    <script src="/assets/anthem/lib/om.js?v=c05c5e54"></script>
+    <script src="/assets/anthem/lib/stage.js?v=3089781f"></script>
+    <script src="/assets/anthem/lib/kit.js?v=41e2e015"></script>
+    <script src="/assets/anthem/lib/transitions.js?v=5894b5bb"></script>
+    <script src="/assets/anthem/lib/handoff.js?v=7869ac21"></script>
+    <script src="/assets/anthem/lib/post.js?v=5ee3c61d"></script>
+    <script>window.OM_TRANS = {};</script>
+    <link rel="stylesheet" href="/assets/anthem/play.css?v=ad49c153" />
+    <style>
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('/assets/anthem/fonts/jetbrains-mono-var.woff2') format('woff2');
+        font-weight: 100 800;
+        font-style: normal;
+      }
+      .om-fill, .om-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="view">
+      <div id="root">
+      <section id="s-i-01" class="scene" data-start="0" data-duration="7.94" data-enter="0" data-track-index="1"></section>
+      <section id="s-i-02" class="scene" data-start="7.94" data-duration="12.12" data-enter="0" data-track-index="2"></section>
+      <section id="s-i-03" class="scene" data-start="20.06" data-duration="8.59" data-enter="0" data-track-index="1"></section>
+      <section id="s-i-04" class="scene" data-start="28.65" data-duration="8.061" data-enter="0" data-track-index="2"></section>
+      <section id="s-v1-01" class="scene" data-start="36.711" data-duration="5.249" data-enter="0" data-track-index="1"></section>
+      <section id="s-v1-02" class="scene" data-start="41.96" data-duration="4.41" data-enter="0" data-track-index="2"></section>
+      <section id="s-v1-03" class="scene" data-start="46.37" data-duration="4.198" data-enter="0" data-track-index="1"></section>
+      <section id="s-v1-04" class="scene" data-start="50.568" data-duration="3.883" data-enter="0" data-track-index="2"></section>
+      <section id="s-v1-05" class="scene" data-start="54.451" data-duration="4.295" data-enter="0" data-track-index="1"></section>
+      <section id="s-v1-06" class="scene" data-start="58.746" data-duration="4.735" data-enter="0" data-track-index="2"></section>
+      <section id="s-v1-07" class="scene" data-start="63.481" data-duration="3.857" data-enter="0" data-track-index="1"></section>
+      <section id="s-v1-08" class="scene" data-start="67.338" data-duration="5.612" data-enter="0" data-track-index="2"></section>
+      <section id="s-p1-01" class="scene" data-start="72.95" data-duration="1.911" data-enter="0" data-track-index="1"></section>
+      <section id="s-p1-02" class="scene" data-start="74.861" data-duration="1.602" data-enter="0" data-track-index="2"></section>
+      <section id="s-p1-03" class="scene" data-start="76.463" data-duration="2.671" data-enter="0" data-track-index="1"></section>
+      <section id="s-p1-04" class="scene" data-start="79.134" data-duration="2.044" data-enter="0" data-track-index="2"></section>
+      <section id="s-c1-01" class="scene" data-start="81.178" data-duration="3.853" data-enter="0" data-track-index="1"></section>
+      <section id="s-c1-02" class="scene" data-start="85.031" data-duration="4.273" data-enter="0" data-track-index="2"></section>
+      <section id="s-c1-03" class="scene" data-start="89.304" data-duration="4.136" data-enter="0" data-track-index="1"></section>
+      <section id="s-c1-04" class="scene" data-start="93.44" data-duration="4.409" data-enter="0" data-track-index="2"></section>
+      <section id="s-c1-05" class="scene" data-start="97.849" data-duration="3.204" data-enter="0" data-track-index="1"></section>
+      <section id="s-c1-06" class="scene" data-start="101.053" data-duration="5.318" data-enter="0" data-track-index="2"></section>
+      <section id="s-c1-07" class="scene" data-start="106.371" data-duration="4.272" data-enter="0" data-track-index="1"></section>
+      <section id="s-c1-08" class="scene" data-start="110.643" data-duration="4.687" data-enter="0" data-track-index="2"></section>
+      <section id="s-v2-01" class="scene" data-start="115.33" data-duration="3.724" data-enter="0" data-track-index="1"></section>
+      <section id="s-v2-02" class="scene" data-start="119.054" data-duration="4.383" data-enter="0" data-track-index="2"></section>
+      <section id="s-v2-03" class="scene" data-start="123.437" data-duration="4.125" data-enter="0" data-track-index="1"></section>
+      <section id="s-v2-04" class="scene" data-start="127.562" data-duration="5.465" data-enter="0" data-track-index="2"></section>
+      <section id="s-v2-05" class="scene" data-start="133.027" data-duration="3.984" data-enter="0" data-track-index="1"></section>
+      <section id="s-v2-06" class="scene" data-start="137.011" data-duration="3.47" data-enter="0" data-track-index="2"></section>
+      <section id="s-v2-07" class="scene" data-start="140.481" data-duration="4.272" data-enter="0" data-track-index="1"></section>
+      <section id="s-v2-08" class="scene" data-start="144.753" data-duration="5.19" data-enter="0" data-track-index="2"></section>
+      <section id="s-p2-01" class="scene" data-start="149.943" data-duration="1.73" data-enter="0" data-track-index="1"></section>
+      <section id="s-p2-02" class="scene" data-start="151.673" data-duration="2.354" data-enter="0" data-track-index="2"></section>
+      <section id="s-p2-03" class="scene" data-start="154.027" data-duration="1.822" data-enter="0" data-track-index="1"></section>
+      <section id="s-p2-04" class="scene" data-start="155.849" data-duration="2.122" data-enter="0" data-track-index="2"></section>
+      <section id="s-c2-01" class="scene" data-start="157.971" data-duration="3.802" data-enter="0" data-track-index="1"></section>
+      <section id="s-c2-02" class="scene" data-start="161.773" data-duration="4.25" data-enter="0" data-track-index="2"></section>
+      <section id="s-c2-03" class="scene" data-start="166.023" data-duration="4.14" data-enter="0" data-track-index="1"></section>
+      <section id="s-c2-04" class="scene" data-start="170.163" data-duration="4.358" data-enter="0" data-track-index="2"></section>
+      <section id="s-c2-05" class="scene" data-start="174.521" data-duration="3.181" data-enter="0" data-track-index="1"></section>
+      <section id="s-c2-06" class="scene" data-start="177.702" data-duration="5.318" data-enter="0" data-track-index="2"></section>
+      <section id="s-c2-07" class="scene" data-start="183.02" data-duration="4.249" data-enter="0" data-track-index="1"></section>
+      <section id="s-c2-08" class="scene" data-start="187.269" data-duration="6.016" data-enter="0" data-track-index="2"></section>
+      <section id="s-b-01" class="scene" data-start="193.285" data-duration="3.829" data-enter="0" data-track-index="1"></section>
+      <section id="s-b-02" class="scene" data-start="197.114" data-duration="4.178" data-enter="0" data-track-index="2"></section>
+      <section id="s-b-03" class="scene" data-start="201.292" data-duration="4.325" data-enter="0" data-track-index="1"></section>
+      <section id="s-b-04" class="scene" data-start="205.617" data-duration="3.572" data-enter="0" data-track-index="2"></section>
+      <section id="s-b-05" class="scene" data-start="209.189" data-duration="4.829" data-enter="0" data-track-index="1"></section>
+      <section id="s-b-06" class="scene" data-start="214.018" data-duration="3.739" data-enter="0" data-track-index="2"></section>
+      <section id="s-b-07" class="scene" data-start="217.757" data-duration="4.295" data-enter="0" data-track-index="1"></section>
+      <section id="s-b-08" class="scene" data-start="222.052" data-duration="5.498" data-enter="0" data-track-index="2"></section>
+      <section id="s-x-b1" class="scene" data-start="227.55" data-duration="6.25" data-enter="0" data-track-index="1"></section>
+      <section id="s-x-b2" class="scene" data-start="233.8" data-duration="9.453" data-enter="0" data-track-index="2"></section>
+      <section id="s-c3-01" class="scene" data-start="243.253" data-duration="3.877" data-enter="0" data-track-index="1"></section>
+      <section id="s-c3-02" class="scene" data-start="247.13" data-duration="4.249" data-enter="0" data-track-index="2"></section>
+      <section id="s-c3-03" class="scene" data-start="251.379" data-duration="4.145" data-enter="0" data-track-index="1"></section>
+      <section id="s-c3-04" class="scene" data-start="255.524" data-duration="4.377" data-enter="0" data-track-index="2"></section>
+      <section id="s-c3-05" class="scene" data-start="259.901" data-duration="3.204" data-enter="0" data-track-index="1"></section>
+      <section id="s-c3-06" class="scene" data-start="263.105" data-duration="5.318" data-enter="0" data-track-index="2"></section>
+      <section id="s-c3-07" class="scene" data-start="268.423" data-duration="2.956" data-enter="0" data-track-index="1"></section>
+      <section id="s-c3-08" class="scene" data-start="271.379" data-duration="4.521" data-enter="0" data-track-index="2"></section>
+      <section id="s-c3-09" class="scene" data-start="275.9" data-duration="4.9" data-enter="0" data-track-index="1"></section>
+      <section id="s-x-o1" class="scene" data-start="280.8" data-duration="8.985" data-enter="0" data-track-index="2"></section>
+      <section id="s-o-01" class="scene" data-start="289.785" data-duration="3.765" data-enter="0" data-track-index="1"></section>
+      <section id="s-x-end" class="scene" data-start="293.55" data-duration="12.397" data-enter="0" data-track-index="2"></section>
+      </div>
+    </div>
+    <noscript><p style="padding: 2rem">This film is drawn live with JavaScript. <a href="https://youtu.be/R91DhtkbYLs">Watch the rendered film</a>.</p></noscript>
+    <div id="note">
+      <span class="wait">loading…</span>
+      <b class="go">We Can Fix Everything</b>
+      <span class="go">click or press space to play · F for fullscreen</span>
+      <span class="nogl">This film is drawn live with WebGL2, which this browser does not have.<br /><a href="https://youtu.be/R91DhtkbYLs">Watch the rendered film</a></span>
+    </div>
+    <div id="bar">
+      <div id="scrub"><b></b></div>
+      <div class="row"><span id="time"></span><span id="stats"></span><a id="slow" href="https://youtu.be/R91DhtkbYLs">stuttering? watch the rendered film</a><span>song by Kevin Koontz / REARRANGED · <a href="https://github.com/TripleU613/OmarchThemeVideo">source</a> · <a href="https://youtu.be/R91DhtkbYLs">4K film</a></span></div>
+    </div>
+    <audio id="song" data-src="/music/kevin_koontz-we_can_fix_everything.mp3" data-offset="0.526" preload="none"></audio>
+    <script src="/assets/anthem/scenes/i-01.js?v=3c56540d"></script>
+    <script src="/assets/anthem/scenes/i-02.js?v=5bb56d63"></script>
+    <script src="/assets/anthem/scenes/i-03.js?v=fb6b037e"></script>
+    <script src="/assets/anthem/scenes/i-04.js?v=0fd259d0"></script>
+    <script src="/assets/anthem/scenes/v1-01.js?v=dc9be46f"></script>
+    <script src="/assets/anthem/scenes/v1-02.js?v=d83c9cd1"></script>
+    <script src="/assets/anthem/scenes/v1-03.js?v=35466c71"></script>
+    <script src="/assets/anthem/scenes/v1-04.js?v=ef96a613"></script>
+    <script src="/assets/anthem/scenes/v1-05.js?v=b70e32f0"></script>
+    <script src="/assets/anthem/scenes/v1-06.js?v=eac79498"></script>
+    <script src="/assets/anthem/scenes/v1-07.js?v=9b4040dc"></script>
+    <script src="/assets/anthem/scenes/v1-08.js?v=40658e1d"></script>
+    <script src="/assets/anthem/scenes/p1-01.js?v=c7957d2f"></script>
+    <script src="/assets/anthem/scenes/p1-02.js?v=38f35799"></script>
+    <script src="/assets/anthem/scenes/p1-03.js?v=cba881fc"></script>
+    <script src="/assets/anthem/scenes/p1-04.js?v=fa976085"></script>
+    <script src="/assets/anthem/scenes/c1-01.js?v=35463b98"></script>
+    <script src="/assets/anthem/scenes/c1-02.js?v=054afdae"></script>
+    <script src="/assets/anthem/scenes/c1-03.js?v=1937c96f"></script>
+    <script src="/assets/anthem/scenes/c1-04.js?v=0133fc8f"></script>
+    <script src="/assets/anthem/scenes/c1-05.js?v=14ff1483"></script>
+    <script src="/assets/anthem/scenes/c1-06.js?v=6448a312"></script>
+    <script src="/assets/anthem/scenes/c1-07.js?v=f8663910"></script>
+    <script src="/assets/anthem/scenes/c1-08.js?v=6e71c795"></script>
+    <script src="/assets/anthem/scenes/v2-01.js?v=9f4e37ce"></script>
+    <script src="/assets/anthem/scenes/v2-02.js?v=e0b6d203"></script>
+    <script src="/assets/anthem/scenes/v2-03.js?v=2b27879b"></script>
+    <script src="/assets/anthem/scenes/v2-04.js?v=a7859173"></script>
+    <script src="/assets/anthem/scenes/v2-05.js?v=80df4bf8"></script>
+    <script src="/assets/anthem/scenes/v2-06.js?v=6341b0fa"></script>
+    <script src="/assets/anthem/scenes/v2-07.js?v=f627fe39"></script>
+    <script src="/assets/anthem/scenes/v2-08.js?v=9f1895f0"></script>
+    <script src="/assets/anthem/scenes/p2-01.js?v=3b9e118c"></script>
+    <script src="/assets/anthem/scenes/p2-02.js?v=a1b66d5d"></script>
+    <script src="/assets/anthem/scenes/p2-03.js?v=3ff3a544"></script>
+    <script src="/assets/anthem/scenes/p2-04.js?v=3b930fd9"></script>
+    <script src="/assets/anthem/scenes/c2-01.js?v=2368aa18"></script>
+    <script src="/assets/anthem/scenes/c2-02.js?v=83bbf7d5"></script>
+    <script src="/assets/anthem/scenes/c2-03.js?v=6ed30ef9"></script>
+    <script src="/assets/anthem/scenes/c2-04.js?v=5ef1d4a1"></script>
+    <script src="/assets/anthem/scenes/c2-05.js?v=fac2c9fd"></script>
+    <script src="/assets/anthem/scenes/c2-06.js?v=0d6d52d7"></script>
+    <script src="/assets/anthem/scenes/c2-07.js?v=48511780"></script>
+    <script src="/assets/anthem/scenes/c2-08.js?v=b7840338"></script>
+    <script src="/assets/anthem/scenes/b-01.js?v=e2e87b3b"></script>
+    <script src="/assets/anthem/scenes/b-02.js?v=598dd86e"></script>
+    <script src="/assets/anthem/scenes/b-03.js?v=35e5847d"></script>
+    <script src="/assets/anthem/scenes/b-04.js?v=5ac02cd8"></script>
+    <script src="/assets/anthem/scenes/b-05.js?v=67aa5ab6"></script>
+    <script src="/assets/anthem/scenes/b-06.js?v=2da23e7c"></script>
+    <script src="/assets/anthem/scenes/b-07.js?v=33724b99"></script>
+    <script src="/assets/anthem/scenes/b-08.js?v=68929740"></script>
+    <script src="/assets/anthem/scenes/x-b1.js?v=3d73cc07"></script>
+    <script src="/assets/anthem/scenes/x-b2.js?v=0bc89974"></script>
+    <script src="/assets/anthem/scenes/c3-01.js?v=a59439bd"></script>
+    <script src="/assets/anthem/scenes/c3-02.js?v=096d2180"></script>
+    <script src="/assets/anthem/scenes/c3-03.js?v=6291ee4b"></script>
+    <script src="/assets/anthem/scenes/c3-04.js?v=b45ca837"></script>
+    <script src="/assets/anthem/scenes/c3-05.js?v=5afb7252"></script>
+    <script src="/assets/anthem/scenes/c3-06.js?v=96e2e3dd"></script>
+    <script src="/assets/anthem/scenes/c3-07.js?v=9e5d5621"></script>
+    <script src="/assets/anthem/scenes/c3-08.js?v=f0860280"></script>
+    <script src="/assets/anthem/scenes/c3-09.js?v=bf1a9948"></script>
+    <script src="/assets/anthem/scenes/x-o1.js?v=9afe31fe"></script>
+    <script src="/assets/anthem/scenes/o-01.js?v=d03cfbb5"></script>
+    <script src="/assets/anthem/scenes/x-end.js?v=8af2a0cf"></script>
+    <script src="/assets/anthem/lib/lyrics.js"></script>
+    <script src="/assets/anthem/lib/captions.js?v=e7046793"></script>
+    <script src="/assets/anthem/lib/frame-need.js?v=2a42c5f2"></script>
+    <script src="/assets/anthem/lib/frames.js?v=4c1ac862"></script>
+    <script src="/assets/anthem/play.js?v=e3e73642"></script>
+  </body>
+</html>

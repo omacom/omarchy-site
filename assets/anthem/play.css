@@ -1,0 +1,23 @@
+/* Public player chrome: the film fills the window; the controls stay out of its way. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: #0e0e14; color: #c0caf5; font: 13px 'JetBrains Mono', monospace; overflow: hidden; }
+a { color: #9ece6a; }
+#view { position: absolute; inset: 0; overflow: hidden; cursor: pointer; }
+#root { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; background: #0e0e14; }
+#root .scene { position: absolute; inset: 0; overflow: hidden; }
+#bar { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; display: grid; gap: 8px; background: linear-gradient(transparent, #0e0e14cc); transition: opacity 0.3s; }
+#bar .row { display: flex; gap: 16px; align-items: center; color: #a9b1d6; }
+#bar .row span:last-child { margin-left: auto; }
+#scrub { height: 14px; padding: 5px 0; cursor: pointer; background: #24283b content-box; }
+#scrub b { display: block; height: 100%; width: 0; background: #9ece6a; }
+#stats { color: #8b93b8; }
+#note { position: absolute; inset: 0; display: grid; place-content: center; gap: 12px; text-align: center; font-size: 18px; pointer-events: none; }
+#note b { font-size: 40px; font-weight: 600; color: #9ece6a; }
+#note a { pointer-events: auto; }
+body.playing #note, body.nogl #view, body.nogl #bar { display: none; }
+body.playing:not(.active):not(.stats) #bar { opacity: 0; }
+body.playing:not(.active) #view { cursor: none; }
+#note .wait, body.ready #note .go, body.nogl #note .nogl { display: block; }
+#note .go, #note .nogl, body.ready #note .wait, body.nogl #note .wait { display: none; }
+#slow { display: none; }
+body.slow #slow { display: inline; }
