@@ -1664,6 +1664,23 @@
       "cover": null
     },
     {
+      "id": "evt-n3vWFaK0KP8ejG6",
+      "title": "Omarchy Hangzhou Meetup · 项目分享、装机与 Demo",
+      "url": "https://luma.com/omarchyhangzhou",
+      "start": "2026-11-15T06:00:00.000Z",
+      "end": "2026-11-15T10:00:00.000Z",
+      "timezone": "Asia/Taipei",
+      "address": "杭州崇文未来学校，甘王路3号",
+      "city": null,
+      "country": null,
+      "online": false,
+      "geo": null,
+      "hosts": [],
+      "cover": "/images/meetups/evt-n3vWFaK0KP8ejG6-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-deNAAL5V3VjulA1",
       "title": "OMARCHY WARSAW #2",
       "url": "https://luma.com/0tsjjf2d",
@@ -1681,6 +1698,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-R1T3FoigSaT4BA6",
+      "title": "Omarchy London Meetup 002",
+      "url": "https://luma.com/fyb1dq1k",
+      "start": "2026-11-18T18:00:00.000Z",
+      "end": "2026-11-18T20:00:00.000Z",
+      "timezone": "Europe/London",
+      "address": "Wise, 65 Clifton St, London EC2A 4JE, UK",
+      "city": "London",
+      "country": "GB",
+      "online": false,
+      "geo": { "lat": 51.5223258, "lon": -0.0834298 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-R1T3FoigSaT4BA6-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-JBHHKJZRXrbLNGX",
       "title": "Omarchy Singapore",
       "url": "https://luma.com/w2adh2et",
@@ -1694,23 +1728,6 @@
       "geo": { "lat": 1.2979872440179592, "lon": 103.83962067974433 },
       "hosts": [],
       "cover": "/images/meetups/evt-JBHHKJZRXrbLNGX-full.webp",
-      "coverWidth": 800,
-      "coverHeight": 800
-    },
-    {
-      "id": "evt-R1T3FoigSaT4BA6",
-      "title": "Omarchy London Meetup 002",
-      "url": "https://luma.com/fyb1dq1k",
-      "start": "2026-11-19T18:00:00.000Z",
-      "end": "2026-11-19T20:00:00.000Z",
-      "timezone": "Europe/London",
-      "address": "Wise, 65 Clifton St, London EC2A 4JE, UK",
-      "city": "London",
-      "country": "GB",
-      "online": false,
-      "geo": { "lat": 51.5223258, "lon": -0.0834298 },
-      "hosts": [],
-      "cover": "/images/meetups/evt-R1T3FoigSaT4BA6-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },
