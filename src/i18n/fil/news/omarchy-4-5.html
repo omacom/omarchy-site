@@ -1,0 +1,449 @@
+<p>Ang Omarchy 4.5 (aka Quattro RS!) ang unang malaking release na may mga feature simula noong <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, at napakalaki nito: mahigit 740 pull request ang na-merge mula sa mahigit 180 contributor sa loob lang ng labindalawang linggo. Nag-aalok na ito ngayon ng tradisyonal na desktop mode sa tabi ng tiling na default. Puwede mo itong i-install nang native sa mga M1/M2/M3/Neo na MacBook. At nagsasalita ito ng 50 wika. At napakarami pang ibang feature, pag-aayos, at pagpapahusay. Nasa Omarchy ka na? Patakbuhin ang <em>Update &gt; Omarchy</em>. Bagong makina? <a href="/#install">Kunin ito rito</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Mga floating na workspace na may dock</h2>
+
+<p>Pinapalipat-lipat na ngayon ng <code>Super + L</code> ang anumang workspace sa pagitan ng tiling, scrolling, at floating. Sa isang floating na workspace, bawat window ay may titlebar sa mga kulay ng tema mo, at ipinapakita ng isang dock ang mga naka-pin mong app, lahat ng tumatakbo, at isang grid ng bawat app na naka-install. I-drag para muling ayusin o i-pin, mag-right-click para sa iba pa, at pina-minimize ng <code>Super + M</code> ang isang window pababa sa dock.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Magandang panimula ito para sa sinumang galing sa macOS o Windows na hindi pa handang mag-all-in sa tiling. O para sa sinumang gusto lang ng isang workspace kung saan puwedeng magkalat ang mga window. Pagsamahin nang paiba-iba bawat workspace, at ipinapakita ng bar kung anong layout ang gamit ng bawat isa.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy sa Apple Silicon</h2>
+
+<p>Naipadala na ng aming kahanga-hangang team ng <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> ang native na installer para sa Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Mag-download ng app</a> sa macOS, at ilalagay nito ang Omarchy katabi mismo nito sa M1, M2, M3, o Neo MacBook mo. Walang USB stick, walang mga bulong sa terminal. Mas gusto mo ang Homebrew? Isang linya lang iyon:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Ang installer ng Omarchy para sa Mac" /></p>
+
+<p>Ito ang itinakda naming gawin noong Setyembre: tapusin ang sinimulan ng Asahi. Pagkalipas ng dalawang buwan, puwede mo na lang itong i-download. Kahanga-hangang trabaho ng lahat sa team.</p>
+
+<p>At hindi sila humihinto roon. Ginagawa na ngayon ang M4, M5, at M6, kaya malamang hindi magtatagal ay tatakbo na ang Omarchy sa bawat Apple Silicon Mac.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy sa isang M2 Max, M3 Air, Neo, M4 Pro, at M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Suporta sa ARM para sa NVIDIA DGX Spark + N1X (at malapit na ang Snapdragon)</h2>
+
+<p>Ipinapadala ng Omarchy 4.5 ang una nitong ARM ISO, at kasama nito ang paunang suporta para sa mga ARM na makina ng NVIDIA: ang DGX Spark desktop at ang mga laptop na nakabatay sa N1X, tulad ng <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> at ng <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. At malapit na rin naming magkakaroon ng suporta para sa buong hanay ng mga Snapdragon ARM na makina. Maaga pa lang ito, kaya asahan ang ilang magaspang na bahagi, at pakireport sa <a href="https://github.com/omacom/omarchy/issues">GitHub</a> ang anumang masira.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 wika at 5 paraan ng pag-input</h2>
+
+<p>Nagsasalita na ngayon ang Omarchy ng 50 wika. Pumili ng isa sa ilalim ng <em>Setup &gt; Language</em> (o patakbuhin ang <code>omarchy language &lt;code&gt;</code>), at agad na lilipat ang menu, ang desktop, at ang mga notification ng Omarchy. Susunod ang locale ng system sa susunod mong pag-login.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Pagpapalit ng wika" /></p>
+
+<p>Pero kalahati lang ng usapan ang pagsasalita ng isang wika. Kailangan mo rin itong i-type. Kaya inihahanda na ngayon ng Omarchy ang wastong mga paraan ng pag-input para sa Japanese (Mozc), Korean (Hangul), Simplified Chinese (Pinyin), Taiwan (Zhuyin), at Hong Kong (Cangjie), mula mismo sa installer o sa ibang pagkakataon sa ilalim ng <em>Setup &gt; Keyboard</em>. Bawat isa ay may kasamang tamang mga font para sa mga anyo ng karakter nito, sumusunod ang candidate window sa tema mo, at nagpapalipat-lipat ang <code>Super + I</code> sa pagitan ng mga wika ng pag-input mo. Pinapanatili ng Hangul, Zhuyin, at Cangjie ang kanilang mga key sa karaniwang posisyon kahit nagta-type ka ng Latin sa Dvorak, Colemak, o AZERTY, tulad lang sa Windows at macOS. At ang pagtapik sa Shift nang mag-isa ay lalabas mula sa isang paraan ng pag-input papunta sa mga letrang Latin at pabalik muli, sa paraang ginagawa ng Sogou, Microsoft Pinyin, at macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Mag-sign in sa mga captive na Wi-Fi portal</h2>
+
+<p>Sa wakas, gumagana na lang ang Wi-Fi sa hotel, paliparan, at coffee shop. Napapansin na ngayon ng Omarchy kapag gusto ng isang network na mag-sign in ka o tanggapin ang mga tuntunin nito bago ka hayaang mag-online. Binabalaan ka ng icon ng network, at nagpapakita ang panel ng network ng isang malaking button na Open Captive Portal na deretsong magdadala sa iyo sa pahina ng pag-login. Kapag nakapasok ka na, kusang babalik sa normal ang lahat.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Pag-sign in sa isang captive portal mula sa panel ng network" width="380" /></p>
+
+<h2 id="five-new-default-apps">Limang bagong default na app</h2>
+
+<p>Gumagawa ang <strong>Hype</strong> ng mga presentasyon mula sa iisang Markdown file, na may visual na editor ng slide sa tabi ng source, at nag-e-export sa PDF o PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p>Pinapalitan ng <strong>Signed</strong> ang Xournal++ para sa mga papeles: magbukas ng PDF, ilagay ang iyong naka-save na lagda, teksto, at mga petsa, at mag-save ng isang nilagdaang kopya.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p>Gumuguhit ang <strong>Disktree</strong> ng isang treemap ng kung ano ang pumupuno sa disk mo, na may kulay ayon sa uri, itinuturo ang mga cache na ligtas muling buuin, at hinahayaan kang markahan kung ano ang dapat nang mawala.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p>Nire-record ng <strong>Monologue</strong> ang camera mo sa isang pindot lang, na may temang tumutugma sa desktop mo.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p>Binibigyan ka ng <strong>Gliff</strong> ng isang remote desktop sa pamamagitan ng SSH. Kumonekta sa isa pang makina ng Omarchy at patakbuhin ang buong desktop nito mula sa isang window sa iyo, na may isang tab para sa bawat makina. At dahil sumasakay ito sa SSH, wala nang dagdag na kailangang ihanda o ilantad. Ipinapakita ng makinang kinokontrol ang isang tagapagpahiwatig ng remote session sa bar, kaya laging malinaw kapag may tao rito.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>At nariyan ang <strong>Elsewhen</strong>, isang orasan ng mundo na katabi mismo ng orasan sa bar. Magtapik ng isang lungsod sa globo para itakda kung nasaan ka, maghanap ng mga tunay na lugar, at pangalanan ang mga taong nakatira sa bawat lungsod, para lagi mong alam kung disenteng oras ba ito para tumawag. Magpalipat-lipat sa pagitan ng 12 at 24 na oras gamit ang <code>t</code>, sa pagitan ng °F at °C gamit ang <code>Alt + T</code>, at tawagin ito anumang oras gamit ang <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Kasama ang Monologue para sa pag-record at ang Omacut para sa pag-trim, hindi na ipinapadala ng mga bagong install ang OBS Studio at Kdenlive. Wala na rin ang Lazydocker sa mga bagong install, bagaman kasama pa rin ang Docker at Docker Compose. Mananatili ang mga ito sa mga makinang mayroon na ng alinman sa mga ito.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Kailangan bang makipagtrabaho sa mga taong nabubuhay sa Office? Inihahanda na ngayon ng <em>Install &gt; Service &gt; Microsoft</em> ang Outlook, Word, Excel, PowerPoint, Teams, at OneDrive bilang mga web app. Bawat isa ay may sariling window at entry sa launcher, kaya pakiramdam nila ay nasa bahay lang sila katabi ng lahat ng iba pa. Wala nang dahilan para hindi lumipat sa Omarchy sa trabaho!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams, at PowerPoint sa Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper para sa pagdidikta</h2>
+
+<p>Ang Superwhisper na ngayon ang default na engine ng pagdidikta ng Omarchy, at handa na ito agad. Magtapik ng <code>Alt + Space</code> para magsimulang magsalita at muli para huminto, o hawakan ang <code>Right Alt</code> para sa push-to-talk. Napakabilis nito at napakatumpak.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Pagdidikta gamit ang Superwhisper" /></p>
+
+<p>Nagsisimula ito sa cloud, kaya gumagana ito sa sandaling mag-install ka, at libre ang unang 10.000 salita. Pero puwede kang lumipat sa isang modelong puwedeng i-download na ganap na libre at tumatakbo nang buong lokal, nang walang ipinapadalang kahit isang salita kaninuman. At kung mas gusto mo ang isa pang lokal na modelo, iniaalok pa rin ang Voxtype bilang alternatibo.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Mag-install sa wala pang sampung segundo</h2>
+
+<p>Dati, nag-i-install ang Omarchy ng mga 940 package nang isa-isa. Sa halip, binubuksan ng bagong F1 installer ang isang prebuilt na root image at idinaragdag lang sa ibabaw ang mga package ng makinang ito. Pinuputol nito nang halos kalahati ang oras ng pag-install sa anumang makina.</p>
+
+<p>At sa mabilis na hardware, nakakaloko ito. Si <a href="https://x.com/AnushElangovan">Anush Elangovan</a> mula sa AMD ang nagtakda ng world record sa isang buong install ng Omarchy sa loob ng <strong>7 segundo</strong> sa kanyang AMD laptop. <a href="https://x.com/dhh/status/2117222836620202375">Pitong segundo!</a> Naaalala ko noong ang limang minuto ay parang ambisyosong layunin na.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Na-install ang Omarchy sa 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Mas mabilis sa lahat ng iba pang lugar</h2>
+
+<p>Hindi lang ang installer. Hindi na natitigil ang pagsisimula sa pagrehistro ng binfmt. Agad nang bumubukas ang tagapili ng tema sa halip na pagkatapos ng isang kapat ng segundo. Bumubukas ang mga menu at panel deretso mula sa mga shortcut ng Hyprland, na nilalaktawan ang 60 ms na inabot para magsimula muna ng isang proseso. Ang pinakamabagal na pagsusuri ng menu ng Omarchy ay bumaba mula 200 ms tungo sa 16 ms, nagpapakita ang isang bagong terminal ng prompt nito nang 30 ms na mas maaga, at tumutugon na ngayon ang buong desktop sa mga pagbabago sa halip na mag-poll para sa mga ito. Maging ang pag-log out, pag-reboot, at pag-shut down ay nangyayari sa sandaling matapos magsara ang iyong mga app.</p>
+
+<h2 id="agent-upgrades">Mga upgrade sa agent</h2>
+
+<p>Ang Omarchy ang OS na may mga agent, at nagdadala ang 4.5 ng isang malaking round ng mga upgrade para sa pagtatrabaho kasama ang mga agent. Sinusubaybayan na ngayon ng panel ng mga agent ang 23 agent at provider, mula sa 6, kabilang ang Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter, at Ollama. Bawat limit ay may sariling metro kasama ang oras hanggang sa mag-reset ito, kaya makikita mo nang eksakto kung gaano pa karaming runway ang natitira sa iyo. At ganap nang provider ang Grok kasama nina Claude at Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Ang panel ng mga agent na may ilang subscription nina Claude at Codex" width="380" /></p>
+
+<p>At laging isang pindot lang ang layo ng agent mo. Ibinababa ng <code>Super + ~</code> ang isang console na parang Quake sa ibabaw ng isang lumabong desktop, at sa unang beses na buksan mo ito, sinisimulan nito ang default agent mo. Pindutin itong muli para itago ito, at naroon pa rin ang session mo kung saan mo ito iniwan.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Ang console na parang Quake na nagpapatakbo ng isang agent sa ibabaw ng isang lumabong desktop" /></p>
+
+<p>Kung nagpapalipat-lipat ka sa mahigit isang subscription, puwede ka nang magpanatili ng ilang login nina Claude, Codex, at Grok sa iisang makina at pumili kung alin ang pagmumulan ng mga bagong session, gamit ang <code>omarchy agent account</code>. Ibinabahagi sa pagitan nila ang history, mga setting, at mga skill, kaya tutuloy ang <code>claude --continue</code> kung saan ka huminto pagkatapos ng isang paglipat. Malapit sa isang limit, puwedeng mag-alok ang Omarchy ng isang one-click na paglipat o ilipat nang kusa ang mga bagong session sa account na may pinakamaraming headroom. At kapag naghanda ka ng isa pang makina, dinadala ng <code>omarchy agent account copy</code> ang lahat ng login mo sa pamamagitan ng SSH, kaya hindi mo na kailangang mag-sign in sa lahat muli.</p>
+
+<p>Sumali sina Kimi at Ori, ang agent harness ng OpenRouter, sa mga pagpipilian sa ilalim ng <em>Setup &gt; Defaults &gt; Agent</em>, at pinapalitan ng Antigravity ng Google ang lipas nang Gemini CLI (gumagana pa rin ang <code>gemini</code> bilang isang alias). Mas gusto mo ba ang isang window kaysa sa isang terminal? Isang click na lang ang layo ng mga desktop app nina Claude at Amp sa ilalim ng <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Mga notification, muling binuo</h2>
+
+<p>Nagsasalansan na ngayon ang mga notification ayon sa nagpadala, sumusunod sa tema mo, at pinagsasama ang magkaparehong pag-uulit. Gumagana ang mga button ng aksyon, mga code ng pag-verify, at mga link deretso mula sa card. Kumikilos ang <code>Super + Comma</code> sa pinakabago (i-dismiss, buksan, o pindutin ang button nito), at ibinibigay sa iyo ng <code>Super + Ctrl + Comma</code> ang keyboard para patakbuhin silang lahat. Ino-on ng kampanilya sa bar ang Do Not Disturb.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Mga bagong notification" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Mga video background at intro ng mga tema</h2>
+
+<p>Puwede nang maging video ang mga background. Maglagay ka ng isa, at mabubuhay ang desktop mo sa gumugulong na mga alon o anumang iba pang magustuhan mo, habang nagpapakita ang lock screen ng isang still frame mula rito. At gumagawa na ngayon ng entrance ang mga tema: bawat isa ay puwedeng magpatugtog ng isang maikli at tahimik na intro kapag nag-login ka o lumipat dito. (Mas gusto mo bang manatili itong kalmado? I-off ang mga intro sa ilalim ng <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Sumali ang Jade Horse sa mga default na tema</h2>
+
+<p> puro mahamog na berde ang Jade Horse, na may mga background na inukit na jade na nagpapamukha sa buong desktop na parang isang scroll painting. Pinapalitan nito ang Osaka Jade sa mga nakabundle na tema, at kasama nito ang Starship bilang isa pang bagong default na tema. Kung nasa Osaka Jade ka, mananatili ang kopya mo, at magpapatuloy ito bilang isang <a href="https://github.com/omacom/omarchy-osaka-jade-theme">tema ng third-party</a> para sa sinumang gustong mag-install nito nang bago.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Ang temang Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff ang bagong default na background</h2>
+
+<p>Sinasalubong ka na ngayon ng mga bagong install ng Liftoff, isang nakamamanghang paglulunsad sa paglubog ng araw na bagong default na background para sa Tokyo Night. Ginawa ito ni <a href="https://github.com/tcballard">Tom Ballard</a>, na unang lumikha nito para sa kanyang <a href="https://github.com/tcballard/omarchy-theme-liftoff">temang Liftoff</a>. Salamat, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Ang background na Liftoff ni Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Tahimik na ngayon ang boot menu</h2>
+
+<p>Dati, ipinapakita ng Omarchy ang boot menu nang mga anim na segundo sa bawat pagsisimula, kung sakaling kailangan mong bumalik sa isang naunang snapshot. Pero halos walang gumawa noon kailanman. Kaya ngayon, isang segundo lang maghihintay ang Limine at tahimik na magbo-boot, at kadalasan ay hindi mo na makikita ang menu.</p>
+
+<p>Kapag kailangan mo ng ibang entry o isang snapshot, patuloy na magtapik ng anumang key (gumagana ang down arrow) habang nagsisimula ang makina, at hihinto ito sa menu. At kung mas gusto mong manatiling mas matagal ang menu nang permanente, itakda ang sarili mong <code>timeout:</code> sa <code>/boot/limine.conf</code> (tulad ng <code>timeout: 5</code>). Iiwan ng mga update nang mag-isa ang isang timeout na itinakda mo.</p>
+
+<h2 id="changed-hotkeys">Mga nagbagong hotkey</h2>
+
+<p>Lumipat ang ilang shortcut:</p>
+
+<ul>
+  <li>Calculator: ang <code>Super + Ctrl + Q</code> ay <code>Super + Shift + Q</code> na ngayon.</li>
+  <li>Activity: ang <code>Super + Ctrl + T</code> ay <code>Super + Shift + T</code> na ngayon, at binubuksan ng <code>Super + Ctrl + T</code> ang mga tema.</li>
+  <li>Network: ang <code>Super + Ctrl + W</code> ay <code>Super + Ctrl + N</code> na ngayon, at binubuksan ng <code>Super + Ctrl + W</code> ang mga background.</li>
+  <li>Wala nang shortcut ang Nightlight (dati itong <code>Super + Ctrl + N</code>); nasa <code>Trigger &gt; Toggle</code> ito.</li>
+  <li>Binubuksan ng <code>Super + Alt + Space</code> ang Apps mula sa dock sa halip na ang menu ng Apps.</li>
+</ul>
+
+<p>Nagbago ang mga shortcut ng notification:</p>
+
+<ul>
+  <li>Kumikilos ang <code>Super + Comma</code> sa pinakabagong card (tinatanggal ito, binubuksan ito, o pinipindot ang nag-iisang button nito) sa halip na tanggalin lang ito.</li>
+  <li>Lumipat ang pagtanggal sa huli sa <code>Super + Alt + Comma</code>, na dati ay nagbubukas nito.</li>
+  <li>Lumipat ang pagpapatahimik mula sa <code>Super + Ctrl + Comma</code> tungo sa <code>Super + Ctrl + Alt + Comma</code>; ibinibigay na ngayon sa iyo ng <code>Super + Ctrl + Comma</code> ang kontrol sa keyboard.</li>
+</ul>
+
+<p>Iba na ang paggana ng ilang key:</p>
+
+<ul>
+  <li>Ang <code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code>, at <code>Super</code> + scroll ay nananatili sa mga workspace ng kasalukuyang monitor, dahil bawat monitor ay may sarili nito.</li>
+  <li>Sa isang terminal, ipinapadala ng <code>Super + C</code> at <code>Super + V</code> ang <code>Ctrl + Shift + C</code> at <code>Ctrl + Shift + V</code> sa halip na <code>Ctrl + Insert</code> at <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Mga bagong default na maaaring bumangga sa sarili mong mga binding: <code>Super + Q</code> (isara ang window, kasama ng <code>Super + W</code>), <code>Super + A</code> (piliin lahat), <code>Super + M</code> (i-minimize sa dock), <code>Super + ~</code> at <code>Super + Shift + ~</code> (console na parang Quake), <code>Super + Alt + L</code> (nakaraang layout), <code>Super + Shift + Ctrl + Arrows</code> (ilipat ang isang window sa ibang monitor), <code>Super + Ctrl + Alt + C</code> (screenshot), <code>Super + Ctrl + Alt + E</code> (orasan ng mundo), <code>Super + Ctrl + Alt + F</code> (full screen na desktop), at paghawak sa <code>Right Alt</code> para sa push-to-talk na pagdidikta.</p>
+
+<h2 id="more-features">Higit pang mga feature</h2>
+
+<ul>
+  <li>Bigyan ang bawat monitor ng sarili nitong mga workspace: pumupunta ang <code>Super + 1-0</code> sa mga workspace ng monitor na kinaroroonan mo, at lumilipat ang <code>Super + Arrows</code> papunta at mula sa iba pang display ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Tipunin ang lahat tungkol sa hitsura ng desktop sa isang bagong menu ng Appearance, na pinapalitan ang Style: tema, background, font, bar, mga window, branding, ang dock, mga layout ng workspace, mga animation, at ang unlock screen ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Pumili ng mga window na Opaque, Transparent, o Glassy sa ilalim ng <em>Appearance &gt; Window Transparency</em>, pati isang Glassy na background ng bar ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Pumili ng mga sulok ng window na ayon sa tema, matulis, o bilugan sa ilalim ng <em>Appearance &gt; Window Corners</em> ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Magdagdag ng mode na walang animation, na naka-on bilang default sa mga VM ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Gawing opaque ang mga app bilang default, habang pinapanatiling transparent ang mga terminal ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Idagdag ang Slack sa Install &gt; Service ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Gawing mag-toggle ang Alt + Space sa pagdidikta sa bawat backend ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Magdagdag ng mga button na Open at Edit sa mga notification ng screenshot, at Open at Cut sa mga recording ng screen at mga download ng yt-dlp ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Magdagdag ng menu na Update &gt; Kernel para sa pagpapalit ng default na kernel ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Magdagdag ng pag-sync ng tema sa mga makinang herdr ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Magdagdag ng o.rebind para sa pagpapalit ng mga keybinding ng Hyprland ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Itanong ang identity mo sa git pagkatapos ng unang pag-login sa halip na sa installer, kasama ang pag-sign in sa GitHub ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Payagan ang install media na i-preset ang wika, keyboard, at timezone ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Payagan ang mga widget ng bar na manirahan sa drawer ng tray ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Payagan ang pag-alis ng isang widget ng bar sa pamamagitan ng pag-drag nito palabas ng bar ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Payagan ang pag-scroll sa mga workspace mula sa bar ni <a href="https://github.com/outfoxxed">@outfoxxed</a> sa <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Payagan ang pagbura ng mga dagdag na tema mula sa tagapili ng tema ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Idagdag ang mga CLI ng hey, basecamp, at Cloudflare bilang mga tool na lazy-installed ni <a href="https://github.com/monorkin">@monorkin</a> sa <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Idagdag ang SSH Agent bilang isang opsyonal na serbisyo ni <a href="https://github.com/carletex">@carletex</a> sa <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Payagan ang pagpili kung gaano katagal ang sudo na walang password ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Magdagdag ng button na isara kapag nag-hover sa mga toast ng notification ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Payagan ang pag-mute sa mga notification ng isang programa mula sa diagnosis ng crash nito ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Payagan ang omarchy-notification-send na magdagdag ng mga button ng aksyon ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Magdagdag ng format ng orasan na may live na segundo ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Ayusin ang backlight ng keyboard gamit ang Ctrl at ang mga key ng liwanag ni <a href="https://github.com/ludagoo">@ludagoo</a> sa <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>I-print ang OEM Windows product key mula sa firmware ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Idagdag ang orihinal na vi bilang isang pagpipilian ng editor sa terminal ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Idagdag ang background na Roadster Starlight sa Ethereal nina <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> sa <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Seguridad</h2>
+
+<ul>
+  <li>Panatilihin ang password ng Windows VM na wala sa mga argumento ng RDP client ni <a href="https://github.com/dicemans">@dicemans</a> sa <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Ilipat ang estado ng pag-record ng screen palabas ng /tmp na puwedeng sulatan ng lahat ni <a href="https://github.com/Chessing234">@Chessing234</a> sa <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Patibayin ang pag-expire ng sudo na walang password sa kabila ng suspend ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Itali ang paglilinis ng update inhibitor sa prosesong lumikha nito ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Ihiwalay ang awtorisasyon sa paglilinis ng OCaml ni <a href="https://github.com/ErikMelton">@ErikMelton</a> sa <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>I-pin ang elevation ng factory-reset sa naka-package na command ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Alisin ang mga naka-save na template ng fingerprint para sa tumatawag na user sa pag-reset ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Tanggihan ang mga pangalan ng hook at estado na mga path ni <a href="https://github.com/Adolanium">@Adolanium</a> sa <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Magpaubaya sa system-auth sa polkit stack na isinulat ng paghahanda ng fingerprint at FIDO2 ni <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> sa <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Alisin ang mga fingerprint mula sa sariling imbakan ng reader kapag inaalis ang mga ito ni <a href="https://github.com/scottjones">@scottjones</a> sa <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Pigilan ang paghahanda ng SSH na iwan ang sshd na tumatakbo na may mga pag-login gamit ang password kapag walang naidagdag na key nina <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> sa <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Pigilan ang isa pang lokal na user na magpalit ng sarili niyang programa habang nag-a-upgrade ng Voxtype ni <a href="https://github.com/Vladkarok">@Vladkarok</a> sa <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Patibayin kung paano ipinapasa ng factory reset ang mga setting mo ng gum sa pamamagitan ng sudo ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Mga pag-aayos</h2>
+
+<ul>
+  <li>Inayos ang pag-crash ng Hyprland kapag tinatanggal sa saksakan, pina-disable, o pinapatay ang isang monitor sa pamamagitan ng pagsara ng takip ni <a href="https://github.com/falkoro">@falkoro</a> sa <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Inayos ang mga upgrade na maaaring mag-iwan ng isang kernel image na walang parameter nitong root= ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Inayos ang factory reset na bumubura sa mga boot entry ng ibang system ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Inayos ang isang install sa tabi ng isa pang Omarchy na nag-aalis ng boot entry ng install na iyon ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Inayos ang mga install sa libreng espasyo na maaaring kumuha ng isang umiiral na partition para sa isang bago ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Inayos ang pagpapatuloy ng isang naputol na pagpapalit ng password ng drive na nag-aalis ng maling key ni <a href="https://github.com/scottjones">@scottjones</a> sa <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Itanong ang password ng sudo nang isang beses bawat update ng Omarchy ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Itanong ang password ng sudo nang isang beses sa loob ng sampung minuto sa halip na muli sa bawat command ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Saklawin ang mga update ng AUR at ang pagsusuri sa boot ng nag-iisang prompt ng sudo ng update ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Panatilihing ligtas ang mga update ng package mula sa pag-log out sa gitna ng transaksyon ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Mag-log out, mag-reboot, at mag-shut down sa sandaling matapos magsara ang mga app ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Palitan ang Tensaku ng Omasnap para sa mga screenshot ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Palakihin ang mga panel palabas ng bar at mag-morph sa pagitan nila, na may feedback sa pagpindot sa mga button at icon ng bar ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>I-slide ang mga notification papasok mula sa ilalim ng bar at pabalik palabas sa paraang pagdating nila ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Suriin ang connectivity laban sa sariling endpoint ng Omarchy, at ayusin ang pag-sign in sa mga captive portal ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Inayos ang paglipat mula sa edge tungo sa stable o RC na nag-iiwan sa makina sa isang lumang build ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Inayos ang update sa 4.5 na humihinto kapag mabagal sumagot ang shell ni <a href="https://github.com/AnPod">@AnPod</a> sa <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Inayos ang mga update na tahimik na nabibigo kapag sinimulan sa labas ng desktop session ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Inayos ang isang nabigong pag-download ng mise tool na humihinto sa natitirang bahagi ng isang system update ni <a href="https://github.com/sanjyay">@sanjyay</a> sa <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Inayos ang mga update na nabibigo kapag hindi naka-install ang omarchy-nvim ni <a href="https://github.com/imzihuailin">@imzihuailin</a> sa <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Inayos ang mga dual-boot na install na nabibigong i-mount ang EFI partition ni <a href="https://github.com/Damian626">@Damian626</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Inayos ang mga install na humihinto kapag hindi tatanggap ang firmware ng isang bagong boot entry ni <a href="https://github.com/ryanio">@ryanio</a> sa <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Inayos ang mga install na humihinto sa mga disk na may lumang RAID member o volume group ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Simulan ang installer nang mas maaga sa pamamagitan ng hindi paghihintay sa bawat USB device at boot job ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Pabilisin ang pag-encrypt ng disk gamit ang mga sector na 4096-byte sa mga bagong install ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Ilista muna ang mga internal na disk at buksan ang mga screen ng install sa ligtas na pagpipilian ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Ilista muna ang Full disk install sa installer, at bumalik gamit ang Esc sa mga screen ng disk ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Inayos ang pag-scale ng isang monitor na nagbabago sa scale ng bawat iba pang monitor ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Inayos ang mga XWayland app na lumalabas nang sobrang laki kapag magkakaiba ang scale ng mga monitor ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Inayos ang mga HDR display na lumilipat sa isang maputlang HDR na larawan kapag nag-fullscreen ang isang window ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Inayos ang malabong mga menu at tagapili sa mga display na fractional ang scale ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Inayos ang display ng laptop na nananatiling patay pagkatapos tanggalin sa saksakan ang panlabas na display nina <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> sa <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Inayos ang muling pag-enable ng isang display na nagre-reset ng posisyon, scale, at mode nito ni <a href="https://github.com/zihaomu">@zihaomu</a> sa <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Inayos ang mga menu at tagapili na hindi muling bumubukas pagkatapos madiskonekta ang isang monitor ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Inayos ang mga workspace bawat monitor na lumilipat pagkatapos tanggalin sa saksakan ang isang monitor ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Inayos ang pag-crash ng shell kapag nadiskonekta ang isang audio device habang bukas ang panel ng audio ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Inayos ang mga fullscreen na window na nawawalan ng fullscreen pagkatapos ng screensaver ni <a href="https://github.com/MGross21">@MGross21</a> sa <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Inayos ang pagkawala ng cursor sa pagsisimula pagkatapos mag-reload ang Hyprland ni <a href="https://github.com/spencerbull">@spencerbull</a> sa <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Inayos ang cursor na nagiging invisible sa ibabaw ng mga XWayland app ni <a href="https://github.com/Sebo1411">@Sebo1411</a> sa <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Inayos ang mga pag-hang sa pagkuha ng clipboard ni <a href="https://github.com/maxcroy1">@maxcroy1</a> sa <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Inayos ang access sa keyring sa pamamagitan ng XDG Secret portal ni <a href="https://github.com/pkwagner">@pkwagner</a> sa <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Inayos ang pag-enroll ng fingerprint at pagbawi sa lock-screen ni <a href="https://github.com/GeertJohan">@GeertJohan</a> sa <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Gabayan ang pag-enroll ng fingerprint nang hakbang-hakbang ni <a href="https://github.com/scottjones">@scottjones</a> sa <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Inayos ang auto-repeat ng key sa field ng password sa lock screen ni <a href="https://github.com/berndb">@berndb</a> sa <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Inayos ang wallpaper ng lock screen na naglo-load pagkatapos ng field ng password sa paggising ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Inayos ang mga timeout ng lock ng screen kapag pinangalanan ng session ang isang display na wala na ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Pabilisin ang pagbubukas ng isang terminal sa direktoryo ng kasalukuyang window ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Gawing sumunod nang live ang mga editor na kabilang sa pamilya ng VS Code sa mga pagbabago ng tema ni <a href="https://github.com/Macho0x">@Macho0x</a> sa <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Muling bigyan ng tema ang mga tumatakbong session ng Hunk sa pagbabago ng tema ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Tandaan ang napiling wallpaper para sa bawat tema ni <a href="https://github.com/OldJobobo">@OldJobobo</a> sa <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Panatilihing mabilis at matalas ang tagapili ng larawan sa malalaking koleksyon at HiDPI ni <a href="https://github.com/keylimesoda">@keylimesoda</a> sa <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Bawasan ang CPU at memory na ginugugol ng transparent na bar sa pag-sample ng wallpaper nina <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> sa <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Pabilisin ang panel ng Tailscale sa mga tailnet na may libo-libong makina ni <a href="https://github.com/iskakaushik">@iskakaushik</a> sa <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Iangat ang Grok na kapantay nina Claude at Codex sa panel ng mga agent ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Ilapat ang pagpili ng account ng agent sa mga CLI subprocess ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Ipakita ang mga indibidwal na limit sa paggastos ng Codex at ang mga oras ng pag-reset ng mga ito ni <a href="https://github.com/Stegi56">@Stegi56</a> sa <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Ihanda ang integrasyon ng browser kapag pinipili si Claude ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Inayos ang mga agent na hindi nakakakita ng mga mise tool na na-install pagkatapos nilang magsimula ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Inayos ang pag-paste ng mga screenshot sa mga agent sa mga herdr pane na sinimulan sa pamamagitan ng SSH ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Inayos ang panel ng mga agent na nakakaligtaan ang mga naka-compress na session ng Codex ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Ibalik ang Caps Lock sa normal at gawing compose key ang Shift + Caps Lock ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Ilapat ang layout ng keyboard ng system sa screen ng pag-login ni <a href="https://github.com/g-desoutter">@g-desoutter</a> sa <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Inayos ang pagpapalit ng layout na lumalaktaw sa bawat ikalawang pindot gamit ang isang di-Latin na layout ng keyboard ni <a href="https://github.com/manuaudio">@manuaudio</a> sa <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>I-on ang hardware video decoding sa mpv ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Lumipat ang TCP congestion control sa BBR at gamitin ang kyber I/O scheduler sa mga tunay na disk ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>I-install ang T3 Code bilang AppImage nito na nag-a-update sa sarili ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Pagbutihin ang pag-install ng PHP at Laravel ni <a href="https://github.com/nunomaduro">@nunomaduro</a> sa <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>I-install ang Node nang lazy at hayaang mag-isa ang mise config mo ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>I-install ang mga nawawalang app kapag pumipili ng mga default ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Labuin ang naka-install na software sa mga menu ng Install sa halip na itago ito ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Irehistro ang password manager at iba pang native messaging host para sa Brave Origin ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Igrupo ang mga web notification ng Brave Origin ayon sa site, at buksan ang tamang tab kapag kinlik ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Aprubahan nang awtomatiko ang pag-alis ng mga orphan package habang nag-a-update ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>I-update ang keyring ng Omarchy bago ang bawat update ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Mag-alok na mag-reboot pagkatapos lumipat ng channel ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Ialok ang update sa unang pagtakbo kapag mayroon lang talagang ia-update ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Hanapin ang lokasyon ng panahon at ang timezone ng installer gamit ang sariling geo service ng Omarchy ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Itakda ang orasan mula sa ntp.omarchy.org sa halip na sa NTP pool ng Arch ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Sukatin ang bilis ng network gamit ang sariling speed test ng Omarchy ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Magpakita ng isang screen ng progreso na may traced-icon habang unang nagbo-boot nina <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> sa <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>I-boot ang live ISO sa kernel ng Omarchy, at sa T2 kernel lang sa mga Mac ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Patigilin ang mga offline na install na naghihintay sa mga paghahanap ng bersyon ng mise ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Inayos ang mga offline na install na ginagawang Africa/Abidjan ang default na timezone ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Inayos ang tagapili ng timezone ng installer na hindi ka hinahayaang mag-type para maghanap ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Inayos ang live ISO na natitigil sa likod ng splash kapag na-boot mula sa isang Ventoy stick ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Inayos ang mga console keymap na German at French sa form ng paghahanda ng installer ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Itago ang mga hint ng key na English ng gum sa installer at sa paghahanda ng git ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Alisin ang mga biro na English lang mula sa screen ng progreso ng install ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Inayos ang output ng installer na dumarating nang walang padding sa screen habang inihahanda nito ang disk ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Inayos ang upgrade ng Quattro na nagre-reset ng default na browser sa Chromium ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Inayos ang upgrade ng Quattro na humihinto sa mga pangalan ng background na may mga karakter na di-ASCII ni <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> sa <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Inayos ang migration ng kernel na humihinto sa mga makinang nagbo-boot gamit ang GRUB o systemd-boot ni <a href="https://github.com/manuaudio">@manuaudio</a> sa <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Inayos ang hibernation sa mga makinang walang encryption na may mahigit isang NVMe disk ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Inayos ang migration ng FIDO2 na namarkahang tapos na bago ito nalutas ni <a href="https://github.com/ErikMelton">@ErikMelton</a> sa <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Inayos ang isang floating na workspace na umaagaw sa unang window na saklaw ng sarili mong float rule ni <a href="https://github.com/zihaomu">@zihaomu</a> sa <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Inayos ang pagtigil ng compositor kapag pinapalipat-lipat ng Super + L ang isang workspace papasok at palabas ng floating ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Inayos ang Alt + Shift + Tab na hindi umiikot nang paatras sa bawat window ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Inayos ang mga popped-out na window na hindi sumesentro kapag inilipat sa ibang monitor ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Inayos ang mga bagong terminal na bumubukas sa labas ng home folder mo kapag naka-focus ang isang di-terminal na window ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Inayos ang mga window ng 1Password at Bitwarden na hindi lumulutang ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Inayos ang 1Password na nagsasara kapag lumalabas ang terminal ng installer ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Inayos ang mga dialog ng DaVinci Resolve na umaagaw ng focus ng pointer ni <a href="https://github.com/AksharP5">@AksharP5</a> sa <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Inayos ang desktop na sumisilip sa mga display ng Windows VM ni <a href="https://github.com/jmwall">@jmwall</a> sa <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Inayos ang mga legacy na password ng Windows VM na naglalaman ng $$ pagkatapos ng migration ng Quattro ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Patigilin ang popup ng donasyon ng Hyprland na lumalabas pagkatapos ng mga upgrade ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Pagbutihin ang pag-drag at pag-aayos ng mga widget ng bar ni <a href="https://github.com/outfoxxed">@outfoxxed</a> sa <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Gawing pantay ang laki at pagkakaayos ng mga icon ng bar ni <a href="https://github.com/bjarneo">@bjarneo</a> sa <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Ipakita lang ang mga nakatagong indicator ng bar kapag nagho-hover sa kaliwa ng orasan ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Ihanay ang mga icon ng tray sa iba pang icon ng bar ni <a href="https://github.com/ayoubdya">@ayoubdya</a> sa <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Ipakita agad ang susunod na tooltip ng bar habang may nakataas na isa ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Buksan ang mga panel ng orasan at panahon sa ilalim ng kanilang mga widget ni <a href="https://github.com/scottjones">@scottjones</a> sa <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Panatilihing bukas ang panel ng network pagkatapos pumili ng isang DNS provider ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Inayos ang isang nagsasarang popup na nag-iiwan sa mga widget ng bar na hindi tumutugon ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Inayos ang nakatagong bar na sumasalo ng mga click sa kahabaan ng itaas ng mga fullscreen na window ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Inayos ang madidilim na icon ng tray na nawawala sa bar ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Inayos ang mga icon ng bar na hindi pantay o wala sa sentro ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Inayos ang mga tooltip ng bar na gumuguhit ng kanilang unang frame sa maling laki ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Inayos ang history ng notification na nagpapakita sa bawat card na ngayon lang ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Inayos ang mga notification sa unang pag-login na nabubuwal sa iisang salansan ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Inayos ang mga click sa notification na hindi nagpo-focus sa mga app na may pangalang maraming salita ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Inayos ang mga notification ng Taildrop na nagpapakita ng walang laman na teksto at nawawalang mga preview ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Inayos ang notification ng baterya na nagpapakita ng walang laman na oras at 0W sa isang punong baterya ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Inayos ang babala ng mababang baterya na nananatiling nakataas pagkatapos magsaksak at bumabalik pagkatapos ng mga reboot ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Inayos ang pagkonsumo ng baterya na bumabasa ng 0W sa ilang laptop ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Inayos ang isang punong baterya sa AC na nagpapakita bilang nagdi-discharge ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Inayos ang Hibernate na nagpapakita kapag hindi magha-hibernate ang kernel ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Inayos ang mga gvfs mount na nawawala pagkatapos ng resume ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Inayos ang backlight ng keyboard na nananatiling patay pagkatapos dalawang beses mag-blank ang lock ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Inayos ang fingerprint reader na nagigising habang nakapatay ang mga display ng lock ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Inayos ang prompt ng password sa boot na wala sa sentro kapag nahuling lumitaw ang isang display ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Inayos ang exit key ng screensaver na kumikislap sa sulok ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Inayos ang icon ng Wi-Fi na kumukurap sa mga OWE transition-mode network ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Inayos ang isang OWE error na nai-print sa terminal pagkatapos mag-install ng isang tema ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Inayos ang isang pagkislap kapag lumilipat mula sa isang still tungo sa isang video background ni <a href="https://github.com/bjarneo">@bjarneo</a> sa <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>I-update ang Hackerman sa isang na-upscale na geometric na background ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Inayos ang mga temang may cyclic na reperensya ng kulay na nagha-hang sa pagpapalit ng tema ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Inayos ang Neovim na nabibigong magsimula gamit ang temang Catppuccin ni <a href="https://github.com/anandude">@anandude</a> sa <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Inayos ang OpenCode 2 na nagsisimula sa stock na tema nito sa halip na sa tema ng Omarchy ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Inayos ang mababang contrast na inline code sa nabuong tema ng VS Code ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Inayos ang mga install ng T3 Code na humihinto habang tinutugma ang kasalukuyang tema ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Inayos ang laki ng font ng terminal na nagre-reset kapag binabago ang pamilya ng font ni <a href="https://github.com/sbalbalosa">@sbalbalosa</a> sa <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Inayos ang pagpapalit ng mga font na nagpi-print ng process ID ng isang terminal ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Inayos ang pagpapalit ng wika na muling bumubuo sa bawat locale at nawawala ang mga ito sa isang halos punong disk ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Inayos ang shell na nagpapakita ng mga hilaw na translation key bago mag-load ang mga pagsasalin nito ni <a href="https://github.com/zihaomu">@zihaomu</a> sa <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Pabilisin ang isinaling teksto sa mga script ng Omarchy ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>I-update ang mga pagsasalin para sa 686 string, 392 sa mga ito ay nasa manwal ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Inayos ang mga kontrol ng volume at output sa mga di-English na locale ni <a href="https://github.com/Sebo1411">@Sebo1411</a> sa <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Inayos ang mga pagbasa ng paggamit ng CPU sa mga di-English na locale ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Inayos ang serbisyo ng fcitx5 na walang katapusang nagre-restart kapag hindi naka-install ang fcitx5 ni <a href="https://github.com/therk">@therk</a> sa <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Inayos ang widget ng layout ng keyboard na lumilipat sa mga device na walang nagta-type ni <a href="https://github.com/bjarneo">@bjarneo</a> sa <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Inayos ang widget ng layout ng keyboard na lumilipat sa mga vendor hotkey device ni <a href="https://github.com/yashranaway">@yashranaway</a> sa <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Inayos ang menu ng mga keybinding na nag-iiwan ng isang prosesong Lua na tumatakbo sa 100% CPU ni <a href="https://github.com/tobi">@tobi</a> sa <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Inayos ang orasan na bumubuhos sa log bawat millisecond kapag nagtatapos ang daylight saving time ni <a href="https://github.com/falkoro">@falkoro</a> sa <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Inayos ang shell na pinapalitan ang isang shell.json na hindi nito mabasa ng mga default ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Inayos ang menu ng Omarchy na nawawala ang mga row nito habang ina-update ang file nito ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Inayos ang muling pag-enable ng isang Plugin na hindi nagbabalik ng widget nito sa bar ni <a href="https://github.com/berrimi">@berrimi</a> sa <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Inayos ang mga lokal na Plugin na nagre-reload nang paikot-ikot sa sarili nilang Python bytecode ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Inayos ang mga nakatagong button sa Mga Plugin na nabubuwal sa padding ng mga ito ni <a href="https://github.com/dmkenney">@dmkenney</a> sa <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Inayos ang mga dropdown na pinuputol ang kanilang huling item ni <a href="https://github.com/sprajs">@sprajs</a> sa <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Inayos ang mga dropdown na hindi nagsasara sa ikalawang click ni <a href="https://github.com/felixzsh">@felixzsh</a> sa <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Inayos ang mga knob ng slider na humihinto bago ang dulo ng track ni <a href="https://github.com/erikrjohansson">@erikrjohansson</a> sa <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Inayos ang Update &gt; Hardware &gt; Trackpad na nakakaligtaan ang karamihan ng mga touchpad at nagre-reset ng keyboard ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Nagpapakawala na ito ngayon ng isang natigil na button sa bawat touchpad, at nire-reset lang ang touchpad sa halip na ang keyboard at touchscreen kasama nito.</p>
+  </li>
+  <li>Gawing suriin ng menu ng webcam ang mga camera nang hindi binubuksan ang mga ito ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Inayos ang scroll capture ng Omasnap na kumukuha lang ng mga itim na frame ni <a href="https://github.com/falkoro">@falkoro</a> sa <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Inayos ang tagapili ng screenshot na nag-a-unbind ng sarili mong mga key ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Inayos ang paghinto ng isang recording na nag-aanunsyo ng isang walang laman na naka-save na recording ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Inayos ang tagapili ng larawan na nagpapakita ng mga lipas nang thumbnail para sa mga larawang na-save na sa ibabaw ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Inayos ang night light na hindi ganap na nagre-reset kapag pinatay ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Inayos ang widget ng media na nag-iiwan ng isang naka-pause na track para sa isang idle na player ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Inayos ang paulit-ulit na pag-scan ng display sa mga monitor na hindi nag-uulat ng liwanag ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Inayos ang Super + Shift + Return na nabibigo kapag na-uninstall ang naka-configure na browser ni <a href="https://github.com/vitally">@vitally</a> sa <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Inayos ang mga shortcut ng calculator na nananatili pagkatapos alisin ang mga preinstall na app ni <a href="https://github.com/OldJobobo">@OldJobobo</a> sa <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Inayos ang shortcut na Copy URL sa mga profile ng Brave Origin ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Inayos ang popout ng extension ng Bitwarden na bumubukas sa maling laki ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Inayos ang Battle.net na bumubukas sa 100% scale sa mga HiDPI monitor ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Inayos ang mga file chooser ng Inkscape na bumubukas nang naka-tile ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Inayos ang mga Go AUR package na nabibigong mag-build habang nag-a-update kapag pinamamahalaan ng mise ang Go ni <a href="https://github.com/shbernal">@shbernal</a> sa <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Inayos ang pag-install ng ONCE kapag wala ka sa docker group ni <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> sa <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Inayos ang mga click sa panel ng agent na nagbubukas ng tray ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Inayos ang paghahanda ng account ng agent na natitisod sa isang nakalawit na shared symlink ni <a href="https://github.com/manuaudio">@manuaudio</a> sa <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Inayos ang <code>--reauth</code> na nagdaragdag ng isang bagong account ng agent kapag wala nito ni <a href="https://github.com/manuaudio">@manuaudio</a> sa <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Gawing pangalanan ng hint sa pagpapalit ng pangalan ng account ng agent ang provider nito ni <a href="https://github.com/manuaudio">@manuaudio</a> sa <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Inayos ang mga update ng keyring na nagsasabing matagumpay kapag nabibigo ang mga operasyon ng key ni <a href="https://github.com/Adolanium">@Adolanium</a> sa <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Inayos ang isang blangkong prompt ng factory reset kapag pinatakbo sa ilalim ng sudo ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Inayos ang paalala ng mga nakabinbing migration na nagtatambak nang isang beses bawat pag-login ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Inayos ang OS Age sa About na nagbibilang mula sa build ng ISO sa halip na sa install ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Inayos ang Dropbox na nagpapakita ng “0y ago” para sa mga file na 360 hanggang 364 araw na ang tanda ni <a href="https://github.com/manuaudio">@manuaudio</a> sa <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Inayos ang pagsusuri ng status ng Dropbox na nag-e-expire ng isang nakabinbing link sa pag-login ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Inayos ang pag-install ng library ng icon ng tray ng Dropbox ni <a href="https://github.com/omarchybot">@omarchybot</a> sa <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>I-enable ang mga overlay scrollbar sa Chromium ni <a href="https://github.com/robzolkos">@robzolkos</a> sa <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Magtanong bago i-on ang Touch ID sa mga Apple Silicon Mac ni <a href="https://github.com/scottjones">@scottjones</a> sa <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Ialok ang RC channel sa mga Apple Silicon Mac ni <a href="https://github.com/maralcbr">@maralcbr</a> sa <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Ialok ang stable channel sa mga Apple Silicon Mac ni <a href="https://github.com/maralcbr">@maralcbr</a> sa <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Inayos ang mga alias, function, at environment ng Omarchy na nawawala mula sa mga bagong terminal sa Apple Silicon ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Ihanda ang mga naka-install na application ng NVIDIA ni <a href="https://github.com/jdvmi00">@jdvmi00</a> sa <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Inayos ang mga install na nabibigo sa Lenovo Pro 9 na may NVIDIA N1x ni <a href="https://github.com/breymander">@breymander</a> sa <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Inayos ang mga nawawalang internal na speaker at mikropono sa mga N1x laptop na nagpatakbo ng mga naunang audio profile ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Inayos ang isang mabagal na desktop sa mga NVIDIA GB10 machine tulad ng DGX Spark ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Inayos ang pag-type sa lock screen pagkatapos ng resume sa NVIDIA ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Hindi na rin muling didilim ang lock sa sandaling umilaw ang panel.</p>
+  </li>
+  <li>Inayos ang Lutris at Battle.net na nag-i-install ng 32-bit Vulkan driver ng ibang GPU ni <a href="https://github.com/zihaomu">@zihaomu</a> sa <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Patigilin ang paghingi ng isang reboot pagkatapos ng bawat update sa ARM ni <a href="https://github.com/birkskyum">@birkskyum</a> sa <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Ialok ang mga stable at RC channel sa aarch64 ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Gawing gumana ang mga power profile sa mga ARM laptop ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Ialok ang Dropbox sa mga ARM machine na may 4K page, at ang Spotify bilang isang web app sa ARM ni <a href="https://github.com/birkskyum">@birkskyum</a> sa <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Itago ang mga install ng GeForce NOW, Battle.net, at Lutris sa ARM ni <a href="https://github.com/birkskyum">@birkskyum</a> sa <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Inayos ang Hermes app na hindi nag-a-update sa lugar sa ARM ni <a href="https://github.com/ryanrhughes">@ryanrhughes</a> sa <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Inayos ang mga keyboard ng Snapdragon laptop na hindi nagta-type sa prompt ng pag-unlock ng disk ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Inayos ang mga camera na nawawala sa pag-login sa mga Snapdragon laptop ni <a href="https://github.com/birkskyum">@birkskyum</a> sa <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Inayos ang isang itim na screen bago ang pag-unlock ng disk sa mga Snapdragon X2 laptop ni <a href="https://github.com/jdvmi00">@jdvmi00</a> sa <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>I-decode ang video sa hardware sa Intel Wildcat Lake ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Inayos ang mga crash ng live ISO sa mga Arrow Lake-H laptop ni <a href="https://github.com/emirb">@emirb</a> sa <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Inayos ang internal na mikropono ng HP EliteBook Ultra G1q ni <a href="https://github.com/bprendie">@bprendie</a> sa <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Gamitin ang upstream na suporta para sa Motorcomm YT6801 Ethernet ni <a href="https://github.com/AFOliveira">@AFOliveira</a> sa <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>I-relay ang Elgato Cam Link 4K bilang isang 16:9 virtual camera ni <a href="https://github.com/dhh">@dhh</a> sa <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Suportahan ang mga fingerprint reader na pinapangalanan ng isang platform ni <a href="https://github.com/scottjones">@scottjones</a> sa <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>
