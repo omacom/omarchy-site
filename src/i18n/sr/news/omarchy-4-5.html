@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (познат и као Quattro RS!) је прво велико издање са новим функцијама од <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, и права је гузица: преко 740 захтева за спајање спојено је од више од 180 сарадника за само дванаест недеља. Сада нуди традиционални режим радне површине поред подразумеваног режима са слагањем прозора. Можете га изворно инсталирати на M1/M2/M3/Neo MacBook рачунарима. И говори 50 језика. И гомилу других функција, исправки и побољшања. Већ користите Omarchy? Покрените <em>Update &gt; Omarchy</em>. Нова машина? <a href="/#install">Преузмите га овде</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Плутајуће радне површине са доком</h2>
+
+<p><code>Super + L</code> сада пребацује било коју радну површину између режима слагања, померања и плутања. На плутајућој радној површини, сваки прозор добија насловну траку у бојама ваше теме, а док приказује ваше закачене апликације, све што је тренутно покренуто и мрежу свих инсталираних апликација. Превуците да бисте променили редослед или закачили, кликните десним тастером за више, а <code>Super + M</code> минимизује прозор у док.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Ово је диван улаз за свакога ко долази са macOS-а или Windows-а, а још није спреман да се у потпуности посвети слагању прозора. Или за свакога ко просто жели једну радну површину где прозори могу да се рашире. Комбинујте по радној површини, а трака приказује који распоред свака користи.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy на Apple Silicon-у</h2>
+
+<p>Наш невероватни <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> тим испоручио је изворни инсталер за Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Преузмите апликацију</a> на macOS-у, и она ће поставити Omarchy одмах поред њега на ваш M1, M2, M3 или Neo MacBook. Без USB стика, без бајалица у терминалу. Више волите Homebrew? То је једна линија:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Инсталер Omarchy-ја за Mac" /></p>
+
+<p>То је оно што смо зацртали у септембру: да завршимо оно што је Asahi започео. Два месеца касније, можете просто да га преузмете. Невероватан посао свих у тиму.</p>
+
+<p>И не заустављају се ту. На M4, M5 и M6 се тренутно ради, тако да вероватно неће проћи много пре него што Omarchy буде радио на сваком Apple Silicon Mac-у.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy на M2 Max, M3 Air, Neo, M4 Pro и M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM подршка за NVIDIA DGX Spark + N1X (а ускоро и Snapdragon)</h2>
+
+<p>Omarchy 4.5 доноси свој први ARM ISO, а са њим долази прелиминарна подршка за NVIDIA-ине ARM машине: DGX Spark стони рачунар и лаптопове засноване на N1X, као што су <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> и <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. А ускоро ћемо имати подршку и за целу линију Snapdragon ARM машина. Још је рано, па очекујте понеку оштру ивицу, и молимо вас да пријавите све што се поквари на <a href="https://github.com/omacom/omarchy/issues">GitHub</a>-у.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 језика и 5 метода уноса</h2>
+
+<p>Omarchy сада говори 50 језика. Изаберите један под <em>Setup &gt; Language</em> (или покрените <code>omarchy language &lt;code&gt;</code>), и мени, радна површина и Omarchy-јева обавештења прелазе одмах. Локал система следи при следећем пријављивању.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Промена језика" /></p>
+
+<p>Говорити језик је само пола тога, међутим. Морате и да га куцате. Зато Omarchy сада подешава одговарајуће методе уноса за јапански (Mozc), корејски (Hangul), поједностављени кинески (Pinyin), тајвански (Zhuyin) и хонгконшки (Cangjie), директно из инсталера или касније под <em>Setup &gt; Keyboard</em>. Свака долази са одговарајућим фонтовима за своје облике знакова, прозор са кандидатима прати вашу тему, а <code>Super + I</code> пребацује између ваших језика уноса. Hangul, Zhuyin и Cangjie задржавају своје тастере на стандардним позицијама чак и ако куцате латиницу на Dvorak, Colemak или AZERTY распореду, баш као на Windows-у и macOS-у. А додир на Shift сам по себи излази из методе уноса у латинична слова и назад, онако како раде Sogou, Microsoft Pinyin и macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Пријављивање на портале за Wi-Fi са пријавом</h2>
+
+<p>Wi-Fi у хотелима, на аеродромима и у кафићима коначно просто ради. Omarchy сада примећује када мрежа жели да се пријавите или прихватите њене услове пре него што вас пусти на интернет. Икона мреже вас упозорава, а панел мреже приказује велико дугме Open Captive Portal које вас води право на страницу за пријаву. Када прођете, све се само од себе враћа у нормалу.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Пријављивање на портал са пријавом из панела мреже" width="380" /></p>
+
+<h2 id="five-new-default-apps">Пет нових подразумеваних апликација</h2>
+
+<p><strong>Hype</strong> прави презентације од једне Markdown датотеке, са визуелним уређивачем слајдова поред изворног кода, и извози у PDF или PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> замењује Xournal++ за папирологију: отворите PDF, поставите свој сачувани потпис, текст и датуме, и сачувајте потписану копију.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> црта мапу стабла онога што пуни ваш диск, обојену по врсти, издваја кешеве које је безбедно поново генерисати и омогућава вам да означите шта треба да оде.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> снима вашу камеру једним тастером, тематски усклађен са вашом радном површином.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> вам даје удаљену радну површину преко SSH-а. Повежите се на другу Omarchy машину и управљајте њеном целом радном површином из прозора на вашој, са картицом за сваку машину. А пошто се вози на SSH-у, нема ничег додатног за подешавање или излагање. Машина којом се управља приказује индикатор удаљене сесије у траци, тако да је увек јасно када је неко на њој.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>А ту је и <strong>Elsewhen</strong>, светски сат који живи одмах поред сата у траци. Додирните град на глобусу да бисте подесили где се налазите, претражите права места и именујте људе који живе у сваком граду, тако да увек знате да ли је пристојно време за позив. Пребацујте између 12 и 24 сата помоћу <code>t</code>, између °F и °C помоћу <code>Alt + T</code>, и позовите га било када помоћу <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Са Monologue-ом за снимање и Omacut-ом за скраћивање, нове инсталације више не испоручују OBS Studio и Kdenlive. Lazydocker је такође нестао из нових инсталација, мада су Docker и Docker Compose и даље укључени. Машине које већ имају било шта од тога задржавају их.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Треба да радите са људима који живе у Office-у? <em>Install &gt; Service &gt; Microsoft</em> сада подешава Outlook, Word, Excel, PowerPoint, Teams и OneDrive као веб апликације. Свака добија свој прозор и ставку у покретачу, тако да се осећају као код куће поред свега осталог. Нема више изговора да не пређете на Omarchy на послу!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams и PowerPoint на Omarchy-ју" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper за диктирање</h2>
+
+<p>Superwhisper је сада Omarchy-јев подразумевани механизам за диктирање, и подешен је одмах по инсталацији. Додирните <code>Alt + Space</code> да бисте почели да говорите и поново да бисте стали, или држите <code>Right Alt</code> за push-to-talk. Невероватно је брз и веома прецизан.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Диктирање помоћу Superwhisper-а" /></p>
+
+<p>Почиње у облаку, тако да ради оног тренутка када инсталирате, а првих 10.000 речи је бесплатно. Али можете прећи на модел који се може преузети, који је потпуно бесплатан и ради у потпуности локално, без слања иједне речи икоме. А ако бисте радије користили други локални модел, Voxtype је и даље у понуди као алтернатива.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Инсталација за мање од десет секунди</h2>
+
+<p>Omarchy је некада инсталирао неких 940 пакета један по један. Нови F1 инсталер уместо тога распакује унапред изграђену слику коренског система и додаје само пакете ове машине на врх. То скраћује време инсталације отприлике напола на било којој машини.</p>
+
+<p>А на брзом хардверу, то је апсурдно. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> из AMD-а поставио је светски рекорд са потпуном инсталацијом Omarchy-ја за <strong>7 секунди</strong> на свом AMD лаптопу. <a href="https://x.com/dhh/status/2117222836620202375">Седам секунди!</a> Сећам се када се пет минута чинило као амбициозан циљ.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Инсталиран Omarchy за 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Брже и свуда другде</h2>
+
+<p>Није само инсталер у питању. Покретање се више не зауставља на binfmt регистрацији. Бирач теме се отвара одмах уместо после четврт секунде. Менији и панели се отварају директно из Hyprland пречица, прескачући 60 ms колико је требало да се прво покрене процес. Најспорије провере Omarchy менија пале су са 200 ms на 16 ms, нови терминал приказује свој упит 30 ms раније, а цела радна површина сада реагује на промене уместо да их испитује. Чак се и одјављивање, поновно покретање и гашење дешавају оног тренутка када ваше апликације заврше са затварањем.</p>
+
+<h2 id="agent-upgrades">Надоградње агената</h2>
+
+<p>Omarchy је агентски ОС, а 4.5 доноси велики круг надоградњи за рад са агентима. Панел агената сада прати 23 агента и провајдера, у односу на 6 раније, укључујући Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter и Ollama. Свако ограничење добија свој мерач са временом до ресетовања, тако да можете тачно видети колико вам је писте преостало. А Grok је сада пуноправни провајдер поред Claude-а и Codex-а.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Панел агената са неколико Claude и Codex претплата" width="380" /></p>
+
+<p>А ваш агент вам је увек на један притисак тастера. <code>Super + ~</code> спушта конзолу у Quake стилу преко затамњене радне површине, а први пут када је отворите, покреће вашег подразумеваног агента. Притисните поново да бисте је склонили, а ваша сесија је тачно тамо где сте је оставили.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Конзола у Quake стилу која покреће агента преко затамњене радне површине" /></p>
+
+<p>Ако жонглирате са више претплата, сада можете држати неколико Claude, Codex и Grok пријава на истој машини и бирати са којом нове сесије почињу, помоћу <code>omarchy agent account</code>. Историја, подешавања и вештине се деле између њих, тако да <code>claude --continue</code> наставља тачно тамо где сте стали након промене. Близу ограничења, Omarchy може или понудити промену једним кликом или сам преместити нове сесије на налог са највише простора. А када подесите другу машину, <code>omarchy agent account copy</code> доноси све ваше пријаве преко SSH-а, тако да не морате поново да се пријављујете на све.</p>
+
+<p>Kimi и Ori, OpenRouter-ов оквир за агенте, придружују се изборима под <em>Setup &gt; Defaults &gt; Agent</em>, а Google-ов Antigravity замењује застарели Gemini CLI (<code>gemini</code> и даље ради као алијас). Више волите прозор него терминал? Апликације Claude и Amp за радну површину сада су на један клик под <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Обавештења, изграђена изнова</h2>
+
+<p>Обавештења се сада слажу по пошиљаоцу, прате вашу тему и сажимају идентична понављања. Дугмад за акције, верификациони кодови и везе све ради директно са картице. <code>Super + Comma</code> делује на најновије (одбацује га, отвара га или притиска његово дугме), а <code>Super + Ctrl + Comma</code> вам даје тастатуру да управљате свима њима. Звоно у траци укључује режим Не узнемиравај.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Нова обавештења" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Видео позадине и уводи тема</h2>
+
+<p>Позадине сада могу бити видео снимци. Убаците један, и ваша радна површина оживљава са таласима који се котрљају или шта год друго пожелите, док закључани екран приказује непокретни кадар из њега. А теме сада праве улазак: свака може да пусти кратак, нем увод када се пријавите или пређете на њу. (Више волите да остане мирно? Искључите уводе под <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse се придружује подразумеваним темама</h2>
+
+<p>Jade Horse је сав у магличастим зеленим тоновима, са позадинама од резбареног жада које чине да цела радна површина изгледа као слика на свитку. Замењује Osaka Jade међу уграђеним темама, а придружује му се Starship као друга нова подразумевана тема. Ако користите Osaka Jade, задржавате своју копију, а она живи даље као <a href="https://github.com/omacom/omarchy-osaka-jade-theme">тема треће стране</a> за свакога ко жели да је свеже инсталира.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Тема Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff је нова подразумевана позадина</h2>
+
+<p>Нове инсталације сада вас дочекују са Liftoff-ом, прелепим лансирањем у залазак сунца које је нова подразумевана позадина за Tokyo Night. Направио га је <a href="https://github.com/tcballard">Tom Ballard</a>, који га је прво створио за своју <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff тему</a>. Хвала, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Позадина Liftoff аутора Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Мени за покретање сада је тих</h2>
+
+<p>Omarchy је некада приказивао мени за покретање око шест секунди при сваком покретању, за сваки случај ако вам затреба да се вратите на ранији снимак. Али скоро нико то никада није урадио. Зато сада Limine чека само једну секунду и покреће се тихо, и већину времена мени уопште нећете видети.</p>
+
+<p>Када вам затреба друга ставка или снимак, наставите да додирујете било који тастер (стрелица надоле ради) док се машина покреће, и зауставиће се на менију. А ако бисте радије да мени дуже остане за стално, подесите свој <code>timeout:</code> у <code>/boot/limine.conf</code> (као <code>timeout: 5</code>). Ажурирања ће оставити на миру временско ограничење које сте подесили.</p>
+
+<h2 id="changed-hotkeys">Промењене пречице</h2>
+
+<p>Неке пречице су се помериле:</p>
+
+<ul>
+  <li>Калкулатор: <code>Super + Ctrl + Q</code> је сада <code>Super + Shift + Q</code>.</li>
+  <li>Активност: <code>Super + Ctrl + T</code> је сада <code>Super + Shift + T</code>, а <code>Super + Ctrl + T</code> отвара теме.</li>
+  <li>Мрежа: <code>Super + Ctrl + W</code> је сада <code>Super + Ctrl + N</code>, а <code>Super + Ctrl + W</code> отвара позадине.</li>
+  <li>Ноћно светло више нема пречицу (била је <code>Super + Ctrl + N</code>); налази се у <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> отвара Apps из дока уместо менија Apps.</li>
+</ul>
+
+<p>Пречице за обавештења су се промениле:</p>
+
+<ul>
+  <li><code>Super + Comma</code> делује на најновију картицу (одбацује је, отвара је или притиска њено једно дугме) уместо да је само одбацује.</li>
+  <li>Одбацивање последње померило се на <code>Super + Alt + Comma</code>, које је некада отварало.</li>
+  <li>Утишавање се померило са <code>Super + Ctrl + Comma</code> на <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> сада вам даје контролу тастатуром.</li>
+</ul>
+
+<p>Неколико тастера ради другачије:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> и <code>Super</code> + померање остају на радним површинама тренутног монитора, пошто сваки монитор има своје.</li>
+  <li>У терминалу, <code>Super + C</code> и <code>Super + V</code> шаљу <code>Ctrl + Shift + C</code> и <code>Ctrl + Shift + V</code> уместо <code>Ctrl + Insert</code> и <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Нове подразумеване које би се могле сукобити са вашим сопственим везивањима: <code>Super + Q</code> (затвори прозор, поред <code>Super + W</code>), <code>Super + A</code> (изабери све), <code>Super + M</code> (минимизуј у док), <code>Super + ~</code> и <code>Super + Shift + ~</code> (Quake конзола), <code>Super + Alt + L</code> (претходни распоред), <code>Super + Shift + Ctrl + Arrows</code> (премести прозор на други монитор), <code>Super + Ctrl + Alt + C</code> (снимак екрана), <code>Super + Ctrl + Alt + E</code> (светски сат), <code>Super + Ctrl + Alt + F</code> (цела радна површина преко целог екрана) и држање <code>Right Alt</code> за диктирање push-to-talk.</p>
+
+<h2 id="more-features">Још функција</h2>
+
+<ul>
+  <li>Дајте сваком монитору његове сопствене радне површине: <code>Super + 1-0</code> иде на радне површине монитора на коме сте, а <code>Super + Arrows</code> премешта на друге екране и са њих од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Сакупите све о томе како радна површина изгледа у нови мени Appearance, који замењује Style: тему, позадину, фонт, траку, прозоре, брендирање, док, распореде радних површина, анимације и екран за откључавање од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Изаберите Opaque, Transparent или Glassy прозоре под <em>Appearance &gt; Window Transparency</em>, плус Glassy позадину траке од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Изаберите углове прозора теме, оштре или заобљене под <em>Appearance &gt; Window Corners</em> од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Додајте режим без анимација, подразумевано укључен у виртуелним машинама од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Учините апликације непрозирним подразумевано, задржавајући терминале прозирним од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Додајте Slack у Install &gt; Service од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Учините да Alt + Space пребацује диктирање на сваком позадинском систему од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Додајте дугмад Open и Edit обавештењима о снимцима екрана, и Open и Cut снимцима екрана и yt-dlp преузимањима од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Додајте мени Update &gt; Kernel за промену подразумеваног језгра од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Додајте синхронизацију теме на herdr машине од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Додајте o.rebind за замену Hyprland везивања тастера од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Тражите ваш git идентитет после првог пријављивања уместо у инсталеру, са пријавом на GitHub од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Дозволите инсталационим медијима да унапред подесе језик, тастатуру и временску зону од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Дозволите виџетима траке да живе у фиоци системске палете од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Дозволите уклањање виџета траке превлачењем са траке од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Дозволите померање кроз радне површине са траке од стране <a href="https://github.com/outfoxxed">@outfoxxed</a> у <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Дозволите брисање додатних тема из бирача тема од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Додајте hey, basecamp и Cloudflare CLI-је као алате који се лењо инсталирају од стране <a href="https://github.com/monorkin">@monorkin</a> у <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Додајте SSH Agent као опциону услугу од стране <a href="https://github.com/carletex">@carletex</a> у <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Дозволите бирање колико дуго траје sudo без лозинке од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Додајте дугме за затварање при преласку мишем на искачућа обавештења од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Дозволите утишавање обавештења програма из његове дијагнозе пада од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Дозволите omarchy-notification-send да додаје дугмад за акције од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Додајте формат сата са живим секундама од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Подесите позадинско осветљење тастатуре помоћу Ctrl и тастера за осветљеност од стране <a href="https://github.com/ludagoo">@ludagoo</a> у <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Одштампајте OEM Windows кључ производа из фирмвера од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Додајте оригинални vi као избор уређивача у терминалу од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Додајте позадину Roadster Starlight у Ethereal од стране <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> у <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Безбедност</h2>
+
+<ul>
+  <li>Држите лозинку Windows виртуелне машине ван аргумената RDP клијента од стране <a href="https://github.com/dicemans">@dicemans</a> у <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Померите стање снимања екрана из /tmp доступног свима за писање од стране <a href="https://github.com/Chessing234">@Chessing234</a> у <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Очврсните истек sudo без лозинке током суспензије од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Вежите чишћење инхибитора ажурирања за процес који га је створио од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Изолујте овлашћење за чишћење OCaml-а од стране <a href="https://github.com/ErikMelton">@ErikMelton</a> у <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Закачите подизање привилегија за фабричко ресетовање на упаковану команду од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Уклоните сачуване шаблоне отисака прстију за корисника који позива при ресетовању од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Одбијте имена кука и стања која су путање од стране <a href="https://github.com/Adolanium">@Adolanium</a> у <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Препустите system-auth у polkit стеку који пишу подешавање отиска прста и FIDO2 од стране <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> у <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Уклоните отиске прстију из сопственог складишта читача при њиховом уклањању од стране <a href="https://github.com/scottjones">@scottjones</a> у <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Спречите да SSH подешавање остави sshd да ради са пријавама лозинком када се не дода ниједан кључ од стране <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> у <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Спречите другог локалног корисника да убаци свој сопствени програм током надоградње Voxtype-а од стране <a href="https://github.com/Vladkarok">@Vladkarok</a> у <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Очврсните како фабричко ресетовање преноси ваша gum подешавања кроз sudo од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Исправке</h2>
+
+<ul>
+  <li>Поправите пад Hyprland-а када се монитор искључи, онемогући или угаси затварањем поклопца од стране <a href="https://github.com/falkoro">@falkoro</a> у <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Поправите надоградње које су могле оставити слику језгра без његовог root= параметра од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Поправите фабричко ресетовање које брише ставке за покретање других система од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Поправите инсталацију поред другог Omarchy-ја која уклања ставку за покретање те инсталације од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Поправите инсталације на слободан простор које су могле узети постојећу партицију за нову од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Поправите настављање прекинуте промене лозинке диска које уклања погрешан кључ од стране <a href="https://github.com/scottjones">@scottjones</a> у <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Тражите sudo лозинку једном по Omarchy ажурирању од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Тражите sudo лозинку једном на десет минута уместо поново на свакој команди од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Покријте AUR ажурирања и проверу покретања једним sudo упитом ажурирања од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Држите ажурирања пакета безбедним од одјављивања усред трансакције од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Одјавите се, поново покрените и угасите чим апликације заврше са затварањем од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Замените Tensaku са Omasnap за снимке екрана од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Растите панеле из траке и претварајте их једне у друге, са повратном информацијом при притиску на дугмад и иконе траке од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Клизајте обавештења испод траке и назад истим путем од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Проверавајте повезаност према сопственој крајњој тачки Omarchy-ја, и поправите пријављивање на портале са пријавом од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Поправите прелазак са edge на stable или RC који оставља машину на старој верзији од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Поправите ажурирање на 4.5 које стаје када љуска споро одговара од стране <a href="https://github.com/AnPod">@AnPod</a> у <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Поправите ажурирања која тихо не успевају када се покрену ван сесије радне површине од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Поправите неуспело преузимање mise алата које зауставља остатак ажурирања система од стране <a href="https://github.com/sanjyay">@sanjyay</a> у <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Поправите ажурирања која не успевају када omarchy-nvim није инсталиран од стране <a href="https://github.com/imzihuailin">@imzihuailin</a> у <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Поправите инсталације са двојним покретањем које не успевају да монтирају EFI партицију од стране <a href="https://github.com/Damian626">@Damian626</a> у <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Поправите инсталације које стају када фирмвер неће да прихвати нову ставку за покретање од стране <a href="https://github.com/ryanio">@ryanio</a> у <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Поправите инсталације које стају на дисковима са старим RAID чланом или групом волумена од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Покрените инсталер раније тако што нећете чекати сваки USB уређај и посао покретања од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Убрзајте шифровање диска са секторима од 4096 бајта на новим инсталацијама од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Наведите интерне дискове прво и отворите екране за инсталацију на безбедном избору од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Наведите Full disk install прво у инсталеру, и враћајте се са Esc на екранима диска од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Поправите скалирање једног монитора које мења размеру сваког другог монитора од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Поправите XWayland апликације које испадају превелике када монитори користе различите размере од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Поправите HDR екране који прелазе на испрану HDR слику када прозор оде преко целог екрана од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Поправите мутне меније и бираче на екранима са делимичном размером од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Поправите екран лаптопа који остаје искључен после искључивања спољног екрана од стране <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> у <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Поправите поновно омогућавање екрана које ресетује његову позицију, размеру и режим од стране <a href="https://github.com/zihaomu">@zihaomu</a> у <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Поправите меније и бираче који се не отварају поново после искључивања монитора од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Поправите радне површине по монитору које се померају после искључивања монитора од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Поправите пад љуске када се аудио уређај искључи док је аудио панел отворен од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Поправите прозоре преко целог екрана који губе цео екран после чувара екрана од стране <a href="https://github.com/MGross21">@MGross21</a> у <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Поправите курсор који нестаје при покретању после поновног учитавања Hyprland-а од стране <a href="https://github.com/spencerbull">@spencerbull</a> у <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Поправите курсор који постаје невидљив преко XWayland апликација од стране <a href="https://github.com/Sebo1411">@Sebo1411</a> у <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Поправите заглављивања при хватању међуспремника од стране <a href="https://github.com/maxcroy1">@maxcroy1</a> у <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Поправите приступ привеску кључева кроз XDG Secret портал од стране <a href="https://github.com/pkwagner">@pkwagner</a> у <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Поправите упис отиска прста и опоравак закључаног екрана од стране <a href="https://github.com/GeertJohan">@GeertJohan</a> у <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Водите упис отиска прста корак по корак од стране <a href="https://github.com/scottjones">@scottjones</a> у <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Поправите аутоматско понављање тастера у пољу за лозинку закључаног екрана од стране <a href="https://github.com/berndb">@berndb</a> у <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Поправите позадину закључаног екрана која се учитава после поља за лозинку при буђењу од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Поправите истеке закључавања екрана када сесија именује екран који је нестао од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Убрзајте отварање терминала у директоријуму тренутног прозора од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Учините да уређивачи из породице VS Code прате промене теме уживо од стране <a href="https://github.com/Macho0x">@Macho0x</a> у <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Поново тематски обрадите покренуте Hunk сесије при промени теме од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Запамтите изабрану позадину за сваку тему од стране <a href="https://github.com/OldJobobo">@OldJobobo</a> у <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Држите бирач слика брзим и оштрим са великим колекцијама и HiDPI од стране <a href="https://github.com/keylimesoda">@keylimesoda</a> у <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Смањите CPU и меморију које прозирна трака троши узоркујући позадину од стране <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> у <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Убрзајте Tailscale панел на tailnet-овима са хиљадама машина од стране <a href="https://github.com/iskakaushik">@iskakaushik</a> у <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Доведите Grok на исти ниво као Claude и Codex у панелу агената од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Примените избор налога агента на CLI подпроцесе од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Прикажите појединачна ограничења потрошње Codex-а и њихова времена ресетовања од стране <a href="https://github.com/Stegi56">@Stegi56</a> у <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Подесите интеграцију прегледача при избору Claude-а од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Поправите агенте који не проналазе mise алате инсталиране после њиховог покретања од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Поправите лепљење снимака екрана у агенте у herdr панелима покренутим преко SSH-а од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Поправите панел агената који пропушта компресоване Codex сесије од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Вратите Caps Lock у нормалу и учините Shift + Caps Lock тастером за састављање од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Примените распоред тастатуре система на екран за пријаву од стране <a href="https://github.com/g-desoutter">@g-desoutter</a> у <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Поправите мењање распореда које прескаче сваки други притисак са нелатиничним распоредом тастатуре од стране <a href="https://github.com/manuaudio">@manuaudio</a> у <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Укључите хардверско декодирање видеа у mpv од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Пребаците контролу загушења TCP-а на BBR и користите kyber I/O распоређивач на правим дисковима од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Инсталирајте T3 Code као његов самоажурирајући AppImage од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Побољшајте инсталацију PHP-а и Laravel-а од стране <a href="https://github.com/nunomaduro">@nunomaduro</a> у <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Инсталирајте Node лењо и оставите вашу mise конфигурацију на миру од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Инсталирајте апликације које недостају при избору подразумеваних од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Пригушите инсталирани софтвер у менијима Install уместо да га кријете од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Региструјте менаџер лозинки и друге изворне домаћине за размену порука за Brave Origin од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Групишите Brave Origin веб обавештења по сајту, и отворите праву картицу при клику од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Аутоматски одобрите уклањање пакета сирочади током ажурирања од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Ажурирајте Omarchy-јев привезак кључева пре сваког ажурирања од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Понуди поновно покретање после промене канала од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Понуди ажурирање при првом покретању само када има нечега за ажурирање од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Пронађите локацију за временску прогнозу и временску зону инсталера помоћу сопствене гео услуге Omarchy-ја од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Подесите сат са ntp.omarchy.org уместо Arch-овог NTP скупа од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Мерите брзину мреже помоћу сопственог теста брзине Omarchy-ја од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Прикажите екран напретка са испраћеном иконом током првог покретања од стране <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> у <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Покрените живи ISO на Omarchy језгру, а на T2 језгру само на Mac-овима од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Зауставите офлајн инсталације које чекају на претраге mise верзија од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Поправите офлајн инсталације које подразумевано постављају временску зону на Africa/Abidjan од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Поправите бирач временске зоне инсталера који вам не дозвољава да куцате за претрагу од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Поправите живи ISO који виси иза почетног екрана када се покрене са Ventoy стика од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Поправите немачке и француске мапе тастера конзоле у обрасцу за подешавање инсталера од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Сакријте gum-ове наговештаје тастера на енглеском у инсталеру и git подешавању од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Избаците шале само на енглеском са екрана напретка инсталације од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Поправите излаз инсталера који пада без одступања на екран док припрема диск од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Поправите Quattro надоградњу која ресетује подразумевани прегледач на Chromium од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Поправите Quattro надоградњу која стаје на именима позадина са не-ASCII знаковима од стране <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> у <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Поправите миграцију језгра која стаје на машинама које се покрећу са GRUB или systemd-boot од стране <a href="https://github.com/manuaudio">@manuaudio</a> у <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Поправите хибернацију на нешифрованим машинама са више од једног NVMe диска од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Поправите FIDO2 миграцију која се означава као готова пре него што је решена од стране <a href="https://github.com/ErikMelton">@ErikMelton</a> у <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Поправите плутајућу радну површину која преузима први прозор који ваше сопствено правило за плутање покрива од стране <a href="https://github.com/zihaomu">@zihaomu</a> у <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Поправите композитора који застаје када Super + L пребацује радну површину у плутање и из њега од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Поправите Alt + Shift + Tab који не кружи уназад кроз сваки прозор од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Поправите искачуће прозоре који се не центрирају када се преместе на други монитор од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Поправите нове терминале који се отварају ван вашег почетног директоријума када је прозор који није терминал у фокусу од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Поправите прозоре 1Password и Bitwarden који не плутају од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Поправите 1Password који се затвара када терминал инсталера изађе од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Поправите дијалоге DaVinci Resolve који краду фокус показивача од стране <a href="https://github.com/AksharP5">@AksharP5</a> у <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Поправите радну површину која се приказује кроз приказе Windows виртуелне машине од стране <a href="https://github.com/jmwall">@jmwall</a> у <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Поправите старе лозинке Windows виртуелне машине које садрже $$ после Quattro миграције од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Зауставите Hyprland-ов искачући прозор за донације да се приказује после надоградњи од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Побољшајте превлачење и распоређивање виџета траке од стране <a href="https://github.com/outfoxxed">@outfoxxed</a> у <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Нормализујте величину и поравнање икона траке од стране <a href="https://github.com/bjarneo">@bjarneo</a> у <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Откријте скривене индикаторе траке само при преласку мишем лево од сата од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Поравнајте иконе системске палете са другим иконама траке од стране <a href="https://github.com/ayoubdya">@ayoubdya</a> у <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Прикажите следећи опис алата траке одмах док је један већ приказан од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Отворите панеле сата и временске прогнозе испод њихових виџета од стране <a href="https://github.com/scottjones">@scottjones</a> у <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Држите панел мреже отвореним после избора DNS провајдера од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Поправите искачући прозор који се затвара и оставља виџете траке неодзивним од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Поправите скривену траку која хвата кликове дуж врха прозора преко целог екрана од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Поправите тамне иконе системске палете које нестају у траци од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Поправите иконе траке које стоје неравно или ван центра од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Поправите описе алата траке који цртају свој први кадар у погрешној величини од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Поправите историју обавештења која приказује сваку картицу као управо сада од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Поправите обавештења при првом пријављивању која се сажимају у један стек од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Поправите кликове на обавештења који не фокусирају апликације са именима од више речи од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Поправите Taildrop обавештења која приказују празан текст и пропуштају прегледе од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Поправите обавештење о батерији које приказује празно време и 0W на пуној батерији од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Поправите упозорење о ниској батерији које остаје после прикључивања и враћа се после поновних покретања од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Поправите потрошњу батерије која чита 0W на неким лаптоповима од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Поправите пуну батерију на напајању која се приказује као да се празни од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Поправите Hibernate који се приказује када језгро неће да хибернира од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Поправите gvfs монтирања која нестају после настављања од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Поправите позадинско осветљење тастатуре које остаје искључено после два гашења закључавања од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Поправите читач отиска прста који се буди док закључавање има искључене екране од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Поправите упит за лозинку при покретању ван центра када се екран појави касно од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Поправите тастер за излаз чувара екрана који трепери у углу од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Поправите икону Wi-Fi која трепери на OWE мрежама у прелазном режиму од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Поправите OWE грешку одштампану у терминалу после инсталирања теме од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Поправите треперење при преласку са непокретне на видео позадину од стране <a href="https://github.com/bjarneo">@bjarneo</a> у <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Ажурирајте Hackerman на увећану геометријску позадину од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Поправите теме са цикличним референцама боја које заглављују промену теме од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Поправите Neovim који не успева да се покрене са Catppuccin темом од стране <a href="https://github.com/anandude">@anandude</a> у <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Поправите OpenCode 2 који почиње на својој основној теми уместо Omarchy-јеве од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Поправите инлајн код ниског контраста у генерисаној VS Code теми од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Поправите инсталације T3 Code које стају при усклађивању тренутне теме од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Поправите величину фонта терминала која се ресетује при промени породице фонта од стране <a href="https://github.com/sbalbalosa">@sbalbalosa</a> у <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Поправите промену фонтова која штампа ID процеса терминала од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Поправите промену језика која поново гради сваки локал и губи их на скоро пуном диску од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Поправите љуску која приказује сирове кључеве превода пре него што се њени преводи учитају од стране <a href="https://github.com/zihaomu">@zihaomu</a> у <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Убрзајте преведени текст у Omarchy-јевим скриптама од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Ажурирајте преводе за 686 низова, 392 од њих у приручнику од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Поправите контроле јачине звука и излаза у локалима који нису енглески од стране <a href="https://github.com/Sebo1411">@Sebo1411</a> у <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Поправите очитавања употребе CPU-а у локалима који нису енглески од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Поправите fcitx5 услугу која се заувек поново покреће када fcitx5 није инсталиран од стране <a href="https://github.com/therk">@therk</a> у <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Поправите виџет распореда тастатуре који пребацује уређаје на којима нико не куца од стране <a href="https://github.com/bjarneo">@bjarneo</a> у <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Поправите виџет распореда тастатуре који пребацује на уређаје са пречицама произвођача од стране <a href="https://github.com/yashranaway">@yashranaway</a> у <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Поправите мени везивања тастера који оставља Lua процес да ради на 100% CPU-а од стране <a href="https://github.com/tobi">@tobi</a> у <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Поправите сат који поплављује дневник сваке милисекунде када се заврши летње рачунање времена од стране <a href="https://github.com/falkoro">@falkoro</a> у <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Поправите љуску која замењује shell.json који није могла да прочита подразумеваним вредностима од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Поправите Omarchy мени који губи своје редове док се његова датотека ажурира од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Поправите поновно омогућавање плагина које не враћа његов виџет траке од стране <a href="https://github.com/berrimi">@berrimi</a> у <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Поправите локалне плагине који се поново учитавају у петљи на сопственом Python бајткоду од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Поправите скривена дугмад у плагинима која се сажимају на своје одступање од стране <a href="https://github.com/dmkenney">@dmkenney</a> у <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Поправите падајуће меније који одсецају своју последњу ставку од стране <a href="https://github.com/sprajs">@sprajs</a> у <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Поправите падајуће меније који се не затварају на други клик од стране <a href="https://github.com/felixzsh">@felixzsh</a> у <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Поправите дугмад клизача која стају пре краја траке од стране <a href="https://github.com/erikrjohansson">@erikrjohansson</a> у <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Поправите Update &gt; Hardware &gt; Trackpad који пропушта већину тачпеда и ресетује тастатуру од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Сада отпушта заглављено дугме на сваком тачпеду, и ресетује само тачпед уместо тастатуре и екрана осетљивог на додир са њим.</p>
+  </li>
+  <li>Учините да мени веб камере проверава камере без њиховог укључивања од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Поправите Omasnap-ово хватање померањем које хвата само црне кадрове од стране <a href="https://github.com/falkoro">@falkoro</a> у <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Поправите бирач снимака екрана који одвезује ваше сопствене тастере од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Поправите заустављање снимања које најављује празан сачувани снимак од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Поправите бирач слика који приказује застареле сличице за слике преко којих је сачувано од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Поправите ноћно светло које се не ресетује у потпуности када се искључи од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Поправите виџет медија који напушта паузирану нумеру због неактивног плејера од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Поправите поновљена скенирања екрана на мониторима који не пријављују осветљеност од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Поправите Super + Shift + Return који не успева када је конфигурисани прегледач деинсталиран од стране <a href="https://github.com/vitally">@vitally</a> у <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Поправите пречице калкулатора које остају после уклањања унапред инсталираних апликација од стране <a href="https://github.com/OldJobobo">@OldJobobo</a> у <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Поправите пречицу Copy URL у Brave Origin профилима од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Поправите искачући прозор Bitwarden проширења који се отвара у погрешној величини од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Поправите Battle.net који се отвара на размери од 100% на HiDPI мониторима од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Поправите Inkscape-ове бираче датотека који се отварају сложени од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Поправите Go AUR пакете који не успевају да се изграде током ажурирања када mise управља Go-ом од стране <a href="https://github.com/shbernal">@shbernal</a> у <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Поправите ONCE инсталацију када нисте у docker групи од стране <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> у <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Поправите кликове на панел агената који отварају системску палету од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Поправите подешавање налога агента које се саплиће на висећој дељеној симболичкој вези од стране <a href="https://github.com/manuaudio">@manuaudio</a> у <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Поправите <code>--reauth</code> који додаје нови налог агента када га нема од стране <a href="https://github.com/manuaudio">@manuaudio</a> у <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Учините да наговештај за преименовање налога агента именује његовог провајдера од стране <a href="https://github.com/manuaudio">@manuaudio</a> у <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Поправите ажурирања привеска кључева која тврде успех када операције са кључевима не успеју од стране <a href="https://github.com/Adolanium">@Adolanium</a> у <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Поправите празан упит за фабричко ресетовање када се покреће под sudo од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Поправите подсетник за миграције на чекању који се гомила једном по пријављивању од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Поправите старост ОС-а у About која броји од изградње ISO-а уместо од инсталације од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Поправите Dropbox који приказује “0y ago” за датотеке старе 360 до 364 дана од стране <a href="https://github.com/manuaudio">@manuaudio</a> у <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Поправите проверу статуса Dropbox-а која истиче везу за пријаву на чекању од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Поправите инсталирање библиотеке иконе системске палете Dropbox-а од стране <a href="https://github.com/omarchybot">@omarchybot</a> у <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Омогућите преклапајуће траке за померање у Chromium-у од стране <a href="https://github.com/robzolkos">@robzolkos</a> у <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Питајте пре укључивања Touch ID на Apple Silicon Mac-овима од стране <a href="https://github.com/scottjones">@scottjones</a> у <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Понуди RC канал на Apple Silicon Mac-овима од стране <a href="https://github.com/maralcbr">@maralcbr</a> у <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Понуди стабилни канал на Apple Silicon Mac-овима од стране <a href="https://github.com/maralcbr">@maralcbr</a> у <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Поправите Omarchy-јеве алијасе, функције и окружење који недостају из нових терминала на Apple Silicon-у од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Подесите инсталиране NVIDIA апликације од стране <a href="https://github.com/jdvmi00">@jdvmi00</a> у <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Поправите инсталације које не успевају на Lenovo Pro 9 са NVIDIA N1x од стране <a href="https://github.com/breymander">@breymander</a> у <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Поправите недостајуће интерне звучнике и микрофоне на N1x лаптоповима који су покретали раније аудио профиле од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Поправите трому радну површину на NVIDIA GB10 машинама као што је DGX Spark од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Поправите куцање у закључани екран после настављања на NVIDIA од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Закључавање такође више не потамњује поново баш када се панел упали.</p>
+  </li>
+  <li>Поправите Lutris и Battle.net који инсталирају 32-битни Vulkan драјвер другог GPU-а од стране <a href="https://github.com/zihaomu">@zihaomu</a> у <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Престаните да тражите поновно покретање после сваког ажурирања на ARM-у од стране <a href="https://github.com/birkskyum">@birkskyum</a> у <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Понуди стабилне и RC канале на aarch64 од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Учините да профили напајања раде на ARM лаптоповима од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Понуди Dropbox на ARM машинама са 4K страницама, и Spotify као веб апликацију на ARM-у од стране <a href="https://github.com/birkskyum">@birkskyum</a> у <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Сакријте инсталације GeForce NOW, Battle.net и Lutris на ARM-у од стране <a href="https://github.com/birkskyum">@birkskyum</a> у <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Поправите Hermes апликацију која се не ажурира на месту на ARM-у од стране <a href="https://github.com/ryanrhughes">@ryanrhughes</a> у <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Поправите тастатуре Snapdragon лаптопова које не куцају на упиту за откључавање диска од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Поправите камере које недостају при пријављивању на Snapdragon лаптоповима од стране <a href="https://github.com/birkskyum">@birkskyum</a> у <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Поправите црни екран пре откључавања диска на Snapdragon X2 лаптоповима од стране <a href="https://github.com/jdvmi00">@jdvmi00</a> у <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Декодирајте видео хардверски на Intel Wildcat Lake од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Поправите падове живог ISO-а на Arrow Lake-H лаптоповима од стране <a href="https://github.com/emirb">@emirb</a> у <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Поправите интерни микрофон HP EliteBook Ultra G1q од стране <a href="https://github.com/bprendie">@bprendie</a> у <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Користите узводну подршку за Motorcomm YT6801 Ethernet од стране <a href="https://github.com/AFOliveira">@AFOliveira</a> у <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Пренесите Elgato Cam Link 4K као виртуелну камеру 16:9 од стране <a href="https://github.com/dhh">@dhh</a> у <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Подржите читаче отисака прстију које платформа именује од стране <a href="https://github.com/scottjones">@scottjones</a> у <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>
