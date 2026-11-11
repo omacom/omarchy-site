@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-10",
+  "refreshed": "2026-11-11",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1647,21 +1647,6 @@
       "cover": "/images/meetups/evt-jY7E9tlKPKPRwPK-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
-    },
-    {
-      "id": "calev-hpyAeRNiBjQJqEM",
-      "title": "Omarchy Meetup Hangzhou",
-      "url": "https://event.tranquillus.life/en/omarchy-hangzhou-2026",
-      "start": "2026-11-15T01:30:00.000Z",
-      "end": "2026-11-15T08:30:00.000+00:00",
-      "timezone": "Asia/Shanghai",
-      "address": "崇文未来学校 甘王路3号 杭州",
-      "city": "杭州市",
-      "country": "CN",
-      "online": false,
-      "geo": { "lat": 30.2489634, "lon": 120.2052342, "approximate": true },
-      "hosts": [],
-      "cover": null
     },
     {
       "id": "evt-n3vWFaK0KP8ejG6",
