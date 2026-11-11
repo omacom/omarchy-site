@@ -7,5 +7,5 @@ import { themesSeo } from '../astro/page-seo'
 const head = headProps(themesSeo(), '/themes/')
 ---
 <Base {...head}>
-  <ThemesPage />
+  <ThemesPage client:load />
 </Base>
