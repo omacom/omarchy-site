@@ -770,6 +770,9 @@ export function HeroNavGhost() {
             <span className="flex h-8 w-8 items-center justify-center lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]">
               <GithubIcon className="size-5" />
             </span>
+            <span className="flex h-8 w-8 items-center justify-center lg:h-[calc(var(--pxr)*3)] lg:w-[calc(var(--pxr)*3)]">
+              <XIcon className="size-5" />
+            </span>
             {/* Install holds its own colours, so the ghost only holds its
                 place - same box, same type metrics, nothing painted. The
                 border is part of the box: the real button wears a 1px
