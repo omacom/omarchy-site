@@ -40,6 +40,7 @@ import { MeetupShowcase } from '@/components/MeetupShowcase'
 import { ThemeShowcase } from '@/components/ThemeShowcase'
 import { VideoCarousel } from '@/components/VideoCarousel'
 import { Voices } from '@/components/Voices'
+import { InstallCommand } from '@/components/InstallCommand'
 import { Button } from '@/components/ui/button'
 import {
   Tooltip,
@@ -726,6 +727,10 @@ export function HomePage({ data }: { data: HomeData }) {
                       {t('Omarchy M Installer')}
                     </Button>
                     <Verify sha256={release.mac.sha256} />
+                    <InstallCommand
+                      command="brew install omacom/mac/omarchy"
+                      className="mt-3 w-full max-w-md"
+                    />
                   </div>
                 </InstallRow>
               ) : null}

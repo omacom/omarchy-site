@@ -23,8 +23,8 @@ const examples = [
       'M1, M2, M3, and Neo MacBooks install Omarchy natively with the Omarchy M installer, right next to macOS. M4 and newer are on the way.',
     ),
     icon: AppleIcon,
-    href: '/news/2026/09/introducing-omarchy-m/',
-    link: t('Meet Omarchy M'),
+    href: '/manual/mac-support/#apple-silicon-macs',
+    link: t('How to install'),
   },
   {
     title: t('NVIDIA DGX Spark and N1X'),
