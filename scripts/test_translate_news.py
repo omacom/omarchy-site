@@ -33,6 +33,57 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(html=html), self.assertRaises(worker.TranslationError):
                 worker.validate_translation(self.post, {**self.value, 'html': html})
 
+    def test_accepts_inline_markup_reordered_within_its_paragraph(self):
+        # A verb-final language moves a sentence's links and code to where its grammar puts them.
+        post = {'title': 'Thanks', 'html': '<p>Thanks to <a href="/a">@one</a> and <a href="/b">@two</a> for <code>x</code>.</p>\n<p>See <a href="/c">this</a>.</p>'}
+        value = {'title': 'ありがとう', 'html': '<p><code>x</code>について<a href="/b">@two</a>と<a href="/a">@one</a>に感謝します。</p>\n<p><a href="/c">こちら</a>を参照。</p>'}
+        self.assertEqual(worker.validate_translation(post, value), value)
+
+    def test_rejects_inline_markup_that_leaves_its_paragraph_or_breaks(self):
+        post = {'title': 'Thanks', 'html': '<p>Thanks to <a href="/a">@one</a> and <a href="/b"><strong>@two</strong></a>.</p>\n<p>See <code>x</code>.</p>'}
+        for html in ['<p>感謝 <a href="/a">@one</a>.</p>\n<p><a href="/b"><strong>@two</strong></a> <code>x</code>.</p>',
+                     '<p><a href="/a">@one</a> <a href="/b"><strong>@two</strong></a> <a href="/b">@two</a>.</p>\n<p><code>x</code>.</p>',
+                     '<p><a href="/a">@one</a> <strong><a href="/b">@two</strong></a>.</p>\n<p><code>x</code>.</p>',
+                     '<p><a href="/a">@one</a> <a href="/b"><strong>@two</strong></a>.</p>\n<p><code>y</code>.</p>',
+                     '<p><a href="/a" class="x">@one</a> <a href="/b"><strong>@two</strong></a>.</p>\n<p><code>x</code>.</p>']:
+            with self.subTest(html=html), self.assertRaises(worker.TranslationError):
+                worker.validate_translation(post, {'title': 'ありがとう', 'html': html})
+
+    def test_translated_attribute_text_and_prose_may_use_any_script(self):
+        post = {'title': 'T', 'html': '<p>Less &lt; more <img src="/a.png" alt="Picture" /></p>'}
+        value = {'title': 'T', 'html': '<p>少ない &lt; 多い <img src="/a.png" alt="写真" /></p>'}
+        self.assertEqual(worker.validate_translation(post, value), value)
+
+    def test_reordering_never_reaches_inside_code_or_across_parents(self):
+        cases = [
+            # Code keeps its text and tags in order, so a command cannot be rearranged.
+            ('<p><code>rm <b>safe</b></code></p>', '<p><code>safe<b>rm </b></code></p>'),
+            ('<p><code>a</code> and <code>b</code></p>', '<p><code>a<code>b</code></code></p>'),
+            # Each parent keeps its own inline children, whatever the parent is.
+            ('<main><a href="/a">one</a></main><main><a href="/b">two</a></main>',
+             '<main><a href="/a">eins</a><a href="/b">zwei</a></main><main></main>'),
+            # Unusual markup elsewhere does not switch nesting checks off.
+            ('<a href="/a"><div>Hello</div></a><p><b>one</b><i>two</i></p>',
+             '<a href="/a"><div>Hej</div></a><p><b>en<i>to</b></i></p>'),
+            # A self-closed non-void tag opens an element in a browser.
+            ('<p><a href="/a">x</a><b>one</b></p>', '<p><b><a href="/a"/>en</b></p>'),
+            ('<p><a href="/a">x</a></p>', '<p><a href="/a">x</a onclick="alert(1)"></p>'),
+            ('<p><a href="/a">x</a></p>', '<p><a href="/a">x</a/onclick="alert(1)"></p>'),
+            # A tag left unfinished at the end becomes an element once the page closes around it.
+            ('<p>Hello</p>', '<p>Hej</p><img src=x onerror=alert(1) '),
+            ('<p>Hello', '<p>Hej<img src=x onerror=alert(1) '),
+            # U+212A, the Kelvin sign, lowercases to k in Python and to nothing in a browser.
+            ('<blockquote><code>x</code></blockquote><a href="/a">Read</a>',
+             '<blockquote><code>x</code></blocKquote><a href="/a">Læs</a>'),
+            ('<blockquote>Hi</blockquote>', '<blocKquote>Hej</blocKquote>'),
+            # A link wrapping a block is not sentence markup, so its block cannot move with it.
+            ('<main><a href="/a"><div>A</div></a><a href="/b"><div>B</div></a></main>',
+             '<main><a href="/b"><div>B</div></a><a href="/a"><div>A</div></a></main>'),
+        ]
+        for source, html in cases:
+            with self.subTest(html=html), self.assertRaises(worker.TranslationError):
+                worker.validate_translation({'title': 'T', 'html': source}, {'title': 'T', 'html': html})
+
     def test_rejects_empty_title_and_code_changes(self):
         with self.assertRaises(worker.TranslationError):
             worker.validate_translation(self.post, {**self.value, 'title': ' '})

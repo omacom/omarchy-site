@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Translate pending news with Muse; retain valid successes when other jobs fail."""
 import argparse
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 from html.parser import HTMLParser
@@ -33,6 +34,21 @@ def source_hash(post):
 
 
 class Structure(HTMLParser):
+    """An article's markup, as a tree, in the form a translation must keep.
+
+    Every element keeps its tag, its attributes and its place. The one freedom is
+    that a run of adjacent inline elements under the same parent may come back in
+    another order, each moving whole with its own children and code: Japanese,
+    Korean, Turkish and every other language that puts the verb last moves a
+    sentence's links to where its grammar puts them, and demanding the English order
+    made those translations impossible to accept."""
+
+    INLINE = {'a', 'abbr', 'b', 'bdi', 'bdo', 'br', 'cite', 'code', 'del', 'dfn', 'em', 'i', 'img',
+              'ins', 'kbd', 'mark', 'q', 's', 'samp', 'small', 'span', 'strong', 'sub', 'sup',
+              'time', 'u', 'var', 'wbr'}
+    VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
+    PROTECTED = {'script', 'style', 'code', 'pre'}
+
     def __init__(self, html):
         super().__init__(convert_charrefs=True)
         self.events = []
@@ -42,31 +58,59 @@ class Structure(HTMLParser):
         self.paragraphs = []
         self.in_paragraph = False
         self.protected_depth = 0
+        self.root = ['#root', [], []]
+        self.stack = [self.root]
+        # Self-closed non-void tags, stray or crossed end tags, unclosed elements, end
+        # tags carrying attributes: markup a browser repairs in ways nobody checked.
+        self.well_formed = not re.search(r'</[A-Za-z][^\s>/]*[\s/]+[^\s>]', html)
+        # Python lowercases tag names by Unicode rules and browsers only ASCII, so the K of Kelvin
+        # closes a blockquote here and nothing there. Names stay ASCII; quoted values may be anything.
+        self.ascii_names = all(re.sub(r'"[^"]*"|\'[^\']*\'', '', tag).isascii()
+                               for tag in re.findall(r'</?[A-Za-z][^>]*>?', html))
+        if not self.ascii_names:
+            self.well_formed = False
         self.feed(html)
+        # A tag left unfinished at the end is text to this parser and an element to a browser.
+        self.unfinished = '<' in self.rawdata
+        if self.unfinished:
+            self.well_formed = False
         self.close()
+        if len(self.stack) != 1:
+            self.well_formed = False
 
     def start(self, kind, tag, attrs):
         # Attribute names and all non-translatable values must remain identical.
-        normalized = [(k, None if k in ('alt', 'title') else v) for k, v in attrs]
-        self.events.append((kind, tag, sorted(normalized, key=lambda item: item[0])))
+        normalized = sorted(((k, None if k in ('alt', 'title') else v) for k, v in attrs), key=lambda item: item[0])
+        self.events.append((kind, tag, normalized))
         self.references.extend((k, v) for k, v in attrs if k in ('href', 'src'))
+        node = [tag, normalized, []]
+        self.stack[-1][2].append(node)
+        return node
 
     def handle_starttag(self, tag, attrs):
-        self.start('start', tag, attrs)
+        node = self.start('start', tag, attrs)
+        if tag not in self.VOID:
+            self.stack.append(node)
         if tag == 'p':
             self.paragraphs.append('')
             self.in_paragraph = True
-        if tag in ('script', 'style', 'code', 'pre'):
+        if tag in self.PROTECTED:
             self.protected_depth += 1
 
     def handle_startendtag(self, tag, attrs):
         self.start('empty', tag, attrs)
+        if tag not in self.VOID:
+            self.well_formed = False
 
     def handle_endtag(self, tag):
         self.events.append(('end', tag))
+        if tag in self.VOID or len(self.stack) == 1 or self.stack[-1][0] != tag:
+            self.well_formed = False
+        else:
+            self.stack.pop()
         if tag == 'p':
             self.in_paragraph = False
-        if tag in ('script', 'style', 'code', 'pre'):
+        if tag in self.PROTECTED:
             self.protected_depth -= 1
 
     def handle_data(self, data):
@@ -75,18 +119,58 @@ class Structure(HTMLParser):
             self.paragraphs[-1] += data
         if self.protected_depth:
             self.protected.append(data)
+            self.stack[-1][2].append(('#text', data))
 
     def handle_comment(self, data):
         self.events.append(('comment', data))
+        self.stack[-1][2].append(('#comment', data))
 
     def handle_decl(self, decl):
         self.events.append(('decl', decl))
+        self.stack[-1][2].append(('#decl', decl))
 
     def handle_pi(self, data):
         self.events.append(('pi', data))
+        self.stack[-1][2].append(('#pi', data))
 
     def unknown_decl(self, data):
         self.events.append(('unknown', data))
+        self.stack[-1][2].append(('#unknown', data))
+
+    @classmethod
+    def inline_only(cls, node):
+        """Sentence-level markup: an inline element with nothing but inline elements and text inside, so moving it moves no block."""
+        return isinstance(node, list) and node[0] in cls.INLINE and all(
+            isinstance(child, tuple) or cls.inline_only(child) for child in node[2])
+
+    @classmethod
+    def canonical(cls, node, protected=False):
+        if isinstance(node, tuple):
+            return repr(node)
+        tag, attrs, children = node
+        protected = protected or tag in cls.PROTECTED
+        out, run = [], []
+        for child in children:
+            form = cls.canonical(child, protected)
+            # Inside code nothing moves; elsewhere an inline element may change places with its inline neighbours.
+            if not protected and cls.inline_only(child):
+                run.append(form)
+                continue
+            if run:
+                out.append(('#run', tuple(sorted(run))))
+                run = []
+            out.append(form)
+        if run:
+            out.append(('#run', tuple(sorted(run))))
+        return repr((tag, attrs, tuple(out)))
+
+    def keeps(self, source):
+        """Whether this translation keeps source's markup. Malformed source keeps the exact old comparison."""
+        if self.unfinished or not self.ascii_names:
+            return False
+        if not source.well_formed:
+            return self.events == source.events and self.references == source.references and self.protected == source.protected
+        return self.well_formed and self.canonical(self.root) == self.canonical(source.root)
 
 
 def validate_translation(post, value):
@@ -95,12 +179,12 @@ def validate_translation(post, value):
     if any(not isinstance(value[k], str) or not value[k].strip() for k in ('title', 'html')):
         raise TranslationError('empty title or article')
     source, translated = Structure(post['html']), Structure(value['html'])
-    if source.events != translated.events:
-        raise TranslationError('HTML structure or attributes changed')
-    if source.references != translated.references:
-        raise TranslationError('ordered links or images changed')
-    if source.protected != translated.protected:
+    if Counter(map(repr, source.references)) != Counter(map(repr, translated.references)):
+        raise TranslationError('links or images changed')
+    if Counter(source.protected) != Counter(translated.protected):
         raise TranslationError('code or executable content changed')
+    if not translated.keeps(source):
+        raise TranslationError('HTML structure or attributes changed')
     if not ''.join(translated.text).strip():
         raise TranslationError('article contains no text')
     # Matching events preserves the exact paragraph count. Also reject empty prose
