@@ -66,7 +66,7 @@ class Structure(HTMLParser):
         # Python lowercases tag names by Unicode rules and browsers only ASCII, so the K of Kelvin
         # closes a blockquote here and nothing there. Names stay ASCII; quoted values may be anything.
         self.ascii_names = all(re.sub(r'"[^"]*"|\'[^\']*\'', '', tag).isascii()
-                               for tag in re.findall(r'</?[A-Za-z][^>]*>?', html))
+                               for tag in re.findall(r'</?[A-Za-z](?:"[^"]*"|\'[^\']*\'|[^>"\'])*>?', html))
         if not self.ascii_names:
             self.well_formed = False
         self.feed(html)

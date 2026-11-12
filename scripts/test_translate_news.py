@@ -53,6 +53,9 @@ class ValidationTests(unittest.TestCase):
         post = {'title': 'T', 'html': '<p>Less &lt; more <img src="/a.png" alt="Picture" /></p>'}
         value = {'title': 'T', 'html': '<p>少ない &lt; 多い <img src="/a.png" alt="写真" /></p>'}
         self.assertEqual(worker.validate_translation(post, value), value)
+        post = {'title': 'T', 'html': '<p title="Text">Hello</p>'}
+        value = {'title': 'T', 'html': '<p title="写真 > 説明">こんにちは</p>'}
+        self.assertEqual(worker.validate_translation(post, value), value)
 
     def test_reordering_never_reaches_inside_code_or_across_parents(self):
         cases = [
