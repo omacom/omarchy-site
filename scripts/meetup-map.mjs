@@ -14,8 +14,8 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-import { geoEqualEarth, geoPath } from 'd3-geo'
-import { feature } from 'topojson-client'
+import { geoContains, geoEqualEarth, geoPath } from 'd3-geo'
+import { feature, mergeArcs } from 'topojson-client'
 
 const require = createRequire(import.meta.url)
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -33,6 +33,25 @@ const meetups = JSON.parse(
 // Natural Earth names countries by their numeric code; the site by their
 // two-letter one.
 const alpha2 = new Map(countries.map((c) => [c.ccn3, c.cca2]))
+
+// Natural Earth draws borders as they are held on the ground, which puts
+// Crimea inside Russia's shape. The site draws them as the UN and ISO 3166
+// (UA-43) recognise them, so the peninsula moves to Ukraine's shape, merged
+// so no border is drawn across the isthmus.
+const SIMFEROPOL = [34.1, 44.95]
+const shapeOf = (code) =>
+  atlas.objects.countries.geometries.find((g) => g.id === code)
+const russia = shapeOf('643')
+const ukraine = shapeOf('804')
+const crimea = russia.arcs.findIndex((arcs) =>
+  geoContains(feature(atlas, { type: 'Polygon', arcs }), SIMFEROPOL),
+)
+if (crimea === -1) throw new Error('Crimea not found in Russia’s shape')
+const [peninsula] = russia.arcs.splice(crimea, 1)
+const whole = mergeArcs(atlas, [ukraine, { type: 'Polygon', arcs: peninsula }])
+ukraine.type = whole.type
+ukraine.arcs = whole.arcs
+
 const land = feature(atlas, atlas.objects.countries)
 land.features = land.features.filter((f) => f.id !== '010')
 
