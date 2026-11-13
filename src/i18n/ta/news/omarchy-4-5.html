@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (Quattro RS என்றும் அழைக்கப்படுகிறது!) <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>-விற்குப் பிறகு வந்த முதல் பெரிய அம்ச வெளியீடு, இது மிகப் பெரியது: வெறும் பன்னிரண்டு வாரங்களில் 180-க்கும் மேற்பட்ட பங்களிப்பாளர்களிடமிருந்து 740-க்கும் மேற்பட்ட pull request-கள் இணைக்கப்பட்டுள்ளன. இது இப்போது tiling இயல்புநிலைக்கு அருகில் ஒரு பாரம்பரிய டெஸ்க்டாப் பயன்முறையை வழங்குகிறது. இதை M1/M2/M3/Neo MacBook-களில் நேட்டிவ் ஆக நிறுவலாம். மேலும் இது 50 மொழிகள் பேசுகிறது. இன்னும் எண்ணற்ற பிற அம்சங்கள், சரிசெய்தல்கள் மற்றும் மேம்பாடுகள் உள்ளன. ஏற்கனவே Omarchy-இல் இருக்கிறீர்களா? <em>Update &gt; Omarchy</em> ஐ இயக்குங்கள். புதிய இயந்திரமா? <a href="/#install">இங்கே பெறுங்கள்</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Dock உடன் மிதக்கும் பணியிடங்கள்</h2>
+
+<p><code>Super + L</code> இப்போது எந்தப் பணியிடத்தையும் tiling, scrolling மற்றும் floating ஆகியவற்றுக்கு இடையே சுழற்றுகிறது. மிதக்கும் பணியிடத்தில், ஒவ்வொரு சாளரத்திற்கும் உங்கள் தீமின் வண்ணங்களில் ஒரு தலைப்புப் பட்டை கிடைக்கிறது, மேலும் ஒரு dock உங்கள் pin செய்யப்பட்ட செயலிகள், இயங்கிக் கொண்டிருக்கும் அனைத்தும், நிறுவப்பட்ட ஒவ்வொரு செயலியின் கட்டத்தையும் காட்டுகிறது. மறுவரிசைப்படுத்த அல்லது pin செய்ய இழுக்கவும், மேலும் பலவற்றுக்கு வலது கிளிக் செய்யவும், <code>Super + M</code> ஒரு சாளரத்தை dock-க்குள் சிறிதாக்குகிறது.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>macOS அல்லது Windows-இலிருந்து வரும், இன்னும் tiling-இல் முழுமையாக இறங்கத் தயாராக இல்லாத எவருக்கும் இது ஒரு அருமையான தொடக்க வழி. அல்லது சாளரங்கள் பரந்து விரியக்கூடிய ஒரு பணியிடம் மட்டும் வேண்டும் என்று நினைப்பவர்களுக்கும். ஒவ்வொரு பணியிடத்திற்கும் கலந்து பொருத்துங்கள், ஒவ்வொன்றும் எந்த அமைப்பைப் பயன்படுத்துகிறது என்பதைப் பட்டை காட்டுகிறது.</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Silicon-இல் Omarchy</h2>
+
+<p>எங்கள் அற்புதமான <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> அணி நேட்டிவ் Mac நிறுவியை வெளியிட்டுள்ளது. macOS-இல் <a href="https://github.com/omacom/omarchy-mac-installer/releases">ஒரு செயலியைப் பதிவிறக்குங்கள்</a>, அது உங்கள் M1, M2, M3 அல்லது Neo MacBook-இல் Omarchy-ஐ அதற்கு அருகிலேயே வைக்கும். USB stick இல்லை, terminal மந்திரங்கள் இல்லை. Homebrew விருப்பமா? அது ஒரே ஒரு வரி:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac நிறுவி" /></p>
+
+<p>செப்டம்பரில் நாங்கள் செய்ய நினைத்தது இதுதான்: Asahi தொடங்கியதை முடிப்பது. இரண்டு மாதங்களுக்குப் பிறகு, நீங்கள் அதைப் பதிவிறக்கம் செய்தால் போதும். அணியில் உள்ள அனைவரின் அற்புதமான பணி.</p>
+
+<p>அவர்கள் அதோடு நிற்கவில்லை. M4, M5 மற்றும் M6 ஆகியவற்றில் இப்போதே பணி நடந்து கொண்டிருக்கிறது, எனவே Omarchy ஒவ்வொரு Apple Silicon Mac-இலும் இயங்குவதற்கு வெகு காலம் ஆகாது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="M2 Max, M3 Air, Neo, M4 Pro மற்றும் M5 Air-இல் Omarchy" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">NVIDIA DGX Spark + N1X-க்கான ARM ஆதரவு (விரைவில் Snapdragon)</h2>
+
+<p>Omarchy 4.5 அதன் முதல் ARM ISO-வை வெளியிடுகிறது, அதனுடன் NVIDIA-வின் ARM இயந்திரங்களுக்கான ஆரம்ப ஆதரவு வருகிறது: DGX Spark டெஸ்க்டாப் மற்றும் <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> மற்றும் <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a> போன்ற N1X-இல் கட்டப்பட்ட மடிக்கணினிகள். விரைவில் Snapdragon ARM இயந்திரங்களின் முழு வரிசைக்கும் ஆதரவு கிடைக்கும். இது இன்னும் ஆரம்ப நாட்கள்தான், எனவே சில கரடுமுரடான இடங்களை எதிர்பாருங்கள், உடையும் எதையும் <a href="https://github.com/omacom/omarchy/issues">GitHub</a>-இல் புகாரளியுங்கள்.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 மொழிகள் மற்றும் 5 உள்ளீட்டு முறைகள்</h2>
+
+<p>Omarchy இப்போது 50 மொழிகள் பேசுகிறது. <em>Setup &gt; Language</em> இன் கீழ் ஒன்றைத் தேர்ந்தெடுங்கள் (அல்லது <code>omarchy language &lt;code&gt;</code> ஐ இயக்குங்கள்), மெனு, டெஸ்க்டாப் மற்றும் Omarchy-இன் அறிவிப்புகள் உடனடியாக மாறும். உங்கள் அடுத்த உள்நுழைவில் கணினி மொழி அமைப்பும் பின்தொடரும்.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="மொழிகளை மாற்றுதல்" /></p>
+
+<p>ஒரு மொழியைப் பேசுவது அதில் பாதிதான். அதைத் தட்டச்சு செய்யவும் வேண்டும். எனவே Omarchy இப்போது ஜப்பானியம் (Mozc), கொரியம் (Hangul), எளிமைப்படுத்தப்பட்ட சீனம் (Pinyin), தைவான் (Zhuyin) மற்றும் ஹாங்காங் (Cangjie) ஆகியவற்றுக்கு முறையான உள்ளீட்டு முறைகளை, நிறுவியிலிருந்தே அல்லது பின்னர் <em>Setup &gt; Keyboard</em> இன் கீழ் அமைக்கிறது. ஒவ்வொன்றும் அதன் எழுத்து வடிவங்களுக்கு சரியான எழுத்துருக்களுடன் வருகிறது, வேட்பாளர் சாளரம் உங்கள் தீமைப் பின்பற்றுகிறது, <code>Super + I</code> உங்கள் உள்ளீட்டு மொழிகளுக்கு இடையே மாற்றுகிறது. நீங்கள் Dvorak, Colemak அல்லது AZERTY-இல் லத்தீன் தட்டச்சு செய்தாலும், Windows மற்றும் macOS-இல் போலவே, Hangul, Zhuyin மற்றும் Cangjie அவற்றின் விசைகளை நிலையான இடங்களில் வைத்திருக்கும். Shift-ஐ மட்டும் தட்டுவது, Sogou, Microsoft Pinyin மற்றும் macOS செயல்படுவது போல, ஒரு உள்ளீட்டு முறையிலிருந்து லத்தீன் எழுத்துக்களுக்கு வெளியேறி மீண்டும் உள்ளே வரும்.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Captive Wi-Fi போர்ட்டல்களில் உள்நுழையுங்கள்</h2>
+
+<p>ஹோட்டல், விமான நிலையம் மற்றும் காபி கடை Wi-Fi இறுதியாக வேலை செய்கிறது. இணையத்தில் சேர அனுமதிக்கும் முன் ஒரு நெட்வொர்க் உள்நுழையவோ அதன் விதிமுறைகளை ஏற்கவோ விரும்பும்போது Omarchy இப்போது கவனிக்கிறது. நெட்வொர்க் ஐகான் உங்களை எச்சரிக்கிறது, நெட்வொர்க் பேனல் உங்களை நேரடியாக உள்நுழைவுப் பக்கத்திற்கு அழைத்துச் செல்லும் ஒரு பெரிய Open Captive Portal பொத்தானைக் காட்டுகிறது. நீங்கள் உள்ளே சென்றதும், எல்லாம் தானாகவே இயல்பு நிலைக்குத் திரும்பும்.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="நெட்வொர்க் பேனலில் இருந்து captive போர்ட்டலில் உள்நுழைதல்" width="380" /></p>
+
+<h2 id="five-new-default-apps">ஐந்து புதிய இயல்புநிலை செயலிகள்</h2>
+
+<p><strong>Hype</strong> ஒரே ஒரு Markdown கோப்பிலிருந்து விளக்கக்காட்சிகளை உருவாக்குகிறது, மூலத்திற்கு அருகில் ஒரு காட்சி ஸ்லைடு எடிட்டருடன், PDF அல்லது PowerPoint-க்கு ஏற்றுமதி செய்கிறது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> காகித வேலைகளுக்கு Xournal++-ஐ மாற்றுகிறது: ஒரு PDF-ஐத் திறந்து, உங்கள் சேமித்த கையொப்பம், உரை மற்றும் தேதிகளை வைத்து, கையொப்பமிட்ட நகலைச் சேமியுங்கள்.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> உங்கள் வட்டை நிரப்புவதை வகையால் வண்ணமிட்ட treemap ஆக வரைகிறது, மீண்டும் உருவாக்க பாதுகாப்பான தற்காலிக சேமிப்புகளைச் சுட்டிக்காட்டுகிறது, நீக்க வேண்டியதைக் குறிக்க உங்களை அனுமதிக்கிறது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> உங்கள் டெஸ்க்டாப்புக்கு ஏற்ற தீமுடன், ஒரே விசையால் உங்கள் கேமராவைப் பதிவு செய்கிறது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> SSH வழியாக உங்களுக்கு ஒரு தொலைநிலை டெஸ்க்டாப்பைத் தருகிறது. மற்றொரு Omarchy இயந்திரத்துடன் இணைந்து அதன் முழு டெஸ்க்டாப்பையும் உங்கள் சாளரத்திலிருந்து இயக்குங்கள், ஒவ்வொரு இயந்திரத்திற்கும் ஒரு தாவலுடன். அது SSH-இல் செல்வதால், கூடுதலாக அமைக்கவோ வெளிப்படுத்தவோ எதுவும் இல்லை. கட்டுப்படுத்தப்படும் இயந்திரம் பட்டையில் ஒரு தொலைநிலை அமர்வு குறிகாட்டியைக் காட்டுகிறது, எனவே யாராவது அதில் இருக்கும்போது எப்போதும் தெளிவாகத் தெரியும்.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>மேலும் <strong>Elsewhen</strong> உள்ளது, பட்டையில் கடிகாரத்திற்கு அருகிலேயே வாழும் ஒரு உலகக் கடிகாரம். நீங்கள் இருக்கும் இடத்தை அமைக்க உலக வரைபடத்தில் ஒரு நகரத்தைத் தட்டுங்கள், உண்மையான இடங்களைத் தேடுங்கள், ஒவ்வொரு நகரத்திலும் வாழும் மக்களின் பெயர்களை இடுங்கள், எனவே அழைக்க ஏற்ற நேரமா என்பது உங்களுக்கு எப்போதும் தெரியும். <code>t</code> மூலம் 12 மற்றும் 24 மணிநேரத்திற்கு இடையேயும், <code>Alt + T</code> மூலம் °F மற்றும் °C-க்கு இடையேயும் மாறுங்கள், <code>Super + Ctrl + Alt + E</code> மூலம் எப்போது வேண்டுமானாலும் அதை வரவழையுங்கள்.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>பதிவு செய்ய Monologue மற்றும் வெட்ட Omacut இருப்பதால், புதிய நிறுவல்கள் இனி OBS Studio மற்றும் Kdenlive உடன் வராது. Lazydocker-ம் புதிய நிறுவல்களிலிருந்து நீங்கிவிட்டது, இருப்பினும் Docker மற்றும் Docker Compose இன்னும் சேர்க்கப்பட்டுள்ளன. அவற்றில் ஏதேனும் ஏற்கனவே உள்ள இயந்திரங்கள் அவற்றை வைத்திருக்கும்.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Office-இல் வாழும் மக்களுடன் வேலை செய்ய வேண்டுமா? <em>Install &gt; Service &gt; Microsoft</em> இப்போது Outlook, Word, Excel, PowerPoint, Teams மற்றும் OneDrive ஆகியவற்றை வலைச் செயலிகளாக அமைக்கிறது. ஒவ்வொன்றும் அதன் சொந்த சாளரம் மற்றும் துவக்கி உள்ளீட்டைப் பெறுகிறது, எனவே அவை மற்ற எல்லாவற்றிற்கும் அருகில் வீட்டில் இருப்பது போல உணரும். வேலையில் Omarchy-க்கு மாறாமல் இருக்க இனி சாக்குகள் இல்லை!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchy-இல் Excel, Word, Teams மற்றும் PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">பேச்சை எழுத்தாக்க Superwhisper</h2>
+
+<p>Superwhisper இப்போது Omarchy-இன் இயல்புநிலை பேச்சு-எழுத்து இயந்திரம், அது நேரடியாக அமைக்கப்பட்டுள்ளது. பேசத் தொடங்க <code>Alt + Space</code> ஐத் தட்டுங்கள், நிறுத்த மீண்டும் தட்டுங்கள், அல்லது push-to-talk-க்கு <code>Right Alt</code> ஐ அழுத்திப் பிடியுங்கள். இது நம்பமுடியாத அளவு வேகமாகவும் மிகத் துல்லியமாகவும் உள்ளது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisper மூலம் பேசி எழுதுதல்" /></p>
+
+<p>இது மேகத்தில் தொடங்குகிறது, எனவே நீங்கள் நிறுவிய தருணமே வேலை செய்கிறது, முதல் 10,000 சொற்கள் இலவசம். ஆனால் நீங்கள் முற்றிலும் இலவசமாகவும், ஒரு சொல்லைக் கூட யாருக்கும் அனுப்பாமல் முழுமையாக உள்ளூரில் இயங்கும் பதிவிறக்கக்கூடிய மாதிரிக்கு மாறலாம். மற்றொரு உள்ளூர் மாதிரியை விரும்பினால், Voxtype இன்னும் மாற்றாக வழங்கப்படுகிறது.</p>
+
+<h2 id="install-in-less-than-ten-seconds">பத்து விநாடிகளுக்குள் நிறுவுங்கள்</h2>
+
+<p>Omarchy முன்பு சுமார் 940 தொகுப்புகளை ஒவ்வொன்றாக நிறுவியது. புதிய F1 நிறுவி அதற்குப் பதிலாக முன்கூட்டியே கட்டப்பட்ட root படத்தைப் பிரித்து, இந்த இயந்திரத்தின் தொகுப்புகளை மட்டும் மேலே சேர்க்கிறது. அது எந்த இயந்திரத்திலும் நிறுவல் நேரத்தை ஏறக்குறைய பாதியாகக் குறைக்கிறது.</p>
+
+<p>வேகமான வன்பொருளில், இது அபத்தமானது. AMD-ஐச் சேர்ந்த <a href="https://x.com/AnushElangovan">Anush Elangovan</a> தனது AMD மடிக்கணினியில் முழு Omarchy நிறுவலை <strong>7 விநாடிகளில்</strong> செய்து உலக சாதனை படைத்தார். <a href="https://x.com/dhh/status/2117222836620202375">ஏழு விநாடிகள்!</a> ஐந்து நிமிடங்கள் ஒரு லட்சிய இலக்காகத் தோன்றிய காலம் எனக்கு நினைவிருக்கிறது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="0m 7s-இல் Omarchy நிறுவப்பட்டது" /></p>
+
+<h2 id="faster-everywhere-else">மற்ற எல்லா இடங்களிலும் வேகமாக</h2>
+
+<p>இது நிறுவி மட்டுமல்ல. தொடக்கம் இனி binfmt பதிவில் தடுமாறாது. தீம் தேர்வி கால் விநாடிக்குப் பிறகு அல்லாமல் உடனடியாகத் திறக்கிறது. மெனுக்கள் மற்றும் பேனல்கள் Hyprland குறுக்குவழிகளிலிருந்து நேரடியாகத் திறக்கின்றன, முதலில் ஒரு செயல்முறையைத் தொடங்க எடுத்த 60 ms-ஐத் தவிர்க்கின்றன. Omarchy மெனுவின் மிக மெதுவான சோதனைகள் 200 ms-இலிருந்து 16 ms ஆக மாறின, ஒரு புதிய terminal அதன் prompt-ஐ 30 ms முன்னதாகவே காட்டுகிறது, முழு டெஸ்க்டாப்பும் இப்போது அவற்றுக்காக வாக்களிப்பதற்குப் பதிலாக மாற்றங்களுக்கு எதிர்வினையாற்றுகிறது. வெளியேறுதல், மறுதொடக்கம் மற்றும் முடக்குதல் கூட உங்கள் செயலிகள் மூடி முடிந்த தருணமே நடக்கிறது.</p>
+
+<h2 id="agent-upgrades">முகவர் மேம்பாடுகள்</h2>
+
+<p>Omarchy என்பது முகவர்களுடன் இயங்கும் OS, 4.5 முகவர்களுடன் வேலை செய்வதற்கான ஒரு பெரிய மேம்பாட்டுச் சுற்றைக் கொண்டு வருகிறது. முகவர்கள் பேனல் இப்போது 6-இலிருந்து உயர்ந்து 23 முகவர்கள் மற்றும் வழங்குநர்களைக் கண்காணிக்கிறது, அவற்றில் Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter மற்றும் Ollama உள்ளன. ஒவ்வொரு வரம்பும் அது மீட்டமைக்கப்படும் வரையிலான நேரத்துடன் அதன் சொந்த அளவீட்டைப் பெறுகிறது, எனவே உங்களிடம் எவ்வளவு வழி மீதமுள்ளது என்பதை நீங்கள் சரியாகப் பார்க்கலாம். Grok இப்போது Claude மற்றும் Codex உடன் ஒரு முழு வழங்குநராக உள்ளது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="பல Claude மற்றும் Codex சந்தாக்களுடன் முகவர்கள் பேனல்" width="380" /></p>
+
+<p>உங்கள் முகவர் எப்போதும் ஒரு விசை அழுத்தத்தில் உள்ளார். <code>Super + ~</code> மங்கலான டெஸ்க்டாப்பின் மீது Quake-பாணி கன்சோலைக் கீழே இறக்குகிறது, நீங்கள் அதை முதல் முறையாகத் திறக்கும்போது, அது உங்கள் இயல்புநிலை முகவரைத் தொடங்குகிறது. அதை மறைக்க மீண்டும் அழுத்துங்கள், உங்கள் அமர்வு நீங்கள் விட்ட இடத்திலேயே இருக்கும்.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="மங்கலான டெஸ்க்டாப்பின் மீது ஒரு முகவரை இயக்கும் Quake-பாணி கன்சோல்" /></p>
+
+<p>நீங்கள் ஒன்றுக்கு மேற்பட்ட சந்தாக்களைக் கையாண்டால், இப்போது பல Claude, Codex மற்றும் Grok உள்நுழைவுகளை ஒரே இயந்திரத்தில் வைத்து, <code>omarchy agent account</code> ஐப் பயன்படுத்தி புதிய அமர்வுகள் எதனுடன் தொடங்க வேண்டும் என்பதைத் தேர்ந்தெடுக்கலாம். வரலாறு, அமைப்புகள் மற்றும் திறன்கள் அவற்றுக்கு இடையே பகிரப்படுகின்றன, எனவே மாறிய பிறகு <code>claude --continue</code> நீங்கள் விட்ட இடத்திலிருந்தே தொடரும். ஒரு வரம்புக்கு அருகில், Omarchy ஒரே கிளிக்கில் மாற்றத்தை வழங்கலாம் அல்லது புதிய அமர்வுகளை அதிக இடமுள்ள கணக்கிற்குத் தானாகவே நகர்த்தலாம். மற்றொரு இயந்திரத்தை அமைக்கும்போது, <code>omarchy agent account copy</code> உங்கள் எல்லா உள்நுழைவுகளையும் SSH வழியாகக் கொண்டு வருகிறது, எனவே நீங்கள் எல்லாவற்றிலும் மீண்டும் உள்நுழைய வேண்டியதில்லை.</p>
+
+<p>Kimi மற்றும் Ori, OpenRouter-இன் முகவர் கட்டமைப்பு, <em>Setup &gt; Defaults &gt; Agent</em> இன் கீழ் உள்ள தேர்வுகளில் சேர்கின்றன, Google-இன் Antigravity வழக்கற்றுப்போன Gemini CLI-ஐ மாற்றுகிறது (<code>gemini</code> இன்னும் மாற்றுப்பெயராக வேலை செய்கிறது). terminal-ஐ விட சாளரத்தை விரும்புகிறீர்களா? Claude மற்றும் Amp டெஸ்க்டாப் செயலிகள் இப்போது <em>Install &gt; AI</em> இன் கீழ் ஒரு கிளிக்கில் உள்ளன.</p>
+
+<h2 id="notifications-rebuilt">அறிவிப்புகள், மீண்டும் உருவாக்கப்பட்டவை</h2>
+
+<p>அறிவிப்புகள் இப்போது அனுப்புநரால் அடுக்கப்படுகின்றன, உங்கள் தீமைப் பின்பற்றுகின்றன, ஒரே மாதிரியான மறுபடிகளைச் சுருக்குகின்றன. செயல் பொத்தான்கள், சரிபார்ப்புக் குறியீடுகள் மற்றும் இணைப்புகள் அனைத்தும் அட்டையிலிருந்தே வேலை செய்கின்றன. <code>Super + Comma</code> மிகப் புதியதில் செயல்படுகிறது (நிராகரி, திற, அல்லது அதன் பொத்தானை அழுத்து), <code>Super + Ctrl + Comma</code> அவை அனைத்தையும் இயக்க விசைப்பலகையை உங்களிடம் தருகிறது. பட்டையில் உள்ள மணி Do Not Disturb-ஐ இயக்குகிறது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="புதிய அறிவிப்புகள்" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">வீடியோ பின்னணிகள் மற்றும் தீம் அறிமுகங்கள்</h2>
+
+<p>பின்னணிகள் இப்போது வீடியோக்களாக இருக்கலாம். ஒன்றை இடுங்கள், உங்கள் டெஸ்க்டாப் உருளும் அலைகள் அல்லது நீங்கள் விரும்பும் வேறு எதனுடனும் உயிர்பெறுகிறது, பூட்டுத் திரை அதிலிருந்து ஒரு நிலையான சட்டத்தைக் காட்டுகிறது. தீம்கள் இப்போது நுழைவை உருவாக்குகின்றன: நீங்கள் உள்நுழையும்போது அல்லது அதற்கு மாறும்போது ஒவ்வொன்றும் ஒரு குறுகிய, அமைதியான அறிமுகத்தை இயக்கலாம். (அமைதியாக வைத்திருக்க விரும்புகிறீர்களா? <em>Appearance &gt; Animations</em> இன் கீழ் அறிமுகங்களை அணைக்கவும்.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse இயல்புநிலை தீம்களில் சேர்கிறது</h2>
+
+<p>Jade Horse முழுவதும் மூடுபனி பச்சைகள், செதுக்கப்பட்ட ஜேட் பின்னணிகளுடன் முழு டெஸ்க்டாப்பையும் ஒரு சுருள் ஓவியம் போல தோற்றமளிக்கச் செய்கிறது. இது தொகுக்கப்பட்ட தீம்களில் Osaka Jade-ஐ மாற்றுகிறது, மற்ற புதிய இயல்புநிலை தீமாக Starship இதனுடன் சேர்கிறது. நீங்கள் Osaka Jade-இல் இருந்தால், உங்கள் நகலை வைத்திருப்பீர்கள், அதைப் புதிதாக நிறுவ விரும்பும் எவருக்கும் அது ஒரு <a href="https://github.com/omacom/omarchy-osaka-jade-theme">மூன்றாம் தரப்பு தீமாக</a> தொடர்ந்து வாழ்கிறது.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse தீம்" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff புதிய இயல்புநிலை பின்னணி</h2>
+
+<p>புதிய நிறுவல்கள் இப்போது உங்களை Liftoff உடன் வரவேற்கின்றன, Tokyo Night-க்கான புதிய இயல்புநிலை பின்னணியான ஒரு அழகான சூரிய அஸ்தமன ஏவுதல். இதை <a href="https://github.com/tcballard">Tom Ballard</a> உருவாக்கினார், அவர் முதலில் அதைத் தனது <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff தீமுக்காக</a> உருவாக்கினார். நன்றி, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom Ballard உருவாக்கிய Liftoff பின்னணி" /></p>
+
+<h2 id="boot-menu-now-quiet">Boot மெனு இப்போது அமைதியாக</h2>
+
+<p>Omarchy முன்பு ஒவ்வொரு தொடக்கத்திலும் சுமார் ஆறு விநாடிகள் boot மெனுவைக் காட்டியது, நீங்கள் முந்தைய snapshot-க்குத் திரும்ப வேண்டியிருக்கலாம் என்பதற்காக. ஆனால் கிட்டத்தட்ட யாரும் அப்படிச் செய்யவில்லை. எனவே இப்போது Limine ஒரே ஒரு விநாடி காத்திருந்து அமைதியாக boot செய்கிறது, பெரும்பாலான நேரங்களில் நீங்கள் மெனுவைப் பார்க்கவே மாட்டீர்கள்.</p>
+
+<p>உங்களுக்கு வேறு உள்ளீடு அல்லது snapshot தேவைப்படும்போது, இயந்திரம் தொடங்கும்போது எந்த விசையையும் (கீழ் அம்புக்குறி வேலை செய்யும்) தட்டிக் கொண்டே இருங்கள், அது மெனுவில் நிற்கும். மெனுவை நிரந்தரமாக நீண்ட நேரம் வைத்திருக்க விரும்பினால், <code>/boot/limine.conf</code>-இல் உங்கள் சொந்த <code>timeout:</code> ஐ அமையுங்கள் (<code>timeout: 5</code> போல). நீங்கள் அமைத்த timeout-ஐப் புதுப்பிப்புகள் தனியாக விட்டுவிடும்.</p>
+
+<h2 id="changed-hotkeys">மாற்றப்பட்ட ஹாட்கீகள்</h2>
+
+<p>சில குறுக்குவழிகள் மாறிவிட்டன:</p>
+
+<ul>
+  <li>கால்குலேட்டர்: <code>Super + Ctrl + Q</code> இப்போது <code>Super + Shift + Q</code> ஆகும்.</li>
+  <li>Activity: <code>Super + Ctrl + T</code> இப்போது <code>Super + Shift + T</code> ஆகும், <code>Super + Ctrl + T</code> தீம்களைத் திறக்கிறது.</li>
+  <li>Network: <code>Super + Ctrl + W</code> இப்போது <code>Super + Ctrl + N</code> ஆகும், <code>Super + Ctrl + W</code> பின்னணிகளைத் திறக்கிறது.</li>
+  <li>Nightlight-க்கு இனி குறுக்குவழி இல்லை (அது <code>Super + Ctrl + N</code> ஆக இருந்தது); அது <code>Trigger &gt; Toggle</code>-இல் உள்ளது.</li>
+  <li><code>Super + Alt + Space</code> Apps மெனுவிற்குப் பதிலாக dock-இலிருந்து Apps-ஐத் திறக்கிறது.</li>
+</ul>
+
+<p>அறிவிப்பு குறுக்குவழிகள் மாறிவிட்டன:</p>
+
+<ul>
+  <li><code>Super + Comma</code> மிகப் புதிய அட்டையில் செயல்படுகிறது (அதை நிராகரிக்கிறது, திறக்கிறது, அல்லது அதன் ஒரு பொத்தானை அழுத்துகிறது), அதை மட்டும் நிராகரிப்பதற்குப் பதிலாக.</li>
+  <li>கடைசி ஒன்றை நிராகரிப்பது <code>Super + Alt + Comma</code>-க்கு மாறியது, அது முன்பு அதைத் திறந்தது.</li>
+  <li>அமைதிப்படுத்துதல் <code>Super + Ctrl + Comma</code>-இலிருந்து <code>Super + Ctrl + Alt + Comma</code>-க்கு மாறியது; <code>Super + Ctrl + Comma</code> இப்போது உங்களுக்கு விசைப்பலகை கட்டுப்பாட்டைத் தருகிறது.</li>
+</ul>
+
+<p>சில விசைகள் வித்தியாசமாக வேலை செய்கின்றன:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> மற்றும் <code>Super</code> + scroll தற்போதைய மானிட்டரின் பணியிடங்களிலேயே இருக்கும், ஏனெனில் ஒவ்வொரு மானிட்டருக்கும் அதன் சொந்தப் பணியிடங்கள் உள்ளன.</li>
+  <li>ஒரு terminal-இல், <code>Super + C</code> மற்றும் <code>Super + V</code> ஆகியவை <code>Ctrl + Insert</code> மற்றும் <code>Shift + Insert</code>-க்குப் பதிலாக <code>Ctrl + Shift + C</code> மற்றும் <code>Ctrl + Shift + V</code>-ஐ அனுப்புகின்றன.</li>
+</ul>
+
+<p>உங்கள் சொந்த binding-களுடன் மோதக்கூடிய புதிய இயல்புநிலைகள்: <code>Super + Q</code> (சாளரத்தை மூடு, <code>Super + W</code> உடன்), <code>Super + A</code> (அனைத்தையும் தேர்ந்தெடு), <code>Super + M</code> (dock-க்குச் சிறிதாக்கு), <code>Super + ~</code> மற்றும் <code>Super + Shift + ~</code> (Quake கன்சோல்), <code>Super + Alt + L</code> (முந்தைய அமைப்பு), <code>Super + Shift + Ctrl + Arrows</code> (ஒரு சாளரத்தை மற்றொரு மானிட்டருக்கு நகர்த்து), <code>Super + Ctrl + Alt + C</code> (திரைப்பிடிப்பு), <code>Super + Ctrl + Alt + E</code> (உலகக் கடிகாரம்), <code>Super + Ctrl + Alt + F</code> (முழுத்திரை டெஸ்க்டாப்), மற்றும் push-to-talk பேச்சு-எழுத்துக்கு <code>Right Alt</code>-ஐ அழுத்திப் பிடித்தல்.</p>
+
+<h2 id="more-features">மேலும் அம்சங்கள்</h2>
+
+<ul>
+  <li>ஒவ்வொரு மானிட்டருக்கும் அதன் சொந்தப் பணியிடங்களைக் கொடுங்கள்: <code>Super + 1-0</code> நீங்கள் இருக்கும் மானிட்டரின் பணியிடங்களுக்குச் செல்கிறது, <code>Super + Arrows</code> மற்ற காட்சிகளுக்கும் அவற்றிலிருந்தும் நகர்கிறது <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a>-இல்</li>
+  <li>டெஸ்க்டாப் எப்படி இருக்கிறது என்பது பற்றிய அனைத்தையும் Style-ஐ மாற்றும் புதிய Appearance மெனுவில் சேகரியுங்கள்: தீம், பின்னணி, எழுத்துரு, பட்டை, சாளரங்கள், பிராண்டிங், dock, பணியிட அமைப்புகள், அனிமேஷன்கள் மற்றும் திறப்புத் திரை <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a>-இல்</li>
+  <li><em>Appearance &gt; Window Transparency</em> இன் கீழ் Opaque, Transparent அல்லது Glassy சாளரங்களைத் தேர்ந்தெடுங்கள், மேலும் ஒரு Glassy பட்டை பின்னணி <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a>-இல்</li>
+  <li><em>Appearance &gt; Window Corners</em> இன் கீழ் தீம், கூர்மையான அல்லது வட்டமான சாளர மூலைகளைத் தேர்ந்தெடுங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a>-இல்</li>
+  <li>அனிமேஷன் இல்லாத பயன்முறையைச் சேர்க்கவும், VM-களில் இயல்பாக இயக்கத்தில் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a>-இல்</li>
+  <li>செயலிகளை இயல்பாக ஒளிபுகாததாக ஆக்குங்கள், terminal-களை ஒளி ஊடுருவக்கூடியதாக வைத்திருங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a>-இல்</li>
+  <li>Install &gt; Service-இல் Slack-ஐச் சேர்க்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a>-இல்</li>
+  <li>Alt + Space ஒவ்வொரு backend-இலும் பேச்சு-எழுத்தை மாற்றச் செய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a>-இல்</li>
+  <li>திரைப்பிடிப்பு அறிவிப்புகளில் Open மற்றும் Edit பொத்தான்களையும், திரைப் பதிவுகள் மற்றும் yt-dlp பதிவிறக்கங்களில் Open மற்றும் Cut-ஐச் சேர்க்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a>-இல்</li>
+  <li>இயல்புநிலை kernel-ஐ மாற்ற ஒரு Update &gt; Kernel மெனுவைச் சேர்க்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a>-இல்</li>
+  <li>herdr இயந்திரங்களுக்கு தீம் ஒத்திசைவைச் சேர்க்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a>-இல்</li>
+  <li>Hyprland keybinding-களை மாற்ற o.rebind-ஐச் சேர்க்கவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a>-இல்</li>
+  <li>நிறுவியில் அல்லாமல் முதல் உள்நுழைவுக்குப் பிறகு உங்கள் git அடையாளத்தைக் கேளுங்கள், GitHub உள்நுழைவுடன் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a>-இல்</li>
+  <li>நிறுவல் ஊடகம் மொழி, விசைப்பலகை மற்றும் நேர மண்டலத்தை முன்கூட்டியே அமைக்க அனுமதிக்கவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a>-இல்</li>
+  <li>பட்டை விட்ஜெட்கள் tray-இன் drawer-இல் வாழ அனுமதிக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a>-இல்</li>
+  <li>ஒரு பட்டை விட்ஜெட்டைப் பட்டையிலிருந்து இழுத்து நீக்க அனுமதிக்கவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a>-இல்</li>
+  <li>பட்டையிலிருந்து பணியிடங்கள் வழியாக உருட்ட அனுமதிக்கவும் <a href="https://github.com/outfoxxed">@outfoxxed</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a>-இல்</li>
+  <li>தீம் தேர்வியிலிருந்து கூடுதல் தீம்களை நீக்க அனுமதிக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a>-இல்</li>
+  <li>hey, basecamp மற்றும் Cloudflare CLI-களை lazy-installed கருவிகளாகச் சேர்க்கவும் <a href="https://github.com/monorkin">@monorkin</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a>-இல்</li>
+  <li>SSH Agent-ஐ விருப்பச் சேவையாகச் சேர்க்கவும் <a href="https://github.com/carletex">@carletex</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a>-இல்</li>
+  <li>கடவுச்சொல் இல்லாத sudo எவ்வளவு நேரம் நீடிக்கும் என்பதைத் தேர்ந்தெடுக்க அனுமதிக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a>-இல்</li>
+  <li>அறிவிப்பு toast-களில் hover மூடும் பொத்தானைச் சேர்க்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a>-இல்</li>
+  <li>ஒரு நிரலின் செயலிழப்புக் கண்டறிதலிலிருந்து அதன் அறிவிப்புகளை அமைதிப்படுத்த அனுமதிக்கவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a>-இல்</li>
+  <li>omarchy-notification-send செயல் பொத்தான்களைச் சேர்க்க அனுமதிக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a>-இல்</li>
+  <li>நேரடி விநாடிகளுடன் ஒரு கடிகார வடிவத்தைச் சேர்க்கவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a>-இல்</li>
+  <li>Ctrl மற்றும் பிரகாச விசைகளால் விசைப்பலகை பின்னொளியைச் சரிசெய்யவும் <a href="https://github.com/ludagoo">@ludagoo</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a>-இல்</li>
+  <li>firmware-இலிருந்து OEM Windows தயாரிப்பு விசையை அச்சிடவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a>-இல்</li>
+  <li>அசல் vi-ஐ terminal எடிட்டர் தேர்வாகச் சேர்க்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a>-இல்</li>
+  <li>Ethereal-இல் Roadster Starlight பின்னணியைச் சேர்க்கவும் <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a>-இல்</li>
+</ul>
+
+<h2 id="security">பாதுகாப்பு</h2>
+
+<ul>
+  <li>Windows VM கடவுச்சொல்லை RDP client-இன் வாதங்களிலிருந்து வெளியே வைத்திருங்கள் <a href="https://github.com/dicemans">@dicemans</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a>-இல்</li>
+  <li>திரைப் பதிவு நிலையை உலகம் எழுதக்கூடிய /tmp-இலிருந்து வெளியே நகர்த்துங்கள் <a href="https://github.com/Chessing234">@Chessing234</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a>-இல்</li>
+  <li>இடைநிறுத்தத்திற்கு அப்பாலும் கடவுச்சொல் இல்லாத sudo காலாவதியைக் கடினப்படுத்துங்கள் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a>-இல்</li>
+  <li>புதுப்பிப்புத் தடுப்பான் சுத்திகரிப்பை அதை உருவாக்கிய செயல்முறையுடன் பிணைக்கவும் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a>-இல்</li>
+  <li>OCaml சுத்திகரிப்பு அங்கீகாரத்தைத் தனிமைப்படுத்துங்கள் <a href="https://github.com/ErikMelton">@ErikMelton</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a>-இல்</li>
+  <li>தொழிற்சாலை மீட்டமைப்பு உயர்வை தொகுக்கப்பட்ட கட்டளையில் பொருத்துங்கள் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a>-இல்</li>
+  <li>மீட்டமைப்பில் அழைக்கும் பயனருக்கான சேமிக்கப்பட்ட கைரேகை வார்ப்புருக்களை நீக்கவும் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a>-இல்</li>
+  <li>பாதைகளாக இருக்கும் hook மற்றும் நிலைப் பெயர்களை மறுக்கவும் <a href="https://github.com/Adolanium">@Adolanium</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a>-இல்</li>
+  <li>கைரேகை மற்றும் FIDO2 அமைப்பால் எழுதப்பட்ட polkit அடுக்கில் system-auth-க்கு ஒத்துப்போகவும் <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a>-இல்</li>
+  <li>கைரேகைகளை நீக்கும்போது reader-இன் சொந்த சேமிப்பிலிருந்தும் அவற்றை நீக்கவும் <a href="https://github.com/scottjones">@scottjones</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a>-இல்</li>
+  <li>விசை எதுவும் சேர்க்கப்படாதபோது SSH அமைப்பு கடவுச்சொல் உள்நுழைவுகளுடன் sshd இயங்க விடுவதைத் தடுக்கவும் <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a>-இல்</li>
+  <li>Voxtype மேம்படுத்தலின் போது மற்றொரு உள்ளூர் பயனர் தனது சொந்த நிரலை மாற்றுவதைத் தடுக்கவும் <a href="https://github.com/Vladkarok">@Vladkarok</a> ஆல் <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a>-இல்</li>
+  <li>தொழிற்சாலை மீட்டமைப்பு உங்கள் gum அமைப்புகளை sudo வழியாக அனுப்பும் விதத்தைக் கடினப்படுத்துங்கள் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a>-இல்</li>
+</ul>
+
+<h2 id="fixes">சரிசெய்தல்கள்</h2>
+
+<ul>
+  <li>மானிட்டர் துண்டிக்கப்படும்போது, முடக்கப்படும்போது அல்லது மூடியை மூடுவதால் அணைக்கப்படும்போது Hyprland செயலிழப்பதைச் சரிசெய்யவும் <a href="https://github.com/falkoro">@falkoro</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a>-இல்</li>
+  <li>kernel படத்தை அதன் root= அளவுரு இல்லாமல் விடக்கூடிய மேம்படுத்தல்களைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a>-இல்</li>
+  <li>தொழிற்சாலை மீட்டமைப்பு மற்ற கணினிகளின் boot உள்ளீடுகளை அழிப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a>-இல்</li>
+  <li>மற்றொரு Omarchy-க்கு அருகில் நிறுவுவது அந்த நிறுவலின் boot உள்ளீட்டை நீக்குவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a>-இல்</li>
+  <li>காலி இட நிறுவல்கள் ஒரு புதியதற்கு ஏற்கனவே உள்ள பகிர்வை எடுத்துக்கொள்வதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a>-இல்</li>
+  <li>குறுக்கிடப்பட்ட இயக்கக கடவுச்சொல் மாற்றத்தை மீண்டும் தொடங்குவது தவறான விசையை நீக்குவதைச் சரிசெய்யவும் <a href="https://github.com/scottjones">@scottjones</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a>-இல்</li>
+  <li>Omarchy புதுப்பிப்புக்கு ஒரு முறை sudo கடவுச்சொல்லைக் கேளுங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a>-இல்</li>
+  <li>ஒவ்வொரு கட்டளையிலும் மீண்டும் கேட்காமல் பத்து நிமிடங்களுக்கு ஒரு முறை sudo கடவுச்சொல்லைக் கேளுங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a>-இல்</li>
+  <li>AUR புதுப்பிப்புகள் மற்றும் boot சோதனையைப் புதுப்பிப்பின் ஒற்றை sudo prompt-ஆல் மூடவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a>-இல்</li>
+  <li>பரிவர்த்தனையின் நடுவில் வெளியேறுவதிலிருந்து தொகுப்பு புதுப்பிப்புகளைப் பாதுகாப்பாக வைத்திருங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a>-இல்</li>
+  <li>செயலிகள் மூடி முடிந்தவுடன் வெளியேறவும், மறுதொடக்கம் செய்யவும், முடக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a>-இல்</li>
+  <li>திரைப்பிடிப்புகளுக்கு Tensaku-வை Omasnap ஆல் மாற்றவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a>-இல்</li>
+  <li>பேனல்களைப் பட்டையிலிருந்து வளர்த்து அவற்றுக்கு இடையே மாற்றவும், பொத்தான்கள் மற்றும் பட்டை ஐகான்களில் அழுத்த பின்னூட்டத்துடன் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a>-இல்</li>
+  <li>அறிவிப்புகளைப் பட்டையின் கீழிருந்து உள்ளே சறுக்கி வந்த வழியே வெளியே சறுக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a>-இல்</li>
+  <li>Omarchy-இன் சொந்த முனையத்திற்கு எதிராக இணைப்பைச் சோதிக்கவும், captive போர்ட்டல்களில் உள்நுழைவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a>-இல்</li>
+  <li>edge-இலிருந்து stable அல்லது RC-க்கு மாறுவது இயந்திரத்தைப் பழைய build-இல் விடுவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a>-இல்</li>
+  <li>shell பதிலளிக்க மெதுவாக இருக்கும்போது 4.5-க்கான புதுப்பிப்பு நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/AnPod">@AnPod</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a>-இல்</li>
+  <li>டெஸ்க்டாப் அமர்வுக்கு வெளியே தொடங்கப்படும்போது புதுப்பிப்புகள் அமைதியாகத் தோல்வியடைவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a>-இல்</li>
+  <li>தோல்வியடைந்த mise கருவி பதிவிறக்கம் கணினி புதுப்பிப்பின் மீதியை நிறுத்துவதைச் சரிசெய்யவும் <a href="https://github.com/sanjyay">@sanjyay</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a>-இல்</li>
+  <li>omarchy-nvim நிறுவப்படாதபோது புதுப்பிப்புகள் தோல்வியடைவதைச் சரிசெய்யவும் <a href="https://github.com/imzihuailin">@imzihuailin</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a>-இல்</li>
+  <li>dual-boot நிறுவல்கள் EFI பகிர்வை ஏற்றத் தோல்வியடைவதைச் சரிசெய்யவும் <a href="https://github.com/Damian626">@Damian626</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a>-இல்</li>
+  <li>firmware புதிய boot உள்ளீட்டை ஏற்காதபோது நிறுவல்கள் நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/ryanio">@ryanio</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a>-இல்</li>
+  <li>பழைய RAID உறுப்பினர் அல்லது volume group உள்ள வட்டுகளில் நிறுவல்கள் நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a>-இல்</li>
+  <li>ஒவ்வொரு USB சாதனம் மற்றும் boot பணிக்காகவும் காத்திருக்காமல் நிறுவியை விரைவில் தொடங்கவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a>-இல்</li>
+  <li>புதிய நிறுவல்களில் 4096-byte செக்டர்களுடன் வட்டு குறியாக்கத்தை வேகப்படுத்தவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a>-இல்</li>
+  <li>உள் வட்டுகளை முதலில் பட்டியலிடவும், நிறுவல் திரைகளைப் பாதுகாப்பான தேர்வில் திறக்கவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a>-இல்</li>
+  <li>நிறுவியில் Full disk install-ஐ முதலில் பட்டியலிடவும், வட்டுத் திரைகளில் Esc மூலம் திரும்பவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>-இல்</li>
+  <li>ஒரு மானிட்டரை அளவிடுவது மற்ற ஒவ்வொரு மானிட்டரின் அளவையும் மாற்றுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a>-இல்</li>
+  <li>மானிட்டர்கள் வெவ்வேறு அளவுகளைப் பயன்படுத்தும்போது XWayland செயலிகள் மிகப் பெரிதாக வருவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a>-இல்</li>
+  <li>ஒரு சாளரம் முழுத்திரைக்குச் செல்லும்போது HDR காட்சிகள் வெளிறிய HDR படத்திற்கு மாறுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a>-இல்</li>
+  <li>பின்னமாக அளவிடப்பட்ட காட்சிகளில் மங்கலான மெனுக்கள் மற்றும் தேர்விகளைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a>-இல்</li>
+  <li>வெளிப்புறக் காட்சியைத் துண்டித்த பிறகு மடிக்கணினி காட்சி அணைந்தே இருப்பதைச் சரிசெய்யவும் <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a>-இல்</li>
+  <li>ஒரு காட்சியை மீண்டும் இயக்குவது அதன் நிலை, அளவு மற்றும் பயன்முறையை மீட்டமைப்பதைச் சரிசெய்யவும் <a href="https://github.com/zihaomu">@zihaomu</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a>-இல்</li>
+  <li>ஒரு மானிட்டர் துண்டிக்கப்பட்ட பிறகு மெனுக்கள் மற்றும் தேர்விகள் மீண்டும் திறக்காததைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a>-இல்</li>
+  <li>ஒரு மானிட்டர் துண்டிக்கப்பட்ட பிறகு ஒவ்வொரு மானிட்டருக்குமான பணியிடங்கள் நகர்வதைச் சரிசெய்யவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a>-இல்</li>
+  <li>ஆடியோ பேனல் திறந்திருக்கும்போது ஒரு ஆடியோ சாதனம் துண்டிக்கப்படும்போது shell செயலிழப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a>-இல்</li>
+  <li>screensaver-க்குப் பிறகு முழுத்திரை சாளரங்கள் முழுத்திரையை இழப்பதைச் சரிசெய்யவும் <a href="https://github.com/MGross21">@MGross21</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a>-இல்</li>
+  <li>Hyprland மீண்டும் ஏற்றப்பட்ட பிறகு தொடக்கத்தில் கர்சர் மறைவதைச் சரிசெய்யவும் <a href="https://github.com/spencerbull">@spencerbull</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a>-இல்</li>
+  <li>XWayland செயலிகளின் மீது கர்சர் கண்ணுக்குத் தெரியாமல் போவதைச் சரிசெய்யவும் <a href="https://github.com/Sebo1411">@Sebo1411</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a>-இல்</li>
+  <li>கிளிப்போர்டு பிடிப்பு தொங்குவதைச் சரிசெய்யவும் <a href="https://github.com/maxcroy1">@maxcroy1</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a>-இல்</li>
+  <li>XDG Secret போர்ட்டல் வழியாக keyring அணுகலைச் சரிசெய்யவும் <a href="https://github.com/pkwagner">@pkwagner</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a>-இல்</li>
+  <li>கைரேகை பதிவு மற்றும் பூட்டுத் திரை மீட்டெடுப்பைச் சரிசெய்யவும் <a href="https://github.com/GeertJohan">@GeertJohan</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a>-இல்</li>
+  <li>கைரேகை பதிவைப் படிப்படியாக வழிநடத்தவும் <a href="https://github.com/scottjones">@scottjones</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a>-இல்</li>
+  <li>பூட்டுத் திரை கடவுச்சொல் புலத்தில் விசை தானியங்கு மறுபடியைச் சரிசெய்யவும் <a href="https://github.com/berndb">@berndb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a>-இல்</li>
+  <li>விழித்தெழும்போது கடவுச்சொல் புலத்திற்குப் பிறகு பூட்டுத் திரை வால்பேப்பர் ஏற்றப்படுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a>-இல்</li>
+  <li>அமர்வு இல்லாத ஒரு காட்சியைப் பெயரிடும்போது திரைப் பூட்டு காலக்கெடுக்களைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a>-இல்</li>
+  <li>தற்போதைய சாளரத்தின் கோப்பகத்தில் ஒரு terminal-ஐத் திறப்பதை வேகப்படுத்தவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a>-இல்</li>
+  <li>VS Code குடும்ப எடிட்டர்கள் தீம் மாற்றங்களை நேரடியாகப் பின்பற்றச் செய்யவும் <a href="https://github.com/Macho0x">@Macho0x</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a>-இல்</li>
+  <li>தீம் மாற்றத்தில் இயங்கும் Hunk அமர்வுகளை மீண்டும் தீமிடவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a>-இல்</li>
+  <li>ஒவ்வொரு தீமுக்கும் தேர்ந்தெடுக்கப்பட்ட வால்பேப்பரை நினைவில் வைத்திருங்கள் <a href="https://github.com/OldJobobo">@OldJobobo</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a>-இல்</li>
+  <li>பெரிய தொகுப்புகள் மற்றும் HiDPI உடன் படத் தேர்வியை வேகமாகவும் கூர்மையாகவும் வைத்திருங்கள் <a href="https://github.com/keylimesoda">@keylimesoda</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a>-இல்</li>
+  <li>ஒளி ஊடுருவும் பட்டை வால்பேப்பரை மாதிரியாக்கச் செலவிடும் CPU மற்றும் நினைவகத்தைக் குறைக்கவும் <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a>-இல்</li>
+  <li>ஆயிரக்கணக்கான இயந்திரங்களைக் கொண்ட tailnet-களில் Tailscale பேனலை வேகப்படுத்தவும் <a href="https://github.com/iskakaushik">@iskakaushik</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a>-இல்</li>
+  <li>முகவர்கள் பேனலில் Grok-ஐ Claude மற்றும் Codex-க்கு இணையாகக் கொண்டு வாருங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a>-இல்</li>
+  <li>முகவர் கணக்குத் தேர்வை CLI துணைச் செயல்முறைகளுக்குப் பயன்படுத்தவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a>-இல்</li>
+  <li>Codex தனிப்பட்ட செலவு வரம்புகள் மற்றும் அவற்றின் மீட்டமைப்பு நேரங்களைக் காட்டவும் <a href="https://github.com/Stegi56">@Stegi56</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a>-இல்</li>
+  <li>Claude-ஐத் தேர்ந்தெடுக்கும்போது உலாவி ஒருங்கிணைப்பை அமைக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a>-இல்</li>
+  <li>முகவர்கள் தொடங்கிய பிறகு நிறுவப்பட்ட mise கருவிகளைக் கண்டுபிடிக்காததைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a>-இல்</li>
+  <li>SSH வழியாகத் தொடங்கப்பட்ட herdr பேன்களில் முகவர்களில் திரைப்பிடிப்புகளை ஒட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a>-இல்</li>
+  <li>முகவர்கள் பேனல் சுருக்கப்பட்ட Codex அமர்வுகளைத் தவறவிடுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a>-இல்</li>
+  <li>Caps Lock-ஐ இயல்பு நிலைக்குத் திருப்பவும், Shift + Caps Lock-ஐ compose விசையாக ஆக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a>-இல்</li>
+  <li>கணினி விசைப்பலகை அமைப்பை உள்நுழைவுத் திரைக்குப் பயன்படுத்தவும் <a href="https://github.com/g-desoutter">@g-desoutter</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a>-இல்</li>
+  <li>லத்தீன் அல்லாத விசைப்பலகை அமைப்புடன் அமைப்பு மாற்றம் ஒவ்வொரு இரண்டாவது அழுத்தத்தையும் தவிர்ப்பதைச் சரிசெய்யவும் <a href="https://github.com/manuaudio">@manuaudio</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a>-இல்</li>
+  <li>mpv-இல் வன்பொருள் வீடியோ டிகோடிங்கை இயக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a>-இல்</li>
+  <li>TCP நெரிசல் கட்டுப்பாட்டை BBR-க்கு மாற்றவும், உண்மையான வட்டுகளில் kyber I/O திட்டமிடுபவரைப் பயன்படுத்தவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a>-இல்</li>
+  <li>T3 Code-ஐ அதன் தானாகப் புதுப்பிக்கும் AppImage ஆக நிறுவவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a>-இல்</li>
+  <li>PHP மற்றும் Laravel நிறுவலை மேம்படுத்தவும் <a href="https://github.com/nunomaduro">@nunomaduro</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a>-இல்</li>
+  <li>Node-ஐ lazy ஆக நிறுவவும், உங்கள் mise config-ஐத் தனியாக விடவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a>-இல்</li>
+  <li>இயல்புநிலைகளைத் தேர்ந்தெடுக்கும்போது காணாமல் போன செயலிகளை நிறுவவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a>-இல்</li>
+  <li>Install மெனுக்களில் நிறுவப்பட்ட மென்பொருளை மறைப்பதற்குப் பதிலாக மங்கலாக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a>-இல்</li>
+  <li>Brave Origin-க்கு கடவுச்சொல் மேலாளர் மற்றும் பிற நேட்டிவ் செய்தி ஹோஸ்ட்களைப் பதிவு செய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a>-இல்</li>
+  <li>Brave Origin வலை அறிவிப்புகளை தளத்தால் குழுவாக்கவும், கிளிக் செய்யும்போது சரியான தாவலைத் திறக்கவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a>-இல்</li>
+  <li>புதுப்பிப்புகளின் போது அனாதை தொகுப்பு நீக்கத்தைத் தானாகவே ஒப்புதல் அளிக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a>-இல்</li>
+  <li>ஒவ்வொரு புதுப்பிப்புக்கு முன்பும் Omarchy-இன் keyring-ஐப் புதுப்பிக்கவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a>-இல்</li>
+  <li>சேனல்களை மாற்றிய பிறகு மறுதொடக்கம் செய்ய வழங்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a>-இல்</li>
+  <li>புதுப்பிக்க ஏதாவது இருக்கும்போது மட்டும் முதல் இயக்க புதுப்பிப்பை வழங்கவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a>-இல்</li>
+  <li>Omarchy-இன் சொந்த geo சேவை மூலம் வானிலை இடம் மற்றும் நிறுவியின் நேர மண்டலத்தைக் கண்டறியவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a>-இல்</li>
+  <li>Arch-இன் NTP pool-க்குப் பதிலாக ntp.omarchy.org-இலிருந்து கடிகாரத்தை அமைக்கவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a>-இல்</li>
+  <li>Omarchy-இன் சொந்த வேக சோதனை மூலம் நெட்வொர்க் வேகத்தை அளவிடவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a>-இல்</li>
+  <li>முதல் boot-இன் போது traced-icon முன்னேற்றத் திரையைக் காட்டவும் <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a>-இல்</li>
+  <li>live ISO-வை Omarchy kernel-இலும், Mac-களில் மட்டும் T2 kernel-இலும் boot செய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a>-இல்</li>
+  <li>offline நிறுவல்கள் mise பதிப்பு தேடல்களுக்காகக் காத்திருப்பதை நிறுத்தவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a>-இல்</li>
+  <li>offline நிறுவல்கள் நேர மண்டலத்தை Africa/Abidjan ஆக இயல்பாக்குவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a>-இல்</li>
+  <li>நிறுவியின் நேர மண்டலத் தேர்வி தேடத் தட்டச்சு செய்ய அனுமதிக்காததைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a>-இல்</li>
+  <li>Ventoy stick-இலிருந்து boot செய்யும்போது live ISO splash-க்குப் பின்னால் தொங்குவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>-இல்</li>
+  <li>நிறுவியின் அமைப்பு படிவத்தில் ஜெர்மன் மற்றும் பிரெஞ்சு கன்சோல் keymap-களைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a>-இல்</li>
+  <li>நிறுவி மற்றும் git அமைப்பில் gum-இன் ஆங்கில விசைக் குறிப்புகளை மறைக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a>-இல்</li>
+  <li>நிறுவல் முன்னேற்றத் திரையிலிருந்து ஆங்கிலத்தில் மட்டுமான நகைச்சுவைகளை நீக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a>-இல்</li>
+  <li>வட்டைத் தயாரிக்கும்போது நிறுவி வெளியீடு திரையில் padding இல்லாமல் விழுவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a>-இல்</li>
+  <li>Quattro மேம்படுத்தல் இயல்புநிலை உலாவியை Chromium-க்கு மீட்டமைப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a>-இல்</li>
+  <li>ASCII அல்லாத எழுத்துக்களைக் கொண்ட பின்னணிப் பெயர்களில் Quattro மேம்படுத்தல் நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a>-இல்</li>
+  <li>GRUB அல்லது systemd-boot மூலம் boot செய்யும் இயந்திரங்களில் kernel இடம்பெயர்வு நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/manuaudio">@manuaudio</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a>-இல்</li>
+  <li>ஒன்றுக்கு மேற்பட்ட NVMe வட்டு கொண்ட குறியாக்கம் செய்யப்படாத இயந்திரங்களில் hibernation-ஐச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a>-இல்</li>
+  <li>FIDO2 இடம்பெயர்வு தீர்க்கப்படுவதற்கு முன்பே முடிந்ததாகக் குறிக்கப்படுவதைச் சரிசெய்யவும் <a href="https://github.com/ErikMelton">@ErikMelton</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a>-இல்</li>
+  <li>மிதக்கும் பணியிடம் உங்கள் சொந்த float விதி உள்ளடக்கும் முதல் சாளரத்தை எடுத்துக்கொள்வதைச் சரிசெய்யவும் <a href="https://github.com/zihaomu">@zihaomu</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a>-இல்</li>
+  <li>Super + L ஒரு பணியிடத்தை floating-க்கு உள்ளும் வெளியும் சுழற்றும்போது compositor தடுமாறுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a>-இல்</li>
+  <li>Alt + Shift + Tab ஒவ்வொரு சாளரத்தின் வழியாகவும் பின்னோக்கிச் சுழலாததைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a>-இல்</li>
+  <li>மற்றொரு மானிட்டருக்கு நகர்த்தும்போது வெளியே வந்த சாளரங்கள் மையப்படாததைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a>-இல்</li>
+  <li>terminal அல்லாத சாளரம் கவனத்தில் இருக்கும்போது புதிய terminal-கள் உங்கள் home கோப்புறைக்கு வெளியே திறப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a>-இல்</li>
+  <li>1Password மற்றும் Bitwarden சாளரங்கள் மிதக்காததைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a>-இல்</li>
+  <li>நிறுவி terminal வெளியேறும்போது 1Password மூடுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a>-இல்</li>
+  <li>DaVinci Resolve உரையாடல்கள் pointer கவனத்தைத் திருடுவதைச் சரிசெய்யவும் <a href="https://github.com/AksharP5">@AksharP5</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a>-இல்</li>
+  <li>Windows VM காட்சிகள் வழியாக டெஸ்க்டாப் தெரிவதைச் சரிசெய்யவும் <a href="https://github.com/jmwall">@jmwall</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a>-இல்</li>
+  <li>Quattro இடம்பெயர்வுக்குப் பிறகு $$ கொண்ட பழைய Windows VM கடவுச்சொற்களைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a>-இல்</li>
+  <li>மேம்படுத்தல்களுக்குப் பிறகு Hyprland-இன் நன்கொடை popup காட்டப்படுவதை நிறுத்தவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a>-இல்</li>
+  <li>பட்டை விட்ஜெட்களை இழுத்து ஏற்பாடு செய்வதை மேம்படுத்தவும் <a href="https://github.com/outfoxxed">@outfoxxed</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a>-இல்</li>
+  <li>பட்டை ஐகான் அளவு மற்றும் சீரமைப்பை இயல்பாக்கவும் <a href="https://github.com/bjarneo">@bjarneo</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a>-இல்</li>
+  <li>கடிகாரத்திற்கு இடதுபுறம் hover செய்யும்போது மட்டும் மறைக்கப்பட்ட பட்டை குறிகாட்டிகளை வெளிப்படுத்தவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a>-இல்</li>
+  <li>tray ஐகான்களைப் பட்டையின் மற்ற ஐகான்களுடன் சீரமைக்கவும் <a href="https://github.com/ayoubdya">@ayoubdya</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a>-இல்</li>
+  <li>ஒன்று ஏற்கனவே இருக்கும்போது அடுத்த பட்டை tooltip-ஐ உடனடியாகக் காட்டவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a>-இல்</li>
+  <li>கடிகாரம் மற்றும் வானிலை பேனல்களை அவற்றின் விட்ஜெட்களின் கீழ் திறக்கவும் <a href="https://github.com/scottjones">@scottjones</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a>-இல்</li>
+  <li>DNS வழங்குநரைத் தேர்ந்தெடுத்த பிறகு நெட்வொர்க் பேனலைத் திறந்தே வைத்திருங்கள் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a>-இல்</li>
+  <li>மூடும் popup பட்டை விட்ஜெட்களை பதிலளிக்காமல் விடுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a>-இல்</li>
+  <li>மறைக்கப்பட்ட பட்டை முழுத்திரை சாளரங்களின் மேற்புறத்தில் கிளிக்குகளைப் பிடிப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a>-இல்</li>
+  <li>இருண்ட tray ஐகான்கள் பட்டையில் மறைவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a>-இல்</li>
+  <li>பட்டை ஐகான்கள் சீரற்று அல்லது மையத்திற்கு வெளியே அமர்வதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a>-இல்</li>
+  <li>பட்டை tooltip-கள் அவற்றின் முதல் சட்டத்தைத் தவறான அளவில் வரைவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a>-இல்</li>
+  <li>அறிவிப்பு வரலாறு ஒவ்வொரு அட்டையையும் இப்போதுதான் என்று காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a>-இல்</li>
+  <li>முதல் உள்நுழைவு அறிவிப்புகள் ஒரே அடுக்கில் சுருங்குவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a>-இல்</li>
+  <li>அறிவிப்பு கிளிக்குகள் பல சொல் பெயர்களைக் கொண்ட செயலிகளைக் கவனத்திற்குக் கொண்டு வராததைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a>-இல்</li>
+  <li>Taildrop அறிவிப்புகள் வெற்று உரை மற்றும் காணாமல் போன முன்னோட்டங்களைக் காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a>-இல்</li>
+  <li>முழு பேட்டரியில் பேட்டரி அறிவிப்பு வெற்று நேரம் மற்றும் 0W காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a>-இல்</li>
+  <li>செருகிய பிறகும், மறுதொடக்கங்களுக்குப் பிறகு திரும்ப வந்தும் குறைந்த பேட்டரி எச்சரிக்கை நீடிப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a>-இல்</li>
+  <li>சில மடிக்கணினிகளில் பேட்டரி பயன்பாடு 0W என்று படிப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a>-இல்</li>
+  <li>AC-இல் முழு பேட்டரி தீர்ந்து போவதாகக் காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a>-இல்</li>
+  <li>kernel hibernate செய்யாதபோது Hibernate காட்டப்படுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a>-இல்</li>
+  <li>மீண்டும் தொடங்கிய பிறகு gvfs ஏற்றங்கள் காணாமல் போவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a>-இல்</li>
+  <li>பூட்டு இரண்டு முறை வெறுமையான பிறகு விசைப்பலகை பின்னொளி அணைந்தே இருப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a>-இல்</li>
+  <li>பூட்டு காட்சிகள் அணைந்திருக்கும்போது கைரேகை reader விழிப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a>-இல்</li>
+  <li>ஒரு காட்சி தாமதமாகத் தோன்றும்போது boot கடவுச்சொல் prompt மையத்திற்கு வெளியே இருப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a>-இல்</li>
+  <li>screensaver-இன் வெளியேறும் விசை மூலையில் ஒளிர்வதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a>-இல்</li>
+  <li>OWE transition-mode நெட்வொர்க்குகளில் Wi-Fi ஐகான் மினுமினுப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a>-இல்</li>
+  <li>ஒரு தீமை நிறுவிய பிறகு terminal-இல் அச்சிடப்பட்ட OWE பிழையைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a>-இல்</li>
+  <li>நிலையானதிலிருந்து வீடியோ பின்னணிக்கு மாறும்போது ஏற்படும் மினுக்கத்தைச் சரிசெய்யவும் <a href="https://github.com/bjarneo">@bjarneo</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a>-இல்</li>
+  <li>Hackerman-ஐ உயர்த்தப்பட்ட வடிவியல் பின்னணிக்குப் புதுப்பிக்கவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a>-இல்</li>
+  <li>சுழற்சி வண்ணக் குறிப்புகளைக் கொண்ட தீம்கள் தீம் மாற்றத்தைத் தொங்கவிடுவதைச் சரிசெய்யவும் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a>-இல்</li>
+  <li>Catppuccin தீமுடன் Neovim தொடங்கத் தவறுவதைச் சரிசெய்யவும் <a href="https://github.com/anandude">@anandude</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a>-இல்</li>
+  <li>OpenCode 2 Omarchy-இன் தீமுக்குப் பதிலாக அதன் stock தீமில் தொடங்குவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a>-இல்</li>
+  <li>உருவாக்கப்பட்ட VS Code தீமில் குறைந்த மாறுபாடு கொண்ட inline குறியீட்டைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a>-இல்</li>
+  <li>தற்போதைய தீமுடன் பொருந்தும்போது T3 Code நிறுவல்கள் நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a>-இல்</li>
+  <li>எழுத்துரு குடும்பத்தை மாற்றும்போது terminal எழுத்துரு அளவு மீட்டமைக்கப்படுவதைச் சரிசெய்யவும் <a href="https://github.com/sbalbalosa">@sbalbalosa</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a>-இல்</li>
+  <li>எழுத்துருக்களை மாற்றுவது ஒரு terminal-இன் செயல்முறை ID-ஐ அச்சிடுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a>-இல்</li>
+  <li>மொழிகளை மாற்றுவது ஒவ்வொரு locale-ஐயும் மீண்டும் கட்டுவதையும், கிட்டத்தட்ட நிரம்பிய வட்டில் அவற்றை இழப்பதையும் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a>-இல்</li>
+  <li>மொழிபெயர்ப்புகள் ஏற்றப்படுவதற்கு முன்பு shell மூல மொழிபெயர்ப்பு விசைகளைக் காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/zihaomu">@zihaomu</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a>-இல்</li>
+  <li>Omarchy-இன் script-களில் மொழிபெயர்க்கப்பட்ட உரையை வேகப்படுத்தவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a>-இல்</li>
+  <li>686 சரங்களுக்கு மொழிபெயர்ப்புகளைப் புதுப்பிக்கவும், அவற்றில் 392 கையேட்டில் உள்ளன <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a>-இல்</li>
+  <li>ஆங்கிலம் அல்லாத locale-களில் ஒலியளவு மற்றும் வெளியீட்டு கட்டுப்பாடுகளைச் சரிசெய்யவும் <a href="https://github.com/Sebo1411">@Sebo1411</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a>-இல்</li>
+  <li>ஆங்கிலம் அல்லாத locale-களில் CPU பயன்பாட்டு அளவீடுகளைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a>-இல்</li>
+  <li>fcitx5 நிறுவப்படாதபோது fcitx5 சேவை என்றென்றும் மறுதொடக்கம் செய்வதைச் சரிசெய்யவும் <a href="https://github.com/therk">@therk</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a>-இல்</li>
+  <li>விசைப்பலகை அமைப்பு விட்ஜெட் யாரும் தட்டச்சு செய்யாத சாதனங்களை மாற்றுவதைச் சரிசெய்யவும் <a href="https://github.com/bjarneo">@bjarneo</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a>-இல்</li>
+  <li>விசைப்பலகை அமைப்பு விட்ஜெட் vendor ஹாட்கீ சாதனங்களுக்கு மாறுவதைச் சரிசெய்யவும் <a href="https://github.com/yashranaway">@yashranaway</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a>-இல்</li>
+  <li>keybindings மெனு ஒரு Lua செயல்முறையை 100% CPU-இல் இயங்க விடுவதைச் சரிசெய்யவும் <a href="https://github.com/tobi">@tobi</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a>-இல்</li>
+  <li>பகல் சேமிப்பு நேரம் முடியும்போது கடிகாரம் ஒவ்வொரு மில்லிவிநாடியும் பதிவை நிரப்புவதைச் சரிசெய்யவும் <a href="https://github.com/falkoro">@falkoro</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a>-இல்</li>
+  <li>shell படிக்க முடியாத shell.json-ஐ இயல்புநிலைகளால் மாற்றுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a>-இல்</li>
+  <li>அதன் கோப்பு புதுப்பிக்கப்படும்போது Omarchy மெனு அதன் வரிசைகளை இழப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a>-இல்</li>
+  <li>ஒரு செருகுநிரலை மீண்டும் இயக்குவது அதன் பட்டை விட்ஜெட்டைத் திரும்பக் கொண்டு வராததைச் சரிசெய்யவும் <a href="https://github.com/berrimi">@berrimi</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a>-இல்</li>
+  <li>உள்ளூர் செருகுநிரல்கள் அவற்றின் சொந்த Python bytecode-இல் ஒரு சுழற்சியில் மீண்டும் ஏற்றப்படுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a>-இல்</li>
+  <li>செருகுநிரல்களில் மறைக்கப்பட்ட பொத்தான்கள் அவற்றின் padding-ஆகச் சுருங்குவதைச் சரிசெய்யவும் <a href="https://github.com/dmkenney">@dmkenney</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a>-இல்</li>
+  <li>dropdown-கள் அவற்றின் கடைசி உருப்படியை வெட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/sprajs">@sprajs</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a>-இல்</li>
+  <li>இரண்டாவது கிளிக்கில் dropdown-கள் மூடாததைச் சரிசெய்யவும் <a href="https://github.com/felixzsh">@felixzsh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a>-இல்</li>
+  <li>slider குமிழ்கள் பாதையின் முடிவுக்கு முன்பே நிற்பதைச் சரிசெய்யவும் <a href="https://github.com/erikrjohansson">@erikrjohansson</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a>-இல்</li>
+  <li>
+    <p>Update &gt; Hardware &gt; Trackpad பெரும்பாலான touchpad-களைத் தவறவிடுவதையும் விசைப்பலகையை மீட்டமைப்பதையும் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a>-இல்</p>
+
+    <p>இது இப்போது ஒவ்வொரு touchpad-இலும் சிக்கிய பொத்தானை விடுவிக்கிறது, விசைப்பலகை மற்றும் தொடுதிரையுடன் சேர்த்து அல்லாமல் touchpad-ஐ மட்டும் மீட்டமைக்கிறது.</p>
+  </li>
+  <li>webcam மெனு கேமராக்களை இயக்காமல் அவற்றைச் சோதிக்கச் செய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a>-இல்</li>
+  <li>Omasnap-இன் scroll பிடிப்பு கருப்பு சட்டங்களை மட்டும் பிடிப்பதைச் சரிசெய்யவும் <a href="https://github.com/falkoro">@falkoro</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a>-இல்</li>
+  <li>திரைப்பிடிப்புத் தேர்வி உங்கள் சொந்த விசைகளை நீக்குவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a>-இல்</li>
+  <li>ஒரு பதிவை நிறுத்துவது வெற்று சேமிக்கப்பட்ட பதிவை அறிவிப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a>-இல்</li>
+  <li>படத் தேர்வி மேலே சேமிக்கப்பட்ட படங்களுக்கு பழைய சிறுபடங்களைக் காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a>-இல்</li>
+  <li>அணைக்கும்போது night light முழுமையாக மீட்டமைக்கப்படாததைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a>-இல்</li>
+  <li>ஊடக விட்ஜெட் செயலற்ற player-க்காக இடைநிறுத்தப்பட்ட பாடலை விடுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a>-இல்</li>
+  <li>பிரகாசத்தைப் புகாரளிக்காத மானிட்டர்களில் மீண்டும் மீண்டும் காட்சி ஸ்கேன்களைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a>-இல்</li>
+  <li>கட்டமைக்கப்பட்ட உலாவி நிறுவல் நீக்கப்பட்டபோது Super + Shift + Return தோல்வியடைவதைச் சரிசெய்யவும் <a href="https://github.com/vitally">@vitally</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a>-இல்</li>
+  <li>முன்நிறுவப்பட்ட செயலிகளை நீக்கிய பிறகும் கால்குலேட்டர் குறுக்குவழிகள் நீடிப்பதைச் சரிசெய்யவும் <a href="https://github.com/OldJobobo">@OldJobobo</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a>-இல்</li>
+  <li>Brave Origin சுயவிவரங்களில் Copy URL குறுக்குவழியைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a>-இல்</li>
+  <li>Bitwarden நீட்டிப்பு popout தவறான அளவில் திறப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a>-இல்</li>
+  <li>HiDPI மானிட்டர்களில் Battle.net 100% அளவில் திறப்பதைச் சரிசெய்யவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a>-இல்</li>
+  <li>Inkscape-இன் கோப்புத் தேர்விகள் tiled ஆகத் திறப்பதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a>-இல்</li>
+  <li>mise Go-வை நிர்வகிக்கும்போது புதுப்பிப்புகளின் போது Go AUR தொகுப்புகள் கட்டத் தவறுவதைச் சரிசெய்யவும் <a href="https://github.com/shbernal">@shbernal</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a>-இல்</li>
+  <li>நீங்கள் docker குழுவில் இல்லாதபோது ONCE நிறுவலைச் சரிசெய்யவும் <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a>-இல்</li>
+  <li>முகவர் பேனல் கிளிக்குகள் tray-ஐத் திறப்பதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a>-இல்</li>
+  <li>முகவர் கணக்கு அமைப்பு தொங்கும் பகிரப்பட்ட symlink-இல் தடுமாறுவதைச் சரிசெய்யவும் <a href="https://github.com/manuaudio">@manuaudio</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a>-இல்</li>
+  <li><code>--reauth</code> முகவர் கணக்கு இல்லாதபோது புதிய ஒன்றைச் சேர்ப்பதைச் சரிசெய்யவும் <a href="https://github.com/manuaudio">@manuaudio</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a>-இல்</li>
+  <li>முகவர் கணக்கு மறுபெயரிடும் குறிப்பு அதன் வழங்குநரைப் பெயரிடச் செய்யவும் <a href="https://github.com/manuaudio">@manuaudio</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a>-இல்</li>
+  <li>விசை செயல்பாடுகள் தோல்வியடையும்போது keyring புதுப்பிப்புகள் வெற்றி என்று கூறுவதைச் சரிசெய்யவும் <a href="https://github.com/Adolanium">@Adolanium</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a>-இல்</li>
+  <li>sudo-இன் கீழ் இயக்கும்போது வெற்று தொழிற்சாலை மீட்டமைப்பு prompt-ஐச் சரிசெய்யவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a>-இல்</li>
+  <li>நிலுவையில் உள்ள இடம்பெயர்வுகள் நினைவூட்டல் ஒவ்வொரு உள்நுழைவுக்கும் ஒரு முறை குவிவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a>-இல்</li>
+  <li>About-இல் OS Age நிறுவலிலிருந்து அல்லாமல் ISO-இன் கட்டுமானத்திலிருந்து எண்ணுவதைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a>-இல்</li>
+  <li>Dropbox 360 முதல் 364 நாட்கள் பழைய கோப்புகளுக்கு “0y ago” என்று காட்டுவதைச் சரிசெய்யவும் <a href="https://github.com/manuaudio">@manuaudio</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a>-இல்</li>
+  <li>Dropbox நிலை சோதனை நிலுவையில் உள்ள உள்நுழைவு இணைப்பைக் காலாவதியாக்குவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a>-இல்</li>
+  <li>Dropbox-இன் tray ஐகான் நூலகத்தை நிறுவுவதைச் சரிசெய்யவும் <a href="https://github.com/omarchybot">@omarchybot</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a>-இல்</li>
+  <li>Chromium-இல் overlay scrollbar-களை இயக்கவும் <a href="https://github.com/robzolkos">@robzolkos</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a>-இல்</li>
+  <li>Apple Silicon Mac-களில் Touch ID-ஐ இயக்குவதற்கு முன் கேளுங்கள் <a href="https://github.com/scottjones">@scottjones</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a>-இல்</li>
+  <li>Apple Silicon Mac-களில் RC சேனலை வழங்கவும் <a href="https://github.com/maralcbr">@maralcbr</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a>-இல்</li>
+  <li>Apple Silicon Mac-களில் stable சேனலை வழங்கவும் <a href="https://github.com/maralcbr">@maralcbr</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a>-இல்</li>
+  <li>Apple Silicon-இல் புதிய terminal-களிலிருந்து Omarchy-இன் alias-கள், function-கள் மற்றும் environment காணாமல் போவதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a>-இல்</li>
+  <li>நிறுவப்பட்ட NVIDIA பயன்பாடுகளை அமைக்கவும் <a href="https://github.com/jdvmi00">@jdvmi00</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a>-இல்</li>
+  <li>NVIDIA N1x உடன் Lenovo Pro 9-இல் நிறுவல்கள் தோல்வியடைவதைச் சரிசெய்யவும் <a href="https://github.com/breymander">@breymander</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a>-இல்</li>
+  <li>முந்தைய ஆடியோ சுயவிவரங்களை இயக்கிய N1x மடிக்கணினிகளில் உள் ஸ்பீக்கர்கள் மற்றும் மைக்ரோஃபோன்கள் காணாமல் போவதைச் சரிசெய்யவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a>-இல்</li>
+  <li>DGX Spark போன்ற NVIDIA GB10 இயந்திரங்களில் மந்தமான டெஸ்க்டாப்பைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a>-இல்</li>
+  <li>
+    <p>NVIDIA-இல் மீண்டும் தொடங்கிய பிறகு பூட்டுத் திரையில் தட்டச்சு செய்வதைச் சரிசெய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a>-இல்</p>
+
+    <p>பேனல் ஒளிரும் நேரத்தில் பூட்டு மீண்டும் இருட்டாகாது.</p>
+  </li>
+  <li>Lutris மற்றும் Battle.net மற்றொரு GPU-இன் 32-bit Vulkan driver-ஐ நிறுவுவதைச் சரிசெய்யவும் <a href="https://github.com/zihaomu">@zihaomu</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a>-இல்</li>
+  <li>ARM-இல் ஒவ்வொரு புதுப்பிப்புக்குப் பிறகும் மறுதொடக்கம் கேட்பதை நிறுத்தவும் <a href="https://github.com/birkskyum">@birkskyum</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a>-இல்</li>
+  <li>aarch64-இல் stable மற்றும் RC சேனல்களை வழங்கவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a>-இல்</li>
+  <li>ARM மடிக்கணினிகளில் power profile-கள் வேலை செய்யச் செய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a>-இல்</li>
+  <li>4K பக்கங்களைக் கொண்ட ARM இயந்திரங்களில் Dropbox-ஐயும், ARM-இல் Spotify-ஐ வலைச் செயலியாகவும் வழங்கவும் <a href="https://github.com/birkskyum">@birkskyum</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a>-இல்</li>
+  <li>ARM-இல் GeForce NOW, Battle.net மற்றும் Lutris நிறுவல்களை மறைக்கவும் <a href="https://github.com/birkskyum">@birkskyum</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a>-இல்</li>
+  <li>ARM-இல் Hermes செயலி இடத்திலேயே புதுப்பிக்கப்படாததைச் சரிசெய்யவும் <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a>-இல்</li>
+  <li>Snapdragon மடிக்கணினி விசைப்பலகைகள் வட்டு திறப்பு prompt-இல் தட்டச்சு செய்யாததைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a>-இல்</li>
+  <li>Snapdragon மடிக்கணினிகளில் உள்நுழைவில் கேமராக்கள் காணாமல் போவதைச் சரிசெய்யவும் <a href="https://github.com/birkskyum">@birkskyum</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a>-இல்</li>
+  <li>Snapdragon X2 மடிக்கணினிகளில் வட்டு திறப்புக்கு முன் கருப்புத் திரையைச் சரிசெய்யவும் <a href="https://github.com/jdvmi00">@jdvmi00</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a>-இல்</li>
+  <li>Intel Wildcat Lake-இல் வன்பொருளில் வீடியோவை டிகோட் செய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a>-இல்</li>
+  <li>Arrow Lake-H மடிக்கணினிகளில் live ISO செயலிழப்புகளைச் சரிசெய்யவும் <a href="https://github.com/emirb">@emirb</a> ஆல் <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a>-இல்</li>
+  <li>HP EliteBook Ultra G1q உள் மைக்ரோஃபோனைச் சரிசெய்யவும் <a href="https://github.com/bprendie">@bprendie</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a>-இல்</li>
+  <li>Motorcomm YT6801 Ethernet-க்கு upstream ஆதரவைப் பயன்படுத்தவும் <a href="https://github.com/AFOliveira">@AFOliveira</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a>-இல்</li>
+  <li>Elgato Cam Link 4K-ஐ 16:9 மெய்நிகர் கேமராவாக relay செய்யவும் <a href="https://github.com/dhh">@dhh</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a>-இல்</li>
+  <li>ஒரு தளம் பெயரிடும் கைரேகை reader-களை ஆதரிக்கவும் <a href="https://github.com/scottjones">@scottjones</a> ஆல் <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a>-இல்</li>
+</ul>

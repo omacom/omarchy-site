@@ -28,6 +28,17 @@ class ValidationTests(unittest.TestCase):
             with self.subTest(value=invalid), self.assertRaises(worker.TranslationError):
                 worker.validate_value(source, invalid)
 
+    def test_inline_markup_may_follow_the_language_word_order(self):
+        source = 'Built by <a href="/a">Ann</a> with <code>omarchy-menu</code>'
+        self.assertEqual(worker.validate_value(source, '<code>omarchy-menu</code>で<a href="/a">Ann</a>が作成'),
+                         '<code>omarchy-menu</code>で<a href="/a">Ann</a>が作成')
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value(source, '<code>omarchy-menu</code>で<a href="/b">Ann</a>が作成')
+
+    def test_plain_text_cannot_end_on_an_unfinished_tag(self):
+        with self.assertRaises(worker.TranslationError):
+            worker.validate_value('Hello', 'Hej<img src=x onerror=alert(1) ')
+
     def test_plain_text_cannot_introduce_html(self):
         with self.assertRaises(worker.TranslationError):
             worker.validate_value('Hello', '<b>Hej</b>')

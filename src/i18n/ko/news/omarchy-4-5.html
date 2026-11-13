@@ -1,0 +1,449 @@
+<p>Omarchy 4.5(일명 Quattro RS!)는 <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a> 이후 첫 대규모 기능 릴리스이며, 정말 엄청납니다: 단 12주 만에 180명이 넘는 기여자로부터 740개가 넘는 pull request가 병합됐습니다. 이제 tiling 기본값 옆에 전통적인 데스크톱 모드를 제공합니다. M1/M2/M3/Neo MacBook에 네이티브로 설치할 수 있습니다. 그리고 50개 언어를 구사합니다. 그 밖에도 수많은 기능, 수정, 개선이 있습니다. 이미 Omarchy를 사용 중이신가요? <em>Update &gt; Omarchy</em>를 실행하세요. 새 기기인가요? <a href="/#install">여기에서 받으세요</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">독을 갖춘 플로팅 워크스페이스</h2>
+
+<p><code>Super + L</code>을 누르면 이제 모든 워크스페이스가 tiling, scrolling, floating 사이를 순환합니다. 플로팅 워크스페이스에서는 모든 창에 테마 색상의 titlebar가 생기고, 독에는 고정된 앱, 실행 중인 모든 것, 설치된 모든 앱의 그리드가 표시됩니다. 드래그해서 순서를 바꾸거나 고정하고, 마우스 오른쪽 버튼을 클릭하면 더 많은 옵션을 볼 수 있으며, <code>Super + M</code>을 누르면 창이 독으로 최소화됩니다.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>이는 macOS나 Windows에서 넘어온 사람 중 아직 tiling에 완전히 뛰어들 준비가 되지 않은 사람에게 훌륭한 진입로입니다. 또는 창을 마음껏 펼칠 수 있는 워크스페이스가 하나쯤 필요한 사람에게도 좋습니다. 워크스페이스별로 섞어 쓸 수 있고, 바에는 각 워크스페이스가 어떤 레이아웃을 사용하는지 표시됩니다.</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Silicon에서의 Omarchy</h2>
+
+<p>놀라운 저희 <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> 팀이 네이티브 Mac 설치 프로그램을 출시했습니다. macOS에서 <a href="https://github.com/omacom/omarchy-mac-installer/releases">앱을 다운로드</a>하면 M1, M2, M3, Neo MacBook에서 macOS와 나란히 Omarchy를 설치해 줍니다. USB 스틱도, 터미널 주문도 필요 없습니다. Homebrew를 선호하시나요? 한 줄이면 됩니다:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac 설치 프로그램" /></p>
+
+<p>이것이 바로 9월에 우리가 해내려던 일입니다: Asahi가 시작한 일을 마무리하는 것이죠. 두 달 후, 이제 그냥 다운로드하면 됩니다. 팀원 모두 정말 대단한 일을 해냈습니다.</p>
+
+<p>그리고 여기서 멈추지 않습니다. M4, M5, M6 모두 지금 작업 중이니, Omarchy가 모든 Apple Silicon Mac에서 실행될 날도 머지않을 것 같습니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="M2 Max, M3 Air, Neo, M4 Pro, M5 Air에서 실행되는 Omarchy" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">NVIDIA DGX Spark + N1X를 위한 ARM 지원 (그리고 곧 Snapdragon도)</h2>
+
+<p>Omarchy 4.5는 첫 ARM ISO와 함께 NVIDIA ARM 기기를 위한 예비 지원을 제공합니다: DGX Spark 데스크톱과 <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a>, <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a> 같은 N1X 기반 노트북입니다. 그리고 곧 전체 Snapdragon ARM 기기 라인업도 지원할 예정입니다. 아직 초기 단계라 거친 부분이 있을 수 있으니, 문제가 생기면 <a href="https://github.com/omacom/omarchy/issues">GitHub</a>에 보고해 주세요.</p>
+
+<h2 id="50-languages-and-5-input-methods">50개 언어와 5가지 입력 방식</h2>
+
+<p>Omarchy는 이제 50개 언어를 구사합니다. <em>Setup &gt; Language</em>에서 하나를 선택하거나(또는 <code>omarchy language &lt;code&gt;</code>를 실행하면), 메뉴, 데스크톱, Omarchy 알림이 즉시 전환됩니다. 시스템 로케일은 다음 로그인 때 따라 바뀝니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="언어 전환하기" /></p>
+
+<p>언어를 구사하는 것은 절반에 불과합니다. 입력할 수 있어야 하죠. 그래서 Omarchy는 이제 설치 프로그램에서 바로, 또는 나중에 <em>Setup &gt; Keyboard</em>에서 일본어(Mozc), 한국어(Hangul), 중국어 간체(Pinyin), 대만(Zhuyin), 홍콩(Cangjie)을 위한 적절한 입력 방식을 설정합니다. 각 방식에는 문자 형태에 맞는 글꼴이 함께 제공되고, 후보 창은 테마를 따르며, <code>Super + I</code>를 누르면 입력 언어 사이를 전환합니다. Windows와 macOS에서처럼, Dvorak, Colemak, AZERTY로 라틴 문자를 입력하더라도 Hangul, Zhuyin, Cangjie는 표준 위치에 키가 유지됩니다. 그리고 Shift만 살짝 누르면 Sogou, Microsoft Pinyin, macOS가 하는 방식처럼 입력 방식에서 라틴 문자로 빠져나갔다가 다시 돌아옵니다.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">종속형 Wi-Fi 포털에 로그인하기</h2>
+
+<p>호텔, 공항, 커피숍 Wi-Fi가 마침내 그냥 작동합니다. Omarchy는 이제 네트워크가 온라인 접속 전에 로그인이나 약관 동의를 요구할 때 이를 알아챕니다. 네트워크 아이콘이 경고를 표시하고, 네트워크 패널에는 로그인 페이지로 바로 이동하는 큰 Open Captive Portal 버튼이 표시됩니다. 통과하고 나면 모든 것이 저절로 정상으로 돌아옵니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="네트워크 패널에서 종속형 포털에 로그인하기" width="380" /></p>
+
+<h2 id="five-new-default-apps">다섯 가지 새로운 기본 앱</h2>
+
+<p><strong>Hype</strong>는 하나의 Markdown 파일로 프레젠테이션을 만들며, 소스 옆에 시각적 슬라이드 편집기가 있고, PDF나 PowerPoint로 내보냅니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong>는 서류 작업을 위해 Xournal++를 대체합니다: PDF를 열고, 저장된 서명, 텍스트, 날짜를 배치한 뒤 서명된 사본을 저장하세요.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong>는 디스크를 무엇이 채우고 있는지 종류별로 색상을 입힌 treemap으로 그려주며, 안전하게 재생성할 수 있는 캐시를 알려주고, 삭제할 항목을 표시할 수 있게 합니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong>는 한 번의 키 입력으로 카메라를 녹화하며, 데스크톱에 맞게 테마가 적용됩니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong>는 SSH를 통한 원격 데스크톱을 제공합니다. 다른 Omarchy 기기에 연결해 내 기기의 창에서 그 전체 데스크톱을 조작할 수 있으며, 기기마다 탭이 하나씩 있습니다. 그리고 SSH를 타고 가기 때문에 추가로 설정하거나 노출할 것이 없습니다. 제어되는 기기는 바에 원격 세션 표시기가 나타나므로, 누군가 접속 중일 때 항상 알 수 있습니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>그리고 바의 시계 바로 옆에 사는 세계 시계 <strong>Elsewhen</strong>도 있습니다. 지구본에서 도시를 눌러 현재 위치를 설정하고, 실제 장소를 검색하고, 각 도시에 사는 사람들의 이름을 붙여두면 전화하기 괜찮은 시간인지 항상 알 수 있습니다. <code>t</code>로 12시간제와 24시간제를 전환하고, <code>Alt + T</code>로 °F와 °C를 전환하며, <code>Super + Ctrl + Alt + E</code>로 언제든 불러올 수 있습니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>녹화용 Monologue와 편집용 Omacut가 있어, 신규 설치에는 더 이상 OBS Studio와 Kdenlive가 포함되지 않습니다. Lazydocker도 신규 설치에서 사라졌지만, Docker와 Docker Compose는 여전히 포함됩니다. 이미 어느 하나라도 가지고 있는 기기는 그대로 유지합니다.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Office 환경에서 일하는 사람들과 협업해야 하나요? <em>Install &gt; Service &gt; Microsoft</em>가 이제 Outlook, Word, Excel, PowerPoint, Teams, OneDrive를 웹 앱으로 설정합니다. 각 앱마다 자체 창과 실행기 항목이 생겨, 다른 모든 앱 옆에서 자연스럽게 어울립니다. 직장에서 Omarchy로 전환하지 않을 변명은 이제 없습니다!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchy에서의 Excel, Word, Teams, PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">받아쓰기를 위한 Superwhisper</h2>
+
+<p>Superwhisper가 이제 Omarchy의 기본 받아쓰기 엔진이며, 처음부터 바로 사용할 수 있게 설정되어 있습니다. <code>Alt + Space</code>를 눌러 말하기를 시작하고 다시 눌러 멈추거나, <code>Right Alt</code>를 누르고 있어 push-to-talk로 사용하세요. 믿을 수 없을 만큼 빠르고 매우 정확합니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisper로 받아쓰기하기" /></p>
+
+<p>처음에는 클라우드에서 시작하므로 설치하는 순간 바로 작동하고, 처음 10,000단어는 무료입니다. 하지만 완전히 무료이고 누구에게도 단어를 보내지 않으며 전적으로 로컬에서 실행되는 다운로드 가능한 모델로 전환할 수 있습니다. 다른 로컬 모델을 선호한다면, 대안으로 Voxtype도 여전히 제공됩니다.</p>
+
+<h2 id="install-in-less-than-ten-seconds">10초 미만에 설치하기</h2>
+
+<p>Omarchy는 예전에 약 940개의 패키지를 하나씩 설치했습니다. 새로운 F1 설치 프로그램은 대신 미리 빌드된 루트 이미지를 풀고 그 위에 이 기기에만 필요한 패키지만 추가합니다. 덕분에 어떤 기기에서든 설치 시간이 대략 절반으로 줄어듭니다.</p>
+
+<p>그리고 빠른 하드웨어에서는 터무니없을 정도입니다. AMD의 <a href="https://x.com/AnushElangovan">Anush Elangovan</a>은 자신의 AMD 노트북에서 전체 Omarchy 설치를 <strong>7초</strong> 만에 마쳐 세계 기록을 세웠습니다. <a href="https://x.com/dhh/status/2117222836620202375">7초!</a> 5분이 야심 찬 목표처럼 보였던 때가 기억납니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="0m 7s 만에 Omarchy 설치 완료" /></p>
+
+<h2 id="faster-everywhere-else">다른 모든 곳도 더 빠르게</h2>
+
+<p>설치 프로그램만 빨라진 게 아닙니다. 시작 시 더 이상 binfmt 등록 때문에 멈추지 않습니다. 테마 선택기는 0.25초를 기다리는 대신 바로 열립니다. 메뉴와 패널은 Hyprland 단축키에서 바로 열리며, 먼저 프로세스를 시작하는 데 걸리던 60ms를 건너뜁니다. Omarchy 메뉴에서 가장 느린 검사는 200ms에서 16ms로 줄었고, 새 터미널은 프롬프트를 30ms 더 빨리 표시하며, 전체 데스크톱은 이제 폴링하는 대신 변화에 반응합니다. 로그아웃, 재부팅, 종료도 앱이 닫히기를 마치자마자 일어납니다.</p>
+
+<h2 id="agent-upgrades">에이전트 업그레이드</h2>
+
+<p>Omarchy는 에이전트 OS이며, 4.5는 에이전트와 함께 작업하기 위한 대규모 업그레이드를 가져옵니다. 에이전트 패널은 이제 6개에서 늘어난 23개의 에이전트와 제공업체를 추적하며, 여기에는 Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter, Ollama가 포함됩니다. 모든 한도마다 초기화까지 남은 시간을 보여주는 자체 미터가 있어, 얼마나 여유가 남았는지 정확히 볼 수 있습니다. 그리고 Grok이 이제 Claude와 Codex와 함께 완전한 제공업체가 됐습니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="여러 Claude와 Codex 구독이 있는 에이전트 패널" width="380" /></p>
+
+<p>그리고 에이전트는 항상 키 한 번이면 닿습니다. <code>Super + ~</code>를 누르면 어두워진 데스크톱 위로 Quake 스타일 콘솔이 내려오고, 처음 열면 기본 에이전트가 시작됩니다. 다시 누르면 사라지고, 세션은 떠났던 자리 그대로 있습니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="어두워진 데스크톱 위에서 에이전트를 실행하는 Quake 스타일 콘솔" /></p>
+
+<p>여러 구독을 오가며 사용한다면, 이제 같은 기기에 Claude, Codex, Grok 로그인을 여러 개 유지하고 <code>omarchy agent account</code>를 사용해 새 세션이 어떤 로그인으로 시작할지 선택할 수 있습니다. 히스토리, 설정, 스킬은 로그인 간에 공유되므로, 전환 후에도 <code>claude --continue</code>가 떠났던 자리에서 바로 이어집니다. 한도에 가까워지면 Omarchy가 클릭 한 번으로 전환을 제안하거나, 새 세션을 여유가 가장 많은 계정으로 저절로 옮길 수 있습니다. 다른 기기를 설정할 때는 <code>omarchy agent account copy</code>가 SSH를 통해 모든 로그인을 가져오므로, 모든 것에 다시 로그인할 필요가 없습니다.</p>
+
+<p>OpenRouter의 에이전트 하네스인 Kimi와 Ori가 <em>Setup &gt; Defaults &gt; Agent</em>의 선택지에 합류하고, Google의 Antigravity가 구식 Gemini CLI를 대체합니다(<code>gemini</code>는 여전히 별칭으로 작동합니다). 터미널보다 창을 선호하시나요? Claude와 Amp 데스크톱 앱을 이제 <em>Install &gt; AI</em>에서 클릭 한 번으로 사용할 수 있습니다.</p>
+
+<h2 id="notifications-rebuilt">알림, 새로 구축</h2>
+
+<p>알림은 이제 보낸 사람별로 쌓이고, 테마를 따르며, 동일한 반복은 접힙니다. 액션 버튼, 인증 코드, 링크 모두 카드에서 바로 작동합니다. <code>Super + Comma</code>는 가장 새 알림에 동작하고(닫기, 열기, 또는 버튼 누르기), <code>Super + Ctrl + Comma</code>는 키보드로 모든 알림을 조작할 수 있게 해줍니다. 바의 종 아이콘은 방해 금지를 켭니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="새 알림" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">동영상 배경과 테마 인트로</h2>
+
+<p>배경은 이제 동영상이 될 수 있습니다. 하나를 넣으면 데스크톱이 출렁이는 파도나 원하는 다른 무엇으로 살아나고, 잠금 화면에는 그 동영상의 정지 프레임이 표시됩니다. 그리고 테마는 이제 등장 연출을 합니다: 각 테마는 로그인하거나 그 테마로 전환할 때 짧고 소리 없는 인트로를 재생할 수 있습니다. (차분하게 유지하고 싶으신가요? <em>Appearance &gt; Animations</em>에서 인트로를 끄세요.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse가 기본 테마에 합류</h2>
+
+<p>Jade Horse는 온통 안개 낀 녹색으로, 전체 데스크톱을 두루마리 그림처럼 보이게 하는 조각된 옥 배경을 갖추고 있습니다. 번들 테마 중 Osaka Jade를 대체하며, 또 다른 새 기본 테마인 Starship과 함께합니다. Osaka Jade를 사용 중이라면 사본을 그대로 유지하며, 새로 설치하려는 사람을 위한 <a href="https://github.com/omacom/omarchy-osaka-jade-theme">서드파티 테마</a>로 계속 살아갑니다.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse 테마" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff가 새 기본 배경</h2>
+
+<p>신규 설치에서는 이제 Tokyo Night의 새 기본 배경인 멋진 일몰 발사 장면 Liftoff가 여러분을 맞이합니다. <a href="https://github.com/tcballard">Tom Ballard</a>가 만들었고, 그는 자신의 <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff 테마</a>를 위해 처음 만들었습니다. 고마워요, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom Ballard가 만든 Liftoff 배경" /></p>
+
+<h2 id="boot-menu-now-quiet">이제 조용해진 부팅 메뉴</h2>
+
+<p>Omarchy는 예전에 혹시 이전 스냅샷으로 롤백해야 할 경우를 대비해 시작할 때마다 약 6초 동안 부팅 메뉴를 표시했습니다. 하지만 거의 아무도 그러지 않았습니다. 그래서 이제 Limine은 단 1초만 기다리고 조용히 부팅하며, 대부분의 경우 메뉴를 전혀 보지 못할 것입니다.</p>
+
+<p>다른 항목이나 스냅샷이 필요할 때는 기기가 시작되는 동안 아무 키(아래쪽 화살표도 됩니다)나 계속 누르면 메뉴에서 멈춥니다. 메뉴를 계속 더 오래 띄워두고 싶다면, <code>/boot/limine.conf</code>에 자신만의 <code>timeout:</code>을 설정하세요(<code>timeout: 5</code>처럼요). 업데이트는 여러분이 설정한 timeout을 그대로 둡니다.</p>
+
+<h2 id="changed-hotkeys">변경된 단축키</h2>
+
+<p>일부 단축키가 이동했습니다:</p>
+
+<ul>
+  <li>계산기: <code>Super + Ctrl + Q</code>가 이제 <code>Super + Shift + Q</code>입니다.</li>
+  <li>Activity: <code>Super + Ctrl + T</code>가 이제 <code>Super + Shift + T</code>이며, <code>Super + Ctrl + T</code>는 테마를 엽니다.</li>
+  <li>Network: <code>Super + Ctrl + W</code>가 이제 <code>Super + Ctrl + N</code>이며, <code>Super + Ctrl + W</code>는 배경을 엽니다.</li>
+  <li>Nightlight는 더 이상 단축키가 없습니다(예전에는 <code>Super + Ctrl + N</code>이었습니다); <code>Trigger &gt; Toggle</code>에 있습니다.</li>
+  <li><code>Super + Alt + Space</code>는 Apps 메뉴 대신 독에서 Apps를 엽니다.</li>
+</ul>
+
+<p>알림 단축키가 변경됐습니다:</p>
+
+<ul>
+  <li><code>Super + Comma</code>는 가장 새 카드에 대해 닫기만 하는 대신 닫기, 열기, 또는 그 하나의 버튼 누르기를 수행합니다.</li>
+  <li>마지막 카드를 닫는 동작은 <code>Super + Alt + Comma</code>로 이동했으며, 이 키는 예전에 카드를 열었습니다.</li>
+  <li>무음 처리는 <code>Super + Ctrl + Comma</code>에서 <code>Super + Ctrl + Alt + Comma</code>로 이동했습니다; <code>Super + Ctrl + Comma</code>는 이제 키보드 제어를 넘겨줍니다.</li>
+</ul>
+
+<p>몇 가지 키는 다르게 작동합니다:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code>, 그리고 <code>Super</code> + 스크롤은 모든 모니터마다 자체 워크스페이스가 있으므로 현재 모니터의 워크스페이스에 머무릅니다.</li>
+  <li>터미널에서는 <code>Super + C</code>와 <code>Super + V</code>가 <code>Ctrl + Insert</code>와 <code>Shift + Insert</code> 대신 <code>Ctrl + Shift + C</code>와 <code>Ctrl + Shift + V</code>를 보냅니다.</li>
+</ul>
+
+<p>여러분이 직접 만든 바인딩과 충돌할 수 있는 새 기본값: <code>Super + Q</code>(창 닫기, <code>Super + W</code>와 함께), <code>Super + A</code>(모두 선택), <code>Super + M</code>(독으로 최소화), <code>Super + ~</code>와 <code>Super + Shift + ~</code>(Quake 콘솔), <code>Super + Alt + L</code>(이전 레이아웃), <code>Super + Shift + Ctrl + Arrows</code>(창을 다른 모니터로 이동), <code>Super + Ctrl + Alt + C</code>(스크린샷), <code>Super + Ctrl + Alt + E</code>(세계 시계), <code>Super + Ctrl + Alt + F</code>(전체 화면 데스크톱), 그리고 push-to-talk 받아쓰기를 위한 <code>Right Alt</code> 누르고 있기.</p>
+
+<h2 id="more-features">더 많은 기능</h2>
+
+<ul>
+  <li>모니터마다 자체 워크스페이스를 부여: <code>Super + 1-0</code>은 현재 모니터의 워크스페이스로 이동하고, <code>Super + Arrows</code>는 다른 디스플레이 간을 이동합니다 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a>)</li>
+  <li>데스크톱 외관에 관한 모든 것을 Style을 대체하는 새 Appearance 메뉴로 모음: 테마, 배경, 글꼴, 바, 창, 브랜딩, 독, 워크스페이스 레이아웃, 애니메이션, 잠금 해제 화면 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a>)</li>
+  <li><em>Appearance &gt; Window Transparency</em>에서 Opaque, Transparent, Glassy 창 중 선택, 여기에 Glassy 바 배경도 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a>)</li>
+  <li><em>Appearance &gt; Window Corners</em>에서 테마, 날카로운, 둥근 창 모서리 중 선택 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a>)</li>
+  <li>애니메이션 없음 모드 추가, VM에서는 기본으로 켜짐 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a>)</li>
+  <li>앱을 기본으로 불투명하게 만들고, 터미널은 투명하게 유지 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a>)</li>
+  <li>Slack을 Install &gt; Service에 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a>)</li>
+  <li>모든 백엔드에서 Alt + Space로 받아쓰기 전환 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a>)</li>
+  <li>스크린샷 알림에 Open 및 Edit 버튼 추가, 화면 녹화와 yt-dlp 다운로드에 Open 및 Cut 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a>)</li>
+  <li>기본 커널 전환을 위한 Update &gt; Kernel 메뉴 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a>)</li>
+  <li>herdr 기기에 테마 동기화 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a>)</li>
+  <li>Hyprland 키 바인딩 교체를 위한 o.rebind 추가 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a>)</li>
+  <li>설치 프로그램 대신 첫 로그인 후 git 신원을 묻도록 하고, GitHub 로그인도 함께 제공 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a>)</li>
+  <li>설치 미디어가 언어, 키보드, 시간대를 미리 설정할 수 있게 허용 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a>)</li>
+  <li>바 위젯이 트레이 서랍 안에 있을 수 있게 허용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a>)</li>
+  <li>바 위젯을 바 밖으로 드래그해 제거할 수 있게 허용 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a>)</li>
+  <li>바에서 워크스페이스를 스크롤해 이동할 수 있게 허용 (<a href="https://github.com/outfoxxed">@outfoxxed</a>, <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a>)</li>
+  <li>테마 선택기에서 추가 테마를 삭제할 수 있게 허용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a>)</li>
+  <li>hey, basecamp, Cloudflare CLI를 지연 설치 도구로 추가 (<a href="https://github.com/monorkin">@monorkin</a>, <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a>)</li>
+  <li>SSH Agent를 선택적 서비스로 추가 (<a href="https://github.com/carletex">@carletex</a>, <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a>)</li>
+  <li>비밀번호 없는 sudo가 얼마나 지속될지 선택할 수 있게 허용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a>)</li>
+  <li>알림 토스트에 호버 닫기 버튼 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a>)</li>
+  <li>프로그램의 충돌 진단에서 그 프로그램 알림을 음소거할 수 있게 허용 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a>)</li>
+  <li>omarchy-notification-send가 액션 버튼을 추가할 수 있게 허용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a>)</li>
+  <li>실시간 초를 표시하는 시계 형식 추가 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a>)</li>
+  <li>Ctrl과 밝기 키로 키보드 백라이트 조정 (<a href="https://github.com/ludagoo">@ludagoo</a>, <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a>)</li>
+  <li>펌웨어에서 OEM Windows 제품 키 출력 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a>)</li>
+  <li>오리지널 vi를 터미널 편집기 선택지로 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a>)</li>
+  <li>Ethereal에 Roadster Starlight 배경 추가 (<a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a>, <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a>)</li>
+</ul>
+
+<h2 id="security">보안</h2>
+
+<ul>
+  <li>Windows VM 비밀번호를 RDP 클라이언트 인자에서 제외 (<a href="https://github.com/dicemans">@dicemans</a>, <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a>)</li>
+  <li>화면 녹화 상태를 모든 사용자가 쓸 수 있는 /tmp 밖으로 이동 (<a href="https://github.com/Chessing234">@Chessing234</a>, <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a>)</li>
+  <li>절전 모드를 거칠 때 비밀번호 없는 sudo 만료를 강화 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a>)</li>
+  <li>업데이트 억제자 정리를 그것을 만든 프로세스에 연결 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a>)</li>
+  <li>OCaml 정리 권한 분리 (<a href="https://github.com/ErikMelton">@ErikMelton</a>, <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a>)</li>
+  <li>공장 초기화 권한 상승을 패키지된 명령으로 고정 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a>)</li>
+  <li>초기화 시 호출한 사용자의 저장된 지문 템플릿 제거 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a>)</li>
+  <li>경로인 hook 및 상태 이름 거부 (<a href="https://github.com/Adolanium">@Adolanium</a>, <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a>)</li>
+  <li>지문 및 FIDO2 설정이 작성한 polkit 스택에서 system-auth에 위임 (<a href="https://github.com/Wheel-Smith">@Wheel-Smith</a>, <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a>)</li>
+  <li>지문을 제거할 때 리더 자체 저장소에서도 제거 (<a href="https://github.com/scottjones">@scottjones</a>, <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a>)</li>
+  <li>키가 추가되지 않았을 때 SSH 설정이 비밀번호 로그인이 가능한 상태로 sshd를 실행 중으로 남기는 것을 방지 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a>, <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a>)</li>
+  <li>Voxtype 업그레이드 중 다른 로컬 사용자가 자신의 프로그램을 끼워 넣는 것을 방지 (<a href="https://github.com/Vladkarok">@Vladkarok</a>, <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a>)</li>
+  <li>공장 초기화가 gum 설정을 sudo를 통해 전달하는 방식을 강화 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a>)</li>
+</ul>
+
+<h2 id="fixes">수정 사항</h2>
+
+<ul>
+  <li>모니터 연결 해제, 비활성화, 또는 덮개를 닫아 끌 때 Hyprland가 충돌하는 문제 수정 (<a href="https://github.com/falkoro">@falkoro</a>, <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a>)</li>
+  <li>커널 이미지에 root= 매개변수가 빠진 채 남을 수 있던 업그레이드 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a>)</li>
+  <li>공장 초기화가 다른 시스템의 부팅 항목을 지우던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a>)</li>
+  <li>다른 Omarchy 옆에 설치하면 그 설치의 부팅 항목이 제거되던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a>)</li>
+  <li>여유 공간 설치가 기존 파티션을 새 파티션으로 가져갈 수 있던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a>)</li>
+  <li>중단된 드라이브 비밀번호 변경을 재개하면 잘못된 키가 제거되던 문제 수정 (<a href="https://github.com/scottjones">@scottjones</a>, <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a>)</li>
+  <li>Omarchy 업데이트당 sudo 비밀번호를 한 번만 묻기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a>)</li>
+  <li>모든 명령마다 다시 묻는 대신 10분 동안 한 번만 sudo 비밀번호 묻기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a>)</li>
+  <li>업데이트의 단일 sudo 프롬프트로 AUR 업데이트와 부팅 검사까지 처리 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a>)</li>
+  <li>트랜잭션 도중 로그아웃해도 패키지 업데이트가 안전하게 유지 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a>)</li>
+  <li>앱이 닫히기를 마치자마자 로그아웃, 재부팅, 종료 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a>)</li>
+  <li>스크린샷용 Tensaku를 Omasnap으로 교체 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a>)</li>
+  <li>패널이 바에서 커져 나오고 패널 간에 변형되도록 하며, 버튼과 바 아이콘에 누름 피드백 추가 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a>)</li>
+  <li>알림이 바 아래에서 미끄러져 들어오고 왔던 방향으로 다시 나가도록 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a>)</li>
+  <li>Omarchy 자체 엔드포인트에 대해 연결을 확인하고, 종속형 포털 로그인 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a>)</li>
+  <li>edge에서 stable이나 RC로 전환하면 기기가 오래된 빌드에 머물던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a>)</li>
+  <li>셸 응답이 느릴 때 4.5 업데이트가 중단되던 문제 수정 (<a href="https://github.com/AnPod">@AnPod</a>, <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a>)</li>
+  <li>데스크톱 세션 밖에서 시작하면 업데이트가 조용히 실패하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a>)</li>
+  <li>mise 도구 다운로드 실패가 나머지 시스템 업데이트를 중단시키던 문제 수정 (<a href="https://github.com/sanjyay">@sanjyay</a>, <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a>)</li>
+  <li>omarchy-nvim이 설치되지 않았을 때 업데이트가 실패하던 문제 수정 (<a href="https://github.com/imzihuailin">@imzihuailin</a>, <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a>)</li>
+  <li>듀얼 부팅 설치가 EFI 파티션을 마운트하지 못하던 문제 수정 (<a href="https://github.com/Damian626">@Damian626</a>, <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a>)</li>
+  <li>펌웨어가 새 부팅 항목을 받아들이지 않을 때 설치가 중단되던 문제 수정 (<a href="https://github.com/ryanio">@ryanio</a>, <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a>)</li>
+  <li>오래된 RAID 멤버나 볼륨 그룹이 있는 디스크에서 설치가 중단되던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a>)</li>
+  <li>모든 USB 기기와 부팅 작업을 기다리지 않아 설치 프로그램을 더 빨리 시작 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a>)</li>
+  <li>신규 설치에서 4096바이트 섹터로 디스크 암호화 속도 향상 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a>)</li>
+  <li>내부 디스크를 먼저 나열하고 안전한 선택에서 설치 화면 열기 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a>)</li>
+  <li>설치 프로그램에서 Full disk install을 먼저 나열하고, 디스크 화면에서 Esc로 뒤로 가기 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>)</li>
+  <li>한 모니터 배율 조정이 다른 모든 모니터 배율을 바꾸던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a>)</li>
+  <li>모니터마다 배율이 다를 때 XWayland 앱이 너무 크게 나오던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a>)</li>
+  <li>창이 전체 화면이 되면 HDR 디스플레이가 바랜 HDR 화면으로 전환되던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a>)</li>
+  <li>소수 배율 디스플레이에서 메뉴와 선택기가 흐릿하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a>)</li>
+  <li>외부 디스플레이를 분리한 후 노트북 디스플레이가 꺼진 채로 남던 문제 수정 (<a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a>, <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a>)</li>
+  <li>디스플레이를 다시 활성화하면 위치, 배율, 모드가 초기화되던 문제 수정 (<a href="https://github.com/zihaomu">@zihaomu</a>, <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a>)</li>
+  <li>모니터 연결 해제 후 메뉴와 선택기가 다시 열리지 않던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a>)</li>
+  <li>모니터 연결 해제 후 모니터별 워크스페이스가 이동하던 문제 수정 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a>)</li>
+  <li>오디오 패널이 열린 상태에서 오디오 기기가 분리되면 셸이 충돌하던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a>)</li>
+  <li>화면 보호기 후 전체 화면 창이 전체 화면을 잃던 문제 수정 (<a href="https://github.com/MGross21">@MGross21</a>, <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a>)</li>
+  <li>Hyprland 다시 로드 후 시작 시 커서가 사라지던 문제 수정 (<a href="https://github.com/spencerbull">@spencerbull</a>, <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a>)</li>
+  <li>XWayland 앱 위에서 커서가 보이지 않게 되던 문제 수정 (<a href="https://github.com/Sebo1411">@Sebo1411</a>, <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a>)</li>
+  <li>클립보드 캡처가 멈추던 문제 수정 (<a href="https://github.com/maxcroy1">@maxcroy1</a>, <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a>)</li>
+  <li>XDG Secret 포털을 통한 키링 접근 수정 (<a href="https://github.com/pkwagner">@pkwagner</a>, <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a>)</li>
+  <li>지문 등록과 잠금 화면 복구 수정 (<a href="https://github.com/GeertJohan">@GeertJohan</a>, <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a>)</li>
+  <li>지문 등록을 단계별로 안내 (<a href="https://github.com/scottjones">@scottjones</a>, <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a>)</li>
+  <li>잠금 화면 비밀번호 필드에서 키 자동 반복 수정 (<a href="https://github.com/berndb">@berndb</a>, <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a>)</li>
+  <li>절전 해제 시 잠금 화면 배경이 비밀번호 필드보다 늦게 로드되던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a>)</li>
+  <li>세션이 이미 사라진 디스플레이를 이름으로 지정할 때 화면 잠금 시간 초과 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a>)</li>
+  <li>현재 창 디렉터리에서 터미널 여는 속도 향상 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a>)</li>
+  <li>VS Code 계열 편집기가 테마 변경을 실시간으로 따르도록 (<a href="https://github.com/Macho0x">@Macho0x</a>, <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a>)</li>
+  <li>테마 변경 시 실행 중인 Hunk 세션에 테마 다시 적용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a>)</li>
+  <li>테마별로 선택한 배경 기억 (<a href="https://github.com/OldJobobo">@OldJobobo</a>, <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a>)</li>
+  <li>대규모 컬렉션과 HiDPI에서도 이미지 선택기가 빠르고 선명하게 유지 (<a href="https://github.com/keylimesoda">@keylimesoda</a>, <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a>)</li>
+  <li>투명 바가 배경을 샘플링하는 데 쓰는 CPU와 메모리 절감 (<a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a>, <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a>)</li>
+  <li>수천 대 기기가 있는 tailnet에서 Tailscale 패널 속도 향상 (<a href="https://github.com/iskakaushik">@iskakaushik</a>, <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a>)</li>
+  <li>에이전트 패널에서 Grok을 Claude와 Codex 수준으로 끌어올림 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a>)</li>
+  <li>에이전트 계정 선택을 CLI 하위 프로세스에 적용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a>)</li>
+  <li>Codex 개별 지출 한도와 초기화 시간 표시 (<a href="https://github.com/Stegi56">@Stegi56</a>, <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a>)</li>
+  <li>Claude를 선택할 때 브라우저 통합 설정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a>)</li>
+  <li>에이전트가 시작 후 설치된 mise 도구를 찾지 못하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a>)</li>
+  <li>SSH를 통해 시작된 herdr 창에서 에이전트에 스크린샷 붙여넣기가 안 되던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a>)</li>
+  <li>에이전트 패널이 압축된 Codex 세션을 놓치던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a>)</li>
+  <li>Caps Lock을 정상으로 되돌리고 Shift + Caps Lock을 compose 키로 만들기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a>)</li>
+  <li>로그인 화면에 시스템 키보드 레이아웃 적용 (<a href="https://github.com/g-desoutter">@g-desoutter</a>, <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a>)</li>
+  <li>비라틴 키보드 레이아웃에서 레이아웃 전환이 한 번씩 건너뛰던 문제 수정 (<a href="https://github.com/manuaudio">@manuaudio</a>, <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a>)</li>
+  <li>mpv에서 하드웨어 동영상 디코딩 켜기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a>)</li>
+  <li>TCP 혼잡 제어를 BBR로 전환하고 실제 디스크에서 kyber I/O 스케줄러 사용 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a>)</li>
+  <li>T3 Code를 자체 업데이트 AppImage로 설치 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a>)</li>
+  <li>PHP 및 Laravel 설치 개선 (<a href="https://github.com/nunomaduro">@nunomaduro</a>, <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a>)</li>
+  <li>Node를 지연 설치하고 mise 설정을 그대로 두기 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a>)</li>
+  <li>기본값을 선택할 때 누락된 앱 설치 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a>)</li>
+  <li>Install 메뉴에서 설치된 소프트웨어를 숨기는 대신 흐리게 표시 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a>)</li>
+  <li>Brave Origin용 비밀번호 관리자와 기타 네이티브 메시징 호스트 등록 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a>)</li>
+  <li>Brave Origin 웹 알림을 사이트별로 그룹화하고, 클릭하면 올바른 탭 열기 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a>)</li>
+  <li>업데이트 중 고아 패키지 제거를 자동으로 승인 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a>)</li>
+  <li>모든 업데이트 전에 Omarchy 키링 업데이트 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a>)</li>
+  <li>채널 전환 후 재부팅 제안 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a>)</li>
+  <li>업데이트할 것이 있을 때만 첫 실행 업데이트 제안 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a>)</li>
+  <li>Omarchy 자체 지오 서비스로 날씨 위치와 설치 프로그램 시간대 찾기 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a>)</li>
+  <li>Arch NTP 풀 대신 ntp.omarchy.org에서 시계 설정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a>)</li>
+  <li>Omarchy 자체 속도 테스트로 네트워크 속도 측정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a>)</li>
+  <li>첫 부팅 중 따라 그린 아이콘 진행 화면 표시 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a>, <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a>)</li>
+  <li>라이브 ISO를 Omarchy 커널로 부팅하고, Mac에서만 T2 커널로 부팅 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a>)</li>
+  <li>오프라인 설치가 mise 버전 조회를 기다리지 않도록 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a>)</li>
+  <li>오프라인 설치 시간대가 Africa/Abidjan으로 기본 설정되던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a>)</li>
+  <li>설치 프로그램 시간대 선택기에서 입력해 검색할 수 없던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a>)</li>
+  <li>Ventoy 스틱에서 부팅하면 라이브 ISO가 스플래시 뒤에서 멈추던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>)</li>
+  <li>설치 프로그램 설정 양식에서 독일어와 프랑스어 콘솔 키맵 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a>)</li>
+  <li>설치 프로그램과 git 설정에서 gum의 영어 키 힌트 숨기기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a>)</li>
+  <li>설치 진행 화면에서 영어 전용 농담 제거 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a>)</li>
+  <li>디스크 준비 중 설치 프로그램 출력이 화면에 여백 없이 표시되던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a>)</li>
+  <li>Quattro 업그레이드가 기본 브라우저를 Chromium으로 초기화하던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a>)</li>
+  <li>비ASCII 문자가 있는 배경 이름에서 Quattro 업그레이드가 중단되던 문제 수정 (<a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a>, <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a>)</li>
+  <li>GRUB나 systemd-boot로 부팅하는 기기에서 커널 마이그레이션이 중단되던 문제 수정 (<a href="https://github.com/manuaudio">@manuaudio</a>, <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a>)</li>
+  <li>NVMe 디스크가 두 개 이상인 암호화되지 않은 기기에서 최대 절전 모드 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a>)</li>
+  <li>FIDO2 마이그레이션이 해결되기 전에 완료로 표시되던 문제 수정 (<a href="https://github.com/ErikMelton">@ErikMelton</a>, <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a>)</li>
+  <li>플로팅 워크스페이스가 자체 float 규칙이 적용되는 첫 번째 창을 차지하던 문제 수정 (<a href="https://github.com/zihaomu">@zihaomu</a>, <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a>)</li>
+  <li>Super + L로 워크스페이스를 플로팅 안팎으로 순환할 때 컴포지터가 멈추던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a>)</li>
+  <li>Alt + Shift + Tab이 모든 창을 역방향으로 순환하지 않던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a>)</li>
+  <li>분리된 창이 다른 모니터로 이동할 때 중앙에 오지 않던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a>)</li>
+  <li>터미널이 아닌 창에 포커스가 있을 때 새 터미널이 홈 폴더 밖에서 열리던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a>)</li>
+  <li>1Password와 Bitwarden 창이 떠다니지 않던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a>)</li>
+  <li>설치 프로그램 터미널이 종료되면 1Password가 닫히던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a>)</li>
+  <li>DaVinci Resolve 대화 상자가 포인터 포커스를 빼앗던 문제 수정 (<a href="https://github.com/AksharP5">@AksharP5</a>, <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a>)</li>
+  <li>Windows VM 디스플레이를 통해 데스크톱이 비치던 문제 수정 (<a href="https://github.com/jmwall">@jmwall</a>, <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a>)</li>
+  <li>Quattro 마이그레이션 후 $$를 포함하는 레거시 Windows VM 비밀번호 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a>)</li>
+  <li>업그레이드 후 Hyprland 기부 팝업이 표시되지 않도록 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a>)</li>
+  <li>바 위젯 드래그와 배열 개선 (<a href="https://github.com/outfoxxed">@outfoxxed</a>, <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a>)</li>
+  <li>바 아이콘 크기와 정렬 정규화 (<a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a>)</li>
+  <li>시계 왼쪽에 호버할 때만 숨겨진 바 표시기 드러내기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a>)</li>
+  <li>트레이 아이콘을 바의 다른 아이콘과 정렬 (<a href="https://github.com/ayoubdya">@ayoubdya</a>, <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a>)</li>
+  <li>툴팁이 이미 표시 중일 때 다음 바 툴팁을 바로 표시 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a>)</li>
+  <li>시계와 날씨 패널을 해당 위젯 아래에 열기 (<a href="https://github.com/scottjones">@scottjones</a>, <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a>)</li>
+  <li>DNS 제공업체 선택 후에도 네트워크 패널 열어두기 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a>)</li>
+  <li>팝업을 닫으면 바 위젯이 응답하지 않던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a>)</li>
+  <li>숨겨진 바가 전체 화면 창 상단의 클릭을 가로채던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a>)</li>
+  <li>어두운 트레이 아이콘이 바 속에 사라지던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a>)</li>
+  <li>바 아이콘이 고르지 않거나 중앙에서 벗어나 있던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a>)</li>
+  <li>바 툴팁이 첫 프레임을 잘못된 크기로 그리던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a>)</li>
+  <li>알림 기록이 모든 카드를 방금 온 것으로 표시하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a>)</li>
+  <li>첫 로그인 알림이 하나의 스택으로 접히던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a>)</li>
+  <li>이름이 여러 단어인 앱에서 알림 클릭이 포커스를 주지 않던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a>)</li>
+  <li>Taildrop 알림이 빈 텍스트를 표시하고 미리보기가 없던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a>)</li>
+  <li>배터리가 가득 찼을 때 배터리 알림이 빈 시간과 0W를 표시하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a>)</li>
+  <li>전원을 연결한 후에도 배터리 부족 경고가 남아 있고 재부팅 후 다시 나타나던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a>)</li>
+  <li>일부 노트북에서 배터리 소모가 0W로 표시되던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a>)</li>
+  <li>AC 전원에서 가득 찬 배터리가 방전 중인 것으로 표시되던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a>)</li>
+  <li>커널이 최대 절전을 할 수 없을 때 Hibernate가 표시되던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a>)</li>
+  <li>재개 후 gvfs 마운트가 사라지던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a>)</li>
+  <li>잠금이 두 번 꺼진 후 키보드 백라이트가 꺼진 채로 남던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a>)</li>
+  <li>잠금이 디스플레이를 끈 상태에서 지문 리더가 깨어나던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a>)</li>
+  <li>디스플레이가 늦게 나타날 때 부팅 비밀번호 프롬프트가 중앙에서 벗어나던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a>)</li>
+  <li>화면 보호기 종료 키가 모서리에 깜빡이던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a>)</li>
+  <li>OWE 전환 모드 네트워크에서 Wi-Fi 아이콘이 깜빡이던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a>)</li>
+  <li>테마 설치 후 터미널에 OWE 오류가 출력되던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a>)</li>
+  <li>정지 이미지에서 동영상 배경으로 전환할 때 깜빡임 수정 (<a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a>)</li>
+  <li>Hackerman을 업스케일된 기하학 배경으로 업데이트 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a>)</li>
+  <li>순환 색상 참조가 있는 테마에서 테마 전환이 멈추던 문제 수정 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a>)</li>
+  <li>Catppuccin 테마에서 Neovim이 시작되지 않던 문제 수정 (<a href="https://github.com/anandude">@anandude</a>, <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a>)</li>
+  <li>OpenCode 2가 Omarchy 테마 대신 기본 테마로 시작하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a>)</li>
+  <li>생성된 VS Code 테마에서 인라인 코드 대비가 낮던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a>)</li>
+  <li>현재 테마를 맞추는 동안 T3 Code 설치가 중단되던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a>)</li>
+  <li>글꼴 패밀리 변경 시 터미널 글꼴 크기가 초기화되던 문제 수정 (<a href="https://github.com/sbalbalosa">@sbalbalosa</a>, <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a>)</li>
+  <li>글꼴 변경 시 터미널 프로세스 ID가 출력되던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a>)</li>
+  <li>언어 전환 시 모든 로케일을 다시 빌드하고 디스크가 거의 가득 차면 로케일을 잃던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a>)</li>
+  <li>번역이 로드되기 전에 셸이 원시 번역 키를 표시하던 문제 수정 (<a href="https://github.com/zihaomu">@zihaomu</a>, <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a>)</li>
+  <li>Omarchy 스크립트에서 번역된 텍스트 속도 향상 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a>)</li>
+  <li>686개 문자열 번역 업데이트, 그중 392개는 매뉴얼에 있음 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a>)</li>
+  <li>영어가 아닌 로케일에서 볼륨 및 출력 컨트롤 수정 (<a href="https://github.com/Sebo1411">@Sebo1411</a>, <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a>)</li>
+  <li>영어가 아닌 로케일에서 CPU 사용량 표시 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a>)</li>
+  <li>fcitx5가 설치되지 않았을 때 fcitx5 서비스가 영원히 다시 시작되던 문제 수정 (<a href="https://github.com/therk">@therk</a>, <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a>)</li>
+  <li>키보드 레이아웃 위젯이 아무도 입력하지 않는 기기를 전환하던 문제 수정 (<a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a>)</li>
+  <li>키보드 레이아웃 위젯이 벤더 핫키 기기로 전환되던 문제 수정 (<a href="https://github.com/yashranaway">@yashranaway</a>, <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a>)</li>
+  <li>키 바인딩 메뉴가 Lua 프로세스를 CPU 100%로 실행 중인 채 남기던 문제 수정 (<a href="https://github.com/tobi">@tobi</a>, <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a>)</li>
+  <li>일광 절약 시간제가 끝날 때 시계가 매 밀리초마다 로그를 쏟아내던 문제 수정 (<a href="https://github.com/falkoro">@falkoro</a>, <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a>)</li>
+  <li>셸이 읽을 수 없는 shell.json을 기본값으로 교체하던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a>)</li>
+  <li>파일이 업데이트되는 동안 Omarchy 메뉴가 행을 잃던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a>)</li>
+  <li>플러그인을 다시 활성화해도 바 위젯이 돌아오지 않던 문제 수정 (<a href="https://github.com/berrimi">@berrimi</a>, <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a>)</li>
+  <li>로컬 플러그인이 자체 Python 바이트코드 때문에 반복해서 다시 로드되던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a>)</li>
+  <li>플러그인의 숨겨진 버튼이 패딩으로 접히던 문제 수정 (<a href="https://github.com/dmkenney">@dmkenney</a>, <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a>)</li>
+  <li>드롭다운이 마지막 항목을 잘라내던 문제 수정 (<a href="https://github.com/sprajs">@sprajs</a>, <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a>)</li>
+  <li>두 번째 클릭으로 드롭다운이 닫히지 않던 문제 수정 (<a href="https://github.com/felixzsh">@felixzsh</a>, <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a>)</li>
+  <li>슬라이더 노브가 트랙 끝 전에 멈추던 문제 수정 (<a href="https://github.com/erikrjohansson">@erikrjohansson</a>, <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a>)</li>
+  <li>
+    <p>Update &gt; Hardware &gt; Trackpad가 대부분의 터치패드를 놓치고 키보드를 초기화하던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a>)</p>
+
+    <p>이제 모든 터치패드에서 눌린 버튼을 해제하고, 키보드와 터치스크린까지 함께 초기화하는 대신 터치패드만 초기화합니다.</p>
+  </li>
+  <li>웹캠 메뉴가 카메라를 켜지 않고 카메라가 있는지 확인하도록 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a>)</li>
+  <li>Omasnap 스크롤 캡처가 검은 프레임만 잡던 문제 수정 (<a href="https://github.com/falkoro">@falkoro</a>, <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a>)</li>
+  <li>스크린샷 선택기가 사용자 키 바인딩을 해제하던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a>)</li>
+  <li>녹화를 중단하면 빈 저장 녹화가 있다고 알리던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a>)</li>
+  <li>덮어 저장된 이미지에 대해 이미지 선택기가 오래된 썸네일을 표시하던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a>)</li>
+  <li>야간 조명을 끌 때 완전히 초기화되지 않던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a>)</li>
+  <li>미디어 위젯이 유휴 플레이어 때문에 일시정지된 트랙을 버리던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a>)</li>
+  <li>밝기를 보고하지 않는 모니터에서 디스플레이 스캔이 반복되던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a>)</li>
+  <li>구성된 브라우저가 제거됐을 때 Super + Shift + Return이 실패하던 문제 수정 (<a href="https://github.com/vitally">@vitally</a>, <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a>)</li>
+  <li>사전 설치 앱 제거 후에도 계산기 단축키가 남던 문제 수정 (<a href="https://github.com/OldJobobo">@OldJobobo</a>, <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a>)</li>
+  <li>Brave Origin 프로필에서 Copy URL 단축키 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a>)</li>
+  <li>Bitwarden 확장 팝아웃이 잘못된 크기로 열리던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a>)</li>
+  <li>HiDPI 모니터에서 Battle.net이 100% 배율로 열리던 문제 수정 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a>)</li>
+  <li>Inkscape 파일 선택기가 타일형으로 열리던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a>)</li>
+  <li>mise가 Go를 관리할 때 업데이트 중 Go AUR 패키지 빌드가 실패하던 문제 수정 (<a href="https://github.com/shbernal">@shbernal</a>, <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a>)</li>
+  <li>docker 그룹에 없을 때 ONCE 설치 수정 (<a href="https://github.com/kevinmcconnell">@kevinmcconnell</a>, <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a>)</li>
+  <li>에이전트 패널 클릭이 트레이를 열던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a>)</li>
+  <li>끊어진 공유 심링크 때문에 에이전트 계정 설정이 걸리던 문제 수정 (<a href="https://github.com/manuaudio">@manuaudio</a>, <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a>)</li>
+  <li>계정이 없을 때 <code>--reauth</code>가 새 에이전트 계정을 추가하던 문제 수정 (<a href="https://github.com/manuaudio">@manuaudio</a>, <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a>)</li>
+  <li>에이전트 계정 이름 변경 힌트가 제공업체 이름을 표시하도록 (<a href="https://github.com/manuaudio">@manuaudio</a>, <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a>)</li>
+  <li>키 작업이 실패했을 때 키링 업데이트가 성공했다고 주장하던 문제 수정 (<a href="https://github.com/Adolanium">@Adolanium</a>, <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a>)</li>
+  <li>sudo로 실행하면 공장 초기화 프롬프트가 비어 있던 문제 수정 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a>)</li>
+  <li>보류 중인 마이그레이션 알림이 로그인마다 하나씩 쌓이던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a>)</li>
+  <li>About의 OS Age가 설치 시점 대신 ISO 빌드 시점부터 계산되던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a>)</li>
+  <li>Dropbox가 360~364일 된 파일에 대해 “0y ago”라고 표시하던 문제 수정 (<a href="https://github.com/manuaudio">@manuaudio</a>, <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a>)</li>
+  <li>Dropbox 상태 확인이 보류 중인 로그인 링크를 만료시키던 문제 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a>)</li>
+  <li>Dropbox 트레이 아이콘 라이브러리 설치 수정 (<a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a>)</li>
+  <li>Chromium에서 오버레이 스크롤바 활성화 (<a href="https://github.com/robzolkos">@robzolkos</a>, <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a>)</li>
+  <li>Apple Silicon Mac에서 Touch ID를 켜기 전에 묻기 (<a href="https://github.com/scottjones">@scottjones</a>, <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a>)</li>
+  <li>Apple Silicon Mac에서 RC 채널 제공 (<a href="https://github.com/maralcbr">@maralcbr</a>, <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a>)</li>
+  <li>Apple Silicon Mac에서 stable 채널 제공 (<a href="https://github.com/maralcbr">@maralcbr</a>, <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a>)</li>
+  <li>Apple Silicon에서 새 터미널에 Omarchy 별칭, 함수, 환경이 없던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a>)</li>
+  <li>설치된 NVIDIA 애플리케이션 설정 (<a href="https://github.com/jdvmi00">@jdvmi00</a>, <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a>)</li>
+  <li>NVIDIA N1x가 있는 Lenovo Pro 9에서 설치가 실패하던 문제 수정 (<a href="https://github.com/breymander">@breymander</a>, <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a>)</li>
+  <li>이전 오디오 프로필을 실행한 N1x 노트북에서 내장 스피커와 마이크가 없던 문제 수정 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a>)</li>
+  <li>DGX Spark 같은 NVIDIA GB10 기기에서 데스크톱이 느리던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a>)</li>
+  <li>
+    <p>NVIDIA에서 재개 후 잠금 화면에 입력이 안 되던 문제 수정 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a>)</p>
+
+    <p>패널이 켜지는 순간 잠금이 다시 어두워지지도 않습니다.</p>
+  </li>
+  <li>Lutris와 Battle.net이 다른 GPU의 32비트 Vulkan 드라이버를 설치하던 문제 수정 (<a href="https://github.com/zihaomu">@zihaomu</a>, <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a>)</li>
+  <li>ARM에서 모든 업데이트 후 재부팅을 묻지 않도록 (<a href="https://github.com/birkskyum">@birkskyum</a>, <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a>)</li>
+  <li>aarch64에서 stable 및 RC 채널 제공 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a>)</li>
+  <li>ARM 노트북에서 전원 프로필이 작동하도록 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a>)</li>
+  <li>4K 페이지인 ARM 기기에서 Dropbox를 제공하고, ARM에서 Spotify를 웹 앱으로 제공 (<a href="https://github.com/birkskyum">@birkskyum</a>, <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a>)</li>
+  <li>ARM에서 GeForce NOW, Battle.net, Lutris 설치 숨기기 (<a href="https://github.com/birkskyum">@birkskyum</a>, <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a>)</li>
+  <li>ARM에서 Hermes 앱이 제자리 업데이트되지 않던 문제 수정 (<a href="https://github.com/ryanrhughes">@ryanrhughes</a>, <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a>)</li>
+  <li>Snapdragon 노트북 키보드가 디스크 잠금 해제 프롬프트에서 입력되지 않던 문제 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a>)</li>
+  <li>Snapdragon 노트북에서 로그인 시 카메라가 없던 문제 수정 (<a href="https://github.com/birkskyum">@birkskyum</a>, <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a>)</li>
+  <li>Snapdragon X2 노트북에서 디스크 잠금 해제 전 검은 화면 문제 수정 (<a href="https://github.com/jdvmi00">@jdvmi00</a>, <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a>)</li>
+  <li>Intel Wildcat Lake에서 하드웨어로 동영상 디코딩 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a>)</li>
+  <li>Arrow Lake-H 노트북에서 라이브 ISO 충돌 수정 (<a href="https://github.com/emirb">@emirb</a>, <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a>)</li>
+  <li>HP EliteBook Ultra G1q 내장 마이크 수정 (<a href="https://github.com/bprendie">@bprendie</a>, <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a>)</li>
+  <li>Motorcomm YT6801 Ethernet에 업스트림 지원 사용 (<a href="https://github.com/AFOliveira">@AFOliveira</a>, <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a>)</li>
+  <li>Elgato Cam Link 4K를 16:9 가상 카메라로 중계 (<a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a>)</li>
+  <li>플랫폼이 이름을 지정한 지문 리더 지원 (<a href="https://github.com/scottjones">@scottjones</a>, <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a>)</li>
+</ul>
