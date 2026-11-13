@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (diğer adıyla Quattro RS!), <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>'dan bu yana ilk büyük özellik sürümü ve tam bir dev: sadece on iki haftada 180'den fazla katkıcıdan 740'tan fazla pull request birleştirildi. Artık döşeme varsayılanının yanında geleneksel bir masaüstü modu da sunuyor. M1/M2/M3/Neo MacBook'lara yerel olarak kurabilirsiniz. Ve 50 dil konuşuyor. Ve bir sürü başka özellik, düzeltme ve iyileştirme daha var. Zaten Omarchy mi kullanıyorsunuz? <em>Update &gt; Omarchy</em>'yi çalıştırın. Yeni makine mi? <a href="/#install">Buradan alın</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Dock'lu yüzen çalışma alanları</h2>
+
+<p><code>Super + L</code> artık herhangi bir çalışma alanını döşeme, kaydırma ve yüzen arasında döndürüyor. Yüzen bir çalışma alanında her pencere, temanızın renklerinde bir başlık çubuğu alıyor ve bir dock sabitlenmiş uygulamalarınızı, çalışan her şeyi ve kurulu her uygulamanın ızgarasını gösteriyor. Yeniden sıralamak veya sabitlemek için sürükleyin, daha fazlası için sağ tıklayın ve <code>Super + M</code> bir pencereyi dock'a küçültür.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Bu, macOS veya Windows'tan gelen ve henüz tamamen döşemeye geçmeye hazır olmayan herkes için harika bir giriş yolu. Ya da sadece pencerelerin yayılabileceği bir çalışma alanı isteyen herkes için. Çalışma alanı başına karıştırıp eşleştirin, çubuk da her birinin hangi düzeni kullandığını gösterir.</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Silicon üzerinde Omarchy</h2>
+
+<p>İnanılmaz <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> ekibimiz yerel Mac yükleyicisini yayınladı. macOS'ta <a href="https://github.com/omacom/omarchy-mac-installer/releases">bir uygulama indirin</a>, Omarchy'yi M1, M2, M3 veya Neo MacBook'unuza onun yanına kuracaktır. USB bellek yok, terminal büyüleri yok. Homebrew'u mu tercih edersiniz? Bu tek satır:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac yükleyicisi" /></p>
+
+<p>Bu, Eylül'de yapmaya koyulduğumuz şey: Asahi'nin başlattığını bitirmek. İki ay sonra, sadece indirebiliyorsunuz. Ekipteki herkesin inanılmaz işi.</p>
+
+<p>Ve orada durmuyorlar. M4, M5 ve M6 üzerinde şu anda çalışılıyor, bu yüzden Omarchy'nin her Apple Silicon Mac'te çalışması muhtemelen uzun sürmeyecek.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="M2 Max, M3 Air, Neo, M4 Pro ve M5 Air üzerinde Omarchy" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">NVIDIA DGX Spark + N1X için ARM desteği (ve yakında Snapdragon)</h2>
+
+<p>Omarchy 4.5 ilk ARM ISO'sunu yayınlıyor ve onunla birlikte NVIDIA'nın ARM makineleri için ön destek geliyor: DGX Spark masaüstü ve <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> ve <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a> gibi N1X üzerine kurulu dizüstü bilgisayarlar. Ve yakında Snapdragon ARM makinelerinin tüm serisi için de desteğimiz olacak. Henüz ilk günler, bu yüzden birkaç pürüzlü kenar bekleyin ve lütfen bozulan her şeyi <a href="https://github.com/omacom/omarchy/issues">GitHub</a>'da bildirin.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 dil ve 5 giriş yöntemi</h2>
+
+<p>Omarchy artık 50 dil konuşuyor. <em>Setup &gt; Language</em> altında birini seçin (veya <code>omarchy language &lt;code&gt;</code> çalıştırın) ve menü, masaüstü ve Omarchy bildirimleri anında değişir. Sistem yerel ayarı bir sonraki oturum açmanızda onu takip eder.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Dil değiştirme" /></p>
+
+<p>Bir dili konuşmak işin yalnızca yarısı, tabii. Onu yazmanız da gerekiyor. Bu yüzden Omarchy artık Japonca (Mozc), Korece (Hangul), Basitleştirilmiş Çince (Pinyin), Tayvan (Zhuyin) ve Hong Kong (Cangjie) için, doğrudan yükleyiciden veya daha sonra <em>Setup &gt; Keyboard</em> altında düzgün giriş yöntemleri kuruyor. Her biri karakter biçimleri için doğru yazı tipleriyle geliyor, aday penceresi temanızı takip ediyor ve <code>Super + I</code> giriş dilleriniz arasında geçiş yapıyor. Hangul, Zhuyin ve Cangjie, Windows ve macOS'taki gibi, Latinceyi Dvorak, Colemak veya AZERTY ile yazsanız bile tuşlarını standart konumlarında tutuyor. Ve tek başına Shift'e dokunmak bir giriş yönteminden Latin harflerine ve tekrar geri adım atıyor, Sogou, Microsoft Pinyin ve macOS'un çalıştığı gibi.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Captive Wi-Fi portallarında oturum açın</h2>
+
+<p>Otel, havaalanı ve kahve dükkanı Wi-Fi'ı sonunda sadece çalışıyor. Omarchy artık bir ağın çevrimiçi olmanıza izin vermeden önce oturum açmanızı veya şartlarını kabul etmenizi istediğini fark ediyor. Ağ simgesi sizi uyarıyor ve ağ paneli sizi doğrudan giriş sayfasına götüren büyük bir Open Captive Portal düğmesi gösteriyor. Geçtiğinizde her şey kendi kendine normale dönüyor.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Ağ panelinden bir captive portala oturum açma" width="380" /></p>
+
+<h2 id="five-new-default-apps">Beş yeni varsayılan uygulama</h2>
+
+<p><strong>Hype</strong>, tek bir Markdown dosyasından, kaynağın yanında görsel bir slayt düzenleyici ile sunumlar yapar ve PDF veya PowerPoint'e aktarır.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong>, evrak işleri için Xournal++'ın yerini alıyor: bir PDF açın, kayıtlı imzanızı, metninizi ve tarihlerinizi yerleştirin ve imzalı bir kopya kaydedin.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong>, diskinizi neyin doldurduğunun, türüne göre renklendirilmiş bir treemap'ini çizer, yeniden oluşturulması güvenli önbellekleri belirtir ve neyin gitmesi gerektiğini işaretlemenize izin verir.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong>, kameranızı masaüstünüzle eşleşecek şekilde temalı olarak tek tuşla kaydeder.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> size SSH üzerinden bir uzak masaüstü verir. Başka bir Omarchy makinesine bağlanın ve onun tam masaüstünü sizinkindeki bir pencereden, her makine için bir sekmeyle sürün. Ve SSH üzerinde çalıştığı için, kurulacak veya açığa çıkarılacak ekstra bir şey yok. Kontrol edilen makine çubukta bir uzak oturum göstergesi gösterir, bu yüzden birisi üzerindeyken her zaman açıktır.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Ve çubuktaki saatin hemen yanında yaşayan bir dünya saati olan <strong>Elsewhen</strong> var. Nerede olduğunuzu ayarlamak için küre üzerinde bir şehre dokunun, gerçek yerler arayın ve her şehirde yaşayan insanları adlandırın, böylece aramak için uygun bir saat olup olmadığını her zaman bilirsiniz. <code>t</code> ile 12 ve 24 saat arasında, <code>Alt + T</code> ile °F ve °C arasında geçiş yapın ve <code>Super + Ctrl + Alt + E</code> ile istediğiniz zaman çağırın.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Kayıt için Monologue ve kırpma için Omacut ile, yeni kurulumlar artık OBS Studio ve Kdenlive göndermiyor. Lazydocker da yeni kurulumlardan gitti, ancak Docker ve Docker Compose hala dahil. Onlardan herhangi birine zaten sahip makineler onları korur.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Office'te yaşayan insanlarla çalışmanız mı gerekiyor? <em>Install &gt; Service &gt; Microsoft</em> artık Outlook, Word, Excel, PowerPoint, Teams ve OneDrive'ı web uygulamaları olarak kuruyor. Her biri kendi penceresini ve başlatıcı girişini alıyor, bu yüzden her şeyin yanında evinde gibi hissediyor. İş yerinde Omarchy'ye geçmemek için artık bahane yok!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchy üzerinde Excel, Word, Teams ve PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">Dikte için Superwhisper</h2>
+
+<p>Superwhisper artık Omarchy'nin varsayılan dikte motoru ve kutudan çıktığı gibi kurulu. Konuşmaya başlamak için <code>Alt + Space</code>'e dokunun ve durdurmak için tekrar dokunun veya bas-konuş için <code>Right Alt</code>'ı basılı tutun. İnanılmaz hızlı ve çok doğru.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisper ile dikte etme" /></p>
+
+<p>Bulutta başlıyor, bu yüzden kurduğunuz anda çalışıyor ve ilk 10.000 kelime ücretsiz. Ancak tamamen ücretsiz olan ve kimseye bir kelime göndermeden tamamen yerel olarak çalışan indirilebilir bir modele geçebilirsiniz. Ve başka bir yerel modeli tercih ederseniz, Voxtype alternatif olarak hala sunuluyor.</p>
+
+<h2 id="install-in-less-than-ten-seconds">On saniyeden kısa sürede kurulum</h2>
+
+<p>Omarchy eskiden yaklaşık 940 paketi tek tek kurardı. Yeni F1 yükleyicisi bunun yerine önceden oluşturulmuş bir kök imajı açar ve üstüne sadece bu makinenin paketlerini ekler. Bu, herhangi bir makinede kurulum sürelerini kabaca yarıya indirir.</p>
+
+<p>Ve hızlı donanımda saçma. AMD'den <a href="https://x.com/AnushElangovan">Anush Elangovan</a>, AMD dizüstü bilgisayarında <strong>7 saniyede</strong> tam bir Omarchy kurulumuyla dünya rekorunu kırdı. <a href="https://x.com/dhh/status/2117222836620202375">Yedi saniye!</a> Beş dakikanın iddialı bir hedef gibi göründüğü zamanları hatırlıyorum.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy 0d 7s içinde kuruldu" /></p>
+
+<h2 id="faster-everywhere-else">Başka her yerde daha hızlı</h2>
+
+<p>Bu sadece yükleyici değil. Başlangıç artık binfmt kaydında takılmıyor. Tema seçici çeyrek saniye sonra yerine hemen açılıyor. Menüler ve paneller, önce bir süreci başlatmak için gereken 60 ms'yi atlayarak doğrudan Hyprland kısayollarından açılıyor. Omarchy menüsünün en yavaş kontrolleri 200 ms'den 16 ms'ye gitti, yeni bir terminal istemini 30 ms daha erken gösteriyor ve tüm masaüstü artık onları yoklamak yerine değişikliklere tepki veriyor. Oturumu kapatmak, yeniden başlatmak ve kapatmak bile uygulamalarınız kapanmayı bitirdiği anda gerçekleşiyor.</p>
+
+<h2 id="agent-upgrades">Ajan yükseltmeleri</h2>
+
+<p>Omarchy, ajan tabanlı işletim sistemidir ve 4.5, ajanlarla çalışmak için büyük bir yükseltme turu getiriyor. Ajanlar paneli artık 6'dan 23 ajan ve sağlayıcıyı takip ediyor; Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter ve Ollama dahil. Her limit, sıfırlanmasına kalan süreyle kendi göstergesini alıyor, böylece ne kadar piste sahip olduğunuzu tam olarak görebilirsiniz. Ve Grok artık Claude ve Codex'in yanında tam bir sağlayıcı.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Birkaç Claude ve Codex aboneliğiyle ajanlar paneli" width="380" /></p>
+
+<p>Ve ajanınız her zaman bir tuş vuruşu uzakta. <code>Super + ~</code>, karartılmış bir masaüstü üzerinde Quake tarzı bir konsolu aşağı indirir ve onu ilk açtığınızda varsayılan ajanınızı başlatır. Uzaklaştırmak için tekrar basın ve oturumunuz bıraktığınız yerde.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Karartılmış bir masaüstü üzerinde ajan çalıştıran Quake tarzı konsol" /></p>
+
+<p>Birden fazla abonelikle uğraşıyorsanız, artık aynı makinede birkaç Claude, Codex ve Grok oturum açmasını tutabilir ve <code>omarchy agent account</code> kullanarak yeni oturumların hangisiyle başlayacağını seçebilirsiniz. Geçmiş, ayarlar ve beceriler aralarında paylaşılır, bu yüzden <code>claude --continue</code>, bir geçişten sonra bıraktığınız yerden devam eder. Bir limite yakınken, Omarchy ya tek tıkla geçiş sunabilir ya da yeni oturumları kendi başına en çok boş alana sahip hesaba taşıyabilir. Ve başka bir makine kurduğunuzda, <code>omarchy agent account copy</code> tüm oturum açmalarınızı SSH üzerinden getirir, böylece her şeye tekrar oturum açmanız gerekmez.</p>
+
+<p>Kimi ve Ori, OpenRouter'ın ajan koşumu, <em>Setup &gt; Defaults &gt; Agent</em> altındaki seçimlere katılıyor ve Google'ın Antigravity'si eskimiş Gemini CLI'ın yerini alıyor (<code>gemini</code> hala bir takma ad olarak çalışıyor). Terminal yerine pencere mi tercih edersiniz? Claude ve Amp masaüstü uygulamaları artık <em>Install &gt; AI</em> altında bir tıklama uzakta.</p>
+
+<h2 id="notifications-rebuilt">Bildirimler, yeniden inşa edildi</h2>
+
+<p>Bildirimler artık gönderene göre yığılıyor, temanızı takip ediyor ve aynı tekrarları daraltıyor. Eylem düğmeleri, doğrulama kodları ve bağlantıların tümü doğrudan karttan çalışıyor. <code>Super + Comma</code> en yenisinde hareket eder (kapatır, açar veya düğmesine basar) ve <code>Super + Ctrl + Comma</code> hepsini sürmeniz için size klavyeyi verir. Çubuktaki zil, Do Not Disturb'ü açar.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Yeni bildirimler" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Video arka planları ve tema girişleri</h2>
+
+<p>Arka planlar artık video olabilir. Bir tane bırakın ve masaüstünüz yuvarlanan dalgalar veya hoşunuza giden başka herhangi bir şeyle canlanır, kilit ekranı ondan hareketsiz bir kare gösterirken. Ve temalar artık bir giriş yapıyor: her biri, oturum açtığınızda veya ona geçtiğinizde kısa, sessiz bir giriş oynatabilir. (Sakin tutmayı mı tercih edersiniz? <em>Appearance &gt; Animations</em> altında girişleri kapatın.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse varsayılan temalara katılıyor</h2>
+
+<p>Jade Horse tamamen sisli yeşiller, tüm masaüstünün bir parşömen resmi gibi görünmesini sağlayan oyulmuş yeşim arka planlarıyla. Birlikte gelen temalar arasında Osaka Jade'in yerini alıyor ve diğer yeni varsayılan tema olarak Starship ona katılıyor. Osaka Jade'deyseniz, kopyanızı korursunuz ve taze kurmak isteyen herkes için bir <a href="https://github.com/omacom/omarchy-osaka-jade-theme">üçüncü taraf tema</a> olarak yaşamaya devam ediyor.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse teması" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff yeni varsayılan arka plan</h2>
+
+<p>Yeni kurulumlar artık sizi Tokyo Night için yeni varsayılan arka plan olan muhteşem bir gün batımı fırlatması Liftoff ile karşılıyor. Onu, ilk olarak <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a> için yaratan <a href="https://github.com/tcballard">Tom Ballard</a> yaptı. Teşekkürler, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom Ballard'ın Liftoff arka planı" /></p>
+
+<h2 id="boot-menu-now-quiet">Önyükleme menüsü artık sessiz</h2>
+
+<p>Omarchy eskiden, daha erken bir anlık görüntüye geri dönmeniz gerekmesi ihtimaline karşı her başlangıçta önyükleme menüsünü yaklaşık altı saniye gösterirdi. Ama neredeyse hiç kimse yapmadı. Bu yüzden şimdi Limine sadece bir saniye bekler ve sessizce önyüklenir ve çoğu zaman menüyü hiç görmezsiniz.</p>
+
+<p>Farklı bir girişe veya bir anlık görüntüye ihtiyacınız olduğunda, makine başlarken herhangi bir tuşa (aşağı ok çalışır) dokunmaya devam edin ve menüde duracaktır. Ve menüyü iyilik için daha uzun süre yukarıda tutmayı tercih ederseniz, <code>/boot/limine.conf</code> içinde kendi <code>timeout:</code>'unuzu ayarlayın (<code>timeout: 5</code> gibi). Güncellemeler, ayarladığınız bir zaman aşımını yalnız bırakacaktır.</p>
+
+<h2 id="changed-hotkeys">Değişen kısayol tuşları</h2>
+
+<p>Bazı kısayollar taşındı:</p>
+
+<ul>
+  <li>Calculator: <code>Super + Ctrl + Q</code> artık <code>Super + Shift + Q</code>.</li>
+  <li>Activity: <code>Super + Ctrl + T</code> artık <code>Super + Shift + T</code> ve <code>Super + Ctrl + T</code> temaları açar.</li>
+  <li>Network: <code>Super + Ctrl + W</code> artık <code>Super + Ctrl + N</code> ve <code>Super + Ctrl + W</code> arka planları açar.</li>
+  <li>Nightlight artık bir kısayola sahip değil (<code>Super + Ctrl + N</code> idi); <code>Trigger &gt; Toggle</code> içinde.</li>
+  <li><code>Super + Alt + Space</code>, Apps menüsü yerine dock'tan Apps'i açar.</li>
+</ul>
+
+<p>Bildirim kısayolları değişti:</p>
+
+<ul>
+  <li><code>Super + Comma</code>, sadece kapatmak yerine en yeni kartta hareket eder (onu kapatır, açar veya tek düğmesine basar).</li>
+  <li>Sonuncuyu kapatmak, onu açan eski <code>Super + Alt + Comma</code>'ya taşındı.</li>
+  <li>Sessize alma <code>Super + Ctrl + Comma</code>'dan <code>Super + Ctrl + Alt + Comma</code>'ya taşındı; <code>Super + Ctrl + Comma</code> artık size klavye kontrolü veriyor.</li>
+</ul>
+
+<p>Birkaç tuş farklı çalışıyor:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> ve <code>Super</code> + kaydırma, her monitörün kendi çalışma alanları olduğu için mevcut monitörün çalışma alanlarında kalır.</li>
+  <li>Bir terminalde, <code>Super + C</code> ve <code>Super + V</code>, <code>Ctrl + Insert</code> ve <code>Shift + Insert</code> yerine <code>Ctrl + Shift + C</code> ve <code>Ctrl + Shift + V</code> gönderir.</li>
+</ul>
+
+<p>Kendi bağlamalarınızla çakışabilecek yeni varsayılanlar: <code>Super + Q</code> (pencereyi kapat, <code>Super + W</code>'nin yanında), <code>Super + A</code> (tümünü seç), <code>Super + M</code> (dock'a küçült), <code>Super + ~</code> ve <code>Super + Shift + ~</code> (Quake konsolu), <code>Super + Alt + L</code> (önceki düzen), <code>Super + Shift + Ctrl + Arrows</code> (bir pencereyi başka bir monitöre taşı), <code>Super + Ctrl + Alt + C</code> (ekran görüntüsü), <code>Super + Ctrl + Alt + E</code> (dünya saati), <code>Super + Ctrl + Alt + F</code> (tam ekran masaüstü) ve bas-konuş diktesi için <code>Right Alt</code>'ı basılı tutmak.</p>
+
+<h2 id="more-features">Daha fazla özellik</h2>
+
+<ul>
+  <li>Her monitöre kendi çalışma alanlarını verin: <code>Super + 1-0</code>, üzerinde olduğunuz monitörün çalışma alanlarına gider ve <code>Super + Arrows</code> diğer ekranlara ve onlardan taşır, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a> içinde</li>
+  <li>Masaüstünün nasıl göründüğüne dair her şeyi Style'ın yerini alan yeni bir Appearance menüsünde toplayın: tema, arka plan, yazı tipi, çubuk, pencereler, markalama, dock, çalışma alanı düzenleri, animasyonlar ve kilit açma ekranı, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a> içinde</li>
+  <li><em>Appearance &gt; Window Transparency</em> altında Opaque, Transparent veya Glassy pencereleri, artı Glassy bir çubuk arka planı seçin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a> içinde</li>
+  <li><em>Appearance &gt; Window Corners</em> altında tema, keskin veya yuvarlatılmış pencere köşelerini seçin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a> içinde</li>
+  <li>VM'lerde varsayılan olarak açık bir animasyonsuz mod ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a> içinde</li>
+  <li>Terminalleri şeffaf tutarken uygulamaları varsayılan olarak opak yapın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a> içinde</li>
+  <li>Slack'i Install &gt; Service'e ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a> içinde</li>
+  <li>Alt + Space'in her arka uçta dikteyi açıp kapatmasını sağlayın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a> içinde</li>
+  <li>Ekran görüntüsü bildirimlerine Open ve Edit düğmelerini ve ekran kayıtlarına ve yt-dlp indirmelerine Open ve Cut'ı ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a> içinde</li>
+  <li>Varsayılan çekirdeği değiştirmek için bir Update &gt; Kernel menüsü ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a> içinde</li>
+  <li>herdr makinelerine tema senkronizasyonu ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a> içinde</li>
+  <li>Hyprland tuş bağlamalarını değiştirmek için o.rebind ekleyin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a> içinde</li>
+  <li>GitHub oturum açmasıyla, yükleyicide yerine ilk oturum açmadan sonra git kimliğinizi sorun, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a> içinde</li>
+  <li>Kurulum medyasının dili, klavyeyi ve saat dilimini önceden ayarlamasına izin verin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a> içinde</li>
+  <li>Çubuk widget'larının tepsinin çekmecesinde yaşamasına izin verin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a> içinde</li>
+  <li>Bir çubuk widget'ını çubuktan sürükleyerek kaldırmaya izin verin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a> içinde</li>
+  <li>Çubuktan çalışma alanları arasında kaydırmaya izin verin, <a href="https://github.com/outfoxxed">@outfoxxed</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a> içinde</li>
+  <li>Tema seçiciden ekstra temaları silmeye izin verin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a> içinde</li>
+  <li>hey, basecamp ve Cloudflare CLI'larını tembel-kurulan araçlar olarak ekleyin, <a href="https://github.com/monorkin">@monorkin</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a> içinde</li>
+  <li>SSH Agent'ı isteğe bağlı bir hizmet olarak ekleyin, <a href="https://github.com/carletex">@carletex</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a> içinde</li>
+  <li>Parolasız sudo'nun ne kadar süreceğini seçmeye izin verin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a> içinde</li>
+  <li>Bildirim toast'larına bir üzerine gelme kapatma düğmesi ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a> içinde</li>
+  <li>Bir programın bildirimlerini onun çökme teşhisinden sessize almaya izin verin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a> içinde</li>
+  <li>omarchy-notification-send'in eylem düğmeleri eklemesine izin verin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a> içinde</li>
+  <li>Canlı saniyelerle bir saat biçimi ekleyin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a> içinde</li>
+  <li>Klavye arka ışığını Ctrl ve parlaklık tuşlarıyla ayarlayın, <a href="https://github.com/ludagoo">@ludagoo</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a> içinde</li>
+  <li>OEM Windows ürün anahtarını donanım yazılımından yazdırın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a> içinde</li>
+  <li>Orijinal vi'yi bir terminal düzenleyici seçimi olarak ekleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a> içinde</li>
+  <li>Roadster Starlight arka planını Ethereal'a ekleyin, <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a> içinde</li>
+</ul>
+
+<h2 id="security">Güvenlik</h2>
+
+<ul>
+  <li>Windows VM parolasını RDP istemcisinin argümanlarının dışında tutun, <a href="https://github.com/dicemans">@dicemans</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a> içinde</li>
+  <li>Ekran kaydı durumunu herkesin yazabildiği /tmp dışına taşıyın, <a href="https://github.com/Chessing234">@Chessing234</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a> içinde</li>
+  <li>Askıya alma boyunca parolasız sudo süresini sertleştirin, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a> içinde</li>
+  <li>Güncelleme engelleyici temizliğini onu yaratan sürece bağlayın, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a> içinde</li>
+  <li>OCaml temizlik yetkilendirmesini yalıtın, <a href="https://github.com/ErikMelton">@ErikMelton</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a> içinde</li>
+  <li>Fabrika sıfırlama yükseltmesini paketlenmiş komuta sabitleyin, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a> içinde</li>
+  <li>Sıfırlamada çağıran kullanıcı için kaydedilmiş parmak izi şablonlarını kaldırın, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a> içinde</li>
+  <li>Yol olan kanca ve durum adlarını reddedin, <a href="https://github.com/Adolanium">@Adolanium</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a> içinde</li>
+  <li>Parmak izi ve FIDO2 kurulumu tarafından yazılan polkit yığınında system-auth'a uyun, <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a> içinde</li>
+  <li>Parmak izlerini kaldırırken onları okuyucunun kendi depolamasından kaldırın, <a href="https://github.com/scottjones">@scottjones</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a> içinde</li>
+  <li>Hiçbir anahtar eklenmediğinde SSH kurulumunun sshd'yi parola oturum açmalarıyla çalışır bırakmasını önleyin, <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a> içinde</li>
+  <li>Başka bir yerel kullanıcının bir Voxtype yükseltmesi sırasında kendi programını değiştirmesini önleyin, <a href="https://github.com/Vladkarok">@Vladkarok</a> tarafından <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a> içinde</li>
+  <li>Fabrika sıfırlamanın gum ayarlarınızı sudo üzerinden geçirme şeklini sertleştirin, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a> içinde</li>
+</ul>
+
+<h2 id="fixes">Düzeltmeler</h2>
+
+<ul>
+  <li>Kapağı kapatarak bir monitör fişten çekildiğinde, devre dışı bırakıldığında veya kapatıldığında Hyprland'ın çökmesini düzeltin, <a href="https://github.com/falkoro">@falkoro</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a> içinde</li>
+  <li>Bir çekirdek imajını root= parametresi olmadan bırakabilecek yükseltmeleri düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a> içinde</li>
+  <li>Fabrika sıfırlamanın diğer sistemlerin önyükleme girişlerini silmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a> içinde</li>
+  <li>Başka bir Omarchy'nin yanına kurulumun o kurulumun önyükleme girişini kaldırmasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a> içinde</li>
+  <li>Var olan bir bölümü yeni bir tane için alabilecek boş alan kurulumlarını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a> içinde</li>
+  <li>Kesintiye uğramış bir sürücü parolası değişikliğine devam etmenin yanlış anahtarı kaldırmasını düzeltin, <a href="https://github.com/scottjones">@scottjones</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a> içinde</li>
+  <li>Omarchy güncellemesi başına sudo parolasını bir kez sorun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a> içinde</li>
+  <li>Her komutta tekrar yerine on dakika için sudo parolasını bir kez sorun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a> içinde</li>
+  <li>AUR güncellemelerini ve önyükleme kontrolünü güncellemenin tek sudo istemiyle kapsayın, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a> içinde</li>
+  <li>Paket güncellemelerini işlem ortasında oturum kapatmaya karşı güvenli tutun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a> içinde</li>
+  <li>Uygulamalar kapanmayı bitirdiği anda oturumu kapatın, yeniden başlatın ve kapatın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a> içinde</li>
+  <li>Ekran görüntüleri için Tensaku'yu Omasnap ile değiştirin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a> içinde</li>
+  <li>Düğmeler ve çubuk simgeleri üzerinde basma geri bildirimiyle panelleri çubuktan büyütün ve aralarında geçiş yapın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a> içinde</li>
+  <li>Bildirimleri çubuğun altından içeri ve geldikleri şekilde geri kaydırın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a> içinde</li>
+  <li>Bağlantıyı Omarchy'nin kendi uç noktasına karşı kontrol edin ve captive portallara oturum açmayı düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a> içinde</li>
+  <li>edge'den stable veya RC'ye geçişin makineyi eski bir yapı üzerinde bırakmasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a> içinde</li>
+  <li>Kabuk yanıt vermekte yavaş olduğunda 4.5 güncellemesinin durmasını düzeltin, <a href="https://github.com/AnPod">@AnPod</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a> içinde</li>
+  <li>Masaüstü oturumu dışında başlatıldığında güncellemelerin sessizce başarısız olmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a> içinde</li>
+  <li>Başarısız bir mise aracı indirmesinin bir sistem güncellemesinin geri kalanını durdurmasını düzeltin, <a href="https://github.com/sanjyay">@sanjyay</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a> içinde</li>
+  <li>omarchy-nvim kurulu olmadığında güncellemelerin başarısız olmasını düzeltin, <a href="https://github.com/imzihuailin">@imzihuailin</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a> içinde</li>
+  <li>Çift önyükleme kurulumlarının EFI bölümünü bağlayamamasını düzeltin, <a href="https://github.com/Damian626">@Damian626</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a> içinde</li>
+  <li>Donanım yazılımı yeni bir önyükleme girişi almadığında kurulumların durmasını düzeltin, <a href="https://github.com/ryanio">@ryanio</a> tarafından <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a> içinde</li>
+  <li>Eski bir RAID üyesi veya birim grubu olan disklerde kurulumların durmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a> içinde</li>
+  <li>Her USB aygıtını ve önyükleme işini beklemeyerek yükleyiciyi daha erken başlatın, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a> içinde</li>
+  <li>Yeni kurulumlarda 4096 baytlık sektörlerle disk şifrelemeyi hızlandırın, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a> içinde</li>
+  <li>Dahili diskleri önce listeleyin ve kurulum ekranlarını güvenli seçim üzerinde açın, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a> içinde</li>
+  <li>Yükleyicide Full disk install'ı önce listeleyin ve disk ekranlarında Esc ile geri gidin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a> içinde</li>
+  <li>Bir monitörü ölçeklendirmenin diğer her monitörün ölçeğini değiştirmesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a> içinde</li>
+  <li>Monitörler farklı ölçekler kullandığında XWayland uygulamalarının çok büyük çıkmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a> içinde</li>
+  <li>Bir pencere tam ekran olduğunda HDR ekranların soluk bir HDR resme geçmesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a> içinde</li>
+  <li>Kesirli ölçeklenmiş ekranlarda bulanık menüleri ve seçicileri düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a> içinde</li>
+  <li>Harici ekran fişten çekildikten sonra dizüstü ekranının kapalı kalmasını düzeltin, <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a> içinde</li>
+  <li>Bir ekranı yeniden etkinleştirmenin konumunu, ölçeğini ve modunu sıfırlamasını düzeltin, <a href="https://github.com/zihaomu">@zihaomu</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a> içinde</li>
+  <li>Bir monitör bağlantısı kesildikten sonra menülerin ve seçicilerin yeniden açılmamasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a> içinde</li>
+  <li>Bir monitör fişten çekildikten sonra monitör başına çalışma alanlarının taşınmasını düzeltin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a> içinde</li>
+  <li>Ses paneli açıkken bir ses aygıtı bağlantısı kesildiğinde kabuğun çökmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a> içinde</li>
+  <li>Tam ekran pencerelerin ekran koruyucudan sonra tam ekranı kaybetmesini düzeltin, <a href="https://github.com/MGross21">@MGross21</a> tarafından <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a> içinde</li>
+  <li>Hyprland yeniden yüklendikten sonra başlangıçta imlecin kaybolmasını düzeltin, <a href="https://github.com/spencerbull">@spencerbull</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a> içinde</li>
+  <li>XWayland uygulamaları üzerinde imlecin görünmez olmasını düzeltin, <a href="https://github.com/Sebo1411">@Sebo1411</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a> içinde</li>
+  <li>Pano yakalama takılmalarını düzeltin, <a href="https://github.com/maxcroy1">@maxcroy1</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a> içinde</li>
+  <li>XDG Secret portalı üzerinden anahtarlık erişimini düzeltin, <a href="https://github.com/pkwagner">@pkwagner</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a> içinde</li>
+  <li>Parmak izi kaydını ve kilit ekranı kurtarmayı düzeltin, <a href="https://github.com/GeertJohan">@GeertJohan</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a> içinde</li>
+  <li>Parmak izi kaydını adım adım yönlendirin, <a href="https://github.com/scottjones">@scottjones</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a> içinde</li>
+  <li>Kilit ekranı parola alanında tuş otomatik tekrarını düzeltin, <a href="https://github.com/berndb">@berndb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a> içinde</li>
+  <li>Uyanışta kilit ekranı duvar kağıdının parola alanından sonra yüklenmesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a> içinde</li>
+  <li>Oturum gitmiş bir ekranı adlandırdığında ekran kilidi zaman aşımlarını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a> içinde</li>
+  <li>Mevcut pencerenin dizininde bir terminal açmayı hızlandırın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a> içinde</li>
+  <li>VS Code ailesi düzenleyicilerin tema değişikliklerini canlı takip etmesini sağlayın, <a href="https://github.com/Macho0x">@Macho0x</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a> içinde</li>
+  <li>Tema değişiminde çalışan Hunk oturumlarını yeniden temalandırın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a> içinde</li>
+  <li>Her tema için seçilen duvar kağıdını hatırlayın, <a href="https://github.com/OldJobobo">@OldJobobo</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a> içinde</li>
+  <li>Büyük koleksiyonlar ve HiDPI ile resim seçiciyi hızlı ve keskin tutun, <a href="https://github.com/keylimesoda">@keylimesoda</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a> içinde</li>
+  <li>Şeffaf çubuğun duvar kağıdını örneklemeye harcadığı CPU ve belleği kesin, <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a> içinde</li>
+  <li>Binlerce makineli tailnet'lerde Tailscale panelini hızlandırın, <a href="https://github.com/iskakaushik">@iskakaushik</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a> içinde</li>
+  <li>Ajanlar panelinde Grok'u Claude ve Codex ile aynı seviyeye getirin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a> içinde</li>
+  <li>Ajan hesabı seçimini CLI alt süreçlerine uygulayın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a> içinde</li>
+  <li>Codex bireysel harcama limitlerini ve sıfırlanma zamanlarını gösterin, <a href="https://github.com/Stegi56">@Stegi56</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a> içinde</li>
+  <li>Claude seçerken tarayıcı entegrasyonunu kurun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a> içinde</li>
+  <li>Ajanların başladıktan sonra kurulan mise araçlarını bulamamasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a> içinde</li>
+  <li>SSH üzerinden başlatılan herdr panellerinde ajanlara ekran görüntüsü yapıştırmayı düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a> içinde</li>
+  <li>Ajanlar panelinin sıkıştırılmış Codex oturumlarını kaçırmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a> içinde</li>
+  <li>Caps Lock'u normale döndürün ve Shift + Caps Lock'u compose tuşu yapın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a> içinde</li>
+  <li>Sistem klavye düzenini oturum açma ekranına uygulayın, <a href="https://github.com/g-desoutter">@g-desoutter</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a> içinde</li>
+  <li>Latin olmayan bir klavye düzeniyle düzen geçişinin her ikinci basışı atlamasını düzeltin, <a href="https://github.com/manuaudio">@manuaudio</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a> içinde</li>
+  <li>mpv'de donanım video çözmeyi açın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a> içinde</li>
+  <li>TCP tıkanıklık kontrolünü BBR'ye geçirin ve gerçek disklerde kyber I/O zamanlayıcısını kullanın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a> içinde</li>
+  <li>T3 Code'u kendi kendini güncelleyen AppImage'ı olarak kurun, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a> içinde</li>
+  <li>PHP ve Laravel kurulumunu iyileştirin, <a href="https://github.com/nunomaduro">@nunomaduro</a> tarafından <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a> içinde</li>
+  <li>Node'u tembel kurun ve mise yapılandırmanızı yalnız bırakın, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a> içinde</li>
+  <li>Varsayılanları seçerken eksik uygulamaları kurun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a> içinde</li>
+  <li>Kurulu yazılımı Install menülerinde gizlemek yerine soluklaştırın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a> içinde</li>
+  <li>Brave Origin için parola yöneticisini ve diğer yerel mesajlaşma ana bilgisayarlarını kaydedin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a> içinde</li>
+  <li>Brave Origin web bildirimlerini siteye göre gruplayın ve tıklanıldığında doğru sekmeyi açın, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a> içinde</li>
+  <li>Güncellemeler sırasında yetim paket kaldırmayı otomatik onaylayın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a> içinde</li>
+  <li>Her güncellemeden önce Omarchy'nin anahtarlığını güncelleyin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a> içinde</li>
+  <li>Kanal değiştirdikten sonra yeniden başlatmayı teklif edin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a> içinde</li>
+  <li>İlk çalıştırma güncellemesini yalnızca güncellenecek bir şey olduğunda teklif edin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a> içinde</li>
+  <li>Hava durumu konumunu ve yükleyicinin saat dilimini Omarchy'nin kendi coğrafi hizmetiyle bulun, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a> içinde</li>
+  <li>Saati Arch'ın NTP havuzu yerine ntp.omarchy.org'dan ayarlayın, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a> içinde</li>
+  <li>Ağ hızını Omarchy'nin kendi hız testiyle ölçün, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a> içinde</li>
+  <li>İlk önyükleme sırasında izlenen simgeli bir ilerleme ekranı gösterin, <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a> içinde</li>
+  <li>Canlı ISO'yu Omarchy çekirdeğinde ve T2 çekirdeğinde yalnızca Mac'lerde önyükleyin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a> içinde</li>
+  <li>Çevrimdışı kurulumların mise sürüm aramalarında beklemesini durdurun, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a> içinde</li>
+  <li>Çevrimdışı kurulumların saat dilimini varsayılan olarak Africa/Abidjan yapmasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a> içinde</li>
+  <li>Yükleyicinin saat dilimi seçicisinin aramak için yazmanıza izin vermemesini düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a> içinde</li>
+  <li>Bir Ventoy çubuğundan önyüklendiğinde canlı ISO'nun açılış ekranının arkasında takılmasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a> içinde</li>
+  <li>Yükleyicinin kurulum formunda Almanca ve Fransızca konsol tuş haritalarını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a> içinde</li>
+  <li>Yükleyicide ve git kurulumunda gum'ın İngilizce tuş ipuçlarını gizleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a> içinde</li>
+  <li>Kurulum ilerleme ekranından sadece İngilizce şakaları bırakın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a> içinde</li>
+  <li>Yükleyici çıktısının diski hazırlarken ekrana dolgusuz inmesini düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a> içinde</li>
+  <li>Quattro yükseltmesinin varsayılan tarayıcıyı Chromium'a sıfırlamasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a> içinde</li>
+  <li>Quattro yükseltmesinin ASCII olmayan karakterli arka plan adlarında durmasını düzeltin, <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a> içinde</li>
+  <li>Çekirdek geçişinin GRUB veya systemd-boot ile önyüklenen makinelerde durmasını düzeltin, <a href="https://github.com/manuaudio">@manuaudio</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a> içinde</li>
+  <li>Birden fazla NVMe diski olan şifrelenmemiş makinelerde hazırda bekletmeyi düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a> içinde</li>
+  <li>FIDO2 geçişinin çözülmeden önce tamamlandı olarak işaretlenmesini düzeltin, <a href="https://github.com/ErikMelton">@ErikMelton</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a> içinde</li>
+  <li>Yüzen bir çalışma alanının kendi yüzen kuralınızın kapsadığı ilk pencereyi ele geçirmesini düzeltin, <a href="https://github.com/zihaomu">@zihaomu</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a> içinde</li>
+  <li>Super + L bir çalışma alanını yüzenin içine ve dışına döndürdüğünde dizgicinin takılmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a> içinde</li>
+  <li>Alt + Shift + Tab'ın her pencerede geriye doğru dönmemesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a> içinde</li>
+  <li>Çıkarılmış pencerelerin başka bir monitöre taşındığında ortalanmamasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a> içinde</li>
+  <li>Terminal olmayan bir pencere odaklandığında yeni terminallerin ev klasörünüzün dışında açılmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a> içinde</li>
+  <li>1Password ve Bitwarden pencerelerinin yüzmemesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a> içinde</li>
+  <li>Yükleyici terminali çıktığında 1Password'ün kapanmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a> içinde</li>
+  <li>DaVinci Resolve iletişim kutularının işaretçi odağını çalmasını düzeltin, <a href="https://github.com/AksharP5">@AksharP5</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a> içinde</li>
+  <li>Masaüstünün Windows VM ekranlarından görünmesini düzeltin, <a href="https://github.com/jmwall">@jmwall</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a> içinde</li>
+  <li>Quattro geçişinden sonra $$ içeren eski Windows VM parolalarını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a> içinde</li>
+  <li>Hyprland'ın bağış açılır penceresinin yükseltmelerden sonra görünmesini durdurun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a> içinde</li>
+  <li>Çubuk widget'larını sürüklemeyi ve düzenlemeyi iyileştirin, <a href="https://github.com/outfoxxed">@outfoxxed</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a> içinde</li>
+  <li>Çubuk simge boyutunu ve hizalamasını normalleştirin, <a href="https://github.com/bjarneo">@bjarneo</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a> içinde</li>
+  <li>Gizli çubuk göstergelerini yalnızca saatin solunda üzerine gelirken gösterin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a> içinde</li>
+  <li>Tepsi simgelerini çubuğun diğer simgeleriyle hizalayın, <a href="https://github.com/ayoubdya">@ayoubdya</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a> içinde</li>
+  <li>Biri zaten açıkken sonraki çubuk araç ipucunu hemen gösterin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a> içinde</li>
+  <li>Saat ve hava durumu panellerini widget'larının altında açın, <a href="https://github.com/scottjones">@scottjones</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a> içinde</li>
+  <li>Bir DNS sağlayıcısı seçtikten sonra ağ panelini açık tutun, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a> içinde</li>
+  <li>Kapanan bir açılır pencerenin çubuk widget'larını tepkisiz bırakmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a> içinde</li>
+  <li>Gizli çubuğun tam ekran pencerelerin üst kısmı boyunca tıklamaları yakalamasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a> içinde</li>
+  <li>Koyu tepsi simgelerinin çubukta kaybolmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a> içinde</li>
+  <li>Çubuk simgelerinin düzensiz veya merkez dışında oturmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a> içinde</li>
+  <li>Çubuk araç ipuçlarının ilk karelerini yanlış boyutta çizmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a> içinde</li>
+  <li>Bildirim geçmişinin her kartı az önce olarak göstermesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a> içinde</li>
+  <li>İlk oturum açma bildirimlerinin tek bir yığına çökmesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a> içinde</li>
+  <li>Bildirim tıklamalarının çok kelimeli adlara sahip uygulamalara odaklanmamasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a> içinde</li>
+  <li>Taildrop bildirimlerinin boş metin göstermesini ve önizlemeleri kaçırmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a> içinde</li>
+  <li>Pil bildiriminin dolu bir pilde boş bir süre ve 0W göstermesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a> içinde</li>
+  <li>Düşük pil uyarısının fişe taktıktan sonra ve yeniden başlatmalardan sonra geri gelmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a> içinde</li>
+  <li>Bazı dizüstü bilgisayarlarda pil çekişinin 0W okumasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a> içinde</li>
+  <li>AC'de dolu bir pilin boşalıyor olarak görünmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a> içinde</li>
+  <li>Çekirdek hazırda beklemeyecekken Hibernate'in görünmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a> içinde</li>
+  <li>Devam ettikten sonra gvfs bağlamalarının kaybolmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a> içinde</li>
+  <li>Kilit iki kez karardıktan sonra klavye arka ışığının kapalı kalmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a> içinde</li>
+  <li>Kilit ekranlar kapalıyken parmak izi okuyucunun uyanmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a> içinde</li>
+  <li>Bir ekran geç göründüğünde önyükleme parolası isteminin merkez dışında olmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a> içinde</li>
+  <li>Ekran koruyucunun çıkış tuşunun köşede yanıp sönmesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a> içinde</li>
+  <li>OWE geçiş modlu ağlarda Wi-Fi simgesinin titremesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a> içinde</li>
+  <li>Bir tema kurduktan sonra terminalde yazılan bir OWE hatasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a> içinde</li>
+  <li>Hareketsizden video arka plana geçerken bir titremeyi düzeltin, <a href="https://github.com/bjarneo">@bjarneo</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a> içinde</li>
+  <li>Hackerman'ı yükseltilmiş bir geometrik arka plana güncelleyin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a> içinde</li>
+  <li>Döngüsel renk başvurularına sahip temaların tema geçişini takmasını düzeltin, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a> içinde</li>
+  <li>Neovim'in Catppuccin temasıyla başlamamasını düzeltin, <a href="https://github.com/anandude">@anandude</a> tarafından <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a> içinde</li>
+  <li>OpenCode 2'nin Omarchy'ninki yerine stok temasında başlamasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a> içinde</li>
+  <li>Oluşturulan VS Code temasında düşük kontrastlı satır içi kodu düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a> içinde</li>
+  <li>Mevcut temayı eşleştirirken T3 Code kurulumlarının durmasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a> içinde</li>
+  <li>Yazı tipi ailesini değiştirirken terminal yazı tipi boyutunun sıfırlanmasını düzeltin, <a href="https://github.com/sbalbalosa">@sbalbalosa</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a> içinde</li>
+  <li>Yazı tiplerini değiştirmenin bir terminalin süreç kimliğini yazdırmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a> içinde</li>
+  <li>Dil değiştirmenin her yerel ayarı yeniden inşa etmesini ve neredeyse dolu bir diskte onları kaybetmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a> içinde</li>
+  <li>Kabuğun çevirileri yüklenmeden önce ham çeviri anahtarlarını göstermesini düzeltin, <a href="https://github.com/zihaomu">@zihaomu</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a> içinde</li>
+  <li>Omarchy'nin betiklerinde çevrilmiş metni hızlandırın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a> içinde</li>
+  <li>686 dize için çevirileri, 392'si kılavuzda güncelleyin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a> içinde</li>
+  <li>İngilizce olmayan yerel ayarlarda ses ve çıkış kontrollerini düzeltin, <a href="https://github.com/Sebo1411">@Sebo1411</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a> içinde</li>
+  <li>İngilizce olmayan yerel ayarlarda CPU kullanımı okumalarını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a> içinde</li>
+  <li>fcitx5 kurulu olmadığında fcitx5 hizmetinin sonsuza kadar yeniden başlamasını düzeltin, <a href="https://github.com/therk">@therk</a> tarafından <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a> içinde</li>
+  <li>Klavye düzeni widget'ının kimsenin yazmadığı aygıtları değiştirmesini düzeltin, <a href="https://github.com/bjarneo">@bjarneo</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a> içinde</li>
+  <li>Klavye düzeni widget'ının satıcı kısayol tuşu aygıtlarına geçmesini düzeltin, <a href="https://github.com/yashranaway">@yashranaway</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a> içinde</li>
+  <li>Tuş bağlamaları menüsünün %100 CPU'da bir Lua süreci çalışır bırakmasını düzeltin, <a href="https://github.com/tobi">@tobi</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a> içinde</li>
+  <li>Yaz saati bittiğinde saatin günlüğü her milisaniye doldurmasını düzeltin, <a href="https://github.com/falkoro">@falkoro</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a> içinde</li>
+  <li>Kabuğun okuyamadığı bir shell.json'ı varsayılanlarla değiştirmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a> içinde</li>
+  <li>Omarchy menüsünün dosyası güncellenirken satırlarını kaybetmesini düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a> içinde</li>
+  <li>Bir eklentiyi yeniden etkinleştirmenin çubuk widget'ını geri getirmemesini düzeltin, <a href="https://github.com/berrimi">@berrimi</a> tarafından <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a> içinde</li>
+  <li>Yerel eklentilerin kendi Python bayt kodlarında bir döngüde yeniden yüklenmesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a> içinde</li>
+  <li>Eklentilerdeki gizli düğmelerin dolgularına çökmesini düzeltin, <a href="https://github.com/dmkenney">@dmkenney</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a> içinde</li>
+  <li>Açılır menülerin son öğelerini kesmesini düzeltin, <a href="https://github.com/sprajs">@sprajs</a> tarafından <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a> içinde</li>
+  <li>Açılır menülerin ikinci bir tıklamada kapanmamasını düzeltin, <a href="https://github.com/felixzsh">@felixzsh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a> içinde</li>
+  <li>Kaydırıcı topuzlarının yolun sonunda kısa durmasını düzeltin, <a href="https://github.com/erikrjohansson">@erikrjohansson</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a> içinde</li>
+  <li>
+    <p>Update &gt; Hardware &gt; Trackpad'in çoğu dokunmatik yüzeyi kaçırmasını ve klavyeyi sıfırlamasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a> içinde</p>
+
+    <p>Artık her dokunmatik yüzeyde sıkışmış bir düğmeyi bırakıyor ve klavye ve dokunmatik ekran yerine yalnızca dokunmatik yüzeyi sıfırlıyor.</p>
+  </li>
+  <li>Web kamerası menüsünün kameraları açmadan onları kontrol etmesini sağlayın, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a> içinde</li>
+  <li>Omasnap'ın kaydırma yakalamasının yalnızca siyah kareler almasını düzeltin, <a href="https://github.com/falkoro">@falkoro</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a> içinde</li>
+  <li>Ekran görüntüsü seçicinin kendi tuşlarınızın bağlamasını kaldırmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a> içinde</li>
+  <li>Bir kaydı durdurmanın boş bir kaydedilmiş kaydı duyurmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a> içinde</li>
+  <li>Resim seçicinin üzerlerine kaydedilen resimler için bayat küçük resimler göstermesini düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a> içinde</li>
+  <li>Gece ışığının kapatıldığında tamamen sıfırlanmamasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a> içinde</li>
+  <li>Medya widget'ının boşta bir oynatıcı için duraklatılmış bir parçayı bırakmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a> içinde</li>
+  <li>Parlaklık bildirmeyen monitörlerde tekrarlanan ekran taramalarını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a> içinde</li>
+  <li>Yapılandırılmış tarayıcı kaldırıldığında Super + Shift + Return'ün başarısız olmasını düzeltin, <a href="https://github.com/vitally">@vitally</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a> içinde</li>
+  <li>Önceden kurulu uygulamaları kaldırdıktan sonra hesap makinesi kısayollarının kalmasını düzeltin, <a href="https://github.com/OldJobobo">@OldJobobo</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a> içinde</li>
+  <li>Brave Origin profillerinde Copy URL kısayolunu düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a> içinde</li>
+  <li>Bitwarden uzantısı açılır penceresinin yanlış boyutta açılmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a> içinde</li>
+  <li>Battle.net'in HiDPI monitörlerde %100 ölçekte açılmasını düzeltin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a> içinde</li>
+  <li>Inkscape'in dosya seçicilerinin döşeli açılmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a> içinde</li>
+  <li>mise Go'yu yönettiğinde güncellemeler sırasında Go AUR paketlerinin oluşturulamamasını düzeltin, <a href="https://github.com/shbernal">@shbernal</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a> içinde</li>
+  <li>docker grubunda olmadığınızda ONCE kurulumunu düzeltin, <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> tarafından <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a> içinde</li>
+  <li>Ajan paneli tıklamalarının tepsiyi açmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a> içinde</li>
+  <li>Ajan hesabı kurulumunun sarkan bir paylaşılan sembolik bağlantıda takılmasını düzeltin, <a href="https://github.com/manuaudio">@manuaudio</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a> içinde</li>
+  <li><code>--reauth</code>'ın olmadığında yeni bir ajan hesabı eklemesini düzeltin, <a href="https://github.com/manuaudio">@manuaudio</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a> içinde</li>
+  <li>Ajan hesabı yeniden adlandırma ipucunun sağlayıcısını adlandırmasını sağlayın, <a href="https://github.com/manuaudio">@manuaudio</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a> içinde</li>
+  <li>Anahtarlık güncellemelerinin anahtar işlemleri başarısız olduğunda başarıyı iddia etmesini düzeltin, <a href="https://github.com/Adolanium">@Adolanium</a> tarafından <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a> içinde</li>
+  <li>sudo altında çalıştırıldığında boş bir fabrika sıfırlama istemini düzeltin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a> içinde</li>
+  <li>Bekleyen geçişler hatırlatıcısının oturum açma başına bir kez yığılmasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a> içinde</li>
+  <li>About'daki OS Age'in kurulum yerine ISO'nun yapımından saymasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a> içinde</li>
+  <li>Dropbox'ın 360 ila 364 günlük dosyalar için “0y ago” göstermesini düzeltin, <a href="https://github.com/manuaudio">@manuaudio</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a> içinde</li>
+  <li>Dropbox durum kontrolünün bekleyen bir oturum açma bağlantısının süresini doldurmasını düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a> içinde</li>
+  <li>Dropbox'ın tepsi simgesi kitaplığını kurmayı düzeltin, <a href="https://github.com/omarchybot">@omarchybot</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a> içinde</li>
+  <li>Chromium'da üst üste binen kaydırma çubuklarını etkinleştirin, <a href="https://github.com/robzolkos">@robzolkos</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a> içinde</li>
+  <li>Apple Silicon Mac'lerde Touch ID'yi açmadan önce sorun, <a href="https://github.com/scottjones">@scottjones</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a> içinde</li>
+  <li>Apple Silicon Mac'lerde RC kanalını teklif edin, <a href="https://github.com/maralcbr">@maralcbr</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a> içinde</li>
+  <li>Apple Silicon Mac'lerde stable kanalını teklif edin, <a href="https://github.com/maralcbr">@maralcbr</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a> içinde</li>
+  <li>Apple Silicon'da yeni terminallerde Omarchy'nin takma adlarının, işlevlerinin ve ortamının eksik olmasını düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a> içinde</li>
+  <li>Kurulu NVIDIA uygulamalarını kurun, <a href="https://github.com/jdvmi00">@jdvmi00</a> tarafından <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a> içinde</li>
+  <li>NVIDIA N1x'li Lenovo Pro 9'da kurulumların başarısız olmasını düzeltin, <a href="https://github.com/breymander">@breymander</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a> içinde</li>
+  <li>Daha erken ses profillerini çalıştıran N1x dizüstü bilgisayarlarda eksik dahili hoparlörleri ve mikrofonları düzeltin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a> içinde</li>
+  <li>DGX Spark gibi NVIDIA GB10 makinelerinde yavaş bir masaüstünü düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a> içinde</li>
+  <li>
+    <p>NVIDIA'da devam ettikten sonra kilit ekranına yazmayı düzeltin, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a> içinde</p>
+
+    <p>Kilit ayrıca panel yanarken tekrar kararmıyor.</p>
+  </li>
+  <li>Lutris ve Battle.net'in başka bir GPU'nun 32 bit Vulkan sürücüsünü kurmasını düzeltin, <a href="https://github.com/zihaomu">@zihaomu</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a> içinde</li>
+  <li>ARM'da her güncellemeden sonra yeniden başlatmayı istemeyi durdurun, <a href="https://github.com/birkskyum">@birkskyum</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a> içinde</li>
+  <li>aarch64'te stable ve RC kanallarını teklif edin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a> içinde</li>
+  <li>Güç profillerinin ARM dizüstü bilgisayarlarda çalışmasını sağlayın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a> içinde</li>
+  <li>4K sayfalı ARM makinelerinde Dropbox'ı ve ARM'da bir web uygulaması olarak Spotify'ı teklif edin, <a href="https://github.com/birkskyum">@birkskyum</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a> içinde</li>
+  <li>ARM'da GeForce NOW, Battle.net ve Lutris kurulumlarını gizleyin, <a href="https://github.com/birkskyum">@birkskyum</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a> içinde</li>
+  <li>ARM'da Hermes uygulamasının yerinde güncellenmemesini düzeltin, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a> içinde</li>
+  <li>Snapdragon dizüstü klavyelerinin disk kilidi açma isteminde yazmamasını düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a> içinde</li>
+  <li>Snapdragon dizüstü bilgisayarlarda oturum açmada kameraların eksik olmasını düzeltin, <a href="https://github.com/birkskyum">@birkskyum</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a> içinde</li>
+  <li>Snapdragon X2 dizüstü bilgisayarlarda disk kilidi açmadan önce siyah bir ekranı düzeltin, <a href="https://github.com/jdvmi00">@jdvmi00</a> tarafından <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a> içinde</li>
+  <li>Intel Wildcat Lake'de videoyu donanımda çözün, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a> içinde</li>
+  <li>Arrow Lake-H dizüstü bilgisayarlarda canlı ISO çökmelerini düzeltin, <a href="https://github.com/emirb">@emirb</a> tarafından <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a> içinde</li>
+  <li>HP EliteBook Ultra G1q dahili mikrofonunu düzeltin, <a href="https://github.com/bprendie">@bprendie</a> tarafından <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a> içinde</li>
+  <li>Motorcomm YT6801 Ethernet için üst akış desteğini kullanın, <a href="https://github.com/AFOliveira">@AFOliveira</a> tarafından <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a> içinde</li>
+  <li>Elgato Cam Link 4K'yı 16:9 sanal kamera olarak aktarın, <a href="https://github.com/dhh">@dhh</a> tarafından <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a> içinde</li>
+  <li>Bir platformun adlandırdığı parmak izi okuyucuları destekleyin, <a href="https://github.com/scottjones">@scottjones</a> tarafından <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a> içinde</li>
+</ul>
