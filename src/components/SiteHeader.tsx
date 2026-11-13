@@ -193,7 +193,7 @@ function useNavSurface(
   pathname: string,
 ) {
   const wasOpen = useRef(sheetOpen)
-  useEffect(() => {
+  useBeforePaint(() => {
     const el = bar.current
     if (!el) return
     const justClosed = wasOpen.current && !sheetOpen
@@ -320,6 +320,14 @@ function useNavSurface(
       if (here) el.style.setProperty('--nav-ground', here.colour)
       else if (!heroUp) el.style.setProperty('--nav-ground', 'var(--color-bg)')
       el.style.setProperty('--nav-surface', here || !heroUp ? '1' : '0')
+      // blur(0px) still creates a backdrop-filter surface in Chromium.
+      // Use no filter while transparent, restoring the existing blur when
+      // the bar carries a section or the mobile sheet is open.
+      el.style.backdropFilter = sheetOpen
+        ? ''
+        : here || !heroUp
+          ? 'blur(calc(12px * var(--nav-surface, 0)))'
+          : 'none'
       el.toggleAttribute(
         'data-nav-past-hero',
         !heroUp || (phone.matches ? y + height : y) >= heroBottom,
@@ -501,10 +509,6 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
           backgroundColor: menuOpen
             ? undefined
             : 'color-mix(in srgb, var(--nav-ground, var(--color-bg)) calc(var(--nav-surface, 0) * var(--nav-fill, 1) * 90%), transparent)',
-          // Keep blur off over the hero so its pixels stay sharp.
-          backdropFilter: menuOpen
-            ? undefined
-            : 'blur(calc(var(--nav-surface, 0) * 12px))',
         }}
       >
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
