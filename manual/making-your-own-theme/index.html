@@ -75,17 +75,13 @@
 
 <p>A theme you install from someone else’s repo with <code>omarchy theme install</code> keeps everything that’s colour, and loses the handful of files that would run code on your machine: any <code>.lua</code> file, the terminal configs (<code>alacritty.toml</code>, <code>foot.ini</code>, <code>ghostty.conf</code>, <code>kitty.conf</code>), and <code>vscode.json</code>. A theme’s <code>hyprland.lua</code> is Lua your compositor runs at login, a terminal config names the program your terminal starts, and <code>vscode.json</code> names a VSCode extension to install. Installing someone’s theme should change what your desktop looks like, never what it runs.</p>
 
-<p>Everything else still works exactly as the theme author wrote it — <code>btop.theme</code>, <code>chromium.theme</code>, <code>helix.toml</code>, <code>icons.theme</code>, <code>shell.toml</code>, the backgrounds and the previews are all kept. Only what was dropped gets regenerated from <code>colors.toml</code> on your machine.</p>
+<p>Everything else still works exactly as the theme author wrote it — <code>btop.theme</code>, <code>chromium.theme</code>, <code>helix.toml</code>, <code>shell.toml</code>, the backgrounds and the previews are all kept. Only what was dropped gets regenerated from <code>colors.toml</code> on your machine.</p>
 
 <p>Omarchy tells the two apart by whether the theme has its own git repo inside it, which is what <code>omarchy theme install</code> leaves behind when it clones. So a theme you wrote stays yours, and one you pulled off the internet stays colours.</p>
 
 <h3 id="light-mode">Light mode <a class="manual__heading-link" href="#light-mode" aria-label="Link to this section">#</a></h3>
 
 <p>If you’re making a light mode theme, set <code>mode = "light"</code> at the top of your <code>colors.toml</code>. Then it’ll automatically be paired with light mode for all the apps. (The old way of dropping an empty file called <code>light.mode</code> in the root of your theme still works too.)</p>
-
-<h3 id="icon-colors">Icon colors <a class="manual__heading-link" href="#icon-colors" aria-label="Link to this section">#</a></h3>
-
-<p>If you’d like to color-match the file manager icons to your theme, add a file called <code>icons.theme</code> with the name of the icon set you want to use. By default, the options are: <code>Yaru Yaru-blue Yaru-dark Yaru-magenta Yaru-olive Yaru-prussiangreen Yaru-purple Yaru-red Yaru-sage Yaru-wartybrown Yaru-yellow</code>.</p>
 
 <h3 id="unlock-image">Unlock image <a class="manual__heading-link" href="#unlock-image" aria-label="Link to this section">#</a></h3>
 

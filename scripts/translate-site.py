@@ -63,10 +63,13 @@ def validate_value(source, value):
     if not isinstance(value, str) or not value.strip():
         raise TranslationError('empty translation')
     before, after = news.Structure(source), news.Structure(value)
+    # Plain text included: the page closes around the value, and that completes an unfinished tag.
+    if after.unfinished or not after.ascii_names:
+        raise TranslationError('unfinished HTML tag or non-ASCII tag name')
     if before.events:
-        if before.events != after.events or before.references != after.references:
+        if not after.keeps(before) or Counter(map(repr, before.references)) != Counter(map(repr, after.references)):
             raise TranslationError('HTML structure, attributes, or links changed')
-        if before.protected != after.protected:
+        if Counter(before.protected) != Counter(after.protected):
             raise TranslationError('code or executable content changed')
         if len(before.paragraphs) != len(after.paragraphs):
             raise TranslationError('paragraph count changed')
