@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (ওরফে Quattro RS!) হলো <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>-এর পর প্রথম বড় ফিচার রিলিজ, আর এটা একটা ধামাকা: মাত্র বারো সপ্তাহে ১৮০ জনের বেশি অবদানকারীর কাছ থেকে ৭৪০টিরও বেশি পুল রিকোয়েস্ট মার্জ হয়েছে। এটি এখন টাইলিং ডিফল্টের পাশাপাশি একটি ঐতিহ্যবাহী ডেস্কটপ মোডও দিচ্ছে। আপনি এটি M1/M2/M3/Neo MacBook-এ নেটিভভাবে ইনস্টল করতে পারবেন। আর এটি ৫০টি ভাষায় কথা বলে। আরও আছে অগণিত অন্যান্য ফিচার, সংশোধন আর উন্নতি। ইতিমধ্যে Omarchy-তে আছেন? চালান <em>Update &gt; Omarchy</em>। নতুন মেশিন? <a href="/#install">এখান থেকে নিন</a>।</p>
+
+<h2 id="floating-workspaces-with-a-dock">ডকসহ ভাসমান ওয়ার্কস্পেস</h2>
+
+<p><code>Super + L</code> এখন যেকোনো ওয়ার্কস্পেসকে টাইলিং, স্ক্রলিং আর ফ্লোটিংয়ের মধ্যে ঘুরিয়ে দেয়। একটি ফ্লোটিং ওয়ার্কস্পেসে, প্রতিটি উইন্ডো আপনার থিমের রঙে একটি টাইটেলবার পায়, আর একটি ডকে আপনার পিন করা অ্যাপ, চলমান সবকিছু, আর ইনস্টল করা প্রতিটি অ্যাপের একটি গ্রিড দেখা যায়। সাজাতে বা পিন করতে টেনে আনুন, আরও কিছুর জন্য ডান-ক্লিক করুন, আর <code>Super + M</code> একটি উইন্ডোকে ছোট করে ডকে নামিয়ে দেয়।</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>macOS বা Windows থেকে আসা যারা এখনো পুরোপুরি টাইলিংয়ে যেতে প্রস্তুত নন, তাদের জন্য এটি চমৎকার একটি শুরু। কিংবা যারা শুধু এমন একটি ওয়ার্কস্পেস চান যেখানে উইন্ডোগুলো ছড়িয়ে থাকতে পারে, তাদের জন্যও। প্রতিটি ওয়ার্কস্পেসে মিলিয়ে-মিশিয়ে ব্যবহার করুন, আর বারটি দেখিয়ে দেয় প্রতিটি কোন লেআউট ব্যবহার করছে।</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Silicon-এ Omarchy</h2>
+
+<p>আমাদের অসাধারণ <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> দল নেটিভ Mac ইনস্টলারটি প্রকাশ করেছে। macOS-এ <a href="https://github.com/omacom/omarchy-mac-installer/releases">একটি অ্যাপ ডাউনলোড করুন</a>, আর এটি আপনার M1, M2, M3, বা Neo MacBook-এ এর পাশাপাশিই Omarchy বসিয়ে দেবে। কোনো USB স্টিক নয়, টার্মিনালে কোনো মন্ত্রপাঠ নয়। Homebrew পছন্দ করেন? সেটা এক লাইনেই:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac ইনস্টলার" /></p>
+
+<p>সেপ্টেম্বরে আমরা এটাই করতে নেমেছিলাম: Asahi যা শুরু করেছিল, তা শেষ করা। দুই মাস পরে, আপনি শুধু এটি ডাউনলোড করলেই হলো। দলের সবার অসাধারণ কাজ।</p>
+
+<p>আর তারা এখানেই থামছেন না। M4, M5, আর M6—সবগুলো নিয়েই এখন কাজ চলছে, তাই Omarchy প্রতিটি Apple Silicon Mac-এ চলতে খুব বেশি দেরি হবে না বলেই মনে হচ্ছে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="একটি M2 Max, M3 Air, Neo, M4 Pro, আর M5 Air-এ Omarchy" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">NVIDIA DGX Spark + N1X-এর জন্য ARM সমর্থন (আর শীঘ্রই Snapdragon)</h2>
+
+<p>Omarchy 4.5 তার প্রথম ARM ISO নিয়ে এসেছে, আর এর সঙ্গে এসেছে NVIDIA-র ARM মেশিনগুলোর জন্য প্রাথমিক সমর্থন: DGX Spark ডেস্কটপ এবং N1X-এর ওপর তৈরি ল্যাপটপ, যেমন <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> আর <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>। আর শীঘ্রই Snapdragon ARM মেশিনের পুরো লাইনআপের জন্যও সমর্থন আসছে। এখনো প্রাথমিক পর্যায়, তাই কিছু অমসৃণ দিক আশা করুন, আর কিছু ভেঙে গেলে দয়া করে <a href="https://github.com/omacom/omarchy/issues">GitHub</a>-এ জানান।</p>
+
+<h2 id="50-languages-and-5-input-methods">৫০টি ভাষা আর ৫টি ইনপুট পদ্ধতি</h2>
+
+<p>Omarchy এখন ৫০টি ভাষায় কথা বলে। <em>Setup &gt; Language</em>-এর অধীনে একটি বেছে নিন (অথবা চালান <code>omarchy language &lt;code&gt;</code>), আর মেনু, ডেস্কটপ আর Omarchy-র বিজ্ঞপ্তিগুলো সঙ্গে সঙ্গে বদলে যাবে। পরেরবার লগ ইন করলেই সিস্টেম লোকেলও অনুসরণ করবে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="ভাষা বদলানো" /></p>
+
+<p>একটি ভাষায় কথা বলা অবশ্য কাজের অর্ধেক মাত্র। আপনাকে তা টাইপও করতে হবে। তাই Omarchy এখন জাপানি (Mozc), কোরীয় (Hangul), সরলীকৃত চীনা (Pinyin), তাইওয়ান (Zhuyin), আর হংকং (Cangjie)-এর জন্য যথাযথ ইনপুট পদ্ধতি সেট আপ করে দেয়, সরাসরি ইনস্টলার থেকেই অথবা পরে <em>Setup &gt; Keyboard</em>-এর অধীনে। প্রতিটির সঙ্গেই তার অক্ষররূপের জন্য সঠিক ফন্ট আসে, ক্যান্ডিডেট উইন্ডো আপনার থিম অনুসরণ করে, আর <code>Super + I</code> আপনার ইনপুট ভাষাগুলোর মধ্যে বদলে দেয়। আপনি Dvorak, Colemak, অথবা AZERTY-তে লাতিন টাইপ করলেও Hangul, Zhuyin, আর Cangjie তাদের কীগুলো আদর্শ অবস্থানেই রাখে, ঠিক Windows আর macOS-এর মতো। আর Shift একা ট্যাপ করলে একটি ইনপুট পদ্ধতি থেকে বেরিয়ে লাতিন অক্ষরে যাওয়া যায়, আবার ফিরেও আসা যায়, যেভাবে Sogou, Microsoft Pinyin, আর macOS কাজ করে।</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">ক্যাপটিভ Wi-Fi পোর্টালে সাইন ইন করুন</h2>
+
+<p>হোটেল, বিমানবন্দর, আর কফি শপের Wi-Fi অবশেষে সহজেই কাজ করে। কোনো নেটওয়ার্ক অনলাইনে যেতে দেওয়ার আগে আপনাকে সাইন ইন করতে বা তার শর্তাবলিতে সম্মত হতে বললে Omarchy এখন তা টের পায়। নেটওয়ার্ক আইকন আপনাকে সতর্ক করে, আর নেটওয়ার্ক প্যানেলে একটি বড় Open Captive Portal বোতাম দেখায়, যা আপনাকে সোজা লগইন পৃষ্ঠায় নিয়ে যায়। পার হয়ে গেলেই সবকিছু নিজে থেকেই স্বাভাবিক হয়ে যায়।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="নেটওয়ার্ক প্যানেল থেকে একটি ক্যাপটিভ পোর্টালে সাইন ইন করা" width="380" /></p>
+
+<h2 id="five-new-default-apps">পাঁচটি নতুন ডিফল্ট অ্যাপ</h2>
+
+<p><strong>Hype</strong> একটি মাত্র Markdown ফাইল থেকে উপস্থাপনা তৈরি করে, উৎসের পাশে একটি ভিজ্যুয়াল স্লাইড সম্পাদকসহ, আর PDF বা PowerPoint-এ রপ্তানি করে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> কাগজপত্রের কাজে Xournal++-এর জায়গা নিয়েছে: একটি PDF খুলুন, আপনার সংরক্ষিত স্বাক্ষর, লেখা, আর তারিখ বসান, আর একটি স্বাক্ষরিত অনুলিপি সংরক্ষণ করুন।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> আপনার ডিস্ক কী দিয়ে ভরে যাচ্ছে তার একটি ট্রিম্যাপ আঁকে, ধরন অনুযায়ী রঙ করে, নিরাপদে আবার তৈরি করা যায় এমন ক্যাশগুলো চিহ্নিত করে, আর কী যাওয়া উচিত তা চিহ্নিত করতে দেয়।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> একটি কী দিয়েই আপনার ক্যামেরা রেকর্ড করে, আপনার ডেস্কটপের সঙ্গে মিলিয়ে থিম করা।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> আপনাকে SSH-এর ওপর দিয়ে একটি রিমোট ডেস্কটপ দেয়। অন্য একটি Omarchy মেশিনে সংযোগ করুন আর আপনার মেশিনের একটি উইন্ডো থেকে তার পুরো ডেস্কটপ চালান, প্রতিটি মেশিনের জন্য একটি ট্যাবসহ। আর যেহেতু এটি SSH-এর ওপর চলে, অতিরিক্ত কিছু সেট আপ বা প্রকাশ করার নেই। নিয়ন্ত্রিত মেশিনটি বারে একটি রিমোট সেশন নির্দেশক দেখায়, তাই কেউ তাতে থাকলে তা সবসময় পরিষ্কার থাকে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>আর আছে <strong>Elsewhen</strong>, একটি বিশ্বঘড়ি যা বারে ঘড়ির ঠিক পাশেই থাকে। আপনি কোথায় আছেন তা ঠিক করতে পৃথিবীর গ্লোবে একটি শহরে ট্যাপ করুন, আসল জায়গাগুলো খুঁজুন, আর প্রতিটি শহরে বসবাসকারী লোকদের নাম দিন, যাতে আপনি সবসময় জানেন ফোন করার জন্য এটি উপযুক্ত সময় কিনা। <code>t</code> দিয়ে ১২ আর ২৪ ঘণ্টার মধ্যে বদলান, <code>Alt + T</code> দিয়ে °F আর °C-এর মধ্যে, আর <code>Super + Ctrl + Alt + E</code> দিয়ে যেকোনো সময় এটিকে ডেকে আনুন।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>রেকর্ডিংয়ের জন্য Monologue আর ছাঁটাইয়ের জন্য Omacut থাকায়, নতুন ইনস্টলগুলোতে আর OBS Studio আর Kdenlive আসে না। নতুন ইনস্টল থেকে Lazydocker-ও চলে গেছে, যদিও Docker আর Docker Compose এখনো আছে। যেসব মেশিনে এর কোনোটি ইতিমধ্যে আছে, সেগুলোতে তা থেকে যাবে।</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Office-এ বসবাসকারী লোকদের সঙ্গে কাজ করতে হয়? <em>Install &gt; Service &gt; Microsoft</em> এখন Outlook, Word, Excel, PowerPoint, Teams, আর OneDrive-কে ওয়েব অ্যাপ হিসেবে সেট আপ করে। প্রতিটি নিজের উইন্ডো আর লঞ্চার এন্ট্রি পায়, তাই বাকি সবকিছুর পাশে এগুলো একদম মানানসই লাগে। কর্মক্ষেত্রে Omarchy-তে না আসার আর কোনো অজুহাত নেই!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchy-তে Excel, Word, Teams, আর PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">ডিকটেশনের জন্য Superwhisper</h2>
+
+<p>Superwhisper এখন Omarchy-র ডিফল্ট ডিকটেশন ইঞ্জিন, আর এটি তৈরি অবস্থায়ই সেট আপ করা থাকে। কথা বলা শুরু করতে <code>Alt + Space</code> ট্যাপ করুন, থামতেও আবার ট্যাপ করুন, অথবা পুশ-টু-টকের জন্য <code>Right Alt</code> ধরে রাখুন। এটি অবিশ্বাস্যরকম দ্রুত আর খুব নির্ভুল।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisper দিয়ে ডিকটেশন করা" /></p>
+
+<p>এটি ক্লাউডে শুরু হয়, তাই ইনস্টল করার মুহূর্তেই এটি কাজ করে, আর প্রথম ১০,০০০ শব্দ বিনামূল্যে। কিন্তু আপনি এমন একটি ডাউনলোডযোগ্য মডেলে বদলে যেতে পারেন যা সম্পূর্ণ বিনামূল্যে আর পুরোপুরি স্থানীয়ভাবে চলে, কাউকে একটি শব্দও না পাঠিয়ে। আর আপনি যদি অন্য একটি স্থানীয় মডেল পছন্দ করেন, বিকল্প হিসেবে Voxtype এখনো আছে।</p>
+
+<h2 id="install-in-less-than-ten-seconds">দশ সেকেন্ডেরও কমে ইনস্টল</h2>
+
+<p>Omarchy আগে প্রায় ৯৪০টি প্যাকেজ একে একে ইনস্টল করত। নতুন F1 ইনস্টলার তার বদলে একটি আগে থেকে তৈরি রুট ইমেজ খুলে তার ওপর শুধু এই মেশিনের প্যাকেজগুলো যোগ করে। এতে যেকোনো মেশিনে ইনস্টলের সময় মোটামুটি অর্ধেকে নেমে আসে।</p>
+
+<p>আর দ্রুত হার্ডওয়্যারে, এটি অবিশ্বাস্য। AMD-র <a href="https://x.com/AnushElangovan">Anush Elangovan</a> তার AMD ল্যাপটপে মাত্র <strong>৭ সেকেন্ডে</strong> সম্পূর্ণ Omarchy ইনস্টল করে বিশ্বরেকর্ড গড়েছেন। <a href="https://x.com/dhh/status/2117222836620202375">সাত সেকেন্ড!</a> আমার মনে আছে, একসময় পাঁচ মিনিটকেও উচ্চাভিলাষী লক্ষ্য মনে হতো।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy ০ মিনিট ৭ সেকেন্ডে ইনস্টল করা হয়েছে" /></p>
+
+<h2 id="faster-everywhere-else">অন্য সব জায়গায়ও দ্রুত</h2>
+
+<p>শুধু ইনস্টলারই নয়। স্টার্টআপ এখন আর binfmt রেজিস্ট্রেশনে আটকে থাকে না। থিম পিকার এক সেকেন্ডের এক-চতুর্থাংশ দেরির বদলে সঙ্গে সঙ্গে খোলে। মেনু আর প্যানেল Hyprland শর্টকাট থেকে সরাসরি খোলে, প্রথমে একটি প্রক্রিয়া শুরু করতে যে ৬০ মিলিসেকেন্ড লাগত তা এড়িয়ে। Omarchy মেনুর সবচেয়ে ধীর পরীক্ষাগুলো ২০০ মিলিসেকেন্ড থেকে ১৬ মিলিসেকেন্ডে নেমে এসেছে, একটি নতুন টার্মিনাল ৩০ মিলিসেকেন্ড আগেই তার প্রম্পট দেখায়, আর পুরো ডেস্কটপ এখন পোলিংয়ের বদলে পরিবর্তনের প্রতিক্রিয়া দেখায়। এমনকি লগ আউট, রিবুট, আর শাট ডাউনও অ্যাপগুলো বন্ধ হওয়া শেষ হওয়ার মুহূর্তেই ঘটে।</p>
+
+<h2 id="agent-upgrades">এজেন্ট আপগ্রেড</h2>
+
+<p>Omarchy হলো এজেন্টিক OS, আর 4.5 এজেন্টদের সঙ্গে কাজের জন্য বড় এক দফা আপগ্রেড নিয়ে এসেছে। এজেন্ট প্যানেল এখন ৬টি থেকে বেড়ে ২৩টি এজেন্ট আর প্রদানকারীকে ট্র্যাক করে, যার মধ্যে আছে Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter, আর Ollama। প্রতিটি সীমা তার নিজস্ব মিটার পায়, রিসেট হতে কত সময় বাকি তাসহ, যাতে আপনি ঠিক দেখতে পারেন আপনার হাতে কতটা রানওয়ে বাকি আছে। আর Grok এখন Claude আর Codex-এর পাশাপাশি একটি পূর্ণ প্রদানকারী।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="কয়েকটি Claude আর Codex সাবস্ক্রিপশনসহ এজেন্ট প্যানেল" width="380" /></p>
+
+<p>আর আপনার এজেন্ট সবসময় এক কীস্ট্রোক দূরে। <code>Super + ~</code> একটি ম্লান ডেস্কটপের ওপর Quake-ধাঁচের কনসোল নামিয়ে আনে, আর প্রথমবার খুললেই এটি আপনার ডিফল্ট এজেন্ট শুরু করে। আবার চাপলেই এটি গুটিয়ে যায়, আর আপনার সেশন ঠিক যেখানে রেখেছিলেন সেখানেই থাকে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="ম্লান ডেস্কটপের ওপর একটি এজেন্ট চালানো Quake-ধাঁচের কনসোল" /></p>
+
+<p>আপনি যদি একাধিক সাবস্ক্রিপশন সামলান, এখন একই মেশিনে কয়েকটি Claude, Codex, আর Grok লগইন রাখতে পারবেন আর <code>omarchy agent account</code> ব্যবহার করে বেছে নিতে পারবেন নতুন সেশন কোনটি দিয়ে শুরু হবে। ইতিহাস, সেটিংস, আর দক্ষতা তাদের মধ্যে ভাগ করা থাকে, তাই বদলানোর পর <code>claude --continue</code> ঠিক যেখানে ছেড়েছিলেন সেখান থেকেই শুরু করে। সীমার কাছাকাছি গেলে, Omarchy হয় এক-ক্লিকে বদলানোর প্রস্তাব দিতে পারে, নয়তো নিজে থেকেই নতুন সেশনগুলোকে সবচেয়ে বেশি হেডরুম থাকা অ্যাকাউন্টে সরিয়ে দিতে পারে। আর অন্য একটি মেশিন সেট আপ করার সময়, <code>omarchy agent account copy</code> SSH-এর ওপর দিয়ে আপনার সব লগইন নিয়ে আসে, যাতে আপনাকে সবকিছুতে আবার সাইন ইন করতে না হয়।</p>
+
+<p>Kimi আর Ori, OpenRouter-এর এজেন্ট হারনেস, <em>Setup &gt; Defaults &gt; Agent</em>-এর অধীনে পছন্দগুলোতে যোগ দিয়েছে, আর Google-এর Antigravity অপ্রচলিত Gemini CLI-র জায়গা নিয়েছে (<code>gemini</code> এখনো একটি উপনাম হিসেবে কাজ করে)। টার্মিনালের বদলে উইন্ডো পছন্দ করেন? Claude আর Amp ডেস্কটপ অ্যাপ এখন <em>Install &gt; AI</em>-এর অধীনে এক ক্লিক দূরে।</p>
+
+<h2 id="notifications-rebuilt">বিজ্ঞপ্তি, নতুন করে তৈরি</h2>
+
+<p>বিজ্ঞপ্তিগুলো এখন প্রেরক অনুযায়ী স্তূপ হয়, আপনার থিম অনুসরণ করে, আর একই রকম পুনরাবৃত্তিগুলোকে গুটিয়ে দেয়। অ্যাকশন বোতাম, যাচাইকরণ কোড, আর লিংক—সবই সরাসরি কার্ড থেকেই কাজ করে। <code>Super + Comma</code> সবচেয়ে নতুনটির ওপর কাজ করে (বাতিল করা, খোলা, বা তার বোতাম চাপা), আর <code>Super + Ctrl + Comma</code> সবগুলো চালানোর জন্য কীবোর্ড আপনার হাতে তুলে দেয়। বারের ঘণ্টাটি Do Not Disturb চালু করে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="নতুন বিজ্ঞপ্তি" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">ভিডিও ব্যাকগ্রাউন্ড আর থিমের সূচনা</h2>
+
+<p>ব্যাকগ্রাউন্ড এখন ভিডিও হতে পারে। একটি ফেলে দিন, আর আপনার ডেস্কটপ গড়িয়ে আসা ঢেউ বা আপনার পছন্দের অন্য যেকোনো কিছু দিয়ে জীবন্ত হয়ে উঠবে, আর লক স্ক্রিন তা থেকে একটি স্থির ফ্রেম দেখাবে। আর থিমগুলো এখন প্রবেশ করে: প্রতিটি লগ ইন করার সময় বা তাতে বদলানোর সময় একটি ছোট, নীরব সূচনা চালাতে পারে। (বরং শান্ত রাখতে চান? <em>Appearance &gt; Animations</em>-এর অধীনে সূচনাগুলো বন্ধ করুন।)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse ডিফল্ট থিমগুলোতে যোগ দিল</h2>
+
+<p>Jade Horse পুরোটাই কুয়াশাচ্ছন্ন সবুজ, খোদাই করা জেড ব্যাকগ্রাউন্ডসহ, যা পুরো ডেস্কটপকে একটি স্ক্রল চিত্রকলার মতো দেখায়। এটি অন্তর্ভুক্ত থিমগুলোর মধ্যে Osaka Jade-এর জায়গা নিয়েছে, আর এর সঙ্গে অন্য নতুন ডিফল্ট থিম হিসেবে যোগ দিয়েছে Starship। আপনি Osaka Jade-এ থাকলে, আপনার অনুলিপি থেকে যাবে, আর যারা নতুন করে ইনস্টল করতে চান, তাদের জন্য এটি একটি <a href="https://github.com/omacom/omarchy-osaka-jade-theme">তৃতীয় পক্ষের থিম</a> হিসেবে বেঁচে থাকবে।</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse থিম" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff নতুন ডিফল্ট ব্যাকগ্রাউন্ড</h2>
+
+<p>নতুন ইনস্টল এখন আপনাকে Liftoff দিয়ে স্বাগত জানায়, একটি অপূর্ব সূর্যাস্ত উৎক্ষেপণ, যা Tokyo Night-এর নতুন ডিফল্ট ব্যাকগ্রাউন্ড। এটি তৈরি করেছেন <a href="https://github.com/tcballard">Tom Ballard</a>, যিনি প্রথমে এটি তার <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a>-এর জন্য তৈরি করেছিলেন। ধন্যবাদ, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom Ballard-এর Liftoff ব্যাকগ্রাউন্ড" /></p>
+
+<h2 id="boot-menu-now-quiet">বুট মেনু এখন নীরব</h2>
+
+<p>Omarchy আগে প্রতিটি শুরুতে প্রায় ছয় সেকেন্ড ধরে বুট মেনু দেখাত, যদি আপনার আগের একটি স্ন্যাপশটে ফিরে যাওয়ার দরকার হয়। কিন্তু প্রায় কেউই কখনো তা করেনি। তাই এখন Limine মাত্র এক সেকেন্ড অপেক্ষা করে আর নীরবে বুট হয়, আর বেশিরভাগ সময় আপনি মেনুটিই দেখতে পাবেন না।</p>
+
+<p>আপনার যখন অন্য একটি এন্ট্রি বা একটি স্ন্যাপশট দরকার হবে, মেশিন চালু হওয়ার সময় যেকোনো কী ট্যাপ করতে থাকুন (নিচের তীরচিহ্ন কাজ করে), আর এটি মেনুতে থামবে। আর আপনি যদি মেনুটিকে স্থায়ীভাবে বেশিক্ষণ ধরে রাখতে চান, <code>/boot/limine.conf</code>-এ আপনার নিজের <code>timeout:</code> বসান (যেমন <code>timeout: 5</code>)। আপডেট আপনার বসানো টাইমআউটকে ছোঁবে না।</p>
+
+<h2 id="changed-hotkeys">বদলে যাওয়া হটকি</h2>
+
+<p>কিছু শর্টকাট সরে গেছে:</p>
+
+<ul>
+  <li>Calculator: <code>Super + Ctrl + Q</code> এখন <code>Super + Shift + Q</code>।</li>
+  <li>Activity: <code>Super + Ctrl + T</code> এখন <code>Super + Shift + T</code>, আর <code>Super + Ctrl + T</code> থিম খোলে।</li>
+  <li>Network: <code>Super + Ctrl + W</code> এখন <code>Super + Ctrl + N</code>, আর <code>Super + Ctrl + W</code> ব্যাকগ্রাউন্ড খোলে।</li>
+  <li>Nightlight-এর আর কোনো শর্টকাট নেই (এটি ছিল <code>Super + Ctrl + N</code>); এটি <code>Trigger &gt; Toggle</code>-এ আছে।</li>
+  <li><code>Super + Alt + Space</code> Apps মেনুর বদলে ডক থেকে Apps খোলে।</li>
+</ul>
+
+<p>বিজ্ঞপ্তির শর্টকাট বদলেছে:</p>
+
+<ul>
+  <li><code>Super + Comma</code> সবচেয়ে নতুন কার্ডটির ওপর কাজ করে (এটি বাতিল করে, খোলে, বা তার একমাত্র বোতাম চাপে), শুধু বাতিল করার বদলে।</li>
+  <li>শেষটি বাতিল করা <code>Super + Alt + Comma</code>-তে সরে গেছে, যা আগে এটি খুলত।</li>
+  <li>নীরব করা <code>Super + Ctrl + Comma</code> থেকে <code>Super + Ctrl + Alt + Comma</code>-তে সরে গেছে; <code>Super + Ctrl + Comma</code> এখন কীবোর্ড নিয়ন্ত্রণ আপনার হাতে দেয়।</li>
+</ul>
+
+<p>কয়েকটি কী অন্যভাবে কাজ করে:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code>, আর <code>Super</code> + scroll বর্তমান মনিটরের ওয়ার্কস্পেসগুলোতেই থাকে, যেহেতু প্রতিটি মনিটরের নিজস্ব আছে।</li>
+  <li>একটি টার্মিনালে, <code>Super + C</code> আর <code>Super + V</code> <code>Ctrl + Insert</code> আর <code>Shift + Insert</code>-এর বদলে <code>Ctrl + Shift + C</code> আর <code>Ctrl + Shift + V</code> পাঠায়।</li>
+</ul>
+
+<p>আপনার নিজের বাইন্ডিংয়ের সঙ্গে সংঘর্ষ হতে পারে এমন নতুন ডিফল্ট: <code>Super + Q</code> (উইন্ডো বন্ধ, <code>Super + W</code>-এর পাশাপাশি), <code>Super + A</code> (সব নির্বাচন), <code>Super + M</code> (ডকে ছোট করা), <code>Super + ~</code> আর <code>Super + Shift + ~</code> (Quake কনসোল), <code>Super + Alt + L</code> (আগের লেআউট), <code>Super + Shift + Ctrl + Arrows</code> (একটি উইন্ডো অন্য মনিটরে সরানো), <code>Super + Ctrl + Alt + C</code> (স্ক্রিনশট), <code>Super + Ctrl + Alt + E</code> (বিশ্বঘড়ি), <code>Super + Ctrl + Alt + F</code> (পূর্ণ স্ক্রিন ডেস্কটপ), আর পুশ-টু-টক ডিকটেশনের জন্য <code>Right Alt</code> ধরে রাখা।</p>
+
+<h2 id="more-features">আরও ফিচার</h2>
+
+<ul>
+  <li>প্রতিটি মনিটরকে তার নিজস্ব ওয়ার্কস্পেস দিন: <code>Super + 1-0</code> আপনি যে মনিটরে আছেন তার ওয়ার্কস্পেসগুলোতে যায়, আর <code>Super + Arrows</code> অন্য ডিসপ্লেগুলোতে যাওয়া-আসা করে, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a>-এ</li>
+  <li>ডেস্কটপ কেমন দেখায় সে সম্পর্কিত সবকিছু Style-এর বদলে একটি নতুন Appearance মেনুতে একত্র করুন: থিম, ব্যাকগ্রাউন্ড, ফন্ট, বার, উইন্ডো, ব্র্যান্ডিং, ডক, ওয়ার্কস্পেস লেআউট, অ্যানিমেশন, আর আনলক স্ক্রিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a>-এ</li>
+  <li><em>Appearance &gt; Window Transparency</em>-এর অধীনে Opaque, Transparent, অথবা Glassy উইন্ডো বাছুন, সঙ্গে একটি Glassy বার ব্যাকগ্রাউন্ড, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a>-এ</li>
+  <li><em>Appearance &gt; Window Corners</em>-এর অধীনে থিম, ধারালো, অথবা গোলাকার উইন্ডোর কোণ বাছুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a>-এ</li>
+  <li>একটি অ্যানিমেশন-ছাড়া মোড যোগ করুন, VM-গুলোতে ডিফল্টভাবে চালু, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a>-এ</li>
+  <li>অ্যাপগুলোকে ডিফল্টভাবে অস্বচ্ছ করুন, টার্মিনালগুলো স্বচ্ছ রেখে, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a>-এ</li>
+  <li>Install &gt; Service-তে Slack যোগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a>-এ</li>
+  <li>প্রতিটি ব্যাকএন্ডে Alt + Space দিয়ে ডিকটেশন চালু-বন্ধ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a>-এ</li>
+  <li>স্ক্রিনশট বিজ্ঞপ্তিতে Open আর Edit বোতাম যোগ করুন, আর স্ক্রিন রেকর্ডিং আর yt-dlp ডাউনলোডে Open আর Cut যোগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a>-এ</li>
+  <li>ডিফল্ট কার্নেল বদলানোর জন্য একটি Update &gt; Kernel মেনু যোগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a>-এ</li>
+  <li>herdr মেশিনগুলোতে থিম সিঙ্ক যোগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a>-এ</li>
+  <li>Hyprland কী-বাইন্ডিং বদলানোর জন্য o.rebind যোগ করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a>-এ</li>
+  <li>ইনস্টলারের বদলে প্রথম লগইনের পর আপনার git পরিচয় জিজ্ঞাসা করুন, GitHub সাইন-ইনসহ, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a>-এ</li>
+  <li>ইনস্টল মিডিয়াকে ভাষা, কীবোর্ড, আর সময় অঞ্চল আগে থেকে ঠিক করতে দিন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a>-এ</li>
+  <li>বার উইজেটগুলোকে ট্রে-র ড্রয়ারে থাকতে দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a>-এ</li>
+  <li>একটি বার উইজেটকে বার থেকে টেনে সরিয়ে মুছে ফেলতে দিন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a>-এ</li>
+  <li>বার থেকে ওয়ার্কস্পেসগুলোর মধ্য দিয়ে স্ক্রল করতে দিন, <a href="https://github.com/outfoxxed">@outfoxxed</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a>-এ</li>
+  <li>থিম পিকার থেকে অতিরিক্ত থিম মুছতে দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a>-এ</li>
+  <li>অলসভাবে ইনস্টল হওয়া টুল হিসেবে hey, basecamp, আর Cloudflare CLI যোগ করুন, <a href="https://github.com/monorkin">@monorkin</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a>-এ</li>
+  <li>ঐচ্ছিক সেবা হিসেবে SSH Agent যোগ করুন, <a href="https://github.com/carletex">@carletex</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a>-এ</li>
+  <li>পাসওয়ার্ডহীন sudo কতক্ষণ চলবে তা বাছতে দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a>-এ</li>
+  <li>বিজ্ঞপ্তি টোস্টে একটি হোভার বন্ধ বোতাম যোগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a>-এ</li>
+  <li>একটি প্রোগ্রামের ক্র্যাশ নির্ণয় থেকে তার বিজ্ঞপ্তি নীরব করতে দিন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a>-এ</li>
+  <li>omarchy-notification-send-কে অ্যাকশন বোতাম যোগ করতে দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a>-এ</li>
+  <li>লাইভ সেকেন্ডসহ একটি ঘড়ির বিন্যাস যোগ করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a>-এ</li>
+  <li>Ctrl আর উজ্জ্বলতার কী দিয়ে কীবোর্ড ব্যাকলাইট সামঞ্জস্য করুন, <a href="https://github.com/ludagoo">@ludagoo</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a>-এ</li>
+  <li>ফার্মওয়্যার থেকে OEM Windows পণ্য কী ছাপুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a>-এ</li>
+  <li>টার্মিনাল সম্পাদকের পছন্দ হিসেবে আসল vi যোগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a>-এ</li>
+  <li>Ethereal-এ Roadster Starlight ব্যাকগ্রাউন্ড যোগ করুন, <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a>-এ</li>
+</ul>
+
+<h2 id="security">নিরাপত্তা</h2>
+
+<ul>
+  <li>Windows VM পাসওয়ার্ড RDP ক্লায়েন্টের আর্গুমেন্টের বাইরে রাখুন, <a href="https://github.com/dicemans">@dicemans</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a>-এ</li>
+  <li>স্ক্রিন-রেকর্ডিং অবস্থা সবার জন্য লেখারযোগ্য /tmp থেকে সরান, <a href="https://github.com/Chessing234">@Chessing234</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a>-এ</li>
+  <li>সাসপেন্ড জুড়ে পাসওয়ার্ডহীন sudo-র মেয়াদ শেষ হওয়া আরও কঠোর করুন, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a>-এ</li>
+  <li>আপডেট প্রতিরোধক পরিষ্কার করাকে যে প্রক্রিয়া এটি তৈরি করেছে তার সঙ্গে বাঁধুন, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a>-এ</li>
+  <li>OCaml পরিষ্কারের অনুমোদন আলাদা করুন, <a href="https://github.com/ErikMelton">@ErikMelton</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a>-এ</li>
+  <li>ফ্যাক্টরি-রিসেট উন্নীতকরণকে প্যাকেজ করা কমান্ডে আটকে দিন, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a>-এ</li>
+  <li>রিসেটে আহ্বানকারী ব্যবহারকারীর সংরক্ষিত আঙুলের ছাপের টেমপ্লেট সরান, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a>-এ</li>
+  <li>পথ এমন হুক আর অবস্থার নাম প্রত্যাখ্যান করুন, <a href="https://github.com/Adolanium">@Adolanium</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a>-এ</li>
+  <li>আঙুলের ছাপ আর FIDO2 সেটআপের লেখা polkit স্ট্যাকে system-auth-এর ওপর ছেড়ে দিন, <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a>-এ</li>
+  <li>আঙুলের ছাপ সরানোর সময় পাঠকের নিজস্ব সঞ্চয়স্থান থেকেও সেগুলো সরান, <a href="https://github.com/scottjones">@scottjones</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a>-এ</li>
+  <li>কোনো কী যোগ না হলে SSH সেটআপ যাতে পাসওয়ার্ড লগইনসহ sshd চলমান না রাখে তা প্রতিরোধ করুন, <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a>-এ</li>
+  <li>Voxtype আপগ্রেডের সময় অন্য স্থানীয় ব্যবহারকারীকে তার নিজের প্রোগ্রাম বদলে ঢোকানো থেকে প্রতিরোধ করুন, <a href="https://github.com/Vladkarok">@Vladkarok</a> দ্বারা <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a>-এ</li>
+  <li>ফ্যাক্টরি রিসেট sudo-র মধ্য দিয়ে আপনার gum সেটিংস যেভাবে পাঠায় তা আরও কঠোর করুন, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a>-এ</li>
+</ul>
+
+<h2 id="fixes">সংশোধন</h2>
+
+<ul>
+  <li>একটি মনিটর খুলে ফেলা, নিষ্ক্রিয় করা, অথবা ঢাকনা বন্ধ করে বন্ধ করা হলে Hyprland ক্র্যাশ করা ঠিক করুন, <a href="https://github.com/falkoro">@falkoro</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a>-এ</li>
+  <li>root= প্যারামিটার ছাড়া একটি কার্নেল ইমেজ রেখে যেতে পারত এমন আপগ্রেড ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a>-এ</li>
+  <li>অন্য সিস্টেমের বুট এন্ট্রি মুছে ফেলা ফ্যাক্টরি রিসেট ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a>-এ</li>
+  <li>অন্য একটি Omarchy-র পাশে ইনস্টল করলে সেই ইনস্টলের বুট এন্ট্রি সরিয়ে ফেলা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a>-এ</li>
+  <li>খালি জায়গায় ইনস্টল করলে নতুন একটির জন্য বিদ্যমান পার্টিশন নিয়ে নিতে পারত, তা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a>-এ</li>
+  <li>বাধাপ্রাপ্ত ড্রাইভ পাসওয়ার্ড পরিবর্তন আবার শুরু করলে ভুল কী সরিয়ে ফেলা ঠিক করুন, <a href="https://github.com/scottjones">@scottjones</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a>-এ</li>
+  <li>প্রতিটি Omarchy আপডেটে একবার sudo পাসওয়ার্ড চান, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a>-এ</li>
+  <li>প্রতিটি কমান্ডে আবার চাওয়ার বদলে দশ মিনিটের জন্য একবার sudo পাসওয়ার্ড চান, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a>-এ</li>
+  <li>আপডেটের একক sudo প্রম্পট দিয়ে AUR আপডেট আর বুট পরীক্ষা সম্পন্ন করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a>-এ</li>
+  <li>লেনদেনের মাঝখানে লগ আউট থেকে প্যাকেজ আপডেট নিরাপদ রাখুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a>-এ</li>
+  <li>অ্যাপ বন্ধ হওয়া শেষ হলেই লগ আউট, রিবুট, আর শাট ডাউন করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a>-এ</li>
+  <li>স্ক্রিনশটের জন্য Tensaku-কে Omasnap দিয়ে বদলান, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a>-এ</li>
+  <li>প্যানেলগুলোকে বার থেকে বাড়তে দিন আর তাদের মধ্যে রূপ বদলান, বোতাম আর বার আইকনে চাপের প্রতিক্রিয়াসহ, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a>-এ</li>
+  <li>বিজ্ঞপ্তিগুলোকে বারের নিচ থেকে স্লাইড করে ঢোকান আর যেভাবে এসেছিল সেভাবেই বের করে দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a>-এ</li>
+  <li>Omarchy-র নিজস্ব এন্ডপয়েন্টের সঙ্গে সংযোগ পরীক্ষা করুন, আর ক্যাপটিভ পোর্টালে সাইন ইন করা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a>-এ</li>
+  <li>edge থেকে stable বা RC-তে বদলালে মেশিন পুরোনো বিল্ডে থেকে যাওয়া ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a>-এ</li>
+  <li>শেল উত্তর দিতে ধীর হলে 4.5-এ আপডেট থেমে যাওয়া ঠিক করুন, <a href="https://github.com/AnPod">@AnPod</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a>-এ</li>
+  <li>ডেস্কটপ সেশনের বাইরে শুরু করলে আপডেট নীরবে ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a>-এ</li>
+  <li>একটি ব্যর্থ mise টুল ডাউনলোড বাকি সিস্টেম আপডেট থামিয়ে দেওয়া ঠিক করুন, <a href="https://github.com/sanjyay">@sanjyay</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a>-এ</li>
+  <li>omarchy-nvim ইনস্টল না থাকলে আপডেট ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/imzihuailin">@imzihuailin</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a>-এ</li>
+  <li>ডুয়াল-বুট ইনস্টল EFI পার্টিশন মাউন্ট করতে ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/Damian626">@Damian626</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a>-এ</li>
+  <li>ফার্মওয়্যার নতুন বুট এন্ট্রি না নিলে ইনস্টল থেমে যাওয়া ঠিক করুন, <a href="https://github.com/ryanio">@ryanio</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a>-এ</li>
+  <li>পুরোনো RAID সদস্য বা ভলিউম গ্রুপ থাকা ডিস্কে ইনস্টল থেমে যাওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a>-এ</li>
+  <li>প্রতিটি USB ডিভাইস আর বুট কাজের জন্য অপেক্ষা না করে ইনস্টলার আগেই শুরু করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a>-এ</li>
+  <li>নতুন ইনস্টলে 4096-বাইট সেক্টর দিয়ে ডিস্ক এনক্রিপশন দ্রুত করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a>-এ</li>
+  <li>অভ্যন্তরীণ ডিস্কগুলো প্রথমে তালিকাভুক্ত করুন আর নিরাপদ পছন্দে ইনস্টল স্ক্রিন খুলুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a>-এ</li>
+  <li>ইনস্টলারে Full disk install প্রথমে তালিকাভুক্ত করুন, আর ডিস্ক স্ক্রিনে Esc দিয়ে ফিরে যান, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>-এ</li>
+  <li>একটি মনিটর স্কেল করলে প্রতিটি অন্য মনিটরের স্কেল বদলে যাওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a>-এ</li>
+  <li>মনিটরগুলো ভিন্ন স্কেল ব্যবহার করলে XWayland অ্যাপ খুব বড় হয়ে আসা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a>-এ</li>
+  <li>একটি উইন্ডো পূর্ণ স্ক্রিন হলে HDR ডিসপ্লে ফিকে HDR ছবিতে বদলে যাওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a>-এ</li>
+  <li>ভগ্নাংশভাবে স্কেল করা ডিসপ্লেতে ঝাপসা মেনু আর পিকার ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a>-এ</li>
+  <li>বাহ্যিক ডিসপ্লে খুলে ফেলার পর ল্যাপটপ ডিসপ্লে বন্ধ থেকে যাওয়া ঠিক করুন, <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a>-এ</li>
+  <li>একটি ডিসপ্লে আবার চালু করলে তার অবস্থান, স্কেল, আর মোড রিসেট হয়ে যাওয়া ঠিক করুন, <a href="https://github.com/zihaomu">@zihaomu</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a>-এ</li>
+  <li>একটি মনিটর সংযোগ বিচ্ছিন্ন হওয়ার পর মেনু আর পিকার আবার না খোলা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a>-এ</li>
+  <li>একটি মনিটর খুলে ফেলার পর প্রতি-মনিটর ওয়ার্কস্পেস সরে যাওয়া ঠিক করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a>-এ</li>
+  <li>অডিও প্যানেল খোলা থাকা অবস্থায় একটি অডিও ডিভাইস সংযোগ বিচ্ছিন্ন হলে শেল ক্র্যাশ করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a>-এ</li>
+  <li>স্ক্রিনসেভারের পর পূর্ণ স্ক্রিন উইন্ডোর পূর্ণ স্ক্রিন হারানো ঠিক করুন, <a href="https://github.com/MGross21">@MGross21</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a>-এ</li>
+  <li>Hyprland রিলোডের পর স্টার্টআপে কার্সর অদৃশ্য হয়ে যাওয়া ঠিক করুন, <a href="https://github.com/spencerbull">@spencerbull</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a>-এ</li>
+  <li>XWayland অ্যাপের ওপর কার্সর অদৃশ্য হয়ে যাওয়া ঠিক করুন, <a href="https://github.com/Sebo1411">@Sebo1411</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a>-এ</li>
+  <li>ক্লিপবোর্ড ক্যাপচার আটকে যাওয়া ঠিক করুন, <a href="https://github.com/maxcroy1">@maxcroy1</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a>-এ</li>
+  <li>XDG Secret পোর্টালের মধ্য দিয়ে কিরিং অ্যাক্সেস ঠিক করুন, <a href="https://github.com/pkwagner">@pkwagner</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a>-এ</li>
+  <li>আঙুলের ছাপ নথিভুক্তকরণ আর লক-স্ক্রিন পুনরুদ্ধার ঠিক করুন, <a href="https://github.com/GeertJohan">@GeertJohan</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a>-এ</li>
+  <li>ধাপে ধাপে আঙুলের ছাপ নথিভুক্তকরণে পথ দেখান, <a href="https://github.com/scottjones">@scottjones</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a>-এ</li>
+  <li>লক স্ক্রিনের পাসওয়ার্ড ক্ষেত্রে কী স্বয়ংক্রিয় পুনরাবৃত্তি ঠিক করুন, <a href="https://github.com/berndb">@berndb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a>-এ</li>
+  <li>জেগে ওঠার সময় পাসওয়ার্ড ক্ষেত্রের পর লক স্ক্রিন ওয়ালপেপার লোড হওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a>-এ</li>
+  <li>সেশন চলে গেছে এমন একটি ডিসপ্লের নাম দিলে স্ক্রিন লক টাইমআউট ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a>-এ</li>
+  <li>বর্তমান উইন্ডোর ডিরেক্টরিতে একটি টার্মিনাল খোলা দ্রুত করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a>-এ</li>
+  <li>VS Code-পরিবারের সম্পাদকদের থিম পরিবর্তন লাইভ অনুসরণ করতে দিন, <a href="https://github.com/Macho0x">@Macho0x</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a>-এ</li>
+  <li>থিম পরিবর্তনে চলমান Hunk সেশনগুলোকে আবার থিম করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a>-এ</li>
+  <li>প্রতিটি থিমের জন্য নির্বাচিত ওয়ালপেপার মনে রাখুন, <a href="https://github.com/OldJobobo">@OldJobobo</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a>-এ</li>
+  <li>বড় সংগ্রহ আর HiDPI সহ ইমেজ পিকারকে দ্রুত আর তীক্ষ্ণ রাখুন, <a href="https://github.com/keylimesoda">@keylimesoda</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a>-এ</li>
+  <li>ওয়ালপেপার নমুনা নিতে স্বচ্ছ বারের খরচ করা CPU আর মেমরি কমান, <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a>-এ</li>
+  <li>হাজারো মেশিন থাকা টেইলনেটে Tailscale প্যানেল দ্রুত করুন, <a href="https://github.com/iskakaushik">@iskakaushik</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a>-এ</li>
+  <li>এজেন্ট প্যানেলে Grok-কে Claude আর Codex-এর সমপর্যায়ে আনুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a>-এ</li>
+  <li>CLI সাবপ্রসেসে এজেন্ট অ্যাকাউন্ট নির্বাচন প্রয়োগ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a>-এ</li>
+  <li>Codex-এর পৃথক খরচের সীমা আর তাদের রিসেটের সময় দেখান, <a href="https://github.com/Stegi56">@Stegi56</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a>-এ</li>
+  <li>Claude বাছলে ব্রাউজার ইন্টিগ্রেশন সেট আপ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a>-এ</li>
+  <li>এজেন্ট শুরু হওয়ার পর ইনস্টল করা mise টুল এজেন্টদের না পাওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a>-এ</li>
+  <li>SSH-এর ওপর শুরু করা herdr প্যানে এজেন্টদের মধ্যে স্ক্রিনশট পেস্ট করা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a>-এ</li>
+  <li>এজেন্ট প্যানেলের সংকুচিত Codex সেশন মিস করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a>-এ</li>
+  <li>Caps Lock-কে স্বাভাবিকে ফেরান আর Shift + Caps Lock-কে কম্পোজ কী করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a>-এ</li>
+  <li>লগইন স্ক্রিনে সিস্টেম কীবোর্ড লেআউট প্রয়োগ করুন, <a href="https://github.com/g-desoutter">@g-desoutter</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a>-এ</li>
+  <li>অ-লাতিন কীবোর্ড লেআউটে লেআউট বদলানো প্রতি দ্বিতীয় চাপ এড়িয়ে যাওয়া ঠিক করুন, <a href="https://github.com/manuaudio">@manuaudio</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a>-এ</li>
+  <li>mpv-তে হার্ডওয়্যার ভিডিও ডিকোডিং চালু করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a>-এ</li>
+  <li>TCP কনজেশন নিয়ন্ত্রণ BBR-তে বদলান আর আসল ডিস্কে kyber I/O শিডিউলার ব্যবহার করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a>-এ</li>
+  <li>T3 Code-কে তার স্ব-আপডেটকারী AppImage হিসেবে ইনস্টল করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a>-এ</li>
+  <li>PHP আর Laravel ইনস্টলেশন উন্নত করুন, <a href="https://github.com/nunomaduro">@nunomaduro</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a>-এ</li>
+  <li>Node অলসভাবে ইনস্টল করুন আর আপনার mise কনফিগকে ছোঁবেন না, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a>-এ</li>
+  <li>ডিফল্ট বাছার সময় অনুপস্থিত অ্যাপ ইনস্টল করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a>-এ</li>
+  <li>Install মেনুতে ইনস্টল করা সফটওয়্যার লুকানোর বদলে ম্লান করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a>-এ</li>
+  <li>Brave Origin-এর জন্য পাসওয়ার্ড ম্যানেজার আর অন্যান্য নেটিভ মেসেজিং হোস্ট নিবন্ধন করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a>-এ</li>
+  <li>Brave Origin ওয়েব বিজ্ঞপ্তিগুলো সাইট অনুযায়ী দলবদ্ধ করুন, আর ক্লিক করলে সঠিক ট্যাব খুলুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a>-এ</li>
+  <li>আপডেটের সময় অনাথ প্যাকেজ সরানো স্বয়ংক্রিয়ভাবে অনুমোদন করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a>-এ</li>
+  <li>প্রতিটি আপডেটের আগে Omarchy-র কিরিং আপডেট করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a>-এ</li>
+  <li>চ্যানেল বদলানোর পর রিবুটের প্রস্তাব দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a>-এ</li>
+  <li>আপডেট করার মতো কিছু থাকলেই কেবল প্রথমবার চালানোর আপডেটের প্রস্তাব দিন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a>-এ</li>
+  <li>Omarchy-র নিজস্ব জিও সেবা দিয়ে আবহাওয়ার অবস্থান আর ইনস্টলারের সময় অঞ্চল খুঁজুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a>-এ</li>
+  <li>Arch-এর NTP পুলের বদলে ntp.omarchy.org থেকে ঘড়ি ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a>-এ</li>
+  <li>Omarchy-র নিজস্ব গতির পরীক্ষা দিয়ে নেটওয়ার্কের গতি মাপুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a>-এ</li>
+  <li>প্রথম বুটের সময় ট্রেস করা আইকনের অগ্রগতির স্ক্রিন দেখান, <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a>-এ</li>
+  <li>লাইভ ISO Omarchy কার্নেলে বুট করুন, আর T2 কার্নেলে শুধু Mac-গুলোতে, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a>-এ</li>
+  <li>অফলাইন ইনস্টল mise সংস্করণ খোঁজার জন্য অপেক্ষা করা বন্ধ করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a>-এ</li>
+  <li>অফলাইন ইনস্টল সময় অঞ্চল Africa/Abidjan-এ ডিফল্ট করা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a>-এ</li>
+  <li>ইনস্টলারের সময় অঞ্চল পিকার টাইপ করে খুঁজতে না দেওয়া ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a>-এ</li>
+  <li>Ventoy স্টিক থেকে বুট করলে লাইভ ISO স্প্ল্যাশের পেছনে আটকে থাকা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>-এ</li>
+  <li>ইনস্টলারের সেটআপ ফর্মে জার্মান আর ফরাসি কনসোল কীম্যাপ ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a>-এ</li>
+  <li>ইনস্টলার আর git সেটআপে gum-এর ইংরেজি কী ইঙ্গিত লুকান, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a>-এ</li>
+  <li>ইনস্টল অগ্রগতির স্ক্রিন থেকে শুধু ইংরেজি কৌতুক বাদ দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a>-এ</li>
+  <li>ডিস্ক প্রস্তুত করার সময় ইনস্টলারের আউটপুট স্ক্রিনে প্যাডিং ছাড়া আসা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a>-এ</li>
+  <li>Quattro আপগ্রেড ডিফল্ট ব্রাউজার Chromium-এ রিসেট করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a>-এ</li>
+  <li>অ-ASCII অক্ষর থাকা ব্যাকগ্রাউন্ডের নামে Quattro আপগ্রেড থেমে যাওয়া ঠিক করুন, <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a>-এ</li>
+  <li>GRUB বা systemd-boot দিয়ে বুট করা মেশিনে কার্নেল মাইগ্রেশন থেমে যাওয়া ঠিক করুন, <a href="https://github.com/manuaudio">@manuaudio</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a>-এ</li>
+  <li>একাধিক NVMe ডিস্ক থাকা এনক্রিপ্ট না করা মেশিনে হাইবারনেশন ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a>-এ</li>
+  <li>FIDO2 মাইগ্রেশন সমাধান হওয়ার আগেই সম্পন্ন হিসেবে চিহ্নিত হওয়া ঠিক করুন, <a href="https://github.com/ErikMelton">@ErikMelton</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a>-এ</li>
+  <li>একটি ফ্লোটিং ওয়ার্কস্পেস আপনার নিজের ফ্লোট নিয়মে পড়া প্রথম উইন্ডো দখল করা ঠিক করুন, <a href="https://github.com/zihaomu">@zihaomu</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a>-এ</li>
+  <li>Super + L একটি ওয়ার্কস্পেসকে ফ্লোটিংয়ে ঢুকিয়ে-বের করলে কম্পোজিটর আটকে যাওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a>-এ</li>
+  <li>Alt + Shift + Tab প্রতিটি উইন্ডো দিয়ে পেছনের দিকে না ঘোরা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a>-এ</li>
+  <li>অন্য মনিটরে সরালে পপ-আউট উইন্ডো কেন্দ্রে না আসা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a>-এ</li>
+  <li>একটি অ-টার্মিনাল উইন্ডো ফোকাসে থাকলে নতুন টার্মিনাল আপনার হোম ফোল্ডারের বাইরে খোলা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a>-এ</li>
+  <li>1Password আর Bitwarden উইন্ডো না ভাসা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a>-এ</li>
+  <li>ইনস্টলার টার্মিনাল বন্ধ হলে 1Password বন্ধ হয়ে যাওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a>-এ</li>
+  <li>DaVinci Resolve ডায়ালগ পয়েন্টার ফোকাস ছিনিয়ে নেওয়া ঠিক করুন, <a href="https://github.com/AksharP5">@AksharP5</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a>-এ</li>
+  <li>Windows VM ডিসপ্লের মধ্য দিয়ে ডেস্কটপ দেখা যাওয়া ঠিক করুন, <a href="https://github.com/jmwall">@jmwall</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a>-এ</li>
+  <li>Quattro মাইগ্রেশনের পর $$ থাকা পুরোনো Windows VM পাসওয়ার্ড ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a>-এ</li>
+  <li>আপগ্রেডের পর Hyprland-এর অনুদান পপআপ দেখানো বন্ধ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a>-এ</li>
+  <li>বার উইজেট টানা আর সাজানো উন্নত করুন, <a href="https://github.com/outfoxxed">@outfoxxed</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a>-এ</li>
+  <li>বার আইকনের আকার আর সারিবদ্ধতা স্বাভাবিক করুন, <a href="https://github.com/bjarneo">@bjarneo</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a>-এ</li>
+  <li>ঘড়ির বামে হোভার করলেই কেবল লুকানো বার নির্দেশক প্রকাশ করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a>-এ</li>
+  <li>ট্রে আইকনগুলোকে বারের অন্য আইকনের সঙ্গে সারিবদ্ধ করুন, <a href="https://github.com/ayoubdya">@ayoubdya</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a>-এ</li>
+  <li>একটি ইতিমধ্যে থাকা অবস্থায় পরের বার টুলটিপ সঙ্গে সঙ্গে দেখান, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a>-এ</li>
+  <li>ঘড়ি আর আবহাওয়া প্যানেল তাদের উইজেটের নিচে খুলুন, <a href="https://github.com/scottjones">@scottjones</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a>-এ</li>
+  <li>একটি DNS প্রদানকারী বাছার পর নেটওয়ার্ক প্যানেল খোলা রাখুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a>-এ</li>
+  <li>একটি পপআপ বন্ধ হলে বার উইজেট সাড়া না দেওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a>-এ</li>
+  <li>লুকানো বার পূর্ণ স্ক্রিন উইন্ডোর ওপরের দিকে ক্লিক ধরে ফেলা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a>-এ</li>
+  <li>গাঢ় ট্রে আইকন বারে হারিয়ে যাওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a>-এ</li>
+  <li>বার আইকন অসমান বা কেন্দ্রের বাইরে বসা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a>-এ</li>
+  <li>বার টুলটিপ তাদের প্রথম ফ্রেম ভুল আকারে আঁকা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a>-এ</li>
+  <li>বিজ্ঞপ্তির ইতিহাস প্রতিটি কার্ডকে এইমাত্র হিসেবে দেখানো ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a>-এ</li>
+  <li>প্রথম লগইনের বিজ্ঞপ্তি একটি মাত্র স্তূপে গুটিয়ে যাওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a>-এ</li>
+  <li>বিজ্ঞপ্তির ক্লিক বহু-শব্দের নামের অ্যাপে ফোকাস না করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a>-এ</li>
+  <li>Taildrop বিজ্ঞপ্তি খালি লেখা দেখানো আর পূর্বরূপ অনুপস্থিত থাকা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a>-এ</li>
+  <li>পূর্ণ ব্যাটারিতে ব্যাটারি বিজ্ঞপ্তি খালি সময় আর 0W দেখানো ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a>-এ</li>
+  <li>প্লাগ ইন করার পরও কম ব্যাটারির সতর্কতা থেকে যাওয়া আর রিবুটের পর ফিরে আসা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a>-এ</li>
+  <li>কিছু ল্যাপটপে ব্যাটারি খরচ 0W পড়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a>-এ</li>
+  <li>AC-তে পূর্ণ ব্যাটারি ক্ষয় হচ্ছে হিসেবে দেখানো ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a>-এ</li>
+  <li>কার্নেল হাইবারনেট না করলেও Hibernate দেখানো ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a>-এ</li>
+  <li>আবার শুরু করার পর gvfs মাউন্ট হারিয়ে যাওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a>-এ</li>
+  <li>লক দুইবার ফাঁকা হওয়ার পর কীবোর্ড ব্যাকলাইট বন্ধ থেকে যাওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a>-এ</li>
+  <li>লক ডিসপ্লে বন্ধ রাখা অবস্থায় আঙুলের ছাপ পাঠক জেগে ওঠা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a>-এ</li>
+  <li>একটি ডিসপ্লে দেরিতে এলে বুট পাসওয়ার্ড প্রম্পট কেন্দ্রের বাইরে থাকা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a>-এ</li>
+  <li>স্ক্রিনসেভারের প্রস্থান কী কোণে ঝলকানো ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a>-এ</li>
+  <li>OWE ট্রানজিশন-মোড নেটওয়ার্কে Wi-Fi আইকন ঝিকমিক করা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a>-এ</li>
+  <li>একটি থিম ইনস্টল করার পর টার্মিনালে ছাপা একটি OWE ত্রুটি ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a>-এ</li>
+  <li>স্থির থেকে ভিডিও ব্যাকগ্রাউন্ডে বদলানোর সময় ঝিকমিক ঠিক করুন, <a href="https://github.com/bjarneo">@bjarneo</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a>-এ</li>
+  <li>Hackerman-কে একটি আপস্কেল করা জ্যামিতিক ব্যাকগ্রাউন্ডে আপডেট করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a>-এ</li>
+  <li>চক্রাকার রঙের রেফারেন্স থাকা থিম থিম বদলানো আটকে দেওয়া ঠিক করুন, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a>-এ</li>
+  <li>Catppuccin থিম দিয়ে Neovim শুরু হতে ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/anandude">@anandude</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a>-এ</li>
+  <li>OpenCode 2 Omarchy-র বদলে তার মজুত থিমে শুরু হওয়া ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a>-এ</li>
+  <li>তৈরি করা VS Code থিমে কম বৈপরীত্যের ইনলাইন কোড ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a>-এ</li>
+  <li>বর্তমান থিমের সঙ্গে মেলানোর সময় T3 Code ইনস্টল থেমে যাওয়া ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a>-এ</li>
+  <li>ফন্ট পরিবার বদলালে টার্মিনাল ফন্টের আকার রিসেট হওয়া ঠিক করুন, <a href="https://github.com/sbalbalosa">@sbalbalosa</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a>-এ</li>
+  <li>ফন্ট বদলালে একটি টার্মিনালের প্রক্রিয়া ID ছাপা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a>-এ</li>
+  <li>ভাষা বদলালে প্রতিটি লোকেল আবার তৈরি করা আর প্রায় পূর্ণ ডিস্কে সেগুলো হারানো ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a>-এ</li>
+  <li>শেলের অনুবাদ লোড হওয়ার আগে শেল কাঁচা অনুবাদ কী দেখানো ঠিক করুন, <a href="https://github.com/zihaomu">@zihaomu</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a>-এ</li>
+  <li>Omarchy-র স্ক্রিপ্টে অনূদিত লেখা দ্রুত করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a>-এ</li>
+  <li>৬৮৬টি স্ট্রিংয়ের অনুবাদ আপডেট করুন, যার ৩৯২টি নির্দেশিকায়, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a>-এ</li>
+  <li>অ-ইংরেজি লোকেলে ভলিউম আর আউটপুট নিয়ন্ত্রণ ঠিক করুন, <a href="https://github.com/Sebo1411">@Sebo1411</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a>-এ</li>
+  <li>অ-ইংরেজি লোকেলে CPU ব্যবহারের পাঠ ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a>-এ</li>
+  <li>fcitx5 ইনস্টল না থাকলে fcitx5 সেবা চিরকাল আবার শুরু হওয়া ঠিক করুন, <a href="https://github.com/therk">@therk</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a>-এ</li>
+  <li>কীবোর্ড লেআউট উইজেট কেউ টাইপ করে না এমন ডিভাইসে বদলানো ঠিক করুন, <a href="https://github.com/bjarneo">@bjarneo</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a>-এ</li>
+  <li>কীবোর্ড লেআউট উইজেট বিক্রেতার হটকি ডিভাইসে বদলানো ঠিক করুন, <a href="https://github.com/yashranaway">@yashranaway</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a>-এ</li>
+  <li>কী-বাইন্ডিং মেনু একটি Lua প্রক্রিয়া 100% CPU-তে চলমান রেখে যাওয়া ঠিক করুন, <a href="https://github.com/tobi">@tobi</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a>-এ</li>
+  <li>দিবালোক সাশ্রয় সময় শেষ হলে ঘড়ি প্রতি মিলিসেকেন্ডে লগ ভরে দেওয়া ঠিক করুন, <a href="https://github.com/falkoro">@falkoro</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a>-এ</li>
+  <li>শেল পড়তে পারেনি এমন একটি shell.json ডিফল্ট দিয়ে বদলে ফেলা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a>-এ</li>
+  <li>Omarchy মেনুর ফাইল আপডেট হওয়ার সময় মেনু তার সারি হারানো ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a>-এ</li>
+  <li>একটি প্লাগইন আবার চালু করলে তার বার উইজেট ফিরে না আসা ঠিক করুন, <a href="https://github.com/berrimi">@berrimi</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a>-এ</li>
+  <li>স্থানীয় প্লাগইন তাদের নিজস্ব Python বাইটকোডে একটি লুপে আবার লোড হওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a>-এ</li>
+  <li>প্লাগইনে লুকানো বোতাম তাদের প্যাডিংয়ে গুটিয়ে যাওয়া ঠিক করুন, <a href="https://github.com/dmkenney">@dmkenney</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a>-এ</li>
+  <li>ড্রপডাউন তাদের শেষ আইটেম কেটে ফেলা ঠিক করুন, <a href="https://github.com/sprajs">@sprajs</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a>-এ</li>
+  <li>দ্বিতীয় ক্লিকে ড্রপডাউন বন্ধ না হওয়া ঠিক করুন, <a href="https://github.com/felixzsh">@felixzsh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a>-এ</li>
+  <li>স্লাইডার নব ট্র্যাকের শেষের আগেই থেমে যাওয়া ঠিক করুন, <a href="https://github.com/erikrjohansson">@erikrjohansson</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a>-এ</li>
+  <li>
+    <p>বেশিরভাগ টাচপ্যাড মিস করা আর কীবোর্ড রিসেট করা Update &gt; Hardware &gt; Trackpad ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a>-এ</p>
+
+    <p>এটি এখন প্রতিটি টাচপ্যাডে একটি আটকে থাকা বোতাম ছেড়ে দেয়, আর কীবোর্ড আর টাচস্ক্রিনসহ নয়, শুধু টাচপ্যাডই রিসেট করে।</p>
+  </li>
+  <li>ওয়েবক্যাম মেনু ক্যামেরা চালু না করেই ক্যামেরা পরীক্ষা করতে দিন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a>-এ</li>
+  <li>Omasnap-এর স্ক্রল ক্যাপচার শুধু কালো ফ্রেম ধরা ঠিক করুন, <a href="https://github.com/falkoro">@falkoro</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a>-এ</li>
+  <li>স্ক্রিনশট পিকার আপনার নিজের কী আনবাইন্ড করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a>-এ</li>
+  <li>একটি রেকর্ডিং থামালে একটি খালি সংরক্ষিত রেকর্ডিং ঘোষণা করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a>-এ</li>
+  <li>ইমেজ পিকার ওপরে সংরক্ষিত ছবির জন্য পুরোনো থাম্বনেইল দেখানো ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a>-এ</li>
+  <li>বন্ধ করলে নাইট লাইট পুরোপুরি রিসেট না হওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a>-এ</li>
+  <li>মিডিয়া উইজেট একটি নিষ্ক্রিয় প্লেয়ারের জন্য একটি বিরত ট্র্যাক রেখে যাওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a>-এ</li>
+  <li>উজ্জ্বলতা জানায় না এমন মনিটরে বারবার ডিসপ্লে স্ক্যান ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a>-এ</li>
+  <li>কনফিগার করা ব্রাউজার আনইনস্টল করা হলে Super + Shift + Return ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/vitally">@vitally</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a>-এ</li>
+  <li>আগে থেকে ইনস্টল করা অ্যাপ সরানোর পর ক্যালকুলেটর শর্টকাট থেকে যাওয়া ঠিক করুন, <a href="https://github.com/OldJobobo">@OldJobobo</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a>-এ</li>
+  <li>Brave Origin প্রোফাইলে Copy URL শর্টকাট ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a>-এ</li>
+  <li>Bitwarden এক্সটেনশন পপআউট ভুল আকারে খোলা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a>-এ</li>
+  <li>HiDPI মনিটরে Battle.net 100% স্কেলে খোলা ঠিক করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a>-এ</li>
+  <li>Inkscape-এর ফাইল বাছাইকারী টাইল হয়ে খোলা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a>-এ</li>
+  <li>mise Go পরিচালনা করলে আপডেটের সময় Go AUR প্যাকেজ তৈরি হতে ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/shbernal">@shbernal</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a>-এ</li>
+  <li>আপনি docker গ্রুপে না থাকলে ONCE ইনস্টলেশন ঠিক করুন, <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a>-এ</li>
+  <li>এজেন্ট প্যানেলের ক্লিক ট্রে খোলা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a>-এ</li>
+  <li>এজেন্ট অ্যাকাউন্ট সেটআপ একটি ঝুলন্ত ভাগ করা সিমলিংকে হোঁচট খাওয়া ঠিক করুন, <a href="https://github.com/manuaudio">@manuaudio</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a>-এ</li>
+  <li>একটি না থাকলে <code>--reauth</code> একটি নতুন এজেন্ট অ্যাকাউন্ট যোগ করা ঠিক করুন, <a href="https://github.com/manuaudio">@manuaudio</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a>-এ</li>
+  <li>এজেন্ট অ্যাকাউন্টের নাম বদলানোর ইঙ্গিতকে তার প্রদানকারীর নাম দিতে দিন, <a href="https://github.com/manuaudio">@manuaudio</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a>-এ</li>
+  <li>কী অপারেশন ব্যর্থ হলে কিরিং আপডেট সাফল্য দাবি করা ঠিক করুন, <a href="https://github.com/Adolanium">@Adolanium</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a>-এ</li>
+  <li>sudo-র অধীনে চালালে ফাঁকা ফ্যাক্টরি রিসেট প্রম্পট ঠিক করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a>-এ</li>
+  <li>মুলতুবি-মাইগ্রেশন অনুস্মারক প্রতি লগইনে একবার করে জমা হওয়া ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a>-এ</li>
+  <li>About-এ OS Age ইনস্টলের বদলে ISO-র বিল্ড থেকে গণনা করা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a>-এ</li>
+  <li>৩৬০ থেকে ৩৬৪ দিন পুরোনো ফাইলের জন্য Dropbox-এর “0y ago” দেখানো ঠিক করুন, <a href="https://github.com/manuaudio">@manuaudio</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a>-এ</li>
+  <li>Dropbox অবস্থা পরীক্ষা একটি মুলতুবি লগইন লিংকের মেয়াদ শেষ করে দেওয়া ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a>-এ</li>
+  <li>Dropbox-এর ট্রে আইকন লাইব্রেরি ইনস্টল করা ঠিক করুন, <a href="https://github.com/omarchybot">@omarchybot</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a>-এ</li>
+  <li>Chromium-এ ওভারলে স্ক্রলবার চালু করুন, <a href="https://github.com/robzolkos">@robzolkos</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a>-এ</li>
+  <li>Apple Silicon Mac-গুলোতে Touch ID চালু করার আগে জিজ্ঞাসা করুন, <a href="https://github.com/scottjones">@scottjones</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a>-এ</li>
+  <li>Apple Silicon Mac-গুলোতে RC চ্যানেলের প্রস্তাব দিন, <a href="https://github.com/maralcbr">@maralcbr</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a>-এ</li>
+  <li>Apple Silicon Mac-গুলোতে stable চ্যানেলের প্রস্তাব দিন, <a href="https://github.com/maralcbr">@maralcbr</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a>-এ</li>
+  <li>Apple Silicon-এ নতুন টার্মিনাল থেকে Omarchy-র উপনাম, ফাংশন, আর পরিবেশ অনুপস্থিত থাকা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a>-এ</li>
+  <li>ইনস্টল করা NVIDIA অ্যাপ্লিকেশন সেট আপ করুন, <a href="https://github.com/jdvmi00">@jdvmi00</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a>-এ</li>
+  <li>NVIDIA N1x সহ Lenovo Pro 9-এ ইনস্টল ব্যর্থ হওয়া ঠিক করুন, <a href="https://github.com/breymander">@breymander</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a>-এ</li>
+  <li>আগে অডিও প্রোফাইল চালানো N1x ল্যাপটপে অনুপস্থিত অভ্যন্তরীণ স্পিকার আর মাইক্রোফোন ঠিক করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a>-এ</li>
+  <li>DGX Spark-এর মতো NVIDIA GB10 মেশিনে ধীর ডেস্কটপ ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a>-এ</li>
+  <li>
+    <p>NVIDIA-তে আবার শুরু করার পর লক স্ক্রিনে টাইপ করা ঠিক করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a>-এ</p>
+
+    <p>প্যানেল আলোকিত হওয়ার ঠিক সময়ে লকটিও আর আবার অন্ধকার হয়ে যায় না।</p>
+  </li>
+  <li>Lutris আর Battle.net অন্য একটি GPU-র 32-বিট Vulkan ড্রাইভার ইনস্টল করা ঠিক করুন, <a href="https://github.com/zihaomu">@zihaomu</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a>-এ</li>
+  <li>ARM-এ প্রতিটি আপডেটের পর রিবুট চাওয়া বন্ধ করুন, <a href="https://github.com/birkskyum">@birkskyum</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a>-এ</li>
+  <li>aarch64-এ stable আর RC চ্যানেলের প্রস্তাব দিন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a>-এ</li>
+  <li>ARM ল্যাপটপে পাওয়ার প্রোফাইল কাজ করতে দিন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a>-এ</li>
+  <li>4K পৃষ্ঠা থাকা ARM মেশিনে Dropbox, আর ARM-এ একটি ওয়েব অ্যাপ হিসেবে Spotify-এর প্রস্তাব দিন, <a href="https://github.com/birkskyum">@birkskyum</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a>-এ</li>
+  <li>ARM-এ GeForce NOW, Battle.net, আর Lutris ইনস্টল লুকান, <a href="https://github.com/birkskyum">@birkskyum</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a>-এ</li>
+  <li>ARM-এ Hermes অ্যাপ জায়গায় আপডেট না হওয়া ঠিক করুন, <a href="https://github.com/ryanrhughes">@ryanrhughes</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a>-এ</li>
+  <li>Snapdragon ল্যাপটপের কীবোর্ড ডিস্ক আনলক প্রম্পটে টাইপ না করা ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a>-এ</li>
+  <li>Snapdragon ল্যাপটপে লগইনে ক্যামেরা অনুপস্থিত থাকা ঠিক করুন, <a href="https://github.com/birkskyum">@birkskyum</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a>-এ</li>
+  <li>Snapdragon X2 ল্যাপটপে ডিস্ক আনলকের আগে কালো স্ক্রিন ঠিক করুন, <a href="https://github.com/jdvmi00">@jdvmi00</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a>-এ</li>
+  <li>Intel Wildcat Lake-এ হার্ডওয়্যারে ভিডিও ডিকোড করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a>-এ</li>
+  <li>Arrow Lake-H ল্যাপটপে লাইভ ISO ক্র্যাশ ঠিক করুন, <a href="https://github.com/emirb">@emirb</a> দ্বারা <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a>-এ</li>
+  <li>HP EliteBook Ultra G1q-এর অভ্যন্তরীণ মাইক্রোফোন ঠিক করুন, <a href="https://github.com/bprendie">@bprendie</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a>-এ</li>
+  <li>Motorcomm YT6801 Ethernet-এর জন্য আপস্ট্রিম সমর্থন ব্যবহার করুন, <a href="https://github.com/AFOliveira">@AFOliveira</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a>-এ</li>
+  <li>Elgato Cam Link 4K-কে একটি 16:9 ভার্চুয়াল ক্যামেরা হিসেবে রিলে করুন, <a href="https://github.com/dhh">@dhh</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a>-এ</li>
+  <li>একটি প্ল্যাটফর্ম নাম দেয় এমন আঙুলের ছাপ পাঠক সমর্থন করুন, <a href="https://github.com/scottjones">@scottjones</a> দ্বারা <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a>-এ</li>
+</ul>
