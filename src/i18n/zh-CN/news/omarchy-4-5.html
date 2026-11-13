@@ -1,0 +1,449 @@
+<p>Omarchy 4.5（又名 Quattro RS！）是自 <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a> 以来首个大型功能版本，而且是个重磅版本：短短十二周内，合并了来自 180 多位贡献者的 740 多个拉取请求。它现在在默认的平铺模式之外，还提供了一种传统的桌面模式。你可以直接在 M1/M2/M3/Neo MacBook 上原生安装它。它还会说 50 种语言。还有数不清的其他功能、修复和改进。已经在用 Omarchy 了？运行 <em>Update &gt; Omarchy</em>。新机器？<a href="/#install">在这里获取</a>。</p>
+
+<h2 id="floating-workspaces-with-a-dock">带程序坞的浮动工作区</h2>
+
+<p><code>Super + L</code> 现在可以在平铺、滚动和浮动之间循环切换任意工作区。在浮动工作区中，每个窗口都会获得一个采用你的主题颜色的标题栏，程序坞则会显示你固定的应用、所有正在运行的应用，以及所有已安装应用的网格。拖动即可重新排序或固定，右键点击查看更多选项，<code>Super + M</code> 可以将窗口最小化到程序坞。</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>对于那些从 macOS 或 Windows 过来、还没准备好完全投入平铺模式的人来说，这是一个很棒的入门方式。或者，对于只是想要一个可以让窗口自由铺开的工作区的人来说也是如此。每个工作区都可以混搭，状态栏会显示每个工作区使用的是哪种布局。</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Silicon 上的 Omarchy</h2>
+
+<p>我们出色的 <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> 团队已经发布了原生 Mac 安装程序。在 macOS 上<a href="https://github.com/omacom/omarchy-mac-installer/releases">下载一个应用</a>，它就会把 Omarchy 直接安装到你的 M1、M2、M3 或 Neo MacBook 上，与之并存。不需要 U 盘，也不需要终端咒语。更喜欢 Homebrew？那只需要一行：</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac 安装程序" /></p>
+
+<p>这正是我们九月份着手要做的事情：完成 Asahi 开创的工作。两个月后，你直接下载就能用了。团队里每个人的工作都太出色了。</p>
+
+<p>而且他们还不打算停下来。M4、M5 和 M6 目前都在开发中，所以 Omarchy 可能很快就能运行在每一台 Apple Silicon Mac 上了。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="运行着 Omarchy 的 M2 Max、M3 Air、Neo、M4 Pro 和 M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">对 NVIDIA DGX Spark + N1X 的 ARM 支持（Snapdragon 也即将到来）</h2>
+
+<p>Omarchy 4.5 发布了首个 ARM ISO，随之而来的是对 NVIDIA ARM 机器的初步支持：DGX Spark 台式机，以及基于 N1X 的笔记本电脑，例如 <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> 和 <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>。而且我们很快也会支持整个 Snapdragon ARM 机器产品线。目前还处于早期阶段，所以预计会有一些粗糙的地方，如有任何问题，请到 <a href="https://github.com/omacom/omarchy/issues">GitHub</a> 上报告。</p>
+
+<h2 id="50-languages-and-5-input-methods">50 种语言和 5 种输入法</h2>
+
+<p>Omarchy 现在会说 50 种语言。在 <em>Setup &gt; Language</em> 下选择一种（或运行 <code>omarchy language &lt;code&gt;</code>），菜单、桌面和 Omarchy 的通知就会立即切换。系统区域设置会在你下次登录时跟随变更。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="切换语言" /></p>
+
+<p>不过，会说一种语言只是成功了一半。你还得能输入它。所以 Omarchy 现在为日语（Mozc）、韩语（Hangul）、简体中文（Pinyin）、台湾（Zhuyin）和香港（Cangjie）设置了合适的输入法，可以直接在安装程序中设置，或之后在 <em>Setup &gt; Keyboard</em> 下设置。每种输入法都配有适合其字形的正确字体，候选窗口会跟随你的主题，<code>Super + I</code> 可以在你的输入语言之间切换。即使你在 Dvorak、Colemak 或 AZERTY 上输入拉丁字母，Hangul、Zhuyin 和 Cangjie 也会将按键保持在标准位置，就像在 Windows 和 macOS 上一样。而单独轻点 Shift 键可以从输入法中暂时切换到拉丁字母，再切回来，就像搜狗、微软拼音和 macOS 的做法一样。</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">登录 Wi-Fi 强制门户</h2>
+
+<p>酒店、机场和咖啡馆的 Wi-Fi 终于能直接用了。Omarchy 现在会注意到某个网络想让你先登录或接受其条款，然后才能让你上网。网络图标会向你发出警告，网络面板会显示一个大大的 Open Captive Portal 按钮，点击即可直接进入登录页面。一旦你通过了，一切都会自行恢复正常。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="从网络面板登录强制门户" width="380" /></p>
+
+<h2 id="five-new-default-apps">五款新的默认应用</h2>
+
+<p><strong>Hype</strong> 可以从单个 Markdown 文件制作演示文稿，源文件旁边有一个可视化幻灯片编辑器，并可导出为 PDF 或 PowerPoint。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> 取代了 Xournal++ 来处理文书工作：打开一个 PDF，放置你保存的签名、文本和日期，然后保存一份已签名的副本。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> 会绘制一张树状图，展示是什么在占用你的磁盘，按类型着色，指出可以安全地重新生成的缓存，并让你标记应该删除的内容。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> 只需一个按键就能录制你的摄像头画面，主题与你的桌面相匹配。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> 让你可以通过 SSH 使用远程桌面。连接到另一台 Omarchy 机器，在你自己的窗口中操控它的完整桌面，每台机器一个标签页。而且因为它基于 SSH，所以无需任何额外的设置或暴露。被控制的机器会在状态栏中显示远程会话指示器，所以有人正在使用它时总是清清楚楚。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>还有 <strong>Elsewhen</strong>，一个与状态栏中的时钟比邻而居的世界时钟。点击地球仪上的一个城市来设置你所在的位置，搜索真实的地点，并为住在每个城市的人命名，这样你就总能知道现在打电话是否是个合适的时间。用 <code>t</code> 在 12 小时制和 24 小时制之间切换，用 <code>Alt + T</code> 在 °F 和 °C 之间切换，用 <code>Super + Ctrl + Alt + E</code> 随时召唤它。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>有了用于录制的 Monologue 和用于修剪的 Omacut，新安装将不再附带 OBS Studio 和 Kdenlive。Lazydocker 也不再出现在新安装中，不过 Docker 和 Docker Compose 仍会包含在内。已经拥有其中任何一款的机器会保留它们。</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>需要与生活在 Office 中的人一起工作？<em>Install &gt; Service &gt; Microsoft</em> 现在可以将 Outlook、Word、Excel、PowerPoint、Teams 和 OneDrive 设置为网页应用。每一个都有自己的窗口和启动器条目，所以它们在其他一切旁边都显得毫无违和。再也没有不在工作中切换到 Omarchy 的借口了！</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchy 上的 Excel、Word、Teams 和 PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">用于听写的 Superwhisper</h2>
+
+<p>Superwhisper 现在是 Omarchy 的默认听写引擎，并且开箱即用。轻点 <code>Alt + Space</code> 开始说话，再点一次停止，或按住 <code>Right Alt</code> 进行按键通话。它快得令人难以置信，也非常准确。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="用 Superwhisper 进行听写" /></p>
+
+<p>它最初在云端运行，所以安装后立刻就能工作，前 10,000 个单词免费。但你可以切换到一个可下载的模型，它完全免费、完全在本地运行，不会将一个字发送给任何人。而如果你更愿意使用另一个本地模型，Voxtype 仍然可以作为替代方案提供。</p>
+
+<h2 id="install-in-less-than-ten-seconds">十秒内完成安装</h2>
+
+<p>Omarchy 以前会逐个安装大约 940 个软件包。新的 F1 安装程序改为解包一个预构建的根镜像，只在此基础上添加这台机器的软件包。这可将任何机器上的安装时间大致减少一半。</p>
+
+<p>而在快速硬件上，这简直离谱。AMD 的 <a href="https://x.com/AnushElangovan">Anush Elangovan</a> 创下了世界纪录，在他的 AMD 笔记本电脑上以 <strong>7 秒</strong>完成了 Omarchy 的完整安装。<a href="https://x.com/dhh/status/2117222836620202375">七秒钟！</a>我还记得以前五分钟都似乎是一个雄心勃勃的目标。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="已在 0m 7s 内安装 Omarchy" /></p>
+
+<h2 id="faster-everywhere-else">其他地方也更快了</h2>
+
+<p>不只是安装程序更快了。启动时不再因 binfmt 注册而停顿。主题选择器会立即打开，而不是在四分之一秒之后。菜单和面板直接从 Hyprland 快捷键打开，省去了先启动一个进程所需的 60 ms。Omarchy 菜单中最慢的检查从 200 ms 缩短到了 16 ms，新终端显示提示符的时间提前了 30 ms，整个桌面现在会对变化作出反应，而不是轮询等待变化。甚至注销、重启和关机也会在你的应用关闭完毕后立刻进行。</p>
+
+<h2 id="agent-upgrades">智能体升级</h2>
+
+<p>Omarchy 是智能体操作系统，4.5 带来了一大轮与智能体协作的升级。智能体面板现在跟踪 23 个智能体和提供商，高于之前的 6 个，包括 Cursor、OpenCode、GitHub Copilot、Antigravity、Hermes、Amp、Kiro、Devin、Qwen、DeepSeek、OpenRouter 和 Ollama。每个限额都有自己的仪表，并显示距离重置的时间，这样你就可以确切地看到自己还剩下多少余量。而 Grok 现在也与 Claude 和 Codex 一样，成为了一个完整的提供商。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="智能体面板，其中有多个 Claude 和 Codex 订阅" width="380" /></p>
+
+<p>而且你的智能体始终只需一个按键即可触及。<code>Super + ~</code> 会在一个变暗的桌面上拉下一个 Quake 风格的控制台，你第一次打开它时，它会启动你的默认智能体。再按一次将其收起，你的会话就在你离开时的地方等着你。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Quake 风格的控制台，在变暗的桌面上运行着一个智能体" /></p>
+
+<p>如果你同时使用多个订阅，你现在可以在同一台机器上保留多个 Claude、Codex 和 Grok 登录，并使用 <code>omarchy agent account</code> 选择新会话从哪一个开始。它们之间共享历史记录、设置和技能，所以切换后 <code>claude --continue</code> 会从你离开的地方继续。当接近限额时，Omarchy 可以提供一键切换，或自行将新会话转移到余量最多的账户上。而当你设置另一台机器时，<code>omarchy agent account copy</code> 会通过 SSH 把你的所有登录信息带过来，所以你不必再重新登录所有账户。</p>
+
+<p>Kimi 和 Ori（OpenRouter 的智能体框架）加入了 <em>Setup &gt; Defaults &gt; Agent</em> 下的选择，而 Google 的 Antigravity 取代了过时的 Gemini CLI（<code>gemini</code> 仍然可以作为别名使用）。更喜欢窗口而不是终端？Claude 和 Amp 的桌面应用现在在 <em>Install &gt; AI</em> 下只需点击一下即可获得。</p>
+
+<h2 id="notifications-rebuilt">重建的通知</h2>
+
+<p>通知现在按发送者堆叠，跟随你的主题，并折叠相同的重复内容。操作按钮、验证码和链接都可以直接在卡片上使用。<code>Super + Comma</code> 可以对最新的一条进行操作（关闭、打开或按下其按钮），<code>Super + Ctrl + Comma</code> 将键盘交给你来操控所有通知。状态栏中的铃铛会打开“请勿打扰”。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="新通知" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">视频背景和主题片头</h2>
+
+<p>现在背景可以是视频了。放一个进去，你的桌面就会随着滚动的波浪或你喜欢的任何其他东西活起来，而锁定屏幕会显示其中的一帧静止画面。而主题现在会隆重登场：每个主题都可以在你登录或切换到它时播放一段简短、无声的片头。（更喜欢保持安静？在 <em>Appearance &gt; Animations</em> 下关闭片头。）</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse 加入默认主题</h2>
+
+<p>Jade Horse 满是朦胧的绿色，配有雕玉般的背景，让整个桌面看起来像一幅卷轴画。它在捆绑的主题中取代了 Osaka Jade，并与 Starship 一起，成为另一个新的默认主题。如果你正在使用 Osaka Jade，你会保留自己的副本，它将作为一个<a href="https://github.com/omacom/omarchy-osaka-jade-theme">第三方主题</a>继续存在，供任何想全新安装它的人使用。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse 主题" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff 成为新的默认背景</h2>
+
+<p>新安装现在迎接你的是 Liftoff，一次美不胜收的日落发射，它是 Tokyo Night 的新默认背景。它由 <a href="https://github.com/tcballard">Tom Ballard</a> 制作，他最初为自己的 <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff 主题</a>创作了它。谢谢你，Tom！</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom Ballard 制作的 Liftoff 背景" /></p>
+
+<h2 id="boot-menu-now-quiet">启动菜单现在安静了</h2>
+
+<p>Omarchy 以前每次启动都会显示启动菜单大约六秒钟，以防你万一需要回滚到更早的快照。但几乎从来没有人这么做过。所以现在 Limine 只等待一秒钟就安静地启动，大部分时间你根本看不到菜单。</p>
+
+<p>当你确实需要另一个条目或快照时，在机器启动时持续轻点任意键（下箭头也行），它就会停在菜单处。而如果你更喜欢让菜单始终多停留一会儿，在 <code>/boot/limine.conf</code> 中设置你自己的 <code>timeout:</code>（例如 <code>timeout: 5</code>）。更新会保留你设置的超时时间，不作改动。</p>
+
+<h2 id="changed-hotkeys">已更改的快捷键</h2>
+
+<p>部分快捷键已移动：</p>
+
+<ul>
+  <li>计算器：<code>Super + Ctrl + Q</code> 现在改为 <code>Super + Shift + Q</code>。</li>
+  <li>活动：<code>Super + Ctrl + T</code> 现在改为 <code>Super + Shift + T</code>，而 <code>Super + Ctrl + T</code> 会打开主题。</li>
+  <li>网络：<code>Super + Ctrl + W</code> 现在改为 <code>Super + Ctrl + N</code>，而 <code>Super + Ctrl + W</code> 会打开背景。</li>
+  <li>夜灯不再有快捷键（以前是 <code>Super + Ctrl + N</code>）；它在 <code>Trigger &gt; Toggle</code> 中。</li>
+  <li><code>Super + Alt + Space</code> 从程序坞打开 Apps，而不是打开 Apps 菜单。</li>
+</ul>
+
+<p>通知快捷键已更改：</p>
+
+<ul>
+  <li><code>Super + Comma</code> 对最新的卡片进行操作（关闭它、打开它，或按下它的唯一按钮），而不仅仅是关闭它。</li>
+  <li>关闭最后一个的操作移到了 <code>Super + Alt + Comma</code>，它以前用于打开它。</li>
+  <li>静音已从 <code>Super + Ctrl + Comma</code> 移到 <code>Super + Ctrl + Alt + Comma</code>；<code>Super + Ctrl + Comma</code> 现在将键盘控制权交给你。</li>
+</ul>
+
+<p>有几个按键的工作方式不同了：</p>
+
+<ul>
+  <li><code>Super + Tab</code>、<code>Super + Shift + Tab</code>、<code>Super + Ctrl + Tab</code> 和 <code>Super</code> + 滚动会停留在当前显示器的工作区中，因为每个显示器都有自己的工作区。</li>
+  <li>在终端中，<code>Super + C</code> 和 <code>Super + V</code> 会发送 <code>Ctrl + Shift + C</code> 和 <code>Ctrl + Shift + V</code>，而不是 <code>Ctrl + Insert</code> 和 <code>Shift + Insert</code>。</li>
+</ul>
+
+<p>可能与你自己的绑定冲突的新默认值：<code>Super + Q</code>（关闭窗口，与 <code>Super + W</code> 并用）、<code>Super + A</code>（全选）、<code>Super + M</code>（最小化至程序坞）、<code>Super + ~</code> 和 <code>Super + Shift + ~</code>（Quake 控制台）、<code>Super + Alt + L</code>（上一个布局）、<code>Super + Shift + Ctrl + Arrows</code>（将窗口移动到另一个显示器）、<code>Super + Ctrl + Alt + C</code>（截图）、<code>Super + Ctrl + Alt + E</code>（世界时钟）、<code>Super + Ctrl + Alt + F</code>（全屏桌面），以及按住 <code>Right Alt</code> 进行按键通话听写。</p>
+
+<h2 id="more-features">更多功能</h2>
+
+<ul>
+  <li>让每个显示器都有自己的工作区：<code>Super + 1-0</code> 前往你所在显示器的工作区，<code>Super + Arrows</code> 则在其他显示器之间来回移动，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a> 中提交</li>
+  <li>将与桌面外观有关的一切汇集到一个新的 Appearance 菜单中，取代 Style：主题、背景、字体、状态栏、窗口、品牌标识、程序坞、工作区布局、动画和解锁屏幕，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a> 中提交</li>
+  <li>在 <em>Appearance &gt; Window Transparency</em> 下选择不透明、透明或玻璃感窗口，外加一个玻璃感状态栏背景，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a> 中提交</li>
+  <li>在 <em>Appearance &gt; Window Corners</em> 下选择与主题一致、锐角或圆角的窗口边角，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a> 中提交</li>
+  <li>加入一个无动画模式，在虚拟机中默认开启，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a> 中提交</li>
+  <li>让应用默认不透明，同时保持终端透明，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a> 中提交</li>
+  <li>将 Slack 加入 Install &gt; Service，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a> 中提交</li>
+  <li>让 Alt + Space 在每个后端上都能切换听写，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a> 中提交</li>
+  <li>为截图通知加入 Open 和 Edit 按钮，为屏幕录制和 yt-dlp 下载加入 Open 和 Cut，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a> 中提交</li>
+  <li>加入一个 Update &gt; Kernel 菜单，用于切换默认内核，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a> 中提交</li>
+  <li>为 herdr 机器加入主题同步，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a> 中提交</li>
+  <li>加入 o.rebind，用于替换 Hyprland 键绑定，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a> 中提交</li>
+  <li>在首次登录后、而非在安装程序中询问你的 git 身份，并支持 GitHub 登录，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a> 中提交</li>
+  <li>允许安装介质预设语言、键盘和时区，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a> 中提交</li>
+  <li>允许状态栏小部件驻留在托盘的抽屉中，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a> 中提交</li>
+  <li>允许通过将状态栏小部件拖出状态栏来移除它，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a> 中提交</li>
+  <li>允许从状态栏滚动浏览工作区，由 <a href="https://github.com/outfoxxed">@outfoxxed</a> 在 <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a> 中提交</li>
+  <li>允许在主题选择器中删除多余的主题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a> 中提交</li>
+  <li>将 hey、basecamp 和 Cloudflare CLI 作为延迟安装的工具加入，由 <a href="https://github.com/monorkin">@monorkin</a> 在 <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a> 中提交</li>
+  <li>将 SSH Agent 作为可选服务加入，由 <a href="https://github.com/carletex">@carletex</a> 在 <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a> 中提交</li>
+  <li>允许选择免密码 sudo 持续多长时间，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a> 中提交</li>
+  <li>为通知弹窗加入一个悬停关闭按钮，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a> 中提交</li>
+  <li>允许从程序的崩溃诊断中静音其通知，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a> 中提交</li>
+  <li>允许 omarchy-notification-send 添加操作按钮，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a> 中提交</li>
+  <li>加入一个带有实时秒数的时钟格式，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a> 中提交</li>
+  <li>用 Ctrl 加亮度键调节键盘背光，由 <a href="https://github.com/ludagoo">@ludagoo</a> 在 <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a> 中提交</li>
+  <li>从固件中打印 OEM Windows 产品密钥，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a> 中提交</li>
+  <li>将原始的 vi 作为终端编辑器选项加入，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a> 中提交</li>
+  <li>为 Ethereal 加入 Roadster Starlight 背景，由 <a href="https://github.com/bjarneo">@bjarneo</a>、<a href="https://github.com/tcballard">@tcballard</a> 在 <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a> 中提交</li>
+</ul>
+
+<h2 id="security">安全</h2>
+
+<ul>
+  <li>让 Windows 虚拟机密码不出现在 RDP 客户端的参数中，由 <a href="https://github.com/dicemans">@dicemans</a> 在 <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a> 中提交</li>
+  <li>将屏幕录制状态移出全局可写的 /tmp，由 <a href="https://github.com/Chessing234">@Chessing234</a> 在 <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a> 中提交</li>
+  <li>强化免密码 sudo 在挂起后的过期处理，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a> 中提交</li>
+  <li>将更新抑制器的清理绑定到创建它的进程，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a> 中提交</li>
+  <li>隔离 OCaml 清理授权，由 <a href="https://github.com/ErikMelton">@ErikMelton</a> 在 <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a> 中提交</li>
+  <li>将恢复出厂设置的提权固定到打包的命令上，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a> 中提交</li>
+  <li>在重置时，为调用用户移除已保存的指纹模板，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a> 中提交</li>
+  <li>拒绝作为路径的钩子和状态名称，由 <a href="https://github.com/Adolanium">@Adolanium</a> 在 <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a> 中提交</li>
+  <li>在指纹和 FIDO2 设置写入的 polkit 堆栈中服从 system-auth，由 <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> 在 <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a> 中提交</li>
+  <li>在删除指纹时，同时从读取器自身的存储中删除它们，由 <a href="https://github.com/scottjones">@scottjones</a> 在 <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a> 中提交</li>
+  <li>防止 SSH 设置在没有添加密钥时让 sshd 保持运行并允许密码登录，由 <a href="https://github.com/omarchybot">@omarchybot</a>、<a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> 在 <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a> 中提交</li>
+  <li>防止另一个本地用户在 Voxtype 升级期间换入自己的程序，由 <a href="https://github.com/Vladkarok">@Vladkarok</a> 在 <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a> 中提交</li>
+  <li>强化恢复出厂设置通过 sudo 传递你的 gum 设置的方式，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a> 中提交</li>
+</ul>
+
+<h2 id="fixes">修复</h2>
+
+<ul>
+  <li>修复 Hyprland 在显示器被拔出、禁用或合上盖子关闭时崩溃的问题，由 <a href="https://github.com/falkoro">@falkoro</a> 在 <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a> 中提交</li>
+  <li>修复升级可能导致内核镜像缺少其 root= 参数的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a> 中提交</li>
+  <li>修复恢复出厂设置会擦除其他系统启动条目的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a> 中提交</li>
+  <li>修复在另一个 Omarchy 旁边安装时，会移除那个已安装系统的启动条目的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a> 中提交</li>
+  <li>修复空闲空间安装可能将现有分区误认为新分区的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a> 中提交</li>
+  <li>修复恢复被中断的驱动器密码更改时移除错误密钥的问题，由 <a href="https://github.com/scottjones">@scottjones</a> 在 <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a> 中提交</li>
+  <li>每次 Omarchy 更新只询问一次 sudo 密码，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a> 中提交</li>
+  <li>十分钟内只询问一次 sudo 密码，而不是在每个命令时再次询问，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a> 中提交</li>
+  <li>让 AUR 更新和启动检查共用更新时的单次 sudo 提示，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a> 中提交</li>
+  <li>让软件包更新在事务中途注销时保持安全，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a> 中提交</li>
+  <li>应用关闭完毕后立即注销、重启和关机，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a> 中提交</li>
+  <li>用 Omasnap 取代 Tensaku 进行截图，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a> 中提交</li>
+  <li>让面板从状态栏中生长出来并在它们之间变形，按钮和状态栏图标带有按压反馈，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a> 中提交</li>
+  <li>让通知从状态栏下方滑入，再沿原路滑出，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a> 中提交</li>
+  <li>对照 Omarchy 自己的端点检查连接性，并修复强制门户的登录，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a> 中提交</li>
+  <li>修复从 edge 切换到 stable 或 RC 后，机器仍停留在旧构建上的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a> 中提交</li>
+  <li>修复更新到 4.5 时，当 shell 响应缓慢而停止的问题，由 <a href="https://github.com/AnPod">@AnPod</a> 在 <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a> 中提交</li>
+  <li>修复在桌面会话之外启动更新时静默失败的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a> 中提交</li>
+  <li>修复一个失败的 mise 工具下载会阻止系统更新其余部分的问题，由 <a href="https://github.com/sanjyay">@sanjyay</a> 在 <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a> 中提交</li>
+  <li>修复未安装 omarchy-nvim 时更新失败的问题，由 <a href="https://github.com/imzihuailin">@imzihuailin</a> 在 <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a> 中提交</li>
+  <li>修复双启动安装无法挂载 EFI 分区的问题，由 <a href="https://github.com/Damian626">@Damian626</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a> 中提交</li>
+  <li>修复固件不接受新启动条目时安装停止的问题，由 <a href="https://github.com/ryanio">@ryanio</a> 在 <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a> 中提交</li>
+  <li>修复在具有旧 RAID 成员或卷组的磁盘上安装停止的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a> 中提交</li>
+  <li>通过不等待每个 USB 设备和启动任务，让安装程序更早启动，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a> 中提交</li>
+  <li>在新安装中，使用 4096 字节扇区加快磁盘加密，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a> 中提交</li>
+  <li>优先列出内部磁盘，并在安全的选择上打开安装屏幕，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a> 中提交</li>
+  <li>在安装程序中优先列出 Full disk install，并在磁盘屏幕上用 Esc 返回，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a> 中提交</li>
+  <li>修复缩放一个显示器会改变其他每个显示器缩放比例的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a> 中提交</li>
+  <li>修复当显示器使用不同缩放比例时，XWayland 应用显得过大的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a> 中提交</li>
+  <li>修复当窗口全屏时，HDR 显示器切换到褪色的 HDR 画面的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a> 中提交</li>
+  <li>修复在分数缩放显示器上菜单和选择器模糊的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a> 中提交</li>
+  <li>修复拔出外接显示器后，笔记本电脑显示器保持关闭的问题，由 <a href="https://github.com/Hamza0101">@Hamza0101</a>、<a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> 在 <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a> 中提交</li>
+  <li>修复重新启用显示器会重置其位置、缩放比例和模式的问题，由 <a href="https://github.com/zihaomu">@zihaomu</a> 在 <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a> 中提交</li>
+  <li>修复显示器断开连接后，菜单和选择器无法重新打开的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a> 中提交</li>
+  <li>修复拔出显示器后，每显示器工作区移动的问题，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a> 中提交</li>
+  <li>修复音频面板打开时，音频设备断开连接导致 shell 崩溃的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a> 中提交</li>
+  <li>修复屏幕保护程序后全屏窗口失去全屏状态的问题，由 <a href="https://github.com/MGross21">@MGross21</a> 在 <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a> 中提交</li>
+  <li>修复 Hyprland 重新加载后，启动时光标消失的问题，由 <a href="https://github.com/spencerbull">@spencerbull</a> 在 <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a> 中提交</li>
+  <li>修复光标在 XWayland 应用上变得不可见的问题，由 <a href="https://github.com/Sebo1411">@Sebo1411</a> 在 <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a> 中提交</li>
+  <li>修复剪贴板捕获挂起的问题，由 <a href="https://github.com/maxcroy1">@maxcroy1</a> 在 <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a> 中提交</li>
+  <li>修复通过 XDG Secret 门户访问钥匙串的问题，由 <a href="https://github.com/pkwagner">@pkwagner</a> 在 <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a> 中提交</li>
+  <li>修复指纹注册和锁屏恢复的问题，由 <a href="https://github.com/GeertJohan">@GeertJohan</a> 在 <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a> 中提交</li>
+  <li>逐步引导指纹注册，由 <a href="https://github.com/scottjones">@scottjones</a> 在 <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a> 中提交</li>
+  <li>修复锁屏密码字段中的按键自动重复问题，由 <a href="https://github.com/berndb">@berndb</a> 在 <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a> 中提交</li>
+  <li>修复唤醒时锁屏壁纸在密码字段之后加载的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a> 中提交</li>
+  <li>修复会话指定的显示器已不存在时屏幕锁定超时的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a> 中提交</li>
+  <li>加快在当前窗口的目录中打开终端的速度，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a> 中提交</li>
+  <li>让 VS Code 家族的编辑器实时跟随主题变化，由 <a href="https://github.com/Macho0x">@Macho0x</a> 在 <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a> 中提交</li>
+  <li>在主题更改时，为正在运行的 Hunk 会话重新应用主题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a> 中提交</li>
+  <li>记住每个主题所选的壁纸，由 <a href="https://github.com/OldJobobo">@OldJobobo</a> 在 <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a> 中提交</li>
+  <li>在大型集合和 HiDPI 下，让图像选择器保持快速和清晰，由 <a href="https://github.com/keylimesoda">@keylimesoda</a> 在 <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a> 中提交</li>
+  <li>减少透明状态栏在采样壁纸时消耗的 CPU 和内存，由 <a href="https://github.com/ryanyogan">@ryanyogan</a>、<a href="https://github.com/aholbreich">@aholbreich</a> 在 <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a> 中提交</li>
+  <li>在拥有数千台机器的 tailnet 上，加快 Tailscale 面板的速度，由 <a href="https://github.com/iskakaushik">@iskakaushik</a> 在 <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a> 中提交</li>
+  <li>让 Grok 在智能体面板中与 Claude 和 Codex 达到同等水平，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a> 中提交</li>
+  <li>将智能体账户选择应用于 CLI 子进程，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a> 中提交</li>
+  <li>显示 Codex 的个人支出限额及其重置时间，由 <a href="https://github.com/Stegi56">@Stegi56</a> 在 <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a> 中提交</li>
+  <li>在选择 Claude 时设置浏览器集成，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a> 中提交</li>
+  <li>修复智能体找不到在它们启动后安装的 mise 工具的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a> 中提交</li>
+  <li>修复在通过 SSH 启动的 herdr 窗格中，将截图粘贴到智能体时的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a> 中提交</li>
+  <li>修复智能体面板遗漏压缩的 Codex 会话的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a> 中提交</li>
+  <li>让 Caps Lock 恢复正常，并将 Shift + Caps Lock 设为组合键，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a> 中提交</li>
+  <li>将系统键盘布局应用于登录屏幕，由 <a href="https://github.com/g-desoutter">@g-desoutter</a> 在 <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a> 中提交</li>
+  <li>修复使用非拉丁键盘布局时，布局切换每隔一次按键就跳过一次的问题，由 <a href="https://github.com/manuaudio">@manuaudio</a> 在 <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a> 中提交</li>
+  <li>在 mpv 中启用硬件视频解码，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a> 中提交</li>
+  <li>将 TCP 拥塞控制切换到 BBR，并在真实磁盘上使用 kyber I/O 调度器，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a> 中提交</li>
+  <li>将 T3 Code 安装为其可自我更新的 AppImage，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a> 中提交</li>
+  <li>改善 PHP 和 Laravel 的安装，由 <a href="https://github.com/nunomaduro">@nunomaduro</a> 在 <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a> 中提交</li>
+  <li>延迟安装 Node，并且不动你的 mise 配置，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a> 中提交</li>
+  <li>在选择默认应用时安装缺失的应用，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a> 中提交</li>
+  <li>在 Install 菜单中将已安装的软件变暗，而不是隐藏它，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a> 中提交</li>
+  <li>为 Brave Origin 注册密码管理器和其他原生消息传递主机，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a> 中提交</li>
+  <li>按站点对 Brave Origin 的网页通知分组，并在点击时打开正确的标签页，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a> 中提交</li>
+  <li>在更新期间自动批准移除孤立软件包，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a> 中提交</li>
+  <li>在每次更新前更新 Omarchy 的钥匙串，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a> 中提交</li>
+  <li>在切换渠道后提供重启选项，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a> 中提交</li>
+  <li>仅在有内容可更新时才提供首次运行更新，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a> 中提交</li>
+  <li>使用 Omarchy 自己的地理服务查找天气位置和安装程序的时区，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a> 中提交</li>
+  <li>从 ntp.omarchy.org 设置时钟，而不是 Arch 的 NTP 池，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a> 中提交</li>
+  <li>使用 Omarchy 自己的速度测试来测量网络速度，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a> 中提交</li>
+  <li>在首次启动期间显示一个带有描摹图标的进度屏幕，由 <a href="https://github.com/dhh">@dhh</a>、<a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> 在 <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a> 中提交</li>
+  <li>使用 Omarchy 内核启动实时 ISO，仅在 Mac 上才使用 T2 内核，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a> 中提交</li>
+  <li>让离线安装不再等待 mise 版本查询，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a> 中提交</li>
+  <li>修复离线安装将时区默认为 Africa/Abidjan 的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a> 中提交</li>
+  <li>修复安装程序的时区选择器不让你输入搜索的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a> 中提交</li>
+  <li>修复当从 Ventoy U 盘启动时，实时 ISO 在启动画面后面挂起的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a> 中提交</li>
+  <li>修复安装程序设置表单中的德语和法语控制台键映射问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a> 中提交</li>
+  <li>在安装程序和 git 设置中隐藏 gum 的英文按键提示，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a> 中提交</li>
+  <li>从安装进度屏幕中删掉只有英文的笑话，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a> 中提交</li>
+  <li>修复安装程序在准备磁盘时，输出没有边距地落在屏幕上的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a> 中提交</li>
+  <li>修复 Quattro 升级会将默认浏览器重置为 Chromium 的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a> 中提交</li>
+  <li>修复 Quattro 升级在遇到带有非 ASCII 字符的背景名称时停止的问题，由 <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> 在 <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a> 中提交</li>
+  <li>修复内核迁移在用 GRUB 或 systemd-boot 启动的机器上停止的问题，由 <a href="https://github.com/manuaudio">@manuaudio</a> 在 <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a> 中提交</li>
+  <li>修复在具有多个 NVMe 磁盘的未加密机器上休眠的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a> 中提交</li>
+  <li>修复 FIDO2 迁移在解决之前就被标记为完成的问题，由 <a href="https://github.com/ErikMelton">@ErikMelton</a> 在 <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a> 中提交</li>
+  <li>修复浮动工作区接管你的浮动规则所涵盖的第一个窗口的问题，由 <a href="https://github.com/zihaomu">@zihaomu</a> 在 <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a> 中提交</li>
+  <li>修复当 Super + L 将工作区在浮动模式中进出循环时，合成器停顿的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a> 中提交</li>
+  <li>修复 Alt + Shift + Tab 无法向后循环浏览每个窗口的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a> 中提交</li>
+  <li>修复弹出窗口在移动到另一个显示器时不居中的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a> 中提交</li>
+  <li>修复当非终端窗口处于焦点时，新终端在你的主文件夹之外打开的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a> 中提交</li>
+  <li>修复 1Password 和 Bitwarden 窗口不浮动的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a> 中提交</li>
+  <li>修复安装程序终端退出时 1Password 关闭的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a> 中提交</li>
+  <li>修复 DaVinci Resolve 对话框窃取指针焦点的问题，由 <a href="https://github.com/AksharP5">@AksharP5</a> 在 <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a> 中提交</li>
+  <li>修复桌面透过 Windows 虚拟机显示器显露出来的问题，由 <a href="https://github.com/jmwall">@jmwall</a> 在 <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a> 中提交</li>
+  <li>修复 Quattro 迁移后，旧版 Windows 虚拟机密码中含有 $$ 的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a> 中提交</li>
+  <li>让 Hyprland 的捐赠弹窗在升级后不再显示，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a> 中提交</li>
+  <li>改善状态栏小部件的拖动和排列，由 <a href="https://github.com/outfoxxed">@outfoxxed</a> 在 <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a> 中提交</li>
+  <li>规范化状态栏图标的大小和对齐方式，由 <a href="https://github.com/bjarneo">@bjarneo</a> 在 <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a> 中提交</li>
+  <li>仅当悬停在时钟左侧时才显示隐藏的状态栏指示器，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a> 中提交</li>
+  <li>将托盘图标与状态栏的其他图标对齐，由 <a href="https://github.com/ayoubdya">@ayoubdya</a> 在 <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a> 中提交</li>
+  <li>当一个状态栏工具提示已经出现时，立即显示下一个，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a> 中提交</li>
+  <li>在时钟和天气小部件下方打开它们的面板，由 <a href="https://github.com/scottjones">@scottjones</a> 在 <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a> 中提交</li>
+  <li>在选择 DNS 提供商后，保持网络面板打开，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a> 中提交</li>
+  <li>修复正在关闭的弹窗导致状态栏小部件无响应的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a> 中提交</li>
+  <li>修复隐藏的状态栏会捕获全屏窗口顶部点击的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a> 中提交</li>
+  <li>修复深色托盘图标消失在状态栏中的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a> 中提交</li>
+  <li>修复状态栏图标位置不齐或偏离中心的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a> 中提交</li>
+  <li>修复状态栏工具提示以错误的大小绘制其第一帧的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a> 中提交</li>
+  <li>修复通知历史将每张卡片都显示为刚刚的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a> 中提交</li>
+  <li>修复首次登录通知折叠成单个堆叠的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a> 中提交</li>
+  <li>修复点击通知无法聚焦名称为多个单词的应用的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a> 中提交</li>
+  <li>修复 Taildrop 通知显示空文本并缺少预览的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a> 中提交</li>
+  <li>修复电池已满时，电池通知显示空的时间和 0W 的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a> 中提交</li>
+  <li>修复低电量警告在插入电源后仍不消失，并在重启后再次出现的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a> 中提交</li>
+  <li>修复在某些笔记本电脑上电池功耗读数为 0W 的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a> 中提交</li>
+  <li>修复接通交流电源且电池已满时显示为正在放电的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a> 中提交</li>
+  <li>修复当内核无法休眠时仍显示 Hibernate 的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a> 中提交</li>
+  <li>修复恢复后 gvfs 挂载消失的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a> 中提交</li>
+  <li>修复锁屏两次变黑后键盘背光保持关闭的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a> 中提交</li>
+  <li>修复锁屏关闭显示器时指纹读取器唤醒的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a> 中提交</li>
+  <li>修复当显示器出现较晚时，启动密码提示偏离中心的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a> 中提交</li>
+  <li>修复屏幕保护程序的退出按键在角落闪烁的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a> 中提交</li>
+  <li>修复 Wi-Fi 图标在 OWE 过渡模式网络上闪烁的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a> 中提交</li>
+  <li>修复安装主题后，终端中打印 OWE 错误的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a> 中提交</li>
+  <li>修复从静止背景切换到视频背景时闪烁的问题，由 <a href="https://github.com/bjarneo">@bjarneo</a> 在 <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a> 中提交</li>
+  <li>将 Hackerman 更新为一个放大的几何背景，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a> 中提交</li>
+  <li>修复带有循环颜色引用的主题导致主题切换挂起的问题，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a> 中提交</li>
+  <li>修复 Neovim 使用 Catppuccin 主题时无法启动的问题，由 <a href="https://github.com/anandude">@anandude</a> 在 <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a> 中提交</li>
+  <li>修复 OpenCode 2 以其自带主题而不是 Omarchy 的主题启动的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a> 中提交</li>
+  <li>修复生成的 VS Code 主题中行内代码对比度低的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a> 中提交</li>
+  <li>修复 T3 Code 安装在匹配当前主题时停止的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a> 中提交</li>
+  <li>修复更改字体家族时终端字体大小重置的问题，由 <a href="https://github.com/sbalbalosa">@sbalbalosa</a> 在 <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a> 中提交</li>
+  <li>修复更改字体时打印终端进程 ID 的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a> 中提交</li>
+  <li>修复切换语言时重建每个区域设置，并在磁盘几乎已满时丢失它们的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a> 中提交</li>
+  <li>修复 shell 在其翻译加载之前显示原始翻译键的问题，由 <a href="https://github.com/zihaomu">@zihaomu</a> 在 <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a> 中提交</li>
+  <li>加快 Omarchy 脚本中翻译文本的速度，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a> 中提交</li>
+  <li>更新 686 条字符串的翻译，其中 392 条在用户手册中，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a> 中提交</li>
+  <li>修复非英语区域设置中音量和输出控制的问题，由 <a href="https://github.com/Sebo1411">@Sebo1411</a> 在 <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a> 中提交</li>
+  <li>修复非英语区域设置中 CPU 使用率读数的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a> 中提交</li>
+  <li>修复未安装 fcitx5 时 fcitx5 服务无限重启的问题，由 <a href="https://github.com/therk">@therk</a> 在 <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a> 中提交</li>
+  <li>修复键盘布局小部件切换到无人打字的设备的问题，由 <a href="https://github.com/bjarneo">@bjarneo</a> 在 <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a> 中提交</li>
+  <li>修复键盘布局小部件切换到厂商热键设备的问题，由 <a href="https://github.com/yashranaway">@yashranaway</a> 在 <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a> 中提交</li>
+  <li>修复键绑定菜单留下一个以 100% CPU 运行的 Lua 进程的问题，由 <a href="https://github.com/tobi">@tobi</a> 在 <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a> 中提交</li>
+  <li>修复夏令时结束时，时钟每毫秒一次地淹没日志的问题，由 <a href="https://github.com/falkoro">@falkoro</a> 在 <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a> 中提交</li>
+  <li>修复 shell 将它无法读取的 shell.json 替换为默认值的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a> 中提交</li>
+  <li>修复 Omarchy 菜单在其文件更新时丢失其行的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a> 中提交</li>
+  <li>修复重新启用插件后，其状态栏小部件未恢复的问题，由 <a href="https://github.com/berrimi">@berrimi</a> 在 <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a> 中提交</li>
+  <li>修复本地插件因其自己的 Python 字节码而循环重新加载的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a> 中提交</li>
+  <li>修复插件中的隐藏按钮折叠到其边距的问题，由 <a href="https://github.com/dmkenney">@dmkenney</a> 在 <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a> 中提交</li>
+  <li>修复下拉菜单切掉最后一项的问题，由 <a href="https://github.com/sprajs">@sprajs</a> 在 <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a> 中提交</li>
+  <li>修复下拉菜单在第二次点击时不关闭的问题，由 <a href="https://github.com/felixzsh">@felixzsh</a> 在 <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a> 中提交</li>
+  <li>修复滑块旋钮在轨道末端之前停下的问题，由 <a href="https://github.com/erikrjohansson">@erikrjohansson</a> 在 <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a> 中提交</li>
+  <li>
+    <p>修复 Update &gt; Hardware &gt; Trackpad 遗漏了大多数触摸板并重置键盘的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a> 中提交</p>
+
+    <p>它现在会释放每个触摸板上卡住的按钮，并且只重置触摸板，而不是连键盘和触摸屏一起重置。</p>
+  </li>
+  <li>让网络摄像头菜单检查摄像头但不打开它们，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a> 中提交</li>
+  <li>修复 Omasnap 的滚动捕获只抓取黑色帧的问题，由 <a href="https://github.com/falkoro">@falkoro</a> 在 <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a> 中提交</li>
+  <li>修复截图选择器解绑你自己的按键的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a> 中提交</li>
+  <li>修复停止录制时宣布已保存的录制为空的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a> 中提交</li>
+  <li>修复图像选择器为被覆盖保存的图像显示陈旧缩略图的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a> 中提交</li>
+  <li>修复夜灯关闭时未完全重置的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a> 中提交</li>
+  <li>修复媒体小部件将暂停的曲目留给空闲播放器的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a> 中提交</li>
+  <li>修复在不报告亮度的显示器上重复进行显示器扫描的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a> 中提交</li>
+  <li>修复当配置的浏览器被卸载时，Super + Shift + Return 失败的问题，由 <a href="https://github.com/vitally">@vitally</a> 在 <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a> 中提交</li>
+  <li>修复在移除预装应用后计算器快捷键仍然保留的问题，由 <a href="https://github.com/OldJobobo">@OldJobobo</a> 在 <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a> 中提交</li>
+  <li>修复 Brave Origin 配置文件中的 Copy URL 快捷键问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a> 中提交</li>
+  <li>修复 Bitwarden 扩展弹出窗口以错误的大小打开的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a> 中提交</li>
+  <li>修复 Battle.net 在 HiDPI 显示器上以 100% 缩放打开的问题，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a> 中提交</li>
+  <li>修复 Inkscape 的文件选择器以平铺方式打开的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a> 中提交</li>
+  <li>修复当 mise 管理 Go 时，Go AUR 软件包在更新期间无法构建的问题，由 <a href="https://github.com/shbernal">@shbernal</a> 在 <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a> 中提交</li>
+  <li>修复当你不在 docker 组中时 ONCE 安装的问题，由 <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> 在 <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a> 中提交</li>
+  <li>修复点击智能体面板会打开托盘的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a> 中提交</li>
+  <li>修复智能体账户设置被一个悬空的共享符号链接绊倒的问题，由 <a href="https://github.com/manuaudio">@manuaudio</a> 在 <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a> 中提交</li>
+  <li>修复在没有智能体账户时，<code>--reauth</code> 会添加一个新的智能体账户的问题，由 <a href="https://github.com/manuaudio">@manuaudio</a> 在 <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a> 中提交</li>
+  <li>让智能体账户重命名提示注明其提供商，由 <a href="https://github.com/manuaudio">@manuaudio</a> 在 <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a> 中提交</li>
+  <li>修复钥匙串更新在密钥操作失败时声称成功的问题，由 <a href="https://github.com/Adolanium">@Adolanium</a> 在 <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a> 中提交</li>
+  <li>修复在 sudo 下运行时恢复出厂设置提示为空白的问题，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a> 中提交</li>
+  <li>修复待处理迁移提醒每次登录堆积一次的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a> 中提交</li>
+  <li>修复 About 中的 OS Age 从 ISO 构建时间而不是安装时间开始计数的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a> 中提交</li>
+  <li>修复 Dropbox 对 360 到 364 天前的文件显示“0y ago”的问题，由 <a href="https://github.com/manuaudio">@manuaudio</a> 在 <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a> 中提交</li>
+  <li>修复 Dropbox 状态检查使待处理的登录链接过期的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a> 中提交</li>
+  <li>修复安装 Dropbox 托盘图标库的问题，由 <a href="https://github.com/omarchybot">@omarchybot</a> 在 <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a> 中提交</li>
+  <li>在 Chromium 中启用悬浮滚动条，由 <a href="https://github.com/robzolkos">@robzolkos</a> 在 <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a> 中提交</li>
+  <li>在 Apple Silicon Mac 上启用 Touch ID 前先询问，由 <a href="https://github.com/scottjones">@scottjones</a> 在 <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a> 中提交</li>
+  <li>在 Apple Silicon Mac 上提供 RC 渠道，由 <a href="https://github.com/maralcbr">@maralcbr</a> 在 <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a> 中提交</li>
+  <li>在 Apple Silicon Mac 上提供 stable 渠道，由 <a href="https://github.com/maralcbr">@maralcbr</a> 在 <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a> 中提交</li>
+  <li>修复在 Apple Silicon 上，Omarchy 的别名、函数和环境在新终端中缺失的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a> 中提交</li>
+  <li>设置已安装的 NVIDIA 应用，由 <a href="https://github.com/jdvmi00">@jdvmi00</a> 在 <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a> 中提交</li>
+  <li>修复在搭载 NVIDIA N1x 的 Lenovo Pro 9 上安装失败的问题，由 <a href="https://github.com/breymander">@breymander</a> 在 <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a> 中提交</li>
+  <li>修复运行过早期音频配置文件的 N1x 笔记本电脑缺少内置扬声器和麦克风的问题，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a> 中提交</li>
+  <li>修复在 NVIDIA GB10 机器（例如 DGX Spark）上桌面迟缓的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a> 中提交</li>
+  <li>
+    <p>修复在 NVIDIA 上恢复后向锁屏输入的问题，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a> 中提交</p>
+
+    <p>锁屏也不再在面板亮起时再次变暗。</p>
+  </li>
+  <li>修复 Lutris 和 Battle.net 安装另一个 GPU 的 32 位 Vulkan 驱动程序的问题，由 <a href="https://github.com/zihaomu">@zihaomu</a> 在 <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a> 中提交</li>
+  <li>在 ARM 上，不再在每次更新后询问是否重启，由 <a href="https://github.com/birkskyum">@birkskyum</a> 在 <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a> 中提交</li>
+  <li>在 aarch64 上提供 stable 和 RC 渠道，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a> 中提交</li>
+  <li>让电源配置文件在 ARM 笔记本电脑上工作，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a> 中提交</li>
+  <li>在具有 4K 页面的 ARM 机器上提供 Dropbox，并在 ARM 上将 Spotify 作为网页应用提供，由 <a href="https://github.com/birkskyum">@birkskyum</a> 在 <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a> 中提交</li>
+  <li>在 ARM 上隐藏 GeForce NOW、Battle.net 和 Lutris 的安装，由 <a href="https://github.com/birkskyum">@birkskyum</a> 在 <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a> 中提交</li>
+  <li>修复 Hermes 应用在 ARM 上无法就地更新的问题，由 <a href="https://github.com/ryanrhughes">@ryanrhughes</a> 在 <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a> 中提交</li>
+  <li>修复 Snapdragon 笔记本电脑键盘在磁盘解锁提示处无法输入的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a> 中提交</li>
+  <li>修复 Snapdragon 笔记本电脑登录时摄像头缺失的问题，由 <a href="https://github.com/birkskyum">@birkskyum</a> 在 <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a> 中提交</li>
+  <li>修复 Snapdragon X2 笔记本电脑在磁盘解锁前出现黑屏的问题，由 <a href="https://github.com/jdvmi00">@jdvmi00</a> 在 <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a> 中提交</li>
+  <li>在 Intel Wildcat Lake 上以硬件方式解码视频，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a> 中提交</li>
+  <li>修复实时 ISO 在 Arrow Lake-H 笔记本电脑上崩溃的问题，由 <a href="https://github.com/emirb">@emirb</a> 在 <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a> 中提交</li>
+  <li>修复 HP EliteBook Ultra G1q 的内置麦克风问题，由 <a href="https://github.com/bprendie">@bprendie</a> 在 <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a> 中提交</li>
+  <li>使用对 Motorcomm YT6801 以太网的上游支持，由 <a href="https://github.com/AFOliveira">@AFOliveira</a> 在 <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a> 中提交</li>
+  <li>将 Elgato Cam Link 4K 中继为一个 16:9 虚拟摄像头，由 <a href="https://github.com/dhh">@dhh</a> 在 <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a> 中提交</li>
+  <li>支持平台命名的指纹读取器，由 <a href="https://github.com/scottjones">@scottjones</a> 在 <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a> 中提交</li>
+</ul>
