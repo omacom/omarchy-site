@@ -174,6 +174,25 @@ def parse_teams(html: str) -> list[dict]:
     return teams
 
 
+def parse_themes(html: str) -> list[dict]:
+    """Turns the hand-written themes gallery into repo/image/name triples.
+
+    Contributors paste a figure block per theme, in the shape the README
+    documents. Prettier may wrap the anchor and image across lines, so the
+    pattern tolerates whitespace between the anchor, the image and the
+    caption rather than requiring a single line.
+    """
+    themes = [
+        {'repo': href, 'image': image, 'name': unescape(name.strip())}
+        for href, image, name in re.findall(
+            r'<figure class="themes__theme">.*?<a href="([^"]+)"\s*>\s*'
+            r'<img\s+src="([^"]+)".*?'
+            r'<figcaption>\s*<a[^>]*>([^<]+)</a>\s*</figcaption>',
+            html, re.S)
+    ]
+    return themes
+
+
 def port_marketplace(repo: Path) -> None:
     """Ports the marketplace's develop/publish docs into plugin-pages.json."""
     pages = {}
@@ -278,13 +297,7 @@ def main() -> None:
     # rather than on the refresh schedule: a merged theme has to be on the
     # site the next time it deploys, the way it always has been.
     themes_html = (repo / 'themes' / 'index.html').read_text()
-    themes = [
-        {'repo': href, 'image': image, 'name': unescape(name.strip())}
-        for href, image, name in re.findall(
-            r'<figure class="themes__theme">.*?<a href="([^"]+)"><img src="([^"]+)".*?'
-            r'<figcaption><a[^>]*>([^<]+)</a></figcaption>',
-            themes_html, re.S)
-    ]
+    themes = parse_themes(themes_html)
     (OUT / 'themes.json').write_text(json.dumps(themes, indent=1))
     print(f'themes.json: {len(themes)} themes')
 
