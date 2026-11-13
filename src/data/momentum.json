@@ -1,8 +1,8 @@
 {
-  "checked": "2026-11-12",
+  "checked": "2026-11-13",
   "github": {
-    "stars": 46885,
-    "pullRequests": 9719,
+    "stars": 46911,
+    "pullRequests": 9737,
     "contributors": 628,
     "commitsYear": 4612,
     "weeks": [
@@ -88,15 +88,15 @@
     ]
   },
   "downloads": {
-    "total": 1375832,
+    "total": 1379164,
     "countries": 216,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "quattro": 561190,
-    "periods": [{ "label": "Last month", "count": 104983, "days": 30 }],
+    "quattro": 564522,
+    "periods": [{ "label": "Last month", "count": 104685, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-11-11",
-      "lastAdded": 4799,
+      "through": "2026-11-12",
+      "lastAdded": 3332,
       "countries": [
         "AD",
         "AE",

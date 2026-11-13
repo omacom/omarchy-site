@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-12",
+  "refreshed": "2026-11-13",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1650,7 +1650,7 @@
     },
     {
       "id": "evt-n3vWFaK0KP8ejG6",
-      "title": "Omarchy Hangzhou Meetup · 项目分享、装机与 Demo",
+      "title": "Omarchy 杭州 Meetup · DHH 远程连线 + 项目分享与装机",
       "url": "https://luma.com/omarchyhangzhou",
       "start": "2026-11-15T06:00:00.000Z",
       "end": "2026-11-15T10:00:00.000Z",
