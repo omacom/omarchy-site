@@ -8,6 +8,8 @@ description: Omarchy 4.5 brings floating workspaces with a dock, native Apple Si
 
 Omarchy 4.5 (aka Quattro RS!) is the first big feature release since [Quattro](https://github.com/omacom/omarchy/releases/tag/v4.0.0), and it's a whopper: over 740 pull requests merged from more than 180 contributors in just twelve weeks. It now offers a traditional desktop mode next to the tiling default. You can install it natively on a M1/M2/M3/Neo MacBooks. And it speaks 50 languages. And a gazillion other features, fixes, and improvements. Already on Omarchy? Run _Update > Omarchy_. New machine? [Grab it here](/#install).
 
+<iframe width="1280" height="720" style="width: 100%; height: auto; aspect-ratio: 16 / 9" title="Omarchy 4.5 Is Here! Here's What's New" src="https://www.youtube-nocookie.com/embed/ceQcmhUl3Xw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Floating workspaces with a dock
 
 `Super + L` now cycles any workspace between tiling, scrolling, and floating. On a floating workspace, every window gets a titlebar in your theme's colors, and a dock shows your pinned apps, everything that's running, and a grid of every app installed. Drag to reorder or pin, right-click for more, and `Super + M` minimizes a window down to the dock.
