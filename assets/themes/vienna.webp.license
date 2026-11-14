@@ -1,0 +1,14 @@
+Vienna desktop preview
+
+Copyright (c) 2026 Oliver Gassner (desktop screenshot).
+Wallpaper: Diego Delso, delso.photo, License CC BY-SA 4.0.
+Author: https://delso.photo/
+Source: https://commons.wikimedia.org/wiki/File:Palacio_Belvedere,_Viena,_Austria,_2020-02-01,_DD_93-95_HDR.jpg
+License: https://creativecommons.org/licenses/by-sa/4.0/
+
+The preview is distributed under CC BY-SA 4.0. It shows the wallpaper in a
+real Omarchy desktop session with terminal and editor windows over it.
+Changes: desktop compositing, 16:9 crop, downsampling to 1200x675, WebP
+compression, and removal of screenshot metadata. The source photographer
+adjusted highlights and curves and cloned out a crane.
+No endorsement is implied. No additional restrictions apply.
