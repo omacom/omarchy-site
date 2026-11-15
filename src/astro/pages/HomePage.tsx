@@ -9,20 +9,19 @@ import {
   BankIcon,
   CalendarFilledIcon,
   DiscordIcon,
-  DisplayIcon,
   DownloadIcon,
   GithubIcon,
   UsbIcon,
   PlayIcon,
   WindowsIcon,
 } from '@/components/icons'
+import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
 import { HeroNavGhost } from '@/components/SiteHeader'
 import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
 import { CardRail } from '@/components/CardRail'
 import { Figures } from '@/components/Figures'
-import { HardwareShowcase } from '@/components/HardwareShowcase'
 import { AgentShowcase } from '@/components/AgentShowcase'
 import { WindowsShowcase } from '@/components/WindowsShowcase'
 import { GamingShowcase } from '@/components/GamingShowcase'
@@ -72,18 +71,182 @@ const release: {
 const ISOS = isoLinks(release.isos, import.meta.env?.PUBLIC_ISO_ORIGIN)
 const ISO_LABEL: Record<string, string> = { x86_64: 'x86', aarch64: 'ARM' }
 
-const TRY = {
-  mac: {
-    label: t('Try on Mac'),
-    href: 'https://github.com/omacom/try-omarchy',
+type TryOption = {
+  key: string
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  platform: string
+  lead: string
+  action: { label: string; href: string; icon: typeof DownloadIcon }
+  links: ReadonlyArray<{ label: string; href: string }>
+}
+
+/** Ways to try Omarchy without installing it: the Try Omarchy apps from
+ *  tryomarchy.com, and a desktop streamed to a browser tab from
+ *  tryomarchy.dev. */
+const TRY: ReadonlyArray<TryOption> = [
+  {
+    key: 'mac',
     icon: AppleIcon,
+    title: t('Mac'),
+    platform: t('Apple Silicon · macOS 15+'),
+    lead: t(
+      'A native app with accelerated graphics and a shared clipboard. Needs about 15 GB free.',
+    ),
+    action: {
+      label: t('Try on Mac'),
+      href: 'https://github.com/omacom/try-omarchy/releases/latest',
+      icon: DownloadIcon,
+    },
+    links: [
+      {
+        label: t('Quick start'),
+        href: 'https://tryomarchy.com/#mac-quick-start',
+      },
+      { label: t('Source'), href: 'https://github.com/omacom/try-omarchy' },
+    ],
   },
-  windows: {
-    label: t('Try on Windows'),
-    href: 'https://github.com/omacom/try-omarchy-windows',
+  {
+    key: 'windows',
     icon: WindowsIcon,
+    title: t('Windows'),
+    platform: t('Windows 10 & 11 · x86_64'),
+    lead: t(
+      'Guided setup with GPU acceleration. Needs hardware virtualization and about 2 GB.',
+    ),
+    action: {
+      label: t('Try on Windows'),
+      href: 'https://github.com/omacom/try-omarchy-windows/releases/latest/download/TryOmarchy.exe',
+      icon: DownloadIcon,
+    },
+    links: [
+      {
+        label: t('Quick start'),
+        href: 'https://tryomarchy.com/#windows-quick-start',
+      },
+      {
+        label: t('Source'),
+        href: 'https://github.com/omacom/try-omarchy-windows',
+      },
+    ],
   },
-} as const
+  {
+    key: 'web',
+    icon: GlobeIcon,
+    title: t('Web'),
+    platform: t('Any desktop browser'),
+    lead: t(
+      'A fresh Omarchy streamed to your tab. Nothing to install, gone when you close it.',
+    ),
+    action: {
+      label: t('Try on Web'),
+      href: 'https://tryomarchy.dev/',
+      icon: PlayIcon,
+    },
+    links: [
+      {
+        label: t('Community demo by Emir Beganovic'),
+        href: 'https://emirb.github.io/',
+      },
+    ],
+  },
+]
+
+/** One way into Omarchy, as a compact card: what it is, a single button,
+ *  and a row of small links beneath. Cards sit in an OptionGrid, whose
+ *  subgrid lines their headers, leads, buttons, and links up across a row
+ *  however long each one's copy runs. */
+function OptionCard({
+  icon: Icon,
+  title,
+  platform,
+  lead,
+  action,
+  footer,
+  heading: Heading = 'h4',
+}: {
+  heading?: 'h4' | 'h5'
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  platform: string
+  lead: string
+  action: React.ReactNode
+  footer: React.ReactNode
+}) {
+  return (
+    <article className="row-span-4 grid min-w-0 grid-rows-subgrid gap-y-0 border border-border-subtle bg-bg p-5">
+      <div className="flex items-center gap-2.5">
+        <Icon className="size-5 shrink-0 text-brand" />
+        <Heading className="text-base font-semibold text-text">{title}</Heading>
+        <p className="ml-auto truncate text-xs text-text-muted">{platform}</p>
+      </div>
+      <p className="mt-3 text-[13px] leading-relaxed text-text-secondary [text-wrap:pretty]">
+        {lead}
+      </p>
+      <div className="mt-4">{action}</div>
+      <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-text-muted">
+        {footer}
+      </div>
+    </article>
+  )
+}
+
+function OptionGrid({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mt-6 grid gap-4 lg:mt-8 lg:grid-cols-3">{children}</div>
+  )
+}
+
+/** Omarchy without installing it: an app on the Mac or Windows PC you
+ *  already have, or a desktop streamed to a browser tab. Sits under the
+ *  install cards, in the same section. */
+function TryOmarchy() {
+  return (
+    <div id="try" className="mt-12 scroll-mt-24 lg:mt-16">
+      <h4 className="text-lg font-semibold tracking-tight text-text">
+        {t('Try it first')}
+      </h4>
+      <p className="mt-1 text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
+        {t(
+          'Get a taste of Omarchy without leaving the computer you already use.',
+        )}
+      </p>
+      <OptionGrid>
+        {TRY.map((app) => (
+          <OptionCard
+            key={app.key}
+            heading="h5"
+            icon={app.icon}
+            title={app.title}
+            platform={app.platform}
+            lead={app.lead}
+            action={
+              <Button
+                variant="outline"
+                nativeButton={false}
+                render={<a href={app.action.href} />}
+                className="w-full"
+              >
+                <app.action.icon
+                  data-icon="inline-start"
+                  className={
+                    app.action.icon === PlayIcon ? 'size-4' : undefined
+                  }
+                />
+                {app.action.label}
+              </Button>
+            }
+            footer={app.links.map((link) => (
+              <a key={link.href} className={smallLink} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          />
+        ))}
+      </OptionGrid>
+    </div>
+  )
+}
 
 /** The release's ISOs with the visitor's own architecture first, read after
  *  mount; x86_64 first until then. */
@@ -130,40 +293,7 @@ const noteLink =
 const sectionLink =
   'inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0'
 
-const installNote = 'mt-2 text-[13px] leading-relaxed text-text-muted'
-const installButton = 'h-11 px-4 whitespace-nowrap'
-
-function InstallRow({
-  icon: Icon,
-  title,
-  lead,
-  note,
-  children,
-}: {
-  icon: React.ComponentType<{ className?: string }>
-  title: string
-  lead: string
-  note?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className="grid gap-4 border-t border-border-subtle py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start md:gap-8 lg:gap-10">
-      <div className="min-w-0">
-        <h4 className="flex items-center gap-2.5 text-lg font-medium tracking-tight text-text">
-          <Icon className="size-5 shrink-0 text-brand" />
-          {title}
-        </h4>
-        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty]">
-          {lead}
-        </p>
-        {note ? <p className={cn(installNote, 'max-w-md')}>{note}</p> : null}
-      </div>
-      <div className="@container min-w-0">{children}</div>
-    </div>
-  )
-}
-
-const verifyLink =
+const smallLink =
   'cursor-pointer underline decoration-border-strong underline-offset-4 transition-colors duration-150 ease-out hover:text-text hover:decoration-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring'
 
 /** Under a download: copy its SHA-256, and fetch its signature when it has
@@ -184,12 +314,12 @@ function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
   }
 
   return (
-    <span className="mt-2 flex gap-4 text-[13px] text-text-muted">
+    <span className="flex gap-4">
       {sha256 ? (
         <Tooltip>
           <TooltipTrigger
             render={
-              <button type="button" onClick={copy} className={verifyLink} />
+              <button type="button" onClick={copy} className={smallLink} />
             }
           >
             {copied ? t('Copied') : 'SHA-256'}
@@ -199,7 +329,7 @@ function Verify({ sha256, sig }: { sha256?: string | null; sig?: string }) {
       ) : null}
       {sig ? (
         <Tooltip>
-          <TooltipTrigger render={<a href={sig} className={verifyLink} />}>
+          <TooltipTrigger render={<a href={sig} className={smallLink} />}>
             {t('Signature')}
           </TooltipTrigger>
           <TooltipContent>{t('Download the GPG signature')}</TooltipContent>
@@ -436,7 +566,7 @@ export function HomePage({ data }: { data: HomeData }) {
   )
 
   return (
-    <main>
+    <main className="home">
       <section
         id="home"
         data-hero-sentinel
@@ -658,108 +788,76 @@ export function HomePage({ data }: { data: HomeData }) {
           <SectionHeading
             level={3}
             anchor="install"
-            title={t('Install Omarchy')}
+            roomy
+            title={t('Install Omarchy (or try it first)')}
             description={t(
               'Be up and running in as little as seven seconds on the fastest machines, and in less than two minutes on the majority of computers.',
             )}
             action={installGuide}
           />
 
-          {/* Three ways in, one per row: what it is on the left, the
-              downloads on the right, rows divided by rules rather than boxed. */}
+          {/* Each way in as a card, the visitor's own architecture first,
+              with the ways to try it first in the same cards beneath. */}
           <TooltipProvider delay={300}>
-            <div className="mt-8 border-b border-border-subtle lg:mt-12">
-              <InstallRow
-                icon={UsbIcon}
-                title={t('Full-disk or dual-boot installation')}
-                lead={t(
-                  'Write the ISO to a USB stick and answer five questions. It hands back a finished desktop.',
-                )}
-                note={
-                  release.isos.aarch64
-                    ? t(
-                        'ARM64 has preliminary support for NVIDIA DGX Spark and N1X.',
-                      )
-                    : undefined
-                }
-              >
-                <ul className="grid w-fit gap-x-6 gap-y-3 @md:grid-cols-2">
-                  {isos.map(([arch, iso]) => (
-                    <li key={arch} className="flex flex-col items-start">
-                      <Button
-                        size="lg"
-                        nativeButton={false}
-                        render={<a href={iso.url} />}
-                        className={installButton}
-                      >
-                        <DownloadIcon data-icon="inline-start" />
-                        Omarchy {release.version}{' '}
-                        {ideographic
-                          ? `（${ISO_LABEL[arch] ?? arch}）`
-                          : `(${ISO_LABEL[arch] ?? arch})`}
-                      </Button>
-                      <Verify
-                        sha256={release.isos[arch]?.sha256}
-                        sig={`${iso.url}.sig`}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </InstallRow>
-
+            <OptionGrid>
+              {isos.map(([arch, iso]) => (
+                <OptionCard
+                  key={arch}
+                  icon={UsbIcon}
+                  title={arch === 'aarch64' ? t('ARM PCs') : t('x86 PCs')}
+                  platform={`${arch} · ISO`}
+                  lead={
+                    arch === 'aarch64'
+                      ? t(
+                          'Preliminary support for NVIDIA DGX Spark and N1X. Write the ISO to a USB stick and answer five questions.',
+                        )
+                      : t(
+                          'Write the ISO to a USB stick and answer five questions. Full-disk or dual-boot, it hands back a finished desktop.',
+                        )
+                  }
+                  action={
+                    <Button
+                      nativeButton={false}
+                      render={<a href={iso.url} />}
+                      className="w-full"
+                    >
+                      <DownloadIcon data-icon="inline-start" />
+                      Omarchy {release.version}{' '}
+                      {ideographic
+                        ? `（${ISO_LABEL[arch] ?? arch}）`
+                        : `(${ISO_LABEL[arch] ?? arch})`}
+                    </Button>
+                  }
+                  footer={
+                    <Verify
+                      sha256={release.isos[arch]?.sha256}
+                      sig={`${iso.url}.sig`}
+                    />
+                  }
+                />
+              ))}
               {release.mac ? (
-                <InstallRow
+                <OptionCard
                   icon={AppleIcon}
                   title={t('Apple Silicon Macs')}
+                  platform={t('M1, M2, M3, Neo')}
                   lead={t(
-                    'The native Omarchy M installer puts Omarchy right next to macOS on M1, M2, M3, and Neo MacBooks. No USB stick needed.',
+                    'The native Omarchy M installer puts Omarchy right next to macOS. No USB stick needed.',
                   )}
-                >
-                  <div className="flex flex-col items-start">
+                  action={
                     <Button
-                      size="lg"
                       nativeButton={false}
                       render={<a href={release.mac.url} />}
-                      className={installButton}
+                      className="w-full"
                     >
                       <DownloadIcon data-icon="inline-start" />
                       {t('Omarchy M Installer')}
                     </Button>
-                    <Verify sha256={release.mac.sha256} />
-                  </div>
-                </InstallRow>
+                  }
+                  footer={<Verify sha256={release.mac.sha256} />}
+                />
               ) : null}
-
-              <InstallRow
-                icon={DisplayIcon}
-                title={t('Try it first')}
-                lead={t(
-                  'All of Omarchy running in a virtual machine, so you can get a taste first.',
-                )}
-              >
-                <div className="flex flex-wrap gap-2">
-                  {(['mac', 'windows'] as const).map((key) => {
-                    const Mark = TRY[key].icon
-                    return (
-                      <Button
-                        key={key}
-                        size="lg"
-                        variant="outline"
-                        nativeButton={false}
-                        render={<a href={TRY[key].href} />}
-                      >
-                        <Mark data-icon="inline-start" />
-                        {TRY[key].label}
-                        <ArrowUpRightIcon data-icon="inline-end" />
-                      </Button>
-                    )
-                  })}
-                </div>
-                <p className={installNote}>
-                  {t('Apple Silicon Macs, Windows 10 and 11.')}
-                </p>
-              </InstallRow>
-            </div>
+            </OptionGrid>
           </TooltipProvider>
 
           <p className="mt-6 text-[13px] leading-relaxed text-text-muted [text-wrap:pretty]">
@@ -773,16 +871,8 @@ export function HomePage({ data }: { data: HomeData }) {
             </ManualLink>
             {ideographic ? t(' detailed guides.') : '.'}
           </p>
+          <TryOmarchy />
           <SectionActions>{installGuide}</SectionActions>
-        </div>
-      </section>
-
-      <section
-        id="hardware"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
-          <HardwareShowcase />
         </div>
       </section>
 
@@ -806,7 +896,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="agents" className="border-t border-border-subtle bg-bg-deep">
+      <section id="agents" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <AgentShowcase />
         </div>
@@ -845,10 +935,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section
-        id="developers"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="developers" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <DeveloperShowcase />
         </div>
@@ -860,10 +947,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section
-        id="windows"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="windows" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <WindowsShowcase />
         </div>
@@ -914,10 +998,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section
-        id="figures"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="figures" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="figures"
@@ -948,7 +1029,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="teams" className="border-t border-border-subtle bg-bg-deep">
+      <section id="teams" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="teams"
@@ -980,7 +1061,7 @@ export function HomePage({ data }: { data: HomeData }) {
 
       <section
         id="meetups"
-        className="border-t border-border-subtle bg-bg-deep py-12 lg:py-24"
+        className="border-t border-border-subtle py-12 lg:py-24"
       >
         <MeetupShowcase action={allMeetups} />
       </section>
