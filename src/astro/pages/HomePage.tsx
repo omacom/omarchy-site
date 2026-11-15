@@ -877,7 +877,10 @@ export function HomePage({ data }: { data: HomeData }) {
       </section>
 
       {/* plugins */}
-      <section id="plugins" className="border-t border-border-subtle">
+      <section
+        id="plugins"
+        className="border-t border-border-subtle bg-bg-deep"
+      >
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="plugins"
@@ -896,13 +899,13 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="agents" className="border-t border-border-subtle bg-bg-deep">
+      <section id="agents" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <AgentShowcase />
         </div>
       </section>
 
-      <section id="themes" className="border-t border-border-subtle">
+      <section id="themes" className="border-t border-border-subtle bg-bg-deep">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="themes"
@@ -935,31 +938,25 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section
-        id="developers"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="developers" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <DeveloperShowcase />
         </div>
       </section>
 
-      <section id="gaming" className="border-t border-border-subtle">
+      <section id="gaming" className="border-t border-border-subtle bg-bg-deep">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <GamingShowcase />
         </div>
       </section>
 
-      <section
-        id="windows"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="windows" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <WindowsShowcase />
         </div>
       </section>
 
-      <section id="news" className="border-t border-border-subtle">
+      <section id="news" className="border-t border-border-subtle bg-bg-deep">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="news"
@@ -1004,10 +1001,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section
-        id="figures"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="figures" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="figures"
@@ -1020,7 +1014,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="voices" className="border-t border-border-subtle">
+      <section id="voices" className="border-t border-border-subtle bg-bg-deep">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="voices"
@@ -1038,7 +1032,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="teams" className="border-t border-border-subtle bg-bg-deep">
+      <section id="teams" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="teams"
@@ -1053,7 +1047,10 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="patrons" className="border-t border-border-subtle">
+      <section
+        id="patrons"
+        className="border-t border-border-subtle bg-bg-deep"
+      >
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="patrons"
@@ -1070,13 +1067,16 @@ export function HomePage({ data }: { data: HomeData }) {
 
       <section
         id="meetups"
-        className="border-t border-border-subtle bg-bg-deep py-12 lg:py-24"
+        className="border-t border-border-subtle py-12 lg:py-24"
       >
         <MeetupShowcase action={allMeetups} />
       </section>
 
       {/* community */}
-      <section id="community" className="border-t border-border-subtle">
+      <section
+        id="community"
+        className="border-t border-border-subtle bg-bg-deep"
+      >
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="community"

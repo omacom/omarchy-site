@@ -1086,6 +1086,15 @@ body,
   --nav-h: calc(3.5rem + env(safe-area-inset-top, 0px));
 }
 
+/* The ground a home section sits on, which alternates down the page, for
+   marks that cut themselves out of it, like the rings between team faces. */
+main > section {
+  --ground: var(--color-bg);
+}
+main > section.bg-bg-deep {
+  --ground: var(--color-bg-deep);
+}
+
 body {
   margin: 0;
   /* Include the safe area in the sticky bar; viewport-fit=cover fills the notch. */
