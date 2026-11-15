@@ -171,6 +171,72 @@ html[data-theme='bangladesh'],
   --t-hdr-text-2: #c9e7d9;
 }
 
+/* България (BG) */
+html[data-theme='balgariya'],
+[data-theme='balgariya'] {
+  --t-bg-deep: #00140c;
+  --t-bg: #031b12;
+  --t-surface: #092219;
+  --t-surface-2: #112b21;
+  --t-border-subtle: #112b21;
+  --t-border-strong: #395448;
+  --t-text: #e9f3ee;
+  --t-text-secondary: #c9d9d1;
+  --t-text-muted: #9ab5a9;
+  --t-brand: #fb4f39;
+  --t-brand-soft: #fb4f391f;
+  --t-brand-fill: #d62612;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #4d2b1e;
+  --t-field-bg: #000e07;
+  --t-field-dim: #004b35;
+  --t-field-mid: #00966e;
+  --t-field-lit: #d62612;
+  --t-field-hover: #e47265;
+  --t-field-crest: #f3beb8;
+  --t-word: linear-gradient(to bottom, #ffffff 0% 15.789%, #e4e5e5 15.789% 31.579%, #00966e 31.579% 52.632%, #007f5d 52.632% 68.421%, #d62612 68.421% 84.211%, #b82310 84.211% 100%);
+  --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #00966e #00966e #00966e #00966e #00966e #00966e #00966e #d62612 #d62612 #d62612 #d62612 #d62612 #d62612;
+  color-scheme: dark;
+  --t-hdr-text-2: #c9e7d8;
+}
+
+/* Brasil (BR) */
+html[data-theme='brasil'],
+[data-theme='brasil'] {
+  --t-bg-deep: #011505;
+  --t-bg: #031c09;
+  --t-surface: #092310;
+  --t-surface-2: #122c18;
+  --t-border-subtle: #122c18;
+  --t-border-strong: #3a553f;
+  --t-text: #ebf2ec;
+  --t-text-secondary: #ccd8cd;
+  --t-text-muted: #9fb5a2;
+  --t-brand: #ffcb00;
+  --t-brand-soft: #ffcb001f;
+  --t-brand-fill: #ffcb00;
+  --t-brand-ink: #302681;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #4f5106;
+  --t-field-bg: #000f02;
+  --t-field-dim: #004b1e;
+  --t-field-mid: #009440;
+  --t-field-lit: #ffcb00;
+  --t-field-hover: #ffdd59;
+  --t-field-crest: #ffefb3;
+  --t-word: linear-gradient(to bottom, #ffcb00 0% 26.316%, #d9af00 26.316% 52.632%, #b39301 52.632% 78.947%, #8c7601 78.947% 100%);
+  --t-word-cells: rows #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00 #ffcb00;
+  color-scheme: dark;
+  --t-hdr-text-2: #cce7cf;
+}
+
 /* 中国 (CN) */
 html[data-theme='zhongguo'],
 [data-theme='zhongguo'] {
@@ -202,6 +268,73 @@ html[data-theme='zhongguo'],
   --t-word-cells: rows #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00 #ffde00;
   color-scheme: dark;
   --t-hdr-text-2: #fdd1cc;
+}
+
+/* Česko (CZ) */
+html[data-theme='cesko'],
+[data-theme='cesko'] {
+  --t-bg-deep: #05101d;
+  --t-bg: #0b1725;
+  --t-surface: #121e2c;
+  --t-surface-2: #1a2635;
+  --t-border-subtle: #1a2635;
+  --t-border-strong: #414e5f;
+  --t-text: #ebf1f8;
+  --t-text-secondary: #ccd5e2;
+  --t-text-muted: #9fb0c4;
+  --t-brand: #fe473f;
+  --t-brand-soft: #fe473f1f;
+  --t-brand-fill: #d7141a;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #54252d;
+  --t-field-bg: #020a18;
+  --t-field-dim: #15355d;
+  --t-field-mid: #2c6ab2;
+  --t-field-lit: #ffffff;
+  --t-field-hover: #ffffff;
+  --t-field-crest: #ffffff;
+  --t-word: conic-gradient(at 13.58% 26.316%, transparent 0deg 270deg, #1f5ea5 270deg), conic-gradient(at 13.58% 52.632%, transparent 0deg 270deg, #1b5190 270deg), conic-gradient(at 13.58% 78.947%, transparent 0deg 270deg, #16457b 270deg), conic-gradient(at 13.58% 100%, transparent 0deg 270deg, #123866 270deg), linear-gradient(to bottom, #ffffff 0% 21.053%, #e9e9ea 21.053% 36.842%, #d2d3d6 36.842% 52.632%, #d7141a 52.632% 68.421%, #c0131a 68.421% 84.211%, #aa121a 84.211% 100%);
+  --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a;
+  --t-word-hoist: #1f5ea5 11 19;
+  color-scheme: dark;
+  --t-hdr-text-2: #cedffa;
+}
+
+/* Deutschland (DE) */
+html[data-theme='deutschland'],
+[data-theme='deutschland'] {
+  --t-bg-deep: #220402;
+  --t-bg: #2a0a07;
+  --t-surface: #32110d;
+  --t-surface-2: #3c1a15;
+  --t-border-subtle: #3c1a15;
+  --t-border-strong: #68413b;
+  --t-text: #f8edeb;
+  --t-text-secondary: #e1d0cd;
+  --t-text-muted: #c3a6a1;
+  --t-brand: #ffce00;
+  --t-brand-soft: #ffce001f;
+  --t-brand-fill: #ffce00;
+  --t-brand-ink: #000000;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #6a4505;
+  --t-field-bg: #1c0101;
+  --t-field-dim: #730101;
+  --t-field-mid: #dd0000;
+  --t-field-lit: #ffce00;
+  --t-field-hover: #ffdf59;
+  --t-field-crest: #fff0b3;
+  --t-word: linear-gradient(to bottom, #5d5d5d 0% 15.789%, #545050 15.789% 31.579%, #dd0000 31.579% 52.632%, #bd0000 52.632% 68.421%, #ffce00 68.421% 84.211%, #dfb100 84.211% 100%);
+  --t-word-cells: rows #5d5d5d #5d5d5d #5d5d5d #5d5d5d #5d5d5d #5d5d5d #dd0000 #dd0000 #dd0000 #dd0000 #dd0000 #dd0000 #dd0000 #ffce00 #ffce00 #ffce00 #ffce00 #ffce00 #ffce00;
+  color-scheme: dark;
+  --t-hdr-text-2: #fdd1ce;
 }
 
 /* Danmark (DK) */
@@ -236,6 +369,39 @@ html[data-theme='danmark'],
   --t-word-uprights: #ffffff 17 20;
   color-scheme: dark;
   --t-hdr-text-2: #fdd0d0;
+}
+
+/* Eesti (EE) */
+html[data-theme='eesti'],
+[data-theme='eesti'] {
+  --t-bg-deep: #001024;
+  --t-bg: #04172c;
+  --t-surface: #091e33;
+  --t-surface-2: #12263d;
+  --t-border-subtle: #12263d;
+  --t-border-strong: #394f68;
+  --t-text: #ebf1f8;
+  --t-text-secondary: #cbd5e1;
+  --t-text-muted: #9fb0c4;
+  --t-brand: #308eed;
+  --t-brand-soft: #308eed1f;
+  --t-brand-fill: #0072ce;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #113b66;
+  --t-field-bg: #000a1b;
+  --t-field-dim: #00396c;
+  --t-field-mid: #0072ce;
+  --t-field-lit: #ffffff;
+  --t-field-hover: #ffffff;
+  --t-field-crest: #ffffff;
+  --t-word: linear-gradient(to bottom, #0072ce 0% 15.789%, #0063b5 15.789% 31.579%, #5d5d5d 31.579% 52.632%, #4e4f52 52.632% 68.421%, #ffffff 68.421% 84.211%, #e4e5e7 84.211% 100%);
+  --t-word-cells: rows #0072ce #0072ce #0072ce #0072ce #0072ce #0072ce #5d5d5d #5d5d5d #5d5d5d #5d5d5d #5d5d5d #5d5d5d #5d5d5d #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff;
+  color-scheme: dark;
+  --t-hdr-text-2: #cbdffc;
 }
 
 /* Suomi (FI) */
@@ -339,6 +505,39 @@ html[data-theme='hellas'],
   --t-hdr-text-2: #cbdffe;
 }
 
+/* Hrvatska (HR) */
+html[data-theme='hrvatska'],
+[data-theme='hrvatska'] {
+  --t-bg-deep: #060d27;
+  --t-bg: #0c142f;
+  --t-surface: #121b37;
+  --t-surface-2: #1a2340;
+  --t-border-subtle: #1a2340;
+  --t-border-strong: #414c6c;
+  --t-text: #edf0f9;
+  --t-text-secondary: #cfd4e2;
+  --t-text-muted: #a5aec5;
+  --t-brand: #fd4939;
+  --t-brand-soft: #fd49391f;
+  --t-brand-fill: #ff0000;
+  --t-brand-ink: #060d27;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #542432;
+  --t-field-bg: #030721;
+  --t-field-dim: #1e2d73;
+  --t-field-mid: #405bd8;
+  --t-field-lit: #ff0000;
+  --t-field-hover: #ff5959;
+  --t-field-crest: #ffb3b3;
+  --t-word: linear-gradient(to bottom, #ff0000 0% 15.789%, #db0105 15.789% 31.579%, #ffffff 31.579% 52.632%, #e0e0e3 52.632% 68.421%, #3750cc 68.421% 84.211%, #3046b4 84.211% 100%);
+  --t-word-cells: rows #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #3750cc #3750cc #3750cc #3750cc #3750cc #3750cc;
+  color-scheme: dark;
+  --t-hdr-text-2: #d2dbff;
+}
+
 /* Magyarország (HU) */
 html[data-theme='magyarorszag'],
 [data-theme='magyarorszag'] {
@@ -370,6 +569,39 @@ html[data-theme='magyarorszag'],
   --t-word-cells: rows #cd2a3e #cd2a3e #cd2a3e #cd2a3e #cd2a3e #cd2a3e #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #436f4d #436f4d #436f4d #436f4d #436f4d #436f4d;
   color-scheme: dark;
   --t-hdr-text-2: #cfe5d3;
+}
+
+/* Indonesia (ID) */
+html[data-theme='indonesia'],
+[data-theme='indonesia'] {
+  --t-bg-deep: #220402;
+  --t-bg: #2a0a07;
+  --t-surface: #32110d;
+  --t-surface-2: #3c1a15;
+  --t-border-subtle: #3c1a15;
+  --t-border-strong: #68413b;
+  --t-text: #f8edeb;
+  --t-text-secondary: #e1d0cd;
+  --t-text-muted: #c3a6a1;
+  --t-brand: #fd4939;
+  --t-brand-soft: #fd49391f;
+  --t-brand-fill: #ff0000;
+  --t-brand-ink: #220402;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #691d16;
+  --t-field-bg: #1c0101;
+  --t-field-dim: #820101;
+  --t-field-mid: #ff0000;
+  --t-field-lit: #ffffff;
+  --t-field-hover: #ffffff;
+  --t-field-crest: #ffffff;
+  --t-word: linear-gradient(to bottom, #ff0000 0% 21.053%, #e40000 21.053% 36.842%, #c90000 36.842% 52.632%, #ffffff 52.632% 68.421%, #edebeb 68.421% 84.211%, #dbd6d6 84.211% 100%);
+  --t-word-cells: rows #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ff0000 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff;
+  color-scheme: dark;
+  --t-hdr-text-2: #fdd1ce;
 }
 
 /* Éire (IE) */
@@ -405,6 +637,41 @@ html[data-theme='eire'],
   --t-hdr-text-2: #cae6d4;
 }
 
+/* ישראל (IL) */
+html[data-theme='israel'],
+[data-theme='israel'] {
+  --t-bg-deep: #edf0f6;
+  --t-bg: #fcfdff;
+  --t-surface: #ffffff;
+  --t-surface-2: #edf0f6;
+  --t-border-subtle: #e0e3e8;
+  --t-border-strong: #b5b7bd;
+  --t-text: #161b24;
+  --t-text-secondary: #2d333d;
+  --t-text-muted: #4a505b;
+  --t-brand: #0038b8;
+  --t-brand-soft: #0038b81f;
+  --t-brand-fill: #0038b8;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(0 0 0 / 0.06), 0 1px 3px oklch(0 0 0 / 0.05),
+    0 4px 10px -4px oklch(0 0 0 / 0.05);
+  --t-elevation-hover: 0 0 0 1px oklch(0 0 0 / 0.09), 0 1px 3px oklch(0 0 0 / 0.07),
+    0 4px 10px -4px oklch(0 0 0 / 0.08);
+  --t-img-outline: rgb(0 0 0 / 0.1);
+  --t-scroll-thumb: rgb(0 0 0 / 0.18);
+  --t-selection: #c5d2ef;
+  --t-field-bg: #e5e8ed;
+  --t-field-dim: #95aada;
+  --t-field-mid: #0038b8;
+  --t-field-lit: #0038b8;
+  --t-field-hover: #002c90;
+  --t-field-crest: #001f65;
+  --t-word: linear-gradient(to bottom, #0038b8 0% 26.316%, #2252c0 26.316% 52.632%, #456dc8 52.632% 78.947%, #6787d0 78.947% 100%);
+  --t-word-cells: rows #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8 #0038b8;
+  color-scheme: light;
+  --t-hdr-text-2: #b8b5b0;
+}
+
 /* भारत (IN) */
 html[data-theme='bharat'],
 [data-theme='bharat'] {
@@ -436,6 +703,39 @@ html[data-theme='bharat'],
   --t-word-cells: rows #ff9933 #ff9933 #ff9933 #ff9933 #ff9933 #ff9933 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #138808 #138808 #138808 #138808 #138808 #138808;
   color-scheme: dark;
   --t-hdr-text-2: #cde7cc;
+}
+
+/* ایران (IR) */
+html[data-theme='iran'],
+[data-theme='iran'] {
+  --t-bg-deep: #001503;
+  --t-bg: #041c07;
+  --t-surface: #0a230e;
+  --t-surface-2: #132c16;
+  --t-border-subtle: #132c16;
+  --t-border-strong: #3a553d;
+  --t-text: #ebf2eb;
+  --t-text-secondary: #ccd8cd;
+  --t-text-muted: #a0b4a1;
+  --t-brand: #fb503f;
+  --t-brand-soft: #fb503f1f;
+  --t-brand-fill: #da0000;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #4e2c18;
+  --t-field-bg: #000f02;
+  --t-field-dim: #10501e;
+  --t-field-mid: #239f40;
+  --t-field-lit: #da0000;
+  --t-field-hover: #e75959;
+  --t-field-crest: #f4b3b3;
+  --t-word: linear-gradient(to bottom, #239f40 0% 15.789%, #1e8b37 15.789% 31.579%, #ffffff 31.579% 52.632%, #dfe1e0 52.632% 68.421%, #da0000 68.421% 84.211%, #bb0200 84.211% 100%);
+  --t-word-cells: rows #239f40 #239f40 #239f40 #239f40 #239f40 #239f40 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #da0000 #da0000 #da0000 #da0000 #da0000 #da0000;
+  color-scheme: dark;
+  --t-hdr-text-2: #cce7cf;
 }
 
 /* Ísland (IS) */
@@ -641,6 +941,39 @@ html[data-theme='lietuva'],
   --t-hdr-text-2: #cae7d6;
 }
 
+/* Latvija (LV) */
+html[data-theme='latvija'],
+[data-theme='latvija'] {
+  --t-bg-deep: #200508;
+  --t-bg: #280c0e;
+  --t-surface: #301314;
+  --t-surface-2: #391b1c;
+  --t-border-subtle: #391b1c;
+  --t-border-strong: #654343;
+  --t-text: #f8eded;
+  --t-text-secondary: #e1cfcf;
+  --t-text-muted: #c3a6a6;
+  --t-brand: #e0626c;
+  --t-brand-soft: #e0626c1f;
+  --t-brand-fill: #9d2235;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #5f262a;
+  --t-field-bg: #1a0204;
+  --t-field-dim: #611c23;
+  --t-field-mid: #b73c49;
+  --t-field-lit: #ffffff;
+  --t-field-hover: #ffffff;
+  --t-field-crest: #ffffff;
+  --t-word: linear-gradient(to bottom, #a92f3e 0% 21.053%, #8e2633 21.053% 42.105%, #ffffff 42.105% 57.895%, #a92f3e 57.895% 78.947%, #8e2633 78.947% 100%);
+  --t-word-cells: rows #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #ffffff #ffffff #ffffff #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e #a92f3e;
+  color-scheme: dark;
+  --t-hdr-text-2: #fbd1d3;
+}
+
 /* México (MX) */
 html[data-theme='mexico'],
 [data-theme='mexico'] {
@@ -672,6 +1005,40 @@ html[data-theme='mexico'],
   --t-word-cells: cols #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #036d4b #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126;
   color-scheme: dark;
   --t-hdr-text-2: #cae7d7;
+}
+
+/* Malaysia (MY) */
+html[data-theme='malaysia'],
+[data-theme='malaysia'] {
+  --t-bg-deep: #050e24;
+  --t-bg: #0b152c;
+  --t-surface: #111c33;
+  --t-surface-2: #19253d;
+  --t-border-subtle: #19253d;
+  --t-border-strong: #404d68;
+  --t-text: #ecf0f9;
+  --t-text-secondary: #ced4e2;
+  --t-text-muted: #a3aec5;
+  --t-brand: #ffcc00;
+  --t-brand-soft: #ffcc001f;
+  --t-brand-fill: #ffcc00;
+  --t-brand-ink: #000066;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #544c1f;
+  --t-field-bg: #02081e;
+  --t-field-dim: #1a3169;
+  --t-field-mid: #3862c4;
+  --t-field-lit: #ffcc00;
+  --t-field-hover: #ffde59;
+  --t-field-crest: #fff0b3;
+  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #2f58b8 270deg), conic-gradient(at 33.333% 42.105%, transparent 0deg 270deg, #294ea4 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #234390 270deg), linear-gradient(to bottom, #cc0000 0% 15.789%, #ffffff 15.789% 26.316%, #cc0000 26.316% 42.105%, #ffffff 42.105% 57.895%, #cc0000 57.895% 73.684%, #ffffff 73.684% 84.211%, #cc0000 84.211% 100%);
+  --t-word-cells: rows #cc0000 #cc0000 #cc0000 #ffffff #ffffff #cc0000 #cc0000 #cc0000 #ffffff #ffffff #ffffff #cc0000 #cc0000 #cc0000 #ffffff #ffffff #cc0000 #cc0000 #cc0000;
+  --t-word-hoist: #2f58b8 27 11;
+  color-scheme: dark;
+  --t-hdr-text-2: #d0dcff;
 }
 
 /* Nigeria (NG) */
@@ -940,6 +1307,105 @@ html[data-theme='portugal'],
   --t-hdr-text-2: #cce6d2;
 }
 
+/* România (RO) */
+html[data-theme='romania'],
+[data-theme='romania'] {
+  --t-bg-deep: #050f23;
+  --t-bg: #0a152a;
+  --t-surface: #111d32;
+  --t-surface-2: #19253b;
+  --t-border-subtle: #19253b;
+  --t-border-strong: #404d66;
+  --t-text: #ecf0f8;
+  --t-text-secondary: #cdd5e2;
+  --t-text-muted: #a2afc5;
+  --t-brand: #fcd116;
+  --t-brand-soft: #fcd1161f;
+  --t-brand-fill: #fcd116;
+  --t-brand-ink: #002b7f;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #534d24;
+  --t-field-bg: #02091c;
+  --t-field-dim: #1a3365;
+  --t-field-mid: #3766be;
+  --t-field-lit: #fcd116;
+  --t-field-hover: #fde168;
+  --t-field-crest: #fef1b9;
+  --t-word: conic-gradient(at 33.333% 26.316%, transparent 0deg 270deg, #2d5bb3 270deg), conic-gradient(at 33.333% 52.632%, transparent 0deg 270deg, #274f9c 270deg), conic-gradient(at 33.333% 78.947%, transparent 0deg 270deg, #204286 270deg), conic-gradient(at 33.333% 100%, transparent 0deg 270deg, #1a366f 270deg), conic-gradient(at 66.667% 26.316%, transparent 0deg 270deg, #fcd116 270deg), conic-gradient(at 66.667% 52.632%, transparent 0deg 270deg, #d7b317 270deg), conic-gradient(at 66.667% 78.947%, transparent 0deg 270deg, #b19518 270deg), conic-gradient(at 66.667% 100%, transparent 0deg 270deg, #8c7719 270deg), linear-gradient(to bottom, #ce1126 0% 26.316%, #af1025 26.316% 52.632%, #910f23 52.632% 78.947%, #720d22 78.947% 100%);
+  --t-word-cells: cols #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #2d5bb3 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126;
+  color-scheme: dark;
+  --t-hdr-text-2: #cfdefe;
+}
+
+/* Србија (RS) */
+html[data-theme='srbija'],
+[data-theme='srbija'] {
+  --t-bg-deep: #06101d;
+  --t-bg: #0b1724;
+  --t-surface: #121e2c;
+  --t-surface-2: #1a2635;
+  --t-border-subtle: #1a2635;
+  --t-border-strong: #414e5e;
+  --t-text: #ebf1f8;
+  --t-text-secondary: #cbd5e1;
+  --t-text-muted: #9fb0c4;
+  --t-brand: #ed5c5c;
+  --t-brand-soft: #ed5c5c1f;
+  --t-brand-fill: #c6363c;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #4f2c35;
+  --t-field-bg: #030a17;
+  --t-field-dim: #14355c;
+  --t-field-mid: #2969b0;
+  --t-field-lit: #c6363c;
+  --t-field-hover: #da7c80;
+  --t-field-crest: #eec3c5;
+  --t-word: linear-gradient(to bottom, #c6363c 0% 15.789%, #aa3037 15.789% 31.579%, #1d5ea5 31.579% 52.632%, #19508d 52.632% 68.421%, #ffffff 68.421% 84.211%, #e4e5e6 84.211% 100%);
+  --t-word-cells: rows #c6363c #c6363c #c6363c #c6363c #c6363c #c6363c #1d5ea5 #1d5ea5 #1d5ea5 #1d5ea5 #1d5ea5 #1d5ea5 #1d5ea5 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff;
+  color-scheme: dark;
+  --t-hdr-text-2: #cedff8;
+}
+
+/* Россия (RU) */
+html[data-theme='rossiya'],
+[data-theme='rossiya'] {
+  --t-bg-deep: #030e27;
+  --t-bg: #08152f;
+  --t-surface: #0e1c36;
+  --t-surface-2: #162540;
+  --t-border-subtle: #162540;
+  --t-border-strong: #3d4d6b;
+  --t-text: #ecf0f8;
+  --t-text-secondary: #cdd5e2;
+  --t-text-muted: #a2afc5;
+  --t-brand: #f8503f;
+  --t-brand-soft: #f8503f1f;
+  --t-brand-fill: #d52b1e;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #502734;
+  --t-field-bg: #010820;
+  --t-field-dim: #13306f;
+  --t-field-mid: #2861d0;
+  --t-field-lit: #d52b1e;
+  --t-field-hover: #e4756d;
+  --t-field-crest: #f2bfbc;
+  --t-word: linear-gradient(to bottom, #ffffff 0% 15.789%, #e4e5e7 15.789% 31.579%, #1d56c4 31.579% 52.632%, #1849a9 52.632% 68.421%, #d52b1e 68.421% 84.211%, #b7261e 84.211% 100%);
+  --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #1d56c4 #1d56c4 #1d56c4 #1d56c4 #1d56c4 #1d56c4 #1d56c4 #d52b1e #d52b1e #d52b1e #d52b1e #d52b1e #d52b1e;
+  color-scheme: dark;
+  --t-hdr-text-2: #ceddff;
+}
+
 /* Sverige (SE) */
 html[data-theme='sverige'],
 [data-theme='sverige'] {
@@ -1007,6 +1473,72 @@ html[data-theme='singapore'],
   --t-hdr-text-2: #fdd0d0;
 }
 
+/* Slovenija (SI) */
+html[data-theme='slovenija'],
+[data-theme='slovenija'] {
+  --t-bg-deep: #030e26;
+  --t-bg: #08152e;
+  --t-surface: #0e1c36;
+  --t-surface-2: #16253f;
+  --t-border-subtle: #16253f;
+  --t-border-strong: #3d4d6a;
+  --t-text: #ecf0f8;
+  --t-text-secondary: #cdd5e2;
+  --t-text-muted: #a2afc5;
+  --t-brand: #f8505a;
+  --t-brand-soft: #f8505a1f;
+  --t-brand-fill: #d50032;
+  --t-brand-ink: #ffffff;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #50273b;
+  --t-field-bg: #010820;
+  --t-field-dim: #13316e;
+  --t-field-mid: #2863cd;
+  --t-field-lit: #d50032;
+  --t-field-hover: #e4597a;
+  --t-field-crest: #f2b3c2;
+  --t-word: linear-gradient(to bottom, #ffffff 0% 15.789%, #e4e5e7 15.789% 31.579%, #1e58c1 31.579% 52.632%, #194ba6 52.632% 68.421%, #d50032 68.421% 84.211%, #b7012f 84.211% 100%);
+  --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #1e58c1 #1e58c1 #1e58c1 #1e58c1 #1e58c1 #1e58c1 #1e58c1 #d50032 #d50032 #d50032 #d50032 #d50032 #d50032;
+  color-scheme: dark;
+  --t-hdr-text-2: #ceddff;
+}
+
+/* Slovensko (SK) */
+html[data-theme='slovensko'],
+[data-theme='slovensko'] {
+  --t-bg-deep: #060e23;
+  --t-bg: #0b152b;
+  --t-surface: #121c32;
+  --t-surface-2: #1a253c;
+  --t-border-subtle: #1a253c;
+  --t-border-strong: #404d67;
+  --t-text: #ecf0f9;
+  --t-text-secondary: #ced4e2;
+  --t-text-muted: #a3aec5;
+  --t-brand: #fe4b44;
+  --t-brand-soft: #fe4b441f;
+  --t-brand-fill: #ed1c24;
+  --t-brand-ink: #000000;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #542533;
+  --t-field-bg: #03091d;
+  --t-field-dim: #1d3267;
+  --t-field-mid: #3c64c1;
+  --t-field-lit: #ed1c24;
+  --t-field-hover: #f36b71;
+  --t-field-crest: #fabbbd;
+  --t-word: linear-gradient(to bottom, #ffffff 0% 15.789%, #e4e5e7 15.789% 31.579%, #3158b4 31.579% 52.632%, #294b9b 52.632% 68.421%, #ed1c24 68.421% 84.211%, #cc1923 84.211% 100%);
+  --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #3158b4 #3158b4 #3158b4 #3158b4 #3158b4 #3158b4 #3158b4 #ed1c24 #ed1c24 #ed1c24 #ed1c24 #ed1c24 #ed1c24;
+  color-scheme: dark;
+  --t-hdr-text-2: #d1ddff;
+}
+
 /* ไทย (TH) */
 html[data-theme='thai'],
 [data-theme='thai'] {
@@ -1071,6 +1603,106 @@ html[data-theme='turkiye'],
   --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff;
   color-scheme: dark;
   --t-hdr-text-2: #fdd1ce;
+}
+
+/* 臺灣 (TW) */
+html[data-theme='taiwan'],
+[data-theme='taiwan'] {
+  --t-bg-deep: #220402;
+  --t-bg: #2a0a07;
+  --t-surface: #32110d;
+  --t-surface-2: #3c1a15;
+  --t-border-subtle: #3c1a15;
+  --t-border-strong: #68413b;
+  --t-text: #f8edeb;
+  --t-text-secondary: #e1d0cd;
+  --t-text-muted: #c3a6a1;
+  --t-brand: #fc4939;
+  --t-brand-soft: #fc49391f;
+  --t-brand-fill: #fe0000;
+  --t-brand-ink: #220402;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #691d16;
+  --t-field-bg: #1c0101;
+  --t-field-dim: #820101;
+  --t-field-mid: #fe0000;
+  --t-field-lit: #ffffff;
+  --t-field-hover: #ffffff;
+  --t-field-crest: #ffffff;
+  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #1f51d6 270deg), conic-gradient(at 33.333% 42.105%, transparent 0deg 270deg, #1f47ba 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #1e3c9f 270deg), linear-gradient(to bottom, #fe0000 0% 26.316%, #dc0000 26.316% 52.632%, #ba0000 52.632% 78.947%, #980000 78.947% 100%);
+  --t-word-cells: rows #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000;
+  --t-word-hoist: #1f51d6 27 11;
+  color-scheme: dark;
+  --t-hdr-text-2: #fdd1ce;
+}
+
+/* Tanzania (TZ) */
+html[data-theme='tanzania'],
+[data-theme='tanzania'] {
+  --t-bg-deep: #011502;
+  --t-bg: #031c05;
+  --t-surface: #09230b;
+  --t-surface-2: #122c14;
+  --t-border-subtle: #122c14;
+  --t-border-strong: #3a553a;
+  --t-text: #ebf2eb;
+  --t-text-secondary: #ccd8cc;
+  --t-text-muted: #a1b4a1;
+  --t-brand: #fcd116;
+  --t-brand-soft: #fcd1161f;
+  --t-brand-fill: #fcd116;
+  --t-brand-ink: #000000;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #4e520a;
+  --t-field-bg: #000f01;
+  --t-field-dim: #0e5a1b;
+  --t-field-mid: #1eb53a;
+  --t-field-lit: #fcd116;
+  --t-field-hover: #fde168;
+  --t-field-crest: #fef1b9;
+  --t-word: linear-gradient(to bottom, #1eb53a 0% 21.053%, #199931 21.053% 36.842%, #fcd116 36.842% 42.105%, #5f5f5f 42.105% 57.895%, #fcd116 57.895% 63.158%, #00a3dd 63.158% 84.211%, #008ab9 84.211% 100%);
+  --t-word-cells: rows #1eb53a #1eb53a #1eb53a #1eb53a #1eb53a #1eb53a #1eb53a #fcd116 #5f5f5f #5f5f5f #5f5f5f #fcd116 #00a3dd #00a3dd #00a3dd #00a3dd #00a3dd #00a3dd #00a3dd;
+  color-scheme: dark;
+  --t-hdr-text-2: #cce7cd;
+}
+
+/* Україна (UA) */
+html[data-theme='ukrayina'],
+[data-theme='ukrayina'] {
+  --t-bg-deep: #020f25;
+  --t-bg: #06162c;
+  --t-surface: #0c1d34;
+  --t-surface-2: #15263d;
+  --t-border-subtle: #15263d;
+  --t-border-strong: #3b4e69;
+  --t-text: #ebf1f8;
+  --t-text-secondary: #ccd5e2;
+  --t-text-muted: #a0afc4;
+  --t-brand: #ffd700;
+  --t-brand-soft: #ffd7001f;
+  --t-brand-fill: #ffd700;
+  --t-brand-ink: #0057b7;
+  --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
+  --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+  --t-img-outline: rgb(255 255 255 / 0.1);
+  --t-scroll-thumb: rgb(255 255 255 / 0.14);
+  --t-selection: #51501f;
+  --t-field-bg: #00091e;
+  --t-field-dim: #0a326a;
+  --t-field-mid: #1765c6;
+  --t-field-lit: #ffd700;
+  --t-field-hover: #ffe559;
+  --t-field-crest: #fff3b3;
+  --t-word: linear-gradient(to bottom, #055aba 0% 21.053%, #0450a8 21.053% 36.842%, #044795 36.842% 52.632%, #ffd700 52.632% 68.421%, #e4c103 68.421% 84.211%, #c9ab06 84.211% 100%);
+  --t-word-cells: rows #055aba #055aba #055aba #055aba #055aba #055aba #055aba #055aba #055aba #055aba #ffd700 #ffd700 #ffd700 #ffd700 #ffd700 #ffd700 #ffd700 #ffd700 #ffd700;
+  color-scheme: dark;
+  --t-hdr-text-2: #ccdeff;
 }
 
 /* United States (US) */
