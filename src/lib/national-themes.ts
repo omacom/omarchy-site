@@ -11,7 +11,9 @@
  * - `links` and `hot` (the pixels the cursor and a click light up) take
  *   the button's colour unless a flag says otherwise.
  * - `word` lays the flag on the wordmark. Striped flags show their
- *   stripes. Flags that are a field with an emblem (Türkiye's crescent,
+ *   stripes. A tricolour's first stripe is OM, ending in the gap before
+ *   the A; its last takes the C's open end, one column before its
+ *   hooks. Flags that are a field with an emblem (Türkiye's crescent,
  *   Japan's disc) wear the emblem's colour, over a ground in the field's.
  *   A Nordic cross shows its horizontal arm, and its upright runs down the
  *   M's middle stem, which rises above the word and gives the cross its
@@ -264,8 +266,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       stripes: [
         ['blue', 27],
-        ['white', 27],
-        ['red', 27],
+        ['white', 28],
+        ['red', 26],
       ],
     },
   },
@@ -353,8 +355,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       stripes: [
         ['green', 27],
-        ['white', 27],
-        ['orange', 27],
+        ['white', 28],
+        ['orange', 26],
       ],
     },
   },
@@ -433,8 +435,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       stripes: [
         ['green', 27],
-        ['white', 27],
-        ['red', 27],
+        ['white', 28],
+        ['red', 26],
       ],
     },
   },
@@ -528,8 +530,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       stripes: [
         ['green', 27],
-        ['white', 27],
-        ['red', 27],
+        ['white', 28],
+        ['red', 26],
       ],
     },
   },
@@ -571,8 +573,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       stripes: [
         ['green', 27],
-        ['white', 27],
-        ['green', 27],
+        ['white', 28],
+        ['green', 26],
       ],
     },
   },
@@ -695,8 +697,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       stripes: [
         ['blue', 27],
-        ['yellow', 27],
-        ['red', 27],
+        ['yellow', 28],
+        ['red', 26],
       ],
     },
   },
