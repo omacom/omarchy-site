@@ -22,7 +22,6 @@ import { HeroShader } from '@/components/HeroShader'
 import { EtchPicker } from '@/components/EtchPicker'
 import { CardRail } from '@/components/CardRail'
 import { Figures } from '@/components/Figures'
-import { HardwareShowcase } from '@/components/HardwareShowcase'
 import { AgentShowcase } from '@/components/AgentShowcase'
 import { WindowsShowcase } from '@/components/WindowsShowcase'
 import { GamingShowcase } from '@/components/GamingShowcase'
@@ -874,15 +873,6 @@ export function HomePage({ data }: { data: HomeData }) {
           </p>
           <TryOmarchy />
           <SectionActions>{installGuide}</SectionActions>
-        </div>
-      </section>
-
-      <section
-        id="hardware"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
-          <HardwareShowcase />
         </div>
       </section>
 
