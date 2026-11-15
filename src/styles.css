@@ -1086,12 +1086,15 @@ body,
   --nav-h: calc(3.5rem + env(safe-area-inset-top, 0px));
 }
 
-/* The ground a home section sits on, which alternates down the page, for
-   marks that cut themselves out of it, like the rings between team faces. */
-main > section {
+/* Home sections alternate their ground by position, so adding, removing, or
+   reordering one never leaves two neighbours on the same ground. The hero
+   paints its own field and counts as the first. Marks that cut themselves out
+   of the ground, like the rings between team faces, read --ground. */
+.home > section {
   --ground: var(--color-bg);
+  background: var(--ground);
 }
-main > section.bg-bg-deep {
+.home > section:nth-of-type(odd) {
   --ground: var(--color-bg-deep);
 }
 

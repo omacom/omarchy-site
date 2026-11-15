@@ -566,7 +566,7 @@ export function HomePage({ data }: { data: HomeData }) {
   )
 
   return (
-    <main>
+    <main className="home">
       <section
         id="home"
         data-hero-sentinel
@@ -877,10 +877,7 @@ export function HomePage({ data }: { data: HomeData }) {
       </section>
 
       {/* plugins */}
-      <section
-        id="plugins"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="plugins" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="plugins"
@@ -905,7 +902,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="themes" className="border-t border-border-subtle bg-bg-deep">
+      <section id="themes" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="themes"
@@ -944,7 +941,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="gaming" className="border-t border-border-subtle bg-bg-deep">
+      <section id="gaming" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <GamingShowcase />
         </div>
@@ -956,7 +953,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="news" className="border-t border-border-subtle bg-bg-deep">
+      <section id="news" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="news"
@@ -1014,7 +1011,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="voices" className="border-t border-border-subtle bg-bg-deep">
+      <section id="voices" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="voices"
@@ -1047,10 +1044,7 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section
-        id="patrons"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="patrons" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="patrons"
@@ -1073,10 +1067,7 @@ export function HomePage({ data }: { data: HomeData }) {
       </section>
 
       {/* community */}
-      <section
-        id="community"
-        className="border-t border-border-subtle bg-bg-deep"
-      >
+      <section id="community" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <SectionHeading
             anchor="community"
