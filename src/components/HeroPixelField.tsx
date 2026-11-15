@@ -14,7 +14,7 @@ import {
 } from '@/lib/etch'
 import { BANDS, loadMusic, music } from '@/lib/music'
 import type { Etch } from '@/lib/etch'
-import { wordGrid, WORD_COLUMNS, WORD_ROWS } from '@/lib/word-shade'
+import { wordGrid, WORD_BANDS, WORD_COLUMNS, WORD_ROWS } from '@/lib/word-shade'
 
 export type FieldGlyph = {
   rows: readonly string[]
@@ -124,27 +124,9 @@ function wordWasHeld() {
   return heldAnswer
 }
 
-const LASER_BANDS = [
-  'crest',
-  'crest',
-  'crest',
-  'crest',
-  'hover',
-  'hover',
-  'hover',
-  'lit',
-  'lit',
-  'lit',
-  'lit',
-  'mid',
-  'mid',
-  'mid',
-  'dim',
-  'dim',
-  'dim',
-  'dim',
-  'dim',
-] as const
+const LASER_BANDS = (['crest', 'hover', 'lit', 'mid', 'dim'] as const).flatMap(
+  (name, i) => Array<typeof name>(WORD_BANDS[i]).fill(name),
+)
 
 /** How much of a band's height a beat adds, and how fast that fades. */
 const BEAT_REACH = 0.8

@@ -12,6 +12,11 @@
 export const WORD_ROWS = 19
 export const WORD_COLUMNS = 81
 
+/** The stock wordmark's bands, top to bottom, in rows: crest, hover, lit,
+ *  mid and dim. A run of one colour the word's full height steps the same
+ *  way, so a one-colour flag shades like the stock themes. */
+export const WORD_BANDS = [4, 3, 4, 3, 5] as const
+
 /** Each step is at least this many rows, and a run has at most this many
  *  steps: a run under two steps tall stays flat. */
 const STEP_ROWS = 3
@@ -43,14 +48,18 @@ export function mixHex(from: string, to: string, t: number) {
   return `#${channel(16)}${channel(8)}${channel(0)}`
 }
 
-/**
- * How far toward the field a colour moves at a row of its run: 0 for the
- * first step, more for each one below. The run is cut into steps of near
- * equal height, the taller ones first.
- */
-export function shadeAt(color: string, position: number, height: number) {
+/** A full-height run's step at a row: the stock bands. */
+function stockStep(position: number) {
+  let step = 0
+  for (let edge = WORD_BANDS[0]; position >= edge;) edge += WORD_BANDS[++step]
+  return { step, steps: WORD_BANDS.length }
+}
+
+/** A shorter run's step at a row: steps of near equal height, the taller
+ *  ones first. */
+function evenStep(position: number, height: number) {
   const steps = Math.min(MAX_STEPS, Math.floor(height / STEP_ROWS))
-  if (steps < 2) return 0
+  if (steps < 2) return { step: 0, steps }
   const tall = Math.ceil(height / steps)
   const extra = height - (tall - 1) * steps
   // The first `extra` steps are `tall` rows; the rest one fewer.
@@ -58,6 +67,18 @@ export function shadeAt(color: string, position: number, height: number) {
     position < extra * tall
       ? Math.floor(position / tall)
       : extra + Math.floor((position - extra * tall) / (tall - 1))
+  return { step, steps }
+}
+
+/**
+ * How far toward the field a colour moves at a row of its run: 0 for the
+ * first step, more for each one below. A run the word's full height steps
+ * like the stock bands; a shorter one is cut into near-equal steps.
+ */
+export function shadeAt(color: string, position: number, height: number) {
+  const { step, steps } =
+    height === WORD_ROWS ? stockStep(position) : evenStep(position, height)
+  if (steps < 2) return 0
   const depth = DEPTH * (height / WORD_ROWS) * (isPale(color) ? PALE_DEPTH : 1)
   return (depth * step) / (steps - 1)
 }

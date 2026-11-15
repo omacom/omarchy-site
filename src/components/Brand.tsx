@@ -1,5 +1,6 @@
 import { NOT_FOUND_HEIGHT, NOT_FOUND_WIDTH } from '@/data/not-found-bitmap'
 import { cn } from '@/lib/utils'
+import { WORD_BANDS } from '@/lib/word-shade'
 
 /** The square-spiral glyph from public/brand/omarchy-logo.svg, inlined. The
  *  favicon is drawn from this same path, so the two cannot drift apart. */
@@ -25,13 +26,9 @@ export function OmarchyMark({ className }: { className?: string }) {
 }
 
 /** Brand gradient bands as wordmark pixel rows, shared by wordmark and mark. */
-const BRAND_BANDS: [color: string, rows: number][] = [
-  ['var(--t-field-crest)', 4],
-  ['var(--t-field-hover)', 3],
-  ['var(--t-field-lit)', 4],
-  ['var(--t-field-mid)', 3],
-  ['var(--t-field-dim)', 5],
-]
+const BRAND_BANDS: [color: string, rows: number][] = (
+  ['crest', 'hover', 'lit', 'mid', 'dim'] as const
+).map((name, i) => [`var(--t-field-${name})`, WORD_BANDS[i]])
 const BAND_ROWS = BRAND_BANDS.reduce((sum, [, rows]) => sum + rows, 0)
 
 /** Band edges in percent of the height. */

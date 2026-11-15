@@ -123,14 +123,14 @@ test('every colour starts exact at its top and only deepens below', () => {
     // Each step is no lighter than the one above it.
     for (let row = 1; row < cells.length; row++)
       assert.ok(luminance(cells[row]) <= luminance(cells[row - 1]))
-    // Four even steps of five, five, five and four rows.
+    // Five steps, like the stock bands: four, three, four, three, five rows.
     const runs = []
     for (const cell of cells)
       if (runs.at(-1)?.[0] === cell) runs.at(-1)[1]++
       else runs.push([cell, 1])
     assert.deepEqual(
       runs.map(([, rows]) => rows),
-      [5, 5, 5, 4],
+      [4, 3, 4, 3, 5],
     )
   }
   // Stripes keep their edges.
