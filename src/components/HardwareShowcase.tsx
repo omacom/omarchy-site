@@ -69,6 +69,7 @@ export function HardwareShowcase() {
     <>
       <SectionHeading
         anchor="hardware"
+        wide
         title={t('It runs on almost anything')}
         description={t(
           "You don't need a new machine to try Omarchy. But if you get one, today's laptops are amazing.",
