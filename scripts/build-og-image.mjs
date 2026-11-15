@@ -123,7 +123,7 @@ for (const theme of STOCK_THEMES) {
   const wordmark = []
   for (let row = 0; row < 19; row++) {
     const ink =
-      WORDMARK_INKS[row < 5 ? 0 : row < 7 ? 1 : row < 11 ? 2 : row < 14 ? 3 : 4]
+      WORDMARK_INKS[row < 4 ? 0 : row < 7 ? 1 : row < 11 ? 2 : row < 14 ? 3 : 4]
     for (let col = 0; col < 81; col++) {
       if (lit(row, col)) {
         wordmark.push(

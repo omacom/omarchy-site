@@ -26,8 +26,8 @@ export function OmarchyMark({ className }: { className?: string }) {
 
 /** Brand gradient bands as wordmark pixel rows, shared by wordmark and mark. */
 const BRAND_BANDS: [color: string, rows: number][] = [
-  ['var(--t-field-crest)', 5],
-  ['var(--t-field-hover)', 2],
+  ['var(--t-field-crest)', 4],
+  ['var(--t-field-hover)', 3],
   ['var(--t-field-lit)', 4],
   ['var(--t-field-mid)', 3],
   ['var(--t-field-dim)', 5],

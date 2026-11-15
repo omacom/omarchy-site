@@ -129,7 +129,7 @@ const LASER_BANDS = [
   'crest',
   'crest',
   'crest',
-  'crest',
+  'hover',
   'hover',
   'hover',
   'lit',

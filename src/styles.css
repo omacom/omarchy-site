@@ -2489,8 +2489,8 @@ h6 {
     --t-word,
     linear-gradient(
       to bottom,
-      var(--t-field-crest) 0 26.316%,
-      var(--t-field-hover) 26.316% 36.842%,
+      var(--t-field-crest) 0 21.053%,
+      var(--t-field-hover) 21.053% 36.842%,
       var(--t-field-lit) 36.842% 57.895%,
       var(--t-field-mid) 57.895% 73.684%,
       var(--t-field-dim) 73.684% 100%
