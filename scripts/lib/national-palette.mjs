@@ -33,6 +33,7 @@ export const wordFloor = (hex) =>
 const REST_CONTRAST = 3.5
 
 /** The wordmark's grid. */
+import { markGrid, markImage, oneColourMark } from './national-mark.mjs'
 import {
   inHoist,
   wordGrid,
@@ -121,6 +122,28 @@ export function oklch(l, c, h) {
       (v) => toGamma(Math.min(1, Math.max(0, v))) * 255,
     ),
   )
+}
+
+/** Browser tabs a favicon sits on: a light one and a dark one. */
+export const TAB_GROUNDS = ['#ffffff', '#202124']
+/** How far a favicon stands off either tab. */
+export const TAB_CONTRAST = 2
+
+/**
+ * A flag colour as a favicon wears it: itself where it stands off both a
+ * light tab and a dark one, else moved only as far toward the middle in
+ * lightness as it takes to, keeping its hue.
+ */
+export function onTabs(hex) {
+  const fits = (c) => TAB_GROUNDS.every((g) => contrast(c, g) >= TAB_CONTRAST)
+  if (fits(hex)) return hex.toLowerCase()
+  const { l, c, h } = hexToOklch(hex)
+  for (let step = 1; step <= 100; step++) {
+    const t = step / 100
+    const moved = oklch(l + (0.62 - l) * t, c, h)
+    if (fits(moved)) return moved
+  }
+  return oklch(0.62, c, h)
 }
 
 /** Part way from one colour to another, in sRGB as the stock themes mix. */
@@ -549,6 +572,13 @@ export function themeTokens(theme) {
       ? mix(fieldLit, '#ffffff', 0.7)
       : mix(fieldLit, '#000000', 0.45),
     '--t-word': word,
+    '--t-mark': markImage(markGrid({ ...theme, fieldBg }, shown)),
+    '--t-mark-bands': 'transparent',
+    ...(theme.favicon && {
+      '--t-favicon': markImage(
+        oneColourMark(onTabs(color(theme.favicon)), fieldBg),
+      ),
+    }),
     '--t-word-cells': `${axis} ${cells.map((name) => shown.get(name)).join(' ')}`,
     ...(hoist && {
       '--t-word-hoist': `${shown.get(hoist[0])} ${hoist[1]} ${hoistRows}${triangle ? ` ${[triangle[2], ...(triangle[3] ?? []).map((end) => end.join(':'))].join(' ')}` : ''}`,
@@ -614,6 +644,8 @@ export function problemsWith(theme) {
         problems.push(`diagonal uses unknown colour ${name}`)
     if (!(slant.slope > 0)) problems.push('a diagonal needs a slope above 0')
   }
+  if (theme.favicon && !theme.colors[theme.favicon])
+    problems.push(`favicon uses unknown colour ${theme.favicon}`)
   const edge = 'edge' in theme.word ? theme.word.edge : undefined
   if (edge) {
     if (!theme.colors[edge]) problems.push(`edge uses unknown colour ${edge}`)

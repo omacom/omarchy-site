@@ -164,7 +164,7 @@ function toHex([L, a, b]: number[]) {
 
 /** A word of two bands has only two tones in each, so they step further
  *  apart to be seen. */
-const TWO_BAND_DEPTH = 0.07
+export const TWO_BAND_DEPTH = 0.07
 
 /** White, and colours as near the top of sRGB as yellow, cannot lift a
  *  step without fading toward cream: they start exact at the top and only
@@ -192,6 +192,25 @@ function shaded(color: string, amount: number, field: string) {
     else high = mid
   }
   return toHex(at(low))
+}
+
+/**
+ * A colour at one of a run's tones, as the word shades it: the first tone
+ * of a pale colour its own, of any other the middle; `turned` runs them
+ * the other way.
+ */
+export function tone(
+  color: string,
+  step: number,
+  steps: number,
+  field: string,
+  { depth = STEP_DEPTH, turned = false } = {},
+) {
+  return shaded(
+    color,
+    (turned ? -1 : 1) * amountAt(color, step, steps, depth),
+    field,
+  )
 }
 
 /** A colour shaded for its row in a run of it that is `height` tall. */

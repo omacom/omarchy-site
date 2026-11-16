@@ -54,6 +54,10 @@ export type NationalTheme = {
   glow?: string
   /** The wordmark: bands from the top over its 19 rows, or stripes from
    *  the left over its 81 columns, each a flag colour and a size. */
+  /** The favicon in one flag colour instead of the flag: where the word
+   *  is white, black or a colour that is not the flag's own field, any of
+   *  which a browser tab of its own colour would swallow or misread. */
+  favicon?: string
   word:
     | {
         /** A band of two tones may say how many rows its first takes. */
@@ -151,6 +155,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'blue',
     button: { fill: 'red', label: ['white'] },
     hot: 'white',
+    favicon: 'blue',
     word: { bands: [['white', 19]] },
   },
   {
@@ -162,6 +167,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'blue',
     button: { fill: 'yellow', label: ['blue'] },
     hot: 'white',
+    favicon: 'blue',
     word: { bands: [['yellow', 19]] },
   },
   {
@@ -172,6 +178,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: { green: '#006A4E', red: '#F42A41' },
     base: 'green',
     button: { fill: 'red', label: ['green'] },
+    favicon: 'green',
     word: { bands: [['red', 19]] },
   },
   {
@@ -204,6 +211,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'green',
     button: { fill: 'yellow' },
     glow: 'blue',
+    favicon: 'green',
     word: { bands: [['yellow', 19]] },
   },
   {
@@ -214,6 +222,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: { red: '#DE2910', yellow: '#FFDE00' },
     base: 'red',
     button: { fill: 'yellow', label: ['red'] },
+    favicon: 'red',
     word: { bands: [['yellow', 19]] },
   },
   {
@@ -421,6 +430,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: { blue: '#0038B8', white: '#FFFFFF' },
     base: 'blue',
     button: { fill: 'blue', label: ['white'] },
+    favicon: 'blue',
     word: { bands: [['blue', 19]], turned: true },
   },
   {
@@ -548,6 +558,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     },
     base: 'maroon',
     button: { fill: 'gold', label: ['maroon'] },
+    favicon: 'maroon',
     word: { bands: [['gold', 19]] },
   },
   {
@@ -695,6 +706,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: { blue: '#00247D', red: '#CC142B', white: '#FFFFFF' },
     base: 'blue',
     button: { fill: 'red', label: ['white'] },
+    favicon: 'blue',
     word: { bands: [['red', 19]] },
   },
   {
@@ -728,6 +740,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: { green: '#01411C', white: '#FFFFFF' },
     base: 'green',
     button: { fill: 'white', label: ['green'] },
+    favicon: 'green',
     word: { bands: [['white', 19]] },
   },
   {
@@ -903,6 +916,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'red',
     button: { fill: 'red', label: ['white'] },
     hot: 'white',
+    favicon: 'red',
     word: { bands: [['white', 19]] },
   },
   {
@@ -1040,6 +1054,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: { red: '#DA251D', yellow: '#FFFF00' },
     base: 'red',
     button: { fill: 'yellow', label: ['red'] },
+    favicon: 'red',
     word: { bands: [['yellow', 19]] },
   },
   {

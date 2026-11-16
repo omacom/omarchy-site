@@ -25,33 +25,48 @@ export function OmarchyMark({ className }: { className?: string }) {
   )
 }
 
-/** Brand gradient bands as wordmark pixel rows, shared by wordmark and mark. */
-const BRAND_BANDS: [color: string, rows: number][] = (
-  ['crest', 'hover', 'lit', 'mid', 'dim'] as const
-).map((name, i) => [`var(--t-field-${name})`, WORD_BANDS[i]])
-const BAND_ROWS = BRAND_BANDS.reduce((sum, [, rows]) => sum + rows, 0)
+const BAND_NAMES = ['crest', 'hover', 'lit', 'mid', 'dim'] as const
 
-/** Band edges in percent of the height. */
-const BAND_STOPS = BRAND_BANDS.reduce<{
-  stops: [string, number, number][]
-  rows: number
-}>(
-  ({ stops, rows }, [color, band]) => {
-    const pct = (n: number) => Math.round((n / BAND_ROWS) * 100000) / 1000
-    return {
-      stops: [...stops, [color, pct(rows), pct(rows + band)]],
-      rows: rows + band,
-    }
-  },
-  { stops: [], rows: 0 },
-).stops
+/** Band edges in percent of the height, for bands of so many rows each. */
+function bandStops(rows: readonly number[]) {
+  const total = rows.reduce((sum, n) => sum + n, 0)
+  const pct = (n: number) => Math.round((n / total) * 100000) / 1000
+  let at = 0
+  return BAND_NAMES.map((name, i): [string, number, number] => {
+    const from = at
+    at += rows[i]
+    return [`var(--t-field-${name})`, pct(from), pct(at)]
+  })
+}
 
+/** The wordmark's bands, by its pixel rows. */
+const BAND_STOPS = bandStops(WORD_BANDS)
+
+/** The mark's own bands, by its 15 rows of blocks, so every colour change
+ *  falls between two blocks rather than through one. */
+const MARK_BANDS = [4, 2, 3, 2, 4] as const
+const MARK_STOPS = bandStops(MARK_BANDS)
+
+/** The drawn mark's strokes, in the order they draw. */
+const MARK_STROKES = [
+  'M640 1160H40V40H1160V1160H720',
+  'M600 40V200',
+  'M640 200H200V1000H1000V200H880',
+  'M600 1160V1040',
+  'M40 600H200',
+]
+
+/**
+ * The mark drawn in strokes, in the stock bands, or where a theme gives
+ * one (a national theme's flag, as `--t-mark`), in its own blocks: they
+ * show through the same strokes, so the mark draws itself the same way.
+ */
 export function OmarchyMarkDrawn({ className }: { className?: string }) {
+  const strokes = MARK_STROKES.map((d) => <path key={d} pathLength={1} d={d} />)
   return (
     <svg
       viewBox="0 0 1200 1200"
       fill="none"
-      stroke="url(#mark-bands)"
       strokeWidth="80"
       aria-hidden="true"
       className={cn('mark-draw', className)}
@@ -65,7 +80,7 @@ export function OmarchyMarkDrawn({ className }: { className?: string }) {
           x2="0"
           y2="1200"
         >
-          {BAND_STOPS.flatMap(([color, from, to]) => [
+          {MARK_STOPS.flatMap(([color, from, to]) => [
             <stop
               key={`${color}-from`}
               offset={`${from}%`}
@@ -74,12 +89,28 @@ export function OmarchyMarkDrawn({ className }: { className?: string }) {
             <stop key={`${color}-to`} offset={`${to}%`} stopColor={color} />,
           ])}
         </linearGradient>
+        <mask
+          id="mark-strokes"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="1200"
+          height="1200"
+        >
+          <g stroke="#fff">{strokes}</g>
+        </mask>
       </defs>
-      <path pathLength={1} d="M640 1160H40V40H1160V1160H720" />
-      <path pathLength={1} d="M600 40V200" />
-      <path pathLength={1} d="M640 200H200V1000H1000V200H880" />
-      <path pathLength={1} d="M600 1160V1040" />
-      <path pathLength={1} d="M40 600H200" />
+      <g className="mark-bands">{strokes}</g>
+      <foreignObject
+        x="0"
+        y="0"
+        width="1200"
+        height="1200"
+        mask="url(#mark-strokes)"
+        className="mark-blocks"
+      >
+        <div />
+      </foreignObject>
     </svg>
   )
 }

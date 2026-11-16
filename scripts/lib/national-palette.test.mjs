@@ -335,3 +335,33 @@ test('new word shapes reject what they cannot draw', () => {
     ),
   )
 })
+
+test('the mark wears its flag in whole blocks, shaded down the mark', async () => {
+  const { blockShares, MARK_BLOCKS } = await import('./national-mark.mjs')
+  for (const sizes of [[19], [9, 10], [3, 3, 7, 3, 3], [27, 28, 26], [1, 18]]) {
+    const shares = blockShares(sizes)
+    assert.equal(
+      shares.reduce((a, b) => a + b, 0),
+      MARK_BLOCKS,
+    )
+    assert.ok(shares.every((n) => n >= 1))
+  }
+  for (const t of NATIONAL_THEMES) {
+    const tokens = themeTokens(t)
+    assert.match(tokens['--t-mark'], /^url\("data:image\/svg\+xml,/, t.id)
+    assert.equal(tokens['--t-mark-bands'], 'transparent', t.id)
+  }
+  // A one-colour word steps through tones down the mark, not one flat ink.
+  const turkiye = themeTokens(theme('turkiye'))['--t-mark']
+  assert.ok(new Set(turkiye.match(/%23[0-9a-f]{6}/g)).size > 1)
+})
+
+test('a one-colour favicon stands off a light tab and a dark one', async () => {
+  const { onTabs, TAB_GROUNDS, TAB_CONTRAST } =
+    await import('./national-palette.mjs')
+  for (const t of NATIONAL_THEMES.filter((t) => t.favicon)) {
+    const ink = onTabs(t.colors[t.favicon])
+    for (const tab of TAB_GROUNDS)
+      assert.ok(contrast(ink, tab) >= TAB_CONTRAST, `${t.id} on ${tab}`)
+  }
+})

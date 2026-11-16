@@ -46,11 +46,10 @@ export function readTheme(): string {
 
 /** Replace the favicon link to invalidate browsers that cache it by element. */
 export function paintFavicon() {
-  const brand = getComputedStyle(document.documentElement)
-    .getPropertyValue('--color-brand')
-    .trim()
+  const style = getComputedStyle(document.documentElement)
+  const brand = style.getPropertyValue('--color-brand').trim()
   if (!brand) return
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><path fill="${brand}" fill-rule="evenodd" clip-rule="evenodd" d="${OMARCHY_MARK_PATH}"/></svg>`
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">${markFill(style, brand)}</svg>`
   const link = document.createElement('link')
   link.rel = 'icon'
   link.type = 'image/svg+xml'
@@ -60,6 +59,57 @@ export function paintFavicon() {
     .querySelectorAll('link[rel="icon"][data-theme-icon]')
     .forEach((old) => old.remove())
   document.head.appendChild(link)
+}
+
+/** A colour's channels, 0 to 255. */
+const channels = (hex: string) =>
+  [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16))
+const toHex = (rgb: number[]) =>
+  `#${rgb.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')}`
+
+/**
+ * A favicon's colour on a light tab, and on a dark one. A flag's whites, in
+ * every tone, sink a fifth toward grey on a light tab, the default, and its
+ * blacks lift a quarter toward white on a dark one, so neither vanishes into
+ * a tab of its own colour.
+ */
+function onTabs(hex: string) {
+  const rgb = channels(hex)
+  const grey = Math.max(...rgb) - Math.min(...rgb) < 24
+  if (grey && Math.min(...rgb) > 150)
+    return { light: toHex(rgb.map((v) => v * 0.81)), dark: hex }
+  if (grey && Math.max(...rgb) < 64)
+    return { light: hex, dark: toHex(rgb.map((v) => v + (255 - v) * 0.25)) }
+  return { light: hex, dark: hex }
+}
+
+/**
+ * The mark's shape, filled: in the brand colour, or in a theme's own
+ * blocks clipped to the mark: its one-colour favicon (`--t-favicon`) or its
+ * flag (`--t-mark`), each shaded down the mark as the word is, and given
+ * its tones for a light tab, the default, and a dark one.
+ */
+function markFill(style: CSSStyleDeclaration, brand: string) {
+  const shape = `fill-rule="evenodd" clip-rule="evenodd" d="${OMARCHY_MARK_PATH}"`
+  const image = (name: string) =>
+    /^url\("data:image\/svg\+xml,(.*)"\)$/.exec(
+      style.getPropertyValue(name).trim(),
+    )?.[1]
+  const own = image('--t-favicon') ?? image('--t-mark')
+  if (!own) return `<path fill="${brand}" ${shape}/>`
+  const dark: string[] = []
+  const blocks = decodeURIComponent(own)
+    .replace('<svg ', '<svg width="1200" height="1200" ')
+    .replace(/fill='(#[0-9a-f]{6})'/gi, (_, hex: string) => {
+      const tabs = onTabs(hex.toLowerCase())
+      if (tabs.light === tabs.dark) return `fill='${hex}'`
+      dark.push(`.c${dark.length}{fill:${tabs.dark}}`)
+      return `class="c${dark.length - 1}" fill='${tabs.light}'`
+    })
+  const tabs = dark.length
+    ? `<style>@media (prefers-color-scheme:dark){${dark.join('')}}</style>`
+    : ''
+  return `${tabs}<clipPath id="m"><path ${shape}/></clipPath><g clip-path="url(#m)">${blocks}</g>`
 }
 
 /**
