@@ -456,7 +456,11 @@ export function HeroPixelField({
      *  colour (Brazil's blue) shaded down the mark, or the stock mark's
      *  bands, as the navbar draws it. */
     let stampInks: string[][] = []
+    /** A cursor colour of the theme's own, apart from the pixels it lights
+     *  (Brazil's blue): every national theme names one, mostly the same. */
+    let ownGlow = ''
     const buildRestInks = () => {
+      ownGlow = palette.glow && palette.glow !== palette.lit ? palette.glow : ''
       const bands = [
         palette.crest,
         palette.hover,
@@ -465,12 +469,12 @@ export function HeroPixelField({
         palette.dim,
       ]
       stampInks =
-        palette.mark && !palette.glow
+        palette.mark && !ownGlow
           ? palette.mark
           : Array.from({ length: LOGO_SIZE }, (_, row) => {
               const band = STAMP_BAND_OF[row]
-              const ink = palette.glow
-                ? tone(palette.glow, band, STAMP_BANDS.length, palette.bg)
+              const ink = ownGlow
+                ? tone(ownGlow, band, STAMP_BANDS.length, palette.bg)
                 : bands[band]
               return Array<string>(LOGO_SIZE).fill(ink)
             })
@@ -1055,7 +1059,7 @@ export function HeroPixelField({
           ctx.fillStyle = block
             ? heat >= 0.85
               ? block
-              : palette.glow
+              : ownGlow
                 ? heat >= 0.35
                   ? mix(palette.mid, block, (heat - 0.35) / 0.5)
                   : mix(palette.dim, palette.mid, heat / 0.35)

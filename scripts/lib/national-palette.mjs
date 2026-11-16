@@ -572,7 +572,23 @@ export function themeTokens(theme) {
       ? mix(fieldLit, '#ffffff', 0.7)
       : mix(fieldLit, '#000000', 0.45),
     '--t-word': word,
-    '--t-mark': markImage(markGrid({ ...theme, fieldBg }, shown)),
+    '--t-mark': markImage(
+      Array.isArray(theme.favicon)
+        ? // The flag's field round its emblem, as the favicon has it.
+          oneColourMark(
+            ...(([field, emblem]) => [field, fieldBg, emblem])(
+              theme.favicon.map((name) =>
+                readableOn(
+                  color(name),
+                  [fieldBg],
+                  wordFloor(color(name)),
+                  dark,
+                ),
+              ),
+            ),
+          )
+        : markGrid({ ...theme, fieldBg }, shown),
+    ),
     '--t-mark-bands': 'transparent',
     ...(theme.favicon && {
       '--t-favicon': markImage(
