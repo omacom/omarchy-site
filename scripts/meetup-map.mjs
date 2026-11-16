@@ -14,7 +14,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-import { geoEqualEarth, geoPath } from 'd3-geo'
+import { geoContains, geoEqualEarth, geoPath } from 'd3-geo'
 import { feature } from 'topojson-client'
 
 const require = createRequire(import.meta.url)
@@ -23,6 +23,37 @@ const DATA = path.join(ROOT, 'src/data')
 
 /** The drawing's size, in its own units. */
 const WIDTH = 1000
+
+/**
+ * Natural Earth draws borders by who holds the ground, but not evenly: it
+ * keeps occupied Donetsk, Luhansk, Transnistria, Abkhazia and South Ossetia
+ * inside Ukraine, Moldova and Georgia, and gives Crimea alone to Russia.
+ * Hand Crimea back so the map draws every occupied territory the same way,
+ * within its internationally recognized country (UN GA resolution 68/262).
+ * The polygon is picked by the point it contains, Simferopol, not by index.
+ */
+const CRIMEA = [34.1, 44.95]
+function returnCrimea(features) {
+  const russia = features.find((f) => f.id === '643')
+  const ukraine = features.find((f) => f.id === '804')
+  if (russia?.geometry.type !== 'MultiPolygon' || !ukraine) return
+  const contains = (rings) =>
+    geoContains({ type: 'Polygon', coordinates: rings }, CRIMEA)
+  const crimea = russia.geometry.coordinates.filter(contains)
+  if (crimea.length === 0) return
+  russia.geometry.coordinates = russia.geometry.coordinates.filter(
+    (rings) => !contains(rings),
+  )
+  ukraine.geometry = {
+    type: 'MultiPolygon',
+    coordinates: [
+      ...(ukraine.geometry.type === 'MultiPolygon'
+        ? ukraine.geometry.coordinates
+        : [ukraine.geometry.coordinates]),
+      ...crimea,
+    ],
+  }
+}
 
 const atlas = require('world-atlas/countries-110m.json')
 const countries = require('world-countries')
@@ -35,6 +66,7 @@ const meetups = JSON.parse(
 const alpha2 = new Map(countries.map((c) => [c.ccn3, c.cca2]))
 const land = feature(atlas, atlas.objects.countries)
 land.features = land.features.filter((f) => f.id !== '010')
+returnCrimea(land.features)
 
 const projection = geoEqualEarth().fitWidth(WIDTH, land)
 const [[, top], [, bottom]] = geoPath(projection).bounds(land)
