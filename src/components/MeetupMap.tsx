@@ -73,6 +73,10 @@ export const PIN_AT = new Map(mapData.pins.map((p) => [p.id, p]))
 /** The countries the map draws, by code. */
 export const COUNTRIES_DRAWN = new Set(mapData.countries.map((c) => c.id))
 
+/** Every country as one shape, so the land reads as continents without the
+ *  hairline seams separate shapes leave where their edges meet. */
+const LAND = mapData.countries.map((c) => c.d).join('')
+
 export function MeetupMap({
   pins,
   box,
@@ -175,6 +179,8 @@ export function MeetupMap({
             transformOrigin: '0 0',
           }}
         >
+          <path d={LAND} className="fill-surface-2" />
+          {/* Countries only show themselves when lit, over the land. */}
           {mapData.countries.map((country) => {
             const hasMeetup = withMeetups.has(country.id)
             return (
@@ -187,11 +193,8 @@ export function MeetupMap({
                     ? 'fill-brand/20'
                     : lit.has(country.id)
                       ? 'fill-brand/8'
-                      : 'fill-surface-2',
+                      : 'fill-transparent',
                 )}
-                stroke="var(--color-bg)"
-                strokeWidth={0.7 * k}
-                strokeLinejoin="round"
               />
             )
           })}
