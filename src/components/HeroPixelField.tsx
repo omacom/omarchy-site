@@ -14,7 +14,13 @@ import {
 } from '@/lib/etch'
 import { BANDS, loadMusic, music } from '@/lib/music'
 import type { Etch } from '@/lib/etch'
-import { wordGrid, WORD_BANDS, WORD_COLUMNS, WORD_ROWS } from '@/lib/word-shade'
+import {
+  tone,
+  wordGrid,
+  WORD_BANDS,
+  WORD_COLUMNS,
+  WORD_ROWS,
+} from '@/lib/word-shade'
 
 export type FieldGlyph = {
   rows: readonly string[]
@@ -225,6 +231,11 @@ const BEAT_DECAY = 0.84
  * no two stamps are quite twins, while every stamp is the same mark.
  */
 const LOGO_SIZE = 15
+/** The square mark's bands, by its rows of blocks, as Brand.tsx draws the
+ *  navbar's: a click's stamp wears them where a theme has no mark of its
+ *  own. */
+const STAMP_BANDS = [4, 2, 3, 2, 4]
+const STAMP_BAND_OF = STAMP_BANDS.flatMap((rows, i) => Array(rows).fill(i))
 const LOGO_ROWS = [
   '111111111111111',
   '100000010000001',
@@ -441,7 +452,28 @@ export function HeroPixelField({
     let restGrid: string[][] = []
     /** Where a theme's own word lifts toward under the cursor. */
     let wordLift = '#ffffff'
+    /** A click's stamp, block by block: a theme's own mark, or its cursor
+     *  colour (Brazil's blue) shaded down the mark, or the stock mark's
+     *  bands, as the navbar draws it. */
+    let stampInks: string[][] = []
     const buildRestInks = () => {
+      const bands = [
+        palette.crest,
+        palette.hover,
+        palette.lit,
+        palette.mid,
+        palette.dim,
+      ]
+      stampInks =
+        palette.mark && !palette.glow
+          ? palette.mark
+          : Array.from({ length: LOGO_SIZE }, (_, row) => {
+              const band = STAMP_BAND_OF[row]
+              const ink = palette.glow
+                ? tone(palette.glow, band, STAMP_BANDS.length, palette.bg)
+                : bands[band]
+              return Array<string>(LOGO_SIZE).fill(ink)
+            })
       wordLift =
         luma(parse(palette.bg) ?? [0, 0, 0]) < 0.5 ? '#ffffff' : '#000000'
       const word = palette.word
@@ -1011,38 +1043,28 @@ export function HeroPixelField({
           // The cursor's own colours where it is what lit the pixel.
           const byCursor =
             glowAmount >= waveAmount && glowAmount >= specAmount * SPECTRUM_HEAT
-          // A click's stamp starts in the cursor's own colour where the
-          // theme gives one.
+          // What a click's stamp lit, where it outshines the cursor.
           const byStamp = !byCursor && waveAmount >= heat
-          const lit = ((byCursor || byStamp) && palette.glow) || palette.lit
+          const lit = (byCursor && palette.glow) || palette.lit
           const mid = (byCursor && palette.trail) || palette.mid
-          // A click's stamp on a national theme fades through the inks
-          // smoothly as it dies: its first colour, then the field's own
-          // middle one, then into the field's dim, the whole of it at once,
-          // rather than jumping from one to the next.
-          // On a theme with its own mark, the stamp is that mark, each block
-          // in its own colour, fading from it into the field's dim; one with
-          // its own cursor colour (Brazil's blue) keeps that instead, fading
-          // through the field's middle colour.
-          const flag =
-            byStamp && palette.mark && !palette.glow
-              ? palette.mark[stampBlock.row][stampBlock.col]
-              : ''
-          ctx.fillStyle = flag
+          // A click's stamp is the mark, each block in its own colour, and
+          // fades smoothly as it dies: into the field's dim, or, in a cursor
+          // colour of the theme's own (Brazil's blue), through the field's
+          // middle colour first.
+          const block = byStamp ? stampInks[stampBlock.row][stampBlock.col] : ''
+          ctx.fillStyle = block
             ? heat >= 0.85
-              ? flag
-              : mix(palette.dim, flag, heat / 0.85)
-            : byStamp && palette.word
-              ? heat >= 0.85
-                ? lit
-                : heat >= 0.35
-                  ? mix(mid, lit, (heat - 0.35) / 0.5)
-                  : mix(palette.dim, mid, heat / 0.35)
-              : heat > 0.34
-                ? lit
-                : heat > 0.1
-                  ? mid
-                  : palette.dim
+              ? block
+              : palette.glow
+                ? heat >= 0.35
+                  ? mix(palette.mid, block, (heat - 0.35) / 0.5)
+                  : mix(palette.dim, palette.mid, heat / 0.35)
+                : mix(palette.dim, block, heat / 0.85)
+            : heat > 0.34
+              ? lit
+              : heat > 0.1
+                ? mid
+                : palette.dim
           const x = Math.round(xLeft)
           ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, cellH)
         }
