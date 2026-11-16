@@ -576,7 +576,12 @@ export function themeTokens(theme) {
     '--t-mark-bands': 'transparent',
     ...(theme.favicon && {
       '--t-favicon': markImage(
-        oneColourMark(onTabs(color(theme.favicon)), fieldBg),
+        oneColourMark(
+          onTabs(color([theme.favicon].flat()[0])),
+          fieldBg,
+          [theme.favicon].flat()[1] &&
+            color([theme.favicon].flat()[1]).toLowerCase(),
+        ),
       ),
     }),
     '--t-word-cells': `${axis} ${cells.map((name) => shown.get(name)).join(' ')}`,
@@ -644,8 +649,9 @@ export function problemsWith(theme) {
         problems.push(`diagonal uses unknown colour ${name}`)
     if (!(slant.slope > 0)) problems.push('a diagonal needs a slope above 0')
   }
-  if (theme.favicon && !theme.colors[theme.favicon])
-    problems.push(`favicon uses unknown colour ${theme.favicon}`)
+  for (const name of [theme.favicon ?? []].flat())
+    if (!theme.colors[name])
+      problems.push(`favicon uses unknown colour ${name}`)
   const edge = 'edge' in theme.word ? theme.word.edge : undefined
   if (edge) {
     if (!theme.colors[edge]) problems.push(`edge uses unknown colour ${edge}`)

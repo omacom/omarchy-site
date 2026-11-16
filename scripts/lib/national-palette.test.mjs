@@ -356,11 +356,11 @@ test('the mark wears its flag in whole blocks, shaded down the mark', async () =
   assert.ok(new Set(turkiye.match(/%23[0-9a-f]{6}/g)).size > 1)
 })
 
-test('a one-colour favicon stands off a light tab and a dark one', async () => {
+test("a favicon's own field stands off a light tab and a dark one", async () => {
   const { onTabs, TAB_GROUNDS, TAB_CONTRAST } =
     await import('./national-palette.mjs')
   for (const t of NATIONAL_THEMES.filter((t) => t.favicon)) {
-    const ink = onTabs(t.colors[t.favicon])
+    const ink = onTabs(t.colors[[t.favicon].flat()[0]])
     for (const tab of TAB_GROUNDS)
       assert.ok(contrast(ink, tab) >= TAB_CONTRAST, `${t.id} on ${tab}`)
   }

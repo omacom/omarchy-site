@@ -225,16 +225,23 @@ export function markGrid(theme, shown) {
 }
 
 /**
- * The mark in one colour, stepping down through the stock mark's five
- * bands as a one-colour word does: a favicon that is one flag colour.
+ * The mark in one colour, or its outer frame in one and its inner square in
+ * another, as a flag's field holds its emblem, each stepping down through
+ * the stock mark's five bands as a one-colour word does: a favicon drawn
+ * from a flag's field and emblem rather than the flag.
  */
-export function oneColourMark(color, field) {
+export function oneColourMark(color, field, inner = color) {
   return Array.from({ length: MARK_BLOCKS }, (_, row) => {
     const step = MARK_RAMP_EDGES.findIndex(
       ([from, to]) => row >= from && row < to,
     )
-    const ink = tone(color, step, MARK_RAMP.length, field)
-    return Array(MARK_BLOCKS).fill(ink)
+    const outside = tone(color, step, MARK_RAMP.length, field)
+    const inside = tone(inner, step, MARK_RAMP.length, field)
+    // The inner square runs from the third block to the thirteenth; the
+    // outer frame and the three links to it are the rest.
+    return Array.from({ length: MARK_BLOCKS }, (_, col) =>
+      row >= 2 && row <= 12 && col >= 2 && col <= 12 ? inside : outside,
+    )
   })
 }
 
