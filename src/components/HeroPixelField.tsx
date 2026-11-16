@@ -55,6 +55,9 @@ function readPalette() {
     /** Bars down the whole word: a cross's upright. */
     uprights: wordUprights(token('--t-word-uprights', '')),
     /** A slant across the word instead of its bands. */
+    /** A theme's own square mark (a national theme's flag), block by
+     *  block, which a click's stamp wears. */
+    mark: markBlocks(token('--t-mark', '')),
     diagonal: wordDiagonal(
       token('--t-word-diagonal', ''),
       token('--t-word-diagonal-fill', ''),
@@ -88,6 +91,22 @@ function wordHoist(value: string, edge: string) {
         }),
       }
     : null
+}
+
+/** Reads `--t-mark`: an SVG of the mark's 15 by 15 blocks, its rects
+ *  laid out as a grid of colours by row then column. */
+function markBlocks(value: string) {
+  const svg = /^url\("data:image\/svg\+xml,(.*)"\)$/.exec(value.trim())?.[1]
+  if (!svg) return null
+  const grid: string[][] = Array.from({ length: LOGO_SIZE }, () =>
+    Array<string>(LOGO_SIZE).fill(''),
+  )
+  for (const [, x, y, w, h, fill] of decodeURIComponent(svg).matchAll(
+    /<rect x='(\d+)' y='(\d+)' width='(\d+)' height='(\d+)' fill='(#[0-9a-f]+)'/gi,
+  ))
+    for (let row = +y; row < +y + +h; row++)
+      for (let col = +x; col < +x + +w; col++) grid[row][col] = fill
+  return grid
 }
 
 /** Reads `--t-word-diagonal`: columns per row, each colour from where it
@@ -878,6 +897,8 @@ export function HeroPixelField({
       }
       const etching = etch !== null || awaitingFirstEtch
 
+      /** The block of the mark the last stampAt found a point in. */
+      let stampBlock = { row: 0, col: 0 }
       /** The strongest live stamp covering a device-px point, if any. */
       const stampAt = (cx: number, cy: number) => {
         let amp = 0
@@ -885,7 +906,10 @@ export function HeroPixelField({
           const lx = Math.floor((cx - stamp.x) / stamp.cellPx + LOGO_SIZE / 2)
           const ly = Math.floor((cy - stamp.y) / stamp.cellPx + LOGO_SIZE / 2)
           if (lx < 0 || ly < 0 || lx >= LOGO_SIZE || ly >= LOGO_SIZE) continue
-          if (LOGO_ROWS[ly][lx] === '1' && stamp.amp > amp) amp = stamp.amp
+          if (LOGO_ROWS[ly][lx] === '1' && stamp.amp > amp) {
+            amp = stamp.amp
+            stampBlock = { row: ly, col: lx }
+          }
         }
         return amp
       }
@@ -996,8 +1020,19 @@ export function HeroPixelField({
           // smoothly as it dies: its first colour, then the field's own
           // middle one, then into the field's dim, the whole of it at once,
           // rather than jumping from one to the next.
-          ctx.fillStyle =
-            byStamp && palette.word
+          // On a theme with its own mark, the stamp is that mark, each block
+          // in its own colour, fading from it into the field's dim; one with
+          // its own cursor colour (Brazil's blue) keeps that instead, fading
+          // through the field's middle colour.
+          const flag =
+            byStamp && palette.mark && !palette.glow
+              ? palette.mark[stampBlock.row][stampBlock.col]
+              : ''
+          ctx.fillStyle = flag
+            ? heat >= 0.85
+              ? flag
+              : mix(palette.dim, flag, heat / 0.85)
+            : byStamp && palette.word
               ? heat >= 0.85
                 ? lit
                 : heat >= 0.35
