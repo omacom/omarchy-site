@@ -91,6 +91,8 @@
 
 <p>Your packages aren’t the only thing that goes stale. Many laptops and peripherals ship BIOS, SSD, and dock firmware through the Linux Vendor Firmware Service, and <em>Update &gt; Firmware</em> in the Omarchy menu will fetch and install whatever your hardware has waiting. It installs <code>fwupd</code> the first time you run it. Plenty of firmware can only be written during a reboot, so don’t be surprised to be asked for one.</p>
 
+<p>When you need to change a setting in the BIOS itself, hold <code>Alt</code> in the system menu (<code>Super + Escape</code>) and <em>Reboot</em> turns into <em>Reboot to BIOS</em>, which restarts straight into the firmware setup without having to catch the right key at boot. From the terminal, it’s <code>omarchy system firmware</code>.</p>
+
 <h3 id="warning-about-direct-pacmanyay-updates">Warning about direct pacman/yay updates <a class="manual__heading-link" href="#warning-about-direct-pacmanyay-updates" aria-label="Link to this section">#</a></h3>
 
 <p>If you’re already familiar with Arch, you might be tempted to just run <code>pacman -Syu</code> or <code>yay -Syu</code> yourself, but if you do that, you’ll miss the snapshot, migrations, and configuration updates that Omarchy runs together with new packages. That’s why Omarchy will actually stop a direct system upgrade and point you to <code>omarchy update</code> instead. (If you really know what you’re doing, the guard will tell you how to bypass it for a single transaction.)</p>
