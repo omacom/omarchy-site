@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '@fontsource-variable/vazirmatn';
 @import './theme-transition.css';
 
 /* Archived routes do not contribute utilities to the live site. */
@@ -242,6 +243,11 @@
   --color-input: var(--t-border-strong);
   /* Use the accent to meet the 3:1 focus-indicator contrast requirement. */
   --color-ring: var(--t-brand);
+}
+
+/* Use Vazirmatn only on the Persian edition; keep mono/code typography intact. */
+html[lang='fa'] {
+  --font-sans: 'Vazirmatn Variable', sans-serif;
 }
 
 @theme {
