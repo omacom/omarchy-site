@@ -64,6 +64,9 @@ export type NationalTheme = {
     | {
         /** A band of two tones may say how many rows its first takes. */
         bands: [color: string, rows: number, firstTone?: number][]
+        /** The square mark's rows of blocks for each band, out of 15, where
+         *  the word's own share them unevenly. */
+        markRows?: number[]
         /** The tones run the other way: on a light page, light at the
          *  top and deepening down, as the word does on a dark one. */
         turned?: true
@@ -1085,6 +1088,9 @@ export const NATIONAL_THEMES: NationalTheme[] = [
         ['yellow', 2],
         ['green', 4],
       ],
+      // The square's rows: the flag's seven stripes even, the black the
+      // one block over, where the word's are not.
+      markRows: [2, 2, 2, 3, 2, 2, 2],
       // The flag's white triangle, its point under the M as on the flag.
       // The O's top row joins the triangle, so the O is white whole.
       triangle: ['white', 27, 9, [[1, 7]]],

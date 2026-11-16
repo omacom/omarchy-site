@@ -46,6 +46,45 @@ export function blockShares(sizes, total = MARK_BLOCKS) {
   return shares
 }
 
+/** Whether a flag's runs mirror about the middle one: an odd number, each
+ *  the same colour as its twin or within a row of its size, as a cross's
+ *  arm between two fields or stripes that the word makes a row uneven. */
+const mirrored = (runs) =>
+  runs.length >= 3 &&
+  runs.length % 2 === 1 &&
+  runs.every(
+    ([name, size], i) =>
+      name === runs.at(-1 - i)[0] || Math.abs(size - runs.at(-1 - i)[1]) <= 1,
+  )
+
+/** Whole-block shares as `blockShares`, but each run and its twin the
+ *  same, so the flag sits even on the square and any block over goes to
+ *  the middle run. Runs raised to a whole block take no more. */
+export function mirrorShares(sizes, total = MARK_BLOCKS) {
+  const sum = sizes.reduce((a, b) => a + b, 0)
+  const half = (sizes.length - 1) / 2
+  const exact = sizes.map((size, i) =>
+    i === half ? size : (size + sizes[sizes.length - 1 - i]) / 2,
+  )
+  const share = exact.map((size) => (size / sum) * total)
+  const shares = share.map((x) => Math.max(1, Math.floor(x)))
+  let left =
+    total -
+    shares.reduce((a, b, i) => a + (i < half ? 2 * b : i === half ? b : 0), 0)
+  const order = share
+    .slice(0, half)
+    .map((x, i) => ({ i, rest: x < 1 ? -1 : x - Math.floor(x) }))
+    .sort((a, b) => b.rest - a.rest || a.i - b.i)
+  for (const { i } of order) {
+    if (left < 2) break
+    shares[i]++
+    left -= 2
+  }
+  shares[half] += left
+  for (let i = 0; i < half; i++) shares[sizes.length - 1 - i] = shares[i]
+  return shares
+}
+
 /** Edges of runs of these sizes: [from, to) for each. */
 const edgesOf = (shares) => {
   let at = 0
@@ -61,7 +100,12 @@ export function markGrid(theme, shown) {
   const word = theme.word
   const runs = 'bands' in word ? word.bands : word.stripes
   const across = 'bands' in word
-  const shares = blockShares(runs.map(([, size]) => size))
+  const shares =
+    'markRows' in word && word.markRows
+      ? word.markRows
+      : mirrored(runs)
+        ? mirrorShares(runs.map(([, size]) => size))
+        : blockShares(runs.map(([, size]) => size))
   const markEdges = edgesOf(shares)
   const wordEdges = edgesOf(runs.map(([, size]) => size))
 
