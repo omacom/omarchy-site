@@ -13,11 +13,14 @@ import {
   contrast,
   luminance,
   problemsWith,
-  SHAPE_CONTRAST,
+  WORD_CONTRAST,
+  BLACK_CONTRAST,
+  isBlackish,
   TEXT_CONTRAST,
   themeTokens,
 } from './national-palette.mjs'
-import { wordGrid } from '../../src/lib/word-shade.ts'
+import { inHoist, wordGrid } from '../../src/lib/word-shade.ts'
+import { WORDMARK_ROWS } from '../../src/data/wordmark-bitmap.ts'
 
 test('every language site but the English one has a national theme', () => {
   for (const code of Object.keys(locales)) {
@@ -82,7 +85,8 @@ test('text, links and the word can all be read on their grounds', () => {
     const hoist = tokens['--t-word-hoist']?.split(' ')[0]
     for (const cell of new Set(hoist ? [...cells, hoist] : cells))
       assert.ok(
-        contrast(cell, tokens['--t-field-bg']) >= SHAPE_CONTRAST,
+        contrast(cell, tokens['--t-field-bg']) >=
+          (isBlackish(cell) ? BLACK_CONTRAST : WORD_CONTRAST),
         `${theme.id}: word colour ${cell}`,
       )
   }
@@ -99,7 +103,7 @@ test('src/national-themes.css is generated from the flags', () => {
   )
 })
 
-test('every colour starts exact at its top and only deepens below', () => {
+test('every colour is exact on its middle step, lighter above, deeper below', () => {
   const field = '#020821'
   const grid = wordGrid(
     {
@@ -119,7 +123,10 @@ test('every colour starts exact at its top and only deepens below', () => {
     [80, '#e1000f'],
   ]) {
     const cells = down(col)
-    assert.equal(cells[0], exact)
+    // Exact on the middle step, rows 7 to 10, as a stock word's lit band;
+    // white, which cannot lift, exact from the top.
+    assert.equal(cells[exact === '#ffffff' ? 0 : 7], exact)
+    if (exact !== '#ffffff') assert.notEqual(cells[0], exact)
     // Each step is no lighter than the one above it.
     for (let row = 1; row < cells.length; row++)
       assert.ok(luminance(cells[row]) <= luminance(cells[row - 1]))
@@ -137,7 +144,7 @@ test('every colour starts exact at its top and only deepens below', () => {
   assert.notEqual(grid[0][26], grid[0][27])
 })
 
-test('a band of a flag starts at its own exact colour', () => {
+test('a field under a cross steps only where it shows', () => {
   const red = '#c8102e'
   const grid = wordGrid(
     {
@@ -151,15 +158,23 @@ test('a band of a flag starts at its own exact colour', () => {
     '#1c0101',
   )
   const down = grid.map((line) => line[40])
-  // Both reds start exact, then step deeper in even steps of four rows.
-  assert.equal(down[0], red)
-  assert.equal(down[11], red)
-  assert.deepEqual(down.slice(0, 4), Array(4).fill(red))
-  assert.notEqual(down[4], red)
-  assert.equal(down[4], down[7])
+  // Two steps of four rows above the cross, then the exact red just under
+  // it and the deepest at the foot, the tallest, as the stock word's is.
+  const runs = []
   for (const cell of down)
-    assert.ok(luminance(cell) <= luminance(red) || cell === '#ffffff')
-  // The thin cross stays flat white.
+    if (runs.at(-1)?.[0] === cell) runs.at(-1)[1]++
+    else runs.push([cell, 1])
+  assert.deepEqual(
+    runs.map(([, rows]) => rows),
+    [4, 4, 3, 3, 5],
+  )
+  assert.equal(down[11], red)
+  const reds = down.filter((cell) => cell !== '#ffffff')
+  for (let i = 1; i < reds.length; i++)
+    assert.ok(
+      luminance(reds[i]) < luminance(reds[i - 1]) || reds[i] === reds[i - 1],
+    )
+  // The cross lies flat over it.
   assert.deepEqual(new Set(down.slice(8, 11)), new Set(['#ffffff']))
 })
 
@@ -178,4 +193,145 @@ test('a Nordic cross runs its upright flat down the M middle stem', () => {
   )
   for (const line of grid)
     assert.deepEqual(line.slice(17, 20), [yellow, yellow, yellow])
+})
+
+const theme = (id) => NATIONAL_THEMES.find((t) => t.id === id)
+const lit = (row, col) => {
+  const line = WORDMARK_ROWS[row]
+  return (typeof line === 'string' ? line : line.join(''))[col] === '1'
+}
+
+test('a triangle edge borders the triangle just above and below it', () => {
+  const hoist = {
+    color: '#ffffff',
+    columns: 27,
+    rows: 19,
+    tip: 9,
+    edge: '#111111',
+  }
+  const grid = wordGrid(
+    { axis: 'rows', cells: Array(19).fill('#319208'), hoist },
+    '#031c09',
+  )
+  for (let row = 0; row < 19; row++)
+    for (let col = 0; col < 81; col++) {
+      const inside = inHoist(hoist, row, col)
+      const beside =
+        !inside &&
+        (inHoist(hoist, row - 1, col) || inHoist(hoist, row + 1, col))
+      if (beside) assert.equal(grid[row][col], '#111111', `${row}:${col}`)
+      else assert.notEqual(grid[row][col], '#111111', `${row}:${col}`)
+    }
+  assert.ok(themeTokens(theme('zimbabwe'))['--t-word-hoist-edge'])
+})
+
+test('a slant crosses each upright stroke whole, its band flat', () => {
+  const tokens = themeTokens(theme('tanzania'))
+  const [slope, ...rest] = tokens['--t-word-diagonal'].split(' ')
+  const first = rest.pop()
+  const runs = [
+    { color: first, from: -Infinity },
+    ...rest.map((part) => {
+      const [color, from] = part.split('@')
+      return { color, from: Number(from) }
+    }),
+  ]
+  const grid = wordGrid(
+    {
+      axis: 'rows',
+      cells: tokens['--t-word-cells'].split(' ').slice(1),
+      diagonal: { slope: Number(slope), runs },
+    },
+    tokens['--t-field-bg'],
+  )
+  const band = new Set(runs.slice(1, -1).map((run) => run.color))
+  for (let row = 0; row < 19; row++) {
+    let col = 0
+    while (col < 81) {
+      if (!lit(row, col)) {
+        col++
+        continue
+      }
+      let end = col
+      while (lit(row, end)) end++
+      // A stroke three wide or less is one colour across.
+      if (end - col <= 3)
+        assert.equal(
+          new Set(grid[row].slice(col, end)).size,
+          1,
+          `${row}:${col}`,
+        )
+      col = end
+    }
+  }
+  // The band's own colours are exact wherever they fall.
+  const seen = new Set(grid.flat().filter((cell) => band.has(cell)))
+  assert.deepEqual(seen, band)
+})
+
+test('a bar can cover some rows, and half columns, by its cells middles', () => {
+  const tokens = themeTokens(theme('norge'))
+  const bars = tokens['--t-word-uprights'].split(', ').map((bar) => {
+    const [color, from, to, top, bottom] = bar.split(' ')
+    return {
+      color,
+      from: Number(from),
+      to: Number(to),
+      rows: top === undefined ? null : [Number(top), Number(bottom)],
+    }
+  })
+  const [white, blue] = bars.map((bar) => bar.color)
+  const grid = wordGrid(
+    {
+      axis: 'rows',
+      cells: tokens['--t-word-cells'].split(' ').slice(1),
+      uprights: bars,
+    },
+    tokens['--t-field-bg'],
+  )
+  // Off the arm, a half column of white edges a blue two columns wide: the
+  // cells whose middles the blue's edges fall on stay white.
+  assert.deepEqual(grid[4].slice(17, 20), [white, blue, white])
+  // On the arm, the cross runs unbroken through the stem.
+  assert.deepEqual(grid[8].slice(17, 20), [blue, blue, blue])
+  assert.deepEqual(grid[9].slice(17, 20), [blue, blue, blue])
+})
+
+test('a turned word deepens down the page instead of lifting', () => {
+  const blue = '#0038b8'
+  const field = '#fcfdff'
+  const down = (turned) =>
+    wordGrid({ axis: 'rows', cells: Array(19).fill(blue), turned }, field).map(
+      (line) => luminance(line[1]),
+    )
+  const plain = down(false)
+  const turned = down(true)
+  assert.ok(plain[0] < plain[18])
+  assert.ok(turned[0] > turned[18])
+  // The flag's own blue stays in the middle either way.
+  assert.equal(
+    wordGrid(
+      { axis: 'rows', cells: Array(19).fill(blue), turned: true },
+      field,
+    )[9][1],
+    blue,
+  )
+})
+
+test('new word shapes reject what they cannot draw', () => {
+  const base = theme('tanzania')
+  const word = (extra) => ({ ...base, word: { ...base.word, ...extra } })
+  assert.ok(
+    problemsWith(
+      word({ diagonal: { ...base.word.diagonal, above: 'purple' } }),
+    ).some((p) => p.includes('purple')),
+  )
+  assert.ok(
+    problemsWith(word({ edge: 'black' })).some((p) => p.includes('triangle')),
+  )
+  assert.ok(
+    problemsWith(word({ uprights: [['black', 17, 20, [10, 30]]] })).some((p) =>
+      p.includes('rows'),
+    ),
+  )
 })

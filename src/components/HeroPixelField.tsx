@@ -40,22 +40,83 @@ function readPalette() {
     lit: token('--t-field-lit', '#9ece6a'),
     hover: token('--t-field-hover', '#bbdd97'),
     crest: token('--t-field-crest', '#daecc6'),
+    /** What the cursor alone lights, and the trail it leaves: a national
+     *  theme's own, else the field's lit and mid. */
+    glow: token('--t-field-glow', ''),
+    trail: token('--t-field-trail', ''),
     /** A theme's own colours for the word, one per row or per column. */
     word: wordCells(token('--t-word-cells', '')),
     /** A block of one colour over them from the top left: a flag's hoist
      *  or canton, as its colour, columns and rows. */
-    hoist: wordHoist(token('--t-word-hoist', '')),
+    hoist: wordHoist(
+      token('--t-word-hoist', ''),
+      token('--t-word-hoist-edge', ''),
+    ),
     /** Bars down the whole word: a cross's upright. */
     uprights: wordUprights(token('--t-word-uprights', '')),
+    /** A slant across the word instead of its bands. */
+    diagonal: wordDiagonal(
+      token('--t-word-diagonal', ''),
+      token('--t-word-diagonal-fill', ''),
+    ),
+    /** Rows where a band takes its second tone, where the flag says. */
+    /** The tones run the other way down the word. */
+    turned: token('--t-word-turned', '') === '1',
+    splits: token('--t-word-splits', '')
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(Number),
   }
 }
 
-/** Reads `--t-word-hoist`: a colour, then its columns and rows. */
-function wordHoist(value: string) {
-  const [color, columns, rows] = value.split(/\s+/)
+/** Reads `--t-word-hoist`: a colour, then its columns and rows, then for
+ *  a triangle the row of its point and any rows set by hand, as row:end;
+ *  and `--t-word-hoist-edge`, a triangle's border colour. */
+function wordHoist(value: string, edge: string) {
+  const [color, columns, rows, tip, ...ends] = value.split(/\s+/)
   return color && Number(columns) > 0
-    ? { color, columns: Number(columns), rows: Number(rows) }
+    ? {
+        color,
+        columns: Number(columns),
+        rows: Number(rows),
+        edge: edge || null,
+        ...(Number(tip) > 0 && {
+          tip: Number(tip),
+          ends: ends.map(
+            (end) => end.split(':').map(Number) as [number, number],
+          ),
+        }),
+      }
     : null
+}
+
+/** Reads `--t-word-diagonal`: columns per row, each colour from where it
+ *  starts as colour@start, then the colour before them all. */
+function wordDiagonal(value: string, fillValue: string) {
+  const parts = value.split(/\s+/).filter(Boolean)
+  if (parts.length < 3) return null
+  const [slope, ...rest] = parts
+  const first = rest.pop()!
+  return {
+    slope: Number(slope),
+    runs: [
+      { color: first, from: -Infinity },
+      ...rest.map((part) => {
+        const [color, from] = part.split('@')
+        return { color, from: Number(from) }
+      }),
+    ],
+    fill: fillValue
+      .split(',')
+      .map((part) => part.trim().split(/\s+/))
+      .filter((part) => part.length === 4)
+      .map(([color, row, from, to]) => ({
+        color,
+        row: Number(row),
+        from: Number(from),
+        to: Number(to),
+      })),
+  }
 }
 
 /** Reads `--t-word-uprights`: bars of a colour, from and to columns. */
@@ -64,10 +125,14 @@ function wordUprights(value: string) {
     .split(',')
     .map((bar) => bar.trim().split(/\s+/))
     .filter(([color, from, to]) => color && Number(to) > Number(from))
-    .map(([color, from, to]) => ({
+    .map(([color, from, to, top, bottom]) => ({
       color,
       from: Number(from),
       to: Number(to),
+      rows:
+        top !== undefined
+          ? ([Number(top), Number(bottom)] as [number, number])
+          : null,
     }))
 }
 
@@ -368,6 +433,9 @@ export function HeroPixelField({
               cells: word.cells,
               hoist: palette.hoist,
               uprights: palette.uprights,
+              diagonal: palette.diagonal,
+              splits: palette.splits,
+              turned: palette.turned,
             },
             palette.bg,
           )
@@ -916,8 +984,30 @@ export function HeroPixelField({
             waveAmount,
             specAmount * SPECTRUM_HEAT,
           )
+          // The cursor's own colours where it is what lit the pixel.
+          const byCursor =
+            glowAmount >= waveAmount && glowAmount >= specAmount * SPECTRUM_HEAT
+          // A click's stamp starts in the cursor's own colour where the
+          // theme gives one.
+          const byStamp = !byCursor && waveAmount >= heat
+          const lit = ((byCursor || byStamp) && palette.glow) || palette.lit
+          const mid = (byCursor && palette.trail) || palette.mid
+          // A click's stamp on a national theme fades through the inks
+          // smoothly as it dies: its first colour, then the field's own
+          // middle one, then into the field's dim, the whole of it at once,
+          // rather than jumping from one to the next.
           ctx.fillStyle =
-            heat > 0.34 ? palette.lit : heat > 0.1 ? palette.mid : palette.dim
+            byStamp && palette.word
+              ? heat >= 0.85
+                ? lit
+                : heat >= 0.35
+                  ? mix(mid, lit, (heat - 0.35) / 0.5)
+                  : mix(palette.dim, mid, heat / 0.35)
+              : heat > 0.34
+                ? lit
+                : heat > 0.1
+                  ? mid
+                  : palette.dim
           const x = Math.round(xLeft)
           ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, cellH)
         }
@@ -941,7 +1031,11 @@ export function HeroPixelField({
        * metal the laser has cut, so the word answers the pointer while it
        * is still being made.
        */
-      const wordmarkInk = (cx: number, cy: number) => {
+      const wordmarkInk = (
+        cx: number,
+        cy: number,
+        rest = restInkAt(cx, cy),
+      ) => {
         let crest = stamps.length > 0 ? stampAt(cx, cy) : 0
 
         for (const glow of glowsOnWordmark) {
@@ -955,7 +1049,6 @@ export function HeroPixelField({
           }
         }
 
-        const rest = restInkAt(cx, cy)
         // A theme's own word lifts toward white on a dark page, or black on
         // a light one, since the bands' inks would paint over its colours.
         if (palette.word)
@@ -969,6 +1062,61 @@ export function HeroPixelField({
           : crest > 0.12
             ? palette.hover
             : rest
+      }
+
+      // Uprights that start or end part way across a cell: the cell takes
+      // the colour at its middle, and these paint the rest of it, only on
+      // the word's own size.
+      const halves =
+        isHero &&
+        glyph.width === WORD_COLUMNS &&
+        glyph.height === WORD_ROWS &&
+        palette.word
+          ? palette.uprights
+          : []
+      const drawHalves = (row: number, y: number, rowHeight: number) => {
+        if (!halves.some((bar) => bar.from % 1 || bar.to % 1)) return
+        const bits = glyph.rows[row]
+        const topAt = (x: number) =>
+          halves
+            .filter(
+              (bar) =>
+                x >= bar.from &&
+                x < bar.to &&
+                (!bar.rows || (row >= bar.rows[0] && row < bar.rows[1])),
+            )
+            .pop()
+        for (let col = 0; col < glyph.width; col++) {
+          // Off the letter, a half cell a bar covers beside a stroke it
+          // lies on shows too, so the bar reads whole past the stroke.
+          const off = bits[col] !== '1'
+          if (off && bits[col - 1] !== '1' && bits[col + 1] !== '1') continue
+          const edges = halves
+            .flatMap((bar) => [bar.from, bar.to])
+            .filter((x) => x > col && x < col + 1)
+          if (!edges.length) continue
+          const cuts = [col, ...new Set(edges), col + 1].sort((a, b) => a - b)
+          const mid = off ? null : restGrid[row][col]
+          for (let i = 0; i + 1 < cuts.length; i++) {
+            const bar = topAt((cuts[i] + cuts[i + 1]) / 2)
+            if (!bar || bar.color === mid) continue
+            const cells = (cuts[i] + cuts[i + 1]) / 2 < col + 0.5 ? -1 : 1
+            if (off && bits[col + cells] !== '1') continue
+            const left = Math.round(wmX + cuts[i] * wmCW)
+            const cx = wmX + (col + 0.5) * wmCW
+            const cy = wmY + (row + 0.5) * wmCH
+            ctx.fillStyle =
+              stamps.length === 0 && !cursorOnWordmark
+                ? bar.color
+                : wordmarkInk(cx, cy, bar.color)
+            ctx.fillRect(
+              left,
+              y,
+              Math.round(wmX + cuts[i + 1] * wmCW) - left,
+              rowHeight,
+            )
+          }
+        }
       }
 
       // Cell edges snap to whole device px with rounding against the shared
@@ -998,6 +1146,7 @@ export function HeroPixelField({
             }
             run = lit ? 1 : 0
           }
+          drawHalves(row, y, rowHeight)
           continue
         }
 
@@ -1012,6 +1161,7 @@ export function HeroPixelField({
           ctx.fillStyle = wordmarkInk(cx, cy)
           ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, rowHeight)
         }
+        drawHalves(row, y, rowHeight)
       }
 
       // The effect's frame on the lattice. A block is a whole cell in the
@@ -1090,6 +1240,17 @@ export function HeroPixelField({
               ? y
               : y + Math.round((ch - size) / 2)
           ctx.fillRect(sx, sy, size, size)
+        }
+        // The half cells of a bar fade in as the word settles into its
+        // resting colours, so they land with it.
+        if (settle > 0) {
+          ctx.globalAlpha = settle
+          for (let row = 0; isHero && row < glyph.height; row++) {
+            const yTop = wmY + row * wmCH
+            const y = Math.round(yTop)
+            drawHalves(row, y, Math.round(yTop + wmCH) - y)
+          }
+          ctx.globalAlpha = 1
         }
       }
 

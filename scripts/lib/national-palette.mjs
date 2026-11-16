@@ -11,12 +11,34 @@
 /** WCAG floors: body text, and large shapes such as the wordmark. */
 export const TEXT_CONTRAST = 4.5
 export const SHAPE_CONTRAST = 3
+/** The wordmark's own floor. It is a logo, which WCAG leaves out of its
+ *  contrast rules, so a dark flag colour such as Germany's black is lifted
+ *  only as far as it takes to be seen, not to the floor for shapes. */
+export const WORD_CONTRAST = 2
+/** Black, a flag's own, is lifted less: only to a dark grey that still
+ *  stands off the field, so it reads as black rather than grey. */
+export const BLACK_CONTRAST = 1.35
+
+/** Whether a colour is a black or dark grey, with no hue to speak of. */
+export function isBlackish(hex) {
+  const { l, c } = hexToOklch(hex)
+  return l < 0.35 && c < 0.02
+}
+
+/** How far a word colour must stand off the field. */
+export const wordFloor = (hex) =>
+  isBlackish(hex) ? BLACK_CONTRAST : WORD_CONTRAST
 /** How far the resting pixels stand off the field: clearly there, quieter
  *  than the word. */
 const REST_CONTRAST = 3.5
 
 /** The wordmark's grid. */
-import { wordGrid, WORD_COLUMNS, WORD_ROWS } from '../../src/lib/word-shade.ts'
+import {
+  inHoist,
+  wordGrid,
+  WORD_COLUMNS,
+  WORD_ROWS,
+} from '../../src/lib/word-shade.ts'
 export { WORD_COLUMNS, WORD_ROWS }
 
 // ------------------------------------------------------------ colour math
@@ -189,7 +211,14 @@ const ELEVATION = {
 export function wordCells(theme) {
   const runs = 'bands' in theme.word ? theme.word.bands : theme.word.stripes
   const cells = runs.flatMap(([color, size]) => Array(size).fill(color))
-  return { axis: 'bands' in theme.word ? 'rows' : 'cols', cells, runs }
+  // Rows where a band's own first tone ends.
+  const splits = []
+  let top = 0
+  for (const [, size, firstTone] of runs) {
+    if (firstTone) splits.push(top + firstTone)
+    top += size
+  }
+  return { axis: 'bands' in theme.word ? 'rows' : 'cols', cells, runs, splits }
 }
 
 /** Rows grouped into runs of one value: [value, first row, end row). */
@@ -229,6 +258,65 @@ function wordCss(grid, ends) {
       )
     })
     .join(', ')
+}
+
+/**
+ * Any word as CSS backgrounds, row by row: each row's runs of colour, a
+ * conic gradient for each filling the quarter above and left of its end,
+ * the leftmost run on top and the higher rows over the lower. Rows alike
+ * share one set of layers, laid at the last of them.
+ */
+function gridCss(grid) {
+  const pct = (n, of) => `${Math.round((n / of) * 100000) / 1000}%`
+  const layers = []
+  grid.forEach((line, row) => {
+    const runs = runsOf(line)
+    const next = grid[row + 1]
+    if (next && next.join() === line.join()) return
+    for (const [color, , end] of runs)
+      layers.push(
+        `conic-gradient(at ${pct(end, WORD_COLUMNS)} ${pct(row + 1, WORD_ROWS)}, transparent 0deg 270deg, ${color} 270deg)`,
+      )
+  })
+  return layers.join(', ')
+}
+
+/**
+ * A word of bands with a hoist triangle as CSS backgrounds. The triangle's
+ * shading runs the word's height underneath, and each row's band lies over
+ * it from the triangle's edge rightward: a conic gradient fills exactly the
+ * quarter right of a point and above it, for the rows above the tip, the
+ * higher on top, or below it, for the rows under, the lower on top.
+ */
+function triangleCss(grid, hoist) {
+  const pct = (n, of) => `${Math.round((n / of) * 100000) / 1000}%`
+  const reach = (row) => {
+    let col = 0
+    while (inHoist({ ...hoist, color: '' }, row, col)) col++
+    return col
+  }
+  const above = []
+  const below = []
+  for (let row = 0; row < WORD_ROWS; row++) {
+    const col = reach(row)
+    const band = grid[row][col]
+    const x = pct(col, WORD_COLUMNS)
+    if (row + 0.5 <= hoist.tip)
+      above.push(
+        `conic-gradient(at ${x} ${pct(row + 1, WORD_ROWS)}, ${band} 0deg 90deg, transparent 90deg)`,
+      )
+    else
+      below.unshift(
+        `conic-gradient(at ${x} ${pct(row, WORD_ROWS)}, transparent 0deg 90deg, ${band} 90deg 180deg, transparent 180deg)`,
+      )
+  }
+  const base = `linear-gradient(to bottom, ${runsOf(grid.map((line) => line[0]))
+    .map(
+      ([color, from, to]) =>
+        `${color} ${pct(from, WORD_ROWS)} ${pct(to, WORD_ROWS)}`,
+    )
+    .join(', ')})`
+  return [...above, ...below, base].join(', ')
 }
 
 /** Every token a national theme sets, in the order the stock themes do. */
@@ -279,37 +367,106 @@ export function themeTokens(theme) {
     SHAPE_CONTRAST,
     dark,
   )
+  // The cursor's own glow, where a flag gives one: decoration, like the
+  // word, so lifted only as far as it takes to be seen.
+  const fieldGlow = theme.glow
+    ? readableOn(color(theme.glow), [fieldBg], WORD_CONTRAST, dark)
+    : fieldLit
 
   // The word's colours, each kept exact unless the field would swallow it.
-  const { axis, cells, runs } = wordCells(theme)
+  const { axis, cells, runs, splits } = wordCells(theme)
   const shown = new Map()
   for (const [name] of runs)
-    shown.set(name, readableOn(color(name), [fieldBg], SHAPE_CONTRAST, dark))
-  const hoist = 'hoist' in theme.word ? theme.word.hoist : undefined
+    shown.set(
+      name,
+      readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
+    )
+  const triangle = ('triangle' in theme.word && theme.word.triangle) || null
+  const hoist =
+    ('hoist' in theme.word && theme.word.hoist) ||
+    (triangle && [triangle[0], triangle[1], WORD_ROWS]) ||
+    undefined
   if (hoist)
     shown.set(
       hoist[0],
-      readableOn(color(hoist[0]), [fieldBg], SHAPE_CONTRAST, dark),
+      readableOn(color(hoist[0]), [fieldBg], wordFloor(color(hoist[0])), dark),
+    )
+  const slant = ('diagonal' in theme.word && theme.word.diagonal) || null
+  let diagonal = null
+  if (slant) {
+    for (const name of [
+      slant.above,
+      slant.below,
+      ...slant.band.map(([n]) => n),
+      ...(slant.fill ?? []).map(([n]) => n),
+    ])
+      if (!shown.has(name))
+        shown.set(
+          name,
+          readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
+        )
+    const span = WORD_COLUMNS + WORD_ROWS * slant.slope
+    const width = slant.band.reduce((sum, [, cols]) => sum + cols, 0)
+    let from = Math.floor((span - width) / 2)
+    diagonal = {
+      slope: slant.slope,
+      runs: [
+        { color: shown.get(slant.above), from: -Infinity },
+        ...slant.band.map(([name, cols]) => {
+          const run = { color: shown.get(name), from }
+          from += cols
+          return run
+        }),
+        { color: shown.get(slant.below), from },
+      ],
+      fill: (slant.fill ?? []).map(([name, row, from, to]) => ({
+        color: shown.get(name),
+        row,
+        from,
+        to,
+      })),
+    }
+  }
+  const border = ('edge' in theme.word && theme.word.edge) || null
+  if (border && !shown.has(border))
+    shown.set(
+      border,
+      readableOn(color(border), [fieldBg], wordFloor(color(border)), dark),
     )
   const uprights = ('uprights' in theme.word && theme.word.uprights) || []
   for (const [name] of uprights)
-    shown.set(name, readableOn(color(name), [fieldBg], SHAPE_CONTRAST, dark))
-  const bars = uprights.map(([name, from, to]) => ({
+    shown.set(
+      name,
+      readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
+    )
+  const bars = uprights.map(([name, from, to, rows]) => ({
     color: shown.get(name),
     from,
     to,
+    rows: rows ?? null,
   }))
+  // A bar over only some rows can't be a stripe down the word: the word is
+  // drawn cell by cell instead.
+  const partBars = bars.some((bar) => bar.rows)
   const hoistRows = hoist?.[2] ?? WORD_ROWS
   const grid = wordGrid(
     {
       axis,
+      splits,
+      turned: 'turned' in theme.word && theme.word.turned === true,
       cells: cells.map((name) => shown.get(name)),
       hoist: hoist && {
         color: shown.get(hoist[0]),
         columns: hoist[1],
         rows: hoistRows,
+        ...(triangle && {
+          tip: triangle[2],
+          ends: triangle[3],
+          edge: border && shown.get(border),
+        }),
       },
       uprights: bars,
+      diagonal,
     },
     fieldBg,
   )
@@ -324,15 +481,26 @@ export function themeTokens(theme) {
   ]
   // Uprights lie over everything, the last listed on top.
   const pctOf = (n) => `${Math.round((n / WORD_COLUMNS) * 100000) / 1000}%`
-  const word = [
-    ...[...bars]
-      .reverse()
-      .map(
-        ({ color: bar, from, to }) =>
-          `linear-gradient(to right, transparent ${pctOf(from)}, ${bar} ${pctOf(from)} ${pctOf(to)}, transparent ${pctOf(to)})`,
-      ),
-    wordCss(grid, ends),
-  ].join(', ')
+  const word = partBars
+    ? gridCss(grid)
+    : [
+        ...[...bars]
+          .reverse()
+          .map(
+            ({ color: bar, from, to }) =>
+              `linear-gradient(to right, transparent ${pctOf(from)}, ${bar} ${pctOf(from)} ${pctOf(to)}, transparent ${pctOf(to)})`,
+          ),
+        triangle && !border
+          ? triangleCss(grid, {
+              columns: triangle[1],
+              rows: WORD_ROWS,
+              tip: triangle[2],
+              ends: triangle[3],
+            })
+          : border || diagonal
+            ? gridCss(grid)
+            : wordCss(grid, ends),
+      ].join(', ')
 
   // The bar over the hero draws its labels in difference mode, so it asks
   // for the colour that comes out as the secondary text over the field.
@@ -368,6 +536,11 @@ export function themeTokens(theme) {
     '--t-field-bg': fieldBg,
     '--t-field-dim': mix(fieldBg, rest, dark ? 0.45 : 0.35),
     '--t-field-mid': rest,
+    // The cursor lights the pixels in its glow and they cool in a deeper
+    // shade of it, one colour as a stock theme's do, before settling back
+    // into the field's. Music and waves keep lit and mid.
+    '--t-field-glow': fieldGlow,
+    '--t-field-trail': mix(fieldGlow, fieldBg, 0.4),
     '--t-field-lit': fieldLit,
     '--t-field-hover': dark
       ? mix(fieldLit, '#ffffff', 0.35)
@@ -378,11 +551,29 @@ export function themeTokens(theme) {
     '--t-word': word,
     '--t-word-cells': `${axis} ${cells.map((name) => shown.get(name)).join(' ')}`,
     ...(hoist && {
-      '--t-word-hoist': `${shown.get(hoist[0])} ${hoist[1]} ${hoistRows}`,
+      '--t-word-hoist': `${shown.get(hoist[0])} ${hoist[1]} ${hoistRows}${triangle ? ` ${[triangle[2], ...(triangle[3] ?? []).map((end) => end.join(':'))].join(' ')}` : ''}`,
     }),
+    ...(border && { '--t-word-hoist-edge': shown.get(border) }),
+    ...(diagonal && {
+      '--t-word-diagonal': `${diagonal.slope} ${diagonal.runs
+        .slice(1)
+        .map((run) => `${run.color}@${run.from}`)
+        .join(' ')} ${diagonal.runs[0].color}`,
+      ...(diagonal.fill.length && {
+        '--t-word-diagonal-fill': diagonal.fill
+          .map(({ color: c, row, from, to }) => `${c} ${row} ${from} ${to}`)
+          .join(', '),
+      }),
+    }),
+    ...(splits.length && { '--t-word-splits': splits.join(' ') }),
+    ...('turned' in theme.word &&
+      theme.word.turned && { '--t-word-turned': '1' }),
     ...(bars.length && {
       '--t-word-uprights': bars
-        .map(({ color: bar, from, to }) => `${bar} ${from} ${to}`)
+        .map(
+          ({ color: bar, from, to, rows }) =>
+            `${bar} ${from} ${to}${rows ? ` ${rows.join(' ')}` : ''}`,
+        )
         .join(', '),
     }),
     'color-scheme': theme.ground,
@@ -399,20 +590,51 @@ export function problemsWith(theme) {
     problems.push(`word has ${cells.length} ${axis}, wants ${want}`)
   for (const name of cells)
     if (!theme.colors[name]) problems.push(`word uses unknown colour ${name}`)
+  if ('bands' in theme.word)
+    for (const [name, rows, firstTone] of theme.word.bands)
+      if (firstTone !== undefined && !(firstTone > 0 && firstTone < rows))
+        problems.push(`${name} band's first tone needs 1 to ${rows - 1} rows`)
+  const triangle = 'triangle' in theme.word ? theme.word.triangle : undefined
+  if (triangle) {
+    if (!theme.colors[triangle[0]])
+      problems.push(`triangle uses unknown colour ${triangle[0]}`)
+    if (!(triangle[1] > 0 && triangle[1] < WORD_COLUMNS))
+      problems.push(`triangle's point needs a column inside the word`)
+    if (!(triangle[2] > 0 && triangle[2] < WORD_ROWS))
+      problems.push(`triangle's point needs a row inside the word`)
+  }
+  const slant = 'diagonal' in theme.word ? theme.word.diagonal : undefined
+  if (slant) {
+    for (const name of [
+      slant.above,
+      slant.below,
+      ...slant.band.map(([n]) => n),
+    ])
+      if (!theme.colors[name])
+        problems.push(`diagonal uses unknown colour ${name}`)
+    if (!(slant.slope > 0)) problems.push('a diagonal needs a slope above 0')
+  }
+  const edge = 'edge' in theme.word ? theme.word.edge : undefined
+  if (edge) {
+    if (!theme.colors[edge]) problems.push(`edge uses unknown colour ${edge}`)
+    if (!triangle) problems.push('an edge needs a triangle to border')
+  }
   const hoist = 'hoist' in theme.word ? theme.word.hoist : undefined
   if (hoist) {
     if (!theme.colors[hoist[0]])
       problems.push(`hoist uses unknown colour ${hoist[0]}`)
-    if (hoist[1] !== 11 && hoist[1] !== 27)
-      problems.push('hoist must end in a gap between letters: 11 or 27')
+    if (![11, 27, 37].includes(hoist[1]))
+      problems.push('hoist must end in a gap between letters: 11, 27 or 37')
   }
-  for (const [name, from, to] of ('uprights' in theme.word &&
+  for (const [name, from, to, rows] of ('uprights' in theme.word &&
     theme.word.uprights) ||
     []) {
     if (!theme.colors[name])
       problems.push(`upright uses unknown colour ${name}`)
     if (!(from >= 0 && from < to && to <= WORD_COLUMNS))
       problems.push(`upright ${name} must run from 0 to ${WORD_COLUMNS}`)
+    if (rows && !(rows[0] >= 0 && rows[0] < rows[1] && rows[1] <= WORD_ROWS))
+      problems.push(`upright ${name}'s rows must run from 0 to ${WORD_ROWS}`)
   }
   for (const name of [
     theme.base,
@@ -420,6 +642,7 @@ export function problemsWith(theme) {
     ...(theme.button.label ?? []),
     theme.links,
     theme.hot,
+    theme.glow,
   ])
     if (name && !theme.colors[name]) problems.push(`unknown colour ${name}`)
   return problems

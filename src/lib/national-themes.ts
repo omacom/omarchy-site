@@ -18,8 +18,9 @@
  *   A Nordic cross shows its horizontal arm, and its upright runs down the
  *   M's middle stem, which rises above the word and gives the cross its
  *   top, a solid bar left of centre that never falls into a gap between
- *   letters. The cross is one colour: a flag's thin white edging would be
- *   single pixels here. A flag with a hoist or
+ *   letters. A cross edged in white (Iceland's, Norway's) takes the edge
+ *   as rows around its arm and half columns beside its upright, which
+ *   only the hero draws at that size. A flag with a hoist or
  *   a canton (the UAE's red bar, the Stars and Stripes' blue) lays it over
  *   the bands from the left, ending in a gap between letters.
  *
@@ -49,18 +50,55 @@ export type NationalTheme = {
   links?: string
   /** The pixels the cursor and clicks light up, where not the button's. */
   hot?: string
+  /** The pixels the cursor alone lights, where not the hot colour. */
+  glow?: string
   /** The wordmark: bands from the top over its 19 rows, or stripes from
    *  the left over its 81 columns, each a flag colour and a size. */
   word:
     | {
-        bands: [color: string, rows: number][]
+        /** A band of two tones may say how many rows its first takes. */
+        bands: [color: string, rows: number, firstTone?: number][]
+        /** The tones run the other way: on a light page, light at the
+         *  top and deepening down, as the word does on a dark one. */
+        turned?: true
         /** A block over the bands from the top left: the O alone is 11
-         *  columns, OM is 27. Its height is all 19 rows unless given. */
-        hoist?: [color: string, columns: 11 | 27, rows?: number]
+         *  columns, OM is 27, OMA 37. Its height is all 19 rows unless given. */
+        hoist?: [color: string, columns: 11 | 27 | 37, rows?: number]
+        /** A hoist triangle instead: its base the word's left edge, its
+         *  point at a column on a row's top edge. The A ends at 37. */
+        triangle?: [
+          color: string,
+          column: number,
+          row: number,
+          /** Rows set by hand: row, then the column it ends at. */
+          ends?: [row: number, column: number][],
+        ]
+        /** A colour on the cells just above and below the triangle,
+         *  outside it: the black that borders Zimbabwe's. */
+        edge?: string
+        /** A band across the word on a slant instead, bottom left to top
+         *  right, as Tanzania's: the colour above it, the colour below,
+         *  and the band's own colours, each so many columns wide along a
+         *  row, centred on the word. `slope` is columns per row. */
+        diagonal?: {
+          slope: number
+          above: string
+          below: string
+          band: [color: string, columns: number][]
+          /** Cells set by hand, where a line's steps break on a letter:
+           *  a colour, its row, and columns from one up to another. */
+          fill?: [color: string, row: number, from: number, to: number][]
+        }
         /** Bars down the whole word, each from one column up to another,
          *  the later ones on top: a Nordic cross's upright. The M's middle
          *  stem is columns 17 to 20. */
-        uprights?: [color: string, from: number, to: number][]
+        uprights?: [
+          color: string,
+          from: number,
+          to: number,
+          /** Only over these rows, from one up to another. */
+          rows?: [number, number],
+        ][]
       }
     | { stripes: [color: string, columns: number][] }
 }
@@ -98,8 +136,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['green', 6],
-        ['white', 7],
-        ['black', 6],
+        ['white', 6],
+        ['black', 7],
       ],
       hoist: ['red', 11],
     },
@@ -147,8 +185,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['white', 6],
-        ['green', 7],
-        ['red', 6],
+        ['green', 6],
+        ['red', 7],
       ],
     },
   },
@@ -160,11 +198,12 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     colors: {
       green: '#009440',
       yellow: '#FFCB00',
-      blue: '#302681',
+      blue: '#002776',
       white: '#FFFFFF',
     },
     base: 'green',
-    button: { fill: 'yellow', label: ['blue'] },
+    button: { fill: 'yellow' },
+    glow: 'blue',
     word: { bands: [['yellow', 19]] },
   },
   {
@@ -188,10 +227,19 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     hot: 'white',
     word: {
       bands: [
-        ['white', 10],
-        ['red', 9],
+        ['white', 9],
+        ['red', 10],
       ],
-      hoist: ['blue', 11],
+      triangle: [
+        'blue',
+        37,
+        9,
+        [
+          [3, 11],
+          [13, 17],
+          [14, 11],
+        ],
+      ],
     },
   },
   {
@@ -205,8 +253,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['black', 6],
-        ['red', 7],
-        ['gold', 6],
+        ['red', 6],
+        ['gold', 7],
       ],
     },
   },
@@ -221,8 +269,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     hot: 'white',
     word: {
       bands: [
-        ['red', 8],
-        ['white', 3],
+        ['red', 7],
+        ['white', 4],
         ['red', 8],
       ],
       uprights: [['white', 17, 20]],
@@ -240,8 +288,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['blue', 6],
-        ['black', 7],
-        ['white', 6],
+        ['black', 6],
+        ['white', 7],
       ],
     },
   },
@@ -249,11 +297,18 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     country: 'FI',
     id: 'suomi',
     name: 'Suomi',
-    ground: 'light',
+    ground: 'dark',
     colors: { blue: '#002F6C', white: '#FFFFFF' },
     base: 'blue',
-    button: { fill: 'blue', label: ['white'] },
-    word: { bands: [['blue', 19]] },
+    button: { fill: 'white', label: ['blue'] },
+    word: {
+      bands: [
+        ['white', 7],
+        ['blue', 4],
+        ['white', 8],
+      ],
+      uprights: [['blue', 17, 20]],
+    },
   },
   {
     country: 'FR',
@@ -280,17 +335,14 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'blue',
     button: { fill: 'white', label: ['blue'] },
     links: 'blue',
+    // The flag's stripes, in the United States' rows.
     word: {
-      // The letters span rows 1 to 16, so the outer blue stripes take a row
-      // more and the middle one a row less: the letters begin and end blue.
       bands: [
         ['blue', 3],
         ['white', 2],
-        ['blue', 2],
-        ['white', 2],
-        ['blue', 1],
-        ['white', 2],
-        ['blue', 2],
+        ['blue', 3],
+        ['white', 3],
+        ['blue', 3],
         ['white', 2],
         ['blue', 3],
       ],
@@ -307,8 +359,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['red', 6],
-        ['white', 7],
-        ['blue', 6],
+        ['white', 6],
+        ['blue', 7],
       ],
     },
   },
@@ -323,8 +375,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['red', 6],
-        ['white', 7],
-        ['green', 6],
+        ['white', 6],
+        ['green', 7],
       ],
     },
   },
@@ -339,8 +391,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     hot: 'white',
     word: {
       bands: [
-        ['red', 10],
-        ['white', 9],
+        ['red', 9],
+        ['white', 10],
       ],
     },
   },
@@ -364,11 +416,12 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     country: 'IL',
     id: 'israel',
     name: 'ישראל',
+    // The flag's white is the page, its blue the word.
     ground: 'light',
     colors: { blue: '#0038B8', white: '#FFFFFF' },
     base: 'blue',
     button: { fill: 'blue', label: ['white'] },
-    word: { bands: [['blue', 19]] },
+    word: { bands: [['blue', 19]], turned: true },
   },
   {
     country: 'IN',
@@ -386,8 +439,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['saffron', 6],
-        ['white', 7],
-        ['green', 6],
+        ['white', 6],
+        ['green', 7],
       ],
     },
   },
@@ -402,8 +455,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['green', 6],
-        ['white', 7],
-        ['red', 6],
+        ['white', 6],
+        ['red', 7],
       ],
     },
   },
@@ -416,12 +469,23 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'blue',
     button: { fill: 'red', label: ['white'] },
     word: {
+      // The cross edged in white, as on the flag: the arm two rows between
+      // two white, the upright a column between two down the M's middle.
       bands: [
-        ['blue', 8],
-        ['red', 3],
+        ['blue', 7],
+        ['white', 1],
+        ['red', 2],
+        ['white', 1],
         ['blue', 8],
       ],
-      uprights: [['red', 17, 20]],
+      // The cross unbroken where its arm and upright meet. Its upright two
+      // columns wide, edged by half a column of white either side, the
+      // half off the M's stem too.
+      uprights: [
+        ['white', 16.5, 20.5],
+        ['red', 17.5, 19.5],
+        ['red', 16.5, 20.5, [8, 10]],
+      ],
     },
   },
   {
@@ -497,8 +561,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['yellow', 6],
-        ['green', 7],
-        ['red', 6],
+        ['green', 6],
+        ['red', 7],
       ],
     },
   },
@@ -589,8 +653,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['red', 6],
-        ['white', 7],
-        ['blue', 6],
+        ['white', 6],
+        ['blue', 7],
       ],
     },
   },
@@ -604,12 +668,23 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'red', label: ['white'] },
     hot: 'white',
     word: {
+      // The cross edged in white, as on the flag: the arm two rows between
+      // two white, the upright a column between two down the M's middle.
       bands: [
-        ['red', 8],
-        ['blue', 3],
+        ['red', 7],
+        ['white', 1],
+        ['blue', 2],
+        ['white', 1],
         ['red', 8],
       ],
-      uprights: [['blue', 17, 20]],
+      // The cross unbroken where its arm and upright meet. Its upright two
+      // columns wide, edged by half a column of white either side, the
+      // half off the M's stem too.
+      uprights: [
+        ['white', 16.5, 20.5],
+        ['blue', 17.5, 19.5],
+        ['blue', 16.5, 20.5, [8, 10]],
+      ],
     },
   },
   {
@@ -637,10 +712,12 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'yellow', label: ['blue'] },
     word: {
       bands: [
-        ['blue', 10],
-        ['red', 9],
+        ['blue', 9],
+        ['red', 10],
       ],
-      hoist: ['white', 11],
+      // The flag's white triangle, as Zimbabwe's: its point under the M,
+      // where the blue meets the red, and the O white whole.
+      triangle: ['white', 27, 9, [[1, 7]]],
     },
   },
   {
@@ -664,8 +741,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     hot: 'white',
     word: {
       bands: [
-        ['white', 10],
-        ['red', 9],
+        ['white', 9],
+        ['red', 10],
       ],
     },
   },
@@ -713,8 +790,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['red', 6],
-        ['blue', 7],
-        ['white', 6],
+        ['blue', 6],
+        ['white', 7],
       ],
     },
   },
@@ -729,8 +806,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['white', 6],
-        ['blue', 7],
-        ['red', 6],
+        ['blue', 6],
+        ['red', 7],
       ],
     },
   },
@@ -744,8 +821,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'yellow', label: ['blue'] },
     word: {
       bands: [
-        ['blue', 8],
-        ['yellow', 3],
+        ['blue', 7],
+        ['yellow', 4],
         ['blue', 8],
       ],
       uprights: [['yellow', 17, 20]],
@@ -762,8 +839,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     links: 'red',
     word: {
       bands: [
-        ['red', 10],
-        ['white', 9],
+        ['red', 9],
+        ['white', 10],
       ],
     },
   },
@@ -778,8 +855,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['white', 6],
-        ['blue', 7],
-        ['red', 6],
+        ['blue', 6],
+        ['red', 7],
       ],
     },
   },
@@ -794,8 +871,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: {
       bands: [
         ['white', 6],
-        ['blue', 7],
-        ['red', 6],
+        ['blue', 6],
+        ['red', 7],
       ],
     },
   },
@@ -811,9 +888,9 @@ export const NATIONAL_THEMES: NationalTheme[] = [
       bands: [
         ['red', 3],
         ['white', 3],
-        ['blue', 7],
+        ['blue', 6],
         ['white', 3],
-        ['red', 3],
+        ['red', 4],
       ],
     },
   },
@@ -856,8 +933,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'green',
     button: { fill: 'yellow', label: ['black'] },
     word: {
-      // The diagonal, laid flat: green and blue either side of a black band
-      // edged in yellow.
+      // Laid flat, for whatever reads the word by rows.
       bands: [
         ['green', 7],
         ['yellow', 1],
@@ -865,6 +941,35 @@ export const NATIONAL_THEMES: NationalTheme[] = [
         ['yellow', 1],
         ['blue', 7],
       ],
+      // The flag's slant, corner to corner of the word, from the O's foot
+      // to the Y's top: green and blue either side of a black band edged
+      // in yellow. Four columns a row, near the word's 81 over 19,
+      // so every row steps alike, and each yellow five wide, so its steps
+      // touch: a clean line, not scraps.
+      diagonal: {
+        slope: 4,
+        above: 'green',
+        below: 'blue',
+        // Each yellow as wide as a row's step, so it crosses every stroke
+        // on one row, and the black four rows.
+        band: [
+          ['yellow', 4],
+          ['black', 16],
+          ['yellow', 4],
+        ],
+        // The yellow joined where its steps break, so it runs on to every
+        // edge it meets: out the O's right side, the A's bar end to end,
+        // round the C's corner, and along the whole of the R's foot.
+        fill: [
+          ['yellow', 14, 6, 9],
+          ['yellow', 8, 36, 37],
+          ['yellow', 9, 27, 28],
+          ['yellow', 2, 52, 56],
+          ['yellow', 3, 50, 53],
+          ['black', 4, 50, 53],
+          ['yellow', 11, 38, 48],
+        ],
+      },
     },
   },
   {
@@ -877,8 +982,8 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'yellow', label: ['blue'] },
     word: {
       bands: [
-        ['blue', 10],
-        ['yellow', 9],
+        ['blue', 9],
+        ['yellow', 10],
       ],
     },
   },
@@ -919,11 +1024,11 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'green', label: ['white'] },
     word: {
       bands: [
-        ['blue', 6],
+        ['blue', 5, 3],
         ['red', 1],
-        ['white', 5],
+        ['white', 6],
         ['red', 1],
-        ['green', 6],
+        ['green', 6, 2],
       ],
     },
   },
@@ -953,15 +1058,20 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'yellow', label: ['black'] },
     word: {
       bands: [
+        // Even on the letters (rows 1-16): the M's peak and the R's tail
+        // ride on the outer greens.
         ['green', 3],
-        ['yellow', 3],
+        ['yellow', 2],
         ['red', 2],
-        ['black', 3],
+        ['black', 4],
         ['red', 2],
-        ['yellow', 3],
-        ['green', 3],
+        ['yellow', 2],
+        ['green', 4],
       ],
-      hoist: ['white', 11],
+      // The flag's white triangle, its point under the M as on the flag.
+      // The O's top row joins the triangle, so the O is white whole.
+      triangle: ['white', 27, 9, [[1, 7]]],
+      edge: 'black',
     },
   },
 ]
