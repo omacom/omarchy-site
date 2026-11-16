@@ -73,15 +73,14 @@ export const PIN_AT = new Map(mapData.pins.map((p) => [p.id, p]))
 /** The countries the map draws, by code. */
 export const COUNTRIES_DRAWN = new Set(mapData.countries.map((c) => c.id))
 
-/** Every country as one shape, so the land reads as continents without the
- *  hairline seams separate shapes leave where their edges meet. */
+/** Every country as one shape in one colour, so the land reads as continents
+ *  without borders, shading, or the hairline seams separate shapes leave
+ *  where their edges meet. */
 const LAND = mapData.countries.map((c) => c.d).join('')
 
 export function MeetupMap({
   pins,
   box,
-  lit,
-  withMeetups,
   active,
   onActive,
   className,
@@ -89,10 +88,6 @@ export function MeetupMap({
   pins: MapPin[]
   /** The part of the map to show. */
   box: MapBox
-  /** Country codes to light: the region being looked at. */
-  lit: Set<string>
-  /** Country codes with a meetup coming up, drawn more prominently. */
-  withMeetups: Set<string>
   /** The meetup the reader is on, on the map or in the list. */
   active: string | null
   onActive: (id: string | null) => void
@@ -180,24 +175,6 @@ export function MeetupMap({
           }}
         >
           <path d={LAND} className="fill-surface-2" />
-          {/* Countries only show themselves when lit, over the land. */}
-          {mapData.countries.map((country) => {
-            const hasMeetup = withMeetups.has(country.id)
-            return (
-              <path
-                key={country.id}
-                d={country.d}
-                className={cn(
-                  'transition-[fill] duration-300 ease-out',
-                  lit.has(country.id) && hasMeetup
-                    ? 'fill-brand/20'
-                    : lit.has(country.id)
-                      ? 'fill-brand/8'
-                      : 'fill-transparent',
-                )}
-              />
-            )
-          })}
           {placed.map((pin) => {
             const delay = (orderOf.get(pin.id) ?? 0) * 35
             const r = (pin.past ? 2.2 : pin.shown ? 4 : 2.8) * k
