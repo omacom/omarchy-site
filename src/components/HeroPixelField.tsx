@@ -452,9 +452,9 @@ export function HeroPixelField({
     let restGrid: string[][] = []
     /** Where a theme's own word lifts toward under the cursor. */
     let wordLift = '#ffffff'
-    /** A click's stamp, block by block: a theme's own mark, or its cursor
-     *  colour (Brazil's blue) shaded down the mark, or the stock mark's
-     *  bands, as the navbar draws it. */
+    /** A click's stamp, block by block: a theme's own mark, as the navbar
+     *  and the favicon draw it, else its cursor colour shaded down the
+     *  mark, or the stock mark's bands. */
     let stampInks: string[][] = []
     /** A cursor colour of the theme's own, apart from the pixels it lights
      *  (Brazil's blue): every national theme names one, mostly the same. */
@@ -468,16 +468,15 @@ export function HeroPixelField({
         palette.mid,
         palette.dim,
       ]
-      stampInks =
-        palette.mark && !ownGlow
-          ? palette.mark
-          : Array.from({ length: LOGO_SIZE }, (_, row) => {
-              const band = STAMP_BAND_OF[row]
-              const ink = ownGlow
-                ? tone(ownGlow, band, STAMP_BANDS.length, palette.bg)
-                : bands[band]
-              return Array<string>(LOGO_SIZE).fill(ink)
-            })
+      stampInks = palette.mark
+        ? palette.mark
+        : Array.from({ length: LOGO_SIZE }, (_, row) => {
+            const band = STAMP_BAND_OF[row]
+            const ink = ownGlow
+              ? tone(ownGlow, band, STAMP_BANDS.length, palette.bg)
+              : bands[band]
+            return Array<string>(LOGO_SIZE).fill(ink)
+          })
       wordLift =
         luma(parse(palette.bg) ?? [0, 0, 0]) < 0.5 ? '#ffffff' : '#000000'
       const word = palette.word
