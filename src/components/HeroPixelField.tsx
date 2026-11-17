@@ -518,6 +518,23 @@ export function HeroPixelField({
       const line = restGrid[Math.max(0, Math.min(glyph.height - 1, row))]
       return line[Math.max(0, Math.min(glyph.width - 1, col))]
     }
+    /** A colour at full strength, its hue kept: every channel scaled
+     *  together, up on a dark page till one reaches the top, down on a
+     *  light one. */
+    const vivid = (css: string) => {
+      const rgb = parse(css)
+      if (!rgb) return css
+      const dark = luma(parse(palette.bg) ?? [0, 0, 0]) < 0.5
+      const top = Math.max(...rgb, 1)
+      const by = dark ? Math.min(1.4, 255 / top) : 0.68
+      return `#${rgb
+        .map((v) =>
+          Math.round(Math.min(255, v * by))
+            .toString(16)
+            .padStart(2, '0'),
+        )
+        .join('')}`
+    }
     /** A colour part way from one CSS colour to another. */
     const mix = (from: string, to: string, t: number) => {
       if (t <= 0) return from
@@ -894,6 +911,17 @@ export function HeroPixelField({
           strength: sprite.strength,
           reach: reachOf(sprite.strength),
         })
+      // A national theme's brightest ink is its flag's white, which would
+      // flash on every beat: there, the music stops at the flag's own
+      // colour, while the glows and a click's stamp keep theirs.
+      const calmTop = Boolean(palette.glow)
+      /** Its steps there stay in the flag's own colour, from deep to the
+       *  colour itself, far enough apart to tell at a glance: no white,
+       *  and no pale tint of it the flag lacks. A flag's colour is mostly
+       *  near full strength already, so the middle step sits well below
+       *  it, between it and the field's dim. */
+      const calmLit = calmTop ? vivid(palette.mid) : ''
+      const calmMid = calmTop ? mix(palette.bg, palette.mid, 0.72) : ''
 
       // Resolve each live click stamp once per frame, not once per cell.
       const stamps: {
@@ -1049,8 +1077,11 @@ export function HeroPixelField({
             glowAmount >= waveAmount && glowAmount >= specAmount * SPECTRUM_HEAT
           // What a click's stamp lit, where it outshines the cursor.
           const byStamp = !byCursor && waveAmount >= heat
-          const lit = (byCursor && palette.glow) || palette.lit
-          const mid = (byCursor && palette.trail) || palette.mid
+          const calm = calmTop && !byStamp && !byCursor
+          const lit = calm ? calmLit : (byCursor && palette.glow) || palette.lit
+          const mid = calm
+            ? calmMid
+            : (byCursor && palette.trail) || palette.mid
           // A click's stamp is the mark, each block in its own colour, and
           // fades smoothly as it dies: into the field's dim, or, in a cursor
           // colour of the theme's own (Brazil's blue), through the field's
