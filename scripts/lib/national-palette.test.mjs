@@ -222,7 +222,6 @@ test('a triangle edge borders the triangle just above and below it', () => {
       if (beside) assert.equal(grid[row][col], '#111111', `${row}:${col}`)
       else assert.notEqual(grid[row][col], '#111111', `${row}:${col}`)
     }
-  assert.ok(themeTokens(theme('zimbabwe'))['--t-word-hoist-edge'])
 })
 
 test('a slant crosses each upright stroke whole, its band flat', () => {

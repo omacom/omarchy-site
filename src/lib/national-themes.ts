@@ -83,7 +83,7 @@ export type NationalTheme = {
           ends?: [row: number, column: number][],
         ]
         /** A colour on the cells just above and below the triangle,
-         *  outside it: the black that borders Zimbabwe's. */
+         *  outside it, as a black border. */
         edge?: string
         /** A band across the word on a slant instead, bottom left to top
          *  right, as Tanzania's: the colour above it, the colour below,
@@ -150,18 +150,6 @@ export const NATIONAL_THEMES: NationalTheme[] = [
       ],
       hoist: ['red', 11],
     },
-  },
-  {
-    country: 'AU',
-    id: 'australia',
-    name: 'Australia',
-    ground: 'dark',
-    colors: { blue: '#00008B', red: '#E4002B', white: '#FFFFFF' },
-    base: 'blue',
-    button: { fill: 'red', label: ['white'] },
-    hot: 'white',
-    favicon: ['blue', 'white'],
-    word: { bands: [['white', 19]] },
   },
   {
     country: 'BA',
@@ -349,7 +337,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     base: 'blue',
     button: { fill: 'white', label: ['blue'] },
     links: 'blue',
-    // The flag's stripes, in the United States' rows.
+    // The flag's stripes, over the word's rows.
     word: {
       bands: [
         ['blue', 3],
@@ -642,23 +630,6 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     },
   },
   {
-    country: 'NG',
-    id: 'nigeria',
-    name: 'Nigeria',
-    ground: 'dark',
-    colors: { green: '#008751', white: '#FFFFFF' },
-    base: 'green',
-    button: { fill: 'white', label: ['green'] },
-    links: 'green',
-    word: {
-      stripes: [
-        ['green', 27],
-        ['white', 28],
-        ['green', 26],
-      ],
-    },
-  },
-  {
     country: 'NL',
     id: 'nederland',
     name: 'Nederland',
@@ -704,17 +675,6 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     },
   },
   {
-    country: 'NZ',
-    id: 'new-zealand',
-    name: 'New Zealand',
-    ground: 'dark',
-    colors: { blue: '#00247D', red: '#CC142B', white: '#FFFFFF' },
-    base: 'blue',
-    button: { fill: 'red', label: ['white'] },
-    favicon: ['blue', 'red'],
-    word: { bands: [['red', 19]] },
-  },
-  {
     country: 'PH',
     id: 'pilipinas',
     name: 'Pilipinas',
@@ -732,7 +692,7 @@ export const NATIONAL_THEMES: NationalTheme[] = [
         ['blue', 9],
         ['red', 10],
       ],
-      // The flag's white triangle, as Zimbabwe's: its point under the M,
+      // The flag's white triangle: its point under the M,
       // where the blue meets the red, and the O white whole.
       triangle: ['white', 27, 9, [[1, 7]]],
     },
@@ -844,22 +804,6 @@ export const NATIONAL_THEMES: NationalTheme[] = [
         ['blue', 8],
       ],
       uprights: [['yellow', 17, 20]],
-    },
-  },
-  {
-    country: 'SG',
-    id: 'singapore',
-    name: 'Singapore',
-    ground: 'dark',
-    colors: { red: '#EF3340', white: '#FFFFFF' },
-    base: 'red',
-    button: { fill: 'white', label: ['red'] },
-    links: 'red',
-    word: {
-      bands: [
-        ['red', 9],
-        ['white', 10],
-      ],
     },
   },
   {
@@ -1007,28 +951,6 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     },
   },
   {
-    country: 'US',
-    id: 'usa',
-    name: 'United States',
-    ground: 'dark',
-    colors: { red: '#B31942', white: '#FFFFFF', blue: '#0A3161' },
-    base: 'blue',
-    button: { fill: 'red', label: ['white'] },
-    hot: 'white',
-    word: {
-      bands: [
-        ['red', 3],
-        ['white', 2],
-        ['red', 3],
-        ['white', 3],
-        ['red', 3],
-        ['white', 2],
-        ['red', 3],
-      ],
-      hoist: ['blue', 27, 11],
-    },
-  },
-  {
     country: 'UZ',
     id: 'ozbekiston',
     name: 'Oʻzbekiston',
@@ -1061,40 +983,5 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     button: { fill: 'yellow', label: ['red'] },
     favicon: ['red', 'yellow'],
     word: { bands: [['yellow', 19]] },
-  },
-  {
-    country: 'ZW',
-    id: 'zimbabwe',
-    name: 'Zimbabwe',
-    ground: 'dark',
-    colors: {
-      green: '#319208',
-      yellow: '#FFD200',
-      red: '#DE2010',
-      black: '#000000',
-      white: '#FFFFFF',
-    },
-    base: 'green',
-    button: { fill: 'yellow', label: ['black'] },
-    word: {
-      bands: [
-        // Even on the letters (rows 1-16): the M's peak and the R's tail
-        // ride on the outer greens.
-        ['green', 3],
-        ['yellow', 2],
-        ['red', 2],
-        ['black', 4],
-        ['red', 2],
-        ['yellow', 2],
-        ['green', 4],
-      ],
-      // The square's rows: the flag's seven stripes even, the black the
-      // one block over, where the word's are not.
-      markRows: [2, 2, 2, 3, 2, 2, 2],
-      // The flag's white triangle, its point under the M as on the flag.
-      // The O's top row joins the triangle, so the O is white whole.
-      triangle: ['white', 27, 9, [[1, 7]]],
-      edge: 'black',
-    },
   },
 ]
