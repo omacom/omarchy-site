@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (ehk Quattro RS!) on esimene suur funktsiooniväljalase pärast <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>t ja see on korralik tükk: kõigest kaheteistkümne nädalaga liideti üle 740 pull request'i enam kui 180 kaastööliselt. Nüüd pakub see plaatimise vaikerežiimi kõrval ka traditsioonilist töölauarežiimi. Saad selle paigaldada natiivselt M1/M2/M3/Neo MacBookidele. Ja see räägib 50 keelt. Ja veel mustmiljon muud funktsiooni, parandust ja täiustust. Juba Omarchyl? Käivita <em>Update &gt; Omarchy</em>. Uus masin? <a href="/#install">Haara see siit</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Hõljuvad tööruumid koos dokiga</h2>
+
+<p><code>Super + L</code> liigub nüüd iga tööruumi puhul ringiga plaatimise, kerimise ja hõljumise vahel. Hõljuval tööruumil saab iga aken sinu teema värvides tiitliriba ja dokk kuvab sinu kinnitatud rakendused, kõik, mis parajasti töötab, ja kõigi paigaldatud rakenduste ruudustiku. Lohista ümber järjestamiseks või kinnitamiseks, rohkemaks tee paremklõps ja <code>Super + M</code> vähendab akna dokki.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>See on imeline sisenemistee kõigile, kes tulevad macOS-ist või Windowsist ega ole veel valmis plaatimisse täielikult sukelduma. Või kõigile, kes tahavad lihtsalt üht tööruumi, kus aknad saavad laialt laiutada. Kombineeri ja sobita tööruumi kaupa ja riba näitab, millist paigutust igaüks kasutab.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy Apple Siliconil</h2>
+
+<p>Meie uskumatu <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> meeskond on natiivse Maci installeri välja saatnud. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Laadi alla rakendus</a> macOS-is ja see paneb Omarchy otse selle kõrvale sinu M1, M2, M3 või Neo MacBookile. Ei mingit USB-mälupulka, ei mingeid terminaliloitsusid. Eelistad Homebrew'd? See on üks rida:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Maci installer" /></p>
+
+<p>See on see, mida me septembris ette võtsime: viia lõpule see, mida Asahi alustas. Kaks kuud hiljem saad selle lihtsalt alla laadida. Hämmastav töö kõigilt meeskonnaliikmetelt.</p>
+
+<p>Ja nad ei peatu seal. M4, M5 ja M6 kallal töötatakse kõigil praegu, nii et tõenäoliselt ei lähe kaua, kuni Omarchy töötab igal Apple Silicon Macil.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy M2 Maxil, M3 Airil, Neol, M4 Prol ja M5 Airil" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM-i tugi NVIDIA DGX Sparkile + N1X-ile (ja peagi Snapdragonile)</h2>
+
+<p>Omarchy 4.5 tarnib oma esimese ARM ISO ja sellega tuleb esialgne tugi NVIDIA ARM masinatele: DGX Spark töölauale ja N1X-il põhinevatele sülearvutitele, nagu <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> ja <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Ja peagi on meil tugi ka kogu Snapdragoni ARM masinate valikule. See on alles varajane aeg, nii et oota mõnda karedamat serva ja palun teata kõigest, mis katki läheb, <a href="https://github.com/omacom/omarchy/issues">GitHubis</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 keelt ja 5 sisestusmeetodit</h2>
+
+<p>Omarchy räägib nüüd 50 keelt. Vali üks jaotisest <em>Setup &gt; Language</em> (või käivita <code>omarchy language &lt;code&gt;</code>) ja menüü, töölaud ja Omarchy teavitused lülituvad kohe ümber. Süsteemi lokaat järgneb sinu järgmisel sisselogimisel.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Keelte vahetamine" /></p>
+
+<p>Keelt rääkida on aga ainult pool asjast. Seda on vaja ka tippida. Nii et Omarchy seadistab nüüd korralikud sisestusmeetodid jaapani (Mozc), korea (Hangul), lihtsustatud hiina (Pinyin), Taiwani (Zhuyin) ja Hongkongi (Cangjie) keele jaoks, otse installerist või hiljem jaotisest <em>Setup &gt; Keyboard</em>. Igaühega tulevad kaasa selle tähevormide jaoks õiged fondid, kandidaadiaken järgib sinu teemat ja <code>Super + I</code> vahetab sinu sisestuskeelte vahel. Hangul, Zhuyin ja Cangjie hoiavad oma klahve standardsetel positsioonidel isegi siis, kui tipid ladina tähestikku Dvorakil, Colemakil või AZERTY-l, nagu Windowsis ja macOS-is. Ja Shiftile üksi vajutamine astub sisestusmeetodist ladina tähtede juurde välja ja tagasi, nii nagu Sogou, Microsoft Pinyin ja macOS töötavad.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Logi sisse sundivatesse Wi-Fi portaalidesse</h2>
+
+<p>Hotelli, lennujaama ja kohviku Wi-Fi töötab lõpuks lihtsalt. Omarchy märkab nüüd, kui võrk tahab, et sa logiksid sisse või nõustuksid selle tingimustega, enne kui sind veebi laseb. Võrguikoon hoiatab sind ja võrgupaneelil on suur Open Captive Portal nupp, mis viib su otse sisselogimislehele. Kui oled läbi saanud, läheb kõik iseenesest normaalseks tagasi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Võrgupaneelilt sundportaali sisselogimine" width="380" /></p>
+
+<h2 id="five-new-default-apps">Viis uut vaikerakendust</h2>
+
+<p><strong>Hype</strong> teeb esitlusi ühest Markdowni failist, visuaalse slaidiredaktoriga allika kõrval, ja ekspordib PDF-i või PowerPointi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> asendab Xournal++ paberitöö jaoks: ava PDF, paiguta oma salvestatud allkiri, tekst ja kuupäevad ning salvesta allkirjastatud koopia.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> joonistab puukaardi sellest, mis su ketast täidab, värvitud liigi järgi, toob esile vahemälud, mida on ohutu uuesti genereerida, ja laseb sul märkida, mis peaks minema.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> salvestab su kaamerat ühe klahviga, teemastatud nii, et see sobiks su töölauaga.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> annab sulle kaugtöölaua SSH kaudu. Ühendu teise Omarchy masinaga ja juhi selle täielikku töölauda aknast enda omal, iga masina jaoks oma vahelehega. Ja kuna see sõidab SSH-l, pole midagi eraldi seadistada ega paljastada. Juhitaval masinal kuvatakse ribal kaugseansi indikaator, nii et on alati selge, kui keegi sellel on.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Ja seal on <strong>Elsewhen</strong>, maailmakell, mis elab otse kella kõrval ribal. Puuduta maakera linna, et määrata, kus sa oled, otsi päris kohti ja nimeta inimesed, kes igas linnas elavad, nii et tead alati, kas on sobiv aeg helistada. Vaheta 12 ja 24 tunni vahel klahviga <code>t</code>, °F ja °C vahel klahviga <code>Alt + T</code> ja kutsu see igal ajal esile klahviga <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Koos Monologue'iga salvestamiseks ja Omacutiga kärpimiseks ei tarnita uusi installatsioone enam OBS Studio ja Kdenlive'iga. Ka Lazydocker on uutest installatsioonidest läinud, kuigi Docker ja Docker Compose on endiselt kaasas. Masinad, millel mõni neist juba on, hoiavad need alles.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Vajad töötada inimestega, kes elavad Office'is? <em>Install &gt; Service &gt; Microsoft</em> seadistab nüüd Outlooki, Wordi, Exceli, PowerPointi, Teamsi ja OneDrive'i veebirakendustena. Igaüks saab oma akna ja käivitusprogrammi kirje, nii et need tunnevad end kõige muu kõrval koduselt. Enam pole vabandusi, miks tööl Omarchyle mitte üle minna!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams ja PowerPoint Omarchyl" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper dikteerimiseks</h2>
+
+<p>Superwhisper on nüüd Omarchy vaikedikteerimismootor ja see on kohe karbist seadistatud. Puuduta <code>Alt + Space</code>, et hakata rääkima, ja uuesti peatamiseks, või hoia <code>Right Alt</code> all push-to-talki jaoks. See on uskumatult kiire ja väga täpne.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisperiga dikteerimine" /></p>
+
+<p>See algab pilves, nii et see töötab kohe paigaldamise hetkel ja esimesed 10 000 sõna on tasuta. Aga saad lülituda allalaaditavale mudelile, mis on täiesti tasuta ja töötab täielikult lokaalselt, ilma sõnagi kellelegi saatmata. Ja kui eelistad pigem mõnda muud lokaalset mudelit, on Voxtype alternatiivina endiselt pakkumises.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Paigalda vähem kui kümne sekundiga</h2>
+
+<p>Omarchy paigaldas varem umbes 940 paketti ükshaaval. Uus F1 installer pakib selle asemel lahti eelvalmistatud juurpildi ja lisab peale ainult selle masina paketid. See lõikab paigaldusajad igal masinal umbes pooleks.</p>
+
+<p>Ja kiirel riistvaral on see absurdne. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> AMD-st püstitas maailmarekordi täieliku Omarchy paigaldusega <strong>7 sekundiga</strong> oma AMD sülearvutil. <a href="https://x.com/dhh/status/2117222836620202375">Seitse sekundit!</a> Ma mäletan, kui viis minutit tundus ambitsioonika eesmärgina.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Paigaldasin Omarchy 0m 7s-ga" /></p>
+
+<h2 id="faster-everywhere-else">Kiirem kõikjal mujal</h2>
+
+<p>Asi pole ainult installeris. Käivitumine ei takerdu enam binfmt registreerimisele. Teemavalija avaneb kohe, mitte veerand sekundi pärast. Menüüd ja paneelid avanevad otse Hyprlandi otseteedest, jättes vahele 60 ms, mis kulus esmalt protsessi käivitamiseks. Omarchy menüü kõige aeglasemad kontrollid läksid 200 ms-lt 16 ms-le, uus terminal näitab oma viipa 30 ms varem ja kogu töölaud reageerib nüüd muutustele selle asemel, et nende järele pollida. Isegi väljalogimine, taaskäivitamine ja väljalülitamine toimuvad hetkel, kui su rakendused sulgemise lõpetavad.</p>
+
+<h2 id="agent-upgrades">Agentide täiustused</h2>
+
+<p>Omarchy on agendiline OS ja 4.5 toob agentidega töötamiseks suure täiustuste vooru. Agentide paneel jälgib nüüd 23 agenti ja pakkujat, võrreldes varasema 6-ga, sealhulgas Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter ja Ollama. Iga limiit saab oma mõõdiku koos ajaga, kuni see lähtestub, nii et näed täpselt, kui palju ruumi sul veel on. Ja Grok on nüüd täieõiguslik pakkuja Claude'i ja Codexi kõrval.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Agentide paneel mitme Claude'i ja Codexi tellimusega" width="380" /></p>
+
+<p>Ja sinu agent on alati ühe klahvivajutuse kaugusel. <code>Super + ~</code> laseb Quake-stiilis konsooli tumendatud töölaua kohale alla ja esimesel avamisel käivitab see sinu vaikeagendi. Vajuta seda uuesti, et see ära peita, ja sinu seanss on täpselt seal, kuhu sa selle jätsid.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Quake-stiilis konsool, mis käitab agenti tumendatud töölaua kohal" /></p>
+
+<p>Kui žongleerid rohkem kui ühe tellimusega, saad nüüd hoida samal masinal mitut Claude'i, Codexi ja Groki sisselogimist ja valida, millega uued seansid algavad, kasutades käsku <code>omarchy agent account</code>. Ajalugu, seaded ja oskused on nende vahel jagatud, nii et <code>claude --continue</code> jätkab täpselt sealt, kus pärast vahetust pooleli jäi. Limiidi lähedal saab Omarchy kas pakkuda ühe klõpsuga vahetust või liigutada uued seansid ise selle kontole, millel on kõige rohkem ruumi. Ja kui seadistad teise masina, toob <code>omarchy agent account copy</code> kõik su sisselogimised SSH kaudu üle, nii et sa ei pea kõigesse uuesti sisse logima.</p>
+
+<p>Kimi ja Ori, OpenRouteri agendiraamistik, liituvad valikutega jaotises <em>Setup &gt; Defaults &gt; Agent</em> ja Google'i Antigravity asendab iganenud Gemini CLI (<code>gemini</code> töötab endiselt aliasena). Eelistad aknat terminalile? Claude'i ja Ampi töölauarakendused on nüüd ühe klõpsu kaugusel jaotises <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Teavitused, uuesti üles ehitatud</h2>
+
+<p>Teavitused virnastuvad nüüd saatja järgi, järgivad sinu teemat ja ahendavad identsed kordused. Toimingunupud, kinnituskoodid ja lingid töötavad kõik otse kaardilt. <code>Super + Comma</code> toimib kõige uuemale (sulge see, ava see või vajuta selle nuppu) ja <code>Super + Ctrl + Comma</code> annab sulle klaviatuuri, et neid kõiki juhtida. Ribal olev kell lülitab sisse režiimi Mitte segada.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Uued teavitused" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Videotaustad ja teema sissejuhatused</h2>
+
+<p>Taustad saavad nüüd olla videod. Pane üks sisse ja su töölaud ärkab ellu veerevate lainete või millegi muuga, mis sulle meeldib, samal ajal kui lukustuskuva näitab sellest seisvat kaadrit. Ja teemad teevad nüüd sissepääsu: igaüks saab sisselogimisel või sellele lülitumisel esitada lühikese vaikse sissejuhatuse. (Eelistad pigem rahulikku? Lülita sissejuhatused välja jaotises <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse liitub vaiketeemadega</h2>
+
+<p>Jade Horse on üleni udused rohelised, nikerdatud jade-taustadega, mis muudavad kogu töölaua kerimismaali moodi välja nägema. See asendab komplekteeritud teemade seas Osaka Jade ja sellega liitub Starship kui teine uus vaiketeema. Kui oled Osaka Jade'il, hoiad oma koopia alles ja see elab edasi <a href="https://github.com/omacom/omarchy-osaka-jade-theme">kolmanda osapoole teemana</a> kõigile, kes tahavad selle värskelt paigaldada.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse'i teema" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff on uus vaiketaust</h2>
+
+<p>Uued installatsioonid tervitavad sind nüüd Liftoffiga, uhkete päikeseloojanguliste startidega, mis on Tokyo Nighti uus vaiketaust. Selle tegi <a href="https://github.com/tcballard">Tom Ballard</a>, kes lõi selle esmakordselt oma <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoffi teema</a> jaoks. Aitäh, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Liftoffi taust autorilt Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Käivitusmenüü nüüd vaikne</h2>
+
+<p>Omarchy näitas varem igal käivitamisel umbes kuus sekundit käivitusmenüüd, juhuks kui sul on vaja varasema hetktõmmise juurde tagasi pöörduda. Aga peaaegu keegi ei teinud seda kunagi. Nii et nüüd ootab Limine vaid ühe sekundi ja käivitub vaikselt ning enamasti sa ei näe menüüd üldse.</p>
+
+<p>Kui sul on vaja teist kirjet või hetktõmmist, toksa masina käivitumise ajal ükskõik millist klahvi (allanool töötab) ja see peatub menüüs. Ja kui eelistad pigem menüüd kauem üleval hoida, määra omaenda <code>timeout:</code> failis <code>/boot/limine.conf</code> (nt <code>timeout: 5</code>). Uuendused jätavad sinu määratud timeouti rahule.</p>
+
+<h2 id="changed-hotkeys">Muudetud kiirklahvid</h2>
+
+<p>Mõned otseteed liikusid:</p>
+
+<ul>
+  <li>Kalkulaator: <code>Super + Ctrl + Q</code> on nüüd <code>Super + Shift + Q</code>.</li>
+  <li>Tegevus: <code>Super + Ctrl + T</code> on nüüd <code>Super + Shift + T</code> ja <code>Super + Ctrl + T</code> avab teemad.</li>
+  <li>Võrk: <code>Super + Ctrl + W</code> on nüüd <code>Super + Ctrl + N</code> ja <code>Super + Ctrl + W</code> avab taustad.</li>
+  <li>Öövalgusel pole enam otseteed (see oli <code>Super + Ctrl + N</code>); see on jaotises <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> avab dokist Apps, mitte Apps menüü.</li>
+</ul>
+
+<p>Teavituste otseteed muutusid:</p>
+
+<ul>
+  <li><code>Super + Comma</code> toimib kõige uuemale kaardile (sulgeb selle, avab selle või vajutab selle üht nuppu), selle asemel et see ainult sulgeda.</li>
+  <li>Viimase sulgemine liikus klahvile <code>Super + Alt + Comma</code>, mis varem avas selle.</li>
+  <li>Vaigistamine liikus klahvilt <code>Super + Ctrl + Comma</code> klahvile <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> annab nüüd sulle klaviatuurijuhtimise.</li>
+</ul>
+
+<p>Mõned klahvid töötavad teisiti:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> ja <code>Super</code> + kerimine püsivad praeguse monitori tööruumidel, kuna igal monitoril on oma.</li>
+  <li>Terminalis saadavad <code>Super + C</code> ja <code>Super + V</code> <code>Ctrl + Shift + C</code> ja <code>Ctrl + Shift + V</code>, mitte <code>Ctrl + Insert</code> ja <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Uued vaikesätted, mis võivad sinu enda sidumistega kokku põrkuda: <code>Super + Q</code> (sulge aken, koos <code>Super + W</code>-ga), <code>Super + A</code> (vali kõik), <code>Super + M</code> (vähenda dokki), <code>Super + ~</code> ja <code>Super + Shift + ~</code> (Quake konsool), <code>Super + Alt + L</code> (eelmine paigutus), <code>Super + Shift + Ctrl + Arrows</code> (liiguta aken teisele monitorile), <code>Super + Ctrl + Alt + C</code> (ekraanitõmmis), <code>Super + Ctrl + Alt + E</code> (maailmakell), <code>Super + Ctrl + Alt + F</code> (täisekraani töölaud) ja <code>Right Alt</code> all hoidmine push-to-talk dikteerimiseks.</p>
+
+<h2 id="more-features">Veel funktsioone</h2>
+
+<ul>
+  <li>Anna igale monitorile oma tööruumid: <code>Super + 1-0</code> läheb selle monitori tööruumidele, millel sa oled, ja <code>Super + Arrows</code> liigub teistele kuvaritele ja tagasi, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Kogu kõik selle kohta, kuidas töölaud välja näeb, uude Appearance menüüsse, asendades Style: teema, taust, font, riba, aknad, bränding, dokk, tööruumi paigutused, animatsioonid ja lukustuse avamise kuva, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Vali läbipaistmatud, läbipaistvad või klaasjad aknad jaotises <em>Appearance &gt; Window Transparency</em>, pluss klaasjas riba taust, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Vali teema-, teravad või ümarad aknanurgad jaotises <em>Appearance &gt; Window Corners</em>, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Lisa animatsioonideta režiim, VM-ides vaikimisi sees, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Tee rakendused vaikimisi läbipaistmatuks, hoides terminalid läbipaistvad, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Lisa Slack jaotisse Install &gt; Service, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Tee nii, et Alt + Space lülitab dikteerimist igal taustsüsteemil, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Lisa ekraanitõmmiste teavitustele nupud Open ja Edit ning ekraanisalvestistele ja yt-dlp allalaadimistele nupud Open ja Cut, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Lisa menüü Update &gt; Kernel vaikekerneli vahetamiseks, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Lisa teema sünkroonimine herdr masinatele, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Lisa o.rebind Hyprlandi klahvisidemete asendamiseks, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Küsi sinu giti identiteeti pärast esimest sisselogimist, mitte installeris, GitHubi sisselogimisega, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Luba paigalduskandjal eelseadistada keelt, klaviatuuri ja ajavööndit, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Luba ribavidinatel elada salve sahtlis, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Luba ribavidina eemaldada, lohistades selle ribalt maha, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Luba tööruumide vahel kerida ribalt, autor <a href="https://github.com/outfoxxed">@outfoxxed</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Luba lisateemade kustutamist teemavalijast, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Lisa hey, basecamp ja Cloudflare CLI-d laisalt paigaldatavate tööriistadena, autor <a href="https://github.com/monorkin">@monorkin</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Lisa SSH Agent valikulise teenusena, autor <a href="https://github.com/carletex">@carletex</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Luba valida, kui kaua paroolita sudo kestab, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Lisa teavituste hüpikakendele hõljuv sulgemisnupp, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Luba programmi teavituste vaigistamist selle kokkuvarisemise diagnoosist, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Luba omarchy-notification-sendil lisada toimingunuppe, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Lisa kellavorming reaalajas sekunditega, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Reguleeri klaviatuuri taustvalgust Ctrl ja heleduse klahvidega, autor <a href="https://github.com/ludagoo">@ludagoo</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Prindi püsivarast OEM Windowsi tootevõti, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Lisa algne vi terminaliredaktori valikuna, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Lisa Etherealile Roadster Starlight taust, autor <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Turvalisus</h2>
+
+<ul>
+  <li>Hoia Windowsi VM-i parool RDP kliendi argumentidest eemal, autor <a href="https://github.com/dicemans">@dicemans</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Liiguta ekraanisalvestuse olek kõigile kirjutatavast /tmp-st välja, autor <a href="https://github.com/Chessing234">@Chessing234</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Tugevda paroolita sudo aegumist peatumise korral, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Seo uuenduste inhibiitori puhastus protsessiga, mis selle lõi, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Isoleeri OCaml puhastuse autoriseerimine, autor <a href="https://github.com/ErikMelton">@ErikMelton</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Kinnita tehaseseadete lähtestamise õiguste tõstmine pakendatud käsule, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Eemalda lähtestamisel kutsuva kasutaja salvestatud sõrmejälje mallid, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Keeldu konksu- ja olekunimedest, mis on teed, autor <a href="https://github.com/Adolanium">@Adolanium</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Allu system-authile polkit virnas, mille kirjutavad sõrmejälje ja FIDO2 seadistus, autor <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Eemalda sõrmejäljed nende eemaldamisel lugeja enda salvestusruumist, autor <a href="https://github.com/scottjones">@scottjones</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Väldi, et SSH seadistus jätaks sshd parooliga sisselogimistega tööle, kui võtit ei lisata, autor <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Väldi, et teine kohalik kasutaja saaks Voxtype'i uuendamise ajal oma programmi asemele sokutada, autor <a href="https://github.com/Vladkarok">@Vladkarok</a> pull requestis <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Tugevda seda, kuidas tehaseseadete lähtestamine edastab sinu gum seadeid sudo kaudu, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Parandused</h2>
+
+<ul>
+  <li>Paranda Hyprlandi kokkuvarisemine, kui monitor eemaldatakse, keelatakse või lülitatakse kaane sulgemisega välja, autor <a href="https://github.com/falkoro">@falkoro</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Paranda uuendused, mis võisid jätta kernelipildi ilma selle root= parameetrita, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Paranda tehaseseadete lähtestamine, mis kustutas teiste süsteemide käivituskirjed, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Paranda paigaldus teise Omarchy kõrvale, mis eemaldas selle paigalduse käivituskirje, autor <a href="https://github.com/emirb">@emirb</a> teoses <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Paranda vaba ruumi paigaldused, mis võisid võtta uue jaoks olemasoleva partitsiooni, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Paranda katkestatud kettaparooli muudatuse jätkamine, mis eemaldas vale võtme, autor <a href="https://github.com/scottjones">@scottjones</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Küsi sudo parooli üks kord Omarchy uuenduse kohta, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Küsi sudo parooli üks kord kümneks minutiks, mitte iga käsu puhul uuesti, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Kata AUR uuendused ja käivituskontroll uuenduse ühe sudo küsitlusega, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Hoia paketi uuendused ohutuna väljalogimise eest tehingu keskel, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Logi välja, taaskäivita ja lülita välja niipea, kui rakendused sulgemise lõpetavad, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Asenda Tensaku ekraanitõmmiste jaoks Omasnapiga, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Kasvata paneelid ribast välja ja muuda nende vahel, nuppudel ja ribaikoonidel vajutustagasisidega, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Libista teavitused riba alt sisse ja samamoodi tagasi välja, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Kontrolli ühenduvust Omarchy enda lõpp-punkti vastu ja paranda sundportaalidesse sisselogimine, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Paranda edge'ilt stable'ile või RC-le lülitumine, mis jättis masina vanale järgule, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Paranda 4.5-le uuendamine, mis peatus, kui kest vastas aeglaselt, autor <a href="https://github.com/AnPod">@AnPod</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Paranda uuendused, mis ebaõnnestusid vaikselt, kui need käivitati väljaspool töölaua seanssi, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Paranda ebaõnnestunud mise tööriista allalaadimine, mis peatas ülejäänud süsteemiuuenduse, autor <a href="https://github.com/sanjyay">@sanjyay</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Paranda uuendused, mis ebaõnnestusid, kui omarchy-nvim pole paigaldatud, autor <a href="https://github.com/imzihuailin">@imzihuailin</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Paranda kahekäivitusega paigaldused, mis ei suutnud EFI partitsiooni ühendada, autor <a href="https://github.com/Damian626">@Damian626</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Paranda paigaldused, mis peatusid, kui püsivara ei võtnud uut käivituskirjet vastu, autor <a href="https://github.com/ryanio">@ryanio</a> teoses <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Paranda paigaldused, mis peatusid ketastel, millel on vana RAID liige või köiterühm, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Käivita installer varem, ootamata iga USB seadet ja käivitustööd, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Kiirenda kettakrüptimist 4096-baidiste sektoritega uutel paigaldustel, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Loetle sisemised kettad esimesena ja ava paigalduskuvad ohutul valikul, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Loetle installeris esimesena Full disk install ja mine kettakuvadel Esciga tagasi, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Paranda ühe monitori skaleerimine, mis muutis iga teise monitori skaalat, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Paranda XWaylandi rakendused, mis tulid liiga suurena välja, kui monitorid kasutavad erinevaid skaalasid, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Paranda HDR kuvarid, mis lülitusid tuhmunud HDR pildile, kui aken läks täisekraanile, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Paranda hägused menüüd ja valijad murdosa skaleeritud kuvaritel, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Paranda sülearvuti kuva, mis jäi pärast välise kuvari lahtiühendamist välja, autor <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Paranda kuva uuesti lubamine, mis lähtestas selle asendi, skaala ja režiimi, autor <a href="https://github.com/zihaomu">@zihaomu</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Paranda menüüd ja valijad, mis pärast monitori lahtiühendamist ei avanenud uuesti, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Paranda monitoripõhised tööruumid, mis liikusid pärast monitori lahtiühendamist, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Paranda kest, mis varises kokku, kui heliseade helipaneeli avatuna lahti ühendus, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Paranda täisekraani aknad, mis kaotasid pärast ekraanisäästjat täisekraani, autor <a href="https://github.com/MGross21">@MGross21</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Paranda kursor, mis kadus käivitamisel pärast Hyprlandi uuesti laadimist, autor <a href="https://github.com/spencerbull">@spencerbull</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Paranda kursor, mis muutus XWaylandi rakenduste kohal nähtamatuks, autor <a href="https://github.com/Sebo1411">@Sebo1411</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Paranda lõikelaua hõive takerdumised, autor <a href="https://github.com/maxcroy1">@maxcroy1</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Paranda võtmehoidja juurdepääs XDG Secret portaali kaudu, autor <a href="https://github.com/pkwagner">@pkwagner</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Paranda sõrmejälje registreerimine ja lukustuskuva taastamine, autor <a href="https://github.com/GeertJohan">@GeertJohan</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Juhenda sõrmejälje registreerimist samm-sammult, autor <a href="https://github.com/scottjones">@scottjones</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Paranda klahvi automaatne kordus lukustuskuva parooliväljal, autor <a href="https://github.com/berndb">@berndb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Paranda lukustuskuva taustapilt, mis laadis äratamisel pärast paroolivälja, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Paranda ekraaniluku ajalõpud, kui seanss nimetab kadunud kuvarit, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Kiirenda terminali avamist praeguse akna kataloogis, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Pane VS Code perekonna redaktorid teemamuutusi reaalajas järgima, autor <a href="https://github.com/Macho0x">@Macho0x</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Teemasta töötavad Hunki seansid teema vahetamisel uuesti, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Jäta iga teema jaoks valitud taustapilt meelde, autor <a href="https://github.com/OldJobobo">@OldJobobo</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Hoia pildivalija suurte kogude ja HiDPI korral kiire ja terav, autor <a href="https://github.com/keylimesoda">@keylimesoda</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Vähenda CPU-d ja mälu, mida läbipaistev riba kulutab taustapildi proovivõtule, autor <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Kiirenda Tailscale'i paneeli tailnetides, kus on tuhandeid masinaid, autor <a href="https://github.com/iskakaushik">@iskakaushik</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Too Grok agentide paneelis Claude'i ja Codexiga samale tasemele, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Rakenda agendi konto valik CLI alamprotsessidele, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Näita Codexi individuaalseid kululimiite ja nende lähtestusaegu, autor <a href="https://github.com/Stegi56">@Stegi56</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Seadista brauseri integratsioon Claude'i valimisel, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Paranda agendid, mis ei leidnud mise tööriistu, mis paigaldati pärast nende käivitumist, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Paranda ekraanitõmmiste kleepimine agentidesse herdr paanides, mis käivitati SSH kaudu, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Paranda agentide paneel, millel puudusid tihendatud Codexi seansid, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Too Caps Lock normaalseks tagasi ja tee Shift + Caps Lock koostamisklahviks, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Rakenda süsteemi klaviatuuripaigutus sisselogimiskuvale, autor <a href="https://github.com/g-desoutter">@g-desoutter</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Paranda paigutuse vahetamine, mis jättis mitte-ladina klaviatuuripaigutusega iga teise vajutuse vahele, autor <a href="https://github.com/manuaudio">@manuaudio</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Lülita mpv-s sisse riistvaraline video dekodeerimine, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Lülita TCP ülekoormuse juhtimine BBR-ile ja kasuta päris ketastel kyber I/O ajastajat, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Paigalda T3 Code selle iseuueneva AppImagena, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Paranda PHP ja Laraveli paigaldust, autor <a href="https://github.com/nunomaduro">@nunomaduro</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Paigalda Node laisalt ja jäta oma mise konfiguratsioon rahule, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Paigalda puuduvad rakendused vaikeväärtuste valimisel, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Tumenda paigaldatud tarkvara Install menüüdes selle peitmise asemel, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Registreeri Brave Origini jaoks paroolihaldur ja muud natiivse sõnumside hostid, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Rühmita Brave Origini veebiteavitused saidi järgi ja ava klõpsamisel õige vaheleht, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Kiida orbpakettide eemaldamine uuenduste ajal automaatselt heaks, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Uuenda Omarchy võtmehoidjat enne iga uuendust, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Paku pärast kanalite vahetamist taaskäivitamist, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Paku esmakäivituse uuendust ainult siis, kui on midagi uuendada, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Leia ilmateate asukoht ja installeri ajavöönd Omarchy enda geoteenusega, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Määra kell ntp.omarchy.org-ist Archi NTP kogumi asemel, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Mõõda võrgu kiirust Omarchy enda kiirustestiga, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Näita esimesel käivitamisel jälgitud ikooniga edenemiskuva, autor <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Käivita live ISO Omarchy kernelil ja T2 kernelil ainult Macidel, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Peata võrguühenduseta paigaldused, mis ootavad mise versiooniotsinguid, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Paranda võrguühenduseta paigaldused, mis vaikimisi määrasid ajavööndi Africa/Abidjan, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Paranda installeri ajavööndi valija, mis ei lasknud sul otsimiseks tippida, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Paranda live ISO, mis jäi Ventoy pulgalt käivitamisel alglaadimiskuva taha rippuma, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Paranda saksa ja prantsuse konsooli klahvistikud installeri seadistusvormis, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Peida gumi ingliskeelsed klahvivihjed installeris ja giti seadistuses, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Eemalda paigalduse edenemiskuvalt ainult ingliskeelsed naljad, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Paranda installeri väljund, mis maandus ketta ettevalmistamise ajal ekraanil täitmata, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Paranda Quattro uuendus, mis lähtestas vaikebrauseri Chromiumile, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Paranda Quattro uuendus, mis peatus taustanimedel, millel on mitte-ASCII tähemärgid, autor <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Paranda kerneli migratsioon, mis peatus masinatel, mis käivituvad GRUBi või systemd-bootiga, autor <a href="https://github.com/manuaudio">@manuaudio</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Paranda talveuni krüptimata masinatel, millel on rohkem kui üks NVMe ketas, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Paranda FIDO2 migratsioon, mis märgiti tehtuks enne, kui see lahendati, autor <a href="https://github.com/ErikMelton">@ErikMelton</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Paranda hõljuv tööruum, mis võttis üle esimese akna, mida sinu enda hõljumisreegel hõlmab, autor <a href="https://github.com/zihaomu">@zihaomu</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Paranda komposiitori takerdumine, kui Super + L liigub tööruumi hõljumisse ja välja ringiga, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Paranda Alt + Shift + Tab, mis ei liikunud iga akna kaudu tagurpidi ringiga, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Paranda välja hüpanud aknad, mis ei keskindunud teisele monitorile liigutamisel, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Paranda uued terminalid, mis avanesid väljaspool sinu kodukausta, kui fookuses oli mitte-terminali aken, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Paranda 1Passwordi ja Bitwardeni aknad, mis ei hõljunud, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Paranda 1Password, mis sulgus installeri terminali väljumisel, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Paranda DaVinci Resolve dialoogid, mis varastasid kursori fookuse, autor <a href="https://github.com/AksharP5">@AksharP5</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Paranda töölaud, mis paistis läbi Windowsi VM-i kuvade, autor <a href="https://github.com/jmwall">@jmwall</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Paranda pärand Windowsi VM-i paroolid, mis sisaldasid $$ pärast Quattro migratsiooni, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Peata Hyprlandi annetuse hüpikakna ilmumine pärast uuendusi, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Paranda ribavidinate lohistamist ja korrastamist, autor <a href="https://github.com/outfoxxed">@outfoxxed</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normaliseeri ribaikoonide suurus ja joondus, autor <a href="https://github.com/bjarneo">@bjarneo</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Näita peidetud ribaindikaatoreid ainult siis, kui hõljud kellast vasakul, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Joonda salveikoonid riba teiste ikoonidega, autor <a href="https://github.com/ayoubdya">@ayoubdya</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Näita järgmist riba tööriistavihjet kohe, kui üks on juba üleval, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Ava kella ja ilma paneelid nende vidinate all, autor <a href="https://github.com/scottjones">@scottjones</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Hoia võrgupaneel pärast DNS pakkuja valimist avatuna, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Paranda sulguv hüpikaken, mis jättis ribavidinad mittereageerivaks, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Paranda peidetud riba, mis püüdis klõpse täisekraani akende ülaosas, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Paranda tumedad salveikoonid, mis kadusid riba sisse, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Paranda ribaikoonid, mis istusid ebaühtlaselt või keskelt väljas, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Paranda riba tööriistavihjed, mis joonistasid oma esimese kaadri vales suuruses, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Paranda teavituste ajalugu, mis näitas iga kaarti justkui äsja saabunud, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Paranda esmakordse sisselogimise teavitused, mis varisesid ühte virna, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Paranda teavituste klõpsud, mis ei fokuseerinud mitmesõnaliste nimedega rakendusi, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Paranda Taildropi teavitused, mis näitasid tühja teksti ja puuduvaid eelvaateid, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Paranda akuteavitus, mis näitas täis aku puhul tühja aega ja 0W, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Paranda tühja aku hoiatus, mis jäi pärast ühendamist üles ja tuli pärast taaskäivitusi tagasi, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Paranda akukulu näit 0W mõnel sülearvutil, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Paranda täis aku vahelduvvoolul, mis näitas tühjenemisena, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Paranda Hibernate, mis näitas, kui kernel ei lähe talveunne, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Paranda gvfs ühendused, mis kadusid pärast jätkamist, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Paranda klaviatuuri taustvalgus, mis jäi pärast luku kahekordset tühjenemist välja, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Paranda sõrmejäljelugeja, mis ärkas, kui lukul olid kuvarid välja lülitatud, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Paranda käivitusparooli küsitlus, mis oli keskelt väljas, kui kuvar ilmus hilja, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Paranda ekraanisäästja väljumis klahv, mis vilkus nurgas, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Paranda Wi-Fi ikoon, mis väreles OWE üleminekurežiimi võrkudes, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Paranda OWE viga, mis prinditi terminali pärast teema paigaldamist, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Paranda värelus, kui vahetad pilditaustalt videotaustale, autor <a href="https://github.com/bjarneo">@bjarneo</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Uuenda Hackerman üleskaleeritud geomeetriliseks taustaks, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Paranda teemad, mille tsüklilised värviviited panid teemavahetuse rippuma, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Paranda Neovim, mis ei käivitunud Catppuccini teemaga, autor <a href="https://github.com/anandude">@anandude</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Paranda OpenCode 2, mis käivitus Omarchy oma asemel selle varuteemal, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Paranda madala kontrastsusega tekstisisene kood genereeritud VS Code teemas, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Paranda T3 Code paigaldused, mis peatusid praeguse teema sobitamisel, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Paranda terminali fondi suurus, mis lähtestus fondiperekonna vahetamisel, autor <a href="https://github.com/sbalbalosa">@sbalbalosa</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Paranda fontide vahetamine, mis printis terminali protsessi ID, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Paranda keelte vahetamine, mis ehitas iga lokaadi uuesti ja kaotas need peaaegu täis kettal, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Paranda kest, mis näitas tooreid tõlkevõtmeid enne selle tõlgete laadimist, autor <a href="https://github.com/zihaomu">@zihaomu</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Kiirenda tõlgitud teksti Omarchy skriptides, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Uuenda tõlkeid 686 stringi jaoks, neist 392 käsiraamatus, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> teoses <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Paranda helitugevuse ja väljundi juhtnupud mitte-inglise lokaatides, autor <a href="https://github.com/Sebo1411">@Sebo1411</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Paranda CPU kasutuse näidud mitte-inglise lokaatides, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Paranda fcitx5 teenus, mis taaskäivitus igavesti, kui fcitx5 pole paigaldatud, autor <a href="https://github.com/therk">@therk</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Paranda klaviatuuripaigutuse vidin, mis vahetas seadmeid, millel keegi ei tipi, autor <a href="https://github.com/bjarneo">@bjarneo</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Paranda klaviatuuripaigutuse vidin, mis lülitus tootja kiirklahviseadmetele, autor <a href="https://github.com/yashranaway">@yashranaway</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Paranda klahvisidemete menüü, mis jättis Lua protsessi 100% CPU-ga tööle, autor <a href="https://github.com/tobi">@tobi</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Paranda kell, mis ujutas suveaja lõppemisel logi iga millisekundiga üle, autor <a href="https://github.com/falkoro">@falkoro</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Paranda kest, mis asendas shell.jsoni, mida see ei saanud lugeda, vaikeväärtustega, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Paranda Omarchy menüü, mis kaotas oma read, kui selle faili uuendati, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Paranda plugina uuesti lubamine, mis ei toonud selle ribavidinat tagasi, autor <a href="https://github.com/berrimi">@berrimi</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Paranda kohalikud pluginad, mis laadisid oma Pythoni baitkoodi tõttu ringis uuesti, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Paranda pluginate peidetud nupud, mis varisesid oma täidiseks, autor <a href="https://github.com/dmkenney">@dmkenney</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Paranda rippmenüüd, mis lõikasid oma viimase elemendi ära, autor <a href="https://github.com/sprajs">@sprajs</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Paranda rippmenüüd, mis ei sulgunud teisel klõpsul, autor <a href="https://github.com/felixzsh">@felixzsh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Paranda liuguri nupud, mis peatusid enne raja lõppu, autor <a href="https://github.com/erikrjohansson">@erikrjohansson</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Paranda Update &gt; Hardware &gt; Trackpad, millel puudus enamik puuteplaate ja mis lähtestas klaviatuuri, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>See vabastab nüüd igal puuteplaadil kinnijäänud nupu ja lähtestab ainult puuteplaadi, mitte koos sellega klaviatuuri ja puuteekraani.</p>
+  </li>
+  <li>Pane veebikaamera menüü kaameraid kontrollima ilma neid sisse lülitamata, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Paranda Omasnapi kerimishõive, mis haaras ainult musti kaadreid, autor <a href="https://github.com/falkoro">@falkoro</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Paranda ekraanitõmmise valija, mis vabastas sinu enda klahvid, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Paranda salvestuse peatamine, mis teatas tühjast salvestatud salvestusest, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Paranda pildivalija, mis näitas üle salvestatud piltide jaoks vananenud pisipilte, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Paranda öövalgus, mis ei lähtestunud väljalülitamisel täielikult, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Paranda meediavidin, mis jättis peatatud loo jõudeoleva mängija vastu, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Paranda korduvad kuvaskannid monitoridel, mis heledust ei raporteeri, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Paranda Super + Shift + Return, mis ebaõnnestus, kui seadistatud brauser oli desinstallitud, autor <a href="https://github.com/vitally">@vitally</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Paranda kalkulaatori otseteed, mis jäid pärast eelpaigaldatud rakenduste eemaldamist alles, autor <a href="https://github.com/OldJobobo">@OldJobobo</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Paranda Copy URL otsetee Brave Origini profiilides, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Paranda Bitwardeni laienduse hüpikaken, mis avanes vale suurusega, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Paranda Battle.net, mis avanes HiDPI monitoridel 100% skaalal, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Paranda Inkscape'i failivalijad, mis avanesid plaaditult, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Paranda Go AUR paketid, mis ebaõnnestusid uuenduste ajal ehitamisel, kui mise haldab God, autor <a href="https://github.com/shbernal">@shbernal</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Paranda ONCE paigaldus, kui sa ei ole docker rühmas, autor <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Paranda agentide paneeli klõpsud, mis avasid salve, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Paranda agendi konto seadistus, mis komistas rippuma jäänud jagatud sümboolse lingi otsa, autor <a href="https://github.com/manuaudio">@manuaudio</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Paranda <code>--reauth</code>, mis lisas uue agendi konto, kui seda pole, autor <a href="https://github.com/manuaudio">@manuaudio</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Pane agendi konto ümbernimetamise vihje nimetama selle pakkujat, autor <a href="https://github.com/manuaudio">@manuaudio</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Paranda võtmehoidja uuendused, mis väitsid edu, kui võtmetoimingud ebaõnnestusid, autor <a href="https://github.com/Adolanium">@Adolanium</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Paranda tühi tehaseseadete lähtestamise küsitlus, kui see töötab sudo all, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Paranda ootel migratsioonide meeldetuletus, mis kuhjus üks kord sisselogimise kohta, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Paranda OS Age jaotises About, mis luges ISO koostest, mitte paigaldusest, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Paranda Dropbox, mis näitas failide puhul, mis on 360 kuni 364 päeva vanad, “0y ago”, autor <a href="https://github.com/manuaudio">@manuaudio</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Paranda Dropboxi olekukontroll, mis aegutas ootel sisselogimislingi, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Paranda Dropboxi salveikooni teegi paigaldamine, autor <a href="https://github.com/omarchybot">@omarchybot</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Luba Chromiumis katvad kerimisribad, autor <a href="https://github.com/robzolkos">@robzolkos</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Küsi enne Touch ID sisselülitamist Apple Silicon Macidel, autor <a href="https://github.com/scottjones">@scottjones</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Paku RC kanalit Apple Silicon Macidel, autor <a href="https://github.com/maralcbr">@maralcbr</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Paku stable kanalit Apple Silicon Macidel, autor <a href="https://github.com/maralcbr">@maralcbr</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Paranda Omarchy aliasid, funktsioonid ja keskkond, mis puudusid Apple Siliconi uutest terminalidest, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Seadista paigaldatud NVIDIA rakendused, autor <a href="https://github.com/jdvmi00">@jdvmi00</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Paranda paigaldused, mis ebaõnnestusid Lenovo Pro 9-l NVIDIA N1xiga, autor <a href="https://github.com/breymander">@breymander</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Paranda puuduvad sisemised kõlarid ja mikrofonid N1x sülearvutitel, mis kasutasid varasemaid heliprofiile, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Paranda aeglane töölaud NVIDIA GB10 masinatel nagu DGX Spark, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Paranda NVIDIA-l lukustuskuvale tippimine pärast jätkamist, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Lukk ei lähe enam uuesti pimedaks just siis, kui paneel süttib.</p>
+  </li>
+  <li>Paranda Lutris ja Battle.net, mis paigaldasid teise GPU 32-bitise Vulkani draiveri, autor <a href="https://github.com/zihaomu">@zihaomu</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Peata pärast iga uuendust taaskäivitamise küsimine ARM-il, autor <a href="https://github.com/birkskyum">@birkskyum</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Paku stable ja RC kanaleid aarch64-l, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Pane toiteprofiilid ARM sülearvutitel tööle, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Paku Dropboxi ARM masinatel 4K lehtedega ja Spotifyd veebirakendusena ARM-il, autor <a href="https://github.com/birkskyum">@birkskyum</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Peida GeForce NOW, Battle.neti ja Lutrise paigaldused ARM-il, autor <a href="https://github.com/birkskyum">@birkskyum</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Paranda Hermese rakendus, mis ei uuenenud kohapeal ARM-il, autor <a href="https://github.com/ryanrhughes">@ryanrhughes</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Paranda Snapdragoni sülearvutite klaviatuurid, mis ei tippinud ketta avamise küsitlusel, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Paranda kaamerad, mis puudusid Snapdragoni sülearvutitel sisselogimisel, autor <a href="https://github.com/birkskyum">@birkskyum</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Paranda must ekraan enne ketta avamist Snapdragon X2 sülearvutitel, autor <a href="https://github.com/jdvmi00">@jdvmi00</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Dekodeeri videot riistvaras Intel Wildcat Lake'il, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Paranda live ISO kokkuvarisemised Arrow Lake-H sülearvutitel, autor <a href="https://github.com/emirb">@emirb</a> pull requestis <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Paranda HP EliteBook Ultra G1q sisemine mikrofon, autor <a href="https://github.com/bprendie">@bprendie</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Kasuta Motorcomm YT6801 Etherneti jaoks ülesvoolu tuge, autor <a href="https://github.com/AFOliveira">@AFOliveira</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Edasta Elgato Cam Link 4K 16:9 virtuaalkaamerana, autor <a href="https://github.com/dhh">@dhh</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Toeta sõrmejäljelugejaid, mida platvorm nimetab, autor <a href="https://github.com/scottjones">@scottjones</a> pull requestis <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

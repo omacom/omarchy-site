@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (einnig kallað Quattro RS!) er fyrsta stóra eiginleikaútgáfan síðan <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, og hún er risastór: yfir 740 pull request voru sameinuð frá meira en 180 þátttakendum á aðeins tólf vikum. Hún býður nú upp á hefðbundinn skjáborðsham við hliðina á flísalagða sjálfgefna hamnum. Þú getur sett hana upp innbyggt á M1/M2/M3/Neo MacBook-tölvum. Og hún talar 50 tungumál. Og milljón aðra eiginleika, lagfæringar og endurbætur. Ertu þegar á Omarchy? Keyrðu <em>Update &gt; Omarchy</em>. Ný vél? <a href="/#install">Sæktu hana hér</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Fljótandi vinnusvæði með bryggju</h2>
+
+<p><code>Super + L</code> skiptir nú hvaða vinnusvæði sem er á milli flísaleggingar, skrununar og fljótandi hams. Á fljótandi vinnusvæði fær hver gluggi titilstiku í litum þemans þíns, og bryggja sýnir fest forritin þín, allt sem er í gangi, og rist yfir öll uppsett forrit. Dragðu til að endurraða eða festa, hægrismelltu fyrir meira, og <code>Super + M</code> lágmarkar glugga niður í bryggjuna.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Þetta er dásamleg leið inn fyrir alla sem koma frá macOS eða Windows og eru ekki tilbúnir að fara alla leið í flísaleggingu ennþá. Eða fyrir alla sem vilja bara eitt vinnusvæði þar sem gluggar geta breitt úr sér. Blandið saman eftir vinnusvæðum, og stikan sýnir hvaða útlit hvert þeirra notar.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy á Apple Silicon</h2>
+
+<p>Ótrúlega <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> teymið okkar hefur gefið út innbygga Mac-uppsetningarforritið. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Sæktu forrit</a> á macOS, og það setur Omarchy rétt við hliðina á því á M1, M2, M3 eða Neo MacBook-tölvunni þinni. Enginn USB-lykill, engin töfraorð í skipanalínu. Viltu frekar Homebrew? Það er ein lína:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Uppsetningarforrit Omarchy fyrir Mac" /></p>
+
+<p>Þetta er það sem við stefndum að í september: að klára það sem Asahi byrjaði á. Tveimur mánuðum síðar geturðu bara sótt það. Frábært starf allra í teyminu.</p>
+
+<p>Og þau eru ekki að stoppa þar. Unnið er að M4, M5 og M6 núna, svo það líður líklega ekki á löngu þar til Omarchy keyrir á öllum Apple Silicon Mac-tölvum.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy á M2 Max, M3 Air, Neo, M4 Pro og M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM-stuðningur fyrir NVIDIA DGX Spark + N1X (og bráðum Snapdragon)</h2>
+
+<p>Omarchy 4.5 kemur með fyrstu ARM ISO-útgáfunni sinni, og með henni kemur bráðabirgðastuðningur fyrir ARM-vélar NVIDIA: DGX Spark skjáborðstölvuna og fartölvurnar sem byggja á N1X, eins og <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> og <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Og bráðum fáum við stuðning fyrir alla línuna af Snapdragon ARM-vélum líka. Það er enn snemma, svo búist við nokkrum hrjúfum brúnum, og tilkynnið vinsamlegast allt sem bilar á <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 tungumál og 5 innsláttaraðferðir</h2>
+
+<p>Omarchy talar nú 50 tungumál. Veldu eitt undir <em>Setup &gt; Language</em> (eða keyrðu <code>omarchy language &lt;code&gt;</code>), og valmyndin, skjáborðið og tilkynningar Omarchy skipta strax. Staðfærsla kerfisins fylgir við næstu innskráningu.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Skipt um tungumál" /></p>
+
+<p>Að tala tungumál er þó aðeins hálfur leikurinn. Þú þarft líka að geta slegið það inn. Svo Omarchy setur nú upp almennilegar innsláttaraðferðir fyrir japönsku (Mozc), kóresku (Hangul), einfaldaða kínversku (Pinyin), Taívan (Zhuyin) og Hong Kong (Cangjie), beint úr uppsetningarforritinu eða síðar undir <em>Setup &gt; Keyboard</em>. Hver þeirra kemur með réttum leturgerðum fyrir stafform sín, glugginn með tillögum fylgir þemanu þínu, og <code>Super + I</code> skiptir á milli innsláttartungumála þinna. Hangul, Zhuyin og Cangjie halda lyklum sínum í stöðluðum stöðum jafnvel þó þú skrifir latneskt á Dvorak, Colemak eða AZERTY, alveg eins og á Windows og macOS. Og að ýta á Shift eitt og sér stígur út úr innsláttaraðferð yfir í latneska stafi og til baka aftur, eins og Sogou, Microsoft Pinyin og macOS virka.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Skráðu þig inn á innskráningargáttir Wi-Fi</h2>
+
+<p>Wi-Fi á hótelum, flugvöllum og kaffihúsum virkar loksins bara. Omarchy tekur nú eftir því þegar net vill að þú skráir þig inn eða samþykkir skilmála þess áður en það hleypir þér á netið. Nettáknið varar þig við, og netborðið sýnir stóran Open Captive Portal hnapp sem fer með þig beint á innskráningarsíðuna. Þegar þú ert kominn í gegn fer allt aftur í eðlilegt horf af sjálfu sér.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Skrá inn á innskráningargátt úr netborðinu" width="380" /></p>
+
+<h2 id="five-new-default-apps">Fimm ný sjálfgefin forrit</h2>
+
+<p><strong>Hype</strong> býr til kynningar úr einni Markdown-skrá, með sjónrænum glæruritli við hliðina á frumtextanum, og flytur út í PDF eða PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> kemur í stað Xournal++ fyrir pappírsvinnuna: opnaðu PDF, settu vistaða undirskriftina þína, texta og dagsetningar, og vistaðu undirritað eintak.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> teiknar trékort af því sem fyllir diskinn þinn, litað eftir tegund, bendir á skyndiminni sem óhætt er að endurgera, og lætur þig merkja það sem á að fara.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> tekur upp myndavélina þína með einum lykli, með þema sem passar við skjáborðið þitt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> gefur þér fjartengt skjáborð yfir SSH. Tengstu við aðra Omarchy-vél og stjórnaðu öllu skjáborðinu hennar úr glugga á þinni, með flipa fyrir hverja vél. Og þar sem það fer yfir SSH er ekkert auka sem þarf að setja upp eða afhjúpa. Vélin sem verið er að stjórna sýnir vísir um fjartengda lotu á stikunni, svo það er alltaf ljóst þegar einhver er á henni.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Og þar er <strong>Elsewhen</strong>, heimsklukka sem býr rétt við hliðina á klukkunni á stikunni. Bankaðu á borg á hnettinum til að stilla hvar þú ert, leitaðu að raunverulegum stöðum, og nefndu fólkið sem býr í hverri borg, svo þú veist alltaf hvort það er sómasamlegur tími til að hringja. Skiptu á milli 12 og 24 klukkustunda með <code>t</code>, á milli °F og °C með <code>Alt + T</code>, og kallaðu hana fram hvenær sem er með <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Með Monologue fyrir upptöku og Omacut fyrir klippingu fylgja OBS Studio og Kdenlive ekki lengur með nýjum uppsetningum. Lazydocker er líka horfið úr nýjum uppsetningum, þó Docker og Docker Compose séu enn innifalin. Vélar sem þegar hafa eitthvað af þeim halda þeim.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Þarftu að vinna með fólki sem býr í Office? <em>Install &gt; Service &gt; Microsoft</em> setur nú upp Outlook, Word, Excel, PowerPoint, Teams og OneDrive sem vefforrit. Hvert þeirra fær sinn eigin glugga og færslu í ræsinum, svo þau líða eins og heima við hliðina á öllu öðru. Engar afsakanir lengur fyrir því að skipta ekki yfir í Omarchy í vinnunni!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams og PowerPoint á Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper fyrir inntal</h2>
+
+<p>Superwhisper er nú sjálfgefinn inntalshreyfill Omarchy, og hann er settur upp beint úr kassanum. Bankaðu á <code>Alt + Space</code> til að byrja að tala og aftur til að stoppa, eða haltu <code>Right Alt</code> fyrir ýta-til-að-tala. Það er ótrúlega hratt og mjög nákvæmt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Talað inn með Superwhisper" /></p>
+
+<p>Það byrjar í skýinu, svo það virkar um leið og þú setur upp, og fyrstu 10.000 orðin eru ókeypis. En þú getur skipt yfir í niðurhalanlegt líkan sem er algjörlega ókeypis og keyrir alveg staðbundið, án þess að senda orð til nokkurs. Og ef þú vilt frekar nota annað staðbundið líkan er Voxtype enn í boði sem valkostur.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Uppsetning á innan við tíu sekúndum</h2>
+
+<p>Omarchy setti áður upp einhver 940 pakka einn af öðrum. Nýja F1 uppsetningarforritið pakkar í staðinn út fyrirframgerðri rótarmynd og bætir aðeins pökkum þessarar vélar ofan á. Það styttir uppsetningartíma um það bil um helming á hvaða vél sem er.</p>
+
+<p>Og á hröðum vélbúnaði er það fáránlegt. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> frá AMD setti heimsmetið með fullri Omarchy-uppsetningu á <strong>7 sekúndum</strong> á AMD fartölvunni sinni. <a href="https://x.com/dhh/status/2117222836620202375">Sjö sekúndur!</a> Ég man þegar fimm mínútur þóttu metnaðarfullt markmið.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Setti upp Omarchy á 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Hraðara alls staðar annars staðar</h2>
+
+<p>Það er ekki bara uppsetningarforritið. Ræsing stöðvast ekki lengur á binfmt-skráningu. Þemavalinn opnast strax í staðinn fyrir eftir fjórðung úr sekúndu. Valmyndir og borð opnast beint frá flýtilyklum Hyprland, og sleppa þeim 60 ms sem það tók að ræsa ferli fyrst. Hægustu athuganir Omarchy-valmyndarinnar fóru úr 200 ms í 16 ms, ný útstöð sýnir kvaðningu sína 30 ms fyrr, og allt skjáborðið bregst nú við breytingum í stað þess að spyrjast fyrir um þær. Jafnvel útskráning, endurræsing og slökkvun gerast um leið og forritin þín klára að lokast.</p>
+
+<h2 id="agent-upgrades">Uppfærslur fyrir gervigreindaraðila</h2>
+
+<p>Omarchy er stýrikerfið með gervigreindaraðilum fyrir öld gervigreindaraðilanna, og 4.5 kemur með stóra umferð uppfærslna fyrir vinnu með gervigreindaraðilum. Aðilaborðið fylgist nú með 23 aðilum og veitum, upp úr 6, þar á meðal Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter og Ollama. Hvert takmörk fær sinn eigin mæli með tímanum þar til það endurstillist, svo þú getur séð nákvæmlega hversu mikið svigrúm þú átt eftir. Og Grok er nú fullgild veita við hliðina á Claude og Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Aðilaborðið með nokkrum Claude- og Codex-áskriftum" width="380" /></p>
+
+<p>Og gervigreindaraðilinn þinn er alltaf einn ásláttur í burtu. <code>Super + ~</code> fellir niður Quake-stíls stjórnborð yfir deyft skjáborð, og í fyrsta skipti sem þú opnar það ræsir það sjálfgefna gervigreindaraðilann þinn. Ýttu á það aftur til að fela það, og lotan þín er rétt þar sem þú skildir hana eftir.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Quake-stíls stjórnborðið sem keyrir gervigreindaraðila yfir deyft skjáborð" /></p>
+
+<p>Ef þú ert með fleiri en eina áskrift geturðu nú haldið nokkrum Claude, Codex og Grok innskráningum á sömu vél og valið með hvaða nýjar lotur byrja, með <code>omarchy agent account</code>. Saga, stillingar og færni eru samnýtt á milli þeirra, svo <code>claude --continue</code> heldur áfram rétt þar sem þú hættir eftir skipti. Nálægt takmörkum getur Omarchy annaðhvort boðið upp á skipti með einum smelli eða fært nýjar lotur yfir á reikninginn með mest svigrúmið af sjálfu sér. Og þegar þú setur upp aðra vél færir <code>omarchy agent account copy</code> allar innskráningar þínar yfir SSH, svo þú þarft ekki að skrá þig inn í allt aftur.</p>
+
+<p>Kimi og Ori, aðilahámur OpenRouter, bætast við valkostina undir <em>Setup &gt; Defaults &gt; Agent</em>, og Antigravity frá Google kemur í stað úrelta Gemini CLI (<code>gemini</code> virkar enn sem samheiti). Viltu frekar glugga en útstöð? Skjáborðsforrit Claude og Amp eru nú einum smelli í burtu undir <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Tilkynningar, endurgerðar</h2>
+
+<p>Tilkynningar staflast nú eftir sendanda, fylgja þemanu þínu og fella saman eins endurtekningar. Aðgerðahnnappar, staðfestingarkóðar og tenglar virka allir beint úr kortinu. <code>Super + Comma</code> virkar á þá nýjustu (vísar henni frá, opnar hana eða ýtir á hnappinn hennar), og <code>Super + Ctrl + Comma</code> gefur þér lyklaborðið til að stjórna þeim öllum. Bjallan á stikunni kveikir á Ónáðið ekki.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Nýjar tilkynningar" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Myndbandsbakgrunnar og kynningar þema</h2>
+
+<p>Bakgrunnar geta nú verið myndbönd. Settu eitt inn, og skjáborðið þitt lifnar við með veltandi öldum eða hverju öðru sem þig lystir, á meðan læsiskjárinn sýnir kyrran ramma úr því. Og þemu gera nú inngöngu: hvert þeirra getur spilað stutta, hljóðlausa kynningu þegar þú skráir þig inn eða skiptir yfir í það. (Viltu frekar hafa það rólegt? Slökktu á kynningum undir <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse bætist í hóp sjálfgefnu þemanna</h2>
+
+<p>Jade Horse er allt í misturgrænum tónum, með útskornum jade-bakgrunnum sem láta allt skjáborðið líta út eins og rúllumálverk. Það kemur í stað Osaka Jade meðal innbyggðu þemanna, og því fylgir Starship sem hitt nýja sjálfgefna þemað. Ef þú ert á Osaka Jade heldurðu eintakinu þínu, og það lifir áfram sem <a href="https://github.com/omacom/omarchy-osaka-jade-theme">þema frá þriðja aðila</a> fyrir alla sem vilja setja það upp nýtt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Þemað Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff er nýi sjálfgefni bakgrunnurinn</h2>
+
+<p>Nýjar uppsetningar taka nú á móti þér með Liftoff, glæsilegri flugtaksmynd við sólsetur sem er nýi sjálfgefni bakgrunnurinn fyrir Tokyo Night. Hann var gerður af <a href="https://github.com/tcballard">Tom Ballard</a>, sem bjó hann fyrst til fyrir <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a>. Takk, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Bakgrunnurinn Liftoff eftir Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Ræsivalmynd nú hljóðlát</h2>
+
+<p>Omarchy sýndi áður ræsivalmyndina í um sex sekúndur við hverja ræsingu, bara ef þú þyrftir að fara til baka í eldri skyndimynd. En næstum enginn gerði það nokkurn tímann. Svo nú bíður Limine aðeins í eina sekúndu og ræsir hljóðlega, og oftast sérðu ekki valmyndina neitt.</p>
+
+<p>Þegar þú þarft aðra færslu eða skyndimynd skaltu halda áfram að banka á hvaða lykil sem er (örin niður virkar) á meðan vélin ræsir, og hún mun stoppa við valmyndina. Og ef þú vilt frekar hafa valmyndina uppi lengur til frambúðar skaltu stilla þitt eigið <code>timeout:</code> í <code>/boot/limine.conf</code> (eins og <code>timeout: 5</code>). Uppfærslur láta tímamörk sem þú stillir í friði.</p>
+
+<h2 id="changed-hotkeys">Breyttir flýtilyklar</h2>
+
+<p>Sumir flýtilyklar færðust til:</p>
+
+<ul>
+  <li>Reiknivél: <code>Super + Ctrl + Q</code> er nú <code>Super + Shift + Q</code>.</li>
+  <li>Virkni: <code>Super + Ctrl + T</code> er nú <code>Super + Shift + T</code>, og <code>Super + Ctrl + T</code> opnar þemu.</li>
+  <li>Net: <code>Super + Ctrl + W</code> er nú <code>Super + Ctrl + N</code>, og <code>Super + Ctrl + W</code> opnar bakgrunna.</li>
+  <li>Næturljós hefur ekki lengur flýtilykil (hann var <code>Super + Ctrl + N</code>); það er í <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> opnar Apps úr bryggjunni í stað Apps-valmyndarinnar.</li>
+</ul>
+
+<p>Flýtilyklar tilkynninga breyttust:</p>
+
+<ul>
+  <li><code>Super + Comma</code> virkar á nýjasta kortið (vísar því frá, opnar það eða ýtir á eina hnappinn þess) í stað þess að aðeins vísa því frá.</li>
+  <li>Að vísa þeirri síðustu frá færðist í <code>Super + Alt + Comma</code>, sem áður opnaði hana.</li>
+  <li>Þöggun færðist frá <code>Super + Ctrl + Comma</code> í <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> gefur þér nú stjórn með lyklaborði.</li>
+</ul>
+
+<p>Nokkrir lyklar virka öðruvísi:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code>, og <code>Super</code> + skrun vera á vinnusvæðum núverandi skjás, þar sem hver skjár hefur sín eigin.</li>
+  <li>Í útstöð senda <code>Super + C</code> og <code>Super + V</code> <code>Ctrl + Shift + C</code> og <code>Ctrl + Shift + V</code> í stað <code>Ctrl + Insert</code> og <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Ný sjálfgefin gildi sem gætu rekist á við eigin bindingar þínar: <code>Super + Q</code> (loka glugga, við hliðina á <code>Super + W</code>), <code>Super + A</code> (velja allt), <code>Super + M</code> (lágmarka í bryggjuna), <code>Super + ~</code> og <code>Super + Shift + ~</code> (Quake-stjórnborð), <code>Super + Alt + L</code> (fyrra útlit), <code>Super + Shift + Ctrl + Arrows</code> (færa glugga á annan skjá), <code>Super + Ctrl + Alt + C</code> (skjámynd), <code>Super + Ctrl + Alt + E</code> (heimsklukka), <code>Super + Ctrl + Alt + F</code> (skjáborð á fullum skjá), og að halda <code>Right Alt</code> fyrir ýta-til-að-tala inntal.</p>
+
+<h2 id="more-features">Fleiri eiginleikar</h2>
+
+<ul>
+  <li>Gefðu hverjum skjá sín eigin vinnusvæði: <code>Super + 1-0</code> fer á vinnusvæði skjásins sem þú ert á, og <code>Super + Arrows</code> færir til og frá hinum skjásunum eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Safnaðu öllu um útlit skjáborðsins í nýja Appearance-valmynd, sem kemur í stað Style: þema, bakgrunnur, letur, stika, gluggar, vörumerki, bryggja, útlit vinnusvæða, hreyfimyndir og aflæsingarskjár eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Veldu ógegnsæja, gegnsæja eða glerjaða glugga undir <em>Appearance &gt; Window Transparency</em>, auk glerjaðs bakgrunns stiku eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Veldu þema, hvöss eða rúnað horn glugga undir <em>Appearance &gt; Window Corners</em> eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Bættu við ham án hreyfimynda, sjálfgefið á í sýndarvélum eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Gerðu forrit ógegnsæ sjálfgefið, á meðan útstöðvar haldast gegnsæjar eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Bættu Slack við Install &gt; Service eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Láttu Alt + Space kveikja og slökkva á inntali á öllum bakendum eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Bættu Open- og Edit-hnöppum við tilkynningar um skjámyndir, og Open og Cut við skjáupptökur og niðurhal frá yt-dlp eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Bættu við Update &gt; Kernel valmynd til að skipta um sjálfgefinn kjarna eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Bættu þemasamstillingu við herdr-vélar eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Bættu við o.rebind til að skipta út lyklabindingum Hyprland eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Biddu um git-auðkenni þitt eftir fyrstu innskráningu í stað þess í uppsetningarforritinu, með innskráningu á GitHub eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Leyfðu uppsetningarmiðli að forstilla tungumál, lyklaborð og tímabelti eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Leyfðu græjum stiku að búa í skúffu bakkans eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Leyfðu að fjarlægja græju stiku með því að draga hana af stikunni eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Leyfðu að skruna í gegnum vinnusvæði frá stikunni eftir <a href="https://github.com/outfoxxed">@outfoxxed</a> í <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Leyfðu að eyða aukaþemum úr þemavalinu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Bættu hey, basecamp og Cloudflare CLI-tólum við sem tólum sem sett eru upp eftir þörfum eftir <a href="https://github.com/monorkin">@monorkin</a> í <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Bættu SSH Agent við sem valkvæðri þjónustu eftir <a href="https://github.com/carletex">@carletex</a> í <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Leyfðu að velja hversu lengi sudo án lykilorðs varir eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Bættu lokunarhnappi sem birtist við yfirferð við tilkynningakort eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Leyfðu að þagga tilkynningar forrits úr hrunsgreiningu þess eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Leyfðu omarchy-notification-send að bæta við aðgerðahnöppum eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Bættu við klukkusniði með lifandi sekúndum eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Stilltu baklýsingu lyklaborðs með Ctrl og birtulyk lunum eftir <a href="https://github.com/ludagoo">@ludagoo</a> í <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Prentaðu OEM Windows vörulykilinn úr fastbúnaði eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Bættu upprunalega vi við sem valkosti fyrir ritil í útstöð eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Bættu bakgrunninum Roadster Starlight við Ethereal eftir <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> í <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Öryggi</h2>
+
+<ul>
+  <li>Haltu lykilorði Windows-sýndarvélarinnar utan við röksemdir RDP-forritsins eftir <a href="https://github.com/dicemans">@dicemans</a> í <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Færðu stöðu skjáupptöku út úr /tmp sem allir geta skrifað í eftir <a href="https://github.com/Chessing234">@Chessing234</a> í <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Hertðu fyrningu sudo án lykilorðs yfir svefn eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Bindu hreinsun uppfærsluhemils við ferlið sem bjó hann til eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Einangraðu heimild fyrir hreinsun OCaml eftir <a href="https://github.com/ErikMelton">@ErikMelton</a> í <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Festu hækkun réttinda fyrir endurstillingu á verksmiðju við pakkaða skipunina eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Fjarlægðu vistuð fingrafarssniðmát fyrir notandann sem kallar á endurstillingu eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Hafnaðu nöfnum á krókum og stöðu sem eru slóðir eftir <a href="https://github.com/Adolanium">@Adolanium</a> í <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Vísaðu til system-auth í polkit-staflanum sem uppsetning fingrafars og FIDO2 skrifar eftir <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> í <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Fjarlægðu fingraför úr geymslu lesarans sjálfs þegar þeim er eytt eftir <a href="https://github.com/scottjones">@scottjones</a> í <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Komdu í veg fyrir að uppsetning SSH skilji sshd eftir í gangi með innskráningum með lykilorði þegar engum lykli er bætt við eftir <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> í <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Komdu í veg fyrir að annar staðbundinn notandi skipti inn sínu eigin forriti við uppfærslu Voxtype eftir <a href="https://github.com/Vladkarok">@Vladkarok</a> í <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Hertðu hvernig endurstilling á verksmiðju sendir gum-stillingar þínar í gegnum sudo eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Lagfæringar</h2>
+
+<ul>
+  <li>Lagfærðu að Hyprland hrundi þegar skjár var tekinn úr sambandi, gerður óvirkur eða slökkt á honum með því að loka lokinu eftir <a href="https://github.com/falkoro">@falkoro</a> í <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Lagfærðu uppfærslur sem gátu skilið kjarnaímynd eftir án root= færibreytu sinnar eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Lagfærðu að endurstilling á verksmiðju eyddi ræsifærslum annarra kerfa eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Lagfærðu að uppsetning við hliðina á annarri Omarchy fjarlægði ræsifærslu þeirrar uppsetningar eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Lagfærðu uppsetningar á lausu plássi sem gátu tekið núverandi disksneið fyrir nýja eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Lagfærðu að endurtekning rofinnar breytingar á lykilorði drifs fjarlægði rangan lykil eftir <a href="https://github.com/scottjones">@scottjones</a> í <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Biddu um sudo-lykilorðið einu sinni fyrir hverja Omarchy-uppfærslu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Biddu um sudo-lykilorðið einu sinni í tíu mínútur í stað þess aftur við hverja skipun eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Láttu eina sudo-kvaðningu uppfærslunnar ná yfir AUR-uppfærslur og ræsiathugunina eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Haltu pakkauppfærslum öruggum frá útskráningu mitt í færslu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Skráðu út, endurræstu og slökktu um leið og forrit klára að lokast eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Skiptu Tensaku út fyrir Omasnap fyrir skjámyndir eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Láttu borð vaxa út úr stikunni og umbreytast á milli, með endurgjöf við ýtingu á hnöppum og táknum stiku eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Láttu tilkynningar renna inn undan stikunni og til baka út sömu leið og þær komu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Athugaðu tengingu við eigin endapunkt Omarchy, og lagfærðu innskráningu á innskráningargáttir eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Lagfærðu að skipti frá edge yfir í stable eða RC skildu vélina eftir á gamalli byggingu eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Lagfærðu að uppfærslan í 4.5 stoppaði þegar skelin var sein að svara eftir <a href="https://github.com/AnPod">@AnPod</a> í <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Lagfærðu að uppfærslur mistókust þegjandi þegar þær voru ræstar utan skjáborðslotu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Lagfærðu að misheppnað niðurhal á mise-tóli stoppaði restina af kerfisuppfærslu eftir <a href="https://github.com/sanjyay">@sanjyay</a> í <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Lagfærðu að uppfærslur mistókust þegar omarchy-nvim var ekki uppsett eftir <a href="https://github.com/imzihuailin">@imzihuailin</a> í <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Lagfærðu að tvíræsiuppsetningar mistókust að tengja EFI-disksneiðina eftir <a href="https://github.com/Damian626">@Damian626</a> í <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Lagfærðu að uppsetningar stoppuðu þegar fastbúnaðurinn tók ekki við nýrri ræsifærslu eftir <a href="https://github.com/ryanio">@ryanio</a> í <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Lagfærðu að uppsetningar stoppuðu á diskum með gömlum RAID-meðlim eða rúmmálshópi eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Ræstu uppsetningarforritið fyrr með því að bíða ekki eftir hverju USB-tæki og ræsiverki eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Flýttu dulritun disks með 4096 bæta geirum á nýjum uppsetningum eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Listaðu innri diska fyrst og opnaðu uppsetningarskjái á öruggum valkosti eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Listaðu Full disk install fyrst í uppsetningarforritinu, og farðu til baka með Esc á diskskjánum eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Lagfærðu að kvörðun eins skjás breytti kvarða allra annarra skjáa eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Lagfærðu að XWayland-forrit komu út of stór þegar skjáir nota mismunandi kvarða eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Lagfærðu að HDR-skjáir skiptu yfir í útþvegna HDR-mynd þegar gluggi fór á fullan skjá eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Lagfærðu óskarpar valmyndir og völ á brotakvörðuðum skjám eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Lagfærðu að skjár fartölvunnar var áfram slökktur eftir að ytri skjárinn var tekinn úr sambandi eftir <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> í <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Lagfærðu að endurvirkjun skjás endurstillti stöðu hans, kvarða og ham eftir <a href="https://github.com/zihaomu">@zihaomu</a> í <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Lagfærðu að valmyndir og völ enduropnuðust ekki eftir að skjár var aftengdur eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Lagfærðu að vinnusvæði hvers skjás færðust eftir að skjár var tekinn úr sambandi eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Lagfærðu að skelin hrundi þegar hljóðtæki aftengdist með hljóðborðið opið eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Lagfærðu að gluggar á fullum skjá misstu fullan skjá eftir skjáhvíld eftir <a href="https://github.com/MGross21">@MGross21</a> í <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Lagfærðu að bendillinn hvarf við ræsingu eftir að Hyprland endurhlóð eftir <a href="https://github.com/spencerbull">@spencerbull</a> í <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Lagfærðu að bendillinn varð ósýnilegur yfir XWayland-forritum eftir <a href="https://github.com/Sebo1411">@Sebo1411</a> í <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Lagfærðu að upptaka klemmuspjalds hékk eftir <a href="https://github.com/maxcroy1">@maxcroy1</a> í <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Lagfærðu aðgang að lyklakippu í gegnum XDG Secret-gáttina eftir <a href="https://github.com/pkwagner">@pkwagner</a> í <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Lagfærðu skráningu fingrafara og endurheimt læsiskjás eftir <a href="https://github.com/GeertJohan">@GeertJohan</a> í <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Leiðbeindu um skráningu fingrafara skref fyrir skref eftir <a href="https://github.com/scottjones">@scottjones</a> í <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Lagfærðu sjálfvirka endurtekningu lykla í lykilorðareit læsiskjásins eftir <a href="https://github.com/berndb">@berndb</a> í <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Lagfærðu að veggfóður læsiskjásins hlóðst eftir lykilorðareitinn við vakningu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Lagfærðu tímamörk skjálæsingar þegar lotan nefnir skjá sem er horfinn eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Flýttu því að opna útstöð í möppu núverandi glugga eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Láttu ritla í VS Code-fjölskyldunni fylgja þemabreytingum í beinni eftir <a href="https://github.com/Macho0x">@Macho0x</a> í <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Endurþemaðu Hunk-lotur í gangi við þemabreytingu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Mundu valið veggfóður fyrir hvert þema eftir <a href="https://github.com/OldJobobo">@OldJobobo</a> í <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Haltu myndavalinu hröðu og skarpu með stórum söfnum og HiDPI eftir <a href="https://github.com/keylimesoda">@keylimesoda</a> í <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Minnkaðu örgjörva- og minnisnotkun gegnsæju stikunnar við sýnatöku úr veggfóðrinu eftir <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> í <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Flýttu Tailscale-borðinu á tailnetum með þúsundum véla eftir <a href="https://github.com/iskakaushik">@iskakaushik</a> í <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Færðu Grok á sama stig og Claude og Codex í aðilaborðinu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Beittu vali á aðilareikningi á undirferli CLI eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Sýndu einstök útgjaldamörk Codex og endurstillingartíma þeirra eftir <a href="https://github.com/Stegi56">@Stegi56</a> í <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Settu upp samþættingu við vafra þegar Claude er valinn eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Lagfærðu að aðilar fundu ekki mise-tól sem sett voru upp eftir að þeir ræstust eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Lagfærðu að líma skjámyndir inn í aðila í herdr-rúðum sem ræstar voru yfir SSH eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Lagfærðu að aðilaborðið missti af þjöppuðum Codex-lotum eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Færðu Caps Lock aftur í eðlilegt horf og gerðu Shift + Caps Lock að samsetningarlykli eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Beittu lyklaborðsuppsetningu kerfisins á innskráningarskjánum eftir <a href="https://github.com/g-desoutter">@g-desoutter</a> í <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Lagfærðu að skipti á uppsetningu slepptu öðru hverju ýtingu með ólatneskri lyklaborðsuppsetningu eftir <a href="https://github.com/manuaudio">@manuaudio</a> í <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Kveiktu á vélbúnaðarafkóðun myndbanda í mpv eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Skiptu um stjórn á TCP-teppu yfir í BBR og notaðu kyber I/O-áætlunargerðina á raunverulegum diskum eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Settu T3 Code upp sem sjálfuppfærandi AppImage þess eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Bættu uppsetningu PHP og Laravel eftir <a href="https://github.com/nunomaduro">@nunomaduro</a> í <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Settu Node upp eftir þörfum og láttu mise-stillinguna þína í friði eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Settu upp forrit sem vantar þegar sjálfgefin eru valin eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Deyfðu uppsettan hugbúnað í Install-valmyndunum í stað þess að fela hann eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Skráðu lykilorðastjóra og aðra innbyggða skilaboðahýsla fyrir Brave Origin eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Flokkaðu vef tilkynningar Brave Origin eftir vefsvæði, og opnaðu réttan flipa þegar smellt er eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Samþykktu sjálfkrafa fjarlægingu munaðarlausra pakka við uppfærslur eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Uppfærðu lyklakippu Omarchy fyrir hverja uppfærslu eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Bjóddu endurræsingu eftir að skipt er um rás eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Bjóddu uppfærslu við fyrstu keyrslu aðeins þegar eitthvað er að uppfæra eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Finndu staðsetningu veðurs og tímabelti uppsetningarforritsins með eigin landþjónustu Omarchy eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Stilltu klukkuna frá ntp.omarchy.org í stað NTP-hóps Arch eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Mældu nethraða með eigin hraðaprófi Omarchy eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Sýndu framvinduskjá með raktu tákni við fyrstu ræsingu eftir <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> í <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Ræstu lifandi ISO á Omarchy-kjarnanum, og á T2-kjarnanum aðeins á Mac-tölvum eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Komdu í veg fyrir að uppsetningar án nettengingar bíði eftir útgáfuuppflettingum mise eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Lagfærðu að uppsetningar án nettengingar settu tímabeltið sjálfgefið á Africa/Abidjan eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Lagfærðu að tímabeltaval uppsetningarforritsins leyfði þér ekki að skrifa til að leita eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Lagfærðu að lifandi ISO hékk á bak við upphafsskjáinn þegar ræst var af Ventoy-lykli eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Lagfærðu þýsk og frönsk stjórnborðslyklaborð í uppsetningarformi uppsetningarforritsins eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Feldu ensku lyklavísbendingar gum í uppsetningarforritinu og uppsetningu git eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Fjarlægðu brandarana sem eru aðeins á ensku af framvinduskjá uppsetningarinnar eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Lagfærðu að úttak uppsetningarforritsins lenti án jaðarrýmis á skjánum á meðan það undirbjó diskinn eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Lagfærðu að Quattro-uppfærslan endurstillti sjálfgefinn vafra í Chromium eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Lagfærðu að Quattro-uppfærslan stoppaði á bakgrunnsnöfnum með stöfum utan ASCII eftir <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> í <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Lagfærðu að kjarnaflutningurinn stoppaði á vélum sem ræsa með GRUB eða systemd-boot eftir <a href="https://github.com/manuaudio">@manuaudio</a> í <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Lagfærðu dvala á ódulrituðum vélum með fleiri en einum NVMe-diski eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Lagfærðu að FIDO2-flutningurinn var merktur kláraður áður en hann var leystur eftir <a href="https://github.com/ErikMelton">@ErikMelton</a> í <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Lagfærðu að fljótandi vinnusvæði tók yfir fyrsta gluggann sem eigin fljótaregla þín nær yfir eftir <a href="https://github.com/zihaomu">@zihaomu</a> í <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Lagfærðu að samsetningarforritið stöðvaðist þegar Super + L skipti vinnusvæði inn og út úr fljótandi ham eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Lagfærðu að Alt + Shift + Tab fór ekki aftur á bak í gegnum hvern glugga eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Lagfærðu að útstökkvir gluggar miðjuðust ekki þegar þeir voru færðir á annan skjá eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Lagfærðu að nýjar útstöðvar opnuðust utan heimamöppunnar þinnar þegar gluggi sem ekki var útstöð var í fókus eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Lagfærðu að gluggar 1Password og Bitwarden flutu ekki eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Lagfærðu að 1Password lokaðist þegar útstöð uppsetningarforritsins hætti eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Lagfærðu að gluggar DaVinci Resolve stálu fókus bendilsins eftir <a href="https://github.com/AksharP5">@AksharP5</a> í <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Lagfærðu að skjáborðið sást í gegnum skjái Windows-sýndarvélar eftir <a href="https://github.com/jmwall">@jmwall</a> í <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Lagfærðu eldri lykilorð Windows-sýndarvélar sem innihéldu $$ eftir Quattro-flutninginn eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Komdu í veg fyrir að sprettigluggi Hyprland um framlög birtist eftir uppfærslur eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Bættu að draga og raða græjum stiku eftir <a href="https://github.com/outfoxxed">@outfoxxed</a> í <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Staðlaðu stærð og röðun tákna stiku eftir <a href="https://github.com/bjarneo">@bjarneo</a> í <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Birtu feldu vísa stikunnar aðeins þegar farið er yfir vinstra megin við klukkuna eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Jafnaðu tákn bakkans við önnur tákn stikunnar eftir <a href="https://github.com/ayoubdya">@ayoubdya</a> í <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Sýndu næstu ábendingu stikunnar strax á meðan ein er þegar uppi eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Opnaðu klukku- og veðurborðin undir græjum þeirra eftir <a href="https://github.com/scottjones">@scottjones</a> í <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Haltu netborðinu opnu eftir að DNS-veita er valin eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Lagfærðu að lokandi sprettigluggi skildi græjur stiku eftir óvirkar eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Lagfærðu að falda stikan fangaði smelli eftir efri brún glugga á fullum skjá eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Lagfærðu að dökk tákn bakkans hurfu inn í stikuna eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Lagfærðu að tákn stiku sátu ójöfn eða utan miðju eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Lagfærðu að ábendingar stiku teiknuðu fyrsta rammann sinn í rangri stærð eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Lagfærðu að saga tilkynninga sýndi hvert kort sem rétt í þessu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Lagfærðu að tilkynningar við fyrstu innskráningu féllu saman í einn stafla eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Lagfærðu að smellir á tilkynningar færðu ekki fókus á forrit með nöfn úr mörgum orðum eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Lagfærðu að Taildrop-tilkynningar sýndu tóman texta og vantaði forskoðanir eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Lagfærðu að rafhlöðutilkynningin sýndi tóman tíma og 0W á fullri rafhlöðu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Lagfærðu að viðvörun um litla rafhlöðu var áfram uppi eftir að sett var í samband og kom aftur eftir endurræsingar eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Lagfærðu að aflnotkun rafhlöðu las 0W á sumum fartölvum eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Lagfærðu að full rafhlaða á AC birtist sem að tæmast eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Lagfærðu að Hibernate birtist þegar kjarninn getur ekki farið í dvala eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Lagfærðu að gvfs-tengingar hurfu eftir endurvakningu eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Lagfærðu að baklýsing lyklaborðs var áfram slökkt eftir að læsingin slökkti tvisvar eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Lagfærðu að fingrafaralesarinn vaknaði á meðan læsingin hafði skjái slökktar eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Lagfærðu að kvaðning um ræsilýkilorð var utan miðju þegar skjár birtist seint eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Lagfærðu að útgöngulykill skjáhvíldarinnar blikkaði í horninu eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Lagfærðu að Wi-Fi táknið blikkaði á netum í OWE umbreytingarham eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Lagfærðu OWE villu sem prentuð var í útstöðinni eftir uppsetningu þema eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Lagfærðu blikk þegar skipt var úr kyrrum bakgrunni yfir í myndbandsbakgrunn eftir <a href="https://github.com/bjarneo">@bjarneo</a> í <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Uppfærðu Hackerman í uppskalaðan rúmfræðilegan bakgrunn eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Lagfærðu þemu með hringlaga litavísunum sem hengdu þemaskiptin eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Lagfærðu að Neovim mistókst að ræsa með Catppuccin þemanu eftir <a href="https://github.com/anandude">@anandude</a> í <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Lagfærðu að OpenCode 2 ræsti á sjálfgefnu þema sínu í stað þema Omarchy eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Lagfærðu kóða í texta með litlum birtuskilum í mynduðu VS Code þemanu eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Lagfærðu að uppsetningar T3 Code stoppuðu á meðan þær pössuðu við núverandi þema eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Lagfærðu að leturstærð útstöðvar endurstilltist þegar leturfjölskyldu var breytt eftir <a href="https://github.com/sbalbalosa">@sbalbalosa</a> í <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Lagfærðu að breyting á letri prentaði ferilsauðkenni útstöðvar eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Lagfærðu að tungumálaskipti endurgerðu hverja staðfærslu og misstu þær á næstum fullum diski eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Lagfærðu að skelin sýndi hráa þýðingarlykla áður en þýðingar hennar hlóðust eftir <a href="https://github.com/zihaomu">@zihaomu</a> í <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Flýttu þýddum texta í skriftum Omarchy eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Uppfærðu þýðingar fyrir 686 strengi, 392 þeirra í handbókinni eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Lagfærðu hljóðstyrks- og úttaksstýringar í staðfærslum sem ekki eru á ensku eftir <a href="https://github.com/Sebo1411">@Sebo1411</a> í <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Lagfærðu aflestur örgjörvanotkunar í staðfærslum sem ekki eru á ensku eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Lagfærðu að fcitx5 þjónustan endurræsti endalaust þegar fcitx5 var ekki uppsett eftir <a href="https://github.com/therk">@therk</a> í <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Lagfærðu að græja lyklaborðsuppsetningar skipti um tæki sem enginn skrifar á eftir <a href="https://github.com/bjarneo">@bjarneo</a> í <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Lagfærðu að græja lyklaborðsuppsetningar skipti yfir í flýtivísatæki framleiðanda eftir <a href="https://github.com/yashranaway">@yashranaway</a> í <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Lagfærðu að valmynd lyklabindinga skildi Lua-ferli eftir í gangi á 100% örgjörva eftir <a href="https://github.com/tobi">@tobi</a> í <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Lagfærðu að klukkan flæddi annálinn á hverri millisekúndu þegar sumartíma lauk eftir <a href="https://github.com/falkoro">@falkoro</a> í <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Lagfærðu að skelin skipti shell.json sem hún gat ekki lesið út fyrir sjálfgefin gildi eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Lagfærðu að Omarchy-valmyndin missti raðir sínar á meðan skrá hennar var uppfærð eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Lagfærðu að endurvirkjun viðbótar færði græju hennar á stikunni ekki til baka eftir <a href="https://github.com/berrimi">@berrimi</a> í <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Lagfærðu að staðbundnar viðbætur endurhlóðust í lykkju á eigin Python-bætakóða eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Lagfærðu að faldir hnappar í viðbótum féllu saman að fyllingu sinni eftir <a href="https://github.com/dmkenney">@dmkenney</a> í <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Lagfærðu að fellilistar klipptu af síðasta atriðið sitt eftir <a href="https://github.com/sprajs">@sprajs</a> í <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Lagfærðu að fellilistar lokuðust ekki við annan smell eftir <a href="https://github.com/felixzsh">@felixzsh</a> í <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Lagfærðu að rennihnappar stöðvuðu skammt frá enda brautarinnar eftir <a href="https://github.com/erikrjohansson">@erikrjohansson</a> í <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Lagfærðu að Update &gt; Hardware &gt; Trackpad missti af flestum snertiflötum og endurstillti lyklaborðið eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Það sleppir nú föstum hnappi á hverjum snertifleti, og endurstillir aðeins snertiflötinn í stað lyklaborðsins og snertiskjásins með honum.</p>
+  </li>
+  <li>Láttu vefmyndavélavalmyndina athuga hvort myndavélar séu til án þess að kveikja á þeim eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Lagfærðu að skrunupptaka Omasnap greip aðeins svarta ramma eftir <a href="https://github.com/falkoro">@falkoro</a> í <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Lagfærðu að skjámyndavalinn aftengdi eigin lykla þína eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Lagfærðu að stöðvun upptöku tilkynnti tóma vistaða upptöku eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Lagfærðu að myndavalinn sýndi úreltar smámyndir fyrir myndir sem vistað var yfir eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Lagfærðu að næturljós endurstilltist ekki að fullu þegar slökkt var á því eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Lagfærðu að miðilsgræjan yfirgaf lag í bið fyrir óvirkan spilara eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Lagfærðu endurteknar skannanir skjás á skjám sem tilkynna ekki birtustig eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Lagfærðu að Super + Shift + Return mistókst þegar stillti vafrinn var fjarlægður eftir <a href="https://github.com/vitally">@vitally</a> í <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Lagfærðu að flýtilyklar reiknivélar voru áfram eftir að foruppsett forrit voru fjarlægð eftir <a href="https://github.com/OldJobobo">@OldJobobo</a> í <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Lagfærðu flýtilykilinn Copy URL í sniðum Brave Origin eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Lagfærðu að sprettigluggi Bitwarden-viðbótarinnar opnaðist í rangri stærð eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Lagfærðu að Battle.net opnaðist á 100% kvarða á HiDPI-skjám eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Lagfærðu að skráavöl Inkscape opnuðust flísalögð eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Lagfærðu að Go AUR-pakkar mistókust að byggja við uppfærslur þegar mise stjórnaði Go eftir <a href="https://github.com/shbernal">@shbernal</a> í <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Lagfærðu uppsetningu ONCE þegar þú ert ekki í docker-hópnum eftir <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> í <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Lagfærðu að smellir á aðilaborðið opnuðu bakkann eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Lagfærðu að uppsetning aðilareiknings hrasaði um lausan samnýttan tákntengil eftir <a href="https://github.com/manuaudio">@manuaudio</a> í <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Lagfærðu að <code>--reauth</code> bætti við nýjum aðilareikningi þegar enginn var til eftir <a href="https://github.com/manuaudio">@manuaudio</a> í <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Láttu vísbendingu um endurnefningu aðilareiknings nefna veitu hans eftir <a href="https://github.com/manuaudio">@manuaudio</a> í <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Lagfærðu að uppfærslur lyklakippu þóttust takast þegar lyklaaðgerðir mistókust eftir <a href="https://github.com/Adolanium">@Adolanium</a> í <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Lagfærðu tóma kvaðningu um endurstillingu á verksmiðju þegar keyrt var undir sudo eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Lagfærðu að áminning um flutninga í bið hrúgaðist upp einu sinni fyrir hverja innskráningu eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Lagfærðu að OS Age í About taldi frá byggingu ISO í stað uppsetningarinnar eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Lagfærðu að Dropbox sýndi “0y ago” fyrir skrár sem voru 360 til 364 daga gamlar eftir <a href="https://github.com/manuaudio">@manuaudio</a> í <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Lagfærðu að stöðuathugun Dropbox lét innskráningartengil í bið renna út eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Lagfærðu uppsetningu bókasafns fyrir tákn Dropbox í bakkanum eftir <a href="https://github.com/omarchybot">@omarchybot</a> í <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Virkjaðu yfirlagðar skrunstikur í Chromium eftir <a href="https://github.com/robzolkos">@robzolkos</a> í <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Biddu um leyfi áður en kveikt er á Touch ID á Apple Silicon Mac-tölvum eftir <a href="https://github.com/scottjones">@scottjones</a> í <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Bjóddu RC-rásina á Apple Silicon Mac-tölvum eftir <a href="https://github.com/maralcbr">@maralcbr</a> í <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Bjóddu stable-rásina á Apple Silicon Mac-tölvum eftir <a href="https://github.com/maralcbr">@maralcbr</a> í <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Lagfærðu að samheiti, föll og umhverfi Omarchy vantaði í nýjum útstöðvum á Apple Silicon eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Settu upp uppsett NVIDIA-forrit eftir <a href="https://github.com/jdvmi00">@jdvmi00</a> í <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Lagfærðu að uppsetningar mistókust á Lenovo Pro 9 með NVIDIA N1x eftir <a href="https://github.com/breymander">@breymander</a> í <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Lagfærðu að innri hátalara og hljóðnema vantaði á N1x-fartölvum sem keyrðu fyrri hljóðsniðin eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Lagfærðu tregt skjáborð á NVIDIA GB10-vélum eins og DGX Spark eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Lagfærðu ritun á læsiskjáinn eftir endurvakningu á NVIDIA eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Læsingin verður heldur ekki aftur dökk rétt þegar borðið lýsist upp.</p>
+  </li>
+  <li>Lagfærðu að Lutris og Battle.net settu upp 32-bita Vulkan-rekil annarrar GPU eftir <a href="https://github.com/zihaomu">@zihaomu</a> í <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Hættu að biðja um endurræsingu eftir hverja uppfærslu á ARM eftir <a href="https://github.com/birkskyum">@birkskyum</a> í <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Bjóddu stable- og RC-rásirnar á aarch64 eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Láttu aflsnið virka á ARM-fartölvum eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Bjóddu Dropbox á ARM-vélum með 4K síðum, og Spotify sem vefforrit á ARM eftir <a href="https://github.com/birkskyum">@birkskyum</a> í <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Feldu uppsetningar GeForce NOW, Battle.net og Lutris á ARM eftir <a href="https://github.com/birkskyum">@birkskyum</a> í <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Lagfærðu að Hermes-forritið uppfærðist ekki á sínum stað á ARM eftir <a href="https://github.com/ryanrhughes">@ryanrhughes</a> í <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Lagfærðu að lyklaborð Snapdragon-fartölva slógu ekki inn við kvaðningu um aflæsingu disks eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Lagfærðu að myndavélar vantaði við innskráningu á Snapdragon-fartölvum eftir <a href="https://github.com/birkskyum">@birkskyum</a> í <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Lagfærðu svartan skjá fyrir aflæsingu disks á Snapdragon X2-fartölvum eftir <a href="https://github.com/jdvmi00">@jdvmi00</a> í <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Afkóðaðu myndband í vélbúnaði á Intel Wildcat Lake eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Lagfærðu hrun lifandi ISO á Arrow Lake-H fartölvum eftir <a href="https://github.com/emirb">@emirb</a> í <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Lagfærðu innri hljóðnema HP EliteBook Ultra G1q eftir <a href="https://github.com/bprendie">@bprendie</a> í <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Notaðu stuðning frá uppruna fyrir Motorcomm YT6801 Ethernet eftir <a href="https://github.com/AFOliveira">@AFOliveira</a> í <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Áframsendu Elgato Cam Link 4K sem 16:9 sýndarmyndavél eftir <a href="https://github.com/dhh">@dhh</a> í <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Styðdu fingrafaralesara sem vettvangur nefnir eftir <a href="https://github.com/scottjones">@scottjones</a> í <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

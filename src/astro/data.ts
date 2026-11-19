@@ -3,6 +3,7 @@ import { t } from '../i18n/site'
 import manualJson from '../data/manual.json'
 import pagesJson from '../data/pages.json'
 import pluginsJson from '../data/plugins.json'
+import { FEATURED_PLUGIN_IDS } from '../lib/featured-plugins'
 import { loadNews, summarize } from '../lib/news'
 import type { NewsPost, NewsSummary } from '../lib/news'
 import { toCatalogueEntry } from '../lib/plugin-filter'
@@ -90,15 +91,6 @@ export function getPortedSlugs(): Array<string> {
 
 const ZERO_STATS: Engagement = { views: 0, copies: 0, hearts: 0 }
 
-const FEATURED_PLUGIN_IDS = [
-  'akshar.radio-atlas',
-  'slcode777.omagotchi',
-  'io.github.thisisgm.omapods',
-  'jankeesvw.omasweeper',
-  'jankeesvw.time-machine',
-  'raiden-meixelysia.omarchy-pets',
-]
-
 type PluginRecord = Omit<CatalogueEntry, 'stats'>
 
 export function getPluginHighlights(): {
@@ -106,10 +98,14 @@ export function getPluginHighlights(): {
   total: number
 } {
   const all = (pluginsJson as { plugins: Array<PluginRecord> }).plugins
-  const featured = FEATURED_PLUGIN_IDS.map((id) => {
+  // The catalogue is refreshed from the marketplace on a schedule, and the
+  // marketplace delists a plugin whose repository disappears. Skip it here so
+  // a delisting never stops the site from deploying.
+  const featured = FEATURED_PLUGIN_IDS.flatMap((id) => {
     const plugin = all.find((p) => p.id === id)
-    if (!plugin) throw new Error(`Featured plugin missing: ${id}`)
-    return plugin
+    if (!plugin)
+      console.warn(`Featured plugin missing from the catalogue: ${id}`)
+    return plugin ? [plugin] : []
   })
   const top = featured.map((p) => toCatalogueEntry({ ...p, stats: ZERO_STATS }))
   return { top, total: all.length }

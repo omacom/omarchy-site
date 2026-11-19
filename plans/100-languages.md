@@ -1,5 +1,13 @@
 # Expand Omarchy to 100 languages with concurrent Muse agents
 
+> **Outcome (2026-09-13).** All 100 editions were produced on the `100-languages`
+> branch, then the target was cut to **50**: everything macOS and Windows ship as a
+> full system language (39 languages), the 8 existing smaller editions, and Persian and
+> Swahili by speakers, and Brazilian Portuguese as its own edition. The other translated editions stay
+> in that branch's history and in the owner workspaces; re-adding one is one
+> registry line plus `translate-owners.py publish`. The roster file still records
+> the full 100 and the domain probe.
+
 ## Handoff and user requirements
 
 This is an implementation brief for a coordinating agent on another computer.
@@ -97,7 +105,7 @@ suffix. Default missing domains to `<code>.omarchy.org`. Existing `zh-CN` at
 
 First inspect `muse exec --help` on the destination computer and verify its
 authenticated provider/model. Existing translators use
-`muse-spark-1.3-contributor` unless `MUSE_MODEL` overrides it. Keep credentials
+`muse-wonder-1.0` unless `MUSE_MODEL` overrides it. Keep credentials
 out of prompts, artifacts, logs, and Git. Do not copy credentials from this box.
 
 **Important:** the existing Python translators are not one persistent agent per

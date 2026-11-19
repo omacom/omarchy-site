@@ -93,7 +93,7 @@ export function NotFoundHero() {
                 onClick={home}
                 render={<Link to="/" />}
               >
-                <ArrowLeftIcon data-icon="inline-start" />
+                <ArrowLeftIcon data-icon="inline-start" className="rtl:-scale-x-100" />
                 {t('Back to Omarchy')}
               </Button>
             </div>

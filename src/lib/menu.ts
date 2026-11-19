@@ -1,11 +1,14 @@
 import {
   flag,
-  hasTranslation,
   locales,
+  matchesLocale,
+  searchable,
   sortedLocales,
   t,
 } from '../i18n/site.ts'
 import type { SearchEntry } from '@/lib/content'
+
+export { localeHref } from '../i18n/site.ts'
 
 /**
  * The palette's standing menu, shaped like the one SUPER+SPACE opens on the
@@ -33,6 +36,7 @@ export type MenuIcon =
   | 'meetups'
   | 'teams'
   | 'discord'
+  | 'x'
   | 'github'
   | 'security'
   | 'patrons'
@@ -96,6 +100,12 @@ const ITEMS: Array<MenuItem> = [
     label: 'Discord',
     icon: 'discord',
     href: 'https://discord.gg/tXFUdasqhY',
+  },
+  {
+    id: 'community.x',
+    label: 'X',
+    icon: 'x',
+    href: 'https://x.com/omarchy',
   },
   {
     id: 'community.meetups',
@@ -172,11 +182,14 @@ const ITEMS: Array<MenuItem> = [
 ]
 
 /**
- * The same page on another locale's site, or its front page where that site
- * does not have the page, as the header's switcher links.
+ * The copy the language switcher shows around its list. Held here so the
+ * extractor finds the English source with the menu's other labels.
  */
-export function localeHref(code: string, path: string, suffix = '') {
-  return `${locales[code].domain}${hasTranslation(code, path) ? path + suffix : '/'}`
+export const languageMenuCopy = {
+  search: t('Search languages'),
+  none: t('No languages match'),
+  current: t('Current language'),
+  all: t('All languages'),
 }
 
 const parentOf = (id: string) =>
@@ -247,12 +260,18 @@ export function providerRows(
   return chapters
 }
 
-/** Substring match on the label, the way the desktop menu filters a submenu. */
+/**
+ * Substring match on the label, the way the desktop menu filters a submenu,
+ * blind to accents and case. A language row also answers to its English
+ * name, its code and its other spellings: "german" finds Deutsch.
+ */
 export function filterRows(rows: Array<MenuItem>, query: string) {
-  const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
+  const terms = searchable(query).split(/\s+/).filter(Boolean)
   if (terms.length === 0) return rows
   return rows.filter((row) => {
-    const label = row.label.toLowerCase()
+    if (row.locale && matchesLocale(locales[row.locale], query, row.locale))
+      return true
+    const label = searchable(row.label)
     return terms.every((term) => label.includes(term))
   })
 }

@@ -10,22 +10,16 @@ export const DEFAULT_THEME = 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
-/** Ask the mounted ThemePicker to open (footer link, welcome notice). */
+/** Ask the mounted ThemePicker to open (footer link, menu). */
 export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 /** Fired with detail { open } whenever the picker opens or closes. */
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
-/** Set once the user has seen the picker or dismissed the welcome notice. */
-export const HINT_KEY = 'omarchy-theme-hint-seen'
 
-/** Apply the saved palette before paint, or select one matching the system color scheme.
+/** Apply the saved palette before paint, or Tokyo Night for anyone who hasn't picked one.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */
-export const themeInitScript = `(function(){try{var t=localStorage.getItem(${inlineJson(THEME_KEY)});var ok=${inlineJson(
+export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});if(${inlineJson(
   SITE_THEMES.map((t) => t.id),
-)};var light=${inlineJson(
-  SITE_THEMES.filter((t) => t.light).map((t) => t.id),
-)};var dark=${inlineJson(
-  SITE_THEMES.filter((t) => !t.light).map((t) => t.id),
-)};if(ok.indexOf(t)<0){var pool=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?light:dark;t=pool[Math.floor(Math.random()*pool.length)];localStorage.setItem(${inlineJson(THEME_KEY)},t)}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme=${inlineJson(DEFAULT_THEME)}}if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
+)}.indexOf(s)>=0)t=s}catch(e){}document.documentElement.dataset.theme=t;if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
 
 export function readTheme(): string {
   try {

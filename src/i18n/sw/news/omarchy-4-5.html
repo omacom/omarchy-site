@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (aka Quattro RS!) ni toleo kubwa la kwanza la vipengele tangu <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, na ni kubwa kweli: zaidi ya maombi 740 ya kuvuta (pull requests) yameunganishwa kutoka kwa wachangiaji zaidi ya 180 katika wiki kumi na mbili tu. Sasa inatoa hali ya kawaida ya eneo-kazi kando ya ile ya kuweka vigae (tiling) iliyo ya msingi. Unaweza kuisakinisha asilia kwenye MacBook za M1/M2/M3/Neo. Na inazungumza lugha 50. Na vipengele vingine vingi sana, marekebisho, na maboresho. Tayari unatumia Omarchy? Endesha <em>Update &gt; Omarchy</em>. Mashine mpya? <a href="/#install">Iichukue hapa</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Nafasi za kazi zinazoelea zenye doki</h2>
+
+<p><code>Super + L</code> sasa huzungusha nafasi yoyote ya kazi kati ya kuweka vigae (tiling), kusogeza (scrolling), na kuelea (floating). Kwenye nafasi ya kazi inayoelea, kila dirisha hupata upau wa kichwa (titlebar) wenye rangi za mandhari yako, na doki huonyesha programu zako zilizobandikwa, kila kitu kinachoendeshwa, na gridi ya kila programu iliyosakinishwa. Buruta ili kupanga upya au kubandika, bofya kulia kwa zaidi, na <code>Super + M</code> hupunguza dirisha hadi kwenye doki.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Hii ni njia nzuri sana ya kuanza kwa mtu yeyote anayekuja kutoka macOS au Windows ambaye bado hayuko tayari kuingia kabisa kwenye kuweka vigae. Au kwa mtu yeyote anayetaka tu nafasi moja ya kazi ambapo madirisha yanaweza kutawanyika. Changanya na ulinganishe kwa kila nafasi ya kazi, na upau huonyesha mpangilio ambao kila moja hutumia.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy kwenye Apple Silicon</h2>
+
+<p>Timu yetu ya ajabu ya <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> imetoa kisakinishi asilia cha Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Pakua programu</a> kwenye macOS, na itaweka Omarchy kando yake kwenye M1, M2, M3, au Neo MacBook yako. Hakuna kijiti cha USB, hakuna maneno ya ajabu ya terminal. Unapendelea Homebrew? Hiyo ni mstari mmoja:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Kisakinishi cha Omarchy cha Mac" /></p>
+
+<p>Hili ndilo tulilokusudia kufanya mnamo Septemba: kumalizia kile Asahi kilichoanza. Miezi miwili baadaye, unaweza kuipakua tu. Kazi ya ajabu kutoka kwa kila mtu kwenye timu.</p>
+
+<p>Na hawasimami hapo. M4, M5, na M6 zote zinafanyiwa kazi hivi sasa, kwa hivyo pengine haitachukua muda mrefu hadi Omarchy iendeshwe kwenye kila Mac ya Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy kwenye M2 Max, M3 Air, Neo, M4 Pro, na M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Usaidizi wa ARM kwa NVIDIA DGX Spark + N1X (na hivi karibuni Snapdragon)</h2>
+
+<p>Omarchy 4.5 inatoa ISO yake ya kwanza ya ARM, na pamoja nayo inakuja usaidizi wa awali kwa mashine za ARM za NVIDIA: eneo-kazi la DGX Spark na kompyuta mpakato zilizojengwa kwenye N1X, kama <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> na <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Na hivi karibuni tutakuwa na usaidizi kwa safu nzima ya mashine za Snapdragon ARM pia. Bado ni siku za mwanzo, kwa hivyo tarajia hitilafu chache, na tafadhali ripoti chochote kinachoharibika kwenye <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">Lugha 50 na mbinu 5 za uingizaji</h2>
+
+<p>Omarchy sasa inazungumza lugha 50. Chagua moja chini ya <em>Setup &gt; Language</em> (au endesha <code>omarchy language &lt;code&gt;</code>), na menyu, eneo-kazi, na arifa za Omarchy hubadilika mara moja. Lugha ya mfumo (system locale) hufuata kwenye kuingia kwako kunakofuata.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Kubadilisha lugha" /></p>
+
+<p>Kuzungumza lugha ni nusu tu, hata hivyo. Pia unahitaji kuichapa. Kwa hivyo Omarchy sasa huweka mbinu sahihi za uingizaji kwa Kijapani (Mozc), Kikorea (Hangul), Kichina Kilichorahisishwa (Pinyin), Taiwan (Zhuyin), na Hong Kong (Cangjie), moja kwa moja kutoka kwa kisakinishi au baadaye chini ya <em>Setup &gt; Keyboard</em>. Kila moja huja na fonti sahihi kwa maumbo yake ya herufi, dirisha la wagombea hufuata mandhari yako, na <code>Super + I</code> hubadilisha kati ya lugha zako za uingizaji. Hangul, Zhuyin, na Cangjie huweka vitufe vyao katika nafasi za kawaida hata kama unachapa Kilatini kwenye Dvorak, Colemak, au AZERTY, kama tu kwenye Windows na macOS. Na kugusa Shift peke yake hutoka kwenye mbinu ya uingizaji kwenda kwenye herufi za Kilatini na kurudi tena, jinsi Sogou, Microsoft Pinyin, na macOS zinavyofanya.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Ingia kwenye tovuti za Wi-Fi zinazohitaji kuingia</h2>
+
+<p>Wi-Fi ya hoteli, uwanja wa ndege, na duka la kahawa hatimaye inafanya kazi tu. Omarchy sasa hutambua wakati mtandao unataka uingie au ukubali masharti yake kabla ya kukuweka mtandaoni. Ikoni ya mtandao inakuonya, na paneli ya mtandao huonyesha kitufe kikubwa cha Open Captive Portal kinachokupeleka moja kwa moja kwenye ukurasa wa kuingia. Ukishapita, kila kitu hurudi kawaida chenyewe.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Kuingia kwenye tovuti inayohitaji kuingia kutoka kwenye paneli ya mtandao" width="380" /></p>
+
+<h2 id="five-new-default-apps">Programu tano mpya za msingi</h2>
+
+<p><strong>Hype</strong> hutengeneza mawasilisho kutoka kwenye faili moja ya Markdown, ikiwa na kihariri cha kuona cha slaidi kando ya chanzo, na husafirisha kwenda PDF au PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> hubadilisha Xournal++ kwa karatasi: fungua PDF, weka sahihi yako iliyohifadhiwa, maandishi, na tarehe, na uhifadhi nakala iliyotiwa sahihi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> huchora treemap ya kinachojaza diski yako, iliyotiwa rangi kulingana na aina, hutaja akiba (caches) ambazo ni salama kuzalisha upya, na hukuacha uweke alama kile kinachopaswa kuondoka.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> hurekodi kamera yako kwa kitufe kimoja, ikiwa na mandhari yanayolingana na eneo-kazi lako.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> hukupa eneo-kazi la mbali kupitia SSH. Unganisha kwenye mashine nyingine ya Omarchy na uendeshe eneo-kazi lake kamili kutoka kwenye dirisha kwenye yako, ukiwa na kichupo kwa kila mashine. Na kwa sababu inaenda kupitia SSH, hakuna chochote cha ziada cha kuweka au kufichua. Mashine inayodhibitiwa huonyesha kiashiria cha kipindi cha mbali kwenye upau, kwa hivyo kila wakati ni wazi wakati mtu yuko juu yake.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Na kuna <strong>Elsewhen</strong>, saa ya dunia inayoishi karibu kabisa na saa kwenye upau. Gusa jiji kwenye dunia ili kuweka mahali ulipo, tafuta maeneo halisi, na uwataje watu wanaoishi katika kila jiji, ili kila wakati ujue kama ni saa nzuri ya kupiga simu. Geuza kati ya saa 12 na 24 kwa <code>t</code>, kati ya °F na °C kwa <code>Alt + T</code>, na uiitie wakati wowote kwa <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Kwa Monologue kwa kurekodi na Omacut kwa kupunguza, usakinishaji mpya hauleti tena OBS Studio na Kdenlive. Lazydocker pia imeondoka kwenye usakinishaji mpya, ingawa Docker na Docker Compose bado zimejumuishwa. Mashine ambazo tayari zina mojawapo kati ya hizo huziweka.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Unahitaji kufanya kazi na watu wanaoishi katika Office? <em>Install &gt; Service &gt; Microsoft</em> sasa huweka Outlook, Word, Excel, PowerPoint, Teams, na OneDrive kama programu za wavuti. Kila moja hupata dirisha lake na kiingilio cha kizindua, kwa hivyo zinahisi kama nyumbani kando ya kila kitu kingine. Hakuna tena visingizio vya kuto badili kwenda Omarchy kazini!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams, na PowerPoint kwenye Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper kwa kuandika kwa sauti</h2>
+
+<p>Superwhisper sasa ni injini ya msingi ya Omarchy ya kuandika kwa sauti, na imewekwa tayari. Gusa <code>Alt + Space</code> ili kuanza kuzungumza na tena kusimama, au shikilia <code>Right Alt</code> kwa push-to-talk. Ni haraka sana na sahihi sana.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Kuandika kwa sauti ukitumia Superwhisper" /></p>
+
+<p>Huanza kwenye wingu, kwa hivyo inafanya kazi wakati unaposakinisha, na maneno 10,000 ya kwanza ni bure. Lakini unaweza kubadili kwenda kwenye modeli inayoweza kupakuliwa ambayo ni bure kabisa na huendeshwa kabisa ndani ya mashine, bila kutuma neno kwa mtu yeyote. Na ikiwa ungependelea kwenda na modeli nyingine ya ndani, Voxtype bado inapatikana kama mbadala.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Sakinisha kwa chini ya sekunde kumi</h2>
+
+<p>Omarchy ilikuwa ikisakinisha vifurushi vipatavyo 940 kimoja baada ya kingine. Kisakinishi kipya cha F1 badala yake hufungua picha ya mizizi iliyojengwa awali na kuongeza vifurushi vya mashine hii tu juu yake. Hiyo hupunguza muda wa usakinishaji takriban nusu kwenye mashine yoyote.</p>
+
+<p>Na kwenye vifaa vya haraka, ni upuuzi. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> kutoka AMD aliweka rekodi ya dunia kwa usakinishaji kamili wa Omarchy katika <strong>sekunde 7</strong> kwenye kompyuta yake mpakato ya AMD. <a href="https://x.com/dhh/status/2117222836620202375">Sekunde saba!</a> Nakumbuka wakati dakika tano zilipoonekana kama lengo la matarajio makubwa.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Nilisakinisha Omarchy kwa dakika 0 sekunde 7" /></p>
+
+<h2 id="faster-everywhere-else">Haraka zaidi kila mahali pengine</h2>
+
+<p>Sio kisakinishi tu. Kuanzisha hakukwami tena kwenye usajili wa binfmt. Kiteua mandhari hufunguka mara moja badala ya baada ya robo sekunde. Menyu na paneli hufunguka moja kwa moja kutoka kwa mikato ya Hyprland, zikiruka milisekunde 60 ilizochukua kuanzisha mchakato kwanza. Ukaguzi wa polepole zaidi wa menyu ya Omarchy ulienda kutoka milisekunde 200 hadi milisekunde 16, terminal mpya huonyesha prompt yake milisekunde 30 mapema, na eneo-kazi lote sasa huitikia mabadiliko badala ya kuyapigia kura. Hata kutoka, kuwasha upya, na kuzima hutokea wakati programu zako zinapomaliza kufunga.</p>
+
+<h2 id="agent-upgrades">Maboresho ya mawakala</h2>
+
+<p>Omarchy ni mfumo wa uendeshaji wa mawakala, na 4.5 inaleta raundi kubwa ya maboresho kwa kufanya kazi na mawakala. Paneli ya mawakala sasa hufuatilia mawakala na watoa huduma 23, kutoka 6, ikiwemo Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter, na Ollama. Kila kikomo hupata mita yake na muda hadi kitakapojiweka upya, ili uone hasa ni kiasi gani cha njia ulichobaki nacho. Na Grok sasa ni mtoa huduma kamili kando ya Claude na Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Paneli ya mawakala yenye usajili kadhaa wa Claude na Codex" width="380" /></p>
+
+<p>Na wakala wako kila wakati yuko kwa vibonyezo kimoja. <code>Super + ~</code> hudondosha console ya mtindo wa Quake juu ya eneo-kazi lenye giza, na mara ya kwanza unapoifungua, huanzisha wakala wako wa msingi. Bonyeza tena ili kuificha, na kipindi chako kiko pale pale ulipokiacha.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Console ya mtindo wa Quake inayoendesha wakala juu ya eneo-kazi lenye giza" /></p>
+
+<p>Ikiwa unashughulika na usajili zaidi ya mmoja, sasa unaweza kuweka logins kadhaa za Claude, Codex, na Grok kwenye mashine ile ile na kuchagua ni ipi vipindi vipya vianze nayo, ukitumia <code>omarchy agent account</code>. Historia, mipangilio, na ujuzi vinashirikiwa kati yao, kwa hivyo <code>claude --continue</code> huendelea pale pale ulipoishia baada ya kubadili. Karibu na kikomo, Omarchy inaweza ama kutoa ubadili wa kubofya mara moja au kuhamisha vipindi vipya kwenda kwenye akaunti yenye nafasi nyingi zaidi yenyewe. Na unapoweka mashine nyingine, <code>omarchy agent account copy</code> huleta logins zako zote kupitia SSH, ili usilazimike kuingia kwenye kila kitu tena.</p>
+
+<p>Kimi na Ori, harness ya wakala ya OpenRouter, hujiunga na chaguo chini ya <em>Setup &gt; Defaults &gt; Agent</em>, na Antigravity ya Google hubadilisha Gemini CLI iliyopitwa na wakati (<code>gemini</code> bado inafanya kazi kama alias). Unapendelea dirisha kuliko terminal? Programu za eneo-kazi za Claude na Amp sasa ziko kwa kubofya chini ya <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Arifa, zimejengwa upya</h2>
+
+<p>Arifa sasa hurundikana kulingana na mtumaji, hufuata mandhari yako, na hukunja marudio yanayofanana. Vitufe vya vitendo, nambari za uthibitishaji, na viungo vyote hufanya kazi moja kwa moja kutoka kwenye kadi. <code>Super + Comma</code> hutenda kwenye mpya zaidi (kuiondoa, kuifungua, au kubonyeza kitufe chake), na <code>Super + Ctrl + Comma</code> hukupa kibodi ili kuziendesha zote. Kengele kwenye upau huwasha Do Not Disturb.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Arifa mpya" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Mandharinyuma ya video na utangulizi wa mandhari</h2>
+
+<p>Mandharinyuma sasa zinaweza kuwa video. Weka moja, na eneo-kazi lako huwa hai kwa mawimbi yanayotiririka au chochote kingine unachopenda, huku skrini ya kufunga ikionyesha fremu tuli kutoka kwayo. Na mandhari sasa hufanya ingizo: kila moja inaweza kucheza utangulizi mfupi, wa kimya unapoingia au unapobadili kwenda kwayo. (Unapendelea kubaki mtulivu? Zima utangulizi chini ya <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse yajiunga na mandhari za msingi</h2>
+
+<p>Jade Horse ni kijani kibichi chenye ukungu, ikiwa na mandharinyuma za jade zilizochongwa zinazolifanya eneo-kazi lote lionekane kama mchoro wa scroll. Hubadilisha Osaka Jade miongoni mwa mandhari zilizojumuishwa, na hujiunga na Starship kama mandhari nyingine mpya ya msingi. Ikiwa uko kwenye Osaka Jade, unaweka nakala yako, na inaendelea kama <a href="https://github.com/omacom/omarchy-osaka-jade-theme">mandhari ya wahusika wengine</a> kwa mtu yeyote anayetaka kuisakinisha upya.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Mandhari ya Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff ndiyo mandharinyuma mpya ya msingi</h2>
+
+<p>Usakinishaji mpya sasa hukusalimu kwa Liftoff, uzinduzi mzuri wa machweo ambao ni mandharinyuma mpya ya msingi kwa Tokyo Night. Ilitengenezwa na <a href="https://github.com/tcballard">Tom Ballard</a>, ambaye aliitengeneza kwanza kwa <a href="https://github.com/tcballard/omarchy-theme-liftoff">mandhari yake ya Liftoff</a>. Asante, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Mandharinyuma ya Liftoff na Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Menyu ya kuwasha sasa ni tulivu</h2>
+
+<p>Omarchy ilikuwa ikionyesha menyu ya kuwasha kwa takriban sekunde sita kila kuanza, ikiwa tu utahitaji kurudi kwenye snapshot ya awali. Lakini karibu hakuna mtu aliyewahi kufanya hivyo. Kwa hivyo sasa Limine husubiri sekunde moja tu na kuwasha kimya kimya, na mara nyingi hutaona menyu kabisa.</p>
+
+<p>Unapohitaji ingizo tofauti au snapshot, endelea kugusa kitufe chochote (mshale wa chini unafanya kazi) wakati mashine inapoanza, na itasimama kwenye menyu. Na ikiwa ungependelea kuweka menyu juu kwa muda mrefu kabisa, weka <code>timeout:</code> yako mwenyewe katika <code>/boot/limine.conf</code> (kama <code>timeout: 5</code>). Masasisho yataacha timeout uliyoweka peke yake.</p>
+
+<h2 id="changed-hotkeys">Vitufe vya mkato vilivyobadilika</h2>
+
+<p>Mikato mingine ilihama:</p>
+
+<ul>
+  <li>Calculator: <code>Super + Ctrl + Q</code> sasa ni <code>Super + Shift + Q</code>.</li>
+  <li>Activity: <code>Super + Ctrl + T</code> sasa ni <code>Super + Shift + T</code>, na <code>Super + Ctrl + T</code> hufungua mandhari.</li>
+  <li>Network: <code>Super + Ctrl + W</code> sasa ni <code>Super + Ctrl + N</code>, na <code>Super + Ctrl + W</code> hufungua mandharinyuma.</li>
+  <li>Nightlight haina tena mkato (ilikuwa <code>Super + Ctrl + N</code>); iko katika <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> hufungua Apps kutoka kwenye doki badala ya menyu ya Apps.</li>
+</ul>
+
+<p>Mikato ya arifa ilibadilika:</p>
+
+<ul>
+  <li><code>Super + Comma</code> hutenda kwenye kadi mpya zaidi (huiondoa, huifungua, au hubonyeza kitufe chake kimoja) badala ya kuiondoa tu.</li>
+  <li>Kuondoa ya mwisho kulihamia <code>Super + Alt + Comma</code>, ambayo ilikuwa ikiifungua.</li>
+  <li>Kunyamazisha kulihama kutoka <code>Super + Ctrl + Comma</code> kwenda <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> sasa hukupa udhibiti wa kibodi.</li>
+</ul>
+
+<p>Vitufe vichache hufanya kazi tofauti:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code>, na <code>Super</code> + scroll hubaki kwenye nafasi za kazi za kifuatiliaji cha sasa, kwani kila kifuatiliaji kina zake.</li>
+  <li>Katika terminal, <code>Super + C</code> na <code>Super + V</code> hutuma <code>Ctrl + Shift + C</code> na <code>Ctrl + Shift + V</code> badala ya <code>Ctrl + Insert</code> na <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Mipangilio mipya ya msingi ambayo inaweza kugongana na binding zako mwenyewe: <code>Super + Q</code> (funga dirisha, kando ya <code>Super + W</code>), <code>Super + A</code> (chagua yote), <code>Super + M</code> (punguza hadi kwenye doki), <code>Super + ~</code> na <code>Super + Shift + ~</code> (console ya Quake), <code>Super + Alt + L</code> (mpangilio uliopita), <code>Super + Shift + Ctrl + Arrows</code> (hamisha dirisha kwenda kifuatiliaji kingine), <code>Super + Ctrl + Alt + C</code> (picha ya skrini), <code>Super + Ctrl + Alt + E</code> (saa ya dunia), <code>Super + Ctrl + Alt + F</code> (eneo-kazi la skrini kamili), na kushikilia <code>Right Alt</code> kwa kuandika kwa sauti kwa push-to-talk.</p>
+
+<h2 id="more-features">Vipengele zaidi</h2>
+
+<ul>
+  <li>Zipe kila kifuatiliaji nafasi zake za kazi: <code>Super + 1-0</code> huenda kwenye nafasi za kazi za kifuatiliaji ulichopo, na <code>Super + Arrows</code> husogea kwenda na kutoka kwenye maonyesho mengine na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Kusanya kila kitu kuhusu jinsi eneo-kazi linavyoonekana kwenye menyu mpya ya Appearance, ikibadilisha Style: mandhari, mandharinyuma, fonti, upau, madirisha, chapa, doki, mipangilio ya nafasi za kazi, uhuishaji, na skrini ya kufungua na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Chagua madirisha ya Opaque, Transparent, au Glassy chini ya <em>Appearance &gt; Window Transparency</em>, pamoja na mandharinyuma ya upau ya Glassy na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Chagua pembe za dirisha za mandhari, kali, au za mviringo chini ya <em>Appearance &gt; Window Corners</em> na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Ongeza hali ya kutokuwa na uhuishaji, iliyowashwa kwa msingi katika VM na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Fanya programu ziwe opaque kwa msingi, ukiweka terminal zikiwa transparent na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Ongeza Slack kwenye Install &gt; Service na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Fanya Alt + Space igeuze kuandika kwa sauti kwenye kila backend na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Ongeza vitufe vya Open na Edit kwenye arifa za picha za skrini, na Open na Cut kwenye rekodi za skrini na upakuaji wa yt-dlp na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Ongeza menyu ya Update &gt; Kernel kwa kubadilisha kernel ya msingi na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Ongeza ulandanishaji wa mandhari kwenye mashine za herdr na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Ongeza o.rebind kwa kubadilisha keybindings za Hyprland na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Uliza utambulisho wako wa git baada ya kuingia mara ya kwanza badala ya kwenye kisakinishi, ukiwa na kuingia kwa GitHub na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Ruhusu vyombo vya usakinishaji kuweka awali lugha, kibodi, na eneo la saa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Ruhusu widget za upau kuishi kwenye droo ya tray na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Ruhusu kuondoa widget ya upau kwa kuiburuta kutoka kwenye upau na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Ruhusu kusogeza kupitia nafasi za kazi kutoka kwenye upau na <a href="https://github.com/outfoxxed">@outfoxxed</a> katika <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Ruhusu kufuta mandhari za ziada kutoka kwenye kiteua mandhari na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Ongeza CLI za hey, basecamp, na Cloudflare kama zana zilizosakinishwa kwa uvivu na <a href="https://github.com/monorkin">@monorkin</a> katika <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Ongeza SSH Agent kama huduma ya hiari na <a href="https://github.com/carletex">@carletex</a> katika <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Ruhusu kuchagua muda gani sudo bila nywila inadumu na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Ongeza kitufe cha kufunga cha kuelea kwenye toast za arifa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Ruhusu kunyamazisha arifa za programu kutoka kwenye utambuzi wake wa kuanguka na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Ruhusu omarchy-notification-send kuongeza vitufe vya vitendo na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Ongeza muundo wa saa wenye sekunde za moja kwa moja na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Rekebisha mwangaza wa nyuma wa kibodi kwa Ctrl na vitufe vya mwangaza na <a href="https://github.com/ludagoo">@ludagoo</a> katika <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Chapisha ufunguo wa bidhaa wa OEM Windows kutoka kwenye firmware na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Ongeza vi asilia kama chaguo la kihariri cha terminal na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Ongeza mandharinyuma ya Roadster Starlight kwenye Ethereal na <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> katika <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Usalama</h2>
+
+<ul>
+  <li>Weka nywila ya Windows VM nje ya hoja za mteja wa RDP na <a href="https://github.com/dicemans">@dicemans</a> katika <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Hamisha hali ya kurekodi skrini kutoka kwenye /tmp inayoweza kuandikwa na kila mtu na <a href="https://github.com/Chessing234">@Chessing234</a> katika <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Imarisha kuisha kwa sudo bila nywila kupitia kusitisha (suspend) na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Funga usafishaji wa kizuia sasisho kwenye mchakato uliouunda na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Tenga uidhinishaji wa usafishaji wa OCaml na <a href="https://github.com/ErikMelton">@ErikMelton</a> katika <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Bandika mwinuko wa kuweka upya kiwandani kwenye amri iliyofungashwa na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Ondoa violezo vya alama za vidole vilivyohifadhiwa kwa mtumiaji anayeanzisha kwenye kuweka upya na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Kataa majina ya hook na hali ambayo ni njia na <a href="https://github.com/Adolanium">@Adolanium</a> katika <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Fuata system-auth katika rundo la polkit lililoandikwa na usanidi wa alama za vidole na FIDO2 na <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> katika <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Ondoa alama za vidole kutoka kwenye hifadhi ya kisomaji chenyewe unapoziondoa na <a href="https://github.com/scottjones">@scottjones</a> katika <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Zuia usanidi wa SSH kuacha sshd ikiendeshwa na logins za nywila wakati hakuna ufunguo unaoongezwa na <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> katika <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Zuia mtumiaji mwingine wa ndani kubadilisha programu yake mwenyewe wakati wa uboreshaji wa Voxtype na <a href="https://github.com/Vladkarok">@Vladkarok</a> katika <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Imarisha jinsi kuweka upya kiwandani kunavyopitisha mipangilio yako ya gum kupitia sudo na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Marekebisho</h2>
+
+<ul>
+  <li>Rekebisha Hyprland kuanguka wakati kifuatiliaji kinapochomolewa, kuzimwa, au kuzimwa kwa kufunga kifuniko na <a href="https://github.com/falkoro">@falkoro</a> katika <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Rekebisha maboresho ambayo yangeweza kuacha picha ya kernel bila kigezo chake cha root= na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Rekebisha kuweka upya kiwandani kufuta maingizo ya kuwasha ya mifumo mingine na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Rekebisha usakinishaji kando ya Omarchy nyingine kuondoa ingizo la kuwasha la usakinishaji huo na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Rekebisha usakinishaji wa nafasi tupu ambao ungeweza kuchukua kizigeu kilichopo kwa kipya na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Rekebisha kuendelea na ubadilishaji wa nywila ya kiendeshi uliokatizwa kuondoa ufunguo usio sahihi na <a href="https://github.com/scottjones">@scottjones</a> katika <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Uliza nywila ya sudo mara moja kwa kila sasisho la Omarchy na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Uliza nywila ya sudo mara moja kwa dakika kumi badala ya tena kwenye kila amri na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Funikia masasisho ya AUR na ukaguzi wa kuwasha kwa prompt moja ya sudo ya sasisho na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Weka masasisho ya vifurushi salama kutokana na kutoka katikati ya muamala na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Toka, washa upya, na uzime mara tu programu zinapomaliza kufunga na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Badilisha Tensaku na Omasnap kwa picha za skrini na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Kua paneli kutoka kwenye upau na ubadilike kati yao, ukiwa na majibu ya kubonyeza kwenye vitufe na ikoni za upau na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Telezesha arifa kutoka chini ya upau na kurudi nje jinsi zilivyokuja na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Angalia muunganisho dhidi ya endpoint ya Omarchy yenyewe, na urekebishe kuingia kwenye tovuti zinazohitaji kuingia na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Rekebisha kubadili kutoka edge kwenda stable au RC kuacha mashine kwenye muundo wa zamani na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Rekebisha sasisho kwenda 4.5 kusimama wakati shell ni polepole kujibu na <a href="https://github.com/AnPod">@AnPod</a> katika <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Rekebisha masasisho kushindwa kimya kimya yanapoanzishwa nje ya kipindi cha eneo-kazi na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Rekebisha upakuaji wa zana ya mise ulioshindwa kusimamisha sasisho lililobaki la mfumo na <a href="https://github.com/sanjyay">@sanjyay</a> katika <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Rekebisha masasisho kushindwa wakati omarchy-nvim haijasakinishwa na <a href="https://github.com/imzihuailin">@imzihuailin</a> katika <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Rekebisha usakinishaji wa kuwasha mara mbili kushindwa kupachika kizigeu cha EFI na <a href="https://github.com/Damian626">@Damian626</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Rekebisha usakinishaji kusimama wakati firmware haitachukua ingizo jipya la kuwasha na <a href="https://github.com/ryanio">@ryanio</a> katika <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Rekebisha usakinishaji kusimama kwenye diski zenye mwanachama wa zamani wa RAID au kikundi cha ujazo na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Anzisha kisakinishi mapema kwa kutosubiri kila kifaa cha USB na kazi ya kuwasha na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Haraka usimbaji fiche wa diski kwa sekta za baiti 4096 kwenye usakinishaji mpya na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Orodhesha diski za ndani kwanza na ufungue skrini za usakinishaji kwenye chaguo salama na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Orodhesha usakinishaji wa Full disk kwanza katika kisakinishi, na urudi nyuma kwa Esc kwenye skrini za diski na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Rekebisha kuongeza ukubwa wa kifuatiliaji kimoja kubadilisha ukubwa wa kila kifuatiliaji kingine na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Rekebisha programu za XWayland kutoka kubwa mno wakati vifuatiliaji vinatumia mizani tofauti na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Rekebisha maonyesho ya HDR kubadili kwenda picha ya HDR iliyofifia wakati dirisha linakwenda skrini kamili na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Rekebisha menyu na viteua vyenye ukungu kwenye maonyesho yenye ukubwa wa sehemu na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Rekebisha onyesho la kompyuta mpakato kubaki limezimwa baada ya kuchomoa onyesho la nje na <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> katika <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Rekebisha kuwasha tena onyesho kuweka upya nafasi yake, ukubwa, na hali na <a href="https://github.com/zihaomu">@zihaomu</a> katika <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Rekebisha menyu na viteua kutofunguka tena baada ya kifuatiliaji kukatwa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Rekebisha nafasi za kazi za kila kifuatiliaji kuhama baada ya kifuatiliaji kuchomolewa na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Rekebisha shell kuanguka wakati kifaa cha sauti kinapokatwa na paneli ya sauti wazi na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Rekebisha madirisha ya skrini kamili kupoteza skrini kamili baada ya kisafisha skrini na <a href="https://github.com/MGross21">@MGross21</a> katika <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Rekebisha kishale kutoweka wakati wa kuanzisha baada ya Hyprland kupakia upya na <a href="https://github.com/spencerbull">@spencerbull</a> katika <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Rekebisha kishale kuwa kisichoonekana juu ya programu za XWayland na <a href="https://github.com/Sebo1411">@Sebo1411</a> katika <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Rekebisha kukwama kwa kunasa ubao wa kunakili na <a href="https://github.com/maxcroy1">@maxcroy1</a> katika <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Rekebisha ufikiaji wa keyring kupitia tovuti ya XDG Secret na <a href="https://github.com/pkwagner">@pkwagner</a> katika <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Rekebisha uandikishaji wa alama za vidole na urejeshaji wa skrini ya kufunga na <a href="https://github.com/GeertJohan">@GeertJohan</a> katika <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Kuongoza uandikishaji wa alama za vidole hatua kwa hatua na <a href="https://github.com/scottjones">@scottjones</a> katika <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Rekebisha kurudia kiotomatiki kwa kitufe katika uga wa nywila wa skrini ya kufunga na <a href="https://github.com/berndb">@berndb</a> katika <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Rekebisha Ukuta wa skrini ya kufunga kupakia baada ya uga wa nywila wakati wa kuamka na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Rekebisha muda wa kuisha wa kufunga skrini wakati kipindi kinataja onyesho ambalo limekwenda na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Haraka kufungua terminal katika saraka ya dirisha la sasa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Fanya wahariri wa familia ya VS Code kufuata mabadiliko ya mandhari moja kwa moja na <a href="https://github.com/Macho0x">@Macho0x</a> katika <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Weka upya mandhari ya vipindi vya Hunk vinavyoendeshwa wakati wa kubadilisha mandhari na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Kumbuka Ukuta uliochaguliwa kwa kila mandhari na <a href="https://github.com/OldJobobo">@OldJobobo</a> katika <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Weka kiteua picha haraka na kali kwa makusanyo makubwa na HiDPI na <a href="https://github.com/keylimesoda">@keylimesoda</a> katika <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Punguza CPU na kumbukumbu ambayo upau wa uwazi hutumia kuchukua sampuli ya Ukuta na <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> katika <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Haraka paneli ya Tailscale kwenye tailnets zenye mashine maelfu na <a href="https://github.com/iskakaushik">@iskakaushik</a> katika <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Leteni Grok sawa na Claude na Codex katika paneli ya mawakala na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Tumia uteuzi wa akaunti ya wakala kwenye michakato midogo ya CLI na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Onyesha vikomo vya matumizi vya mtu binafsi vya Codex na nyakati zao za kuweka upya na <a href="https://github.com/Stegi56">@Stegi56</a> katika <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Weka ujumuishaji wa kivinjari wakati wa kuchagua Claude na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Rekebisha mawakala kutopata zana za mise zilizosakinishwa baada ya kuanza na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Rekebisha kubandika picha za skrini kwenye mawakala katika pane za herdr zilizanzishwa kupitia SSH na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Rekebisha paneli ya mawakala kukosa vipindi vya Codex vilivyobanwa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Rejesha Caps Lock kawaida na ufanye Shift + Caps Lock kuwa kitufe cha kutunga na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Tumia mpangilio wa kibodi wa mfumo kwenye skrini ya kuingia na <a href="https://github.com/g-desoutter">@g-desoutter</a> katika <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Rekebisha kubadili mpangilio kuruka kila bonyezo la pili kwa mpangilio wa kibodi usio wa Kilatini na <a href="https://github.com/manuaudio">@manuaudio</a> katika <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Washa usimbaji wa video wa vifaa katika mpv na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Badili udhibiti wa msongamano wa TCP kwenda BBR na utumie kiratibu cha I/O cha kyber kwenye diski halisi na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Sakinisha T3 Code kama AppImage yake inayojisasisha yenyewe na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Boresha usakinishaji wa PHP na Laravel na <a href="https://github.com/nunomaduro">@nunomaduro</a> katika <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Sakinisha Node kwa uvivu na uache usanidi wako wa mise peke yake na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Sakinisha programu zinazokosekana wakati wa kuchagua chaguo-msingi na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Fifisha programu zilizosakinishwa katika menyu za Install badala ya kuzificha na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Sajili kidhibiti nywila na vipangishi vingine asilia vya ujumbe kwa Brave Origin na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Kuwa na arifa za wavuti za Brave Origin kulingana na tovuti, na ufungue kichupo sahihi unapobofya na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Idhinisha uondoaji wa kifurushi yatima kiotomatiki wakati wa masasisho na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Sasisha keyring ya Omarchy kabla ya kila sasisho na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Toa kuwasha upya baada ya kubadili vituo na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Toa sasisho la mara ya kwanza tu wakati kuna kitu cha kusasisha na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Tafuta eneo la hali ya hewa na eneo la saa la kisakinishi kwa huduma ya geo ya Omarchy yenyewe na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Weka saa kutoka ntp.omarchy.org badala ya kundi la NTP la Arch na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Pima kasi ya mtandao kwa jaribio la kasi la Omarchy yenyewe na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Onyesha skrini ya maendeleo ya ikoni iliyofuatiliwa wakati wa kuwasha mara ya kwanza na <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> katika <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Washa ISO ya moja kwa moja kwenye kernel ya Omarchy, na kwenye kernel ya T2 kwenye Mac tu na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Simamisha usakinishaji wa nje ya mtandao kusubiri utafutaji wa toleo la mise na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Rekebisha usakinishaji wa nje ya mtandao kuweka eneo la saa kuwa Africa/Abidjan kwa msingi na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Rekebisha kiteua eneo la saa cha kisakinishi kutokuruhusu kuchapa ili kutafuta na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Rekebisha ISO ya moja kwa moja kukwama nyuma ya splash inapowashwa kutoka kwenye kijiti cha Ventoy na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Rekebisha ramani za vitufe za console za Kijerumani na Kifaransa katika fomu ya usanidi ya kisakinishi na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Ficha vidokezo vya vitufe vya Kiingereza vya gum katika kisakinishi na usanidi wa git na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Ondoa vicheshi vya Kiingereza tu kutoka kwenye skrini ya maendeleo ya usakinishaji na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Rekebisha matokeo ya kisakinishi kutua bila kuwekewa nafasi kwenye skrini wakati inapoandaa diski na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Rekebisha uboreshaji wa Quattro kuweka upya kivinjari cha msingi kuwa Chromium na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Rekebisha uboreshaji wa Quattro kusimama kwenye majina ya mandharinyuma yenye herufi zisizo za ASCII na <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> katika <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Rekebisha uhamiaji wa kernel kusimama kwenye mashine zinazowasha kwa GRUB au systemd-boot na <a href="https://github.com/manuaudio">@manuaudio</a> katika <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Rekebisha hibernation kwenye mashine zisizosimbwa fiche zenye zaidi ya diski moja ya NVMe na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Rekebisha uhamiaji wa FIDO2 kuwekwa alama kuwa umekamilika kabla ya kutatuliwa na <a href="https://github.com/ErikMelton">@ErikMelton</a> katika <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Rekebisha nafasi ya kazi inayoelea kuchukua dirisha la kwanza ambalo kanuni yako ya kuelea inafunika na <a href="https://github.com/zihaomu">@zihaomu</a> katika <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Rekebisha mtunzi (compositor) kukwama wakati Super + L inapozungusha nafasi ya kazi ndani na nje ya kuelea na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Rekebisha Alt + Shift + Tab kutokuzunguka kinyume kupitia kila dirisha na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Rekebisha madirisha yaliyotoka kutokuwa katikati yanapohamishwa kwenda kifuatiliaji kingine na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Rekebisha terminal mpya kufunguka nje ya folda yako ya nyumbani wakati dirisha lisilo la terminal limeangaziwa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Rekebisha madirisha ya 1Password na Bitwarden kutokuelea na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Rekebisha 1Password kufunga wakati terminal ya kisakinishi inapotoka na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Rekebisha mazungumzo ya DaVinci Resolve kuiba umakini wa pointer na <a href="https://github.com/AksharP5">@AksharP5</a> katika <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Rekebisha eneo-kazi kuonyesha kupitia maonyesho ya Windows VM na <a href="https://github.com/jmwall">@jmwall</a> katika <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Rekebisha nywila za zamani za Windows VM zenye $$ baada ya uhamiaji wa Quattro na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Simamisha dirisha ibukizi la michango la Hyprland kuonyesha baada ya maboresho na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Boresha kuburuta na kupanga widget za upau na <a href="https://github.com/outfoxxed">@outfoxxed</a> katika <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Rekebisha ukubwa na mpangilio wa ikoni ya upau na <a href="https://github.com/bjarneo">@bjarneo</a> katika <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Fichua viashiria vilivyofichwa vya upau tu wakati wa kuelea kushoto kwa saa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Panga ikoni za tray na ikoni nyingine za upau na <a href="https://github.com/ayoubdya">@ayoubdya</a> katika <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Onyesha kidokezo cha zana cha upau kinachofuata mara moja wakati kimoja tayari kiko juu na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Fungua paneli za saa na hali ya hewa chini ya widget zao na <a href="https://github.com/scottjones">@scottjones</a> katika <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Weka paneli ya mtandao wazi baada ya kuchagua mtoa DNS na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Rekebisha dirisha ibukizi linalofunga kuacha widget za upau zisizojibu na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Rekebisha upau uliofichwa kunasa mibofyo kando ya juu ya madirisha ya skrini kamili na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Rekebisha ikoni za tray zenye giza kutoweka kwenye upau na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Rekebisha ikoni za upau kukaa zisizo sawa au nje ya katikati na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Rekebisha vidokezo vya zana vya upau kuchora fremu yao ya kwanza kwa ukubwa usio sahihi na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Rekebisha historia ya arifa kuonyesha kila kadi kama sasa hivi tu na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Rekebisha arifa za kuingia mara ya kwanza kukunjika kwenye rundo moja na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Rekebisha mibofyo ya arifa kutoangazia programu zenye majina ya maneno mengi na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Rekebisha arifa za Taildrop kuonyesha maandishi tupu na kukosa hakiki na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Rekebisha arifa ya betri kuonyesha muda tupu na 0W kwenye betri kamili na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Rekebisha onyo la betri ya chini kubaki juu baada ya kuchomeka na kurudi baada ya kuwasha upya na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Rekebisha usomaji wa matumizi ya betri kuwa 0W kwenye baadhi ya kompyuta mpakato na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Rekebisha betri kamili kwenye AC kuonyesha kama inachajiwa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Rekebisha Hibernate kuonyesha wakati kernel haitahiberneti na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Rekebisha upachikaji wa gvfs kupotea baada ya kuendelea na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Rekebisha mwangaza wa nyuma wa kibodi kubaki umezimwa baada ya kufuli kuwa tupu mara mbili na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Rekebisha kisomaji cha alama za vidole kuamka wakati kufuli kuna maonyesho yamezimwa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Rekebisha prompt ya nywila ya kuwasha kuwa nje ya katikati wakati onyesho linapotokea marehemu na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Rekebisha kitufe cha kutoka cha kisafisha skrini kuangaza kwenye kona na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Rekebisha ikoni ya Wi-Fi kupepesa kwenye mitandao ya hali ya mpito ya OWE na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Rekebisha hitilafu ya OWE iliyochapishwa katika terminal baada ya kusakinisha mandhari na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Rekebisha kupepesa wakati wa kubadili kutoka mandharinyuma tuli kwenda ya video na <a href="https://github.com/bjarneo">@bjarneo</a> katika <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Sasisha Hackerman kwenda mandharinyuma ya kijiometria iliyokuzwa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Rekebisha mandhari zenye rejeleo za rangi za mzunguko kukwamisha ubadilishaji wa mandhari na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Rekebisha Neovim kushindwa kuanza na mandhari ya Catppuccin na <a href="https://github.com/anandude">@anandude</a> katika <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Rekebisha OpenCode 2 kuanza kwenye mandhari yake ya kawaida badala ya ya Omarchy na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Rekebisha msimbo wa ndani wenye utofautishaji mdogo katika mandhari ya VS Code iliyozalishwa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Rekebisha usakinishaji wa T3 Code kusimama wakati wa kulinganisha mandhari ya sasa na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Rekebisha ukubwa wa fonti ya terminal kuweka upya wakati wa kubadilisha familia ya fonti na <a href="https://github.com/sbalbalosa">@sbalbalosa</a> katika <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Rekebisha kubadilisha fonti kuchapisha ID ya mchakato wa terminal na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Rekebisha kubadilisha lugha kujenga upya kila locale na kuzipoteza kwenye diski karibu kujaa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Rekebisha shell kuonyesha vitufe ghafi vya tafsiri kabla ya tafsiri zake kupakia na <a href="https://github.com/zihaomu">@zihaomu</a> katika <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Haraka maandishi yaliyotafsiriwa katika hati za Omarchy na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Sasisha tafsiri kwa mifuatano 686, 392 kati yake katika mwongozo na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Rekebisha vidhibiti vya sauti na matokeo katika lugha zisizo za Kiingereza na <a href="https://github.com/Sebo1411">@Sebo1411</a> katika <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Rekebisha usomaji wa matumizi ya CPU katika lugha zisizo za Kiingereza na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Rekebisha huduma ya fcitx5 kuwasha upya milele wakati fcitx5 haijasakinishwa na <a href="https://github.com/therk">@therk</a> katika <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Rekebisha widget ya mpangilio wa kibodi kubadilisha vifaa ambavyo hakuna anayechapa na <a href="https://github.com/bjarneo">@bjarneo</a> katika <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Rekebisha widget ya mpangilio wa kibodi kubadili kwenda vifaa vya hotkey vya muuzaji na <a href="https://github.com/yashranaway">@yashranaway</a> katika <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Rekebisha menyu ya keybindings kuacha mchakato wa Lua ukiendeshwa kwa CPU 100% na <a href="https://github.com/tobi">@tobi</a> katika <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Rekebisha saa kufurika kumbukumbu kila milisekunde wakati wa kuokoa mchana unapoisha na <a href="https://github.com/falkoro">@falkoro</a> katika <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Rekebisha shell kubadilisha shell.json ambayo haikuweza kusoma na chaguo-msingi na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Rekebisha menyu ya Omarchy kupoteza safu zake wakati faili yake inasasishwa na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Rekebisha kuwasha tena programu-jalizi kutokuleta widget yake ya upau na <a href="https://github.com/berrimi">@berrimi</a> katika <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Rekebisha programu-jalizi za ndani kupakia upya katika kitanzi kwenye bytecode yao ya Python na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Rekebisha vitufe vilivyofichwa katika programu-jalizi kukunjika hadi kwenye padding yao na <a href="https://github.com/dmkenney">@dmkenney</a> katika <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Rekebisha menyu kunjuzi kukata kipengee chao cha mwisho na <a href="https://github.com/sprajs">@sprajs</a> katika <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Rekebisha menyu kunjuzi kutofunga kwa kubofya mara ya pili na <a href="https://github.com/felixzsh">@felixzsh</a> katika <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Rekebisha vitovu vya kitelezi kusimama karibu na mwisho wa wimbo na <a href="https://github.com/erikrjohansson">@erikrjohansson</a> katika <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Rekebisha Update &gt; Hardware &gt; Trackpad kukosa pedi nyingi za mguso na kuweka upya kibodi na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Sasa huachilia kitufe kilichokwama kwenye kila pedi ya mguso, na huweka upya pedi ya mguso tu badala ya kibodi na skrini ya mguso pamoja nayo.</p>
+  </li>
+  <li>Fanya menyu ya webcam iangalie kamera bila kuziwasha na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Rekebisha unasa wa kusogeza wa Omasnap kuchukua fremu nyeusi tu na <a href="https://github.com/falkoro">@falkoro</a> katika <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Rekebisha kiteua picha ya skrini kufungua vitufe vyako mwenyewe na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Rekebisha kusimamisha rekodi kutangaza rekodi tupu iliyohifadhiwa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Rekebisha kiteua picha kuonyesha vijipicha vya zamani kwa picha zilizohifadhiwa juu yake na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Rekebisha mwanga wa usiku kutokuweka upya kabisa unapozimwa na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Rekebisha widget ya media kuacha wimbo uliositishwa kwa kichezaji kisichofanya kitu na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Rekebisha uchunguzi wa maonyesho unaorudiwa kwenye vifuatiliaji ambavyo haviripoti mwangaza na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Rekebisha Super + Shift + Return kushindwa wakati kivinjari kilichosanidiwa kiliondolewa na <a href="https://github.com/vitally">@vitally</a> katika <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Rekebisha mikato ya kikokotozi kubaki baada ya kuondoa programu zilizosakinishwa awali na <a href="https://github.com/OldJobobo">@OldJobobo</a> katika <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Rekebisha mkato wa Copy URL katika wasifu wa Brave Origin na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Rekebisha dirisha ibukizi la kiendelezi cha Bitwarden kufunguka kwa ukubwa usio sahihi na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Rekebisha Battle.net kufunguka kwa ukubwa wa 100% kwenye vifuatiliaji vya HiDPI na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Rekebisha viteua faili vya Inkscape kufunguka vikiwa vimewekewa vigae na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Rekebisha vifurushi vya Go AUR kushindwa kujenga wakati wa masasisho wakati mise inasimamia Go na <a href="https://github.com/shbernal">@shbernal</a> katika <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Rekebisha usakinishaji wa ONCE wakati hauko katika kikundi cha docker na <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> katika <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Rekebisha mibofyo ya paneli ya wakala kufungua tray na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Rekebisha usanidi wa akaunti ya wakala kukwazwa na symlink iliyoshirikiwa inayoning'inia na <a href="https://github.com/manuaudio">@manuaudio</a> katika <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Rekebisha <code>--reauth</code> kuongeza akaunti mpya ya wakala wakati hakuna na <a href="https://github.com/manuaudio">@manuaudio</a> katika <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Fanya kidokezo cha kubadili jina la akaunti ya wakala kutaja mtoa huduma wake na <a href="https://github.com/manuaudio">@manuaudio</a> katika <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Rekebisha masasisho ya keyring kudai mafanikio wakati shughuli za ufunguo zinashindwa na <a href="https://github.com/Adolanium">@Adolanium</a> katika <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Rekebisha prompt tupu ya kuweka upya kiwandani inapendeshwa chini ya sudo na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Rekebisha kikumbusho cha uhamiaji unaosubiri kurundikana mara moja kwa kila kuingia na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Rekebisha OS Age katika About kuhesabu kutoka muundo wa ISO badala ya usakinishaji na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Rekebisha Dropbox kuonyesha “0y ago” kwa faili zenye umri wa siku 360 hadi 364 na <a href="https://github.com/manuaudio">@manuaudio</a> katika <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Rekebisha ukaguzi wa hali wa Dropbox kuisha muda wa kiungo cha kuingia kinachosubiri na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Rekebisha kusakinisha maktaba ya ikoni ya tray ya Dropbox na <a href="https://github.com/omarchybot">@omarchybot</a> katika <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Washa baa za kusogeza za overlay katika Chromium na <a href="https://github.com/robzolkos">@robzolkos</a> katika <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Uliza kabla ya kuwasha Touch ID kwenye Mac za Apple Silicon na <a href="https://github.com/scottjones">@scottjones</a> katika <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Toa kituo cha RC kwenye Mac za Apple Silicon na <a href="https://github.com/maralcbr">@maralcbr</a> katika <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Toa kituo thabiti kwenye Mac za Apple Silicon na <a href="https://github.com/maralcbr">@maralcbr</a> katika <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Rekebisha alias, functions, na mazingira ya Omarchy kukosekana kutoka terminal mpya kwenye Apple Silicon na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Weka programu za NVIDIA zilizosakinishwa na <a href="https://github.com/jdvmi00">@jdvmi00</a> katika <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Rekebisha usakinishaji kushindwa kwenye Lenovo Pro 9 yenye NVIDIA N1x na <a href="https://github.com/breymander">@breymander</a> katika <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Rekebisha spika za ndani na maikrofoni zinazokosekana kwenye kompyuta mpakato za N1x ambazo ziliendesha wasifu wa sauti wa awali na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Rekebisha eneo-kazi la polepole kwenye mashine za NVIDIA GB10 kama DGX Spark na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Rekebisha kuchapa kwenye skrini ya kufunga baada ya kuendelea kwenye NVIDIA na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Kufuli pia haikwi giza tena wakati tu paneli inapowaka.</p>
+  </li>
+  <li>Rekebisha Lutris na Battle.net kusakinisha kiendeshi cha Vulkan cha biti 32 cha GPU nyingine na <a href="https://github.com/zihaomu">@zihaomu</a> katika <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Simamisha kuomba kuwasha upya baada ya kila sasisho kwenye ARM na <a href="https://github.com/birkskyum">@birkskyum</a> katika <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Toa vituo thabiti na vya RC kwenye aarch64 na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Fanya wasifu wa nguvu ufanye kazi kwenye kompyuta mpakato za ARM na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Toa Dropbox kwenye mashine za ARM zenye kurasa za 4K, na Spotify kama programu ya wavuti kwenye ARM na <a href="https://github.com/birkskyum">@birkskyum</a> katika <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Ficha usakinishaji wa GeForce NOW, Battle.net, na Lutris kwenye ARM na <a href="https://github.com/birkskyum">@birkskyum</a> katika <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Rekebisha programu ya Hermes kutosasisha mahali pake kwenye ARM na <a href="https://github.com/ryanrhughes">@ryanrhughes</a> katika <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Rekebisha kibodi za kompyuta mpakato za Snapdragon kutokuchapa kwenye prompt ya kufungua diski na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Rekebisha kamera zinazokosekana wakati wa kuingia kwenye kompyuta mpakato za Snapdragon na <a href="https://github.com/birkskyum">@birkskyum</a> katika <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Rekebisha skrini nyeusi kabla ya kufungua diski kwenye kompyuta mpakato za Snapdragon X2 na <a href="https://github.com/jdvmi00">@jdvmi00</a> katika <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Simbua video katika vifaa kwenye Intel Wildcat Lake na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Rekebisha kuanguka kwa ISO ya moja kwa moja kwenye kompyuta mpakato za Arrow Lake-H na <a href="https://github.com/emirb">@emirb</a> katika <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Rekebisha maikrofoni ya ndani ya HP EliteBook Ultra G1q na <a href="https://github.com/bprendie">@bprendie</a> katika <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Tumia usaidizi wa juu kwa Motorcomm YT6801 Ethernet na <a href="https://github.com/AFOliveira">@AFOliveira</a> katika <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Peana Elgato Cam Link 4K kama kamera pepe ya 16:9 na <a href="https://github.com/dhh">@dhh</a> katika <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Saidia visomaji vya alama za vidole ambavyo jukwaa hulitaja na <a href="https://github.com/scottjones">@scottjones</a> katika <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

@@ -92,11 +92,16 @@ if (pendingNews || pendingSite) {
   })
   process.exit(0)
 }
+const isStringList = (value) =>
+  Array.isArray(value) &&
+  value.every((item) => typeof item === 'string' && item.trim())
 const references = (html, attribute) =>
   [...html.matchAll(new RegExp(`${attribute}="([^"]*)"`, 'g'))]
     .map((match) => match[1])
     .sort()
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
+// Scripts written right to left; an edition in one must say so, no other may.
+const RTL_SCRIPTS = ['Arab', 'Hebr', 'Thaa', 'Nkoo', 'Syrc']
 const domains = new Set()
 for (const [code, locale] of Object.entries(locales)) {
   if (!/^[a-z]{2,3}(-[A-Za-z0-9]+)*$/.test(code))
@@ -109,11 +114,39 @@ for (const [code, locale] of Object.entries(locales)) {
   )
     problems.push(`Invalid or duplicate domain: ${locale.domain}`)
   domains.add(url.hostname)
+  if (typeof locale.englishName !== 'string' || !locale.englishName.trim())
+    problems.push(`Missing englishName: ${code}`)
+  if (!/^[A-Z][a-z]{3}$/.test(locale.script ?? ''))
+    problems.push(`Invalid ISO 15924 script code: ${code}`)
   if (locale.direction && !['ltr', 'rtl'].includes(locale.direction))
     problems.push(`Invalid text direction: ${code}`)
+  if (RTL_SCRIPTS.includes(locale.script) && locale.direction !== 'rtl')
+    problems.push(`${code}: script ${locale.script} needs direction "rtl"`)
+  if (!RTL_SCRIPTS.includes(locale.script) && locale.direction !== undefined)
+    problems.push(
+      `${code}: direction is set only for right-to-left scripts; drop it`,
+    )
   if (locale.flag && !/^[A-Z]{2}$/.test(locale.flag))
     problems.push(`Invalid flag country code: ${code}`)
-  new Intl.DateTimeFormat(locale.formatLocale)
+  // English keeps its globe; every other edition shows a country, from its
+  // domain's suffix or, on a subdomain or generic domain, an explicit flag.
+  if (
+    code !== 'en' &&
+    !locale.flag &&
+    url.hostname.split('.').at(-1).length !== 2
+  )
+    problems.push(`${code}: no country suffix on ${url.hostname}; set flag`)
+  if (
+    typeof locale.formatLocale !== 'string' ||
+    Intl.DateTimeFormat.supportedLocalesOf([locale.formatLocale]).length === 0
+  )
+    problems.push(
+      `${code}: formatLocale ${locale.formatLocale} is not supported by this Node`,
+    )
+  if (locale.searchTerms !== undefined && !isStringList(locale.searchTerms))
+    problems.push(`${code}: searchTerms must be a list of non-empty strings`)
+  if (locale.draft !== undefined && locale.draft !== true)
+    problems.push(`${code}: draft is either true or absent`)
   const contentLocale = locale.contentLocale ?? code
   if (contentLocale === 'en' || (selected.length && !selected.includes(code)))
     continue

@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (หรือ Quattro RS!) เป็นรุ่นฟีเจอร์ใหญ่รุ่นแรกนับตั้งแต่ <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a> และมันเป็นรุ่นใหญ่จริง ๆ มีพูลรีเควสต์ที่ถูกรวมเข้ามามากกว่า 740 รายการจากผู้ร่วมพัฒนามากกว่า 180 คนในเวลาเพียงสิบสองสัปดาห์ ตอนนี้มีโหมดเดสก์ท็อปแบบดั้งเดิมอยู่ข้างโหมดเรียงหน้าต่างเป็นค่าเริ่มต้น คุณสามารถติดตั้งแบบเนทีฟบน MacBook รุ่น M1/M2/M3/Neo ได้ และมันพูดได้ 50 ภาษา และยังมีฟีเจอร์ การแก้ไข และการปรับปรุงอื่น ๆ อีกมากมาย ใช้ Omarchy อยู่แล้วใช่ไหม เรียกใช้ <em>Update &gt; Omarchy</em> ได้เลย เครื่องใหม่เหรอ <a href="/#install">ดาวน์โหลดได้ที่นี่</a></p>
+
+<h2 id="floating-workspaces-with-a-dock">เวิร์กสเปซแบบลอยพร้อมด็อก</h2>
+
+<p>ตอนนี้ <code>Super + L</code> จะวนเวิร์กสเปซใดก็ได้ระหว่างโหมดเรียงต่อกัน โหมดเลื่อน และโหมดลอย บนเวิร์กสเปซแบบลอย ทุกหน้าต่างจะมีแถบชื่อเรื่องในสีของธีมของคุณ และด็อกจะแสดงแอปที่ปักหมุดไว้ ทุกอย่างที่กำลังทำงานอยู่ และตารางของแอปทุกตัวที่ติดตั้งไว้ ลากเพื่อจัดลำดับใหม่หรือปักหมุด คลิกขวาเพื่อดูเพิ่มเติม และ <code>Super + M</code> จะย่อหน้าต่างลงไปที่ด็อก</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>นี่เป็นทางเริ่มต้นที่ยอดเยี่ยมสำหรับใครก็ตามที่ย้ายมาจาก macOS หรือ Windows และยังไม่พร้อมทุ่มสุดตัวกับโหมดเรียงต่อกัน หรือสำหรับใครก็ตามที่แค่อยากมีเวิร์กสเปซหนึ่งที่หน้าต่างกระจายตัวได้อย่างอิสระ ผสมผสานกันได้ตามเวิร์กสเปซ และแถบจะแสดงว่าแต่ละเวิร์กสเปซใช้เลย์เอาต์แบบใด</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy บน Apple Silicon</h2>
+
+<p>ทีม <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> ที่น่าทึ่งของเราได้ส่งมอบตัวติดตั้ง Mac แบบเนทีฟแล้ว <a href="https://github.com/omacom/omarchy-mac-installer/releases">ดาวน์โหลดแอป</a> บน macOS และมันจะวาง Omarchy ไว้ข้าง ๆ กันบน MacBook รุ่น M1, M2, M3 หรือ Neo ของคุณ ไม่ต้องใช้แท่ง USB ไม่ต้องร่ายคาถาในเทอร์มินัล ชอบ Homebrew มากกว่าเหรอ แค่บรรทัดเดียว:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="ตัวติดตั้ง Omarchy สำหรับ Mac" /></p>
+
+<p>นี่คือสิ่งที่เราตั้งใจจะทำในเดือนกันยายน ทำให้สิ่งที่ Asahi เริ่มต้นไว้เสร็จสมบูรณ์ สองเดือนต่อมา คุณก็แค่ดาวน์โหลดมันได้เลย เป็นผลงานที่น่าทึ่งของทุกคนในทีม</p>
+
+<p>และพวกเขายังไม่หยุดแค่นั้น M4, M5 และ M6 กำลังดำเนินการอยู่ตอนนี้ ดังนั้นคงอีกไม่นาน Omarchy ก็จะรันบน Mac ที่ใช้ Apple Silicon ทุกเครื่องได้</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy บน M2 Max, M3 Air, Neo, M4 Pro และ M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">การรองรับ ARM สำหรับ NVIDIA DGX Spark + N1X (และ Snapdragon ในเร็ว ๆ นี้)</h2>
+
+<p>Omarchy 4.5 ส่งมอบ ISO สำหรับ ARM รุ่นแรก และด้วยสิ่งนี้จึงมีการรองรับเบื้องต้นสำหรับเครื่อง ARM ของ NVIDIA เดสก์ท็อป DGX Spark และแล็ปท็อปที่ใช้ N1X เช่น <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> และ <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a> และในเร็ว ๆ นี้เราจะรองรับเครื่อง ARM แบบ Snapdragon ทั้งไลน์อัปด้วย ยังเป็นช่วงเริ่มต้น ดังนั้นคาดไว้ได้ว่าอาจมีจุดที่ยังไม่เรียบร้อยบ้าง และโปรดรายงานสิ่งที่เสียหายได้ที่ <a href="https://github.com/omacom/omarchy/issues">GitHub</a></p>
+
+<h2 id="50-languages-and-5-input-methods">50 ภาษาและ 5 วิธีป้อนข้อมูล</h2>
+
+<p>ตอนนี้ Omarchy พูดได้ 50 ภาษา เลือกหนึ่งภาษาได้ที่ <em>Setup &gt; Language</em> (หรือรัน <code>omarchy language &lt;code&gt;</code>) และเมนู เดสก์ท็อป และการแจ้งเตือนของ Omarchy จะเปลี่ยนทันที ส่วน locale ของระบบจะตามไปในการเข้าสู่ระบบครั้งถัดไปของคุณ</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="การเปลี่ยนภาษา" /></p>
+
+<p>แต่การพูดภาษาหนึ่งเป็นเพียงครึ่งเดียวเท่านั้น คุณต้องพิมพ์มันได้ด้วย ดังนั้นตอนนี้ Omarchy จึงตั้งค่าวิธีป้อนข้อมูลที่เหมาะสมสำหรับภาษาญี่ปุ่น (Mozc), ภาษาเกาหลี (Hangul), ภาษาจีนตัวย่อ (Pinyin), ไต้หวัน (Zhuyin) และฮ่องกง (Cangjie) ได้เลยจากตัวติดตั้ง หรือภายหลังที่ <em>Setup &gt; Keyboard</em> แต่ละวิธีมาพร้อมแบบอักษรที่ถูกต้องสำหรับรูปแบบตัวอักษรของมัน หน้าต่างตัวเลือกจะตามธีมของคุณ และ <code>Super + I</code> จะสลับระหว่างภาษาสำหรับการป้อนข้อมูลของคุณ Hangul, Zhuyin และ Cangjie จะคงปุ่มไว้ในตำแหน่งมาตรฐานแม้ว่าคุณจะพิมพ์ละตินบน Dvorak, Colemak หรือ AZERTY เหมือนกับบน Windows และ macOS และการแตะ Shift เพียงอย่างเดียวจะก้าวออกจากวิธีป้อนข้อมูลไปเป็นตัวอักษรละตินและกลับมาอีกครั้ง ในแบบที่ Sogou, Microsoft Pinyin และ macOS ทำงาน</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">ลงชื่อเข้าใช้พอร์ทัล Wi-Fi ที่ต้องเข้าสู่ระบบ</h2>
+
+<p>ในที่สุด Wi-Fi ของโรงแรม สนามบิน และร้านกาแฟก็ใช้งานได้เลย ตอนนี้ Omarchy จะสังเกตเห็นเมื่อเครือข่ายต้องการให้คุณลงชื่อเข้าใช้หรือยอมรับข้อกำหนดก่อนอนุญาตให้คุณออนไลน์ ไอคอนเครือข่ายจะเตือนคุณ และแผงเครือข่ายจะแสดงปุ่ม Open Captive Portal ขนาดใหญ่ที่พาคุณตรงไปยังหน้าเข้าสู่ระบบ เมื่อคุณผ่านเข้าไปได้ ทุกอย่างจะกลับเป็นปกติเอง</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="การเข้าสู่ระบบพอร์ทัลที่ต้องเข้าสู่ระบบจากแผงเครือข่าย" width="380" /></p>
+
+<h2 id="five-new-default-apps">แอปเริ่มต้นใหม่ห้าแอป</h2>
+
+<p><strong>Hype</strong> สร้างงานนำเสนอจากไฟล์ Markdown ไฟล์เดียว โดยมีตัวแก้ไขสไลด์แบบภาพอยู่ข้างต้นฉบับ และส่งออกเป็น PDF หรือ PowerPoint ได้</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> มาแทน Xournal++ สำหรับงานเอกสาร เปิด PDF วางลายเซ็น ข้อความ และวันที่ที่บันทึกไว้ของคุณ และบันทึกสำเนาที่ลงนามแล้ว</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> วาดแผนภาพต้นไม้ของสิ่งที่กำลังเติมดิสก์ของคุณ โดยระบายสีตามชนิด เรียก out แคชที่สร้างใหม่ได้อย่างปลอดภัย และให้คุณทำเครื่องหมายสิ่งที่ควรลบออก</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> บันทึกกล้องของคุณด้วยปุ่มเดียว โดยมีธีมให้เข้ากับเดสก์ท็อปของคุณ</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> ให้เดสก์ท็อประยะไกลผ่าน SSH แก่คุณ เชื่อมต่อกับเครื่อง Omarchy อีกเครื่องและควบคุมเดสก์ท็อปเต็มรูปแบบของมันจากหน้าต่างบนเครื่องของคุณ โดยมีแท็บสำหรับแต่ละเครื่อง และเพราะมันอาศัย SSH จึงไม่มีอะไรต้องตั้งค่าเพิ่มเติมหรือเปิดเผย เครื่องที่ถูกควบคุมจะแสดงตัวบ่งชี้เซสชันระยะไกลในแถบ ดังนั้นจึงชัดเจนเสมอเมื่อมีใครบางคนอยู่บนเครื่องนั้น</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>และยังมี <strong>Elsewhen</strong> นาฬิกาโลกที่อยู่ติดกับนาฬิกาในแถบเลย แตะเมืองบนลูกโลกเพื่อตั้งว่าคุณอยู่ที่ไหน ค้นหาสถานที่จริง และตั้งชื่อผู้คนที่อาศัยอยู่ในแต่ละเมือง เพื่อให้คุณรู้เสมอว่าตอนนี้เป็นเวลาที่เหมาะสมที่จะโทรหาหรือไม่ สลับระหว่าง 12 และ 24 ชั่วโมงด้วย <code>t</code> ระหว่าง °F และ °C ด้วย <code>Alt + T</code> และเรียกมันขึ้นมาได้ทุกเมื่อด้วย <code>Super + Ctrl + Alt + E</code></p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>ด้วย Monologue สำหรับการบันทึกและ Omacut สำหรับการตัดแต่ง การติดตั้งใหม่จะไม่ส่งมอบ OBS Studio และ Kdenlive อีกต่อไป Lazydocker ก็หายไปจากการติดตั้งใหม่ด้วยเช่นกัน แม้ว่า Docker และ Docker Compose จะยังรวมอยู่ เครื่องที่มีสิ่งใด ๆ เหล่านี้อยู่แล้วจะยังคงเก็บไว้</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>ต้องการทำงานกับผู้คนที่อยู่ใน Office เหรอ ตอนนี้ <em>Install &gt; Service &gt; Microsoft</em> จะตั้งค่า Outlook, Word, Excel, PowerPoint, Teams และ OneDrive เป็นเว็บแอป แต่ละอันจะมีหน้าต่างและรายการในตัวเปิดใช้ของตัวเอง ดังนั้นพวกมันจึงรู้สึกเหมือนอยู่บ้านข้าง ๆ ทุกอย่างอื่น ๆ ไม่มีข้อแก้ตัวที่จะไม่เปลี่ยนมาใช้ Omarchy ในที่ทำงานอีกต่อไป!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams และ PowerPoint บน Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper สำหรับการเขียนตามคำบอก</h2>
+
+<p>ตอนนี้ Superwhisper เป็นเครื่องมือเขียนตามคำบอกเริ่มต้นของ Omarchy และตั้งค่ามาให้พร้อมใช้ทันที แตะ <code>Alt + Space</code> เพื่อเริ่มพูดและแตะอีกครั้งเพื่อหยุด หรือกด <code>Right Alt</code> ค้างไว้เพื่อพูดแบบกดเพื่อพูด มันเร็วอย่างไม่น่าเชื่อและแม่นยำมาก</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="การเขียนตามคำบอกด้วย Superwhisper" /></p>
+
+<p>มันเริ่มต้นบนคลาวด์ ดังนั้นจึงใช้งานได้ทันทีที่คุณติดตั้ง และ 10,000 คำแรกฟรี แต่คุณสามารถเปลี่ยนไปใช้โมเดลดาวน์โหลดได้ซึ่งฟรีทั้งหมดและทำงานภายในเครื่องอย่างสมบูรณ์ โดยไม่ส่งคำใด ๆ ไปให้ใคร และถ้าคุณอยากใช้โมเดลภายในเครื่องตัวอื่นมากกว่า Voxtype ก็ยังมีให้เป็นทางเลือก</p>
+
+<h2 id="install-in-less-than-ten-seconds">ติดตั้งในเวลาไม่ถึงสิบวินาที</h2>
+
+<p>Omarchy เคยติดตั้งแพ็กเกจประมาณ 940 รายการทีละรายการ ตัวติดตั้ง F1 ใหม่จะแกะอิมเมจรูทที่สร้างไว้ล่วงหน้าแทน และเพิ่มเฉพาะแพ็กเกจของเครื่องนี้ลงไปด้านบน นั่นลดเวลาการติดตั้งลงประมาณครึ่งหนึ่งบนเครื่องใด ๆ</p>
+
+<p>และบนฮาร์ดแวร์ที่เร็ว มันไร้สาระมาก <a href="https://x.com/AnushElangovan">Anush Elangovan</a> จาก AMD สร้างสถิติโลกด้วยการติดตั้ง Omarchy เต็มรูปแบบในเวลา <strong>7 วินาที</strong> บนแล็ปท็อป AMD ของเขา <a href="https://x.com/dhh/status/2117222836620202375">เจ็ดวินาที!</a> ผมจำได้ว่าเมื่อห้านาทีดูเหมือนเป็นเป้าหมายที่ทะเยอทะยาน</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="ติดตั้ง Omarchy ใน 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">เร็วขึ้นในที่อื่น ๆ ทุกแห่ง</h2>
+
+<p>ไม่ใช่แค่ตัวติดตั้งเท่านั้น การเริ่มต้นจะไม่ค้างกับการลงทะเบียน binfmt อีกต่อไป ตัวเลือกธีมเปิดทันทีแทนที่จะหลังจากหนึ่งในสี่วินาที เมนูและแผงเปิดโดยตรงจากทางลัด Hyprland โดยข้าม 60 ms ที่เคยใช้ในการเริ่มกระบวนการก่อน การตรวจสอบที่ช้าที่สุดของเมนู Omarchy ลดจาก 200 ms เป็น 16 ms เทอร์มินัลใหม่แสดงพรอมต์เร็วขึ้น 30 ms และตอนนี้เดสก์ท็อปทั้งหมดตอบสนองต่อการเปลี่ยนแปลงแทนที่จะสำรวจหามัน แม้แต่การออกจากระบบ การรีบูต และการปิดเครื่องก็เกิดขึ้นทันทีที่แอปของคุณปิดเสร็จ</p>
+
+<h2 id="agent-upgrades">การอัปเกรดเอเจนต์</h2>
+
+<p>Omarchy คือระบบปฏิบัติการพร้อมเอเจนต์สำหรับยุคเอเจนต์ และ 4.5 นำการอัปเกรดครั้งใหญ่สำหรับการทำงานกับเอเจนต์มาให้ ตอนนี้แผงเอเจนต์ติดตามเอเจนต์และผู้ให้บริการ 23 ราย เพิ่มจาก 6 ราย รวมถึง Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter และ Ollama ขีดจำกัดทุกอันจะมีมิเตอร์ของตัวเองพร้อมเวลาจนกว่าจะรีเซ็ต ดังนั้นคุณจะเห็นได้อย่างชัดเจนว่าคุณเหลือระยะทางอีกเท่าใด และตอนนี้ Grok เป็นผู้ให้บริการเต็มรูปแบบควบคู่กับ Claude และ Codex</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="แผงเอเจนต์ที่มีการสมัครสมาชิก Claude และ Codex หลายรายการ" width="380" /></p>
+
+<p>และเอเจนต์ของคุณอยู่ห่างเพียงการกดปุ่มเดียวเสมอ <code>Super + ~</code> จะดึงคอนโซลสไตล์ Quake ลงมาบนเดสก์ท็อปที่หรี่ลง และครั้งแรกที่คุณเปิดมัน มันจะเริ่มเอเจนต์เริ่มต้นของคุณ กดอีกครั้งเพื่อเก็บมันไว้ และเซสชันของคุณจะอยู่ตรงที่คุณทิ้งไว้</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="คอนโซลสไตล์ Quake ที่รันเอเจนต์บนเดสก์ท็อปที่หรี่ลง" /></p>
+
+<p>ถ้าคุณสลับไปมาระหว่างการสมัครสมาชิกมากกว่าหนึ่งรายการ ตอนนี้คุณสามารถเก็บการเข้าสู่ระบบ Claude, Codex และ Grok หลายรายการบนเครื่องเดียวกัน และเลือกได้ว่าเซสชันใหม่จะเริ่มด้วยรายการใด โดยใช้ <code>omarchy agent account</code> ประวัติ การตั้งค่า และทักษะจะแชร์กันระหว่างพวกมัน ดังนั้น <code>claude --continue</code> จึงทำต่อจากจุดที่คุณทิ้งไว้หลังการสลับ เมื่อใกล้ถึงขีดจำกัด Omarchy สามารถเสนอการสลับในคลิกเดียว หรือย้ายเซสชันใหม่ไปยังบัญชีที่มีพื้นที่เหลือมากที่สุดเองได้ และเมื่อคุณตั้งค่าเครื่องอื่น <code>omarchy agent account copy</code> จะนำการเข้าสู่ระบบทั้งหมดของคุณผ่าน SSH มา เพื่อให้คุณไม่ต้องลงชื่อเข้าใช้ทุกอย่างอีกครั้ง</p>
+
+<p>Kimi และ Ori ซึ่งเป็นชุดเครื่องมือเอเจนต์ของ OpenRouter เข้าร่วมตัวเลือกที่ <em>Setup &gt; Defaults &gt; Agent</em> และ Antigravity ของ Google มาแทน Gemini CLI ที่ล้าสมัย (<code>gemini</code> ยังใช้งานได้เป็นนามแฝง) ชอบหน้าต่างมากกว่าเทอร์มินัลเหรอ ตอนนี้แอปเดสก์ท็อป Claude และ Amp อยู่ห่างเพียงคลิกเดียวที่ <em>Install &gt; AI</em></p>
+
+<h2 id="notifications-rebuilt">การแจ้งเตือน สร้างใหม่</h2>
+
+<p>ตอนนี้การแจ้งเตือนซ้อนกันตามผู้ส่ง ตามธีมของคุณ และยุบรายการซ้ำที่เหมือนกัน ปุ่มการกระทำ รหัสยืนยัน และลิงก์ทั้งหมดทำงานได้เลยจากการ์ด <code>Super + Comma</code> จะกระทำกับรายการใหม่ล่าสุด (ปิดมัน เปิดมัน หรือกดปุ่มของมัน) และ <code>Super + Ctrl + Comma</code> จะมอบแป้นพิมพ์ให้คุณควบคุมพวกมันทั้งหมด กระดิ่งในแถบจะเปิดโหมดห้ามรบกวน</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="การแจ้งเตือนใหม่" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">พื้นหลังวิดีโอและอินโทรของธีม</h2>
+
+<p>ตอนนี้พื้นหลังสามารถเป็นวิดีโอได้ วางอันหนึ่งลงไป และเดสก์ท็อปของคุณจะมีชีวิตขึ้นมาด้วยคลื่นที่กลิ้งไปหรืออะไรก็ตามที่คุณชอบ ในขณะที่หน้าจอล็อกแสดงเฟรมนิ่งจากมัน และตอนนี้ธีมจะปรากฏตัวอย่างมีสไตล์ แต่ละธีมสามารถเล่นอินโทรสั้น ๆ ที่ไม่มีเสียงเมื่อคุณเข้าสู่ระบบหรือเปลี่ยนไปใช้มัน (อยากให้มันสงบมากกว่าเหรอ ปิดอินโทรได้ที่ <em>Appearance &gt; Animations</em>)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse เข้าร่วมธีมเริ่มต้น</h2>
+
+<p>Jade Horse เต็มไปด้วยสีเขียวหมอก พร้อมพื้นหลังหยกแกะสลักที่ทำให้เดสก์ท็อปทั้งหมดดูเหมือนภาพม้วน มันมาแทน Osaka Jade ในบรรดาธีมที่รวมมา และมี Starship เข้าร่วมเป็นธีมเริ่มต้นใหม่อีกธีม ถ้าคุณอยู่บน Osaka Jade คุณจะเก็บสำเนาของคุณไว้ และมันจะมีชีวิตต่อไปในฐานะ<a href="https://github.com/omacom/omarchy-osaka-jade-theme">ธีมของบุคคลที่สาม</a>สำหรับใครก็ตามที่อยากติดตั้งใหม่</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="ธีม Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff เป็นพื้นหลังเริ่มต้นใหม่</h2>
+
+<p>ตอนนี้การติดตั้งใหม่จะต้อนรับคุณด้วย Liftoff การปล่อยยานยามพระอาทิตย์ตกที่งดงามซึ่งเป็นพื้นหลังเริ่มต้นใหม่สำหรับ Tokyo Night มันสร้างโดย <a href="https://github.com/tcballard">Tom Ballard</a> ผู้ซึ่งสร้างมันครั้งแรกสำหรับ<a href="https://github.com/tcballard/omarchy-theme-liftoff">ธีม Liftoff</a>ของเขา ขอบคุณ Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="พื้นหลัง Liftoff โดย Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">ตอนนี้เมนูบูตเงียบลง</h2>
+
+<p>Omarchy เคยแสดงเมนูบูตประมาณหกวินาทีทุกครั้งที่เริ่ม เผื่อในกรณีที่คุณต้องย้อนกลับไปยังสแนปช็อตก่อนหน้า แต่แทบไม่มีใครเคยทำเลย ดังนั้นตอนนี้ Limine รอเพียงหนึ่งวินาทีและบูตอย่างเงียบ ๆ และส่วนใหญ่คุณจะไม่เห็นเมนูเลย</p>
+
+<p>เมื่อคุณต้องการรายการอื่นหรือสแนปช็อต ให้แตะปุ่มใดก็ได้ต่อไป (ลูกศรลงก็ใช้ได้) ขณะที่เครื่องกำลังเริ่ม และมันจะหยุดที่เมนู และถ้าคุณอยากให้เมนูอยู่นานขึ้นอย่างถาวรมากกว่า ให้ตั้งค่า <code>timeout:</code> ของคุณเองใน <code>/boot/limine.conf</code> (เช่น <code>timeout: 5</code>) การอัปเดตจะปล่อยให้ timeout ที่คุณตั้งไว้อยู่ตามเดิม</p>
+
+<h2 id="changed-hotkeys">ปุ่มลัดที่เปลี่ยนไป</h2>
+
+<p>ทางลัดบางอย่างย้ายไปแล้ว:</p>
+
+<ul>
+  <li>เครื่องคิดเลข: <code>Super + Ctrl + Q</code> ตอนนี้เป็น <code>Super + Shift + Q</code></li>
+  <li>กิจกรรม: <code>Super + Ctrl + T</code> ตอนนี้เป็น <code>Super + Shift + T</code> และ <code>Super + Ctrl + T</code> เปิดธีม</li>
+  <li>เครือข่าย: <code>Super + Ctrl + W</code> ตอนนี้เป็น <code>Super + Ctrl + N</code> และ <code>Super + Ctrl + W</code> เปิดพื้นหลัง</li>
+  <li>Nightlight ไม่มีปุ่มลัดอีกต่อไป (เดิมคือ <code>Super + Ctrl + N</code>); มันอยู่ใน <code>Trigger &gt; Toggle</code></li>
+  <li><code>Super + Alt + Space</code> เปิด Apps จากด็อกแทนเมนู Apps</li>
+</ul>
+
+<p>ปุ่มลัดการแจ้งเตือนเปลี่ยนไป:</p>
+
+<ul>
+  <li><code>Super + Comma</code> กระทำกับการ์ดใหม่ล่าสุด (ปิดมัน เปิดมัน หรือกดปุ่มเดียวของมัน) แทนที่จะแค่ปิดมันเท่านั้น</li>
+  <li>การปิดการ์ดสุดท้ายย้ายไป <code>Super + Alt + Comma</code> ซึ่งเดิมใช้เปิดมัน</li>
+  <li>การปิดเสียงย้ายจาก <code>Super + Ctrl + Comma</code> ไป <code>Super + Ctrl + Alt + Comma</code>; ตอนนี้ <code>Super + Ctrl + Comma</code> มอบการควบคุมด้วยแป้นพิมพ์ให้คุณ</li>
+</ul>
+
+<p>ปุ่มบางปุ่มทำงานต่างออกไป:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> และ <code>Super</code> + การเลื่อน จะอยู่บนเวิร์กสเปซของจอภาพปัจจุบัน เนื่องจากจอภาพแต่ละจอมีเวิร์กสเปซของตัวเอง</li>
+  <li>ในเทอร์มินัล <code>Super + C</code> และ <code>Super + V</code> จะส่ง <code>Ctrl + Shift + C</code> และ <code>Ctrl + Shift + V</code> แทน <code>Ctrl + Insert</code> และ <code>Shift + Insert</code></li>
+</ul>
+
+<p>ค่าเริ่มต้นใหม่ที่อาจชนกับการผูกปุ่มของคุณเอง: <code>Super + Q</code> (ปิดหน้าต่าง ควบคู่กับ <code>Super + W</code>), <code>Super + A</code> (เลือกทั้งหมด), <code>Super + M</code> (ย่อลงด็อก), <code>Super + ~</code> และ <code>Super + Shift + ~</code> (คอนโซล Quake), <code>Super + Alt + L</code> (เลย์เอาต์ก่อนหน้า), <code>Super + Shift + Ctrl + Arrows</code> (ย้ายหน้าต่างไปจอภาพอื่น), <code>Super + Ctrl + Alt + C</code> (ภาพหน้าจอ), <code>Super + Ctrl + Alt + E</code> (นาฬิกาโลก), <code>Super + Ctrl + Alt + F</code> (เดสก์ท็อปเต็มจอ) และการกด <code>Right Alt</code> ค้างไว้สำหรับการเขียนตามคำบอกแบบกดเพื่อพูด</p>
+
+<h2 id="more-features">ฟีเจอร์เพิ่มเติม</h2>
+
+<ul>
+  <li>ให้จอภาพแต่ละจอมีเวิร์กสเปซของตัวเอง: <code>Super + 1-0</code> ไปยังเวิร์กสเปซของจอภาพที่คุณอยู่ และ <code>Super + Arrows</code> ย้ายไปและกลับจากจอแสดงผลอื่น ๆ โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>รวบรวมทุกอย่างเกี่ยวกับรูปลักษณ์ของเดสก์ท็อปไว้ในเมนู Appearance ใหม่ แทนที่ Style: ธีม พื้นหลัง แบบอักษร แถบ หน้าต่าง การสร้างแบรนด์ ด็อก เลย์เอาต์เวิร์กสเปซ แอนิเมชัน และหน้าจอปลดล็อก โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>เลือกหน้าต่างแบบ Opaque, Transparent หรือ Glassy ได้ที่ <em>Appearance &gt; Window Transparency</em> พร้อมพื้นหลังแถบแบบ Glassy โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>เลือกมุมหน้าต่างตามธีม แบบคม หรือแบบโค้งมนได้ที่ <em>Appearance &gt; Window Corners</em> โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>เพิ่มโหมดไม่มีแอนิเมชัน เปิดเป็นค่าเริ่มต้นใน VM โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>ทำให้แอปทึบแสงเป็นค่าเริ่มต้น โดยเทอร์มินัลยังคงโปร่งใส โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>เพิ่ม Slack ไปที่ Install &gt; Service โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>ทำให้ Alt + Space สลับการเขียนตามคำบอกในทุกแบ็กเอนด์ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>เพิ่มปุ่ม Open และ Edit ในการแจ้งเตือนภาพหน้าจอ และ Open และ Cut ในการบันทึกหน้าจอและการดาวน์โหลด yt-dlp โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>เพิ่มเมนู Update &gt; Kernel สำหรับเปลี่ยนเคอร์เนลเริ่มต้น โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>เพิ่มการซิงก์ธีมไปยังเครื่อง herdr โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>เพิ่ม o.rebind สำหรับแทนที่การผูกปุ่ม Hyprland โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>ขอตัวตน git ของคุณหลังเข้าสู่ระบบครั้งแรกแทนที่จะในตัวติดตั้ง พร้อมการลงชื่อเข้าใช้ GitHub โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>อนุญาตให้สื่อการติดตั้งตั้งค่าภาษา แป้นพิมพ์ และเขตเวลาล่วงหน้าได้ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>อนุญาตให้วิดเจ็ตแถบอยู่ในลิ้นชักของถาดได้ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>อนุญาตให้ลบวิดเจ็ตแถบด้วยการลากออกจากแถบ โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>อนุญาตให้เลื่อนผ่านเวิร์กสเปซจากแถบได้ โดย <a href="https://github.com/outfoxxed">@outfoxxed</a> ใน <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>อนุญาตให้ลบธีมเพิ่มเติมออกจากตัวเลือกธีมได้ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>เพิ่ม CLI ของ hey, basecamp และ Cloudflare เป็นเครื่องมือที่ติดตั้งแบบ lazy โดย <a href="https://github.com/monorkin">@monorkin</a> ใน <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>เพิ่ม SSH Agent เป็นบริการเสริม โดย <a href="https://github.com/carletex">@carletex</a> ใน <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>อนุญาตให้เลือกได้ว่า sudo แบบไม่ใช้รหัสผ่านจะอยู่นานแค่ไหน โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>เพิ่มปุ่มปิดเมื่อวางเมาส์เหนือ toast การแจ้งเตือน โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>อนุญาตให้ปิดเสียงการแจ้งเตือนของโปรแกรมจากการวินิจฉัยการหยุดทำงานของมัน โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>อนุญาตให้ omarchy-notification-send เพิ่มปุ่มการกระทำได้ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>เพิ่มรูปแบบนาฬิกาที่มีวินาทีสด โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>ปรับแสงพื้นหลังแป้นพิมพ์ด้วย Ctrl และปุ่มความสว่าง โดย <a href="https://github.com/ludagoo">@ludagoo</a> ใน <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>พิมพ์รหัสผลิตภัณฑ์ Windows ของ OEM จากเฟิร์มแวร์ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>เพิ่ม vi ต้นฉบับเป็นตัวเลือกตัวแก้ไขเทอร์มินัล โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>เพิ่มพื้นหลัง Roadster Starlight ให้กับ Ethereal โดย <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> ใน <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">ความปลอดภัย</h2>
+
+<ul>
+  <li>เก็บรหัสผ่าน Windows VM ไว้นอกอาร์กิวเมนต์ของไคลเอนต์ RDP โดย <a href="https://github.com/dicemans">@dicemans</a> ใน <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>ย้ายสถานะการบันทึกหน้าจอออกจาก /tmp ที่ทุกคนเขียนได้ โดย <a href="https://github.com/Chessing234">@Chessing234</a> ใน <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>เสริมการหมดอายุของ sudo แบบไม่ใช้รหัสผ่านข้ามการพักเครื่องให้แข็งแกร่งขึ้น โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>ผูกการล้างตัวระงับการอัปเดตเข้ากับกระบวนการที่สร้างมัน โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>แยกการอนุญาตการล้าง OCaml โดย <a href="https://github.com/ErikMelton">@ErikMelton</a> ใน <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>ตรึงการยกระดับการรีเซ็ตเป็นค่าโรงงานไว้กับคำสั่งที่แพ็กเกจมา โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>ลบเทมเพลตลายนิ้วมือที่บันทึกไว้สำหรับผู้ใช้ที่เรียกใช้เมื่อรีเซ็ต โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>ปฏิเสธชื่อ hook และ state ที่เป็นพาธ โดย <a href="https://github.com/Adolanium">@Adolanium</a> ใน <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>ยึดตาม system-auth ในสแตก polkit ที่เขียนโดยการตั้งค่าลายนิ้วมือและ FIDO2 โดย <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> ใน <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>ลบลายนิ้วมือออกจากที่เก็บข้อมูลของตัวอ่านเองเมื่อลบมัน โดย <a href="https://github.com/scottjones">@scottjones</a> ใน <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>ป้องกันการตั้งค่า SSH จากการทิ้ง sshd ให้ทำงานด้วยการเข้าสู่ระบบด้วยรหัสผ่านเมื่อไม่มีคีย์ถูกเพิ่ม โดย <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> ใน <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>ป้องกันผู้ใช้ภายในเครื่องคนอื่นจากการสลับโปรแกรมของตัวเองเข้ามาระหว่างการอัปเกรด Voxtype โดย <a href="https://github.com/Vladkarok">@Vladkarok</a> ใน <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>เสริมวิธีที่การรีเซ็ตเป็นค่าโรงงานส่งการตั้งค่า gum ของคุณผ่าน sudo ให้แข็งแกร่งขึ้น โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">การแก้ไข</h2>
+
+<ul>
+  <li>แก้ไข Hyprland หยุดทำงานเมื่อถอดปลั๊กจอภาพ ปิดใช้งาน หรือปิดด้วยการพับฝา โดย <a href="https://github.com/falkoro">@falkoro</a> ใน <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>แก้ไขการอัปเกรดที่อาจทิ้งอิมเมจเคอร์เนลไว้โดยไม่มีพารามิเตอร์ root= โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>แก้ไขการรีเซ็ตเป็นค่าโรงงานที่ลบรายการบูตของระบบอื่น โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>แก้ไขการติดตั้งข้าง Omarchy อีกตัวที่ลบรายการบูตของการติดตั้งนั้น โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>แก้ไขการติดตั้งในพื้นที่ว่างที่อาจนำพาร์ติชันที่มีอยู่ไปใช้เป็นพาร์ติชันใหม่ โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>แก้ไขการดำเนินการเปลี่ยนรหัสผ่านไดรฟ์ที่ถูกขัดจังหวะต่อที่ลบคีย์ผิด โดย <a href="https://github.com/scottjones">@scottjones</a> ใน <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>ขอรหัสผ่าน sudo ครั้งเดียวต่อการอัปเดต Omarchy โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>ขอรหัสผ่าน sudo ครั้งเดียวเป็นเวลาสิบนาทีแทนที่จะขออีกทุกคำสั่ง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>ครอบคลุมการอัปเดต AUR และการตรวจสอบการบูตด้วยพรอมต์ sudo ครั้งเดียวของการอัปเดต โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>รักษาการอัปเดตแพ็กเกจให้ปลอดภัยจากการออกจากระบบกลางธุรกรรม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>ออกจากระบบ รีบูต และปิดเครื่องทันทีที่แอปปิดเสร็จ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>แทนที่ Tensaku ด้วย Omasnap สำหรับภาพหน้าจอ โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>ทำให้แผงขยายออกจากแถบและเปลี่ยนรูปไปมาระหว่างกัน พร้อมการตอบสนองเมื่อกดบนปุ่มและไอคอนแถบ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>เลื่อนการแจ้งเตือนเข้ามาจากใต้แถบและกลับออกไปทางเดิม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>ตรวจสอบการเชื่อมต่อกับเอนด์พอยต์ของ Omarchy เอง และแก้ไขการลงชื่อเข้าใช้พอร์ทัลที่ต้องเข้าสู่ระบบ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>แก้ไขการเปลี่ยนจาก edge ไป stable หรือ RC ที่ทิ้งเครื่องไว้บนบิลด์เก่า โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>แก้ไขการอัปเดตเป็น 4.5 ที่หยุดเมื่อเชลล์ตอบช้า โดย <a href="https://github.com/AnPod">@AnPod</a> ใน <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>แก้ไขการอัปเดตที่ล้มเหลวเงียบ ๆ เมื่อเริ่มนอกเซสชันเดสก์ท็อป โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>แก้ไขการดาวน์โหลดเครื่องมือ mise ที่ล้มเหลวทำให้การอัปเดตระบบที่เหลือหยุด โดย <a href="https://github.com/sanjyay">@sanjyay</a> ใน <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>แก้ไขการอัปเดตที่ล้มเหลวเมื่อไม่ได้ติดตั้ง omarchy-nvim โดย <a href="https://github.com/imzihuailin">@imzihuailin</a> ใน <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>แก้ไขการติดตั้งแบบดูอัลบูตที่เมานต์พาร์ติชัน EFI ไม่สำเร็จ โดย <a href="https://github.com/Damian626">@Damian626</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>แก้ไขการติดตั้งที่หยุดเมื่อเฟิร์มแวร์ไม่ยอมรับรายการบูตใหม่ โดย <a href="https://github.com/ryanio">@ryanio</a> ใน <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>แก้ไขการติดตั้งที่หยุดบนดิสก์ที่มีสมาชิก RAID เก่าหรือกลุ่มวอลุ่ม โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>เริ่มตัวติดตั้งเร็วขึ้นโดยไม่รออุปกรณ์ USB และงานบูตทุกอย่าง โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>เร่งการเข้ารหัสดิสก์ด้วยเซกเตอร์ 4096 ไบต์ในการติดตั้งใหม่ โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>แสดงดิสก์ภายในก่อนและเปิดหน้าจอการติดตั้งไปที่ตัวเลือกที่ปลอดภัย โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>แสดง Full disk install ก่อนในตัวติดตั้ง และย้อนกลับด้วย Esc บนหน้าจอดิสก์ โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>แก้ไขการปรับสเกลจอภาพหนึ่งที่เปลี่ยนสเกลของจอภาพอื่นทุกจอ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>แก้ไขแอป XWayland ที่ใหญ่เกินไปเมื่อจอภาพใช้สเกลต่างกัน โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>แก้ไขจอแสดงผล HDR ที่เปลี่ยนเป็นภาพ HDR ซีดจางเมื่อหน้าต่างไปเต็มจอ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>แก้ไขเมนูและตัวเลือกที่เบลอบนจอแสดงผลที่ใช้สเกลเศษส่วน โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>แก้ไขจอแล็ปท็อปที่ยังปิดอยู่หลังถอดจอแสดงผลภายนอก โดย <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> ใน <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>แก้ไขการเปิดใช้งานจอแสดงผลอีกครั้งที่รีเซ็ตตำแหน่ง สเกล และโหมดของมัน โดย <a href="https://github.com/zihaomu">@zihaomu</a> ใน <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>แก้ไขเมนูและตัวเลือกที่ไม่เปิดอีกหลังถอดจอภาพ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>แก้ไขเวิร์กสเปซเฉพาะจอภาพที่ย้ายหลังถอดจอภาพ โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>แก้ไขเชลล์หยุดทำงานเมื่ออุปกรณ์เสียงตัดการเชื่อมต่อขณะแผงเสียงเปิดอยู่ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>แก้ไขหน้าต่างเต็มจอที่สูญเสียสถานะเต็มจอหลังโปรแกรมรักษาหน้าจอ โดย <a href="https://github.com/MGross21">@MGross21</a> ใน <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>แก้ไขเคอร์เซอร์หายไปตอนเริ่มต้นหลัง Hyprland โหลดใหม่ โดย <a href="https://github.com/spencerbull">@spencerbull</a> ใน <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>แก้ไขเคอร์เซอร์ที่มองไม่เห็นเหนือแอป XWayland โดย <a href="https://github.com/Sebo1411">@Sebo1411</a> ใน <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>แก้ไขการจับคลิปบอร์ดที่ค้าง โดย <a href="https://github.com/maxcroy1">@maxcroy1</a> ใน <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>แก้ไขการเข้าถึงพวงกุญแจผ่านพอร์ทัล XDG Secret โดย <a href="https://github.com/pkwagner">@pkwagner</a> ใน <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>แก้ไขการลงทะเบียนลายนิ้วมือและการกู้คืนหน้าจอล็อก โดย <a href="https://github.com/GeertJohan">@GeertJohan</a> ใน <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>แนะนำการลงทะเบียนลายนิ้วมือทีละขั้นตอน โดย <a href="https://github.com/scottjones">@scottjones</a> ใน <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>แก้ไขการกดปุ่มซ้ำอัตโนมัติในช่องรหัสผ่านหน้าจอล็อก โดย <a href="https://github.com/berndb">@berndb</a> ใน <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>แก้ไขวอลเปเปอร์หน้าจอล็อกที่โหลดหลังช่องรหัสผ่านเมื่อปลุก โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>แก้ไขการหมดเวลาล็อกหน้าจอเมื่อเซสชันระบุจอแสดงผลที่ไม่มีแล้ว โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>เร่งการเปิดเทอร์มินัลในไดเรกทอรีของหน้าต่างปัจจุบัน โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>ทำให้ตัวแก้ไขตระกูล VS Code ตามการเปลี่ยนธีมแบบสด โดย <a href="https://github.com/Macho0x">@Macho0x</a> ใน <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>เปลี่ยนธีมเซสชัน Hunk ที่กำลังทำงานเมื่อเปลี่ยนธีม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>จดจำวอลเปเปอร์ที่เลือกสำหรับแต่ละธีม โดย <a href="https://github.com/OldJobobo">@OldJobobo</a> ใน <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>รักษาตัวเลือกภาพให้เร็วและคมชัดกับคอลเลกชันขนาดใหญ่และ HiDPI โดย <a href="https://github.com/keylimesoda">@keylimesoda</a> ใน <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>ลด CPU และหน่วยความจำที่แถบโปร่งใสใช้สุ่มตัวอย่างวอลเปเปอร์ โดย <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> ใน <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>เร่งแผง Tailscale บน tailnet ที่มีเครื่องหลายพันเครื่อง โดย <a href="https://github.com/iskakaushik">@iskakaushik</a> ใน <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>นำ Grok ให้ทัดเทียม Claude และ Codex ในแผงเอเจนต์ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>นำการเลือกบัญชีเอเจนต์ไปใช้กับกระบวนการย่อย CLI โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>แสดงขีดจำกัดการใช้จ่ายรายบุคคลของ Codex และเวลารีเซ็ตของมัน โดย <a href="https://github.com/Stegi56">@Stegi56</a> ใน <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>ตั้งค่าการรวมเบราว์เซอร์เมื่อเลือก Claude โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>แก้ไขเอเจนต์ที่ไม่พบเครื่องมือ mise ที่ติดตั้งหลังพวกมันเริ่ม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>แก้ไขการวางภาพหน้าจอลงในเอเจนต์ในบานหน้าต่าง herdr ที่เริ่มผ่าน SSH โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>แก้ไขแผงเอเจนต์ที่ไม่แสดงเซสชัน Codex ที่บีบอัด โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>คืน Caps Lock ให้ปกติและทำให้ Shift + Caps Lock เป็นปุ่ม compose โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>นำเลย์เอาต์แป้นพิมพ์ระบบไปใช้กับหน้าจอเข้าสู่ระบบ โดย <a href="https://github.com/g-desoutter">@g-desoutter</a> ใน <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>แก้ไขการสลับเลย์เอาต์ที่ข้ามทุกการกดครั้งเว้นครั้งด้วยเลย์เอาต์แป้นพิมพ์ที่ไม่ใช่ละติน โดย <a href="https://github.com/manuaudio">@manuaudio</a> ใน <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>เปิดการถอดรหัสวิดีโอด้วยฮาร์ดแวร์ใน mpv โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>เปลี่ยนการควบคุมความแออัด TCP เป็น BBR และใช้ตัวจัดตาราง I/O kyber บนดิสก์จริง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>ติดตั้ง T3 Code เป็น AppImage ที่อัปเดตตัวเอง โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>ปรับปรุงการติดตั้ง PHP และ Laravel โดย <a href="https://github.com/nunomaduro">@nunomaduro</a> ใน <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>ติดตั้ง Node แบบ lazy และปล่อยการตั้งค่า mise ของคุณไว้ โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>ติดตั้งแอปที่หายไปเมื่อเลือกค่าเริ่มต้น โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>ทำให้ซอฟต์แวร์ที่ติดตั้งแล้วจางในเมนู Install แทนที่จะซ่อนมัน โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>ลงทะเบียนตัวจัดการรหัสผ่านและโฮสต์การส่งข้อความเนทีฟอื่น ๆ สำหรับ Brave Origin โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>จัดกลุ่มการแจ้งเตือนเว็บ Brave Origin ตามไซต์ และเปิดแท็บที่ถูกต้องเมื่อคลิก โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>อนุมัติการลบแพ็กเกจกำพร้าโดยอัตโนมัติระหว่างการอัปเดต โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>อัปเดตพวงกุญแจของ Omarchy ก่อนการอัปเดตทุกครั้ง โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>เสนอให้รีบูตหลังเปลี่ยนช่อง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>เสนอการอัปเดตครั้งแรกเฉพาะเมื่อมีสิ่งให้อัปเดต โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>ค้นหาตำแหน่งสภาพอากาศและเขตเวลาของตัวติดตั้งด้วยบริการภูมิศาสตร์ของ Omarchy เอง โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>ตั้งนาฬิกาจาก ntp.omarchy.org แทนพูล NTP ของ Arch โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>วัดความเร็วเครือข่ายด้วยการทดสอบความเร็วของ Omarchy เอง โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>แสดงหน้าจอความคืบหน้าไอคอนที่วาดเส้นระหว่างการบูตครั้งแรก โดย <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> ใน <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>บูต ISO แบบ live บนเคอร์เนล Omarchy และบนเคอร์เนล T2 เฉพาะบน Mac โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>หยุดการติดตั้งแบบออฟไลน์ที่รอการค้นหาเวอร์ชัน mise โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>แก้ไขการติดตั้งแบบออฟไลน์ที่ตั้งเขตเวลาเริ่มต้นเป็น Africa/Abidjan โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>แก้ไขตัวเลือกเขตเวลาของตัวติดตั้งที่ไม่ให้คุณพิมพ์เพื่อค้นหา โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>แก้ไข ISO แบบ live ที่ค้างหลัง splash เมื่อบูตจากแท่ง Ventoy โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>แก้ไขแผนผังปุ่มคอนโซลภาษาเยอรมันและภาษาฝรั่งเศสในแบบฟอร์มตั้งค่าของตัวติดตั้ง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>ซ่อนคำแนะนำปุ่มภาษาอังกฤษของ gum ในตัวติดตั้งและการตั้งค่า git โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>ตัดมุกเฉพาะภาษาอังกฤษออกจากหน้าจอความคืบหน้าการติดตั้ง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>แก้ไขเอาต์พุตตัวติดตั้งที่ลงบนหน้าจอโดยไม่มีการเยื้องขณะเตรียมดิสก์ โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>แก้ไขการอัปเกรด Quattro ที่รีเซ็ตเบราว์เซอร์เริ่มต้นเป็น Chromium โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>แก้ไขการอัปเกรด Quattro ที่หยุดบนชื่อพื้นหลังที่มีอักขระที่ไม่ใช่ ASCII โดย <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> ใน <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>แก้ไขการย้ายเคอร์เนลที่หยุดบนเครื่องที่บูตด้วย GRUB หรือ systemd-boot โดย <a href="https://github.com/manuaudio">@manuaudio</a> ใน <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>แก้ไขการไฮเบอร์เนตบนเครื่องที่ไม่ได้เข้ารหัสที่มีดิสก์ NVMe มากกว่าหนึ่งตัว โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>แก้ไขการย้าย FIDO2 ที่ถูกทำเครื่องหมายว่าเสร็จก่อนได้รับการแก้ไข โดย <a href="https://github.com/ErikMelton">@ErikMelton</a> ใน <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>แก้ไขเวิร์กสเปซแบบลอยที่เข้ายึดหน้าต่างแรกที่กฎลอยของคุณเองครอบคลุม โดย <a href="https://github.com/zihaomu">@zihaomu</a> ใน <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>แก้ไขคอมโพสิเตอร์ที่ค้างเมื่อ Super + L วนเวิร์กสเปซเข้าและออกจากการลอย โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>แก้ไข Alt + Shift + Tab ที่ไม่วนย้อนกลับผ่านทุกหน้าต่าง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>แก้ไขหน้าต่างที่แยกออกมาที่ไม่จัดกึ่งกลางเมื่อย้ายไปจอภาพอื่น โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>แก้ไขเทอร์มินัลใหม่ที่เปิดนอกโฟลเดอร์โฮมของคุณเมื่อหน้าต่างที่ไม่ใช่เทอร์มินัลถูกโฟกัส โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>แก้ไขหน้าต่าง 1Password และ Bitwarden ที่ไม่ลอย โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>แก้ไข 1Password ที่ปิดเมื่อเทอร์มินัลตัวติดตั้งออก โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>แก้ไขกล่องโต้ตอบ DaVinci Resolve ที่ขโมยโฟกัสตัวชี้ โดย <a href="https://github.com/AksharP5">@AksharP5</a> ใน <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>แก้ไขเดสก์ท็อปที่แสดงผ่านจอแสดงผล Windows VM โดย <a href="https://github.com/jmwall">@jmwall</a> ใน <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>แก้ไขรหัสผ่าน Windows VM แบบเดิมที่มี $$ หลังการย้าย Quattro โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>หยุดป๊อปอัปบริจาคของ Hyprland ไม่ให้แสดงหลังการอัปเกรด โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>ปรับปรุงการลากและจัดเรียงวิดเจ็ตแถบ โดย <a href="https://github.com/outfoxxed">@outfoxxed</a> ใน <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>ทำให้ขนาดและการจัดตำแหน่งไอคอนแถบเป็นมาตรฐาน โดย <a href="https://github.com/bjarneo">@bjarneo</a> ใน <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>แสดงตัวบ่งชี้แถบที่ซ่อนอยู่เฉพาะเมื่อวางเมาส์ทางซ้ายของนาฬิกา โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>จัดไอคอนถาดให้ตรงกับไอคอนอื่น ๆ ของแถบ โดย <a href="https://github.com/ayoubdya">@ayoubdya</a> ใน <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>แสดงคำแนะนำแถบถัดไปทันทีขณะที่อันหนึ่งแสดงอยู่แล้ว โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>เปิดแผงนาฬิกาและสภาพอากาศใต้วิดเจ็ตของพวกมัน โดย <a href="https://github.com/scottjones">@scottjones</a> ใน <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>รักษาแผงเครือข่ายให้เปิดอยู่หลังเลือกผู้ให้บริการ DNS โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>แก้ไขป๊อปอัปที่ปิดแล้วทิ้งวิดเจ็ตแถบไม่ตอบสนอง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>แก้ไขแถบที่ซ่อนอยู่ซึ่งรับการคลิกตามขอบบนของหน้าต่างเต็มจอ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>แก้ไขไอคอนถาดสีเข้มที่หายเข้าไปในแถบ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>แก้ไขไอคอนแถบที่อยู่ไม่สม่ำเสมอหรือไม่อยู่กึ่งกลาง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>แก้ไขคำแนะนำแถบที่วาดเฟรมแรกด้วยขนาดผิด โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>แก้ไขประวัติการแจ้งเตือนที่แสดงทุกการ์ดว่าเป็นเมื่อกี้ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>แก้ไขการแจ้งเตือนการเข้าสู่ระบบครั้งแรกที่ยุบเป็นกองเดียว โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>แก้ไขการคลิกการแจ้งเตือนที่ไม่โฟกัสแอปที่มีชื่อหลายคำ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>แก้ไขการแจ้งเตือน Taildrop ที่แสดงข้อความว่างและไม่มีตัวอย่าง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>แก้ไขการแจ้งเตือนแบตเตอรี่ที่แสดงเวลาว่างและ 0W บนแบตเตอรี่เต็ม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>แก้ไขคำเตือนแบตเตอรี่ต่ำที่ยังอยู่หลังเสียบปลั๊กและกลับมาหลังรีบูต โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>แก้ไขการอ่านการดึงพลังงานแบตเตอรี่เป็น 0W บนแล็ปท็อปบางเครื่อง โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>แก้ไขแบตเตอรี่เต็มบน AC ที่แสดงว่ากำลังคายประจุ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>แก้ไข Hibernate ที่แสดงเมื่อเคอร์เนลจะไม่ไฮเบอร์เนต โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>แก้ไขการเมานต์ gvfs ที่หายไปหลังกลับมาทำงานต่อ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>แก้ไขแสงพื้นหลังแป้นพิมพ์ที่ยังปิดอยู่หลังการล็อกดับสองครั้ง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>แก้ไขตัวอ่านลายนิ้วมือที่ตื่นขณะการล็อกปิดจอแสดงผล โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>แก้ไขพรอมต์รหัสผ่านบูตที่ไม่อยู่กึ่งกลางเมื่อจอแสดงผลปรากฏช้า โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>แก้ไขปุ่มออกจากโปรแกรมรักษาหน้าจอที่กะพริบที่มุม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>แก้ไขไอคอน Wi-Fi ที่กะพริบบนเครือข่ายโหมดเปลี่ยนผ่าน OWE โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>แก้ไขข้อผิดพลาด OWE ที่พิมพ์ในเทอร์มินัลหลังติดตั้งธีม โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>แก้ไขการกะพริบเมื่อเปลี่ยนจากพื้นหลังนิ่งเป็นวิดีโอ โดย <a href="https://github.com/bjarneo">@bjarneo</a> ใน <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>อัปเดต Hackerman เป็นพื้นหลังเรขาคณิตที่ขยายขนาด โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>แก้ไขธีมที่มีการอ้างอิงสีแบบวนซ้ำที่ทำให้การเปลี่ยนธีมหยุดค้าง โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>แก้ไข Neovim ที่เริ่มไม่ได้ด้วยธีม Catppuccin โดย <a href="https://github.com/anandude">@anandude</a> ใน <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>แก้ไข OpenCode 2 ที่เริ่มบนธีมพื้นฐานของมันแทนของ Omarchy โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>แก้ไขโค้ดอินไลน์ความคมชัดต่ำในธีม VS Code ที่สร้างขึ้น โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>แก้ไขการติดตั้ง T3 Code ที่หยุดขณะจับคู่ธีมปัจจุบัน โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>แก้ไขขนาดแบบอักษรเทอร์มินัลที่รีเซ็ตเมื่อเปลี่ยนตระกูลแบบอักษร โดย <a href="https://github.com/sbalbalosa">@sbalbalosa</a> ใน <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>แก้ไขการเปลี่ยนแบบอักษรที่พิมพ์ ID กระบวนการของเทอร์มินัล โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>แก้ไขการเปลี่ยนภาษาที่สร้าง locale ทุกตัวใหม่และสูญเสียพวกมันบนดิสก์ที่เกือบเต็ม โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>แก้ไขเชลล์ที่แสดงคีย์การแปลดิบก่อนโหลดคำแปลของมัน โดย <a href="https://github.com/zihaomu">@zihaomu</a> ใน <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>เร่งข้อความที่แปลในสคริปต์ของ Omarchy โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>อัปเดตคำแปลสำหรับ 686 สตริง โดย 392 รายการอยู่ในคู่มือ โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>แก้ไขตัวควบคุมระดับเสียงและเอาต์พุตใน locale ที่ไม่ใช่ภาษาอังกฤษ โดย <a href="https://github.com/Sebo1411">@Sebo1411</a> ใน <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>แก้ไขการอ่านการใช้งาน CPU ใน locale ที่ไม่ใช่ภาษาอังกฤษ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>แก้ไขบริการ fcitx5 ที่รีสตาร์ทตลอดไปเมื่อไม่ได้ติดตั้ง fcitx5 โดย <a href="https://github.com/therk">@therk</a> ใน <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>แก้ไขวิดเจ็ตเลย์เอาต์แป้นพิมพ์ที่สลับอุปกรณ์ที่ไม่มีใครพิมพ์ โดย <a href="https://github.com/bjarneo">@bjarneo</a> ใน <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>แก้ไขวิดเจ็ตเลย์เอาต์แป้นพิมพ์ที่สลับไปอุปกรณ์ปุ่มลัดของผู้ผลิต โดย <a href="https://github.com/yashranaway">@yashranaway</a> ใน <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>แก้ไขเมนูการผูกปุ่มที่ทิ้งกระบวนการ Lua ให้ทำงานที่ CPU 100% โดย <a href="https://github.com/tobi">@tobi</a> ใน <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>แก้ไขนาฬิกาที่ท่วมล็อกทุกมิลลิวินาทีเมื่อเวลาออมแสงสิ้นสุด โดย <a href="https://github.com/falkoro">@falkoro</a> ใน <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>แก้ไขเชลล์ที่แทนที่ shell.json ที่มันอ่านไม่ได้ด้วยค่าเริ่มต้น โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>แก้ไขเมนู Omarchy ที่สูญเสียแถวของมันขณะไฟล์ของมันกำลังอัปเดต โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>แก้ไขการเปิดใช้งานปลั๊กอินอีกครั้งที่ไม่นำวิดเจ็ตแถบของมันกลับมา โดย <a href="https://github.com/berrimi">@berrimi</a> ใน <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>แก้ไขปลั๊กอินภายในเครื่องที่โหลดซ้ำเป็นวงบน bytecode Python ของตัวเอง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>แก้ไขปุ่มที่ซ่อนในปลั๊กอินที่ยุบเหลือเพียง padding ของมัน โดย <a href="https://github.com/dmkenney">@dmkenney</a> ใน <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>แก้ไขดรอปดาวน์ที่ตัดรายการสุดท้ายของมันออก โดย <a href="https://github.com/sprajs">@sprajs</a> ใน <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>แก้ไขดรอปดาวน์ที่ไม่ปิดเมื่อคลิกครั้งที่สอง โดย <a href="https://github.com/felixzsh">@felixzsh</a> ใน <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>แก้ไขปุ่มสไลเดอร์ที่หยุดก่อนสุดราง โดย <a href="https://github.com/erikrjohansson">@erikrjohansson</a> ใน <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>แก้ไข Update &gt; Hardware &gt; Trackpad ที่พลาดทัชแพดส่วนใหญ่และรีเซ็ตแป้นพิมพ์ โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>ตอนนี้มันปล่อยปุ่มที่ค้างบนทุกทัชแพด และรีเซ็ตเฉพาะทัชแพดแทนแป้นพิมพ์และหน้าจอสัมผัสไปด้วย</p>
+  </li>
+  <li>ทำให้เมนูเว็บแคมตรวจสอบกล้องโดยไม่เปิดมัน โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>แก้ไขการจับภาพแบบเลื่อนของ Omasnap ที่จับได้เฉพาะเฟรมดำ โดย <a href="https://github.com/falkoro">@falkoro</a> ใน <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>แก้ไขตัวเลือกภาพหน้าจอที่ยกเลิกการผูกปุ่มของคุณเอง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>แก้ไขการหยุดการบันทึกที่ประกาศว่าการบันทึกที่บันทึกไว้ว่างเปล่า โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>แก้ไขตัวเลือกภาพที่แสดงภาพขนาดย่อเก่าสำหรับภาพที่บันทึกทับ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>แก้ไขแสงกลางคืนที่ไม่รีเซ็ตอย่างสมบูรณ์เมื่อปิด โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>แก้ไขวิดเจ็ตสื่อที่ทิ้งแทร็กที่หยุดชั่วคราวไว้สำหรับผู้เล่นที่ไม่ได้ใช้งาน โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>แก้ไขการสแกนจอแสดงผลซ้ำ ๆ บนจอภาพที่ไม่รายงานความสว่าง โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>แก้ไข Super + Shift + Return ที่ล้มเหลวเมื่อเบราว์เซอร์ที่ตั้งค่าไว้ถูกถอนการติดตั้ง โดย <a href="https://github.com/vitally">@vitally</a> ใน <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>แก้ไขปุ่มลัดเครื่องคิดเลขที่ยังอยู่หลังลบแอปที่ติดตั้งมาล่วงหน้า โดย <a href="https://github.com/OldJobobo">@OldJobobo</a> ใน <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>แก้ไขปุ่มลัด Copy URL ในโปรไฟล์ Brave Origin โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>แก้ไขป๊อปเอาต์ส่วนขยาย Bitwarden ที่เปิดด้วยขนาดผิด โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>แก้ไข Battle.net ที่เปิดที่สเกล 100% บนจอภาพ HiDPI โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>แก้ไขตัวเลือกไฟล์ของ Inkscape ที่เปิดแบบเรียงต่อกัน โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>แก้ไขแพ็กเกจ Go AUR ที่สร้างไม่สำเร็จระหว่างการอัปเดตเมื่อ mise จัดการ Go โดย <a href="https://github.com/shbernal">@shbernal</a> ใน <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>แก้ไขการติดตั้ง ONCE เมื่อคุณไม่ได้อยู่ในกลุ่ม docker โดย <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> ใน <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>แก้ไขการคลิกแผงเอเจนต์ที่เปิดถาด โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>แก้ไขการตั้งค่าบัญชีเอเจนต์ที่สะดุดกับ symlink ร่วมที่ค้างอยู่ โดย <a href="https://github.com/manuaudio">@manuaudio</a> ใน <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>แก้ไข <code>--reauth</code> ที่เพิ่มบัญชีเอเจนต์ใหม่เมื่อไม่มีบัญชี โดย <a href="https://github.com/manuaudio">@manuaudio</a> ใน <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>ทำให้คำแนะนำการเปลี่ยนชื่อบัญชีเอเจนต์ระบุผู้ให้บริการของมัน โดย <a href="https://github.com/manuaudio">@manuaudio</a> ใน <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>แก้ไขการอัปเดตพวงกุญแจที่อ้างว่าสำเร็จเมื่อการดำเนินการคีย์ล้มเหลว โดย <a href="https://github.com/Adolanium">@Adolanium</a> ใน <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>แก้ไขพรอมต์รีเซ็ตเป็นค่าโรงงานที่ว่างเปล่าเมื่อรันภายใต้ sudo โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>แก้ไขการเตือนการย้ายที่ค้างอยู่ซึ่งกองขึ้นครั้งละหนึ่งต่อการเข้าสู่ระบบ โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>แก้ไข OS Age ใน About ที่นับจากการสร้าง ISO แทนการติดตั้ง โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>แก้ไข Dropbox ที่แสดง “0y ago” สำหรับไฟล์อายุ 360 ถึง 364 วัน โดย <a href="https://github.com/manuaudio">@manuaudio</a> ใน <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>แก้ไขการตรวจสอบสถานะ Dropbox ที่ทำให้ลิงก์เข้าสู่ระบบที่ค้างอยู่หมดอายุ โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>แก้ไขการติดตั้งไลบรารีไอคอนถาดของ Dropbox โดย <a href="https://github.com/omarchybot">@omarchybot</a> ใน <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>เปิดแถบเลื่อนแบบทับซ้อนใน Chromium โดย <a href="https://github.com/robzolkos">@robzolkos</a> ใน <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>ถามก่อนเปิด Touch ID บน Mac ที่ใช้ Apple Silicon โดย <a href="https://github.com/scottjones">@scottjones</a> ใน <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>เสนอช่อง RC บน Mac ที่ใช้ Apple Silicon โดย <a href="https://github.com/maralcbr">@maralcbr</a> ใน <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>เสนอช่อง stable บน Mac ที่ใช้ Apple Silicon โดย <a href="https://github.com/maralcbr">@maralcbr</a> ใน <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>แก้ไข alias ฟังก์ชัน และสภาพแวดล้อมของ Omarchy ที่หายไปจากเทอร์มินัลใหม่บน Apple Silicon โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>ตั้งค่าแอปพลิเคชัน NVIDIA ที่ติดตั้งแล้ว โดย <a href="https://github.com/jdvmi00">@jdvmi00</a> ใน <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>แก้ไขการติดตั้งที่ล้มเหลวบน Lenovo Pro 9 ที่มี NVIDIA N1x โดย <a href="https://github.com/breymander">@breymander</a> ใน <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>แก้ไขลำโพงและไมโครโฟนภายในที่หายไปบนแล็ปท็อป N1x ที่ใช้โปรไฟล์เสียงก่อนหน้า โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>แก้ไขเดสก์ท็อปที่เชื่องช้าบนเครื่อง NVIDIA GB10 เช่น DGX Spark โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>แก้ไขการพิมพ์ลงในหน้าจอล็อกหลังกลับมาทำงานต่อบน NVIDIA โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>การล็อกจะไม่มืดลงอีกทันทีที่แผงสว่างขึ้น</p>
+  </li>
+  <li>แก้ไข Lutris และ Battle.net ที่ติดตั้งไดรเวอร์ Vulkan 32 บิตของ GPU อีกตัว โดย <a href="https://github.com/zihaomu">@zihaomu</a> ใน <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>หยุดขอให้รีบูตหลังการอัปเดตทุกครั้งบน ARM โดย <a href="https://github.com/birkskyum">@birkskyum</a> ใน <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>เสนอช่อง stable และ RC บน aarch64 โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>ทำให้โปรไฟล์พลังงานทำงานบนแล็ปท็อป ARM โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>เสนอ Dropbox บนเครื่อง ARM ที่มีเพจ 4K และ Spotify เป็นเว็บแอปบน ARM โดย <a href="https://github.com/birkskyum">@birkskyum</a> ใน <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>ซ่อนการติดตั้ง GeForce NOW, Battle.net และ Lutris บน ARM โดย <a href="https://github.com/birkskyum">@birkskyum</a> ใน <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>แก้ไขแอป Hermes ที่ไม่อัปเดตในที่บน ARM โดย <a href="https://github.com/ryanrhughes">@ryanrhughes</a> ใน <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>แก้ไขแป้นพิมพ์แล็ปท็อป Snapdragon ที่ไม่พิมพ์ที่พรอมต์ปลดล็อกดิสก์ โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>แก้ไขกล้องที่หายไปเมื่อเข้าสู่ระบบบนแล็ปท็อป Snapdragon โดย <a href="https://github.com/birkskyum">@birkskyum</a> ใน <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>แก้ไขหน้าจอดำก่อนปลดล็อกดิสก์บนแล็ปท็อป Snapdragon X2 โดย <a href="https://github.com/jdvmi00">@jdvmi00</a> ใน <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>ถอดรหัสวิดีโอด้วยฮาร์ดแวร์บน Intel Wildcat Lake โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>แก้ไข ISO แบบ live หยุดทำงานบนแล็ปท็อป Arrow Lake-H โดย <a href="https://github.com/emirb">@emirb</a> ใน <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>แก้ไขไมโครโฟนภายใน HP EliteBook Ultra G1q โดย <a href="https://github.com/bprendie">@bprendie</a> ใน <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>ใช้การรองรับต้นน้ำสำหรับ Motorcomm YT6801 Ethernet โดย <a href="https://github.com/AFOliveira">@AFOliveira</a> ใน <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>ถ่ายทอด Elgato Cam Link 4K เป็นกล้องเสมือน 16:9 โดย <a href="https://github.com/dhh">@dhh</a> ใน <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>รองรับตัวอ่านลายนิ้วมือที่แพลตฟอร์มตั้งชื่อ โดย <a href="https://github.com/scottjones">@scottjones</a> ใน <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

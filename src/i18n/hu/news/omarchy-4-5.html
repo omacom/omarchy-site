@@ -1,0 +1,449 @@
+<p>Az Omarchy 4.5 (más néven Quattro RS!) az első nagy funkciókiadás a <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a> óta, és igazi nagyágyú: alig tizenkét hét alatt több mint 180 közreműködőtől több mint 740 pull request olvadt be. Mostantól a csempéző alapértelmezés mellett hagyományos asztali módot is kínál. Natívan telepítheted M1/M2/M3/Neo MacBookokra. És 50 nyelven beszél. És még egy rakás más funkció, javítás és fejlesztés is érkezett. Már Omarchyt használsz? Futtasd az <em>Update &gt; Omarchy</em> menüpontot. Új géped van? <a href="/#install">Szerezd be innen</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Lebegő munkaterületek dokkal</h2>
+
+<p>A <code>Super + L</code> mostantól bármelyik munkaterületet körbeforgatja a csempéző, a görgető és a lebegő mód között. Lebegő munkaterületen minden ablak a témád színeiben pompázó címsort kap, egy dokk pedig megmutatja a rögzített alkalmazásaidat, mindent, ami éppen fut, és minden telepített alkalmazás rácsát. Húzással átrendezheted vagy rögzítheted őket, jobb kattintással további lehetőségeket kapsz, a <code>Super + M</code> pedig lekicsinyít egy ablakot a dokkra.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Ez csodálatos belépő mindenkinek, aki macOS-ről vagy Windowsról érkezik, és még nem áll készen arra, hogy teljesen belevesse magát a csempézésbe. Vagy bárkinek, aki egyszerűen csak szeretne egy munkaterületet, ahol az ablakok szabadon szétterülhetnek. Munkaterületenként kedved szerint keverheted őket, a sáv pedig megmutatja, melyik melyik elrendezést használja.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy Apple Siliconon</h2>
+
+<p>A hihetetlen <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> csapatunk leszállította a natív Mac-telepítőt. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Tölts le egy alkalmazást</a> macOS-en, és az Omarchyt szépen odateszi mellé az M1, M2, M3 vagy Neo MacBookodra. Semmi USB-kulcs, semmi terminálos varázslat. Inkább Homebrew-t használnál? Az egyetlen sor:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Az Omarchy Mac-telepítője" /></p>
+
+<p>Ez volt a célunk szeptemberben: befejezni, amit az Asahi elkezdett. Két hónappal később már csak le kell töltened. Elképesztő munka a csapat minden tagjától.</p>
+
+<p>És itt nem állnak meg. Az M4-en, M5-ön és M6-on is dolgoznak éppen, úgyhogy valószínűleg nem kell sokat várni, és az Omarchy minden Apple Silicon Macen futni fog.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy egy M2 Maxen, egy M3 Airen, egy Neón, egy M4 Prón és egy M5 Airen" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM-támogatás NVIDIA DGX Sparkhoz és N1X-hez (és hamarosan Snapdragonhoz is)</h2>
+
+<p>Az Omarchy 4.5 az első ARM ISO-jával érkezik, és vele együtt előzetes támogatást hoz az NVIDIA ARM gépeihez: a DGX Spark asztali géphez és az N1X-re épülő laptopokhoz, mint a <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> és az <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. És hamarosan a Snapdragon ARM gépek teljes kínálatát is támogatni fogjuk. Még korai szakaszban járunk, úgyhogy számíts néhány nyers élre, és kérjük, jelents be mindent, ami elromlik, a <a href="https://github.com/omacom/omarchy/issues">GitHubon</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 nyelv és 5 beviteli mód</h2>
+
+<p>Az Omarchy mostantól 50 nyelven beszél. Válassz ki egyet a <em>Setup &gt; Language</em> alatt (vagy futtasd az <code>omarchy language &lt;code&gt;</code> parancsot), és a menü, az asztal és az Omarchy értesítései azonnal átváltanak. A rendszer területi beállítása a következő bejelentkezésedkor követi őket.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Nyelvváltás" /></p>
+
+<p>Egy nyelven beszélni azonban csak a fele a dolognak. Gépelni is tudni kell rajta. Úgyhogy az Omarchy mostantól megfelelő beviteli módokat állít be a japán (Mozc), a koreai (Hangul), az egyszerűsített kínai (Pinyin), a tajvani (Zhuyin) és a hongkongi (Cangjie) nyelvhez, rögtön a telepítőből vagy később a <em>Setup &gt; Keyboard</em> alatt. Mindegyikhez járnak a karakterformáihoz illő betűtípusok, a jelöltablak követi a témádat, a <code>Super + I</code> pedig vált a beviteli nyelveid között. A Hangul, a Zhuyin és a Cangjie a szokásos helyükön tartják a billentyűiket akkor is, ha latin betűket Dvorak, Colemak vagy AZERTY kiosztáson gépelsz, pont úgy, mint Windowson és macOS-en. És ha önmagában koppintasz a Shiftre, kilépsz egy beviteli módból a latin betűkhöz, majd vissza, ahogyan a Sogou, a Microsoft Pinyin és a macOS is működik.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Bejelentkezés rögzített Wi-Fi portálokra</h2>
+
+<p>A szállodai, repülőtéri és kávézói Wi-Fi végre egyszerűen működik. Az Omarchy mostantól észreveszi, ha egy hálózat azt szeretné, hogy jelentkezz be vagy fogadd el a feltételeit, mielőtt felengedne az internetre. A hálózati ikon figyelmeztet, a hálózati panel pedig egy nagy Open Captive Portal gombot mutat, amely egyenesen a bejelentkezési oldalra visz. Amint átjutottál, minden magától visszaáll a normális kerékvágásba.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Bejelentkezés egy rögzített portálra a hálózati panelről" width="380" /></p>
+
+<h2 id="five-new-default-apps">Öt új alapértelmezett alkalmazás</h2>
+
+<p>A <strong>Hype</strong> egyetlen Markdown fájlból készít prezentációkat, a forrás mellett vizuális diászerkesztővel, és PDF-be vagy PowerPointba exportál.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p>A <strong>Signed</strong> váltja le az Xournal++-t a papírmunkához: nyiss meg egy PDF-et, helyezd el a mentett aláírásodat, szöveget és dátumokat, és ments el egy aláírt példányt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p>A <strong>Disktree</strong> fatérképet rajzol arról, mi tölti meg a lemezedet, típus szerint színezve, megjelöli a biztonságosan újragenerálható gyorsítótárakat, és hagyja, hogy kijelöld, minek kell mennie.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p>A <strong>Monologue</strong> egyetlen billentyűvel rögzíti a kamerádat, az asztalodhoz illő témával.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p>A <strong>Gliff</strong> távoli asztalt ad SSH-n keresztül. Csatlakozz egy másik Omarchy géphez, és irányítsd annak teljes asztalát a saját gépeden lévő ablakból, minden géphez külön füllel. És mivel SSH-n fut, semmi extrát nem kell beállítani vagy kitenni. A vezérelt gép a sávban távoli munkamenet jelzőt mutat, így mindig egyértelmű, ha valaki rajta van.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>És ott van az <strong>Elsewhen</strong>, egy világóra, amely közvetlenül az óra mellett él a sávban. Koppints egy városra a földgömbön, hogy beállítsd, hol vagy, keress valódi helyekre, és nevezd meg az embereket, akik az egyes városokban élnek, így mindig tudod, illendő órában telefonálsz-e. Válts 12 és 24 óra között a <code>t</code> billentyűvel, °F és °C között az <code>Alt + T</code> billentyűkombinációval, és hívd elő bármikor a <code>Super + Ctrl + Alt + E</code> billentyűkombinációval.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>A Monologue-gal a rögzítéshez és az Omacuttal a vágáshoz az új telepítések már nem szállítják az OBS Studiót és a Kdenlive-ot. A Lazydocker is kikerült az új telepítésekből, bár a Docker és a Docker Compose továbbra is benne van. Azok a gépek, amelyeken bármelyik is megvan már, megtartják őket.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Olyan emberekkel kell együtt dolgoznod, akik az Office-ban élnek? Az <em>Install &gt; Service &gt; Microsoft</em> mostantól webalkalmazásként állítja be az Outlookot, a Wordöt, az Excelt, a PowerPointot, a Teamst és a OneDrive-ot. Mindegyik saját ablakot és indítóbejegyzést kap, így otthon érzik magukat minden más mellett. Nincs több kifogás arra, hogy ne válts Omarchyra a munkahelyeden!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams és PowerPoint az Omarchyn" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper diktáláshoz</h2>
+
+<p>A Superwhisper mostantól az Omarchy alapértelmezett diktálómotorja, és dobozból kivéve be van állítva. Koppints az <code>Alt + Space</code> billentyűkombinációra a beszéd indításához, majd újra a leállításához, vagy tartsd nyomva a <code>Right Alt</code> billentyűt push-to-talk módban. Hihetetlenül gyors és nagyon pontos.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Diktálás Superwhisperrel" /></p>
+
+<p>A felhőben indul, így a telepítés pillanatában működik, és az első 10 000 szó ingyenes. De átválthatsz egy letölthető modellre is, amely teljesen ingyenes és teljesen helyben fut, anélkül, hogy egyetlen szót is elküldene bárkinek. És ha inkább egy másik helyi modellt szeretnél, a Voxtype továbbra is elérhető alternatívaként.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Telepítés kevesebb mint tíz másodperc alatt</h2>
+
+<p>Az Omarchy korábban egyenként telepített mintegy 940 csomagot. Az új F1 telepítő ehelyett egy előre elkészített root lemezképet csomagol ki, és csak az adott gép csomagjait adja hozzá a tetejére. Ez bármelyik gépen nagyjából megfelezi a telepítési időt.</p>
+
+<p>Gyors hardveren pedig abszurd. Az AMD-től <a href="https://x.com/AnushElangovan">Anush Elangovan</a> világrekordot állított fel egy teljes Omarchy telepítéssel <strong>7 másodperc</strong> alatt az AMD laptopján. <a href="https://x.com/dhh/status/2117222836620202375">Hét másodperc!</a> Emlékszem, amikor az öt perc ambiciózus célnak tűnt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Telepített Omarchy 0m 7s alatt" /></p>
+
+<h2 id="faster-everywhere-else">Mindenhol máshol is gyorsabb</h2>
+
+<p>Nem csak a telepítő gyorsult. Az indulás már nem akad meg a binfmt regisztráción. A témaválasztó azonnal megnyílik, nem negyed másodperc múlva. A menük és panelek közvetlenül Hyprland gyorsbillentyűkről nyílnak, kihagyva azt a 60 ms-ot, amelybe korábban egy folyamat elindítása került. Az Omarchy menü leglassabb ellenőrzései 200 ms-ról 16 ms-ra csökkentek, egy új terminál 30 ms-mal hamarabb mutatja a promptját, és az egész asztal mostantól reagál a változásokra ahelyett, hogy lekérdezgetné őket. Még a kijelentkezés, az újraindítás és a leállítás is abban a pillanatban megtörténik, amint az alkalmazásaid bezáródtak.</p>
+
+<h2 id="agent-upgrades">Ügynökfejlesztések</h2>
+
+<p>Az Omarchy az ügynökös operációs rendszer, a 4.5 pedig nagy kör ügynökfejlesztést hoz az ügynökökkel végzett munkához. Az ügynökpanel mostantól 23 ügynököt és szolgáltatót követ nyomon a korábbi 6 helyett, köztük a Cursort, az OpenCode-ot, a GitHub Copilotot, az Antigravityt, a Hermest, az Ampot, a Kirót, a Devint, a Qwent, a DeepSeeket, az OpenRoutert és az Ollamát. Minden korláthoz saját mérő tartozik a visszaállításig hátralévő idővel, így pontosan láthatod, mennyi mozgástered maradt. És a Grok mostantól teljes értékű szolgáltató a Claude és a Codex mellett.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Az ügynökpanel több Claude- és Codex-előfizetéssel" width="380" /></p>
+
+<p>És az ügynököd mindig egyetlen billentyűleütésnyire van. A <code>Super + ~</code> egy Quake-stílusú konzolt ejt le egy elhalványított asztal fölé, és amikor először megnyitod, elindítja az alapértelmezett ügynöködet. Nyomd meg újra, hogy eltüntesd, és a munkameneted pontosan ott lesz, ahol hagytad.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="A Quake-stílusú konzol ügynököt futtat egy elhalványított asztal fölött" /></p>
+
+<p>Ha egynél több előfizetéssel zsonglőrködsz, mostantól több Claude-, Codex- és Grok-bejelentkezést is tarthatsz ugyanazon a gépen, és kiválaszthatod, melyikkel induljanak az új munkamenetek, az <code>omarchy agent account</code> paranccsal. Az előzmények, a beállítások és a készségek közösek közöttük, így a <code>claude --continue</code> pontosan ott folytatja, ahol egy váltás után abbahagytad. Egy korláthoz közeledve az Omarchy felajánlhat egy egykattintásos váltást, vagy magától átviheti az új munkameneteket arra a fiókra, amelyiknek a legtöbb mozgástere van. És amikor egy másik gépet állítasz be, az <code>omarchy agent account copy</code> SSH-n át átviszi az összes bejelentkezésedet, így nem kell mindenbe újra bejelentkezned.</p>
+
+<p>A Kimi és az Ori, az OpenRouter ügynök-keretrendszere, csatlakoznak a lehetőségekhez a <em>Setup &gt; Defaults &gt; Agent</em> alatt, a Google Antigravity pedig leváltja az elavult Gemini CLI-t (a <code>gemini</code> továbbra is működik aliasként). Inkább ablakot szeretnél terminál helyett? A Claude és az Amp asztali alkalmazásai mostantól egy kattintásnyira vannak az <em>Install &gt; AI</em> alatt.</p>
+
+<h2 id="notifications-rebuilt">Értesítések, újjáépítve</h2>
+
+<p>Az értesítések mostantól feladó szerint halmozódnak, követik a témádat, és összecsukják az azonos ismétlődéseket. A műveletgombok, az ellenőrző kódok és a hivatkozások mind közvetlenül a kártyáról működnek. A <code>Super + Comma</code> a legújabbra hat (elveti, megnyitja vagy megnyomja a gombját), a <code>Super + Ctrl + Comma</code> pedig átadja neked a billentyűzetet, hogy mindet vezérelhesd. A sávban lévő csengő bekapcsolja a Ne zavarjanak módot.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Új értesítések" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Videós hátterek és témaintrók</h2>
+
+<p>A hátterek mostantól videók is lehetnek. Dobj be egyet, és az asztalod életre kel gördülő hullámokkal vagy bármi mással, amihez kedved van, miközben a zárolási képernyő egy állóképet mutat belőle. És a témák mostantól belépőt is tartanak: mindegyik lejátszhat egy rövid, néma intrót, amikor bejelentkezel vagy átváltasz rá. (Inkább nyugodtan tartanád? Kapcsold ki az intrókat az <em>Appearance &gt; Animations</em> alatt.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">A Jade Horse csatlakozik az alapértelmezett témákhoz</h2>
+
+<p>A Jade Horse csupa ködös zöld, faragott jáde hátterekkel, amelyek miatt az egész asztal úgy néz ki, mint egy tekercsfestmény. Az Osaka Jade-et váltja a mellékelt témák között, és a Starship csatlakozik hozzá, mint a másik új alapértelmezett téma. Ha Osaka Jade-et használsz, megtartod a példányodat, és <a href="https://github.com/omacom/omarchy-osaka-jade-theme">harmadik féltől származó témaként</a> él tovább mindenkinek, aki frissen szeretné telepíteni.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="A Jade Horse téma" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">A Liftoff az új alapértelmezett háttér</h2>
+
+<p>Az új telepítések mostantól a Liftoff-fal üdvözölnek, egy gyönyörű naplementés indítással, amely a Tokyo Night új alapértelmezett háttere. <a href="https://github.com/tcballard">Tom Ballard</a> készítette, aki először a saját <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a> témájához alkotta meg. Köszi, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="A Liftoff háttér Tom Ballardtól" /></p>
+
+<h2 id="boot-menu-now-quiet">A boot menü mostantól csendes</h2>
+
+<p>Az Omarchy korábban minden indításkor körülbelül hat másodpercig mutatta a boot menüt, arra az esetre, ha vissza kellene állnod egy korábbi pillanatképre. De szinte soha senki nem tette. Úgyhogy a Limine mostantól csak egy másodpercet vár, és csendesen bootol, és legtöbbször egyáltalán nem fogod látni a menüt.</p>
+
+<p>Amikor mégis szükséged van egy másik bejegyzésre vagy egy pillanatképre, koppintgass bármelyik billentyűre (a lefelé nyíl is megteszi), miközben a gép indul, és meg fog állni a menünél. És ha inkább hosszabb ideig fent tartanád a menüt végleg, állíts be saját <code>timeout:</code> értéket a <code>/boot/limine.conf</code> fájlban (például <code>timeout: 5</code>). A frissítések békén hagyják az általad beállított időtúllépést.</p>
+
+<h2 id="changed-hotkeys">Megváltozott gyorsbillentyűk</h2>
+
+<p>Néhány gyorsbillentyű elköltözött:</p>
+
+<ul>
+  <li>Számológép: a <code>Super + Ctrl + Q</code> mostantól <code>Super + Shift + Q</code>.</li>
+  <li>Tevékenység: a <code>Super + Ctrl + T</code> mostantól <code>Super + Shift + T</code>, a <code>Super + Ctrl + T</code> pedig a témákat nyitja meg.</li>
+  <li>Hálózat: a <code>Super + Ctrl + W</code> mostantól <code>Super + Ctrl + N</code>, a <code>Super + Ctrl + W</code> pedig a háttereket nyitja meg.</li>
+  <li>Az Éjjeli fénynek már nincs gyorsbillentyűje (korábban <code>Super + Ctrl + N</code> volt); a <code>Trigger &gt; Toggle</code> alatt van.</li>
+  <li>A <code>Super + Alt + Space</code> az Apps menü helyett a dokkról nyitja meg az Appsot.</li>
+</ul>
+
+<p>Az értesítési gyorsbillentyűk megváltoztak:</p>
+
+<ul>
+  <li>A <code>Super + Comma</code> a legújabb kártyára hat (elveti, megnyitja vagy megnyomja az egyetlen gombját) ahelyett, hogy csak elvetné.</li>
+  <li>Az utolsó elvetése átkerült a <code>Super + Alt + Comma</code> billentyűkombinációra, amely korábban megnyitotta azt.</li>
+  <li>Az elnémítás a <code>Super + Ctrl + Comma</code> billentyűkombinációról a <code>Super + Ctrl + Alt + Comma</code> billentyűkombinációra került; a <code>Super + Ctrl + Comma</code> mostantól billentyűzetes vezérlést ad neked.</li>
+</ul>
+
+<p>Néhány billentyű másképp működik:</p>
+
+<ul>
+  <li>A <code>Super + Tab</code>, a <code>Super + Shift + Tab</code>, a <code>Super + Ctrl + Tab</code> és a <code>Super</code> + görgetés az aktuális monitor munkaterületein maradnak, mivel minden monitornak sajátjai vannak.</li>
+  <li>Terminálban a <code>Super + C</code> és a <code>Super + V</code> a <code>Ctrl + Shift + C</code> és a <code>Ctrl + Shift + V</code> billentyűkombinációt küldik a <code>Ctrl + Insert</code> és a <code>Shift + Insert</code> helyett.</li>
+</ul>
+
+<p>Új alapértelmezések, amelyek ütközhetnek a saját kötéseiddel: <code>Super + Q</code> (ablak bezárása, a <code>Super + W</code> mellett), <code>Super + A</code> (összes kijelölése), <code>Super + M</code> (lekicsinyítés a dokkra), <code>Super + ~</code> és <code>Super + Shift + ~</code> (Quake konzol), <code>Super + Alt + L</code> (előző elrendezés), <code>Super + Shift + Ctrl + Arrows</code> (ablak áthelyezése másik monitorra), <code>Super + Ctrl + Alt + C</code> (képernyőkép), <code>Super + Ctrl + Alt + E</code> (világóra), <code>Super + Ctrl + Alt + F</code> (teljes képernyős asztal), és a <code>Right Alt</code> nyomva tartása push-to-talk diktáláshoz.</p>
+
+<h2 id="more-features">További funkciók</h2>
+
+<ul>
+  <li>Minden monitornak saját munkaterületei lehetnek: a <code>Super + 1-0</code> az éppen használt monitor munkaterületeire lép, a <code>Super + Arrows</code> pedig a többi kijelzőhöz és onnan mozog – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15655">#15655</a>)</li>
+  <li>Az asztal kinézetére vonatkozó minden egy új Appearance menübe gyűlik, a Style helyett: téma, háttér, betűtípus, sáv, ablakok, márkajelzés, a dokk, a munkaterület-elrendezések, az animációk és a feloldási képernyő – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15973">#15973</a>)</li>
+  <li>Választhatsz Opaque, Transparent vagy Glassy ablakokat az <em>Appearance &gt; Window Transparency</em> alatt, plusz Glassy sávhátteret – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14991">#14991</a>)</li>
+  <li>Választhatsz témához illő, éles vagy lekerekített ablak sarkokat az <em>Appearance &gt; Window Corners</em> alatt – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14990">#14990</a>)</li>
+  <li>Új animációmentes mód, virtuális gépekben alapértelmezetten bekapcsolva – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13550">#13550</a>)</li>
+  <li>Az alkalmazások alapértelmezetten átlátszatlanok, a terminálok átlátszóak maradnak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14253">#14253</a>)</li>
+  <li>Slack hozzáadása az Install &gt; Service menühöz – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14434">#14434</a>)</li>
+  <li>Az Alt + Space minden háttérrendszeren kapcsolja a diktálást – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17188">#17188</a>)</li>
+  <li>Open és Edit gombok a képernyőkép-értesítésekhez, és Open és Cut a képernyőfelvételekhez és az yt-dlp letöltésekhez – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16505">#16505</a>)</li>
+  <li>Új Update &gt; Kernel menü az alapértelmezett kernel váltásához – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15966">#15966</a>)</li>
+  <li>Témaszinkron hozzáadása herdr gépekhez – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13430">#13430</a>)</li>
+  <li>o.rebind hozzáadása Hyprland billentyűkötések lecseréléséhez – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10537">#10537</a>)</li>
+  <li>A git identitásodat az első bejelentkezés után kérdezi meg a telepítő helyett, GitHub-bejelentkezéssel – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16288">#16288</a>)</li>
+  <li>A telepítési adathordozó előre beállíthatja a nyelvet, a billentyűzetet és az időzónát – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15522">#15522</a>)</li>
+  <li>A sáv widgetjei a tálca fiókjában is élhetnek – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15281">#15281</a>)</li>
+  <li>Egy sáv widget eltávolítható a sávról lehúzva – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6782">#6782</a>)</li>
+  <li>Görgetés a munkaterületek között a sávról – <a href="https://github.com/outfoxxed">@outfoxxed</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15256">#15256</a>)</li>
+  <li>Extra témák törölhetők a témaválasztóból – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14713">#14713</a>)</li>
+  <li>A hey, a basecamp és a Cloudflare CLI-k lustán telepített eszközként – <a href="https://github.com/monorkin">@monorkin</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7626">#7626</a>)</li>
+  <li>SSH Agent opcionális szolgáltatásként – <a href="https://github.com/carletex">@carletex</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9399">#9399</a>)</li>
+  <li>Kiválasztható, meddig tartson a jelszó nélküli sudo – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14435">#14435</a>)</li>
+  <li>Lebegő bezárás gomb az értesítési pirítósokon – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6946">#6946</a>)</li>
+  <li>Egy program értesítései elnémíthatók az összeomlás-diagnózisából – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8549">#8549</a>)</li>
+  <li>Az omarchy-notification-send műveletgombokat adhat hozzá – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16466">#16466</a>)</li>
+  <li>Óraformátum élő másodpercekkel – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7586">#7586</a>)</li>
+  <li>A billentyűzet háttérvilágítása állítható a Ctrl és a fényerő billentyűkkel – <a href="https://github.com/ludagoo">@ludagoo</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16650">#16650</a>)</li>
+  <li>Az OEM Windows termékkulcs kiírása a firmware-ből – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7480">#7480</a>)</li>
+  <li>Az eredeti vi terminálszerkesztő-választásként – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10307">#10307</a>)</li>
+  <li>A Roadster Starlight háttér hozzáadása az Etherealhoz – <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15878">#15878</a>)</li>
+</ul>
+
+<h2 id="security">Biztonság</h2>
+
+<ul>
+  <li>A Windows VM jelszava távol marad az RDP kliens argumentumaitól – <a href="https://github.com/dicemans">@dicemans</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7902">#7902</a>)</li>
+  <li>A képernyőfelvételi állapot kikerül a mindenki által írható /tmp alól – <a href="https://github.com/Chessing234">@Chessing234</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8374">#8374</a>)</li>
+  <li>A jelszó nélküli sudo lejáratának megerősítése felfüggesztésen át – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9457">#9457</a>)</li>
+  <li>A frissítési gátló takarítása ahhoz a folyamathoz kötve, amely létrehozta – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9467">#9467</a>)</li>
+  <li>Az OCaml takarítási engedély elkülönítése – <a href="https://github.com/ErikMelton">@ErikMelton</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10217">#10217</a>)</li>
+  <li>A gyári visszaállítás jogosultságának rögzítése a csomagolt parancshoz – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13047">#13047</a>)</li>
+  <li>A hívó felhasználó mentett ujjlenyomat-sablonjainak eltávolítása visszaállításkor – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13049">#13049</a>)</li>
+  <li>Hook- és állapotnevek visszautasítása, ha azok elérési utak – <a href="https://github.com/Adolanium">@Adolanium</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8170">#8170</a>)</li>
+  <li>Az ujjlenyomatos és FIDO2 beállítás által írt polkit veremben a system-auth tiszteletben tartása – <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9873">#9873</a>)</li>
+  <li>Az ujjlenyomatok eltávolítása az olvasó saját tárolójából is eltávolításkor – <a href="https://github.com/scottjones">@scottjones</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16403">#16403</a>)</li>
+  <li>Annak megakadályozása, hogy az SSH beállítás jelszavas bejelentkezéssel futó sshd-t hagyjon, ha nem adnak hozzá kulcsot – <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14667">#14667</a>)</li>
+  <li>Annak megakadályozása, hogy egy másik helyi felhasználó saját programot cseréljen be egy Voxtype frissítés során – <a href="https://github.com/Vladkarok">@Vladkarok</a> munkája (<a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a>)</li>
+  <li>Annak megerősítése, ahogyan a gyári visszaállítás átadja a gum beállításaidat a sudón – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13316">#13316</a>)</li>
+</ul>
+
+<h2 id="fixes">Javítások</h2>
+
+<ul>
+  <li>Javítva a Hyprland összeomlása, amikor egy monitort kihúznak, letiltanak, vagy a fedél lecsukásával kikapcsolnak – <a href="https://github.com/falkoro">@falkoro</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16750">#16750</a>)</li>
+  <li>Javítva, hogy a frissítések root= paraméter nélküli kernelképet hagyhattak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6951">#6951</a>)</li>
+  <li>Javítva, hogy a gyári visszaállítás más rendszerek boot bejegyzéseit törölte – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14949">#14949</a>)</li>
+  <li>Javítva, hogy egy másik Omarchy mellé telepítés eltávolította annak a telepítésnek a boot bejegyzését – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a>)</li>
+  <li>Javítva, hogy a szabad helyre telepítések egy meglévő partíciót újnak vehettek – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a>)</li>
+  <li>Javítva, hogy egy megszakított meghajtójelszó-változtatás folytatása a rossz kulcsot távolította el – <a href="https://github.com/scottjones">@scottjones</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14874">#14874</a>)</li>
+  <li>A sudo jelszót Omarchy-frissítésenként egyszer kéri – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13323">#13323</a>)</li>
+  <li>A sudo jelszót tíz percre egyszer kéri, nem minden parancsnál újra – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17000">#17000</a>)</li>
+  <li>Az AUR-frissítésekre és a boot ellenőrzésre is kiterjed a frissítés egyetlen sudo promptja – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16568">#16568</a>)</li>
+  <li>A csomagfrissítések biztonságban vannak a tranzakció közbeni kijelentkezéstől – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/11651">#11651</a>)</li>
+  <li>Kijelentkezés, újraindítás és leállítás, amint az alkalmazások bezáródtak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15231">#15231</a>)</li>
+  <li>A Tensaku lecserélése Omasnapra a képernyőképekhez – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9446">#9446</a>)</li>
+  <li>A panelek a sávból nőnek ki és alakulnak át egymásba, nyomási visszajelzéssel a gombokon és a sáv ikonjain – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16470">#16470</a>)</li>
+  <li>Az értesítések a sáv alól csúsznak be, és ugyanúgy ki, ahogyan jöttek – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16469">#16469</a>)</li>
+  <li>A kapcsolódás ellenőrzése az Omarchy saját végpontja ellen, és a rögzített portálokra bejelentkezés javítása – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16186">#16186</a>)</li>
+  <li>Javítva, hogy az edge-ről stable-re vagy RC-re váltás régi builden hagyta a gépet – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15903">#15903</a>)</li>
+  <li>Javítva, hogy a 4.5-re frissítés megállt, amikor a shell lassan válaszolt – <a href="https://github.com/AnPod">@AnPod</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13468">#13468</a>)</li>
+  <li>Javítva, hogy az asztali munkameneten kívül indított frissítések csendben meghiúsultak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17420">#17420</a>)</li>
+  <li>Javítva, hogy egy sikertelen mise eszközletöltés megállította a rendszerfrissítés többi részét – <a href="https://github.com/sanjyay">@sanjyay</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16318">#16318</a>)</li>
+  <li>Javítva, hogy a frissítések meghiúsultak, amikor az omarchy-nvim nem volt telepítve – <a href="https://github.com/imzihuailin">@imzihuailin</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15141">#15141</a>)</li>
+  <li>Javítva, hogy a dual-boot telepítések nem tudták csatolni az EFI partíciót – <a href="https://github.com/Damian626">@Damian626</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a>)</li>
+  <li>Javítva, hogy a telepítések megálltak, amikor a firmware nem vett fel új boot bejegyzést – <a href="https://github.com/ryanio">@ryanio</a> munkája (<a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a>)</li>
+  <li>Javítva, hogy a telepítések megálltak régi RAID-tagot vagy kötet csoportot tartalmazó lemezeken – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a>)</li>
+  <li>A telepítő hamarabb indul, mert nem vár minden USB-eszközre és boot feladatra – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a>)</li>
+  <li>A lemeztitkosítás gyorsítása 4096 bájtos szektorokkal új telepítéseken – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a>)</li>
+  <li>A belső lemezek listázása először, és a telepítési képernyők megnyitása a biztonságos választáson – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a>)</li>
+  <li>A Full disk install listázása először a telepítőben, és visszalépés Esc-kel a lemezképernyőkön – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>)</li>
+  <li>Javítva, hogy egy monitor méretezése minden más monitor méretezését megváltoztatta – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16923">#16923</a>)</li>
+  <li>Javítva, hogy az XWayland alkalmazások túl nagyok lettek, amikor a monitorok eltérő méretezést használtak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16950">#16950</a>)</li>
+  <li>Javítva, hogy a HDR kijelzők kimosott HDR képre váltottak, amikor egy ablak teljes képernyőre ment – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17157">#17157</a>)</li>
+  <li>Javítva a homályos menük és választók tört méretezésű kijelzőkön – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13419">#13419</a>)</li>
+  <li>Javítva, hogy a laptop kijelzője kikapcsolva maradt a külső kijelző kihúzása után – <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16310">#16310</a>)</li>
+  <li>Javítva, hogy egy kijelző újbóli engedélyezése visszaállította a helyzetét, méretezését és módját – <a href="https://github.com/zihaomu">@zihaomu</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16147">#16147</a>)</li>
+  <li>Javítva, hogy a menük és választók nem nyíltak újra egy monitor leválasztása után – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14458">#14458</a>)</li>
+  <li>Javítva, hogy a monitoronkénti munkaterületek elmozdultak egy monitor kihúzása után – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15867">#15867</a>)</li>
+  <li>Javítva, hogy a shell összeomlott, amikor egy hangeszköz levált nyitott hangpanel mellett – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7783">#7783</a>)</li>
+  <li>Javítva, hogy a teljes képernyős ablakok elvesztették a teljes képernyőt a képernyővédő után – <a href="https://github.com/MGross21">@MGross21</a> munkája (<a href="https://github.com/omacom/omarchy/pull/3284">#3284</a>)</li>
+  <li>Javítva, hogy a kurzor eltűnt induláskor a Hyprland újratöltése után – <a href="https://github.com/spencerbull">@spencerbull</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14935">#14935</a>)</li>
+  <li>Javítva, hogy a kurzor láthatatlanná vált XWayland alkalmazások fölött – <a href="https://github.com/Sebo1411">@Sebo1411</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14580">#14580</a>)</li>
+  <li>Javítva a vágólap-rögzítés lefagyása – <a href="https://github.com/maxcroy1">@maxcroy1</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9488">#9488</a>)</li>
+  <li>Javítva a kulcstartó-hozzáférés az XDG Secret portálon keresztül – <a href="https://github.com/pkwagner">@pkwagner</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9594">#9594</a>)</li>
+  <li>Javítva az ujjlenyomat-beállítás és a zárolási képernyő helyreállítása – <a href="https://github.com/GeertJohan">@GeertJohan</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7158">#7158</a>)</li>
+  <li>Az ujjlenyomat-beállítás lépésről lépésre vezetése – <a href="https://github.com/scottjones">@scottjones</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15512">#15512</a>)</li>
+  <li>Javítva a billentyűismétlés a zárolási képernyő jelszómezőjében – <a href="https://github.com/berndb">@berndb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7806">#7806</a>)</li>
+  <li>Javítva, hogy a zárolási képernyő háttérképe a jelszómező után töltődött be ébredéskor – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13431">#13431</a>)</li>
+  <li>Javítva a képernyőzár időtúllépése, amikor a munkamenet egy már nem létező kijelzőt nevez meg – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15226">#15226</a>)</li>
+  <li>Terminál megnyitásának gyorsítása az aktuális ablak könyvtárában – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13423">#13423</a>)</li>
+  <li>A VS Code-család szerkesztői élőben követik a témaváltozásokat – <a href="https://github.com/Macho0x">@Macho0x</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10134">#10134</a>)</li>
+  <li>A futó Hunk munkamenetek újratémázása témaváltozáskor – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13518">#13518</a>)</li>
+  <li>A kiválasztott háttérkép megjegyzése minden témához – <a href="https://github.com/OldJobobo">@OldJobobo</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7718">#7718</a>)</li>
+  <li>A képválasztó gyors és éles marad nagy gyűjteményekkel és HiDPI-vel – <a href="https://github.com/keylimesoda">@keylimesoda</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14117">#14117</a>)</li>
+  <li>Az átlátszó sáv által a háttérkép mintavételezésére fordított CPU és memória csökkentése – <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8307">#8307</a>)</li>
+  <li>A Tailscale panel gyorsítása több ezer gépet tartalmazó tailneteken – <a href="https://github.com/iskakaushik">@iskakaushik</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7623">#7623</a>)</li>
+  <li>A Grok felzárkóztatása a Claude-hoz és a Codexhez az ügynökpanelben – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13992">#13992</a>)</li>
+  <li>Az ügynökfiók-választás alkalmazása a CLI alfolyamatokra – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14233">#14233</a>)</li>
+  <li>A Codex egyéni költési korlátjainak és visszaállítási idejük mutatása – <a href="https://github.com/Stegi56">@Stegi56</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15722">#15722</a>)</li>
+  <li>Böngészőintegráció beállítása Claude választásakor – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/11934">#11934</a>)</li>
+  <li>Javítva, hogy az ügynökök nem találták az indulásuk után telepített mise eszközöket – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16593">#16593</a>)</li>
+  <li>Javítva a képernyőképek beillesztése SSH-n át indított herdr panelekben lévő ügynökökbe – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16572">#16572</a>)</li>
+  <li>Javítva, hogy az ügynökpanel kihagyta a tömörített Codex munkameneteket – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16385">#16385</a>)</li>
+  <li>A Caps Lock visszaállítása normálisra, és a Shift + Caps Lock compose billentyűvé tétele – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14939">#14939</a>)</li>
+  <li>A rendszer billentyűzetkiosztásának alkalmazása a bejelentkezési képernyőre – <a href="https://github.com/g-desoutter">@g-desoutter</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6896">#6896</a>)</li>
+  <li>Javítva, hogy a kiosztásváltás minden második lenyomást kihagyott nem latin billentyűzetkiosztással – <a href="https://github.com/manuaudio">@manuaudio</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14076">#14076</a>)</li>
+  <li>Hardveres videódekódolás bekapcsolása az mpv-ben – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15172">#15172</a>)</li>
+  <li>A TCP torlódásvezérlés BBR-re váltása, és a kyber I/O ütemező használata valódi lemezeken – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/11658">#11658</a>)</li>
+  <li>A T3 Code telepítése önfrissítő AppImage-ként – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15907">#15907</a>)</li>
+  <li>A PHP és a Laravel telepítésének javítása – <a href="https://github.com/nunomaduro">@nunomaduro</a> munkája (<a href="https://github.com/omacom/omarchy/pull/12141">#12141</a>)</li>
+  <li>A Node lustán telepítése, és a mise konfigurációd békén hagyása – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15876">#15876</a>)</li>
+  <li>Hiányzó alkalmazások telepítése alapértelmezések választásakor – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6950">#6950</a>)</li>
+  <li>A telepített szoftverek elhalványítása az Install menükben elrejtés helyett – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6955">#6955</a>)</li>
+  <li>Jelszókezelő és más natív üzenetküldő hosztok regisztrálása a Brave Originhez – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10292">#10292</a>)</li>
+  <li>A Brave Origin webes értesítéseinek csoportosítása oldal szerint, és a megfelelő fül megnyitása kattintáskor – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16296">#16296</a>)</li>
+  <li>Az árva csomagok eltávolításának automatikus jóváhagyása frissítések során – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14428">#14428</a>)</li>
+  <li>Az Omarchy kulcstartójának frissítése minden frissítés előtt – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17311">#17311</a>)</li>
+  <li>Újraindítás felajánlása csatornaváltás után – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17251">#17251</a>)</li>
+  <li>Az első futtatási frissítés felajánlása csak akkor, ha van mit frissíteni – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16211">#16211</a>)</li>
+  <li>Az időjárás helyének és a telepítő időzónájának megkeresése az Omarchy saját geo szolgáltatásával – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16240">#16240</a>)</li>
+  <li>Az óra beállítása az ntp.omarchy.org-ról az Arch NTP készlete helyett – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16247">#16247</a>)</li>
+  <li>A hálózati sebesség mérése az Omarchy saját sebességtesztjével – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16681">#16681</a>)</li>
+  <li>Nyomkövetett ikonos haladási képernyő mutatása az első boot során – <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17156">#17156</a>)</li>
+  <li>A live ISO bootolása az Omarchy kernelen, és a T2 kernelen csak Mac-eken – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a>)</li>
+  <li>Az offline telepítések már nem várnak mise verziókeresésekre – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a>)</li>
+  <li>Javítva, hogy az offline telepítések alapértelmezetten Africa/Abidjanra állították az időzónát – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a>)</li>
+  <li>Javítva, hogy a telepítő időzóna-választója nem engedett gépeléssel keresni – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17040">#17040</a>)</li>
+  <li>Javítva, hogy a live ISO a nyitókép mögött lefagyott Ventoy kulcsról bootolva – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>)</li>
+  <li>Javítva a német és a francia konzolbillentyű-térképek a telepítő beállító űrlapján – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14684">#14684</a>)</li>
+  <li>A gum angol billentyűtippjeinek elrejtése a telepítőben és a git beállításban – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a>)</li>
+  <li>Az angol nyelvű viccek elhagyása a telepítési haladási képernyőről – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a>)</li>
+  <li>Javítva, hogy a telepítő kimenete párnázatlanul landolt a képernyőn a lemez előkészítése közben – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a>)</li>
+  <li>Javítva, hogy a Quattro frissítés visszaállította az alapértelmezett böngészőt Chromiumra – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15074">#15074</a>)</li>
+  <li>Javítva, hogy a Quattro frissítés megállt nem ASCII karaktereket tartalmazó háttérneveken – <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15277">#15277</a>)</li>
+  <li>Javítva, hogy a kernelmigráció megállt GRUB-bal vagy systemd-boottal bootoló gépeken – <a href="https://github.com/manuaudio">@manuaudio</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14188">#14188</a>)</li>
+  <li>Javítva a hibernálás titkosítatlan, egynél több NVMe lemezzel rendelkező gépeken – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16658">#16658</a>)</li>
+  <li>Javítva, hogy a FIDO2 migráció késznek lett jelölve a megoldása előtt – <a href="https://github.com/ErikMelton">@ErikMelton</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16421">#16421</a>)</li>
+  <li>Javítva, hogy egy lebegő munkaterület átvette az első ablakot, amelyre a saját lebegési szabályod vonatkozott – <a href="https://github.com/zihaomu">@zihaomu</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16143">#16143</a>)</li>
+  <li>Javítva, hogy a kompozitor megakadt, amikor a Super + L egy munkaterületet ki-be forgatott a lebegésből – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16397">#16397</a>)</li>
+  <li>Javítva, hogy az Alt + Shift + Tab nem forgatott visszafelé minden ablakon – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8576">#8576</a>)</li>
+  <li>Javítva, hogy a kiugró ablakok nem középre kerültek másik monitorra mozgatva – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14549">#14549</a>)</li>
+  <li>Javítva, hogy az új terminálok az otthoni mappádon kívül nyíltak, amikor egy nem terminál ablak volt fókuszban – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15007">#15007</a>)</li>
+  <li>Javítva, hogy az 1Password és a Bitwarden ablakai nem lebegtek – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/11704">#11704</a>)</li>
+  <li>Javítva, hogy az 1Password bezáródott, amikor a telepítő terminálja kilépett – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/12402">#12402</a>)</li>
+  <li>Javítva, hogy a DaVinci Resolve párbeszédablakai ellopták a mutató fókuszát – <a href="https://github.com/AksharP5">@AksharP5</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6919">#6919</a>)</li>
+  <li>Javítva, hogy az asztal átlátszott a Windows VM kijelzőin – <a href="https://github.com/jmwall">@jmwall</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8162">#8162</a>)</li>
+  <li>Javítva a $$-t tartalmazó régi Windows VM jelszavak a Quattro migráció után – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13432">#13432</a>)</li>
+  <li>A Hyprland adománykérő felugró ablakának megállítása frissítések után – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17153">#17153</a>)</li>
+  <li>A sáv widgetjei húzásának és elrendezésének javítása – <a href="https://github.com/outfoxxed">@outfoxxed</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15517">#15517</a>)</li>
+  <li>A sáv ikonméreteinek és igazításának normalizálása – <a href="https://github.com/bjarneo">@bjarneo</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15065">#15065</a>)</li>
+  <li>A rejtett sávjelzők felfedése csak akkor, ha az óra bal oldalán lebegsz – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16293">#16293</a>)</li>
+  <li>A tálcaikonok igazítása a sáv többi ikonjával – <a href="https://github.com/ayoubdya">@ayoubdya</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16089">#16089</a>)</li>
+  <li>A következő sáv buboréktipp azonnali mutatása, miközben egy már fent van – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16488">#16488</a>)</li>
+  <li>Az óra- és időjárás-panelek megnyitása a widgetjeik alatt – <a href="https://github.com/scottjones">@scottjones</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8942">#8942</a>)</li>
+  <li>A hálózati panel nyitva tartása DNS-szolgáltató választása után – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16485">#16485</a>)</li>
+  <li>Javítva, hogy egy bezáródó felugró ablak válaszolatlanul hagyta a sáv widgetjeit – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15111">#15111</a>)</li>
+  <li>Javítva, hogy a rejtett sáv kattintásokat fogott a teljes képernyős ablakok tetején – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16991">#16991</a>)</li>
+  <li>Javítva, hogy a sötét tálcaikonok eltűntek a sávban – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14661">#14661</a>)</li>
+  <li>Javítva, hogy a sáv ikonjai egyenetlenül vagy nem középen ültek – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17003">#17003</a>)</li>
+  <li>Javítva, hogy a sáv buboréktippjei rossz méretben rajzolták az első képkockájukat – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16243">#16243</a>)</li>
+  <li>Javítva, hogy az értesítési előzmények minden kártyát éppen mostként mutattak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16277">#16277</a>)</li>
+  <li>Javítva, hogy az első bejelentkezési értesítések egyetlen halomba omlottak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16515">#16515</a>)</li>
+  <li>Javítva, hogy az értesítési kattintások nem fókuszáltak többszavas nevű alkalmazásokat – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16380">#16380</a>)</li>
+  <li>Javítva, hogy a Taildrop értesítések üres szöveget és hiányzó előnézeteket mutattak – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16301">#16301</a>)</li>
+  <li>Javítva, hogy az akkumulátor-értesítés üres időt és 0W-ot mutatott feltöltött akkumulátoron – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16272">#16272</a>)</li>
+  <li>Javítva, hogy az alacsony akkumulátor figyelmeztetés fent maradt bedugás után, és visszatért újraindítások után – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16562">#16562</a>)</li>
+  <li>Javítva, hogy az akkumulátor fogyasztása 0W-ot olvasott néhány laptopon – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17265">#17265</a>)</li>
+  <li>Javítva, hogy egy feltöltött akkumulátor hálózatról merülőként jelent meg – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16278">#16278</a>)</li>
+  <li>Javítva, hogy a Hibernate megjelent, amikor a kernel nem tud hibernálni – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7779">#7779</a>)</li>
+  <li>Javítva, hogy a gvfs csatolások eltűntek folytatás után – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14496">#14496</a>)</li>
+  <li>Javítva, hogy a billentyűzet háttérvilágítása kikapcsolva maradt, miután a zár kétszer elsötétült – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15908">#15908</a>)</li>
+  <li>Javítva, hogy az ujjlenyomat-olvasó felébredt, miközben a zár kijelzői ki voltak kapcsolva – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15294">#15294</a>)</li>
+  <li>Javítva, hogy a boot jelszókérés nem középen volt, amikor egy kijelző későn jelent meg – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/11641">#11641</a>)</li>
+  <li>Javítva, hogy a képernyővédő kilépő billentyűje felvillant a sarokban – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16596">#16596</a>)</li>
+  <li>Javítva a Wi-Fi ikon villogása OWE transition-mode hálózatokon – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14133">#14133</a>)</li>
+  <li>Javítva egy OWE hiba, amely a terminálba íródott egy téma telepítése után – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16872">#16872</a>)</li>
+  <li>Javítva egy villogás állóképről videós háttérre váltáskor – <a href="https://github.com/bjarneo">@bjarneo</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17082">#17082</a>)</li>
+  <li>A Hackerman frissítése felskálázott geometrikus háttérre – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16892">#16892</a>)</li>
+  <li>Javítva, hogy a ciklikus színreferenciákat tartalmazó témák lefagyasztották a témaváltást – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13046">#13046</a>)</li>
+  <li>Javítva, hogy a Neovim nem indult a Catppuccin témával – <a href="https://github.com/anandude">@anandude</a> munkája (<a href="https://github.com/omacom/omarchy/pull/12864">#12864</a>)</li>
+  <li>Javítva, hogy az OpenCode 2 a gyári témáján indult az Omarchyé helyett – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17293">#17293</a>)</li>
+  <li>Javítva az alacsony kontrasztú sorközi kód a generált VS Code témában – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15818">#15818</a>)</li>
+  <li>Javítva, hogy a T3 Code telepítések megálltak az aktuális téma egyeztetése közben – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16962">#16962</a>)</li>
+  <li>Javítva, hogy a terminál betűmérete visszaállt a betűcsalád megváltoztatásakor – <a href="https://github.com/sbalbalosa">@sbalbalosa</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6958">#6958</a>)</li>
+  <li>Javítva, hogy a betűtípusok megváltoztatása kiírta egy terminál folyamat azonosítóját – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15820">#15820</a>)</li>
+  <li>Javítva, hogy a nyelvváltás minden területi beállítást újraépített, és elvesztette őket egy majdnem tele lemezen – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16414">#16414</a>)</li>
+  <li>Javítva, hogy a shell nyers fordítási kulcsokat mutatott a fordításai betöltődése előtt – <a href="https://github.com/zihaomu">@zihaomu</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16059">#16059</a>)</li>
+  <li>A lefordított szöveg gyorsítása az Omarchy szkriptjeiben – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16584">#16584</a>)</li>
+  <li>686 sztring fordításának frissítése, közülük 392 a kézikönyvben – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a>)</li>
+  <li>Javítva a hangerő- és kimenetvezérlők nem angol területi beállításokban – <a href="https://github.com/Sebo1411">@Sebo1411</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14855">#14855</a>)</li>
+  <li>Javítva a CPU-használati értékek nem angol területi beállításokban – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15109">#15109</a>)</li>
+  <li>Javítva, hogy az fcitx5 szolgáltatás örökké újraindult, amikor az fcitx5 nem volt telepítve – <a href="https://github.com/therk">@therk</a> munkája (<a href="https://github.com/omacom/omarchy/pull/11694">#11694</a>)</li>
+  <li>Javítva, hogy a billentyűzetkiosztás widget olyan eszközöket váltott, amelyeken senki nem gépel – <a href="https://github.com/bjarneo">@bjarneo</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10670">#10670</a>)</li>
+  <li>Javítva, hogy a billentyűzetkiosztás widget gyártói gyorsbillentyű-eszközökre váltott – <a href="https://github.com/yashranaway">@yashranaway</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9129">#9129</a>)</li>
+  <li>Javítva, hogy a billentyűkötések menü 100% CPU-n futó Lua folyamatot hagyott – <a href="https://github.com/tobi">@tobi</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7564">#7564</a>)</li>
+  <li>Javítva, hogy az óra ezredmásodpercenként árasztotta el a naplót a nyári időszámítás végén – <a href="https://github.com/falkoro">@falkoro</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16684">#16684</a>)</li>
+  <li>Javítva, hogy a shell egy olvashatatlan shell.json-t az alapértelmezésekkel cserélt le – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14534">#14534</a>)</li>
+  <li>Javítva, hogy az Omarchy menü elvesztette a sorait, miközben a fájlját frissítették – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16268">#16268</a>)</li>
+  <li>Javítva, hogy egy bővítmény újbóli engedélyezése nem hozta vissza a sáv widgetjét – <a href="https://github.com/berrimi">@berrimi</a> munkája (<a href="https://github.com/omacom/omarchy/pull/12540">#12540</a>)</li>
+  <li>Javítva, hogy a helyi bővítmények a saját Python bájtkódjuk miatt ciklusban újratöltődtek – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15093">#15093</a>)</li>
+  <li>Javítva, hogy a bővítményekben a rejtett gombok a párnázatukra omlottak – <a href="https://github.com/dmkenney">@dmkenney</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15786">#15786</a>)</li>
+  <li>Javítva, hogy a legördülők levágták az utolsó elemüket – <a href="https://github.com/sprajs">@sprajs</a> munkája (<a href="https://github.com/omacom/omarchy/pull/13916">#13916</a>)</li>
+  <li>Javítva, hogy a legördülők nem záródtak be második kattintásra – <a href="https://github.com/felixzsh">@felixzsh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/6725">#6725</a>)</li>
+  <li>Javítva, hogy a csúszka gombjai megálltak a sáv vége előtt – <a href="https://github.com/erikrjohansson">@erikrjohansson</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9345">#9345</a>)</li>
+  <li>
+    <p>Javítva, hogy az Update &gt; Hardware &gt; Trackpad a legtöbb érintőpadot kihagyta, és visszaállította a billentyűzetet – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17280">#17280</a>)</p>
+
+    <p>Mostantól minden érintőpadon elenged egy beragadt gombot, és csak az érintőpadot állítja vissza a billentyűzet és az érintőképernyő helyett azokkal együtt.</p>
+  </li>
+  <li>A webkamera menü a kamerákat bekapcsolás nélkül ellenőrzi – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15910">#15910</a>)</li>
+  <li>Javítva, hogy az Omasnap görgetős rögzítése csak fekete képkockákat ragadott meg – <a href="https://github.com/falkoro">@falkoro</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16715">#16715</a>)</li>
+  <li>Javítva, hogy a képernyőkép-választó feloldotta a saját billentyűidet – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15126">#15126</a>)</li>
+  <li>Javítva, hogy egy felvétel leállítása üres mentett felvételt jelentett be – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15073">#15073</a>)</li>
+  <li>Javítva, hogy a képválasztó elavult bélyegképeket mutatott felülírt képekhez – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15079">#15079</a>)</li>
+  <li>Javítva, hogy az éjjeli fény nem állt vissza teljesen kikapcsoláskor – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14489">#14489</a>)</li>
+  <li>Javítva, hogy a média widget egy szüneteltetett számot egy tétlen lejátszóra hagyott – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14585">#14585</a>)</li>
+  <li>Javítva az ismételt kijelzőkeresés olyan monitorokon, amelyek nem jelentenek fényerőt – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14525">#14525</a>)</li>
+  <li>Javítva, hogy a Super + Shift + Return meghiúsult, amikor a beállított böngészőt eltávolították – <a href="https://github.com/vitally">@vitally</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16422">#16422</a>)</li>
+  <li>Javítva, hogy a számológép gyorsbillentyűi megmaradtak az előre telepített alkalmazások eltávolítása után – <a href="https://github.com/OldJobobo">@OldJobobo</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7716">#7716</a>)</li>
+  <li>Javítva a Copy URL gyorsbillentyű a Brave Origin profilokban – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10308">#10308</a>)</li>
+  <li>Javítva, hogy a Bitwarden kiterjesztés felugró ablaka rossz méretben nyílt – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14514">#14514</a>)</li>
+  <li>Javítva, hogy a Battle.net 100%-os méretezéssel nyílt HiDPI monitorokon – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17418">#17418</a>)</li>
+  <li>Javítva, hogy az Inkscape fájlválasztói csempézve nyíltak – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15792">#15792</a>)</li>
+  <li>Javítva, hogy a Go AUR csomagok nem épültek frissítések során, amikor a mise kezelte a Gót – <a href="https://github.com/shbernal">@shbernal</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16388">#16388</a>)</li>
+  <li>Javítva az ONCE telepítése, amikor nem vagy a docker csoportban – <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> munkája (<a href="https://github.com/omacom/omarchy/pull/8224">#8224</a>)</li>
+  <li>Javítva, hogy az ügynökpanel kattintásai megnyitották a tálcát – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15501">#15501</a>)</li>
+  <li>Javítva, hogy az ügynökfiók beállítása megbotlott egy lógó megosztott szimbolikus hivatkozáson – <a href="https://github.com/manuaudio">@manuaudio</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14103">#14103</a>)</li>
+  <li>Javítva, hogy a <code>--reauth</code> új ügynökfiókot adott hozzá, amikor nem volt egy sem – <a href="https://github.com/manuaudio">@manuaudio</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14100">#14100</a>)</li>
+  <li>Az ügynökfiók átnevezési tippje megnevezi a szolgáltatóját – <a href="https://github.com/manuaudio">@manuaudio</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14099">#14099</a>)</li>
+  <li>Javítva, hogy a kulcstartó-frissítések sikert állítottak, amikor a kulcsműveletek meghiúsultak – <a href="https://github.com/Adolanium">@Adolanium</a> munkája (<a href="https://github.com/omacom/omarchy/pull/7807">#7807</a>)</li>
+  <li>Javítva egy üres gyári visszaállítási kérdés sudo alatt futtatva – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16032">#16032</a>)</li>
+  <li>Javítva, hogy a függőben lévő migrációk emlékeztetője bejelentkezésenként egyszer halmozódott – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16981">#16981</a>)</li>
+  <li>Javítva, hogy az Aboutban az OS Age az ISO készítésétől számolt a telepítés helyett – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16828">#16828</a>)</li>
+  <li>Javítva, hogy a Dropbox „0y ago”-t mutatott 360–364 napos fájlokra – <a href="https://github.com/manuaudio">@manuaudio</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14183">#14183</a>)</li>
+  <li>Javítva, hogy a Dropbox állapotellenőrzése lejárttá tett egy függőben lévő bejelentkezési hivatkozást – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15135">#15135</a>)</li>
+  <li>Javítva a Dropbox tálcaikon könyvtárának telepítése – <a href="https://github.com/omarchybot">@omarchybot</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15076">#15076</a>)</li>
+  <li>Átfedő görgetősávok engedélyezése a Chromiumban – <a href="https://github.com/robzolkos">@robzolkos</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14456">#14456</a>)</li>
+  <li>Rákérdezés a Touch ID bekapcsolása előtt Apple Silicon Mac-eken – <a href="https://github.com/scottjones">@scottjones</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16360">#16360</a>)</li>
+  <li>Az RC csatorna felajánlása Apple Silicon Mac-eken – <a href="https://github.com/maralcbr">@maralcbr</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16986">#16986</a>)</li>
+  <li>A stable csatorna felajánlása Apple Silicon Mac-eken – <a href="https://github.com/maralcbr">@maralcbr</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17498">#17498</a>)</li>
+  <li>Javítva, hogy az Omarchy aliasai, függvényei és környezete hiányoztak az új terminálokból Apple Siliconon – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17041">#17041</a>)</li>
+  <li>A telepített NVIDIA alkalmazások beállítása – <a href="https://github.com/jdvmi00">@jdvmi00</a> munkája (<a href="https://github.com/omacom/omarchy/pull/12723">#12723</a>)</li>
+  <li>Javítva, hogy a telepítések meghiúsultak a Lenovo Pro 9-en NVIDIA N1x-szel – <a href="https://github.com/breymander">@breymander</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16423">#16423</a>)</li>
+  <li>Javítva a hiányzó belső hangszórók és mikrofonok olyan N1x laptopokon, amelyek a korábbi hangprofilokat futtatták – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16233">#16233</a>)</li>
+  <li>Javítva a lassú asztal NVIDIA GB10 gépeken, mint a DGX Spark – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17264">#17264</a>)</li>
+  <li>
+    <p>Javítva a zárolási képernyőbe gépelés folytatás után NVIDIA-n – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17277">#17277</a>)</p>
+
+    <p>A zár már nem is sötétül el újra éppen akkor, amikor a panel felgyullad.</p>
+  </li>
+  <li>Javítva, hogy a Lutris és a Battle.net egy másik GPU 32 bites Vulkan illesztőjét telepítette – <a href="https://github.com/zihaomu">@zihaomu</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16046">#16046</a>)</li>
+  <li>Nincs több újraindítás kérése minden frissítés után ARM-on – <a href="https://github.com/birkskyum">@birkskyum</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14447">#14447</a>)</li>
+  <li>A stable és RC csatornák felajánlása aarch64-en – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16065">#16065</a>)</li>
+  <li>Az energiaprofilok működésre bírása ARM laptopokon – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14737">#14737</a>)</li>
+  <li>A Dropbox felajánlása 4K lapokkal rendelkező ARM gépeken, és a Spotify webalkalmazásként ARM-on – <a href="https://github.com/birkskyum">@birkskyum</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15757">#15757</a>)</li>
+  <li>A GeForce NOW, a Battle.net és a Lutris telepítések elrejtése ARM-on – <a href="https://github.com/birkskyum">@birkskyum</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15753">#15753</a>)</li>
+  <li>Javítva, hogy a Hermes alkalmazás nem frissült a helyén ARM-on – <a href="https://github.com/ryanrhughes">@ryanrhughes</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16124">#16124</a>)</li>
+  <li>Javítva, hogy a Snapdragon laptopbillentyűzetek nem gépeltek a lemezfeloldási kérdésnél – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16688">#16688</a>)</li>
+  <li>Javítva, hogy a kamerák hiányoztak bejelentkezéskor Snapdragon laptopokon – <a href="https://github.com/birkskyum">@birkskyum</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16856">#16856</a>)</li>
+  <li>Javítva egy fekete képernyő a lemezfeloldás előtt Snapdragon X2 laptopokon – <a href="https://github.com/jdvmi00">@jdvmi00</a> munkája (<a href="https://github.com/omacom/omarchy/pull/16940">#16940</a>)</li>
+  <li>Videó dekódolása hardveresen Intel Wildcat Lake-en – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/17150">#17150</a>)</li>
+  <li>Javítva a live ISO összeomlása Arrow Lake-H laptopokon – <a href="https://github.com/emirb">@emirb</a> munkája (<a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a>)</li>
+  <li>Javítva a HP EliteBook Ultra G1q belső mikrofonja – <a href="https://github.com/bprendie">@bprendie</a> munkája (<a href="https://github.com/omacom/omarchy/pull/15574">#15574</a>)</li>
+  <li>Felmenői támogatás használata a Motorcomm YT6801 Ethernethez – <a href="https://github.com/AFOliveira">@AFOliveira</a> munkája (<a href="https://github.com/omacom/omarchy/pull/9682">#9682</a>)</li>
+  <li>Az Elgato Cam Link 4K továbbítása 16:9-es virtuális kameraként – <a href="https://github.com/dhh">@dhh</a> munkája (<a href="https://github.com/omacom/omarchy/pull/10809">#10809</a>)</li>
+  <li>Olyan ujjlenyomat-olvasók támogatása, amelyeket egy platform nevez meg – <a href="https://github.com/scottjones">@scottjones</a> munkája (<a href="https://github.com/omacom/omarchy/pull/14675">#14675</a>)</li>
+</ul>

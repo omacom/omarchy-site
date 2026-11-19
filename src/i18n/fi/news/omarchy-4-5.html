@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (eli Quattro RS!) on ensimmäinen iso ominaisuusjulkaisu sitten <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>n, ja se on aikamoinen tapaus: yli 740 pull requestia yhdistettynä yli 180 osallistujalta vain kahdessatoista viikossa. Se tarjoaa nyt perinteisen työpöytätilan laatoitusoletusarvon rinnalla. Voit asentaa sen natiivisti M1/M2/M3/Neo MacBookeihin. Ja se puhuu 50 kieltä. Ja valtavan määrän muita ominaisuuksia, korjauksia ja parannuksia. Käytätkö jo Omarchya? Suorita <em>Update &gt; Omarchy</em>. Uusi kone? <a href="/#install">Hae se täältä</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Kelluvat työtilat ja telakka</h2>
+
+<p><code>Super + L</code> vaihtaa nyt minkä tahansa työtilan laatoituksen, vierityksen ja kellunnan välillä. Kelluvassa työtilassa jokainen ikkuna saa otsikkopalkin teemasi väreissä, ja telakka näyttää kiinnitetyt sovelluksesi, kaiken käynnissä olevan ja ruudukon kaikista asennetuista sovelluksista. Raahaa järjestääksesi uudelleen tai kiinnittääksesi, napsauta hiiren oikealla näppäimellä saadaksesi lisää vaihtoehtoja, ja <code>Super + M</code> pienentää ikkunan alas telakkaan.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Tämä on ihana sisäänajoväylä kenelle tahansa macOS:stä tai Windowsista saapuvalle, joka ei ole vielä valmis sitoutumaan laatoitukseen täysin. Tai kenelle tahansa, joka haluaa vain yhden työtilan, jossa ikkunat voivat levittäytyä. Yhdistele vapaasti työtilakohtaisesti, ja palkki näyttää, mitä asettelua kukin käyttää.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy Apple Siliconilla</h2>
+
+<p>Uskomaton <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> -tiimimme on julkaissut natiivin Mac-asennusohjelman. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Lataa sovellus</a> macOS:ssä, ja se asettaa Omarchyn sen rinnalle M1-, M2-, M3- tai Neo MacBookiisi. Ei USB-tikkua, ei päätekommentojen loitsuja. Suositko Homebrew’tä? Se on yksi rivi:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchyn Mac-asennusohjelma" /></p>
+
+<p>Tätä lähdimme tekemään syyskuussa: viemään loppuun sen, minkä Asahi aloitti. Kaksi kuukautta myöhemmin voit vain ladata sen. Uskomatonta työtä koko tiimiltä.</p>
+
+<p>Eivätkä he pysähdy siihen. M4:n, M5:n ja M6:n parissa työskennellään parhaillaan, joten ei todennäköisesti kestä kauan, ennen kuin Omarchy toimii jokaisella Apple Silicon Macilla.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy M2 Maxilla, M3 Airilla, Neolla, M4 Prolla ja M5 Airilla" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM-tuki NVIDIA DGX Sparkille + N1X:lle (ja pian Snapdragonille)</h2>
+
+<p>Omarchy 4.5 toimittaa ensimmäisen ARM-ISO:nsa, ja sen mukana tulee alustava tuki NVIDIAn ARM-koneille: DGX Spark -työpöytäkoneelle ja N1X:ään perustuville kannettaville, kuten <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> ja <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Ja pian meillä on tuki myös koko Snapdragon ARM -koneiden mallistolle. Olemme vielä alkuvaiheessa, joten odota muutamaa terävää reunaa, ja ilmoita kaikesta, mikä menee rikki, <a href="https://github.com/omacom/omarchy/issues">GitHub</a>issa.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 kieltä ja 5 syöttötapaa</h2>
+
+<p>Omarchy puhuu nyt 50 kieltä. Valitse yksi kohdasta <em>Setup &gt; Language</em> (tai suorita <code>omarchy language &lt;code&gt;</code>), ja valikko, työpöytä ja Omarchyn ilmoitukset vaihtuvat välittömästi. Järjestelmän kieliasetus seuraa seuraavalla kirjautumiskerrallasi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Kielten vaihtaminen" /></p>
+
+<p>Kielen puhuminen on kuitenkin vain puolet asiasta. Sinun on myös pystyttävä kirjoittamaan sillä. Niinpä Omarchy määrittää nyt kunnolliset syöttötavat japanille (Mozc), korealle (Hangul), yksinkertaistetulle kiinalle (Pinyin), Taiwanille (Zhuyin) ja Hongkongille (Cangjie) suoraan asennusohjelmasta tai myöhemmin kohdasta <em>Setup &gt; Keyboard</em>. Jokaisen mukana tulevat oikeat fontit sen merkistömuodoille, ehdotusikkuna noudattaa teemaasi, ja <code>Super + I</code> vaihtaa syöttökieltesi välillä. Hangul, Zhuyin ja Cangjie pitävät näppäimensä vakioasemissa, vaikka kirjoittaisit latinalaisia aakkosia Dvorakilla, Colemakilla tai AZERTYllä, aivan kuten Windowsissa ja macOS:ssä. Ja Shiftin napauttaminen yksinään astuu ulos syöttötavasta latinalaisiin kirjaimiin ja takaisin, niin kuin Sogou, Microsoft Pinyin ja macOS toimivat.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Kirjaudu captive-Wi-Fi-portaaleihin</h2>
+
+<p>Hotellien, lentokenttien ja kahviloiden Wi-Fi toimii vihdoin vain niin kuin pitääkin. Omarchy huomaa nyt, kun verkko haluaa sinun kirjautuvan sisään tai hyväksyvän sen ehdot, ennen kuin päästää sinut verkkoon. Verkkokuvake varoittaa sinua, ja verkkopaneeli näyttää ison Open Captive Portal -painikkeen, joka vie sinut suoraan kirjautumissivulle. Kun olet päässyt läpi, kaikki palaa normaaliksi itsestään.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Kirjautuminen captive-portaaliin verkkopaneelista" width="380" /></p>
+
+<h2 id="five-new-default-apps">Viisi uutta oletussovellusta</h2>
+
+<p><strong>Hype</strong> tekee esityksiä yhdestä Markdown-tiedostosta, visuaalinen diaeditori lähteen rinnalla, ja vie PDF:ksi tai PowerPointiksi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> korvaa Xournal++:n paperitöissä: avaa PDF, aseta tallennettu allekirjoituksesi, tekstisi ja päivämääräsi, ja tallenna allekirjoitettu kopio.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> piirtää puukartan siitä, mikä täyttää levysi, värjättynä lajin mukaan, nostaa esiin välimuistit, jotka on turvallista luoda uudelleen, ja antaa sinun merkitä, minkä pitää lähteä.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> tallentaa kameraasi yhdellä näppäimellä, teemoitettuna työpöytääsi sopivaksi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> antaa sinulle etätyöpöydän SSH:n yli. Yhdistä toiseen Omarchy-koneeseen ja ohjaa sen koko työpöytää ikkunasta omallasi, välilehti jokaiselle koneelle. Ja koska se kulkee SSH:n päällä, mitään ylimääräistä ei tarvitse määrittää tai paljastaa. Ohjattava kone näyttää etäistunnon ilmaisimen palkissa, joten on aina selvää, kun joku käyttää sitä.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Ja on olemassa <strong>Elsewhen</strong>, maailmankello, joka elää aivan palkin kellon vieressä. Napauta kaupunkia maapallolla asettaaksesi, missä olet, hae oikeita paikkoja ja nimeä ihmiset, jotka asuvat kussakin kaupungissa, jotta tiedät aina, onko sopiva aika soittaa. Vaihda 12 ja 24 tunnin välillä näppäimellä <code>t</code>, °F:n ja °C:n välillä näppäimellä <code>Alt + T</code>, ja kutsu se esiin milloin tahansa näppäimellä <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Kun Monologue on tallentamiseen ja Omacut leikkaamiseen, uudet asennukset eivät enää toimita OBS Studiota ja Kdenlivea. Myös Lazydocker on poissa uusista asennuksista, vaikka Docker ja Docker Compose sisältyvät edelleen. Koneet, joilla jokin niistä jo on, säilyttävät ne.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Tarvitseeko sinun työskennellä ihmisten kanssa, jotka elävät Officessa? <em>Install &gt; Service &gt; Microsoft</em> määrittää nyt Outlookin, Wordin, Excelin, PowerPointin, Teamsin ja OneDriven verkkosovelluksina. Jokainen saa oman ikkunansa ja käynnistysmerkintänsä, joten ne tuntuvat aivan kotoisilta kaiken muun rinnalla. Ei enää tekosyitä olla vaihtamatta Omarchyyn töissä!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams ja PowerPoint Omarchyssa" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper saneluun</h2>
+
+<p>Superwhisper on nyt Omarchyn oletussanelukone, ja se on määritetty valmiiksi. Napauta <code>Alt + Space</code> aloittaaksesi puhumisen ja uudelleen lopettaaksesi, tai pidä <code>Right Alt</code> painettuna push-to-talkia varten. Se on uskomattoman nopea ja erittäin tarkka.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Sanelua Superwhisperillä" /></p>
+
+<p>Se alkaa pilvessä, joten se toimii heti asennushetkestä alkaen, ja ensimmäiset 10 000 sanaa ovat ilmaisia. Mutta voit vaihtaa ladattavaan malliin, joka on täysin ilmainen ja toimii kokonaan paikallisesti lähettämättä sanaakaan kenellekään. Ja jos haluat mieluummin toisen paikallisen mallin, Voxtype on edelleen tarjolla vaihtoehtona.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Asennus alle kymmenessä sekunnissa</h2>
+
+<p>Omarchy asensi ennen noin 940 pakettia yksi kerrallaan. Uusi F1-asennusohjelma purkaa sen sijaan valmiiksi rakennetun juurikuvan ja lisää sen päälle vain tämän koneen paketit. Se lyhentää asennusajat karkeasti puoleen millä tahansa koneella.</p>
+
+<p>Ja nopealla laitteistolla se on järjetöntä. AMD:n <a href="https://x.com/AnushElangovan">Anush Elangovan</a> teki maailmanennätyksen täydellä Omarchy-asennuksella <strong>7 sekunnissa</strong> AMD-kannettavallaan. <a href="https://x.com/dhh/status/2117222836620202375">Seitsemän sekuntia!</a> Muistan, kun viisi minuuttia tuntui kunnianhimoiselta tavoitteelta.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Asensi Omarchyn ajassa 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Nopeampi kaikkialla muuallakin</h2>
+
+<p>Kyse ei ole vain asennusohjelmasta. Käynnistys ei enää pysähtele binfmt-rekisteröintiin. Teemanvalitsin aukeaa heti neljännessekunnin viiveen sijaan. Valikot ja paneelit avautuvat suoraan Hyprland-pikanäppäimistä ohittaen sen 60 ms:n, joka prosessin käynnistämiseen ensin kului. Omarchy-valikon hitaimmat tarkistukset menivät 200 ms:sta 16 ms:iin, uusi pääte näyttää kehotteensa 30 ms aiemmin, ja koko työpöytä reagoi nyt muutoksiin niiden pollaamisen sijaan. Jopa uloskirjautuminen, uudelleenkäynnistys ja sammuttaminen tapahtuvat sillä hetkellä, kun sovelluksesi ovat sulkeutuneet.</p>
+
+<h2 id="agent-upgrades">Agenttipäivityksiä</h2>
+
+<p>Omarchy on agentteja hyödyntävä käyttöjärjestelmä, ja 4.5 tuo ison kierroksen päivityksiä agenttien kanssa työskentelyyn. Agenttipaneeli seuraa nyt 23 agenttia ja palveluntarjoajaa, kun ennen niitä oli 6, mukana Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter ja Ollama. Jokainen raja saa oman mittarinsa ja ajan sen nollaantumiseen, joten näet tarkalleen, kuinka paljon liikkumavaraa sinulla on jäljellä. Ja Grok on nyt täysi palveluntarjoaja Clauden ja Codexin rinnalla.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Agenttipaneeli, jossa on useita Claude- ja Codex-tilauksia" width="380" /></p>
+
+<p>Ja agenttisi on aina yhden näppäinpainalluksen päässä. <code>Super + ~</code> pudottaa Quake-tyylisen konsolin himmennetyn työpöydän päälle, ja ensimmäisellä avauskerralla se käynnistää oletusagenttisi. Paina sitä uudelleen piilottaaksesi sen, ja istuntosi on aivan siinä, mihin sen jätit.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Quake-tyylinen konsoli, jossa agentti toimii himmennetyn työpöydän päällä" /></p>
+
+<p>Jos jongleeraat useammalla kuin yhdellä tilauksella, voit nyt pitää useita Claude-, Codex- ja Grok-kirjautumisia samalla koneella ja valita, millä uudet istunnot alkavat, käyttämällä komentoa <code>omarchy agent account</code>. Historia, asetukset ja taidot jaetaan niiden kesken, joten <code>claude --continue</code> jatkaa aivan siitä, mihin jäit vaihdon jälkeen. Rajan lähellä Omarchy voi joko tarjota yhden napsautuksen vaihtoa tai siirtää uudet istunnot omatoimisesti tilille, jolla on eniten liikkumavaraa. Ja kun määrität toisen koneen, <code>omarchy agent account copy</code> tuo kaikki kirjautumisesi SSH:n yli, joten sinun ei tarvitse kirjautua kaikkeen uudelleen.</p>
+
+<p>Kimi ja Ori, OpenRouterin agenttikehys, liittyvät valintoihin kohdassa <em>Setup &gt; Defaults &gt; Agent</em>, ja Googlen Antigravity korvaa vanhentuneen Gemini CLI:n (<code>gemini</code> toimii edelleen aliaksena). Suositko ikkunaa päätteen sijaan? Claude- ja Amp-työpöytäsovellukset ovat nyt napsautuksen päässä kohdassa <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Ilmoitukset, uudelleenrakennettuina</h2>
+
+<p>Ilmoitukset pinoutuvat nyt lähettäjän mukaan, noudattavat teemaasi ja kutistavat identtiset toistot. Toimintopainikkeet, vahvistuskoodit ja linkit toimivat kaikki suoraan kortilta. <code>Super + Comma</code> toimii uusimman kohdalla (hylkää sen, avaa sen tai painaa sen painiketta), ja <code>Super + Ctrl + Comma</code> antaa sinulle näppäimistön niiden kaikkien ohjaamiseen. Palkin kello kytkee Älä häiritse -tilan päälle.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Uudet ilmoitukset" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Videotaustat ja teemojen introt</h2>
+
+<p>Taustat voivat nyt olla videoita. Pudota sellainen sisään, ja työpöytäsi herää eloon vierivillä aalloilla tai millä muulla tahansa haluat, samalla kun lukitusnäyttö näyttää siitä pysäytyskuvan. Ja teemat tekevät nyt sisääntulon: jokainen voi toistaa lyhyen, äänettömän intron, kun kirjaudut sisään tai vaihdat siihen. (Haluatko mieluummin pitää sen rauhallisena? Kytke introt pois kohdassa <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse liittyy oletusteemoihin</h2>
+
+<p>Jade Horse on kauttaaltaan usvaisen vihreä, ja sen kaiverrettua jadea muistuttavat taustat saavat koko työpöydän näyttämään käärömaalaukselta. Se korvaa Osaka Jaden mukana tulevien teemojen joukossa, ja sen rinnalle toisena uutena oletusteemana liittyy Starship. Jos käytät Osaka Jadea, säilytät kopiosi, ja se elää edelleen <a href="https://github.com/omacom/omarchy-osaka-jade-theme">kolmannen osapuolen teemana</a> kaikille, jotka haluavat asentaa sen tuoreeltaan.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse -teema" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff on uusi oletustausta</h2>
+
+<p>Uudet asennukset tervehtivät sinua nyt Liftoffilla, upealla auringonlaskulaukaisulla, joka on Tokyo Nightin uusi oletustausta. Sen teki <a href="https://github.com/tcballard">Tom Ballard</a>, joka loi sen ensin <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a> -teemaansa varten. Kiitos, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Liftoff-tausta, tekijänä Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Käynnistysvalikko on nyt hiljainen</h2>
+
+<p>Omarchy näytti ennen käynnistysvalikon noin kuuden sekunnin ajan joka käynnistyksellä siltä varalta, että sinun täytyisi palata aiempaan tilannekuvaan. Mutta melkein kukaan ei koskaan tehnyt niin. Niinpä Limine odottaa nyt vain yhden sekunnin ja käynnistyy hiljaa, ja suurimman osan ajasta et näe valikkoa lainkaan.</p>
+
+<p>Kun tarvitset eri merkintää tai tilannekuvaa, naputtele mitä tahansa näppäintä (alasnuoli toimii) koneen käynnistyessä, ja se pysähtyy valikkoon. Ja jos haluat mieluummin pitää valikon näkyvissä pidempään pysyvästi, aseta oma <code>timeout:</code>-arvosi tiedostoon <code>/boot/limine.conf</code> (kuten <code>timeout: 5</code>). Päivitykset jättävät asettamasi aikakatkaisun rauhaan.</p>
+
+<h2 id="changed-hotkeys">Muuttuneet pikanäppäimet</h2>
+
+<p>Jotkin pikanäppäimet siirtyivät:</p>
+
+<ul>
+  <li>Laskin: <code>Super + Ctrl + Q</code> on nyt <code>Super + Shift + Q</code>.</li>
+  <li>Aktiivisuus: <code>Super + Ctrl + T</code> on nyt <code>Super + Shift + T</code>, ja <code>Super + Ctrl + T</code> avaa teemat.</li>
+  <li>Verkko: <code>Super + Ctrl + W</code> on nyt <code>Super + Ctrl + N</code>, ja <code>Super + Ctrl + W</code> avaa taustat.</li>
+  <li>Yövalolla ei enää ole pikanäppäintä (se oli <code>Super + Ctrl + N</code>); se on kohdassa <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> avaa Apps-valikon telakasta Apps-valikon sijaan.</li>
+</ul>
+
+<p>Ilmoitusten pikanäppäimet muuttuivat:</p>
+
+<ul>
+  <li><code>Super + Comma</code> toimii uusimman kortin kohdalla (hylkää sen, avaa sen tai painaa sen ainoaa painiketta) sen pelkän hylkäämisen sijaan.</li>
+  <li>Viimeisen hylkääminen siirtyi näppäimeen <code>Super + Alt + Comma</code>, joka avasi sen ennen.</li>
+  <li>Hiljentäminen siirtyi näppäimestä <code>Super + Ctrl + Comma</code> näppäimeen <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> antaa sinulle nyt näppäimistöohjauksen.</li>
+</ul>
+
+<p>Muutama näppäin toimii eri tavalla:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> ja <code>Super</code> + vieritys pysyvät nykyisen näytön työtiloissa, koska jokaisella näytöllä on omansa.</li>
+  <li>Päätteessä <code>Super + C</code> ja <code>Super + V</code> lähettävät <code>Ctrl + Shift + C</code> ja <code>Ctrl + Shift + V</code> komentojen <code>Ctrl + Insert</code> ja <code>Shift + Insert</code> sijaan.</li>
+</ul>
+
+<p>Uusia oletusarvoja, jotka voivat törmätä omiin sidoksiisi: <code>Super + Q</code> (sulje ikkuna, näppäimen <code>Super + W</code> rinnalla), <code>Super + A</code> (valitse kaikki), <code>Super + M</code> (pienennä telakkaan), <code>Super + ~</code> ja <code>Super + Shift + ~</code> (Quake-konsoli), <code>Super + Alt + L</code> (edellinen asettelu), <code>Super + Shift + Ctrl + Arrows</code> (siirrä ikkuna toiselle näytölle), <code>Super + Ctrl + Alt + C</code> (kuvakaappaus), <code>Super + Ctrl + Alt + E</code> (maailmankello), <code>Super + Ctrl + Alt + F</code> (koko näytön työpöytä) ja <code>Right Alt</code> -näppäimen pitäminen push-to-talk-sanelua varten.</p>
+
+<h2 id="more-features">Lisää ominaisuuksia</h2>
+
+<ul>
+  <li>Anna jokaiselle näytölle omat työtilansa: <code>Super + 1-0</code> menee käyttämäsi näytön työtiloihin, ja <code>Super + Arrows</code> siirtyy muihin näyttöihin ja niistä pois, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Kerää kaikki työpöydän ulkoasuun liittyvä uuteen Appearance-valikkoon, joka korvaa Stylen: teema, tausta, fontti, palkki, ikkunat, brändäys, telakka, työtilojen asettelut, animaatiot ja lukituksen avausnäyttö, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Valitse Opaque, Transparent tai Glassy -ikkunat kohdasta <em>Appearance &gt; Window Transparency</em>, sekä Glassy-palkkitausta, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Valitse teeman mukaiset, terävät tai pyöristetyt ikkunan kulmat kohdasta <em>Appearance &gt; Window Corners</em>, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Lisää ei-animaatioiden tila, oletuksena päällä virtuaalikoneissa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Tee sovelluksista läpinäkymättömiä oletuksena ja pidä päätteet läpinäkyvinä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Lisää Slack kohtaan Install &gt; Service, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Saa Alt + Space kytkemään sanelun jokaisella taustajärjestelmällä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Lisää Open- ja Edit-painikkeet kuvakaappausilmoituksiin sekä Open ja Cut näyttötallenteisiin ja yt-dlp-latauksiin, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Lisää Update &gt; Kernel -valikko oletuskernelin vaihtamiseen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Lisää teemojen synkronointi herdr-koneisiin, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Lisää o.rebind Hyprland-näppäinsidosten korvaamiseen, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Kysy git-identiteettiäsi ensimmäisen kirjautumisen jälkeen asennusohjelman sijaan, GitHub-kirjautumisella, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Salli asennusmedian esiasettaa kieli, näppäimistö ja aikavyöhyke, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Salli palkin widgettien elää lokeron laatikossa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Salli palkin widgetin poistaminen raahaamalla se pois palkista, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Salli työtilojen vierittäminen palkista, tekijänä <a href="https://github.com/outfoxxed">@outfoxxed</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Salli ylimääräisten teemojen poistaminen teemanvalitsimesta, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Lisää hey, basecamp ja Cloudflare CLI:t laiskasti asennettavina työkaluina, tekijänä <a href="https://github.com/monorkin">@monorkin</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Lisää SSH Agent valinnaisena palveluna, tekijänä <a href="https://github.com/carletex">@carletex</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Salli valita, kuinka kauan salasanaton sudo kestää, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Lisää hover-sulkemispainike ilmoitusponnahduksiin, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Salli ohjelman ilmoitusten mykistäminen sen kaatumisdiagnoosista, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Salli omarchy-notification-sendin lisätä toimintopainikkeita, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Lisää kellomuoto reaaliaikaisilla sekunneilla, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Säädä näppäimistön taustavaloa Ctrl:llä ja kirkkausnäppäimillä, tekijänä <a href="https://github.com/ludagoo">@ludagoo</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Tulosta OEM Windows -tuoteavain laiteohjelmistosta, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Lisää alkuperäinen vi pääte-editorin valinnaksi, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Lisää Roadster Starlight -tausta Etherealiin, tekijöinä <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Tietoturva</h2>
+
+<ul>
+  <li>Pidä Windows-virtuaalikoneen salasana poissa RDP-asiakkaan argumenteista, tekijänä <a href="https://github.com/dicemans">@dicemans</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Siirrä näyttötallennuksen tila pois kaikkien kirjoitettavissa olevasta /tmp:stä, tekijänä <a href="https://github.com/Chessing234">@Chessing234</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Vahvista salasanattoman sudon vanhenemista keskeytyksen yli, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Sido päivityksen estäjän siivous sen luoneeseen prosessiin, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Eristä OCaml-siivouksen valtuutus, tekijänä <a href="https://github.com/ErikMelton">@ErikMelton</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Kiinnitä tehdasasetusten palautuksen korotus paketoituun komentoon, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Poista tallennetut sormenjälkimalleja kutsuvalta käyttäjältä nollauksessa, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Kiellä koukkujen ja tilojen nimet, jotka ovat polkuja, tekijänä <a href="https://github.com/Adolanium">@Adolanium</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Ohjaa system-authiin sormenjälki- ja FIDO2-asetusten kirjoittamassa polkit-pinossa, tekijänä <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Poista sormenjäljet lukijan omasta tallennustilasta niitä poistettaessa, tekijänä <a href="https://github.com/scottjones">@scottjones</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Estä SSH-asetuksia jättämästä sshd:tä käyntiin salasanakirjautumiset käytössä, kun yhtään avainta ei lisätä, tekijöinä <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Estä toista paikallista käyttäjää vaihtamasta omaa ohjelmaansa Voxtype-päivityksen aikana, tekijänä <a href="https://github.com/Vladkarok">@Vladkarok</a> kohteessa <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Vahvista tapaa, jolla tehdasasetusten palautus välittää gum-asetuksesi sudon läpi, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Korjaukset</h2>
+
+<ul>
+  <li>Korjaa Hyprlandin kaatuminen, kun näyttö irrotetaan, poistetaan käytöstä tai sammutetaan kantta sulkemalla, tekijänä <a href="https://github.com/falkoro">@falkoro</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Korjaa päivitykset, jotka saattoivat jättää kernel-kuvan ilman sen root=-parametria, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Korjaa tehdasasetusten palautus poistamasta muiden järjestelmien käynnistysmerkintöjä, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Korjaa toisen Omarchyn rinnalle tehtävä asennus poistamasta kyseisen asennuksen käynnistysmerkinnän, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Korjaa vapaan tilan asennukset, jotka saattoivat ottaa olemassa olevan osion uuden tilalle, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Korjaa keskeytyneen aseman salasanan vaihdon jatkaminen poistamasta väärän avaimen, tekijänä <a href="https://github.com/scottjones">@scottjones</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Kysy sudo-salasanaa kerran Omarchy-päivitystä kohden, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Kysy sudo-salasanaa kerran kymmeneksi minuutiksi joka komennon kohdalla uudelleen kysymisen sijaan, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Kata AUR-päivitykset ja käynnistystarkistus päivityksen yhdellä sudo-kehotteella, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Pidä pakettipäivitykset turvassa kesken transaktion tapahtuvalta uloskirjautumiselta, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Kirjaudu ulos, käynnistä uudelleen ja sammuta heti, kun sovellukset ovat sulkeutuneet, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Korvaa Tensaku Omasnapilla kuvakaappauksissa, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Kasvata paneelit palkista ja muunna niitä keskenään, painikkeiden ja palkkikuvakkeiden painalluspalautteella, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Liu’uta ilmoitukset sisään palkin alta ja takaisin samaa tietä ulos, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Tarkista yhteys Omarchyn omaa päätepistettä vasten ja korjaa captive-portaaleihin kirjautuminen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Korjaa edgestä stableen tai RC:hen vaihtaminen jättämästä koneen vanhaan koontiversioon, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Korjaa 4.5-päivityksen pysähtyminen, kun komentotulkki vastaa hitaasti, tekijänä <a href="https://github.com/AnPod">@AnPod</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Korjaa työpöytäistunnon ulkopuolella käynnistettyjen päivitysten äänetön epäonnistuminen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Korjaa epäonnistunut mise-työkalun lataus pysäyttämästä loput järjestelmäpäivityksestä, tekijänä <a href="https://github.com/sanjyay">@sanjyay</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Korjaa päivitysten epäonnistuminen, kun omarchy-nvim ei ole asennettuna, tekijänä <a href="https://github.com/imzihuailin">@imzihuailin</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Korjaa dual-boot-asennusten epäonnistuminen EFI-osion liittämisessä, tekijänä <a href="https://github.com/Damian626">@Damian626</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Korjaa asennusten pysähtyminen, kun laiteohjelmisto ei ota uutta käynnistysmerkintää, tekijänä <a href="https://github.com/ryanio">@ryanio</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Korjaa asennusten pysähtyminen levyillä, joilla on vanha RAID-jäsen tai taltioryhmä, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Käynnistä asennusohjelma aiemmin odottamatta jokaista USB-laitetta ja käynnistystyötä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Nopeuta levyn salausta 4096-tavuisilla sektoreilla uusissa asennuksissa, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Listaa sisäiset levyt ensin ja avaa asennusnäytöt turvallisella valinnalla, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Listaa Full disk install ensin asennusohjelmassa ja palaa Escillä levynäytöillä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Korjaa yhden näytön skaalaaminen muuttamasta jokaisen muun näytön skaalaa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Korjaa XWayland-sovellukset tulemaan liian isoiksi, kun näytöt käyttävät eri skaalauksia, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Korjaa HDR-näyttöjen vaihtaminen haalistuneeseen HDR-kuvaan, kun ikkuna menee koko näytölle, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Korjaa sumeat valikot ja valitsimet murto-osittain skaalatuilla näytöillä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Korjaa kannettavan näytön jääminen pois päältä ulkoisen näytön irrottamisen jälkeen, tekijöinä <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Korjaa näytön uudelleen käyttöön ottaminen nollaamasta sen sijainnin, skaalan ja tilan, tekijänä <a href="https://github.com/zihaomu">@zihaomu</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Korjaa valikot ja valitsimet, jotka eivät avautuneet uudelleen näytön irrottamisen jälkeen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Korjaa näyttökohtaiset työtilat siirtymästä näytön irrottamisen jälkeen, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Korjaa komentotulkin kaatuminen, kun äänilaite irtoaa äänipaneelin ollessa auki, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Korjaa koko näytön ikkunat menettämästä koko näytön tilan näytönsäästäjän jälkeen, tekijänä <a href="https://github.com/MGross21">@MGross21</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Korjaa kursorin katoaminen käynnistyksessä Hyprlandin uudelleenlatausten jälkeen, tekijänä <a href="https://github.com/spencerbull">@spencerbull</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Korjaa kursorin muuttuminen näkymättömäksi XWayland-sovellusten päällä, tekijänä <a href="https://github.com/Sebo1411">@Sebo1411</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Korjaa leikepöydän kaappauksen jumittumiset, tekijänä <a href="https://github.com/maxcroy1">@maxcroy1</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Korjaa avainrenkaan käyttö XDG Secret -portaalin kautta, tekijänä <a href="https://github.com/pkwagner">@pkwagner</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Korjaa sormenjäljen rekisteröinti ja lukitusnäytöstä palautuminen, tekijänä <a href="https://github.com/GeertJohan">@GeertJohan</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Opasta sormenjäljen rekisteröinti vaihe vaiheelta, tekijänä <a href="https://github.com/scottjones">@scottjones</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Korjaa näppäinten automaattinen toisto lukitusnäytön salasanakentässä, tekijänä <a href="https://github.com/berndb">@berndb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Korjaa lukitusnäytön taustakuvan latautuminen salasanakentän jälkeen herätyksessä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Korjaa näytön lukituksen aikakatkaisut, kun istunto nimeää kadonneen näytön, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Nopeuta päätteen avaamista nykyisen ikkunan hakemistossa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Saa VS Code -perheen editorit noudattamaan teeman muutoksia reaaliajassa, tekijänä <a href="https://github.com/Macho0x">@Macho0x</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Teemoita käynnissä olevat Hunk-istunnot uudelleen teeman vaihtuessa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Muista valittu taustakuva jokaiselle teemalle, tekijänä <a href="https://github.com/OldJobobo">@OldJobobo</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Pidä kuvavalitsin nopeana ja terävänä suurilla kokoelmilla ja HiDPI:llä, tekijänä <a href="https://github.com/keylimesoda">@keylimesoda</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Leikkaa prosessorin ja muistin käyttöä, jonka läpinäkyvä palkki käyttää taustakuvan näytteistämiseen, tekijöinä <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Nopeuta Tailscale-paneelia tailneteissä, joissa on tuhansia koneita, tekijänä <a href="https://github.com/iskakaushik">@iskakaushik</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Tuo Grok tasolle Clauden ja Codexin kanssa agenttipaneelissa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Sovella agenttitilin valintaa CLI-aliprosesseihin, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Näytä Codexin yksilölliset kulutusrajat ja niiden nollausajat, tekijänä <a href="https://github.com/Stegi56">@Stegi56</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Määritä selainintegraatio Clauden valinnan yhteydessä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Korjaa agentit, jotka eivät löydä niiden käynnistymisen jälkeen asennettuja mise-työkaluja, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Korjaa kuvakaappausten liittäminen agentteihin SSH:n yli käynnistetyissä herdr-ruuduissa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Korjaa agenttipaneeli, josta puuttuvat pakatut Codex-istunnot, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Palauta Caps Lock normaaliksi ja tee Shift + Caps Lockista compose-näppäin, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Sovella järjestelmän näppäimistöasettelua kirjautumisnäyttöön, tekijänä <a href="https://github.com/g-desoutter">@g-desoutter</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Korjaa asettelun vaihto ohittamasta joka toinen painallus ei-latinalaisella näppäimistöasettelulla, tekijänä <a href="https://github.com/manuaudio">@manuaudio</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Kytke laitteistovideodekoodaus päälle mpv:ssä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Vaihda TCP-ruuhkanhallinta BBR:ään ja käytä kyber I/O-ajoitinta oikeilla levyillä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Asenna T3 Code sen itseään päivittävänä AppImagene, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Paranna PHP:n ja Laravelin asennusta, tekijänä <a href="https://github.com/nunomaduro">@nunomaduro</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Asenna Node laiskasti ja jätä mise-asetuksesi rauhaan, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Asenna puuttuvat sovellukset oletusarvoja valittaessa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Himmennä asennettu ohjelmisto Install-valikoissa sen piilottamisen sijaan, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Rekisteröi salasananhallinnan ja muut natiivin viestinnän isännät Brave Originille, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Ryhmittele Brave Originin verkkoilmoitukset sivuston mukaan ja avaa oikea välilehti napsautettaessa, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Hyväksy orpopakettien poisto automaattisesti päivitysten aikana, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Päivitä Omarchyn avainrengas ennen jokaista päivitystä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Tarjoa uudelleenkäynnistystä kanavien vaihdon jälkeen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Tarjoa ensimmäisen käynnistyksen päivitys vain, kun päivitettävää on, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Etsi sään sijainti ja asennusohjelman aikavyöhyke Omarchyn omalla geo-palvelulla, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Aseta kello osoitteesta ntp.omarchy.org Archin NTP-poolin sijaan, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Mittaa verkon nopeus Omarchyn omalla nopeustestillä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Näytä jäljitettyjen kuvakkeiden edistymisnäyttö ensimmäisen käynnistyksen aikana, tekijöinä <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Käynnistä live-ISO Omarchy-kernelillä ja T2-kernelillä vain Maceissa, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Estä offline-asennuksia odottamasta mise-versiohakuja, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Korjaa offline-asennukset asettamasta aikavyöhykkeeksi oletuksena Africa/Abidjan, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Korjaa asennusohjelman aikavyöhykevalitsin, joka ei antanut kirjoittaa hakeaksesi, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Korjaa live-ISO jumittumasta aloitusnäytön taakse Ventoy-tikulta käynnistettäessä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Korjaa saksalaiset ja ranskalaiset konsolinäppäinkartat asennusohjelman asetuslomakkeessa, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Piilota gumin englanninkieliset näppäinvihjeet asennusohjelmassa ja git-asetuksissa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Poista vain englanniksi toimivat vitsit asennuksen edistymisnäytöltä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Korjaa asennusohjelman tuloste laskeutumasta täyttämättömänä näytölle sen valmistellessa levyä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Korjaa Quattro-päivitys nollaamasta oletusselain Chromiumiksi, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Korjaa Quattro-päivitys pysähtymästä taustojen nimiin, joissa on ei-ASCII-merkkejä, tekijänä <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Korjaa kernel-migraatio pysähtymästä koneilla, jotka käynnistyvät GRUBilla tai systemd-bootilla, tekijänä <a href="https://github.com/manuaudio">@manuaudio</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Korjaa horrostila salaamattomilla koneilla, joissa on enemmän kuin yksi NVMe-levy, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Korjaa FIDO2-migraatio merkitsemästä tehdyksi ennen kuin se oli ratkaistu, tekijänä <a href="https://github.com/ErikMelton">@ErikMelton</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Korjaa kelluva työtila ottamasta haltuun ensimmäisen ikkunan, jonka oma kelluntasääntösi kattaa, tekijänä <a href="https://github.com/zihaomu">@zihaomu</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Korjaa kompositoijan pysähtely, kun Super + L vaihtaa työtilaa kelluntaan ja siitä pois, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Korjaa Alt + Shift + Tab, joka ei kierrättänyt taaksepäin jokaisen ikkunan läpi, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Korjaa irrotetut ikkunat, jotka eivät keskittyneet toiselle näytölle siirrettäessä, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Korjaa uudet päätteet avautumasta kotikansiosi ulkopuolelle, kun ei-pääteikkuna on kohdistettuna, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Korjaa 1Password- ja Bitwarden-ikkunat, jotka eivät kelluneet, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Korjaa 1Password sulkeutumasta, kun asennusohjelman pääte sulkeutuu, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Korjaa DaVinci Resolven valintaikkunat varastamasta osoittimen kohdistuksen, tekijänä <a href="https://github.com/AksharP5">@AksharP5</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Korjaa työpöytä näkymästä läpi Windows-virtuaalikoneen näyttöjen, tekijänä <a href="https://github.com/jmwall">@jmwall</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Korjaa vanhat Windows-virtuaalikoneen salasanat, joissa on $$ Quattro-migraation jälkeen, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Estä Hyprlandin lahjoitusponnahdusta näkymästä päivitysten jälkeen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Paranna palkin widgettien raahaamista ja järjestämistä, tekijänä <a href="https://github.com/outfoxxed">@outfoxxed</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normalisoi palkkikuvakkeiden koko ja tasaus, tekijänä <a href="https://github.com/bjarneo">@bjarneo</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Paljasta piilotetut palkin ilmaisimet vain, kun viet hiiren kellon vasemmalle puolelle, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Tasaa lokeron kuvakkeet palkin muiden kuvakkeiden kanssa, tekijänä <a href="https://github.com/ayoubdya">@ayoubdya</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Näytä seuraava palkin työkaluvihje heti, kun yksi on jo näkyvissä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Avaa kello- ja sääpaneelit niiden widgettien alle, tekijänä <a href="https://github.com/scottjones">@scottjones</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Pidä verkkopaneeli auki DNS-palveluntarjoajan valinnan jälkeen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Korjaa sulkeutuva ponnahdusikkuna jättämästä palkin widgetit reagoimattomiksi, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Korjaa piilotettu palkki nappaamasta napsautuksia koko näytön ikkunoiden yläreunalla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Korjaa tummat lokeron kuvakkeet katoamasta palkkiin, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Korjaa palkkikuvakkeet, jotka istuivat epätasaisesti tai keskittämättä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Korjaa palkin työkaluvihjeet piirtämästä ensimmäisen kehyksensä väärällä koolla, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Korjaa ilmoitushistoria näyttämästä jokaisen kortin aivan äskettäisenä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Korjaa ensimmäisen kirjautumisen ilmoitukset kutistumasta yhdeksi pinoksi, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Korjaa ilmoitusnapsautukset, jotka eivät kohdistaneet sovelluksia, joilla on monisanaisia nimiä, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Korjaa Taildrop-ilmoitukset näyttämästä tyhjää tekstiä ja puuttuvia esikatseluja, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Korjaa akkuilmoitus näyttämästä tyhjää aikaa ja 0W täydellä akulla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Korjaa vähäisen akun varoitus jäämästä näkyviin kytkemisen jälkeen ja palaamasta uudelleenkäynnistysten jälkeen, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Korjaa akun kulutus lukemasta 0W joillakin kannettavilla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Korjaa täysi akku verkkovirralla näkymästä tyhjenevänä, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Korjaa Hibernate näkymästä, kun kernel ei horrosta, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Korjaa gvfs-liitokset katoamasta jatkamisen jälkeen, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Korjaa näppäimistön taustavalo jäämästä pois päältä lukon sammutettua näytön kahdesti, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Korjaa sormenjälkilukija heräämästä, kun lukon näytöt ovat pois päältä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Korjaa käynnistyksen salasanakehote keskittämättömänä, kun näyttö ilmestyy myöhään, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Korjaa näytönsäästäjän poistumisnäppäin välähtämästä kulmassa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Korjaa Wi-Fi-kuvake välkkymästä OWE-siirtymätilan verkoissa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Korjaa OWE-virhe, joka tulostui päätteeseen teeman asentamisen jälkeen, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Korjaa välkkyminen vaihdettaessa pysäytyskuvasta videotaustaan, tekijänä <a href="https://github.com/bjarneo">@bjarneo</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Päivitä Hackerman suurennettuun geometriseen taustaan, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Korjaa teemat, joissa sykliset väriviittaukset jumittivat teeman vaihdon, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Korjaa Neovim, joka ei käynnistynyt Catppuccin-teemalla, tekijänä <a href="https://github.com/anandude">@anandude</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Korjaa OpenCode 2 käynnistymästä sen vakioteemalla Omarchyn teeman sijaan, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Korjaa heikkokontrastinen upotettu koodi luodussa VS Code -teemassa, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Korjaa T3 Coden asennukset pysähtymästä nykyisen teeman sovittamisen aikana, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Korjaa päätteen fonttikoko nollautumasta fonttiperhettä vaihdettaessa, tekijänä <a href="https://github.com/sbalbalosa">@sbalbalosa</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Korjaa fonttien vaihtaminen tulostamasta päätteen prosessitunnuksen, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Korjaa kielten vaihtaminen rakentamasta jokaisen kieliasetuksen uudelleen ja menettämästä ne lähes täydellä levyllä, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Korjaa komentotulkki näyttämästä raakoja käännösavaimia ennen sen käännösten latautumista, tekijänä <a href="https://github.com/zihaomu">@zihaomu</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Nopeuta käännettyä tekstiä Omarchyn skripteissä, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Päivitä käännökset 686 merkkijonolle, joista 392 on ohjekirjassa, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Korjaa äänenvoimakkuuden ja lähdön säätimet muilla kuin englanninkielisillä kieliasetuksilla, tekijänä <a href="https://github.com/Sebo1411">@Sebo1411</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Korjaa suorittimen käytön lukemat muilla kuin englanninkielisillä kieliasetuksilla, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Korjaa fcitx5-palvelu käynnistymästä ikuisesti uudelleen, kun fcitx5 ei ole asennettuna, tekijänä <a href="https://github.com/therk">@therk</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Korjaa näppäimistöasettelun widget vaihtamasta laitteita, joilla kukaan ei kirjoita, tekijänä <a href="https://github.com/bjarneo">@bjarneo</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Korjaa näppäimistöasettelun widget vaihtamasta valmistajan pikanäppäinlaitteisiin, tekijänä <a href="https://github.com/yashranaway">@yashranaway</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Korjaa näppäinsidosvalikko jättämästä Lua-prosessin käyntiin 100 %:n prosessorikäytöllä, tekijänä <a href="https://github.com/tobi">@tobi</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Korjaa kello tulvimasta lokia joka millisekunti kesäajan päättyessä, tekijänä <a href="https://github.com/falkoro">@falkoro</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Korjaa komentotulkki korvaamasta shell.jsonia, jota se ei voinut lukea, oletusarvoilla, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Korjaa Omarchy-valikko menettämästä rivejään, kun sen tiedostoa päivitetään, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Korjaa lisäosan uudelleen käyttöön ottaminen, joka ei tuonut takaisin sen palkkiwidgetiä, tekijänä <a href="https://github.com/berrimi">@berrimi</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Korjaa paikalliset lisäosat latautumasta uudelleen silmukassa omalla Python-tavukoodillaan, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Korjaa piilotetut painikkeet lisäosissa kutistumasta täytteeseensä, tekijänä <a href="https://github.com/dmkenney">@dmkenney</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Korjaa pudotusvalikot leikkaamasta viimeisen kohteensa, tekijänä <a href="https://github.com/sprajs">@sprajs</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Korjaa pudotusvalikot, jotka eivät sulkeutuneet toisella napsautuksella, tekijänä <a href="https://github.com/felixzsh">@felixzsh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Korjaa liukusäätimen nupit pysähtymästä ennen radan loppua, tekijänä <a href="https://github.com/erikrjohansson">@erikrjohansson</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Korjaa Update &gt; Hardware &gt; Trackpad, josta puuttui useimmat kosketuslevyt ja joka nollasi näppäimistön, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Se vapauttaa nyt juuttuneen painikkeen jokaisella kosketuslevyllä ja nollaa vain kosketuslevyn näppäimistön ja kosketusnäytön sijaan sen kanssa.</p>
+  </li>
+  <li>Saa verkkokameravalikko tarkistamaan kamerat kytkemättä niitä päälle, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Korjaa Omasnapin vierityskaappaus nappaamasta vain mustia kehyksiä, tekijänä <a href="https://github.com/falkoro">@falkoro</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Korjaa kuvakaappausvalitsin irrottamasta omia näppäimiäsi, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Korjaa tallenteen pysäyttäminen ilmoittamasta tyhjästä tallennetusta tallenteesta, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Korjaa kuvavalitsin näyttämästä vanhentuneita pikkukuvia päälle tallennetuille kuville, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Korjaa yövalo, joka ei nollautunut täysin sammutettaessa, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Korjaa mediawidget jättämästä keskeytetyn raidan toimettomalle soittimelle, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Korjaa toistuvat näyttöskannaukset näytöillä, jotka eivät ilmoita kirkkautta, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Korjaa Super + Shift + Return epäonnistumasta, kun määritetty selain oli poistettu, tekijänä <a href="https://github.com/vitally">@vitally</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Korjaa laskimen pikanäppäimet jäämästä esiasennettujen sovellusten poistamisen jälkeen, tekijänä <a href="https://github.com/OldJobobo">@OldJobobo</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Korjaa Copy URL -pikanäppäin Brave Origin -profiileissa, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Korjaa Bitwarden-laajennuksen ponnahdusikkuna avautumasta väärällä koolla, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Korjaa Battle.net avautumasta 100 %:n skaalalla HiDPI-näytöillä, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Korjaa Inkscapen tiedostonvalitsimet avautumasta laatoitettuina, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Korjaa Go AUR -paketit, jotka eivät rakentuneet päivitysten aikana, kun mise hallitsee Gota, tekijänä <a href="https://github.com/shbernal">@shbernal</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Korjaa ONCE-asennus, kun et ole docker-ryhmässä, tekijänä <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Korjaa agenttipaneelin napsautukset avaamasta lokeron, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Korjaa agenttitilin määritys kompastumasta roikkuvaan jaettuun symboliseen linkkiin, tekijänä <a href="https://github.com/manuaudio">@manuaudio</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Korjaa <code>--reauth</code> lisäämästä uuden agenttitilin, kun sellaista ei ole, tekijänä <a href="https://github.com/manuaudio">@manuaudio</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Saa agenttitilin uudelleennimeämisvihje nimeämään sen palveluntarjoajan, tekijänä <a href="https://github.com/manuaudio">@manuaudio</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Korjaa avainrenkaan päivitykset väittämästä onnistumista, kun avaintoiminnot epäonnistuvat, tekijänä <a href="https://github.com/Adolanium">@Adolanium</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Korjaa tyhjä tehdasasetusten palautuksen kehote sudon alla ajettaessa, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Korjaa odottavien migraatioiden muistutus kasautumasta kerran kirjautumista kohden, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Korjaa OS Age Aboutissa laskemasta ISO:n koonnista asennuksen sijaan, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Korjaa Dropbox näyttämästä ”0y ago” tiedostoille, jotka ovat 360–364 päivää vanhoja, tekijänä <a href="https://github.com/manuaudio">@manuaudio</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Korjaa Dropboxin tilan tarkistus vanhentamasta odottavan kirjautumislinkin, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Korjaa Dropboxin lokerokuvakekirjaston asentaminen, tekijänä <a href="https://github.com/omarchybot">@omarchybot</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Ota käyttöön päällekkäiset vierityspalkit Chromiumissa, tekijänä <a href="https://github.com/robzolkos">@robzolkos</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Kysy ennen Touch ID:n kytkemistä päälle Apple Silicon Maceissa, tekijänä <a href="https://github.com/scottjones">@scottjones</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Tarjoa RC-kanava Apple Silicon Maceissa, tekijänä <a href="https://github.com/maralcbr">@maralcbr</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Tarjoa stable-kanava Apple Silicon Maceissa, tekijänä <a href="https://github.com/maralcbr">@maralcbr</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Korjaa Omarchyn aliakset, funktiot ja ympäristö puuttumasta uusista päätteistä Apple Siliconilla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Määritä asennetut NVIDIA-sovellukset, tekijänä <a href="https://github.com/jdvmi00">@jdvmi00</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Korjaa asennukset, jotka epäonnistuivat Lenovo Pro 9:llä NVIDIA N1x:llä, tekijänä <a href="https://github.com/breymander">@breymander</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Korjaa puuttuvat sisäiset kaiuttimet ja mikrofonit N1x-kannettavilla, jotka ajoivat aiempia ääniprofiileja, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Korjaa hidas työpöytä NVIDIA GB10 -koneilla, kuten DGX Sparkilla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Korjaa lukitusnäyttöön kirjoittaminen jatkamisen jälkeen NVIDIA:lla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Lukko ei myöskään enää pimene uudelleen juuri kun paneeli syttyy.</p>
+  </li>
+  <li>Korjaa Lutris ja Battle.net asentamasta toisen näytönohjaimen 32-bittisen Vulkan-ajurin, tekijänä <a href="https://github.com/zihaomu">@zihaomu</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Älä enää pyydä uudelleenkäynnistystä jokaisen ARM-päivityksen jälkeen, tekijänä <a href="https://github.com/birkskyum">@birkskyum</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Tarjoa stable- ja RC-kanavat aarch64:llä, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Saa virtaprofiilit toimimaan ARM-kannettavilla, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Tarjoa Dropboxia ARM-koneilla, joissa on 4K sivut, ja Spotifyta verkkosovelluksena ARMilla, tekijänä <a href="https://github.com/birkskyum">@birkskyum</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Piilota GeForce NOW-, Battle.net- ja Lutris-asennukset ARMilla, tekijänä <a href="https://github.com/birkskyum">@birkskyum</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Korjaa Hermes-sovellus, joka ei päivittynyt paikallaan ARMilla, tekijänä <a href="https://github.com/ryanrhughes">@ryanrhughes</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Korjaa Snapdragon-kannettavien näppäimistöt, jotka eivät kirjoittaneet levyn lukituksen avauskehotteessa, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Korjaa kamerat, jotka puuttuivat kirjautumisessa Snapdragon-kannettavilla, tekijänä <a href="https://github.com/birkskyum">@birkskyum</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Korjaa musta näyttö ennen levyn lukituksen avausta Snapdragon X2 -kannettavilla, tekijänä <a href="https://github.com/jdvmi00">@jdvmi00</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Dekoodaa video laitteistolla Intel Wildcat Lakella, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Korjaa live-ISO:n kaatumiset Arrow Lake-H -kannettavilla, tekijänä <a href="https://github.com/emirb">@emirb</a> kohteessa <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Korjaa HP EliteBook Ultra G1q:n sisäinen mikrofoni, tekijänä <a href="https://github.com/bprendie">@bprendie</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Käytä ylävirran tukea Motorcomm YT6801 Ethernetille, tekijänä <a href="https://github.com/AFOliveira">@AFOliveira</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Välitä Elgato Cam Link 4K 16:9-virtuaalikamerana, tekijänä <a href="https://github.com/dhh">@dhh</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Tue sormenjälkilukijoita, jotka alusta nimeää, tekijänä <a href="https://github.com/scottjones">@scottjones</a> kohteessa <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

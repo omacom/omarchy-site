@@ -4,7 +4,10 @@ begin
   require "kramdown"
   require "kramdown-parser-gfm"
 rescue LoadError
-  abort "Missing gems. Run: gem install kramdown kramdown-parser-gfm"
+  system("gem", "install", "kramdown", "kramdown-parser-gfm") or abort "Couldn't install kramdown and kramdown-parser-gfm"
+  Gem.clear_paths
+  require "kramdown"
+  require "kramdown-parser-gfm"
 end
 
 require "cgi"
@@ -17,7 +20,8 @@ SITE_ROOT = File.expand_path("..", __dir__)
 CONTENT_DIR = File.join(SITE_ROOT, "content", "news")
 NEWS_DIR = File.join(SITE_ROOT, "news")
 TEMPLATE_DIR = File.join(SITE_ROOT, "templates", "news")
-RELATIVE_ASSET = %r{\]\((?!\w+:|[/#])([^)]+)\)}
+# A file next to the post, linked from Markdown, ](file), or from HTML, src="file".
+RELATIVE_ASSET = %r{(\]\(|\bsrc=")(?!\w+:|[/#])([^)"]+)}
 
 Post = Struct.new(:source, :title, :date, :author, :author_url, :description, :html, :path, :assets, keyword_init: true)
 
@@ -108,12 +112,12 @@ def load_post(file)
   date = DateTime.parse(date.to_s) if date
   date ||= DateTime.new(Integer(year), Integer(month), 1)
 
-  assets = markdown.scan(RELATIVE_ASSET).flatten.uniq
+  assets = markdown.scan(RELATIVE_ASSET).map(&:last).uniq
   assets.each do |asset|
     next if File.file?(File.join(File.dirname(file), asset))
     abort "#{file.delete_prefix("#{SITE_ROOT}/")} links to #{asset}, but no such file sits next to it"
   end
-  markdown = markdown.gsub(RELATIVE_ASSET) { "](/news/#{relative}/#{$1})" }
+  markdown = markdown.gsub(RELATIVE_ASSET) { "#{$1}/news/#{relative}/#{$2}" }
 
   html = Kramdown::Document.new(markdown, input: "GFM", hard_wrap: false, syntax_highlighter: nil).to_html
   description = metadata["description"] || excerpt(plain_text(html))

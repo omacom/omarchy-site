@@ -7,7 +7,7 @@ import { MeetupMap, PIN_AT, WHOLE_MAP, boxAround } from '@/components/MeetupMap'
 import { SectionActions } from '@/components/SectionHeading'
 import { ArrowRightIcon } from '@/components/icons'
 import meetups from '@/data/meetups.json'
-import { COUNTRIES_OF, REGIONS, regionOf } from '@/lib/regions'
+import { REGIONS, regionOf } from '@/lib/regions'
 import type { Region } from '@/lib/regions'
 import { cn } from '@/lib/utils'
 
@@ -176,7 +176,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
       className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 py-2 text-sm font-medium whitespace-nowrap text-text underline decoration-current underline-offset-4 transition-colors duration-150 hover:text-brand hover:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring [&_svg]:size-5 [&_svg]:shrink-0"
     >
       {t('The calendar on Luma')}
-      <ArrowRightIcon aria-hidden="true" />
+      <ArrowRightIcon className="rtl:-scale-x-100" aria-hidden="true" />
     </a>
   )
 
@@ -232,10 +232,6 @@ export function MeetupsPage({ rules }: { rules: string }) {
       <MeetupMap
         pins={pins}
         box={box}
-        lit={region ? COUNTRIES_OF(region) : new Set<string>()}
-        withMeetups={
-          new Set(allUpcoming.flatMap((e) => (e.country ? [e.country] : [])))
-        }
         active={active}
         onActive={setActive}
         className="mt-6 hidden sm:block"

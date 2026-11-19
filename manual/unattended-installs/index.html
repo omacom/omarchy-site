@@ -91,16 +91,6 @@
       <td>Username and password hash</td>
     </tr>
     <tr>
-      <td><code>user_full_name.txt</code></td>
-      <td>No</td>
-      <td>Git full name</td>
-    </tr>
-    <tr>
-      <td><code>user_email_address.txt</code></td>
-      <td>No</td>
-      <td>Git email</td>
-    </tr>
-    <tr>
       <td><code>user_encrypt_installation.txt</code></td>
       <td>No</td>
       <td><code>true</code> when the configuration carries a <code>disk_encryption</code> block</td>
@@ -119,6 +109,8 @@
 </table>
 
 <p>Generate the password hash for <code>user_credentials.json</code> with <code>openssl passwd -6 "yourpassword"</code>.</p>
+
+<p>The name and email for git commits aren’t part of the install. Set them once the machine is up, over SSH for example, with <code>omarchy setup git --name "Jane Doe" --email jane@example.com</code>.</p>
 
 <p>You can also drop in an empty file named <code>defer-provisioning</code> in place of <code>user_credentials.json</code>. That runs the same <a href="../getting-started/">prepare-for-another-owner install</a> you can trigger interactively: the machine installs with no personal details, and whoever boots it first picks their keyboard and creates their user. That’s the mode for imaging rigs, where the drive shouldn’t carry anyone’s credentials at all.</p>
 

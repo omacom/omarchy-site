@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (alias Quattro RS!) je první velké vydání s novými funkcemi od verze <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a> a je to pořádná nálož: přes 740 pull requestů od více než 180 přispěvatelů sloučených za pouhých dvanáct týdnů. Nyní nabízí vedle výchozího dlaždicového režimu i tradiční režim plochy. Můžete si ho nativně nainstalovat na MacBooky s čipy M1/M2/M3/Neo. A mluví 50 jazyky. A má gazilion dalších funkcí, oprav a vylepšení. Už Omarchy máte? Spusťte <em>Update &gt; Omarchy</em>. Nový stroj? <a href="/#install">Stáhněte si ho tady</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Plovoucí pracovní plochy s dokem</h2>
+
+<p><code>Super + L</code> nyní přepíná každou pracovní plochu mezi dlaždicovým, rolovacím a plovoucím režimem. Na plovoucí pracovní ploše dostane každé okno záhlaví v barvách vašeho tématu a dok zobrazuje vaše připnuté aplikace, vše, co právě běží, a mřížku všech nainstalovaných aplikací. Přetažením můžete měnit pořadí nebo připínat, kliknutím pravým tlačítkem získáte další možnosti a <code>Super + M</code> minimalizuje okno do doku.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Je to skvělý vstupní můstek pro každého, kdo přichází z macOS nebo Windows a ještě není připravený plně přejít na dlaždice. Nebo pro kohokoli, kdo prostě chce jednu pracovní plochu, kde se okna mohou rozvalovat. Kombinujte režimy podle libosti pro každou pracovní plochu a lišta ukazuje, jaké rozložení každá z nich používá.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy na Apple Silicon</h2>
+
+<p>Náš úžasný tým <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> vydal nativní instalátor pro Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Stáhněte si aplikaci</a> v macOS a ta vám Omarchy nainstaluje přímo vedle něj na váš MacBook s čipem M1, M2, M3 nebo Neo. Žádný USB disk, žádné zaklínání v terminálu. Dáváte přednost Homebrew? Stačí jeden řádek:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Instalátor Omarchy pro Mac" /></p>
+
+<p>To je to, co jsme si v září předsevzali: dokončit, co Asahi začal. O dva měsíce později si ho prostě můžete stáhnout. Úžasná práce celého týmu.</p>
+
+<p>A tím nekončí. Na čipech M4, M5 a M6 se právě pracuje, takže pravděpodobně nebude dlouho trvat, než Omarchy poběží na každém Macu s Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy na M2 Max, M3 Air, Neo, M4 Pro a M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Podpora ARM pro NVIDIA DGX Spark + N1X (a brzy i Snapdragon)</h2>
+
+<p>Omarchy 4.5 přináší své první ARM ISO a s ním předběžnou podporu pro ARM stroje od NVIDIE: stolní počítač DGX Spark a notebooky postavené na N1X, jako je <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> a <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. A brzy budeme mít i podporu pro celou řadu ARM strojů se Snapdragonem. Je to zatím v začátcích, takže počítejte s pár ostrými hranami, a prosím nahlaste vše, co se rozbije, na <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 jazyků a 5 metod zadávání</h2>
+
+<p>Omarchy nyní mluví 50 jazyky. Vyberte si jeden v <em>Setup &gt; Language</em> (nebo spusťte <code>omarchy language &lt;code&gt;</code>) a nabídka, plocha i oznámení Omarchy se okamžitě přepnou. Systémové národní prostředí se změní při příštím přihlášení.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Přepínání jazyků" /></p>
+
+<p>Mluvit jazykem je ale jen polovina. Musíte jím také umět psát. Omarchy proto nyní nastavuje správné metody zadávání pro japonštinu (Mozc), korejštinu (Hangul), zjednodušenou čínštinu (Pinyin), Tchaj-wan (Zhuyin) a Hongkong (Cangjie), přímo z instalátoru nebo později v <em>Setup &gt; Keyboard</em>. Každá z nich přichází se správnými písmy pro své znakové formy, okno s kandidáty následuje vaše téma a <code>Super + I</code> přepíná mezi vašimi vstupními jazyky. Hangul, Zhuyin a Cangjie si zachovávají své klávesy ve standardních pozicích, i když píšete latinkou na rozložení Dvorak, Colemak nebo AZERTY, stejně jako ve Windows a macOS. A klepnutí na samotný Shift vás přepne z metody zadávání do latinky a zase zpět, tak jak to dělají Sogou, Microsoft Pinyin a macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Přihlášení k Wi-Fi portálům s povinným přihlášením</h2>
+
+<p>Hotelová, letištní a kavárenská Wi-Fi konečně prostě funguje. Omarchy nyní pozná, když po vás síť chce, abyste se přihlásili nebo přijali její podmínky, než vás pustí online. Ikona sítě vás varuje a síťový panel ukazuje velké tlačítko Open Captive Portal, které vás vezme rovnou na přihlašovací stránku. Jakmile projdete, vše se samo vrátí do normálu.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Přihlášení k portálu s povinným přihlášením ze síťového panelu" width="380" /></p>
+
+<h2 id="five-new-default-apps">Pět nových výchozích aplikací</h2>
+
+<p><strong>Hype</strong> vytváří prezentace z jediného souboru v Markdownu, s vizuálním editorem snímků vedle zdroje, a exportuje do PDF nebo PowerPointu.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> nahrazuje Xournal++ pro papírování: otevřete PDF, umístěte svůj uložený podpis, text a data a uložte podepsanou kopii.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> kreslí stromovou mapu toho, co vám zaplňuje disk, barevně rozlišenou podle druhu, upozorňuje na mezipaměti, které je bezpečné znovu vygenerovat, a umožňuje vám označit, co má jít pryč.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> nahrává vaši kameru jedním tlačítkem, s tématem sladěným s vaší plochou.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> vám poskytuje vzdálenou plochu přes SSH. Připojte se k jinému stroji s Omarchy a ovládejte jeho celou plochu z okna na tom svém, s kartou pro každý stroj. A protože jede přes SSH, není potřeba nic dalšího nastavovat ani vystavovat. Ovládaný stroj ukazuje v liště indikátor vzdálené relace, takže je vždy jasné, když na něm někdo je.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>A je tu <strong>Elsewhen</strong>, světové hodiny, které žijí hned vedle hodin v liště. Klepnutím na město na glóbu nastavíte, kde jste, vyhledáte skutečná místa a pojmenujete lidi, kteří v každém městě žijí, takže vždy víte, jestli je slušná hodina na zavolání. Přepínejte mezi 12 a 24 hodinami pomocí <code>t</code>, mezi °F a °C pomocí <code>Alt + T</code> a vyvolejte je kdykoli pomocí <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>S Monologue pro nahrávání a Omacut pro stříhání už nové instalace nedodávají OBS Studio a Kdenlive. Lazydocker také z nových instalací zmizel, i když Docker a Docker Compose jsou stále součástí. Stroje, které už cokoli z toho mají, si to ponechají.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Potřebujete pracovat s lidmi, kteří žijí v Office? <em>Install &gt; Service &gt; Microsoft</em> nyní nastaví Outlook, Word, Excel, PowerPoint, Teams a OneDrive jako webové aplikace. Každá z nich dostane vlastní okno a položku ve spouštěči, takže se vedle všeho ostatního cítí jako doma. Už žádné výmluvy, proč v práci nepřejít na Omarchy!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams a PowerPoint na Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper pro diktování</h2>
+
+<p>Superwhisper je nyní výchozím diktovacím enginem Omarchy a je nastavený hned po instalaci. Klepněte na <code>Alt + Space</code> pro zahájení hovoru a znovu pro ukončení, nebo podržte <code>Right Alt</code> pro režim push-to-talk. Je neuvěřitelně rychlý a velmi přesný.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Diktování se Superwhisperem" /></p>
+
+<p>Začíná v cloudu, takže funguje v okamžiku instalace a prvních 10 000 slov je zdarma. Ale můžete přepnout na model ke stažení, který je zcela zdarma a běží kompletně lokálně, aniž by komukoli poslal jediné slovo. A pokud byste raději použili jiný lokální model, Voxtype je stále v nabídce jako alternativa.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Instalace za méně než deset sekund</h2>
+
+<p>Omarchy dříve instaloval zhruba 940 balíčků jeden po druhém. Nový instalátor F1 místo toho rozbalí předem sestavený obraz kořenového systému a navrch přidá jen balíčky pro tento konkrétní stroj. To zkracuje dobu instalace zhruba na polovinu na jakémkoli stroji.</p>
+
+<p>A na rychlém hardwaru je to absurdní. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> z AMD nastavil světový rekord s kompletní instalací Omarchy za <strong>7 sekund</strong> na svém notebooku od AMD. <a href="https://x.com/dhh/status/2117222836620202375">Sedm sekund!</a> Vzpomínám si, kdy pět minut vypadalo jako ambiciózní cíl.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy nainstalován za 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Rychlejší i všude jinde</h2>
+
+<p>Není to jen instalátor. Spouštění už se nezasekává na registraci binfmt. Výběr tématu se otevře hned, místo aby po čtvrt sekundě. Nabídky a panely se otevírají přímo ze zkratek Hyprlandu a přeskočí 60 ms, které dříve trvalo spuštění procesu. Nejpomalejší kontroly nabídky Omarchy šly z 200 ms na 16 ms, nový terminál ukazuje svůj prompt o 30 ms dříve a celá plocha nyní reaguje na změny, místo aby je dotazováním zjišťovala. Dokonce i odhlášení, restart a vypnutí proběhne v okamžiku, kdy vaše aplikace dokončí zavírání.</p>
+
+<h2 id="agent-upgrades">Vylepšení agentů</h2>
+
+<p>Omarchy je agentní OS a verze 4.5 přináší velkou várku vylepšení pro práci s agenty. Panel agentů nyní sleduje 23 agentů a poskytovatelů, oproti dřívějším 6, včetně Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter a Ollama. Každý limit dostane vlastní měřič s časem do jeho resetu, takže přesně vidíte, kolik prostoru vám ještě zbývá. A Grok je nyní plnohodnotným poskytovatelem vedle Claude a Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Panel agentů s několika předplatnými Claude a Codex" width="380" /></p>
+
+<p>A váš agent je vždy na dosah jednoho stisku klávesy. <code>Super + ~</code> shodí dolů konzoli ve stylu Quake přes ztmavenou plochu a při prvním otevření spustí vašeho výchozího agenta. Stiskněte to znovu pro její schování a vaše relace je přesně tam, kde jste ji nechali.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Konzole ve stylu Quake s běžícím agentem přes ztmavenou plochu" /></p>
+
+<p>Pokud žonglujete s více než jedním předplatným, můžete nyní mít na stejném stroji několik přihlášení Claude, Codex a Grok a vybírat, kterým nové relace začnou, pomocí <code>omarchy agent account</code>. Historie, nastavení a dovednosti jsou mezi nimi sdílené, takže <code>claude --continue</code> naváže přesně tam, kde jste po přepnutí skončili. Když se blížíte k limitu, Omarchy vám může buď nabídnout přepnutí jedním kliknutím, nebo nové relace sám přesune na účet s největším zbývajícím prostorem. A když nastavujete další stroj, <code>omarchy agent account copy</code> přenese všechna vaše přihlášení přes SSH, takže se nemusíte ke všemu znovu přihlašovat.</p>
+
+<p>Kimi a Ori, agentní harness OpenRouteru, se přidávají k volbám v <em>Setup &gt; Defaults &gt; Agent</em> a Antigravity od Googlu nahrazuje zastaralé Gemini CLI (<code>gemini</code> stále funguje jako alias). Dáváte přednost oknu před terminálem? Desktopové aplikace Claude a Amp jsou nyní na jedno kliknutí v <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Oznámení, od základu přepracovaná</h2>
+
+<p>Oznámení se nyní skládají podle odesílatele, následují vaše téma a sbalují identické opakování. Akční tlačítka, ověřovací kódy a odkazy fungují přímo z karty. <code>Super + Comma</code> provede akci u nejnovějšího (zavře ho, otevře nebo stiskne jeho tlačítko) a <code>Super + Ctrl + Comma</code> vám předá klávesnici k ovládání všech. Zvonek v liště zapíná režim Nerušit.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Nová oznámení" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Video pozadí a intra témat</h2>
+
+<p>Pozadí nyní mohou být videa. Vložte jedno a vaše plocha ožije valícími se vlnami nebo čímkoli jiným, co se vám zlíbí, zatímco zamykací obrazovka z něj ukazuje statický snímek. A témata nyní mají svůj nástup: každé může při přihlášení nebo přepnutí na něj přehrát krátké, tiché intro. (Raději klid? Vypněte intra v <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse se přidává k výchozím tématům</h2>
+
+<p>Jade Horse je celý v mlžných zelených tónech, s pozadími z vyřezávaného nefritu, díky nimž celá plocha vypadá jako svitková malba. Nahrazuje Osaka Jade mezi přibalenými tématy a přidává se k němu Starship jako druhé nové výchozí téma. Pokud používáte Osaka Jade, svou kopii si ponecháte a dál žije jako <a href="https://github.com/omacom/omarchy-osaka-jade-theme">téma třetí strany</a> pro každého, kdo si ho chce nainstalovat čerstvě.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Téma Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff je nové výchozí pozadí</h2>
+
+<p>Nové instalace vás nyní vítají pozadím Liftoff, nádherným startem při západu slunce, který je novým výchozím pozadím pro Tokyo Night. Vytvořil ho <a href="https://github.com/tcballard">Tom Ballard</a>, který ho původně vytvořil pro své <a href="https://github.com/tcballard/omarchy-theme-liftoff">téma Liftoff</a>. Díky, Tome!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Pozadí Liftoff od Toma Ballarda" /></p>
+
+<h2 id="boot-menu-now-quiet">Nabídka při spuštění je nyní tichá</h2>
+
+<p>Omarchy dříve při každém startu ukazoval nabídku při spuštění asi šest sekund, pro případ, že byste se potřebovali vrátit k dřívějšímu snímku. Ale skoro nikdo to nikdy neudělal. Limine nyní čeká jen jednu sekundu a spouští se tiše a většinou nabídku vůbec neuvidíte.</p>
+
+<p>Když jinou položku nebo snímek potřebujete, klepejte během spouštění stroje na libovolnou klávesu (šipka dolů funguje) a zastaví se v nabídce. A pokud si raději nabídku necháte zobrazenou déle natrvalo, nastavte si vlastní <code>timeout:</code> v <code>/boot/limine.conf</code> (například <code>timeout: 5</code>). Aktualizace vámi nastavený časový limit nechají být.</p>
+
+<h2 id="changed-hotkeys">Změněné klávesové zkratky</h2>
+
+<p>Některé zkratky se přesunuly:</p>
+
+<ul>
+  <li>Kalkulačka: <code>Super + Ctrl + Q</code> je nyní <code>Super + Shift + Q</code>.</li>
+  <li>Aktivita: <code>Super + Ctrl + T</code> je nyní <code>Super + Shift + T</code> a <code>Super + Ctrl + T</code> otevírá témata.</li>
+  <li>Síť: <code>Super + Ctrl + W</code> je nyní <code>Super + Ctrl + N</code> a <code>Super + Ctrl + W</code> otevírá pozadí.</li>
+  <li>Noční světlo už nemá zkratku (dříve to bylo <code>Super + Ctrl + N</code>); je v <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> otevírá Apps z doku místo nabídky Apps.</li>
+</ul>
+
+<p>Zkratky oznámení se změnily:</p>
+
+<ul>
+  <li><code>Super + Comma</code> provede akci u nejnovější karty (zavře ji, otevře ji nebo stiskne její jediné tlačítko) místo aby ji pouze zavíralo.</li>
+  <li>Zavření poslední se přesunulo na <code>Super + Alt + Comma</code>, které ji dříve otevíralo.</li>
+  <li>Ztlumení se přesunulo z <code>Super + Ctrl + Comma</code> na <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> vám nyní předává ovládání klávesnicí.</li>
+</ul>
+
+<p>Několik kláves funguje jinak:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> a <code>Super</code> + rolování zůstávají na pracovních plochách aktuálního monitoru, protože každý monitor má své vlastní.</li>
+  <li>V terminálu <code>Super + C</code> a <code>Super + V</code> posílají <code>Ctrl + Shift + C</code> a <code>Ctrl + Shift + V</code> místo <code>Ctrl + Insert</code> a <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Nové výchozí zkratky, které by mohly kolidovat s vašimi vlastními vazbami: <code>Super + Q</code> (zavření okna, vedle <code>Super + W</code>), <code>Super + A</code> (vybrat vše), <code>Super + M</code> (minimalizovat do doku), <code>Super + ~</code> a <code>Super + Shift + ~</code> (konzole Quake), <code>Super + Alt + L</code> (předchozí rozložení), <code>Super + Shift + Ctrl + Arrows</code> (přesun okna na jiný monitor), <code>Super + Ctrl + Alt + C</code> (snímek obrazovky), <code>Super + Ctrl + Alt + E</code> (světové hodiny), <code>Super + Ctrl + Alt + F</code> (plocha na celou obrazovku) a podržení <code>Right Alt</code> pro diktování push-to-talk.</p>
+
+<h2 id="more-features">Další funkce</h2>
+
+<ul>
+  <li>Dát každému monitoru vlastní pracovní plochy: <code>Super + 1-0</code> přejde na pracovní plochy monitoru, na kterém jste, a <code>Super + Arrows</code> se přesouvá na další displeje a zpět od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Shromáždit vše o vzhledu plochy do nové nabídky Appearance, která nahrazuje Style: téma, pozadí, písmo, lišta, okna, branding, dok, rozložení pracovních ploch, animace a odemykací obrazovka od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Vybrat si neprůhledná, průhledná nebo skleněná okna v <em>Appearance &gt; Window Transparency</em> a k tomu skleněné pozadí lišty od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Vybrat rohy oken podle tématu, ostré nebo zaoblené v <em>Appearance &gt; Window Corners</em> od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Přidat režim bez animací, ve výchozím nastavení zapnutý ve virtuálních počítačích od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Nastavit aplikace ve výchozím nastavení jako neprůhledné a terminály ponechat průhledné od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Přidat Slack do Install &gt; Service od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Zajistit, aby Alt + Space přepínalo diktování na každém backendu od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Přidat tlačítka Open a Edit k oznámením o snímcích obrazovky a Open a Cut k nahrávkám obrazovky a stahování yt-dlp od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Přidat nabídku Update &gt; Kernel pro přepínání výchozího jádra od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Přidat synchronizaci tématu na stroje herdr od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Přidat o.rebind pro nahrazování klávesových vazeb Hyprlandu od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Ptát se na vaši git identitu po prvním přihlášení místo v instalátoru, s přihlášením přes GitHub od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Umožnit instalačnímu médiu přednastavit jazyk, klávesnici a časové pásmo od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Umožnit widgetům lišty pobývat v zásuvce oznamovací oblasti od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Umožnit odebrání widgetu lišty jeho přetažením z lišty pryč od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Umožnit rolování mezi pracovními plochami z lišty od <a href="https://github.com/outfoxxed">@outfoxxed</a> v <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Umožnit mazání dalších témat z výběru témat od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Přidat CLI hey, basecamp a Cloudflare jako nástroje instalované líně od <a href="https://github.com/monorkin">@monorkin</a> v <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Přidat SSH Agent jako volitelnou službu od <a href="https://github.com/carletex">@carletex</a> v <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Umožnit zvolit, jak dlouho trvá sudo bez hesla od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Přidat tlačítko pro zavření při najetí myší k vyskakovacím oznámením od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Umožnit ztlumení oznámení programu z jeho diagnostiky pádu od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Umožnit omarchy-notification-send přidávat akční tlačítka od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Přidat formát hodin s živými sekundami od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Upravovat podsvícení klávesnice pomocí Ctrl a kláves jasu od <a href="https://github.com/ludagoo">@ludagoo</a> v <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Zobrazit produktový klíč Windows od OEM z firmwaru od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Přidat původní vi jako volbu terminálového editoru od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Přidat pozadí Roadster Starlight do Ethereal od <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> v <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Bezpečnost</h2>
+
+<ul>
+  <li>Udržet heslo k virtuálnímu počítači s Windows mimo argumenty RDP klienta od <a href="https://github.com/dicemans">@dicemans</a> v <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Přesunout stav nahrávání obrazovky z /tmp zapisovatelného pro všechny od <a href="https://github.com/Chessing234">@Chessing234</a> v <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Zpřísnit vypršení sudo bez hesla při uspání od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Navázat úklid inhibitoru aktualizací na proces, který ho vytvořil od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Izolovat autorizaci úklidu OCaml od <a href="https://github.com/ErikMelton">@ErikMelton</a> v <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Připnout zvýšení oprávnění pro obnovení do továrního nastavení na zabalený příkaz od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Při resetu odebrat uložené šablony otisků prstů pro volajícího uživatele od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Odmítat názvy hooků a stavů, které jsou cestami od <a href="https://github.com/Adolanium">@Adolanium</a> v <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Podřídit se system-auth v zásobníku polkit, který zapisuje nastavení otisků a FIDO2 od <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> v <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Při odstraňování otisků je odebrat i z vlastního úložiště čtečky od <a href="https://github.com/scottjones">@scottjones</a> v <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Zabránit nastavení SSH, aby nechalo sshd běžet s přihlášením heslem, když nebyl přidán žádný klíč od <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> v <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Zabránit jinému místnímu uživateli, aby během upgradu Voxtype podstrčil svůj vlastní program od <a href="https://github.com/Vladkarok">@Vladkarok</a> v <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Zpřísnit způsob, jakým obnovení do továrního nastavení předává vaše nastavení gum přes sudo od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Opravy</h2>
+
+<ul>
+  <li>Opravit pád Hyprlandu, když je monitor odpojen, deaktivován nebo vypnut zavřením víka od <a href="https://github.com/falkoro">@falkoro</a> v <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Opravit upgrady, které mohly zanechat obraz jádra bez parametru root= od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Opravit obnovení do továrního nastavení, které mazalo zaváděcí položky jiných systémů od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Opravit instalaci vedle jiného Omarchy, která odstraňovala zaváděcí položku té instalace od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Opravit instalace do volného místa, které mohly vzít existující oddíl pro nový od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Opravit pokračování přerušené změny hesla disku, které odstraňovalo nesprávný klíč od <a href="https://github.com/scottjones">@scottjones</a> v <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Ptát se na heslo sudo jednou na aktualizaci Omarchy od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Ptát se na heslo sudo jednou na deset minut místo znovu při každém příkazu od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Pokrýt aktualizace AUR a kontrolu při spuštění jedinou výzvou sudo aktualizace od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Udržet aktualizace balíčků v bezpečí před odhlášením uprostřed transakce od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Odhlásit, restartovat a vypnout, jakmile aplikace dokončí zavírání od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Nahradit Tensaku nástrojem Omasnap pro snímky obrazovky od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Nechat panely vyrůstat z lišty a morfovat mezi nimi, s odezvou při stisku na tlačítkách a ikonách lišty od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Nechat oznámení vklouznout zpod lišty a zase odklouznout stejnou cestou od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Kontrolovat připojení vůči vlastnímu koncovému bodu Omarchy a opravit přihlašování k portálům s povinným přihlášením od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Opravit přepínání z edge na stable nebo RC, které nechávalo stroj na starém sestavení od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Opravit aktualizaci na 4.5, která se zastavovala, když shell odpovídal pomalu od <a href="https://github.com/AnPod">@AnPod</a> v <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Opravit aktualizace, které tiše selhávaly při spuštění mimo relaci plochy od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Opravit neúspěšné stažení nástroje mise, které zastavovalo zbytek aktualizace systému od <a href="https://github.com/sanjyay">@sanjyay</a> v <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Opravit aktualizace selhávající, když není nainstalován omarchy-nvim od <a href="https://github.com/imzihuailin">@imzihuailin</a> v <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Opravit instalace s duálním spuštěním, kterým se nedařilo připojit oddíl EFI od <a href="https://github.com/Damian626">@Damian626</a> v <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Opravit instalace, které se zastavovaly, když firmware nepřijal novou zaváděcí položku od <a href="https://github.com/ryanio">@ryanio</a> v <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Opravit instalace, které se zastavovaly na discích se starým členem RAID nebo skupinou svazků od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Spustit instalátor dříve tím, že se nečeká na každé USB zařízení a úlohu při spuštění od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Zrychlit šifrování disku pomocí sektorů o velikosti 4096 bajtů u nových instalací od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Uvádět interní disky jako první a otevírat instalační obrazovky na bezpečné volbě od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Uvádět Full disk install v instalátoru jako první a vracet se pomocí Esc na obrazovkách disků od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Opravit škálování jednoho monitoru, které měnilo škálování každého dalšího monitoru od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Opravit aplikace XWayland, které vycházely příliš velké, když monitory používaly různá škálování od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Opravit HDR displeje, které přepínaly na vybledlý HDR obraz, když okno přešlo na celou obrazovku od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Opravit rozmazané nabídky a výběry na displejích s frakčním škálováním od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Opravit displej notebooku, který zůstával vypnutý po odpojení externího displeje od <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> v <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Opravit opětovné zapnutí displeje, které resetovalo jeho pozici, škálování a režim od <a href="https://github.com/zihaomu">@zihaomu</a> v <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Opravit nabídky a výběry, které se znovu neotevíraly po odpojení monitoru od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Opravit pracovní plochy jednotlivých monitorů, které se přesouvaly po odpojení monitoru od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Opravit pád shellu, když se odpojilo zvukové zařízení při otevřeném zvukovém panelu od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Opravit okna na celou obrazovku, která po spořiči obrazovky ztrácela režim celé obrazovky od <a href="https://github.com/MGross21">@MGross21</a> v <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Opravit kurzor mizící při spuštění po opětovném načtení Hyprlandu od <a href="https://github.com/spencerbull">@spencerbull</a> v <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Opravit kurzor, který se nad aplikacemi XWayland stával neviditelným od <a href="https://github.com/Sebo1411">@Sebo1411</a> v <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Opravit zamrzání zachytávání schránky od <a href="https://github.com/maxcroy1">@maxcroy1</a> v <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Opravit přístup ke klíčence přes portál XDG Secret od <a href="https://github.com/pkwagner">@pkwagner</a> v <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Opravit registraci otisků prstů a obnovení zamykací obrazovky od <a href="https://github.com/GeertJohan">@GeertJohan</a> v <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Provést registrací otisků prstů krok za krokem od <a href="https://github.com/scottjones">@scottjones</a> v <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Opravit automatické opakování kláves v poli pro heslo na zamykací obrazovce od <a href="https://github.com/berndb">@berndb</a> v <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Opravit tapetu zamykací obrazovky, která se při probuzení načítala až po poli pro heslo od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Opravit časové limity zámku obrazovky, když relace jmenuje displej, který už není od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Zrychlit otevírání terminálu v adresáři aktuálního okna od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Zajistit, aby editory z rodiny VS Code sledovaly změny tématu živě od <a href="https://github.com/Macho0x">@Macho0x</a> v <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Při změně tématu přetématovat běžící relace Hunk od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Pamatovat si vybranou tapetu pro každé téma od <a href="https://github.com/OldJobobo">@OldJobobo</a> v <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Udržet výběr obrázků rychlý a ostrý u velkých sbírek a HiDPI od <a href="https://github.com/keylimesoda">@keylimesoda</a> v <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Snížit využití CPU a paměti, které průhledná lišta spotřebovává vzorkováním tapety od <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> v <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Zrychlit panel Tailscale na tailnetech s tisíci stroji od <a href="https://github.com/iskakaushik">@iskakaushik</a> v <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Dostat Grok v panelu agentů na úroveň Claude a Codex od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Aplikovat výběr účtu agenta na podprocesy CLI od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Zobrazovat jednotlivé limity útraty Codex a časy jejich resetu od <a href="https://github.com/Stegi56">@Stegi56</a> v <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Nastavit integraci prohlížeče při výběru Claude od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Opravit agenty, kteří nenacházeli nástroje mise nainstalované po jejich spuštění od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Opravit vkládání snímků obrazovky do agentů v panelech herdr spuštěných přes SSH od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Opravit panel agentů, kterému chyběly komprimované relace Codex od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Vrátit Caps Lock do normálu a udělat ze Shift + Caps Lock klávesu compose od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Aplikovat systémové rozložení klávesnice na přihlašovací obrazovku od <a href="https://github.com/g-desoutter">@g-desoutter</a> v <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Opravit přepínání rozložení, které přeskakovalo každé druhé stisknutí u nelatinského rozložení klávesnice od <a href="https://github.com/manuaudio">@manuaudio</a> v <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Zapnout hardwarové dekódování videa v mpv od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Přepnout řízení přetížení TCP na BBR a používat plánovač I/O kyber na skutečných discích od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Instalovat T3 Code jako jeho samoaktualizační AppImage od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Vylepšit instalaci PHP a Laravelu od <a href="https://github.com/nunomaduro">@nunomaduro</a> v <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Instalovat Node líně a nechat vaši konfiguraci mise na pokoji od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Instalovat chybějící aplikace při výběru výchozích od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Ztlumit nainstalovaný software v nabídkách Install místo jeho skrývání od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Registrovat správce hesel a další nativní messaging hosty pro Brave Origin od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Seskupovat webová oznámení Brave Origin podle webu a při kliknutí otevřít správnou kartu od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Automaticky schvalovat odstraňování osiřelých balíčků během aktualizací od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Aktualizovat klíčenku Omarchy před každou aktualizací od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Nabídnout restart po přepnutí kanálů od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Nabízet aktualizaci při prvním spuštění jen když je co aktualizovat od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Najít polohu pro počasí a časové pásmo instalátoru pomocí vlastní geo služby Omarchy od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Nastavovat hodiny z ntp.omarchy.org místo NTP poolu Arch od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Měřit rychlost sítě vlastním testem rychlosti Omarchy od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Zobrazovat během prvního spuštění obrazovku průběhu s trasovanou ikonou od <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> v <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Spouštět živé ISO na jádře Omarchy a na jádře T2 pouze na Macích od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Zabránit offline instalacím čekat na vyhledávání verzí mise od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Opravit offline instalace, které výchozí časové pásmo nastavovaly na Africa/Abidjan od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Opravit výběr časového pásma instalátoru, který vám nedovoloval psát pro vyhledávání od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Opravit živé ISO, které viselo za úvodní obrazovkou při spuštění z disku Ventoy od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Opravit německé a francouzské mapy kláves konzole ve formuláři nastavení instalátoru od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Skrýt anglické nápovědy kláves nástroje gum v instalátoru a nastavení gitu od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Odstranit vtipy pouze v angličtině z obrazovky průběhu instalace od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Opravit výstup instalátoru, který během přípravy disku dopadal na obrazovku bez odsazení od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Opravit upgrade Quattro, který resetoval výchozí prohlížeč na Chromium od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Opravit upgrade Quattro, který se zastavoval na názvech pozadí s znaky mimo ASCII od <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> v <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Opravit migraci jádra, která se zastavovala na strojích spouštěných pomocí GRUB nebo systemd-boot od <a href="https://github.com/manuaudio">@manuaudio</a> v <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Opravit hibernaci na nešifrovaných strojích s více než jedním diskem NVMe od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Opravit migraci FIDO2, která byla označena jako hotová dříve, než byla vyřešena od <a href="https://github.com/ErikMelton">@ErikMelton</a> v <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Opravit plovoucí pracovní plochu, která přebírala první okno pokryté vaším vlastním pravidlem pro plovoucí okna od <a href="https://github.com/zihaomu">@zihaomu</a> v <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Opravit kompozitor, který se zasekával, když Super + L přepínal pracovní plochu do plovoucího režimu a zpět od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Opravit Alt + Shift + Tab, které necyklilo zpět přes každé okno od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Opravit vyskakovací okna, která se při přesunu na jiný monitor necentrovala od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Opravit nové terminály, které se otevíraly mimo vaši domovskou složku, když bylo v popředí neterminálové okno od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Opravit okna 1Password a Bitwarden, která neplavala od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Opravit 1Password, který se zavíral při ukončení terminálu instalátoru od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Opravit dialogy DaVinci Resolve, které kradly zaměření ukazatele od <a href="https://github.com/AksharP5">@AksharP5</a> v <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Opravit plochu prosvítající skrz displeje virtuálního počítače s Windows od <a href="https://github.com/jmwall">@jmwall</a> v <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Opravit starší hesla virtuálního počítače s Windows obsahující $$ po migraci Quattro od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Zabránit vyskakovacímu oknu Hyprlandu s žádostí o dar, aby se zobrazovalo po upgradech od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Vylepšit přetahování a uspořádání widgetů lišty od <a href="https://github.com/outfoxxed">@outfoxxed</a> v <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normalizovat velikost a zarovnání ikon lišty od <a href="https://github.com/bjarneo">@bjarneo</a> v <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Odhalovat skryté indikátory lišty pouze při najetí vlevo od hodin od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Zarovnat ikony oznamovací oblasti s ostatními ikonami lišty od <a href="https://github.com/ayoubdya">@ayoubdya</a> v <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Zobrazit další nápovědu lišty okamžitě, když už je jedna zobrazená od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Otevírat panely hodin a počasí pod jejich widgety od <a href="https://github.com/scottjones">@scottjones</a> v <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Nechávat síťový panel otevřený po výběru poskytovatele DNS od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Opravit zavírající se vyskakovací okno, které nechávalo widgety lišty bez odezvy od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Opravit skrytou lištu, která zachytávala kliknutí podél horního okraje oken na celou obrazovku od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Opravit tmavé ikony oznamovací oblasti mizící v liště od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Opravit ikony lišty, které seděly nerovnoměrně nebo mimo střed od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Opravit nápovědy lišty, které svůj první snímek kreslily ve špatné velikosti od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Opravit historii oznámení, která každou kartu zobrazovala jako právě teď od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Opravit oznámení při prvním přihlášení, která se sbalovala do jediného zásobníku od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Opravit kliknutí na oznámení, která nezaměřovala aplikace s víceslovnými názvy od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Opravit oznámení Taildrop, která zobrazovala prázdný text a chybějící náhledy od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Opravit oznámení o baterii, které u plné baterie zobrazovalo prázdný čas a 0 W od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Opravit varování o nízké baterii, které zůstávalo po zapojení a vracelo se po restartech od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Opravit odběr baterie, který na některých noteboocích ukazoval 0 W od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Opravit plnou baterii na napájení ze sítě, která se zobrazovala jako vybíjející se od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Opravit zobrazování režimu Hibernate, když jádro neumí hibernovat od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Opravit připojení gvfs, která po probuzení mizela od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Opravit podsvícení klávesnice, které zůstávalo vypnuté poté, co zámek dvakrát zhasl od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Opravit čtečku otisků prstů, která se probouzela, když zámek měl displeje vypnuté od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Opravit výzvu k heslu při spuštění, která byla mimo střed, když se displej objevil pozdě od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Opravit klávesu pro ukončení spořiče obrazovky blikající v rohu od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Opravit blikání ikony Wi-Fi v sítích OWE v přechodovém režimu od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Opravit chybu OWE vypsanou v terminálu po instalaci tématu od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Opravit bliknutí při přepínání ze statického na video pozadí od <a href="https://github.com/bjarneo">@bjarneo</a> v <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Aktualizovat Hackerman na zvětšené geometrické pozadí od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Opravit témata s cyklickými odkazy na barvy, která zasekávala přepínání témat od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Opravit Neovim, kterému se nedařilo spustit s tématem Catppuccin od <a href="https://github.com/anandude">@anandude</a> v <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Opravit OpenCode 2, který startoval na svém základním tématu místo tématu Omarchy od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Opravit nízkokontrastní vložený kód ve vygenerovaném tématu VS Code od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Opravit instalace T3 Code, které se zastavovaly při párování aktuálního tématu od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Opravit velikost písma terminálu, která se resetovala při změně rodiny písma od <a href="https://github.com/sbalbalosa">@sbalbalosa</a> v <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Opravit změnu písem, která vypisovala ID procesu terminálu od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Opravit přepínání jazyků, které přestavovalo každé národní prostředí a ztrácelo je na téměř plném disku od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Opravit shell, který zobrazoval surové překladové klíče před načtením svých překladů od <a href="https://github.com/zihaomu">@zihaomu</a> v <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Zrychlit přeložený text ve skriptech Omarchy od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Aktualizovat překlady pro 686 řetězců, z toho 392 v manuálu od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Opravit ovládání hlasitosti a výstupu v neanglických národních prostředích od <a href="https://github.com/Sebo1411">@Sebo1411</a> v <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Opravit údaje o využití CPU v neanglických národních prostředích od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Opravit službu fcitx5, která se restartovala donekonečna, když fcitx5 nebyl nainstalován od <a href="https://github.com/therk">@therk</a> v <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Opravit widget rozložení klávesnice, který přepínal zařízení, na kterých nikdo nepíše od <a href="https://github.com/bjarneo">@bjarneo</a> v <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Opravit widget rozložení klávesnice, který přepínal na zařízení s klávesovými zkratkami výrobce od <a href="https://github.com/yashranaway">@yashranaway</a> v <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Opravit nabídku klávesových vazeb, která nechávala běžet proces Lua na 100 % CPU od <a href="https://github.com/tobi">@tobi</a> v <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Opravit hodiny, které zaplavovaly log každou milisekundu při konci letního času od <a href="https://github.com/falkoro">@falkoro</a> v <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Opravit shell, který nahrazoval soubor shell.json, který nedokázal přečíst, výchozími hodnotami od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Opravit nabídku Omarchy, která ztrácela své řádky během aktualizace svého souboru od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Opravit opětovné zapnutí pluginu, které nevracelo jeho widget lišty od <a href="https://github.com/berrimi">@berrimi</a> v <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Opravit místní pluginy, které se ve smyčce znovu načítaly na svém vlastním bajtkódu Pythonu od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Opravit skrytá tlačítka v pluginech, která se sbalovala na své odsazení od <a href="https://github.com/dmkenney">@dmkenney</a> v <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Opravit rozbalovací nabídky, které odřezávaly svou poslední položku od <a href="https://github.com/sprajs">@sprajs</a> v <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Opravit rozbalovací nabídky, které se nezavíraly při druhém kliknutí od <a href="https://github.com/felixzsh">@felixzsh</a> v <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Opravit knoflíky posuvníků, které se zastavovaly před koncem dráhy od <a href="https://github.com/erikrjohansson">@erikrjohansson</a> v <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Opravit Update &gt; Hardware &gt; Trackpad, kterému chyběla většina touchpadů a resetoval klávesnici od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Nyní uvolní zaseknuté tlačítko na každém touchpadu a resetuje pouze touchpad místo klávesnice a dotykové obrazovky spolu s ním.</p>
+  </li>
+  <li>Zajistit, aby nabídka webkamery kontrolovala kamery, aniž by je zapínala od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Opravit rolovací zachytávání Omasnap, které zachytávalo pouze černé snímky od <a href="https://github.com/falkoro">@falkoro</a> v <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Opravit výběr snímků obrazovky, který odvazoval vaše vlastní klávesy od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Opravit zastavení nahrávání, které oznamovalo prázdnou uloženou nahrávku od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Opravit výběr obrázků, který zobrazoval zastaralé miniatury u přepsaných obrázků od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Opravit noční světlo, které se při vypnutí úplně neresetovalo od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Opravit widget médií, který opouštěl pozastavenou skladbu kvůli nečinnému přehrávači od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Opravit opakované skenování displejů u monitorů, které nehlásí jas od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Opravit Super + Shift + Return, které selhávalo, když byl odinstalován nakonfigurovaný prohlížeč od <a href="https://github.com/vitally">@vitally</a> v <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Opravit zkratky kalkulačky, které zůstávaly po odebrání předinstalovaných aplikací od <a href="https://github.com/OldJobobo">@OldJobobo</a> v <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Opravit zkratku Copy URL v profilech Brave Origin od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Opravit vyskakovací okno rozšíření Bitwarden, které se otevíralo ve špatné velikosti od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Opravit Battle.net, který se na HiDPI monitorech otevíral ve škálování 100 % od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Opravit výběry souborů Inkscape, které se otevíraly dlaždicově od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Opravit balíčky Go z AUR, kterým se během aktualizací nedařilo sestavit, když Go spravuje mise od <a href="https://github.com/shbernal">@shbernal</a> v <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Opravit instalaci ONCE, když nejste ve skupině docker od <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> v <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Opravit kliknutí v panelu agentů, která otevírala oznamovací oblast od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Opravit nastavení účtu agenta, které zakopávalo o visící sdílený symbolický odkaz od <a href="https://github.com/manuaudio">@manuaudio</a> v <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Opravit <code>--reauth</code>, které přidávalo nový účet agenta, když žádný nebyl od <a href="https://github.com/manuaudio">@manuaudio</a> v <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Zajistit, aby nápověda k přejmenování účtu agenta jmenovala jeho poskytovatele od <a href="https://github.com/manuaudio">@manuaudio</a> v <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Opravit aktualizace klíčenky, které tvrdily úspěch, když operace s klíči selhaly od <a href="https://github.com/Adolanium">@Adolanium</a> v <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Opravit prázdnou výzvu obnovení do továrního nastavení při spuštění pod sudo od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Opravit připomínku čekajících migrací, která se hromadila jednou za každé přihlášení od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Opravit OS Age v About, které počítalo od sestavení ISO místo od instalace od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Opravit Dropbox, který u souborů starých 360 až 364 dní zobrazoval „0y ago“ od <a href="https://github.com/manuaudio">@manuaudio</a> v <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Opravit kontrolu stavu Dropboxu, která způsobovala vypršení čekajícího přihlašovacího odkazu od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Opravit instalaci knihovny ikony Dropboxu v oznamovací oblasti od <a href="https://github.com/omarchybot">@omarchybot</a> v <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Povolit překryvné posuvníky v Chromiu od <a href="https://github.com/robzolkos">@robzolkos</a> v <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Ptát se před zapnutím Touch ID na Macích s Apple Silicon od <a href="https://github.com/scottjones">@scottjones</a> v <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Nabízet kanál RC na Macích s Apple Silicon od <a href="https://github.com/maralcbr">@maralcbr</a> v <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Nabízet kanál stable na Macích s Apple Silicon od <a href="https://github.com/maralcbr">@maralcbr</a> v <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Opravit aliasy, funkce a prostředí Omarchy chybějící v nových terminálech na Apple Silicon od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Nastavit nainstalované aplikace NVIDIA od <a href="https://github.com/jdvmi00">@jdvmi00</a> v <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Opravit instalace selhávající na Lenovo Pro 9 s NVIDIA N1x od <a href="https://github.com/breymander">@breymander</a> v <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Opravit chybějící interní reproduktory a mikrofony na noteboocích N1x, které používaly dřívější zvukové profily od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Opravit pomalou plochu na strojích NVIDIA GB10, jako je DGX Spark od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Opravit psaní na zamykací obrazovce po probuzení na NVIDIA od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Zámek také už znovu nezhasne právě ve chvíli, kdy se panel rozsvítí.</p>
+  </li>
+  <li>Opravit Lutris a Battle.net, které instalovaly 32bitový ovladač Vulkan pro jinou GPU od <a href="https://github.com/zihaomu">@zihaomu</a> v <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Přestat žádat o restart po každé aktualizaci na ARM od <a href="https://github.com/birkskyum">@birkskyum</a> v <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Nabízet kanály stable a RC na aarch64 od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Zajistit, aby profily napájení fungovaly na noteboocích ARM od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Nabízet Dropbox na strojích ARM se stránkami 4K a Spotify jako webovou aplikaci na ARM od <a href="https://github.com/birkskyum">@birkskyum</a> v <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Skrýt instalace GeForce NOW, Battle.net a Lutris na ARM od <a href="https://github.com/birkskyum">@birkskyum</a> v <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Opravit aplikaci Hermes, která se na ARM neaktualizovala na místě od <a href="https://github.com/ryanrhughes">@ryanrhughes</a> v <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Opravit klávesnice notebooků Snapdragon, které nepsaly při výzvě k odemčení disku od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Opravit kamery chybějící při přihlášení na noteboocích Snapdragon od <a href="https://github.com/birkskyum">@birkskyum</a> v <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Opravit černou obrazovku před odemčením disku na noteboocích Snapdragon X2 od <a href="https://github.com/jdvmi00">@jdvmi00</a> v <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Dekódovat video hardwarově na Intel Wildcat Lake od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Opravit pády živého ISO na noteboocích Arrow Lake-H od <a href="https://github.com/emirb">@emirb</a> v <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Opravit interní mikrofon HP EliteBook Ultra G1q od <a href="https://github.com/bprendie">@bprendie</a> v <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Používat upstream podporu pro Ethernet Motorcomm YT6801 od <a href="https://github.com/AFOliveira">@AFOliveira</a> v <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Předávat Elgato Cam Link 4K jako virtuální kameru 16:9 od <a href="https://github.com/dhh">@dhh</a> v <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Podporovat čtečky otisků prstů, které platforma pojmenuje od <a href="https://github.com/scottjones">@scottjones</a> v <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

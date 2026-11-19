@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (она же Quattro RS!) — первый крупный функциональный релиз после <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, и это нечто огромное: более 740 pull request’ов от более чем 180 участников, слитых всего за двенадцать недель. Теперь она предлагает традиционный режим рабочего стола рядом с тайлинговым по умолчанию. Вы можете установить её нативно на MacBook с M1/M2/M3/Neo. И она говорит на 50 языках. И ещё куча других функций, исправлений и улучшений. Уже на Omarchy? Запустите <em>Update &gt; Omarchy</em>. Новая машина? <a href="/#install">Забирайте здесь</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Плавающие рабочие пространства с доком</h2>
+
+<p><code>Super + L</code> теперь переключает любое рабочее пространство между тайлингом, прокруткой и плавающим режимом. На плавающем рабочем пространстве каждое окно получает строку заголовка в цветах вашей темы, а док показывает ваши закреплённые приложения, всё запущенное и сетку всех установленных приложений. Перетаскивайте, чтобы изменить порядок или закрепить, щёлкните правой кнопкой мыши для дополнительных действий, а <code>Super + M</code> сворачивает окно в док.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Это прекрасная отправная точка для всех, кто приходит с macOS или Windows и ещё не готов полностью переходить на тайлинг. Или для всех, кто просто хочет одно рабочее пространство, где окна могут развалиться как угодно. Смешивайте и сочетайте для каждого рабочего пространства, а панель показывает, какой макет использует каждое из них.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy на Apple Silicon</h2>
+
+<p>Наша невероятная команда <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> выпустила нативный установщик для Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Скачайте приложение</a> на macOS, и оно поставит Omarchy прямо рядом с ней на ваш M1, M2, M3 или Neo MacBook. Никаких USB-флешек, никаких заклинаний в терминале. Предпочитаете Homebrew? Это одна строка:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Установщик Omarchy для Mac" /></p>
+
+<p>Это то, что мы задумали сделать в сентябре: завершить то, что начала Asahi. Два месяца спустя вы можете просто скачать её. Потрясающая работа всей команды.</p>
+
+<p>И они на этом не останавливаются. Сейчас ведётся работа над M4, M5 и M6, так что, вероятно, скоро Omarchy будет работать на каждом Mac с Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy на M2 Max, M3 Air, Neo, M4 Pro и M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Поддержка ARM для NVIDIA DGX Spark + N1X (и скоро Snapdragon)</h2>
+
+<p>Omarchy 4.5 выпускает свой первый ARM ISO, и с ним приходит предварительная поддержка ARM-машин NVIDIA: настольного DGX Spark и ноутбуков на базе N1X, таких как <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> и <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. И скоро у нас также будет поддержка всей линейки ARM-машин Snapdragon. Пока ещё рано, так что ожидайте несколько шероховатостей и, пожалуйста, сообщайте обо всём, что ломается, на <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 языков и 5 методов ввода</h2>
+
+<p>Теперь Omarchy говорит на 50 языках. Выберите один в <em>Setup &gt; Language</em> (или запустите <code>omarchy language &lt;code&gt;</code>), и меню, рабочий стол и уведомления Omarchy переключатся немедленно. Системная локаль последует при вашем следующем входе.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Переключение языков" /></p>
+
+<p>Но говорить на языке — только половина дела. Нужно ещё и печатать на нём. Поэтому Omarchy теперь настраивает правильные методы ввода для японского (Mozc), корейского (Hangul), упрощённого китайского (Pinyin), тайваньского (Zhuyin) и гонконгского (Cangjie) прямо из установщика или позже в <em>Setup &gt; Keyboard</em>. Каждый поставляется с нужными шрифтами для своих форм символов, окно кандидатов следует вашей теме, а <code>Super + I</code> переключает между вашими языками ввода. Hangul, Zhuyin и Cangjie сохраняют свои клавиши в стандартных позициях, даже если вы печатаете латиницей на Dvorak, Colemak или AZERTY, прямо как на Windows и macOS. А нажатие одного только Shift выходит из метода ввода в латинские буквы и обратно, как работают Sogou, Microsoft Pinyin и macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Вход на порталы авторизации Wi-Fi</h2>
+
+<p>Wi-Fi в отелях, аэропортах и кофейнях наконец-то просто работает. Omarchy теперь замечает, когда сеть хочет, чтобы вы вошли или приняли её условия, прежде чем пустить вас в интернет. Значок сети предупреждает вас, а панель сети показывает большую кнопку Open Captive Portal, которая ведёт вас прямо на страницу входа. Как только вы пройдёте дальше, всё само возвращается в норму.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Вход на портал авторизации из панели сети" width="380" /></p>
+
+<h2 id="five-new-default-apps">Пять новых приложений по умолчанию</h2>
+
+<p><strong>Hype</strong> делает презентации из одного файла Markdown, с визуальным редактором слайдов рядом с исходником, и экспортирует в PDF или PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> заменяет Xournal++ для бумажной работы: откройте PDF, разместите сохранённую подпись, текст и даты и сохраните подписанную копию.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> рисует древовидную карту того, чем заполнен ваш диск, окрашенную по типу, выделяет кэши, которые безопасно регенерировать, и позволяет отметить, что должно уйти.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> записывает вашу камеру одним нажатием клавиши, оформлена в соответствии с вашим рабочим столом.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> даёт вам удалённый рабочий стол через SSH. Подключитесь к другой машине Omarchy и управляйте её полным рабочим столом из окна на вашей, с вкладкой для каждой машины. И поскольку это работает поверх SSH, не нужно ничего дополнительно настраивать или выставлять наружу. На управляемой машине в панели отображается индикатор удалённой сессии, так что всегда ясно, когда кто-то на ней находится.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>И есть <strong>Elsewhen</strong> — мировые часы, которые живут прямо рядом с часами в панели. Нажмите на город на глобусе, чтобы задать, где вы находитесь, ищите настоящие места и называйте людей, которые живут в каждом городе, чтобы всегда знать, приличное ли сейчас время для звонка. Переключайтесь между 12 и 24 часами с помощью <code>t</code>, между °F и °C с помощью <code>Alt + T</code> и вызывайте в любое время с помощью <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>С Monologue для записи и Omacut для обрезки новые установки больше не поставляются с OBS Studio и Kdenlive. Lazydocker тоже исчез из новых установок, хотя Docker и Docker Compose по-прежнему включены. Машины, на которых уже есть что-то из них, их сохраняют.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Нужно работать с людьми, которые живут в Office? <em>Install &gt; Service &gt; Microsoft</em> теперь настраивает Outlook, Word, Excel, PowerPoint, Teams и OneDrive как веб-приложения. Каждое получает собственное окно и запись в панели запуска, так что они чувствуют себя как дома рядом со всем остальным. Больше никаких оправданий, чтобы не переходить на Omarchy на работе!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams и PowerPoint на Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper для диктовки</h2>
+
+<p>Superwhisper теперь является движком диктовки Omarchy по умолчанию, и он настроен из коробки. Нажмите <code>Alt + Space</code>, чтобы начать говорить, и ещё раз, чтобы остановиться, или удерживайте <code>Right Alt</code> для push-to-talk. Это невероятно быстро и очень точно.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Диктовка с помощью Superwhisper" /></p>
+
+<p>Сначала он работает в облаке, так что работает в момент установки, а первые 10 000 слов бесплатны. Но вы можете переключиться на загружаемую модель, которая полностью бесплатна и работает полностью локально, не отправляя ни слова никому. А если вы предпочитаете другую локальную модель, Voxtype по-прежнему предлагается как альтернатива.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Установка менее чем за десять секунд</h2>
+
+<p>Раньше Omarchy устанавливала около 940 пакетов по одному. Новый установщик F1 вместо этого распаковывает готовый образ корневой системы и добавляет сверху только пакеты этой машины. Это сокращает время установки примерно вдвое на любой машине.</p>
+
+<p>А на быстром железе это абсурд. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> из AMD установил мировой рекорд, выполнив полную установку Omarchy за <strong>7 секунд</strong> на своём ноутбуке AMD. <a href="https://x.com/dhh/status/2117222836620202375">Семь секунд!</a> Я помню, когда пять минут казались амбициозной целью.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy установлена за 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Быстрее и во всём остальном</h2>
+
+<p>Дело не только в установщике. Запуск больше не тормозит на регистрации binfmt. Выбор темы открывается сразу, а не через четверть секунды. Меню и панели открываются прямо из сочетаний Hyprland, пропуская 60 мс, которые требовались сначала для запуска процесса. Самые медленные проверки меню Omarchy пошли с 200 мс до 16 мс, новый терминал показывает приглашение на 30 мс раньше, а весь рабочий стол теперь реагирует на изменения вместо того, чтобы опрашивать их. Даже выход, перезагрузка и выключение происходят в момент, когда ваши приложения закончили закрываться.</p>
+
+<h2 id="agent-upgrades">Улучшения агентов</h2>
+
+<p>Omarchy — это агентная ОС, и 4.5 приносит большой раунд улучшений для работы с агентами. Панель агентов теперь отслеживает 23 агента и провайдера, по сравнению с 6, включая Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter и Ollama. Каждый лимит получает свой индикатор со временем до сброса, так что вы можете точно видеть, сколько запаса у вас осталось. А Grok теперь полноценный провайдер наряду с Claude и Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Панель агентов с несколькими подписками Claude и Codex" width="380" /></p>
+
+<p>И ваш агент всегда на расстоянии одного нажатия клавиши. <code>Super + ~</code> опускает консоль в стиле Quake поверх затемнённого рабочего стола, и при первом открытии она запускает вашего агента по умолчанию. Нажмите ещё раз, чтобы убрать её, и ваша сессия останется там, где вы её оставили.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Консоль в стиле Quake, запускающая агента поверх затемнённого рабочего стола" /></p>
+
+<p>Если вы жонглируете несколькими подписками, теперь вы можете держать несколько входов Claude, Codex и Grok на одной машине и выбирать, с каким новые сессии будут начинаться, используя <code>omarchy agent account</code>. История, настройки и навыки общие между ними, так что <code>claude --continue</code> продолжает с того места, где вы остановились после переключения. Вблизи лимита Omarchy может либо предложить переключение в один клик, либо самостоятельно перемещать новые сессии на аккаунт с наибольшим запасом. А когда вы настраиваете другую машину, <code>omarchy agent account copy</code> переносит все ваши входы через SSH, так что вам не придётся входить во всё заново.</p>
+
+<p>Kimi и Ori, агентный каркас OpenRouter, присоединяются к выбору в <em>Setup &gt; Defaults &gt; Agent</em>, а Antigravity от Google заменяет устаревший Gemini CLI (<code>gemini</code> по-прежнему работает как псевдоним). Предпочитаете окно терминалу? Настольные приложения Claude и Amp теперь в одном клике в <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Уведомления переработаны</h2>
+
+<p>Уведомления теперь складываются по отправителю, следуют вашей теме и сворачивают идентичные повторы. Кнопки действий, коды подтверждения и ссылки работают прямо с карточки. <code>Super + Comma</code> действует на самое новое (отклоняет, открывает или нажимает его кнопку), а <code>Super + Ctrl + Comma</code> передаёт вам клавиатуру для управления всеми. Колокольчик в панели включает «Не беспокоить».</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Новые уведомления" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Видео-фоны и интро тем</h2>
+
+<p>Фоны теперь могут быть видео. Добавьте одно, и ваш рабочий стол оживёт с катящимися волнами или чем ещё пожелаете, а экран блокировки показывает неподвижный кадр из него. А темы теперь делают вход: каждая может проигрывать короткое беззвучное интро, когда вы входите или переключаетесь на неё. (Предпочитаете спокойствие? Отключите интро в <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse присоединяется к темам по умолчанию</h2>
+
+<p>Jade Horse — вся в туманных зелёных тонах, с фонами из резного нефрита, от которых весь рабочий стол выглядит как картина-свиток. Она заменяет Osaka Jade среди тем, входящих в комплект, и к ней присоединяется Starship как другая новая тема по умолчанию. Если вы на Osaka Jade, вы сохраняете свою копию, и она продолжает жить как <a href="https://github.com/omacom/omarchy-osaka-jade-theme">сторонняя тема</a> для всех, кто хочет установить её свежей.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Тема Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff — новый фон по умолчанию</h2>
+
+<p>Новые установки теперь встречают вас Liftoff, великолепным закатным запуском, который является новым фоном по умолчанию для Tokyo Night. Его сделал <a href="https://github.com/tcballard">Tom Ballard</a>, который сначала создал его для своей <a href="https://github.com/tcballard/omarchy-theme-liftoff">темы Liftoff</a>. Спасибо, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Фон Liftoff от Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Меню загрузки теперь тихое</h2>
+
+<p>Раньше Omarchy показывала меню загрузки около шести секунд при каждом запуске, на всякий случай, если вам понадобится откатиться к более раннему снимку. Но почти никто никогда этого не делал. Так что теперь Limine ждёт всего одну секунду и загружается тихо, и в большинстве случаев вы вообще не увидите меню.</p>
+
+<p>Когда вам всё же нужен другой пункт или снимок, продолжайте нажимать любую клавишу (подойдёт стрелка вниз), пока машина запускается, и она остановится в меню. А если вы предпочитаете держать меню дольше постоянно, установите свой собственный <code>timeout:</code> в <code>/boot/limine.conf</code> (например, <code>timeout: 5</code>). Обновления оставят установленный вами timeout в покое.</p>
+
+<h2 id="changed-hotkeys">Изменённые горячие клавиши</h2>
+
+<p>Некоторые сочетания переехали:</p>
+
+<ul>
+  <li>Калькулятор: <code>Super + Ctrl + Q</code> теперь <code>Super + Shift + Q</code>.</li>
+  <li>Активность: <code>Super + Ctrl + T</code> теперь <code>Super + Shift + T</code>, а <code>Super + Ctrl + T</code> открывает темы.</li>
+  <li>Сеть: <code>Super + Ctrl + W</code> теперь <code>Super + Ctrl + N</code>, а <code>Super + Ctrl + W</code> открывает фоны.</li>
+  <li>У ночной подсветки больше нет сочетания (было <code>Super + Ctrl + N</code>); она находится в <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> открывает Apps из дока вместо меню Apps.</li>
+</ul>
+
+<p>Сочетания уведомлений изменились:</p>
+
+<ul>
+  <li><code>Super + Comma</code> действует на самую новую карточку (отклоняет её, открывает её или нажимает её единственную кнопку) вместо того, чтобы только отклонять её.</li>
+  <li>Отклонение последней переехало на <code>Super + Alt + Comma</code>, которое раньше открывало её.</li>
+  <li>Отключение звука переехало с <code>Super + Ctrl + Comma</code> на <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> теперь передаёт вам управление с клавиатуры.</li>
+</ul>
+
+<p>Несколько клавиш работают иначе:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> и <code>Super</code> + прокрутка остаются на рабочих пространствах текущего монитора, поскольку у каждого монитора свои.</li>
+  <li>В терминале <code>Super + C</code> и <code>Super + V</code> отправляют <code>Ctrl + Shift + C</code> и <code>Ctrl + Shift + V</code> вместо <code>Ctrl + Insert</code> и <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Новые значения по умолчанию, которые могут конфликтовать с вашими собственными привязками: <code>Super + Q</code> (закрыть окно, наряду с <code>Super + W</code>), <code>Super + A</code> (выбрать всё), <code>Super + M</code> (свернуть в док), <code>Super + ~</code> и <code>Super + Shift + ~</code> (консоль Quake), <code>Super + Alt + L</code> (предыдущий макет), <code>Super + Shift + Ctrl + Arrows</code> (переместить окно на другой монитор), <code>Super + Ctrl + Alt + C</code> (снимок экрана), <code>Super + Ctrl + Alt + E</code> (мировые часы), <code>Super + Ctrl + Alt + F</code> (полноэкранный рабочий стол) и удерживание <code>Right Alt</code> для диктовки push-to-talk.</p>
+
+<h2 id="more-features">Больше функций</h2>
+
+<ul>
+  <li>Дайте каждому монитору свои рабочие пространства: <code>Super + 1-0</code> переходит к рабочим пространствам монитора, на котором вы находитесь, а <code>Super + Arrows</code> перемещает к другим дисплеям и от них, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Соберите всё о том, как выглядит рабочий стол, в новое меню Appearance, заменяющее Style: тема, фон, шрифт, панель, окна, брендинг, док, макеты рабочих пространств, анимации и экран разблокировки, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Выбирайте окна Opaque, Transparent или Glassy в <em>Appearance &gt; Window Transparency</em>, плюс стеклянный фон панели, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Выбирайте углы окон из темы, острые или закруглённые в <em>Appearance &gt; Window Corners</em>, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Добавьте режим без анимаций, включённый по умолчанию в виртуальных машинах, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Сделайте приложения непрозрачными по умолчанию, сохраняя терминалы прозрачными, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Добавьте Slack в Install &gt; Service, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Сделайте так, чтобы Alt + Space переключал диктовку на каждом бэкенде, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Добавьте кнопки Open и Edit к уведомлениям о снимках экрана, а Open и Cut — к записям экрана и загрузкам yt-dlp, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Добавьте меню Update &gt; Kernel для переключения ядра по умолчанию, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Добавьте синхронизацию тем на машины herdr, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Добавьте o.rebind для замены привязок клавиш Hyprland, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Запрашивайте вашу git-идентичность после первого входа вместо установщика, с входом через GitHub, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Разрешите установочным носителям предустанавливать язык, клавиатуру и часовой пояс, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Разрешите виджетам панели жить в выдвижном ящике трея, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Разрешите удалять виджет панели, перетаскивая его с панели, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Разрешите прокрутку рабочих пространств с панели, от <a href="https://github.com/outfoxxed">@outfoxxed</a> в <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Разрешите удалять лишние темы из выбора тем, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Добавьте CLI hey, basecamp и Cloudflare как лениво устанавливаемые инструменты, от <a href="https://github.com/monorkin">@monorkin</a> в <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Добавьте SSH Agent как опциональную службу, от <a href="https://github.com/carletex">@carletex</a> в <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Разрешите выбирать, как долго длится sudo без пароля, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Добавьте кнопку закрытия при наведении к всплывающим уведомлениям, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Разрешите отключать уведомления программы из диагностики её сбоя, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Разрешите omarchy-notification-send добавлять кнопки действий, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Добавьте формат часов с живыми секундами, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Регулируйте подсветку клавиатуры с помощью Ctrl и клавиш яркости, от <a href="https://github.com/ludagoo">@ludagoo</a> в <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Печатайте OEM-ключ продукта Windows из прошивки, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Добавьте оригинальный vi как выбор редактора терминала, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Добавьте фон Roadster Starlight в Ethereal, от <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> в <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Безопасность</h2>
+
+<ul>
+  <li>Держите пароль виртуальной машины Windows вне аргументов RDP-клиента, от <a href="https://github.com/dicemans">@dicemans</a> в <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Переместите состояние записи экрана из доступного для записи всем /tmp, от <a href="https://github.com/Chessing234">@Chessing234</a> в <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Усильте истечение sudo без пароля при приостановке, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Привяжите очистку ингибитора обновлений к процессу, который его создал, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Изолируйте авторизацию очистки OCaml, от <a href="https://github.com/ErikMelton">@ErikMelton</a> в <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Закрепите повышение привилегий сброса к заводским настройкам за упакованной командой, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Удаляйте сохранённые шаблоны отпечатков пальцев вызывающего пользователя при сбросе, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Отклоняйте имена хуков и состояний, которые являются путями, от <a href="https://github.com/Adolanium">@Adolanium</a> в <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Ссылайтесь на system-auth в стеке polkit, записываемом настройкой отпечатков пальцев и FIDO2, от <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> в <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Удаляйте отпечатки пальцев из собственного хранилища считывателя при их удалении, от <a href="https://github.com/scottjones">@scottjones</a> в <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Не позволяйте настройке SSH оставлять sshd работающим с входами по паролю, когда не добавлен ни один ключ, от <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> в <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Не позволяйте другому локальному пользователю подменять свою собственную программу во время обновления Voxtype, от <a href="https://github.com/Vladkarok">@Vladkarok</a> в <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Усильте то, как сброс к заводским настройкам передаёт ваши настройки gum через sudo, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Исправления</h2>
+
+<ul>
+  <li>Исправьте падение Hyprland, когда монитор отключён, выключен или выключен закрытием крышки, от <a href="https://github.com/falkoro">@falkoro</a> в <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Исправьте обновления, которые могли оставить образ ядра без его параметра root=, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Исправьте сброс к заводским настройкам, стирающий записи загрузки других систем, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Исправьте установку рядом с другой Omarchy, удаляющую запись загрузки той установки, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Исправьте установки в свободное пространство, которые могли принять существующий раздел за новый, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Исправьте возобновление прерванной смены пароля диска, удаляющее неправильный ключ, от <a href="https://github.com/scottjones">@scottjones</a> в <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Запрашивайте пароль sudo один раз за обновление Omarchy, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Запрашивайте пароль sudo один раз на десять минут вместо повторного запроса на каждую команду, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Покройте обновления AUR и проверку загрузки одним запросом sudo обновления, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Сохраняйте обновления пакетов в безопасности от выхода из системы в середине транзакции, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Выходите, перезагружайтесь и выключайтесь, как только приложения закончат закрываться, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Замените Tensaku на Omasnap для снимков экрана, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Выращивайте панели из панели и превращайте их друг в друга, с обратной связью при нажатии на кнопки и значки панели, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Выдвигайте уведомления из-под панели и обратно тем же путём, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Проверяйте подключение по собственной конечной точке Omarchy и исправьте вход на порталы авторизации, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Исправьте переключение с edge на stable или RC, оставляющее машину на старой сборке, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Исправьте обновление до 4.5, останавливающееся, когда оболочка медленно отвечает, от <a href="https://github.com/AnPod">@AnPod</a> в <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Исправьте обновления, тихо завершающиеся неудачей при запуске вне сессии рабочего стола, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Исправьте неудачную загрузку инструмента mise, останавливающую остаток системного обновления, от <a href="https://github.com/sanjyay">@sanjyay</a> в <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Исправьте обновления, завершающиеся неудачей, когда omarchy-nvim не установлен, от <a href="https://github.com/imzihuailin">@imzihuailin</a> в <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Исправьте установки с двойной загрузкой, которым не удаётся смонтировать раздел EFI, от <a href="https://github.com/Damian626">@Damian626</a> в <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Исправьте установки, останавливающиеся, когда прошивка не принимает новую запись загрузки, от <a href="https://github.com/ryanio">@ryanio</a> в <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Исправьте установки, останавливающиеся на дисках со старым участником RAID или группой томов, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Запускайте установщик раньше, не ожидая каждое USB-устройство и задачу загрузки, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Ускорьте шифрование диска с секторами по 4096 байт на новых установках, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Перечисляйте внутренние диски первыми и открывайте экраны установки на безопасном выборе, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Перечисляйте Full disk install первым в установщике и возвращайтесь с помощью Esc на экранах дисков, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Исправьте масштабирование одного монитора, меняющее масштаб каждого другого монитора, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Исправьте приложения XWayland, получающиеся слишком большими, когда мониторы используют разные масштабы, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Исправьте дисплеи HDR, переключающиеся на выцветшую картинку HDR, когда окно переходит в полноэкранный режим, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Исправьте размытые меню и средства выбора на дисплеях с дробным масштабированием, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Исправьте дисплей ноутбука, остающийся выключенным после отключения внешнего дисплея, от <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> в <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Исправьте повторное включение дисплея, сбрасывающее его позицию, масштаб и режим, от <a href="https://github.com/zihaomu">@zihaomu</a> в <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Исправьте меню и средства выбора, не открывающиеся снова после отключения монитора, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Исправьте рабочие пространства для каждого монитора, перемещающиеся после отключения монитора, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Исправьте падение оболочки, когда аудиоустройство отключается при открытой панели аудио, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Исправьте полноэкранные окна, теряющие полноэкранный режим после заставки, от <a href="https://github.com/MGross21">@MGross21</a> в <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Исправьте курсор, исчезающий при запуске после перезагрузки Hyprland, от <a href="https://github.com/spencerbull">@spencerbull</a> в <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Исправьте курсор, становящийся невидимым над приложениями XWayland, от <a href="https://github.com/Sebo1411">@Sebo1411</a> в <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Исправьте зависания захвата буфера обмена, от <a href="https://github.com/maxcroy1">@maxcroy1</a> в <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Исправьте доступ к связке ключей через портал XDG Secret, от <a href="https://github.com/pkwagner">@pkwagner</a> в <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Исправьте регистрацию отпечатков пальцев и восстановление экрана блокировки, от <a href="https://github.com/GeertJohan">@GeertJohan</a> в <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Проводите регистрацию отпечатков пальцев шаг за шагом, от <a href="https://github.com/scottjones">@scottjones</a> в <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Исправьте автоповтор клавиш в поле пароля экрана блокировки, от <a href="https://github.com/berndb">@berndb</a> в <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Исправьте обои экрана блокировки, загружающиеся после поля пароля при пробуждении, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Исправьте тайм-ауты блокировки экрана, когда сессия называет исчезнувший дисплей, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Ускорьте открытие терминала в каталоге текущего окна, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Сделайте так, чтобы редакторы семейства VS Code следовали изменениям темы в реальном времени, от <a href="https://github.com/Macho0x">@Macho0x</a> в <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Переоформляйте запущенные сессии Hunk при смене темы, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Запоминайте выбранные обои для каждой темы, от <a href="https://github.com/OldJobobo">@OldJobobo</a> в <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Сохраняйте средство выбора изображений быстрым и резким при больших коллекциях и HiDPI, от <a href="https://github.com/keylimesoda">@keylimesoda</a> в <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Сократите потребление процессора и памяти прозрачной панелью при сэмплировании обоев, от <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> в <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Ускорьте панель Tailscale на tailnet с тысячами машин, от <a href="https://github.com/iskakaushik">@iskakaushik</a> в <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Доведите Grok до уровня Claude и Codex в панели агентов, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Применяйте выбор аккаунта агента к подпроцессам CLI, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Показывайте индивидуальные лимиты расходов Codex и время их сброса, от <a href="https://github.com/Stegi56">@Stegi56</a> в <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Настраивайте интеграцию с браузером при выборе Claude, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Исправьте агентов, не находящих инструменты mise, установленные после их запуска, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Исправьте вставку снимков экрана в агентов в панелях herdr, запущенных через SSH, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Исправьте панель агентов, пропускающую сжатые сессии Codex, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Верните Caps Lock к норме и сделайте Shift + Caps Lock клавишей compose, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Применяйте системную раскладку клавиатуры к экрану входа, от <a href="https://github.com/g-desoutter">@g-desoutter</a> в <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Исправьте переключение макета, пропускающее каждое второе нажатие при нелатинской раскладке клавиатуры, от <a href="https://github.com/manuaudio">@manuaudio</a> в <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Включите аппаратное декодирование видео в mpv, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Переключите управление перегрузкой TCP на BBR и используйте планировщик ввода-вывода kyber на настоящих дисках, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Устанавливайте T3 Code как его самообновляющийся AppImage, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Улучшите установку PHP и Laravel, от <a href="https://github.com/nunomaduro">@nunomaduro</a> в <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Устанавливайте Node лениво и оставляйте вашу конфигурацию mise в покое, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Устанавливайте отсутствующие приложения при выборе значений по умолчанию, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Затемняйте установленное программное обеспечение в меню Install вместо того, чтобы скрывать его, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Регистрируйте менеджер паролей и другие хосты нативных сообщений для Brave Origin, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Группируйте веб-уведомления Brave Origin по сайтам и открывайте правильную вкладку при щелчке, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Автоматически одобряйте удаление осиротевших пакетов во время обновлений, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Обновляйте связку ключей Omarchy перед каждым обновлением, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Предлагайте перезагрузку после переключения каналов, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Предлагайте обновление при первом запуске только тогда, когда есть что обновлять, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Находите местоположение погоды и часовой пояс установщика с помощью собственного геосервиса Omarchy, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Устанавливайте часы с ntp.omarchy.org вместо пула NTP Arch, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Измеряйте скорость сети с помощью собственного теста скорости Omarchy, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Показывайте экран прогресса с трассированными значками во время первой загрузки, от <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> в <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Загружайте live ISO на ядре Omarchy, а на ядре T2 — только на Mac, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Прекратите офлайн-установки, ожидающие запросов версий mise, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Исправьте офлайн-установки, устанавливающие часовой пояс по умолчанию на Africa/Abidjan, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Исправьте средство выбора часового пояса установщика, не позволяющее печатать для поиска, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Исправьте live ISO, зависающий за заставкой при загрузке с флешки Ventoy, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Исправьте немецкие и французские консольные раскладки в форме настройки установщика, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Скройте английские подсказки клавиш gum в установщике и настройке git, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Уберите шутки только на английском с экрана прогресса установки, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Исправьте вывод установщика, попадающий без отступов на экран, пока он готовит диск, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Исправьте обновление Quattro, сбрасывающее браузер по умолчанию на Chromium, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Исправьте обновление Quattro, останавливающееся на именах фонов с не-ASCII символами, от <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> в <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Исправьте миграцию ядра, останавливающуюся на машинах, которые загружаются с GRUB или systemd-boot, от <a href="https://github.com/manuaudio">@manuaudio</a> в <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Исправьте гибернацию на незашифрованных машинах с более чем одним диском NVMe, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Исправьте миграцию FIDO2, помечаемую выполненной до её разрешения, от <a href="https://github.com/ErikMelton">@ErikMelton</a> в <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Исправьте плавающее рабочее пространство, захватывающее первое окно, которое покрывает ваше собственное правило плавания, от <a href="https://github.com/zihaomu">@zihaomu</a> в <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Исправьте композитор, останавливающийся, когда Super + L переключает рабочее пространство в плавающий режим и обратно, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Исправьте Alt + Shift + Tab, не переключающий назад через каждое окно, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Исправьте всплывающие окна, не центрирующиеся при перемещении на другой монитор, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Исправьте новые терминалы, открывающиеся вне вашей домашней папки, когда сфокусировано нетерминальное окно, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Исправьте окна 1Password и Bitwarden, не плавающие, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Исправьте 1Password, закрывающийся, когда терминал установщика выходит, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Исправьте диалоги DaVinci Resolve, крадущие фокус указателя, от <a href="https://github.com/AksharP5">@AksharP5</a> в <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Исправьте рабочий стол, показывающийся сквозь дисплеи виртуальной машины Windows, от <a href="https://github.com/jmwall">@jmwall</a> в <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Исправьте устаревшие пароли виртуальной машины Windows, содержащие $$ после миграции Quattro, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Прекратите показ всплывающего окна пожертвований Hyprland после обновлений, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Улучшите перетаскивание и упорядочивание виджетов панели, от <a href="https://github.com/outfoxxed">@outfoxxed</a> в <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Нормализуйте размер и выравнивание значков панели, от <a href="https://github.com/bjarneo">@bjarneo</a> в <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Показывайте скрытые индикаторы панели только при наведении слева от часов, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Выровняйте значки трея с другими значками панели, от <a href="https://github.com/ayoubdya">@ayoubdya</a> в <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Показывайте следующую подсказку панели сразу, пока одна уже показана, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Открывайте панели часов и погоды под их виджетами, от <a href="https://github.com/scottjones">@scottjones</a> в <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Сохраняйте панель сети открытой после выбора провайдера DNS, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Исправьте закрывающееся всплывающее окно, оставляющее виджеты панели без отклика, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Исправьте скрытую панель, ловящую щелчки вдоль верхней части полноэкранных окон, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Исправьте тёмные значки трея, исчезающие в панели, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Исправьте значки панели, сидящие неровно или не по центру, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Исправьте подсказки панели, рисующие свой первый кадр неправильного размера, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Исправьте историю уведомлений, показывающую каждую карточку как только что, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Исправьте уведомления при первом входе, сворачивающиеся в один стек, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Исправьте щелчки по уведомлениям, не фокусирующие приложения с именами из нескольких слов, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Исправьте уведомления Taildrop, показывающие пустой текст и отсутствующие превью, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Исправьте уведомление о батарее, показывающее пустое время и 0W на полной батарее, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Исправьте предупреждение о низком заряде батареи, остающееся после подключения и возвращающееся после перезагрузок, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Исправьте потребление батареи, читающееся как 0W на некоторых ноутбуках, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Исправьте полную батарею на AC, показывающуюся как разряжающаяся, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Исправьте Hibernate, показывающийся, когда ядро не будет гибернировать, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Исправьте монтирования gvfs, пропадающие после возобновления, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Исправьте подсветку клавиатуры, остающуюся выключенной после того, как блокировка дважды погаснет, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Исправьте считыватель отпечатков пальцев, просыпающийся, пока у блокировки выключены дисплеи, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Исправьте запрос пароля загрузки, смещённый от центра, когда дисплей появляется поздно, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Исправьте клавишу выхода заставки, вспыхивающую в углу, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Исправьте значок Wi-Fi, мерцающий на сетях OWE в режиме перехода, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Исправьте ошибку OWE, печатаемую в терминале после установки темы, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Исправьте мерцание при переключении с неподвижного на видео-фон, от <a href="https://github.com/bjarneo">@bjarneo</a> в <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Обновите Hackerman до увеличенного геометрического фона, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Исправьте темы с циклическими ссылками на цвета, зависающие при переключении темы, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Исправьте Neovim, не запускающийся с темой Catppuccin, от <a href="https://github.com/anandude">@anandude</a> в <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Исправьте OpenCode 2, запускающийся на своей стандартной теме вместо темы Omarchy, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Исправьте низкоконтрастный встроенный код в сгенерированной теме VS Code, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Исправьте установки T3 Code, останавливающиеся при сопоставлении текущей темы, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Исправьте размер шрифта терминала, сбрасывающийся при смене семейства шрифтов, от <a href="https://github.com/sbalbalosa">@sbalbalosa</a> в <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Исправьте смену шрифтов, печатающую ID процесса терминала, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Исправьте переключение языков, перестраивающее каждую локаль и теряющее их на почти полном диске, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Исправьте оболочку, показывающую необработанные ключи перевода до загрузки её переводов, от <a href="https://github.com/zihaomu">@zihaomu</a> в <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Ускорьте переведённый текст в скриптах Omarchy, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Обновите переводы для 686 строк, 392 из них в руководстве, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Исправьте элементы управления громкостью и выводом в неанглийских локалях, от <a href="https://github.com/Sebo1411">@Sebo1411</a> в <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Исправьте показания использования процессора в неанглийских локалях, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Исправьте службу fcitx5, перезапускающуюся вечно, когда fcitx5 не установлен, от <a href="https://github.com/therk">@therk</a> в <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Исправьте виджет раскладки клавиатуры, переключающий устройства, на которых никто не печатает, от <a href="https://github.com/bjarneo">@bjarneo</a> в <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Исправьте виджет раскладки клавиатуры, переключающийся на устройства горячих клавиш производителя, от <a href="https://github.com/yashranaway">@yashranaway</a> в <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Исправьте меню привязок клавиш, оставляющее процесс Lua работающим на 100% процессора, от <a href="https://github.com/tobi">@tobi</a> в <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Исправьте часы, затапливающие журнал каждую миллисекунду, когда заканчивается летнее время, от <a href="https://github.com/falkoro">@falkoro</a> в <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Исправьте оболочку, заменяющую shell.json, который она не могла прочитать, значениями по умолчанию, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Исправьте меню Omarchy, теряющее свои строки, пока его файл обновляется, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Исправьте повторное включение плагина, не возвращающее его виджет панели, от <a href="https://github.com/berrimi">@berrimi</a> в <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Исправьте локальные плагины, перезагружающиеся в цикле на своём собственном байт-коде Python, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Исправьте скрытые кнопки в плагинах, сворачивающиеся до своих отступов, от <a href="https://github.com/dmkenney">@dmkenney</a> в <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Исправьте выпадающие списки, отрезающие свой последний элемент, от <a href="https://github.com/sprajs">@sprajs</a> в <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Исправьте выпадающие списки, не закрывающиеся при втором щелчке, от <a href="https://github.com/felixzsh">@felixzsh</a> в <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Исправьте ручки слайдеров, останавливающиеся не доходя до конца дорожки, от <a href="https://github.com/erikrjohansson">@erikrjohansson</a> в <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Исправьте Update &gt; Hardware &gt; Trackpad, пропускающий большинство тачпадов и сбрасывающий клавиатуру, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Теперь он отпускает залипшую кнопку на каждом тачпаде и сбрасывает только тачпад вместо клавиатуры и сенсорного экрана вместе с ним.</p>
+  </li>
+  <li>Сделайте так, чтобы меню веб-камеры проверяло камеры, не включая их, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Исправьте захват прокрутки Omasnap, захватывающий только чёрные кадры, от <a href="https://github.com/falkoro">@falkoro</a> в <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Исправьте средство выбора снимков экрана, отвязывающее ваши собственные клавиши, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Исправьте остановку записи, объявляющую пустую сохранённую запись, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Исправьте средство выбора изображений, показывающее устаревшие миниатюры для изображений, поверх которых сохранили, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Исправьте ночную подсветку, не полностью сбрасывающуюся при выключении, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Исправьте виджет медиа, оставляющий поставленный на паузу трек ради простаивающего плеера, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Исправьте повторяющиеся сканирования дисплеев на мониторах, которые не сообщают яркость, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Исправьте Super + Shift + Return, завершающийся неудачей, когда настроенный браузер был удалён, от <a href="https://github.com/vitally">@vitally</a> в <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Исправьте сочетания калькулятора, остающиеся после удаления предустановленных приложений, от <a href="https://github.com/OldJobobo">@OldJobobo</a> в <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Исправьте сочетание Copy URL в профилях Brave Origin, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Исправьте всплывающее окно расширения Bitwarden, открывающееся неправильного размера, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Исправьте Battle.net, открывающийся в масштабе 100% на мониторах HiDPI, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Исправьте средства выбора файлов Inkscape, открывающиеся в тайлинге, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Исправьте пакеты Go AUR, не собирающиеся во время обновлений, когда mise управляет Go, от <a href="https://github.com/shbernal">@shbernal</a> в <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Исправьте установку ONCE, когда вы не в группе docker, от <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> в <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Исправьте щелчки по панели агентов, открывающие трей, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Исправьте настройку аккаунта агента, спотыкающуюся на висячей общей символической ссылке, от <a href="https://github.com/manuaudio">@manuaudio</a> в <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Исправьте <code>--reauth</code>, добавляющий новый аккаунт агента, когда его нет, от <a href="https://github.com/manuaudio">@manuaudio</a> в <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Сделайте так, чтобы подсказка переименования аккаунта агента называла его провайдера, от <a href="https://github.com/manuaudio">@manuaudio</a> в <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Исправьте обновления связки ключей, заявляющие об успехе, когда операции с ключами завершаются неудачей, от <a href="https://github.com/Adolanium">@Adolanium</a> в <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Исправьте пустой запрос сброса к заводским настройкам при запуске под sudo, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Исправьте напоминание об ожидающих миграциях, накапливающееся один раз за вход, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Исправьте OS Age в About, считающий от сборки ISO вместо установки, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Исправьте Dropbox, показывающий «0y ago» для файлов возрастом от 360 до 364 дней, от <a href="https://github.com/manuaudio">@manuaudio</a> в <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Исправьте проверку статуса Dropbox, истекающую у ожидающей ссылки входа, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Исправьте установку библиотеки значка трея Dropbox, от <a href="https://github.com/omarchybot">@omarchybot</a> в <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Включите накладывающиеся полосы прокрутки в Chromium, от <a href="https://github.com/robzolkos">@robzolkos</a> в <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Спрашивайте перед включением Touch ID на Mac с Apple Silicon, от <a href="https://github.com/scottjones">@scottjones</a> в <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Предлагайте канал RC на Mac с Apple Silicon, от <a href="https://github.com/maralcbr">@maralcbr</a> в <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Предлагайте стабильный канал на Mac с Apple Silicon, от <a href="https://github.com/maralcbr">@maralcbr</a> в <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Исправьте псевдонимы, функции и окружение Omarchy, отсутствующие в новых терминалах на Apple Silicon, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Настраивайте установленные приложения NVIDIA, от <a href="https://github.com/jdvmi00">@jdvmi00</a> в <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Исправьте установки, завершающиеся неудачей на Lenovo Pro 9 с NVIDIA N1x, от <a href="https://github.com/breymander">@breymander</a> в <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Исправьте отсутствующие внутренние динамики и микрофоны на ноутбуках N1x, которые запускали более ранние аудиопрофили, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Исправьте вялый рабочий стол на машинах NVIDIA GB10, таких как DGX Spark, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Исправьте ввод в экран блокировки после возобновления на NVIDIA, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Блокировка также больше не темнеет снова как раз тогда, когда загорается панель.</p>
+  </li>
+  <li>Исправьте Lutris и Battle.net, устанавливающие 32-битный драйвер Vulkan другого GPU, от <a href="https://github.com/zihaomu">@zihaomu</a> в <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Прекратите запрашивать перезагрузку после каждого обновления на ARM, от <a href="https://github.com/birkskyum">@birkskyum</a> в <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Предлагайте стабильный и RC каналы на aarch64, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Сделайте так, чтобы профили питания работали на ноутбуках ARM, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Предлагайте Dropbox на машинах ARM со страницами 4K и Spotify как веб-приложение на ARM, от <a href="https://github.com/birkskyum">@birkskyum</a> в <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Скройте установки GeForce NOW, Battle.net и Lutris на ARM, от <a href="https://github.com/birkskyum">@birkskyum</a> в <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Исправьте приложение Hermes, не обновляющееся на месте на ARM, от <a href="https://github.com/ryanrhughes">@ryanrhughes</a> в <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Исправьте клавиатуры ноутбуков Snapdragon, не печатающие в запросе разблокировки диска, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Исправьте камеры, отсутствующие при входе на ноутбуках Snapdragon, от <a href="https://github.com/birkskyum">@birkskyum</a> в <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Исправьте чёрный экран перед разблокировкой диска на ноутбуках Snapdragon X2, от <a href="https://github.com/jdvmi00">@jdvmi00</a> в <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Декодируйте видео аппаратно на Intel Wildcat Lake, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Исправьте падения live ISO на ноутбуках Arrow Lake-H, от <a href="https://github.com/emirb">@emirb</a> в <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Исправьте внутренний микрофон HP EliteBook Ultra G1q, от <a href="https://github.com/bprendie">@bprendie</a> в <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Используйте вышестоящую поддержку для Motorcomm YT6801 Ethernet, от <a href="https://github.com/AFOliveira">@AFOliveira</a> в <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Ретранслируйте Elgato Cam Link 4K как виртуальную камеру 16:9, от <a href="https://github.com/dhh">@dhh</a> в <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Поддерживайте считыватели отпечатков пальцев, которые называет платформа, от <a href="https://github.com/scottjones">@scottjones</a> в <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>
