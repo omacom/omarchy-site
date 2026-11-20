@@ -33,9 +33,14 @@ export function boxAround(
   width: number,
   height: number,
 ): MapBox {
-  if (points.length === 0) return wholeMap(width, height)
-  const xs = points.map((p) => p.x)
-  const ys = points.map((p) => p.y)
+  const finite = points.filter(
+    (p) => Number.isFinite(p.x) && Number.isFinite(p.y),
+  )
+  if (finite.length === 0 || !(width > 0) || !(height > 0)) {
+    return wholeMap(width, height)
+  }
+  const xs = finite.map((p) => p.x)
+  const ys = finite.map((p) => p.y)
   const pad = 40
   let x0 = Math.min(...xs) - pad
   let x1 = Math.max(...xs) + pad
