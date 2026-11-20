@@ -53,6 +53,33 @@ test('upcoming pins paint above past ones, and a lit pin above a dim one', () =>
   assert.deepEqual(order, ['past-dim', 'past-lit', 'next-dim', 'next-lit'])
 })
 
+test('a pin with no coordinates leaves the whole map up', () => {
+  assert.deepEqual(
+    boxAround(
+      [
+        { x: Number.NaN, y: 10 },
+        { x: 4, y: Number.POSITIVE_INFINITY },
+      ],
+      W,
+      H,
+    ),
+    wholeMap(W, H),
+  )
+  const mixed = boxAround(
+    [
+      { x: Number.NaN, y: 0 },
+      { x: 0, y: 0 },
+    ],
+    W,
+    H,
+  )
+  assert.ok(mixed.width < W, 'a real city beside a missing one still gets a frame')
+})
+
+test('a zero-size map is not divided into a frame', () => {
+  assert.deepEqual(boxAround([{ x: 1, y: 1 }], 0, 0), wholeMap(0, 0))
+})
+
 test('two pins in the same state keep their order', () => {
   assert.equal(
     pinPaintOrder({ past: false, shown: true }, { past: false, shown: true }),
