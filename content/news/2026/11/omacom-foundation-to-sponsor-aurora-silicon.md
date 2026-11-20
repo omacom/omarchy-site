@@ -3,10 +3,10 @@ title: Omacom Foundation to sponsor Aurora Silicon
 date: 2026-11-20 16:00 +0100
 author: DHH
 author_url: https://dhh.dk
-description: The Omacom Foundation is sponsoring Dj and Ryan's work on Aurora Silicon, the independent project bringing Linux to Apple Silicon Macs, with hardware, tokens, and support.
+description: The Omacom Foundation is sponsoring Aurora Silicon, the independent project bringing Linux to Apple Silicon Macs, with hardware and tokens for everyone working on it and three months of full-time funding for Dj and Ryan.
 ---
 
-The [Omacom Foundation](/foundation/) is sponsoring [Aurora Silicon](https://aurorasilicon.org/), the independent open-source project bringing Linux to Apple Silicon Macs! We're backing the work of two of its maintainers, [Dj](https://x.com/buildwithdjdev) and [Ryan Murray](https://github.com/RyanTheTide), with hardware, tokens, and support, so they can keep pushing Linux onto every Mac Apple makes.
+The [Omacom Foundation](/foundation/) is sponsoring [Aurora Silicon](https://aurorasilicon.org/), the independent open-source project bringing Linux to Apple Silicon Macs! We're providing hardware and tokens for everyone working on Aurora, plus direct funding for two of its maintainers, [Dj](https://x.com/buildwithdjdev) and [Ryan Murray](https://github.com/RyanTheTide), to focus on it full-time for the next three months. All so they can keep pushing Linux onto every Mac Apple makes.
 
 You've already seen what they can do. [Omarchy 4.5](/news/2026/11/omarchy-4-5/) shipped a native installer that puts Omarchy right alongside macOS on M1, M2, M3, and Neo MacBooks. Aurora works on the layer underneath: the kernel, the graphics drivers, and the boot chain. And they brought up the MacBook Neo independently, with display, GPU acceleration, Vulkan 1.4, Touch ID, audio, camera, Wi-Fi, and Bluetooth all working. That's a stunning amount of progress on Apple's newest laptop.
 
@@ -16,9 +16,9 @@ What I love about Aurora is that it's an independent project. Its maintainers se
 
 So here's what the sponsorship covers:
 
-- **Support** for Dj and Ryan to work on bringing up more Macs, starting with the M3 and M4 series.
-- **Hardware**, so they have the Macs they need to bring up, trace, and test.
-- **Tokens** for the AI models that help them move at a pace that would have seemed absurd a year ago.
+- **Hardware** for everyone working on Aurora, so they have the Macs they need to bring up, trace, and test.
+- **Tokens** for everyone working on Aurora, for the AI models that help them move at a pace that would have seemed absurd a year ago.
+- **Direct funding** for Dj and Ryan to focus full-time on Aurora for three months, pushing the boundaries of Linux on the Mac, starting with the M3 and M4 series.
 
 A Mac counts as done when it ships in an Omarchy release. M4, M5, and M6 are all being worked on right now, and I can't wait to see how quickly the rest of the lineup falls.
 
