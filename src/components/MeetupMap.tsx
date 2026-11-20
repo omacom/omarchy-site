@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import mapData from '@/data/meetup-map.json'
 import {
   boxAround as frameAround,
+  pinPaintOrder,
   wholeMap,
   type MapBox,
 } from '@/lib/meetup-map'
@@ -68,13 +69,10 @@ export function MeetupMap({
     const at = PIN_AT.get(pin.id)
     return at ? [{ ...pin, x: at.x, y: at.y }] : []
   })
-  // Shown pins over past ones. The order never changes after that: a dot
-  // moved in the tree would restart its arrival and blink. The dot the
+  // Upcoming above past, lit above dim. The order never changes after that:
+  // a dot moved in the tree would restart its arrival and blink. The dot the
   // reader is on is drawn again on top instead, further down.
-  placed.sort(
-    (a, b) =>
-      Number(a.past) - Number(b.past) || Number(a.shown) - Number(b.shown),
-  )
+  placed.sort(pinPaintOrder)
   const scale = W / box.width
   const k = 1 / Math.sqrt(scale)
   const hovered = active ? placed.find((p) => p.id === active) : undefined

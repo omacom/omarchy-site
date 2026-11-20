@@ -71,3 +71,14 @@ export function boxAround(
     height,
   )
 }
+
+/** Lower paints first. Upcoming pins paint above past ones, and a lit
+ *  pin paints above a dimmed one from the same time. */
+export function pinPaintOrder(
+  a: { past: boolean; shown: boolean },
+  b: { past: boolean; shown: boolean },
+): number {
+  const rank = (pin: { past: boolean; shown: boolean }) =>
+    (pin.past ? 0 : 2) + (pin.shown ? 1 : 0)
+  return rank(a) - rank(b)
+}
