@@ -216,6 +216,9 @@
      read as text on its page: a national theme's exact flag colour. */
   --color-brand-fill: var(--t-brand-fill, var(--t-brand));
   --color-brand-ink: var(--t-brand-ink);
+  /* The same colour where it says something alone, against the page: a
+     rail's thumb, the music bars, a pressed chip's edge. */
+  --color-brand-signal: var(--t-brand-signal, var(--color-brand-fill));
 
   --color-tn-blue: oklch(0.719 0.132 264.2);
   --color-tn-purple: oklch(0.751 0.134 299.5);

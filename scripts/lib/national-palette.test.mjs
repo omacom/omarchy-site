@@ -19,6 +19,7 @@ import {
   BLACK_CONTRAST,
   isBlackish,
   TEXT_CONTRAST,
+  SHAPE_CONTRAST,
   themeTokens,
 } from './national-palette.mjs'
 import { inHoist, wordGrid } from '../../src/lib/word-shade.ts'
@@ -83,13 +84,32 @@ test('text, links and the word can all be read on their grounds', () => {
           `${theme.id}: ${ink} on ${ground}`,
         )
     }
-    const [, ...cells] = tokens['--t-word-cells'].split(' ')
-    const hoist = tokens['--t-word-hoist']?.split(' ')[0]
-    for (const cell of new Set(hoist ? [...cells, hoist] : cells))
+    // Every cell the word and the mark draw, after shading, not only the
+    // flag colours they start from.
+    const drawn = `${tokens['--t-word']} ${decodeURIComponent(tokens['--t-mark'])}`
+    const field = tokens['--t-field-bg']
+    for (const cell of new Set(drawn.match(/#[0-9a-f]{6}/gi)))
+      if (cell.toLowerCase() !== field)
+        assert.ok(
+          contrast(cell, field) >=
+            (isBlackish(cell) ? BLACK_CONTRAST : WORD_CONTRAST),
+          `${theme.id}: word or mark cell ${cell}`,
+        )
+  }
+})
+
+test('what says something by colour alone stands off the page', () => {
+  for (const theme of NATIONAL_THEMES) {
+    const tokens = themeTokens(theme)
+    for (const ground of [
+      '--t-bg-deep',
+      '--t-bg',
+      '--t-surface',
+      '--t-surface-2',
+    ])
       assert.ok(
-        contrast(cell, tokens['--t-field-bg']) >=
-          (isBlackish(cell) ? BLACK_CONTRAST : WORD_CONTRAST),
-        `${theme.id}: word colour ${cell}`,
+        contrast(tokens['--t-brand-signal'], tokens[ground]) >= SHAPE_CONTRAST,
+        `${theme.id}: --t-brand-signal on ${ground}`,
       )
   }
 })

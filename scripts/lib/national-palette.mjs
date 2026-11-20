@@ -36,6 +36,8 @@ const REST_CONTRAST = 3.5
 import { markGrid, markImage, oneColourMark } from './national-mark.mjs'
 import {
   inHoist,
+  tone,
+  TWO_BAND_DEPTH,
   wordGrid,
   WORD_COLUMNS,
   WORD_ROWS,
@@ -200,6 +202,31 @@ export function readableOn(hex, grounds, floor, dark) {
     if (passes(next)) return next
   }
   return dark ? '#ffffff' : '#000000'
+}
+
+/** Every tone the word, or the mark, can shade a colour to: any step of a
+ *  run of two to five, at either depth, either way round. */
+const toneCache = new Map()
+function tonesOf(hex, field) {
+  const key = `${hex} ${field}`
+  if (toneCache.has(key)) return toneCache.get(key)
+  const tones = new Set()
+  for (const depth of [undefined, TWO_BAND_DEPTH])
+    for (let steps = 2; steps <= 5; steps++)
+      for (let step = 0; step < steps; step++)
+        for (const turned of [false, true])
+          tones.add(tone(hex, step, steps, field, { depth, turned }))
+  toneCache.set(key, tones)
+  return tones
+}
+
+/**
+ * A flag colour as the word wears it: exact unless the field would swallow
+ * it, else lifted as far as its floor, and then by `lifts` further where a
+ * tone the shading gives it still sinks below (themeTokens).
+ */
+export function wordColour(hex, field, dark, lifts) {
+  return readableOn(hex, [field], wordFloor(hex) + (lifts?.get(hex) ?? 0), dark)
 }
 
 // --------------------------------------------------------------- tokens
@@ -373,8 +400,54 @@ function triangleCss(grid, hoist) {
   return [...above, ...below, base].join(', ')
 }
 
-/** Every token a national theme sets, in the order the stock themes do. */
+/**
+ * Every token a national theme sets, in the order the stock themes do.
+ * The word and the mark shade each colour into tones, deeper ones too, so
+ * any colour one of whose drawn tones still sinks into the field is lifted
+ * a little further, until every cell drawn stands off it.
+ */
 export function themeTokens(theme) {
+  const lifts = new Map()
+  for (let round = 0; round < 400; round++) {
+    const { tokens, fieldBg, dark, colors } = tokensWith(theme, lifts)
+    const sunk = sunkColours(tokens, fieldBg, colors, dark, lifts)
+    if (!sunk.size) return tokens
+    // Up by as far as the deepest tone fell short, and at least a little.
+    for (const [hex, short] of sunk)
+      lifts.set(hex, (lifts.get(hex) ?? 0) + Math.max(0.01, short))
+  }
+  throw new Error(`${theme.id}: the word's colours never stand off the field`)
+}
+
+/** The cells the word and the mark draw. */
+const drawnCells = (tokens) =>
+  new Set(
+    `${tokens['--t-word']} ${decodeURIComponent(tokens['--t-mark'])}`
+      .match(/#[0-9a-f]{6}/gi)
+      .map((hex) => hex.toLowerCase()),
+  )
+
+/** The flag colours, of `colors`, one of whose drawn tones falls under
+ *  its floor against the field, each with how far the deepest falls. */
+function sunkColours(tokens, fieldBg, colors, dark, lifts) {
+  const sunk = new Map()
+  // Only a cell under the highest floor can have sunk: the rest are left
+  // unchecked, and the tones are worked out only for the few that are.
+  const low = [...drawnCells(tokens)].filter(
+    (cell) => contrast(cell, fieldBg) < WORD_CONTRAST,
+  )
+  for (const cell of low)
+    for (const hex of colors) {
+      const worn = wordColour(hex, fieldBg, dark, lifts)
+      if (cell !== worn && !tonesOf(worn, fieldBg).has(cell)) continue
+      const short = wordFloor(hex) - contrast(cell, fieldBg)
+      if (short > 0) sunk.set(hex, Math.max(short, sunk.get(hex) ?? 0))
+      break
+    }
+  return sunk
+}
+
+function tokensWith(theme, lifts) {
   const dark = theme.ground === 'dark'
   const g = GREYS[theme.ground]
   const color = (name) => {
@@ -412,6 +485,10 @@ export function themeTokens(theme) {
   const links =
     theme.links ?? (luminance(fill) > 0.85 ? theme.base : theme.button.fill)
   const brand = readableOn(color(links), grounds, TEXT_CONTRAST, dark)
+  // Things that say something by colour alone (a rail's thumb, the music
+  // bars, a pressed chip's edge) are read against the page, so they wear
+  // the button's colour moved, where it must be, to the floor for shapes.
+  const signal = readableOn(fill, grounds, SHAPE_CONTRAST, dark)
 
   // The pixels rest in the field's colour and light up in the hot one.
   const rest = readableOn(color(theme.base), [fieldBg], REST_CONTRAST, dark)
@@ -431,20 +508,14 @@ export function themeTokens(theme) {
   const { axis, cells, runs, splits } = wordCells(theme)
   const shown = new Map()
   for (const [name] of runs)
-    shown.set(
-      name,
-      readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
-    )
+    shown.set(name, wordColour(color(name), fieldBg, dark, lifts))
   const triangle = ('triangle' in theme.word && theme.word.triangle) || null
   const hoist =
     ('hoist' in theme.word && theme.word.hoist) ||
     (triangle && [triangle[0], triangle[1], WORD_ROWS]) ||
     undefined
   if (hoist)
-    shown.set(
-      hoist[0],
-      readableOn(color(hoist[0]), [fieldBg], wordFloor(color(hoist[0])), dark),
-    )
+    shown.set(hoist[0], wordColour(color(hoist[0]), fieldBg, dark, lifts))
   const slant = ('diagonal' in theme.word && theme.word.diagonal) || null
   let diagonal = null
   if (slant) {
@@ -455,10 +526,7 @@ export function themeTokens(theme) {
       ...(slant.fill ?? []).map(([n]) => n),
     ])
       if (!shown.has(name))
-        shown.set(
-          name,
-          readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
-        )
+        shown.set(name, wordColour(color(name), fieldBg, dark, lifts))
     const span = WORD_COLUMNS + WORD_ROWS * slant.slope
     const width = slant.band.reduce((sum, [, cols]) => sum + cols, 0)
     let from = Math.floor((span - width) / 2)
@@ -483,16 +551,10 @@ export function themeTokens(theme) {
   }
   const border = ('edge' in theme.word && theme.word.edge) || null
   if (border && !shown.has(border))
-    shown.set(
-      border,
-      readableOn(color(border), [fieldBg], wordFloor(color(border)), dark),
-    )
+    shown.set(border, wordColour(color(border), fieldBg, dark, lifts))
   const uprights = ('uprights' in theme.word && theme.word.uprights) || []
   for (const [name] of uprights)
-    shown.set(
-      name,
-      readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
-    )
+    shown.set(name, wordColour(color(name), fieldBg, dark, lifts))
   const bars = uprights.map(([name, from, to, rows]) => ({
     color: shown.get(name),
     from,
@@ -571,7 +633,7 @@ export function themeTokens(theme) {
         oneColourMark(
           ...(([field, emblem]) => [field, fieldBg, emblem])(
             theme.favicon.map((name) =>
-              readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
+              wordColour(color(name), fieldBg, dark, lifts),
             ),
           ),
         )
@@ -593,7 +655,7 @@ export function themeTokens(theme) {
   const [elevation, elevationHover, imgOutline, scrollThumb] =
     ELEVATION[theme.ground]
 
-  return {
+  const tokens = {
     '--t-bg-deep': grey(g.deep),
     '--t-bg': bg,
     '--t-surface': surface,
@@ -606,6 +668,7 @@ export function themeTokens(theme) {
     '--t-brand': brand,
     '--t-brand-soft': `${brand}1f`,
     '--t-brand-fill': fill,
+    '--t-brand-signal': signal,
     '--t-brand-ink': ink,
     '--t-elevation': elevation,
     '--t-elevation-hover': elevationHover,
@@ -662,6 +725,10 @@ export function themeTokens(theme) {
     'color-scheme': theme.ground,
     '--t-hdr-text-2': hdr,
   }
+  const colors = [
+    ...new Set([...shown.keys(), ...[theme.favicon ?? []].flat()].map(color)),
+  ]
+  return { tokens, fieldBg, dark, colors }
 }
 
 /** Checks a theme's own description before any tokens are made from it. */

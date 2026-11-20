@@ -21,6 +21,7 @@ html[data-theme='andorra'],
   --t-brand: #fedf00;
   --t-brand-soft: #fedf001f;
   --t-brand-fill: #fedf00;
+  --t-brand-signal: #fedf00;
   --t-brand-ink: #10069f;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -35,10 +36,10 @@ html[data-theme='andorra'],
   --t-field-lit: #fedf00;
   --t-field-hover: #feea59;
   --t-field-crest: #fff5b3;
-  --t-word: conic-gradient(at 32.099% 21.053%, transparent 0deg 270deg, #2b4bd6 270deg), conic-gradient(at 32.099% 36.842%, transparent 0deg 270deg, #223ec8 270deg), conic-gradient(at 32.099% 57.895%, transparent 0deg 270deg, #1a2fba 270deg), conic-gradient(at 32.099% 73.684%, transparent 0deg 270deg, #141eac 270deg), conic-gradient(at 32.099% 100%, transparent 0deg 270deg, #10069f 270deg), conic-gradient(at 67.901% 21.053%, transparent 0deg 270deg, #fedf00 270deg), conic-gradient(at 67.901% 36.842%, transparent 0deg 270deg, #f0d200 270deg), conic-gradient(at 67.901% 57.895%, transparent 0deg 270deg, #e1c600 270deg), conic-gradient(at 67.901% 73.684%, transparent 0deg 270deg, #d3b900 270deg), conic-gradient(at 67.901% 100%, transparent 0deg 270deg, #c5ad00 270deg), linear-gradient(to bottom, #ed3a51 0% 21.053%, #df2845 21.053% 36.842%, #d0103a 36.842% 57.895%, #bf0032 57.895% 73.684%, #ac002c 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%232b4bd6'/%3E%3Crect x='5' y='0' width='5' height='4' fill='%23fedf00'/%3E%3Crect x='10' y='0' width='5' height='4' fill='%23ed3a51'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%23223ec8'/%3E%3Crect x='5' y='4' width='5' height='2' fill='%23f0d200'/%3E%3Crect x='10' y='4' width='5' height='2' fill='%23df2845'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%231a2fba'/%3E%3Crect x='5' y='6' width='5' height='3' fill='%23e1c600'/%3E%3Crect x='10' y='6' width='5' height='3' fill='%23d0103a'/%3E%3Crect x='0' y='9' width='5' height='2' fill='%23141eac'/%3E%3Crect x='5' y='9' width='5' height='2' fill='%23d3b900'/%3E%3Crect x='10' y='9' width='5' height='2' fill='%23bf0032'/%3E%3Crect x='0' y='11' width='5' height='4' fill='%2310069f'/%3E%3Crect x='5' y='11' width='5' height='4' fill='%23c5ad00'/%3E%3Crect x='10' y='11' width='5' height='4' fill='%23ac002c'/%3E%3C/svg%3E");
+  --t-word: conic-gradient(at 32.099% 21.053%, transparent 0deg 270deg, #3e65f0 270deg), conic-gradient(at 32.099% 36.842%, transparent 0deg 270deg, #3457e2 270deg), conic-gradient(at 32.099% 57.895%, transparent 0deg 270deg, #2a4ad4 270deg), conic-gradient(at 32.099% 73.684%, transparent 0deg 270deg, #213cc6 270deg), conic-gradient(at 32.099% 100%, transparent 0deg 270deg, #192eb8 270deg), conic-gradient(at 67.901% 21.053%, transparent 0deg 270deg, #fedf00 270deg), conic-gradient(at 67.901% 36.842%, transparent 0deg 270deg, #f0d200 270deg), conic-gradient(at 67.901% 57.895%, transparent 0deg 270deg, #e1c600 270deg), conic-gradient(at 67.901% 73.684%, transparent 0deg 270deg, #d3b900 270deg), conic-gradient(at 67.901% 100%, transparent 0deg 270deg, #c5ad00 270deg), linear-gradient(to bottom, #ed3a51 0% 21.053%, #df2845 21.053% 36.842%, #d0103a 36.842% 57.895%, #bf0032 57.895% 73.684%, #ac002c 73.684% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%233e65f0'/%3E%3Crect x='5' y='0' width='5' height='4' fill='%23fedf00'/%3E%3Crect x='10' y='0' width='5' height='4' fill='%23ed3a51'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%233457e2'/%3E%3Crect x='5' y='4' width='5' height='2' fill='%23f0d200'/%3E%3Crect x='10' y='4' width='5' height='2' fill='%23df2845'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%232a4ad4'/%3E%3Crect x='5' y='6' width='5' height='3' fill='%23e1c600'/%3E%3Crect x='10' y='6' width='5' height='3' fill='%23d0103a'/%3E%3Crect x='0' y='9' width='5' height='2' fill='%23213cc6'/%3E%3Crect x='5' y='9' width='5' height='2' fill='%23d3b900'/%3E%3Crect x='10' y='9' width='5' height='2' fill='%23bf0032'/%3E%3Crect x='0' y='11' width='5' height='4' fill='%23192eb8'/%3E%3Crect x='5' y='11' width='5' height='4' fill='%23c5ad00'/%3E%3Crect x='10' y='11' width='5' height='4' fill='%23ac002c'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
-  --t-word-cells: cols #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #1a2fba #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a;
+  --t-word-cells: cols #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #2a4ad4 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #fedf00 #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a #d0103a;
   color-scheme: dark;
   --t-hdr-text-2: #d1dbff;
 }
@@ -58,6 +59,7 @@ html[data-theme='emirates'],
   --t-brand: #fe4b3b;
   --t-brand-soft: #fe4b3b1f;
   --t-brand-fill: #ff0000;
+  --t-brand-signal: #ff0000;
   --t-brand-ink: #000000;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -97,6 +99,7 @@ html[data-theme='bosna'],
   --t-brand: #fecb00;
   --t-brand-soft: #fecb001f;
   --t-brand-fill: #fecb00;
+  --t-brand-signal: #fecb00;
   --t-brand-ink: #002395;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -112,7 +115,7 @@ html[data-theme='bosna'],
   --t-field-hover: #ffffff;
   --t-field-crest: #ffffff;
   --t-word: linear-gradient(to bottom, #fecb00 0% 21.053%, #efbf00 21.053% 36.842%, #e0b300 36.842% 57.895%, #d1a700 57.895% 73.684%, #c39b00 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%232252c4'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%232252c4'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23fecb00'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%232252c4'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%231745b6'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23efbf00'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%231745b6'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%230c38a9'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e0b300'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%230c38a9'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%23022a9c'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d1a700'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%23022a9c'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%23001f8a'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23c39b00'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%23001f8a'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%23001f8a'/%3E%3C/svg%3E");
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%23386bdf'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%23386bdf'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23fecb00'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%23386bdf'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%232d5fd2'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23efbf00'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%232d5fd2'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%232252c4'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e0b300'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%232252c4'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%231745b6'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d1a700'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%231745b6'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%230c38a9'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23c39b00'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%230c38a9'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%230c38a9'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-favicon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%232f60d4'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%232f60d4'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23fecb00'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%232f60d4'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%232454c7'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23efbf00'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%232454c7'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%231947b9'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e0b300'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%231947b9'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%230e3aac'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d1a700'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%230e3aac'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%23042d9e'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23c39b00'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%23042d9e'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%23042d9e'/%3E%3C/svg%3E");
   --t-word-cells: rows #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00 #fecb00;
@@ -135,6 +138,7 @@ html[data-theme='bangladesh'],
   --t-brand: #fd4c55;
   --t-brand-soft: #fd4c551f;
   --t-brand-fill: #f42a41;
+  --t-brand-signal: #f42a41;
   --t-brand-ink: #03130d;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -173,6 +177,7 @@ html[data-theme='balgariya'],
   --t-brand: #fb4f39;
   --t-brand-soft: #fb4f391f;
   --t-brand-fill: #d62612;
+  --t-brand-signal: #d82815;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -211,6 +216,7 @@ html[data-theme='brasil'],
   --t-brand: #ffcb00;
   --t-brand-soft: #ffcb001f;
   --t-brand-fill: #ffcb00;
+  --t-brand-signal: #ffcb00;
   --t-brand-ink: #011505;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -249,6 +255,7 @@ html[data-theme='zhongguo'],
   --t-brand: #ffde00;
   --t-brand-soft: #ffde001f;
   --t-brand-fill: #ffde00;
+  --t-brand-signal: #ffde00;
   --t-brand-ink: #220402;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -287,6 +294,7 @@ html[data-theme='cesko'],
   --t-brand: #fe473f;
   --t-brand-soft: #fe473f1f;
   --t-brand-fill: #d7141a;
+  --t-brand-signal: #db1b1e;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -301,12 +309,12 @@ html[data-theme='cesko'],
   --t-field-lit: #ffffff;
   --t-field-hover: #ffffff;
   --t-field-crest: #ffffff;
-  --t-word: conic-gradient(at 2.469% 5.263%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 8.642% 10.526%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 12.346% 15.789%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 13.58% 21.053%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 20.988% 26.316%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 28.395% 31.579%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 33.333% 36.842%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 38.272% 42.105%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 45.679% 47.368%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 2.469% 94.737%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 7.407% 89.474%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 11.111% 84.211%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 14.815% 78.947%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 13.58% 73.684%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 20.988% 68.421%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 28.395% 63.158%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), conic-gradient(at 34.568% 57.895%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), conic-gradient(at 38.272% 52.632%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), conic-gradient(at 45.679% 47.368%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), linear-gradient(to bottom, #3b6eaa 0% 26.316%, #275994 26.316% 47.368%, #11457e 47.368% 68.421%, #003266 68.421% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='1' fill='%23ffffff'/%3E%3Crect x='0' y='1' width='1' height='3' fill='%232a5c97'/%3E%3Crect x='1' y='1' width='14' height='1' fill='%23ffffff'/%3E%3Crect x='1' y='2' width='1' height='2' fill='%232a5c97'/%3E%3Crect x='2' y='2' width='13' height='1' fill='%23ffffff'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%232a5c97'/%3E%3Crect x='3' y='3' width='12' height='1' fill='%23ffffff'/%3E%3Crect x='0' y='4' width='4' height='2' fill='%231e508a'/%3E%3Crect x='4' y='4' width='11' height='1' fill='%23e8e8e8'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%231e508a'/%3E%3Crect x='5' y='5' width='10' height='1' fill='%23e8e8e8'/%3E%3Crect x='0' y='6' width='6' height='3' fill='%2311457e'/%3E%3Crect x='6' y='6' width='9' height='1' fill='%23e8e8e8'/%3E%3Crect x='6' y='7' width='9' height='3' fill='%23f13933'/%3E%3Crect x='0' y='9' width='5' height='1' fill='%23023a72'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%23f13933'/%3E%3Crect x='0' y='10' width='4' height='1' fill='%23023a72'/%3E%3Crect x='4' y='10' width='11' height='5' fill='%23d7141a'/%3E%3Crect x='0' y='11' width='3' height='1' fill='%23003061'/%3E%3Crect x='3' y='11' width='1' height='4' fill='%23d7141a'/%3E%3Crect x='0' y='12' width='2' height='1' fill='%23003061'/%3E%3Crect x='2' y='12' width='1' height='3' fill='%23d7141a'/%3E%3Crect x='0' y='13' width='1' height='1' fill='%23003061'/%3E%3Crect x='1' y='13' width='1' height='2' fill='%23d7141a'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23d7141a'/%3E%3C/svg%3E");
+  --t-word: conic-gradient(at 2.469% 5.263%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 8.642% 10.526%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 12.346% 15.789%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 13.58% 21.053%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 20.988% 26.316%, #ffffff 0deg 90deg, transparent 90deg), conic-gradient(at 28.395% 31.579%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 33.333% 36.842%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 38.272% 42.105%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 45.679% 47.368%, #e8e8e8 0deg 90deg, transparent 90deg), conic-gradient(at 2.469% 94.737%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 7.407% 89.474%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 11.111% 84.211%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 14.815% 78.947%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 13.58% 73.684%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 20.988% 68.421%, transparent 0deg 90deg, #d7141a 90deg 180deg, transparent 180deg), conic-gradient(at 28.395% 63.158%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), conic-gradient(at 34.568% 57.895%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), conic-gradient(at 38.272% 52.632%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), conic-gradient(at 45.679% 47.368%, transparent 0deg 90deg, #f13933 90deg 180deg, transparent 180deg), linear-gradient(to bottom, #4885cf 0% 26.316%, #3370b8 26.316% 47.368%, #1c5ba1 47.368% 68.421%, #00478a 68.421% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='1' fill='%23ffffff'/%3E%3Crect x='0' y='1' width='1' height='3' fill='%233673bb'/%3E%3Crect x='1' y='1' width='14' height='1' fill='%23ffffff'/%3E%3Crect x='1' y='2' width='1' height='2' fill='%233673bb'/%3E%3Crect x='2' y='2' width='13' height='1' fill='%23ffffff'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%233673bb'/%3E%3Crect x='3' y='3' width='12' height='1' fill='%23ffffff'/%3E%3Crect x='0' y='4' width='4' height='2' fill='%232967ae'/%3E%3Crect x='4' y='4' width='11' height='1' fill='%23e8e8e8'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%232967ae'/%3E%3Crect x='5' y='5' width='10' height='1' fill='%23e8e8e8'/%3E%3Crect x='0' y='6' width='6' height='3' fill='%231c5ba1'/%3E%3Crect x='6' y='6' width='9' height='1' fill='%23e8e8e8'/%3E%3Crect x='6' y='7' width='9' height='3' fill='%23f13933'/%3E%3Crect x='0' y='9' width='5' height='1' fill='%230c4f94'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%23f13933'/%3E%3Crect x='0' y='10' width='4' height='1' fill='%230c4f94'/%3E%3Crect x='4' y='10' width='11' height='5' fill='%23d7141a'/%3E%3Crect x='0' y='11' width='3' height='1' fill='%23004486'/%3E%3Crect x='3' y='11' width='1' height='4' fill='%23d7141a'/%3E%3Crect x='0' y='12' width='2' height='1' fill='%23004486'/%3E%3Crect x='2' y='12' width='1' height='3' fill='%23d7141a'/%3E%3Crect x='0' y='13' width='1' height='1' fill='%23004486'/%3E%3Crect x='1' y='13' width='1' height='2' fill='%23d7141a'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23d7141a'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-tab-tones: #ffffff #cfcfcf #ffffff, #e8e8e8 #bcbcbc #e8e8e8;
   --t-word-cells: rows #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a #d7141a;
-  --t-word-hoist: #11457e 37 19 9 3:11 13:17 14:11;
+  --t-word-hoist: #1c5ba1 37 19 9 3:11 13:17 14:11;
   color-scheme: dark;
   --t-hdr-text-2: #cedffa;
 }
@@ -326,6 +334,7 @@ html[data-theme='deutschland'],
   --t-brand: #ffce00;
   --t-brand-soft: #ffce001f;
   --t-brand-fill: #ffce00;
+  --t-brand-signal: #ffce00;
   --t-brand-ink: #000000;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -364,6 +373,7 @@ html[data-theme='danmark'],
   --t-brand: #f74c54;
   --t-brand-soft: #f74c541f;
   --t-brand-fill: #c8102e;
+  --t-brand-signal: #d32337;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -403,6 +413,7 @@ html[data-theme='eesti'],
   --t-brand: #308eed;
   --t-brand-soft: #308eed1f;
   --t-brand-fill: #0072ce;
+  --t-brand-signal: #0072ce;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -441,6 +452,7 @@ html[data-theme='suomi'],
   --t-brand: #588edb;
   --t-brand-soft: #588edb1f;
   --t-brand-fill: #ffffff;
+  --t-brand-signal: #ffffff;
   --t-brand-ink: #002f6c;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -480,6 +492,7 @@ html[data-theme='france'],
   --t-brand: #fb4a3f;
   --t-brand-soft: #fb4a3f1f;
   --t-brand-fill: #e1000f;
+  --t-brand-signal: #e1000f;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -494,11 +507,11 @@ html[data-theme='france'],
   --t-field-lit: #e1000f;
   --t-field-hover: #ec5963;
   --t-field-crest: #f6b3b7;
-  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #1d4ecf 270deg), conic-gradient(at 33.333% 36.842%, transparent 0deg 270deg, #1341c2 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #0833b4 270deg), conic-gradient(at 33.333% 73.684%, transparent 0deg 270deg, #0124a6 270deg), conic-gradient(at 33.333% 100%, transparent 0deg 270deg, #001795 270deg), conic-gradient(at 67.901% 21.053%, transparent 0deg 270deg, #ffffff 270deg), conic-gradient(at 67.901% 36.842%, transparent 0deg 270deg, #f2f2f2 270deg), conic-gradient(at 67.901% 57.895%, transparent 0deg 270deg, #e4e4e4 270deg), conic-gradient(at 67.901% 73.684%, transparent 0deg 270deg, #d7d7d7 270deg), conic-gradient(at 67.901% 100%, transparent 0deg 270deg, #cacaca 270deg), linear-gradient(to bottom, #ff3831 0% 21.053%, #f02422 21.053% 36.842%, #e1000f 36.842% 57.895%, #ce000d 57.895% 73.684%, #bb000a 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%231d4ecf'/%3E%3Crect x='5' y='0' width='5' height='4' fill='%23ffffff'/%3E%3Crect x='10' y='0' width='5' height='4' fill='%23ff3831'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%231341c2'/%3E%3Crect x='5' y='4' width='5' height='2' fill='%23f2f2f2'/%3E%3Crect x='10' y='4' width='5' height='2' fill='%23f02422'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%230833b4'/%3E%3Crect x='5' y='6' width='5' height='3' fill='%23e4e4e4'/%3E%3Crect x='10' y='6' width='5' height='3' fill='%23e1000f'/%3E%3Crect x='0' y='9' width='5' height='2' fill='%230124a6'/%3E%3Crect x='5' y='9' width='5' height='2' fill='%23d7d7d7'/%3E%3Crect x='10' y='9' width='5' height='2' fill='%23ce000d'/%3E%3Crect x='0' y='11' width='5' height='4' fill='%23001795'/%3E%3Crect x='5' y='11' width='5' height='4' fill='%23cacaca'/%3E%3Crect x='10' y='11' width='5' height='4' fill='%23bb000a'/%3E%3C/svg%3E");
+  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #3369ec 270deg), conic-gradient(at 33.333% 36.842%, transparent 0deg 270deg, #285cde 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #1d4fd0 270deg), conic-gradient(at 33.333% 73.684%, transparent 0deg 270deg, #1242c2 270deg), conic-gradient(at 33.333% 100%, transparent 0deg 270deg, #0734b5 270deg), conic-gradient(at 67.901% 21.053%, transparent 0deg 270deg, #ffffff 270deg), conic-gradient(at 67.901% 36.842%, transparent 0deg 270deg, #f2f2f2 270deg), conic-gradient(at 67.901% 57.895%, transparent 0deg 270deg, #e4e4e4 270deg), conic-gradient(at 67.901% 73.684%, transparent 0deg 270deg, #d7d7d7 270deg), conic-gradient(at 67.901% 100%, transparent 0deg 270deg, #cacaca 270deg), linear-gradient(to bottom, #ff3831 0% 21.053%, #f02422 21.053% 36.842%, #e1000f 36.842% 57.895%, #ce000d 57.895% 73.684%, #bb000a 73.684% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%233369ec'/%3E%3Crect x='5' y='0' width='5' height='4' fill='%23ffffff'/%3E%3Crect x='10' y='0' width='5' height='4' fill='%23ff3831'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%23285cde'/%3E%3Crect x='5' y='4' width='5' height='2' fill='%23f2f2f2'/%3E%3Crect x='10' y='4' width='5' height='2' fill='%23f02422'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%231d4fd0'/%3E%3Crect x='5' y='6' width='5' height='3' fill='%23e4e4e4'/%3E%3Crect x='10' y='6' width='5' height='3' fill='%23e1000f'/%3E%3Crect x='0' y='9' width='5' height='2' fill='%231242c2'/%3E%3Crect x='5' y='9' width='5' height='2' fill='%23d7d7d7'/%3E%3Crect x='10' y='9' width='5' height='2' fill='%23ce000d'/%3E%3Crect x='0' y='11' width='5' height='4' fill='%230734b5'/%3E%3Crect x='5' y='11' width='5' height='4' fill='%23cacaca'/%3E%3Crect x='10' y='11' width='5' height='4' fill='%23bb000a'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-tab-tones: #ffffff #cfcfcf #ffffff, #f2f2f2 #c4c4c4 #f2f2f2, #e4e4e4 #b9b9b9 #e4e4e4, #d7d7d7 #aeaeae #d7d7d7, #cacaca #a4a4a4 #cacaca;
-  --t-word-cells: cols #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #0833b4 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f;
+  --t-word-cells: cols #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #1d4fd0 #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f #e1000f;
   color-scheme: dark;
   --t-hdr-text-2: #d0dcff;
 }
@@ -518,6 +531,7 @@ html[data-theme='hellas'],
   --t-brand: #458ee3;
   --t-brand-soft: #458ee31f;
   --t-brand-fill: #ffffff;
+  --t-brand-signal: #ffffff;
   --t-brand-ink: #0d5eaf;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -556,6 +570,7 @@ html[data-theme='hrvatska'],
   --t-brand: #fd4939;
   --t-brand-soft: #fd49391f;
   --t-brand-fill: #ff0000;
+  --t-brand-signal: #ff0000;
   --t-brand-ink: #060d27;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -594,6 +609,7 @@ html[data-theme='magyarorszag'],
   --t-brand: #f5535e;
   --t-brand-soft: #f5535e1f;
   --t-brand-fill: #cd2a3e;
+  --t-brand-signal: #d12e41;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -632,6 +648,7 @@ html[data-theme='indonesia'],
   --t-brand: #fd4939;
   --t-brand-soft: #fd49391f;
   --t-brand-fill: #ff0000;
+  --t-brand-signal: #ff0000;
   --t-brand-ink: #220402;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -670,6 +687,7 @@ html[data-theme='eire'],
   --t-brand: #ff883e;
   --t-brand-soft: #ff883e1f;
   --t-brand-fill: #ff883e;
+  --t-brand-signal: #ff883e;
   --t-brand-ink: #011409;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -708,6 +726,7 @@ html[data-theme='israel'],
   --t-brand: #0038b8;
   --t-brand-soft: #0038b81f;
   --t-brand-fill: #0038b8;
+  --t-brand-signal: #0038b8;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(0 0 0 / 0.06), 0 1px 3px oklch(0 0 0 / 0.05),
     0 4px 10px -4px oklch(0 0 0 / 0.05);
@@ -749,6 +768,7 @@ html[data-theme='bharat'],
   --t-brand: #ff9933;
   --t-brand-soft: #ff99331f;
   --t-brand-fill: #ff9933;
+  --t-brand-signal: #ff9933;
   --t-brand-ink: #000080;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -787,6 +807,7 @@ html[data-theme='iran'],
   --t-brand: #fb503f;
   --t-brand-soft: #fb503f1f;
   --t-brand-fill: #da0000;
+  --t-brand-signal: #e0120b;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -825,6 +846,7 @@ html[data-theme='island'],
   --t-brand: #fd4750;
   --t-brand-soft: #fd47501f;
   --t-brand-fill: #dc1e35;
+  --t-brand-signal: #dc1e35;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -864,6 +886,7 @@ html[data-theme='italia'],
   --t-brand: #f65457;
   --t-brand-soft: #f654571f;
   --t-brand-fill: #ce2b37;
+  --t-brand-signal: #d22f3a;
   --t-brand-ink: #f4f5f0;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -902,6 +925,7 @@ html[data-theme='nippon'],
   --t-brand: #bc002d;
   --t-brand-soft: #bc002d1f;
   --t-brand-fill: #bc002d;
+  --t-brand-signal: #bc002d;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(0 0 0 / 0.06), 0 1px 3px oklch(0 0 0 / 0.05),
     0 4px 10px -4px oklch(0 0 0 / 0.05);
@@ -941,6 +965,7 @@ html[data-theme='hanguk'],
   --t-brand: #0047a0;
   --t-brand-soft: #0047a01f;
   --t-brand-fill: #cd2e3a;
+  --t-brand-signal: #cd2e3a;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(0 0 0 / 0.06), 0 1px 3px oklch(0 0 0 / 0.05),
     0 4px 10px -4px oklch(0 0 0 / 0.05);
@@ -980,6 +1005,7 @@ html[data-theme='srilanka'],
   --t-brand: #ffbe29;
   --t-brand-soft: #ffbe291f;
   --t-brand-fill: #ffbe29;
+  --t-brand-signal: #ffbe29;
   --t-brand-ink: #8d153a;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -995,7 +1021,7 @@ html[data-theme='srilanka'],
   --t-field-hover: #ffd574;
   --t-field-crest: #ffecbf;
   --t-word: linear-gradient(to bottom, #ffbe29 0% 21.053%, #f1b106 21.053% 36.842%, #e2a500 36.842% 57.895%, #d39a00 57.895% 73.684%, #c38e00 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%23a8324f'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%23a8324f'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23ffbe29'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%23a8324f'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%239a2545'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23f1b106'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%239a2545'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%238d153a'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e2a500'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%238d153a'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%237f0030'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d39a00'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%237f0030'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%236e0028'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23c38e00'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%236e0028'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%236e0028'/%3E%3C/svg%3E");
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%23bc4660'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%23bc4660'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23ffbe29'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%23bc4660'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%23af3955'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23f1b106'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%23af3955'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%23a12c4a'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e2a500'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%23a12c4a'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%23931e3f'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d39a00'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%23931e3f'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%23860b35'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23c38e00'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%23860b35'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%23860b35'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-favicon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%23b23c58'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%23b23c58'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23ffbe29'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%23b23c58'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%23a52f4d'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23f1b106'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%23a52f4d'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%23972142'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e2a500'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%23972142'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%238a1037'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d39a00'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%238a1037'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%237b002e'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23c38e00'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%237b002e'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%237b002e'/%3E%3C/svg%3E");
   --t-word-cells: rows #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29 #ffbe29;
@@ -1018,6 +1044,7 @@ html[data-theme='lietuva'],
   --t-brand: #fdb913;
   --t-brand-soft: #fdb9131f;
   --t-brand-fill: #fdb913;
+  --t-brand-signal: #fdb913;
   --t-brand-ink: #03140b;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1055,6 +1082,7 @@ html[data-theme='latvija'],
   --t-brand: #e0626c;
   --t-brand-soft: #e0626c1f;
   --t-brand-fill: #9d2235;
+  --t-brand-signal: #be424f;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1069,11 +1097,11 @@ html[data-theme='latvija'],
   --t-field-lit: #ffffff;
   --t-field-hover: #ffffff;
   --t-field-crest: #ffffff;
-  --t-word: linear-gradient(to bottom, #b83e4b 0% 21.053%, #ab3040 21.053% 42.105%, #ffffff 42.105% 57.895%, #9d2235 57.895% 73.684%, #8f112a 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='4' fill='%23b83e4b'/%3E%3Crect x='0' y='4' width='15' height='2' fill='%23ab3040'/%3E%3Crect x='0' y='6' width='15' height='3' fill='%23ffffff'/%3E%3Crect x='0' y='9' width='15' height='2' fill='%238f112a'/%3E%3Crect x='0' y='11' width='15' height='4' fill='%23800021'/%3E%3C/svg%3E");
+  --t-word: linear-gradient(to bottom, #c24652 0% 21.053%, #b43947 21.053% 42.105%, #ffffff 42.105% 57.895%, #a62b3c 57.895% 73.684%, #981c31 73.684% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='4' fill='%23c24652'/%3E%3Crect x='0' y='4' width='15' height='2' fill='%23b43947'/%3E%3Crect x='0' y='6' width='15' height='3' fill='%23ffffff'/%3E%3Crect x='0' y='9' width='15' height='2' fill='%23981c31'/%3E%3Crect x='0' y='11' width='15' height='4' fill='%238b0727'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-tab-tones: #ffffff #cfcfcf #ffffff;
-  --t-word-cells: rows #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #ffffff #ffffff #ffffff #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #9d2235 #9d2235;
+  --t-word-cells: rows #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #ffffff #ffffff #ffffff #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c #a62b3c;
   color-scheme: dark;
   --t-hdr-text-2: #fbd1d3;
 }
@@ -1093,6 +1121,7 @@ html[data-theme='mexico'],
   --t-brand: #fc4c4d;
   --t-brand-soft: #fc4c4d1f;
   --t-brand-fill: #ce1126;
+  --t-brand-signal: #d92430;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1131,6 +1160,7 @@ html[data-theme='malaysia'],
   --t-brand: #ffcc00;
   --t-brand-soft: #ffcc001f;
   --t-brand-fill: #ffcc00;
+  --t-brand-signal: #ffcc00;
   --t-brand-ink: #000066;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1145,12 +1175,12 @@ html[data-theme='malaysia'],
   --t-field-lit: #ffcc00;
   --t-field-hover: #ffde59;
   --t-field-crest: #fff0b3;
-  --t-word: conic-gradient(at 33.333% 15.789%, transparent 0deg 270deg, #2b53b3 270deg), conic-gradient(at 33.333% 26.316%, transparent 0deg 270deg, #2047a6 270deg), conic-gradient(at 33.333% 42.105%, transparent 0deg 270deg, #163b99 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #0c2f8c 270deg), linear-gradient(to bottom, #e93428 0% 15.789%, #ffffff 15.789% 26.316%, #db2117 26.316% 42.105%, #e4e4e4 42.105% 57.895%, #cc0000 57.895% 73.684%, #cacaca 73.684% 84.211%, #b90000 84.211% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%232b53b3'/%3E%3Crect x='5' y='0' width='10' height='2' fill='%23e93428'/%3E%3Crect x='5' y='2' width='10' height='2' fill='%23ffffff'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%232047a6'/%3E%3Crect x='5' y='4' width='10' height='2' fill='%23db2117'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%23163b99'/%3E%3Crect x='5' y='6' width='10' height='3' fill='%23e4e4e4'/%3E%3Crect x='0' y='9' width='15' height='2' fill='%23b90000'/%3E%3Crect x='0' y='11' width='15' height='2' fill='%23cacaca'/%3E%3Crect x='0' y='13' width='15' height='2' fill='%23a70000'/%3E%3C/svg%3E");
+  --t-word: conic-gradient(at 33.333% 15.789%, transparent 0deg 270deg, #355fc0 270deg), conic-gradient(at 33.333% 26.316%, transparent 0deg 270deg, #2b53b3 270deg), conic-gradient(at 33.333% 42.105%, transparent 0deg 270deg, #2047a6 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #163b99 270deg), linear-gradient(to bottom, #e93428 0% 15.789%, #ffffff 15.789% 26.316%, #db2117 26.316% 42.105%, #e4e4e4 42.105% 57.895%, #cc0000 57.895% 73.684%, #cacaca 73.684% 84.211%, #b90000 84.211% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%23355fc0'/%3E%3Crect x='5' y='0' width='10' height='2' fill='%23e93428'/%3E%3Crect x='5' y='2' width='10' height='2' fill='%23ffffff'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%232b53b3'/%3E%3Crect x='5' y='4' width='10' height='2' fill='%23db2117'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%232047a6'/%3E%3Crect x='5' y='6' width='10' height='3' fill='%23e4e4e4'/%3E%3Crect x='0' y='9' width='15' height='2' fill='%23b90000'/%3E%3Crect x='0' y='11' width='15' height='2' fill='%23cacaca'/%3E%3Crect x='0' y='13' width='15' height='2' fill='%23a70000'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-tab-tones: #ffffff #cfcfcf #ffffff, #e4e4e4 #b9b9b9 #e4e4e4, #cacaca #a4a4a4 #cacaca;
   --t-word-cells: rows #cc0000 #cc0000 #cc0000 #ffffff #ffffff #cc0000 #cc0000 #cc0000 #ffffff #ffffff #ffffff #cc0000 #cc0000 #cc0000 #ffffff #ffffff #cc0000 #cc0000 #cc0000;
-  --t-word-hoist: #163b99 27 11;
+  --t-word-hoist: #2047a6 27 11;
   color-scheme: dark;
   --t-hdr-text-2: #d0dcff;
 }
@@ -1170,6 +1200,7 @@ html[data-theme='nederland'],
   --t-brand: #ec5c5b;
   --t-brand-soft: #ec5c5b1f;
   --t-brand-fill: #ae1c28;
+  --t-brand-signal: #c83a3e;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1208,6 +1239,7 @@ html[data-theme='norge'],
   --t-brand: #f2505b;
   --t-brand-soft: #f2505b1f;
   --t-brand-fill: #ba0c2f;
+  --t-brand-signal: #ce2b3f;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1247,6 +1279,7 @@ html[data-theme='pilipinas'],
   --t-brand: #fcd116;
   --t-brand-soft: #fcd1161f;
   --t-brand-fill: #fcd116;
+  --t-brand-signal: #fcd116;
   --t-brand-ink: #0038a8;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1286,6 +1319,7 @@ html[data-theme='pakistan'],
   --t-brand: #429f5f;
   --t-brand-soft: #429f5f1f;
   --t-brand-fill: #ffffff;
+  --t-brand-signal: #ffffff;
   --t-brand-ink: #01411c;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1301,7 +1335,7 @@ html[data-theme='pakistan'],
   --t-field-hover: #ffffff;
   --t-field-crest: #ffffff;
   --t-word: linear-gradient(to bottom, #ffffff 0% 21.053%, #f2f2f2 21.053% 36.842%, #e4e4e4 36.842% 57.895%, #d7d7d7 57.895% 73.684%, #cacaca 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%2327653a'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%2327653a'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23ffffff'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%2327653a'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%231a592f'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23f2f2f2'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%231a592f'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%230b4e25'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e4e4e4'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%230b4e25'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%2300431c'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d7d7d7'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%2300431c'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%23003716'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23cacaca'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%23003716'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%23003716'/%3E%3C/svg%3E");
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%232b8047'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%232b8047'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23ffffff'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%232b8047'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%231b743c'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23f2f2f2'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%231b743c'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%23056831'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e4e4e4'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%23056831'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%23005c29'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d7d7d7'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%23005c29'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%23004f23'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23cacaca'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%23004f23'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%23004f23'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-favicon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='15' height='2' fill='%233a724a'/%3E%3Crect x='0' y='2' width='2' height='2' fill='%233a724a'/%3E%3Crect x='2' y='2' width='11' height='2' fill='%23ffffff'/%3E%3Crect x='13' y='2' width='2' height='2' fill='%233a724a'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%232e663f'/%3E%3Crect x='2' y='4' width='11' height='2' fill='%23f2f2f2'/%3E%3Crect x='13' y='4' width='2' height='2' fill='%232e663f'/%3E%3Crect x='0' y='6' width='2' height='3' fill='%23225b34'/%3E%3Crect x='2' y='6' width='11' height='3' fill='%23e4e4e4'/%3E%3Crect x='13' y='6' width='2' height='3' fill='%23225b34'/%3E%3Crect x='0' y='9' width='2' height='2' fill='%2315502a'/%3E%3Crect x='2' y='9' width='11' height='2' fill='%23d7d7d7'/%3E%3Crect x='13' y='9' width='2' height='2' fill='%2315502a'/%3E%3Crect x='0' y='11' width='2' height='4' fill='%2305451f'/%3E%3Crect x='2' y='11' width='11' height='2' fill='%23cacaca'/%3E%3Crect x='13' y='11' width='2' height='4' fill='%2305451f'/%3E%3Crect x='2' y='13' width='11' height='2' fill='%2305451f'/%3E%3C/svg%3E");
   --t-tab-tones: #ffffff #cfcfcf #ffffff, #f2f2f2 #c4c4c4 #f2f2f2, #e4e4e4 #b9b9b9 #e4e4e4, #d7d7d7 #aeaeae #d7d7d7, #cacaca #a4a4a4 #cacaca;
@@ -1325,6 +1359,7 @@ html[data-theme='polska'],
   --t-brand: #fd4256;
   --t-brand-soft: #fd42561f;
   --t-brand-fill: #dc143c;
+  --t-brand-signal: #dc143c;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1363,6 +1398,7 @@ html[data-theme='portugal'],
   --t-brand: #ffe900;
   --t-brand-soft: #ffe9001f;
   --t-brand-fill: #da291c;
+  --t-brand-signal: #da291c;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1400,6 +1436,7 @@ html[data-theme='romania'],
   --t-brand: #fcd116;
   --t-brand-soft: #fcd1161f;
   --t-brand-fill: #fcd116;
+  --t-brand-signal: #fcd116;
   --t-brand-ink: #002b7f;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1414,10 +1451,10 @@ html[data-theme='romania'],
   --t-field-lit: #fcd116;
   --t-field-hover: #fde168;
   --t-field-crest: #fef1b9;
-  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #2957ae 270deg), conic-gradient(at 33.333% 36.842%, transparent 0deg 270deg, #1e4ba1 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #123f94 270deg), conic-gradient(at 33.333% 73.684%, transparent 0deg 270deg, #063387 270deg), conic-gradient(at 33.333% 100%, transparent 0deg 270deg, #002878 270deg), conic-gradient(at 67.901% 21.053%, transparent 0deg 270deg, #fcd116 270deg), conic-gradient(at 67.901% 36.842%, transparent 0deg 270deg, #eec400 270deg), conic-gradient(at 67.901% 57.895%, transparent 0deg 270deg, #dfb800 270deg), conic-gradient(at 67.901% 73.684%, transparent 0deg 270deg, #d0ac00 270deg), conic-gradient(at 67.901% 100%, transparent 0deg 270deg, #c2a000 270deg), linear-gradient(to bottom, #eb3a3f 0% 21.053%, #dd2933 21.053% 36.842%, #ce1126 36.842% 57.895%, #bd001e 57.895% 73.684%, #aa001a 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%232957ae'/%3E%3Crect x='5' y='0' width='5' height='4' fill='%23fcd116'/%3E%3Crect x='10' y='0' width='5' height='4' fill='%23eb3a3f'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%231e4ba1'/%3E%3Crect x='5' y='4' width='5' height='2' fill='%23eec400'/%3E%3Crect x='10' y='4' width='5' height='2' fill='%23dd2933'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%23123f94'/%3E%3Crect x='5' y='6' width='5' height='3' fill='%23dfb800'/%3E%3Crect x='10' y='6' width='5' height='3' fill='%23ce1126'/%3E%3Crect x='0' y='9' width='5' height='2' fill='%23063387'/%3E%3Crect x='5' y='9' width='5' height='2' fill='%23d0ac00'/%3E%3Crect x='10' y='9' width='5' height='2' fill='%23bd001e'/%3E%3Crect x='0' y='11' width='5' height='4' fill='%23002878'/%3E%3Crect x='5' y='11' width='5' height='4' fill='%23c2a000'/%3E%3Crect x='10' y='11' width='5' height='4' fill='%23aa001a'/%3E%3C/svg%3E");
+  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #3f6ec8 270deg), conic-gradient(at 33.333% 36.842%, transparent 0deg 270deg, #3462bb 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #2956ae 270deg), conic-gradient(at 33.333% 73.684%, transparent 0deg 270deg, #1e4aa1 270deg), conic-gradient(at 33.333% 100%, transparent 0deg 270deg, #133e94 270deg), conic-gradient(at 67.901% 21.053%, transparent 0deg 270deg, #fcd116 270deg), conic-gradient(at 67.901% 36.842%, transparent 0deg 270deg, #eec400 270deg), conic-gradient(at 67.901% 57.895%, transparent 0deg 270deg, #dfb800 270deg), conic-gradient(at 67.901% 73.684%, transparent 0deg 270deg, #d0ac00 270deg), conic-gradient(at 67.901% 100%, transparent 0deg 270deg, #c2a000 270deg), linear-gradient(to bottom, #eb3a3f 0% 21.053%, #dd2933 21.053% 36.842%, #ce1126 36.842% 57.895%, #bd001e 57.895% 73.684%, #aa001a 73.684% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%233f6ec8'/%3E%3Crect x='5' y='0' width='5' height='4' fill='%23fcd116'/%3E%3Crect x='10' y='0' width='5' height='4' fill='%23eb3a3f'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%233462bb'/%3E%3Crect x='5' y='4' width='5' height='2' fill='%23eec400'/%3E%3Crect x='10' y='4' width='5' height='2' fill='%23dd2933'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%232956ae'/%3E%3Crect x='5' y='6' width='5' height='3' fill='%23dfb800'/%3E%3Crect x='10' y='6' width='5' height='3' fill='%23ce1126'/%3E%3Crect x='0' y='9' width='5' height='2' fill='%231e4aa1'/%3E%3Crect x='5' y='9' width='5' height='2' fill='%23d0ac00'/%3E%3Crect x='10' y='9' width='5' height='2' fill='%23bd001e'/%3E%3Crect x='0' y='11' width='5' height='4' fill='%23133e94'/%3E%3Crect x='5' y='11' width='5' height='4' fill='%23c2a000'/%3E%3Crect x='10' y='11' width='5' height='4' fill='%23aa001a'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
-  --t-word-cells: cols #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #123f94 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126;
+  --t-word-cells: cols #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #2956ae #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #fcd116 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126 #ce1126;
   color-scheme: dark;
   --t-hdr-text-2: #cfdefe;
 }
@@ -1437,6 +1474,7 @@ html[data-theme='srbija'],
   --t-brand: #ed5c5c;
   --t-brand-soft: #ed5c5c1f;
   --t-brand-fill: #c6363c;
+  --t-brand-signal: #ca3a3f;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1475,6 +1513,7 @@ html[data-theme='rossiya'],
   --t-brand: #f8503f;
   --t-brand-soft: #f8503f1f;
   --t-brand-fill: #d52b1e;
+  --t-brand-signal: #d52b1e;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1513,6 +1552,7 @@ html[data-theme='sverige'],
   --t-brand: #fecc02;
   --t-brand-soft: #fecc021f;
   --t-brand-fill: #fecc02;
+  --t-brand-signal: #fecc02;
   --t-brand-ink: #01111f;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1551,6 +1591,7 @@ html[data-theme='slovenija'],
   --t-brand: #f8505a;
   --t-brand-soft: #f8505a1f;
   --t-brand-fill: #d50032;
+  --t-brand-signal: #db1136;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1589,6 +1630,7 @@ html[data-theme='slovensko'],
   --t-brand: #fe4b44;
   --t-brand-soft: #fe4b441f;
   --t-brand-fill: #ed1c24;
+  --t-brand-signal: #ed1c24;
   --t-brand-ink: #000000;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1627,6 +1669,7 @@ html[data-theme='thai'],
   --t-brand: #e85d66;
   --t-brand-soft: #e85d661f;
   --t-brand-fill: #a51931;
+  --t-brand-signal: #c63e4b;
   --t-brand-ink: #f4f5f8;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1665,6 +1708,7 @@ html[data-theme='turkiye'],
   --t-brand: #fb4b41;
   --t-brand-soft: #fb4b411f;
   --t-brand-fill: #e30a17;
+  --t-brand-signal: #e30a17;
   --t-brand-ink: #ffffff;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1704,6 +1748,7 @@ html[data-theme='taiwan'],
   --t-brand: #fc4939;
   --t-brand-soft: #fc49391f;
   --t-brand-fill: #fe0000;
+  --t-brand-signal: #fe0000;
   --t-brand-ink: #220402;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1718,11 +1763,11 @@ html[data-theme='taiwan'],
   --t-field-lit: #ffffff;
   --t-field-hover: #ffffff;
   --t-field-crest: #ffffff;
-  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #103fc3 270deg), conic-gradient(at 33.333% 36.842%, transparent 0deg 270deg, #0631b5 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #0021a7 270deg), linear-gradient(to bottom, #fe0000 0% 21.053%, #ea0000 21.053% 36.842%, #d70000 36.842% 57.895%, #c40000 57.895% 73.684%, #b10000 73.684% 100%);
-  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%231b4dd0'/%3E%3Crect x='5' y='0' width='10' height='4' fill='%23fe0000'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%23103fc3'/%3E%3Crect x='5' y='4' width='10' height='2' fill='%23ea0000'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%230631b5'/%3E%3Crect x='5' y='6' width='10' height='3' fill='%23d70000'/%3E%3Crect x='0' y='9' width='15' height='2' fill='%23c40000'/%3E%3Crect x='0' y='11' width='15' height='4' fill='%23b10000'/%3E%3C/svg%3E");
+  --t-word: conic-gradient(at 33.333% 21.053%, transparent 0deg 270deg, #1b4dd1 270deg), conic-gradient(at 33.333% 36.842%, transparent 0deg 270deg, #103fc3 270deg), conic-gradient(at 33.333% 57.895%, transparent 0deg 270deg, #0631b5 270deg), linear-gradient(to bottom, #fe0000 0% 21.053%, #ea0000 21.053% 36.842%, #d70000 36.842% 57.895%, #c40000 57.895% 73.684%, #b10000 73.684% 100%);
+  --t-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='5' height='4' fill='%23265adf'/%3E%3Crect x='5' y='0' width='10' height='4' fill='%23fe0000'/%3E%3Crect x='0' y='4' width='5' height='2' fill='%231b4dd1'/%3E%3Crect x='5' y='4' width='10' height='2' fill='%23ea0000'/%3E%3Crect x='0' y='6' width='5' height='3' fill='%23103fc3'/%3E%3Crect x='5' y='6' width='10' height='3' fill='%23d70000'/%3E%3Crect x='0' y='9' width='15' height='2' fill='%23c40000'/%3E%3Crect x='0' y='11' width='15' height='4' fill='%23b10000'/%3E%3C/svg%3E");
   --t-mark-bands: transparent;
   --t-word-cells: rows #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000 #fe0000;
-  --t-word-hoist: #0631b5 27 11;
+  --t-word-hoist: #103fc3 27 11;
   color-scheme: dark;
   --t-hdr-text-2: #fdd1ce;
 }
@@ -1742,6 +1787,7 @@ html[data-theme='tanzania'],
   --t-brand: #fcd116;
   --t-brand-soft: #fcd1161f;
   --t-brand-fill: #fcd116;
+  --t-brand-signal: #fcd116;
   --t-brand-ink: #000000;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1782,6 +1828,7 @@ html[data-theme='ukrayina'],
   --t-brand: #ffd700;
   --t-brand-soft: #ffd7001f;
   --t-brand-fill: #ffd700;
+  --t-brand-signal: #ffd700;
   --t-brand-ink: #0057b7;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1819,6 +1866,7 @@ html[data-theme='ozbekiston'],
   --t-brand: #1eb53a;
   --t-brand-soft: #1eb53a1f;
   --t-brand-fill: #1eb53a;
+  --t-brand-signal: #1eb53a;
   --t-brand-ink: #011217;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
@@ -1858,6 +1906,7 @@ html[data-theme='vietnam'],
   --t-brand: #fb4b3d;
   --t-brand-soft: #fb4b3d1f;
   --t-brand-fill: #ffff00;
+  --t-brand-signal: #ffff00;
   --t-brand-ink: #da251d;
   --t-elevation: 0 0 0 1px oklch(1 0 0 / 0.07);
   --t-elevation-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
