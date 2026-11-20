@@ -60,17 +60,17 @@ function readPalette() {
     ),
     /** Bars down the whole word: a cross's upright. */
     uprights: wordUprights(token('--t-word-uprights', '')),
-    /** A slant across the word instead of its bands. */
     /** A theme's own square mark (a national theme's flag), block by
      *  block, which a click's stamp wears. */
     mark: markBlocks(token('--t-mark', '')),
+    /** A slant across the word instead of its bands. */
     diagonal: wordDiagonal(
       token('--t-word-diagonal', ''),
       token('--t-word-diagonal-fill', ''),
     ),
-    /** Rows where a band takes its second tone, where the flag says. */
     /** The tones run the other way down the word. */
     turned: token('--t-word-turned', '') === '1',
+    /** Rows where a band takes its second tone, where the flag says. */
     splits: token('--t-word-splits', '')
       .split(/\s+/)
       .filter(Boolean)

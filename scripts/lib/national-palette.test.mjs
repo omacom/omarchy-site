@@ -94,6 +94,17 @@ test('text, links and the word can all be read on their grounds', () => {
   }
 })
 
+test('a favicon tones only the whites and blacks a tab would swallow', async () => {
+  const { tabTones } = await import('./national-palette.mjs')
+  const svg = (...fills) =>
+    `url("data:image/svg+xml,${encodeURIComponent(fills.map((f) => `<rect fill='${f}'/>`).join(''))}")`
+  assert.equal(
+    tabTones(svg('#ffffff', '#c8102e', '#000000')),
+    '#ffffff #cfcfcf #ffffff, #000000 #000000 #404040',
+  )
+  assert.equal(tabTones(svg('#c8102e')), '')
+})
+
 test('a site ships only its own national theme', () => {
   const css = readFileSync(
     new URL('../../src/national-themes.css', import.meta.url),

@@ -60,26 +60,15 @@ export function paintFavicon() {
   document.head.appendChild(link)
 }
 
-/** A colour's channels, 0 to 255. */
-const channels = (hex: string) =>
-  [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16))
-const toHex = (rgb: number[]) =>
-  `#${rgb.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')}`
-
-/**
- * A favicon's colour on a light tab, and on a dark one. A flag's whites, in
- * every tone, sink a fifth toward grey on a light tab, the default, and its
- * blacks lift a quarter toward white on a dark one, so neither vanishes into
- * a tab of its own colour.
- */
-function onTabs(hex: string) {
-  const rgb = channels(hex)
-  const grey = Math.max(...rgb) - Math.min(...rgb) < 24
-  if (grey && Math.min(...rgb) > 150)
-    return { light: toHex(rgb.map((v) => v * 0.81)), dark: hex }
-  if (grey && Math.max(...rgb) < 64)
-    return { light: hex, dark: toHex(rgb.map((v) => v + (255 - v) * 0.25)) }
-  return { light: hex, dark: hex }
+/** A theme's `--t-tab-tones`: each favicon colour a tab would swallow, and
+ *  its tone on a light tab and a dark one (scripts/lib/national-palette.mjs). */
+function tabTones(style: CSSStyleDeclaration) {
+  const tones = new Map<string, { light: string; dark: string }>()
+  for (const entry of style.getPropertyValue('--t-tab-tones').split(',')) {
+    const [hex, light, dark] = entry.trim().split(/\s+/)
+    if (hex && light && dark) tones.set(hex, { light, dark })
+  }
+  return tones
 }
 
 /**
@@ -96,12 +85,13 @@ function markFill(style: CSSStyleDeclaration, brand: string) {
     )?.[1]
   const own = image('--t-favicon') ?? image('--t-mark')
   if (!own) return `<path fill="${brand}" ${shape}/>`
+  const tones = tabTones(style)
   const dark: string[] = []
   const blocks = decodeURIComponent(own)
     .replace('<svg ', '<svg width="1200" height="1200" ')
     .replace(/fill='(#[0-9a-f]{6})'/gi, (_, hex: string) => {
-      const tabs = onTabs(hex.toLowerCase())
-      if (tabs.light === tabs.dark) return `fill='${hex}'`
+      const tabs = tones.get(hex.toLowerCase())
+      if (!tabs) return `fill='${hex}'`
       dark.push(`.c${dark.length}{fill:${tabs.dark}}`)
       return `class="c${dark.length - 1}" fill='${tabs.light}'`
     })

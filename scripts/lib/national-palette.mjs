@@ -146,6 +146,37 @@ export function onTabs(hex) {
   return oklch(0.62, c, h)
 }
 
+/**
+ * `--t-tab-tones`: each colour of a favicon that one tab would swallow,
+ * then its tone on a light tab and on a dark one; the page paints the
+ * favicon from these (paintFavicon in src/lib/theme.ts). A flag's whites,
+ * in every tone, sink a fifth toward grey on a light tab, and its blacks
+ * lift a quarter toward white on a dark one. That is gentler than the
+ * floor a one-colour favicon's field is held to (onTabs): the field is the
+ * mark's whole outline, while a white or black stripe of a flag sits among
+ * the flag's other colours, which keep the outline, and moving every tone
+ * to the floor would flatten the shading down the mark.
+ */
+export function tabTones(image) {
+  const colors = new Set(
+    [...decodeURIComponent(image).matchAll(/fill='(#[0-9a-f]{6})'/gi)].map(
+      ([, hex]) => hex.toLowerCase(),
+    ),
+  )
+  return [...colors]
+    .flatMap((hex) => {
+      const rgb = parseHex(hex)
+      const grey = Math.max(...rgb) - Math.min(...rgb) < 24
+      if (grey && Math.min(...rgb) > 150)
+        return [[hex, toHex(rgb.map((v) => v * 0.81)), hex]]
+      if (grey && Math.max(...rgb) < 64)
+        return [[hex, hex, toHex(rgb.map((v) => v + (255 - v) * 0.25))]]
+      return []
+    })
+    .map((tones) => tones.join(' '))
+    .join(', ')
+}
+
 /** Part way from one colour to another, in sRGB as the stock themes mix. */
 export function mix(from, to, t) {
   const a = parseHex(from)
@@ -534,6 +565,31 @@ export function themeTokens(theme) {
     ),
   )
 
+  const mark = markImage(
+    Array.isArray(theme.favicon)
+      ? // The flag's field round its emblem, as the favicon has it.
+        oneColourMark(
+          ...(([field, emblem]) => [field, fieldBg, emblem])(
+            theme.favicon.map((name) =>
+              readableOn(color(name), [fieldBg], wordFloor(color(name)), dark),
+            ),
+          ),
+        )
+      : markGrid({ ...theme, fieldBg }, shown),
+  )
+  const favicon =
+    theme.favicon &&
+    markImage(
+      oneColourMark(
+        onTabs(color([theme.favicon].flat()[0])),
+        fieldBg,
+        [theme.favicon].flat()[1] &&
+          color([theme.favicon].flat()[1]).toLowerCase(),
+      ),
+    )
+  // The favicon is painted from its own image, else the mark.
+  const tones = tabTones(favicon || mark)
+
   const [elevation, elevationHover, imgOutline, scrollThumb] =
     ELEVATION[theme.ground]
 
@@ -572,34 +628,10 @@ export function themeTokens(theme) {
       ? mix(fieldLit, '#ffffff', 0.7)
       : mix(fieldLit, '#000000', 0.45),
     '--t-word': word,
-    '--t-mark': markImage(
-      Array.isArray(theme.favicon)
-        ? // The flag's field round its emblem, as the favicon has it.
-          oneColourMark(
-            ...(([field, emblem]) => [field, fieldBg, emblem])(
-              theme.favicon.map((name) =>
-                readableOn(
-                  color(name),
-                  [fieldBg],
-                  wordFloor(color(name)),
-                  dark,
-                ),
-              ),
-            ),
-          )
-        : markGrid({ ...theme, fieldBg }, shown),
-    ),
+    '--t-mark': mark,
     '--t-mark-bands': 'transparent',
-    ...(theme.favicon && {
-      '--t-favicon': markImage(
-        oneColourMark(
-          onTabs(color([theme.favicon].flat()[0])),
-          fieldBg,
-          [theme.favicon].flat()[1] &&
-            color([theme.favicon].flat()[1]).toLowerCase(),
-        ),
-      ),
-    }),
+    ...(favicon && { '--t-favicon': favicon }),
+    ...(tones && { '--t-tab-tones': tones }),
     '--t-word-cells': `${axis} ${cells.map((name) => shown.get(name)).join(' ')}`,
     ...(hoist && {
       '--t-word-hoist': `${shown.get(hoist[0])} ${hoist[1]} ${hoistRows}${triangle ? ` ${[triangle[2], ...(triangle[3] ?? []).map((end) => end.join(':'))].join(' ')}` : ''}`,
