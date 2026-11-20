@@ -5,8 +5,37 @@
     <link>https://omarchy.org/news</link>
     <description>Notes on the people, ideas, and releases shaping Omarchy.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 11:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 15:00:00 GMT</lastBuildDate>
     <atom:link href="https://omarchy.org/news/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+  <title>Omacom Foundation to sponsor Aurora Silicon</title>
+  <link>https://omarchy.org/news/2026/11/omacom-foundation-to-sponsor-aurora-silicon</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/11/omacom-foundation-to-sponsor-aurora-silicon</guid>
+  <pubDate>Fri, 20 Nov 2026 15:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[The Omacom Foundation is sponsoring Dj and Ryan's work on Aurora Silicon, the independent project bringing Linux to Apple Silicon Macs, with hardware, tokens, and support.]]></description>
+  <content:encoded><![CDATA[<p>The <a href="https://omarchy.org/foundation/">Omacom Foundation</a> is sponsoring <a href="https://aurorasilicon.org/">Aurora Silicon</a>, the independent open-source project bringing Linux to Apple Silicon Macs! We’re backing the work of its maintainers, <a href="https://x.com/buildwithdjdev">Dj</a> and <a href="https://github.com/RyanTheTide">Ryan Murray</a>, with hardware, tokens, and support, so they can keep pushing Linux onto every Mac Apple makes.</p>
+
+<p>You’ve already seen what they can do. <a href="https://omarchy.org/news/2026/11/omarchy-4-5/">Omarchy 4.5</a> shipped a native installer that puts Omarchy right alongside macOS on M1, M2, M3, and Neo MacBooks. Aurora works on the layer underneath: the kernel, the graphics drivers, and the boot chain. And they brought up the MacBook Neo independently, with display, GPU acceleration, Vulkan 1.4, Touch ID, audio, camera, Wi-Fi, and Bluetooth all working. That’s a stunning amount of progress on Apple’s newest laptop.</p>
+
+<p>But none of this would have been possible without <a href="https://asahilinux.org/">Asahi Linux</a>. For years, the Asahi team did the hard, unglamorous work of reverse-engineering Apple Silicon, documenting the hardware, writing m1n1, and building the GPU drivers that made Linux on a Mac more than a party trick. Aurora’s bootloader, kernel, and installer trees began as forks of that work. When we set out to <a href="https://omarchy.org/news/2026/09/introducing-omarchy-m/">finish what Asahi started</a>, we weren’t starting from zero. We were starting from a position Asahi had spent years building, and that’s what let us accelerate. Thank you, Asahi.</p>
+
+<p>What I love about Aurora is that it’s an independent project. Dj and Ryan set its technical direction, and it lives in <a href="https://github.com/aurora-silicon">their own repositories</a>. Omarchy is its flagship distribution, and our <a href="https://omarchy.org/teams/#m">Omarchy M</a> team works hand in hand with them to get each new machine into the installer. But Aurora isn’t just for Omarchy. Fedora, Arch, and NixOS setups are coming too. Every Mac that Aurora brings up is a Mac that can run Linux, no matter which distribution you prefer. That’s exactly the kind of upstream work a foundation should be funding.</p>
+
+<p>So here’s what the sponsorship covers:</p>
+
+<ul>
+  <li><strong>Support</strong> for Dj and Ryan to work on bringing up more Macs, starting with the M3 and M4 series.</li>
+  <li><strong>Hardware</strong>, so they have the Macs they need to bring up, trace, and test.</li>
+  <li><strong>Tokens</strong> for the AI models that help them move at a pace that would have seemed absurd a year ago.</li>
+</ul>
+
+<p>A Mac counts as done when it ships in an Omarchy release. M4, M5, and M6 are all being worked on right now, and I can’t wait to see how quickly the rest of the lineup falls.</p>
+
+<p>Thank you to <a href="https://omarchy.org/patrons/">our patrons</a> for making this sponsorship possible. And thank you to Dj and Ryan for giving all those beautiful Macs a second life on Linux!</p>
+]]></content:encoded>
+</item>
+
 <item>
   <title>Beelink joins as a Distinguished Corporate Patron</title>
   <link>https://omarchy.org/news/2026/11/beelink-joins-as-a-distinguished-corporate-patron</link>
