@@ -27,9 +27,9 @@ export const PICKER_STATE_EVENT = 'omarchy-picker-state'
  * country's theme until the visitor picks another; anyone else who hasn't
  * picked one gets Tokyo Night.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */
-export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});var home=${inlineJson(
+export const themeInitScript = `(function(){var home=${inlineJson(
   HOME_THEME?.id ?? null,
-)};var chosen=localStorage.getItem(${inlineJson(CHOSEN_KEY)})==='true';if(home&&!chosen){t=home;localStorage.setItem(${inlineJson(THEME_KEY)},t)}else if(${inlineJson(
+)};var t=home||${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});var chosen=localStorage.getItem(${inlineJson(CHOSEN_KEY)})==='true';if(home&&!chosen)localStorage.setItem(${inlineJson(THEME_KEY)},home);else if(${inlineJson(
   SITE_THEMES.map((t) => t.id),
 )}.indexOf(s)>=0)t=s}catch(e){}document.documentElement.dataset.theme=t;if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
 
