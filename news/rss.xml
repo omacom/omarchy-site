@@ -5,8 +5,48 @@
     <link>https://omarchy.org/news</link>
     <description>Notes on the people, ideas, and releases shaping Omarchy.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 11:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 11:00:00 GMT</lastBuildDate>
     <atom:link href="https://omarchy.org/news/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+  <title>Beelink joins as a Distinguished Corporate Patron</title>
+  <link>https://omarchy.org/news/2026/11/beelink-joins-as-a-distinguished-corporate-patron</link>
+  <guid isPermaLink="true">https://omarchy.org/news/2026/11/beelink-joins-as-a-distinguished-corporate-patron</guid>
+  <pubDate>Fri, 20 Nov 2026 11:00:00 GMT</pubDate>
+  <dc:creator>DHH</dc:creator>
+  <description><![CDATA[Beelink joins the Omacom Foundation as a Distinguished Corporate Patron with $100,000 a year for three years, and we're collaborating on a special Omarchy Edition mini PC.]]></description>
+  <content:encoded><![CDATA[<p>I’m thrilled to welcome <a href="https://www.bee-link.com/">Beelink</a> to the <a href="https://omarchy.org/foundation/">Omacom Foundation</a> as a <a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Distinguished Corporate Patron</a>! They’re pledging <strong>$100,000 a year for the next three years</strong>. That’s a big vote of confidence in Omarchy and the open Linux desktop from a company whose machines I’ve been running and recommending for years.</p>
+
+<p>In the spring of 2025, I discovered that <a href="https://world.hey.com/dhh/cheap-mini-pcs-have-gotten-really-good-c70ab40f">cheap mini PCs have gotten really good</a>. Not just good for the price, but good, period. How five hundred dollars could buy you a tiny, quiet box that would run Linux circles around machines that cost many times more just a few years ago. Now the top machines cost more than that thanks to RAM prices running wild, but you can still get a modest machine for around that number.</p>
+
+<p>And my favorite of the bunch has always been a Beelink. I ran one as <a href="https://world.hey.com/dhh/it-s-a-beelink-baby-243fdaf1">my primary machine</a> for a long time, because in the crowded market of mini PCs, Beelink just stood out with superior build quality, class-leading cooling, and silent operation.</p>
+
+<p>When I was in China a few weeks ago, Beelink was among the companies that impressed me most with how fast they moved from conversation to commitment. I wrote about that in <a href="https://world.hey.com/dhh/seven-years-from-china-a63b03cc">Seven years from China</a>, and this patronage is what that speed looks like in practice.</p>
+
+<h2 id="the-beelink-omarchy-edition">The Beelink Omarchy Edition</h2>
+
+<p>And now for the fun part: we’re collaborating with Beelink on a special Omarchy Edition mini PC. What I want is an affordable, awesome little machine that ships with Omarchy and nothing to install, configure, or fight.</p>
+
+<p>It’s meant to do two jobs really well:</p>
+
+<ul>
+  <li><strong>An AI hub.</strong> A quiet, always-on box for your remote agents and loops. Something to save you from having to leave the lid open on your laptop. Something that’ll just soldier on overnight. For the price we’re aiming at, it won’t be running any serious local AI, though, so don’t get your hopes up for that!</li>
+  <li><strong>A great first Omarchy computer.</strong> For everyone who’s been curious about Linux but didn’t want to wipe their laptop to find out. Plug in a screen and a keyboard, and you’re home.</li>
+</ul>
+
+<p>We’ll have much more to share on specs, pricing, and availability as the work comes together.</p>
+
+<h2 id="thank-you-jun">Thank you, Jun</h2>
+
+<p>A huge thanks to Jun Li and the whole Beelink team for their patronage, and for believing in Omarchy and the open Linux desktop. And thank you, Jun, for that lovely tea in Shenzhen. Some of the best plans start over a good cup, and this was one of them.</p>
+
+<p><a href="https://omarchy.org/patrons/#distinguished-corporate-patrons">Beelink joins 1Password, 37signals, Four Technologies, Fireworks, OpenAI, OpenRouter, OrcaRouter, Namespace, and Greptile as a Distinguished Corporate Patron</a>. Their pledge brings our <a href="https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million/">total backing to approximately <strong>$24 million</strong></a>.</p>
+
+<p>Welcome aboard, Beelink!</p>
+
+<p>If your company would like to <a href="https://omarchy.org/patrons/">join our patrons</a>, write <a href="mailto:david@omarchy.org">david@omarchy.org</a>.</p>
+]]></content:encoded>
+</item>
+
 <item>
   <title>Marcelo Alcantara and Birk Skyum join Omarchy Core</title>
   <link>https://omarchy.org/news/2026/11/marcelo-alcantara-and-birk-skyum-join-omarchy-core</link>
@@ -1353,7 +1393,7 @@
 </item>
 
 <item>
-  <title>Omacom Foundation launches with $23.7 million</title>
+  <title>Omacom Foundation launches with $24 million</title>
   <link>https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million</link>
   <guid isPermaLink="true">https://omarchy.org/news/2026/08/omacom-foundation-launches-with-8-million</guid>
   <pubDate>Fri, 21 Aug 2026 15:57:00 GMT</pubDate>
@@ -1412,9 +1452,10 @@
   <li><a href="https://www.orcarouter.ai/">OrcaRouter</a></li>
   <li><a href="https://namespace.so/">Namespace</a></li>
   <li><a href="https://www.greptile.com/">Greptile</a></li>
+  <li><a href="https://www.bee-link.com/">Beelink</a></li>
 </ul>
 
-<p>Over 800 donors have also raised over $120,000 through <a href="https://www.zeffy.com/en-US/donation-form/omarchy-patronage">open patronage</a>, bringing the total in pledges and donations to approximately $23.7 million.</p>
+<p>Over 800 donors have also raised over $120,000 through <a href="https://www.zeffy.com/en-US/donation-form/omarchy-patronage">open patronage</a>, bringing the total in pledges and donations to approximately $24 million.</p>
 
 <p>This is a ridiculous sum of money, so I intend to make sure it lasts a long time, and that we make the most of it. But just as important as the incredible cushion is the vote of confidence delivered by these pledges.</p>
 
@@ -1445,6 +1486,8 @@
 <p><em>UPDATE: Namespace <a href="https://omarchy.org/news/2026/10/namespace-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $100,000 a year in compute on October 9</a>.</em></p>
 
 <p><em>UPDATE: Greptile <a href="https://omarchy.org/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $150,000 in tokens for PR reviews on October 15</a>.</em></p>
+
+<p><em>UPDATE: Beelink <a href="https://omarchy.org/news/2026/11/beelink-joins-as-a-distinguished-corporate-patron/">joined as a Distinguished Corporate Patron with $100,000 a year for three years on November 20</a>.</em></p>
 ]]></content:encoded>
 </item>
 

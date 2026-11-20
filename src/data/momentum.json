@@ -13,7 +13,7 @@
     ]
   },
   "foundation": {
-    "total": 23.65,
+    "total": 23.95,
     "steps": [
       {
         "date": "2026-08-21",
@@ -84,6 +84,11 @@
         "date": "2026-10-15",
         "amount": 23.65,
         "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-11-20",
+        "amount": 23.95,
+        "post": "/news/2026/11/beelink-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
