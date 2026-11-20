@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import locales from '../../src/i18n/locales.json' with { type: 'json' }
 import { NATIONAL_THEMES } from '../../src/lib/national-themes.ts'
@@ -7,8 +8,9 @@ import {
   countryOf,
   nationalThemeOf,
   themesFor,
-  STOCK_THEMES,
-} from '../../src/lib/site-themes.ts'
+} from '../../src/lib/national-sites.ts'
+import { STOCK_THEMES } from '../../src/lib/site-themes.ts'
+import { onlyTheme } from '../national-theme-css.mjs'
 import {
   contrast,
   luminance,
@@ -90,6 +92,20 @@ test('text, links and the word can all be read on their grounds', () => {
         `${theme.id}: word colour ${cell}`,
       )
   }
+})
+
+test('a site ships only its own national theme', () => {
+  const css = readFileSync(
+    new URL('../../src/national-themes.css', import.meta.url),
+    'utf8',
+  )
+  const own = onlyTheme(css, 'turkiye')
+  assert.match(own, /^\/\* Türkiye \(TR\) \*\/\nhtml\[data-theme='turkiye'\]/)
+  assert.equal(own.match(/data-theme='/g).length, 2)
+  assert.ok(own.trimEnd().endsWith('}'))
+  for (const theme of NATIONAL_THEMES)
+    assert.match(onlyTheme(css, theme.id), /\{[^}]+\}$/, theme.id)
+  assert.equal(onlyTheme(css, 'tokyo-night'), '')
 })
 
 test('src/national-themes.css is generated from the flags', () => {

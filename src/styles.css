@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import './theme-transition.css';
-@import './national-themes.css';
 
 /* Archived routes do not contribute utilities to the live site. */
 @source not './parked';

@@ -1,12 +1,6 @@
 import { t } from '@/i18n/site'
 import { useEffect, useState } from 'react'
-import {
-  ALL_THEMES,
-  SITE_THEMES,
-  THEME_EVENT,
-  switchTheme,
-  readTheme,
-} from '@/lib/theme'
+import { SITE_THEMES, THEME_EVENT, switchTheme, readTheme } from '@/lib/theme'
 import { cn } from '@/lib/utils'
 
 /** A theme's desktop screenshot, the same one the picker shows. */
@@ -68,7 +62,7 @@ export function ThemeShowcase() {
             <Preview
               key={id}
               id={id}
-              name={ALL_THEMES.find((theme) => theme.id === id)?.name ?? id}
+              name={SITE_THEMES.find((theme) => theme.id === id)?.name ?? id}
             />
           ))}
         </div>

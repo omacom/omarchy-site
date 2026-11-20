@@ -3,9 +3,8 @@ import { inlineJson } from './inline-json'
 import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
-import { ALL_THEMES, HOME_THEME } from './site-themes.ts'
+import { HOME_THEME, SITE_THEMES } from './site-themes.ts'
 export {
-  ALL_THEMES,
   HOME_THEME,
   SITE_THEMES,
   STOCK_THEMES,
@@ -31,13 +30,13 @@ export const PICKER_STATE_EVENT = 'omarchy-picker-state'
 export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});var home=${inlineJson(
   HOME_THEME?.id ?? null,
 )};var chosen=localStorage.getItem(${inlineJson(CHOSEN_KEY)})==='true';if(home&&!chosen){t=home;localStorage.setItem(${inlineJson(THEME_KEY)},t)}else if(${inlineJson(
-  ALL_THEMES.map((t) => t.id),
+  SITE_THEMES.map((t) => t.id),
 )}.indexOf(s)>=0)t=s}catch(e){}document.documentElement.dataset.theme=t;if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
 
 export function readTheme(): string {
   try {
     const stored = localStorage.getItem(THEME_KEY)
-    if (ALL_THEMES.some((t) => t.id === stored)) return stored as string
+    if (SITE_THEMES.some((t) => t.id === stored)) return stored as string
   } catch {
     /* storage unavailable */
   }
