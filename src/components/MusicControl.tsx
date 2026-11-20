@@ -2,12 +2,17 @@ import { t } from '@/i18n/site'
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from '@tanstack/react-router'
 import { VolumeIcon, VolumeOffIcon } from '@/components/icons'
+import { MusicBackdrop } from '@/components/MusicBackdrop'
 import { MUSIC_EVENT, TRACK, loadMusic, music } from '@/lib/music'
 import type { MusicState } from '@/lib/music'
 
 /** Bars in the little meter, and the pixel steps each can climb. */
 const METER_BARS = 4
 const METER_STEPS = 5
+const METER_TRANSFORMS = Array.from(
+  { length: METER_STEPS + 1 },
+  (_, step) => `scaleY(${step / METER_STEPS})`,
+)
 
 const clock = (seconds: number) => {
   const s = Math.max(0, Math.floor(seconds))
@@ -56,18 +61,31 @@ export function MusicMenuControl({
     const shownLevels = new Float32Array(METER_BARS)
     let frame = 0
     const tick = () => {
+      if (document.hidden) return
       frame = requestAnimationFrame(tick)
       music.meter(levels)
       for (let i = 0; i < METER_BARS; i++) {
         const rise = levels[i] > shownLevels[i]
         shownLevels[i] += (levels[i] - shownLevels[i]) * (rise ? 0.7 : 0.2)
         const bar = bars.current[i]
-        if (bar)
-          bar.style.height = `${Math.max(1, Math.round(shownLevels[i] * METER_STEPS)) * 2}px`
+        const transform =
+          METER_TRANSFORMS[
+            Math.max(1, Math.round(shownLevels[i] * METER_STEPS))
+          ]
+        if (bar && bar.style.transform !== transform)
+          bar.style.transform = transform
       }
     }
-    frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
+    const resume = () => {
+      cancelAnimationFrame(frame)
+      if (!document.hidden) frame = requestAnimationFrame(tick)
+    }
+    resume()
+    document.addEventListener('visibilitychange', resume)
+    return () => {
+      cancelAnimationFrame(frame)
+      document.removeEventListener('visibilitychange', resume)
+    }
   }, [open, on])
   if (!shown) return null
   const title = TRACK.title.replace(/ \(.*\)$/, '')
@@ -136,8 +154,8 @@ export function MusicMenuControl({
             ref={(el) => {
               bars.current[i] = el
             }}
-            className="block w-[3px] shrink-0 bg-brand"
-            style={{ height: 2 }}
+            className="block w-[3px] origin-bottom shrink-0 bg-brand"
+            style={{ height: METER_STEPS * 2, transform: METER_TRANSFORMS[1] }}
           />
         ))}
       </span>
@@ -148,46 +166,85 @@ export function MusicMenuControl({
 export function MusicControl({ path = '/' }: { path?: string }) {
   const { state, on, shown, untouched } = useMusicState(path)
 
-  // The progress line, the meter and the readout are driven straight from
-  // the track each frame, outside React, so the card never re-renders for
-  // them. While a hand is on the range, the range leads and the track
-  // follows; otherwise the track leads.
+  // Keep the silent timeline's animation too, updating DOM values only
+  // when they change. Replacing an identical clock text every frame forces
+  // needless layout work beneath the card's backdrop filter.
   const line = useRef<HTMLSpanElement>(null)
   const range = useRef<HTMLInputElement>(null)
   const readout = useRef<HTMLSpanElement>(null)
   const bars = useRef<Array<HTMLSpanElement | null>>([])
   const scrubbing = useRef(false)
+  const paintProgress = useRef<(at: number) => void>(() => {})
   useEffect(() => {
     if (!shown) return
     const levels = new Float32Array(METER_BARS)
     const smoothed = new Float32Array(METER_BARS)
+    let progressWidth = 0
+    let paintedPixel = -1
+    let paintedWidth = 0
+    paintProgress.current = (at) => {
+      if (!line.current || progressWidth === 0) return
+      const width = Math.max(
+        1,
+        Math.round(progressWidth * (window.devicePixelRatio || 1)),
+      )
+      const pixel = Math.round(at * width)
+      if (pixel === paintedPixel && width === paintedWidth) return
+      paintedPixel = pixel
+      paintedWidth = width
+      line.current.style.transform = `scaleX(${pixel / width})`
+    }
+    const resize = new ResizeObserver(([entry]) => {
+      // Observe the unscaled box: getBoundingClientRect includes scaleX.
+      progressWidth = entry.contentRect.width
+      paintProgress.current(music.progress)
+    })
+    if (line.current) resize.observe(line.current)
     let frame = 0
     const tick = () => {
+      if (document.hidden) return
       frame = requestAnimationFrame(tick)
       if (!scrubbing.current) {
         const at = music.progress
-        if (line.current) line.current.style.transform = `scaleX(${at})`
-        if (range.current) range.current.value = String(at * 1000)
-        if (readout.current)
-          readout.current.textContent = `${clock(music.time)} / ${clock(music.duration)}`
+        // Subpixel progress changes cannot advance a visible pixel. Retain
+        // those frames rather than invalidating the card every display tick.
+        paintProgress.current(at)
+        const position = String(Math.round(at * 1000))
+        if (range.current && range.current.value !== position)
+          range.current.value = position
+        const text = `${clock(music.time)} / ${clock(music.duration)}`
+        if (readout.current && readout.current.textContent !== text)
+          readout.current.textContent = text
       }
       music.meter(levels)
       for (let i = 0; i < METER_BARS; i++) {
         const rise = levels[i] > smoothed[i]
         smoothed[i] += (levels[i] - smoothed[i]) * (rise ? 0.7 : 0.2)
         const bar = bars.current[i]
-        if (bar)
-          bar.style.height = `${Math.max(1, Math.round(smoothed[i] * METER_STEPS)) * 2}px`
+        const transform =
+          METER_TRANSFORMS[Math.max(1, Math.round(smoothed[i] * METER_STEPS))]
+        if (bar && bar.style.transform !== transform)
+          bar.style.transform = transform
       }
     }
-    frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
+    const resume = () => {
+      cancelAnimationFrame(frame)
+      tick()
+    }
+    resume()
+    document.addEventListener('visibilitychange', resume)
+    return () => {
+      cancelAnimationFrame(frame)
+      resize.disconnect()
+      paintProgress.current = () => {}
+      document.removeEventListener('visibilitychange', resume)
+    }
   }, [shown])
 
   /** The range moved, by hand or key: show it at once, and go there. */
   const onScrub = (value: number) => {
     const at = value / 1000
-    if (line.current) line.current.style.transform = `scaleX(${at})`
+    paintProgress.current(at)
     if (readout.current)
       readout.current.textContent = `${clock(at * music.duration)} / ${clock(music.duration)}`
     music.seek(at * music.duration)
@@ -200,8 +257,10 @@ export function MusicControl({ path = '/' }: { path?: string }) {
     <div
       data-hero-quiet
       data-no-stamp
-      className="group/card pointer-events-auto fixed bottom-5 left-5 z-(--z-dropdown) hidden h-[46px] items-stretch border border-border-subtle bg-bg/85 supports-backdrop-filter:backdrop-blur-sm sm:flex"
+      data-music-control
+      className="group/card pointer-events-auto fixed bottom-5 left-5 z-(--z-dropdown) isolate hidden h-[46px] items-stretch border border-border-subtle sm:flex"
     >
+      <MusicBackdrop />
       <button
         type="button"
         onClick={() => music.toggle()}
@@ -258,8 +317,8 @@ export function MusicControl({ path = '/' }: { path?: string }) {
             ref={(el) => {
               bars.current[i] = el
             }}
-            className="block w-[3px] shrink-0 bg-brand"
-            style={{ height: 2 }}
+            className="block w-[3px] origin-bottom shrink-0 bg-brand"
+            style={{ height: METER_STEPS * 2, transform: METER_TRANSFORMS[1] }}
           />
         ))}
       </span>
