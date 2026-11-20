@@ -14,8 +14,6 @@ And my favorite of the bunch has always been a Beelink. I ran one as [my primary
 
 When I was in China a few weeks ago, Beelink was among the companies that impressed me most with how fast they moved from conversation to commitment. I wrote about that in [Seven years from China](https://world.hey.com/dhh/seven-years-from-china-a63b03cc), and this patronage is what that speed looks like in practice.
 
-## The Beelink Omarchy Edition
-
 And now for the fun part: we're collaborating with Beelink on a special Omarchy Edition mini PC. What I want is an affordable, awesome little machine that ships with Omarchy and nothing to install, configure, or fight.
 
 It's meant to do two jobs really well:
@@ -24,8 +22,6 @@ It's meant to do two jobs really well:
 - **A great first Omarchy computer.** For everyone who's been curious about Linux but didn't want to wipe their laptop to find out. Plug in a screen and a keyboard, and you're home.
 
 We'll have much more to share on specs, pricing, and availability as the work comes together.
-
-## Thank you, Jun
 
 A huge thanks to Jun Li and the whole Beelink team for their patronage, and for believing in Omarchy and the open Linux desktop. And thank you, Jun, for that lovely tea in Shenzhen. Some of the best plans start over a good cup, and this was one of them.
 
