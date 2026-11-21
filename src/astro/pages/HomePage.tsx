@@ -95,7 +95,9 @@ const TRY: ReadonlyArray<TryOption> = [
     ),
     action: {
       label: t('Try on Mac'),
-      href: 'https://github.com/omacom/try-omarchy/releases/latest',
+      // GitHub answers this with Content-Disposition: attachment, so the click
+      // saves the DMG. The asset name has been TryOmarchy.dmg since v0.2.0.
+      href: 'https://github.com/omacom/try-omarchy/releases/latest/download/TryOmarchy.dmg',
       icon: DownloadIcon,
     },
     links: [
