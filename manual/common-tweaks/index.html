@@ -63,9 +63,9 @@
 
     <article class="manual__content">
       <h1>Common tweaks</h1>
-<p>This is a collection of common tailorings to the Omarchy setup. Know that it might occasionally be necessary for system updates to restore certain configs to their original condition. If this happens, your changes won’t be lost, but put in a <code>.bak</code> file in the same directory.</p>
+<p>This is a collection of common tailorings to the Omarchy setup. Know that it might occasionally be necessary for system updates to restore certain configs to their original condition. If this happens, your changes won’t be lost, but put in a <code>.bak.&lt;timestamp&gt;</code> file next to the original.</p>
 
-<p>If you screw something up, you can restore individual configs to their original setup via <em>Update &gt; Config</em> in the Omarchy menu. If you <em>really</em> screw everything up, you can reset all configs via <code>omarchy-reinstall</code>.</p>
+<p>If you screw something up, you can restore individual configs to their original setup via <em>Update &gt; Config</em> in the Omarchy menu. If you <em>really</em> screw everything up, you can reset all configs via <code>omarchy reinstall configs</code>, or reinstall every default package and config with <code>omarchy reinstall</code>.</p>
 
 <h3 id="reveal-all-tray-icons-all-the-time">Reveal all tray icons all the time <a class="manual__heading-link" href="#reveal-all-tray-icons-all-the-time" aria-label="Link to this section">#</a></h3>
 
@@ -73,7 +73,7 @@
 
 <h3 id="rounded-window-corners">Rounded window corners <a class="manual__heading-link" href="#rounded-window-corners" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy’s default design is one of square corners, but if you like to soften that up a bit, you can change <code>~/.config/hypr/looknfeel.lua</code> so rounding is no longer commented out:</p>
+<p>Omarchy’s default design is one of square corners, but if you like to soften that up a bit, pick <em>Appearance &gt; Windows &gt; Window Corners &gt; Rounded Corners</em> in the Omarchy menu, or run <code>omarchy hyprland corners rounded</code>. <em>Theme Corners</em> goes back to whatever the theme uses. To pick your own radius, stay on <em>Theme Corners</em> (<code>omarchy hyprland corners theme</code>), since Rounded and Sharp load after your config and override it, and uncomment rounding in <code>~/.config/hypr/looknfeel.lua</code>:</p>
 
 <pre><code>hl.config({
   decoration = {

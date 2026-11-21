@@ -63,13 +63,13 @@
 
     <article class="manual__content">
       <h1>Browsers</h1>
-<p>Omarchy ships with <a href="https://www.google.com/chrome/">Google Chrome</a> as the default browser. It’s themed to match the rest of your system, and it’s what <code>Super + Shift + Return</code> opens and what every <a href="../web-apps/">web app</a> runs inside. It opens straight to a browser window: there’s no welcome screen or sign-in prompt, usage statistics and crash reports aren’t sent to Google, and the ad privacy prompts are switched off. You can still sign in to your Google account from the profile button whenever you want sync.</p>
+<p>Omarchy ships with <a href="https://www.google.com/chrome/">Google Chrome</a> as the default browser. It’s themed to match the rest of your system, and it’s what <code>Super + Shift + Return</code> (or <code>Super + Shift + B</code>) opens, with <code>Super + Shift + Alt + B</code> for a private window, and what every <a href="../web-apps/">web app</a> runs inside. It opens straight to a browser window: there’s no welcome screen or sign-in prompt, usage statistics and crash reports aren’t sent to Google, and the ad privacy prompts are switched off. You can still sign in to your Google account from the profile button whenever you want sync.</p>
 
-<p>If Chrome isn’t your taste, you’re not stuck with it. Under <em>Install &gt; Browser</em> in the Omarchy menu you’ll find <a href="https://www.chromium.org/">Chromium</a> (the plain open-source build Chrome is made from), Edge, Brave, Brave Origin, Firefox, and <a href="https://zen-browser.app/">Zen</a>. Pick one and Omarchy installs it, sets up its policy directory, and applies your current theme to it.</p>
+<p>If Chrome isn’t your taste, you’re not stuck with it. Under <em>Install &gt; Browser</em> in the Omarchy menu you’ll find <a href="https://www.chromium.org/">Chromium</a> (the plain open-source build Chrome is made from), Edge, Brave, Brave Origin, Firefox, and <a href="https://zen-browser.app/">Zen</a> (Edge on x86 machines only). Pick one and Omarchy installs it, sets up its policy directory, and applies your current theme to it.</p>
 
 <h2 id="making-one-the-default">Making one the default <a class="manual__heading-link" href="#making-one-the-default" aria-label="Link to this section">#</a></h2>
 
-<p>Installing a browser doesn’t promote it. Once it’s on the machine, go to <em>Setup &gt; Defaults &gt; Browser</em> and pick it — the menu only lists browsers you actually have installed, and marks the current default with a check.</p>
+<p>Installing a browser doesn’t promote it. To switch, go to <em>Setup &gt; Defaults &gt; Browser</em> and pick one. The current default is marked with a check, and picking a browser you don’t have yet installs it first.</p>
 
 <p>From the terminal it’s:</p>
 
@@ -80,13 +80,15 @@
 
 <h2 id="copy-url-and-download-video">Copy URL and Download Video <a class="manual__heading-link" href="#copy-url-and-download-video" aria-label="Link to this section">#</a></h2>
 
-<p>The Chromium-family browsers (Chromium itself, Chrome, Edge, and Brave) come with two Omarchy extensions that reach out of the browser and into the rest of your system.</p>
+<p>The Chromium-family browsers (Chromium itself, Chrome, Edge, Brave, and Brave Origin) come with three Omarchy extensions: two that reach out of the browser and into the rest of your system, and one that tidies up WhatsApp.</p>
 
 <p><strong>Copy URL</strong> puts the current tab’s address on your clipboard with <code>Alt + Shift + L</code>. That’s faster than clicking into the address bar and copying, and because it goes through the system clipboard rather than the browser’s, you get an Omarchy notification confirming it and the URL is immediately available in <a href="../unified-clipboard-history/">clipboard history</a> and every other app. There’s a toolbar button too, if you prefer clicking.</p>
 
 <p><strong>Download Video</strong> grabs the video playing on the page you’re looking at with <code>Alt + Shift + D</code>. It hands the URL to <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>, so it works on far more than YouTube, and the download lands in <code>~/Videos</code>. Progress shows up in the same on-screen display that volume and brightness use, updating in place rather than stacking up notifications. Set <code>OMARCHY_YTDLP_DIR</code> if you’d rather the files went somewhere else — see the <a href="../faq/">FAQ</a> for where to put environment variables.</p>
 
 <p>Both extensions talk to Omarchy through a small native messaging host, which gets installed for you along with the browser. That’s the piece that lets a web page’s video end up in your home directory and a URL end up in your clipboard manager, which a normal extension can’t do on its own.</p>
+
+<p><strong>WhatsApp Slim</strong> makes WhatsApp Web follow your system theme and collapses its chat list when the window is narrow.</p>
 
 <p>These are Chromium-family only. Firefox and Zen don’t get them.</p>
 

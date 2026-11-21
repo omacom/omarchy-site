@@ -129,7 +129,7 @@
 
 <h3 id="running-scripts-on-system-events">Running scripts on system events <a class="manual__heading-link" href="#running-scripts-on-system-events" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy fires hooks at a handful of moments, and you can hang your own scripts off them. They live in <code>~/.config/omarchy/hooks/&lt;event&gt;.d/</code>, one directory per event, and every executable file in there runs when the event happens:</p>
+<p>Omarchy fires hooks at a handful of moments, and you can hang your own scripts off them. They live in <code>~/.config/omarchy/hooks/&lt;event&gt;.d/</code>, one directory per event, and every file in there that doesn’t end in <code>.sample</code> runs with bash when the event happens:</p>
 
 <table>
   <thead>
@@ -166,7 +166,7 @@
   </tbody>
 </table>
 
-<p>The <code>pre-refresh-pacman</code> hook is where custom repositories or <code>IgnorePkg</code> lines belong, since it runs before the package transaction. Both update-related hooks run as your user after Omarchy clears its cached sudo authorization, so a hook that uses <code>sudo</code> needs its own authorization and may ask for your password.</p>
+<p>The <code>pre-refresh-pacman</code> hook is where custom repositories or <code>IgnorePkg</code> lines belong, since it runs before the package transaction. Both run as your user. <code>post-update</code> runs while <code>omarchy update</code>’s sudo authorization is still fresh, so a hook that uses <code>sudo</code> won’t ask for your password again; <code>pre-refresh-pacman</code> runs right after <code>omarchy refresh pacman</code> has used sudo itself.</p>
 
 <p>Each of those directories already holds a <code>.sample</code> file showing the shape of a hook — drop the <code>.sample</code> from the name to put it to work. To install a script you’ve written elsewhere, use <code>omarchy hook install post-boot ~/my-hook</code>, which copies it in and makes it executable.</p>
 

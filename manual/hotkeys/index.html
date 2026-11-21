@@ -157,6 +157,22 @@
       <td>Close all windows</td>
     </tr>
     <tr>
+      <td><code>Super + K</code></td>
+      <td>Show all hotkeys</td>
+    </tr>
+    <tr>
+      <td><code>Super + Alt + K</code></td>
+      <td>Show tmux hotkeys</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + K</code></td>
+      <td>Show herdr hotkeys</td>
+    </tr>
+    <tr>
+      <td><code>Super + M</code></td>
+      <td>Minimize window to the dock</td>
+    </tr>
+    <tr>
       <td><code>Super + T</code></td>
       <td>Toggle window between tiling/floating</td>
     </tr>
@@ -193,8 +209,8 @@
       <td>Go full screen inside window</td>
     </tr>
     <tr>
-      <td><code>Super + 1/2/3/4</code></td>
-      <td>Jump to specific workspace on the focused monitor</td>
+      <td><code>Super + 1…9/0</code></td>
+      <td>Jump to specific workspace (0 is 10) on the focused monitor</td>
     </tr>
     <tr>
       <td><code>Super + Tab</code></td>
@@ -209,11 +225,11 @@
       <td>Jump to former workspace on the focused monitor</td>
     </tr>
     <tr>
-      <td><code>Super + Shift + 1/2/3/4</code></td>
+      <td><code>Super + Shift + 1…9/0</code></td>
       <td>Move window to workspace on the focused monitor</td>
     </tr>
     <tr>
-      <td><code>Super + Shift + Alt + 1/2/3/4</code></td>
+      <td><code>Super + Shift + Alt + 1…9/0</code></td>
       <td>Move window to workspace on the focused monitor without following</td>
     </tr>
     <tr>
@@ -356,8 +372,18 @@
       <td><code>Ctrl + Alt + Shift + Tab</code></td>
       <td>Cycle focus backwards through monitors</td>
     </tr>
+    <tr>
+      <td><code>Super + I</code></td>
+      <td>Switch input language (with more than one layout or input method)</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + I</code></td>
+      <td>Switch input language back</td>
+    </tr>
   </tbody>
 </table>
+
+<p>On a touchpad, three- and four-finger swipes switch workspaces, move windows, and open the menu and the Quake console; see <a href="../keyboard-mouse-trackpad/">keyboard, mouse, and trackpad</a> for the gestures.</p>
 
 <p>Resize shortcuts use physical keys <code>code:20</code> and <code>code:21</code> (XKB <code>&lt;AE11&gt;</code> and <code>&lt;AE12&gt;</code>), regardless of the characters printed on the keyboard. On US keyboards these keys are <code>-</code> and <code>=</code>; on Japanese (JIS) keyboards they are <code>-</code> and <code>^</code>; on Spanish keyboards they are <code>'</code> and <code>¡</code>. On JIS, <code>Super + ^</code> is <code>Super + Equal</code>, while <code>Super + Shift + -</code> (which types <code>=</code>) is <code>Super + Shift + Minus</code>.</p>
 
@@ -394,6 +420,10 @@
     <tr>
       <td><code>Super + Ctrl + X</code></td>
       <td>Agents panel</td>
+    </tr>
+    <tr>
+      <td><code>Super + Ctrl + Alt + X</code></td>
+      <td>Local models panel</td>
     </tr>
     <tr>
       <td><code>Super + Ctrl + Alt + D</code></td>
@@ -435,6 +465,14 @@
       <td><code>Super + Shift + Ctrl + A</code></td>
       <td>Pick an AI agent</td>
     </tr>
+    <tr>
+      <td><code>Power</code> key</td>
+      <td>System menu</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + Copilot</code> key</td>
+      <td>Omarchy menu</td>
+    </tr>
   </tbody>
 </table>
 
@@ -473,6 +511,26 @@
       <td>Cycle the keyboard backlight levels</td>
     </tr>
     <tr>
+      <td><code>Ctrl + Brightness Up/Down</code></td>
+      <td>Keyboard backlight brighter/dimmer, on keyboards without their own keys</td>
+    </tr>
+    <tr>
+      <td><code>Mic Mute</code></td>
+      <td>Mute the microphone</td>
+    </tr>
+    <tr>
+      <td><code>Shift + Mute</code></td>
+      <td>Switch audio output</td>
+    </tr>
+    <tr>
+      <td><code>Touchpad Toggle</code></td>
+      <td>Turn the touchpad on or off</td>
+    </tr>
+    <tr>
+      <td><code>Display</code> key</td>
+      <td>Cycle the workspace layout</td>
+    </tr>
+    <tr>
       <td><code>Alt + Play</code></td>
       <td>Next track</td>
     </tr>
@@ -506,7 +564,7 @@
       <td>Herdr (agent manager)</td>
     </tr>
     <tr>
-      <td><code>Super + Shift + Return</code></td>
+      <td><code>Super + Shift + Return</code> or <code>Super + Shift + B</code></td>
       <td>Browser</td>
     </tr>
     <tr>
@@ -534,8 +592,12 @@
       <td>Password manager (1password)</td>
     </tr>
     <tr>
-      <td><code>Super + Shift + Q</code></td>
+      <td><code>Super + Shift + Q</code> or <code>Calculator</code> key</td>
       <td>Calculator (Omacalc)</td>
+    </tr>
+    <tr>
+      <td><code>Super + Shift + D</code></td>
+      <td>Docker (lazydocker, once installed)</td>
     </tr>
     <tr>
       <td><code>Super + Shift + T</code></td>
@@ -543,7 +605,7 @@
     </tr>
     <tr>
       <td><code>Super + Shift + N</code></td>
-      <td>Editor (Neovim)</td>
+      <td>Editor (Plain, or your chosen default)</td>
     </tr>
     <tr>
       <td><code>Super + Shift + C</code></td>
@@ -599,7 +661,7 @@
     </tr>
     <tr>
       <td><code>Super + Shift + Alt + X</code></td>
-      <td>X Compose</td>
+      <td>X (new post)</td>
     </tr>
     <tr>
       <td><code>Super + Shift + Y</code></td>
@@ -782,7 +844,7 @@
 
 <p>Extra background images live in <code>~/.config/omarchy/backgrounds/&lt;theme name&gt;</code>. Also available via <em>Install &gt; Style &gt; Background</em> in the Omarchy menu.</p>
 
-<p>All style options are also accessible under <em>Style</em> in the Omarchy menu (<code>Super + Space</code>).</p>
+<p>All style options are also accessible under <em>Appearance</em> in the Omarchy menu (<code>Super + Space</code>).</p>
 
 <h2 id="toggles">Toggles <a class="manual__heading-link" href="#toggles" aria-label="Link to this section">#</a></h2>
 
@@ -1421,7 +1483,7 @@
   </tbody>
 </table>
 
-<p>You can add more of your own by editing <code>~/.XCompose</code>, then running <code>omarchy-restart-xcompose</code> in the terminal to get the changes picked up.</p>
+<p>You can add more of your own by editing <code>~/.XCompose</code>, then running <code>omarchy restart xcompose</code> in the terminal to get the changes picked up.</p>
 
     </article>
   </div>
