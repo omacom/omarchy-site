@@ -6,7 +6,7 @@ export function setupWorkstationLightbox() {
     '.workstation-lightbox',
   )
   const gallery = document.querySelector('.workstations__images')
-  if (!dialog || !gallery || initialized.has(dialog)) return
+  if (!dialog?.showModal || !gallery || initialized.has(dialog)) return
   initialized.add(dialog)
 
   const links = Array.from(

@@ -7,4 +7,4 @@ export type { DateFormatName } from './intl-data.ts'
 // reference: define pastes the whole object wherever the name appears.
 declare const __EDITION_INTL__: IntlData
 
-export const { number, date, region } = createFormat(__EDITION_INTL__)
+export const { number, date, region, script } = createFormat(__EDITION_INTL__)

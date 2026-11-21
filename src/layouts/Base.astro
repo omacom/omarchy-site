@@ -125,7 +125,11 @@ const fontPreloads = [...new Set([...own, geistLatin, monoLatin])]
       import { watchOutbound } from '@/lib/outbound'
       import { watchBrandDownloads } from '@/lib/brand-downloads'
       import { watchManualTocScroll } from '@/lib/manual-toc-scroll'
+      import { watchAspectRatioFallback } from '@/lib/aspect-ratio-fallback'
+      import { watchWebpFallback } from '@/lib/webp-fallback'
 
+      watchAspectRatioFallback()
+      watchWebpFallback()
       watchBrandDownloads()
       watchManualTocScroll()
       watchOutbound()

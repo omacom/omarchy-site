@@ -50,7 +50,7 @@ export function ThemeShowcase() {
   useEffect(() => {
     if (!worn) return
     setShown((list) =>
-      list.at(-1) === worn ? list : [...list.slice(-1), worn],
+      list[list.length - 1] === worn ? list : [...list.slice(-1), worn],
     )
   }, [worn])
 

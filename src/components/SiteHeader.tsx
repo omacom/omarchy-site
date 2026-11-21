@@ -493,7 +493,10 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
         // With the sheet down, the bar is the top of the sheet and wears its
         // ground rather than the section's: taking a colour from the page
         // behind it would put a seam across the one surface being looked at.
-        className={cn('group/bar', menuOpen && 'bg-bg/95 backdrop-blur-lg')}
+        className={cn(
+          'site-nav-bar group/bar',
+          menuOpen && 'bg-bg/95 backdrop-blur-lg',
+        )}
         style={{
           // On the bar rather than the header, so both the surface it paints
           // and the height the hooks measure include the strip above it.
@@ -503,6 +506,9 @@ export function SiteHeader({ path = '/' }: { path?: string }) {
             : 'color-mix(in srgb, var(--nav-ground, var(--color-bg)) calc(var(--nav-surface, 0) * var(--nav-fill, 1) * 90%), transparent)',
           // Keep blur off over the hero so its pixels stay sharp.
           backdropFilter: menuOpen
+            ? undefined
+            : 'blur(calc(var(--nav-surface, 0) * 12px))',
+          WebkitBackdropFilter: menuOpen
             ? undefined
             : 'blur(calc(var(--nav-surface, 0) * 12px))',
         }}

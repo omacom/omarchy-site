@@ -4,12 +4,12 @@ import { GlobeIcon } from '@/components/icons/GlobeIcon'
 import { SearchIcon } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { script } from '@/i18n/format'
 import { flag, language, locale, t } from '@/i18n/site'
 import { languageMenuCopy, localeHref } from '@/lib/menu'
 import {
   flattenSections,
   moveActive,
-  scriptName,
   switcherSections,
 } from '@/lib/language-switcher'
 
@@ -175,7 +175,7 @@ export function LanguageSwitcher({ path }: { path: string }) {
                         section.kind === 'current'
                           ? languageMenuCopy.current
                           : section.kind === 'script'
-                            ? scriptName(section.script!)
+                            ? script(section.script!)
                             : null
                       return (
                         <Fragment key={section.script ?? section.kind}>

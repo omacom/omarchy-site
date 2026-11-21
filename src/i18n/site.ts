@@ -66,7 +66,7 @@ export function t(english: string): string {
 /** A locale's flag, from its country code or its domain's suffix; a globe where
  *  there is no country to show. */
 export function flag(domain: string, countryCode?: string) {
-  const country = countryCode ?? new URL(domain).hostname.split('.').at(-1)!
+  const country = countryCode ?? new URL(domain).hostname.split('.').pop()!
   return country.length === 2
     ? [...country.toUpperCase()]
         .map((letter) => String.fromCodePoint(127397 + letter.charCodeAt(0)))

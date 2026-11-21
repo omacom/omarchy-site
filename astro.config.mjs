@@ -4,6 +4,7 @@ import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { devPassthrough } from './scripts/dev-passthrough.mjs'
+import legacyCss from './scripts/legacy-css.mjs'
 import { intlData } from './src/i18n/intl-data.ts'
 
 const language = process.env.PUBLIC_SITE_LOCALE || 'en'
@@ -26,6 +27,9 @@ export default defineConfig({
       ),
     },
     plugins: [tailwindcss(), devPassthrough()],
+    // Tailwind targets Safari 16.4; lower its output for older browsers.
+    css: { postcss: { plugins: legacyCss } },
+    build: { target: 'safari14' },
     optimizeDeps: { entries: ['!src/parked/**'] },
     resolve: {
       // Array form: exact entries first, so the shims win over the prefixes.

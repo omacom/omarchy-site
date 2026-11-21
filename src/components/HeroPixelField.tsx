@@ -557,6 +557,7 @@ export function HeroPixelField({
         ? document.querySelector<HTMLElement>('[data-hero-wordmark]')
         : null
       const slotBox = slot?.getBoundingClientRect()
+      if (slotBox && slotBox.height < 1) return false
       const slotWidth =
         (slotBox?.width ??
           Math.min(SLOT_FRACTION * (box.width - SLOT_INSET), SLOT_MAX)) * dpr
