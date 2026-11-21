@@ -63,9 +63,9 @@
 
     <article class="manual__content">
       <h1>Themes</h1>
-<p>Omarchy comes with twenty-three beautiful themes. You can select between them via <em>Appearance &gt; Theme</em> in the Omarchy Menu (<code>Super + Space</code>) or hop directly to the theme selector using <code>Super + Ctrl + T</code>.</p>
+<p>Omarchy comes with twenty-two beautiful themes. You can select between them via <em>Appearance &gt; Theme</em> in the Omarchy Menu (<code>Super + Space</code>) or hop directly to the theme selector using <code>Super + Ctrl + T</code>.</p>
 
-<p>Each theme styles the desktop, terminal, neovim, activity screen (btop), your browser (Chrome, Chromium, Edge or Brave), and the entire Omarchy shell: top bar, menu, notifications, OSD, and the lock screen. (For Obsidian, you must manually select the Omarchy theme via <em>Appearance &gt; Themes</em> inside the app).</p>
+<p>Each theme styles the desktop, terminal, neovim, activity screen (btop), Chromium, and the entire Omarchy shell: top bar, menu, notifications, OSD, and the lock screen. (For Obsidian, you must manually select the Omarchy theme via <em>Appearance &gt; Themes</em> inside the app).</p>
 
 <p>Themes have a set of background images that you can pick between using <code>Super + Ctrl + W</code>.</p>
 
@@ -128,32 +128,6 @@
 <p><img src="/manual/images/white-preview.webp" alt="white" />
 <em>White</em></p>
 
-<p><img src="/manual/images/last-horizon-preview.webp" alt="last-horizon" />
-<em>Last Horizon</em></p>
-
-<p><img src="/manual/images/lupine-preview.webp" alt="lupine" />
-<em>Lupine</em></p>
-
-<p><img src="/manual/images/solitude-preview.webp" alt="solitude" />
-<em>Solitude</em></p>
-
-<p><img src="/manual/images/starship-preview.webp" alt="starship" />
-<em>Starship</em></p>
-
-<h3 id="app-icons">App icons <a class="manual__heading-link" href="#app-icons" aria-label="Link to this section">#</a></h3>
-
-<p>The icons in the app launcher and dock are drawn in the colors of your theme, so they change along with it. They come from an icon set, which you pick separately from the theme under <em>Appearance &gt; Icons</em>, from previews of each set, the same way you pick a theme:</p>
-
-<ul>
-  <li><em>Papercraft</em> is the default: everything that comes installed, drawn in one style. Apps known by their logo, like Chrome, HEY, or YouTube, keep its shape and take on the theme’s colors.</li>
-  <li><em>Arcade</em> draws the same apps as 8-bit pixel art, like an old game console would.</li>
-  <li><em>Original</em> shows every app with the icon its maker gave it.</li>
-</ul>
-
-<p>You can install an icon set someone else has made with <em>Install &gt; Style &gt; Icons</em> (or <code>omarchy icons install &lt;git url&gt;</code>), and remove it again under <em>Remove &gt; Icons</em>. <em>Update &gt; Extra Icons</em> fetches the latest version of the sets you have installed.</p>
-
-<p>To make your own, put your icons in <code>~/.config/omarchy/icons/&lt;name&gt;/</code>, one file per app, named after the <code>Icon=</code> line of the app’s <code>.desktop</code> file. A file ending in <code>.svg</code> is shown as it is. A file ending in <code>.svg.tpl</code> is drawn in the theme’s colors: write <code>{{ icon_main }}</code>, <code>{{ icon_mark }}</code>, <code>{{ icon_paper }}</code>, <code>{{ icon_body }}</code>, <code>{{ icon_edge }}</code>, <code>{{ icon_ink }}</code> or <code>{{ icon_shadow }}</code> where a color goes. The default set in <code>/usr/share/omarchy/icons/papercraft/</code> is a good place to start from. Add a <code>preview.png</code> to show your set in the picker; without one, Omarchy draws a preview from your icons. To change a single icon of the default set, put your version in <code>~/.config/omarchy/icons/papercraft/</code>.</p>
-
 <h3 id="unlocks">Unlocks <a class="manual__heading-link" href="#unlocks" aria-label="Link to this section">#</a></h3>
 
 <p>Themes can also have a custom unlock design, which is used for the boot decryption process. You can select one of these under <em>Appearance &gt; Unlock</em>. They look like this:</p>
@@ -185,14 +159,8 @@
 <p><img src="/manual/images/kanagawa-preview-unlock.webp" alt="kanagawa" />
 <em>Kanagawa</em></p>
 
-<p><img src="/manual/images/last-horizon-preview-unlock.webp" alt="last-horizon" />
-<em>Last Horizon</em></p>
-
 <p><img src="/manual/images/lumon-preview-unlock.webp" alt="lumon" />
 <em>Lumon</em></p>
-
-<p><img src="/manual/images/lupine-preview-unlock.webp" alt="lupine" />
-<em>Lupine</em></p>
 
 <p><img src="/manual/images/matte-black-preview-unlock.webp" alt="matte-black" />
 <em>Matte Black</em></p>
@@ -211,9 +179,6 @@
 
 <p><img src="/manual/images/rose-pine-preview-unlock.webp" alt="rose-pine" />
 <em>Rose Pine</em></p>
-
-<p><img src="/manual/images/solitude-preview-unlock.webp" alt="solitude" />
-<em>Solitude</em></p>
 
 <p><img src="/manual/images/tokyo-night-preview-unlock.webp" alt="tokyo-night" />
 <em>Tokyo Night</em></p>

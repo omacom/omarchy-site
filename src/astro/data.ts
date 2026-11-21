@@ -1,6 +1,6 @@
 import { translateHtml } from '../i18n/content'
 import { t } from '../i18n/site'
-import manualJson from '../data/manual.json'
+import { manualChapters } from './manual-chapters'
 import pagesJson from '../data/pages.json'
 import pluginsJson from '../data/plugins.json'
 import { FEATURED_PLUGIN_IDS } from '../lib/featured-plugins'
@@ -9,7 +9,7 @@ import type { NewsPost, NewsSummary } from '../lib/news'
 import { toCatalogueEntry } from '../lib/plugin-filter'
 import type { CatalogueEntry, Engagement } from '../lib/plugin-filter'
 
-export type ManualChapter = { slug: string; title: string; html: string }
+export type { ManualChapter } from './manual-chapters'
 export type { NewsPost, NewsSummary }
 export type PortedPage = {
   title: string
@@ -35,7 +35,7 @@ function foldHeadingLinks(html: string) {
   )
 }
 
-const chapters = manualJson as Array<ManualChapter>
+const chapters = manualChapters
 
 export function getManualToc() {
   return chapters.map(({ slug, title }) => ({ slug, title }))

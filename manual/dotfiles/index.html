@@ -65,7 +65,7 @@
       <h1>Dotfiles</h1>
 <p>Omarchy is primarily configured through the so-called dotfiles that live in <code>~/.config</code>. Those are considered your files for your changes. The files that live in <code>/usr/share/omarchy</code> belong to Omarchy itself, and you shouldn’t be messing with those. If you need to change anything in <code>/usr/share/omarchy</code>, you should be overwriting the value in <code>~/.config</code> instead.</p>
 
-<p>The key configs can be edited straight from the Omarchy menu (<code>Super + Space</code>), like <em>Setup &gt; Keyboard &gt; Keybindings</em>, <em>Setup &gt; Input</em>, and <em>Setup &gt; Config &gt; [file]</em>. When you do it this way, any process that needs restarting after config edits automatically will be after you quit the editor (Neovim by default — <code>:wq</code>, remember! — but you can change that via <em>Setup &gt; Defaults &gt; Editor</em>).</p>
+<p>The key configs can be edited straight from the Omarchy menu (<code>Super + Space</code>), like <em>Setup &gt; Monitors</em>, <em>Setup &gt; Keybindings</em>, <em>Setup &gt; Input</em>, and <em>Setup &gt; Config &gt; [file]</em>. When you do it this way, any process that needs restarting after config edits automatically will be after you quit the editor (Neovim by default — <code>:wq</code>, remember! — but you can change that via <em>Setup &gt; Defaults &gt; Editor</em>).</p>
 
 <p>Here’s a list of the key files in <code>~/.config</code> and what they control:</p>
 
@@ -87,7 +87,7 @@
     </tr>
     <tr>
       <td><code>~/.config/hypr/monitors.lua</code></td>
-      <td>Monitor settings the monitor panel doesn’t cover, like rotation, extra modes, or keeping a monitor off.</td>
+      <td>Controls your monitors, resolution, and position.</td>
     </tr>
     <tr>
       <td><code>~/.config/hypr/input.lua</code></td>
@@ -129,7 +129,7 @@
 
 <h3 id="running-scripts-on-system-events">Running scripts on system events <a class="manual__heading-link" href="#running-scripts-on-system-events" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy fires hooks at a handful of moments, and you can hang your own scripts off them. They live in <code>~/.config/omarchy/hooks/&lt;event&gt;.d/</code>, one directory per event, and every file in there that doesn’t end in <code>.sample</code> runs with bash when the event happens:</p>
+<p>Omarchy fires hooks at a handful of moments, and you can hang your own scripts off them. They live in <code>~/.config/omarchy/hooks/&lt;event&gt;.d/</code>, one directory per event, and every executable file in there runs when the event happens:</p>
 
 <table>
   <thead>
@@ -166,7 +166,7 @@
   </tbody>
 </table>
 
-<p>The <code>pre-refresh-pacman</code> hook is where custom repositories or <code>IgnorePkg</code> lines belong, since it runs before the package transaction. Both run as your user. <code>post-update</code> runs while <code>omarchy update</code>’s sudo authorization is still fresh, so a hook that uses <code>sudo</code> won’t ask for your password again; <code>pre-refresh-pacman</code> runs right after <code>omarchy refresh pacman</code> has used sudo itself.</p>
+<p>The <code>pre-refresh-pacman</code> hook is where custom repositories or <code>IgnorePkg</code> lines belong, since it runs before the package transaction. Both update-related hooks run as your user after Omarchy clears its cached sudo authorization, so a hook that uses <code>sudo</code> needs its own authorization and may ask for your password.</p>
 
 <p>Each of those directories already holds a <code>.sample</code> file showing the shape of a hook — drop the <code>.sample</code> from the name to put it to work. To install a script you’ve written elsewhere, use <code>omarchy hook install post-boot ~/my-hook</code>, which copies it in and makes it executable.</p>
 

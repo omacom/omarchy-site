@@ -81,17 +81,15 @@
 
 <p>Finally, there’s the dev channel, which links Omarchy directly to a git checkout of the source code in <code>~/omarchy</code>, combined with the edge packages. You should only use this channel if you’re an experienced Linux user, working directly on Omarchy, and willing to tolerate breakage.</p>
 
-<p>You can switch between channels using <em>Update &gt; Channel</em> from the Omarchy menu (or <code>omarchy channel set &lt;stable|rc|edge|dev&gt;</code> in the terminal, with <code>omarchy channel current</code> to see where you are).</p>
+<p>You can switch between channels using <em>Update &gt; Channel</em> from the Omarchy menu (or <code>omarchy-channel-set</code> in the terminal).</p>
 
 <h3 id="switching-kernels">Switching kernels <a class="manual__heading-link" href="#switching-kernels" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy boots its own <code>linux-omarchy</code> kernel, but you can keep others installed next to it, like the stock Arch <code>linux</code> kernel or an experimental build you’re testing. When there’s more than one, <em>Update &gt; Kernel</em> in the Omarchy menu lists them with a check next to the one that boots by default. Pick another, enter your password once, and it’ll boot after the next restart. The other kernels stay in the boot menu, so you can still pick one by hand if the new default gives you trouble. In the terminal, it’s <code>omarchy kernel</code> to see the current default, <code>omarchy kernel list</code> for what’s installed, and <code>omarchy kernel set &lt;kernel&gt;</code> to switch.</p>
+<p>Omarchy boots its own <code>linux-omarchy</code> kernel, but you can keep others installed next to it, like the stock Arch <code>linux</code> kernel or an experimental build you’re testing. When there’s more than one, <em>Update &gt; Kernel</em> in the Omarchy menu lists them with a check next to the one that boots by default. Pick another, enter your password once, and it’ll boot after the next restart. The other kernels stay in the boot menu, so you can still pick one by hand if the new default gives you trouble. In the terminal, it’s <code>omarchy-kernel</code> to see the current default, <code>omarchy-kernel list</code> for what’s installed, and <code>omarchy-kernel set &lt;kernel&gt;</code> to switch.</p>
 
 <h3 id="firmware-updates">Firmware updates <a class="manual__heading-link" href="#firmware-updates" aria-label="Link to this section">#</a></h3>
 
 <p>Your packages aren’t the only thing that goes stale. Many laptops and peripherals ship BIOS, SSD, and dock firmware through the Linux Vendor Firmware Service, and <em>Update &gt; Firmware</em> in the Omarchy menu will fetch and install whatever your hardware has waiting. It installs <code>fwupd</code> the first time you run it. Plenty of firmware can only be written during a reboot, so don’t be surprised to be asked for one.</p>
-
-<p>When you need to change a setting in the BIOS itself, hold <code>Alt</code> in the system menu (<code>Super + Escape</code>) and <em>Reboot</em> turns into <em>Reboot to BIOS</em>, which restarts straight into the firmware setup without having to catch the right key at boot. From the terminal, it’s <code>omarchy system firmware</code>.</p>
 
 <h3 id="warning-about-direct-pacmanyay-updates">Warning about direct pacman/yay updates <a class="manual__heading-link" href="#warning-about-direct-pacmanyay-updates" aria-label="Link to this section">#</a></h3>
 
@@ -103,7 +101,7 @@
 
 <p><img src="/manual/images/bootloader.webp" alt="bootloader" /></p>
 
-<p>If somehow your configuration files have been corrupted, you can also perform an Omarchy reinstall using <code>omarchy reinstall</code> in the terminal. This will reinstall all the default Omarchy packages, put you on stable (edge on Apple Silicon) and downgrade any packages that are too new, and reset all the configuration files. Note that all your user config changes to the Omarchy defaults will be overwritten doing this!</p>
+<p>If somehow your configuration files have been corrupted, you can also perform an Omarchy reinstall using <code>omarchy reinstall</code> in the terminal. This will reinstall all the default Omarchy packages, put you on stable and downgrade any packages that are too new, and reset all the configuration files. Note that all your user config changes to the Omarchy defaults will be overwritten doing this!</p>
 
     </article>
   </div>

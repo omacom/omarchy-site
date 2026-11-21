@@ -65,7 +65,7 @@
       <h1>Development Tools</h1>
 <h2 id="alternative-editors">Alternative Editors <a class="manual__heading-link" href="#alternative-editors" aria-label="Link to this section">#</a></h2>
 
-<p>Omarchy ships with Plain as the default editor on new installs and <a href="https://neovim.io/">Neovim</a> preinstalled, but if you’d like something a bit more mainstream and familiar, you can run the Omarchy Menu (<code>Super + Space</code>) and see the options under <em>Install &gt; Editor</em>. We have VSCode, Cursor, Zed, Sublime Text, Helix, Vim, and Emacs listed there. If you don’t find what you’re looking for, checkout <em>Install &gt; Package</em>, and see if it isn’t in an Arch package (and if not, try <em>Install &gt; AUR</em> to check the AUR).</p>
+<p>Omarchy ships with <a href="https://neovim.io/">Neovim</a> by default, but if you’d like something a bit more mainstream and familiar, you can run the Omarchy Menu (<code>Super + Space</code>) and see the options under <em>Install &gt; Editor</em>. We have VSCode, Cursor, Zed, Sublime Text, Helix, Vim, and Emacs listed there. If you don’t find what you’re looking for, checkout <em>Install &gt; Package</em>, and see if it isn’t in an Arch package (and if not, try <em>Install &gt; AUR</em> to check the AUR).</p>
 
 <p>The original <code>vi</code> editor is also available out of the box. Run <code>vi filename</code> to edit a file in the terminal.</p>
 
@@ -83,7 +83,7 @@
 
 <h2 id="preinstalled-cli-tools">Preinstalled CLI tools <a class="manual__heading-link" href="#preinstalled-cli-tools" aria-label="Link to this section">#</a></h2>
 
-<p>Omarchy makes tools such as <code>gh</code>, <code>uv</code>, and most <a href="../ai/">coding agents</a> available through <a href="https://mise.jdx.dev/dev-tools/shims.html#lazy-tools">mise’s lazy installation</a>. The first time you run one, mise installs it. Coding agents then check for an update before they run, at most once every four hours; other tools, like <code>gh</code> and <code>uv</code>, reuse the installed version until you update.</p>
+<p>Omarchy makes tools such as <code>gh</code>, <code>uv</code>, and most <a href="../ai/">coding agents</a> available through <a href="https://mise.jdx.dev/dev-tools/shims.html#lazy-tools">mise’s lazy installation</a>. The first time you run one, mise installs it. Later runs reuse the installed version; they do not check for an update on every launch.</p>
 
 <p>You can also inspect the defaults or install them ahead of time:</p>
 
@@ -108,7 +108,7 @@ disable_tools = ["cursor-agent"]
 
 <h3 id="removing-and-restoring-defaults">Removing and restoring defaults <a class="manual__heading-link" href="#removing-and-restoring-defaults" aria-label="Link to this section">#</a></h3>
 
-<p><em>Remove &gt; Preinstalls</em> removes Omarchy’s preinstalled web apps, TUIs and apps, and has mise skip Omarchy’s tool declarations for your user, by adding them to <code>ignored_config_paths</code> in <code>~/.config/mise/miserc.toml</code>. <em>Install &gt; Preinstalls</em> brings them back and removes that line again. Tools you declare yourself, in your own config or in a project’s <code>mise.toml</code>, keep working either way. If you choose a default agent or set up Python after removing the preinstalls, that tool is added to your own config. The mise setting applies only to your user, and other users keep their own choice; the apps are packages, though, so removing or restoring them changes them for everyone on the machine.</p>
+<p><em>Remove Preinstalls</em> has mise skip Omarchy’s tool declarations for your user, by adding them to <code>ignored_config_paths</code> in <code>~/.config/mise/miserc.toml</code>. <em>Restore Preinstalls</em> removes that line again. Tools you declare yourself, in your own config or in a project’s <code>mise.toml</code>, keep working either way. If you choose a default agent or set up Python after removing the preinstalls, that tool is added to your own config. Both apply only to your user; other users on the machine keep their own choice.</p>
 
 <h2 id="docker">Docker <a class="manual__heading-link" href="#docker" aria-label="Link to this section">#</a></h2>
 

@@ -69,9 +69,9 @@
 
 <h2 id="whats-on-it-by-default">What’s on it by default <a class="manual__heading-link" href="#whats-on-it-by-default" aria-label="Link to this section">#</a></h2>
 
-<p>The bar has three sections. On the left sits the Omarchy logo (the menu launcher) and the workspace indicators. In the center you get the status indicators, the clock, Elsewhen (a world clock), the weather, and an Omarchy update badge. On the right: the system tray, the keyboard layout (when more than one layout or input method is configured), agents, bluetooth, network, audio, display, and power.</p>
+<p>The bar has three sections. On the left sits the Omarchy logo (the menu launcher) and the workspace indicators. In the center you get the status indicators, the clock, Elsewhen (a world clock), the weather, and an Omarchy update badge. On the right: the system tray, the keyboard layout (when more than one is configured), agents, bluetooth, network, audio, display, and power.</p>
 
-<p>A few of those only show up when they have something to say. The keyboard layout appears only if you’ve configured more than one layout or input method. The update badge appears only when there’s an Omarchy update waiting.</p>
+<p>A few of those only show up when they have something to say. The keyboard layout appears only if you’ve configured more than one layout. The update badge appears only when there’s an Omarchy update waiting. And the agents icon appears the first time Omarchy finds AI coding usage on the machine (see <a href="../ai/">AI</a>).</p>
 
 <h2 id="clicking-around">Clicking around <a class="manual__heading-link" href="#clicking-around" aria-label="Link to this section">#</a></h2>
 
@@ -104,12 +104,6 @@
       <td>Calendar popup</td>
       <td>Cycle the label format</td>
       <td>Middle: timezone picker</td>
-    </tr>
-    <tr>
-      <td>World clock</td>
-      <td>World clock panel</td>
-      <td>Refresh</td>
-      <td>Middle: refresh</td>
     </tr>
     <tr>
       <td>Weather</td>
@@ -163,7 +157,7 @@
       <td>Agents</td>
       <td>Agents panel</td>
       <td>Launch your agent</td>
-      <td>Middle: refresh usage</td>
+      <td>Middle: next subscription</td>
     </tr>
     <tr>
       <td>Tray</td>
@@ -223,10 +217,6 @@
       <td>World clock</td>
     </tr>
     <tr>
-      <td><code>Super + Ctrl + X</code></td>
-      <td>Agents</td>
-    </tr>
-    <tr>
       <td><code>Super + Ctrl + 1-9</code></td>
       <td>Toggle the nth panel in the right section</td>
     </tr>
@@ -261,7 +251,7 @@
 
 <h2 id="indicators">Indicators <a class="manual__heading-link" href="#indicators" aria-label="Link to this section">#</a></h2>
 
-<p>The little cluster in the center is the indicators widget. These are status glyphs for modes you’ve turned on: do not disturb, night light, a queued <a href="../reminders/">reminder</a>, an active screen recording, and stay awake, plus warnings while passwordless sudo is on or someone is connected to a remote session. They light up when the mode is active and otherwise stay out of the way — hover just beside them, where the inactive ones would sit, to peek at those. Clicking an indicator toggles that mode. One more is status only: a remote session lights up red while someone is connected to this machine through gliff.</p>
+<p>The little cluster in the center is the indicators widget. These are status glyphs for modes you’ve turned on: do not disturb, night light, a queued <a href="../reminders/">reminder</a>, an active screen recording, stay awake, and <a href="../text-extraction-dictation/">dictation</a>. They light up when the mode is active and otherwise stay out of the way — hover anywhere on the bar to peek at the inactive ones. Clicking an indicator toggles that mode. One more is status only: a remote session lights up red while someone is connected to this machine through gliff.</p>
 
 <p>If you’d rather they were always visible, set <code>alwaysShow</code> to <code>true</code> on the widget. And if you only care about some of them, list the ones you want in <code>items</code>: <code>["Dnd", "Reminder", "NightLight"]</code>. You can have more than one indicators widget, so different sections can show different subsets.</p>
 
