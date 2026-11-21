@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (også kjent som Quattro RS!) er den første store funksjonsutgivelsen siden <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, og den er en skikkelig kraftpakke: over 740 pull requests slått sammen fra mer enn 180 bidragsytere på bare tolv uker. Den tilbyr nå en tradisjonell skrivebordsmodus ved siden av flislegging som standard. Du kan installere den direkte på M1/M2/M3/Neo MacBook-er. Og den snakker 50 språk. Og en haug med andre funksjoner, rettelser og forbedringer. Allerede på Omarchy? Kjør <em>Update &gt; Omarchy</em>. Ny maskin? <a href="/#install">Hent den her</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Flytende arbeidsområder med en dokk</h2>
+
+<p><code>Super + L</code> veksler nå ethvert arbeidsområde mellom flislegging, rulling og flytende. På et flytende arbeidsområde får hvert vindu en tittellinje i fargene til temaet ditt, og en dokk viser appene du har festet, alt som kjører, og et rutenett med alle installerte apper. Dra for å endre rekkefølge eller feste, høyreklikk for mer, og <code>Super + M</code> minimerer et vindu ned til dokken.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Dette er en flott inngangsport for alle som kommer fra macOS eller Windows og ikke er klare til å satse fullt på flislegging ennå. Eller for alle som bare vil ha ett arbeidsområde der vinduer kan breie seg. Bland og match per arbeidsområde, og linjen viser hvilket oppsett hvert enkelt bruker.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy på Apple Silicon</h2>
+
+<p>Vårt utrolige <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a>-team har levert det innebygde Mac-installasjonsprogrammet. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Last ned en app</a> på macOS, så legger den Omarchy rett ved siden av på M1-, M2-, M3- eller Neo MacBook-en din. Ingen USB-pinne, ingen terminalbesvergelser. Foretrekker du Homebrew? Det er én linje:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy-installasjonsprogrammet for Mac" /></p>
+
+<p>Dette er det vi satte oss fore å gjøre i september: å fullføre det Asahi startet. To måneder senere kan du bare laste det ned. Fantastisk arbeid av alle på teamet.</p>
+
+<p>Og de stopper ikke der. M4, M5 og M6 jobbes det med akkurat nå, så det går nok ikke lang tid før Omarchy kjører på alle Apple Silicon Mac-er.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy på en M2 Max, M3 Air, Neo, M4 Pro og M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM-støtte for NVIDIA DGX Spark + N1X (og snart Snapdragon)</h2>
+
+<p>Omarchy 4.5 leverer sin første ARM-ISO, og med den kommer foreløpig støtte for NVIDIAs ARM-maskiner: skrivebordsmaskinen DGX Spark og de bærbare PC-ene bygget på N1X, som <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> og <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Og snart får vi også støtte for hele utvalget av Snapdragon ARM-maskiner. Det er fortsatt tidlig, så forvent noen skarpe kanter, og meld fra om alt som går i stykker på <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 språk og 5 inndatametoder</h2>
+
+<p>Omarchy snakker nå 50 språk. Velg ett under <em>Setup &gt; Language</em> (eller kjør <code>omarchy language &lt;code&gt;</code>), så bytter menyen, skrivebordet og varslene fra Omarchy umiddelbart. Systemspråket følger ved neste innlogging.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Bytte språk" /></p>
+
+<p>Å snakke et språk er bare halve jobben, da. Du må også kunne skrive det. Så Omarchy setter nå opp ordentlige inndatametoder for japansk (Mozc), koreansk (Hangul), forenklet kinesisk (Pinyin), Taiwan (Zhuyin) og Hongkong (Cangjie), rett fra installasjonsprogrammet eller senere under <em>Setup &gt; Keyboard</em>. Hver av dem kommer med riktige skrifttyper for sine tegnformer, kandidatvinduet følger temaet ditt, og <code>Super + I</code> bytter mellom inndataspråkene dine. Hangul, Zhuyin og Cangjie beholder tastene sine i standardposisjonene selv om du skriver latin på Dvorak, Colemak eller AZERTY, akkurat som på Windows og macOS. Og å trykke Shift alene går ut av en inndatametode til latinske bokstaver og tilbake igjen, slik Sogou, Microsoft Pinyin og macOS fungerer.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Logg inn på captive Wi-Fi-portaler</h2>
+
+<p>Hotell-, flyplass- og kafé-Wi-Fi fungerer endelig bare. Omarchy merker nå når et nettverk vil at du skal logge inn eller godta vilkårene før du får komme på nett. Nettverksikonet varsler deg, og nettverkspanelet viser en stor Open Captive Portal-knapp som tar deg rett til innloggingssiden. Når du er gjennom, går alt tilbake til normalt av seg selv.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Logge inn på en captive portal fra nettverkspanelet" width="380" /></p>
+
+<h2 id="five-new-default-apps">Fem nye standardapper</h2>
+
+<p><strong>Hype</strong> lager presentasjoner fra én enkelt Markdown-fil, med en visuell lysbildeeditor ved siden av kilden, og eksporterer til PDF eller PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> erstatter Xournal++ for papirarbeidet: åpne en PDF, plasser den lagrede signaturen din, tekst og datoer, og lagre en signert kopi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> tegner et trekart over hva som fyller disken din, farget etter type, peker ut hurtigbuffere som trygt kan gjenskapes, og lar deg merke hva som skal bort.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> tar opp kameraet ditt med én tast, med tema som matcher skrivebordet ditt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> gir deg et eksternt skrivebord over SSH. Koble til en annen Omarchy-maskin og styr hele skrivebordet dens fra et vindu på din, med en fane for hver maskin. Og siden den går over SSH, er det ingenting ekstra å sette opp eller eksponere. Maskinen som styres, viser en indikator for ekstern økt i linjen, så det alltid er tydelig når noen er på den.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Og så er det <strong>Elsewhen</strong>, en verdensklokke som bor rett ved siden av klokken i linjen. Trykk på en by på globusen for å angi hvor du er, søk etter virkelige steder, og navngi personene som bor i hver by, så du alltid vet om det er en høvelig tid å ringe. Bytt mellom 12 og 24 timer med <code>t</code>, mellom °F og °C med <code>Alt + T</code>, og hent den frem når som helst med <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Med Monologue for opptak og Omacut for trimming leveres nye installasjoner ikke lenger med OBS Studio og Kdenlive. Lazydocker er også borte fra nye installasjoner, men Docker og Docker Compose er fortsatt inkludert. Maskiner som allerede har noen av dem, beholder dem.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Trenger du å jobbe med folk som lever i Office? <em>Install &gt; Service &gt; Microsoft</em> setter nå opp Outlook, Word, Excel, PowerPoint, Teams og OneDrive som webapper. Hver av dem får sitt eget vindu og oppføring i startprogrammet, så de føles helt hjemme ved siden av alt annet. Ingen unnskyldninger igjen for ikke å bytte til Omarchy på jobben!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams og PowerPoint på Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper for diktering</h2>
+
+<p>Superwhisper er nå Omarchys standard dikteringsmotor, og den er satt opp rett ut av boksen. Trykk <code>Alt + Space</code> for å begynne å snakke og igjen for å stoppe, eller hold <code>Right Alt</code> for push-to-talk. Den er utrolig rask og svært nøyaktig.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Diktere med Superwhisper" /></p>
+
+<p>Den starter i skyen, så den fungerer i det øyeblikket du installerer, og de første 10 000 ordene er gratis. Men du kan bytte til en nedlastbar modell som er helt gratis og kjører fullstendig lokalt, uten å sende et ord til noen. Og hvis du heller vil bruke en annen lokal modell, tilbys Voxtype fortsatt som et alternativ.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Installer på under ti sekunder</h2>
+
+<p>Omarchy pleide å installere rundt 940 pakker én etter én. Det nye F1-installasjonsprogrammet pakker i stedet ut et forhåndsbygd rotbilde og legger bare denne maskinens pakker på toppen. Det kutter installasjonstiden omtrent i to på enhver maskin.</p>
+
+<p>Og på rask maskinvare er det absurd. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> fra AMD satte verdensrekord med en full Omarchy-installasjon på <strong>7 sekunder</strong> på sin AMD-bærbare. <a href="https://x.com/dhh/status/2117222836620202375">Syv sekunder!</a> Jeg husker da fem minutter virket som et ambisiøst mål.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Installerte Omarchy på 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Raskere overalt ellers</h2>
+
+<p>Det er ikke bare installasjonsprogrammet. Oppstart stopper ikke lenger opp på binfmt-registrering. Temavelgeren åpner med en gang i stedet for etter et kvart sekund. Menyer og paneler åpner rett fra Hyprland-snarveier og hopper over de 60 ms det tok å starte en prosess først. De tregeste sjekkene i Omarchy-menyen gikk fra 200 ms til 16 ms, en ny terminal viser ledeteksten 30 ms tidligere, og hele skrivebordet reagerer nå på endringer i stedet for å polle etter dem. Selv utlogging, omstart og avslutning skjer i det øyeblikket appene dine er ferdige med å lukke seg.</p>
+
+<h2 id="agent-upgrades">Agentoppgraderinger</h2>
+
+<p>Omarchy er det agentiske operativsystemet, og 4.5 bringer en stor runde med oppgraderinger for å jobbe med agenter. Agentpanelet sporer nå 23 agenter og leverandører, opp fra 6, inkludert Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter og Ollama. Hver grense får sin egen måler med tiden til den nullstilles, så du kan se nøyaktig hvor mye spillerom du har igjen. Og Grok er nå en fullverdig leverandør ved siden av Claude og Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Agentpanelet med flere Claude- og Codex-abonnementer" width="380" /></p>
+
+<p>Og agenten din er alltid ett tastetrykk unna. <code>Super + ~</code> feller ned en konsoll i Quake-stil over et nedtonet skrivebord, og første gang du åpner den, starter den standardagenten din. Trykk den igjen for å gjemme den bort, og økten din er akkurat der du forlot den.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Konsollen i Quake-stil som kjører en agent over et nedtonet skrivebord" /></p>
+
+<p>Hvis du sjonglerer mer enn ett abonnement, kan du nå beholde flere Claude-, Codex- og Grok-innlogginger på samme maskin og velge hvilken nye økter skal starte med, ved hjelp av <code>omarchy agent account</code>. Historikk, innstillinger og ferdigheter deles mellom dem, så <code>claude --continue</code> fortsetter akkurat der du slapp etter et bytte. Nær en grense kan Omarchy enten tilby et bytte med ett klikk eller flytte nye økter over til kontoen med mest spillerom på egen hånd. Og når du setter opp en annen maskin, bringer <code>omarchy agent account copy</code> alle innloggingene dine over SSH, så du ikke må logge inn på alt igjen.</p>
+
+<p>Kimi og Ori, OpenRouters agentrammeverk, slutter seg til valgene under <em>Setup &gt; Defaults &gt; Agent</em>, og Googles Antigravity erstatter det foreldede Gemini CLI (<code>gemini</code> fungerer fortsatt som et alias). Foretrekker du et vindu fremfor en terminal? Skrivebordsappene Claude og Amp er nå ett klikk unna under <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Varsler, bygget på nytt</h2>
+
+<p>Varsler stables nå etter avsender, følger temaet ditt og slår sammen identiske gjentakelser. Handlingsknapper, bekreftelseskoder og lenker fungerer alle rett fra kortet. <code>Super + Comma</code> handler på det nyeste (avviser det, åpner det eller trykker på knappen), og <code>Super + Ctrl + Comma</code> gir deg tastaturet til å styre dem alle. Bjellen i linjen slår på Ikke forstyrr.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Nye varsler" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Videobakgrunner og temaintroer</h2>
+
+<p>Bakgrunner kan nå være videoer. Legg inn en, så våkner skrivebordet ditt til liv med rullende bølger eller hva annet du måtte like, mens låseskjermen viser et stillbilde fra den. Og temaer gjør nå en entré: hvert av dem kan spille en kort, lydløs intro når du logger inn eller bytter til det. (Vil du heller ha det rolig? Slå av introer under <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse slutter seg til standardtemaene</h2>
+
+<p>Jade Horse er helt i disige grønntoner, med bakgrunner i utskåret jade som får hele skrivebordet til å se ut som et rullemaleri. Den erstatter Osaka Jade blant de medfølgende temaene, og får selskap av Starship som det andre nye standardtemaet. Hvis du er på Osaka Jade, beholder du kopien din, og den lever videre som et <a href="https://github.com/omacom/omarchy-osaka-jade-theme">tredjepartstema</a> for alle som vil installere den på nytt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Temaet Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff er den nye standardbakgrunnen</h2>
+
+<p>Nye installasjoner møter deg nå med Liftoff, en nydelig solnedgangsoppskyting som er den nye standardbakgrunnen for Tokyo Night. Den ble laget av <a href="https://github.com/tcballard">Tom Ballard</a>, som først skapte den til sitt <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff-tema</a>. Takk, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Bakgrunnen Liftoff av Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Oppstartsmenyen er nå stille</h2>
+
+<p>Omarchy pleide å vise oppstartsmenyen i omtrent seks sekunder ved hver start, i tilfelle du trengte å rulle tilbake til et tidligere øyeblikksbilde. Men nesten ingen gjorde det noen gang. Så nå venter Limine bare ett sekund og starter stille, og mesteparten av tiden ser du ikke menyen i det hele tatt.</p>
+
+<p>Når du trenger en annen oppføring eller et øyeblikksbilde, fortsett å trykke på en hvilken som helst tast (pil ned fungerer) mens maskinen starter, så stopper den ved menyen. Og hvis du heller vil ha menyen oppe lenger for godt, angi din egen <code>timeout:</code> i <code>/boot/limine.conf</code> (som <code>timeout: 5</code>). Oppdateringer lar en tidsavbruddsverdi du selv har satt, være i fred.</p>
+
+<h2 id="changed-hotkeys">Endrede hurtigtaster</h2>
+
+<p>Noen snarveier flyttet:</p>
+
+<ul>
+  <li>Kalkulator: <code>Super + Ctrl + Q</code> er nå <code>Super + Shift + Q</code>.</li>
+  <li>Aktivitet: <code>Super + Ctrl + T</code> er nå <code>Super + Shift + T</code>, og <code>Super + Ctrl + T</code> åpner temaer.</li>
+  <li>Nettverk: <code>Super + Ctrl + W</code> er nå <code>Super + Ctrl + N</code>, og <code>Super + Ctrl + W</code> åpner bakgrunner.</li>
+  <li>Nattlys har ikke lenger en snarvei (den var <code>Super + Ctrl + N</code>); den er i <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> åpner Apps fra dokken i stedet for Apps-menyen.</li>
+</ul>
+
+<p>Snarveier for varsler er endret:</p>
+
+<ul>
+  <li><code>Super + Comma</code> handler på det nyeste kortet (avviser det, åpner det eller trykker på den ene knappen) i stedet for bare å avvise det.</li>
+  <li>Å avvise det siste flyttet til <code>Super + Alt + Comma</code>, som pleide å åpne det.</li>
+  <li>Å dempe flyttet fra <code>Super + Ctrl + Comma</code> til <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> gir deg nå tastaturkontroll.</li>
+</ul>
+
+<p>Noen få taster fungerer annerledes:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> og <code>Super</code> + rulling blir på arbeidsområdene til den gjeldende skjermen, siden hver skjerm har sine egne.</li>
+  <li>I en terminal sender <code>Super + C</code> og <code>Super + V</code> <code>Ctrl + Shift + C</code> og <code>Ctrl + Shift + V</code> i stedet for <code>Ctrl + Insert</code> og <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Nye standarder som kan kollidere med bindinger du selv har: <code>Super + Q</code> (lukk vindu, sammen med <code>Super + W</code>), <code>Super + A</code> (velg alt), <code>Super + M</code> (minimer til dokken), <code>Super + ~</code> og <code>Super + Shift + ~</code> (Quake-konsoll), <code>Super + Alt + L</code> (forrige oppsett), <code>Super + Shift + Ctrl + Arrows</code> (flytt et vindu til en annen skjerm), <code>Super + Ctrl + Alt + C</code> (skjermbilde), <code>Super + Ctrl + Alt + E</code> (verdensklokke), <code>Super + Ctrl + Alt + F</code> (skrivebord i fullskjerm), og å holde <code>Right Alt</code> for push-to-talk-diktering.</p>
+
+<h2 id="more-features">Flere funksjoner</h2>
+
+<ul>
+  <li>Gi hver skjerm sine egne arbeidsområder: <code>Super + 1-0</code> går til arbeidsområdene på skjermen du er på, og <code>Super + Arrows</code> flytter til og fra de andre skjermene av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Samle alt om hvordan skrivebordet ser ut i en ny Appearance-meny, som erstatter Style: tema, bakgrunn, skrifttype, linje, vinduer, merkevarebygging, dokken, oppsett for arbeidsområder, animasjoner og opplåsingsskjermen av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Velg vinduer som Opaque, Transparent eller Glassy under <em>Appearance &gt; Window Transparency</em>, pluss en Glassy-bakgrunn for linjen av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Velg vindushjørner fra temaet, skarpe eller avrundede under <em>Appearance &gt; Window Corners</em> av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Legg til en modus uten animasjoner, på som standard i VM-er av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Gjør apper ugjennomsiktige som standard, mens terminaler beholdes gjennomsiktige av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Legg til Slack i Install &gt; Service av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Gjør at Alt + Space veksler diktering på alle bakender av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Legg til Open- og Edit-knapper i varsler om skjermbilder, og Open og Cut i skjermopptak og yt-dlp-nedlastinger av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Legg til en Update &gt; Kernel-meny for å bytte standardkjerne av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Legg til temasync til herdr-maskiner av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Legg til o.rebind for å erstatte Hyprland-tastebindinger av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Be om git-identiteten din etter første innlogging i stedet for i installasjonsprogrammet, med GitHub-innlogging av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Tillat at installasjonsmedier forhåndsinnstiller språk, tastatur og tidssone av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Tillat at linje-widgeter bor i skuffen til systemstatusfeltet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Tillat å fjerne en linje-widget ved å dra den av linjen av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Tillat rulling gjennom arbeidsområder fra linjen av <a href="https://github.com/outfoxxed">@outfoxxed</a> i <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Tillat å slette ekstra temaer fra temavelgeren av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Legg til CLI-ene hey, basecamp og Cloudflare som verktøy som installeres lat av <a href="https://github.com/monorkin">@monorkin</a> i <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Legg til SSH Agent som en valgfri tjeneste av <a href="https://github.com/carletex">@carletex</a> i <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Tillat å velge hvor lenge passordløs sudo varer av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Legg til en lukkeknapp ved hovering på varsel-toast-er av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Tillat å dempe et programs varsler fra krasjdiagnosen dets av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Tillat at omarchy-notification-send legger til handlingsknapper av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Legg til et klokkeformat med levende sekunder av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Juster tastaturbaklyset med Ctrl og lysstyrketastene av <a href="https://github.com/ludagoo">@ludagoo</a> i <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Skriv ut OEM Windows-produktnøkkelen fra fastvaren av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Legg til original vi som et valg for terminaleditor av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Legg til bakgrunnen Roadster Starlight i Ethereal av <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> i <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Sikkerhet</h2>
+
+<ul>
+  <li>Hold Windows VM-passordet ute av argumentene til RDP-klienten av <a href="https://github.com/dicemans">@dicemans</a> i <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Flytt tilstand for skjermopptak ut av /tmp som alle kan skrive til av <a href="https://github.com/Chessing234">@Chessing234</a> i <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Herd utløp for passordløs sudo på tvers av hvilemodus av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Bind opprydding av oppdateringshemmer til prosessen som opprettet den av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Isoler autorisasjon for OCaml-opprydding av <a href="https://github.com/ErikMelton">@ErikMelton</a> i <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Fest heving for fabrikktilbakestilling til den pakkede kommandoen av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Fjern lagrede fingeravtrykksmaler for brukeren som kaller ved tilbakestilling av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Avvis hook- og tilstandsnavn som er stier av <a href="https://github.com/Adolanium">@Adolanium</a> i <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Overlat til system-auth i polkit-stakken skrevet av oppsett for fingeravtrykk og FIDO2 av <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> i <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Fjern fingeravtrykk fra leserens egen lagring når de fjernes av <a href="https://github.com/scottjones">@scottjones</a> i <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Hindre at SSH-oppsett etterlater sshd kjørende med passordinnlogginger når ingen nøkkel blir lagt til av <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> i <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Hindre en annen lokal bruker i å bytte inn sitt eget program under en Voxtype-oppgradering av <a href="https://github.com/Vladkarok">@Vladkarok</a> i <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Herd hvordan fabrikktilbakestilling sender gum-innstillingene dine gjennom sudo av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Rettelser</h2>
+
+<ul>
+  <li>Rett opp at Hyprland krasjer når en skjerm kobles fra, deaktiveres eller slås av ved å lukke lokket av <a href="https://github.com/falkoro">@falkoro</a> i <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Rett opp oppgraderinger som kunne etterlate et kjernebilde uten root=-parameteren dets av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Rett opp at fabrikktilbakestilling slettet oppstartsoppføringer for andre systemer av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Rett opp at en installasjon ved siden av en annen Omarchy fjernet oppstartsoppføringen til den installasjonen av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Rett opp installasjoner på ledig plass som kunne ta en eksisterende partisjon for en ny en av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Rett opp at gjenopptak av en avbrutt endring av diskpassord fjernet feil nøkkel av <a href="https://github.com/scottjones">@scottjones</a> i <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Be om sudo-passordet én gang per Omarchy-oppdatering av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Be om sudo-passordet én gang i ti minutter i stedet for igjen på hver kommando av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Dekk AUR-oppdateringer og oppstartssjekken med oppdateringens ene sudo-spørsmål av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Hold pakkeoppdateringer trygge mot utlogging midt i en transaksjon av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Logg ut, start på nytt og slå av så snart apper er ferdige med å lukke seg av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Erstatt Tensaku med Omasnap for skjermbilder av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>La paneler vokse ut av linjen og forvandle seg mellom dem, med trykktilbakemelding på knapper og linjeikoner av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>La varsler gli inn fra under linjen og ut igjen samme vei som de kom av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Sjekk tilkobling mot Omarchys eget endepunkt, og rett innlogging på captive portaler av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Rett opp at bytte fra edge til stable eller RC etterlot maskinen på en gammel byggversjon av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Rett opp at oppdateringen til 4.5 stoppet når skallet var tregt til å svare av <a href="https://github.com/AnPod">@AnPod</a> i <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Rett opp at oppdateringer feilet stille når de ble startet utenfor skrivebordsøkten av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Rett opp at en mislykket nedlasting av et mise-verktøy stoppet resten av en systemoppdatering av <a href="https://github.com/sanjyay">@sanjyay</a> i <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Rett opp at oppdateringer feilet når omarchy-nvim ikke er installert av <a href="https://github.com/imzihuailin">@imzihuailin</a> i <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Rett opp at installasjoner med dobbeltoppstart ikke fikk montert EFI-partisjonen av <a href="https://github.com/Damian626">@Damian626</a> i <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Rett opp at installasjoner stoppet når fastvaren ikke ville ta en ny oppstartsoppføring av <a href="https://github.com/ryanio">@ryanio</a> i <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Rett opp at installasjoner stoppet på disker med et gammelt RAID-medlem eller volumgruppe av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Start installasjonsprogrammet tidligere ved å ikke vente på hver USB-enhet og oppstartsjobb av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Få fart på diskkryptering med 4096-byte sektorer på nye installasjoner av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>List interne disker først og åpne installasjonsskjermene på det trygge valget av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>List Full disk install først i installasjonsprogrammet, og gå tilbake med Esc på diskskjermene av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Rett opp at skalering av én skjerm endret skalaen på alle andre skjermer av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Rett opp at XWayland-apper ble for store når skjermer bruker forskjellige skalaer av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Rett opp at HDR-skjermer byttet til et utvasket HDR-bilde når et vindu gikk i fullskjerm av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Rett opp uskarpe menyer og velgere på brøkdelsskalerte skjermer av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Rett opp at den bærbare skjermen ble værende av etter at den eksterne skjermen ble koblet fra av <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> i <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Rett opp at å aktivere en skjerm på nytt tilbakestilte posisjonen, skalaen og modusen dens av <a href="https://github.com/zihaomu">@zihaomu</a> i <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Rett opp at menyer og velgere ikke åpnet seg igjen etter at en skjerm ble koblet fra av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Rett opp at arbeidsområder per skjerm flyttet seg etter at en skjerm ble koblet fra av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Rett opp at skallet krasjet når en lydenhet koblet fra med lydpanelet åpent av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Rett opp at fullskjermsvinduer mistet fullskjerm etter skjermspareren av <a href="https://github.com/MGross21">@MGross21</a> i <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Rett opp at markøren forsvant ved oppstart etter at Hyprland lastet på nytt av <a href="https://github.com/spencerbull">@spencerbull</a> i <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Rett opp at markøren ble usynlig over XWayland-apper av <a href="https://github.com/Sebo1411">@Sebo1411</a> i <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Rett opp heng ved utklippstavlefangst av <a href="https://github.com/maxcroy1">@maxcroy1</a> i <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Rett opp tilgang til nøkkelring gjennom XDG Secret-portalen av <a href="https://github.com/pkwagner">@pkwagner</a> i <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Rett opp registrering av fingeravtrykk og gjenoppretting av låseskjerm av <a href="https://github.com/GeertJohan">@GeertJohan</a> i <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Veiled registrering av fingeravtrykk steg for steg av <a href="https://github.com/scottjones">@scottjones</a> i <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Rett opp automatisk gjentakelse av taster i passordfeltet på låseskjermen av <a href="https://github.com/berndb">@berndb</a> i <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Rett opp at bakgrunnen på låseskjermen lastet etter passordfeltet ved oppvåkning av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Rett opp tidsavbrudd for skjermlås når økten navngir en skjerm som er borte av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Få fart på å åpne en terminal i katalogen til det gjeldende vinduet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Gjør at editorer i VS Code-familien følger temabytter live av <a href="https://github.com/Macho0x">@Macho0x</a> i <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Gi kjørende Hunk-økter nytt tema ved temabytte av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Husk den valgte bakgrunnen for hvert tema av <a href="https://github.com/OldJobobo">@OldJobobo</a> i <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Hold bildevelgeren rask og skarp med store samlinger og HiDPI av <a href="https://github.com/keylimesoda">@keylimesoda</a> i <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Kutt CPU og minne den gjennomsiktige linjen bruker på å sample bakgrunnen av <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> i <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Få fart på Tailscale-panelet på tailnets med tusenvis av maskiner av <a href="https://github.com/iskakaushik">@iskakaushik</a> i <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Bring Grok på linje med Claude og Codex i agentpanelet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Bruk valg av agentkonto på CLI-underprosesser av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Vis individuelle forbruksgrenser for Codex og nullstillingstidene deres av <a href="https://github.com/Stegi56">@Stegi56</a> i <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Sett opp nettleserintegrasjon når du velger Claude av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Rett opp at agenter ikke fant mise-verktøy installert etter at de startet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Rett opp å lime inn skjermbilder i agenter i herdr-ruter startet over SSH av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Rett opp at agentpanelet manglet komprimerte Codex-økter av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Returner Caps Lock til normalt og gjør Shift + Caps Lock til compose-tasten av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Bruk systemets tastaturoppsett på innloggingsskjermen av <a href="https://github.com/g-desoutter">@g-desoutter</a> i <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Rett opp at bytte av oppsett hoppet over annethvert trykk med et ikke-latinsk tastaturoppsett av <a href="https://github.com/manuaudio">@manuaudio</a> i <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Slå på maskinvarevideodekoding i mpv av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Bytt TCP-overbelastningskontroll til BBR og bruk kyber I/O-planleggeren på virkelige disker av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Installer T3 Code som dens selvoppdaterende AppImage av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Forbedre installasjon av PHP og Laravel av <a href="https://github.com/nunomaduro">@nunomaduro</a> i <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Installer Node lat og la mise-konfigurasjonen din være i fred av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Installer manglende apper når du velger standarder av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Ton ned installert programvare i Install-menyene i stedet for å skjule den av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Registrer passordbehandler og andre verter for innebygd meldingsutveksling for Brave Origin av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Grupper Brave Origin-webvarsler etter nettsted, og åpne riktig fane når de klikkes av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Godkjenn fjerning av foreldreløse pakker automatisk under oppdateringer av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Oppdater Omarchys nøkkelring før hver oppdatering av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Tilby omstart etter bytte av kanal av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Tilby førstekjøringsoppdateringen bare når det er noe å oppdatere av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Finn værstedet og tidssonen til installasjonsprogrammet med Omarchys egen geo-tjeneste av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Still klokken fra ntp.omarchy.org i stedet for Archs NTP-pool av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Mål nettverkshastighet med Omarchys egen hastighetstest av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Vis en fremdriftsskjerm med sporet ikon under første oppstart av <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> i <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Start live-ISO-en på Omarchy-kjernen, og på T2-kjernen bare på Mac-er av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Stopp at frakoblede installasjoner venter på mise-versjonsoppslag av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Rett opp at frakoblede installasjoner satte tidssonen til Africa/Abidjan som standard av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Rett opp at tidssonevelgeren i installasjonsprogrammet ikke lot deg skrive for å søke av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Rett opp at live-ISO-en hang bak splash-skjermen når den ble startet fra en Ventoy-pinne av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Rett opp tyske og franske konsolltastaturkart i oppsettskjemaet til installasjonsprogrammet av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Skjul gums engelske tastehint i installasjonsprogrammet og git-oppsettet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Fjern de engelskspråklige vitsene fra fremdriftsskjermen for installasjon av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Rett opp at utdata fra installasjonsprogrammet landet uten innrykk på skjermen mens den forberedte disken av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Rett opp at Quattro-oppgraderingen tilbakestilte standardnettleseren til Chromium av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Rett opp at Quattro-oppgraderingen stoppet på bakgrunnsnavn med ikke-ASCII-tegn av <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> i <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Rett opp at kjernemigreringen stoppet på maskiner som starter med GRUB eller systemd-boot av <a href="https://github.com/manuaudio">@manuaudio</a> i <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Rett opp dvalemodus på ukrypterte maskiner med mer enn én NVMe-disk av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Rett opp at FIDO2-migreringen ble markert som ferdig før den var løst av <a href="https://github.com/ErikMelton">@ErikMelton</a> i <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Rett opp at et flytende arbeidsområde tok over det første vinduet din egen flyteregel dekker av <a href="https://github.com/zihaomu">@zihaomu</a> i <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Rett opp at kompositoren stoppet opp når Super + L vekslet et arbeidsområde inn og ut av flytende av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Rett opp at Alt + Shift + Tab ikke gikk bakover gjennom alle vinduer av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Rett opp at utpoppede vinduer ikke sentrerte seg når de ble flyttet til en annen skjerm av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Rett opp at nye terminaler åpnet utenfor hjemmemappen din når et ikke-terminalvindu var fokusert av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Rett opp at 1Password- og Bitwarden-vinduer ikke fløt av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Rett opp at 1Password lukket seg når terminalen til installasjonsprogrammet avsluttet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Rett opp at DaVinci Resolve-dialoger stjal pekerfokus av <a href="https://github.com/AksharP5">@AksharP5</a> i <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Rett opp at skrivebordet viste gjennom Windows VM-skjermer av <a href="https://github.com/jmwall">@jmwall</a> i <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Rett opp eldre Windows VM-passord som inneholdt $$ etter Quattro-migreringen av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Stopp at Hyprlands donasjons-popup viste seg etter oppgraderinger av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Forbedre å dra og ordne linje-widgeter av <a href="https://github.com/outfoxxed">@outfoxxed</a> i <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normaliser størrelse og justering på linjeikoner av <a href="https://github.com/bjarneo">@bjarneo</a> i <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Vis de skjulte linjeindikatorene bare når du holder pekeren til venstre for klokken av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Juster ikoner i systemstatusfeltet med de andre ikonene i linjen av <a href="https://github.com/ayoubdya">@ayoubdya</a> i <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Vis neste verktøytips for linjen med en gang mens ett allerede er oppe av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Åpne klokke- og værpanelene under widgetene deres av <a href="https://github.com/scottjones">@scottjones</a> i <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Hold nettverkspanelet åpent etter at du har valgt en DNS-leverandør av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Rett opp at en popup som lukket seg, etterlot linje-widgeter uten respons av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Rett opp at den skjulte linjen fanget klikk langs toppen av fullskjermsvinduer av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Rett opp at mørke ikoner i systemstatusfeltet forsvant inn i linjen av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Rett opp at linjeikoner satt ujevnt eller utenfor senter av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Rett opp at verktøytips for linjen tegnet første bilde i feil størrelse av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Rett opp at varselhistorikken viste alle kort som akkurat nå av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Rett opp at varsler ved første innlogging kollapset til én enkelt stabel av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Rett opp at klikk på varsler ikke fokuserte apper med navn på flere ord av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Rett opp at Taildrop-varsler viste tom tekst og manglet forhåndsvisninger av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Rett opp at batterivarselet viste tom tid og 0W på et fullt batteri av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Rett opp at advarselen om lavt batteri ble værende etter at du plugget inn og kom tilbake etter omstarter av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Rett opp at batteriforbruk viste 0W på noen bærbare av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Rett opp at et fullt batteri på strøm viste som om det tømte seg av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Rett opp at Hibernate viste seg når kjernen ikke vil gå i dvale av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Rett opp at gvfs-monteringer forsvant etter gjenopptak av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Rett opp at tastaturbaklyset ble værende av etter at låsen blankte to ganger av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Rett opp at fingeravtrykksleseren våknet mens låsen hadde skjermer av av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Rett opp at spørsmålet om oppstartspassord var utenfor senter når en skjerm dukket opp sent av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Rett opp at avslutningstasten for skjermspareren blinket i hjørnet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Rett opp at Wi-Fi-ikonet flimret på OWE-nettverk i overgangsmodus av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Rett opp en OWE-feil skrevet ut i terminalen etter installasjon av et tema av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Rett opp en flimring når du byttet fra en stillbakgrunn til en videobakgrunn av <a href="https://github.com/bjarneo">@bjarneo</a> i <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Oppdater Hackerman til en oppskalert geometrisk bakgrunn av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Rett opp at temaer med sykliske fargereferanser hang temabytte av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Rett opp at Neovim ikke startet med Catppuccin-temaet av <a href="https://github.com/anandude">@anandude</a> i <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Rett opp at OpenCode 2 startet på standardtemaet sitt i stedet for Omarchys av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Rett opp innebygd kode med lav kontrast i det genererte VS Code-temaet av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Rett opp at T3 Code-installasjoner stoppet mens de matchet gjeldende tema av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Rett opp at skriftstørrelsen i terminalen tilbakestilte seg når du endret skriftfamilie av <a href="https://github.com/sbalbalosa">@sbalbalosa</a> i <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Rett opp at endring av skrifter skrev ut prosess-ID-en til en terminal av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Rett opp at bytte av språk bygget alle lokale innstillinger på nytt og mistet dem på en nesten full disk av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Rett opp at skallet viste rå oversettelsesnøkler før oversettelsene lastet av <a href="https://github.com/zihaomu">@zihaomu</a> i <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Få fart på oversatt tekst i Omarchys skript av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Oppdater oversettelser for 686 strenger, 392 av dem i Manualen av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Rett opp volum- og utdatakontroller i ikke-engelske lokale innstillinger av <a href="https://github.com/Sebo1411">@Sebo1411</a> i <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Rett opp CPU-bruksavlesninger i ikke-engelske lokale innstillinger av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Rett opp at fcitx5-tjenesten startet på nytt for alltid når fcitx5 ikke er installert av <a href="https://github.com/therk">@therk</a> i <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Rett opp at widgeten for tastaturoppsett byttet enheter ingen skriver på av <a href="https://github.com/bjarneo">@bjarneo</a> i <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Rett opp at widgeten for tastaturoppsett byttet til leverandørens hurtigtastenheter av <a href="https://github.com/yashranaway">@yashranaway</a> i <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Rett opp at menyen for tastebindinger etterlot en Lua-prosess kjørende på 100 % CPU av <a href="https://github.com/tobi">@tobi</a> i <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Rett opp at klokken flommet loggen hvert millisekund når sommertid slutter av <a href="https://github.com/falkoro">@falkoro</a> i <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Rett opp at skallet erstattet en shell.json det ikke kunne lese med standardene av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Rett opp at Omarchy-menyen mistet radene sine mens filen dens ble oppdatert av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Rett opp at å aktivere en plugin igjen ikke brakte tilbake linje-widgeten dens av <a href="https://github.com/berrimi">@berrimi</a> i <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Rett opp at lokale plugins lastet på nytt i en løkke på sin egen Python-bytekode av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Rett opp at skjulte knapper i plugins kollapset til innrykket sitt av <a href="https://github.com/dmkenney">@dmkenney</a> i <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Rett opp at rullegardiner kuttet av det siste elementet sitt av <a href="https://github.com/sprajs">@sprajs</a> i <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Rett opp at rullegardiner ikke lukket seg ved et andre klikk av <a href="https://github.com/felixzsh">@felixzsh</a> i <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Rett opp at glidebryterknotter stoppet før slutten av sporet av <a href="https://github.com/erikrjohansson">@erikrjohansson</a> i <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Rett opp at Update &gt; Hardware &gt; Trackpad manglet de fleste styreflater og tilbakestilte tastaturet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Den slipper nå en fastkjørt knapp på hver styreflate, og tilbakestiller bare styreflaten i stedet for tastaturet og berøringsskjermen sammen med den.</p>
+  </li>
+  <li>Gjør at webkameramenyen sjekker etter kameraer uten å slå dem på av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Rett opp at Omasnaps rullefangst bare tok svarte bilder av <a href="https://github.com/falkoro">@falkoro</a> i <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Rett opp at skjermbildevelgeren løsnet dine egne taster av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Rett opp at å stoppe et opptak kunngjorde et tomt lagret opptak av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Rett opp at bildevelgeren viste utdaterte miniatyrbilder for bilder som var lagret over av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Rett opp at nattlys ikke ble fullstendig tilbakestilt når det ble slått av av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Rett opp at mediewidgeten etterlot et pauset spor for en inaktiv spiller av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Rett opp gjentatte skjermskanninger på skjermer som ikke rapporterer lysstyrke av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Rett opp at Super + Shift + Return feilet når den konfigurerte nettleseren var avinstallert av <a href="https://github.com/vitally">@vitally</a> i <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Rett opp at kalkulatorsnarveier ble værende etter fjerning av forhåndsinstallerte apper av <a href="https://github.com/OldJobobo">@OldJobobo</a> i <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Rett opp snarveien Copy URL i Brave Origin-profiler av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Rett opp at Bitwarden-utvidelsens popup åpnet i feil størrelse av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Rett opp at Battle.net åpnet i 100 % skala på HiDPI-skjermer av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Rett opp at Inkscapes filvelgere åpnet flislagt av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Rett opp at Go AUR-pakker ikke fikk bygge under oppdateringer når mise styrer Go av <a href="https://github.com/shbernal">@shbernal</a> i <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Rett opp ONCE-installasjon når du ikke er i docker-gruppen av <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> i <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Rett opp at klikk på agentpanelet åpnet systemstatusfeltet av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Rett opp at oppsett av agentkonto snublet i en dinglende delt symbolkobling av <a href="https://github.com/manuaudio">@manuaudio</a> i <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Rett opp at <code>--reauth</code> la til en ny agentkonto når det ikke finnes en av <a href="https://github.com/manuaudio">@manuaudio</a> i <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Gjør at hintet for å gi agentkonto nytt navn navngir leverandøren dens av <a href="https://github.com/manuaudio">@manuaudio</a> i <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Rett opp at nøkkelringoppdateringer hevdet suksess når nøkkeloperasjoner feilet av <a href="https://github.com/Adolanium">@Adolanium</a> i <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Rett opp et blankt spørsmål om fabrikktilbakestilling når det kjøres under sudo av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Rett opp at påminnelsen om ventende migreringer hopet seg opp én gang per innlogging av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Rett opp at OS Age i About telte fra ISO-ens bygg i stedet for installasjonen av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Rett opp at Dropbox viste «0y ago» for filer 360 til 364 dager gamle av <a href="https://github.com/manuaudio">@manuaudio</a> i <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Rett opp at Dropbox-statussjekken utløpte en ventende innloggingslenke av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Rett opp installasjon av Dropbox sitt bibliotek for ikon i systemstatusfeltet av <a href="https://github.com/omarchybot">@omarchybot</a> i <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Aktiver overleggsrullefelt i Chromium av <a href="https://github.com/robzolkos">@robzolkos</a> i <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Spør før du slår på Touch ID på Apple Silicon Mac-er av <a href="https://github.com/scottjones">@scottjones</a> i <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Tilby RC-kanalen på Apple Silicon Mac-er av <a href="https://github.com/maralcbr">@maralcbr</a> i <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Tilby stable-kanalen på Apple Silicon Mac-er av <a href="https://github.com/maralcbr">@maralcbr</a> i <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Rett opp at Omarchys aliaser, funksjoner og miljø manglet fra nye terminaler på Apple Silicon av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Sett opp installerte NVIDIA-applikasjoner av <a href="https://github.com/jdvmi00">@jdvmi00</a> i <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Rett opp at installasjoner feilet på Lenovo Pro 9 med NVIDIA N1x av <a href="https://github.com/breymander">@breymander</a> i <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Rett opp manglende interne høyttalere og mikrofoner på N1x-bærbare som kjørte de tidligere lydprofilene av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Rett opp et tregt skrivebord på NVIDIA GB10-maskiner som DGX Spark av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Rett opp å skrive på låseskjermen etter gjenopptak på NVIDIA av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Låsen går heller ikke mørk igjen akkurat idet panelet lyser opp.</p>
+  </li>
+  <li>Rett opp at Lutris og Battle.net installerte en annen GPUs 32-biters Vulkan-driver av <a href="https://github.com/zihaomu">@zihaomu</a> i <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Stopp å be om omstart etter hver oppdatering på ARM av <a href="https://github.com/birkskyum">@birkskyum</a> i <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Tilby stable- og RC-kanalene på aarch64 av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Gjør at strømprofiler fungerer på ARM-bærbare av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Tilby Dropbox på ARM-maskiner med 4K-sider, og Spotify som webapp på ARM av <a href="https://github.com/birkskyum">@birkskyum</a> i <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Skjul installasjoner av GeForce NOW, Battle.net og Lutris på ARM av <a href="https://github.com/birkskyum">@birkskyum</a> i <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Rett opp at Hermes-appen ikke oppdaterte seg på stedet på ARM av <a href="https://github.com/ryanrhughes">@ryanrhughes</a> i <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Rett opp at tastaturer på Snapdragon-bærbare ikke skrev ved spørsmålet om diskopplåsing av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Rett opp at kameraer manglet ved innlogging på Snapdragon-bærbare av <a href="https://github.com/birkskyum">@birkskyum</a> i <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Rett opp en svart skjerm før diskopplåsing på Snapdragon X2-bærbare av <a href="https://github.com/jdvmi00">@jdvmi00</a> i <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Dekod video i maskinvare på Intel Wildcat Lake av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Rett opp at live-ISO krasjet på Arrow Lake-H-bærbare av <a href="https://github.com/emirb">@emirb</a> i <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Rett opp den interne mikrofonen på HP EliteBook Ultra G1q av <a href="https://github.com/bprendie">@bprendie</a> i <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Bruk oppstrøms støtte for Motorcomm YT6801 Ethernet av <a href="https://github.com/AFOliveira">@AFOliveira</a> i <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Videresend Elgato Cam Link 4K som et virtuelt kamera i 16:9 av <a href="https://github.com/dhh">@dhh</a> i <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Støtt fingeravtrykkslesere som en plattform navngir av <a href="https://github.com/scottjones">@scottjones</a> i <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

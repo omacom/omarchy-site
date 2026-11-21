@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (juga dikenali sebagai Quattro RS!) ialah keluaran ciri besar pertama sejak <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, dan ia memang padat: lebih 740 pull request digabungkan daripada lebih 180 penyumbang dalam masa hanya dua belas minggu. Ia kini menawarkan mod desktop tradisional di samping mod jubin sebagai lalai. Anda boleh memasangnya secara natif pada MacBook M1/M2/M3/Neo. Dan ia bertutur dalam 50 bahasa. Serta segudang ciri, pembaikan dan penambahbaikan lain. Sudah menggunakan Omarchy? Jalankan <em>Update &gt; Omarchy</em>. Mesin baharu? <a href="/#install">Dapatkan di sini</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Ruang kerja terapung dengan dok</h2>
+
+<p><code>Super + L</code> kini mengitar mana-mana ruang kerja antara jubin, tatalan dan terapung. Pada ruang kerja terapung, setiap tetingkap mendapat bar tajuk dalam warna tema anda, dan dok memaparkan aplikasi tersemat anda, semua yang sedang berjalan, dan grid bagi setiap aplikasi yang dipasang. Seret untuk menyusun semula atau menyemat, klik kanan untuk lebih banyak pilihan, dan <code>Super + M</code> meminimumkan tetingkap ke dok.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Ini merupakan laluan masuk yang sangat baik untuk sesiapa yang datang daripada macOS atau Windows yang belum bersedia untuk menggunakan jubin sepenuhnya lagi. Atau untuk sesiapa sahaja yang hanya mahukan satu ruang kerja di mana tetingkap boleh terbentang luas. Campur dan padan mengikut ruang kerja, dan bar menunjukkan susun atur yang digunakan oleh setiap satu.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy pada Apple Silicon</h2>
+
+<p>Pasukan <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> kami yang luar biasa telah menghantar pemasang Mac natif. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Muat turun aplikasi</a> pada macOS, dan ia akan meletakkan Omarchy betul-betul di sampingnya pada MacBook M1, M2, M3 atau Neo anda. Tiada batang USB, tiada mantera terminal. Lebih suka Homebrew? Itu hanya satu baris:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Pemasang Mac Omarchy" /></p>
+
+<p>Inilah yang kami sasarkan untuk lakukan pada bulan September: menyelesaikan apa yang Asahi mulakan. Dua bulan kemudian, anda hanya perlu memuat turunnya. Kerja yang menakjubkan oleh semua orang dalam pasukan.</p>
+
+<p>Dan mereka tidak berhenti di situ. M4, M5 dan M6 semuanya sedang diusahakan sekarang, jadi mungkin tidak lama lagi Omarchy akan berjalan pada setiap Mac Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy pada M2 Max, M3 Air, Neo, M4 Pro dan M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Sokongan ARM untuk NVIDIA DGX Spark + N1X (dan tidak lama lagi Snapdragon)</h2>
+
+<p>Omarchy 4.5 menghantar ISO ARM pertamanya, dan bersamanya hadir sokongan awal untuk mesin ARM NVIDIA: desktop DGX Spark dan komputer riba yang dibina berasaskan N1X, seperti <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> dan <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Dan tidak lama lagi kami akan mempunyai sokongan untuk seluruh barisan mesin ARM Snapdragon juga. Ia masih di peringkat awal, jadi jangkakan beberapa bahagian yang kurang sempurna, dan sila laporkan apa-apa yang rosak di <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 bahasa dan 5 kaedah input</h2>
+
+<p>Omarchy kini bertutur dalam 50 bahasa. Pilih satu di bawah <em>Setup &gt; Language</em> (atau jalankan <code>omarchy language &lt;code&gt;</code>), dan menu, desktop serta pemberitahuan Omarchy bertukar serta-merta. Tempatan sistem akan menyusul pada log masuk anda yang seterusnya.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Menukar bahasa" /></p>
+
+<p>Bertutur dalam sesebuah bahasa hanyalah separuh daripadanya. Anda juga perlu menaipnya. Jadi Omarchy kini menyediakan kaedah input yang betul untuk bahasa Jepun (Mozc), bahasa Korea (Hangul), bahasa Cina Ringkas (Pinyin), Taiwan (Zhuyin), dan Hong Kong (Cangjie), terus daripada pemasang atau kemudian di bawah <em>Setup &gt; Keyboard</em>. Setiap satu disertakan dengan fon yang betul untuk bentuk aksaranya, tetingkap calon mengikut tema anda, dan <code>Super + I</code> bertukar antara bahasa input anda. Hangul, Zhuyin dan Cangjie mengekalkan kekuncinya pada kedudukan standard walaupun anda menaip Latin pada Dvorak, Colemak atau AZERTY, sama seperti pada Windows dan macOS. Dan mengetik Shift bersendirian akan melangkah keluar daripada kaedah input kepada huruf Latin dan kembali semula, seperti cara Sogou, Microsoft Pinyin dan macOS berfungsi.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Log masuk ke portal Wi-Fi captive</h2>
+
+<p>Wi-Fi hotel, lapangan terbang dan kedai kopi akhirnya berfungsi dengan lancar sahaja. Omarchy kini menyedari apabila rangkaian mahu anda log masuk atau menerima syaratnya sebelum membenarkan anda dalam talian. Ikon rangkaian memberi amaran kepada anda, dan panel rangkaian memaparkan butang Open Captive Portal yang besar yang membawa anda terus ke halaman log masuk. Sebaik sahaja anda melepasinya, semuanya kembali normal dengan sendirinya.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Log masuk ke portal captive daripada panel rangkaian" width="380" /></p>
+
+<h2 id="five-new-default-apps">Lima aplikasi lalai baharu</h2>
+
+<p><strong>Hype</strong> membuat pembentangan daripada satu fail Markdown, dengan editor slaid visual di sebelah sumber, dan mengeksport ke PDF atau PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> menggantikan Xournal++ untuk urusan kertas kerja: buka PDF, letakkan tandatangan, teks dan tarikh anda yang tersimpan, dan simpan salinan yang telah ditandatangani.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> melukis peta pokok tentang apa yang memenuhi cakera anda, diwarnakan mengikut jenis, menunjukkan cache yang selamat untuk dijana semula, dan membolehkan anda menandakan apa yang patut dibuang.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> merakam kamera anda dengan satu kekunci, bertema untuk dipadankan dengan desktop anda.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> memberikan anda desktop jauh melalui SSH. Sambung ke mesin Omarchy lain dan pandu desktop penuhnya daripada tetingkap pada mesin anda, dengan tab untuk setiap mesin. Dan kerana ia berjalan di atas SSH, tiada apa-apa tambahan untuk disediakan atau didedahkan. Mesin yang dikawal memaparkan penunjuk sesi jauh dalam bar, jadi sentiasa jelas apabila seseorang berada padanya.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Dan terdapat <strong>Elsewhen</strong>, jam dunia yang berada betul-betul di sebelah jam dalam bar. Ketik bandar pada glob untuk menetapkan di mana anda berada, cari tempat sebenar, dan namakan orang yang tinggal di setiap bandar, supaya anda sentiasa tahu sama ada masa itu sesuai untuk menelefon. Tukar antara 12 dan 24 jam dengan <code>t</code>, antara °F dan °C dengan <code>Alt + T</code>, dan panggilnya pada bila-bila masa dengan <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Dengan Monologue untuk rakaman dan Omacut untuk pemangkasan, pemasangan baharu tidak lagi menghantar OBS Studio dan Kdenlive. Lazydocker juga tiada daripada pemasangan baharu, walaupun Docker dan Docker Compose masih disertakan. Mesin yang sudah mempunyai mana-mana daripadanya akan mengekalkannya.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Perlu bekerja dengan orang yang hidup dalam Office? <em>Install &gt; Service &gt; Microsoft</em> kini menyediakan Outlook, Word, Excel, PowerPoint, Teams dan OneDrive sebagai aplikasi web. Setiap satu mendapat tetingkap dan entri pelancar sendiri, jadi ia terasa betul-betul selesa di samping semua yang lain. Tiada lagi alasan untuk tidak bertukar kepada Omarchy di tempat kerja!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams dan PowerPoint pada Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper untuk imlak</h2>
+
+<p>Superwhisper kini ialah enjin imlak lalai Omarchy, dan ia disediakan terus dari kotak. Ketik <code>Alt + Space</code> untuk mula bercakap dan sekali lagi untuk berhenti, atau tahan <code>Right Alt</code> untuk tekan-untuk-bercakap. Ia sangat pantas dan sangat tepat.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Mengimlak dengan Superwhisper" /></p>
+
+<p>Ia bermula di awan, jadi ia berfungsi sebaik sahaja anda memasang, dan 10,000 perkataan pertama adalah percuma. Tetapi anda boleh bertukar kepada model boleh muat turun yang sepenuhnya percuma dan berjalan sepenuhnya secara tempatan, tanpa menghantar walau satu perkataan kepada sesiapa. Dan jika anda lebih suka menggunakan model tempatan lain, Voxtype masih ditawarkan sebagai alternatif.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Pasang dalam masa kurang daripada sepuluh saat</h2>
+
+<p>Omarchy dahulu memasang kira-kira 940 pakej satu demi satu. Pemasang F1 baharu sebaliknya membongkar imej root yang telah dibina dan menambah hanya pakej mesin ini di atasnya. Itu mengurangkan masa pemasangan kira-kira separuh pada mana-mana mesin.</p>
+
+<p>Dan pada perkakasan pantas, ia tidak masuk akal. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> daripada AMD mencatatkan rekod dunia dengan pemasangan Omarchy penuh dalam masa <strong>7 saat</strong> pada komputer riba AMD beliau. <a href="https://x.com/dhh/status/2117222836620202375">Tujuh saat!</a> Saya masih ingat ketika lima minit kelihatan seperti matlamat yang bercita-cita tinggi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Memasang Omarchy dalam 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Lebih pantas di tempat lain juga</h2>
+
+<p>Ia bukan hanya pemasang. Permulaan tidak lagi tersangkut pada pendaftaran binfmt. Pemilih tema dibuka serta-merta dan bukannya selepas suku saat. Menu dan panel dibuka terus daripada pintasan Hyprland, melangkau 60 ms yang diperlukan untuk memulakan proses terlebih dahulu. Pemeriksaan paling perlahan menu Omarchy berubah daripada 200 ms kepada 16 ms, terminal baharu memaparkan gesaannya 30 ms lebih awal, dan seluruh desktop kini bertindak balas terhadap perubahan dan bukannya mengundinya. Malah log keluar, but semula dan penutupan berlaku sebaik sahaja aplikasi anda selesai ditutup.</p>
+
+<h2 id="agent-upgrades">Naik taraf ejen</h2>
+
+<p>Omarchy ialah OS agentik, dan 4.5 membawakan pusingan besar naik taraf untuk bekerja dengan ejen. Panel ejen kini menjejaki 23 ejen dan penyedia, naik daripada 6, termasuk Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter dan Ollama. Setiap had mendapat meternya sendiri dengan masa sehingga ia ditetapkan semula, jadi anda dapat melihat dengan tepat berapa banyak ruang yang anda tinggal. Dan Grok kini ialah penyedia penuh di samping Claude dan Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Panel ejen dengan beberapa langganan Claude dan Codex" width="380" /></p>
+
+<p>Dan ejen anda sentiasa hanya satu ketukan kekunci sahaja. <code>Super + ~</code> menjatuhkan konsol gaya Quake di atas desktop yang dimalapkan, dan kali pertama anda membukanya, ia memulakan ejen lalai anda. Tekan sekali lagi untuk menyimpannya, dan sesi anda kekal betul-betul di tempat anda meninggalkannya.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Konsol gaya Quake menjalankan ejen di atas desktop yang dimalapkan" /></p>
+
+<p>Jika anda mengendalikan lebih daripada satu langganan, anda kini boleh menyimpan beberapa log masuk Claude, Codex dan Grok pada mesin yang sama dan memilih yang mana sesi baharu bermula dengannya, menggunakan <code>omarchy agent account</code>. Sejarah, tetapan dan kemahiran dikongsi antara mereka, jadi <code>claude --continue</code> menyambung betul-betul di tempat anda berhenti selepas bertukar. Hampir mencapai had, Omarchy sama ada boleh menawarkan pertukaran satu klik atau memindahkan sesi baharu ke akaun yang mempunyai ruang paling banyak dengan sendirinya. Dan apabila anda menyediakan mesin lain, <code>omarchy agent account copy</code> membawa semua log masuk anda melalui SSH, jadi anda tidak perlu log masuk ke semuanya sekali lagi.</p>
+
+<p>Kimi dan Ori, abah-abah ejen OpenRouter, menyertai pilihan di bawah <em>Setup &gt; Defaults &gt; Agent</em>, dan Antigravity Google menggantikan Gemini CLI yang usang (<code>gemini</code> masih berfungsi sebagai alias). Lebih suka tetingkap berbanding terminal? Aplikasi desktop Claude dan Amp kini hanya satu klik di bawah <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Pemberitahuan, dibina semula</h2>
+
+<p>Pemberitahuan kini bertindan mengikut penghantar, mengikut tema anda, dan meruntuhkan ulangan yang sama. Butang tindakan, kod pengesahan dan pautan semuanya berfungsi terus daripada kad. <code>Super + Comma</code> bertindak pada yang terbaru (abaikan, buka, atau tekan butangnya), dan <code>Super + Ctrl + Comma</code> memberikan anda papan kekunci untuk memandu semuanya. Loceng dalam bar menghidupkan Jangan Ganggu.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Pemberitahuan baharu" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Latar belakang video dan intro tema</h2>
+
+<p>Latar belakang kini boleh menjadi video. Letakkan satu, dan desktop anda menjadi hidup dengan ombak bergulung atau apa sahaja yang anda sukai, manakala skrin kunci memaparkan bingkai pegun daripadanya. Dan tema kini membuat penampilan: setiap satu boleh memainkan intro pendek dan senyap apabila anda log masuk atau bertukar kepadanya. (Lebih suka kekal tenang? Matikan intro di bawah <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse menyertai tema lalai</h2>
+
+<p>Jade Horse penuh dengan hijau berkabus, dengan latar belakang jed berukir yang menjadikan seluruh desktop kelihatan seperti lukisan skrol. Ia menggantikan Osaka Jade antara tema yang digabungkan, dan ia disertai oleh Starship sebagai tema lalai baharu yang lain. Jika anda menggunakan Osaka Jade, anda mengekalkan salinan anda, dan ia terus hidup sebagai <a href="https://github.com/omacom/omarchy-osaka-jade-theme">tema pihak ketiga</a> untuk sesiapa yang mahu memasangnya dari awal.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Tema Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff ialah latar belakang lalai baharu</h2>
+
+<p>Pemasangan baharu kini menyambut anda dengan Liftoff, pelancaran matahari terbenam yang cantik yang merupakan latar belakang lalai baharu untuk Tokyo Night. Ia dibuat oleh <a href="https://github.com/tcballard">Tom Ballard</a>, yang mula-mula menciptanya untuk <a href="https://github.com/tcballard/omarchy-theme-liftoff">tema Liftoff</a> beliau. Terima kasih, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Latar belakang Liftoff oleh Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Menu but kini senyap</h2>
+
+<p>Omarchy dahulu memaparkan menu but selama kira-kira enam saat pada setiap permulaan, sekiranya anda perlu kembali kepada petikan terdahulu. Tetapi hampir tiada sesiapa yang pernah melakukannya. Jadi kini Limine menunggu hanya satu saat dan but dengan senyap, dan kebanyakan masa anda tidak akan melihat menu itu langsung.</p>
+
+<p>Apabila anda memang memerlukan entri atau petikan yang berbeza, terus ketik sebarang kekunci (anak panah ke bawah berfungsi) semasa mesin dimulakan, dan ia akan berhenti pada menu. Dan jika anda lebih suka mengekalkan menu lebih lama untuk selamanya, tetapkan <code>timeout:</code> anda sendiri dalam <code>/boot/limine.conf</code> (seperti <code>timeout: 5</code>). Kemas kini akan membiarkan timeout yang anda tetapkan begitu sahaja.</p>
+
+<h2 id="changed-hotkeys">Kekunci panas yang diubah</h2>
+
+<p>Beberapa pintasan berpindah:</p>
+
+<ul>
+  <li>Kalkulator: <code>Super + Ctrl + Q</code> kini menjadi <code>Super + Shift + Q</code>.</li>
+  <li>Aktiviti: <code>Super + Ctrl + T</code> kini menjadi <code>Super + Shift + T</code>, dan <code>Super + Ctrl + T</code> membuka tema.</li>
+  <li>Rangkaian: <code>Super + Ctrl + W</code> kini menjadi <code>Super + Ctrl + N</code>, dan <code>Super + Ctrl + W</code> membuka latar belakang.</li>
+  <li>Nightlight tidak lagi mempunyai pintasan (ia dahulu <code>Super + Ctrl + N</code>); ia berada dalam <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> membuka Apps daripada dok dan bukannya menu Apps.</li>
+</ul>
+
+<p>Pintasan pemberitahuan diubah:</p>
+
+<ul>
+  <li><code>Super + Comma</code> bertindak pada kad terbaru (mengabaikannya, membukanya, atau menekan satu butangnya) dan bukannya hanya mengabaikannya.</li>
+  <li>Mengabaikan yang terakhir berpindah ke <code>Super + Alt + Comma</code>, yang dahulu membukanya.</li>
+  <li>Menyenyapkan berpindah daripada <code>Super + Ctrl + Comma</code> kepada <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> kini memberikan anda kawalan papan kekunci.</li>
+</ul>
+
+<p>Beberapa kekunci berfungsi secara berbeza:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code>, dan <code>Super</code> + tatal kekal pada ruang kerja monitor semasa, kerana setiap monitor mempunyai ruang kerjanya sendiri.</li>
+  <li>Dalam terminal, <code>Super + C</code> dan <code>Super + V</code> menghantar <code>Ctrl + Shift + C</code> dan <code>Ctrl + Shift + V</code> dan bukannya <code>Ctrl + Insert</code> dan <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Lalai baharu yang mungkin berlanggar dengan ikatan anda sendiri: <code>Super + Q</code> (tutup tetingkap, di samping <code>Super + W</code>), <code>Super + A</code> (pilih semua), <code>Super + M</code> (minimumkan ke dok), <code>Super + ~</code> dan <code>Super + Shift + ~</code> (konsol Quake), <code>Super + Alt + L</code> (susun atur sebelumnya), <code>Super + Shift + Ctrl + Arrows</code> (pindahkan tetingkap ke monitor lain), <code>Super + Ctrl + Alt + C</code> (tangkapan skrin), <code>Super + Ctrl + Alt + E</code> (jam dunia), <code>Super + Ctrl + Alt + F</code> (desktop skrin penuh), dan menahan <code>Right Alt</code> untuk imlak tekan-untuk-bercakap.</p>
+
+<h2 id="more-features">Lebih banyak ciri</h2>
+
+<ul>
+  <li>Berikan setiap monitor ruang kerjanya sendiri: <code>Super + 1-0</code> pergi ke ruang kerja monitor yang anda berada padanya, dan <code>Super + Arrows</code> bergerak ke dan dari paparan lain oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Kumpulkan semua tentang rupa desktop ke dalam menu Appearance baharu, menggantikan Style: tema, latar belakang, fon, bar, tetingkap, penjenamaan, dok, susun atur ruang kerja, animasi dan skrin buka kunci oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Pilih tetingkap Opaque, Transparent atau Glassy di bawah <em>Appearance &gt; Window Transparency</em>, ditambah latar belakang bar Glassy oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Pilih penjuru tetingkap tema, tajam atau bulat di bawah <em>Appearance &gt; Window Corners</em> oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Tambah mod tanpa animasi, hidup secara lalai dalam VM oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Jadikan aplikasi legap secara lalai, mengekalkan terminal telus oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Tambah Slack ke Install &gt; Service oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Jadikan Alt + Space menogol imlak pada setiap backend oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Tambah butang Open dan Edit pada pemberitahuan tangkapan skrin, dan Open dan Cut pada rakaman skrin dan muat turun yt-dlp oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Tambah menu Update &gt; Kernel untuk menukar kernel lalai oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Tambah penyegerakan tema ke mesin herdr oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Tambah o.rebind untuk menggantikan ikatan kekunci Hyprland oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Minta identiti git anda selepas log masuk pertama dan bukannya dalam pemasang, dengan log masuk GitHub oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Benarkan media pemasangan untuk pratetapkan bahasa, papan kekunci dan zon waktu oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Benarkan widget bar berada dalam laci dulang oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Benarkan membuang widget bar dengan menyeretnya keluar dari bar oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Benarkan menatal melalui ruang kerja daripada bar oleh <a href="https://github.com/outfoxxed">@outfoxxed</a> dalam <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Benarkan memadam tema tambahan daripada pemilih tema oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Tambah CLI hey, basecamp dan Cloudflare sebagai alat yang dipasang secara malas oleh <a href="https://github.com/monorkin">@monorkin</a> dalam <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Tambah SSH Agent sebagai perkhidmatan pilihan oleh <a href="https://github.com/carletex">@carletex</a> dalam <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Benarkan memilih berapa lama sudo tanpa kata laluan bertahan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Tambah butang tutup hover pada toast pemberitahuan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Benarkan menyenyapkan pemberitahuan program daripada diagnosis ranapnya oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Benarkan omarchy-notification-send menambah butang tindakan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Tambah format jam dengan saat langsung oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Laraskan lampu latar papan kekunci dengan Ctrl dan kekunci kecerahan oleh <a href="https://github.com/ludagoo">@ludagoo</a> dalam <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Cetak kunci produk Windows OEM daripada firmware oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Tambah vi asal sebagai pilihan editor terminal oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Tambah latar belakang Roadster Starlight ke Ethereal oleh <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> dalam <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Keselamatan</h2>
+
+<ul>
+  <li>Kekalkan kata laluan VM Windows di luar argumen klien RDP oleh <a href="https://github.com/dicemans">@dicemans</a> dalam <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Pindahkan keadaan rakaman skrin keluar daripada /tmp yang boleh ditulis dunia oleh <a href="https://github.com/Chessing234">@Chessing234</a> dalam <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Ketatkan tamat tempoh sudo tanpa kata laluan merentasi suspend oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Ikat pembersihan perencat kemas kini kepada proses yang menciptanya oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Asingkan kebenaran pembersihan OCaml oleh <a href="https://github.com/ErikMelton">@ErikMelton</a> dalam <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Sematkan peningkatan tetapan semula kilang kepada arahan yang dibungkus oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Buang templat cap jari tersimpan untuk pengguna yang memanggil semasa tetapan semula oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Tolak nama hook dan keadaan yang merupakan laluan oleh <a href="https://github.com/Adolanium">@Adolanium</a> dalam <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Serahkan kepada system-auth dalam tindanan polkit yang ditulis oleh persediaan cap jari dan FIDO2 oleh <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> dalam <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Buang cap jari daripada storan pembaca sendiri apabila membuangnya oleh <a href="https://github.com/scottjones">@scottjones</a> dalam <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Halang persediaan SSH daripada meninggalkan sshd berjalan dengan log masuk kata laluan apabila tiada kunci ditambah oleh <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> dalam <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Halang pengguna tempatan lain daripada menukar masuk program mereka sendiri semasa naik taraf Voxtype oleh <a href="https://github.com/Vladkarok">@Vladkarok</a> dalam <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Ketatkan cara tetapan semula kilang menyalurkan tetapan gum anda melalui sudo oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Pembaikan</h2>
+
+<ul>
+  <li>Baiki Hyprland ranap apabila monitor dicabut, dilumpuhkan atau dimatikan dengan menutup penutup oleh <a href="https://github.com/falkoro">@falkoro</a> dalam <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Baiki naik taraf yang boleh meninggalkan imej kernel tanpa parameter root= oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Baiki tetapan semula kilang memadam entri but sistem lain oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Baiki pemasangan di sebelah Omarchy lain membuang entri but pemasangan itu oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Baiki pemasangan ruang kosong yang boleh mengambil partition sedia ada untuk yang baharu oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Baiki penyambungan semula perubahan kata laluan pemacu yang terganggu membuang kunci yang salah oleh <a href="https://github.com/scottjones">@scottjones</a> dalam <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Minta kata laluan sudo sekali bagi setiap kemas kini Omarchy oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Minta kata laluan sudo sekali selama sepuluh minit dan bukannya lagi pada setiap arahan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Meliputi kemas kini AUR dan pemeriksaan but dengan gesaan sudo tunggal kemas kini oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Kekalkan kemas kini pakej selamat daripada log keluar di tengah transaksi oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Log keluar, but semula dan tutup sebaik sahaja aplikasi selesai ditutup oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Gantikan Tensaku dengan Omasnap untuk tangkapan skrin oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Tumbuhkan panel keluar dari bar dan berubah antara mereka, dengan maklum balas tekan pada butang dan ikon bar oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Luncurkan pemberitahuan masuk dari bawah bar dan kembali keluar mengikut cara ia datang oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Semak sambungan terhadap titik hujung Omarchy sendiri, dan baiki log masuk ke portal captive oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Baiki pertukaran daripada edge kepada stable atau RC meninggalkan mesin pada binaan lama oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Baiki kemas kini ke 4.5 berhenti apabila shell lambat menjawab oleh <a href="https://github.com/AnPod">@AnPod</a> dalam <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Baiki kemas kini gagal secara senyap apabila dimulakan di luar sesi desktop oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Baiki muat turun alat mise yang gagal menghentikan baki kemas kini sistem oleh <a href="https://github.com/sanjyay">@sanjyay</a> dalam <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Baiki kemas kini gagal apabila omarchy-nvim tidak dipasang oleh <a href="https://github.com/imzihuailin">@imzihuailin</a> dalam <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Baiki pemasangan dwi-but gagal melekapkan partition EFI oleh <a href="https://github.com/Damian626">@Damian626</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Baiki pemasangan berhenti apabila firmware tidak mahu menerima entri but baharu oleh <a href="https://github.com/ryanio">@ryanio</a> dalam <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Baiki pemasangan berhenti pada cakera dengan ahli RAID atau kumpulan volum lama oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Mulakan pemasang lebih awal dengan tidak menunggu setiap peranti USB dan kerja but oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Percepatkan penyulitan cakera dengan sektor 4096 bait pada pemasangan baharu oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Senaraikan cakera dalaman dahulu dan buka skrin pemasangan pada pilihan selamat oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Senaraikan Full disk install dahulu dalam pemasang, dan kembali dengan Esc pada skrin cakera oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Baiki penskalaan satu monitor mengubah skala setiap monitor lain oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Baiki aplikasi XWayland keluar terlalu besar apabila monitor menggunakan skala berbeza oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Baiki paparan HDR bertukar kepada gambar HDR yang pudar apabila tetingkap menjadi skrin penuh oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Baiki menu dan pemilih kabur pada paparan berskala pecahan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Baiki paparan komputer riba kekal mati selepas mencabut paparan luaran oleh <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> dalam <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Baiki pengaktifan semula paparan menetapkan semula kedudukan, skala dan modnya oleh <a href="https://github.com/zihaomu">@zihaomu</a> dalam <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Baiki menu dan pemilih tidak dibuka semula selepas monitor diputuskan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Baiki ruang kerja setiap monitor bergerak selepas monitor dicabut oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Baiki shell ranap apabila peranti audio terputus dengan panel audio terbuka oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Baiki tetingkap skrin penuh kehilangan skrin penuh selepas penyelamat skrin oleh <a href="https://github.com/MGross21">@MGross21</a> dalam <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Baiki kursor hilang semasa permulaan selepas Hyprland dimuat semula oleh <a href="https://github.com/spencerbull">@spencerbull</a> dalam <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Baiki kursor menjadi tidak kelihatan di atas aplikasi XWayland oleh <a href="https://github.com/Sebo1411">@Sebo1411</a> dalam <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Baiki tangkapan papan keratan tersangkut oleh <a href="https://github.com/maxcroy1">@maxcroy1</a> dalam <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Baiki akses keyring melalui portal XDG Secret oleh <a href="https://github.com/pkwagner">@pkwagner</a> dalam <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Baiki pendaftaran cap jari dan pemulihan skrin kunci oleh <a href="https://github.com/GeertJohan">@GeertJohan</a> dalam <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Pandu pendaftaran cap jari langkah demi langkah oleh <a href="https://github.com/scottjones">@scottjones</a> dalam <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Baiki ulang automatik kekunci dalam medan kata laluan skrin kunci oleh <a href="https://github.com/berndb">@berndb</a> dalam <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Baiki kertas dinding skrin kunci dimuatkan selepas medan kata laluan semasa bangun oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Baiki tamat masa kunci skrin apabila sesi menamakan paparan yang sudah tiada oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Percepatkan pembukaan terminal dalam direktori tetingkap semasa oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Jadikan editor keluarga VS Code mengikut perubahan tema secara langsung oleh <a href="https://github.com/Macho0x">@Macho0x</a> dalam <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Tema semula sesi Hunk yang berjalan semasa perubahan tema oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Ingat kertas dinding terpilih untuk setiap tema oleh <a href="https://github.com/OldJobobo">@OldJobobo</a> dalam <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Kekalkan pemilih imej pantas dan tajam dengan koleksi besar dan HiDPI oleh <a href="https://github.com/keylimesoda">@keylimesoda</a> dalam <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Kurangkan CPU dan memori yang dibelanjakan bar telus untuk mengambil sampel kertas dinding oleh <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> dalam <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Percepatkan panel Tailscale pada tailnet dengan ribuan mesin oleh <a href="https://github.com/iskakaushik">@iskakaushik</a> dalam <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Bawa Grok setanding dengan Claude dan Codex dalam panel ejen oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Gunakan pemilihan akaun ejen pada subproses CLI oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Tunjukkan had perbelanjaan individu Codex dan masa tetapan semulanya oleh <a href="https://github.com/Stegi56">@Stegi56</a> dalam <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Sediakan integrasi pelayar apabila memilih Claude oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Baiki ejen tidak menemui alat mise yang dipasang selepas ia bermula oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Baiki penampalan tangkapan skrin ke dalam ejen dalam pane herdr yang dimulakan melalui SSH oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Baiki panel ejen terlepas sesi Codex yang dimampatkan oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Kembalikan Caps Lock kepada normal dan jadikan Shift + Caps Lock kekunci compose oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Gunakan susun atur papan kekunci sistem pada skrin log masuk oleh <a href="https://github.com/g-desoutter">@g-desoutter</a> dalam <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Baiki pertukaran susun atur melangkau setiap tekanan kedua dengan susun atur papan kekunci bukan Latin oleh <a href="https://github.com/manuaudio">@manuaudio</a> dalam <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Hidupkan penyahkodan video perkakasan dalam mpv oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Tukar kawalan kesesakan TCP kepada BBR dan gunakan penjadual I/O kyber pada cakera sebenar oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Pasang T3 Code sebagai AppImage kemas kini sendirinya oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Tambah baik pemasangan PHP dan Laravel oleh <a href="https://github.com/nunomaduro">@nunomaduro</a> dalam <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Pasang Node secara malas dan biarkan konfigurasi mise anda sahaja oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Pasang aplikasi yang hilang apabila memilih lalai oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Malapkan perisian terpasang dalam menu Install dan bukannya menyembunyikannya oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Daftarkan pengurus kata laluan dan hos pemesejan natif lain untuk Brave Origin oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Kumpulkan pemberitahuan web Brave Origin mengikut tapak, dan buka tab yang betul apabila diklik oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Luluskan pembuangan pakej yatim secara automatik semasa kemas kini oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Kemas kini keyring Omarchy sebelum setiap kemas kini oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Tawarkan untuk but semula selepas menukar channel oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Tawarkan kemas kini larian pertama hanya apabila ada sesuatu untuk dikemas kini oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Cari lokasi cuaca dan zon waktu pemasang dengan perkhidmatan geo Omarchy sendiri oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Tetapkan jam daripada ntp.omarchy.org dan bukannya kolam NTP Arch oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Ukur kelajuan rangkaian dengan ujian kelajuan Omarchy sendiri oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Tunjukkan skrin kemajuan ikon terjejak semasa but pertama oleh <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> dalam <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>But ISO langsung pada kernel Omarchy, dan pada kernel T2 hanya pada Mac oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Hentikan pemasangan luar talian menunggu carian versi mise oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Baiki pemasangan luar talian menjadikan zon waktu lalai kepada Africa/Abidjan oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Baiki pemilih zon waktu pemasang tidak membenarkan anda menaip untuk mencari oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Baiki ISO langsung tersangkut di belakang percikan apabila dibut daripada batang Ventoy oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Baiki peta kekunci konsol Jerman dan Perancis dalam borang persediaan pemasang oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Sembunyikan petunjuk kekunci Bahasa Inggeris gum dalam pemasang dan persediaan git oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Buang jenaka Bahasa Inggeris sahaja daripada skrin kemajuan pemasangan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Baiki output pemasang mendarat tanpa padding pada skrin semasa ia menyediakan cakera oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Baiki naik taraf Quattro menetapkan semula pelayar lalai kepada Chromium oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Baiki naik taraf Quattro berhenti pada nama latar belakang dengan aksara bukan ASCII oleh <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> dalam <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Baiki migrasi kernel berhenti pada mesin yang but dengan GRUB atau systemd-boot oleh <a href="https://github.com/manuaudio">@manuaudio</a> dalam <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Baiki hibernasi pada mesin tidak tersulit dengan lebih daripada satu cakera NVMe oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Baiki migrasi FIDO2 ditandakan selesai sebelum ia diselesaikan oleh <a href="https://github.com/ErikMelton">@ErikMelton</a> dalam <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Baiki ruang kerja terapung mengambil alih tetingkap pertama yang diliputi peraturan apungan anda sendiri oleh <a href="https://github.com/zihaomu">@zihaomu</a> dalam <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Baiki kompositor tersangkut apabila Super + L mengitar ruang kerja masuk dan keluar daripada terapung oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Baiki Alt + Shift + Tab tidak mengitar ke belakang melalui setiap tetingkap oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Baiki tetingkap yang dikeluarkan tidak berpusat apabila dipindahkan ke monitor lain oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Baiki terminal baharu dibuka di luar folder rumah anda apabila tetingkap bukan terminal difokuskan oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Baiki tetingkap 1Password dan Bitwarden tidak terapung oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Baiki 1Password ditutup apabila terminal pemasang keluar oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Baiki dialog DaVinci Resolve mencuri fokus penunjuk oleh <a href="https://github.com/AksharP5">@AksharP5</a> dalam <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Baiki desktop kelihatan melalui paparan VM Windows oleh <a href="https://github.com/jmwall">@jmwall</a> dalam <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Baiki kata laluan VM Windows legasi yang mengandungi $$ selepas migrasi Quattro oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Hentikan popup derma Hyprland daripada muncul selepas naik taraf oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Tambah baik menyeret dan menyusun widget bar oleh <a href="https://github.com/outfoxxed">@outfoxxed</a> dalam <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normalkan saiz dan penjajaran ikon bar oleh <a href="https://github.com/bjarneo">@bjarneo</a> dalam <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Dedahkan penunjuk bar tersembunyi hanya apabila hover di sebelah kiri jam oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Sejajarkan ikon dulang dengan ikon bar yang lain oleh <a href="https://github.com/ayoubdya">@ayoubdya</a> dalam <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Tunjukkan tooltip bar seterusnya serta-merta semasa satu sudah dipaparkan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Buka panel jam dan cuaca di bawah widgetnya oleh <a href="https://github.com/scottjones">@scottjones</a> dalam <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Kekalkan panel rangkaian terbuka selepas memilih penyedia DNS oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Baiki popup yang ditutup meninggalkan widget bar tidak responsif oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Baiki bar tersembunyi menangkap klik di sepanjang bahagian atas tetingkap skrin penuh oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Baiki ikon dulang gelap hilang ke dalam bar oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Baiki ikon bar duduk tidak sekata atau tidak berpusat oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Baiki tooltip bar melukis bingkai pertamanya pada saiz yang salah oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Baiki sejarah pemberitahuan memaparkan setiap kad sebagai baru sahaja oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Baiki pemberitahuan log masuk pertama runtuh menjadi satu tindanan oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Baiki klik pemberitahuan tidak memfokuskan aplikasi dengan nama berbilang perkataan oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Baiki pemberitahuan Taildrop memaparkan teks kosong dan pratonton hilang oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Baiki pemberitahuan bateri memaparkan masa kosong dan 0W pada bateri penuh oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Baiki amaran bateri rendah kekal dipaparkan selepas dipasang dan kembali selepas but semula oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Baiki bacaan penggunaan bateri 0W pada sesetengah komputer riba oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Baiki bateri penuh pada AC dipaparkan sebagai mengecas keluar oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Baiki Hibernate dipaparkan apabila kernel tidak akan berhibernasi oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Baiki lekapan gvfs hilang selepas resume oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Baiki lampu latar papan kekunci kekal mati selepas kunci mengosongkan dua kali oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Baiki pembaca cap jari bangun semasa kunci mempunyai paparan mati oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Baiki gesaan kata laluan but tidak berpusat apabila paparan muncul lewat oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Baiki kekunci keluar penyelamat skrin berkelip di penjuru oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Baiki ikon Wi-Fi berkelip pada rangkaian mod peralihan OWE oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Baiki ralat OWE dicetak dalam terminal selepas memasang tema oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Baiki kelipan apabila bertukar daripada latar belakang pegun kepada video oleh <a href="https://github.com/bjarneo">@bjarneo</a> dalam <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Kemas kini Hackerman kepada latar belakang geometri yang ditingkatkan skala oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Baiki tema dengan rujukan warna kitaran menggantung pertukaran tema oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Baiki Neovim gagal dimulakan dengan tema Catppuccin oleh <a href="https://github.com/anandude">@anandude</a> dalam <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Baiki OpenCode 2 bermula pada tema stoknya dan bukannya Omarchy oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Baiki kod sebaris kontras rendah dalam tema VS Code yang dijana oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Baiki pemasangan T3 Code berhenti semasa memadankan tema semasa oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Baiki saiz fon terminal ditetapkan semula apabila menukar keluarga fon oleh <a href="https://github.com/sbalbalosa">@sbalbalosa</a> dalam <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Baiki penukaran fon mencetak ID proses terminal oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Baiki pertukaran bahasa membina semula setiap tempatan dan kehilangannya pada cakera yang hampir penuh oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Baiki shell memaparkan kekunci terjemahan mentah sebelum terjemahannya dimuatkan oleh <a href="https://github.com/zihaomu">@zihaomu</a> dalam <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Percepatkan teks terjemahan dalam skrip Omarchy oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Kemas kini terjemahan untuk 686 rentetan, 392 daripadanya dalam manual oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Baiki kawalan volum dan output dalam tempatan bukan Bahasa Inggeris oleh <a href="https://github.com/Sebo1411">@Sebo1411</a> dalam <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Baiki bacaan penggunaan CPU dalam tempatan bukan Bahasa Inggeris oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Baiki perkhidmatan fcitx5 dimulakan semula selama-lamanya apabila fcitx5 tidak dipasang oleh <a href="https://github.com/therk">@therk</a> dalam <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Baiki widget susun atur papan kekunci menukar peranti yang tiada sesiapa menaip padanya oleh <a href="https://github.com/bjarneo">@bjarneo</a> dalam <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Baiki widget susun atur papan kekunci bertukar kepada peranti kekunci panas vendor oleh <a href="https://github.com/yashranaway">@yashranaway</a> dalam <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Baiki menu ikatan kekunci meninggalkan proses Lua berjalan pada CPU 100% oleh <a href="https://github.com/tobi">@tobi</a> dalam <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Baiki jam membanjiri log setiap milisaat apabila waktu penjimatan siang tamat oleh <a href="https://github.com/falkoro">@falkoro</a> dalam <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Baiki shell menggantikan shell.json yang tidak dapat dibacanya dengan lalai oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Baiki menu Omarchy kehilangan barisnya semasa failnya sedang dikemas kini oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Baiki pengaktifan semula plugin tidak membawa kembali widget barnya oleh <a href="https://github.com/berrimi">@berrimi</a> dalam <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Baiki plugin tempatan dimuat semula dalam gelung pada bytecode Python mereka sendiri oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Baiki butang tersembunyi dalam plugin runtuh kepada paddingnya oleh <a href="https://github.com/dmkenney">@dmkenney</a> dalam <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Baiki lungsur turun memotong item terakhir mereka oleh <a href="https://github.com/sprajs">@sprajs</a> dalam <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Baiki lungsur turun tidak ditutup pada klik kedua oleh <a href="https://github.com/felixzsh">@felixzsh</a> dalam <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Baiki tombol gelangsar berhenti sebelum hujung trek oleh <a href="https://github.com/erikrjohansson">@erikrjohansson</a> dalam <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Baiki Update &gt; Hardware &gt; Trackpad terlepas kebanyakan pad sentuh dan menetapkan semula papan kekunci oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Ia kini melepaskan butang tersangkut pada setiap pad sentuh, dan menetapkan semula hanya pad sentuh dan bukannya papan kekunci dan skrin sentuh bersamanya.</p>
+  </li>
+  <li>Jadikan menu webcam menyemak kamera tanpa menghidupkannya oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Baiki tangkapan tatal Omasnap hanya mengambil bingkai hitam oleh <a href="https://github.com/falkoro">@falkoro</a> dalam <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Baiki pemilih tangkapan skrin menyahikat kekunci anda sendiri oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Baiki pemberhentian rakaman mengumumkan rakaman tersimpan yang kosong oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Baiki pemilih imej memaparkan lakaran kecil basi untuk imej yang disimpan ganti oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Baiki cahaya malam tidak ditetapkan semula sepenuhnya apabila dimatikan oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Baiki widget media meninggalkan trek dijeda untuk pemain melahu oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Baiki imbasan paparan berulang pada monitor yang tidak melaporkan kecerahan oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Baiki Super + Shift + Return gagal apabila pelayar yang dikonfigurasikan telah dinyahpasang oleh <a href="https://github.com/vitally">@vitally</a> dalam <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Baiki pintasan kalkulator kekal selepas membuang aplikasi prapasang oleh <a href="https://github.com/OldJobobo">@OldJobobo</a> dalam <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Baiki pintasan Copy URL dalam profil Brave Origin oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Baiki popout sambungan Bitwarden dibuka pada saiz yang salah oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Baiki Battle.net dibuka pada skala 100% pada monitor HiDPI oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Baiki pemilih fail Inkscape dibuka secara jubin oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Baiki pakej Go AUR gagal dibina semasa kemas kini apabila mise mengurus Go oleh <a href="https://github.com/shbernal">@shbernal</a> dalam <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Baiki pemasangan ONCE apabila anda tiada dalam kumpulan docker oleh <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> dalam <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Baiki klik panel ejen membuka dulang oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Baiki persediaan akaun ejen tersandung pada symlink kongsi tergantung oleh <a href="https://github.com/manuaudio">@manuaudio</a> dalam <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Baiki <code>--reauth</code> menambah akaun ejen baharu apabila tiada satu pun oleh <a href="https://github.com/manuaudio">@manuaudio</a> dalam <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Jadikan petunjuk penamaan semula akaun ejen menamakan penyedianya oleh <a href="https://github.com/manuaudio">@manuaudio</a> dalam <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Baiki kemas kini keyring mendakwa kejayaan apabila operasi kunci gagal oleh <a href="https://github.com/Adolanium">@Adolanium</a> dalam <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Baiki gesaan tetapan semula kilang kosong apabila dijalankan di bawah sudo oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Baiki peringatan migrasi tertunda bertimbun sekali bagi setiap log masuk oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Baiki OS Age dalam About mengira daripada binaan ISO dan bukannya pemasangan oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Baiki Dropbox memaparkan “0y ago” untuk fail berusia 360 hingga 364 hari oleh <a href="https://github.com/manuaudio">@manuaudio</a> dalam <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Baiki pemeriksaan status Dropbox menamatkan pautan log masuk tertunda oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Baiki pemasangan pustaka ikon dulang Dropbox oleh <a href="https://github.com/omarchybot">@omarchybot</a> dalam <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Dayakan bar tatal tindanan dalam Chromium oleh <a href="https://github.com/robzolkos">@robzolkos</a> dalam <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Minta sebelum menghidupkan Touch ID pada Mac Apple Silicon oleh <a href="https://github.com/scottjones">@scottjones</a> dalam <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Tawarkan channel RC pada Mac Apple Silicon oleh <a href="https://github.com/maralcbr">@maralcbr</a> dalam <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Tawarkan channel stable pada Mac Apple Silicon oleh <a href="https://github.com/maralcbr">@maralcbr</a> dalam <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Baiki alias, fungsi dan persekitaran Omarchy hilang daripada terminal baharu pada Apple Silicon oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Sediakan aplikasi NVIDIA yang dipasang oleh <a href="https://github.com/jdvmi00">@jdvmi00</a> dalam <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Baiki pemasangan gagal pada Lenovo Pro 9 dengan NVIDIA N1x oleh <a href="https://github.com/breymander">@breymander</a> dalam <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Baiki pembesar suara dan mikrofon dalaman hilang pada komputer riba N1x yang menjalankan profil audio terdahulu oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Baiki desktop lembap pada mesin NVIDIA GB10 seperti DGX Spark oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Baiki menaip ke dalam skrin kunci selepas resume pada NVIDIA oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>Kunci juga tidak lagi menjadi gelap semula sebaik sahaja panel menyala.</p>
+  </li>
+  <li>Baiki Lutris dan Battle.net memasang pemacu Vulkan 32-bit GPU lain oleh <a href="https://github.com/zihaomu">@zihaomu</a> dalam <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Hentikan meminta but semula selepas setiap kemas kini pada ARM oleh <a href="https://github.com/birkskyum">@birkskyum</a> dalam <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Tawarkan channel stable dan RC pada aarch64 oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Jadikan profil kuasa berfungsi pada komputer riba ARM oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Tawarkan Dropbox pada mesin ARM dengan halaman 4K, dan Spotify sebagai aplikasi web pada ARM oleh <a href="https://github.com/birkskyum">@birkskyum</a> dalam <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Sembunyikan pemasangan GeForce NOW, Battle.net dan Lutris pada ARM oleh <a href="https://github.com/birkskyum">@birkskyum</a> dalam <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Baiki aplikasi Hermes tidak dikemas kini di tempatnya pada ARM oleh <a href="https://github.com/ryanrhughes">@ryanrhughes</a> dalam <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Baiki papan kekunci komputer riba Snapdragon tidak menaip pada gesaan buka kunci cakera oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Baiki kamera hilang semasa log masuk pada komputer riba Snapdragon oleh <a href="https://github.com/birkskyum">@birkskyum</a> dalam <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Baiki skrin hitam sebelum buka kunci cakera pada komputer riba Snapdragon X2 oleh <a href="https://github.com/jdvmi00">@jdvmi00</a> dalam <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Nyahkod video dalam perkakasan pada Intel Wildcat Lake oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Baiki ranap ISO langsung pada komputer riba Arrow Lake-H oleh <a href="https://github.com/emirb">@emirb</a> dalam <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Baiki mikrofon dalaman HP EliteBook Ultra G1q oleh <a href="https://github.com/bprendie">@bprendie</a> dalam <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Gunakan sokongan huluan untuk Ethernet Motorcomm YT6801 oleh <a href="https://github.com/AFOliveira">@AFOliveira</a> dalam <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Sampaikan Elgato Cam Link 4K sebagai kamera maya 16:9 oleh <a href="https://github.com/dhh">@dhh</a> dalam <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Sokong pembaca cap jari yang dinamakan platform oleh <a href="https://github.com/scottjones">@scottjones</a> dalam <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

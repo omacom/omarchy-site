@@ -1,6 +1,10 @@
 # Keeps the manual current without anyone running bin/build-manual by hand.
 # The chapters and the theme previews they show live in the OS repository;
-# this renders them into manual/ once a day and commits what changed.
+# this renders them, at omarchy's latest public release, into
+# manual/ once a day and commits what changed, with each translation's
+# src/i18n/<code>/manual.json that the build makes from manual-translations/.
+# A new release changes manual/ with its translations, so that is what this
+# watches, and a new release reaches the site by the next morning.
 #
 # The render runs in Arch, like a hand run of bin/build-manual on Omarchy.
 # The script calls ImageMagick 7's `magick`, which Ubuntu does not ship.
@@ -41,10 +45,13 @@ jobs:
 
       - name: Fetch the manual from omarchy
         id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git clone --quiet --depth 1 --filter=blob:none --sparse https://github.com/omacom/omarchy "$RUNNER_TEMP/omarchy"
+          ref=$(gh api repos/omacom/omarchy/releases/latest --jq .tag_name)
+          git clone --quiet --depth 1 --branch "$ref" --filter=blob:none --sparse https://github.com/omacom/omarchy "$RUNNER_TEMP/omarchy"
           git -C "$RUNNER_TEMP/omarchy" sparse-checkout set --no-cone '/manual/' '/themes/*/preview*.png'
-          echo "commit=$(git -C "$RUNNER_TEMP/omarchy" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
 
       - name: Render the manual
         id: render
@@ -90,13 +97,13 @@ jobs:
         id: commit
         if: steps.render.outputs.changed == 'true'
         env:
-          SOURCE: ${{ steps.source.outputs.commit }}
+          SOURCE: ${{ steps.source.outputs.ref }}
         run: |
-          git add -A manual src/data/manual.json
+          git add -A manual src/data/manual.json src/i18n/*/manual.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Refresh the manual from omarchy" \
-            -m "Rendered with bin/build-manual from omacom/omarchy at ${SOURCE:0:8}." \
+            -m "Rendered with bin/build-manual from omacom/omarchy at ${SOURCE}." \
             -m "$(git diff --cached --stat | tail -1)"
           # The build also rewrites data it does not own; drop that before rebasing.
           git restore .

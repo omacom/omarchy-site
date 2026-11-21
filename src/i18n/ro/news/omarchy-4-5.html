@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (aka Quattro RS!) este prima lansare mare cu funcții noi de la <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, și e una pe cinste: peste 740 de pull request-uri integrate, de la mai mult de 180 de contribuitori, în doar douăsprezece săptămâni. Acum oferă un mod desktop tradițional alături de modul implicit cu aranjare în mozaic. Îl poți instala nativ pe MacBook-uri M1/M2/M3/Neo. Și vorbește 50 de limbi. Și o grămadă de alte funcții, remedieri și îmbunătățiri. Ești deja pe Omarchy? Rulează <em>Update &gt; Omarchy</em>. Mașină nouă? <a href="/#install">Ia-l de aici</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Spații de lucru plutitoare, cu un dock</h2>
+
+<p><code>Super + L</code> acum comută orice spațiu de lucru între aranjare în mozaic, defilare și plutire. Într-un spațiu de lucru plutitor, fiecare fereastră primește o bară de titlu în culorile temei tale, iar un dock îți arată aplicațiile fixate, tot ce rulează și o grilă cu fiecare aplicație instalată. Trage ca să reordonezi sau să fixezi, dă clic dreapta pentru mai multe opțiuni, iar <code>Super + M</code> minimizează o fereastră în dock.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Este o rampă de lansare minunată pentru oricine vine de pe macOS sau Windows și nu e încă gata să treacă complet la aranjarea în mozaic. Sau pentru oricine vrea pur și simplu un spațiu de lucru unde ferestrele se pot întinde cum vor. Combină și potrivește pentru fiecare spațiu de lucru, iar bara arată ce aspect folosește fiecare.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy pe Apple Silicon</h2>
+
+<p>Incredibila noastră echipă <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> a lansat programul de instalare nativ pentru Mac. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Descarcă o aplicație</a> pe macOS și va pune Omarchy chiar alături de el, pe MacBook-ul tău M1, M2, M3 sau Neo. Fără stick USB, fără incantații în terminal. Preferi Homebrew? Asta înseamnă o singură linie:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Programul de instalare Omarchy pentru Mac" /></p>
+
+<p>Asta ne-am propus să facem în septembrie: să terminăm ce a început Asahi. Două luni mai târziu, poți pur și simplu să îl descarci. O treabă uimitoare din partea tuturor din echipă.</p>
+
+<p>Și nu se opresc aici. Se lucrează chiar acum la M4, M5 și M6, așa că probabil nu va dura mult până când Omarchy va rula pe fiecare Mac cu Apple Silicon.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy pe un M2 Max, M3 Air, Neo, M4 Pro și M5 Air" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">Suport ARM pentru NVIDIA DGX Spark + N1X (și în curând Snapdragon)</h2>
+
+<p>Omarchy 4.5 vine cu primul său ISO ARM și, odată cu el, cu suport preliminar pentru mașinile ARM de la NVIDIA: desktopul DGX Spark și laptopurile construite pe N1X, cum ar fi <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> și <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Și în curând vom avea suport și pentru întreaga gamă de mașini ARM Snapdragon. Este încă devreme, așa că așteaptă-te la câteva asperități și te rugăm să raportezi orice se strică pe <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 de limbi și 5 metode de introducere</h2>
+
+<p>Omarchy vorbește acum 50 de limbi. Alege una din <em>Setup &gt; Language</em> (sau rulează <code>omarchy language &lt;code&gt;</code>), iar meniul, desktopul și notificările Omarchy se schimbă imediat. Setările regionale ale sistemului urmează la următoarea autentificare.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Schimbarea limbii" /></p>
+
+<p>Totuși, să vorbești o limbă e doar jumătate din treabă. Trebuie și să o poți tasta. Așa că Omarchy configurează acum metode de introducere potrivite pentru japoneză (Mozc), coreeană (Hangul), chineză simplificată (Pinyin), Taiwan (Zhuyin) și Hong Kong (Cangjie), direct din programul de instalare sau mai târziu din <em>Setup &gt; Keyboard</em>. Fiecare vine cu fonturile potrivite pentru formele caracterelor sale, fereastra cu candidați urmărește tema ta, iar <code>Super + I</code> comută între limbile tale de introducere. Hangul, Zhuyin și Cangjie își păstrează tastele în pozițiile standard chiar dacă tastezi caractere latine pe Dvorak, Colemak sau AZERTY, exact ca pe Windows și macOS. Iar o atingere a tastei Shift, singură, te scoate dintr-o metodă de introducere către literele latine și înapoi, așa cum funcționează Sogou, Microsoft Pinyin și macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Autentificare în portaluri Wi-Fi captive</h2>
+
+<p>Wi-Fi-ul de la hotel, aeroport și cafenea în sfârșit funcționează pur și simplu. Omarchy observă acum când o rețea vrea să te autentifici sau să îi accepți termenii înainte să te lase online. Pictograma rețelei te avertizează, iar panoul de rețea arată un buton mare Open Captive Portal care te duce direct la pagina de autentificare. Odată ce ai trecut de ea, totul revine la normal de la sine.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Autentificarea într-un portal captiv din panoul de rețea" width="380" /></p>
+
+<h2 id="five-new-default-apps">Cinci aplicații implicite noi</h2>
+
+<p><strong>Hype</strong> face prezentări dintr-un singur fișier Markdown, cu un editor vizual de diapozitive lângă sursă, și exportă în PDF sau PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> înlocuiește Xournal++ pentru hârtii: deschide un PDF, plasează semnătura, textul și datele salvate și salvează o copie semnată.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> desenează o hartă arborescentă cu ce îți umple discul, colorată după tip, semnalează cache-urile care pot fi regenerate în siguranță și te lasă să marchezi ce trebuie să dispară.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> îți înregistrează camera cu o singură tastă, cu o temă asortată cu desktopul tău.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> îți oferă un desktop la distanță prin SSH. Conectează-te la o altă mașină Omarchy și condu-i întregul desktop dintr-o fereastră de pe a ta, cu o filă pentru fiecare mașină. Și pentru că merge prin SSH, nu e nimic în plus de configurat sau de expus. Mașina controlată arată în bară un indicator de sesiune la distanță, așa că e mereu clar când cineva e pe ea.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Și mai există <strong>Elsewhen</strong>, un ceas mondial care locuiește chiar lângă ceasul din bară. Atinge un oraș pe glob ca să setezi unde ești, caută locuri reale și numește oamenii care locuiesc în fiecare oraș, ca să știi mereu dacă e o oră decentă ca să suni. Comută între 12 și 24 de ore cu <code>t</code>, între °F și °C cu <code>Alt + T</code> și cheamă-l oricând cu <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Cu Monologue pentru înregistrare și Omacut pentru tăiere, instalările noi nu mai vin cu OBS Studio și Kdenlive. Lazydocker a dispărut și el din instalările noi, deși Docker și Docker Compose sunt în continuare incluse. Mașinile care au deja vreunul dintre ele le păstrează.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Trebuie să lucrezi cu oameni care trăiesc în Office? <em>Install &gt; Service &gt; Microsoft</em> configurează acum Outlook, Word, Excel, PowerPoint, Teams și OneDrive ca aplicații web. Fiecare primește propria fereastră și propria intrare în lansator, așa că se simt chiar la ele acasă lângă orice altceva. Gata cu scuzele ca să nu treci la Omarchy la serviciu!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams și PowerPoint pe Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper pentru dictare</h2>
+
+<p>Superwhisper este acum motorul implicit de dictare al Omarchy și e configurat din start. Atinge <code>Alt + Space</code> ca să începi să vorbești și din nou ca să te oprești, sau ține apăsat <code>Right Alt</code> pentru push-to-talk. E incredibil de rapid și foarte precis.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Dictare cu Superwhisper" /></p>
+
+<p>Pornește în cloud, așa că funcționează din momentul în care instalezi, iar primele 10.000 de cuvinte sunt gratuite. Dar poți trece la un model descărcabil, complet gratuit, care rulează în întregime local, fără să trimită un cuvânt nimănui. Și dacă preferi mai degrabă un alt model local, Voxtype este în continuare oferit ca alternativă.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Instalare în mai puțin de zece secunde</h2>
+
+<p>Omarchy obișnuia să instaleze vreo 940 de pachete unul câte unul. Noul program de instalare F1 despachetează în schimb o imagine root precompilată și adaugă deasupra doar pachetele acestei mașini. Asta reduce timpii de instalare cam la jumătate pe orice mașină.</p>
+
+<p>Iar pe hardware rapid, e absurd. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> de la AMD a stabilit recordul mondial cu o instalare completă Omarchy în <strong>7 secunde</strong> pe laptopul său AMD. <a href="https://x.com/dhh/status/2117222836620202375">Șapte secunde!</a> Îmi amintesc când cinci minute păreau un obiectiv ambițios.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy instalat în 0m 7s" /></p>
+
+<h2 id="faster-everywhere-else">Mai rapid peste tot în rest</h2>
+
+<p>Nu e doar programul de instalare. Pornirea nu se mai blochează la înregistrarea binfmt. Selector de teme se deschide imediat, în loc de după un sfert de secundă. Meniurile și panourile se deschid direct din scurtăturile Hyprland, sărind peste cei 60 ms cât dura înainte pornirea unui proces. Cele mai lente verificări ale meniului Omarchy au trecut de la 200 ms la 16 ms, un terminal nou își arată promptul cu 30 ms mai devreme, iar întregul desktop reacționează acum la schimbări în loc să le verifice periodic. Chiar și deconectarea, repornirea și închiderea se întâmplă în momentul în care aplicațiile tale termină de se închis.</p>
+
+<h2 id="agent-upgrades">Îmbunătățiri pentru agenți</h2>
+
+<p>Omarchy este sistemul de operare agentic, iar 4.5 aduce o rundă mare de îmbunătățiri pentru lucrul cu agenți. Panoul de agenți urmărește acum 23 de agenți și furnizori, față de 6 înainte, inclusiv Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter și Ollama. Fiecare limită primește propriul indicator, cu timpul rămas până la resetare, ca să poți vedea exact câtă marjă mai ai. Iar Grok este acum un furnizor complet, alături de Claude și Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Panoul de agenți cu mai multe abonamente Claude și Codex" width="380" /></p>
+
+<p>Iar agentul tău e mereu la o apăsare de tastă distanță. <code>Super + ~</code> coboară o consolă în stil Quake peste un desktop estompat, iar prima dată când o deschizi, pornește agentul tău implicit. Apasă din nou ca să o ascunzi, iar sesiunea ta rămâne exact unde ai lăsat-o.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Consola în stil Quake rulând un agent peste un desktop estompat" /></p>
+
+<p>Dacă jonglezi cu mai multe abonamente, poți acum să păstrezi mai multe autentificări Claude, Codex și Grok pe aceeași mașină și să alegi cu care încep sesiunile noi, folosind <code>omarchy agent account</code>. Istoricul, setările și abilitățile sunt partajate între ele, așa că <code>claude --continue</code> continuă exact de unde ai rămas după o comutare. Aproape de o limită, Omarchy poate fie să ofere o comutare cu un singur clic, fie să mute singur sesiunile noi pe contul cu cea mai multă marjă. Iar când configurezi o altă mașină, <code>omarchy agent account copy</code> aduce toate autentificările tale prin SSH, ca să nu trebuiască să te autentifici din nou la toate.</p>
+
+<p>Kimi și Ori, harnessul de agenți de la OpenRouter, se alătură opțiunilor din <em>Setup &gt; Defaults &gt; Agent</em>, iar Antigravity de la Google înlocuiește învechitul Gemini CLI (<code>gemini</code> încă funcționează ca alias). Preferi o fereastră în locul unui terminal? Aplicațiile desktop Claude și Amp sunt acum la un clic distanță, în <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Notificări, reconstruite</h2>
+
+<p>Notificările acum se grupează după expeditor, urmăresc tema ta și restrâng repetările identice. Butoanele de acțiune, codurile de verificare și linkurile funcționează toate direct din card. <code>Super + Comma</code> acționează asupra celei mai noi (o închide, o deschide sau îi apasă butonul), iar <code>Super + Ctrl + Comma</code> îți dă tastatura ca să le conduci pe toate. Clopoțelul din bară activează Nu deranja.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Notificările noi" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Fundaluri video și intro-uri pentru teme</h2>
+
+<p>Fundalurile pot fi acum videoclipuri. Pune unul, iar desktopul tău prinde viață cu valuri care se rostogolesc sau orice altceva îți place, în timp ce ecranul de blocare arată un cadru fix din el. Iar temele își fac acum intrarea: fiecare poate reda un intro scurt și silențios când te autentifici sau când comuți la ea. (Preferi liniștea? Dezactivează intro-urile din <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse se alătură temelor implicite</h2>
+
+<p>Jade Horse înseamnă verdețuri cețoase, cu fundaluri din jad sculptat care fac întregul desktop să arate ca o pictură pe sul. Înlocuiește Osaka Jade printre temele incluse și i se alătură Starship ca cealaltă temă implicită nouă. Dacă ești pe Osaka Jade, îți păstrezi copia, iar ea trăiește mai departe ca <a href="https://github.com/omacom/omarchy-osaka-jade-theme">temă terță parte</a> pentru oricine vrea să o instaleze proaspăt.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Tema Jade Horse" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff este noul fundal implicit</h2>
+
+<p>Instalările noi te întâmpină acum cu Liftoff, o lansare superbă la apus, care este noul fundal implicit pentru Tokyo Night. A fost făcut de <a href="https://github.com/tcballard">Tom Ballard</a>, care l-a creat prima dată pentru <a href="https://github.com/tcballard/omarchy-theme-liftoff">tema sa Liftoff</a>. Mulțumim, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Fundalul Liftoff de Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Meniul de pornire este acum silențios</h2>
+
+<p>Omarchy obișnuia să arate meniul de pornire vreo șase secunde la fiecare pornire, pentru orice eventualitate, dacă aveai nevoie să revii la un snapshot anterior. Dar aproape nimeni nu a făcut-o vreodată. Așa că acum Limine așteaptă doar o secundă și pornește silențios, iar de cele mai multe ori nu vei vedea deloc meniul.</p>
+
+<p>Când ai nevoie de o altă intrare sau de un snapshot, continuă să atingi orice tastă (săgeata în jos funcționează) în timp ce mașina pornește, iar ea se va opri la meniu. Și dacă preferi să ții meniul afișat mai mult, pentru totdeauna, setează-ți propriul <code>timeout:</code> în <code>/boot/limine.conf</code> (de exemplu <code>timeout: 5</code>). Actualizările vor lăsa în pace un timeout setat de tine.</p>
+
+<h2 id="changed-hotkeys">Taste rapide modificate</h2>
+
+<p>Unele scurtături s-au mutat:</p>
+
+<ul>
+  <li>Calculator: <code>Super + Ctrl + Q</code> este acum <code>Super + Shift + Q</code>.</li>
+  <li>Activity: <code>Super + Ctrl + T</code> este acum <code>Super + Shift + T</code>, iar <code>Super + Ctrl + T</code> deschide temele.</li>
+  <li>Network: <code>Super + Ctrl + W</code> este acum <code>Super + Ctrl + N</code>, iar <code>Super + Ctrl + W</code> deschide fundalurile.</li>
+  <li>Nightlight nu mai are o scurtătură (era <code>Super + Ctrl + N</code>); se află în <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> deschide Apps din dock în loc de meniul Apps.</li>
+</ul>
+
+<p>Scurtăturile pentru notificări s-au modificat:</p>
+
+<ul>
+  <li><code>Super + Comma</code> acționează asupra celui mai nou card (îl închide, îl deschide sau îi apasă singurul buton) în loc doar să îl închidă.</li>
+  <li>Închiderea ultimului s-a mutat la <code>Super + Alt + Comma</code>, care obișnuia să îl deschidă.</li>
+  <li>Silențierea s-a mutat de la <code>Super + Ctrl + Comma</code> la <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> îți dă acum control de la tastatură.</li>
+</ul>
+
+<p>Câteva taste funcționează diferit:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> și <code>Super</code> + defilare rămân pe spațiile de lucru ale monitorului curent, pentru că fiecare monitor le are pe ale lui.</li>
+  <li>Într-un terminal, <code>Super + C</code> și <code>Super + V</code> trimit <code>Ctrl + Shift + C</code> și <code>Ctrl + Shift + V</code> în loc de <code>Ctrl + Insert</code> și <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Setări implicite noi care s-ar putea ciocni cu legături de-ale tale: <code>Super + Q</code> (închide fereastra, alături de <code>Super + W</code>), <code>Super + A</code> (selectează tot), <code>Super + M</code> (minimizează în dock), <code>Super + ~</code> și <code>Super + Shift + ~</code> (consola Quake), <code>Super + Alt + L</code> (aspectul anterior), <code>Super + Shift + Ctrl + Arrows</code> (mută o fereastră pe alt monitor), <code>Super + Ctrl + Alt + C</code> (captură de ecran), <code>Super + Ctrl + Alt + E</code> (ceas mondial), <code>Super + Ctrl + Alt + F</code> (desktop pe tot ecranul) și ținerea apăsată a <code>Right Alt</code> pentru dictare push-to-talk.</p>
+
+<h2 id="more-features">Mai multe funcții</h2>
+
+<ul>
+  <li>Dă fiecărui monitor propriile spații de lucru: <code>Super + 1-0</code> merge la spațiile de lucru ale monitorului pe care ești, iar <code>Super + Arrows</code> te mută spre și dinspre celelalte ecrane, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>Adună tot ce ține de aspectul desktopului într-un meniu nou Appearance, înlocuind Style: temă, fundal, font, bară, ferestre, branding, dock, aspecte ale spațiilor de lucru, animații și ecranul de deblocare, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li>Alege ferestre Opaque, Transparent sau Glassy în <em>Appearance &gt; Window Transparency</em>, plus un fundal Glassy pentru bară, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li>Alege colțuri de fereastră în funcție de temă, ascuțite sau rotunjite în <em>Appearance &gt; Window Corners</em>, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>Adaugă un mod fără animații, activat implicit în mașinile virtuale, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>Fă aplicațiile opace implicit, păstrând terminalele transparente, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>Adaugă Slack în Install &gt; Service, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>Fă ca Alt + Space să comute dictarea pe fiecare backend, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>Adaugă butoane Open și Edit la notificările pentru capturi de ecran, și Open și Cut la înregistrările de ecran și descărcările yt-dlp, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>Adaugă un meniu Update &gt; Kernel pentru schimbarea kernelului implicit, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>Adaugă sincronizarea temei cu mașinile herdr, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Adaugă o.rebind pentru înlocuirea legăturilor de taste Hyprland, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>Cere identitatea ta git după prima autentificare în loc de în programul de instalare, cu autentificare GitHub, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>Permite mediilor de instalare să presetaze limba, tastatura și fusul orar, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>Permite widgeturilor din bară să locuiască în sertarul zonei de notificare, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>Permite eliminarea unui widget din bară trăgându-l de pe bară, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>Permite defilarea prin spațiile de lucru din bară, de <a href="https://github.com/outfoxxed">@outfoxxed</a> în <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>Permite ștergerea temelor suplimentare din selectorul de teme, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>Adaugă CLI-urile hey, basecamp și Cloudflare ca instrumente instalate leneș, de <a href="https://github.com/monorkin">@monorkin</a> în <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>Adaugă SSH Agent ca serviciu opțional, de <a href="https://github.com/carletex">@carletex</a> în <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>Permite alegerea duratei sudo fără parolă, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>Adaugă un buton de închidere la trecerea cursorului peste notificările toast, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>Permite silențierea notificărilor unui program din diagnosticul său de blocare, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>Permite omarchy-notification-send să adauge butoane de acțiune, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>Adaugă un format de ceas cu secunde în timp real, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Reglează iluminarea tastaturii cu Ctrl și tastele de luminozitate, de <a href="https://github.com/ludagoo">@ludagoo</a> în <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>Afișează cheia de produs Windows OEM din firmware, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>Adaugă vi original ca opțiune de editor în terminal, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>Adaugă fundalul Roadster Starlight la Ethereal, de <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> în <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">Securitate</h2>
+
+<ul>
+  <li>Ține parola mașinii virtuale Windows în afara argumentelor clientului RDP, de <a href="https://github.com/dicemans">@dicemans</a> în <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>Mută starea înregistrării ecranului din /tmp, accesibil oricui pentru scriere, de <a href="https://github.com/Chessing234">@Chessing234</a> în <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>Întărește expirarea sudo fără parolă la suspendare, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>Leagă curățarea inhibitorului de actualizare de procesul care l-a creat, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>Izolează autorizarea curățării OCaml, de <a href="https://github.com/ErikMelton">@ErikMelton</a> în <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>Fixează ridicarea privilegiilor pentru resetarea la setările din fabrică la comanda împachetată, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>Elimină șabloanele de amprente salvate pentru utilizatorul care invocă resetarea, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>Refuză numele de hook-uri și de stare care sunt căi, de <a href="https://github.com/Adolanium">@Adolanium</a> în <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>Amână la system-auth în stiva polkit scrisă de configurarea amprentei și FIDO2, de <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> în <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>Elimină amprentele din stocarea proprie a cititorului atunci când le elimini, de <a href="https://github.com/scottjones">@scottjones</a> în <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>Împiedică configurarea SSH să lase sshd rulând cu autentificări cu parolă atunci când nu se adaugă nicio cheie, de <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> în <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Împiedică un alt utilizator local să își strecoare propriul program în timpul unei actualizări Voxtype, de <a href="https://github.com/Vladkarok">@Vladkarok</a> în <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>Întărește modul în care resetarea la setările din fabrică transmite setările tale gum prin sudo, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">Remedieri</h2>
+
+<ul>
+  <li>Remediază blocarea Hyprland când un monitor este deconectat, dezactivat sau oprit prin închiderea capacului, de <a href="https://github.com/falkoro">@falkoro</a> în <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>Remediază actualizările care puteau lăsa o imagine de kernel fără parametrul său root=, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>Remediază resetarea la setările din fabrică ce ștergea intrările de pornire ale altor sisteme, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>Remediază o instalare lângă un alt Omarchy care elimina intrarea de pornire a acelei instalări, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>Remediază instalările în spațiu liber care puteau lua o partiție existentă drept una nouă, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>Remediază reluarea unei schimbări întrerupte a parolei unității care elimina cheia greșită, de <a href="https://github.com/scottjones">@scottjones</a> în <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Cere parola sudo o dată per actualizare Omarchy, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>Cere parola sudo o dată pentru zece minute în loc de din nou la fiecare comandă, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>Acoperă actualizările AUR și verificarea pornirii cu promptul sudo unic al actualizării, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>Ține actualizările de pachete în siguranță față de deconectarea în mijlocul tranzacției, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>Deconectează, repornește și închide imediat ce aplicațiile termină de se închis, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>Înlocuiește Tensaku cu Omasnap pentru capturi de ecran, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>Fă panourile să crească din bară și să se transforme unele în altele, cu feedback la apăsare pe butoane și pictogramele din bară, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>Fă notificările să alunece de sub bară și înapoi pe unde au venit, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Verifică conectivitatea față de endpointul propriu al Omarchy și remediază autentificarea în portaluri captive, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>Remediază trecerea de la edge la stable sau RC care lăsa mașina pe o versiune veche, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>Remediază actualizarea la 4.5 care se oprea când shell-ul răspundea greu, de <a href="https://github.com/AnPod">@AnPod</a> în <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>Remediază actualizările care eșuau silențios când erau pornite în afara sesiunii desktop, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>Remediază o descărcare eșuată a unui instrument mise care oprea restul unei actualizări de sistem, de <a href="https://github.com/sanjyay">@sanjyay</a> în <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>Remediază actualizările care eșuau când omarchy-nvim nu era instalat, de <a href="https://github.com/imzihuailin">@imzihuailin</a> în <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>Remediază instalările dual-boot care nu reușeau să monteze partiția EFI, de <a href="https://github.com/Damian626">@Damian626</a> în <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>Remediază instalările care se opreau când firmware-ul nu accepta o intrare de pornire nouă, de <a href="https://github.com/ryanio">@ryanio</a> în <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>Remediază instalările care se opreau pe discuri cu un vechi membru RAID sau grup de volume, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>Pornește programul de instalare mai devreme, fără să aștepte fiecare dispozitiv USB și sarcină de pornire, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>Accelerează criptarea discului cu sectoare de 4096 de octeți pe instalările noi, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>Listează mai întâi discurile interne și deschide ecranele de instalare pe alegerea sigură, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>Listează Full disk install prima în programul de instalare și revino cu Esc pe ecranele pentru disc, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Remediază scalarea unui monitor care schimba scara fiecărui alt monitor, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>Remediază aplicațiile XWayland care ieșeau prea mari când monitoarele foloseau scări diferite, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>Remediază ecranele HDR care treceau la o imagine HDR ștearsă când o fereastră trecea pe tot ecranul, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>Remediază meniurile și selectoarele neclare pe ecrane cu scalare fracționară, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>Remediază ecranul laptopului care rămânea oprit după deconectarea ecranului extern, de <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> în <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>Remediază reactivarea unui ecran care îi reseta poziția, scara și modul, de <a href="https://github.com/zihaomu">@zihaomu</a> în <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>Remediază meniurile și selectoarele care nu se redeschideau după deconectarea unui monitor, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>Remediază spațiile de lucru per monitor care se mutau după deconectarea unui monitor, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>Remediază blocarea shell-ului când un dispozitiv audio se deconectează cu panoul audio deschis, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>Remediază ferestrele pe tot ecranul care pierdeau modul pe tot ecranul după screensaver, de <a href="https://github.com/MGross21">@MGross21</a> în <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Remediază dispariția cursorului la pornire după reîncărcările Hyprland, de <a href="https://github.com/spencerbull">@spencerbull</a> în <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>Remediază cursorul care devenea invizibil peste aplicațiile XWayland, de <a href="https://github.com/Sebo1411">@Sebo1411</a> în <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>Remediază blocările la capturarea clipboardului, de <a href="https://github.com/maxcroy1">@maxcroy1</a> în <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>Remediază accesul la keyring prin portalul XDG Secret, de <a href="https://github.com/pkwagner">@pkwagner</a> în <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>Remediază înrolarea amprentei și recuperarea ecranului de blocare, de <a href="https://github.com/GeertJohan">@GeertJohan</a> în <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>Ghidează înrolarea amprentei pas cu pas, de <a href="https://github.com/scottjones">@scottjones</a> în <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>Remediază repetarea automată a tastelor în câmpul de parolă al ecranului de blocare, de <a href="https://github.com/berndb">@berndb</a> în <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>Remediază imaginea de fundal a ecranului de blocare care se încărca după câmpul de parolă la trezire, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>Remediază expirarea blocării ecranului când sesiunea numește un ecran dispărut, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>Accelerează deschiderea unui terminal în directorul ferestrei curente, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>Fă editorii din familia VS Code să urmărească în timp real schimbările de temă, de <a href="https://github.com/Macho0x">@Macho0x</a> în <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>Reaplică tema sesiunilor Hunk care rulează la schimbarea temei, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>Reține imaginea de fundal selectată pentru fiecare temă, de <a href="https://github.com/OldJobobo">@OldJobobo</a> în <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>Ține selectorul de imagini rapid și clar cu colecții mari și HiDPI, de <a href="https://github.com/keylimesoda">@keylimesoda</a> în <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>Reduce CPU-ul și memoria pe care bara transparentă le cheltuiește eșantionând imaginea de fundal, de <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> în <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>Accelerează panoul Tailscale pe tailnet-uri cu mii de mașini, de <a href="https://github.com/iskakaushik">@iskakaushik</a> în <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>Adu Grok la nivelul Claude și Codex în panoul de agenți, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>Aplică selecția contului de agent subproceselor CLI, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Arată limitele individuale de cheltuieli Codex și timpii lor de resetare, de <a href="https://github.com/Stegi56">@Stegi56</a> în <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Configurează integrarea cu browserul când alegi Claude, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>Remediază agenții care nu găseau instrumentele mise instalate după ce au pornit, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>Remediază lipirea capturilor de ecran în agenți, în panouri herdr pornite prin SSH, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>Remediază panoul de agenți care rata sesiunile Codex comprimate, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Readu Caps Lock la normal și fă din Shift + Caps Lock tasta de compunere, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>Aplică aspectul de tastatură al sistemului pe ecranul de autentificare, de <a href="https://github.com/g-desoutter">@g-desoutter</a> în <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>Remediază comutarea aspectului care sărea peste a doua apăsare cu un aspect de tastatură non-latin, de <a href="https://github.com/manuaudio">@manuaudio</a> în <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>Activează decodarea video hardware în mpv, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>Comută controlul congestiei TCP la BBR și folosește planificatorul I/O kyber pe discuri reale, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>Instalează T3 Code ca AppImage-ul său cu actualizare automată, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>Îmbunătățește instalarea PHP și Laravel, de <a href="https://github.com/nunomaduro">@nunomaduro</a> în <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Instalează Node leneș și lasă-ți configurația mise în pace, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>Instalează aplicațiile lipsă când alegi setările implicite, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Estompează software-ul instalat în meniurile Install în loc să îl ascunzi, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Înregistrează managerul de parole și alte gazde de mesagerie native pentru Brave Origin, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Grupează notificările web Brave Origin după site și deschide fila potrivită la clic, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>Aprobă automat eliminarea pachetelor orfane în timpul actualizărilor, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>Actualizează keyring-ul Omarchy înainte de fiecare actualizare, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>Oferă repornirea după schimbarea canalelor, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>Oferă actualizarea de la prima rulare doar când există ceva de actualizat, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Găsește locația pentru vreme și fusul orar al programului de instalare cu serviciul geo propriu al Omarchy, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>Setează ceasul de pe ntp.omarchy.org în loc de pool-ul NTP Arch, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Măsoară viteza rețelei cu testul de viteză propriu al Omarchy, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>Arată un ecran de progres cu pictogramă trasată în timpul primei porniri, de <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> în <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>Pornește ISO-ul live pe kernelul Omarchy, și pe kernelul T2 doar pe Mac-uri, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>Oprește instalările offline din așteptarea căutărilor de versiune mise, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>Remediază instalările offline care setau implicit fusul orar la Africa/Abidjan, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>Remediază selectorul de fus orar al programului de instalare care nu te lăsa să tastezi ca să cauți, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Remediază ISO-ul live care rămânea blocat în spatele ecranului de pornire când era pornit de pe un stick Ventoy, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>Remediază hărțile de taste de consolă germane și franceze în formularul de configurare al programului de instalare, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>Ascunde indicațiile de taste în engleză ale gum în programul de instalare și în configurarea git, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>Elimină glumele doar în engleză de pe ecranul de progres al instalării, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>Remediază ieșirea programului de instalare care ajungea fără umplutură pe ecran în timp ce pregătea discul, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>Remediază actualizarea Quattro care reseta browserul implicit la Chromium, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>Remediază actualizarea Quattro care se oprea la nume de fundaluri cu caractere non-ASCII, de <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> în <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>Remediază migrarea kernelului care se oprea pe mașini care pornesc cu GRUB sau systemd-boot, de <a href="https://github.com/manuaudio">@manuaudio</a> în <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>Remediază hibernarea pe mașini necriptate cu mai mult de un disc NVMe, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>Remediază migrarea FIDO2 marcată ca terminată înainte să fie rezolvată, de <a href="https://github.com/ErikMelton">@ErikMelton</a> în <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>Remediază un spațiu de lucru plutitor care prelua prima fereastră acoperită de propria ta regulă de plutire, de <a href="https://github.com/zihaomu">@zihaomu</a> în <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Remediază blocarea compozitorului când Super + L scoate și bagă un spațiu de lucru din plutire, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Remediază Alt + Shift + Tab care nu parcurgea invers fiecare fereastră, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>Remediază ferestrele desprinse care nu se centrau când erau mutate pe alt monitor, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>Remediază terminalele noi care se deschideau în afara folderului tău personal când o fereastră non-terminal avea focusul, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>Remediază ferestrele 1Password și Bitwarden care nu pluteau, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>Remediază închiderea 1Password când terminalul programului de instalare se închidea, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>Remediază dialogurile DaVinci Resolve care furau focusul indicatorului, de <a href="https://github.com/AksharP5">@AksharP5</a> în <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Remediază desktopul care se vedea prin ecranele mașinii virtuale Windows, de <a href="https://github.com/jmwall">@jmwall</a> în <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Remediază parolele vechi ale mașinii virtuale Windows care conțineau $$ după migrarea Quattro, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>Oprește fereastra pop-up de donații Hyprland să mai apară după actualizări, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>Îmbunătățește tragerea și aranjarea widgeturilor din bară, de <a href="https://github.com/outfoxxed">@outfoxxed</a> în <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>Normalizează dimensiunea și alinierea pictogramelor din bară, de <a href="https://github.com/bjarneo">@bjarneo</a> în <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>Dezvăluie indicatorii ascunși ai barei doar la trecerea cursorului la stânga ceasului, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>Aliniază pictogramele din zona de notificare cu celelalte pictograme ale barei, de <a href="https://github.com/ayoubdya">@ayoubdya</a> în <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>Arată imediat următoarea sugestie a barei cât timp una este deja afișată, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>Deschide panourile ceasului și vremii sub widgeturile lor, de <a href="https://github.com/scottjones">@scottjones</a> în <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>Ține panoul de rețea deschis după alegerea unui furnizor DNS, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>Remediază un pop-up care se închidea și lăsa widgeturile din bară fără răspuns, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>Remediază bara ascunsă care prindea clicuri de-a lungul marginii de sus a ferestrelor pe tot ecranul, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>Remediază pictogramele întunecate din zona de notificare care dispăreau în bară, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>Remediază pictogramele din bară care stăteau neuniform sau descentrate, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>Remediază sugestiile barei care desenau primul cadru la dimensiunea greșită, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>Remediază istoricul notificărilor care arăta fiecare card ca „chiar acum”, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>Remediază notificările de la prima autentificare care se prăbușeau într-un singur grup, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>Remediază clicurile pe notificări care nu focalizau aplicațiile cu nume din mai multe cuvinte, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Remediază notificările Taildrop care arătau text gol și fără previzualizări, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>Remediază notificarea bateriei care arăta un timp gol și 0W pe o baterie plină, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>Remediază avertismentul de baterie descărcată care rămânea după conectare și revenea după reporniri, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>Remediază citirea consumului bateriei ca 0W pe unele laptopuri, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>Remediază o baterie plină pe curent alternativ care era arătată ca descărcându-se, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>Remediază Hibernate care apărea când kernelul nu hibernează, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>Remediază montările gvfs care dispăreau după reluare, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>Remediază iluminarea tastaturii care rămânea oprită după ce blocarea stingea ecranul de două ori, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>Remediază cititorul de amprente care se trezea cât timp blocarea avea ecranele stinse, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>Remediază promptul parolei de pornire descentrat când un ecran apare târziu, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>Remediază tasta de ieșire a screensaverului care clipea în colț, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>Remediază pictograma Wi-Fi care pâlpâia pe rețele OWE în mod de tranziție, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>Remediază o eroare OWE afișată în terminal după instalarea unei teme, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>Remediază o pâlpâire la comutarea de la un fundal fix la unul video, de <a href="https://github.com/bjarneo">@bjarneo</a> în <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Actualizează Hackerman la un fundal geometric mărit, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>Remediază temele cu referințe ciclice de culori care blocau schimbarea temei, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>Remediază Neovim care nu pornea cu tema Catppuccin, de <a href="https://github.com/anandude">@anandude</a> în <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>Remediază OpenCode 2 care pornea pe tema sa standard în loc de cea a Omarchy, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>Remediază codul inline cu contrast slab în tema VS Code generată, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>Remediază instalările T3 Code care se opreau în timpul potrivirii temei curente, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>Remediază dimensiunea fontului terminalului care se reseta la schimbarea familiei de fonturi, de <a href="https://github.com/sbalbalosa">@sbalbalosa</a> în <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>Remediază schimbarea fonturilor care afișa ID-ul procesului unui terminal, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>Remediază schimbarea limbii care reconstrua fiecare locale și le pierdea pe un disc aproape plin, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>Remediază shell-ul care arăta chei brute de traducere înainte să i se încarce traducerile, de <a href="https://github.com/zihaomu">@zihaomu</a> în <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Accelerează textul tradus în scripturile Omarchy, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>Actualizează traducerile pentru 686 de șiruri, 392 dintre ele în manual, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>Remediază controalele de volum și ieșire în locale non-engleze, de <a href="https://github.com/Sebo1411">@Sebo1411</a> în <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>Remediază citirile utilizării CPU în locale non-engleze, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>Remediază serviciul fcitx5 care repornea la nesfârșit când fcitx5 nu era instalat, de <a href="https://github.com/therk">@therk</a> în <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>Remediază widgetul de aspect al tastaturii care comuta dispozitive pe care nu tastează nimeni, de <a href="https://github.com/bjarneo">@bjarneo</a> în <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>Remediază widgetul de aspect al tastaturii care comuta la dispozitive hotkey ale furnizorului, de <a href="https://github.com/yashranaway">@yashranaway</a> în <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>Remediază meniul de legături de taste care lăsa un proces Lua rulând la CPU 100%, de <a href="https://github.com/tobi">@tobi</a> în <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>Remediază ceasul care inunda jurnalul în fiecare milisecundă când se termină ora de vară, de <a href="https://github.com/falkoro">@falkoro</a> în <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>Remediază shell-ul care înlocuia un shell.json pe care nu îl putea citi cu setările implicite, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>Remediază meniul Omarchy care își pierdea rândurile în timp ce fișierul său era actualizat, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>Remediază reactivarea unui plugin care nu îi aducea înapoi widgetul din bară, de <a href="https://github.com/berrimi">@berrimi</a> în <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>Remediază pluginurile locale care se reîncărcau în buclă din cauza propriului bytecode Python, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>Remediază butoanele ascunse din pluginuri care se prăbușeau la umplutura lor, de <a href="https://github.com/dmkenney">@dmkenney</a> în <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>Remediază listele derulante care își tăiau ultimul element, de <a href="https://github.com/sprajs">@sprajs</a> în <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>Remediază listele derulante care nu se închideau la un al doilea clic, de <a href="https://github.com/felixzsh">@felixzsh</a> în <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>Remediază butoanele glisoarelor care se opreau înainte de capătul pistei, de <a href="https://github.com/erikrjohansson">@erikrjohansson</a> în <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Remediază Update &gt; Hardware &gt; Trackpad care rata majoritatea touchpad-urilor și reseta tastatura, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>Acum eliberează un buton blocat pe fiecare touchpad și resetează doar touchpad-ul în loc de tastatura și ecranul tactil odată cu el.</p>
+  </li>
+  <li>Fă meniul webcam să verifice camerele fără să le pornească, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Remediază capturarea prin defilare a Omasnap care lua doar cadre negre, de <a href="https://github.com/falkoro">@falkoro</a> în <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>Remediază selectorul de capturi de ecran care îți desprindea propriile taste, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>Remediază oprirea unei înregistrări care anunța o înregistrare salvată goală, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>Remediază selectorul de imagini care arăta miniaturi vechi pentru imagini suprascrise, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>Remediază lumina de noapte care nu se reseta complet când era oprită, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>Remediază widgetul media care lăsa o piesă în pauză pentru un player inactiv, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>Remediază scanările repetate ale ecranelor pe monitoare care nu raportează luminozitatea, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>Remediază Super + Shift + Return care eșua când browserul configurat era dezinstalat, de <a href="https://github.com/vitally">@vitally</a> în <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>Remediază scurtăturile calculatorului care rămâneau după eliminarea aplicațiilor preinstalate, de <a href="https://github.com/OldJobobo">@OldJobobo</a> în <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Remediază scurtătura Copy URL în profilurile Brave Origin, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Remediază fereastra pop-out a extensiei Bitwarden care se deschidea la dimensiunea greșită, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>Remediază Battle.net care se deschidea la scară 100% pe monitoare HiDPI, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Remediază selectoarele de fișiere Inkscape care se deschideau în mozaic, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>Remediază pachetele Go AUR care nu se construiau în timpul actualizărilor când mise gestiona Go, de <a href="https://github.com/shbernal">@shbernal</a> în <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>Remediază instalarea ONCE când nu ești în grupul docker, de <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> în <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>Remediază clicurile în panoul de agenți care deschideau zona de notificare, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>Remediază configurarea contului de agent care se împiedica de un symlink partajat suspendat, de <a href="https://github.com/manuaudio">@manuaudio</a> în <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li>Remediază <code>--reauth</code> care adăuga un cont de agent nou când nu exista unul, de <a href="https://github.com/manuaudio">@manuaudio</a> în <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>Fă indicația de redenumire a contului de agent să își numească furnizorul, de <a href="https://github.com/manuaudio">@manuaudio</a> în <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>Remediază actualizările keyring-ului care pretindeau succes când operațiunile cu chei eșuau, de <a href="https://github.com/Adolanium">@Adolanium</a> în <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>Remediază un prompt gol de resetare la setările din fabrică atunci când era rulat sub sudo, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>Remediază mementoul migrărilor în așteptare care se aduna o dată per autentificare, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>Remediază OS Age din About care număra de la construirea ISO-ului în loc de la instalare, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Remediază Dropbox care arăta „0y ago” pentru fișiere vechi de 360 până la 364 de zile, de <a href="https://github.com/manuaudio">@manuaudio</a> în <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Remediază verificarea stării Dropbox care expira un link de autentificare în așteptare, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Remediază instalarea bibliotecii pentru pictograma Dropbox din zona de notificare, de <a href="https://github.com/omarchybot">@omarchybot</a> în <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Activează barele de defilare suprapuse în Chromium, de <a href="https://github.com/robzolkos">@robzolkos</a> în <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Cere confirmare înainte de activarea Touch ID pe Mac-urile cu Apple Silicon, de <a href="https://github.com/scottjones">@scottjones</a> în <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Oferă canalul RC pe Mac-urile cu Apple Silicon, de <a href="https://github.com/maralcbr">@maralcbr</a> în <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Oferă canalul stable pe Mac-urile cu Apple Silicon, de <a href="https://github.com/maralcbr">@maralcbr</a> în <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Remediază aliasurile, funcțiile și mediul Omarchy care lipseau din terminalele noi pe Apple Silicon, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>Configurează aplicațiile NVIDIA instalate, de <a href="https://github.com/jdvmi00">@jdvmi00</a> în <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>Remediază instalările care eșuau pe Lenovo Pro 9 cu NVIDIA N1x, de <a href="https://github.com/breymander">@breymander</a> în <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Remediază difuzoarele și microfoanele interne lipsă pe laptopurile N1x care rulaseră profilurile audio anterioare, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Remediază un desktop lent pe mașini NVIDIA GB10 cum ar fi DGX Spark, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>Remediază tastarea în ecranul de blocare după reluare pe NVIDIA, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>De asemenea, blocarea nu se mai întunecă din nou chiar când panoul se aprinde.</p>
+  </li>
+  <li>Remediază Lutris și Battle.net care instalau driverul Vulkan pe 32 de biți al altui GPU, de <a href="https://github.com/zihaomu">@zihaomu</a> în <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>Oprește cererea unei reporniri după fiecare actualizare pe ARM, de <a href="https://github.com/birkskyum">@birkskyum</a> în <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>Oferă canalele stable și RC pe aarch64, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>Fă profilurile de energie să funcționeze pe laptopuri ARM, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>Oferă Dropbox pe mașini ARM cu pagini 4K, și Spotify ca aplicație web pe ARM, de <a href="https://github.com/birkskyum">@birkskyum</a> în <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>Ascunde instalările GeForce NOW, Battle.net și Lutris pe ARM, de <a href="https://github.com/birkskyum">@birkskyum</a> în <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>Remediază aplicația Hermes care nu se actualiza pe loc pe ARM, de <a href="https://github.com/ryanrhughes">@ryanrhughes</a> în <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>Remediază tastaturile laptopurilor Snapdragon care nu tastau la promptul de deblocare a discului, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>Remediază camerele lipsă la autentificare pe laptopuri Snapdragon, de <a href="https://github.com/birkskyum">@birkskyum</a> în <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Remediază un ecran negru înainte de deblocarea discului pe laptopuri Snapdragon X2, de <a href="https://github.com/jdvmi00">@jdvmi00</a> în <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Decodifică video hardware pe Intel Wildcat Lake, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Remediază blocările ISO-ului live pe laptopuri Arrow Lake-H, de <a href="https://github.com/emirb">@emirb</a> în <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>Remediază microfonul intern al HP EliteBook Ultra G1q, de <a href="https://github.com/bprendie">@bprendie</a> în <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Folosește suportul upstream pentru Motorcomm YT6801 Ethernet, de <a href="https://github.com/AFOliveira">@AFOliveira</a> în <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Transmite Elgato Cam Link 4K ca o cameră virtuală 16:9, de <a href="https://github.com/dhh">@dhh</a> în <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>Acceptă cititoare de amprente pe care o platformă le numește, de <a href="https://github.com/scottjones">@scottjones</a> în <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

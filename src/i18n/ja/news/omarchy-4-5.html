@@ -1,0 +1,449 @@
+<p>Omarchy 4.5（別名 Quattro RS!）は、<a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>以来初の大型機能リリースで、とにかく盛りだくさんです。わずか12週間で180人以上のコントリビューターから740件以上のプルリクエストがマージされました。タイル型がデフォルトの隣に、従来型のデスクトップモードも選べるようになりました。M1/M2/M3/NeoのMacBookにネイティブインストールできます。そして50言語に対応。さらに数え切れないほどの新機能、修正、改善が入っています。すでにOmarchyを使っている方は、<em>Update &gt; Omarchy</em>を実行してください。新しいマシンですか？<a href="/#install">こちらから入手</a>してください。</p>
+
+<h2 id="floating-workspaces-with-a-dock">ドック付きフローティングワークスペース</h2>
+
+<p><code>Super + L</code>で、ワークスペースをタイル、スクロール、フローティングの間で切り替えられるようになりました。フローティングワークスペースでは、すべてのウィンドウにテーマカラーのタイトルバーが付き、ドックにはピン留めしたアプリ、実行中のすべてのアプリ、インストール済みのすべてのアプリのグリッドが表示されます。ドラッグで並べ替えやピン留めができ、右クリックでさらに操作でき、<code>Super + M</code>でウィンドウをドックに最小化できます。</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>これは、まだタイル型に完全移行する準備ができていない、macOSやWindowsから来た人にとって素晴らしい入口です。ウィンドウを広げて使えるワークスペースを1つだけ持ちたい人にもぴったりです。ワークスペースごとに組み合わせて使え、バーには各ワークスペースがどのレイアウトを使っているかが表示されます。</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Silicon上のOmarchy</h2>
+
+<p>素晴らしい<a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a>チームが、Mac用ネイティブインストーラーをリリースしました。macOSで<a href="https://github.com/omacom/omarchy-mac-installer/releases">アプリをダウンロード</a>すれば、M1、M2、M3、NeoのMacBookでmacOSと並べてOmarchyを入れられます。USBメモリも、ターミナルの呪文も不要です。Homebrewがお好みですか？それなら1行です：</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Macインストーラー" /></p>
+
+<p>これは9月にやろうと決めたこと、つまりAsahiが始めたことを完成させることです。2か月後には、ただダウンロードするだけで使えるようになりました。チームのみんな、本当にすごい仕事です。</p>
+
+<p>そして、ここで止まるつもりはありません。M4、M5、M6にも現在取り組んでいるので、OmarchyがすべてのApple Silicon Macで動くようになるのも、おそらくそう遠くないでしょう。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="M2 Max、M3 Air、Neo、M4 Pro、M5 Airで動作するOmarchy" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">NVIDIA DGX Spark + N1X向けARMサポート（近日中にSnapdragonにも対応）</h2>
+
+<p>Omarchy 4.5では初のARM ISOが登場し、NVIDIAのARMマシンへの予備サポートが加わりました。DGX Sparkデスクトップや、<a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a>や<a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>のようなN1X搭載ノートPCが対象です。さらに近日中には、Snapdragon ARMマシンの全ラインナップにも対応する予定です。まだ初期段階なので、少し荒い部分があるかもしれません。何か壊れたら<a href="https://github.com/omacom/omarchy/issues">GitHub</a>で報告してください。</p>
+
+<h2 id="50-languages-and-5-input-methods">50言語と5つの入力方式</h2>
+
+<p>Omarchyは50言語に対応しました。<em>Setup &gt; Language</em>で選ぶか（または<code>omarchy language &lt;code&gt;</code>を実行すると）、メニュー、デスクトップ、Omarchyの通知がすぐに切り替わります。システムロケールは次回ログイン時に追随します。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="言語の切り替え" /></p>
+
+<p>言語を話せるのは半分にすぎません。入力もできなければなりません。そこでOmarchyは、日本語（Mozc）、韓国語（Hangul）、簡体字中国語（Pinyin）、台湾向け（Zhuyin）、香港向け（Cangjie）の適切な入力方式を、インストーラーから、または後から<em>Setup &gt; Keyboard</em>で設定できるようになりました。それぞれの文字形式に合ったフォントが付属し、候補ウィンドウはテーマに追随し、<code>Super + I</code>で入力言語を切り替えます。Hangul、Zhuyin、Cangjieは、Dvorak、Colemak、AZERTYでラテン文字を入力していても、WindowsやmacOSと同じようにキーが標準位置に保たれます。そしてShiftを単独でタップすると、Sogou、Microsoft Pinyin、macOSのように、入力方式からラテン文字へ抜けて、また戻れます。</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">キャプティブWi-Fiポータルへのサインイン</h2>
+
+<p>ホテル、空港、コーヒーショップのWi-Fiが、ついにそのまま使えるようになりました。ネットワークがオンラインになる前にサインインや規約への同意を求めていることを、Omarchyが検知するようになりました。ネットワークアイコンが警告を表示し、ネットワークパネルには大きなOpen Captive Portalボタンが表示され、ログインページへ直接移動できます。通過すれば、すべて自動的に通常に戻ります。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="ネットワークパネルからキャプティブポータルにサインインする様子" width="380" /></p>
+
+<h2 id="five-new-default-apps">5つの新しいデフォルトアプリ</h2>
+
+<p><strong>Hype</strong>は、1つのMarkdownファイルからプレゼンテーションを作ります。ソースの横にビジュアルなスライドエディターがあり、PDFやPowerPointにエクスポートできます。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong>は、書類仕事向けにXournal++を置き換えます。PDFを開き、保存済みの署名、テキスト、日付を配置して、署名済みコピーを保存できます。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong>は、ディスクを埋めているものをツリーマップで描き、種類ごとに色分けし、安全に再生成できるキャッシュを指摘して、削除すべきものをマークできます。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong>は、キー1つでカメラを録画し、デスクトップに合わせてテーマが適用されます。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong>はSSH経由のリモートデスクトップを提供します。別のOmarchyマシンに接続し、そのデスクトップ全体を自分のウィンドウから操作でき、マシンごとにタブが分かれます。SSHに乗っているので、追加で設定したり公開したりするものは何もありません。操作される側のマシンでは、バーの中にリモートセッションインジケーターが表示されるので、誰かが接続していることが常に明確です。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>そして<strong>Elsewhen</strong>もあります。バーの時計のすぐ隣に住む世界時計です。地球儀上の都市をタップして自分の場所を設定し、実在の場所を検索し、各都市に住む人々に名前を付けられるので、電話するのにちょうどいい時間かどうかがいつでも分かります。<code>t</code>で12時間と24時間を切り替え、<code>Alt + T</code>で°Fと°Cを切り替え、<code>Super + Ctrl + Alt + E</code>でいつでも呼び出せます。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Monologueが録画用、Omacutがトリミング用にあるため、新規インストールにはOBS StudioとKdenliveが同梱されなくなりました。Lazydockerも新規インストールからなくなりましたが、DockerとDocker Composeは引き続き含まれます。すでにいずれかを持っているマシンでは、そのまま残ります。</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Officeで生きている人たちと仕事をする必要がありますか？<em>Install &gt; Service &gt; Microsoft</em>で、Outlook、Word、Excel、PowerPoint、Teams、OneDriveをWebアプリとして設定できるようになりました。それぞれ専用のウィンドウとランチャーエントリーを持つので、他のすべてと並んでも違和感がありません。職場でOmarchyに切り替えない言い訳は、もうありません！</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchy上のExcel、Word、Teams、PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">音声入力のためのSuperwhisper</h2>
+
+<p>SuperwhisperがOmarchyのデフォルトの音声入力エンジンになり、最初から設定済みです。<code>Alt + Space</code>をタップして話し始め、もう一度タップして止めるか、<code>Right Alt</code>を押し続けてプッシュ・トゥ・トークできます。信じられないほど速く、とても正確です。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisperで音声入力している様子" /></p>
+
+<p>最初はクラウドで動作するので、インストールした瞬間から使え、最初の10,000語は無料です。でも、完全に無料で、誰にも一言も送らずに完全にローカルで動作する、ダウンロード可能なモデルに切り替えることもできます。別のローカルモデルの方がいい場合は、代替としてVoxtypeも引き続き利用できます。</p>
+
+<h2 id="install-in-less-than-ten-seconds">10秒未満でインストール</h2>
+
+<p>Omarchyは以前、約940個のパッケージを1つずつインストールしていました。新しいF1インストーラーは代わりに、ビルド済みのルートイメージを展開し、その上にこのマシン専用のパッケージだけを追加します。これで、どのマシンでもインストール時間がおよそ半分に短縮されます。</p>
+
+<p>そして高速なハードウェアでは、もはや非常識な速さです。AMDの<a href="https://x.com/AnushElangovan">Anush Elangovan</a>さんは、自分のAMDノートPCでOmarchyのフルインストールを<strong>7秒</strong>で完了し、世界記録を樹立しました。<a href="https://x.com/dhh/status/2117222836620202375">7秒です！</a>5分でさえ野心的な目標に思えた頃を覚えています。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchyを0分7秒でインストール" /></p>
+
+<h2 id="faster-everywhere-else">他のあらゆる場所でも高速に</h2>
+
+<p>速くなったのはインストーラーだけではありません。起動時にbinfmt登録で止まることがなくなりました。テーマピッカーは0.25秒後ではなく、すぐに開きます。メニューとパネルはHyprlandのショートカットから直接開き、最初にプロセスを起動するのにかかっていた60ミリ秒を省略します。Omarchyメニューの最も遅いチェックは200ミリ秒から16ミリ秒になり、新しいターミナルはプロンプトが30ミリ秒早く表示され、デスクトップ全体がポーリングではなく変化に反応するようになりました。ログアウト、再起動、シャットダウンでさえ、アプリが閉じ終わった瞬間に行われます。</p>
+
+<h2 id="agent-upgrades">エージェントのアップグレード</h2>
+
+<p>OmarchyはエージェントのためのOSであり、4.5ではエージェントと協働するための大規模なアップグレードが入りました。エージェントパネルは6から増えて23のエージェントとプロバイダーを追跡するようになりました。Cursor、OpenCode、GitHub Copilot、Antigravity、Hermes、Amp、Kiro、Devin、Qwen、DeepSeek、OpenRouter、Ollamaなどが含まれます。すべての制限にはリセットまでの時間付きの専用メーターがあり、残りの余裕が正確に分かります。そしてGrokは、ClaudeやCodexと並ぶ正式なプロバイダーになりました。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="複数のClaudeとCodexのサブスクリプションを表示したエージェントパネル" width="380" /></p>
+
+<p>そして、エージェントはいつでもキー1つで呼び出せます。<code>Super + ~</code>で、暗くしたデスクトップの上にQuake風コンソールが降りてきて、初めて開いたときにはデフォルトのエージェントが起動します。もう一度押せばしまわれ、セッションは離れたときのまま残ります。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="暗くしたデスクトップ上でエージェントを実行するQuake風コンソール" /></p>
+
+<p>複数のサブスクリプションを使い分けている場合は、同じマシン上に複数のClaude、Codex、Grokのログインを保持し、<code>omarchy agent account</code>を使って新しいセッションがどれで始まるか選べるようになりました。履歴、設定、スキルはそれらの間で共有されるので、切り替えた後も<code>claude --continue</code>で離れたところからそのまま再開できます。制限に近づくと、Omarchyはワンクリックでの切り替えを提案するか、最も余裕のあるアカウントへ新しいセッションを自動的に移します。そして別のマシンをセットアップするときは、<code>omarchy agent account copy</code>がSSH経由でログインをすべて持ってきてくれるので、すべてに再度サインインする必要がありません。</p>
+
+<p>OpenRouterのエージェントハーネスであるKimiとOriが、<em>Setup &gt; Defaults &gt; Agent</em>の選択肢に加わり、GoogleのAntigravityが旧式のGemini CLIを置き換えます（<code>gemini</code>はエイリアスとして引き続き使えます）。ターミナルよりウィンドウがいいですか？ClaudeとAmpのデスクトップアプリが、<em>Install &gt; AI</em>からクリック1つで使えるようになりました。</p>
+
+<h2 id="notifications-rebuilt">通知、生まれ変わりました</h2>
+
+<p>通知は送信者ごとに積み重なり、テーマに追随し、同一の繰り返しは折りたたまれます。アクションボタン、認証コード、リンクはすべてカードから直接使えます。<code>Super + Comma</code>は最新のものに作用し（閉じる、開く、またはそのボタンを押す）、<code>Super + Ctrl + Comma</code>はキーボードですべてを操作できるようにします。バーのベルでDo Not Disturbをオンにします。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="新しい通知" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">動画背景とテーマイントロ</h2>
+
+<p>背景に動画が使えるようになりました。1つ放り込むだけで、打ち寄せる波でも何でも好きなものでデスクトップが生き生きとし、ロック画面にはその静止フレームが表示されます。そしてテーマが登場演出を持つようになりました。各テーマは、ログインしたときや切り替えたときに、短い無音のイントロを再生できます。（落ち着いた方がいいですか？<em>Appearance &gt; Animations</em>でイントロをオフにしてください。）</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horseがデフォルトテーマに仲間入り</h2>
+
+<p>Jade Horseは霧がかった緑で統一され、彫刻された翡翠の背景でデスクトップ全体が掛け軸の絵のように見えます。同梱テーマの中でOsaka Jadeを置き換え、もう1つの新しいデフォルトテーマであるStarshipとともに加わります。Osaka Jadeを使っている方は自分のコピーをそのまま保持でき、それは<a href="https://github.com/omacom/omarchy-osaka-jade-theme">サードパーティテーマ</a>として生き続け、新規にインストールしたい人も使えます。</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horseテーマ" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoffが新しいデフォルト背景に</h2>
+
+<p>新規インストールでは、Tokyo Nightの新しいデフォルト背景である、美しい夕日の打ち上げ、Liftoffが迎えてくれます。これは<a href="https://github.com/tcballard">Tom Ballard</a>さんが作ったもので、最初は自身の<a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a>のために作られました。ありがとう、Tom！</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom BallardによるLiftoff背景" /></p>
+
+<h2 id="boot-menu-now-quiet">ブートメニューが静かになりました</h2>
+
+<p>Omarchyは以前、万が一以前のスナップショットにロールバックする必要があった場合に備えて、起動のたびにブートメニューを約6秒間表示していました。でも、実際にそうする人はほとんどいませんでした。そこで今ではLimineは1秒だけ待って静かに起動し、ほとんどの場合はメニューがまったく見えません。</p>
+
+<p>別のエントリーやスナップショットが必要なときは、マシンの起動中に任意のキー（下矢印でも可）を連打し続ければ、メニューで止まります。メニューをずっと長く表示しておきたい場合は、<code>/boot/limine.conf</code>に自分で<code>timeout:</code>を設定してください（例：<code>timeout: 5</code>）。アップデートで、設定したタイムアウトが変更されることはありません。</p>
+
+<h2 id="changed-hotkeys">変更されたホットキー</h2>
+
+<p>一部のショートカットが移動しました：</p>
+
+<ul>
+  <li>電卓：<code>Super + Ctrl + Q</code>が<code>Super + Shift + Q</code>になりました。</li>
+  <li>アクティビティ：<code>Super + Ctrl + T</code>が<code>Super + Shift + T</code>になり、<code>Super + Ctrl + T</code>はテーマを開きます。</li>
+  <li>ネットワーク：<code>Super + Ctrl + W</code>が<code>Super + Ctrl + N</code>になり、<code>Super + Ctrl + W</code>は背景を開きます。</li>
+  <li>Nightlightにはショートカットがなくなりました（以前は<code>Super + Ctrl + N</code>でした）。<code>Trigger &gt; Toggle</code>の中にあります。</li>
+  <li><code>Super + Alt + Space</code>は、AppsメニューではなくドックからAppsを開きます。</li>
+</ul>
+
+<p>通知のショートカットが変更されました：</p>
+
+<ul>
+  <li><code>Super + Comma</code>は、最新のカードを閉じるだけではなく、そのカードに作用します（閉じる、開く、またはその1つのボタンを押す）。</li>
+  <li>最後のものを閉じる操作は<code>Super + Alt + Comma</code>に移動しました。これは以前は開く操作でした。</li>
+  <li>無音化は<code>Super + Ctrl + Comma</code>から<code>Super + Ctrl + Alt + Comma</code>に移動しました。<code>Super + Ctrl + Comma</code>はキーボード操作を受け渡すようになりました。</li>
+</ul>
+
+<p>いくつかのキーの動作が変わりました：</p>
+
+<ul>
+  <li><code>Super + Tab</code>、<code>Super + Shift + Tab</code>、<code>Super + Ctrl + Tab</code>、そして<code>Super</code> + スクロールは、モニターごとに独自のワークスペースがあるため、現在のモニターのワークスペース内にとどまります。</li>
+  <li>ターミナルでは、<code>Super + C</code>と<code>Super + V</code>が、<code>Ctrl + Insert</code>と<code>Shift + Insert</code>の代わりに<code>Ctrl + Shift + C</code>と<code>Ctrl + Shift + V</code>を送ります。</li>
+</ul>
+
+<p>自分のバインディングと競合する可能性のある新しいデフォルト：<code>Super + Q</code>（ウィンドウを閉じる、<code>Super + W</code>と併用）、<code>Super + A</code>（すべて選択）、<code>Super + M</code>（ドックに最小化）、<code>Super + ~</code>と<code>Super + Shift + ~</code>（Quakeコンソール）、<code>Super + Alt + L</code>（前のレイアウト）、<code>Super + Shift + Ctrl + Arrows</code>（ウィンドウを別のモニターに移動）、<code>Super + Ctrl + Alt + C</code>（スクリーンショット）、<code>Super + Ctrl + Alt + E</code>（世界時計）、<code>Super + Ctrl + Alt + F</code>（フルスクリーンデスクトップ）、そしてプッシュ・トゥ・トーク音声入力のための<code>Right Alt</code>長押し。</p>
+
+<h2 id="more-features">その他の機能</h2>
+
+<ul>
+  <li>すべてのモニターに独自のワークスペースを持たせる：<code>Super + 1-0</code>で今いるモニターのワークスペースへ移動し、<code>Super + Arrows</code>で他のディスプレイとの間を移動、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/15655">#15655</a></li>
+  <li>デスクトップの見た目に関するすべてを新しいAppearanceメニューに集約し、Styleを置き換え：テーマ、背景、フォント、バー、ウィンドウ、ブランディング、ドック、ワークスペースレイアウト、アニメーション、ロック解除画面、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15973">#15973</a></li>
+  <li><em>Appearance &gt; Window Transparency</em>でOpaque、Transparent、Glassyのウィンドウを選べるようにし、Glassyなバー背景も追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14991">#14991</a></li>
+  <li><em>Appearance &gt; Window Corners</em>でテーマ通り、シャープ、角丸のウィンドウコーナーを選べるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14990">#14990</a></li>
+  <li>アニメーションなしモードを追加し、VMではデフォルトでオンに、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13550">#13550</a></li>
+  <li>アプリをデフォルトで不透明にし、ターミナルは透明のままに、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14253">#14253</a></li>
+  <li>SlackをInstall &gt; Serviceに追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14434">#14434</a></li>
+  <li>すべてのバックエンドでAlt + Spaceで音声入力を切り替えられるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17188">#17188</a></li>
+  <li>スクリーンショット通知にOpenボタンとEditボタンを追加し、画面録画とyt-dlpダウンロードにOpenとCutを追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16505">#16505</a></li>
+  <li>デフォルトカーネルを切り替えるためのUpdate &gt; Kernelメニューを追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15966">#15966</a></li>
+  <li>herdrマシンへのテーマ同期を追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13430">#13430</a></li>
+  <li>Hyprlandのキーバインディングを置き換えるためのo.rebindを追加、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/10537">#10537</a></li>
+  <li>gitの本人情報をインストーラーではなく初回ログイン後に尋ねるようにし、GitHubサインイン付き、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16288">#16288</a></li>
+  <li>インストールメディアが言語、キーボード、タイムゾーンを事前設定できるように、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15522">#15522</a></li>
+  <li>バーウィジェットがトレイの引き出し内に配置できるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15281">#15281</a></li>
+  <li>バーウィジェットをバーからドラッグして外すことで削除できるように、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/6782">#6782</a></li>
+  <li>バーからワークスペースをスクロールして移動できるように、<a href="https://github.com/outfoxxed">@outfoxxed</a>による<a href="https://github.com/omacom/omarchy/pull/15256">#15256</a></li>
+  <li>テーマピッカーから余分なテーマを削除できるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14713">#14713</a></li>
+  <li>hey、basecamp、CloudflareのCLIを遅延インストールされるツールとして追加、<a href="https://github.com/monorkin">@monorkin</a>による<a href="https://github.com/omacom/omarchy/pull/7626">#7626</a></li>
+  <li>SSH Agentをオプションサービスとして追加、<a href="https://github.com/carletex">@carletex</a>による<a href="https://github.com/omacom/omarchy/pull/9399">#9399</a></li>
+  <li>パスワードなしsudoがどれくらい続くか選べるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14435">#14435</a></li>
+  <li>通知トーストにホバー時の閉じるボタンを追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/6946">#6946</a></li>
+  <li>プログラムのクラッシュ診断から、そのプログラムの通知をミュートできるように、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/8549">#8549</a></li>
+  <li>omarchy-notification-sendがアクションボタンを追加できるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16466">#16466</a></li>
+  <li>ライブ秒表示付きの時計フォーマットを追加、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/7586">#7586</a></li>
+  <li>Ctrlと輝度キーでキーボードバックライトを調整、<a href="https://github.com/ludagoo">@ludagoo</a>による<a href="https://github.com/omacom/omarchy/pull/16650">#16650</a></li>
+  <li>ファームウェアからOEM Windowsプロダクトキーを表示、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/7480">#7480</a></li>
+  <li>オリジナルのviをターミナルエディターの選択肢として追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/10307">#10307</a></li>
+  <li>EtherealにRoadster Starlight背景を追加、<a href="https://github.com/bjarneo">@bjarneo</a>、<a href="https://github.com/tcballard">@tcballard</a>による<a href="https://github.com/omacom/omarchy/pull/15878">#15878</a></li>
+</ul>
+
+<h2 id="security">セキュリティ</h2>
+
+<ul>
+  <li>Windows VMのパスワードをRDPクライアントの引数から除外、<a href="https://github.com/dicemans">@dicemans</a>による<a href="https://github.com/omacom/omarchy/pull/7902">#7902</a></li>
+  <li>画面録画の状態を誰でも書き込み可能な/tmpから移動、<a href="https://github.com/Chessing234">@Chessing234</a>による<a href="https://github.com/omacom/omarchy/pull/8374">#8374</a></li>
+  <li>サスペンドをまたいだパスワードなしsudoの有効期限を強化、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/9457">#9457</a></li>
+  <li>アップデート抑制のクリーンアップを、それを作成したプロセスに紐付け、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/9467">#9467</a></li>
+  <li>OCamlクリーンアップの認可を分離、<a href="https://github.com/ErikMelton">@ErikMelton</a>による<a href="https://github.com/omacom/omarchy/pull/10217">#10217</a></li>
+  <li>工場出荷時リセットの昇格をパッケージ化されたコマンドに固定、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/13047">#13047</a></li>
+  <li>リセット時に呼び出しユーザーの保存済み指紋テンプレートを削除、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/13049">#13049</a></li>
+  <li>パスであるフック名と状態名を拒否、<a href="https://github.com/Adolanium">@Adolanium</a>による<a href="https://github.com/omacom/omarchy/pull/8170">#8170</a></li>
+  <li>指紋とFIDO2のセットアップが書くpolkitスタックでsystem-authに従うように、<a href="https://github.com/Wheel-Smith">@Wheel-Smith</a>による<a href="https://github.com/omacom/omarchy/pull/9873">#9873</a></li>
+  <li>指紋を削除するときにリーダー自体のストレージからも削除、<a href="https://github.com/scottjones">@scottjones</a>による<a href="https://github.com/omacom/omarchy/pull/16403">#16403</a></li>
+  <li>キーが追加されなかったときに、SSHセットアップがパスワードログイン可能なままsshdを実行し続けるのを防止、<a href="https://github.com/omarchybot">@omarchybot</a>、<a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a>による<a href="https://github.com/omacom/omarchy/pull/14667">#14667</a></li>
+  <li>Voxtypeのアップグレード中に別のローカルユーザーが自分のプログラムに差し替えるのを防止、<a href="https://github.com/Vladkarok">@Vladkarok</a>による<a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a></li>
+  <li>工場出荷時リセットがgum設定をsudo経由で渡す方法を強化、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/13316">#13316</a></li>
+</ul>
+
+<h2 id="fixes">修正</h2>
+
+<ul>
+  <li>モニターが抜かれた、無効化された、または蓋を閉じてオフになったときにHyprlandがクラッシュする問題を修正、<a href="https://github.com/falkoro">@falkoro</a>による<a href="https://github.com/omacom/omarchy/pull/16750">#16750</a></li>
+  <li>root=パラメーターなしのカーネルイメージが残る可能性があったアップグレードを修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/6951">#6951</a></li>
+  <li>工場出荷時リセットが他のシステムのブートエントリーを消す問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14949">#14949</a></li>
+  <li>別のOmarchyの隣へのインストールが、そのインストールのブートエントリーを削除する問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a></li>
+  <li>空き領域インストールが既存のパーティションを新しいものとして使う可能性があった問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a></li>
+  <li>中断されたドライブパスワード変更の再開時に間違ったキーを削除する問題を修正、<a href="https://github.com/scottjones">@scottjones</a>による<a href="https://github.com/omacom/omarchy/pull/14874">#14874</a></li>
+  <li>Omarchyアップデートごとにsudoパスワードを1回だけ尋ねるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13323">#13323</a></li>
+  <li>すべてのコマンドごとに再度ではなく、10分間1回だけsudoパスワードを尋ねるように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17000">#17000</a></li>
+  <li>AURアップデートとブートチェックを、アップデートの1回のsudoプロンプトでカバー、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16568">#16568</a></li>
+  <li>トランザクション途中のログアウトからパッケージアップデートを安全に保つ、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/11651">#11651</a></li>
+  <li>アプリが閉じ終わったらすぐにログアウト、再起動、シャットダウン、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15231">#15231</a></li>
+  <li>スクリーンショット用にTensakuをOmasnapに置き換え、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/9446">#9446</a></li>
+  <li>パネルがバーから成長して相互にモーフィングするようにし、ボタンとバーアイコンに押下フィードバックを追加、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16470">#16470</a></li>
+  <li>通知がバーの下からスライドインし、来た道を戻ってスライドアウトするように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16469">#16469</a></li>
+  <li>Omarchy独自のエンドポイントに対して接続をチェックし、キャプティブポータルへのサインインを修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16186">#16186</a></li>
+  <li>edgeからstableやRCへの切り替えでマシンが古いビルドのままになる問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/15903">#15903</a></li>
+  <li>シェルの応答が遅いときに4.5へのアップデートが止まる問題を修正、<a href="https://github.com/AnPod">@AnPod</a>による<a href="https://github.com/omacom/omarchy/pull/13468">#13468</a></li>
+  <li>デスクトップセッションの外で開始したときにアップデートが静かに失敗する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17420">#17420</a></li>
+  <li>miseツールのダウンロード失敗がシステムアップデートの残りを止める問題を修正、<a href="https://github.com/sanjyay">@sanjyay</a>による<a href="https://github.com/omacom/omarchy/pull/16318">#16318</a></li>
+  <li>omarchy-nvimがインストールされていないときにアップデートが失敗する問題を修正、<a href="https://github.com/imzihuailin">@imzihuailin</a>による<a href="https://github.com/omacom/omarchy/pull/15141">#15141</a></li>
+  <li>デュアルブートインストールがEFIパーティションをマウントできない問題を修正、<a href="https://github.com/Damian626">@Damian626</a>による<a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a></li>
+  <li>ファームウェアが新しいブートエントリーを受け付けないときにインストールが止まる問題を修正、<a href="https://github.com/ryanio">@ryanio</a>による<a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a></li>
+  <li>古いRAIDメンバーやボリュームグループのあるディスクでインストールが止まる問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a></li>
+  <li>すべてのUSBデバイスとブートジョブを待たないことでインストーラーを早く開始、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a></li>
+  <li>新規インストールで4096バイトセクターによりディスク暗号化を高速化、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a></li>
+  <li>内蔵ディスクを最初に一覧表示し、安全な選択肢でインストール画面を開く、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a></li>
+  <li>インストーラーでFull disk installを最初に一覧表示し、ディスク画面でEscで戻れるように、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>1台のモニターのスケーリングが他のすべてのモニターのスケールを変更する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16923">#16923</a></li>
+  <li>モニターが異なるスケールを使うときにXWaylandアプリが大きすぎる問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16950">#16950</a></li>
+  <li>ウィンドウがフルスクリーンになるとHDRディスプレイが白っぽいHDR映像に切り替わる問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17157">#17157</a></li>
+  <li>分数スケーリングのディスプレイでメニューとピッカーがぼやける問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13419">#13419</a></li>
+  <li>外部ディスプレイを抜いた後もノートPCのディスプレイがオフのままになる問題を修正、<a href="https://github.com/Hamza0101">@Hamza0101</a>、<a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a>による<a href="https://github.com/omacom/omarchy/pull/16310">#16310</a></li>
+  <li>ディスプレイを再有効化すると位置、スケール、モードがリセットされる問題を修正、<a href="https://github.com/zihaomu">@zihaomu</a>による<a href="https://github.com/omacom/omarchy/pull/16147">#16147</a></li>
+  <li>モニターが切断された後にメニューとピッカーが再度開かない問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14458">#14458</a></li>
+  <li>モニターが抜かれた後にモニターごとのワークスペースが移動する問題を修正、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/15867">#15867</a></li>
+  <li>オーディオパネルが開いているときにオーディオデバイスが切断されるとシェルがクラッシュする問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/7783">#7783</a></li>
+  <li>スクリーンセーバーの後にフルスクリーンウィンドウがフルスクリーンを失う問題を修正、<a href="https://github.com/MGross21">@MGross21</a>による<a href="https://github.com/omacom/omarchy/pull/3284">#3284</a></li>
+  <li>Hyprlandのリロード後に起動時にカーソルが消える問題を修正、<a href="https://github.com/spencerbull">@spencerbull</a>による<a href="https://github.com/omacom/omarchy/pull/14935">#14935</a></li>
+  <li>XWaylandアプリ上でカーソルが見えなくなる問題を修正、<a href="https://github.com/Sebo1411">@Sebo1411</a>による<a href="https://github.com/omacom/omarchy/pull/14580">#14580</a></li>
+  <li>クリップボードキャプチャがハングする問題を修正、<a href="https://github.com/maxcroy1">@maxcroy1</a>による<a href="https://github.com/omacom/omarchy/pull/9488">#9488</a></li>
+  <li>XDG Secretポータル経由のキーリングアクセスを修正、<a href="https://github.com/pkwagner">@pkwagner</a>による<a href="https://github.com/omacom/omarchy/pull/9594">#9594</a></li>
+  <li>指紋登録とロック画面のリカバリーを修正、<a href="https://github.com/GeertJohan">@GeertJohan</a>による<a href="https://github.com/omacom/omarchy/pull/7158">#7158</a></li>
+  <li>指紋登録をステップごとに案内、<a href="https://github.com/scottjones">@scottjones</a>による<a href="https://github.com/omacom/omarchy/pull/15512">#15512</a></li>
+  <li>ロック画面のパスワード欄でのキー自動リピートを修正、<a href="https://github.com/berndb">@berndb</a>による<a href="https://github.com/omacom/omarchy/pull/7806">#7806</a></li>
+  <li>ウェイク時にロック画面の壁紙がパスワード欄の後に読み込まれる問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13431">#13431</a></li>
+  <li>セッションがなくなったディスプレイを指しているときの画面ロックタイムアウトを修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15226">#15226</a></li>
+  <li>現在のウィンドウのディレクトリでターミナルを開くのを高速化、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13423">#13423</a></li>
+  <li>VS Code系エディターがテーマ変更にライブで追随するように、<a href="https://github.com/Macho0x">@Macho0x</a>による<a href="https://github.com/omacom/omarchy/pull/10134">#10134</a></li>
+  <li>テーマ変更時に実行中のHunkセッションを再テーマ適用、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13518">#13518</a></li>
+  <li>テーマごとに選択した壁紙を記憶、<a href="https://github.com/OldJobobo">@OldJobobo</a>による<a href="https://github.com/omacom/omarchy/pull/7718">#7718</a></li>
+  <li>大規模なコレクションとHiDPIでもイメージピッカーを速く鮮明に保つ、<a href="https://github.com/keylimesoda">@keylimesoda</a>による<a href="https://github.com/omacom/omarchy/pull/14117">#14117</a></li>
+  <li>透明なバーが壁紙をサンプリングするのに使うCPUとメモリを削減、<a href="https://github.com/ryanyogan">@ryanyogan</a>、<a href="https://github.com/aholbreich">@aholbreich</a>による<a href="https://github.com/omacom/omarchy/pull/8307">#8307</a></li>
+  <li>数千台のマシンがあるtailnetでTailscaleパネルを高速化、<a href="https://github.com/iskakaushik">@iskakaushik</a>による<a href="https://github.com/omacom/omarchy/pull/7623">#7623</a></li>
+  <li>エージェントパネルでGrokをClaudeやCodexと同等に、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/13992">#13992</a></li>
+  <li>エージェントアカウントの選択をCLIサブプロセスに適用、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14233">#14233</a></li>
+  <li>Codexの個別支出制限とそのリセット時刻を表示、<a href="https://github.com/Stegi56">@Stegi56</a>による<a href="https://github.com/omacom/omarchy/pull/15722">#15722</a></li>
+  <li>Claudeを選んだときにブラウザ連携を設定、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/11934">#11934</a></li>
+  <li>エージェントが起動後にインストールされたmiseツールを見つけられない問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16593">#16593</a></li>
+  <li>SSH経由で開始したherdrペインで、エージェントにスクリーンショットをペーストする問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16572">#16572</a></li>
+  <li>エージェントパネルが圧縮されたCodexセッションを見逃す問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16385">#16385</a></li>
+  <li>Caps Lockを通常に戻し、Shift + Caps Lockをコンポーズキーに、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14939">#14939</a></li>
+  <li>システムのキーボードレイアウトをログイン画面に適用、<a href="https://github.com/g-desoutter">@g-desoutter</a>による<a href="https://github.com/omacom/omarchy/pull/6896">#6896</a></li>
+  <li>非ラテンキーボードレイアウトでレイアウト切り替えが1回おきにスキップされる問題を修正、<a href="https://github.com/manuaudio">@manuaudio</a>による<a href="https://github.com/omacom/omarchy/pull/14076">#14076</a></li>
+  <li>mpvでハードウェア動画デコーディングをオンに、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15172">#15172</a></li>
+  <li>TCP輻輳制御をBBRに切り替え、実ディスクではkyber I/Oスケジューラーを使用、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/11658">#11658</a></li>
+  <li>T3 Codeを自己更新するAppImageとしてインストール、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/15907">#15907</a></li>
+  <li>PHPとLaravelのインストールを改善、<a href="https://github.com/nunomaduro">@nunomaduro</a>による<a href="https://github.com/omacom/omarchy/pull/12141">#12141</a></li>
+  <li>Nodeを遅延インストールし、mise設定に手を付けないように、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/15876">#15876</a></li>
+  <li>デフォルトを選ぶときに不足しているアプリをインストール、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/6950">#6950</a></li>
+  <li>Installメニューでインストール済みソフトウェアを隠すのではなく暗く表示、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/6955">#6955</a></li>
+  <li>Brave Origin向けにパスワードマネージャーや他のネイティブメッセージングホストを登録、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/10292">#10292</a></li>
+  <li>Brave OriginのWeb通知をサイトごとにグループ化し、クリック時に正しいタブを開く、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/16296">#16296</a></li>
+  <li>アップデート中に孤立パッケージの削除を自動的に承認、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14428">#14428</a></li>
+  <li>すべてのアップデートの前にOmarchyのキーリングを更新、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/17311">#17311</a></li>
+  <li>チャンネル切り替え後に再起動を提案、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17251">#17251</a></li>
+  <li>更新するものがあるときだけ初回アップデートを提案、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16211">#16211</a></li>
+  <li>Omarchy独自のジオサービスで天気の場所とインストーラーのタイムゾーンを検索、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16240">#16240</a></li>
+  <li>時計をArchのNTPプールではなくntp.omarchy.orgから設定、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16247">#16247</a></li>
+  <li>Omarchy独自のスピードテストでネットワーク速度を測定、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16681">#16681</a></li>
+  <li>初回起動中にトレースされたアイコンの進捗画面を表示、<a href="https://github.com/dhh">@dhh</a>、<a href="https://github.com/DjDeveloperr">@DjDeveloperr</a>による<a href="https://github.com/omacom/omarchy/pull/17156">#17156</a></li>
+  <li>ライブISOをOmarchyカーネルで起動し、MacでのみT2カーネルで起動、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a></li>
+  <li>オフラインインストールがmiseのバージョン検索で待つのを停止、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a></li>
+  <li>オフラインインストールでタイムゾーンがAfrica/Abidjanにデフォルト設定される問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a></li>
+  <li>インストーラーのタイムゾーンピッカーで入力して検索できない問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/17040">#17040</a></li>
+  <li>Ventoyスティックから起動したときにライブISOがスプラッシュの裏でハングする問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a></li>
+  <li>インストーラーのセットアップフォームでドイツ語とフランス語のコンソールキーマップを修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14684">#14684</a></li>
+  <li>インストーラーとgitセットアップでgumの英語キーヒントを隠す、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a></li>
+  <li>インストール進捗画面から英語のみのジョークを削除、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a></li>
+  <li>ディスク準備中にインストーラーの出力が画面に余白なしで表示される問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a></li>
+  <li>QuattroアップグレードがデフォルトブラウザをChromiumにリセットする問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15074">#15074</a></li>
+  <li>非ASCII文字を含む背景名でQuattroアップグレードが止まる問題を修正、<a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a>による<a href="https://github.com/omacom/omarchy/pull/15277">#15277</a></li>
+  <li>GRUBやsystemd-bootで起動するマシンでカーネル移行が止まる問題を修正、<a href="https://github.com/manuaudio">@manuaudio</a>による<a href="https://github.com/omacom/omarchy/pull/14188">#14188</a></li>
+  <li>NVMeディスクが複数ある暗号化されていないマシンでの休止状態を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16658">#16658</a></li>
+  <li>FIDO2移行が解決前に完了としてマークされる問題を修正、<a href="https://github.com/ErikMelton">@ErikMelton</a>による<a href="https://github.com/omacom/omarchy/pull/16421">#16421</a></li>
+  <li>フローティングワークスペースが、自分のフロートルールがカバーする最初のウィンドウを引き継ぐ問題を修正、<a href="https://github.com/zihaomu">@zihaomu</a>による<a href="https://github.com/omacom/omarchy/pull/16143">#16143</a></li>
+  <li>Super + Lでワークスペースをフローティングに出し入れするとコンポジターが止まる問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16397">#16397</a></li>
+  <li>Alt + Shift + Tabですべてのウィンドウを逆方向に循環できない問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/8576">#8576</a></li>
+  <li>ポップアウトしたウィンドウが別のモニターに移動したときに中央に配置されない問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14549">#14549</a></li>
+  <li>ターミナルでないウィンドウがフォーカスされているときに新しいターミナルがホームフォルダーの外で開く問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15007">#15007</a></li>
+  <li>1PasswordとBitwardenのウィンドウがフローティングしない問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/11704">#11704</a></li>
+  <li>インストーラーのターミナルが終了すると1Passwordが閉じる問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/12402">#12402</a></li>
+  <li>DaVinci Resolveのダイアログがポインターフォーカスを奪う問題を修正、<a href="https://github.com/AksharP5">@AksharP5</a>による<a href="https://github.com/omacom/omarchy/pull/6919">#6919</a></li>
+  <li>Windows VMのディスプレイを通してデスクトップが見える問題を修正、<a href="https://github.com/jmwall">@jmwall</a>による<a href="https://github.com/omacom/omarchy/pull/8162">#8162</a></li>
+  <li>Quattro移行後に$$を含むレガシーWindows VMパスワードの問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/13432">#13432</a></li>
+  <li>アップグレード後にHyprlandの寄付ポップアップが表示されるのを停止、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17153">#17153</a></li>
+  <li>バーウィジェットのドラッグと配置を改善、<a href="https://github.com/outfoxxed">@outfoxxed</a>による<a href="https://github.com/omacom/omarchy/pull/15517">#15517</a></li>
+  <li>バーアイコンのサイズと配置を正規化、<a href="https://github.com/bjarneo">@bjarneo</a>による<a href="https://github.com/omacom/omarchy/pull/15065">#15065</a></li>
+  <li>時計の左にホバーしたときだけ隠れたバーインジケーターを表示、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16293">#16293</a></li>
+  <li>トレイアイコンをバーの他のアイコンと揃える、<a href="https://github.com/ayoubdya">@ayoubdya</a>による<a href="https://github.com/omacom/omarchy/pull/16089">#16089</a></li>
+  <li>1つが表示されている間に次のバーツールチップをすぐに表示、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16488">#16488</a></li>
+  <li>時計と天気のパネルをそのウィジェットの下に開く、<a href="https://github.com/scottjones">@scottjones</a>による<a href="https://github.com/omacom/omarchy/pull/8942">#8942</a></li>
+  <li>DNSプロバイダーを選んだ後もネットワークパネルを開いたままにする、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16485">#16485</a></li>
+  <li>ポップアップを閉じるとバーウィジェットが反応しなくなる問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15111">#15111</a></li>
+  <li>隠れたバーがフルスクリーンウィンドウの上部でクリックを捕捉する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16991">#16991</a></li>
+  <li>暗いトレイアイコンがバーに消える問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14661">#14661</a></li>
+  <li>バーアイコンが不揃いだったり中心からずれたりする問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17003">#17003</a></li>
+  <li>バーツールチップが最初のフレームを間違ったサイズで描画する問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16243">#16243</a></li>
+  <li>通知履歴ですべてのカードがたった今と表示される問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16277">#16277</a></li>
+  <li>初回ログインの通知が1つのスタックに折りたたまれる問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16515">#16515</a></li>
+  <li>複数単語の名前を持つアプリに通知クリックがフォーカスしない問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16380">#16380</a></li>
+  <li>Taildrop通知が空のテキストを表示しプレビューが欠ける問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16301">#16301</a></li>
+  <li>バッテリー通知がフルバッテリーで空の時間と0Wを表示する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16272">#16272</a></li>
+  <li>プラグを差した後も低バッテリー警告が残り、再起動後に戻る問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16562">#16562</a></li>
+  <li>一部のノートPCでバッテリー消費が0Wと表示される問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17265">#17265</a></li>
+  <li>AC接続時のフルバッテリーが放電中と表示される問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16278">#16278</a></li>
+  <li>カーネルが休止状態にならないときにHibernateが表示される問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/7779">#7779</a></li>
+  <li>レジューム後にgvfsマウントがなくなる問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14496">#14496</a></li>
+  <li>ロックが2回消灯した後にキーボードバックライトがオフのままになる問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15908">#15908</a></li>
+  <li>ロックがディスプレイをオフにしている間に指紋リーダーがウェイクする問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15294">#15294</a></li>
+  <li>ディスプレイが遅れて現れたときにブートパスワードプロンプトが中心からずれる問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/11641">#11641</a></li>
+  <li>スクリーンセーバーの終了キーが隅で点滅する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16596">#16596</a></li>
+  <li>OWEトランジションモードネットワークでWi-Fiアイコンがちらつく問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14133">#14133</a></li>
+  <li>テーマをインストールした後にターミナルにOWEエラーが表示される問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16872">#16872</a></li>
+  <li>静止画から動画背景に切り替えるときのちらつきを修正、<a href="https://github.com/bjarneo">@bjarneo</a>による<a href="https://github.com/omacom/omarchy/pull/17082">#17082</a></li>
+  <li>Hackermanをアップスケールされた幾何学的な背景に更新、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16892">#16892</a></li>
+  <li>循環色参照を持つテーマがテーマ切り替えをハングさせる問題を修正、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/13046">#13046</a></li>
+  <li>CatppuccinテーマでNeovimが起動に失敗する問題を修正、<a href="https://github.com/anandude">@anandude</a>による<a href="https://github.com/omacom/omarchy/pull/12864">#12864</a></li>
+  <li>OpenCode 2がOmarchyのテーマではなく標準テーマで起動する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17293">#17293</a></li>
+  <li>生成されたVS Codeテーマで低コントラストのインラインコードを修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15818">#15818</a></li>
+  <li>現在のテーマに合わせる際にT3 Codeのインストールが止まる問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16962">#16962</a></li>
+  <li>フォントファミリーを変更するとターミナルのフォントサイズがリセットされる問題を修正、<a href="https://github.com/sbalbalosa">@sbalbalosa</a>による<a href="https://github.com/omacom/omarchy/pull/6958">#6958</a></li>
+  <li>フォント変更時にターミナルのプロセスIDが表示される問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15820">#15820</a></li>
+  <li>言語切り替えで毎回すべてのロケールを再構築し、ほぼ満杯のディスクで失う問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/16414">#16414</a></li>
+  <li>翻訳が読み込まれる前にシェルが生の翻訳キーを表示する問題を修正、<a href="https://github.com/zihaomu">@zihaomu</a>による<a href="https://github.com/omacom/omarchy/pull/16059">#16059</a></li>
+  <li>Omarchyのスクリプトで翻訳されたテキストを高速化、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16584">#16584</a></li>
+  <li>686文字列の翻訳を更新し、そのうち392はマニュアル内、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a></li>
+  <li>非英語ロケールでの音量と出力コントロールを修正、<a href="https://github.com/Sebo1411">@Sebo1411</a>による<a href="https://github.com/omacom/omarchy/pull/14855">#14855</a></li>
+  <li>非英語ロケールでのCPU使用率の読み取りを修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15109">#15109</a></li>
+  <li>fcitx5がインストールされていないときにfcitx5サービスが永遠に再起動する問題を修正、<a href="https://github.com/therk">@therk</a>による<a href="https://github.com/omacom/omarchy/pull/11694">#11694</a></li>
+  <li>キーボードレイアウトウィジェットが誰も入力しないデバイスを切り替える問題を修正、<a href="https://github.com/bjarneo">@bjarneo</a>による<a href="https://github.com/omacom/omarchy/pull/10670">#10670</a></li>
+  <li>キーボードレイアウトウィジェットがベンダーのホットキーデバイスに切り替える問題を修正、<a href="https://github.com/yashranaway">@yashranaway</a>による<a href="https://github.com/omacom/omarchy/pull/9129">#9129</a></li>
+  <li>キーバインディングメニューがLuaプロセスをCPU 100%で実行したままにする問題を修正、<a href="https://github.com/tobi">@tobi</a>による<a href="https://github.com/omacom/omarchy/pull/7564">#7564</a></li>
+  <li>夏時間が終わるときに時計が毎ミリ秒ログを溢れさせる問題を修正、<a href="https://github.com/falkoro">@falkoro</a>による<a href="https://github.com/omacom/omarchy/pull/16684">#16684</a></li>
+  <li>シェルが読めなかったshell.jsonをデフォルトで置き換える問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14534">#14534</a></li>
+  <li>ファイルが更新されている間にOmarchyメニューが行を失う問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/16268">#16268</a></li>
+  <li>プラグインを再有効化してもそのバーウィジェットが戻らない問題を修正、<a href="https://github.com/berrimi">@berrimi</a>による<a href="https://github.com/omacom/omarchy/pull/12540">#12540</a></li>
+  <li>ローカルプラグインが自身のPythonバイトコードでループして再読み込みする問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15093">#15093</a></li>
+  <li>プラグイン内の隠れたボタンがパディングまで潰れる問題を修正、<a href="https://github.com/dmkenney">@dmkenney</a>による<a href="https://github.com/omacom/omarchy/pull/15786">#15786</a></li>
+  <li>ドロップダウンが最後のアイテムを切り取る問題を修正、<a href="https://github.com/sprajs">@sprajs</a>による<a href="https://github.com/omacom/omarchy/pull/13916">#13916</a></li>
+  <li>2回目のクリックでドロップダウンが閉じない問題を修正、<a href="https://github.com/felixzsh">@felixzsh</a>による<a href="https://github.com/omacom/omarchy/pull/6725">#6725</a></li>
+  <li>スライダーのノブがトラックの端まで届かない問題を修正、<a href="https://github.com/erikrjohansson">@erikrjohansson</a>による<a href="https://github.com/omacom/omarchy/pull/9345">#9345</a></li>
+  <li>
+    <p>Update &gt; Hardware &gt; Trackpadがほとんどのタッチパッドを見逃し、キーボードをリセットする問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17280">#17280</a></p>
+
+    <p>これにより、すべてのタッチパッドでスタックしたボタンを解放し、キーボードとタッチスクリーンを一緒にではなくタッチパッドだけをリセットするようになりました。</p>
+  </li>
+  <li>ウェブカメラメニューがカメラをオンにせずにカメラを確認するように、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15910">#15910</a></li>
+  <li>Omasnapのスクロールキャプチャが黒いフレームしか取得しない問題を修正、<a href="https://github.com/falkoro">@falkoro</a>による<a href="https://github.com/omacom/omarchy/pull/16715">#16715</a></li>
+  <li>スクリーンショットピッカーが自分のキーのバインドを解除する問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15126">#15126</a></li>
+  <li>録画停止時に空の保存済み録画を通知する問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15073">#15073</a></li>
+  <li>上書き保存された画像に対してイメージピッカーが古いサムネイルを表示する問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15079">#15079</a></li>
+  <li>オフにしたときにナイトライトが完全にリセットされない問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14489">#14489</a></li>
+  <li>メディアウィジェットがアイドル状態のプレイヤーに対して一時停止中のトラックを残す問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14585">#14585</a></li>
+  <li>輝度を報告しないモニターでの繰り返しディスプレイスキャンを修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14525">#14525</a></li>
+  <li>設定されたブラウザがアンインストールされたときにSuper + Shift + Returnが失敗する問題を修正、<a href="https://github.com/vitally">@vitally</a>による<a href="https://github.com/omacom/omarchy/pull/16422">#16422</a></li>
+  <li>プリインストールされたアプリを削除した後も電卓ショートカットが残る問題を修正、<a href="https://github.com/OldJobobo">@OldJobobo</a>による<a href="https://github.com/omacom/omarchy/pull/7716">#7716</a></li>
+  <li>Brave OriginプロファイルでのCopy URLショートカットを修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/10308">#10308</a></li>
+  <li>Bitwarden拡張機能のポップアウトが間違ったサイズで開く問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/14514">#14514</a></li>
+  <li>HiDPIモニターでBattle.netが100%スケールで開く問題を修正、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/17418">#17418</a></li>
+  <li>Inkscapeのファイル選択ダイアログがタイル状に開く問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15792">#15792</a></li>
+  <li>miseがGoを管理しているときにアップデート中にGo AURパッケージがビルドに失敗する問題を修正、<a href="https://github.com/shbernal">@shbernal</a>による<a href="https://github.com/omacom/omarchy/pull/16388">#16388</a></li>
+  <li>dockerグループにいないときにONCEのインストールが失敗する問題を修正、<a href="https://github.com/kevinmcconnell">@kevinmcconnell</a>による<a href="https://github.com/omacom/omarchy/pull/8224">#8224</a></li>
+  <li>エージェントパネルのクリックでトレイが開く問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/15501">#15501</a></li>
+  <li>エージェントアカウントの設定が宙ぶらりんの共有シンボリックリンクでつまずく問題を修正、<a href="https://github.com/manuaudio">@manuaudio</a>による<a href="https://github.com/omacom/omarchy/pull/14103">#14103</a></li>
+  <li><code>--reauth</code>がアカウントがないときに新しいエージェントアカウントを追加する問題を修正、<a href="https://github.com/manuaudio">@manuaudio</a>による<a href="https://github.com/omacom/omarchy/pull/14100">#14100</a></li>
+  <li>エージェントアカウントの名前変更ヒントがそのプロバイダーを名指すように、<a href="https://github.com/manuaudio">@manuaudio</a>による<a href="https://github.com/omacom/omarchy/pull/14099">#14099</a></li>
+  <li>キー操作が失敗したときにキーリング更新が成功したと主張する問題を修正、<a href="https://github.com/Adolanium">@Adolanium</a>による<a href="https://github.com/omacom/omarchy/pull/7807">#7807</a></li>
+  <li>sudoで実行したときに工場出荷時リセットのプロンプトが空白になる問題を修正、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/16032">#16032</a></li>
+  <li>ログインごとに保留中の移行リマインダーが積み上がる問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16981">#16981</a></li>
+  <li>AboutのOS AgeがインストールではなくISOのビルドから数える問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16828">#16828</a></li>
+  <li>Dropboxが360日から364日前のファイルに対して“0y ago”と表示する問題を修正、<a href="https://github.com/manuaudio">@manuaudio</a>による<a href="https://github.com/omacom/omarchy/pull/14183">#14183</a></li>
+  <li>Dropboxのステータスチェックが保留中のログインリンクを期限切れにする問題を修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15135">#15135</a></li>
+  <li>Dropboxのトレイアイコンライブラリのインストールを修正、<a href="https://github.com/omarchybot">@omarchybot</a>による<a href="https://github.com/omacom/omarchy/pull/15076">#15076</a></li>
+  <li>Chromiumでオーバーレイスクロールバーを有効化、<a href="https://github.com/robzolkos">@robzolkos</a>による<a href="https://github.com/omacom/omarchy/pull/14456">#14456</a></li>
+  <li>Apple Silicon MacでTouch IDをオンにする前に尋ねる、<a href="https://github.com/scottjones">@scottjones</a>による<a href="https://github.com/omacom/omarchy/pull/16360">#16360</a></li>
+  <li>Apple Silicon MacでRCチャンネルを提供、<a href="https://github.com/maralcbr">@maralcbr</a>による<a href="https://github.com/omacom/omarchy/pull/16986">#16986</a></li>
+  <li>Apple Silicon Macでstableチャンネルを提供、<a href="https://github.com/maralcbr">@maralcbr</a>による<a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
+  <li>Apple Siliconで新しいターミナルからOmarchyのエイリアス、関数、環境が欠ける問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
+  <li>インストールされたNVIDIAアプリケーションを設定、<a href="https://github.com/jdvmi00">@jdvmi00</a>による<a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
+  <li>NVIDIA N1xを搭載したLenovo Pro 9でインストールが失敗する問題を修正、<a href="https://github.com/breymander">@breymander</a>による<a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>以前のオーディオプロファイルを実行したN1xノートPCで内蔵スピーカーとマイクが欠ける問題を修正、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>DGX SparkのようなNVIDIA GB10マシンでデスクトップが重い問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
+  <li>
+    <p>NVIDIAでレジューム後にロック画面に入力する問題を修正、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
+
+    <p>ロックは、パネルが光ったちょうどそのときに再び暗くなることもなくなりました。</p>
+  </li>
+  <li>LutrisとBattle.netが別のGPUの32ビットVulkanドライバーをインストールする問題を修正、<a href="https://github.com/zihaomu">@zihaomu</a>による<a href="https://github.com/omacom/omarchy/pull/16046">#16046</a></li>
+  <li>ARMですべてのアップデート後に再起動を求めるのを停止、<a href="https://github.com/birkskyum">@birkskyum</a>による<a href="https://github.com/omacom/omarchy/pull/14447">#14447</a></li>
+  <li>aarch64でstableとRCチャンネルを提供、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16065">#16065</a></li>
+  <li>ARMノートPCで電源プロファイルが動作するように、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/14737">#14737</a></li>
+  <li>4KページのARMマシンでDropboxを提供し、ARMでSpotifyをWebアプリとして提供、<a href="https://github.com/birkskyum">@birkskyum</a>による<a href="https://github.com/omacom/omarchy/pull/15757">#15757</a></li>
+  <li>ARMでGeForce NOW、Battle.net、Lutrisのインストールを隠す、<a href="https://github.com/birkskyum">@birkskyum</a>による<a href="https://github.com/omacom/omarchy/pull/15753">#15753</a></li>
+  <li>ARMでHermesアプリがインプレースで更新されない問題を修正、<a href="https://github.com/ryanrhughes">@ryanrhughes</a>による<a href="https://github.com/omacom/omarchy/pull/16124">#16124</a></li>
+  <li>SnapdragonノートPCのキーボードがディスクロック解除プロンプトで入力できない問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy/pull/16688">#16688</a></li>
+  <li>SnapdragonノートPCでログイン時にカメラが欠ける問題を修正、<a href="https://github.com/birkskyum">@birkskyum</a>による<a href="https://github.com/omacom/omarchy/pull/16856">#16856</a></li>
+  <li>Snapdragon X2ノートPCでディスクロック解除前に黒い画面になる問題を修正、<a href="https://github.com/jdvmi00">@jdvmi00</a>による<a href="https://github.com/omacom/omarchy/pull/16940">#16940</a></li>
+  <li>Intel Wildcat Lakeで動画をハードウェアでデコード、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/17150">#17150</a></li>
+  <li>Arrow Lake-HノートPCでライブISOがクラッシュする問題を修正、<a href="https://github.com/emirb">@emirb</a>による<a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a></li>
+  <li>HP EliteBook Ultra G1qの内蔵マイクを修正、<a href="https://github.com/bprendie">@bprendie</a>による<a href="https://github.com/omacom/omarchy/pull/15574">#15574</a></li>
+  <li>Motorcomm YT6801 Ethernetに上流のサポートを使用、<a href="https://github.com/AFOliveira">@AFOliveira</a>による<a href="https://github.com/omacom/omarchy/pull/9682">#9682</a></li>
+  <li>Elgato Cam Link 4Kを16:9の仮想カメラとして中継、<a href="https://github.com/dhh">@dhh</a>による<a href="https://github.com/omacom/omarchy/pull/10809">#10809</a></li>
+  <li>プラットフォームが名前を付ける指紋リーダーをサポート、<a href="https://github.com/scottjones">@scottjones</a>による<a href="https://github.com/omacom/omarchy/pull/14675">#14675</a></li>
+</ul>

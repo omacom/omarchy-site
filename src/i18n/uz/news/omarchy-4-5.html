@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (aka Quattro RS!) <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>dan keyingi birinchi katta funksiyalar relizi boʻlib, juda katta yangilanishdir: atigi oʻn ikki haftada 180 dan ortiq hissa qoʻshuvchidan 740 dan ortiq pull request birlashtirildi. Endi u plitka tartibidagi standart rejim yonida anʼanaviy ish stoli rejimini ham taklif qiladi. Uni M1/M2/M3/Neo MacBook larga oʻz tizim sifatida oʻrnatishingiz mumkin. Va u 50 tilda gapiradi. Va yana juda koʻp boshqa funksiyalar, tuzatishlar va yaxshilanishlar bor. Omarchyda allaqachon bormisiz? <em>Update &gt; Omarchy</em>ni ishga tushiring. Yangi mashinami? <a href="/#install">Bu yerdan oling</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Dokli suzuvchi ish maydonlari</h2>
+
+<p><code>Super + L</code> endi istalgan ish maydonini plitka, aylantirish va suzuvchi tartiblar oʻrtasida aylantiradi. Suzuvchi ish maydonida har bir oyna mavzuingiz ranglaridagi sarlavha panelini oladi, dok esa mahkamlangan ilovalaringiz, ishlayotgan barcha ilovalar va oʻrnatilgan har bir ilovaning panjarasini koʻrsatadi. Tartibini oʻzgartirish yoki mahkamlash uchun torting, koʻproq imkoniyatlar uchun oʻng tugmani bosing, <code>Super + M</code> esa oynani dokka kichraytiradi.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Bu macOS yoki Windowsdan kelayotgan va hali plitka tartibiga toʻliq oʻtishga tayyor boʻlmagan har bir kishi uchun ajoyib kirish yoʻlidir. Yoki shunchaki oynalar erkin yoyilishi mumkin boʻlgan bitta ish maydonini xohlaydigan har bir kishi uchun. Har bir ish maydoni boʻyicha aralashtirib moslang, panel esa har biri qaysi tartibni ishlatishini koʻrsatadi.</p>
+
+<h2 id="omarchy-on-apple-silicon">Apple Siliconda Omarchy</h2>
+
+<p>Bizning ajoyib <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> jamoamiz Mac uchun mahalliy oʻrnatuvchini taqdim etdi. macOSda <a href="https://github.com/omacom/omarchy-mac-installer/releases">ilovani yuklab oling</a>, u Omarchy ni M1, M2, M3 yoki Neo MacBook ingizda uning yoniga oʻrnatadi. USB fleshka ham, terminal afsunlari ham kerak emas. Homebrewni afzal koʻrasizmi? Bu bir qator:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac oʻrnatuvchisi" /></p>
+
+<p>Bu biz sentabrda qilishni maqsad qilgan ishimiz edi: Asahi boshlagan ishni yakunlash. Ikki oy oʻtgach, uni shunchaki yuklab olishingiz mumkin. Jamoaning barcha aʼzolarining ajoyib ishi.</p>
+
+<p>Va ular bu bilan toʻxtab qolishmayapti. M4, M5 va M6 ustida hozir ishlanmoqda, shuning uchun Omarchy har bir Apple Silicon Macda ishlaydigan vaqtgacha koʻp qolmagan boʻlsa kerak.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="M2 Max, M3 Air, Neo, M4 Pro va M5 Airda Omarchy" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">NVIDIA DGX Spark + N1X uchun ARM qoʻllab-quvvatlovi (va tez orada Snapdragon)</h2>
+
+<p>Omarchy 4.5 oʻzining birinchi ARM ISO sini taqdim etadi va u bilan NVIDIAning ARM mashinalari uchun dastlabki qoʻllab-quvvatlov keladi: DGX Spark ish stoli kompyuteri va N1X asosida qurilgan noutbuklar, masalan, <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> va <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Va tez orada Snapdragon ARM mashinalarining butun qatorini ham qoʻllab-quvvatlaymiz. Hali erta kunlar, shuning uchun bir nechta qoʻpol qirralarni kuting va buzilgan narsalar haqida <a href="https://github.com/omacom/omarchy/issues">GitHub</a>da xabar bering.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 til va 5 kiritish usuli</h2>
+
+<p>Omarchy endi 50 tilda gapiradi. <em>Setup &gt; Language</em> ostida bittasini tanlang (yoki <code>omarchy language &lt;code&gt;</code>ni ishga tushiring), menyu, ish stoli va Omarchy bildirishnomalari darhol almashadi. Tizim tili keyingi kirishingizda unga ergashadi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Tillarni almashtirish" /></p>
+
+<p>Lekin tilda gapirish ishning yarmi xolos. Uni yozishingiz ham kerak. Shuning uchun Omarchy endi yapon tili (Mozc), koreys tili (Hangul), soddalashtirilgan xitoy tili (Pinyin), Taiwan (Zhuyin) va Hong Kong (Cangjie) uchun toʻgʻri kiritish usullarini oʻrnatuvchidan yoki keyinroq <em>Setup &gt; Keyboard</em> ostida sozlaydi. Har biri oʻz belgi shakllari uchun toʻgʻri shriftlar bilan keladi, nomzodlar oynasi mavzuingizga ergashadi, <code>Super + I</code> esa kiritish tillaringiz oʻrtasida almashadi. Hangul, Zhuyin va Cangjie, agar lotincha Dvorak, Colemak yoki AZERTYda yozsangiz ham, tugmalarini standart oʻrinlarda saqlaydi, xuddi Windows va macOSdagidek. Va Shiftni oʻzini bosish kiritish usulidan lotin harflariga chiqadi va yana qaytadi, Sogou, Microsoft Pinyin va macOS ishlagandek.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Captive Wi-Fi portallariga kirish</h2>
+
+<p>Mehmonxona, aeroport va qahvaxona Wi-Fi nihoyat shunchaki ishlaydi. Omarchy endi tarmoq onlayn boʻlishingizdan oldin kirishingizni yoki uning shartlarini qabul qilishingizni xohlasa, buni payqaydi. Tarmoq belgisi sizni ogohlantiradi, tarmoq paneli esa sizni toʻgʻridan-toʻgʻri kirish sahifasiga olib boradigan katta Open Captive Portal tugmasini koʻrsatadi. Oʻtib boʻlganingizdan soʻng hamma narsa oʻz-oʻzidan normal holatga qaytadi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Tarmoq panelidan captive portalga kirish" width="380" /></p>
+
+<h2 id="five-new-default-apps">Beshta yangi standart ilova</h2>
+
+<p><strong>Hype</strong> bitta Markdown faylidan taqdimotlar yaratadi, manba yonida vizual slayd muharriri bor va PDF yoki PowerPointga eksport qiladi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> hujjat ishlari uchun Xournal++ oʻrnini bosadi: PDFni oching, saqlangan imzoingiz, matn va sanalarni joylashtiring va imzolangan nusxani saqlang.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> diskingizni nima toʻldirib turganining treemapini chizadi, turiga qarab ranglaydi, qayta yaratish xavfsiz boʻlgan keshlarni koʻrsatadi va ketishi kerak boʻlgan narsalarni belgilashingizga imkon beradi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> kamerangizni bitta tugma bilan yozib oladi, ish stolingizga mos mavzuda.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> sizga SSH orqali masofaviy ish stolini beradi. Boshqa Omarchy mashinasiga ulaning va uning toʻliq ish stolini oʻzingiznikidagi oynadan boshqaring, har bir mashina uchun bitta yorliq bilan. Va u SSHda harakatlangani uchun qoʻshimcha sozlaydigan yoki ochadigan narsa yoʻq. Boshqarilayotgan mashina panelda masofaviy sessiya indikatorini koʻrsatadi, shuning uchun kimdir unda boʻlganda har doim aniq boʻladi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Va <strong>Elsewhen</strong> bor, paneldagi soatning yonida yashaydigan dunyo soati. Qayerda ekanligingizni belgilash uchun globusdagi shaharni bosing, haqiqiy joylarni qidiring va har bir shaharda yashaydigan odamlarning nomini kiriting, shunda qoʻngʻiroq qilish uchun munosib vaqtmi yoki yoʻqligini har doim bilasiz. <code>t</code> bilan 12 va 24 soat oʻrtasida, <code>Alt + T</code> bilan °F va °C oʻrtasida almashing va uni istalgan vaqtda <code>Super + Ctrl + Alt + E</code> bilan chaqiring.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Yozib olish uchun Monologue va kesish uchun Omacut bilan yangi oʻrnatishlar endi OBS Studio va Kdenlive ni yetkazib bermaydi. Lazydocker ham yangi oʻrnatishlardan ketdi, lekin Docker va Docker Compose hali ham kiritilgan. Ulardan birortasi allaqachon bor mashinalar ularni saqlab qoladi.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Office da yashaydigan odamlar bilan ishlashingiz kerakmi? <em>Install &gt; Service &gt; Microsoft</em> endi Outlook, Word, Excel, PowerPoint, Teams va OneDrive ni veb-ilovalar sifatida sozlaydi. Har biri oʻz oynasi va ishga tushirgich yozuvini oladi, shuning uchun ular boshqa hamma narsa yonida oʻzini uyidagidek his qiladi. Ishda Omarchyga oʻtmaslik uchun endi bahona yoʻq!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Omarchyda Excel, Word, Teams va PowerPoint" /></p>
+
+<h2 id="superwhisper-for-dictation">Diktovka uchun Superwhisper</h2>
+
+<p>Superwhisper endi Omarchyning standart diktovka mexanizmi boʻlib, qutidan chiqqanda sozlangan. Gapirishni boshlash uchun <code>Alt + Space</code>ni bosing, toʻxtatish uchun yana bosing yoki push-to-talk uchun <code>Right Alt</code>ni ushlab turing. U nihoyatda tez va juda aniq.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Superwhisper bilan diktovka qilish" /></p>
+
+<p>U bulutda boshlanadi, shuning uchun oʻrnatgan oningizda ishlaydi va birinchi 10 000 ta soʻz bepul. Lekin toʻliq bepul boʻlgan va birorta soʻzni hech kimga yubormasdan butunlay mahalliy ishlaydigan yuklab olinadigan modelga oʻtishingiz mumkin. Va agar boshqa mahalliy modelni afzal koʻrsangiz, Voxtype muqobil sifatida hali ham taklif qilinadi.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Oʻn soniyadan kam vaqt ichida oʻrnatish</h2>
+
+<p>Omarchy ilgari taxminan 940 ta paketni birma-bir oʻrnatardi. Yangi F1 oʻrnatuvchisi buning oʻrniga oldindan qurilgan ildiz tasvirini ochadi va ustiga faqat shu mashinaning paketlarini qoʻshadi. Bu har qanday mashinada oʻrnatish vaqtini taxminan yarmiga qisqartiradi.</p>
+
+<p>Va tez apparatda bu gʻoyat ajoyib. AMDdan <a href="https://x.com/AnushElangovan">Anush Elangovan</a> oʻz AMD noutbukida toʻliq Omarchy oʻrnatish bilan <strong>7 soniya</strong>da jahon rekordini oʻrnatdi. <a href="https://x.com/dhh/status/2117222836620202375">Yetti soniya!</a> Besh daqiqa shuhratparast maqsaddek tuyulgan vaqtlarni eslayman.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy 0m 7s da oʻrnatildi" /></p>
+
+<h2 id="faster-everywhere-else">Boshqa hamma joyda tezroq</h2>
+
+<p>Bu faqat oʻrnatuvchi emas. Ishga tushish endi binfmt roʻyxatdan oʻtishida toʻxtab qolmaydi. Mavzu tanlagichi chorak soniyadan keyin emas, darhol ochiladi. Menyular va panellar Hyprland yorliqlaridan toʻgʻridan-toʻgʻri ochiladi, avval jarayonni boshlash uchun ketadigan 60 msni oʻtkazib yuboradi. Omarchy menyusining eng sekin tekshiruvlari 200 msdan 16 msgacha tushdi, yangi terminal oʻz soʻrovini 30 ms tezroq koʻrsatadi va butun ish stoli endi ularni soʻrov qilish oʻrniga oʻzgarishlarga reaksiya beradi. Hatto chiqish, qayta yuklash va oʻchirish ham ilovalaringiz yopilishi tugagan ondayoq sodir boʻladi.</p>
+
+<h2 id="agent-upgrades">Agent yangilanishlari</h2>
+
+<p>Omarchy — agentli operatsion tizim, 4.5 esa agentlar bilan ishlash uchun katta yangilanishlar toʻplamini olib keladi. Agentlar paneli endi 6 tadan oshib, 23 ta agent va provayderni kuzatadi, jumladan Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter va Ollama. Har bir limit qayta tiklanishigacha qolgan vaqt bilan oʻz oʻlchagichini oladi, shuning uchun qancha yoʻlingiz qolganini aniq koʻrishingiz mumkin. Va Grok endi Claude va Codex yonida toʻliq provayderdir.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Bir nechta Claude va Codex obunalari bilan agentlar paneli" width="380" /></p>
+
+<p>Va agentingiz har doim bitta tugma bosish masofasida. <code>Super + ~</code> xiralashgan ish stoli ustiga Quake uslubidagi konsolni tushiradi va uni birinchi marta ochganingizda standart agentingizni ishga tushiradi. Uni yashirish uchun yana bosing, sessiyangiz esa qoldirgan joyingizda boʻladi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Xiralashgan ish stoli ustida agentni ishga tushirayotgan Quake uslubidagi konsol" /></p>
+
+<p>Agar bir nechta obunani jonglyor qilsangiz, endi bir xil mashinada bir nechta Claude, Codex va Grok kirishlarini saqlashingiz va <code>omarchy agent account</code> yordamida yangi sessiyalar qaysi biri bilan boshlanishini tanlashingiz mumkin. Tarix, sozlamalar va koʻnikmalar ular oʻrtasida baham koʻriladi, shuning uchun <code>claude --continue</code> almashtirishdan keyin qoldirgan joyingizdan davom etadi. Limitga yaqinlashganda, Omarchy bir bosishda almashtirishni taklif qilishi yoki yangi sessiyalarni oʻz-oʻzidan eng koʻp zaxiraga ega hisobga oʻtkazishi mumkin. Va boshqa mashinani sozlaganingizda, <code>omarchy agent account copy</code> barcha kirishlaringizni SSH orqali olib keladi, shuning uchun hammasiga yana kirishingiz shart emas.</p>
+
+<p>Kimi va Ori, OpenRouterning agent harnessi, <em>Setup &gt; Defaults &gt; Agent</em> ostidagi tanlovlarga qoʻshiladi, Google ning Antigravitysi esa eskirgan Gemini CLI oʻrnini bosadi (<code>gemini</code> hali ham taxallus sifatida ishlaydi). Terminaldan koʻra oynani afzal koʻrasizmi? Claude va Amp ish stoli ilovalari endi <em>Install &gt; AI</em> ostida bir bosish masofasida.</p>
+
+<h2 id="notifications-rebuilt">Bildirishnomalar, qayta qurilgan</h2>
+
+<p>Bildirishnomalar endi yuboruvchi boʻyicha toʻplanadi, mavzuingizga ergashadi va bir xil takrorlarni yigʻadi. Harakat tugmalari, tasdiqlash kodlari va havolalar kartochkadan toʻgʻridan-toʻgʻri ishlaydi. <code>Super + Comma</code> eng yangisiga taʼsir qiladi (rad etish, ochish yoki tugmasini bosish), <code>Super + Ctrl + Comma</code> esa hammasini boshqarishingiz uchun klaviaturani sizga beradi. Paneldagi qoʻngʻiroq Bezovta qilmang rejimini yoqadi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Yangi bildirishnomalar" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Video fonlar va mavzu introlari</h2>
+
+<p>Fonlar endi videolar boʻlishi mumkin. Bittasini tashlang, ish stolingiz dumalab kelayotgan toʻlqinlar yoki xayolingizga kelgan boshqa narsa bilan jonlanadi, qulf ekrani esa undan harakatsiz kadrni koʻrsatadi. Va mavzular endi kirish qiladi: har biri kirganingizda yoki unga oʻtganingizda qisqa, jim intro oʻynashi mumkin. (Tinchlikni afzal koʻrasizmi? Introlarni <em>Appearance &gt; Animations</em> ostida oʻchiring.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse standart mavzularga qoʻshildi</h2>
+
+<p>Jade Horse — tumli yashillar, butun ish stolini varaq rasmidek koʻrsatadigan oʻyilgan nefrit fonlari bilan. U toʻplangan mavzular orasida Osaka Jade oʻrnini bosadi va unga Starship boshqa yangi standart mavzu sifatida qoʻshiladi. Agar Osaka Jadeda boʻlsangiz, nusxangizni saqlab qolasiz va u uni yangi oʻrnatmoqchi boʻlgan har bir kishi uchun <a href="https://github.com/omacom/omarchy-osaka-jade-theme">uchinchi tomon mavzusi</a> sifatida yashashda davom etadi.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse mavzusi" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff — yangi standart fon</h2>
+
+<p>Yangi oʻrnatishlar endi sizni Liftoff bilan kutib oladi, Tokyo Night uchun yangi standart fon boʻlgan ajoyib quyosh botishi uchishi. Uni <a href="https://github.com/tcballard">Tom Ballard</a> yaratgan, u uni birinchi marta oʻzining <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a>si uchun yaratgan. Rahmat, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Tom Ballard tomonidan Liftoff foni" /></p>
+
+<h2 id="boot-menu-now-quiet">Yuklash menyusi endi jim</h2>
+
+<p>Omarchy ilgari har bir ishga tushishda yuklash menyusini taxminan olti soniya koʻrsatardi, ehtimol oldingi suratga qaytishingiz kerak boʻlib qolar, deb. Lekin deyarli hech kim hech qachon bunday qilmagan. Shuning uchun endi Limine atigi bir soniya kutadi va jim yuklanadi, koʻpincha menyuni umuman koʻrmaysiz.</p>
+
+<p>Boshqa yozuv yoki surat kerak boʻlganda, mashina ishga tushayotganda istalgan tugmani (pastga strelka ishlaydi) bosib turing va u menyuda toʻxtaydi. Va agar menyuni yaxshilikka uzoqroq ushlab turishni afzal koʻrsangiz, <code>/boot/limine.conf</code>da oʻz <code>timeout:</code>ingizni belgilang (masalan, <code>timeout: 5</code>). Yangilanishlar siz belgilagan timeoutni yolgʻiz qoldiradi.</p>
+
+<h2 id="changed-hotkeys">Oʻzgargan tezkor tugmalar</h2>
+
+<p>Baʼzi yorliqlar koʻchdi:</p>
+
+<ul>
+  <li>Kalkulyator: <code>Super + Ctrl + Q</code> endi <code>Super + Shift + Q</code> boʻldi.</li>
+  <li>Faollik: <code>Super + Ctrl + T</code> endi <code>Super + Shift + T</code> boʻldi, <code>Super + Ctrl + T</code> esa mavzularni ochadi.</li>
+  <li>Tarmoq: <code>Super + Ctrl + W</code> endi <code>Super + Ctrl + N</code> boʻldi, <code>Super + Ctrl + W</code> esa fonlarni ochadi.</li>
+  <li>Tungi yorugʻlik endi yorliqqa ega emas (u <code>Super + Ctrl + N</code> edi); u <code>Trigger &gt; Toggle</code>da.</li>
+  <li><code>Super + Alt + Space</code> Apps menyusi oʻrniga dokdan Appsni ochadi.</li>
+</ul>
+
+<p>Bildirishnoma yorliqlari oʻzgardi:</p>
+
+<ul>
+  <li><code>Super + Comma</code> eng yangi kartochkaga taʼsir qiladi (uni rad etadi, ochadi yoki uning bitta tugmasini bosadi), uni faqat rad etish oʻrniga.</li>
+  <li>Oxirgisini rad etish <code>Super + Alt + Comma</code>ga koʻchdi, u ilgari uni ochardi.</li>
+  <li>Jim qilish <code>Super + Ctrl + Comma</code>dan <code>Super + Ctrl + Alt + Comma</code>ga koʻchdi; <code>Super + Ctrl + Comma</code> endi sizga klaviatura boshqaruvini beradi.</li>
+</ul>
+
+<p>Bir nechta tugmalar boshqacha ishlaydi:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> va <code>Super</code> + aylantirish joriy monitorning ish maydonlarida qoladi, chunki har bir monitorning oʻz ish maydonlari bor.</li>
+  <li>Terminalda <code>Super + C</code> va <code>Super + V</code> <code>Ctrl + Insert</code> va <code>Shift + Insert</code> oʻrniga <code>Ctrl + Shift + C</code> va <code>Ctrl + Shift + V</code>ni yuboradi.</li>
+</ul>
+
+<p>Oʻzingiznikilar bilan toʻqnashishi mumkin boʻlgan yangi standartlar: <code>Super + Q</code> (oynani yopish, <code>Super + W</code> yonida), <code>Super + A</code> (hammasini tanlash), <code>Super + M</code> (dokka kichraytirish), <code>Super + ~</code> va <code>Super + Shift + ~</code> (Quake console), <code>Super + Alt + L</code> (oldingi tartib), <code>Super + Shift + Ctrl + Arrows</code> (oynani boshqa monitorga koʻchirish), <code>Super + Ctrl + Alt + C</code> (ekran rasmi), <code>Super + Ctrl + Alt + E</code> (dunyo soati), <code>Super + Ctrl + Alt + F</code> (toʻliq ekran ish stoli) va diktovka uchun push-to-talk sifatida <code>Right Alt</code>ni ushlab turish.</p>
+
+<h2 id="more-features">Koʻproq funksiyalar</h2>
+
+<ul>
+  <li>Har bir monitorga oʻz ish maydonlari berildi: <code>Super + 1-0</code> turgan monitoringiz ish maydonlariga boradi, <code>Super + Arrows</code> esa boshqa displeylarga va ulardan koʻchadi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15655">#15655</a>da</li>
+  <li>Ish stoli qanday koʻrinishi haqidagi hamma narsa Style oʻrnini bosuvchi yangi Appearance menyusiga toʻplandi: mavzu, fon, shrift, panel, oynalar, brending, dok, ish maydoni tartiblari, animatsiyalar va qulfni ochish ekrani — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15973">#15973</a>da</li>
+  <li><em>Appearance &gt; Window Transparency</em> ostida Opaque, Transparent yoki Glassy oynalarni tanlash, hamda Glassy panel foni qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14991">#14991</a>da</li>
+  <li><em>Appearance &gt; Window Corners</em> ostida mavzuga mos, oʻtkir yoki yumaloq oyna burchaklarini tanlash qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14990">#14990</a>da</li>
+  <li>Animatsiyasiz rejim qoʻshildi, VMlarda sukut boʻyicha yoqilgan — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13550">#13550</a>da</li>
+  <li>Ilovalar sukut boʻyicha shaffof boʻlmagan qilindi, terminallar shaffof saqlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14253">#14253</a>da</li>
+  <li>Slack Install &gt; Service ga qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14434">#14434</a>da</li>
+  <li>Alt + Space har bir backendda diktovkani almashtiradigan qilindi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17188">#17188</a>da</li>
+  <li>Ekran rasmi bildirishnomalariga Open va Edit tugmalari, ekran yozuvlari va yt-dlp yuklab olishlariga Open va Cut tugmalari qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16505">#16505</a>da</li>
+  <li>Standart yadroni almashtirish uchun Update &gt; Kernel menyusi qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15966">#15966</a>da</li>
+  <li>herdr mashinalariga mavzu sinxronizatsiyasi qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13430">#13430</a>da</li>
+  <li>Hyprland tugma bogʻlanishlarini almashtirish uchun o.rebind qoʻshildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10537">#10537</a>da</li>
+  <li>Git identifikatoringiz oʻrnatuvchida emas, birinchi kirishdan keyin soʻraladigan boʻldi, GitHubga kirish bilan — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16288">#16288</a>da</li>
+  <li>Oʻrnatish mediasi til, klaviatura va vaqt mintaqasini oldindan belgilashiga ruxsat berildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15522">#15522</a>da</li>
+  <li>Panel vidjetlari treyning tortmasida yashashiga ruxsat berildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15281">#15281</a>da</li>
+  <li>Panel vidjetini paneldan tortib chiqarib olib tashlashga ruxsat berildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6782">#6782</a>da</li>
+  <li>Paneldan ish maydonlari boʻylab aylantirishga ruxsat berildi — <a href="https://github.com/outfoxxed">@outfoxxed</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15256">#15256</a>da</li>
+  <li>Mavzu tanlagichidan qoʻshimcha mavzularni oʻchirishga ruxsat berildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14713">#14713</a>da</li>
+  <li>hey, basecamp va Cloudflare CLIlar dangasa oʻrnatiladigan vositalar sifatida qoʻshildi — <a href="https://github.com/monorkin">@monorkin</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7626">#7626</a>da</li>
+  <li>SSH Agent ixtiyoriy xizmat sifatida qoʻshildi — <a href="https://github.com/carletex">@carletex</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9399">#9399</a>da</li>
+  <li>Parolsiz sudo qancha davom etishini tanlashga ruxsat berildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14435">#14435</a>da</li>
+  <li>Bildirishnoma tostlariga hoverda yopish tugmasi qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6946">#6946</a>da</li>
+  <li>Dastur bildirishnomalarini uning buzilish tashxisidan jim qilishga ruxsat berildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8549">#8549</a>da</li>
+  <li>omarchy-notification-send harakat tugmalarini qoʻshishiga ruxsat berildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16466">#16466</a>da</li>
+  <li>Jonli soniyalar bilan soat formati qoʻshildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7586">#7586</a>da</li>
+  <li>Klaviatura yoritgichini Ctrl va yorqinlik tugmalari bilan sozlash qoʻshildi — <a href="https://github.com/ludagoo">@ludagoo</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16650">#16650</a>da</li>
+  <li>OEM Windows mahsulot kalitini firmware dan chop etish qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7480">#7480</a>da</li>
+  <li>Asl vi terminal muharriri tanlovi sifatida qoʻshildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10307">#10307</a>da</li>
+  <li>Etherealga Roadster Starlight foni qoʻshildi — <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15878">#15878</a>da</li>
+</ul>
+
+<h2 id="security">Xavfsizlik</h2>
+
+<ul>
+  <li>Windows VM paroli RDP mijozining argumentlaridan tashqarida saqlandi — <a href="https://github.com/dicemans">@dicemans</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7902">#7902</a>da</li>
+  <li>Ekran yozish holati hamma yozishi mumkin boʻlgan /tmpdan koʻchirildi — <a href="https://github.com/Chessing234">@Chessing234</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8374">#8374</a>da</li>
+  <li>Parolsiz sudo muddati tugashi suspend boʻylab kuchaytirildi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9457">#9457</a>da</li>
+  <li>Yangilanish inhibitori tozalash uni yaratgan jarayonga bogʻlandi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9467">#9467</a>da</li>
+  <li>OCaml tozalash avtorizatsiyasi izolyatsiya qilindi — <a href="https://github.com/ErikMelton">@ErikMelton</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10217">#10217</a>da</li>
+  <li>Zavod sozlamalariga qaytarish huquqi paketlangan buyruqqa mahkamlandi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13047">#13047</a>da</li>
+  <li>Qayta tiklashda chaqirayotgan foydalanuvchi uchun saqlangan barmoq izi shablonlari olib tashlandi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13049">#13049</a>da</li>
+  <li>Yoʻl boʻlgan hook va holat nomlari rad etildi — <a href="https://github.com/Adolanium">@Adolanium</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8170">#8170</a>da</li>
+  <li>Barmoq izi va FIDO2 sozlash yozgan polkit stekida system-authga boʻysunish taʼminlandi — <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9873">#9873</a>da</li>
+  <li>Barmoq izlari olib tashlanganda oʻqigichning oʻz xotirasidan ham olib tashlandi — <a href="https://github.com/scottjones">@scottjones</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16403">#16403</a>da</li>
+  <li>Hech qanday kalit qoʻshilmasa, SSH sozlash sshd ni parol bilan kirishlar yoqilgan holda ishlashda qoldirishining oldi olindi — <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14667">#14667</a>da</li>
+  <li>Voxtype yangilanishi paytida boshqa mahalliy foydalanuvchi oʻz dasturini almashtirib qoʻyishining oldi olindi — <a href="https://github.com/Vladkarok">@Vladkarok</a> tomonidan <a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a>da</li>
+  <li>Zavod sozlamalariga qaytarish gum sozlamalaringizni sudo orqali qanday oʻtkazishi kuchaytirildi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13316">#13316</a>da</li>
+</ul>
+
+<h2 id="fixes">Tuzatishlar</h2>
+
+<ul>
+  <li>Monitor uzilganda, oʻchirilganda yoki qopqoq yopilib oʻchirilganda Hyprland buzilishi tuzatildi — <a href="https://github.com/falkoro">@falkoro</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16750">#16750</a>da</li>
+  <li>Yadro tasvirini root= parametrisiz qoldirishi mumkin boʻlgan yangilanishlar tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6951">#6951</a>da</li>
+  <li>Zavod sozlamalariga qaytarish boshqa tizimlarning yuklash yozuvlarini oʻchirishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14949">#14949</a>da</li>
+  <li>Boshqa Omarchy yoniga oʻrnatish oʻsha oʻrnatishning yuklash yozuvini olib tashlashi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a>da</li>
+  <li>Mavjud boʻlimni yangisi uchun olishi mumkin boʻlgan boʻsh joyga oʻrnatishlar tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a>da</li>
+  <li>Uzilgan disk parolini oʻzgartirishni davom ettirish notoʻgʻri kalitni olib tashlashi tuzatildi — <a href="https://github.com/scottjones">@scottjones</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14874">#14874</a>da</li>
+  <li>Sudo paroli Omarchy yangilanishi uchun bir marta soʻraladigan boʻldi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13323">#13323</a>da</li>
+  <li>Sudo paroli har bir buyruqda yana emas, oʻn daqiqa uchun bir marta soʻraladigan boʻldi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17000">#17000</a>da</li>
+  <li>AUR yangilanishlari va yuklash tekshiruvi yangilanishning yagona sudo soʻrovi bilan qoplandi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16568">#16568</a>da</li>
+  <li>Paket yangilanishlari tranzaksiya oʻrtasida chiqib ketishdan xavfsiz saqlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/11651">#11651</a>da</li>
+  <li>Chiqish, qayta yuklash va oʻchirish ilovalar yopilishi tugashi bilanoq sodir boʻladigan boʻldi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15231">#15231</a>da</li>
+  <li>Ekran rasmlari uchun Tensaku Omasnap bilan almashtirildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9446">#9446</a>da</li>
+  <li>Panellar paneldan oʻsib chiqadigan va ular oʻrtasida shakl oʻzgartiradigan boʻldi, tugmalar va panel belgilarida bosish javobi bilan — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16470">#16470</a>da</li>
+  <li>Bildirishnomalar panel ostidan sirgʻalib kiradigan va kelgan yoʻli bilan qaytib chiqadigan boʻldi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16469">#16469</a>da</li>
+  <li>Ulanish Omarchyning oʻz endpointiga nisbatan tekshiriladigan boʻldi va captive portallarga kirish tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16186">#16186</a>da</li>
+  <li>edge dan stable yoki RCga oʻtish mashinani eski qurilmada qoldirishi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15903">#15903</a>da</li>
+  <li>4.5ga yangilanish qobiq javob berishi sekin boʻlganda toʻxtashi tuzatildi — <a href="https://github.com/AnPod">@AnPod</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13468">#13468</a>da</li>
+  <li>Ish stoli sessiyasidan tashqarida boshlangan yangilanishlar jimgina muvaffaqiyatsiz boʻlishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17420">#17420</a>da</li>
+  <li>mise vositasi yuklab olinishi muvaffaqiyatsiz boʻlishi tizim yangilanishining qolganini toʻxtatishi tuzatildi — <a href="https://github.com/sanjyay">@sanjyay</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16318">#16318</a>da</li>
+  <li>omarchy-nvim oʻrnatilmaganda yangilanishlar muvaffaqiyatsiz boʻlishi tuzatildi — <a href="https://github.com/imzihuailin">@imzihuailin</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15141">#15141</a>da</li>
+  <li>Ikki yuklashli oʻrnatishlar EFI boʻlimini ulay olmasligi tuzatildi — <a href="https://github.com/Damian626">@Damian626</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a>da</li>
+  <li>Firmware yangi yuklash yozuvini qabul qilmasa, oʻrnatishlar toʻxtashi tuzatildi — <a href="https://github.com/ryanio">@ryanio</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a>da</li>
+  <li>Eski RAID aʼzosi yoki hajm guruhi boʻlgan disklarda oʻrnatishlar toʻxtashi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a>da</li>
+  <li>Oʻrnatuvchi har bir USB qurilma va yuklash ishini kutmasdan tezroq boshlanadigan boʻldi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a>da</li>
+  <li>Yangi oʻrnatishlarda 4096 baytli sektorlar bilan disk shifrlash tezlashtirildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a>da</li>
+  <li>Ichki disklar birinchi roʻyxatga olinadigan va oʻrnatish ekranlari xavfsiz tanlovda ochiladigan boʻldi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a>da</li>
+  <li>Oʻrnatuvchida Full disk install birinchi roʻyxatga olindi va disk ekranlarida Esc bilan orqaga qaytish qoʻshildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>da</li>
+  <li>Bitta monitorni masshtablash har bir boshqa monitorning masshtabini oʻzgartirishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16923">#16923</a>da</li>
+  <li>Monitorlar turli masshtablarni ishlatganda XWayland ilovalari juda katta chiqishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16950">#16950</a>da</li>
+  <li>Oyna toʻliq ekranga oʻtganda HDR displeylar xira HDR rasmga oʻtishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17157">#17157</a>da</li>
+  <li>Kasrli masshtablangan displeylarda xira menyular va tanlagichlar tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13419">#13419</a>da</li>
+  <li>Tashqi displeyni uzgandan keyin noutbuk displeyi oʻchiq qolishi tuzatildi — <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16310">#16310</a>da</li>
+  <li>Displeyni qayta yoqish uning oʻrni, masshtabi va rejimini qayta tiklashi tuzatildi — <a href="https://github.com/zihaomu">@zihaomu</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16147">#16147</a>da</li>
+  <li>Monitor uzilgandan keyin menyular va tanlagichlar qayta ochilmasligi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14458">#14458</a>da</li>
+  <li>Monitor uzilgandan keyin har bir monitor ish maydonlari koʻchishi tuzatildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15867">#15867</a>da</li>
+  <li>Audio panel ochiq boʻlganda audio qurilma uzilsa, qobiq buzilishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7783">#7783</a>da</li>
+  <li>Ekran saqlagichidan keyin toʻliq ekran oynalar toʻliq ekranni yoʻqotishi tuzatildi — <a href="https://github.com/MGross21">@MGross21</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/3284">#3284</a>da</li>
+  <li>Hyprland qayta yuklangandan keyin ishga tushishda kursor yoʻqolishi tuzatildi — <a href="https://github.com/spencerbull">@spencerbull</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14935">#14935</a>da</li>
+  <li>XWayland ilovalari ustida kursor koʻrinmas boʻlib qolishi tuzatildi — <a href="https://github.com/Sebo1411">@Sebo1411</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14580">#14580</a>da</li>
+  <li>Buferga nusxalashda osilib qolishlar tuzatildi — <a href="https://github.com/maxcroy1">@maxcroy1</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9488">#9488</a>da</li>
+  <li>XDG Secret portali orqali kalitlar toʻplamiga kirish tuzatildi — <a href="https://github.com/pkwagner">@pkwagner</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9594">#9594</a>da</li>
+  <li>Barmoq izini roʻyxatga olish va qulf ekranini tiklash tuzatildi — <a href="https://github.com/GeertJohan">@GeertJohan</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7158">#7158</a>da</li>
+  <li>Barmoq izini roʻyxatga olish bosqichma-bosqich yoʻnaltiriladigan boʻldi — <a href="https://github.com/scottjones">@scottjones</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15512">#15512</a>da</li>
+  <li>Qulf ekrani parol maydonida tugma avtomatik takrorlanishi tuzatildi — <a href="https://github.com/berndb">@berndb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7806">#7806</a>da</li>
+  <li>Uygʻonganda qulf ekrani foni parol maydonidan keyin yuklanishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13431">#13431</a>da</li>
+  <li>Sessiya ketgan displeyni nomlaganda ekran qulfi vaqti tugashlari tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15226">#15226</a>da</li>
+  <li>Joriy oyna katalogida terminal ochish tezlashtirildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13423">#13423</a>da</li>
+  <li>VS Code oilasi muharrirlari mavzu oʻzgarishlariga jonli ergashadigan boʻldi — <a href="https://github.com/Macho0x">@Macho0x</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10134">#10134</a>da</li>
+  <li>Ishlayotgan Hunk sessiyalari mavzu oʻzgarganda qayta mavzulanadigan boʻldi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13518">#13518</a>da</li>
+  <li>Har bir mavzu uchun tanlangan fon eslab qolindi — <a href="https://github.com/OldJobobo">@OldJobobo</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7718">#7718</a>da</li>
+  <li>Rasm tanlagich katta toʻplamlar va HiDPI bilan tez va aniq saqlandi — <a href="https://github.com/keylimesoda">@keylimesoda</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14117">#14117</a>da</li>
+  <li>Shaffof panel fonni tanlashga sarflaydigan CPU va xotira qisqartirildi — <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8307">#8307</a>da</li>
+  <li>Minglab mashinali tailnetlarda Tailscale paneli tezlashtirildi — <a href="https://github.com/iskakaushik">@iskakaushik</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7623">#7623</a>da</li>
+  <li>Grok agentlar panelida Claude va Codex darajasiga yetkazildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13992">#13992</a>da</li>
+  <li>Agent hisobi tanlovi CLI quyi jarayonlariga qoʻllandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14233">#14233</a>da</li>
+  <li>Codex individual sarf limitlari va ularning qayta tiklanish vaqtlari koʻrsatildi — <a href="https://github.com/Stegi56">@Stegi56</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15722">#15722</a>da</li>
+  <li>Claude tanlanganda brauzer integratsiyasi sozlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/11934">#11934</a>da</li>
+  <li>Agentlar ishga tushgandan keyin oʻrnatilgan mise vositalarini topmasligi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16593">#16593</a>da</li>
+  <li>SSH orqali boshlangan herdr panellarida agentlarga ekran rasmlarini joylashtirish tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16572">#16572</a>da</li>
+  <li>Agentlar paneli siqilgan Codex sessiyalarini oʻtkazib yuborishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16385">#16385</a>da</li>
+  <li>Caps Lock normal holatga qaytarildi va Shift + Caps Lock tuzish tugmasi qilindi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14939">#14939</a>da</li>
+  <li>Tizim klaviatura tartibi kirish ekraniga qoʻllandi — <a href="https://github.com/g-desoutter">@g-desoutter</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6896">#6896</a>da</li>
+  <li>Lotin boʻlmagan klaviatura tartibida tartib almashtirish har ikkinchi bosishni oʻtkazib yuborishi tuzatildi — <a href="https://github.com/manuaudio">@manuaudio</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14076">#14076</a>da</li>
+  <li>mpvda apparat video dekodlash yoqildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15172">#15172</a>da</li>
+  <li>TCP tirbandlik boshqaruvi BBRga oʻtkazildi va haqiqiy disklarda kyber I/O rejalashtiruvchisi ishlatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/11658">#11658</a>da</li>
+  <li>T3 Code oʻzini yangilaydigan AppImage sifatida oʻrnatildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15907">#15907</a>da</li>
+  <li>PHP va Laravel oʻrnatish yaxshilandi — <a href="https://github.com/nunomaduro">@nunomaduro</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/12141">#12141</a>da</li>
+  <li>Node dangasa oʻrnatildi va mise konfiguratsiyangiz yolgʻiz qoldirildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15876">#15876</a>da</li>
+  <li>Standartlarni tanlashda yetishmayotgan ilovalar oʻrnatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6950">#6950</a>da</li>
+  <li>Oʻrnatilgan dasturlar Install menyularida yashirish oʻrniga xiralashtirildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6955">#6955</a>da</li>
+  <li>Brave Origin uchun parol menejeri va boshqa mahalliy xabar almashish hostlari roʻyxatga olindi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10292">#10292</a>da</li>
+  <li>Brave Origin veb-bildirishnomalari sayt boʻyicha guruhlandi va bosilganda toʻgʻri yorliq ochildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16296">#16296</a>da</li>
+  <li>Yangilanishlar paytida yetim paketlarni olib tashlash avtomatik tasdiqlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14428">#14428</a>da</li>
+  <li>Omarchy kalitlar toʻplami har bir yangilanishdan oldin yangilandi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17311">#17311</a>da</li>
+  <li>Kanallarni almashtirgandan keyin qayta yuklash taklif qilindi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17251">#17251</a>da</li>
+  <li>Birinchi ishga tushirish yangilanishi faqat yangilaydigan narsa boʻlganda taklif qilindi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16211">#16211</a>da</li>
+  <li>Ob-havo joylashuvi va oʻrnatuvchining vaqt mintaqasi Omarchyning oʻz geo xizmati bilan topildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16240">#16240</a>da</li>
+  <li>Soat Archning NTP hovuzidan emas, ntp.omarchy.orgdan belgilandi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16247">#16247</a>da</li>
+  <li>Tarmoq tezligi Omarchyning oʻz tezlik testi bilan oʻlchandi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16681">#16681</a>da</li>
+  <li>Birinchi yuklash paytida kuzatilgan belgi bilan jarayon ekrani koʻrsatildi — <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17156">#17156</a>da</li>
+  <li>Jonli ISO Omarchy yadrosida, T2 yadrosida esa faqat Maclarda yuklandi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a>da</li>
+  <li>Oflayn oʻrnatishlar mise versiya qidiruvlarini kutib toʻxtashi toʻxtatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a>da</li>
+  <li>Oflayn oʻrnatishlar vaqt mintaqasini Africa/Abidjan qilib belgilashi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a>da</li>
+  <li>Oʻrnatuvchining vaqt mintaqasi tanlagichi yozib qidirishga ruxsat bermasligi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17040">#17040</a>da</li>
+  <li>Ventoy fleshkasidan yuklanganda jonli ISO ekran ortida osilib qolishi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>da</li>
+  <li>Oʻrnatuvchining sozlash shaklida nemis va fransuz konsol tugma xaritasi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14684">#14684</a>da</li>
+  <li>Oʻrnatuvchi va git sozlashda gumning inglizcha tugma maslahatlari yashirildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a>da</li>
+  <li>Oʻrnatish jarayoni ekranidan faqat ingliz tilidagi hazillar olib tashlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a>da</li>
+  <li>Diskni tayyorlayotganda oʻrnatuvchi chiqishi ekranda toʻldirishsiz tushishi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a>da</li>
+  <li>Quattro yangilanishi standart brauzerni Chromiumga qayta tiklashi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15074">#15074</a>da</li>
+  <li>Quattro yangilanishi ASCII boʻlmagan belgili fon nomlarida toʻxtashi tuzatildi — <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15277">#15277</a>da</li>
+  <li>GRUB yoki systemd-boot bilan yuklanadigan mashinalarda yadro koʻchishi toʻxtashi tuzatildi — <a href="https://github.com/manuaudio">@manuaudio</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14188">#14188</a>da</li>
+  <li>Bittadan ortiq NVMe diski boʻlgan shifrlanmagan mashinalarda uyqu rejimi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16658">#16658</a>da</li>
+  <li>FIDO2 koʻchishi hal qilinishidan oldin bajarilgan deb belgilanishi tuzatildi — <a href="https://github.com/ErikMelton">@ErikMelton</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16421">#16421</a>da</li>
+  <li>Suzuvchi ish maydoni oʻz suzish qoidangiz qamrab oladigan birinchi oynani egallab olishi tuzatildi — <a href="https://github.com/zihaomu">@zihaomu</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16143">#16143</a>da</li>
+  <li>Super + L ish maydonini suzuvchiga va undan aylantirganda kompozitor toʻxtab qolishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16397">#16397</a>da</li>
+  <li>Alt + Shift + Tab har bir oyna boʻylab orqaga aylanmasligi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8576">#8576</a>da</li>
+  <li>Chiqarilgan oynalar boshqa monitorga koʻchirilganda markazlashmasligi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14549">#14549</a>da</li>
+  <li>Terminal boʻlmagan oyna fokusda boʻlganda yangi terminallar uy papkangizdan tashqarida ochilishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15007">#15007</a>da</li>
+  <li>1Password va Bitwarden oynalari suzmasligi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/11704">#11704</a>da</li>
+  <li>Oʻrnatuvchi terminali chiqqanda 1Password yopilishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/12402">#12402</a>da</li>
+  <li>DaVinci Resolve dialoglari koʻrsatkich fokusini oʻgʻirlashi tuzatildi — <a href="https://github.com/AksharP5">@AksharP5</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6919">#6919</a>da</li>
+  <li>Ish stoli Windows VM displeylari orqali koʻrinishi tuzatildi — <a href="https://github.com/jmwall">@jmwall</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8162">#8162</a>da</li>
+  <li>Quattro koʻchishidan keyin $$ ni oʻz ichiga olgan eski Windows VM parollari tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13432">#13432</a>da</li>
+  <li>Hyprlandning xayriya qalqib chiquvchi oynasi yangilanishlardan keyin koʻrinishi toʻxtatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17153">#17153</a>da</li>
+  <li>Panel vidjetlarini tortish va tartibga solish yaxshilandi — <a href="https://github.com/outfoxxed">@outfoxxed</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15517">#15517</a>da</li>
+  <li>Panel belgisi oʻlchami va tekislanishi normallashtirildi — <a href="https://github.com/bjarneo">@bjarneo</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15065">#15065</a>da</li>
+  <li>Yashirin panel indikatorlari faqat soatning chap tomonida hover qilganda koʻrsatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16293">#16293</a>da</li>
+  <li>Trey belgilari panelning boshqa belgilari bilan tekislandi — <a href="https://github.com/ayoubdya">@ayoubdya</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16089">#16089</a>da</li>
+  <li>Bittasi allaqachon turganda keyingi panel maslahati darhol koʻrsatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16488">#16488</a>da</li>
+  <li>Soat va ob-havo panellari vidjetlari ostida ochildi — <a href="https://github.com/scottjones">@scottjones</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8942">#8942</a>da</li>
+  <li>DNS provayderini tanlagandan keyin tarmoq paneli ochiq saqlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16485">#16485</a>da</li>
+  <li>Yopilayotgan qalqib chiquvchi oyna panel vidjetlarini javobsiz qoldirishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15111">#15111</a>da</li>
+  <li>Yashirin panel toʻliq ekran oynalar tepasida bosishlarni ushlashi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16991">#16991</a>da</li>
+  <li>Qorongʻu trey belgilari panelda yoʻqolishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14661">#14661</a>da</li>
+  <li>Panel belgilari notekis yoki markazdan tashqarida oʻtirishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17003">#17003</a>da</li>
+  <li>Panel maslahatlari birinchi kadrini notoʻgʻri oʻlchamda chizishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16243">#16243</a>da</li>
+  <li>Bildirishnomalar tarixi har bir kartochkani hozirgina deb koʻrsatishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16277">#16277</a>da</li>
+  <li>Birinchi kirish bildirishnomalari bitta toʻplamga yigʻilishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16515">#16515</a>da</li>
+  <li>Bildirishnoma bosishlari koʻp soʻzli nomli ilovalarni fokuslamasligi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16380">#16380</a>da</li>
+  <li>Taildrop bildirishnomalari boʻsh matn koʻrsatishi va oldindan koʻrishlar yetishmasligi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16301">#16301</a>da</li>
+  <li>Batareya bildirishnomasi toʻliq batareyada boʻsh vaqt va 0W koʻrsatishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16272">#16272</a>da</li>
+  <li>Past batareya ogohlantirishi ulagandan keyin qolishi va qayta yuklashlardan keyin qaytishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16562">#16562</a>da</li>
+  <li>Baʼzi noutbuklarda batareya sarfi 0W deb oʻqilishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17265">#17265</a>da</li>
+  <li>ACdagi toʻliq batareya zaryadsizlanayotgandek koʻrinishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16278">#16278</a>da</li>
+  <li>Yadro uyquga ketmasa, Hibernate koʻrinishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7779">#7779</a>da</li>
+  <li>Qayta boshlashdan keyin gvfs ulanishlari yoʻqolishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14496">#14496</a>da</li>
+  <li>Qulf ikki marta boʻshagandan keyin klaviatura yoritgichi oʻchiq qolishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15908">#15908</a>da</li>
+  <li>Qulf displeylar oʻchiq boʻlganda barmoq izi oʻqigichi uygʻonishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15294">#15294</a>da</li>
+  <li>Displey kech paydo boʻlganda yuklash paroli soʻrovi markazdan tashqarida boʻlishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/11641">#11641</a>da</li>
+  <li>Ekran saqlagichining chiqish tugmasi burchakda yonib koʻrinishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16596">#16596</a>da</li>
+  <li>OWE oʻtish rejimi tarmoqlarida Wi-Fi belgisi miltillashi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14133">#14133</a>da</li>
+  <li>Mavzu oʻrnatgandan keyin terminalda OWE xatosi chop etilishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16872">#16872</a>da</li>
+  <li>Harakatsiz fondan video fonga oʻtganda miltillash tuzatildi — <a href="https://github.com/bjarneo">@bjarneo</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17082">#17082</a>da</li>
+  <li>Hackerman kattalashtirilgan geometrik fonga yangilandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16892">#16892</a>da</li>
+  <li>Davriy rang havolalari boʻlgan mavzular mavzu almashtirishni osib qoʻyishi tuzatildi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13046">#13046</a>da</li>
+  <li>Catppuccin mavzusi bilan Neovim ishga tushmasligi tuzatildi — <a href="https://github.com/anandude">@anandude</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/12864">#12864</a>da</li>
+  <li>OpenCode 2 Omarchyniki oʻrniga oʻz standart mavzusida boshlanishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17293">#17293</a>da</li>
+  <li>Yaratilgan VS Code mavzusida past kontrastli ichki kod tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15818">#15818</a>da</li>
+  <li>T3 Code oʻrnatishlari joriy mavzuni moslashda toʻxtashi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16962">#16962</a>da</li>
+  <li>Shrift oilasini oʻzgartirganda terminal shrifti oʻlchami qayta tiklanishi tuzatildi — <a href="https://github.com/sbalbalosa">@sbalbalosa</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6958">#6958</a>da</li>
+  <li>Shriftlarni oʻzgartirish terminalning jarayon ID sini chop etishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15820">#15820</a>da</li>
+  <li>Tillarni almashtirish har bir tilni qayta qurishi va deyarli toʻliq diskda ularni yoʻqotishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16414">#16414</a>da</li>
+  <li>Tarjimalar yuklanishidan oldin qobiq xom tarjima kalitlarini koʻrsatishi tuzatildi — <a href="https://github.com/zihaomu">@zihaomu</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16059">#16059</a>da</li>
+  <li>Omarchy skriptlarida tarjima qilingan matn tezlashtirildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16584">#16584</a>da</li>
+  <li>686 ta satr uchun tarjimalar yangilandi, ulardan 392 tasi qoʻllanmada — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a>da</li>
+  <li>Inglizcha boʻlmagan tillarda ovoz va chiqish boshqaruvi tuzatildi — <a href="https://github.com/Sebo1411">@Sebo1411</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14855">#14855</a>da</li>
+  <li>Inglizcha boʻlmagan tillarda CPU ishlatilishi oʻqishlari tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15109">#15109</a>da</li>
+  <li>fcitx5 oʻrnatilmaganda fcitx5 xizmati abadiy qayta boshlanishi tuzatildi — <a href="https://github.com/therk">@therk</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/11694">#11694</a>da</li>
+  <li>Klaviatura tartibi vidjeti hech kim yozmaydigan qurilmalarni almashtirishi tuzatildi — <a href="https://github.com/bjarneo">@bjarneo</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10670">#10670</a>da</li>
+  <li>Klaviatura tartibi vidjeti vendor tezkor tugma qurilmalariga oʻtishi tuzatildi — <a href="https://github.com/yashranaway">@yashranaway</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9129">#9129</a>da</li>
+  <li>Tugma bogʻlanishlari menyusi Lua jarayonini 100% CPUda ishlashda qoldirishi tuzatildi — <a href="https://github.com/tobi">@tobi</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7564">#7564</a>da</li>
+  <li>Yozgi vaqt tugaganda soat jurnalni har millisekundda toʻldirishi tuzatildi — <a href="https://github.com/falkoro">@falkoro</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16684">#16684</a>da</li>
+  <li>Qobiq oʻqiy olmagan shell.json ni standartlar bilan almashtirishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14534">#14534</a>da</li>
+  <li>Fayli yangilanayotganda Omarchy menyusi qatorlarini yoʻqotishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16268">#16268</a>da</li>
+  <li>Plaginni qayta yoqish uning panel vidjetini qaytarib kelmasligi tuzatildi — <a href="https://github.com/berrimi">@berrimi</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/12540">#12540</a>da</li>
+  <li>Mahalliy plaginlar oʻz Python baytkodi boʻyicha halqada qayta yuklanishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15093">#15093</a>da</li>
+  <li>Plaginlardagi yashirin tugmalar toʻldirishiga yigʻilishi tuzatildi — <a href="https://github.com/dmkenney">@dmkenney</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15786">#15786</a>da</li>
+  <li>Ochiladigan roʻyxatlar oxirgi elementini kesib tashlashi tuzatildi — <a href="https://github.com/sprajs">@sprajs</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/13916">#13916</a>da</li>
+  <li>Ochiladigan roʻyxatlar ikkinchi bosishda yopilmasligi tuzatildi — <a href="https://github.com/felixzsh">@felixzsh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/6725">#6725</a>da</li>
+  <li>Slayder tugmalari trek oxiridan oldin toʻxtashi tuzatildi — <a href="https://github.com/erikrjohansson">@erikrjohansson</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9345">#9345</a>da</li>
+  <li>
+    <p>Update &gt; Hardware &gt; Trackpad koʻpchilik tachpadlarni oʻtkazib yuborishi va klaviaturani qayta tiklashi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17280">#17280</a>da</p>
+
+    <p>Endi u har bir tachpadda tiqilib qolgan tugmani boʻshatadi va klaviatura va sensor ekran bilan birga emas, faqat tachpadni qayta tiklaydi.</p>
+  </li>
+  <li>Veb-kamera menyusi kameralarni yoqmasdan tekshiradigan boʻldi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15910">#15910</a>da</li>
+  <li>Omasnapning aylantirish bilan olishi faqat qora kadrlarni olishi tuzatildi — <a href="https://github.com/falkoro">@falkoro</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16715">#16715</a>da</li>
+  <li>Ekran rasmi tanlagichi oʻz tugmalaringizni bogʻlanishdan chiqarishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15126">#15126</a>da</li>
+  <li>Yozuvni toʻxtatish boʻsh saqlangan yozuvni eʼlon qilishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15073">#15073</a>da</li>
+  <li>Rasm tanlagich ustiga saqlangan rasmlar uchun eski eskizlarni koʻrsatishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15079">#15079</a>da</li>
+  <li>Tungi yorugʻlik oʻchirilganda toʻliq qayta tiklanmasligi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14489">#14489</a>da</li>
+  <li>Media vidjeti pauza qilingan trekni boʻsh pleyer uchun qoldirishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14585">#14585</a>da</li>
+  <li>Yorqinlikni xabar bermaydigan monitorlarda takroriy displey skanerlashlari tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14525">#14525</a>da</li>
+  <li>Sozlangan brauzer oʻchirib tashlanganda Super + Shift + Return muvaffaqiyatsiz boʻlishi tuzatildi — <a href="https://github.com/vitally">@vitally</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16422">#16422</a>da</li>
+  <li>Oldindan oʻrnatilgan ilovalarni olib tashlagandan keyin kalkulyator yorliqlari qolishi tuzatildi — <a href="https://github.com/OldJobobo">@OldJobobo</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7716">#7716</a>da</li>
+  <li>Brave Origin profillarida Copy URL yorligʻi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10308">#10308</a>da</li>
+  <li>Bitwarden kengaytmasi qalqib chiquvchi oynasi notoʻgʻri oʻlchamda ochilishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14514">#14514</a>da</li>
+  <li>Battle.net HiDPI monitorlarda 100% masshtabda ochilishi tuzatildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17418">#17418</a>da</li>
+  <li>Inkscape fayl tanlagichlari plitka tartibida ochilishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15792">#15792</a>da</li>
+  <li>mise Go ni boshqarganda yangilanishlar paytida Go AUR paketlari qurilmasligi tuzatildi — <a href="https://github.com/shbernal">@shbernal</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16388">#16388</a>da</li>
+  <li>docker guruhida boʻlmasangiz, ONCE oʻrnatish tuzatildi — <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/8224">#8224</a>da</li>
+  <li>Agent paneli bosishlari treyni ochishi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15501">#15501</a>da</li>
+  <li>Agent hisobi sozlash osilib qolgan umumiy simvolik havolada qoqilishi tuzatildi — <a href="https://github.com/manuaudio">@manuaudio</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14103">#14103</a>da</li>
+  <li><code>--reauth</code> agent hisobi boʻlmasa, yangisini qoʻshishi tuzatildi — <a href="https://github.com/manuaudio">@manuaudio</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14100">#14100</a>da</li>
+  <li>Agent hisobi nomini oʻzgartirish maslahati uning provayderini nomlaydigan boʻldi — <a href="https://github.com/manuaudio">@manuaudio</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14099">#14099</a>da</li>
+  <li>Kalitlar toʻplami yangilanishlari kalit operatsiyalari muvaffaqiyatsiz boʻlganda muvaffaqiyat daʼvo qilishi tuzatildi — <a href="https://github.com/Adolanium">@Adolanium</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/7807">#7807</a>da</li>
+  <li>sudo ostida ishga tushirilganda boʻsh zavod sozlamalariga qaytarish soʻrovi tuzatildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16032">#16032</a>da</li>
+  <li>Kutilayotgan koʻchishlar eslatmasi har bir kirishda toʻplanib qolishi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16981">#16981</a>da</li>
+  <li>About dagi OS Age oʻrnatishdan emas, ISO qurilishidan sanashi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16828">#16828</a>da</li>
+  <li>Dropbox 360 dan 364 kungacha boʻlgan fayllar uchun “0y ago” koʻrsatishi tuzatildi — <a href="https://github.com/manuaudio">@manuaudio</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14183">#14183</a>da</li>
+  <li>Dropbox holat tekshiruvi kutilayotgan kirish havolasining muddatini tugatishi tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15135">#15135</a>da</li>
+  <li>Dropboxning trey belgisi kutubxonasini oʻrnatish tuzatildi — <a href="https://github.com/omarchybot">@omarchybot</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15076">#15076</a>da</li>
+  <li>Chromiumda ustki aylantirish panellari yoqildi — <a href="https://github.com/robzolkos">@robzolkos</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14456">#14456</a>da</li>
+  <li>Apple Silicon Maclarda Touch ID ni yoqishdan oldin soʻraldi — <a href="https://github.com/scottjones">@scottjones</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16360">#16360</a>da</li>
+  <li>Apple Silicon Maclarda RC kanali taklif qilindi — <a href="https://github.com/maralcbr">@maralcbr</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16986">#16986</a>da</li>
+  <li>Apple Silicon Maclarda stable kanali taklif qilindi — <a href="https://github.com/maralcbr">@maralcbr</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a>da</li>
+  <li>Apple Siliconda Omarchy taxalluslari, funksiyalari va muhiti yangi terminallardan yetishmasligi tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a>da</li>
+  <li>Oʻrnatilgan NVIDIA ilovalari sozlandi — <a href="https://github.com/jdvmi00">@jdvmi00</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a>da</li>
+  <li>NVIDIA N1x li Lenovo Pro 9 da oʻrnatishlar muvaffaqiyatsiz boʻlishi tuzatildi — <a href="https://github.com/breymander">@breymander</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a>da</li>
+  <li>Oldingi audio profillarni ishlatgan N1x noutbuklarida ichki dinamiklar va mikrofonlar yetishmasligi tuzatildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a>da</li>
+  <li>DGX Spark kabi NVIDIA GB10 mashinalarida sust ish stoli tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a>da</li>
+  <li>
+    <p>NVIDIAda qayta boshlashdan keyin qulf ekraniga yozish tuzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a>da</p>
+
+    <p>Qulf panel yonishi bilanoq yana qorayib qolmaydi.</p>
+  </li>
+  <li>Lutris va Battle.net boshqa GPUning 32 bitli Vulkan drayverini oʻrnatishi tuzatildi — <a href="https://github.com/zihaomu">@zihaomu</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16046">#16046</a>da</li>
+  <li>ARMda har bir yangilanishdan keyin qayta yuklash soʻrash toʻxtatildi — <a href="https://github.com/birkskyum">@birkskyum</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14447">#14447</a>da</li>
+  <li>aarch64da stable va RC kanallari taklif qilindi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16065">#16065</a>da</li>
+  <li>ARM noutbuklarida quvvat rejimlari ishlaydigan boʻldi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14737">#14737</a>da</li>
+  <li>4K sahifali ARM mashinalarida Dropbox va ARMda veb-ilova sifatida Spotify taklif qilindi — <a href="https://github.com/birkskyum">@birkskyum</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15757">#15757</a>da</li>
+  <li>ARMda GeForce NOW, Battle.net va Lutris oʻrnatishlari yashirildi — <a href="https://github.com/birkskyum">@birkskyum</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15753">#15753</a>da</li>
+  <li>ARMda Hermes ilovasi joyida yangilanmasligi tuzatildi — <a href="https://github.com/ryanrhughes">@ryanrhughes</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16124">#16124</a>da</li>
+  <li>Snapdragon noutbuk klaviaturalari disk qulfini ochish soʻrovida yozmasligi tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16688">#16688</a>da</li>
+  <li>Snapdragon noutbuklarida kirishda kameralar yetishmasligi tuzatildi — <a href="https://github.com/birkskyum">@birkskyum</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16856">#16856</a>da</li>
+  <li>Snapdragon X2 noutbuklarida disk qulfini ochishdan oldin qora ekran tuzatildi — <a href="https://github.com/jdvmi00">@jdvmi00</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/16940">#16940</a>da</li>
+  <li>Intel Wildcat Lakeda video apparatda dekodlandi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/17150">#17150</a>da</li>
+  <li>Arrow Lake-H noutbuklarida jonli ISO buzilishlari tuzatildi — <a href="https://github.com/emirb">@emirb</a> tomonidan <a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a>da</li>
+  <li>HP EliteBook Ultra G1q ichki mikrofoni tuzatildi — <a href="https://github.com/bprendie">@bprendie</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/15574">#15574</a>da</li>
+  <li>Motorcomm YT6801 Ethernet uchun yuqori oqim qoʻllab-quvvatlovi ishlatildi — <a href="https://github.com/AFOliveira">@AFOliveira</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/9682">#9682</a>da</li>
+  <li>Elgato Cam Link 4K 16:9 virtual kamera sifatida uzatildi — <a href="https://github.com/dhh">@dhh</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/10809">#10809</a>da</li>
+  <li>Platforma nomlaydigan barmoq izi oʻqigichlari qoʻllab-quvvatlandi — <a href="https://github.com/scottjones">@scottjones</a> tomonidan <a href="https://github.com/omacom/omarchy/pull/14675">#14675</a>da</li>
+</ul>

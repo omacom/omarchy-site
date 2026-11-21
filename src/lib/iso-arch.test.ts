@@ -58,8 +58,9 @@ test('a build links every listed ISO from iso.omarchy.org', () => {
   assert.deepEqual(isoLinks(isos), Object.entries(isos))
 })
 
-test('a build with its own ISO host links the x86_64 ISO from there alone', () => {
+test('a build with its own ISO host links every listed ISO from there', () => {
   assert.deepEqual(isoLinks(isos, 'https://iso.omarchy.cn'), [
     ['x86_64', { url: 'https://iso.omarchy.cn/omarchy-4.5.0.iso' }],
+    ['aarch64', { url: 'https://iso.omarchy.cn/omarchy-4.5.0-aarch64.iso' }],
   ])
 })

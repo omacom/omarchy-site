@@ -1,0 +1,449 @@
+<p>Omarchy 4.5 (jeb Quattro RS!) ir pirmais lielais funkciju laidiens kopš <a href="https://github.com/omacom/omarchy/releases/tag/v4.0.0">Quattro</a>, un tas ir pamatīgs: tikai divpadsmit nedēļās apvienoti vairāk nekā 740 pull request no vairāk nekā 180 līdzdalībniekiem. Tagad tas līdzās mozaīkas noklusējumam piedāvā arī tradicionālu darbvirsmas režīmu. To var uzstādīt dabiski M1/M2/M3/Neo MacBook datoros. Un tas runā 50 valodās. Un vēl milzums citu funkciju, labojumu un uzlabojumu. Jau lieto Omarchy? Palaid <em>Update &gt; Omarchy</em>. Jauna ierīce? <a href="/#install">Ņem to šeit</a>.</p>
+
+<h2 id="floating-workspaces-with-a-dock">Peldošas darbvietas ar doku</h2>
+
+<p><code>Super + L</code> tagad jebkuru darbvietu cikliski pārslēdz starp mozaīkas, ritināšanas un peldošo režīmu. Peldošā darbvietā katrs logs iegūst virsrakstjoslu tavas tēmas krāsās, un doks rāda piespraustās lietotnes, visu, kas darbojas, un visu uzstādīto lietotņu režģi. Velc, lai pārkārtotu vai piespraustu, ar labo klikšķi iegūsti vairāk, un <code>Super + M</code> minimizē logu dokā.</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-floating.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Floating workspace with the dock"></video>
+
+<p>Tas ir brīnišķīgs ievads ikvienam, kas nāk no macOS vai Windows un vēl nav gatavs pilnībā pāriet uz mozaīku. Vai ikvienam, kas vienkārši vēlas vienu darbvietu, kur logi var izplesties. Sajauc un kombinē pa darbvietām, un josla rāda, kādu izkārtojumu katra izmanto.</p>
+
+<h2 id="omarchy-on-apple-silicon">Omarchy Apple Silicon ierīcēs</h2>
+
+<p>Mūsu neticamā <a href="/news/2026/09/introducing-omarchy-m/">Omarchy M</a> komanda ir izlaidusi dabisko Mac instalētāju. <a href="https://github.com/omacom/omarchy-mac-installer/releases">Lejupielādē lietotni</a> macOS, un tā novietos Omarchy līdzās tai tavā M1, M2, M3 vai Neo MacBook datorā. Bez USB atmiņas, bez termināļa burvestībām. Dod priekšroku Homebrew? Tā ir viena rinda:</p>
+
+<pre><code>brew install omacom/mac/omarchy
+</code></pre>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-mac-installer.webp" alt="Omarchy Mac instalētājs" /></p>
+
+<p>Tas ir tas, ko apņēmāmies izdarīt septembrī: pabeigt to, ko sāka Asahi. Divus mēnešus vēlāk to var vienkārši lejupielādēt. Apbrīnojams visas komandas darbs.</p>
+
+<p>Un viņi ar to neapstājas. Pie M4, M5 un M6 pašlaik jau strādā, tāpēc, iespējams, drīz Omarchy darbosies katrā Apple Silicon Mac datorā.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy M2 Max, M3 Air, Neo, M4 Pro un M5 Air datoros" /></p>
+
+<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM atbalsts NVIDIA DGX Spark + N1X (un drīz Snapdragon)</h2>
+
+<p>Omarchy 4.5 izlaiž savu pirmo ARM ISO, un līdz ar to nāk sākotnējs atbalsts NVIDIA ARM ierīcēm: DGX Spark galddatoram un klēpjdatoriem, kas būvēti uz N1X, piemēram, <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> un <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. Un drīz būs atbalsts arī visai Snapdragon ARM ierīču līnijai. Vēl ir agrīnas dienas, tāpēc sagaidi dažas raupjas malas, un, lūdzu, ziņo par visu, kas salūst, <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+
+<h2 id="50-languages-and-5-input-methods">50 valodas un 5 ievades metodes</h2>
+
+<p>Omarchy tagad runā 50 valodās. Izvēlies vienu sadaļā <em>Setup &gt; Language</em> (vai palaid <code>omarchy language &lt;code&gt;</code>), un izvēlne, darbvirsma un Omarchy paziņojumi pārslēdzas nekavējoties. Sistēmas lokāle seko nākamajā pieteikšanās reizē.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-languages.webp" alt="Valodu pārslēgšana" /></p>
+
+<p>Runāt valodā gan ir tikai puse, jo tajā arī jāraksta. Tāpēc Omarchy tagad iestata pareizas ievades metodes japāņu (Mozc), korejiešu (Hangul), vienkāršotajai ķīniešu (Pinyin), Taivānas (Zhuyin) un Honkongas (Cangjie) valodai jau no instalētāja vai vēlāk sadaļā <em>Setup &gt; Keyboard</em>. Katrai ir pareizie fonti tās rakstu zīmju formām, kandidātu logs seko tavai tēmai, un <code>Super + I</code> pārslēdz starp tavām ievades valodām. Hangul, Zhuyin un Cangjie saglabā taustiņus standarta vietās, pat ja latīņu burtus raksti ar Dvorak, Colemak vai AZERTY, tieši kā Windows un macOS. Un, atsevišķi pieskaroties Shift, tiek iziets no ievades metodes uz latīņu burtiem un atpakaļ, tāpat kā darbojas Sogou, Microsoft Pinyin un macOS.</p>
+
+<h2 id="sign-in-to-captive-wi-fi-portals">Pieteikšanās piespiedu Wi-Fi portālos</h2>
+
+<p>Viesnīcu, lidostu un kafejnīcu Wi-Fi beidzot vienkārši darbojas. Omarchy tagad pamana, kad tīkls vēlas, lai pieteiktos vai pieņemtu tā noteikumus, pirms ļauj pieslēgties internetam. Tīkla ikona brīdina, un tīkla panelī redzama liela poga Open Captive Portal, kas ved tieši uz pieteikšanās lapu. Kad esi ticis cauri, viss pats atgriežas normālā režīmā.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-captive-portal.webp" alt="Pieteikšanās piespiedu portālā no tīkla paneļa" width="380" /></p>
+
+<h2 id="five-new-default-apps">Piecas jaunas noklusējuma lietotnes</h2>
+
+<p><strong>Hype</strong> veido prezentācijas no viena Markdown faila ar vizuālu slaidu redaktoru līdzās avotam un eksportē uz PDF vai PowerPoint.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-hype.webp" alt="Hype" /></p>
+
+<p><strong>Signed</strong> aizstāj Xournal++ dokumentiem: atver PDF, novieto saglabāto parakstu, tekstu un datumus un saglabā parakstītu kopiju.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-signed.webp" alt="Signed" /></p>
+
+<p><strong>Disktree</strong> zīmē koka karti ar to, kas piepilda disku, iekrāso pēc veida, norāda kešatmiņas, kuras droši atjaunot, un ļauj atzīmēt, kam jāiet projām.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-disktree.webp" alt="Disktree" /></p>
+
+<p><strong>Monologue</strong> ieraksta tavu kameru ar vienu taustiņu, pieskaņojoties darbvirsmas tēmai.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-monologue.webp" alt="Monologue" /></p>
+
+<p><strong>Gliff</strong> sniedz attālo darbvirsmu pār SSH. Pievienojies citai Omarchy ierīcei un vadi tās pilno darbvirsmu no loga savējā, ar cilni katrai ierīcei. Un, tā kā tas brauc uz SSH, nav nekā papildu, ko iestatīt vai atsegt. Vadāmā ierīce joslā rāda attālās sesijas indikatoru, tāpēc vienmēr ir skaidrs, kad kāds tajā atrodas.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-gliff.webp" alt="Gliff" /></p>
+
+<p>Un ir <strong>Elsewhen</strong> — pasaules pulkstenis, kas dzīvo tieši līdzās pulkstenim joslā. Pieskaries pilsētai uz globusa, lai iestatītu, kur esi, meklē īstas vietas un nosauc cilvēkus, kas dzīvo katrā pilsētā, lai vienmēr zinātu, vai ir pieklājīgs laiks zvanīt. Pārslēdz starp 12 un 24 stundām ar <code>t</code>, starp °F un °C ar <code>Alt + T</code> un izsauc to jebkurā laikā ar <code>Super + Ctrl + Alt + E</code>.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-elsewhen.webp" alt="Elsewhen" /></p>
+
+<p>Ar Monologue ierakstīšanai un Omacut apgriešanai jaunas uzstādīšanas vairs nepiegādā OBS Studio un Kdenlive. Arī Lazydocker no jaunām uzstādīšanām ir pazudis, lai gan Docker un Docker Compose joprojām ir iekļauti. Ierīces, kurām kāda no tām jau ir, tās saglabā.</p>
+
+<h2 id="microsoft-365">Microsoft 365</h2>
+
+<p>Vajag strādāt ar cilvēkiem, kas dzīvo Office? <em>Install &gt; Service &gt; Microsoft</em> tagad iestata Outlook, Word, Excel, PowerPoint, Teams un OneDrive kā tīmekļa lietotnes. Katra iegūst savu logu un palaidēja ierakstu, tāpēc tās jūtas kā mājās līdzās visam pārējam. Vairs nekādu attaisnojumu nepāriet uz Omarchy darbā!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-microsoft-365.webp" alt="Excel, Word, Teams un PowerPoint Omarchy" /></p>
+
+<h2 id="superwhisper-for-dictation">Superwhisper diktēšanai</h2>
+
+<p>Superwhisper tagad ir Omarchy noklusējuma diktēšanas dzinējs, un tas ir iestatīts uzreiz pēc uzstādīšanas. Pieskaries <code>Alt + Space</code>, lai sāktu runāt, un vēlreiz, lai beigtu, vai turi <code>Right Alt</code> push-to-talk režīmam. Tas ir neticami ātrs un ļoti precīzs.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-superwhisper.webp" alt="Diktēšana ar Superwhisper" /></p>
+
+<p>Tas sāk mākonī, tāpēc darbojas uzreiz pēc uzstādīšanas, un pirmie 10 000 vārdu ir bez maksas. Bet vari pārslēgties uz lejupielādējamu modeli, kas ir pilnīgi bez maksas un darbojas pilnībā lokāli, nesūtot nevienam ne vārda. Un, ja labāk izvēlies citu lokālu modeli, Voxtype joprojām tiek piedāvāts kā alternatīva.</p>
+
+<h2 id="install-in-less-than-ten-seconds">Uzstādīšana mazāk nekā desmit sekundēs</h2>
+
+<p>Omarchy agrāk uzstādīja aptuveni 940 pakotnes vienu pēc otras. Jaunais F1 instalētājs tā vietā izsaiņo iepriekš būvētu saknes attēlu un pievieno tikai šīs ierīces pakotnes pa virsu. Tas jebkurā ierīcē uzstādīšanas laiku samazina aptuveni uz pusi.</p>
+
+<p>Un ātrai aparatūrai tas ir absurdi. <a href="https://x.com/AnushElangovan">Anush Elangovan</a> no AMD uzstādīja pasaules rekordu ar pilnu Omarchy uzstādīšanu <strong>7 sekundēs</strong> savā AMD klēpjdatorā. <a href="https://x.com/dhh/status/2117222836620202375">Septiņas sekundes!</a> Atceros, kad piecas minūtes šķita ambiciozs mērķis.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-installed-in-7s.webp" alt="Omarchy uzstādīts 0m 7s laikā" /></p>
+
+<h2 id="faster-everywhere-else">Ātrāk arī visur citur</h2>
+
+<p>Tas nav tikai instalētājs. Startēšana vairs neiesprūst uz binfmt reģistrācijas. Tēmu izvēlētājs atveras uzreiz, nevis pēc ceturtdaļsekundes. Izvēlnes un paneļi atveras tieši no Hyprland īsinājumtaustiņiem, izlaižot 60 ms, kas agrāk vajadzīgas procesa startam. Omarchy izvēlnes lēnākās pārbaudes no 200 ms samazinājās līdz 16 ms, jauns terminālis savu uzvedni rāda par 30 ms ātrāk, un visa darbvirsma tagad reaģē uz izmaiņām, nevis tās aptaujā. Pat izrakstīšanās, restartēšana un izslēgšana notiek brīdī, kad lietotnes beidz aizvērties.</p>
+
+<h2 id="agent-upgrades">Aģentu uzlabojumi</h2>
+
+<p>Omarchy ir aģentiskā OS, un 4.5 nes lielu uzlabojumu kārtu darbam ar aģentiem. Aģentu panelis tagad seko 23 aģentiem un pakalpojumu sniedzējiem, salīdzinājumā ar 6 iepriekš, tostarp Cursor, OpenCode, GitHub Copilot, Antigravity, Hermes, Amp, Kiro, Devin, Qwen, DeepSeek, OpenRouter un Ollama. Katram limitam ir savs skaitītājs ar laiku līdz tā atiestatei, tāpēc precīzi redzi, cik daudz rezerves tev palicis. Un Grok tagad ir pilnvērtīgs pakalpojumu sniedzējs līdzās Claude un Codex.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-agents-panel.webp" alt="Aģentu panelis ar vairākiem Claude un Codex abonementiem" width="380" /></p>
+
+<p>Un tavs aģents vienmēr ir viena taustiņsitiena attālumā. <code>Super + ~</code> nolaiž Quake stila konsoli pār aptumšotu darbvirsmu, un pirmajā atvēršanas reizē tā startē tavu noklusējuma aģentu. Nospied vēlreiz, lai to paslēptu, un sesija paliek tieši tur, kur to atstāji.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-qconsole.webp" alt="Quake stila konsole, kas darbina aģentu pār aptumšotu darbvirsmu" /></p>
+
+<p>Ja žonglē ar vairākiem abonementiem, tagad vienā ierīcē vari turēt vairākus Claude, Codex un Grok pieteikumus un izvēlēties, ar kuru jaunām sesijām sākt, izmantojot <code>omarchy agent account</code>. Vēsture, iestatījumi un prasmes starp tiem tiek koplietotas, tāpēc <code>claude --continue</code> pēc pārslēgšanās turpina tieši tur, kur apstājies. Limita tuvumā Omarchy var vai nu piedāvāt viena klikšķa pārslēgšanos, vai pats pārvietot jaunas sesijas uz kontu ar lielāko rezervi. Un, iestatot citu ierīci, <code>omarchy agent account copy</code> pārnes visus pieteikumus pār SSH, tāpēc nav jāpiesakās visā no jauna.</p>
+
+<p>Kimi un Ori, OpenRouter aģentu ietvars, pievienojas izvēlei sadaļā <em>Setup &gt; Defaults &gt; Agent</em>, un Google Antigravity aizstāj novecojušo Gemini CLI (<code>gemini</code> joprojām darbojas kā aizstājvārds). Dod priekšroku logam, nevis terminālim? Claude un Amp darbvirsmas lietotnes tagad ir viena klikšķa attālumā sadaļā <em>Install &gt; AI</em>.</p>
+
+<h2 id="notifications-rebuilt">Paziņojumi, pārbūvēti</h2>
+
+<p>Paziņojumi tagad sakraujas pēc sūtītāja, seko tavai tēmai un sakļauj identiskus atkārtojumus. Darbību pogas, verifikācijas kodi un saites darbojas tieši no kartītes. <code>Super + Comma</code> rīkojas ar jaunāko (noraida, atver vai nospiež tās pogu), un <code>Super + Ctrl + Comma</code> nodod tev tastatūru, lai vadītu tos visus. Zvaniņš joslā ieslēdz Do Not Disturb.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-notifications.webp" alt="Jauni paziņojumi" /></p>
+
+<h2 id="video-backgrounds-and-theme-intros">Video foni un tēmu ievadi</h2>
+
+<p>Foni tagad var būt video. Iemet vienu iekšā, un darbvirsma atdzīvojas ar viļņiem vai jebko citu, kas patīk, bet bloķēšanas ekrāns rāda nekustīgu kadru no tā. Un tēmas tagad ierodas ar ievadu: katra var atskaņot īsu, klusu ievadu, kad piesakies vai pārslēdzies uz to. (Labāk gribi mieru? Izslēdz ievadus sadaļā <em>Appearance &gt; Animations</em>.)</p>
+
+<video src="/news/2026/11/omarchy-4-5/omarchy-4-5-live-intros.mp4" autoplay="" muted="" loop="" playsinline="" aria-label="Theme intros and video backgrounds"></video>
+
+<h2 id="jade-horse-joins-the-default-themes">Jade Horse pievienojas noklusējuma tēmām</h2>
+
+<p>Jade Horse ir miglaini zaļš, ar grebta nefrīta foniem, kas visu darbvirsmu padara līdzīgu tīstokļa gleznojumam. Tas komplektā esošajās tēmās aizstāj Osaka Jade, un tam pievienojas Starship kā otra jaunā noklusējuma tēma. Ja lieto Osaka Jade, tu saglabā savu kopiju, un tā dzīvo tālāk kā <a href="https://github.com/omacom/omarchy-osaka-jade-theme">trešās puses tēma</a> ikvienam, kas vēlas to uzstādīt no jauna.</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-jade-horse.webp" alt="Jade Horse tēma" /></p>
+
+<h2 id="liftoff-is-the-new-default-background">Liftoff ir jaunais noklusējuma fons</h2>
+
+<p>Jaunas uzstādīšanas tagad sveicina ar Liftoff — krāšņu saulrieta palaišanu, kas ir jaunais noklusējuma fons Tokyo Night tēmai. To veidoja <a href="https://github.com/tcballard">Tom Ballard</a>, kas to sākotnēji radīja savai <a href="https://github.com/tcballard/omarchy-theme-liftoff">Liftoff theme</a>. Paldies, Tom!</p>
+
+<p><img src="/news/2026/11/omarchy-4-5/omarchy-4-5-liftoff.webp" alt="Liftoff fons, autors Tom Ballard" /></p>
+
+<h2 id="boot-menu-now-quiet">Sāknēšanas izvēlne tagad ir klusa</h2>
+
+<p>Omarchy agrāk katrā startā aptuveni sešas sekundes rādīja sāknēšanas izvēlni, gadījumam, ja vajadzētu atgriezties pie agrāka momentuzņēmuma. Bet gandrīz neviens to nekad nedarīja. Tāpēc tagad Limine gaida tikai vienu sekundi un sāknējas klusi, un lielākoties izvēlni nemaz neredzēsi.</p>
+
+<p>Kad tomēr vajag citu ierakstu vai momentuzņēmumu, ierīces starta laikā turpini spiest jebkuru taustiņu (lejupbultiņa der), un tā apstāsies pie izvēlnes. Un, ja labāk gribi izvēlni rādīt ilgāk pastāvīgi, iestati savu <code>timeout:</code> failā <code>/boot/limine.conf</code> (piemēram, <code>timeout: 5</code>). Atjauninājumi tavu iestatīto noildzi atstās mierā.</p>
+
+<h2 id="changed-hotkeys">Mainīti īsinājumtaustiņi</h2>
+
+<p>Daži īsinājumi pārvietojās:</p>
+
+<ul>
+  <li>Calculator: <code>Super + Ctrl + Q</code> tagad ir <code>Super + Shift + Q</code>.</li>
+  <li>Activity: <code>Super + Ctrl + T</code> tagad ir <code>Super + Shift + T</code>, un <code>Super + Ctrl + T</code> atver tēmas.</li>
+  <li>Network: <code>Super + Ctrl + W</code> tagad ir <code>Super + Ctrl + N</code>, un <code>Super + Ctrl + W</code> atver fonus.</li>
+  <li>Nightlight vairs nav īsinājuma (tas bija <code>Super + Ctrl + N</code>); tas atrodas <code>Trigger &gt; Toggle</code>.</li>
+  <li><code>Super + Alt + Space</code> atver Apps no doka, nevis Apps izvēlni.</li>
+</ul>
+
+<p>Paziņojumu īsinājumi mainījās:</p>
+
+<ul>
+  <li><code>Super + Comma</code> rīkojas ar jaunāko kartīti (noraida to, atver to vai nospiež tās vienīgo pogu), nevis tikai noraida to.</li>
+  <li>Pēdējās noraidīšana pārcēlās uz <code>Super + Alt + Comma</code>, kas agrāk to atvēra.</li>
+  <li>Apklusināšana pārcēlās no <code>Super + Ctrl + Comma</code> uz <code>Super + Ctrl + Alt + Comma</code>; <code>Super + Ctrl + Comma</code> tagad nodod tev tastatūras vadību.</li>
+</ul>
+
+<p>Daži taustiņi darbojas citādi:</p>
+
+<ul>
+  <li><code>Super + Tab</code>, <code>Super + Shift + Tab</code>, <code>Super + Ctrl + Tab</code> un <code>Super</code> + ritināšana paliek pašreizējā monitora darbvietās, jo katram monitoram ir savas.</li>
+  <li>Terminālī <code>Super + C</code> un <code>Super + V</code> sūta <code>Ctrl + Shift + C</code> un <code>Ctrl + Shift + V</code>, nevis <code>Ctrl + Insert</code> un <code>Shift + Insert</code>.</li>
+</ul>
+
+<p>Jauni noklusējumi, kas var sadurties ar tavām saistībām: <code>Super + Q</code> (aizvērt logu, līdzās <code>Super + W</code>), <code>Super + A</code> (atlasīt visu), <code>Super + M</code> (minimizēt dokā), <code>Super + ~</code> un <code>Super + Shift + ~</code> (Quake konsole), <code>Super + Alt + L</code> (iepriekšējais izkārtojums), <code>Super + Shift + Ctrl + Arrows</code> (pārvietot logu uz citu monitoru), <code>Super + Ctrl + Alt + C</code> (ekrānuzņēmums), <code>Super + Ctrl + Alt + E</code> (pasaules pulkstenis), <code>Super + Ctrl + Alt + F</code> (pilnekrāna darbvirsma) un <code>Right Alt</code> turēšana push-to-talk diktēšanai.</p>
+
+<h2 id="more-features">Vēl funkcijas</h2>
+
+<ul>
+  <li>Piešķir katram monitoram savas darbvietas: <code>Super + 1-0</code> dodas uz tā monitora darbvietām, kurā esi, un <code>Super + Arrows</code> pārvietojas uz citiem displejiem un no tiem, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/15655">#15655</a>)</li>
+  <li>Apvieno visu par darbvirsmas izskatu jaunā Appearance izvēlnē, aizstājot Style: tēma, fons, fonts, josla, logi, zīmols, doks, darbvietu izkārtojumi, animācijas un atbloķēšanas ekrāns, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15973">#15973</a>)</li>
+  <li>Izvēlies Opaque, Transparent vai Glassy logus sadaļā <em>Appearance &gt; Window Transparency</em>, kā arī Glassy joslas fonu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14991">#14991</a>)</li>
+  <li>Izvēlies tēmas, asus vai noapaļotus logu stūrus sadaļā <em>Appearance &gt; Window Corners</em>, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14990">#14990</a>)</li>
+  <li>Pievieno režīmu bez animācijām, kas VM ir ieslēgts pēc noklusējuma, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13550">#13550</a>)</li>
+  <li>Padari lietotnes necaurspīdīgas pēc noklusējuma, termināļus saglabājot caurspīdīgus, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14253">#14253</a>)</li>
+  <li>Pievieno Slack sadaļai Install &gt; Service, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14434">#14434</a>)</li>
+  <li>Panāk, ka Alt + Space pārslēdz diktēšanu katrā aizmugursistēmā, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17188">#17188</a>)</li>
+  <li>Pievieno Open un Edit pogas ekrānuzņēmumu paziņojumiem, un Open un Cut ekrāna ierakstiem un yt-dlp lejupielādēm, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16505">#16505</a>)</li>
+  <li>Pievieno Update &gt; Kernel izvēlni noklusējuma kodola maiņai, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15966">#15966</a>)</li>
+  <li>Pievieno tēmu sinhronizāciju herdr ierīcēm, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13430">#13430</a>)</li>
+  <li>Pievieno o.rebind Hyprland taustiņsaistību aizstāšanai, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/10537">#10537</a>)</li>
+  <li>Prasi git identitāti pēc pirmās pieteikšanās, nevis instalētājā, ar GitHub pieteikšanos, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16288">#16288</a>)</li>
+  <li>Ļauj uzstādīšanas datu nesējam iepriekš iestatīt valodu, tastatūru un laika joslu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15522">#15522</a>)</li>
+  <li>Ļauj joslas sīkrīkiem dzīvot paplātes atvilktnē, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15281">#15281</a>)</li>
+  <li>Ļauj noņemt joslas sīkrīku, novelkot to no joslas, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/6782">#6782</a>)</li>
+  <li>Ļauj ritināt cauri darbvietām no joslas, autors <a href="https://github.com/outfoxxed">@outfoxxed</a> (<a href="https://github.com/omacom/omarchy/pull/15256">#15256</a>)</li>
+  <li>Ļauj dzēst papildu tēmas no tēmu izvēlētāja, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14713">#14713</a>)</li>
+  <li>Pievieno hey, basecamp un Cloudflare CLI kā laiski uzstādāmus rīkus, autors <a href="https://github.com/monorkin">@monorkin</a> (<a href="https://github.com/omacom/omarchy/pull/7626">#7626</a>)</li>
+  <li>Pievieno SSH Agent kā neobligātu pakalpojumu, autors <a href="https://github.com/carletex">@carletex</a> (<a href="https://github.com/omacom/omarchy/pull/9399">#9399</a>)</li>
+  <li>Ļauj izvēlēties, cik ilgi sudo bez paroles ilgst, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14435">#14435</a>)</li>
+  <li>Pievieno aizvēršanas pogu, uzbraucot uz paziņojumu uznirstošajiem logiem, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/6946">#6946</a>)</li>
+  <li>Ļauj apklusināt programmas paziņojumus no tās avārijas diagnozes, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/8549">#8549</a>)</li>
+  <li>Ļauj omarchy-notification-send pievienot darbību pogas, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16466">#16466</a>)</li>
+  <li>Pievieno pulksteņa formātu ar dzīvām sekundēm, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/7586">#7586</a>)</li>
+  <li>Regulē tastatūras fona apgaismojumu ar Ctrl un spilgtuma taustiņiem, autors <a href="https://github.com/ludagoo">@ludagoo</a> (<a href="https://github.com/omacom/omarchy/pull/16650">#16650</a>)</li>
+  <li>Drukā OEM Windows produkta atslēgu no programmaparatūras, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/7480">#7480</a>)</li>
+  <li>Pievieno oriģinālo vi kā termināļa redaktora izvēli, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/10307">#10307</a>)</li>
+  <li>Pievieno Roadster Starlight fonu Ethereal, autori <a href="https://github.com/bjarneo">@bjarneo</a>, <a href="https://github.com/tcballard">@tcballard</a> (<a href="https://github.com/omacom/omarchy/pull/15878">#15878</a>)</li>
+</ul>
+
+<h2 id="security">Drošība</h2>
+
+<ul>
+  <li>Glabā Windows VM paroli ārpus RDP klienta argumentiem, autors <a href="https://github.com/dicemans">@dicemans</a> (<a href="https://github.com/omacom/omarchy/pull/7902">#7902</a>)</li>
+  <li>Pārvieto ekrāna ierakstīšanas stāvokli ārpus visiem rakstāmā /tmp, autors <a href="https://github.com/Chessing234">@Chessing234</a> (<a href="https://github.com/omacom/omarchy/pull/8374">#8374</a>)</li>
+  <li>Nocietina sudo bez paroles noildzi pēc apturēšanas, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/9457">#9457</a>)</li>
+  <li>Saista atjauninājumu inhibitora tīrīšanu ar procesu, kas to izveidoja, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/9467">#9467</a>)</li>
+  <li>Izolē OCaml tīrīšanas autorizāciju, autors <a href="https://github.com/ErikMelton">@ErikMelton</a> (<a href="https://github.com/omacom/omarchy/pull/10217">#10217</a>)</li>
+  <li>Piesprauž rūpnīcas atiestatīšanas paaugstināšanu iepakotajai komandai, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/13047">#13047</a>)</li>
+  <li>Atiestatot noņem saglabātās pirkstu nospiedumu veidnes izsaucošajam lietotājam, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/13049">#13049</a>)</li>
+  <li>Noraida āķu un stāvokļu nosaukumus, kas ir ceļi, autors <a href="https://github.com/Adolanium">@Adolanium</a> (<a href="https://github.com/omacom/omarchy/pull/8170">#8170</a>)</li>
+  <li>Polkit kaudzē, ko raksta pirkstu nospiedumu un FIDO2 iestatīšana, pakļaujas system-auth, autors <a href="https://github.com/Wheel-Smith">@Wheel-Smith</a> (<a href="https://github.com/omacom/omarchy/pull/9873">#9873</a>)</li>
+  <li>Noņemot pirkstu nospiedumus, noņem tos arī no lasītāja paša krātuves, autors <a href="https://github.com/scottjones">@scottjones</a> (<a href="https://github.com/omacom/omarchy/pull/16403">#16403</a>)</li>
+  <li>Novērš SSH iestatīšanas atstāšanu ar sshd, kas darbojas ar paroļu pieteikšanos, ja netiek pievienota neviena atslēga, autori <a href="https://github.com/omarchybot">@omarchybot</a>, <a href="https://github.com/thebytorsnowdog">@thebytorsnowdog</a> (<a href="https://github.com/omacom/omarchy/pull/14667">#14667</a>)</li>
+  <li>Novērš cita lokāla lietotāja iespēju Voxtype jaunināšanas laikā iemainīt savu programmu, autors <a href="https://github.com/Vladkarok">@Vladkarok</a> (<a href="https://github.com/omacom/omarchy-pkgs/pull/937">omacom/omarchy-pkgs#937</a>)</li>
+  <li>Nocietina veidu, kā rūpnīcas atiestatīšana nodod gum iestatījumus caur sudo, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/13316">#13316</a>)</li>
+</ul>
+
+<h2 id="fixes">Labojumi</h2>
+
+<ul>
+  <li>Labo Hyprland avāriju, kad monitors tiek atvienots, atspējots vai izslēgts, aizverot vāku, autors <a href="https://github.com/falkoro">@falkoro</a> (<a href="https://github.com/omacom/omarchy/pull/16750">#16750</a>)</li>
+  <li>Labo jaunināšanu, kas varēja atstāt kodola attēlu bez tā root= parametra, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/6951">#6951</a>)</li>
+  <li>Labo rūpnīcas atiestatīšanu, kas dzēsa citu sistēmu sāknēšanas ierakstus, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14949">#14949</a>)</li>
+  <li>Labo uzstādīšanu līdzās citam Omarchy, kas noņēma tās uzstādīšanas sāknēšanas ierakstu, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/commit/716bc15">omacom/omarchy-iso@716bc15</a>)</li>
+  <li>Labo uzstādīšanu brīvā vietā, kas esošu nodalījumu varēja paņemt par jaunu, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/307">omacom/omarchy-iso#307</a>)</li>
+  <li>Labo pārtrauktas diska paroles maiņas atsākšanu, kas noņēma nepareizo atslēgu, autors <a href="https://github.com/scottjones">@scottjones</a> (<a href="https://github.com/omacom/omarchy/pull/14874">#14874</a>)</li>
+  <li>Prasi sudo paroli reizi vienā Omarchy atjauninājumā, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13323">#13323</a>)</li>
+  <li>Prasi sudo paroli reizi desmit minūtēs, nevis atkal katrai komandai, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17000">#17000</a>)</li>
+  <li>Sedz AUR atjauninājumus un sāknēšanas pārbaudi ar atjauninājuma vienīgo sudo uzvedni, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16568">#16568</a>)</li>
+  <li>Sargā pakotņu atjauninājumus no izrakstīšanās darījuma vidū, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/11651">#11651</a>)</li>
+  <li>Izraksties, restartē un izslēdz, tiklīdz lietotnes beidz aizvērties, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15231">#15231</a>)</li>
+  <li>Aizstāj Tensaku ar Omasnap ekrānuzņēmumiem, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/9446">#9446</a>)</li>
+  <li>Liec paneļiem izaugt no joslas un pārveidoties starp tiem, ar nospiešanas atgriezenisko saiti pogām un joslas ikonām, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16470">#16470</a>)</li>
+  <li>Slīdini paziņojumus iekšā no joslas apakšas un atpakaļ tā, kā tie nāca, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16469">#16469</a>)</li>
+  <li>Pārbaudi savienojamību pret Omarchy paša galapunktu un labo pieteikšanos piespiedu portālos, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16186">#16186</a>)</li>
+  <li>Labo pārslēgšanos no edge uz stable vai RC, kas ierīci atstāja uz vecas versijas, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/15903">#15903</a>)</li>
+  <li>Labo atjauninājumu uz 4.5, kas apstājās, kad čaula lēni atbildēja, autors <a href="https://github.com/AnPod">@AnPod</a> (<a href="https://github.com/omacom/omarchy/pull/13468">#13468</a>)</li>
+  <li>Labo atjauninājumus, kas klusi izgāzās, startējot ārpus darbvirsmas sesijas, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17420">#17420</a>)</li>
+  <li>Labo neveiksmīgu mise rīka lejupielādi, kas apturēja pārējo sistēmas atjauninājumu, autors <a href="https://github.com/sanjyay">@sanjyay</a> (<a href="https://github.com/omacom/omarchy/pull/16318">#16318</a>)</li>
+  <li>Labo atjauninājumus, kas izgāzās, kad omarchy-nvim nav uzstādīts, autors <a href="https://github.com/imzihuailin">@imzihuailin</a> (<a href="https://github.com/omacom/omarchy/pull/15141">#15141</a>)</li>
+  <li>Labo divkāršās sāknēšanas uzstādīšanas, kam neizdevās pievienot EFI nodalījumu, autors <a href="https://github.com/Damian626">@Damian626</a> (<a href="https://github.com/omacom/omarchy-iso/pull/111">omacom/omarchy-iso#111</a>)</li>
+  <li>Labo uzstādīšanas, kas apstājās, kad programmaparatūra nepieņēma jaunu sāknēšanas ierakstu, autors <a href="https://github.com/ryanio">@ryanio</a> (<a href="https://github.com/omacom/omarchy-iso/commit/238bb33">omacom/omarchy-iso@238bb33</a>)</li>
+  <li>Labo uzstādīšanas, kas apstājās uz diskiem ar vecu RAID dalībnieku vai sējumu grupu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy-iso/pull/327">omacom/omarchy-iso#327</a>)</li>
+  <li>Startē instalētāju ātrāk, negaidot katru USB ierīci un sāknēšanas darbu, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/314">omacom/omarchy-iso#314</a>)</li>
+  <li>Paātrini diska šifrēšanu ar 4096 baitu sektoriem jaunās uzstādīšanās, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/336">omacom/omarchy-iso#336</a>)</li>
+  <li>Uzskaiti iekšējos diskus pirmos un atver uzstādīšanas ekrānus pie drošās izvēles, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/320">omacom/omarchy-iso#320</a>)</li>
+  <li>Uzskaiti Full disk install pirmo instalētājā un ej atpakaļ ar Esc disku ekrānos, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>)</li>
+  <li>Labo viena monitora mērogošanu, kas mainīja katra cita monitora mērogu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16923">#16923</a>)</li>
+  <li>Labo XWayland lietotnes, kas iznāca pārāk lielas, kad monitori izmanto dažādus mērogus, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16950">#16950</a>)</li>
+  <li>Labo HDR displejus, kas pārslēdzās uz izbalējušu HDR attēlu, kad logs kļuva pilnekrāna, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17157">#17157</a>)</li>
+  <li>Labo izplūdušas izvēlnes un izvēlētājus daļēji mērogotos displejos, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13419">#13419</a>)</li>
+  <li>Labo klēpjdatora displeju, kas palika izslēgts pēc ārējā displeja atvienošanas, autori <a href="https://github.com/Hamza0101">@Hamza0101</a>, <a href="https://github.com/dhiasalhiQ">@dhiasalhiQ</a> (<a href="https://github.com/omacom/omarchy/pull/16310">#16310</a>)</li>
+  <li>Labo displeja atkārtotu ieslēgšanu, kas atiestatīja tā pozīciju, mērogu un režīmu, autors <a href="https://github.com/zihaomu">@zihaomu</a> (<a href="https://github.com/omacom/omarchy/pull/16147">#16147</a>)</li>
+  <li>Labo izvēlnes un izvēlētājus, kas neatvērās atkārtoti pēc monitora atvienošanas, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14458">#14458</a>)</li>
+  <li>Labo darbvietas pa monitoriem, kas pārvietojās pēc monitora atvienošanas, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/15867">#15867</a>)</li>
+  <li>Labo čaulas avāriju, kad audio ierīce atvienojas ar atvērtu audio paneli, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/7783">#7783</a>)</li>
+  <li>Labo pilnekrāna logus, kas pēc ekrānsaudzētāja zaudēja pilnekrānu, autors <a href="https://github.com/MGross21">@MGross21</a> (<a href="https://github.com/omacom/omarchy/pull/3284">#3284</a>)</li>
+  <li>Labo kursoru, kas startā pazuda pēc Hyprland pārlādes, autors <a href="https://github.com/spencerbull">@spencerbull</a> (<a href="https://github.com/omacom/omarchy/pull/14935">#14935</a>)</li>
+  <li>Labo kursoru, kas kļuva neredzams pār XWayland lietotnēm, autors <a href="https://github.com/Sebo1411">@Sebo1411</a> (<a href="https://github.com/omacom/omarchy/pull/14580">#14580</a>)</li>
+  <li>Labo starpliktuves tveršanas iestrēgšanu, autors <a href="https://github.com/maxcroy1">@maxcroy1</a> (<a href="https://github.com/omacom/omarchy/pull/9488">#9488</a>)</li>
+  <li>Labo atslēgu gredzena piekļuvi caur XDG Secret portālu, autors <a href="https://github.com/pkwagner">@pkwagner</a> (<a href="https://github.com/omacom/omarchy/pull/9594">#9594</a>)</li>
+  <li>Labo pirkstu nospiedumu reģistrāciju un bloķēšanas ekrāna atkopšanu, autors <a href="https://github.com/GeertJohan">@GeertJohan</a> (<a href="https://github.com/omacom/omarchy/pull/7158">#7158</a>)</li>
+  <li>Vadi pirkstu nospiedumu reģistrāciju soli pa solim, autors <a href="https://github.com/scottjones">@scottjones</a> (<a href="https://github.com/omacom/omarchy/pull/15512">#15512</a>)</li>
+  <li>Labo taustiņu automātisko atkārtošanos bloķēšanas ekrāna paroles laukā, autors <a href="https://github.com/berndb">@berndb</a> (<a href="https://github.com/omacom/omarchy/pull/7806">#7806</a>)</li>
+  <li>Labo bloķēšanas ekrāna fonu, kas pēc pamošanās ielādējās pēc paroles lauka, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13431">#13431</a>)</li>
+  <li>Labo ekrāna bloķēšanas noildzes, kad sesija nosauc pazudušu displeju, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15226">#15226</a>)</li>
+  <li>Paātrini termināļa atvēršanu pašreizējā loga direktorijā, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13423">#13423</a>)</li>
+  <li>Panāk, ka VS Code saimes redaktori tēmas izmaiņām seko dzīvajā, autors <a href="https://github.com/Macho0x">@Macho0x</a> (<a href="https://github.com/omacom/omarchy/pull/10134">#10134</a>)</li>
+  <li>Pārkrāso darbojošās Hunk sesijas tēmas maiņā, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13518">#13518</a>)</li>
+  <li>Atceries izvēlēto fonu katrai tēmai, autors <a href="https://github.com/OldJobobo">@OldJobobo</a> (<a href="https://github.com/omacom/omarchy/pull/7718">#7718</a>)</li>
+  <li>Saglabā attēlu izvēlētāju ātru un asu ar lielām kolekcijām un HiDPI, autors <a href="https://github.com/keylimesoda">@keylimesoda</a> (<a href="https://github.com/omacom/omarchy/pull/14117">#14117</a>)</li>
+  <li>Samazini CPU un atmiņu, ko caurspīdīgā josla tērē fona paraugu ņemšanai, autori <a href="https://github.com/ryanyogan">@ryanyogan</a>, <a href="https://github.com/aholbreich">@aholbreich</a> (<a href="https://github.com/omacom/omarchy/pull/8307">#8307</a>)</li>
+  <li>Paātrini Tailscale paneli tailnet tīklos ar tūkstošiem ierīču, autors <a href="https://github.com/iskakaushik">@iskakaushik</a> (<a href="https://github.com/omacom/omarchy/pull/7623">#7623</a>)</li>
+  <li>Pacel Grok līdz Claude un Codex līmenim aģentu panelī, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/13992">#13992</a>)</li>
+  <li>Piemēro aģenta konta izvēli CLI apakšprocesiem, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14233">#14233</a>)</li>
+  <li>Rādi Codex individuālos tēriņu limitus un to atiestates laikus, autors <a href="https://github.com/Stegi56">@Stegi56</a> (<a href="https://github.com/omacom/omarchy/pull/15722">#15722</a>)</li>
+  <li>Iestati pārlūka integrāciju, izvēloties Claude, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/11934">#11934</a>)</li>
+  <li>Labo aģentus, kas neatrada mise rīkus, kas uzstādīti pēc to starta, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16593">#16593</a>)</li>
+  <li>Labo ekrānuzņēmumu ielīmēšanu aģentos herdr rūtīs, kas startētas pār SSH, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16572">#16572</a>)</li>
+  <li>Labo aģentu paneli, kam trūka saspiestu Codex sesiju, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16385">#16385</a>)</li>
+  <li>Atgriez Caps Lock normālā režīmā un padari Shift + Caps Lock par salikšanas taustiņu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14939">#14939</a>)</li>
+  <li>Piemēro sistēmas tastatūras izkārtojumu pieteikšanās ekrānam, autors <a href="https://github.com/g-desoutter">@g-desoutter</a> (<a href="https://github.com/omacom/omarchy/pull/6896">#6896</a>)</li>
+  <li>Labo izkārtojuma pārslēgšanu, kas ar nelatīņu tastatūras izkārtojumu izlaida katru otro nospiedienu, autors <a href="https://github.com/manuaudio">@manuaudio</a> (<a href="https://github.com/omacom/omarchy/pull/14076">#14076</a>)</li>
+  <li>Ieslēdz aparatūras video dekodēšanu mpv, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15172">#15172</a>)</li>
+  <li>Pārslēdz TCP pārslodzes kontroli uz BBR un īstiem diskiem izmanto kyber I/O plānotāju, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/11658">#11658</a>)</li>
+  <li>Uzstādi T3 Code kā tā pašatjauninošos AppImage, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/15907">#15907</a>)</li>
+  <li>Uzlabo PHP un Laravel uzstādīšanu, autors <a href="https://github.com/nunomaduro">@nunomaduro</a> (<a href="https://github.com/omacom/omarchy/pull/12141">#12141</a>)</li>
+  <li>Uzstādi Node laiski un atstāj mise konfigurāciju mierā, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/15876">#15876</a>)</li>
+  <li>Uzstādi trūkstošās lietotnes, izvēloties noklusējumus, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/6950">#6950</a>)</li>
+  <li>Aptumšo uzstādīto programmatūru Install izvēlnēs, nevis slēp to, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/6955">#6955</a>)</li>
+  <li>Reģistrē paroļu pārvaldnieku un citus dabiskos ziņojumapmaiņas resursdatorus Brave Origin, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/10292">#10292</a>)</li>
+  <li>Grupē Brave Origin tīmekļa paziņojumus pēc vietnes un klikšķinot atver pareizo cilni, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/16296">#16296</a>)</li>
+  <li>Atjauninājumu laikā automātiski apstiprini bāreņu pakotņu noņemšanu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14428">#14428</a>)</li>
+  <li>Atjaunini Omarchy atslēgu gredzenu pirms katra atjauninājuma, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/17311">#17311</a>)</li>
+  <li>Piedāvā restartēt pēc kanālu maiņas, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17251">#17251</a>)</li>
+  <li>Piedāvā pirmās palaišanas atjauninājumu tikai tad, kad ir ko atjaunināt, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16211">#16211</a>)</li>
+  <li>Atrodi laikapstākļu atrašanās vietu un instalētāja laika joslu ar Omarchy paša ģeogrāfisko pakalpojumu, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16240">#16240</a>)</li>
+  <li>Iestati pulksteni no ntp.omarchy.org, nevis Arch NTP kopas, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16247">#16247</a>)</li>
+  <li>Mēri tīkla ātrumu ar Omarchy paša ātruma testu, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16681">#16681</a>)</li>
+  <li>Rādi izsekotas ikonas norises ekrānu pirmās sāknēšanas laikā, autori <a href="https://github.com/dhh">@dhh</a>, <a href="https://github.com/DjDeveloperr">@DjDeveloperr</a> (<a href="https://github.com/omacom/omarchy/pull/17156">#17156</a>)</li>
+  <li>Sāknē dzīvo ISO ar Omarchy kodolu un ar T2 kodolu tikai Mac datoros, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/310">omacom/omarchy-iso#310</a>)</li>
+  <li>Apturi bezsaistes uzstādīšanas, kas gaidīja mise versiju meklējumus, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/323">omacom/omarchy-iso#323</a>)</li>
+  <li>Labo bezsaistes uzstādīšanas, kas laika joslu pēc noklusējuma iestatīja uz Africa/Abidjan, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/329">omacom/omarchy-iso#329</a>)</li>
+  <li>Labo instalētāja laika joslu izvēlētāju, kas neļāva rakstīt meklēšanai, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/17040">#17040</a>)</li>
+  <li>Labo dzīvo ISO, kas iestrēga aiz šļakatām, sāknējot no Ventoy atmiņas, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/348">omacom/omarchy-iso#348</a>)</li>
+  <li>Labo vācu un franču konsoles taustiņkartes instalētāja iestatīšanas formā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14684">#14684</a>)</li>
+  <li>Slēp gum angļu taustiņu padomus instalētājā un git iestatīšanā, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy-iso/pull/325">omacom/omarchy-iso#325</a>)</li>
+  <li>Izmet tikai angļu valodas jokus no uzstādīšanas norises ekrāna, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy-iso/pull/326">omacom/omarchy-iso#326</a>)</li>
+  <li>Labo instalētāja izvadi, kas diska sagatavošanas laikā nonāca ekrānā bez atkāpes, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/338">omacom/omarchy-iso#338</a>)</li>
+  <li>Labo Quattro jaunināšanu, kas noklusējuma pārlūku atiestatīja uz Chromium, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15074">#15074</a>)</li>
+  <li>Labo Quattro jaunināšanu, kas apstājās uz fonu nosaukumiem ar ne-ASCII rakstzīmēm, autors <a href="https://github.com/Pitchfork-and-Torch">@Pitchfork-and-Torch</a> (<a href="https://github.com/omacom/omarchy/pull/15277">#15277</a>)</li>
+  <li>Labo kodola migrāciju, kas apstājās ierīcēs, kas sāknējas ar GRUB vai systemd-boot, autors <a href="https://github.com/manuaudio">@manuaudio</a> (<a href="https://github.com/omacom/omarchy/pull/14188">#14188</a>)</li>
+  <li>Labo hibernāciju nešifrētās ierīcēs ar vairāk nekā vienu NVMe disku, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16658">#16658</a>)</li>
+  <li>Labo FIDO2 migrāciju, kas atzīmēta kā pabeigta, pirms tā bija atrisināta, autors <a href="https://github.com/ErikMelton">@ErikMelton</a> (<a href="https://github.com/omacom/omarchy/pull/16421">#16421</a>)</li>
+  <li>Labo peldošu darbvietu, kas pārņēma pirmo logu, ko sedz tavs paša peldošais noteikums, autors <a href="https://github.com/zihaomu">@zihaomu</a> (<a href="https://github.com/omacom/omarchy/pull/16143">#16143</a>)</li>
+  <li>Labo kompozitora iestrēgšanu, kad Super + L darbvietu cikliski ieslēdz un izslēdz no peldošā režīma, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16397">#16397</a>)</li>
+  <li>Labo Alt + Shift + Tab, kas necikliski gāja atpakaļ cauri katram logam, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/8576">#8576</a>)</li>
+  <li>Labo izlēkušos logus, kas necentrējās, pārvietojot uz citu monitoru, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14549">#14549</a>)</li>
+  <li>Labo jaunus termināļus, kas atvērās ārpus mājas mapes, kad fokusā bija netermināļa logs, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15007">#15007</a>)</li>
+  <li>Labo 1Password un Bitwarden logus, kas nepeldēja, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/11704">#11704</a>)</li>
+  <li>Labo 1Password aizvēršanos, kad instalētāja terminālis beidz darbu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/12402">#12402</a>)</li>
+  <li>Labo DaVinci Resolve dialogus, kas nozaga rādītāja fokusu, autors <a href="https://github.com/AksharP5">@AksharP5</a> (<a href="https://github.com/omacom/omarchy/pull/6919">#6919</a>)</li>
+  <li>Labo darbvirsmu, kas rādījās cauri Windows VM displejiem, autors <a href="https://github.com/jmwall">@jmwall</a> (<a href="https://github.com/omacom/omarchy/pull/8162">#8162</a>)</li>
+  <li>Labo mantotās Windows VM paroles ar $$ pēc Quattro migrācijas, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/13432">#13432</a>)</li>
+  <li>Apturi Hyprland ziedojumu uznirstošo logu rādīšanu pēc jaunināšanas, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17153">#17153</a>)</li>
+  <li>Uzlabo joslas sīkrīku vilkšanu un kārtošanu, autors <a href="https://github.com/outfoxxed">@outfoxxed</a> (<a href="https://github.com/omacom/omarchy/pull/15517">#15517</a>)</li>
+  <li>Normalizē joslas ikonu izmēru un līdzinājumu, autors <a href="https://github.com/bjarneo">@bjarneo</a> (<a href="https://github.com/omacom/omarchy/pull/15065">#15065</a>)</li>
+  <li>Atklāj slēptos joslas indikatorus tikai, uzbraucot pa kreisi no pulksteņa, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16293">#16293</a>)</li>
+  <li>Līdzini paplātes ikonas ar joslas pārējām ikonām, autors <a href="https://github.com/ayoubdya">@ayoubdya</a> (<a href="https://github.com/omacom/omarchy/pull/16089">#16089</a>)</li>
+  <li>Rādi nākamo joslas rīka padomu uzreiz, kamēr viens jau ir redzams, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16488">#16488</a>)</li>
+  <li>Atver pulksteņa un laikapstākļu paneļus zem to sīkrīkiem, autors <a href="https://github.com/scottjones">@scottjones</a> (<a href="https://github.com/omacom/omarchy/pull/8942">#8942</a>)</li>
+  <li>Saglabā tīkla paneli atvērtu pēc DNS pakalpojumu sniedzēja izvēles, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16485">#16485</a>)</li>
+  <li>Labo aizveramu uznirstošo logu, kas joslas sīkrīkus atstāja nereaģējošus, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15111">#15111</a>)</li>
+  <li>Labo slēpto joslu, kas tvēra klikšķus pilnekrāna logu augšpusē, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16991">#16991</a>)</li>
+  <li>Labo tumšas paplātes ikonas, kas pazuda joslā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14661">#14661</a>)</li>
+  <li>Labo joslas ikonas, kas sēdēja nevienmērīgi vai ārpus centra, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17003">#17003</a>)</li>
+  <li>Labo joslas rīka padomus, kas pirmo kadru zīmēja nepareizā izmērā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16243">#16243</a>)</li>
+  <li>Labo paziņojumu vēsturi, kas katru kartīti rādīja kā tikko saņemtu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16277">#16277</a>)</li>
+  <li>Labo pirmās pieteikšanās paziņojumus, kas sakļāvās vienā kaudzē, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16515">#16515</a>)</li>
+  <li>Labo paziņojumu klikšķus, kas nefokusēja lietotnes ar vairāku vārdu nosaukumiem, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16380">#16380</a>)</li>
+  <li>Labo Taildrop paziņojumus, kas rādīja tukšu tekstu un kam trūka priekšskatījumu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16301">#16301</a>)</li>
+  <li>Labo akumulatora paziņojumu, kas pilnam akumulatoram rādīja tukšu laiku un 0W, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16272">#16272</a>)</li>
+  <li>Labo brīdinājumu par zemu akumulatoru, kas palika pēc pievienošanas un atgriezās pēc restartiem, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16562">#16562</a>)</li>
+  <li>Labo akumulatora patēriņa rādījumu 0W dažos klēpjdatoros, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17265">#17265</a>)</li>
+  <li>Labo pilnu akumulatoru pie maiņstrāvas, kas rādījās kā izlādējošs, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16278">#16278</a>)</li>
+  <li>Labo Hibernate rādīšanu, kad kodols nehibernē, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/7779">#7779</a>)</li>
+  <li>Labo gvfs pievienojumus, kas pēc atsākšanas pazuda, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14496">#14496</a>)</li>
+  <li>Labo tastatūras fona apgaismojumu, kas palika izslēgts pēc bloķēšanas divkāršas aptumšošanas, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15908">#15908</a>)</li>
+  <li>Labo pirkstu nospiedumu lasītāju, kas modās, kamēr bloķēšanai displeji bija izslēgti, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15294">#15294</a>)</li>
+  <li>Labo sāknēšanas paroles uzvedni ārpus centra, kad displejs parādās vēlu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/11641">#11641</a>)</li>
+  <li>Labo ekrānsaudzētāja izejas taustiņu, kas mirgoja stūrī, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16596">#16596</a>)</li>
+  <li>Labo Wi-Fi ikonas mirgošanu OWE pārejas režīma tīklos, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14133">#14133</a>)</li>
+  <li>Labo OWE kļūdu, kas terminālī drukājās pēc tēmas uzstādīšanas, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16872">#16872</a>)</li>
+  <li>Labo mirgošanu, pārslēdzoties no nekustīga uz video fonu, autors <a href="https://github.com/bjarneo">@bjarneo</a> (<a href="https://github.com/omacom/omarchy/pull/17082">#17082</a>)</li>
+  <li>Atjaunini Hackerman uz palielinātu ģeometrisku fonu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16892">#16892</a>)</li>
+  <li>Labo tēmas ar cikliskām krāsu atsaucēm, kas iestrēdzināja tēmas maiņu, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/13046">#13046</a>)</li>
+  <li>Labo Neovim, kas nestartējās ar Catppuccin tēmu, autors <a href="https://github.com/anandude">@anandude</a> (<a href="https://github.com/omacom/omarchy/pull/12864">#12864</a>)</li>
+  <li>Labo OpenCode 2, kas startējās ar savu standarta tēmu, nevis Omarchy tēmu, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17293">#17293</a>)</li>
+  <li>Labo zema kontrasta iekļauto kodu ģenerētajā VS Code tēmā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15818">#15818</a>)</li>
+  <li>Labo T3 Code uzstādīšanas, kas apstājās, saskaņojot pašreizējo tēmu, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16962">#16962</a>)</li>
+  <li>Labo termināļa fonta izmēru, kas atiestatījās, mainot fontu saimi, autors <a href="https://github.com/sbalbalosa">@sbalbalosa</a> (<a href="https://github.com/omacom/omarchy/pull/6958">#6958</a>)</li>
+  <li>Labo fontu maiņu, kas drukāja termināļa procesa ID, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15820">#15820</a>)</li>
+  <li>Labo valodu maiņu, kas pārbūvēja katru lokāli un zaudēja tās gandrīz pilnā diskā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/16414">#16414</a>)</li>
+  <li>Labo čaulu, kas pirms tulkojumu ielādes rādīja neapstrādātas tulkojumu atslēgas, autors <a href="https://github.com/zihaomu">@zihaomu</a> (<a href="https://github.com/omacom/omarchy/pull/16059">#16059</a>)</li>
+  <li>Paātrini tulkotu tekstu Omarchy skriptos, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16584">#16584</a>)</li>
+  <li>Atjaunini tulkojumus 686 virknēm, 392 no tām rokasgrāmatā, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/commit/2550970">2550970</a>)</li>
+  <li>Labo skaļuma un izvades vadīklas lokālēs, kas nav angļu, autors <a href="https://github.com/Sebo1411">@Sebo1411</a> (<a href="https://github.com/omacom/omarchy/pull/14855">#14855</a>)</li>
+  <li>Labo CPU lietojuma rādījumus lokālēs, kas nav angļu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15109">#15109</a>)</li>
+  <li>Labo fcitx5 pakalpojumu, kas restartējās mūžīgi, kad fcitx5 nav uzstādīts, autors <a href="https://github.com/therk">@therk</a> (<a href="https://github.com/omacom/omarchy/pull/11694">#11694</a>)</li>
+  <li>Labo tastatūras izkārtojuma sīkrīku, kas pārslēdza ierīces, kurās neviens neraksta, autors <a href="https://github.com/bjarneo">@bjarneo</a> (<a href="https://github.com/omacom/omarchy/pull/10670">#10670</a>)</li>
+  <li>Labo tastatūras izkārtojuma sīkrīku, kas pārslēdza uz ražotāja karsto taustiņu ierīcēm, autors <a href="https://github.com/yashranaway">@yashranaway</a> (<a href="https://github.com/omacom/omarchy/pull/9129">#9129</a>)</li>
+  <li>Labo taustiņsaistību izvēlni, kas atstāja Lua procesu, kas darbojās ar 100% CPU, autors <a href="https://github.com/tobi">@tobi</a> (<a href="https://github.com/omacom/omarchy/pull/7564">#7564</a>)</li>
+  <li>Labo pulksteni, kas vasaras laika beigās katru milisekundi pārpludināja žurnālu, autors <a href="https://github.com/falkoro">@falkoro</a> (<a href="https://github.com/omacom/omarchy/pull/16684">#16684</a>)</li>
+  <li>Labo čaulu, kas shell.json, ko tā nevarēja nolasīt, aizstāja ar noklusējumiem, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14534">#14534</a>)</li>
+  <li>Labo Omarchy izvēlni, kas zaudēja rindas, kamēr tās fails tika atjaunināts, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/16268">#16268</a>)</li>
+  <li>Labo spraudņa atkārtotu ieslēgšanu, kas neatgrieza tā joslas sīkrīku, autors <a href="https://github.com/berrimi">@berrimi</a> (<a href="https://github.com/omacom/omarchy/pull/12540">#12540</a>)</li>
+  <li>Labo lokālos spraudņus, kas cilpā pārlādējās paši no sava Python baitkoda, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15093">#15093</a>)</li>
+  <li>Labo slēptās pogas spraudņos, kas sakļāvās līdz to atkāpei, autors <a href="https://github.com/dmkenney">@dmkenney</a> (<a href="https://github.com/omacom/omarchy/pull/15786">#15786</a>)</li>
+  <li>Labo nolaižamās izvēlnes, kas nogrieza to pēdējo vienumu, autors <a href="https://github.com/sprajs">@sprajs</a> (<a href="https://github.com/omacom/omarchy/pull/13916">#13916</a>)</li>
+  <li>Labo nolaižamās izvēlnes, kas neaizvērās ar otro klikšķi, autors <a href="https://github.com/felixzsh">@felixzsh</a> (<a href="https://github.com/omacom/omarchy/pull/6725">#6725</a>)</li>
+  <li>Labo slīdņu pogas, kas apstājās pirms sliedes gala, autors <a href="https://github.com/erikrjohansson">@erikrjohansson</a> (<a href="https://github.com/omacom/omarchy/pull/9345">#9345</a>)</li>
+  <li>
+    <p>Labo Update &gt; Hardware &gt; Trackpad, kam trūka vairuma skārienpaliktņu un kas atiestatīja tastatūru, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17280">#17280</a>)</p>
+
+    <p>Tas tagad katram skārienpaliktnim atlaiž iestrēgušu pogu un atiestata tikai skārienpaliktni, nevis tastatūru un skārienekrānu kopā ar to.</p>
+  </li>
+  <li>Panāk, ka tīmekļa kameru izvēlne pārbauda kameras, tās neieslēdzot, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15910">#15910</a>)</li>
+  <li>Labo Omasnap ritināšanas tveršanu, kas tvēra tikai melnus kadrus, autors <a href="https://github.com/falkoro">@falkoro</a> (<a href="https://github.com/omacom/omarchy/pull/16715">#16715</a>)</li>
+  <li>Labo ekrānuzņēmumu izvēlētāju, kas atsaistīja tavus taustiņus, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15126">#15126</a>)</li>
+  <li>Labo ieraksta apturēšanu, kas paziņoja par tukšu saglabātu ierakstu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15073">#15073</a>)</li>
+  <li>Labo attēlu izvēlētāju, kas rādīja novecojušus sīktēlus attēliem, kas saglabāti pa virsu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15079">#15079</a>)</li>
+  <li>Labo nakts apgaismojumu, kas izslēdzot pilnībā neatiestatījās, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14489">#14489</a>)</li>
+  <li>Labo multivides sīkrīku, kas apturētu ierakstu atstāja dīkstāves atskaņotājam, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14585">#14585</a>)</li>
+  <li>Labo atkārtotas displeju skenēšanas monitoros, kas neziņo spilgtumu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14525">#14525</a>)</li>
+  <li>Labo Super + Shift + Return kļūmi, kad konfigurētais pārlūks bija atinstalēts, autors <a href="https://github.com/vitally">@vitally</a> (<a href="https://github.com/omacom/omarchy/pull/16422">#16422</a>)</li>
+  <li>Labo kalkulatora īsinājumus, kas palika pēc iepriekš uzstādītu lietotņu noņemšanas, autors <a href="https://github.com/OldJobobo">@OldJobobo</a> (<a href="https://github.com/omacom/omarchy/pull/7716">#7716</a>)</li>
+  <li>Labo Copy URL īsinājumu Brave Origin profilos, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/10308">#10308</a>)</li>
+  <li>Labo Bitwarden paplašinājuma izlēkšanu, kas atvērās nepareizā izmērā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/14514">#14514</a>)</li>
+  <li>Labo Battle.net atvēršanos 100% mērogā HiDPI monitoros, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/17418">#17418</a>)</li>
+  <li>Labo Inkscape failu izvēlētājus, kas atvērās mozaīkā, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15792">#15792</a>)</li>
+  <li>Labo Go AUR pakotnes, kam atjauninājumu laikā neizdevās būvēties, kad Go pārvalda mise, autors <a href="https://github.com/shbernal">@shbernal</a> (<a href="https://github.com/omacom/omarchy/pull/16388">#16388</a>)</li>
+  <li>Labo ONCE uzstādīšanu, kad neesi docker grupā, autors <a href="https://github.com/kevinmcconnell">@kevinmcconnell</a> (<a href="https://github.com/omacom/omarchy/pull/8224">#8224</a>)</li>
+  <li>Labo aģentu paneļa klikšķus, kas atvēra paplāti, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/15501">#15501</a>)</li>
+  <li>Labo aģenta konta iestatīšanu, kas paklupa uz karājošas koplietotas simboliskās saites, autors <a href="https://github.com/manuaudio">@manuaudio</a> (<a href="https://github.com/omacom/omarchy/pull/14103">#14103</a>)</li>
+  <li>Labo <code>--reauth</code>, kas pievienoja jaunu aģenta kontu, kad tāda nebija, autors <a href="https://github.com/manuaudio">@manuaudio</a> (<a href="https://github.com/omacom/omarchy/pull/14100">#14100</a>)</li>
+  <li>Panāk, ka aģenta konta pārdēvēšanas padoms nosauc tā pakalpojumu sniedzēju, autors <a href="https://github.com/manuaudio">@manuaudio</a> (<a href="https://github.com/omacom/omarchy/pull/14099">#14099</a>)</li>
+  <li>Labo atslēgu gredzena atjauninājumus, kas apgalvoja panākumus, kad atslēgu operācijas izgāzās, autors <a href="https://github.com/Adolanium">@Adolanium</a> (<a href="https://github.com/omacom/omarchy/pull/7807">#7807</a>)</li>
+  <li>Labo tukšu rūpnīcas atiestatīšanas uzvedni, palaižot zem sudo, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/16032">#16032</a>)</li>
+  <li>Labo gaidošo migrāciju atgādinājumu, kas krājās reizi katrā pieteikšanās reizē, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16981">#16981</a>)</li>
+  <li>Labo OS Age sadaļā About, kas skaitīja no ISO būvējuma, nevis uzstādīšanas, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16828">#16828</a>)</li>
+  <li>Labo Dropbox, kas failiem, kas 360 līdz 364 dienas veci, rādīja “0y ago”, autors <a href="https://github.com/manuaudio">@manuaudio</a> (<a href="https://github.com/omacom/omarchy/pull/14183">#14183</a>)</li>
+  <li>Labo Dropbox statusa pārbaudi, kas izbeidza gaidošu pieteikšanās saiti, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15135">#15135</a>)</li>
+  <li>Labo Dropbox paplātes ikonu bibliotēkas uzstādīšanu, autors <a href="https://github.com/omarchybot">@omarchybot</a> (<a href="https://github.com/omacom/omarchy/pull/15076">#15076</a>)</li>
+  <li>Iespējo pārklājošas ritjoslas Chromium, autors <a href="https://github.com/robzolkos">@robzolkos</a> (<a href="https://github.com/omacom/omarchy/pull/14456">#14456</a>)</li>
+  <li>Prasi pirms Touch ID ieslēgšanas Apple Silicon Mac datoros, autors <a href="https://github.com/scottjones">@scottjones</a> (<a href="https://github.com/omacom/omarchy/pull/16360">#16360</a>)</li>
+  <li>Piedāvā RC kanālu Apple Silicon Mac datoros, autors <a href="https://github.com/maralcbr">@maralcbr</a> (<a href="https://github.com/omacom/omarchy/pull/16986">#16986</a>)</li>
+  <li>Piedāvā stable kanālu Apple Silicon Mac datoros, autors <a href="https://github.com/maralcbr">@maralcbr</a> (<a href="https://github.com/omacom/omarchy/pull/17498">#17498</a>)</li>
+  <li>Labo Omarchy aizstājvārdus, funkcijas un vidi, kuru trūka jaunos termināļos Apple Silicon, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17041">#17041</a>)</li>
+  <li>Iestati uzstādītās NVIDIA lietojumprogrammas, autors <a href="https://github.com/jdvmi00">@jdvmi00</a> (<a href="https://github.com/omacom/omarchy/pull/12723">#12723</a>)</li>
+  <li>Labo uzstādīšanu kļūmes Lenovo Pro 9 ar NVIDIA N1x, autors <a href="https://github.com/breymander">@breymander</a> (<a href="https://github.com/omacom/omarchy/pull/16423">#16423</a>)</li>
+  <li>Labo trūkstošos iekšējos skaļruņus un mikrofonus N1x klēpjdatoros, kuros darbojās agrākie audio profili, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/16233">#16233</a>)</li>
+  <li>Labo gausu darbvirsmu NVIDIA GB10 ierīcēs, piemēram, DGX Spark, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17264">#17264</a>)</li>
+  <li>
+    <p>Labo rakstīšanu bloķēšanas ekrānā pēc atsākšanas NVIDIA, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17277">#17277</a>)</p>
+
+    <p>Bloķēšana arī vairs nekļūst tumša tieši tad, kad panelis iedegas.</p>
+  </li>
+  <li>Labo Lutris un Battle.net, kas uzstādīja cita GPU 32 bitu Vulkan draiveri, autors <a href="https://github.com/zihaomu">@zihaomu</a> (<a href="https://github.com/omacom/omarchy/pull/16046">#16046</a>)</li>
+  <li>Pārstāj prasīt restartu pēc katra atjauninājuma ARM, autors <a href="https://github.com/birkskyum">@birkskyum</a> (<a href="https://github.com/omacom/omarchy/pull/14447">#14447</a>)</li>
+  <li>Piedāvā stable un RC kanālus aarch64, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16065">#16065</a>)</li>
+  <li>Panāk, ka jaudas profili darbojas ARM klēpjdatoros, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/14737">#14737</a>)</li>
+  <li>Piedāvā Dropbox ARM ierīcēs ar 4K lapām un Spotify kā tīmekļa lietotni ARM, autors <a href="https://github.com/birkskyum">@birkskyum</a> (<a href="https://github.com/omacom/omarchy/pull/15757">#15757</a>)</li>
+  <li>Slēp GeForce NOW, Battle.net un Lutris uzstādīšanas ARM, autors <a href="https://github.com/birkskyum">@birkskyum</a> (<a href="https://github.com/omacom/omarchy/pull/15753">#15753</a>)</li>
+  <li>Labo Hermes lietotni, kas ARM neatjauninājās uz vietas, autors <a href="https://github.com/ryanrhughes">@ryanrhughes</a> (<a href="https://github.com/omacom/omarchy/pull/16124">#16124</a>)</li>
+  <li>Labo Snapdragon klēpjdatoru tastatūras, kas nerakstīja pie diska atbloķēšanas uzvednes, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy/pull/16688">#16688</a>)</li>
+  <li>Labo kameras, kuru trūka pie pieteikšanās Snapdragon klēpjdatoros, autors <a href="https://github.com/birkskyum">@birkskyum</a> (<a href="https://github.com/omacom/omarchy/pull/16856">#16856</a>)</li>
+  <li>Labo melnu ekrānu pirms diska atbloķēšanas Snapdragon X2 klēpjdatoros, autors <a href="https://github.com/jdvmi00">@jdvmi00</a> (<a href="https://github.com/omacom/omarchy/pull/16940">#16940</a>)</li>
+  <li>Dekodē video aparatūrā Intel Wildcat Lake, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/17150">#17150</a>)</li>
+  <li>Labo dzīva ISO avārijas Arrow Lake-H klēpjdatoros, autors <a href="https://github.com/emirb">@emirb</a> (<a href="https://github.com/omacom/omarchy-iso/pull/311">omacom/omarchy-iso#311</a>)</li>
+  <li>Labo HP EliteBook Ultra G1q iekšējo mikrofonu, autors <a href="https://github.com/bprendie">@bprendie</a> (<a href="https://github.com/omacom/omarchy/pull/15574">#15574</a>)</li>
+  <li>Izmanto augšupēju atbalstu Motorcomm YT6801 Ethernet, autors <a href="https://github.com/AFOliveira">@AFOliveira</a> (<a href="https://github.com/omacom/omarchy/pull/9682">#9682</a>)</li>
+  <li>Pārraidi Elgato Cam Link 4K kā 16:9 virtuālu kameru, autors <a href="https://github.com/dhh">@dhh</a> (<a href="https://github.com/omacom/omarchy/pull/10809">#10809</a>)</li>
+  <li>Atbalsti pirkstu nospiedumu lasītājus, ko platforma nosauc, autors <a href="https://github.com/scottjones">@scottjones</a> (<a href="https://github.com/omacom/omarchy/pull/14675">#14675</a>)</li>
+</ul>
