@@ -36,6 +36,28 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / 'src' / 'data'
 
+def gallery_themes(html):
+    """Every theme entry in themes/index.html, in page order.
+
+    Each entry is a link wrapping its screenshot, then a figcaption naming it.
+    They are read pair by pair rather than one per <figure>, because merging
+    several theme pull requests at once can leave two entries in one block,
+    and only the first of them would show. A figcaption that doesn't parse
+    is an error rather than a theme quietly missing from the page.
+    """
+    themes = [
+        {'repo': href, 'image': image, 'name': unescape(name.strip())}
+        for href, image, name in re.findall(
+            r'<a\s+href="([^"]+)"\s*>\s*<img\b[^>]*?\bsrc="([^"]+)"[^>]*>\s*</a>\s*'
+            r'<figcaption>\s*<a[^>]*>([^<]+)</a>\s*</figcaption>',
+            html)
+    ]
+    captions = html.count('<figcaption>')
+    if len(themes) != captions:
+        raise ValueError(f'themes/index.html: read {len(themes)} themes from {captions} figcaptions')
+    return themes
+
+
 def page_sources(repo):
     """Discover authored HTML pages instead of maintaining a route allowlist.
 
@@ -277,14 +299,7 @@ def main() -> None:
     # by hand, in the shape the README documents. Read here, at build time,
     # rather than on the refresh schedule: a merged theme has to be on the
     # site the next time it deploys, the way it always has been.
-    themes_html = (repo / 'themes' / 'index.html').read_text()
-    themes = [
-        {'repo': href, 'image': image, 'name': unescape(name.strip())}
-        for href, image, name in re.findall(
-            r'<figure class="themes__theme">.*?<a href="([^"]+)"><img src="([^"]+)".*?'
-            r'<figcaption><a[^>]*>([^<]+)</a></figcaption>',
-            themes_html, re.S)
-    ]
+    themes = gallery_themes((repo / 'themes' / 'index.html').read_text())
     (OUT / 'themes.json').write_text(json.dumps(themes, indent=1))
     print(f'themes.json: {len(themes)} themes')
 
