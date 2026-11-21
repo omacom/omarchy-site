@@ -2,9 +2,21 @@ import locales from './src/i18n/locales.json' with { type: 'json' }
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
+import cascadeLayers from '@csstools/postcss-cascade-layers'
 import path from 'node:path'
 import { devPassthrough } from './scripts/dev-passthrough.mjs'
 import { intlData } from './src/i18n/intl-data.ts'
+
+// Safari < 15.4 ignores dvh/svh/lvh; precede each use with a vh fallback.
+const viewportFallback = {
+  postcssPlugin: 'viewport-fallback',
+  Declaration(decl) {
+    if (/\d[dsl]vh\b/.test(decl.value) && !decl.prev()?.fallback)
+      decl.cloneBefore({
+        value: decl.value.replace(/(\d)[dsl]vh\b/g, '$1vh'),
+      }).fallback = true
+  },
+}
 
 const language = process.env.PUBLIC_SITE_LOCALE || 'en'
 if (!Object.hasOwn(locales, language))
@@ -26,6 +38,10 @@ export default defineConfig({
       ),
     },
     plugins: [tailwindcss(), devPassthrough()],
+    // Tailwind targets Safari 16.4; older browsers drop @layer blocks entirely
+    // and leave the page unstyled, so flatten layers and lower the output.
+    css: { postcss: { plugins: [cascadeLayers(), viewportFallback] } },
+    build: { target: 'safari14' },
     optimizeDeps: { entries: ['!src/parked/**'] },
     resolve: {
       // Array form: exact entries first, so the shims win over the prefixes.

@@ -160,7 +160,7 @@ export function MeetupsPage({ rules }: { rules: string }) {
   const months: { name: string; id: string; meetups: Meetup[] }[] = []
   for (const meetup of upcoming) {
     const name = inZone(meetup, 'monthYear')
-    const last = months.at(-1)
+    const last = months[months.length - 1]
     if (last && last.name === name) last.meetups.push(meetup)
     else
       months.push({
