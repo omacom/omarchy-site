@@ -204,7 +204,7 @@ function shortDate(iso: string) {
 }
 
 /** A URL, or an @handle at the start of the text or after whitespace. */
-const LINK = /(https?:\/\/[^\s<]+)|((?:^|(?<=\s))@[A-Za-z0-9_]{1,15})/g
+const LINK = /(https?:\/\/[^\s<]+)|(^|\s)(@[A-Za-z0-9_]{1,15})/g
 
 /**
  * The post's links, made live: a URL opens where it points, an @handle opens
@@ -215,8 +215,8 @@ function linkify(text: string): ReactNode[] {
   const out: ReactNode[] = []
   let last = 0
   for (const match of text.matchAll(LINK)) {
-    const [token] = match
-    const at = match.index
+    const token = match[1] ?? match[3]
+    const at = match.index + (match[2]?.length ?? 0)
     if (at > last) out.push(text.slice(last, at))
     const href = token.startsWith('@')
       ? `https://x.com/${token.slice(1)}`

@@ -9,7 +9,7 @@ import {
 } from '@/components/PartnerLogos'
 import { useTopLink } from '@/lib/hash-scroll'
 import { localeHref } from '@/lib/menu'
-import { scriptName } from '@/lib/language-switcher'
+import { script } from '@/i18n/format'
 
 const columns = [
   {
@@ -206,7 +206,7 @@ export function SiteFooter({ path }: { path: string }) {
               >
                 {languageGroups.length > 1 ? (
                   <h2 className="font-sans text-[11px] text-text-muted">
-                    {scriptName(group.script)}
+                    {script(group.script)}
                   </h2>
                 ) : null}
                 <ul

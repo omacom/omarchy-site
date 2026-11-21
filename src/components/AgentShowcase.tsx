@@ -121,6 +121,7 @@ export function AgentShowcase() {
                           className="block size-6 shrink-0 bg-current"
                           style={{
                             mask: `url(/images/agents/${logo}) center / contain no-repeat`,
+                            WebkitMask: `url(/images/agents/${logo}) center / contain no-repeat`,
                           }}
                         />
                       ) : (

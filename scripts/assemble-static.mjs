@@ -7,6 +7,7 @@ import { existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { ASSETS_ONLY, createRedirects, WHOLE } from './site-passthrough.mjs'
+import { writeWebpFallbacks } from './webp-fallbacks.mjs'
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const SITE = path.resolve(process.env.OMARCHY_SITE_DIR ?? ROOT)
@@ -182,3 +183,5 @@ if (LANGUAGE !== 'en') {
     `<?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel><title>Omarchy – ${escapeHtml(feedTitle)}</title><link>${SITE_URL}/news/</link><description>${escapeHtml(feedDescription)}</description><language>${LANGUAGE}</language>${items.join('')}</channel></rss>`,
   )
 }
+
+console.log(`assemble: ${await writeWebpFallbacks(OUT)} WebP fallbacks`)

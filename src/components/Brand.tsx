@@ -1,5 +1,6 @@
 import { NOT_FOUND_HEIGHT, NOT_FOUND_WIDTH } from '@/data/not-found-bitmap'
 import { cn } from '@/lib/utils'
+import { aspectRatio } from '@/lib/aspect-ratio-fallback'
 
 /** The square-spiral glyph from public/brand/omarchy-logo.svg, inlined. The
  *  favicon is drawn from this same path, so the two cannot drift apart. */
@@ -117,7 +118,7 @@ export function OmarchyWordmark({
       aria-hidden={label ? undefined : true}
       className={className}
       style={{
-        aspectRatio: '4131 / 950',
+        ...aspectRatio('4131 / 950'),
         backgroundColor: 'currentColor',
         backgroundImage: background,
         maskImage: 'url(/brand/omarchy-wordmark.svg)',
@@ -140,7 +141,7 @@ export function NotFoundWordmark({ className, label, ...rest }: WordmarkProps) {
       aria-hidden={label ? undefined : true}
       className={className}
       style={{
-        aspectRatio: `${NOT_FOUND_WIDTH * 51} / ${NOT_FOUND_HEIGHT * 50}`,
+        ...aspectRatio(`${NOT_FOUND_WIDTH * 51} / ${NOT_FOUND_HEIGHT * 50}`),
         backgroundColor: 'currentColor',
         maskImage: 'url(/brand/not-found-wordmark.svg)',
         maskRepeat: 'no-repeat',
