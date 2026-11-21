@@ -11,6 +11,7 @@ import { PixelSnap } from '@/components/PixelSnap'
 import { MusicControl } from '@/components/MusicControl'
 import { themeInitScript } from '@/lib/theme'
 import { etchInitScript } from '@/lib/etch'
+import { legacyInitScript } from '@/lib/legacy'
 import { socialImage, SITE_DESCRIPTION, SITE_URL } from '@/lib/seo'
 import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
 import geistCyrillic from '@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2?url'
@@ -59,6 +60,7 @@ const fontPreloads = [...new Set([...own, geistLatin, monoLatin])]
 <!doctype html>
 <html lang={language} dir={locale.direction ?? 'ltr'} transition:name="root" transition:animate="none">
   <head>
+    <script is:inline data-astro-rerun set:html={legacyInitScript(monoLatin)} />
     <ClientRouter fallback="swap" />
     <script is:inline defer data-domain="omarchy.org" src="https://plausible.io/js/script.js" transition:persist="plausible" />
     <meta charset="utf-8" />
