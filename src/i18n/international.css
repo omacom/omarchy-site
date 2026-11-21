@@ -26,6 +26,12 @@ html[dir='rtl'] :is(code, pre, kbd) {
   font-family: var(--font-sans);
 }
 
+/* Fontsource's JetBrains Mono Cyrillic subset lacks Kyrgyz Eng (Ң/ң), which the
+   upstream font has; the bundled Geist subset carries it. */
+html:lang(ky) {
+  --font-mono: 'JetBrains Mono Variable', 'Geist Variable', monospace;
+}
+
 /* Arabic script: Arabic, Persian, Pashto, Urdu, Sindhi, Uyghur, Sorani Kurdish
    and Kurdish written right to left. */
 html:is(

@@ -356,6 +356,16 @@
     "manual": true,
     "flag": "MY"
   },
+  "ky": {
+    "name": "Кыргызча",
+    "englishName": "Kyrgyz",
+    "script": "Cyrl",
+    "domain": "https://ky.omarchy.org",
+    "formatLocale": "ky-KG",
+    "ogLocale": "ky_KG",
+    "manual": false,
+    "flag": "KG"
+  },
   "uk": {
     "name": "Українська",
     "englishName": "Ukrainian",
