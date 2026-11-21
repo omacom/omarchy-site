@@ -1,0 +1,987 @@
+/**
+ * A theme for every country with a site of its own, drawn from its flag.
+ *
+ * Each flag colour gets a job, the way the flag itself uses it:
+ *
+ * - `base` is the field: the page's ground is a deep, near black shade of
+ *   it, and the background pixels rest in it.
+ * - `button` is the colour that stands out against the field: the main
+ *   buttons are filled with it, exactly, with a label in another flag
+ *   colour where one is readable.
+ * - `links` and `hot` (the pixels the cursor and a click light up) take
+ *   the button's colour unless a flag says otherwise.
+ * - `word` lays the flag on the wordmark. Striped flags show their
+ *   stripes. A tricolour's first stripe is OM, ending in the gap before
+ *   the A; its last takes the C's open end, one column before its
+ *   hooks. Flags that are a field with an emblem (Türkiye's crescent,
+ *   Japan's disc) wear the emblem's colour, over a ground in the field's.
+ *   A Nordic cross shows its horizontal arm, and its upright runs down the
+ *   M's middle stem, which rises above the word and gives the cross its
+ *   top, a solid bar left of centre that never falls into a gap between
+ *   letters. A cross edged in white (Iceland's, Norway's) takes the edge
+ *   as rows around its arm and half columns beside its upright, which
+ *   only the hero draws at that size. A flag with a hoist or
+ *   a canton (the UAE's red bar, the Stars and Stripes' blue) lays it over
+ *   the bands from the left, ending in a gap between letters.
+ *
+ * `scripts/build-national-themes.mjs` turns this into the tokens in
+ * src/national-themes.css. Flag colours are used exactly wherever they
+ * sit on something they contrast with. Only a colour that would vanish
+ * on the dark ground (a deep navy stripe, say) is lifted, and only as far
+ * as it takes to be seen.
+ */
+
+export type NationalTheme = {
+  /** The country the language's site stands for, as an ISO code. */
+  country: string
+  id: string
+  /** The country's name in its own language. */
+  name: string
+  /** Dark, or light where the flag's own field is white. */
+  ground: 'dark' | 'light'
+  /** The flag's own colours, by name, at their official values. */
+  colors: Record<string, string>
+  /** The field: the ground leans toward it and the pixels rest in it. */
+  base: string
+  /** The main buttons' fill, and the flag colours to try for their label,
+   *  in order. Where none is readable, the label is the page's own ink. */
+  button: { fill: string; label?: string[] }
+  /** Links and focus rings, where not the button's colour. */
+  links?: string
+  /** The pixels the cursor and clicks light up, where not the button's. */
+  hot?: string
+  /** The pixels the cursor alone lights, where not the hot colour. */
+  glow?: string
+  /** The wordmark: bands from the top over its 19 rows, or stripes from
+   *  the left over its 81 columns, each a flag colour and a size. */
+  /** The favicon in a flag's own field and emblem instead of the flag:
+   *  where the word is white, black or a colour that is not the field's,
+   *  any of which a browser tab of its own colour would swallow or
+   *  misread. One colour, or the field's on the outer frame and the
+   *  emblem's on the inner square. */
+  favicon?: string | [field: string, emblem: string]
+  word:
+    | {
+        /** A band of two tones may say how many rows its first takes. */
+        bands: [color: string, rows: number, firstTone?: number][]
+        /** The square mark's rows of blocks for each band, out of 15, where
+         *  the word's own share them unevenly. */
+        markRows?: number[]
+        /** The tones run the other way: on a light page, light at the
+         *  top and deepening down, as the word does on a dark one. */
+        turned?: true
+        /** A block over the bands from the top left: the O alone is 11
+         *  columns, OM is 27, OMA 37. Its height is all 19 rows unless given. */
+        hoist?: [color: string, columns: 11 | 27 | 37, rows?: number]
+        /** A hoist triangle instead: its base the word's left edge, its
+         *  point at a column on a row's top edge. The A ends at 37. */
+        triangle?: [
+          color: string,
+          column: number,
+          row: number,
+          /** Rows set by hand: row, then the column it ends at. */
+          ends?: [row: number, column: number][],
+        ]
+        /** A colour on the cells just above and below the triangle,
+         *  outside it, as a black border. */
+        edge?: string
+        /** A band across the word on a slant instead, bottom left to top
+         *  right, as Tanzania's: the colour above it, the colour below,
+         *  and the band's own colours, each so many columns wide along a
+         *  row, centred on the word. `slope` is columns per row. */
+        diagonal?: {
+          slope: number
+          above: string
+          below: string
+          band: [color: string, columns: number][]
+          /** Cells set by hand, where a line's steps break on a letter:
+           *  a colour, its row, and columns from one up to another. */
+          fill?: [color: string, row: number, from: number, to: number][]
+        }
+        /** Bars down the whole word, each from one column up to another,
+         *  the later ones on top: a Nordic cross's upright. The M's middle
+         *  stem is columns 17 to 20. */
+        uprights?: [
+          color: string,
+          from: number,
+          to: number,
+          /** Only over these rows, from one up to another. */
+          rows?: [number, number],
+        ][]
+      }
+    | { stripes: [color: string, columns: number][] }
+}
+
+export const NATIONAL_THEMES: NationalTheme[] = [
+  {
+    country: 'AD',
+    id: 'andorra',
+    name: 'Andorra',
+    ground: 'dark',
+    colors: { blue: '#10069F', yellow: '#FEDF00', red: '#D0103A' },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    word: {
+      stripes: [
+        ['blue', 26],
+        ['yellow', 29],
+        ['red', 26],
+      ],
+    },
+  },
+  {
+    country: 'AE',
+    id: 'emirates',
+    name: 'الإمارات',
+    ground: 'dark',
+    colors: {
+      red: '#FF0000',
+      green: '#00732F',
+      white: '#FFFFFF',
+      black: '#000000',
+    },
+    base: 'green',
+    button: { fill: 'red', label: ['white', 'black'] },
+    word: {
+      bands: [
+        ['green', 6],
+        ['white', 6],
+        ['black', 7],
+      ],
+      hoist: ['red', 11],
+    },
+  },
+  {
+    country: 'BA',
+    id: 'bosna',
+    name: 'Bosna i Hercegovina',
+    ground: 'dark',
+    colors: { blue: '#002395', yellow: '#FECB00', white: '#FFFFFF' },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    hot: 'white',
+    favicon: ['blue', 'yellow'],
+    word: { bands: [['yellow', 19]] },
+  },
+  {
+    country: 'BD',
+    id: 'bangladesh',
+    name: 'বাংলাদেশ',
+    ground: 'dark',
+    colors: { green: '#006A4E', red: '#F42A41' },
+    base: 'green',
+    button: { fill: 'red', label: ['green'] },
+    favicon: ['green', 'red'],
+    word: { bands: [['red', 19]] },
+  },
+  {
+    country: 'BG',
+    id: 'balgariya',
+    name: 'България',
+    ground: 'dark',
+    colors: { white: '#FFFFFF', green: '#00966E', red: '#D62612' },
+    base: 'green',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['white', 6],
+        ['green', 6],
+        ['red', 7],
+      ],
+    },
+  },
+  {
+    country: 'BR',
+    id: 'brasil',
+    name: 'Brasil',
+    ground: 'dark',
+    colors: {
+      green: '#009440',
+      yellow: '#FFCB00',
+      blue: '#002776',
+      white: '#FFFFFF',
+    },
+    base: 'green',
+    button: { fill: 'yellow' },
+    glow: 'blue',
+    favicon: ['green', 'yellow'],
+    word: { bands: [['yellow', 19]] },
+  },
+  {
+    country: 'CN',
+    id: 'zhongguo',
+    name: '中国',
+    ground: 'dark',
+    colors: { red: '#DE2910', yellow: '#FFDE00' },
+    base: 'red',
+    button: { fill: 'yellow', label: ['red'] },
+    favicon: ['red', 'yellow'],
+    word: { bands: [['yellow', 19]] },
+  },
+  {
+    country: 'CZ',
+    id: 'cesko',
+    name: 'Česko',
+    ground: 'dark',
+    colors: { white: '#FFFFFF', red: '#D7141A', blue: '#11457E' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [
+        ['white', 9],
+        ['red', 10],
+      ],
+      triangle: [
+        'blue',
+        37,
+        9,
+        [
+          [3, 11],
+          [13, 17],
+          [14, 11],
+        ],
+      ],
+    },
+  },
+  {
+    country: 'DE',
+    id: 'deutschland',
+    name: 'Deutschland',
+    ground: 'dark',
+    colors: { black: '#000000', red: '#DD0000', gold: '#FFCE00' },
+    base: 'red',
+    button: { fill: 'gold', label: ['black'] },
+    word: {
+      bands: [
+        ['black', 6],
+        ['red', 6],
+        ['gold', 7],
+      ],
+    },
+  },
+  {
+    country: 'DK',
+    id: 'danmark',
+    name: 'Danmark',
+    ground: 'dark',
+    colors: { red: '#C8102E', white: '#FFFFFF' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [
+        ['red', 7],
+        ['white', 4],
+        ['red', 8],
+      ],
+      uprights: [['white', 17, 20]],
+    },
+  },
+  {
+    country: 'EE',
+    id: 'eesti',
+    name: 'Eesti',
+    ground: 'dark',
+    colors: { blue: '#0072CE', black: '#000000', white: '#FFFFFF' },
+    base: 'blue',
+    button: { fill: 'blue', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [
+        ['blue', 6],
+        ['black', 6],
+        ['white', 7],
+      ],
+    },
+  },
+  {
+    country: 'FI',
+    id: 'suomi',
+    name: 'Suomi',
+    ground: 'dark',
+    colors: { blue: '#002F6C', white: '#FFFFFF' },
+    base: 'blue',
+    button: { fill: 'white', label: ['blue'] },
+    word: {
+      bands: [
+        ['white', 7],
+        ['blue', 4],
+        ['white', 8],
+      ],
+      uprights: [['blue', 17, 20]],
+    },
+  },
+  {
+    country: 'FR',
+    id: 'france',
+    name: 'France',
+    ground: 'dark',
+    colors: { blue: '#000091', white: '#FFFFFF', red: '#E1000F' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      stripes: [
+        ['blue', 27],
+        ['white', 28],
+        ['red', 26],
+      ],
+    },
+  },
+  {
+    country: 'GR',
+    id: 'hellas',
+    name: 'Ελλάδα',
+    ground: 'dark',
+    colors: { blue: '#0D5EAF', white: '#FFFFFF' },
+    base: 'blue',
+    button: { fill: 'white', label: ['blue'] },
+    links: 'blue',
+    // The flag's stripes, over the word's rows.
+    word: {
+      bands: [
+        ['blue', 3],
+        ['white', 2],
+        ['blue', 3],
+        ['white', 3],
+        ['blue', 3],
+        ['white', 2],
+        ['blue', 3],
+      ],
+    },
+  },
+  {
+    country: 'HR',
+    id: 'hrvatska',
+    name: 'Hrvatska',
+    ground: 'dark',
+    colors: { red: '#FF0000', white: '#FFFFFF', blue: '#171796' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['red', 6],
+        ['white', 6],
+        ['blue', 7],
+      ],
+    },
+  },
+  {
+    country: 'HU',
+    id: 'magyarorszag',
+    name: 'Magyarország',
+    ground: 'dark',
+    colors: { red: '#CD2A3E', white: '#FFFFFF', green: '#436F4D' },
+    base: 'green',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['red', 6],
+        ['white', 6],
+        ['green', 7],
+      ],
+    },
+  },
+  {
+    country: 'ID',
+    id: 'indonesia',
+    name: 'Indonesia',
+    ground: 'dark',
+    colors: { red: '#FF0000', white: '#FFFFFF' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [
+        ['red', 9],
+        ['white', 10],
+      ],
+    },
+  },
+  {
+    country: 'IE',
+    id: 'eire',
+    name: 'Éire',
+    ground: 'dark',
+    colors: { green: '#169B62', white: '#FFFFFF', orange: '#FF883E' },
+    base: 'green',
+    button: { fill: 'orange', label: ['white'] },
+    word: {
+      stripes: [
+        ['green', 27],
+        ['white', 28],
+        ['orange', 26],
+      ],
+    },
+  },
+  {
+    country: 'IL',
+    id: 'israel',
+    name: 'ישראל',
+    // The flag's white is the page, its blue the word.
+    ground: 'light',
+    colors: { blue: '#0038B8', white: '#FFFFFF' },
+    base: 'blue',
+    button: { fill: 'blue', label: ['white'] },
+    favicon: 'blue',
+    word: { bands: [['blue', 19]], turned: true },
+  },
+  {
+    country: 'IN',
+    id: 'bharat',
+    name: 'भारत',
+    ground: 'dark',
+    colors: {
+      saffron: '#FF9933',
+      white: '#FFFFFF',
+      green: '#138808',
+      navy: '#000080',
+    },
+    base: 'green',
+    button: { fill: 'saffron', label: ['navy'] },
+    word: {
+      bands: [
+        ['saffron', 6],
+        ['white', 6],
+        ['green', 7],
+      ],
+    },
+  },
+  {
+    country: 'IR',
+    id: 'iran',
+    name: 'ایران',
+    ground: 'dark',
+    colors: { green: '#239F40', white: '#FFFFFF', red: '#DA0000' },
+    base: 'green',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['green', 6],
+        ['white', 6],
+        ['red', 7],
+      ],
+    },
+  },
+  {
+    country: 'IS',
+    id: 'island',
+    name: 'Ísland',
+    ground: 'dark',
+    colors: { blue: '#02529C', white: '#FFFFFF', red: '#DC1E35' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      // The cross edged in white, as on the flag: the arm two rows between
+      // two white, the upright a column between two down the M's middle.
+      bands: [
+        ['blue', 7],
+        ['white', 1],
+        ['red', 2],
+        ['white', 1],
+        ['blue', 8],
+      ],
+      // The cross unbroken where its arm and upright meet. Its upright two
+      // columns wide, edged by half a column of white either side, the
+      // half off the M's stem too.
+      uprights: [
+        ['white', 16.5, 20.5],
+        ['red', 17.5, 19.5],
+        ['red', 16.5, 20.5, [8, 10]],
+      ],
+    },
+  },
+  {
+    country: 'IT',
+    id: 'italia',
+    name: 'Italia',
+    ground: 'dark',
+    colors: { green: '#009246', white: '#F4F5F0', red: '#CE2B37' },
+    base: 'green',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      stripes: [
+        ['green', 27],
+        ['white', 28],
+        ['red', 26],
+      ],
+    },
+  },
+  {
+    country: 'JP',
+    id: 'nippon',
+    name: '日本',
+    ground: 'light',
+    colors: { red: '#BC002D', white: '#FFFFFF' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    word: { bands: [['red', 19]] },
+  },
+  {
+    country: 'KR',
+    id: 'hanguk',
+    name: '대한민국',
+    ground: 'light',
+    colors: {
+      red: '#CD2E3A',
+      blue: '#0047A0',
+      black: '#000000',
+      white: '#FFFFFF',
+    },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    links: 'blue',
+    word: {
+      bands: [
+        ['red', 10],
+        ['blue', 9],
+      ],
+    },
+  },
+  {
+    country: 'LK',
+    id: 'srilanka',
+    name: 'Sri Lanka',
+    ground: 'dark',
+    colors: {
+      maroon: '#8D153A',
+      gold: '#FFBE29',
+      saffron: '#EB7400',
+      green: '#00534E',
+    },
+    base: 'maroon',
+    button: { fill: 'gold', label: ['maroon'] },
+    favicon: ['maroon', 'gold'],
+    word: { bands: [['gold', 19]] },
+  },
+  {
+    country: 'LT',
+    id: 'lietuva',
+    name: 'Lietuva',
+    ground: 'dark',
+    colors: { yellow: '#FDB913', green: '#006A44', red: '#C1272D' },
+    base: 'green',
+    button: { fill: 'yellow', label: ['green'] },
+    word: {
+      bands: [
+        ['yellow', 6],
+        ['green', 6],
+        ['red', 7],
+      ],
+    },
+  },
+  {
+    country: 'LV',
+    id: 'latvija',
+    name: 'Latvija',
+    ground: 'dark',
+    colors: { carmine: '#9D2235', white: '#FFFFFF' },
+    base: 'carmine',
+    button: { fill: 'carmine', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [
+        ['carmine', 8],
+        ['white', 3],
+        ['carmine', 8],
+      ],
+    },
+  },
+  {
+    country: 'MX',
+    id: 'mexico',
+    name: 'México',
+    ground: 'dark',
+    colors: { green: '#006847', white: '#FFFFFF', red: '#CE1126' },
+    base: 'green',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      stripes: [
+        ['green', 27],
+        ['white', 28],
+        ['red', 26],
+      ],
+    },
+  },
+  {
+    country: 'MY',
+    id: 'malaysia',
+    name: 'Malaysia',
+    ground: 'dark',
+    colors: {
+      red: '#CC0000',
+      white: '#FFFFFF',
+      blue: '#000066',
+      yellow: '#FFCC00',
+    },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    word: {
+      bands: [
+        ['red', 3],
+        ['white', 2],
+        ['red', 3],
+        ['white', 3],
+        ['red', 3],
+        ['white', 2],
+        ['red', 3],
+      ],
+      hoist: ['blue', 27, 11],
+    },
+  },
+  {
+    country: 'NL',
+    id: 'nederland',
+    name: 'Nederland',
+    ground: 'dark',
+    colors: { red: '#AE1C28', white: '#FFFFFF', blue: '#21468B' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['red', 6],
+        ['white', 6],
+        ['blue', 7],
+      ],
+    },
+  },
+  {
+    country: 'NO',
+    id: 'norge',
+    name: 'Norge',
+    ground: 'dark',
+    colors: { red: '#BA0C2F', white: '#FFFFFF', blue: '#00205B' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    word: {
+      // The cross edged in white, as on the flag: the arm two rows between
+      // two white, the upright a column between two down the M's middle.
+      bands: [
+        ['red', 7],
+        ['white', 1],
+        ['blue', 2],
+        ['white', 1],
+        ['red', 8],
+      ],
+      // The cross unbroken where its arm and upright meet. Its upright two
+      // columns wide, edged by half a column of white either side, the
+      // half off the M's stem too.
+      uprights: [
+        ['white', 16.5, 20.5],
+        ['blue', 17.5, 19.5],
+        ['blue', 16.5, 20.5, [8, 10]],
+      ],
+    },
+  },
+  {
+    country: 'PH',
+    id: 'pilipinas',
+    name: 'Pilipinas',
+    ground: 'dark',
+    colors: {
+      blue: '#0038A8',
+      red: '#CE1126',
+      white: '#FFFFFF',
+      yellow: '#FCD116',
+    },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    word: {
+      bands: [
+        ['blue', 9],
+        ['red', 10],
+      ],
+      // The flag's white triangle: its point under the M,
+      // where the blue meets the red, and the O white whole.
+      triangle: ['white', 27, 9, [[1, 7]]],
+    },
+  },
+  {
+    country: 'PK',
+    id: 'pakistan',
+    name: 'پاکستان',
+    ground: 'dark',
+    colors: { green: '#01411C', white: '#FFFFFF' },
+    base: 'green',
+    button: { fill: 'white', label: ['green'] },
+    favicon: ['green', 'white'],
+    word: { bands: [['white', 19]] },
+  },
+  {
+    country: 'PL',
+    id: 'polska',
+    name: 'Polska',
+    ground: 'dark',
+    colors: { white: '#FFFFFF', red: '#DC143C' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [
+        ['white', 9],
+        ['red', 10],
+      ],
+    },
+  },
+  {
+    country: 'PT',
+    id: 'portugal',
+    name: 'Portugal',
+    ground: 'dark',
+    colors: { green: '#046A38', red: '#DA291C', yellow: '#FFE900' },
+    base: 'green',
+    button: { fill: 'red' },
+    links: 'yellow',
+    hot: 'yellow',
+    word: {
+      stripes: [
+        ['green', 32],
+        ['red', 49],
+      ],
+    },
+  },
+  {
+    country: 'RO',
+    id: 'romania',
+    name: 'România',
+    ground: 'dark',
+    colors: { blue: '#002B7F', yellow: '#FCD116', red: '#CE1126' },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    word: {
+      stripes: [
+        ['blue', 27],
+        ['yellow', 28],
+        ['red', 26],
+      ],
+    },
+  },
+  {
+    country: 'RS',
+    id: 'srbija',
+    name: 'Србија',
+    ground: 'dark',
+    colors: { red: '#C6363C', blue: '#0C4076', white: '#FFFFFF' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['red', 6],
+        ['blue', 6],
+        ['white', 7],
+      ],
+    },
+  },
+  {
+    country: 'RU',
+    id: 'rossiya',
+    name: 'Россия',
+    ground: 'dark',
+    colors: { white: '#FFFFFF', blue: '#0039A6', red: '#D52B1E' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['white', 6],
+        ['blue', 6],
+        ['red', 7],
+      ],
+    },
+  },
+  {
+    country: 'SE',
+    id: 'sverige',
+    name: 'Sverige',
+    ground: 'dark',
+    colors: { blue: '#006AA7', yellow: '#FECC02' },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    word: {
+      bands: [
+        ['blue', 7],
+        ['yellow', 4],
+        ['blue', 8],
+      ],
+      uprights: [['yellow', 17, 20]],
+    },
+  },
+  {
+    country: 'SI',
+    id: 'slovenija',
+    name: 'Slovenija',
+    ground: 'dark',
+    colors: { white: '#FFFFFF', blue: '#003DA5', red: '#D50032' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['white', 6],
+        ['blue', 6],
+        ['red', 7],
+      ],
+    },
+  },
+  {
+    country: 'SK',
+    id: 'slovensko',
+    name: 'Slovensko',
+    ground: 'dark',
+    colors: { white: '#FFFFFF', blue: '#254AA5', red: '#ED1C24' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['white', 6],
+        ['blue', 6],
+        ['red', 7],
+      ],
+    },
+  },
+  {
+    country: 'TH',
+    id: 'thai',
+    name: 'ไทย',
+    ground: 'dark',
+    colors: { red: '#A51931', white: '#F4F5F8', blue: '#2D2A4A' },
+    base: 'blue',
+    button: { fill: 'red', label: ['white'] },
+    word: {
+      bands: [
+        ['red', 3],
+        ['white', 3],
+        ['blue', 6],
+        ['white', 3],
+        ['red', 4],
+      ],
+    },
+  },
+  {
+    country: 'TR',
+    id: 'turkiye',
+    name: 'Türkiye',
+    ground: 'dark',
+    colors: { red: '#E30A17', white: '#FFFFFF' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    favicon: ['red', 'white'],
+    word: { bands: [['white', 19]] },
+  },
+  {
+    country: 'TW',
+    id: 'taiwan',
+    name: '臺灣',
+    ground: 'dark',
+    colors: { red: '#FE0000', blue: '#000095', white: '#FFFFFF' },
+    base: 'red',
+    button: { fill: 'red', label: ['white'] },
+    hot: 'white',
+    word: {
+      bands: [['red', 19]],
+      hoist: ['blue', 27, 11],
+    },
+  },
+  {
+    country: 'TZ',
+    id: 'tanzania',
+    name: 'Tanzania',
+    ground: 'dark',
+    colors: {
+      green: '#1EB53A',
+      yellow: '#FCD116',
+      black: '#000000',
+      blue: '#00A3DD',
+    },
+    base: 'green',
+    button: { fill: 'yellow', label: ['black'] },
+    word: {
+      // Laid flat, for whatever reads the word by rows.
+      bands: [
+        ['green', 7],
+        ['yellow', 1],
+        ['black', 3],
+        ['yellow', 1],
+        ['blue', 7],
+      ],
+      // The flag's slant, corner to corner of the word, from the O's foot
+      // to the Y's top: green and blue either side of a black band edged
+      // in yellow. Four columns a row, near the word's 81 over 19,
+      // so every row steps alike, and each yellow five wide, so its steps
+      // touch: a clean line, not scraps.
+      diagonal: {
+        slope: 4,
+        above: 'green',
+        below: 'blue',
+        // Each yellow as wide as a row's step, so it crosses every stroke
+        // on one row, and the black four rows.
+        band: [
+          ['yellow', 4],
+          ['black', 16],
+          ['yellow', 4],
+        ],
+        // The yellow joined where its steps break, so it runs on to every
+        // edge it meets: out the O's right side, the A's bar end to end,
+        // round the C's corner, and along the whole of the R's foot.
+        fill: [
+          ['yellow', 14, 6, 9],
+          ['yellow', 8, 36, 37],
+          ['yellow', 9, 27, 28],
+          ['yellow', 2, 52, 56],
+          ['yellow', 3, 50, 53],
+          ['black', 4, 50, 53],
+          ['yellow', 11, 38, 48],
+        ],
+      },
+    },
+  },
+  {
+    country: 'UA',
+    id: 'ukrayina',
+    name: 'Україна',
+    ground: 'dark',
+    colors: { blue: '#0057B7', yellow: '#FFD700' },
+    base: 'blue',
+    button: { fill: 'yellow', label: ['blue'] },
+    word: {
+      bands: [
+        ['blue', 9],
+        ['yellow', 10],
+      ],
+    },
+  },
+  {
+    country: 'UZ',
+    id: 'ozbekiston',
+    name: 'Oʻzbekiston',
+    ground: 'dark',
+    colors: {
+      blue: '#0099B5',
+      white: '#FFFFFF',
+      green: '#1EB53A',
+      red: '#CE1126',
+    },
+    base: 'blue',
+    button: { fill: 'green', label: ['white'] },
+    word: {
+      bands: [
+        ['blue', 5, 3],
+        ['red', 1],
+        ['white', 6],
+        ['red', 1],
+        ['green', 6, 2],
+      ],
+    },
+  },
+  {
+    country: 'VN',
+    id: 'vietnam',
+    name: 'Việt Nam',
+    ground: 'dark',
+    colors: { red: '#DA251D', yellow: '#FFFF00' },
+    base: 'red',
+    button: { fill: 'yellow', label: ['red'] },
+    favicon: ['red', 'yellow'],
+    word: { bands: [['yellow', 19]] },
+  },
+]

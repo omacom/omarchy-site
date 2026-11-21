@@ -2,7 +2,7 @@
 import sharp from 'sharp'
 import locales from '../src/i18n/locales.json' with { type: 'json' }
 import { socialLabelMasks, colorSocialLabels } from './lib/social-labels.mjs'
-import { SITE_THEMES } from '../src/lib/site-themes.ts'
+import { STOCK_THEMES } from '../src/lib/site-themes.ts'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -41,7 +41,7 @@ const GRID_ROWS = Math.ceil(H / CH)
 const WM_COL = Math.round((COLS - 81) / 2)
 const WM_ROW = 10
 
-for (const theme of SITE_THEMES) {
+for (const theme of STOCK_THEMES) {
   const block = css.split(`[data-theme='${theme.id}'] {`)[1]?.split('}')[0]
   if (!block) throw new Error(`Missing CSS palette for ${theme.id}`)
   const color = (name) => {
@@ -123,7 +123,7 @@ for (const theme of SITE_THEMES) {
   const wordmark = []
   for (let row = 0; row < 19; row++) {
     const ink =
-      WORDMARK_INKS[row < 5 ? 0 : row < 7 ? 1 : row < 11 ? 2 : row < 14 ? 3 : 4]
+      WORDMARK_INKS[row < 4 ? 0 : row < 7 ? 1 : row < 11 ? 2 : row < 14 ? 3 : 4]
     for (let col = 0; col < 81; col++) {
       if (lit(row, col)) {
         wordmark.push(
