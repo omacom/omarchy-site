@@ -1,6 +1,12 @@
 import { t } from '@/i18n/site'
 import { useEffect, useRef, useState } from 'react'
 import mapData from '@/data/meetup-map.json'
+import {
+  boxAround as frameAround,
+  pinPaintOrder,
+  wholeMap,
+  type MapBox,
+} from '@/lib/meetup-map'
 import { cn } from '@/lib/utils'
 
 export type MapPin = {
@@ -18,8 +24,7 @@ export type MapPin = {
   approximate: boolean
 }
 
-/** A box on the map, in its units, to glide onto. */
-export type MapBox = { x: number; y: number; width: number; height: number }
+export type { MapBox }
 
 /** The card's width plus the gap that keeps it off its dot. */
 const CARD_ROOM = 320 + 16
@@ -27,44 +32,11 @@ const CARD_ROOM = 320 + 16
 const { width: W, height: H } = mapData
 
 /** The box that shows everything. */
-export const WHOLE_MAP: MapBox = { x: 0, y: 0, width: W, height: H }
+export const WHOLE_MAP: MapBox = wholeMap(W, H)
 
-/** The box around a set of points, with room to breathe and never so
- *  small that a dot would be huge. */
+/** The box around a set of points, kept on the map. */
 export function boxAround(points: { x: number; y: number }[]): MapBox {
-  if (points.length === 0) return WHOLE_MAP
-  const xs = points.map((p) => p.x)
-  const ys = points.map((p) => p.y)
-  const pad = 40
-  let x0 = Math.min(...xs) - pad
-  let x1 = Math.max(...xs) + pad
-  let y0 = Math.min(...ys) - pad
-  let y1 = Math.max(...ys) + pad
-  const minW = W / 4
-  const minH = H / 4
-  if (x1 - x0 < minW) {
-    const c = (x0 + x1) / 2
-    x0 = c - minW / 2
-    x1 = c + minW / 2
-  }
-  if (y1 - y0 < minH) {
-    const c = (y0 + y1) / 2
-    y0 = c - minH / 2
-    y1 = c + minH / 2
-  }
-  const ratio = W / H
-  if ((x1 - x0) / (y1 - y0) > ratio) {
-    const h = (x1 - x0) / ratio
-    const c = (y0 + y1) / 2
-    y0 = c - h / 2
-    y1 = c + h / 2
-  } else {
-    const w = (y1 - y0) * ratio
-    const c = (x0 + x1) / 2
-    x0 = c - w / 2
-    x1 = c + w / 2
-  }
-  return { x: x0, y: y0, width: x1 - x0, height: y1 - y0 }
+  return frameAround(points, W, H)
 }
 
 /** Where the pins are on the map, by meetup. */
@@ -97,13 +69,10 @@ export function MeetupMap({
     const at = PIN_AT.get(pin.id)
     return at ? [{ ...pin, x: at.x, y: at.y }] : []
   })
-  // Shown pins over past ones. The order never changes after that: a dot
-  // moved in the tree would restart its arrival and blink. The dot the
+  // Upcoming above past, lit above dim. The order never changes after that:
+  // a dot moved in the tree would restart its arrival and blink. The dot the
   // reader is on is drawn again on top instead, further down.
-  placed.sort(
-    (a, b) =>
-      Number(a.past) - Number(b.past) || Number(a.shown) - Number(b.shown),
-  )
+  placed.sort(pinPaintOrder)
   const scale = W / box.width
   const k = 1 / Math.sqrt(scale)
   const hovered = active ? placed.find((p) => p.id === active) : undefined
