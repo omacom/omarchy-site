@@ -1,10 +1,10 @@
 # Keeps the manual current without anyone running bin/build-manual by hand.
 # The chapters and the theme previews they show live in the OS repository;
-# this renders them, at the release bin/build-manual names in RELEASE, into
+# this renders them, at omarchy's latest public release, into
 # manual/ once a day and commits what changed, with each translation's
 # src/i18n/<code>/manual.json that the build makes from manual-translations/.
 # A new release changes manual/ with its translations, so that is what this
-# watches. Moving to a new release is a change to RELEASE.
+# watches, and a new release reaches the site by the next morning.
 #
 # The render runs in Arch, like a hand run of bin/build-manual on Omarchy.
 # The script calls ImageMagick 7's `magick`, which Ubuntu does not ship.
@@ -45,8 +45,10 @@ jobs:
 
       - name: Fetch the manual from omarchy
         id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          ref=$(sed -n 's/^RELEASE = "\(.*\)"$/\1/p' bin/build-manual)
+          ref=$(gh api repos/omacom/omarchy/releases/latest --jq .tag_name)
           git clone --quiet --depth 1 --branch "$ref" --filter=blob:none --sparse https://github.com/omacom/omarchy "$RUNNER_TEMP/omarchy"
           git -C "$RUNNER_TEMP/omarchy" sparse-checkout set --no-cone '/manual/' '/themes/*/preview*.png'
           echo "ref=$ref" >> "$GITHUB_OUTPUT"
