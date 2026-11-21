@@ -49,6 +49,9 @@ function sheet(monoFont: string) {
     'img{max-width:100%;height:auto}',
     // Text meant for screen readers only stays out of sight, but readable.
     '.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}',
+    // A heading whose visible text is a scripted animation (aria-hidden) keeps
+    // the real words in its screen-reader copy, which shows here instead.
+    '[data-typed-block] .sr-only{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}',
     `pre,code{font-family:inherit;white-space:pre-wrap;word-wrap:break-word;color:${TEXT}}`,
     `pre{background:${SURFACE};border:1px solid ${SURFACE_2};padding:12px 16px}`,
     `blockquote{margin:24px 0;padding-left:16px;border-left:2px solid ${BRAND}}`,
@@ -56,30 +59,42 @@ function sheet(monoFont: string) {
     'a[href="#main"]{position:absolute;left:-9999px}',
     'a[href="#main"]:focus{left:16px;top:8px;z-index:9}',
     // The bar: the wordmark, the links, the Install button.
-    `header{background:${FIELD};border-bottom:1px solid ${SURFACE_2}}`,
-    'header>div>div{max-width:72rem;margin:0 auto;padding:0 24px;min-height:56px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap}',
-    'header a[href="/"]{display:inline-block;width:112px;height:26px;margin-right:16px;background:url(/brand/omarchy-wordmark.svg) no-repeat left center;background-size:contain}',
-    `header nav a{color:${TEXT_2};text-decoration:none;padding:6px 12px;font-size:14px}`,
-    `header nav a:hover{color:${TEXT}}`,
+    `header.sticky{background:${FIELD};border-bottom:1px solid ${SURFACE_2}}`,
+    'header.sticky>div>div{max-width:72rem;margin:0 auto;padding:0 24px;min-height:56px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap}',
+    'header.sticky a[href="/"]{display:inline-block;width:112px;height:26px;margin-right:16px;background:url(/brand/omarchy-wordmark.svg) no-repeat left center;background-size:contain}',
+    `header.sticky nav a{color:${TEXT_2};text-decoration:none;padding:6px 12px;font-size:14px}`,
+    `header.sticky nav a:hover{color:${TEXT}}`,
     // Icon-only links need their glyphs, which are hidden; the logo keeps
     // its label and gets the wordmark as a background instead.
-    'header a[aria-label]:not([href="/"]){display:none}',
-    'header>div>div>div{margin-left:auto}',
+    'header.sticky a[aria-label]:not([href="/"]){display:none}',
+    'header.sticky>div>div>div{margin-left:auto}',
     // Buttons: brand green, the second in a row on the dark surface.
     `a[data-slot="button"]{display:inline-block;padding:8px 18px;margin:4px 8px 4px 0;background:${BRAND};color:${INK};font-weight:600;text-decoration:none;border:1px solid ${BRAND}}`,
     `a[data-slot="button"]+a[data-slot="button"]{background:${SURFACE_2};color:${TEXT};border-color:${BORDER}}`,
     // Sections: a centred column on alternating grounds, the hero on the field.
-    `#main section{background:${BG}}`,
-    `#main section:nth-of-type(odd){background:${BG_DEEP}}`,
-    '#main section>div{max-width:72rem;margin:0 auto;padding:48px 24px}',
-    `#main section:first-of-type{background:${FIELD};text-align:center;padding:72px 24px 96px}`,
-    '#main section:first-of-type>div{padding:0}',
-    '#main section:first-of-type h1{font-size:30px;margin:32px 0 16px}',
-    `#main section:first-of-type a[href*="/news/"]{display:inline-block;padding:4px 14px;border:1px solid ${BRAND_DIM};color:${BRAND};text-decoration:none;font-size:13px}`,
-    '#main section:first-of-type p span{display:block}',
+    // Inner pages (manual, news, teams...): one centred column.
+    '#main main:not(.home){display:block;max-width:72rem;margin:0 auto;padding:32px 24px 64px}',
+    // The manual's sidebar is a scripted scroll area; the collapsible
+    // chapter list it also has for narrow screens works everywhere.
+    'nav[data-manual-toc]{display:none}',
+    `details{border:1px solid ${SURFACE_2};padding:8px 16px;margin:0 0 24px}`,
+    `summary{cursor:pointer;color:${TEXT_2};font-size:13px}`,
+    'details ol li{display:block;margin:4px 0}',
+    // Page wordmarks are masked blocks sized by classes and aspect-ratio,
+    // which these browsers lack: give them a fixed size and the brand green.
+    `div[role="img"][style*="omarchy-wordmark"]{width:280px;max-width:70%;height:64px;margin:16px auto 8px;color:${BRAND};background-image:none!important}`,
+    `.page-subtitle{text-align:center;color:${MUTED};font-size:12px;letter-spacing:.18em;text-transform:uppercase}`,
+    `main.home>section{background:${BG}}`,
+    `main.home>section:nth-of-type(odd){background:${BG_DEEP}}`,
+    'main.home>section>div{max-width:72rem;margin:0 auto;padding:48px 24px}',
+    `main.home>section:first-of-type{background:${FIELD};text-align:center;padding:72px 24px 96px}`,
+    'main.home>section:first-of-type>div{padding:0}',
+    'main.home>section:first-of-type h1{font-size:30px;margin:32px 0 16px}',
+    `main.home>section:first-of-type a[href*="/news/"]{display:inline-block;padding:4px 14px;border:1px solid ${BRAND_DIM};color:${BRAND};text-decoration:none;font-size:13px}`,
+    'main.home>section:first-of-type p span{display:block}',
     // The hero's pixel wordmark is drawn on a canvas; the SVG stands in.
-    '#main section:first-of-type h1:before{content:"";display:block;max-width:100%;height:130px;margin:40px auto 48px;background:url(/brand/omarchy-wordmark.svg) no-repeat center;background-size:contain}',
-    '#main section:first-of-type a[data-slot="button"]{margin:24px 6px 0}',
+    'main.home>section:first-of-type h1:before{content:"";display:block;max-width:100%;height:130px;margin:40px auto 48px;background:url(/brand/omarchy-wordmark.svg) no-repeat center;background-size:contain}',
+    'main.home>section:first-of-type a[data-slot="button"]{margin:24px 6px 0}',
     // The video rail: its slides are play buttons, shown here as their
     // thumbnails and titles.
     '[aria-roledescription="slide"]{display:inline-block;vertical-align:top;width:32%;margin-right:1%}',
@@ -138,6 +153,11 @@ function sheet(monoFont: string) {
     'footer>div{max-width:72rem;margin:0 auto;padding:40px 24px}',
     `footer a{display:inline-block;color:${TEXT_2};text-decoration:none;margin:0 16px 6px 0}`,
     'div>a+a{margin-left:.75em}',
+    // Headers and articles inside pages are plain, not the bar or a card.
+    '#main header{background:none;border:0}',
+    'main:not(.home)>article,.manual-chapter article{background:none;border:0;padding:0}',
+    // Tailwind's block utility, which the markup leans on to break lines.
+    '.block{display:block}',
   ].join('')
 }
 
