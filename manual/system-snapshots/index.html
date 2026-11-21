@@ -65,7 +65,7 @@
       <h1>System snapshots</h1>
 <p>We create snapshots automatically on every Omarchy update, but should you want to create your own, you can use <code>omarchy-snapshot create</code>.</p>
 
-<p>To boot and restore a snapshot, you select it from the Limine boot loader. The boot menu stays hidden by default, so press any key as soon as Limine starts to bring it up.</p>
+<p>To boot and restore a snapshot, you select it from the Limine boot loader. (If you’re currently booting straight into the Omarchy decryption screen, you’ll need to select Limine as a boot option via the BIOS first).</p>
 
 <p>From that screen, choose the snapshot you’d like to boot into based on the date and version. The version of Omarchy at the time of the snapshot can be seen at the bottom left corner.</p>
 
@@ -82,6 +82,12 @@
 <p>The same goes for Omarchy’s own record of which migrations have already run: it lives in your home directory, so it survives the restore. Migrations that ran after the snapshot was taken stay marked as done, even though the changes they made to the root filesystem have been rolled back, and the next <code>omarchy update</code> won’t run them again. So if you update again after a restore and something an earlier update had set up is still missing, that’s the likely reason.</p>
 
 <p><em>Note: This feature is only available on installations using the Limine boot loader, which has been the default since Omarchy 2.0. It’s not available if you’re on GRUB or systemd-boot.</em></p>
+
+<h3 id="skipping-the-boot-menu">Skipping the boot menu <a class="manual__heading-link" href="#skipping-the-boot-menu" aria-label="Link to this section">#</a></h3>
+
+<p>If you never touch the boot menu and just want the machine to go straight to the decryption screen, run <em>Setup &gt; Direct Boot</em> in the Omarchy menu. That adds an EFI entry pointing directly at Omarchy, so the firmware boots it without stopping at Limine.</p>
+
+<p>The trade-off is the one mentioned at the top: with direct boot on, getting to a snapshot means picking Limine from your BIOS boot menu first. Run <em>Setup &gt; Direct Boot</em> again to remove the entry and go back to booting through Limine. Some firmware doesn’t take kindly to custom EFI entries, so the setup refuses to run on American Megatrends and Apple firmware.</p>
 
     </article>
   </div>

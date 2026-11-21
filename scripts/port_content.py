@@ -205,18 +205,14 @@ def port_marketplace(repo: Path) -> None:
     print(f'plugin-pages.json: {len(pages)} pages')
 
 
-def main() -> None:
-    argv = [a for a in sys.argv if not a.startswith('--')]
-    repo = get_repo(argv)
-    argv = sys.argv
-
-    # ---------------------------------------------------------------- manual
-    toc_src = (repo / 'manual/getting-started/index.html').read_text()
+def manual_chapters(root: Path) -> list[dict]:
+    """The chapters bin/build-manual rendered under root/manual/, in contents order."""
+    toc_src = (root / 'manual/getting-started/index.html').read_text()
     toc = re.findall(r'<li><a href="/manual/([^"]*)"[^>]*>(.*?)</a></li>', toc_src)
     chapters = []
     for href, label in toc:
         slug = href.strip('/') or 'index'
-        path = repo / 'manual' / (href.strip('/') or '.') / 'index.html'
+        path = root / 'manual' / (href.strip('/') or '.') / 'index.html'
         src = path.read_text()
         m = re.search(r'<article class="manual__content">(.*?)</article>', src, re.S)
         body = m.group(1) if m else extract_main(src)
@@ -226,8 +222,26 @@ def main() -> None:
             'title': unescape(re.sub(r'<[^>]+>', '', label)).strip(),
             'html': clean(body, manual_slug=slug),
         })
+    return chapters
+
+
+def main() -> None:
+    argv = [a for a in sys.argv if not a.startswith('--')]
+    repo = get_repo(argv)
+    argv = sys.argv
+
+    # ---------------------------------------------------------------- manual
+    chapters = manual_chapters(repo)
     (OUT / 'manual.json').write_text(json.dumps(chapters))
     print(f'manual.json: {len(chapters)} chapters')
+
+    # Each translation bin/build-manual rendered becomes that language's
+    # manual, which its edition shows in place of the English one.
+    translations = sorted((repo / 'manual-translations').glob('*/manual/getting-started/index.html'))
+    for toc_page in translations:
+        root = toc_page.parents[2]
+        (repo / 'src/i18n' / root.name / 'manual.json').write_text(json.dumps(manual_chapters(root)))
+    print(f'manual translations: {len(translations)}')
 
     # ------------------------------------------------------------------ news
     posts = []

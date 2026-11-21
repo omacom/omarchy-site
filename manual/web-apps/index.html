@@ -105,7 +105,7 @@
 
 <p><a href="https://www.whatsapp.com/">WhatsApp</a> is one of the most popular messaging services in the world, and the web version is a great option for Linux.</p>
 
-<p>You can start WhatsApp using <code>Super + Shift + Alt + G</code>. It opens with Omarchy’s WhatsApp Slim extension, which makes it follow your theme and collapses the chat list when the window is narrow.</p>
+<p>You can start WhatsApp using <code>Super + Shift + Alt + G</code>.</p>
 
 <h2 id="google-apps">Google apps <a class="manual__heading-link" href="#google-apps" aria-label="Link to this section">#</a></h2>
 
@@ -125,12 +125,6 @@
 
 <p>You can start YouTube using <code>Super + Shift + Y</code>.</p>
 
-<h2 id="netflix">Netflix <a class="manual__heading-link" href="#netflix" aria-label="Link to this section">#</a></h2>
-
-<p><a href="https://www.netflix.com/">Netflix</a> is included as a web app on new installs.</p>
-
-<p>You start Netflix using the application launcher (<code>Super + Space</code>).</p>
-
 <h2 id="zoom">Zoom <a class="manual__heading-link" href="#zoom" aria-label="Link to this section">#</a></h2>
 
 <p><a href="https://zoom.us/">Zoom</a> is the most popular video chat system used in the US. Great connections across the world. And 40-minute meetings can be held without a paying account. Omarchy wraps Zoom’s web client, and zoom meeting links will open straight into it.</p>
@@ -147,7 +141,7 @@
 
 <p>Select <em>Install &gt; Service &gt; Microsoft</em> to add Outlook, Word, Excel, PowerPoint, Teams, and OneDrive as web apps. Each app has its own launcher and opens directly, using the commercial Microsoft 365 URLs and your existing browser profile. They open in the same browser app windows as Omarchy’s other web apps; they do not install the separate Teams for Linux client.</p>
 
-<p>Remove the bundle with <em>Remove &gt; Services &gt; Microsoft</em>, or remove individual apps with <em>Remove &gt; Web App</em>. You can also install just the apps you want through <em>Install &gt; Web App</em>.</p>
+<p>Remove the bundle with <em>Remove &gt; Service &gt; Microsoft</em>, or remove individual apps with <em>Remove &gt; Web App</em>. You can also install just the apps you want through <em>Install &gt; Web App</em>.</p>
 
 <p>For a government or sovereign cloud, edit the URL on the <code>Exec=</code> line in the relevant launcher under <code>~/.local/share/applications/</code>, such as <code>Microsoft Teams.desktop</code>, using the URL supplied by your organization. Write any literal <code>%</code> in that line as <code>%%</code>. Changes apply on the next launch. Running the bundle installer again replaces its launchers with the default URLs.</p>
 
@@ -156,7 +150,7 @@
 <pre><code class="language-ini">Exec=omarchy-launch-webapp "https://teams.cloud.microsoft/" --user-data-dir=/absolute/path/to/work-browser-profile
 </code></pre>
 
-<p>Replace the example directory with an absolute path of your choice and use the same path for all six launchers to share work sign-ins between them. The web apps use Omarchy’s selected supported browser, falling back to Chrome when the default browser is unsupported.</p>
+<p>Replace the example directory with an absolute path of your choice and use the same path for all six launchers to share work sign-ins between them. The web apps use Omarchy’s selected supported browser, falling back to Chromium when the default browser is unsupported.</p>
 
     </article>
   </div>
