@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-18",
+  "refreshed": "2026-11-22",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1747,6 +1747,40 @@
       "geo": { "lat": 34.25343, "lon": -110.02816999999999 },
       "hosts": [],
       "cover": "/images/meetups/evt-E0xJ81sqOj9SPBg-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-8bzYILSu1goFtbi",
+      "title": "Linux And Omarchy Meetup - Chennai 002",
+      "url": "https://luma.com/lbina9uc",
+      "start": "2026-11-28T13:00:00.000Z",
+      "end": "2026-11-28T14:30:00.000Z",
+      "timezone": "Asia/Kolkata",
+      "address": "Studio Cafe, 2nd Main Rd, near Sabari Nagar, Sabari Nagar Extension, Mugalivakkam, Chennai, Tamil Nadu 600116, India",
+      "city": "Chennai",
+      "country": "IN",
+      "online": false,
+      "geo": { "lat": 13.025260099999999, "lon": 80.1686967 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-8bzYILSu1goFtbi-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-NA2pBkUyXaHsaBz",
+      "title": "Omarchy Lisbon Meetup 001",
+      "url": "https://luma.com/xt0wf88j",
+      "start": "2026-11-30T18:30:00.000Z",
+      "end": "2026-11-30T21:00:00.000Z",
+      "timezone": "Europe/Lisbon",
+      "address": "Cloudflare, Av. da Índia 8 10, 1300-299 Lisboa, Portugal",
+      "city": "Lisboa",
+      "country": "PT",
+      "online": false,
+      "geo": { "lat": 38.701561399999996, "lon": -9.176805 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-NA2pBkUyXaHsaBz-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },

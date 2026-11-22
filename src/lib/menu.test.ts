@@ -154,7 +154,12 @@ test('every locale is a language row, English first, linking to the page only wh
     localeHref('da', '/themes/', '?x=1'),
     'https://omarchy.dk/themes/?x=1',
   )
-  assert.equal(localeHref('da', '/manual/faq/'), 'https://omarchy.dk/')
+  assert.equal(
+    localeHref('da', '/manual/faq/'),
+    'https://omarchy.dk/manual/faq/',
+  )
+  // An edition without a translated manual sends its readers home instead.
+  assert.equal(localeHref('bs', '/manual/faq/'), 'https://omarchy.ba/')
   assert.equal(
     localeHref('en', '/manual/faq/'),
     'https://omarchy.org/manual/faq/',
@@ -168,5 +173,8 @@ test('every locale is a language row, English first, linking to the page only wh
     localeHref('zh-CN', '/themes/', '?q=1'),
     'https://zh.omarchy.org/themes/?q=1',
   )
-  assert.equal(localeHref('zh-CN', '/manual/'), 'https://zh.omarchy.org/')
+  assert.equal(
+    localeHref('zh-CN', '/manual/'),
+    'https://zh.omarchy.org/manual/',
+  )
 })

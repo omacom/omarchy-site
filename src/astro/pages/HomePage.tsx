@@ -143,12 +143,7 @@ const TRY: ReadonlyArray<TryOption> = [
       href: 'https://tryomarchy.dev/',
       icon: PlayIcon,
     },
-    links: [
-      {
-        label: t('Community demo by Emir Beganovic'),
-        href: 'https://emirb.github.io/',
-      },
-    ],
+    links: [],
   },
 ]
 

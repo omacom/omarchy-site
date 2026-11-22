@@ -15,3 +15,7 @@ todos.json
 __pycache__/
 .vscode/
 .venv-fonts/
+
+# Rendered translations bin/build-manual writes for scripts/port_content.py;
+# only the src/i18n/<code>/manual.json it makes from them is kept.
+manual-translations/
