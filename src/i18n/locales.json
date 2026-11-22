@@ -15,7 +15,7 @@
     "domain": "https://omarchy.dk",
     "formatLocale": "da-DK",
     "ogLocale": "da_DK",
-    "manual": false
+    "manual": true
   },
   "ar": {
     "name": "العربية",
@@ -24,7 +24,7 @@
     "domain": "https://omarchy.ae",
     "formatLocale": "ar-AE",
     "ogLocale": "ar_AE",
-    "manual": false,
+    "manual": true,
     "direction": "rtl"
   },
   "fi": {
@@ -34,7 +34,7 @@
     "domain": "https://omarchy.fi",
     "formatLocale": "fi-FI",
     "ogLocale": "fi_FI",
-    "manual": false
+    "manual": true
   },
   "fr": {
     "name": "Français",
@@ -43,7 +43,7 @@
     "domain": "https://omarchy.fr",
     "formatLocale": "fr-FR",
     "ogLocale": "fr_FR",
-    "manual": false
+    "manual": true
   },
   "el": {
     "name": "Ελληνικά",
@@ -52,7 +52,7 @@
     "domain": "https://omarchy.gr",
     "formatLocale": "el-GR",
     "ogLocale": "el_GR",
-    "manual": false
+    "manual": true
   },
   "hu": {
     "name": "Magyar",
@@ -61,7 +61,7 @@
     "domain": "https://omarchy.hu",
     "formatLocale": "hu-HU",
     "ogLocale": "hu_HU",
-    "manual": false
+    "manual": true
   },
   "hi": {
     "name": "हिन्दी",
@@ -70,7 +70,7 @@
     "domain": "https://omarchy.in",
     "formatLocale": "hi-IN",
     "ogLocale": "hi_IN",
-    "manual": false
+    "manual": true
   },
   "is": {
     "name": "Íslenska",
@@ -79,7 +79,7 @@
     "domain": "https://omarchy.is",
     "formatLocale": "is-IS",
     "ogLocale": "is_IS",
-    "manual": false
+    "manual": true
   },
   "ja": {
     "name": "日本語",
@@ -88,7 +88,7 @@
     "domain": "https://omarchy.jp",
     "formatLocale": "ja-JP",
     "ogLocale": "ja_JP",
-    "manual": false
+    "manual": true
   },
   "ko": {
     "name": "한국어",
@@ -97,7 +97,7 @@
     "domain": "https://omarchy.kr",
     "formatLocale": "ko-KR",
     "ogLocale": "ko_KR",
-    "manual": false
+    "manual": true
   },
   "es-MX": {
     "name": "Español (México)",
@@ -106,7 +106,7 @@
     "domain": "https://omarchy.mx",
     "formatLocale": "es-MX",
     "ogLocale": "es_MX",
-    "manual": false
+    "manual": true
   },
   "fil": {
     "name": "Filipino",
@@ -115,7 +115,7 @@
     "domain": "https://omarchy.ph",
     "formatLocale": "fil-PH",
     "ogLocale": "fil_PH",
-    "manual": false
+    "manual": true
   },
   "pt": {
     "name": "Português (Portugal)",
@@ -124,7 +124,7 @@
     "domain": "https://omarchy.pt",
     "formatLocale": "pt-PT",
     "ogLocale": "pt_PT",
-    "manual": false,
+    "manual": true,
     "translationNote": "European Portuguese as written in Portugal: \"estar a fazer\" progressives (never \"estar fazendo\"), \"equipa\", \"sistema operativo\", \"utilizador\", \"ecrã\", \"ficheiro\", second-person \"tu\" forms consistent with the existing UI strings. Brazilian Portuguese vocabulary or grammar is a defect; a separate pt-BR edition exists."
   },
   "sv": {
@@ -134,7 +134,7 @@
     "domain": "https://omarchy.se",
     "formatLocale": "sv-SE",
     "ogLocale": "sv_SE",
-    "manual": false
+    "manual": true
   },
   "tr": {
     "name": "Türkçe",
@@ -143,7 +143,7 @@
     "domain": "https://omarchy.tr",
     "formatLocale": "tr-TR",
     "ogLocale": "tr_TR",
-    "manual": false
+    "manual": true
   },
   "vi": {
     "name": "Tiếng Việt",
@@ -152,7 +152,7 @@
     "domain": "https://vi.omarchy.org",
     "formatLocale": "vi-VN",
     "ogLocale": "vi_VN",
-    "manual": false,
+    "manual": true,
     "flag": "VN"
   },
   "ur": {
@@ -162,7 +162,7 @@
     "domain": "https://ur.omarchy.org",
     "formatLocale": "ur-PK",
     "ogLocale": "ur_PK",
-    "manual": false,
+    "manual": true,
     "flag": "PK",
     "direction": "rtl"
   },
@@ -173,7 +173,7 @@
     "domain": "https://bn.omarchy.org",
     "formatLocale": "bn-BD",
     "ogLocale": "bn_BD",
-    "manual": false,
+    "manual": true,
     "flag": "BD"
   },
   "ca": {
@@ -183,7 +183,7 @@
     "domain": "https://ca.omarchy.org",
     "formatLocale": "ca-AD",
     "ogLocale": "ca_ES",
-    "manual": false,
+    "manual": true,
     "flag": "AD"
   },
   "si": {
@@ -193,7 +193,7 @@
     "domain": "https://si.omarchy.org",
     "formatLocale": "si-LK",
     "ogLocale": "si_LK",
-    "manual": false,
+    "manual": true,
     "flag": "LK"
   },
   "ta": {
@@ -203,7 +203,7 @@
     "domain": "https://ta.omarchy.org",
     "formatLocale": "ta-LK",
     "ogLocale": "ta_LK",
-    "manual": false,
+    "manual": true,
     "flag": "LK"
   },
   "th": {
@@ -213,7 +213,7 @@
     "domain": "https://th.omarchy.org",
     "formatLocale": "th-TH",
     "ogLocale": "th_TH",
-    "manual": false,
+    "manual": true,
     "flag": "TH"
   },
   "uz": {
@@ -223,7 +223,7 @@
     "domain": "https://uz.omarchy.org",
     "formatLocale": "uz-UZ",
     "ogLocale": "uz_UZ",
-    "manual": false,
+    "manual": true,
     "flag": "UZ"
   },
   "it": {
@@ -233,7 +233,7 @@
     "domain": "https://it.omarchy.org",
     "formatLocale": "it-IT",
     "ogLocale": "it_IT",
-    "manual": false,
+    "manual": true,
     "flag": "IT"
   },
   "zh-CN": {
@@ -243,7 +243,7 @@
     "domain": "https://zh.omarchy.org",
     "formatLocale": "zh-CN",
     "ogLocale": "zh_CN",
-    "manual": false,
+    "manual": true,
     "flag": "CN"
   },
   "pl": {
@@ -253,7 +253,7 @@
     "domain": "https://pl.omarchy.org",
     "formatLocale": "pl-PL",
     "ogLocale": "pl_PL",
-    "manual": false,
+    "manual": true,
     "flag": "PL"
   },
   "lt": {
@@ -263,7 +263,7 @@
     "domain": "https://lt.omarchy.org",
     "formatLocale": "lt-LT",
     "ogLocale": "lt_LT",
-    "manual": false,
+    "manual": true,
     "flag": "LT"
   },
   "ga": {
@@ -273,7 +273,7 @@
     "domain": "https://ga.omarchy.org",
     "formatLocale": "ga-IE",
     "ogLocale": "ga_IE",
-    "manual": false,
+    "manual": true,
     "flag": "IE"
   },
   "nl": {
@@ -283,7 +283,7 @@
     "domain": "https://nl.omarchy.org",
     "formatLocale": "nl-NL",
     "ogLocale": "nl_NL",
-    "manual": false,
+    "manual": true,
     "flag": "NL"
   },
   "no": {
@@ -293,7 +293,7 @@
     "domain": "https://omarchy.no",
     "formatLocale": "nb-NO",
     "ogLocale": "nb_NO",
-    "manual": false
+    "manual": true
   },
   "ru": {
     "name": "Русский",
@@ -302,7 +302,7 @@
     "domain": "https://ru.omarchy.org",
     "formatLocale": "ru-RU",
     "ogLocale": "ru_RU",
-    "manual": false,
+    "manual": true,
     "flag": "RU"
   },
   "id": {
@@ -312,7 +312,7 @@
     "domain": "https://id.omarchy.org",
     "formatLocale": "id-ID",
     "ogLocale": "id_ID",
-    "manual": false,
+    "manual": true,
     "flag": "ID"
   },
   "de": {
@@ -322,7 +322,7 @@
     "domain": "https://de.omarchy.org",
     "formatLocale": "de-DE",
     "ogLocale": "de_DE",
-    "manual": false,
+    "manual": true,
     "flag": "DE"
   },
   "sw": {
@@ -332,7 +332,7 @@
     "domain": "https://sw.omarchy.org",
     "formatLocale": "sw-TZ",
     "ogLocale": "sw_TZ",
-    "manual": false,
+    "manual": true,
     "flag": "TZ"
   },
   "fa": {
@@ -342,7 +342,7 @@
     "domain": "https://fa.omarchy.org",
     "formatLocale": "fa-IR",
     "ogLocale": "fa_IR",
-    "manual": false,
+    "manual": true,
     "flag": "IR",
     "direction": "rtl"
   },
@@ -353,7 +353,7 @@
     "domain": "https://ms.omarchy.org",
     "formatLocale": "ms-MY",
     "ogLocale": "ms_MY",
-    "manual": false,
+    "manual": true,
     "flag": "MY"
   },
   "uk": {
@@ -363,7 +363,7 @@
     "domain": "https://uk.omarchy.org",
     "formatLocale": "uk-UA",
     "ogLocale": "uk_UA",
-    "manual": false,
+    "manual": true,
     "flag": "UA"
   },
   "ro": {
@@ -373,7 +373,7 @@
     "domain": "https://ro.omarchy.org",
     "formatLocale": "ro-RO",
     "ogLocale": "ro_RO",
-    "manual": false,
+    "manual": true,
     "flag": "RO"
   },
   "cs": {
@@ -383,7 +383,7 @@
     "domain": "https://cs.omarchy.org",
     "formatLocale": "cs-CZ",
     "ogLocale": "cs_CZ",
-    "manual": false,
+    "manual": true,
     "flag": "CZ"
   },
   "sr": {
@@ -393,7 +393,7 @@
     "domain": "https://sr.omarchy.org",
     "formatLocale": "sr-RS",
     "ogLocale": "sr_RS",
-    "manual": false,
+    "manual": true,
     "flag": "RS"
   },
   "he": {
@@ -403,7 +403,7 @@
     "domain": "https://he.omarchy.org",
     "formatLocale": "he-IL",
     "ogLocale": "he_IL",
-    "manual": false,
+    "manual": true,
     "flag": "IL",
     "direction": "rtl"
   },
@@ -414,7 +414,7 @@
     "domain": "https://bg.omarchy.org",
     "formatLocale": "bg-BG",
     "ogLocale": "bg_BG",
-    "manual": false,
+    "manual": true,
     "flag": "BG"
   },
   "sk": {
@@ -424,7 +424,7 @@
     "domain": "https://sk.omarchy.org",
     "formatLocale": "sk-SK",
     "ogLocale": "sk_SK",
-    "manual": false,
+    "manual": true,
     "flag": "SK"
   },
   "hr": {
@@ -434,7 +434,7 @@
     "domain": "https://hr.omarchy.org",
     "formatLocale": "hr-HR",
     "ogLocale": "hr_HR",
-    "manual": false,
+    "manual": true,
     "flag": "HR"
   },
   "sl": {
@@ -444,7 +444,7 @@
     "domain": "https://sl.omarchy.org",
     "formatLocale": "sl-SI",
     "ogLocale": "sl_SI",
-    "manual": false,
+    "manual": true,
     "flag": "SI"
   },
   "zh-TW": {
@@ -454,7 +454,7 @@
     "domain": "https://zh-tw.omarchy.org",
     "formatLocale": "zh-TW",
     "ogLocale": "zh_TW",
-    "manual": false,
+    "manual": true,
     "flag": "TW"
   },
   "et": {
@@ -464,7 +464,7 @@
     "domain": "https://et.omarchy.org",
     "formatLocale": "et-EE",
     "ogLocale": "et_EE",
-    "manual": false,
+    "manual": true,
     "flag": "EE"
   },
   "lv": {
@@ -474,7 +474,7 @@
     "domain": "https://lv.omarchy.org",
     "formatLocale": "lv-LV",
     "ogLocale": "lv_LV",
-    "manual": false,
+    "manual": true,
     "flag": "LV"
   },
   "pt-BR": {
@@ -484,7 +484,7 @@
     "domain": "https://pt-br.omarchy.org",
     "formatLocale": "pt-BR",
     "ogLocale": "pt_BR",
-    "manual": false,
+    "manual": true,
     "flag": "BR",
     "translationNote": "Brazilian Portuguese as written in Brazil: \"você\" forms, \"estar fazendo\" progressives, \"time\", \"sistema operacional\", \"usuário\", \"tela\", \"arquivo\"."
   },

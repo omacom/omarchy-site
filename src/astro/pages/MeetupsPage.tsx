@@ -7,7 +7,7 @@ import { MeetupMap, PIN_AT, WHOLE_MAP, boxAround } from '@/components/MeetupMap'
 import { SectionActions } from '@/components/SectionHeading'
 import { ArrowRightIcon } from '@/components/icons'
 import meetups from '@/data/meetups.json'
-import { COUNTRIES_OF, REGIONS, regionOf } from '@/lib/regions'
+import { REGIONS, regionOf } from '@/lib/regions'
 import type { Region } from '@/lib/regions'
 import { cn } from '@/lib/utils'
 
@@ -232,10 +232,6 @@ export function MeetupsPage({ rules }: { rules: string }) {
       <MeetupMap
         pins={pins}
         box={box}
-        lit={region ? COUNTRIES_OF(region) : new Set<string>()}
-        withMeetups={
-          new Set(allUpcoming.flatMap((e) => (e.country ? [e.country] : [])))
-        }
         active={active}
         onActive={setActive}
         className="mt-6 hidden sm:block"

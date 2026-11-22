@@ -69,7 +69,7 @@
 
 <h3 id="why-are-some-apps-so-large-on-my-display">Why are some apps so large on my display? <a class="manual__heading-link" href="#why-are-some-apps-so-large-on-my-display" aria-label="Link to this section">#</a></h3>
 
-<p>Omarchy assumes a 2x high-resolution display, so it sets <code>GDK_SCALE</code> to 2 until you choose a scale in the monitor panel. If you’re on a 1x display and GTK or X11 apps come out oversized, pick 1x for it in the monitor panel, or add <code>hl.env("GDK_SCALE", "1")</code> to <code>~/.config/hypr/monitors.lua</code> (and then restart any app that’s oversized). See <a href="../monitors/">the manual on monitors</a>.</p>
+<p>Omarchy assumes a 2x high-resolution display, which requires setting <code>GDK_SCALE</code> to 2 in <code>~/.config/hypr/monitors.lua</code>. But if you’re on a 1x display, you can change <code>local omarchy_gdk_scale = 2</code> to 1 (and then restart any app that’s oversized). See <a href="../monitors/">the manual on monitors</a>.</p>
 
 <p>For Spotify, you can use <code>Ctrl + Minus</code> to shrink the UI (and <code>Ctrl + Plus</code> to make it bigger).</p>
 

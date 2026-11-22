@@ -121,8 +121,8 @@ export function TeamClusters({
                       className={
                         'block size-(--team-face) overflow-hidden rounded-full ring-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ' +
                         (isPicked
-                          ? 'ring-bg-deep outline-2 -outline-offset-2 outline-brand'
-                          : 'ring-bg-deep hover:outline-2 hover:-outline-offset-2 hover:outline-brand')
+                          ? 'ring-(--ground) outline-2 -outline-offset-2 outline-brand'
+                          : 'ring-(--ground) hover:outline-2 hover:-outline-offset-2 hover:outline-brand')
                       }
                     >
                       {member.avatar ? (
@@ -151,7 +151,7 @@ export function TeamClusters({
                   <Link
                     to="/teams/"
                     aria-label={`${rest} more on the teams page`}
-                    className="flex size-(--team-face) items-center justify-center rounded-full bg-surface-2 font-mono text-xs text-text-secondary ring-2 ring-bg-deep transition-colors duration-150 ease-out hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                    className="flex size-(--team-face) items-center justify-center rounded-full bg-surface-2 font-mono text-xs text-text-secondary ring-2 ring-(--ground) transition-colors duration-150 ease-out hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     +{rest}
                   </Link>
