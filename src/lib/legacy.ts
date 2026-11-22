@@ -84,6 +84,11 @@ function sheet(monoFont: string) {
     // which these browsers lack: give them a fixed size and the brand green.
     `div[role="img"][style*="omarchy-wordmark"]{width:280px;max-width:70%;height:64px;margin:16px auto 8px;color:${BRAND};background-image:none!important}`,
     `.page-subtitle{text-align:center;color:${MUTED};font-size:12px;letter-spacing:.18em;text-transform:uppercase}`,
+    // The intro under a subtitle (the themes steps) spaces its words with
+    // flex gaps and draws its arrows as aria-hidden text: keep both.
+    '.page-subtitle+div{text-align:center}',
+    '.page-subtitle+div span{margin:0 .3em}',
+    '.page-subtitle+div span[aria-hidden="true"]{display:inline}',
     `main.home>section{background:${BG}}`,
     `main.home>section:nth-of-type(odd){background:${BG_DEEP}}`,
     'main.home>section>div{max-width:72rem;margin:0 auto;padding:48px 24px}',
