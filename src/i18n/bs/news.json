@@ -56,8 +56,8 @@
     "sourceHash": "6b4c4987fc67ebfbd0295a23520056d21819c360a0932aec9a894ddf9edc6c15"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Omacom Foundation pokrenuta sa 23,7 miliona USD",
-    "sourceHash": "c8398860f4f9b8c8ccf40853ac6ac6edd9b7c6677dc55f76b8e0da7d8732d691"
+    "title": "Omacom Foundation pokrenuta uz 24 miliona USD",
+    "sourceHash": "8d642aff52a5ecd1dcc7bbecc6c527d8d5d739164a1a430cb0adfade1eaf6ac0"
   },
   "omacom-foundation-raises-another-half-a-million-dollars": {
     "title": "Omacom Foundation prikuplja još pola miliona dolara!",
@@ -154,5 +154,13 @@
   "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
     "title": "Marcelo Alcantara i Birk Skyum pridružuju se Omarchy Core timu",
     "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
+  },
+  "omacom-foundation-to-sponsor-aurora-silicon": {
+    "title": "Omacom Foundation će sponzorirati Aurora Silicon",
+    "sourceHash": "1de71c060dbcaebc5e32277cf6c97edafb4e96a9b4fd5a87576df34b80fd55c2"
+  },
+  "beelink-joins-as-a-distinguished-corporate-patron": {
+    "title": "Beelink se pridružuje kao istaknuti korporativni patron",
+    "sourceHash": "f7d484964045790d4b4afb1375e2fa0ac023117a81d61ab2c2550c26db117103"
   }
 }

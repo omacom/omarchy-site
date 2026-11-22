@@ -107,7 +107,12 @@ test('localeHref keeps the page where the other site has it', () => {
     localeHref('da', '/themes/', '?x=1'),
     'https://omarchy.dk/themes/?x=1',
   )
-  assert.equal(localeHref('da', '/manual/faq/'), 'https://omarchy.dk/')
+  assert.equal(
+    localeHref('da', '/manual/faq/'),
+    'https://omarchy.dk/manual/faq/',
+  )
+  // An edition without a translated manual sends its readers home instead.
+  assert.equal(localeHref('bs', '/manual/faq/'), 'https://omarchy.ba/')
   assert.equal(
     localeHref('en', '/manual/faq/'),
     'https://omarchy.org/manual/faq/',
