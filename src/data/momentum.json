@@ -1,19 +1,18 @@
 {
-  "checked": "2026-11-18",
+  "checked": "2026-11-22",
   "github": {
-    "stars": 47170,
-    "pullRequests": 10113,
-    "contributors": 640,
-    "commitsYear": 4666,
+    "stars": 47347,
+    "pullRequests": 10418,
+    "contributors": 649,
+    "commitsYear": 4783,
     "weeks": [
-      31, 9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195, 83, 30, 44, 27, 51,
-      21, 18, 38, 77, 125, 196, 263, 437, 142, 42, 30, 15, 35, 57, 9, 78, 230,
-      121, 70, 178, 47, 142, 75, 66, 75, 67, 82, 103, 182, 165, 215, 103, 206,
-      127
+      9, 22, 35, 18, 35, 107, 17, 14, 37, 51, 23, 195, 83, 30, 44, 27, 51, 21,
+      18, 38, 77, 125, 196, 263, 437, 142, 42, 30, 15, 35, 57, 9, 78, 230, 121,
+      70, 178, 47, 142, 77, 66, 75, 67, 85, 103, 182, 165, 215, 105, 206, 267, 1
     ]
   },
   "foundation": {
-    "total": 23.65,
+    "total": 23.95,
     "steps": [
       {
         "date": "2026-08-21",
@@ -84,19 +83,24 @@
         "date": "2026-10-15",
         "amount": 23.65,
         "post": "/news/2026/10/greptile-joins-as-a-distinguished-corporate-patron/"
+      },
+      {
+        "date": "2026-11-20",
+        "amount": 23.95,
+        "post": "/news/2026/11/beelink-joins-as-a-distinguished-corporate-patron/"
       }
     ]
   },
   "downloads": {
-    "total": 1394335,
+    "total": 1405880,
     "countries": 217,
     "post": "/news/2026/09/quattro-crosses-200000-iso-downloads/",
-    "quattro": 579693,
-    "periods": [{ "label": "Last month", "count": 101911, "days": 30 }],
+    "quattro": 591238,
+    "periods": [{ "label": "Last month", "count": 98051, "days": 30 }],
     "counting": {
       "since": "2026-09-06",
-      "through": "2026-11-17",
-      "lastAdded": 2905,
+      "through": "2026-11-21",
+      "lastAdded": 2933,
       "countries": [
         "AD",
         "AE",
