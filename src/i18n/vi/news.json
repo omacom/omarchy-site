@@ -72,8 +72,8 @@
     "sourceHash": "524022d62a6e34bbbc189419752844e27e0cfa2b88cffb0107e302d80c3d6265"
   },
   "omacom-foundation-launches-with-8-million": {
-    "title": "Omacom Foundation ra mắt với 23,7 triệu USD",
-    "sourceHash": "c8398860f4f9b8c8ccf40853ac6ac6edd9b7c6677dc55f76b8e0da7d8732d691"
+    "title": "Omacom Foundation ra mắt với 24 triệu USD",
+    "sourceHash": "8d642aff52a5ecd1dcc7bbecc6c527d8d5d739164a1a430cb0adfade1eaf6ac0"
   },
   "omacom-foundation-funding-hits-10m": {
     "title": "Tài trợ Omacom Foundation đạt 10 triệu USD",
@@ -154,5 +154,13 @@
   "marcelo-alcantara-and-birk-skyum-join-omarchy-core": {
     "title": "Marcelo Alcantara và Birk Skyum tham gia Omarchy Core",
     "sourceHash": "c0be054626078bb144e0cd2eb3d72e005b01fb5459b6c1853385ae233c20436c"
+  },
+  "omacom-foundation-to-sponsor-aurora-silicon": {
+    "title": "Omacom Foundation sẽ tài trợ cho Aurora Silicon",
+    "sourceHash": "1de71c060dbcaebc5e32277cf6c97edafb4e96a9b4fd5a87576df34b80fd55c2"
+  },
+  "beelink-joins-as-a-distinguished-corporate-patron": {
+    "title": "Beelink gia nhập với tư cách Nhà bảo trợ doanh nghiệp tiêu biểu",
+    "sourceHash": "f7d484964045790d4b4afb1375e2fa0ac023117a81d61ab2c2550c26db117103"
   }
 }
