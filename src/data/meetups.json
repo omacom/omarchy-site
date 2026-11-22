@@ -1,7 +1,7 @@
 {
   "source": "luma-api",
   "calendar": "https://luma.com/omarchy",
-  "refreshed": "2026-11-12",
+  "refreshed": "2026-11-22",
   "events": [
     {
       "id": "evt-YDyCEwwpiMzSFDB",
@@ -1650,7 +1650,7 @@
     },
     {
       "id": "evt-n3vWFaK0KP8ejG6",
-      "title": "Omarchy Hangzhou Meetup · 项目分享、装机与 Demo",
+      "title": "Omarchy 杭州 Meetup · DHH 远程连线 + 项目分享与装机",
       "url": "https://luma.com/omarchyhangzhou",
       "start": "2026-11-15T06:00:00.000Z",
       "end": "2026-11-15T10:00:00.000Z",
@@ -1751,6 +1751,40 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-8bzYILSu1goFtbi",
+      "title": "Linux And Omarchy Meetup - Chennai 002",
+      "url": "https://luma.com/lbina9uc",
+      "start": "2026-11-28T13:00:00.000Z",
+      "end": "2026-11-28T14:30:00.000Z",
+      "timezone": "Asia/Kolkata",
+      "address": "Studio Cafe, 2nd Main Rd, near Sabari Nagar, Sabari Nagar Extension, Mugalivakkam, Chennai, Tamil Nadu 600116, India",
+      "city": "Chennai",
+      "country": "IN",
+      "online": false,
+      "geo": { "lat": 13.025260099999999, "lon": 80.1686967 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-8bzYILSu1goFtbi-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-NA2pBkUyXaHsaBz",
+      "title": "Omarchy Lisbon Meetup 001",
+      "url": "https://luma.com/xt0wf88j",
+      "start": "2026-11-30T18:30:00.000Z",
+      "end": "2026-11-30T21:00:00.000Z",
+      "timezone": "Europe/Lisbon",
+      "address": "Cloudflare, Av. da Índia 8 10, 1300-299 Lisboa, Portugal",
+      "city": "Lisboa",
+      "country": "PT",
+      "online": false,
+      "geo": { "lat": 38.701561399999996, "lon": -9.176805 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-NA2pBkUyXaHsaBz-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-uPsBGIfECd9kXxV",
       "title": "Omarchy SF",
       "url": "https://luma.com/ejid15jm",
@@ -1802,6 +1836,23 @@
       "coverHeight": 800
     },
     {
+      "id": "evt-wCxQUZRXp6kPJyK",
+      "title": "Omarchy Aotearoa ep2",
+      "url": "https://luma.com/7bj5q2rs",
+      "start": "2026-12-11T22:00:00.000Z",
+      "end": "2026-12-12T00:00:00.000Z",
+      "timezone": "Pacific/Auckland",
+      "address": "Patch Cafe - Lorne St, 36 Lorne Street, Auckland CBD, Auckland 1010, New Zealand",
+      "city": "Auckland",
+      "country": "NZ",
+      "online": false,
+      "geo": { "lat": -36.8507499, "lon": 174.7655605 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-wCxQUZRXp6kPJyK-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
       "id": "evt-U925QBQtzBf2iX3",
       "title": "Omarchy DFW 002: What's New, Deep Dive, and Show & Tell",
       "url": "https://luma.com/7lpv9pv6",
@@ -1815,6 +1866,23 @@
       "geo": { "lat": 32.7766642, "lon": -96.79698789999999 },
       "hosts": [],
       "cover": "/images/meetups/evt-U925QBQtzBf2iX3-full.webp",
+      "coverWidth": 800,
+      "coverHeight": 800
+    },
+    {
+      "id": "evt-isTAXBiog8Wsv6o",
+      "title": "Omarchy Buenos Aires Meetup 003",
+      "url": "https://luma.com/zh7ya002",
+      "start": "2026-12-16T22:00:00.000Z",
+      "end": "2026-12-17T00:30:00.000Z",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "address": "Buenos Aires, Argentina",
+      "city": "Buenos Aires",
+      "country": "AR",
+      "online": false,
+      "geo": { "lat": -34.6036739, "lon": -58.3821215 },
+      "hosts": [],
+      "cover": "/images/meetups/evt-isTAXBiog8Wsv6o-full.webp",
       "coverWidth": 800,
       "coverHeight": 800
     },

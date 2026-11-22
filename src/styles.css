@@ -1086,6 +1086,18 @@ body,
   --nav-h: calc(3.5rem + env(safe-area-inset-top, 0px));
 }
 
+/* Home sections alternate their ground by position, so adding, removing, or
+   reordering one never leaves two neighbours on the same ground. The hero
+   paints its own field and counts as the first. Marks that cut themselves out
+   of the ground, like the rings between team faces, read --ground. */
+.home > section {
+  --ground: var(--color-bg);
+  background: var(--ground);
+}
+.home > section:nth-of-type(odd) {
+  --ground: var(--color-bg-deep);
+}
+
 body {
   margin: 0;
   /* Include the safe area in the sticky bar; viewport-fit=cover fills the notch. */

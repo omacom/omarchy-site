@@ -30,11 +30,6 @@ for (const region of REGIONS) {
   for (const code of BY_REGION[region].split(' ')) REGION_OF.set(code, region)
 }
 
-/** Every country code listed under a region. */
-export function COUNTRIES_OF(region: Region): Set<string> {
-  return new Set(BY_REGION[region].split(' '))
-}
-
 /** The region a country code belongs to, or null for one not listed. */
 export function regionOf(country: string | null | undefined): Region | null {
   return country ? (REGION_OF.get(country.toUpperCase()) ?? null) : null
