@@ -37,30 +37,44 @@ const agents = [
   ['Ori', 'ori.svg', 'https://openrouter.ai/docs/guides/ori/harness'],
   ['Hermes', 'hermes.svg', 'https://hermes-agent.nousresearch.com/'],
   ['OpenClaw', 'openclaw.svg', 'https://openclaw.ai/'],
-  [
-    'Meta Code',
-    'meta.svg',
-    'https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2',
-  ],
+  ['Muse Code', 'meta.svg', 'https://dev.meta.ai'],
 ].sort(([a], [b]) => a.localeCompare(b, 'en'))
 
 const features = [
   {
-    title: t('Choose your agent'),
+    title: t('Any harness, one keystroke away'),
     description: t(
-      'On first boot, Omarchy invites you to set up a default agent. Pick your favorite, sign in, and put it to work on your computer.',
+      'Pick your default from twenty-four coding agents on first boot — Claude Code, Codex, OpenCode, Pi, Antigravity, Grok, and more. Press Super + ~ to drop it over any workspace in a Quake-style console.',
     ),
   },
   {
-    title: t('Make sense of a crash'),
+    title: t('Limits and multiple subscriptions'),
     description: t(
-      'When an app crashes, click the notification to send your agent on the case. It can examine the crash dump, diagnose what went wrong, and help report the bug.',
+      'The agents panel tracks session limits, weekly quotas, and prepaid balances across providers, and keeps multiple Claude, Codex, and Grok subscriptions signed in on one machine with shared history.',
     ),
   },
   {
-    title: t('Make it your own'),
+    title: t('Private local AI models'),
     description: t(
-      'Omarchy ships with skills to help your agent make apps, plugins, and themes. Describe what you want, try what it builds, and share it with everyone.',
+      'Run open-weight coding models sized to your GPU and RAM with one click, or generate images, video, and endless music locally in Fantasi and Flowtunes. Nothing leaves your machine.',
+    ),
+  },
+  {
+    title: t('Click to diagnose a crash'),
+    description: t(
+      'When an app dumps core, click the notification to send your agent straight into the crash dump. It inspects the trace, explains what broke, and helps file the bug upstream.',
+    ),
+  },
+  {
+    title: t('Build apps, plugins, themes, and games'),
+    description: t(
+      'Built-in skills teach your agent to build native apps, shell plugins, full-system themes, and 3D games for Game Vibes. Describe what you want, try what it builds, and share it with everyone.',
+    ),
+  },
+  {
+    title: t('Shared rules, synced themes'),
+    description: t(
+      'Keep one personal AGENTS.md and shared skills folder linked into every harness automatically, while switching themes restyles your agents right alongside the rest of the desktop.',
     ),
   },
 ]
@@ -82,7 +96,7 @@ export function AgentShowcase() {
         anchor="agents"
         title={t('The agentic OS for the age of agents')}
         description={t(
-          'Your agent should feel at home on your computer. Omarchy gives it the tools and skills to help you understand, fix, and shape the whole system.',
+          'Your agent should feel at home on your computer. Omarchy wires in your favorite harnesses, local models, usage tracking, and system skills so it can understand, fix, and shape the whole desktop.',
         )}
       />
       <div className="mt-6 grid gap-6 md:grid-cols-3 lg:mt-10 lg:gap-8">

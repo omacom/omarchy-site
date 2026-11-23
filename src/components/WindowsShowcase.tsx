@@ -19,7 +19,7 @@ export function WindowsShowcase() {
         anchor="windows"
         title={t('It even runs Windows!')}
         description={t(
-          "Keep the Windows apps you need, right inside Omarchy. Our Windows 11 VM setup makes room for native Microsoft Office and the other programs you can't leave behind.",
+          "Keep the Windows apps you can't leave behind, right inside Omarchy. Spin up a full Windows 11 VM for native Office and legacy software, or install Microsoft 365 web apps in one click.",
         )}
       />
       <img
@@ -41,22 +41,20 @@ export function WindowsShowcase() {
           <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
             {t('Choose')} <em>Install &gt; Windows</em>{' '}
             {t(
-              'from the Omarchy menu. Hardware virtualization brings near-native CPU performance for Office and everyday work, with a shared clipboard and a folder for moving files between Windows and Linux.',
+              'from the Omarchy menu. KVM virtualization delivers near-native CPU performance with sound, microphone, HiDPI scaling, a shared clipboard, and a shared folder for moving files between Windows and Linux.',
             )}
           </p>
         </div>
         <div>
           <h3 className="text-lg font-medium text-text">
-            {t('Bring your Windows key')}
+            {t('Bring your license, or skip the VM')}
           </h3>
           <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-            {t('Bring a Windows 11 Pro license valid for a VM. Run')}{' '}
-            <code className="whitespace-nowrap rounded bg-surface-2 px-1.5 py-0.5 font-mono text-[0.9em] text-text">
-              omarchy windows key
-            </code>{' '}
             {t(
-              "to retrieve your machine's original key (this only works on Pro, not Home licenses).",
-            )}
+              'The VM installs Windows 11 Pro unactivated, so bring your own license key. Only need Word, Excel, Outlook, or Teams? Choose',
+            )}{' '}
+            <em>Install &gt; Service &gt; Microsoft</em>{' '}
+            {t('for Microsoft 365 web apps instead.')}
           </p>
         </div>
         <div>
@@ -65,7 +63,7 @@ export function WindowsShowcase() {
           </h3>
           <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
             {t(
-              "This setup has no GPU acceleration or passthrough. It's a great home for documents, spreadsheets, and Windows-only work apps, but isn't intended for gaming or demanding graphics work.",
+              "This VM runs without GPU passthrough. It's a great home for spreadsheets, documents, and Windows-only work apps, not gaming or heavy 3D graphics.",
             )}
           </p>
         </div>

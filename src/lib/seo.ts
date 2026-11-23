@@ -21,7 +21,7 @@ import { SITE_THEMES } from './site-themes.ts'
 export const SITE_URL = siteUrl
 
 export const SITE_DESCRIPTION =
-  'The malleable OS for the age of agents. Vibe your way through every alteration, tweak, and desire.'
+  'The malleable OS for the age of agents. Vibe your way through every alteration, tweak, or trouble.'
 
 /** Select by canonical path so translations share a theme and repeated builds stay stable. */
 export function socialImage(path: string) {

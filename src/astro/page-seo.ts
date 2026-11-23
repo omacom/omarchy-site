@@ -59,7 +59,7 @@ export function teamsSeo() {
   return seo({
     title: 'Teams - Omarchy',
     description:
-      'The people guiding Omarchy: Core sets the direction, Security keeps the system safe, Design shapes how it looks and feels, and the Rangers help everyone else find their way.',
+      'The people guiding Omarchy: Core sets the direction, Security keeps the system safe, Design shapes how it looks and feels, Omarchy M brings it to the Mac, Omarchy Dragon brings it to Snapdragon, and the Rangers help everyone find their way.',
     path: '/teams',
   })
 }
@@ -68,7 +68,7 @@ export function themesSeo() {
   return seo({
     title: 'Themes - Omarchy',
     description:
-      'Community themes for Omarchy. Install them via Install > Style > Themes in Omarchy.',
+      'Community themes for Omarchy. Install them via Install > Style > Theme in Omarchy.',
     path: '/themes',
   })
 }
@@ -149,7 +149,7 @@ const PORTED: Partial<Record<string, { title: string; description: string }>> =
     sponsorships: {
       title: 'Sponsorships - Omarchy',
       description:
-        'How the Omacom Foundation funds the projects Omarchy is built on, starting with an exclusive three-year sponsorship of Hyprland.',
+        'How the Omacom Foundation funds the open-source projects Omarchy is built on: Hyprland, Quickshell, mise, and Sybil Solutions.',
     },
     workstations: {
       title: 'Workstations - Omarchy',

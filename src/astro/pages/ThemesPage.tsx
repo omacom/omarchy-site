@@ -20,7 +20,7 @@ export function ThemesPage() {
                 →
               </span>
               <span className="sr-only">{t('then')}</span>
-              <span>Themes</span>
+              <span>Theme</span>
             </span>
           </p>
           <a

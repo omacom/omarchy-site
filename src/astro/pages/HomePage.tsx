@@ -23,6 +23,7 @@ import { EtchPicker } from '@/components/EtchPicker'
 import { CardRail } from '@/components/CardRail'
 import { Figures } from '@/components/Figures'
 import { AgentShowcase } from '@/components/AgentShowcase'
+import { DesktopShowcase } from '@/components/DesktopShowcase'
 import { WindowsShowcase } from '@/components/WindowsShowcase'
 import { GamingShowcase } from '@/components/GamingShowcase'
 import { DeveloperShowcase } from '@/components/DeveloperShowcase'
@@ -724,7 +725,7 @@ export function HomePage({ data }: { data: HomeData }) {
                 className={`mt-6 max-w-[35.5rem] text-[15px] leading-relaxed text-text-secondary [text-wrap:pretty] ${ideographic ? 'whitespace-pre-line' : ''}`}
               >
                 {t(
-                  'Linux used to be a chore to setup, difficult to debug, and full of confusing upfront choices. Omarchy solves all of it with a lightning fast installation, agents that debug all issues, and fantastic defaults that give you a fully functioning system that looks amazing out of the box.',
+                  'Linux used to be a chore to set up, hard to debug, and full of confusing upfront choices. Omarchy solves all of it with a lightning-fast install, agents built in to debug what breaks, and fantastic defaults that look great out of the box.',
                 )}
               </p>
               <p
@@ -786,7 +787,7 @@ export function HomePage({ data }: { data: HomeData }) {
             roomy
             title={t('Install Omarchy (or try it first)')}
             description={t(
-              'Be up and running in as little as seven seconds on the fastest machines, and in less than two minutes on the majority of computers.',
+              'Up and running in as little as seven seconds on the fastest machines, and under two minutes on most computers.',
             )}
             action={installGuide}
           />
@@ -878,7 +879,7 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="plugins"
             title={t('A plugin for every dream, every desire')}
             description={t(
-              "Thousands of community plugins are available for Omarchy. Don't find what you need? Just put your agent on the job, then share when done.",
+              "Thousands of community plugins are available for Omarchy. Can't find what you need? Put your agent on the job, then share what it builds.",
             )}
             action={allPlugins}
           />
@@ -905,7 +906,7 @@ export function HomePage({ data }: { data: HomeData }) {
             description={
               <>
                 {t(
-                  'A theme restyles the whole system at once: terminal, bar, notifications, wallpaper. Pick one and this site wears it too.',
+                  'A theme restyles the whole system at once: desktop, terminal, browser, editors, icons, bar, and lock screen. Pick one and this site wears it too.',
                 )}
                 {ideographic && (
                   <>
@@ -930,15 +931,21 @@ export function HomePage({ data }: { data: HomeData }) {
         </div>
       </section>
 
-      <section id="developers" className="border-t border-border-subtle">
+      <section id="desktop" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
-          <DeveloperShowcase />
+          <DesktopShowcase />
         </div>
       </section>
 
       <section id="gaming" className="border-t border-border-subtle">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
           <GamingShowcase />
+        </div>
+      </section>
+
+      <section id="developers" className="border-t border-border-subtle">
+        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-24 sm:px-6">
+          <DeveloperShowcase />
         </div>
       </section>
 
@@ -999,7 +1006,7 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="figures"
             title={t('Momentum by the numbers')}
             description={t(
-              'Donations, downloads, and contributions. Momentum is based on all of it.',
+              'Funding, downloads, and GitHub stars. Momentum comes from all of it.',
             )}
           />
           <Figures />
@@ -1030,7 +1037,7 @@ export function HomePage({ data }: { data: HomeData }) {
             anchor="teams"
             title={t('It takes a village to raise a distro')}
             description={t(
-              'Omarchy Core sets the direction, the Security team keeps your system safe, Design shapes how it looks and feels, Omarchy M brings it to the Mac, and the Rangers help others find their way.',
+              'Omarchy Core sets the direction, the Security team keeps your system safe, Design shapes how it looks and feels, Omarchy M brings it to the Mac, Omarchy Dragon brings it to Snapdragon, and the Rangers help others find their way.',
             )}
             action={allTeams}
           />
