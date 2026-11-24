@@ -27,15 +27,9 @@ export default defineConfig({
       __EDITION_INTL__: JSON.stringify(
         intlData(locales[language].formatLocale),
       ),
-      __HOME_THEME__: JSON.stringify(
-        homeTheme && {
-          id: homeTheme.id,
-          name: homeTheme.name,
-          light: homeTheme.light,
-        },
-      ),
+      __HOME_THEME__: JSON.stringify(homeTheme),
     },
-    plugins: [nationalThemeCss(homeTheme), tailwindcss(), devPassthrough()],
+    plugins: [nationalThemeCss(homeTheme?.id), tailwindcss(), devPassthrough()],
     optimizeDeps: { entries: ['!src/parked/**'] },
     resolve: {
       // Array form: exact entries first, so the shims win over the prefixes.
