@@ -804,7 +804,7 @@ export function HomePage({ data }: { data: HomeData }) {
                   lead={
                     arch === 'aarch64'
                       ? t(
-                          'Preliminary support for NVIDIA DGX Spark and N1X. Write the ISO to a USB stick and answer five questions.',
+                          'Preliminary support for NVIDIA DGX Spark and RTX Spark. Write the ISO to a USB stick and answer five questions.',
                         )
                       : t(
                           'Write the ISO to a USB stick and answer five questions. Full-disk or dual-boot, it hands back a finished desktop.',
