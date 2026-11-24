@@ -38,7 +38,7 @@ async function themedAsset(link: HTMLAnchorElement, preview: HTMLElement) {
   gradient.setAttribute('x2', String(x))
   gradient.setAttribute('y1', String(y))
   gradient.setAttribute('y2', String(y + height))
-  const boundaries = [0, 21.053, 36.842, 57.895, 73.684, 100]
+  const boundaries = [0, 26.316, 36.842, 57.895, 73.684, 100]
   colors.forEach((color, index) => {
     for (const offset of [boundaries[index], boundaries[index + 1]]) {
       const stop = document.createElementNS(SVG_NS, 'stop')

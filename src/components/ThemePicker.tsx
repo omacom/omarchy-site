@@ -295,8 +295,7 @@ export function ThemePicker() {
                 >
                   <div
                     className={
-                      'shadow-2xl ' +
-                      (depth === 0 ? 'bg-brand-signal' : 'bg-zinc-500')
+                      'shadow-2xl ' + (depth === 0 ? 'bg-brand' : 'bg-zinc-500')
                     }
                     style={{ clipPath: PARALLELOGRAM }}
                   >

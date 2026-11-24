@@ -4,18 +4,11 @@ import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
 import { HOME_THEME, SITE_THEMES } from './site-themes.ts'
-export {
-  HOME_THEME,
-  SITE_THEMES,
-  STOCK_THEMES,
-  type SiteTheme,
-} from './site-themes.ts'
+export { SITE_THEMES, type SiteTheme } from './site-themes.ts'
 
-export const DEFAULT_THEME = 'tokyo-night'
+/** A national site opens in its own country's theme, any other in Tokyo Night. */
+export const DEFAULT_THEME = HOME_THEME?.id ?? 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
-/** Set once a visitor picks a theme themselves. Until then a national site
- *  opens in its own country's theme, whatever was stored before. */
-export const CHOSEN_KEY = 'omarchy-site-theme-chosen'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
 /** Ask the mounted ThemePicker to open (footer link, menu). */
@@ -23,13 +16,9 @@ export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 /** Fired with detail { open } whenever the picker opens or closes. */
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
 
-/** Apply the saved palette before paint. A national site opens in its own
- * country's theme until the visitor picks another; anyone else who hasn't
- * picked one gets Tokyo Night.
+/** Apply the saved palette before paint, or the default for anyone who hasn't picked one.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */
-export const themeInitScript = `(function(){var home=${inlineJson(
-  HOME_THEME?.id ?? null,
-)};var t=home||${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});var chosen=localStorage.getItem(${inlineJson(CHOSEN_KEY)})==='true';if(home&&!chosen)localStorage.setItem(${inlineJson(THEME_KEY)},home);else if(${inlineJson(
+export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});if(${inlineJson(
   SITE_THEMES.map((t) => t.id),
 )}.indexOf(s)>=0)t=s}catch(e){}document.documentElement.dataset.theme=t;if(!document.querySelector('link[rel="icon"][data-theme-icon]')){var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/brand/omarchy-logo.svg';l.setAttribute('data-theme-icon','');document.head.appendChild(l)}})()`
 
@@ -40,15 +29,16 @@ export function readTheme(): string {
   } catch {
     /* storage unavailable */
   }
-  return HOME_THEME?.id ?? DEFAULT_THEME
+  return DEFAULT_THEME
 }
 
 /** Replace the favicon link to invalidate browsers that cache it by element. */
 export function paintFavicon() {
-  const style = getComputedStyle(document.documentElement)
-  const brand = style.getPropertyValue('--color-brand').trim()
+  const brand = getComputedStyle(document.documentElement)
+    .getPropertyValue('--color-brand')
+    .trim()
   if (!brand) return
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">${markFill(style, brand)}</svg>`
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200"><path fill="${brand}" fill-rule="evenodd" clip-rule="evenodd" d="${OMARCHY_MARK_PATH}"/></svg>`
   const link = document.createElement('link')
   link.rel = 'icon'
   link.type = 'image/svg+xml'
@@ -58,47 +48,6 @@ export function paintFavicon() {
     .querySelectorAll('link[rel="icon"][data-theme-icon]')
     .forEach((old) => old.remove())
   document.head.appendChild(link)
-}
-
-/** A theme's `--t-tab-tones`: each favicon colour a tab would swallow, and
- *  its tone on a light tab and a dark one (scripts/lib/national-palette.mjs). */
-function tabTones(style: CSSStyleDeclaration) {
-  const tones = new Map<string, { light: string; dark: string }>()
-  for (const entry of style.getPropertyValue('--t-tab-tones').split(',')) {
-    const [hex, light, dark] = entry.trim().split(/\s+/)
-    if (hex && light && dark) tones.set(hex, { light, dark })
-  }
-  return tones
-}
-
-/**
- * The mark's shape, filled: in the brand colour, or in a theme's own
- * blocks clipped to the mark: its one-colour favicon (`--t-favicon`) or its
- * flag (`--t-mark`), each shaded down the mark as the word is, and given
- * its tones for a light tab, the default, and a dark one.
- */
-function markFill(style: CSSStyleDeclaration, brand: string) {
-  const shape = `fill-rule="evenodd" clip-rule="evenodd" d="${OMARCHY_MARK_PATH}"`
-  const image = (name: string) =>
-    /^url\("data:image\/svg\+xml,(.*)"\)$/.exec(
-      style.getPropertyValue(name).trim(),
-    )?.[1]
-  const own = image('--t-favicon') ?? image('--t-mark')
-  if (!own) return `<path fill="${brand}" ${shape}/>`
-  const tones = tabTones(style)
-  const dark: string[] = []
-  const blocks = decodeURIComponent(own)
-    .replace('<svg ', '<svg width="1200" height="1200" ')
-    .replace(/fill='(#[0-9a-f]{6})'/gi, (_, hex: string) => {
-      const tabs = tones.get(hex.toLowerCase())
-      if (!tabs) return `fill='${hex}'`
-      dark.push(`.c${dark.length}{fill:${tabs.dark}}`)
-      return `class="c${dark.length - 1}" fill='${tabs.light}'`
-    })
-  const tabs = dark.length
-    ? `<style>@media (prefers-color-scheme:dark){${dark.join('')}}</style>`
-    : ''
-  return `${tabs}<clipPath id="m"><path ${shape}/></clipPath><g clip-path="url(#m)">${blocks}</g>`
 }
 
 /**
@@ -254,7 +203,6 @@ export function applyTheme(id: string) {
   root.dataset.theme = id
   try {
     localStorage.setItem(THEME_KEY, id)
-    localStorage.setItem(CHOSEN_KEY, 'true')
   } catch {
     /* storage unavailable */
   }

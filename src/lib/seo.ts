@@ -23,8 +23,7 @@ export const SITE_URL = siteUrl
 export const SITE_DESCRIPTION =
   'The malleable OS for the age of agents. Vibe your way through every alteration, tweak, and desire.'
 
-/** Select by canonical path so translations share a theme and repeated builds stay stable.
- *  Cards come in the stock themes, which every language has. */
+/** Select by canonical path so translations share a theme and repeated builds stay stable. */
 export function socialImage(path: string) {
   const pathname = canonicalPath(path.split(/[?#]/, 1)[0])
   let hash = 2166136261

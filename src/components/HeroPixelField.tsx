@@ -14,13 +14,6 @@ import {
 } from '@/lib/etch'
 import { BANDS, loadMusic, music } from '@/lib/music'
 import type { Etch } from '@/lib/etch'
-import {
-  tone,
-  wordGrid,
-  WORD_BANDS,
-  WORD_COLUMNS,
-  WORD_ROWS,
-} from '@/lib/word-shade'
 
 export type FieldGlyph = {
   rows: readonly string[]
@@ -46,127 +39,7 @@ function readPalette() {
     lit: token('--t-field-lit', '#9ece6a'),
     hover: token('--t-field-hover', '#bbdd97'),
     crest: token('--t-field-crest', '#daecc6'),
-    /** What the cursor alone lights, and the trail it leaves: a national
-     *  theme's own, else the field's lit and mid. */
-    glow: token('--t-field-glow', ''),
-    trail: token('--t-field-trail', ''),
-    /** A theme's own colours for the word, one per row or per column. */
-    word: wordCells(token('--t-word-cells', '')),
-    /** A block of one colour over them from the top left: a flag's hoist
-     *  or canton, as its colour, columns and rows. */
-    hoist: wordHoist(
-      token('--t-word-hoist', ''),
-      token('--t-word-hoist-edge', ''),
-    ),
-    /** Bars down the whole word: a cross's upright. */
-    uprights: wordUprights(token('--t-word-uprights', '')),
-    /** A theme's own square mark (a national theme's flag), block by
-     *  block, which a click's stamp wears. */
-    mark: markBlocks(token('--t-mark', '')),
-    /** A slant across the word instead of its bands. */
-    diagonal: wordDiagonal(
-      token('--t-word-diagonal', ''),
-      token('--t-word-diagonal-fill', ''),
-    ),
-    /** The tones run the other way down the word. */
-    turned: token('--t-word-turned', '') === '1',
-    /** Rows where a band takes its second tone, where the flag says. */
-    splits: token('--t-word-splits', '')
-      .split(/\s+/)
-      .filter(Boolean)
-      .map(Number),
   }
-}
-
-/** Reads `--t-word-hoist`: a colour, then its columns and rows, then for
- *  a triangle the row of its point and any rows set by hand, as row:end;
- *  and `--t-word-hoist-edge`, a triangle's border colour. */
-function wordHoist(value: string, edge: string) {
-  const [color, columns, rows, tip, ...ends] = value.split(/\s+/)
-  return color && Number(columns) > 0
-    ? {
-        color,
-        columns: Number(columns),
-        rows: Number(rows),
-        edge: edge || null,
-        ...(Number(tip) > 0 && {
-          tip: Number(tip),
-          ends: ends.map(
-            (end) => end.split(':').map(Number) as [number, number],
-          ),
-        }),
-      }
-    : null
-}
-
-/** Reads `--t-mark`: an SVG of the mark's 15 by 15 blocks, its rects
- *  laid out as a grid of colours by row then column. */
-function markBlocks(value: string) {
-  const svg = /^url\("data:image\/svg\+xml,(.*)"\)$/.exec(value.trim())?.[1]
-  if (!svg) return null
-  const grid: string[][] = Array.from({ length: LOGO_SIZE }, () =>
-    Array<string>(LOGO_SIZE).fill(''),
-  )
-  for (const [, x, y, w, h, fill] of decodeURIComponent(svg).matchAll(
-    /<rect x='(\d+)' y='(\d+)' width='(\d+)' height='(\d+)' fill='(#[0-9a-f]+)'/gi,
-  ))
-    for (let row = +y; row < +y + +h; row++)
-      for (let col = +x; col < +x + +w; col++) grid[row][col] = fill
-  return grid
-}
-
-/** Reads `--t-word-diagonal`: columns per row, each colour from where it
- *  starts as colour@start, then the colour before them all. */
-function wordDiagonal(value: string, fillValue: string) {
-  const parts = value.split(/\s+/).filter(Boolean)
-  if (parts.length < 3) return null
-  const [slope, ...rest] = parts
-  const first = rest.pop()!
-  return {
-    slope: Number(slope),
-    runs: [
-      { color: first, from: -Infinity },
-      ...rest.map((part) => {
-        const [color, from] = part.split('@')
-        return { color, from: Number(from) }
-      }),
-    ],
-    fill: fillValue
-      .split(',')
-      .map((part) => part.trim().split(/\s+/))
-      .filter((part) => part.length === 4)
-      .map(([color, row, from, to]) => ({
-        color,
-        row: Number(row),
-        from: Number(from),
-        to: Number(to),
-      })),
-  }
-}
-
-/** Reads `--t-word-uprights`: bars of a colour, from and to columns. */
-function wordUprights(value: string) {
-  return value
-    .split(',')
-    .map((bar) => bar.trim().split(/\s+/))
-    .filter(([color, from, to]) => color && Number(to) > Number(from))
-    .map(([color, from, to, top, bottom]) => ({
-      color,
-      from: Number(from),
-      to: Number(to),
-      rows:
-        top !== undefined
-          ? ([Number(top), Number(bottom)] as [number, number])
-          : null,
-    }))
-}
-
-/** Reads `--t-word-cells`: "rows" or "cols", then one colour per cell. */
-function wordCells(value: string) {
-  const [axis, ...cells] = value.split(/\s+/).filter(Boolean)
-  return (axis === 'rows' || axis === 'cols') && cells.length > 0
-    ? { axis: axis as 'rows' | 'cols', cells }
-    : null
 }
 
 /** Classic 8x8 ordered dither matrix, 0..63. */
@@ -214,9 +87,27 @@ function wordWasHeld() {
   return heldAnswer
 }
 
-const LASER_BANDS = (['crest', 'hover', 'lit', 'mid', 'dim'] as const).flatMap(
-  (name, i) => Array<typeof name>(WORD_BANDS[i]).fill(name),
-)
+const LASER_BANDS = [
+  'crest',
+  'crest',
+  'crest',
+  'crest',
+  'crest',
+  'hover',
+  'hover',
+  'lit',
+  'lit',
+  'lit',
+  'lit',
+  'mid',
+  'mid',
+  'mid',
+  'dim',
+  'dim',
+  'dim',
+  'dim',
+  'dim',
+] as const
 
 /** How much of a band's height a beat adds, and how fast that fades. */
 const BEAT_REACH = 0.8
@@ -231,11 +122,6 @@ const BEAT_DECAY = 0.84
  * no two stamps are quite twins, while every stamp is the same mark.
  */
 const LOGO_SIZE = 15
-/** The square mark's bands, by its rows of blocks, as Brand.tsx draws the
- *  navbar's: a click's stamp wears them where a theme has no mark of its
- *  own. */
-const STAMP_BANDS = [4, 2, 3, 2, 4]
-const STAMP_BAND_OF = STAMP_BANDS.flatMap((rows, i) => Array(rows).fill(i))
 const LOGO_ROWS = [
   '111111111111111',
   '100000010000001',
@@ -446,93 +332,21 @@ export function HeroPixelField({
         if (Math.abs(ink.l - l) < Math.abs(best.l - l)) best = ink
       return best.css
     }
-    /** The resting ink of every cell of the word, by row then column: the
-     *  brand bands, or a theme's own colours with any hoist and shading. A
-     *  word of another size (the 404's) takes them in proportion. */
-    let restGrid: string[][] = []
-    /** Where a theme's own word lifts toward under the cursor. */
-    let wordLift = '#ffffff'
-    /** A click's stamp, block by block: a theme's own mark, as the navbar
-     *  and the favicon draw it, else its cursor colour shaded down the
-     *  mark, or the stock mark's bands. */
-    let stampInks: string[][] = []
-    /** A cursor colour of the theme's own, apart from the pixels it lights
-     *  (Brazil's blue): every national theme names one, mostly the same. */
-    let ownGlow = ''
+    /** The resting ink of each row of the word, in this theme. A word of
+     *  another height (the 404's) takes the bands in proportion. */
+    let restInks: string[] = []
     const buildRestInks = () => {
-      ownGlow = palette.glow && palette.glow !== palette.lit ? palette.glow : ''
-      const bands = [
-        palette.crest,
-        palette.hover,
-        palette.lit,
-        palette.mid,
-        palette.dim,
-      ]
-      stampInks = palette.mark
-        ? palette.mark
-        : Array.from({ length: LOGO_SIZE }, (_, row) => {
-            const band = STAMP_BAND_OF[row]
-            const ink = ownGlow
-              ? tone(ownGlow, band, STAMP_BANDS.length, palette.bg)
-              : bands[band]
-            return Array<string>(LOGO_SIZE).fill(ink)
-          })
-      wordLift =
-        luma(parse(palette.bg) ?? [0, 0, 0]) < 0.5 ? '#ffffff' : '#000000'
-      const word = palette.word
-      const own = word
-        ? wordGrid(
-            {
-              axis: word.axis,
-              cells: word.cells,
-              hoist: palette.hoist,
-              uprights: palette.uprights,
-              diagonal: palette.diagonal,
-              splits: palette.splits,
-              turned: palette.turned,
-            },
-            palette.bg,
-          )
-        : null
-      restGrid = []
+      restInks = []
       for (let row = 0; row < glyph.height; row++) {
-        const line: string[] = []
-        const r = Math.floor((row / glyph.height) * WORD_ROWS)
-        const band =
-          palette[
-            LASER_BANDS[Math.floor((row / glyph.height) * LASER_BANDS.length)]
-          ]
-        for (let col = 0; col < glyph.width; col++)
-          line.push(
-            own ? own[r][Math.floor((col / glyph.width) * WORD_COLUMNS)] : band,
-          )
-        restGrid.push(line)
+        const band = Math.floor((row / glyph.height) * LASER_BANDS.length)
+        restInks.push(palette[LASER_BANDS[band]])
       }
     }
     buildRestInks()
-    /** The resting ink at a device-px point within the word. */
-    const restInkAt = (cx: number, cy: number) => {
+    /** The resting ink at a device-px height within the word. */
+    const restInkAt = (cy: number) => {
       const row = Math.floor((cy - wmY) / wmCH)
-      const col = Math.floor((cx - wmX) / wmCW)
-      const line = restGrid[Math.max(0, Math.min(glyph.height - 1, row))]
-      return line[Math.max(0, Math.min(glyph.width - 1, col))]
-    }
-    /** A colour at full strength, its hue kept: every channel scaled
-     *  together, up on a dark page till one reaches the top, down on a
-     *  light one. */
-    const vivid = (css: string) => {
-      const rgb = parse(css)
-      if (!rgb) return css
-      const dark = luma(parse(palette.bg) ?? [0, 0, 0]) < 0.5
-      const top = Math.max(...rgb, 1)
-      const by = dark ? Math.min(1.4, 255 / top) : 0.68
-      return `#${rgb
-        .map((v) =>
-          Math.round(Math.min(255, v * by))
-            .toString(16)
-            .padStart(2, '0'),
-        )
-        .join('')}`
+      return restInks[Math.max(0, Math.min(restInks.length - 1, row))]
     }
     /** A colour part way from one CSS colour to another. */
     const mix = (from: string, to: string, t: number) => {
@@ -910,17 +724,6 @@ export function HeroPixelField({
           strength: sprite.strength,
           reach: reachOf(sprite.strength),
         })
-      // A national theme's brightest ink is its flag's white, which would
-      // flash on every beat: there, the music stops at the flag's own
-      // colour, while the glows and a click's stamp keep theirs.
-      const calmTop = Boolean(palette.glow)
-      /** Its steps there stay in the flag's own colour, from deep to the
-       *  colour itself, far enough apart to tell at a glance: no white,
-       *  and no pale tint of it the flag lacks. A flag's colour is mostly
-       *  near full strength already, so the middle step sits well below
-       *  it, between it and the field's dim. */
-      const calmLit = calmTop ? vivid(palette.mid) : ''
-      const calmMid = calmTop ? mix(palette.bg, palette.mid, 0.72) : ''
 
       // Resolve each live click stamp once per frame, not once per cell.
       const stamps: {
@@ -960,8 +763,6 @@ export function HeroPixelField({
       }
       const etching = etch !== null || awaitingFirstEtch
 
-      /** The block of the mark the last stampAt found a point in. */
-      let stampBlock = { row: 0, col: 0 }
       /** The strongest live stamp covering a device-px point, if any. */
       const stampAt = (cx: number, cy: number) => {
         let amp = 0
@@ -969,10 +770,7 @@ export function HeroPixelField({
           const lx = Math.floor((cx - stamp.x) / stamp.cellPx + LOGO_SIZE / 2)
           const ly = Math.floor((cy - stamp.y) / stamp.cellPx + LOGO_SIZE / 2)
           if (lx < 0 || ly < 0 || lx >= LOGO_SIZE || ly >= LOGO_SIZE) continue
-          if (LOGO_ROWS[ly][lx] === '1' && stamp.amp > amp) {
-            amp = stamp.amp
-            stampBlock = { row: ly, col: lx }
-          }
+          if (LOGO_ROWS[ly][lx] === '1' && stamp.amp > amp) amp = stamp.amp
         }
         return amp
       }
@@ -1071,34 +869,8 @@ export function HeroPixelField({
             waveAmount,
             specAmount * SPECTRUM_HEAT,
           )
-          // The cursor's own colours where it is what lit the pixel.
-          const byCursor =
-            glowAmount >= waveAmount && glowAmount >= specAmount * SPECTRUM_HEAT
-          // What a click's stamp lit, where it outshines the cursor.
-          const byStamp = !byCursor && waveAmount >= heat
-          const calm = calmTop && !byStamp && !byCursor
-          const lit = calm ? calmLit : (byCursor && palette.glow) || palette.lit
-          const mid = calm
-            ? calmMid
-            : (byCursor && palette.trail) || palette.mid
-          // A click's stamp is the mark, each block in its own colour, and
-          // fades smoothly as it dies: into the field's dim, or, in a cursor
-          // colour of the theme's own (Brazil's blue), through the field's
-          // middle colour first.
-          const block = byStamp ? stampInks[stampBlock.row][stampBlock.col] : ''
-          ctx.fillStyle = block
-            ? heat >= 0.85
-              ? block
-              : ownGlow
-                ? heat >= 0.35
-                  ? mix(palette.mid, block, (heat - 0.35) / 0.5)
-                  : mix(palette.dim, palette.mid, heat / 0.35)
-                : mix(palette.dim, block, heat / 0.85)
-            : heat > 0.34
-              ? lit
-              : heat > 0.1
-                ? mid
-                : palette.dim
+          ctx.fillStyle =
+            heat > 0.34 ? palette.lit : heat > 0.1 ? palette.mid : palette.dim
           const x = Math.round(xLeft)
           ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, cellH)
         }
@@ -1122,11 +894,7 @@ export function HeroPixelField({
        * metal the laser has cut, so the word answers the pointer while it
        * is still being made.
        */
-      const wordmarkInk = (
-        cx: number,
-        cy: number,
-        rest = restInkAt(cx, cy),
-      ) => {
+      const wordmarkInk = (cx: number, cy: number) => {
         let crest = stamps.length > 0 ? stampAt(cx, cy) : 0
 
         for (const glow of glowsOnWordmark) {
@@ -1140,74 +908,11 @@ export function HeroPixelField({
           }
         }
 
-        // A theme's own word lifts toward white on a dark page, or black on
-        // a light one, since the bands' inks would paint over its colours.
-        if (palette.word)
-          return crest > 0.45
-            ? mix(rest, wordLift, 0.5)
-            : crest > 0.12
-              ? mix(rest, wordLift, 0.25)
-              : rest
         return crest > 0.45
           ? palette.crest
           : crest > 0.12
             ? palette.hover
-            : rest
-      }
-
-      // Uprights that start or end part way across a cell: the cell takes
-      // the colour at its middle, and these paint the rest of it, only on
-      // the word's own size.
-      const halves =
-        isHero &&
-        glyph.width === WORD_COLUMNS &&
-        glyph.height === WORD_ROWS &&
-        palette.word
-          ? palette.uprights
-          : []
-      const drawHalves = (row: number, y: number, rowHeight: number) => {
-        if (!halves.some((bar) => bar.from % 1 || bar.to % 1)) return
-        const bits = glyph.rows[row]
-        const topAt = (x: number) =>
-          halves
-            .filter(
-              (bar) =>
-                x >= bar.from &&
-                x < bar.to &&
-                (!bar.rows || (row >= bar.rows[0] && row < bar.rows[1])),
-            )
-            .pop()
-        for (let col = 0; col < glyph.width; col++) {
-          // Off the letter, a half cell a bar covers beside a stroke it
-          // lies on shows too, so the bar reads whole past the stroke.
-          const off = bits[col] !== '1'
-          if (off && bits[col - 1] !== '1' && bits[col + 1] !== '1') continue
-          const edges = halves
-            .flatMap((bar) => [bar.from, bar.to])
-            .filter((x) => x > col && x < col + 1)
-          if (!edges.length) continue
-          const cuts = [col, ...new Set(edges), col + 1].sort((a, b) => a - b)
-          const mid = off ? null : restGrid[row][col]
-          for (let i = 0; i + 1 < cuts.length; i++) {
-            const bar = topAt((cuts[i] + cuts[i + 1]) / 2)
-            if (!bar || bar.color === mid) continue
-            const cells = (cuts[i] + cuts[i + 1]) / 2 < col + 0.5 ? -1 : 1
-            if (off && bits[col + cells] !== '1') continue
-            const left = Math.round(wmX + cuts[i] * wmCW)
-            const cx = wmX + (col + 0.5) * wmCW
-            const cy = wmY + (row + 0.5) * wmCH
-            ctx.fillStyle =
-              stamps.length === 0 && !cursorOnWordmark
-                ? bar.color
-                : wordmarkInk(cx, cy, bar.color)
-            ctx.fillRect(
-              left,
-              y,
-              Math.round(wmX + cuts[i + 1] * wmCW) - left,
-              rowHeight,
-            )
-          }
-        }
+            : restInkAt(cy)
       }
 
       // Cell edges snap to whole device px with rounding against the shared
@@ -1221,23 +926,19 @@ export function HeroPixelField({
         const rowHeight = Math.round(yTop + wmCH) - y
 
         if (stamps.length === 0 && !cursorOnWordmark) {
-          // At rest, each run of lit cells in one ink is a single rect.
-          const inks = restGrid[row]
+          ctx.fillStyle = restInks[row]
           let run = 0
           for (let col = 0; col <= glyph.width; col++) {
-            const lit = bits[col] === '1'
-            if (lit && (run === 0 || inks[col] === inks[col - 1])) {
+            if (bits[col] === '1') {
               run++
               continue
             }
             if (run > 0) {
-              ctx.fillStyle = inks[col - 1]
               const x = Math.round(wmX + (col - run) * wmCW)
               ctx.fillRect(x, y, Math.round(wmX + col * wmCW) - x, rowHeight)
+              run = 0
             }
-            run = lit ? 1 : 0
           }
-          drawHalves(row, y, rowHeight)
           continue
         }
 
@@ -1252,7 +953,6 @@ export function HeroPixelField({
           ctx.fillStyle = wordmarkInk(cx, cy)
           ctx.fillRect(x, y, Math.round(xLeft + wmCW) - x, rowHeight)
         }
-        drawHalves(row, y, rowHeight)
       }
 
       // The effect's frame on the lattice. A block is a whole cell in the
@@ -1273,7 +973,7 @@ export function HeroPixelField({
           const y = Math.round(yTop)
           const cw = Math.round(xLeft + wmCW) - x
           const ch = Math.round(yTop + wmCH) - y
-          const rest = restInkAt(xLeft + wmCW / 2, yTop + wmCH / 2)
+          const rest = restInkAt(yTop + wmCH / 2)
           const resting = wordmarkInk(xLeft + wmCW / 2, yTop + wmCH / 2)
           const effectInk = themeInk(cell.rgb)
           const ink =
@@ -1331,17 +1031,6 @@ export function HeroPixelField({
               ? y
               : y + Math.round((ch - size) / 2)
           ctx.fillRect(sx, sy, size, size)
-        }
-        // The half cells of a bar fade in as the word settles into its
-        // resting colours, so they land with it.
-        if (settle > 0) {
-          ctx.globalAlpha = settle
-          for (let row = 0; isHero && row < glyph.height; row++) {
-            const yTop = wmY + row * wmCH
-            const y = Math.round(yTop)
-            drawHalves(row, y, Math.round(yTop + wmCH) - y)
-          }
-          ctx.globalAlpha = 1
         }
       }
 
