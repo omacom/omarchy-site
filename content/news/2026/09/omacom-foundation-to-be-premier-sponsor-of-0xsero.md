@@ -14,7 +14,7 @@ Sero is already working on exactly these problems. His [Local AI Registry](https
 
 And your own computer doesn't have to do all the work alone. We also want to make it easy to connect the hardware you own into a **mesh of intelligence**. Your laptop, the powerful desktop in your office, a machine tucked away at home. Let your agents draw on the computers available to you, without making you manage a small data center first.
 
-This is a big part of how I see the promise of the agentic OS being fulfilled. With hardware like NVIDIA's N1x and [Alibaba's upcoming Qwen Book](https://www.qianwenai.com/product/qwenbook), we're moving toward a world where powerful local AI machines are ordinary personal computers. The operating system should make that power available from the moment you start using it.
+This is a big part of how I see the promise of the agentic OS being fulfilled. With hardware like NVIDIA's RTX Spark and [Alibaba's upcoming Qwen Book](https://www.qianwenai.com/product/qwenbook), we're moving toward a world where powerful local AI machines are ordinary personal computers. The operating system should make that power available from the moment you start using it.
 
 I think we're getting close to everyone having access to solid intelligence at home. Models that can help you write code, work with your documents, and carry out useful tasks on hardware you control. A great alternative to frontier models and subscription-based intelligence for more and more of the work people actually do.
 

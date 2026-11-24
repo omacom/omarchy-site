@@ -135,9 +135,9 @@
 
 <p><img src="https://omarchy.org/news/2026/11/omarchy-4-5/omarchy-4-5-macbooks.webp" alt="Omarchy on an M2 Max, M3 Air, Neo, M4 Pro, and M5 Air" /></p>
 
-<h2 id="arm-support-for-nvidia-dgx-spark--n1x-and-soon-snapdragon">ARM support for NVIDIA DGX Spark + N1X (and soon Snapdragon)</h2>
+<h2 id="arm-support-for-nvidia-dgx-spark--rtx-spark-and-soon-snapdragon">ARM support for NVIDIA DGX Spark + RTX Spark (and soon Snapdragon)</h2>
 
-<p>Omarchy 4.5 ships its first ARM ISO, and with it comes preliminary support for NVIDIA’s ARM machines: the DGX Spark desktop and the laptops built on the N1X, like the <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> and the <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. And soon we’ll have support for the entire lineup of Snapdragon ARM machines as well. It’s still early days, so expect a few rough edges, and please report anything that breaks on <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
+<p>Omarchy 4.5 ships its first ARM ISO, and with it comes preliminary support for NVIDIA’s ARM machines: the DGX Spark desktop and the laptops built on the RTX Spark, like the <a href="https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263">Dell XPS 16 Creator Edition</a> and the <a href="https://eshop.asus.com/us/31148-us-cnf-auto.html">ASUS ProArt P14</a>. And soon we’ll have support for the entire lineup of Snapdragon ARM machines as well. It’s still early days, so expect a few rough edges, and please report anything that breaks on <a href="https://github.com/omacom/omarchy/issues">GitHub</a>.</p>
 
 <h2 id="50-languages-and-5-input-methods">50 languages and 5 input methods</h2>
 
@@ -534,8 +534,8 @@
   <li>Offer the stable channel on Apple Silicon Macs by <a href="https://github.com/maralcbr">@maralcbr</a> in <a href="https://github.com/omacom/omarchy/pull/17498">#17498</a></li>
   <li>Fix Omarchy’s aliases, functions, and environment missing from new terminals on Apple Silicon by <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17041">#17041</a></li>
   <li>Set up installed NVIDIA applications by <a href="https://github.com/jdvmi00">@jdvmi00</a> in <a href="https://github.com/omacom/omarchy/pull/12723">#12723</a></li>
-  <li>Fix installs failing on the Lenovo Pro 9 with NVIDIA N1x by <a href="https://github.com/breymander">@breymander</a> in <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
-  <li>Fix missing internal speakers and microphones on N1x laptops that ran the earlier audio profiles by <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
+  <li>Fix installs failing on the Lenovo Pro 9 with NVIDIA RTX Spark by <a href="https://github.com/breymander">@breymander</a> in <a href="https://github.com/omacom/omarchy/pull/16423">#16423</a></li>
+  <li>Fix missing internal speakers and microphones on RTX Spark laptops that ran the earlier audio profiles by <a href="https://github.com/ryanrhughes">@ryanrhughes</a> in <a href="https://github.com/omacom/omarchy/pull/16233">#16233</a></li>
   <li>Fix a sluggish desktop on NVIDIA GB10 machines like the DGX Spark by <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17264">#17264</a></li>
   <li>
     <p>Fix typing into the lock screen after resume on NVIDIA by <a href="https://github.com/dhh">@dhh</a> in <a href="https://github.com/omacom/omarchy/pull/17277">#17277</a></p>
@@ -719,7 +719,7 @@
 
 <p>And your own computer doesn’t have to do all the work alone. We also want to make it easy to connect the hardware you own into a <strong>mesh of intelligence</strong>. Your laptop, the powerful desktop in your office, a machine tucked away at home. Let your agents draw on the computers available to you, without making you manage a small data center first.</p>
 
-<p>This is a big part of how I see the promise of the agentic OS being fulfilled. With hardware like NVIDIA’s N1x and <a href="https://www.qianwenai.com/product/qwenbook">Alibaba’s upcoming Qwen Book</a>, we’re moving toward a world where powerful local AI machines are ordinary personal computers. The operating system should make that power available from the moment you start using it.</p>
+<p>This is a big part of how I see the promise of the agentic OS being fulfilled. With hardware like NVIDIA’s RTX Spark and <a href="https://www.qianwenai.com/product/qwenbook">Alibaba’s upcoming Qwen Book</a>, we’re moving toward a world where powerful local AI machines are ordinary personal computers. The operating system should make that power available from the moment you start using it.</p>
 
 <p>I think we’re getting close to everyone having access to solid intelligence at home. Models that can help you write code, work with your documents, and carry out useful tasks on hardware you control. A great alternative to frontier models and subscription-based intelligence for more and more of the work people actually do.</p>
 

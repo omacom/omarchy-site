@@ -32,9 +32,9 @@ And they're not stopping there. M4, M5, and M6 are all being worked on right now
 
 ![Omarchy on an M2 Max, M3 Air, Neo, M4 Pro, and M5 Air](omarchy-4-5-macbooks.webp)
 
-## ARM support for NVIDIA DGX Spark + N1X (and soon Snapdragon)
+## ARM support for NVIDIA DGX Spark + RTX Spark (and soon Snapdragon)
 
-Omarchy 4.5 ships its first ARM ISO, and with it comes preliminary support for NVIDIA's ARM machines: the DGX Spark desktop and the laptops built on the N1X, like the [Dell XPS 16 Creator Edition](https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263) and the [ASUS ProArt P14](https://eshop.asus.com/us/31148-us-cnf-auto.html). And soon we'll have support for the entire lineup of Snapdragon ARM machines as well. It's still early days, so expect a few rough edges, and please report anything that breaks on [GitHub](https://github.com/omacom/omarchy/issues).
+Omarchy 4.5 ships its first ARM ISO, and with it comes preliminary support for NVIDIA's ARM machines: the DGX Spark desktop and the laptops built on the RTX Spark, like the [Dell XPS 16 Creator Edition](https://www.dell.com/en-us/shop/laptop-computers/spd/xps16dx16263) and the [ASUS ProArt P14](https://eshop.asus.com/us/31148-us-cnf-auto.html). And soon we'll have support for the entire lineup of Snapdragon ARM machines as well. It's still early days, so expect a few rough edges, and please report anything that breaks on [GitHub](https://github.com/omacom/omarchy/issues).
 
 ## 50 languages and 5 input methods
 
@@ -418,8 +418,8 @@ New defaults that could collide with bindings of your own: `Super + Q` (close wi
 - Offer the stable channel on Apple Silicon Macs by [@maralcbr](https://github.com/maralcbr) in [#17498](https://github.com/omacom/omarchy/pull/17498)
 - Fix Omarchy's aliases, functions, and environment missing from new terminals on Apple Silicon by [@dhh](https://github.com/dhh) in [#17041](https://github.com/omacom/omarchy/pull/17041)
 - Set up installed NVIDIA applications by [@jdvmi00](https://github.com/jdvmi00) in [#12723](https://github.com/omacom/omarchy/pull/12723)
-- Fix installs failing on the Lenovo Pro 9 with NVIDIA N1x by [@breymander](https://github.com/breymander) in [#16423](https://github.com/omacom/omarchy/pull/16423)
-- Fix missing internal speakers and microphones on N1x laptops that ran the earlier audio profiles by [@ryanrhughes](https://github.com/ryanrhughes) in [#16233](https://github.com/omacom/omarchy/pull/16233)
+- Fix installs failing on the Lenovo Pro 9 with NVIDIA RTX Spark by [@breymander](https://github.com/breymander) in [#16423](https://github.com/omacom/omarchy/pull/16423)
+- Fix missing internal speakers and microphones on RTX Spark laptops that ran the earlier audio profiles by [@ryanrhughes](https://github.com/ryanrhughes) in [#16233](https://github.com/omacom/omarchy/pull/16233)
 - Fix a sluggish desktop on NVIDIA GB10 machines like the DGX Spark by [@dhh](https://github.com/dhh) in [#17264](https://github.com/omacom/omarchy/pull/17264)
 - Fix typing into the lock screen after resume on NVIDIA by [@dhh](https://github.com/dhh) in [#17277](https://github.com/omacom/omarchy/pull/17277)
 
