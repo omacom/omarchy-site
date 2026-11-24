@@ -100,5 +100,7 @@ export function createFormat(data: IntlData) {
 
   const region = (code: string) => data.regions[code.toUpperCase()] ?? code
 
-  return { number, date, region }
+  const script = (code: string) => data.scripts[code] ?? code
+
+  return { number, date, region, script }
 }

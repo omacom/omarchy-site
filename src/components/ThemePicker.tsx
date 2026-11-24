@@ -13,6 +13,7 @@ import {
 } from '@/lib/theme'
 import { useIsNarrow } from '@/lib/use-media-query'
 import { cn } from '@/lib/utils'
+import { aspectRatio } from '@/lib/aspect-ratio-fallback'
 
 const previewSrc = (id: string) => `/assets/images/theme-previews/${id}.webp`
 
@@ -53,7 +54,10 @@ export function ThemePicker() {
     setIndex(i)
     const trigger = document.activeElement as HTMLElement | null
     restoreFocus.current = trigger
-    restoreRing.current = trigger?.matches(':focus-visible') ?? false
+    restoreRing.current =
+      !!trigger &&
+      CSS.supports('selector(:focus-visible)') &&
+      trigger.matches(':focus-visible')
     setOpen(true)
   }, [])
 
@@ -324,7 +328,7 @@ export function ThemePicker() {
                         }}
                         className="w-full select-none object-cover"
                         style={{
-                          aspectRatio: portrait ? '4 / 5' : '1800 / 1012',
+                          ...aspectRatio(portrait ? '4 / 5' : '1800 / 1012'),
                           filter:
                             depth === 0
                               ? undefined
@@ -340,7 +344,7 @@ export function ThemePicker() {
           {/* Spacer that gives the absolute stack its height */}
           <div
             className="invisible w-[min(68vw,46rem)] sm:w-[min(72vw,46rem)]"
-            style={{ aspectRatio: portrait ? '4 / 5' : '1800 / 1012' }}
+            style={aspectRatio(portrait ? '4 / 5' : '1800 / 1012')}
           />
         </div>
 

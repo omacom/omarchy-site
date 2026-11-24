@@ -1122,9 +1122,26 @@ body {
   container-type: inline-size;
 }
 .pixel-container > * {
-  --pxc: calc(min((100cqw - 48px) * 0.88, 896px) / 81);
+  --pxc: calc(min((100vw - 48px) * 0.88, 896px) / 81);
   /* Rows are 50/51 of a column: the wordmark's units are 51x50. */
   --pxr: calc(var(--pxc) * 50 / 51);
+}
+@supports (width: 1cqw) {
+  .pixel-container > * {
+    --pxc: calc(min((100cqw - 48px) * 0.88, 896px) / 81);
+  }
+}
+
+/* No color-mix(): the bar's inline background is dropped. */
+@supports not (color: color-mix(in srgb, red, red)) {
+  .site-nav-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--nav-ground, var(--color-bg));
+    opacity: calc(var(--nav-surface, 0) * var(--nav-fill, 1) * 0.9);
+  }
 }
 
 /* No 300ms double-tap-zoom wait on anything you can press */

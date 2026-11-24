@@ -1,4 +1,5 @@
 import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import { aspectRatio } from '@/lib/aspect-ratio-fallback'
 
 export function PageWordmark({
   brand = 'omarchy',
@@ -12,7 +13,7 @@ export function PageWordmark({
         aria-label="OMA"
         className="mx-auto mb-3 w-[32.93%] max-w-[14.818rem] text-[color:var(--t-field-lit)]"
         style={{
-          aspectRatio: '722 / 300',
+          ...aspectRatio('722 / 300'),
           backgroundColor: 'currentColor',
           backgroundImage: WORDMARK_BANDS,
           maskImage: 'url(/brand/oma-logo-mask.svg)',

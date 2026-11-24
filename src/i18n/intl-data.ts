@@ -6,6 +6,7 @@
  */
 
 import { fieldsIn } from './create-format.ts'
+import { SCRIPT_NAMES, scriptName } from './script-names.ts'
 
 /** Every date shape the site renders. */
 export const DATE_FORMATS = {
@@ -52,6 +53,7 @@ export type IntlData = {
   }
   dates: Record<DateFormatName, DatePart[]>
   regions: Record<string, string>
+  scripts: Record<string, string>
 }
 
 // V8 turns ICU's narrow no-break space into a plain space in format() for
@@ -187,5 +189,8 @@ export function intlData(tag: string): IntlData {
       ),
     ) as IntlData['dates'],
     regions: regionNames(tag),
+    scripts: Object.fromEntries(
+      Object.keys(SCRIPT_NAMES).map((s) => [s, scriptName(s, tag)]),
+    ),
   }
 }
