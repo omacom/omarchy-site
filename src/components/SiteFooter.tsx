@@ -235,7 +235,10 @@ export function SiteFooter({ path }: { path: string }) {
             )
           })}
         </nav>
-        <div className="mt-12 flex flex-col gap-2 border-t border-border-subtle pt-6 text-[13px] text-text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div
+          data-backdrop-obstacle
+          className="mt-12 flex flex-col gap-2 border-t border-border-subtle pt-6 text-[13px] text-text-muted sm:flex-row sm:items-center sm:justify-between"
+        >
           <p data-quiet>
             <Link to="/$/" params={{ _splat: 'brand' }} className={footerLink}>
               Omarchy™
