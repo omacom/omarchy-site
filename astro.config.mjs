@@ -4,11 +4,14 @@ import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { devPassthrough } from './scripts/dev-passthrough.mjs'
+import { nationalThemeCss } from './scripts/national-theme-css.mjs'
+import { nationalThemeOf } from './src/lib/national-sites.ts'
 import { intlData } from './src/i18n/intl-data.ts'
 
 const language = process.env.PUBLIC_SITE_LOCALE || 'en'
 if (!Object.hasOwn(locales, language))
   throw new Error(`Unknown site language: ${language}`)
+const homeTheme = nationalThemeOf(language)
 
 // The static assembler and deployment workflows share dist/client.
 export default defineConfig({
@@ -24,8 +27,9 @@ export default defineConfig({
       __EDITION_INTL__: JSON.stringify(
         intlData(locales[language].formatLocale),
       ),
+      __HOME_THEME__: JSON.stringify(homeTheme),
     },
-    plugins: [tailwindcss(), devPassthrough()],
+    plugins: [nationalThemeCss(homeTheme?.id), tailwindcss(), devPassthrough()],
     optimizeDeps: { entries: ['!src/parked/**'] },
     resolve: {
       // Array form: exact entries first, so the shims win over the prefixes.

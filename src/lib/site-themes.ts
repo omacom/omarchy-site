@@ -5,7 +5,8 @@ export type SiteTheme = {
   light?: true
 }
 
-export const SITE_THEMES: SiteTheme[] = [
+/** The themes Omarchy itself ships, in the order the picker walks them. */
+export const STOCK_THEMES: SiteTheme[] = [
   { id: 'catppuccin', name: 'Catppuccin' },
   { id: 'catppuccin-latte', name: 'Catppuccin Latte', light: true },
   { id: 'ethereal', name: 'Ethereal' },
@@ -29,3 +30,13 @@ export const SITE_THEMES: SiteTheme[] = [
   { id: 'vantablack', name: 'Vantablack' },
   { id: 'white', name: 'White', light: true },
 ]
+
+/** This site's own national theme, if it has one, worked out by the build
+ *  from the site's language (src/lib/national-sites.ts). */
+declare const __HOME_THEME__: SiteTheme | null | undefined
+export const HOME_THEME: SiteTheme | null =
+  typeof __HOME_THEME__ === 'undefined' ? null : __HOME_THEME__
+/** The themes this site's picker walks, its own country's first. */
+export const SITE_THEMES: SiteTheme[] = HOME_THEME
+  ? [HOME_THEME, ...STOCK_THEMES]
+  : STOCK_THEMES

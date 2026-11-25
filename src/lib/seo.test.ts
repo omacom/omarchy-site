@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { readFileSync } from 'node:fs'
 import { excerptFromHtml, seo, socialImage } from './seo.ts'
-import { SITE_THEMES } from './site-themes.ts'
+import { STOCK_THEMES } from './site-themes.ts'
 
 test('social cards are stable for equivalent page URLs and vary across posts', () => {
   const path =
@@ -19,7 +19,7 @@ test('social cards are stable for equivalent page URLs and vary across posts', (
 })
 
 test('every selectable social card is a 1200x630 PNG', () => {
-  for (const theme of SITE_THEMES) {
+  for (const theme of STOCK_THEMES) {
     const image = readFileSync(
       new URL(`../../public/brand/social/${theme.id}.png`, import.meta.url),
     )

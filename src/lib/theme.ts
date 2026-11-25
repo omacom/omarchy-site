@@ -3,10 +3,11 @@ import { inlineJson } from './inline-json'
 import { OMARCHY_MARK_PATH } from '@/components/Brand'
 import { runThemeViewTransition } from '@/lib/theme-transition'
 
-import { SITE_THEMES } from './site-themes.ts'
+import { HOME_THEME, SITE_THEMES } from './site-themes.ts'
 export { SITE_THEMES, type SiteTheme } from './site-themes.ts'
 
-export const DEFAULT_THEME = 'tokyo-night'
+/** A national site opens in its own country's theme, any other in Tokyo Night. */
+export const DEFAULT_THEME = HOME_THEME?.id ?? 'tokyo-night'
 export const THEME_KEY = 'omarchy-site-theme'
 /** Fired on <window> after a theme lands, for canvas renderers to re-read. */
 export const THEME_EVENT = 'omarchy-theme'
@@ -15,7 +16,7 @@ export const OPEN_PICKER_EVENT = 'omarchy-open-picker'
 /** Fired with detail { open } whenever the picker opens or closes. */
 export const PICKER_STATE_EVENT = 'omarchy-picker-state'
 
-/** Apply the saved palette before paint, or Tokyo Night for anyone who hasn't picked one.
+/** Apply the saved palette before paint, or the default for anyone who hasn't picked one.
  * The favicon is owned outside React so replacing it cannot break reconciliation. */
 export const themeInitScript = `(function(){var t=${inlineJson(DEFAULT_THEME)};try{var s=localStorage.getItem(${inlineJson(THEME_KEY)});if(${inlineJson(
   SITE_THEMES.map((t) => t.id),

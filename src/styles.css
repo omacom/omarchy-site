@@ -212,7 +212,9 @@
   --color-brand: var(--t-brand);
   --color-brand-soft: var(--t-brand-soft);
 
-  --color-brand-fill: var(--t-brand);
+  /* A national theme fills with its flag's exact colour, which its
+     --t-brand-ink is chosen to read on. */
+  --color-brand-fill: var(--t-brand-fill, var(--t-brand));
   --color-brand-ink: var(--t-brand-ink);
 
   --color-tn-blue: oklch(0.719 0.132 264.2);
@@ -229,7 +231,7 @@
   --color-card-foreground: var(--t-text);
   --color-popover: var(--t-surface);
   --color-popover-foreground: var(--t-text);
-  --color-primary: var(--t-brand);
+  --color-primary: var(--t-brand-fill, var(--t-brand));
   --color-primary-foreground: var(--t-brand-ink);
   --color-accent: var(--t-surface-2);
   --color-accent-foreground: var(--t-text);

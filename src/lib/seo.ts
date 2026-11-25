@@ -1,5 +1,5 @@
 import { siteUrl, contentLocale, t } from '../i18n/site.ts'
-import { SITE_THEMES } from './site-themes.ts'
+import { STOCK_THEMES } from './site-themes.ts'
 
 /**
  * The tags social sites read when a link is pasted: Open Graph for Slack,
@@ -30,7 +30,7 @@ export function socialImage(path: string) {
   for (const char of pathname) {
     hash = Math.imul(hash ^ char.charCodeAt(0), 16777619) >>> 0
   }
-  const theme = SITE_THEMES[hash % SITE_THEMES.length]
+  const theme = STOCK_THEMES[hash % STOCK_THEMES.length]
   return {
     url: `${SITE_URL}/brand/social/${contentLocale === 'en' ? '' : `${contentLocale}/`}${theme.id}.png`,
     width: '1200',
