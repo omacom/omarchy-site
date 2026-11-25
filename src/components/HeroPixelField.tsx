@@ -27,11 +27,23 @@ export const WORDMARK_GLYPH: FieldGlyph = {
   height: WORDMARK_HEIGHT,
 }
 
+/** A CSS colour as #rrggbb, as the canvas reads it back: the minifier
+ *  writes custom properties as #fff, red or gold, which the field's own
+ *  parsing reads only as six hex digits. */
+let probe: CanvasRenderingContext2D | null | undefined
+function sixDigit(css: string) {
+  probe ??= document.createElement('canvas').getContext('2d')
+  if (!probe) return css
+  probe.fillStyle = '#000000'
+  probe.fillStyle = css
+  return probe.fillStyle
+}
+
 /** The field's colors come from the active theme's --t-field-* tokens. */
 function readPalette() {
   const style = getComputedStyle(document.documentElement)
   const token = (name: string, fallback: string) =>
-    style.getPropertyValue(name).trim() || fallback
+    sixDigit(style.getPropertyValue(name).trim() || fallback)
   return {
     bg: token('--t-field-bg', '#0e0e14'),
     dim: token('--t-field-dim', '#39482e'),
@@ -40,7 +52,7 @@ function readPalette() {
     hover: token('--t-field-hover', '#bbdd97'),
     crest: token('--t-field-crest', '#daecc6'),
     /** A national theme's flag on the word, cell by cell. */
-    word: wordGrid(token('--t-word-grid', '')),
+    word: wordGrid(style.getPropertyValue('--t-word-grid').trim()),
   }
 }
 
@@ -50,8 +62,9 @@ function readPalette() {
 function wordGrid(value: string) {
   const [colours, rows] = value.split(' / ').map((part) => part.split(' '))
   if (!rows) return null
+  const inks = colours.map(sixDigit)
   const LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  return rows.map((row) => [...row].map((l) => colours[LETTERS.indexOf(l)]))
+  return rows.map((row) => [...row].map((l) => inks[LETTERS.indexOf(l)]))
 }
 
 /** Classic 8x8 ordered dither matrix, 0..63. */

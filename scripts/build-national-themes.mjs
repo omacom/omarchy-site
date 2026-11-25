@@ -2,7 +2,13 @@
 // src/lib/national-themes.ts. With --check it only reports whether the
 // files are current.
 
-import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import {
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs'
 import { NATIONAL_THEMES } from '../src/lib/national-themes.ts'
 import { problemsWith, themeCss } from './lib/national-palette.mjs'
 
@@ -45,6 +51,8 @@ if (process.argv.includes('--check')) {
   }
 } else {
   mkdirSync(dir, { recursive: true })
+  for (const name of readdirSync(dir))
+    if (!files.has(name)) rmSync(new URL(name, dir))
   for (const [name, css] of files) writeFileSync(new URL(name, dir), css)
   console.log(`Wrote ${files.size} national themes`)
 }

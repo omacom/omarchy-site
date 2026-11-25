@@ -212,7 +212,9 @@
   --color-brand: var(--t-brand);
   --color-brand-soft: var(--t-brand-soft);
 
-  --color-brand-fill: var(--t-brand);
+  /* A national theme fills with its flag's exact colour, which its
+     --t-brand-ink is chosen to read on. */
+  --color-brand-fill: var(--t-brand-fill, var(--t-brand));
   --color-brand-ink: var(--t-brand-ink);
 
   --color-tn-blue: oklch(0.719 0.132 264.2);
@@ -229,7 +231,6 @@
   --color-card-foreground: var(--t-text);
   --color-popover: var(--t-surface);
   --color-popover-foreground: var(--t-text);
-  /* A national theme fills its buttons with its flag's exact colour. */
   --color-primary: var(--t-brand-fill, var(--t-brand));
   --color-primary-foreground: var(--t-brand-ink);
   --color-accent: var(--t-surface-2);
@@ -2483,16 +2484,13 @@ h6 {
 
 .brand__preview {
   width: 100%;
-  background: var(
-    --t-word,
-    linear-gradient(
-      to bottom,
-      var(--t-field-crest) 0 26.316%,
-      var(--t-field-hover) 26.316% 36.842%,
-      var(--t-field-lit) 36.842% 57.895%,
-      var(--t-field-mid) 57.895% 73.684%,
-      var(--t-field-dim) 73.684% 100%
-    )
+  background: linear-gradient(
+    to bottom,
+    var(--t-field-crest) 0 26.316%,
+    var(--t-field-hover) 26.316% 36.842%,
+    var(--t-field-lit) 36.842% 57.895%,
+    var(--t-field-mid) 57.895% 73.684%,
+    var(--t-field-dim) 73.684% 100%
   );
   mask: var(--brand-mask) no-repeat center / 100% 100%;
   -webkit-mask: var(--brand-mask) no-repeat center / 100% 100%;

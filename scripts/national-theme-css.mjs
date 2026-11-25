@@ -3,6 +3,7 @@
 // nothing on a site without one.
 
 import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
 const ID = 'virtual:national-theme.css'
 
@@ -13,8 +14,10 @@ export function nationalThemeCss(id) {
     load(source) {
       if (source !== `\0${ID}`) return
       if (!id) return ''
-      const file = new URL(`../src/national-themes/${id}.css`, import.meta.url)
-      this.addWatchFile(file.pathname)
+      const file = fileURLToPath(
+        new URL(`../src/national-themes/${id}.css`, import.meta.url),
+      )
+      this.addWatchFile(file)
       return readFileSync(file, 'utf8')
     },
   }

@@ -1,4 +1,8 @@
-import { OmarchyWordmark, WORDMARK_BANDS } from '@/components/Brand'
+import {
+  BRAND_GRADIENT,
+  OmarchyWordmark,
+  WORDMARK_BANDS,
+} from '@/components/Brand'
 
 export function PageWordmark({
   brand = 'omarchy',
@@ -14,7 +18,7 @@ export function PageWordmark({
         style={{
           aspectRatio: '722 / 300',
           backgroundColor: 'currentColor',
-          backgroundImage: WORDMARK_BANDS,
+          backgroundImage: BRAND_GRADIENT,
           maskImage: 'url(/brand/oma-logo-mask.svg)',
           maskRepeat: 'no-repeat',
           maskSize: '100% 100%',

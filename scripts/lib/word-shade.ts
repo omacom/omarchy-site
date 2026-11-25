@@ -239,9 +239,6 @@ export type WordColours = {
     /** Rows a flag sets the triangle's reach on itself: row, then the
      *  column it ends at. */
     ends?: [row: number, column: number][]
-    /** A colour on the cells just above and below a triangle, outside
-     *  it: a border along its slopes. Flat, like a cross. */
-    edge?: string | null
   } | null
   /** Bars down the whole word, the later ones on top, from one column up
    *  to another: a cross's upright. Flat, like the cross's arm. */
@@ -549,15 +546,6 @@ export function wordGrid(word: WordColours, field: string) {
         continue
       }
       const hoist = word.hoist
-      if (
-        hoist?.edge &&
-        hoist.tip !== undefined &&
-        !inHoist(hoist, row, col) &&
-        (inHoist(hoist, row - 1, col) || inHoist(hoist, row + 1, col))
-      ) {
-        line.push(hoist.edge)
-        continue
-      }
       if (hoist && inHoist(hoist, row, col)) {
         line.push(
           word.axis === 'rows'

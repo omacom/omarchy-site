@@ -34,7 +34,6 @@ const REST_CONTRAST = 3.5
 
 /** The wordmark's grid. */
 import {
-  inHoist,
   tone,
   TWO_BAND_DEPTH,
   wordGrid,
@@ -308,44 +307,6 @@ function gridCss(grid) {
   return layers.join(', ')
 }
 
-/**
- * A word of bands with a hoist triangle as CSS backgrounds. The triangle's
- * shading runs the word's height underneath, and each row's band lies over
- * it from the triangle's edge rightward: a conic gradient fills exactly the
- * quarter right of a point and above it, for the rows above the tip, the
- * higher on top, or below it, for the rows under, the lower on top.
- */
-function triangleCss(grid, hoist) {
-  const pct = (n, of) => `${Math.round((n / of) * 100000) / 1000}%`
-  const reach = (row) => {
-    let col = 0
-    while (inHoist({ ...hoist, color: '' }, row, col)) col++
-    return col
-  }
-  const above = []
-  const below = []
-  for (let row = 0; row < WORD_ROWS; row++) {
-    const col = reach(row)
-    const band = grid[row][col]
-    const x = pct(col, WORD_COLUMNS)
-    if (row + 0.5 <= hoist.tip)
-      above.push(
-        `conic-gradient(at ${x} ${pct(row + 1, WORD_ROWS)}, ${band} 0deg 90deg, transparent 90deg)`,
-      )
-    else
-      below.unshift(
-        `conic-gradient(at ${x} ${pct(row, WORD_ROWS)}, transparent 0deg 90deg, ${band} 90deg 180deg, transparent 180deg)`,
-      )
-  }
-  const base = `linear-gradient(to bottom, ${runsOf(grid.map((line) => line[0]))
-    .map(
-      ([color, from, to]) =>
-        `${color} ${pct(from, WORD_ROWS)} ${pct(to, WORD_ROWS)}`,
-    )
-    .join(', ')})`
-  return [...above, ...below, base].join(', ')
-}
-
 const LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 /**
@@ -501,9 +462,6 @@ function tokensWith(theme, lifts) {
       })),
     }
   }
-  const border = ('edge' in theme.word && theme.word.edge) || null
-  if (border && !shown.has(border))
-    shown.set(border, wordColour(color(border), fieldBg, dark, lifts))
   const uprights = ('uprights' in theme.word && theme.word.uprights) || []
   for (const [name] of uprights)
     shown.set(name, wordColour(color(name), fieldBg, dark, lifts))
@@ -530,7 +488,6 @@ function tokensWith(theme, lifts) {
         ...(triangle && {
           tip: triangle[2],
           ends: triangle[3],
-          edge: border && shown.get(border),
         }),
       },
       uprights: bars,
@@ -558,16 +515,7 @@ function tokensWith(theme, lifts) {
             ({ color: bar, from, to }) =>
               `linear-gradient(to right, transparent ${pctOf(from)}, ${bar} ${pctOf(from)} ${pctOf(to)}, transparent ${pctOf(to)})`,
           ),
-        triangle && !border
-          ? triangleCss(grid, {
-              columns: triangle[1],
-              rows: WORD_ROWS,
-              tip: triangle[2],
-              ends: triangle[3],
-            })
-          : border || diagonal
-            ? gridCss(grid)
-            : wordCss(grid, ends),
+        triangle || diagonal ? gridCss(grid) : wordCss(grid, ends),
       ].join(', ')
 
   // The bar over the hero draws its labels in difference mode, so it asks
@@ -652,11 +600,6 @@ export function problemsWith(theme) {
       if (!theme.colors[name])
         problems.push(`diagonal uses unknown colour ${name}`)
     if (!(slant.slope > 0)) problems.push('a diagonal needs a slope above 0')
-  }
-  const edge = 'edge' in theme.word ? theme.word.edge : undefined
-  if (edge) {
-    if (!theme.colors[edge]) problems.push(`edge uses unknown colour ${edge}`)
-    if (!triangle) problems.push('an edge needs a triangle to border')
   }
   const hoist = 'hoist' in theme.word ? theme.word.hoist : undefined
   if (hoist) {

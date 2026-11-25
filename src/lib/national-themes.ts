@@ -71,9 +71,6 @@ export type NationalTheme = {
           /** Rows set by hand: row, then the column it ends at. */
           ends?: [row: number, column: number][],
         ]
-        /** A colour on the cells just above and below the triangle,
-         *  outside it, as a black border. */
-        edge?: string
         /** A band across the word on a slant instead, bottom left to top
          *  right, as Tanzania's: the colour above it, the colour below,
          *  and the band's own colours, each so many columns wide along a

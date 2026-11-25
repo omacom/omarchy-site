@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 import locales from '../../src/i18n/locales.json' with { type: 'json' }
 import { NATIONAL_THEMES } from '../../src/lib/national-themes.ts'
@@ -16,7 +17,7 @@ import {
   TEXT_CONTRAST,
   themeTokens,
 } from './national-palette.mjs'
-import { inHoist, wordGrid } from './word-shade.ts'
+import { wordGrid } from './word-shade.ts'
 import { WORDMARK_ROWS } from '../../src/data/wordmark-bitmap.ts'
 
 test('every language site but the English one has a national theme', () => {
@@ -88,7 +89,7 @@ test('src/national-themes/ is generated from the flags', () => {
   execFileSync(
     process.execPath,
     [
-      new URL('../build-national-themes.mjs', import.meta.url).pathname,
+      fileURLToPath(new URL('../build-national-themes.mjs', import.meta.url)),
       '--check',
     ],
     { stdio: 'pipe' },
@@ -185,29 +186,6 @@ const lit = (row, col) => {
   return (typeof line === 'string' ? line : line.join(''))[col] === '1'
 }
 
-test('a triangle edge borders the triangle just above and below it', () => {
-  const hoist = {
-    color: '#ffffff',
-    columns: 27,
-    rows: 19,
-    tip: 9,
-    edge: '#111111',
-  }
-  const grid = wordGrid(
-    { axis: 'rows', cells: Array(19).fill('#319208'), hoist },
-    '#031c09',
-  )
-  for (let row = 0; row < 19; row++)
-    for (let col = 0; col < 81; col++) {
-      const inside = inHoist(hoist, row, col)
-      const beside =
-        !inside &&
-        (inHoist(hoist, row - 1, col) || inHoist(hoist, row + 1, col))
-      if (beside) assert.equal(grid[row][col], '#111111', `${row}:${col}`)
-      else assert.notEqual(grid[row][col], '#111111', `${row}:${col}`)
-    }
-})
-
 test('a slant crosses each upright stroke whole', () => {
   const grid = gridFromToken(themeTokens(theme('tanzania'))['--t-word-grid'])
   for (let row = 0; row < 19; row++) {
@@ -271,9 +249,6 @@ test('new word shapes reject what they cannot draw', () => {
     problemsWith(
       word({ diagonal: { ...base.word.diagonal, above: 'purple' } }),
     ).some((p) => p.includes('purple')),
-  )
-  assert.ok(
-    problemsWith(word({ edge: 'black' })).some((p) => p.includes('triangle')),
   )
   assert.ok(
     problemsWith(word({ uprights: [['black', 17, 20, [10, 30]]] })).some((p) =>
