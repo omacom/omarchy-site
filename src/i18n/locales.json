@@ -364,7 +364,8 @@
     "formatLocale": "ky-KG",
     "ogLocale": "ky_KG",
     "manual": false,
-    "flag": "KG"
+    "flag": "KG",
+    "community": true
   },
   "uk": {
     "name": "Українська",

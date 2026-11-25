@@ -111,7 +111,7 @@ which has its own submission guide.
 ## Translations
 
 The site uses shared components with separate language catalogues and domain builds.
-English changes publish immediately. GitHub Actions fills in missing main-site copy and news translations with Muse afterward, then deploys the language sites. Existing human translations are preserved. See [the translation guide](docs/translations.md) for queues, local previews, and adding a language or domain.
+English changes publish immediately. GitHub Actions fills in missing main-site copy and news translations with Muse afterward, then deploys the language sites. Existing human translations are preserved. An edition marked `"community": true` in `src/i18n/locales.json` is left out of that queue, so Muse never translates it; its speakers do, with `npm run site:pending -- <code>` and `npm run news:pending -- <code>` showing what is left. Until they catch up, its pages show the English text. See [the translation guide](docs/translations.md) for queues, local previews, and adding a language or domain.
 
 ## AI assistance
 

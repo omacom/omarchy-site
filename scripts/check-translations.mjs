@@ -51,6 +51,9 @@ if (pendingNews || pendingSite) {
   const seen = new Set()
   for (const [code, locale] of Object.entries(locales)) {
     if (selected.length && !selected.includes(code)) continue
+    // A community edition is translated by its own speakers, never by Muse;
+    // naming it still shows its queue to its translator.
+    if (!selected.length && locale.community) continue
     const contentLocale = locale.contentLocale ?? code
     if (contentLocale === 'en' || seen.has(contentLocale)) continue
     seen.add(contentLocale)
@@ -147,6 +150,8 @@ for (const [code, locale] of Object.entries(locales)) {
     problems.push(`${code}: searchTerms must be a list of non-empty strings`)
   if (locale.draft !== undefined && locale.draft !== true)
     problems.push(`${code}: draft is either true or absent`)
+  if (locale.community !== undefined && locale.community !== true)
+    problems.push(`${code}: community is either true or absent`)
   const contentLocale = locale.contentLocale ?? code
   if (contentLocale === 'en' || (selected.length && !selected.includes(code)))
     continue
