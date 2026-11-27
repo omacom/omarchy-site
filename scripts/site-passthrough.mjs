@@ -22,6 +22,7 @@ export const WHOLE = [
   '.nojekyll',
   'plans',
   'screensaver',
+  'anthem',
   'discord',
 ]
 
