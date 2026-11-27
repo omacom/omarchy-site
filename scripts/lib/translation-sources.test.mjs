@@ -1,6 +1,12 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
+import {
+  mkdtempSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+  rmSync,
+} from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { collectSources } from '../translation-sources.mjs'
@@ -54,12 +60,56 @@ test('authored blocks preserve exact HTML and exclude people and product heading
       title: 'Our patrons',
       html: `<h2>Support us</h2><p>${block}</p><p><img src="/picture.webp"></p><p><strong> </strong></p><h3 class="member__name">Donor Name</h3><p class="member__meta">Product Name</p><ul class="patrons__supporters"><li>Another Donor</li></ul><h3 class="resident__name">Artist Name</h3><h2 class="sponsorship__name">Product</h2>`,
     },
-    meetups: { title: 'Unused imported title', html: '<p>Event Name</p>' },
+    teams: { title: 'Unused imported title', html: '<p>Person Name</p>' },
   })
   assert.deepEqual(collectSources(root), {
     messages: ['Our patrons'],
     blocks: [block, 'Support us'].sort(),
   })
+})
+
+test('meetup rules retain exact HTML without the replaced calendar or unused metadata', (t) => {
+  const { root, put } = fixture(t)
+  const rule =
+    '\n<p>Open to everyone</p>\n<p>No <a href="/invitation">invitation</a> needed.</p>\n'
+  put('src/data/pages.json', {
+    meetups: {
+      title: 'Unused imported title',
+      seoTitle: 'Unused imported SEO title',
+      description: 'Unused imported description',
+      html: `<div class="meetups"><div class="meetups__calendar"><p>Old calendar</p><a>Event name</a></div><section class="rules"><h2>Run your own meetup</h2><ol><li>${rule}</li></ol></section></div>`,
+    },
+  })
+  assert.deepEqual(collectSources(root), {
+    messages: [],
+    blocks: [rule, 'Run your own meetup'].sort(),
+  })
+})
+
+test('meetup prose is included when no legacy calendar exists', (t) => {
+  const { root, put } = fixture(t)
+  put('src/data/pages.json', {
+    meetups: {
+      title: 'Unused imported title',
+      html: '<section class="rules"><p>Everyone is welcome.</p></section>',
+    },
+  })
+  assert.deepEqual(collectSources(root), {
+    messages: [],
+    blocks: ['Everyone is welcome.'],
+  })
+})
+
+test('the meetup component exposes the Everywhere fallback as a literal key', (t) => {
+  const { root, put } = fixture(t)
+  put(
+    'src/astro/pages/MeetupsPage.tsx',
+    readFileSync(
+      new URL('../../src/astro/pages/MeetupsPage.tsx', import.meta.url),
+      'utf8',
+    ),
+  )
+  assert.ok(collectSources(root).messages.includes('Everywhere'))
 })
 
 test('dynamic authored copy is extracted without donor, event, or plugin names', (t) => {
