@@ -17,3 +17,36 @@ class PageDiscoveryTest(unittest.TestCase):
                 source.parent.mkdir(parents=True, exist_ok=True)
                 source.write_text('<main><p>New content</p></main>' if slug != 'discord' else '<meta http-equiv="refresh"><main>Redirecting</main>')
             self.assertEqual(sorted(slug for slug, _ in port.page_sources(root)), ['new-page', 'new-page/details'])
+
+
+class ThemesGalleryTest(unittest.TestCase):
+    def test_parses_a_single_line_figure_block(self):
+        html = '''<figure class="themes__theme">
+  <a href="https://github.com/you/your-theme"><img src="/assets/themes/your-theme.webp" alt="Your Theme theme" loading="lazy" decoding="async"></a>
+  <figcaption><a href="https://github.com/you/your-theme">Your Theme</a></figcaption>
+</figure>'''
+        self.assertEqual(port.parse_themes(html), [{
+            'repo': 'https://github.com/you/your-theme',
+            'image': '/assets/themes/your-theme.webp',
+            'name': 'Your Theme',
+        }])
+
+    def test_parses_a_prettier_wrapped_figure_block(self):
+        html = '''<figure class="themes__theme">
+  <a href="https://github.com/you/your-theme"
+    ><img
+      src="/assets/themes/your-theme.webp"
+      alt="Your Theme theme"
+      loading="lazy"
+      decoding="async"
+  /></a>
+  <figcaption>
+    <a href="https://github.com/you/your-theme">Your Theme</a>
+  </figcaption>
+</figure>'''
+        self.assertEqual(port.parse_themes(html), [{
+            'repo': 'https://github.com/you/your-theme',
+            'image': '/assets/themes/your-theme.webp',
+            'name': 'Your Theme',
+        }])
+
