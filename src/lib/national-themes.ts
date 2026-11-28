@@ -498,6 +498,16 @@ export const NATIONAL_THEMES: NationalTheme[] = [
     word: { bands: [['red', 19]] },
   },
   {
+    country: 'KG',
+    id: 'kyrgyzstan',
+    name: 'Кыргызстан',
+    ground: 'dark',
+    colors: { red: '#EE2737', yellow: '#FEDD00' },
+    base: 'red',
+    button: { fill: 'yellow', label: ['red'] },
+    word: { bands: [['yellow', 19]] },
+  },
+  {
     country: 'KR',
     id: 'hanguk',
     name: '대한민국',
