@@ -165,11 +165,6 @@
   "name": "Castle on a Lake"
  },
  {
-  "repo": "https://github.com/agriby-chaniago/omarchy-catch-the-rainbow-theme",
-  "image": "/assets/themes/catch-the-rainbow.webp",
-  "name": "Catch the Rainbow"
- },
- {
   "repo": "https://github.com/leaflessbranch/omarchy-cathedral-of-static-theme",
   "image": "/assets/themes/cathedral-of-static.webp",
   "name": "Cathedral of Static"
